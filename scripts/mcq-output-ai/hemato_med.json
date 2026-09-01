@@ -1,0 +1,870 @@
+[
+  {
+    "scenario": "A patient underlying rheumatoid arthritis with pale conjunctiva. MCV 78, ferritin 150 ng/ml (normal 180-270 ng/ml), serum iron binding capacity 100 mcg/dL (normal 240-450 mcg/dL). What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aplastic anemia"
+      },
+      {
+        "label": "B",
+        "text": "Pure red cell aplasia"
+      },
+      {
+        "label": "C",
+        "text": "Iron deficiency anemia"
+      },
+      {
+        "label": "D",
+        "text": "Autoimmune hemolytic anemia"
+      },
+      {
+        "label": "E",
+        "text": "Anemia of chronic inflammation/disease"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Patient with rheumatoid arthritis (chronic disease) presents with microcytic anemia (MCV 78). Low ferritin and low TIBC are characteristic of anemia of chronic inflammation/disease (also called anemia of chronic disease). This is the most common cause of anemia in chronic inflammatory conditions. The low ferritin is due to hepcidin-induced iron sequestration, not true iron deficiency.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 3-year-old boy presents with dark urine 1 day. He has had fever 2 days ago. No medication. He has history of neonatal jaundice. BT 38°C, P 120. PE: mild jaundice, icteric sclera, no hepatosplenomegaly. PBS: Hct 28%, normochromic, normocytic anemia with Hb leakage from RBC. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Autoimmune hemolytic anemia"
+      },
+      {
+        "label": "B",
+        "text": "G6PD deficiency"
+      },
+      {
+        "label": "C",
+        "text": "Hemoglobin H disease"
+      },
+      {
+        "label": "D",
+        "text": "Iron deficiency anemia"
+      },
+      {
+        "label": "E",
+        "text": "Hereditary spherocytosis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of G6PD deficiency: history of neonatal jaundice, acute hemolytic episode triggered by fever, dark urine (hemoglobinuria), normocytic normochromic anemia with hemoglobin leakage from RBCs ('bite cells' or 'blister cells' on PBS). Fever is a common trigger for hemolysis in G6PD deficiency.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old female complains of being easily fatigued for 2 months. PE: moderately pale, no jaundice, no lymphadenopathy, no hepatosplenomegaly. CBC: Hb 9 g/dL, WBC 5,500 (N 60, L 35, M 5), platelet 650,000, hypochromic microcytic red cells. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AIHA"
+      },
+      {
+        "label": "B",
+        "text": "G6PD deficiency"
+      },
+      {
+        "label": "C",
+        "text": "HbH disease"
+      },
+      {
+        "label": "D",
+        "text": "Iron deficiency anemia"
+      },
+      {
+        "label": "E",
+        "text": "Aplastic anemia"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of iron deficiency anemia: chronic fatigue, hypochromic microcytic RBCs, elevated platelet count (reactive thrombocytosis is common in IDA), no jaundice (distinguishes from hemolytic anemias), normal WBC. The 2-month duration suggests chronic blood loss or nutritional deficiency.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 19-year-old boy came to hospital with mild fever and fatigue 3 days. PE: mild pale conjunctiva, mild icteric sclera, other WNL. CBC: Hb 8 g/dL, WBC 4200 (N 40%, L 60%). PBS: hemoglobin contracted cell, ghost cell, polychromasia 2+. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hb H disease"
+      },
+      {
+        "label": "B",
+        "text": "G6PD deficiency"
+      },
+      {
+        "label": "C",
+        "text": "AIHA"
+      },
+      {
+        "label": "D",
+        "text": "Aplastic anemia"
+      },
+      {
+        "label": "E",
+        "text": "Hereditary spherocytosis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "G6PD deficiency: fever as trigger, hemoglobin contracted cells (Heinz bodies), ghost cells (from oxidative damage), polychromasia indicating reticulocytosis (response to hemolysis). The clinical picture of acute hemolytic episode with fever in a young male is typical for G6PD deficiency.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 17-year-old man presents with fever, sore throat, and cough. He has history of anemia 2 times in the last 2 years. PE: BT 38.5°C, PR 80, BP 123/75, RR 16, moderate pale conjunctivae, moderate icteric sclera, injected pharynx and tonsil swelling. Liver and spleen cannot be palpated. Hb 7 g/dL, Hct 20, WBC 8800 (N 80%, L 12%, M 5%), platelet normal. What should be the finding of peripheral blood smear in this patient?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hypochromic, microcytic RBC with target cell"
+      },
+      {
+        "label": "B",
+        "text": "Normochromic, normocytic RBC with microspherocyte"
+      },
+      {
+        "label": "C",
+        "text": "Hypochromic, microcytic RBC with ovalocyte and elliptocyte"
+      },
+      {
+        "label": "D",
+        "text": "Normochromic, normocytic RBC with spherocyte and fragmented RBC"
+      },
+      {
+        "label": "E",
+        "text": "Normochromic, normocytic RBC with ghost cell and hemoglobin leakage cell"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "This is AIHA (Autoimmune Hemolytic Anemia): recurrent episodes of anemia with jaundice, pale conjunctivae and icteric sclera indicate hemolysis. Current presentation with fever and pharyngitis (possible infection trigger). PBS shows normochromic normocytic RBCs with ghost cells and hemoglobin leakage cells characteristic of immune hemolysis. History of recurrent anemia episodes is typical for AIHA.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 10-year-old girl comes with fatigue for 1 week. PE: BT 38°C, moderate pallor, spleen 1 cm below left costal margin. CBC: Hct 21%, WBC 4000 (N 60, L 40), platelet 250,000. PBS: normochromic normocytic RBC, polychromasia 2+, spherocyte 3+. Direct antiglobulin test positive. Reticulocyte count 10%. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Splenectomy"
+      },
+      {
+        "label": "B",
+        "text": "FeSO4"
+      },
+      {
+        "label": "C",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "D",
+        "text": "PRC transfusion"
+      },
+      {
+        "label": "E",
+        "text": "IVIG"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "This is AIHA (Autoimmune Hemolytic Anemia): DAT positive, spherocytes, elevated reticulocyte count, normochromic normocytic anemia. First-line management is corticosteroids (Prednisolone). Splenectomy is considered for steroid-dependent cases. IVIG is used in emergency situations or steroid-resistant cases.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 65-year-old man has progressive fatigue for 3 months. PE: marked pale, mild jaundice, no hepatosplenomegaly, no superficial lymphadenopathy. Hb 14 g/dL, MCV 120, platelet 65,000. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymphoma"
+      },
+      {
+        "label": "B",
+        "text": "Autoimmune hemolytic anemia"
+      },
+      {
+        "label": "C",
+        "text": "Megaloblastic anemia"
+      },
+      {
+        "label": "D",
+        "text": "Chronic myelogenous leukemia"
+      },
+      {
+        "label": "E",
+        "text": "Aplastic anemia"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Megaloblastic anemia: macrocytic anemia (MCV 120), pancytopenia with low platelets, mild jaundice (due to ineffective erythropoiesis), no hepatosplenomegaly or lymphadenopathy. Caused by B12 or folate deficiency. The progressive fatigue over 3 months with macrocytosis and thrombocytopenia is classic for megaloblastic anemia.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child whose father has Hb H disease and mother is α-thalassemia 1 trait. What is the risk the child will have a disease?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "0%"
+      },
+      {
+        "label": "B",
+        "text": "25%"
+      },
+      {
+        "label": "C",
+        "text": "50%"
+      },
+      {
+        "label": "D",
+        "text": "75%"
+      },
+      {
+        "label": "E",
+        "text": "100%"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Hb H disease = deletion of 3 alpha-globin genes (--/-α). α-thal 1 trait = deletion of 2 alpha-globin genes (-α/-α). Father (Hb H: --/-α) can pass either -- or -α. Mother (α-thal 1: -α/-α) can only pass -α. Possible offspring: (--/-α) = Hb H disease 50% or (-α/-α) = α-thal 1 trait 50%. So 50% will have a disease phenotype.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old with fever for 3 weeks. Physical exam: spleen just palpable, cervical lymphadenopathy. Hb 7.5 g/dL, MCV 102, WBC 1.2 g/dL (N 7%, L 72%), platelet 30 × 10⁹. What is the cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hypersplenism"
+      },
+      {
+        "label": "B",
+        "text": "Aplastic anemia"
+      },
+      {
+        "label": "C",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "D",
+        "text": "Autoimmune hemolytic anemia"
+      },
+      {
+        "label": "E",
+        "text": "Chronic lymphocytic leukemia"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Acute leukemia: pancytopenia (anemia, low WBC, low platelets), fever, lymphadenopathy, splenomegaly, and macrocytosis. The combination of 3-week fever with lymphadenopathy, hepatosplenomegaly, and severe pancytopenia with macrocytosis is most consistent with acute leukemia (likely ALL given the lymph node involvement).",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old boy, previously healthy, has hemarthrosis left knee after playing football. He never had this symptom before. Hct normal, WBC normal, platelet 150,000, PTT 50 sec, INR 1.1. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cirrhosis"
+      },
+      {
+        "label": "B",
+        "text": "Hemophilia"
+      },
+      {
+        "label": "C",
+        "text": "von Willebrand factor deficiency"
+      },
+      {
+        "label": "D",
+        "text": "Vitamin K deficiency"
+      },
+      {
+        "label": "E",
+        "text": "Disseminated intravascular coagulopathy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Hemophilia (A or B): spontaneous hemarthrosis after minor trauma in previously healthy young male is classic presentation. Prolonged PTT (50 sec) with normal INR and normal platelet count points to Factor VIII or IX deficiency. Hemophilia is the most common cause of spontaneous hemarthrosis in young males.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงมาด้วยอาการ hypermenorrhea ตรวจร่างกายพบ petechiae ตามตัว Platelet 10,000 Lab อื่นๆ ปกติ ถามว่า management ที่เหมาะสมที่สุด?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "B",
+        "text": "Azathioprine"
+      },
+      {
+        "label": "C",
+        "text": "Cyclosporin"
+      },
+      {
+        "label": "D",
+        "text": "IVIG"
+      },
+      {
+        "label": "E",
+        "text": "Platelet transfusion"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "This is ITP (Immune Thrombocytopenia): severe thrombocytopenia (10,000) with petechiae and hypermenorrhea (bleeding manifestation). First-line treatment for newly diagnosed ITP is corticosteroids (Prednisolone). IVIG is second-line or used in emergency situations. Splenectomy is considered for chronic ITP.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 6-year-old boy bleeding after tooth extraction yesterday. PE: blood oozing from tooth-extracted wound and ecchymosis at buttock and lower extremities. CBC: Hct 30%, WBC 8500, platelet 250,000 with pale stain, PTT 30 sec, PT 11.5 sec. What is the best management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dexamethasone"
+      },
+      {
+        "label": "B",
+        "text": "Cryoprecipitate"
+      },
+      {
+        "label": "C",
+        "text": "Platelet transfusion"
+      },
+      {
+        "label": "D",
+        "text": "IV vitamin K"
+      },
+      {
+        "label": "E",
+        "text": "Fresh frozen plasma"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "This is Hemophilia A or B: prolonged PTT (30 sec is prolonged for a child), normal PT, normal platelet count. Pale staining platelets suggests they are normal. Bleeding after dental procedure is typical. Best immediate management is cryoprecipitate (contains Fibrinogen and Factor VIII). FFP is also acceptable but cryoprecipitate is more concentrated for factors VIII and fibrinogen.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with hypertension and hyperthyroidism on medication regularly, presents with fever, sore throat, and low WBC. What is the cause of this symptom?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antihypertensive drug"
+      },
+      {
+        "label": "B",
+        "text": "Antihyperthyroid drug"
+      },
+      {
+        "label": "C",
+        "text": "Viral infection"
+      },
+      {
+        "label": "D",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "E",
+        "text": "HIV infection"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Antithyroid drugs (PTU, methimazole) are well-known to cause agranulocytosis or severe leukopenia. The fever and sore throat in this context suggest infection secondary to drug-induced leukopenia. This is a serious side effect of antithyroid medications requiring immediate cessation and monitoring.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 45-year-old female presents with bruise for 3 months. Physical examination reveals ecchymosis at forearm and leg. Lab: Hb 12 g/dL, MCV 82 fL, RDW 12, WBC 6,500, platelet 24,000. Blood smear normal except low platelet. HIV and Anti-HCV negative. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "B",
+        "text": "IVIG"
+      },
+      {
+        "label": "C",
+        "text": "Platelet transfusion"
+      },
+      {
+        "label": "D",
+        "text": "Observe"
+      },
+      {
+        "label": "E",
+        "text": "Splenectomy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "This is chronic ITP: 3-month history of thrombocytopenia (24,000), ecchymosis, normal RBC and WBC, negative for secondary causes (HIV, HCV). First-line management for chronic ITP is corticosteroids (Prednisolone). Splenectomy is considered after steroid response assessment, usually in second line.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50-year-old woman with alcoholic cirrhosis. BP 100/60 mmHg, P 102, moderate pale, mild jaundice, minimal ascites. Hct 24%, platelet 80,000, INR 1.7, PTT 43 sec. What blood component should be given first?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fresh whole blood"
+      },
+      {
+        "label": "B",
+        "text": "PRC"
+      },
+      {
+        "label": "C",
+        "text": "Cryoprecipitate"
+      },
+      {
+        "label": "D",
+        "text": "Fresh frozen plasma"
+      },
+      {
+        "label": "E",
+        "text": "Platelet concentration"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Cirrhotic patient with coagulopathy (elevated INR 1.7, PTT 43) and anemia. FFP contains multiple clotting factors and is indicated for coagulopathy in cirrhosis. While PRC may be needed eventually for anemia (Hct 24%), correcting coagulopathy first (FFP) is more urgent as it prevents further bleeding. The elevated INR and PTT are signs of hepatic synthetic dysfunction.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 34-year-old patient with underlying thalassemia underwent a blood transfusion. He developed back pain, fever, chill and dark urine 15 minutes after receiving transfusion. V/S BT 37°C, BP 110/70, PR 90, RR 20. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allergic reaction"
+      },
+      {
+        "label": "B",
+        "text": "Anaphylactic reaction"
+      },
+      {
+        "label": "C",
+        "text": "Acute hemolytic reaction"
+      },
+      {
+        "label": "D",
+        "text": "Febrile reaction"
+      },
+      {
+        "label": "E",
+        "text": "Sepsis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Acute hemolytic transfusion reaction: onset within 15 minutes of transfusion, dark urine (hemoglobinuria), back pain, fever, chills. This is a classic presentation of acute hemolytic transfusion reaction, usually due to ABO incompatibility or other major blood group incompatibility causing immediate RBC destruction.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 70-year-old underwent hip surgery and had good mobilization post-operatively. After that, he developed DVT in the leg. For how long should anticoagulation be given?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "1 month"
+      },
+      {
+        "label": "B",
+        "text": "3 months"
+      },
+      {
+        "label": "C",
+        "text": "6 months"
+      },
+      {
+        "label": "D",
+        "text": "12 months"
+      },
+      {
+        "label": "E",
+        "text": "Indefinite"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Provoked DVT (surgery-related): According to standard guidelines, anticoagulation for provoked DVT secondary to transient risk factors (surgery) is typically 3 months. Indefinite anticoagulation is reserved for unprovoked DVT or recurrent events.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A man with underlying heart disease, status post CABG 3 years ago, presents with ecchymosis and left hemiparesis. CT shows right parietal intracerebral hemorrhage. His medication is warfarin. INR 5. What is the immediate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tranexamic acid"
+      },
+      {
+        "label": "B",
+        "text": "Protamine sulfate"
+      },
+      {
+        "label": "C",
+        "text": "Vitamin K"
+      },
+      {
+        "label": "D",
+        "text": "Cryoprecipitate"
+      },
+      {
+        "label": "E",
+        "text": "Fresh frozen plasma"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Warfarin-induced serious bleeding (ICH) with elevated INR: Immediate management requires rapid reversal of warfarin effect. FFP contains Vitamin K-dependent factors (II, VII, IX, X). In urgent situations like ICH, FFP or PCC (Prothrombin Complex Concentrate) is given immediately while Vitamin K (slower onset, 12-24 hours) is given concurrently. FFP is most appropriate choice from given options.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A woman diagnosed with deep vein thrombosis 3 months ago. She takes coumadin 3 mg daily. She has an accidentally fracture femur and has to operate within 24 hours. INR 3.0. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Platelet"
+      },
+      {
+        "label": "B",
+        "text": "Fresh frozen plasma"
+      },
+      {
+        "label": "C",
+        "text": "Cryoprecipitate"
+      },
+      {
+        "label": "D",
+        "text": "IV vitamin K"
+      },
+      {
+        "label": "E",
+        "text": "Tranexamic acid"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Elective surgery within 24 hours in patient on warfarin with INR 3.0: IV Vitamin K is appropriate for non-emergency reversal. Since there is 24 hours before surgery, vitamin K (onset 12-24 hours) is sufficient time. FFP would be for urgent/emergency situations with serious bleeding. Vitamin K allows gradual reversal suitable for this timeframe.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient on warfarin will undergo emergency laparotomy. What is the antidote for warfarin?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vitamin K"
+      },
+      {
+        "label": "B",
+        "text": "Fresh frozen plasma"
+      },
+      {
+        "label": "C",
+        "text": "Cryoprecipitate"
+      },
+      {
+        "label": "D",
+        "text": "Platelet concentrate"
+      },
+      {
+        "label": "E",
+        "text": "Protamine sulfate"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Vitamin K (phytonadione) is the specific antidote for warfarin overdose. While FFP provides immediate factor replacement in emergency settings, Vitamin K is the actual antidote that reverses warfarin's mechanism. For emergency surgery, both FFP (immediate) and Vitamin K (sustained effect) are often given together.",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old woman presents with fatigue for 2 months. She has no other symptoms. CBC shows Hb=7.5 g/dL, MCV=70 fL, RDW=18%, WBC=5,500 (N=75%, L=20%, M=5%), Platelet 500,000. What is the appropriate investigation at this point?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ferritin"
+      },
+      {
+        "label": "B",
+        "text": "Colonoscopy"
+      },
+      {
+        "label": "C",
+        "text": "Bone marrow biopsy"
+      },
+      {
+        "label": "D",
+        "text": "Direct antiglobulin test (Coombs test)"
+      },
+      {
+        "label": "E",
+        "text": "Hemoglobin electrophoresis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Microcytic anemia (MCV=70) with elevated RDW and normal WBC/platelets suggests iron deficiency anemia. Ferritin is the first-line investigation. Corrected choice D from 'directed comb test' to 'Direct antiglobulin test (Coombs test)'",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายเป็น pneumonia นอน รพ. 7 วัน 2 วันก่อนพบ skin bruise วันนี้เจอ source of pneumonia ไม่มี มี active bleeding ไม่มี lab PT และ PTT prolonged จงเลือกการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe"
+      },
+      {
+        "label": "B",
+        "text": "Vitamin K"
+      },
+      {
+        "label": "C",
+        "text": "Cryoprecipitate"
+      },
+      {
+        "label": "D",
+        "text": "Fresh frozen plasma (FFP)"
+      },
+      {
+        "label": "E",
+        "text": "Platelets transfusion"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย pneumonia นอนรพ. 7 วัน มี skin bruise, PT/PTT prolonged แต่ไม่มี active bleeding เสี่ยง DIC (disseminated intravascular coagulation). FFP เป็นการรักษาเบื้องต้นที่เหมาะสม เพิ่มตัวเลือก E",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงไทยอายุ 70 ปี มาด้วยเหนื่อย อ่อนเพลีย ปัสสาวะและอุจจาระปกติ CBC: Hb 8.5 g/dL, MCV 89 fL, WBC 1,500 (N 15%, L 75%, M 10%, E 7%), Plt 30,000 จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aplastic anemia"
+      },
+      {
+        "label": "B",
+        "text": "Megaloblastic anemia"
+      },
+      {
+        "label": "C",
+        "text": "Myelophthisis"
+      },
+      {
+        "label": "D",
+        "text": "Myelodysplastic syndrome (MDS)"
+      },
+      {
+        "label": "E",
+        "text": "Acute lymphoblastic leukemia (ALL)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Pancytopenia (Hb 8.5, WBC 1,500, Plt 30,000) กับ MCV ปกติ ในผู้สูงอายุ เป็นลักษณะของ aplastic anemia หรือ MDS แต่ pancytopenia ที่ชัดเจนนี้ชี้ไปทาง aplastic anemia มากกว่า",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old female presented with dyspnea for 4 months, no fever, no anorexia, no diarrhea, no vomiting. Lab: Hb 8.5 g/dL, WBC 1,500 (N 15%, L 75%), Platelets 30,000. What is your diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aplastic anemia"
+      },
+      {
+        "label": "B",
+        "text": "Myelophthisis"
+      },
+      {
+        "label": "C",
+        "text": "Myelodysplastic syndrome (MDS)"
+      },
+      {
+        "label": "D",
+        "text": "Megaloblastic anemia"
+      },
+      {
+        "label": "E",
+        "text": "Acute lymphoblastic anemia"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Pancytopenia (Hb 8.5, WBC 1,500, Plt 30,000) with chronic presentation (4 months) and no systemic symptoms is classic for aplastic anemia",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยมาด้วยโลหิตจางปานกลาง (moderate anemia) ตรวจร่างกายอย่างอื่นปกติดี Hb 7.6 g/dL, MCV 67 fL จงส่งตรวจอะไรเพื่อยืนยันการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Heinz body"
+      },
+      {
+        "label": "B",
+        "text": "G6PD screening"
+      },
+      {
+        "label": "C",
+        "text": "Hemoglobin typing (Hb electrophoresis)"
+      },
+      {
+        "label": "D",
+        "text": "Ferritin"
+      },
+      {
+        "label": "E",
+        "text": "Direct antiglobulin test (Coombs test)"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Microcytic anemia (MCV 67) คือ iron deficiency anemia จนกว่าจะพิสูจน์อื่น Ferritin คือการตรวจยืนยันที่เหมาะสม เพิ่มตัวเลือก C และ E เป็น plausible distractors",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 70 ปี ญาติพามา รพ.ด้วยการซึม 1 สัปดาห์ มีประวัติมะเร็งรังไข่ 1 ปี ตรวจร่างกาย: BP 100/70 (ลดลง), PR 100 Lab: Plasma glucose 77 mg/dL, Cr 2.8 mg/dL, Calcium 18.2 mg/dL (elevated), Phosphate 6.6 mg/dL. จงเลือกการรักษาเบื้องต้น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hemodialysis"
+      },
+      {
+        "label": "B",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "C",
+        "text": "Normal saline IV เพื่อให้ urine output 100-200 mL/hour"
+      },
+      {
+        "label": "D",
+        "text": "Pamidronate"
+      },
+      {
+        "label": "E",
+        "text": "Calcitonin"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี hypercalcemia ร้ายแรง (Ca 18.2) กับความดันลดลง ซึ่งบ่งชี้ dehydration ขั้นแรกต้อง IV hydration โดยใช้ normal saline เพื่อให้ urine output 100-200 mL/hour หลังจากนั้นค่อยใช้ diuretics และยาลดแคลเซียม",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายเป็น aplastic anemia ต้องได้รับเลือดบ่อยๆ หลังจากได้รับเลือดไป 10 นาที มีอาการเจ็บที่มือ บริเวณที่ได้รับเลือด ปวดหลัง BP 80/60 (ลดลง) ลมหายใจปกติ ได้รับเลือด 1 ครั้ง/2 สัปดาห์แล้ว จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Serum sickness"
+      },
+      {
+        "label": "B",
+        "text": "Bacterial sepsis"
+      },
+      {
+        "label": "C",
+        "text": "Acute febrile transfusion reaction"
+      },
+      {
+        "label": "D",
+        "text": "Afebrile transfusion reaction"
+      },
+      {
+        "label": "E",
+        "text": "Acute hemolytic transfusion reaction"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ปฏิกิริยาเกิดขึ้นทันทีในระหว่างการถ่ายเลือด (10 นาที) มี hemodynamic instability (BP 80/60) ปวดบริเวณใส่เลือด ปวดหลัง นี่คือ acute hemolytic transfusion reaction ที่เกิดจากความไม่เข้ากันของระบบ ABO",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยมี cervical lymphadenopathy ขนาด 2 cm เป็นมา 2 สัปดาห์ ไม่มีอาการอื่น ได้รับยาปฏิชีวนะ 10 วัน แต่อาการไม่ดีขึ้น จงเลือกการตรวจวินิจฉัยที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Complete blood count (CBC)"
+      },
+      {
+        "label": "B",
+        "text": "Bone marrow study"
+      },
+      {
+        "label": "C",
+        "text": "Lymph node biopsy"
+      },
+      {
+        "label": "D",
+        "text": "Lymph node fine needle aspiration (FNA)"
+      },
+      {
+        "label": "E",
+        "text": "Tuberculin skin test (TST)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Lymphadenopathy ที่ไม่ตอบสนองต่อยาปฏิชีวนะ 10 วัน ต้องไป biopsy เพื่อยกเว้นมะเร็ง TB หรือโรคเลือด Lymph node biopsy เป็นมาตรฐานสำหรับกรณีนี้",
+    "subject": "hemato_med",
+    "exam_type": "NL2"
+  }
+]

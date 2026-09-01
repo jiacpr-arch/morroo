@@ -1,0 +1,2572 @@
+[
+  {
+    "scenario": "ทารกชายอายุ 3 เดือน มาด้วยอาการซีดเหลือง ตรวจพบ Hb 7 g/dL MCV 65 fL ตรวจ peripheral blood smear พบ target cells และ hypochromic microcytic RBC ตรวจ Hb electrophoresis พบ Hb Bart 80% การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Iron deficiency anemia"
+      },
+      {
+        "label": "B",
+        "text": "Hb H disease"
+      },
+      {
+        "label": "C",
+        "text": "Hydrops fetalis (alpha thalassemia major)"
+      },
+      {
+        "label": "D",
+        "text": "Beta thalassemia major"
+      },
+      {
+        "label": "E",
+        "text": "Sickle cell disease"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Hb Bart >80% + เด็กอายุน้อย = Hb Bart hydrops fetalis (alpha thalassemia major 4-gene deletion)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Hydrops fetalis (alpha thalassemia major)",
+      "reason": "Alpha thalassemia เกิดจากการขาด alpha-globin genes ปกติมี 4 genes\n\nClassification: 1 gene deletion = Silent carrier, 2 gene deletion = Alpha thal trait, 3 gene deletion = Hb H disease, 4 gene deletion = Hb Bart hydrops fetalis\n\nHb Bart (gamma4 tetramers) พบสูงมาก >80% ใน 4-gene deletion เพราะไม่มี alpha chains gamma chains เกาะกันเป็น tetramers ที่ไม่ carry O2\n\nAHA: Alpha thal major มักเสียชีวิตในครรภ์หรือหลังคลอดไม่นาน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Iron deficiency anemia",
+          "is_correct": false,
+          "explanation": "IDA มี microcytic hypochromic แต่ Hb electrophoresis ปกติ ไม่มี Hb Bart"
+        },
+        {
+          "label": "B",
+          "text": "Hb H disease",
+          "is_correct": false,
+          "explanation": "Hb H disease มี Hb H 10-40% ไม่มี Hb Bart >80%"
+        },
+        {
+          "label": "C",
+          "text": "Hydrops fetalis (alpha thalassemia major)",
+          "is_correct": true,
+          "explanation": "Hb Bart >80% = alpha thalassemia major 4-gene deletion"
+        },
+        {
+          "label": "D",
+          "text": "Beta thalassemia major",
+          "is_correct": false,
+          "explanation": "Beta thal major มี HbF สูง HbA ต่ำ ไม่มี Hb Bart สูง"
+        },
+        {
+          "label": "E",
+          "text": "Sickle cell disease",
+          "is_correct": false,
+          "explanation": "SCD มี HbS ใน electrophoresis ไม่มี Hb Bart"
+        }
+      ],
+      "key_takeaway": "Alpha thalassemia: 4-gene deletion = Hb Bart hydrops fetalis (Hb Bart >80%) อันตรายที่สุด"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี ซีดมา 3 เดือน ม้ามโต ตรวจพบ Hb 6 g/dL Hb electrophoresis: HbF 70% HbA2 5% HbA แทบไม่มี การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Iron deficiency anemia"
+      },
+      {
+        "label": "B",
+        "text": "Beta thalassemia major"
+      },
+      {
+        "label": "C",
+        "text": "G6PD deficiency"
+      },
+      {
+        "label": "D",
+        "text": "Alpha thalassemia trait"
+      },
+      {
+        "label": "E",
+        "text": "Sickle cell disease"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe anemia onset 6-24mo + splenomegaly + HbF สูง + HbA ต่ำ = Beta thalassemia major",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Beta thalassemia major",
+      "reason": "Beta thalassemia major (Cooley anemia) เกิดจาก homozygous/compound heterozygous beta globin mutations\n\nHb electrophoresis: HbF สูงมาก 70-98% HbA2 >3.5% HbA ต่ำหรือไม่มี\n\nอาการมักเริ่มอายุ 6-24 เดือน: Severe anemia splenomegaly thalassemic facies\n\nรักษา: Regular transfusion + Iron chelation (deferoxamine/deferasirox) Curative: BMT",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Iron deficiency anemia",
+          "is_correct": false,
+          "explanation": "IDA ไม่มี splenomegaly Hb electrophoresis ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Beta thalassemia major",
+          "is_correct": true,
+          "explanation": "HbF 70% HbA ต่ำมาก HbA2 >3.5% + severe anemia + splenomegaly = classic beta thal major"
+        },
+        {
+          "label": "C",
+          "text": "G6PD deficiency",
+          "is_correct": false,
+          "explanation": "G6PD เป็น episodic hemolysis Hb electrophoresis ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Alpha thalassemia trait",
+          "is_correct": false,
+          "explanation": "Alpha thal trait มี mild anemia Hb electrophoresis แทบปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Sickle cell disease",
+          "is_correct": false,
+          "explanation": "SCD มี HbS สูง ไม่มี HbF 70%"
+        }
+      ],
+      "key_takeaway": "Beta thal major: HbF สูง HbA ต่ำ HbA2 >3.5% + severe anemia + splenomegaly -> Regular transfusion + Iron chelation"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี เลือดออกง่าย มีรอยช้ำบ่อย ตรวจพบ PT ปกติ APTT ยาว platelet ปกติ ประวัติครอบครัว: พ่อและพี่ชายพ่อมีอาการเดียวกัน การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hemophilia A (Factor VIII deficiency)"
+      },
+      {
+        "label": "B",
+        "text": "Von Willebrand disease"
+      },
+      {
+        "label": "C",
+        "text": "ITP"
+      },
+      {
+        "label": "D",
+        "text": "Vitamin K deficiency"
+      },
+      {
+        "label": "E",
+        "text": "DIC"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "APTT ยาว + PT ปกติ + platelet ปกติ + X-linked family history = Hemophilia A",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Hemophilia A (Factor VIII deficiency)",
+      "reason": "Hemophilia A = Factor VIII deficiency X-linked recessive\n\nCoagulation: APTT ยาว (intrinsic pathway) PT ปกติ platelet ปกติ\n\nBleed type: deep tissue bleeds hemarthroses muscle hematoma\n\nรักษา: Factor VIII concentrate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hemophilia A (Factor VIII deficiency)",
+          "is_correct": true,
+          "explanation": "APTT ยาว PT ปกติ platelet ปกติ + male + X-linked family = hemophilia A"
+        },
+        {
+          "label": "B",
+          "text": "Von Willebrand disease",
+          "is_correct": false,
+          "explanation": "VWD ไม่ใช่ X-linked มี mucosal bleeding เด่น"
+        },
+        {
+          "label": "C",
+          "text": "ITP",
+          "is_correct": false,
+          "explanation": "ITP มี platelet ต่ำ PT APTT ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Vitamin K deficiency",
+          "is_correct": false,
+          "explanation": "Vit K deficiency ทำให้ PT และ APTT ยาวทั้งคู่"
+        },
+        {
+          "label": "E",
+          "text": "DIC",
+          "is_correct": false,
+          "explanation": "DIC มี PT APTT ยาว platelet ต่ำ fibrinogen ต่ำ"
+        }
+      ],
+      "key_takeaway": "Hemophilia A: X-linked + APTT ยาว + PT ปกติ + platelet ปกติ -> Factor VIII concentrate"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี มาด้วย petechiae และรอยช้ำหลังเป็นไข้หวัด 2 สัปดาห์ platelet 8,000/uL Hb 12 g/dL WBC ปกติ การวินิจฉัยและการรักษาที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute leukemia -> Chemotherapy"
+      },
+      {
+        "label": "B",
+        "text": "ITP -> IV immunoglobulin หรือ steroid"
+      },
+      {
+        "label": "C",
+        "text": "Aplastic anemia -> BMT"
+      },
+      {
+        "label": "D",
+        "text": "DIC -> FFP"
+      },
+      {
+        "label": "E",
+        "text": "TTP -> Plasma exchange"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Isolated thrombocytopenia post-viral + Hb ปกติ + WBC ปกติ = ITP",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ITP -> IV immunoglobulin หรือ steroid",
+      "reason": "Childhood ITP: post-viral + isolated thrombocytopenia + normal RBC/WBC\n\nTreatment: IVIg 1-2 g/kg หรือ Prednisolone 1-2 mg/kg/day\n\nMost childhood ITP resolves spontaneously ใน 6 months",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute leukemia -> Chemotherapy",
+          "is_correct": false,
+          "explanation": "ALL มี pancytopenia blast cells มีม้ามโต"
+        },
+        {
+          "label": "B",
+          "text": "ITP -> IV immunoglobulin หรือ steroid",
+          "is_correct": true,
+          "explanation": "Post-viral isolated thrombocytopenia ปกติ RBC/WBC = classic ITP"
+        },
+        {
+          "label": "C",
+          "text": "Aplastic anemia -> BMT",
+          "is_correct": false,
+          "explanation": "AA มี pancytopenia ทั้ง 3 cell lines"
+        },
+        {
+          "label": "D",
+          "text": "DIC -> FFP",
+          "is_correct": false,
+          "explanation": "DIC มี PT APTT ยาว fibrinogen ต่ำ"
+        },
+        {
+          "label": "E",
+          "text": "TTP -> Plasma exchange",
+          "is_correct": false,
+          "explanation": "TTP มี hemolytic anemia + thrombocytopenia + fever + renal dysfunction + neurological symptoms"
+        }
+      ],
+      "key_takeaway": "Childhood ITP: Post-viral + isolated thrombocytopenia -> IVIg หรือ Steroid (ส่วนใหญ่หายเองใน 6 เดือน)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี มาด้วยไข้ ซีด มีม้ามโตมาก WBC 120,000/uL (80% lymphoblast) Hb 5 g/dL platelet 40,000/uL Bone marrow: >95% lymphoblast TdT positive CD10 positive CD19 positive การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ALL B-cell precursor"
+      },
+      {
+        "label": "B",
+        "text": "AML"
+      },
+      {
+        "label": "C",
+        "text": "CML"
+      },
+      {
+        "label": "D",
+        "text": "NHL"
+      },
+      {
+        "label": "E",
+        "text": "Infectious mononucleosis"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Lymphoblast + TdT positive + CD19 CD10 B-lineage markers = ALL B-cell precursor",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. ALL B-cell precursor",
+      "reason": "ALL เป็น acute leukemia ที่พบบ่อยที่สุดในเด็ก 80% ของ childhood leukemia\n\nB-cell ALL: TdT positive + CD19 + CD10 (CALLA)\n\nรักษา: Multi-agent chemotherapy induction -> CNS prophylaxis -> Maintenance 2-3 ปี\n\nOverall survival: >90% ใน standard risk",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ALL B-cell precursor",
+          "is_correct": true,
+          "explanation": "TdT positive + CD19 CD10 positive + lymphoblast = B-cell ALL"
+        },
+        {
+          "label": "B",
+          "text": "AML",
+          "is_correct": false,
+          "explanation": "AML มี myeloid markers MPO CD33 ไม่มี TdT lymphoid markers"
+        },
+        {
+          "label": "C",
+          "text": "CML",
+          "is_correct": false,
+          "explanation": "CML มี mature myeloid cells BCR-ABL ไม่ใช่ blast crisis"
+        },
+        {
+          "label": "D",
+          "text": "NHL",
+          "is_correct": false,
+          "explanation": "NHL เป็น solid lymphoma ไม่ใช่ leukemia"
+        },
+        {
+          "label": "E",
+          "text": "Infectious mononucleosis",
+          "is_correct": false,
+          "explanation": "EBV มี atypical lymphocytes ไม่ใช่ lymphoblast TdT negative"
+        }
+      ],
+      "key_takeaway": "Childhood ALL: TdT+ + B-lineage (CD19 CD10) = B-cell ALL -> Multi-agent chemo -> >90% survival"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 2 ปี ซีด เบื่ออาหาร ดื่มนมวัว 32 oz/วัน ตรวจพบ Hb 8 g/dL MCV 60 fL serum ferritin 5 ng/mL (ต่ำ) TIBC สูง การวินิจฉัยและสาเหตุที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Thalassemia trait"
+      },
+      {
+        "label": "B",
+        "text": "Iron deficiency anemia จากดื่มนมวัวมากเกินไป"
+      },
+      {
+        "label": "C",
+        "text": "G6PD deficiency"
+      },
+      {
+        "label": "D",
+        "text": "Vitamin B12 deficiency"
+      },
+      {
+        "label": "E",
+        "text": "Lead poisoning"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ferritin ต่ำ + TIBC สูง + microcytic + ดื่มนมวัวมาก = Iron deficiency anemia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Iron deficiency anemia จากดื่มนมวัวมากเกินไป",
+      "reason": "IDA เป็น anemia ที่พบบ่อยที่สุดในเด็กทั่วโลก\n\nสาเหตุในเด็ก 6mo-3yr: ดื่มนมวัวมาก >24 oz/day (นมวัวมี iron น้อย casein interfere กับ iron absorption)\n\nLabs: ferritin ต่ำ + TIBC สูง + MCV ต่ำ\n\nDiff from thalassemia: Thal มี ferritin ปกติ TIBC ปกติ\n\nรักษา: Elemental iron 3-6 mg/kg/day + Vit C + ลดนมวัว <24 oz/day",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Thalassemia trait",
+          "is_correct": false,
+          "explanation": "Thal trait มี ferritin ปกติ TIBC ปกติ Hb electrophoresis ผิดปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Iron deficiency anemia จากดื่มนมวัวมากเกินไป",
+          "is_correct": true,
+          "explanation": "Ferritin ต่ำ TIBC สูง + ดื่มนมวัว >24 oz = classic dietary IDA"
+        },
+        {
+          "label": "C",
+          "text": "G6PD deficiency",
+          "is_correct": false,
+          "explanation": "G6PD เป็น episodic hemolysis triggered by oxidants ferritin สูงจาก hemolysis"
+        },
+        {
+          "label": "D",
+          "text": "Vitamin B12 deficiency",
+          "is_correct": false,
+          "explanation": "B12 deficiency ทำให้ macrocytic anemia MCV สูง ไม่ใช่ microcytic"
+        },
+        {
+          "label": "E",
+          "text": "Lead poisoning",
+          "is_correct": false,
+          "explanation": "Lead poisoning ทำให้ microcytic anemia แต่มี basophilic stippling serum lead สูง"
+        }
+      ],
+      "key_takeaway": "IDA ในเด็ก: Ferritin ต่ำ TIBC สูง + ดื่มนมวัวมาก -> Iron 3-6 mg/kg/day (ต่างจาก Thal: ferritin ปกติ)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี เชื้อสายแอฟริกัน มาด้วยอาการปวดขารุนแรงฉับพลัน ตรวจพบ Hb 7.5 g/dL peripheral blood smear พบ sickle cells Howell-Jolly bodies Hb electrophoresis: HbS 90% HbF 8% ม้ามไม่โต สาเหตุอาการปวดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sickle cell disease -> vaso-occlusive crisis"
+      },
+      {
+        "label": "B",
+        "text": "HbS/Beta thalassemia -> aplastic crisis"
+      },
+      {
+        "label": "C",
+        "text": "Hb H disease -> hemolytic crisis"
+      },
+      {
+        "label": "D",
+        "text": "Beta thal major -> iron overload"
+      },
+      {
+        "label": "E",
+        "text": "Sickle cell disease -> splenic sequestration"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "HbS 90% + sickle cells + Howell-Jolly bodies (functional asplenia) + pain crisis = SCD vaso-occlusive crisis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Sickle cell disease -> vaso-occlusive crisis",
+      "reason": "SCD: HbSS ทำให้ RBC sickle เมื่อ deoxygenated\n\nVOC: sickled cells อุดตัน microcirculation -> tissue ischemia + severe pain\n\nHowell-Jolly bodies: บ่งชี้ functional asplenia (auto-splenectomy จาก repeated infarcts) ดังนั้น ม้ามไม่โต\n\nรักษา VOC: Opioids IV fluids oxygen NSAIDs\n\nPreventive: Hydroxyurea เพิ่ม HbF ลด VOC",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sickle cell disease -> vaso-occlusive crisis",
+          "is_correct": true,
+          "explanation": "HbS 90% + sickle cells + Howell-Jolly + ม้ามไม่โต + pain = SCD with VOC"
+        },
+        {
+          "label": "B",
+          "text": "HbS/Beta thalassemia -> aplastic crisis",
+          "is_correct": false,
+          "explanation": "Aplastic crisis จาก Parvovirus B19 ทำให้ Hb drop ฉับพลัน ไม่ใช่ pain"
+        },
+        {
+          "label": "C",
+          "text": "Hb H disease -> hemolytic crisis",
+          "is_correct": false,
+          "explanation": "Hb H เป็น alpha thalassemia ไม่ใช่ sickle cell"
+        },
+        {
+          "label": "D",
+          "text": "Beta thal major -> iron overload",
+          "is_correct": false,
+          "explanation": "Beta thal major ไม่มี sickle cells"
+        },
+        {
+          "label": "E",
+          "text": "Sickle cell disease -> splenic sequestration",
+          "is_correct": false,
+          "explanation": "Splenic sequestration ทำให้ม้ามโตมาก Hb drop รุนแรง ไม่ใช่ม้ามไม่โต"
+        }
+      ],
+      "key_takeaway": "SCD: HbS 90% + sickle cells + Howell-Jolly (functional asplenia) -> VOC: pain -> Opioids + Hydroxyurea ป้องกัน"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 2 วัน ตัวเหลืองมาก Total bilirubin 22 mg/dL (direct 1 mg/dL) Direct Coombs test positive แม่กรุ๊ป O ลูก A การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rh incompatibility"
+      },
+      {
+        "label": "B",
+        "text": "ABO incompatibility"
+      },
+      {
+        "label": "C",
+        "text": "Physiologic jaundice"
+      },
+      {
+        "label": "D",
+        "text": "Breast milk jaundice"
+      },
+      {
+        "label": "E",
+        "text": "Biliary atresia"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "แม่ O ลูก A + Direct Coombs positive + unconjugated hyperbilirubinemia 48h = ABO incompatibility",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ABO incompatibility",
+      "reason": "ABO incompatibility: แม่ O มี anti-A anti-B IgG ผ่าน placenta ทำลาย RBC ลูก\n\nเกิดได้ตั้งแต่ลูกคนแรก (ต่างจาก Rh)\n\nDirect Coombs positive + unconjugated hyperbilirubinemia ใน 48h\n\nรักษา: Phototherapy exchange transfusion ถ้ารุนแรง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rh incompatibility",
+          "is_correct": false,
+          "explanation": "Rh ต้องมีแม่ Rh negative ลูก Rh positive"
+        },
+        {
+          "label": "B",
+          "text": "ABO incompatibility",
+          "is_correct": true,
+          "explanation": "แม่ O ลูก A + Direct Coombs positive + unconjugated hyperbilirubinemia = ABO incompatibility"
+        },
+        {
+          "label": "C",
+          "text": "Physiologic jaundice",
+          "is_correct": false,
+          "explanation": "Physiologic jaundice ไม่ถึง 22 mg/dL ใน 48h Direct Coombs negative"
+        },
+        {
+          "label": "D",
+          "text": "Breast milk jaundice",
+          "is_correct": false,
+          "explanation": "Breast milk jaundice เป็น late-onset week 2-3 Direct Coombs negative"
+        },
+        {
+          "label": "E",
+          "text": "Biliary atresia",
+          "is_correct": false,
+          "explanation": "Biliary atresia เป็น conjugated hyperbilirubinemia (direct bilirubin สูง)"
+        }
+      ],
+      "key_takeaway": "ABO incompatibility: แม่ O ลูก A/B + Direct Coombs positive + unconjugated hyperbilirubinemia -> เกิดได้ลูกคนแรก"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี มีประวัติ Hemophilia A รุนแรง (FVIII <1%) ให้ Factor VIII concentrate 3 ครั้งแล้วเลือดยังออก APTT ยังยาว Bethesda titer 8 BU สาเหตุที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ขนาด Factor VIII ไม่เพียงพอ"
+      },
+      {
+        "label": "B",
+        "text": "Factor VIII inhibitor (alloantibody)"
+      },
+      {
+        "label": "C",
+        "text": "Misdiagnosis เป็น Hemophilia B"
+      },
+      {
+        "label": "D",
+        "text": "Product หมดอายุ"
+      },
+      {
+        "label": "E",
+        "text": "Liver disease"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "FVIII ไม่ตอบสนอง + Bethesda titer 8 BU = Factor VIII inhibitor",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Factor VIII inhibitor (alloantibody)",
+      "reason": "FVIII inhibitor พบใน 25-30% ของ severe hemophilia A หลังได้รับ factor replacement\n\nBethesda titer 8 BU = high-titer inhibitor >5 BU\n\nจัดการ: High-titer inhibitor -> Bypassing agents: rFVIIa (NovoSeven) หรือ aPCC (FEIBA)\n\nImmune tolerance induction (ITI): ให้ FVIII dose สูงทุกวัน eradicate inhibitor",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ขนาด Factor VIII ไม่เพียงพอ",
+          "is_correct": false,
+          "explanation": "Bethesda titer 8 BU บ่งชี้ inhibitor ที่ inactivate FVIII ทันที"
+        },
+        {
+          "label": "B",
+          "text": "Factor VIII inhibitor (alloantibody)",
+          "is_correct": true,
+          "explanation": "Bethesda titer 8 BU = high-titer FVIII inhibitor ต้องใช้ bypassing agents"
+        },
+        {
+          "label": "C",
+          "text": "Misdiagnosis เป็น Hemophilia B",
+          "is_correct": false,
+          "explanation": "Bethesda assay วัด FVIII inhibitor โดยเฉพาะ"
+        },
+        {
+          "label": "D",
+          "text": "Product หมดอายุ",
+          "is_correct": false,
+          "explanation": "Product หมดอายุไม่ทำให้ Bethesda titer สูง"
+        },
+        {
+          "label": "E",
+          "text": "Liver disease",
+          "is_correct": false,
+          "explanation": "Liver disease ทำให้ multiple factors ต่ำ ไม่อธิบาย Bethesda titer สูง"
+        }
+      ],
+      "key_takeaway": "Hemophilia A + ไม่ตอบสนอง FVIII + Bethesda >5 BU = High-titer inhibitor -> Bypassing agents (rFVIIa หรือ aPCC)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี ตรวจพบ neutrophil count 500/uL มาบ่อยๆ มีประวัติ recurrent mouth ulcers และ bacterial infections มา 2 ปี ตรวจ CBC ซ้ำ 3 ครั้งต่างกัน 1 สัปดาห์ พบ neutropenia สลับกับปกติเป็น cycle ประมาณ 21 วัน การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Kostmann syndrome (severe congenital neutropenia)"
+      },
+      {
+        "label": "B",
+        "text": "Cyclic neutropenia"
+      },
+      {
+        "label": "C",
+        "text": "Drug-induced neutropenia"
+      },
+      {
+        "label": "D",
+        "text": "Aplastic anemia"
+      },
+      {
+        "label": "E",
+        "text": "SLE-related neutropenia"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neutropenia แบบ cyclic ทุก 21 วัน + mouth ulcers + recurrent infections = Cyclic neutropenia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Cyclic neutropenia",
+      "reason": "Cyclic neutropenia เป็น genetic disorder (ELANE gene mutation) ที่ neutrophil count ลดลงเป็น cycle ทุก 21 วัน (range 14-35 วัน) ช่วงที่ neutropenia (3-5 วัน) เสี่ยง bacterial infections\n\nอาการ: Recurrent mouth ulcers (aphthous stomatitis) fever gingivitis เมื่อ neutropenic\n\nวินิจฉัย: CBC serial 3 ครั้ง/สัปดาห์ นาน 6-8 สัปดาห์ เพื่อ document cyclic pattern\n\nรักษา: G-CSF (granulocyte colony-stimulating factor) ลด severity และ duration ของ neutropenic episodes",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Kostmann syndrome (severe congenital neutropenia)",
+          "is_correct": false,
+          "explanation": "Kostmann มี persistent severe neutropenia ไม่ใช่ cyclic pattern"
+        },
+        {
+          "label": "B",
+          "text": "Cyclic neutropenia",
+          "is_correct": true,
+          "explanation": "Neutropenia แบบ cyclic ทุก 21 วัน + mouth ulcers + recurrent infections = cyclic neutropenia (ELANE mutation)"
+        },
+        {
+          "label": "C",
+          "text": "Drug-induced neutropenia",
+          "is_correct": false,
+          "explanation": "Drug-induced ไม่มี cyclic pattern และมักหายเมื่อหยุดยา"
+        },
+        {
+          "label": "D",
+          "text": "Aplastic anemia",
+          "is_correct": false,
+          "explanation": "AA มี pancytopenia ทั้ง 3 cell lines ไม่ใช่ isolated neutropenia cyclic"
+        },
+        {
+          "label": "E",
+          "text": "SLE-related neutropenia",
+          "is_correct": false,
+          "explanation": "SLE neutropenia ไม่มี predictable cyclic pattern มักมีอาการ SLE อื่นด้วย"
+        }
+      ],
+      "key_takeaway": "Cyclic neutropenia: Neutropenia cycle ทุก ~21 วัน + mouth ulcers + recurrent infections -> G-CSF รักษา"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี มาด้วยซีดเรื้อรัง ตัวเหลือง ม้ามโต ตรวจพบ Hb 7 g/dL MCV 58 fL Peripheral blood smear: hypochromic microcytic RBC + target cells + nucleated RBC Hb electrophoresis: HbA 20%, HbF 75%, HbA2 5% พ่อแม่ทั้งสองมี Hb electrophoresis ผิดปกติ การวินิจฉัยและการรักษาระยะยาวคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Iron deficiency anemia → iron supplementation"
+      },
+      {
+        "label": "B",
+        "text": "Beta thalassemia major → regular blood transfusion + iron chelation"
+      },
+      {
+        "label": "C",
+        "text": "Sickle cell disease → hydroxyurea"
+      },
+      {
+        "label": "D",
+        "text": "G6PD deficiency → avoid triggers"
+      },
+      {
+        "label": "E",
+        "text": "Hereditary spherocytosis → splenectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hb ต่ำ + target cells + nRBC + HbF 75% + HbA2 5% + autosomal recessive ใน family = Beta thalassemia major",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Beta thalassemia major → regular blood transfusion + iron chelation",
+      "reason": "Beta thalassemia major (Cooley's anemia):\n\nHb electrophoresis ยืนยัน: HbA ต่ำมาก (20%) + HbF สูง (75%) + HbA2 5%\n→ Beta chain mutation ทำให้ HbA ลดลง compensate ด้วย HbF\n\nClinical: severe microcytic anemia + hepatosplenomegaly + jaundice + growth retardation\n\nการรักษา:\n1. **Regular blood transfusion**: target Hb 9-10 g/dL pre-transfusion (q 2-4 สัปดาห์)\n2. **Iron chelation**: หลัง transfusion 10-20 ครั้ง หรือ ferritin > 1000 ng/mL\n   - Deferoxamine (SC/IV), Deferasirox (oral), Deferiprone (oral)\n3. **Hematopoietic stem cell transplantation (HSCT)**: curative ถ้ามี matched donor\n4. **Gene therapy**: investigational\n\nSplenectomy: ลด transfusion requirement ใน hypersplenism\nFolic acid: ทุกราย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Iron deficiency anemia → iron supplementation",
+          "is_correct": false,
+          "explanation": "IDA: hypochromic แต่ nRBC ไม่มี, target cells น้อย, Hb electrophoresis ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Beta thalassemia major → regular transfusion + iron chelation",
+          "is_correct": true,
+          "explanation": "HbA 20% + HbF 75% + HbA2 5% = beta thal major; management: transfusion + chelation"
+        },
+        {
+          "label": "C",
+          "text": "Sickle cell disease → hydroxyurea",
+          "is_correct": false,
+          "explanation": "SCD: HbS สูง + sickle cells; ไม่ใช่ลักษณะนี้"
+        },
+        {
+          "label": "D",
+          "text": "G6PD deficiency → avoid triggers",
+          "is_correct": false,
+          "explanation": "G6PD: episodic hemolytic crisis ไม่ใช่เรื้อรังตั้งแต่เด็ก"
+        },
+        {
+          "label": "E",
+          "text": "Hereditary spherocytosis → splenectomy",
+          "is_correct": false,
+          "explanation": "HS: spherocytes + osmotic fragility test; ไม่ใช่ target cells + HbF สูง"
+        }
+      ],
+      "key_takeaway": "Beta thal major: HbA 20% + HbF 75% + HbA2 5% → regular transfusion (target Hb 9-10) + iron chelation (ป้องกัน iron overload)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 8 ปี มาด้วยไข้ ซีด ดีซ่าน ปวดหลัง 2 วัน ผู้ปกครองระบุว่ากินยา primaquine เพื่อรักษา malaria เมื่อ 3 วันก่อน CBC: Hb 7.5 g/dL Hct 22% Retic 12% WBC ปกติ Platelets ปกติ Peripheral smear: bite cells + Heinz bodies (หลัง brilliant cresyl blue stain) UA: hemoglobinuria การวินิจฉัยคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Autoimmune hemolytic anemia (AIHA)"
+      },
+      {
+        "label": "B",
+        "text": "G6PD deficiency → drug-induced hemolytic crisis"
+      },
+      {
+        "label": "C",
+        "text": "Hereditary spherocytosis"
+      },
+      {
+        "label": "D",
+        "text": "Beta thalassemia intermedia"
+      },
+      {
+        "label": "E",
+        "text": "Microangiopathic hemolytic anemia (MAHA)"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primaquine + bite cells + Heinz bodies = G6PD deficiency drug-induced hemolytic crisis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. G6PD deficiency → drug-induced hemolytic crisis",
+      "reason": "G6PD (Glucose-6-Phosphate Dehydrogenase) Deficiency:\n\nPathophysiology: ขาด G6PD → ขาด NADPH → ขาด reduced glutathione → oxidative stress → Hb oxidation → Heinz bodies → bite cells → extravascular + intravascular hemolysis\n\nTriggers: Primaquine, dapsone, nitrofurantoin, sulfonamides, fava beans, infection\n\nClinical features:\n- Sudden hemolytic anemia หลัง trigger\n- Hemoglobinuria (dark urine)\n- Jaundice + back pain (hemolysis)\n\nBlood smear: **Bite cells** (cells พิเษน Heinz bodies ถูก eaten โดย macrophages) + **Heinz bodies** (Brilliant cresyl blue)\n\nDiagnosis: G6PD enzyme assay (ระหว่าง crisis อาจ false normal เพราะ old RBCs หายไป)\n\nManagement:\n- หยุด trigger ทันที\n- Supportive: hydration, transfusion ถ้าจำเป็น\n- Folic acid\n- การป้องกัน: หลีกเลี่ยง oxidative drugs/foods",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Autoimmune hemolytic anemia",
+          "is_correct": false,
+          "explanation": "AIHA: positive DAT (direct Coombs), spherocytes; ไม่มี bite cells/Heinz bodies"
+        },
+        {
+          "label": "B",
+          "text": "G6PD deficiency → drug-induced hemolytic crisis",
+          "is_correct": true,
+          "explanation": "Primaquine (oxidative drug) + bite cells + Heinz bodies = G6PD deficiency crisis"
+        },
+        {
+          "label": "C",
+          "text": "Hereditary spherocytosis",
+          "is_correct": false,
+          "explanation": "HS: spherocytes + osmotic fragility; ไม่มี bite cells/Heinz bodies"
+        },
+        {
+          "label": "D",
+          "text": "Beta thalassemia intermedia",
+          "is_correct": false,
+          "explanation": "Thal: เรื้อรัง ไม่เฉียบพลันหลัง drug; target cells ไม่ใช่ bite cells"
+        },
+        {
+          "label": "E",
+          "text": "MAHA",
+          "is_correct": false,
+          "explanation": "MAHA: schistocytes + thrombocytopenia; ไม่ใช่ bite cells"
+        }
+      ],
+      "key_takeaway": "G6PD deficiency + oxidative drug (primaquine) → bite cells + Heinz bodies → hemolytic crisis; หยุด trigger + supportive care"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี มาด้วยจุดเลือดออกใต้ผิวหนัง (petechiae) ทั่วตัว ไม่มีไข้ ไม่มีก้อน CBC: Hb 12 g/dL WBC 8,000 Platelets 12,000 Peripheral smear: ไม่มี blast ไม่มี schistocytes BT > 20 นาที ก่อนหน้านี้มี viral URTI เมื่อ 2 สัปดาห์ ควรรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bone marrow biopsy ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Platelet transfusion ทันที"
+      },
+      {
+        "label": "C",
+        "text": "IVIg หรือ corticosteroids (สำหรับ wet ITP) หรือ observation ถ้า dry ITP"
+      },
+      {
+        "label": "D",
+        "text": "Splenectomy ทันที"
+      },
+      {
+        "label": "E",
+        "text": "Rituximab ทันที"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "ITP (post-viral, isolated thrombocytopenia, no blast) → IVIg หรือ steroids ถ้า wet ITP; observation ถ้า dry ITP",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. IVIg หรือ corticosteroids (wet ITP) หรือ observation (dry ITP)",
+      "reason": "Immune Thrombocytopenic Purpura (ITP) ในเด็ก:\n\nDiagnosis: isolated thrombocytopenia + no blast + post-viral → primary ITP\n\n**Wet ITP** (mucosal bleeding + petechiae + low platelets < 20,000):\n- Treatment: IVIg 0.8-1 g/kg x1 dose (เร็วที่สุด ~80% response)\n- หรือ Prednisolone 2 mg/kg/day x 2 สัปดาห์\n- หรือ Anti-D (Rh+ patients)\n\n**Dry ITP** (petechiae เท่านั้น ไม่มี mucosal bleeding):\n- Observation เพียงอย่างเดียว (ส่วนใหญ่ ~80% หายเองใน 6 เดือน)\n\nPlatelet transfusion: ไม่มี indication ใน ITP เว้นแต่ life-threatening bleeding\n(Anti-platelet antibodies ทำลาย transfused platelets เช่นกัน)\n\nSplenectomy: สำหรับ chronic ITP > 12 เดือน ที่ไม่ตอบสนองยา\nBM biopsy: ไม่จำเป็นถ้า presentation typical",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bone marrow biopsy ทันที",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็นถ้า typical ITP (no blast, no atypical features)"
+        },
+        {
+          "label": "B",
+          "text": "Platelet transfusion ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี indication ใน ITP (antibodies ทำลาย transfused platelets ด้วย)"
+        },
+        {
+          "label": "C",
+          "text": "IVIg/corticosteroids (wet ITP) หรือ observation (dry ITP)",
+          "is_correct": true,
+          "explanation": "Treatment ขึ้นกับ clinical severity: wet = IVIg/steroid; dry = observation"
+        },
+        {
+          "label": "D",
+          "text": "Splenectomy ทันที",
+          "is_correct": false,
+          "explanation": "สำหรับ chronic ITP > 12 เดือน ไม่ใช่ acute ITP"
+        },
+        {
+          "label": "E",
+          "text": "Rituximab ทันที",
+          "is_correct": false,
+          "explanation": "สำหรับ refractory/chronic ITP ไม่ใช่ first-line acute"
+        }
+      ],
+      "key_takeaway": "ITP เด็ก: dry ITP → observation; wet ITP → IVIg หรือ corticosteroids; platelet transfusion ไม่มี indication (เว้น life-threatening)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 10 ปี มาด้วยข้อเข่าบวมหลังหกล้ม ไม่หยุดบวม เลือดออกง่ายมาตลอดชีวิต ตรวจ: prolonged aPTT, PT ปกติ Platelet ปกติ BT ปกติ FVIII activity 2% (< 1% = severe) การวินิจฉัยและการรักษาเฉียบพลันคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Von Willebrand disease → desmopressin (DDAVP)"
+      },
+      {
+        "label": "B",
+        "text": "Hemophilia A → Factor VIII concentrate ทันที"
+      },
+      {
+        "label": "C",
+        "text": "Hemophilia B → Factor IX concentrate"
+      },
+      {
+        "label": "D",
+        "text": "Vitamin K deficiency → Vitamin K IV"
+      },
+      {
+        "label": "E",
+        "text": "ITP → IVIg"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "FVIII activity 2% + prolonged aPTT + hemarthrosis = Hemophilia A moderate → Factor VIII concentrate",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Hemophilia A → Factor VIII concentrate ทันที",
+      "reason": "Hemophilia A: X-linked recessive FVIII deficiency\n\nSeverity:\n- Severe: FVIII < 1%\n- Moderate: 1-5% ✓ (ผู้ป่วยนี้)\n- Mild: 5-40%\n\nClinical: hemarthrosis (ข้อ) + hematoma + prolonged bleeding\nCoagulation: aPTT ยาว, PT ปกติ (intrinsic pathway defect)\n\n**Acute hemarthrosis treatment**:\n1. **FVIII concentrate** ทันที:\n   - Minor/moderate bleed: target FVIII 50-80%\n   - Major bleed: target FVIII 80-100%\n   - Dose: FVIII units = weight × desired rise × 0.5\n2. **RICE**: Rest, Ice, Compression, Elevation\n3. Analgesics (ไม่ใช้ NSAIDs/aspirin)\n\n**Prophylaxis**: FVIII 3x/week หรือ extended half-life products (emicizumab)\n\nDDAVP: สำหรับ mild Hemophilia A หรือ VWD type 1 ไม่ใช่ moderate/severe HA",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Von Willebrand disease → DDAVP",
+          "is_correct": false,
+          "explanation": "VWD: BT ยาว + aPTT ยาว แต่ VWF activity ต่ำ; ผู้ป่วยนี้ FVIII 2% = HA"
+        },
+        {
+          "label": "B",
+          "text": "Hemophilia A → Factor VIII concentrate ทันที",
+          "is_correct": true,
+          "explanation": "FVIII 2% + aPTT long + hemarthrosis = Hemophilia A moderate → FVIII concentrate"
+        },
+        {
+          "label": "C",
+          "text": "Hemophilia B → Factor IX concentrate",
+          "is_correct": false,
+          "explanation": "HB: FIX deficiency; ผู้ป่วยนี้ FVIII 2% ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Vitamin K deficiency → Vitamin K IV",
+          "is_correct": false,
+          "explanation": "Vit K def: PT ยาวด้วย (II, VII, IX, X); ผู้ป่วยนี้ PT ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "ITP → IVIg",
+          "is_correct": false,
+          "explanation": "ITP: thrombocytopenia; ผู้ป่วยนี้ platelets ปกติ"
+        }
+      ],
+      "key_takeaway": "Hemophilia A: aPTT ยาว + PT ปกติ + FVIII ต่ำ → Factor VIII concentrate ทันที (dose ตาม severity + target level)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี มาด้วย ALL ที่ได้รับการวินิจฉัยแล้ว หลัง induction chemotherapy ครั้งที่ 2 มาด้วยไข้สูง 39°C ANC = 200 cells/mm3 ไม่มีแหล่ง infection ชัดเจน CBC: WBC 1,200, Hb 9.5, Plt 85,000 ควรรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "รอ blood culture ผล 48 ชั่วโมงก่อนให้ antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Broad-spectrum IV antibiotics ทันที (febrile neutropenia protocol)"
+      },
+      {
+        "label": "C",
+        "text": "Oral antibiotics + discharge"
+      },
+      {
+        "label": "D",
+        "text": "Antifungal (amphotericin B) เดี่ยว"
+      },
+      {
+        "label": "E",
+        "text": "G-CSF เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Febrile neutropenia (fever + ANC < 500) → Broad-spectrum IV antibiotics ทันที (ไม่รอ culture ผล)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Broad-spectrum IV antibiotics ทันที (febrile neutropenia protocol)",
+      "reason": "Febrile Neutropenia definition:\n- Fever ≥ 38.3°C single or ≥ 38.0°C × 1 ชั่วโมง\n- ANC < 500 cells/mm3 (หรือ < 1000 และ declining)\n\n**Oncological emergency** ต้องให้ antibiotics ภายใน 60 นาที!\n\nProtocol:\n1. Blood cultures (× 2 sets) ก่อนให้ antibiotic แต่ไม่รอผล\n2. **IV antibiotics** ทันที:\n   - **Monotherapy**: piperacillin-tazobactam หรือ cefepime หรือ meropenem\n   - เพิ่ม vancomycin ถ้า: hemodynamic unstable, skin/catheter infection, severe mucositis\n3. **Antifungal**: เพิ่มถ้า fever ≥ 4-7 วัน หลัง broad-spectrum antibiotics\n\nG-CSF: ช่วย recovery ANC แต่ไม่ใช่ acute treatment สำหรับ febrile neutropenia\n\nMortality ถ้าไม่รักษาทัน: 10-30%",
+      "choices": [
+        {
+          "label": "A",
+          "text": "รอ blood culture 48 ชั่วโมงก่อนให้ antibiotic",
+          "is_correct": false,
+          "explanation": "ห้ามรอ! Febrile neutropenia = oncological emergency; antibiotics ภายใน 60 นาที"
+        },
+        {
+          "label": "B",
+          "text": "Broad-spectrum IV antibiotics ทันที",
+          "is_correct": true,
+          "explanation": "Febrile neutropenia protocol: IV antibiotics ทันที ไม่รอ culture ผล"
+        },
+        {
+          "label": "C",
+          "text": "Oral antibiotics + discharge",
+          "is_correct": false,
+          "explanation": "ไม่ปลอดภัย high-risk febrile neutropenia ต้องการ IV + admit"
+        },
+        {
+          "label": "D",
+          "text": "Antifungal เดี่ยว",
+          "is_correct": false,
+          "explanation": "Antifungal เพิ่มหลัง fever > 4-7 วัน ไม่ใช่ first-line"
+        },
+        {
+          "label": "E",
+          "text": "G-CSF เดี่ยว",
+          "is_correct": false,
+          "explanation": "G-CSF ไม่ใช่ treatment สำหรับ acute febrile neutropenia"
+        }
+      ],
+      "key_takeaway": "Febrile neutropenia (fever + ANC < 500) = Oncological emergency → Blood culture ก่อน แต่ IV antibiotics ทันทีภายใน 60 นาที"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี diagnosed HbSS (Sickle Cell Disease) มาด้วยปวดกระดูกรุนแรง ขา + หลัง เฉียบพลัน ไข้ต่ำ Hb 8 g/dL (baseline) ไม่มี sign organ damage CBC: WBC 14,000 Retic 12% Chest X-ray ปกติ การรักษาภาวะนี้คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Exchange transfusion ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Analgesics (IV morphine/NSAIDs) + IV fluids + supplemental O2 ถ้า SpO2 < 95%"
+      },
+      {
+        "label": "C",
+        "text": "Hydroxyurea เริ่มทันที"
+      },
+      {
+        "label": "D",
+        "text": "Bone marrow biopsy"
+      },
+      {
+        "label": "E",
+        "text": "Observation เท่านั้น"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SCD vaso-occlusive crisis (VOC) → Analgesics (opioids) + IV fluids + O2 support",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Analgesics (IV morphine/NSAIDs) + IV fluids + supplemental O2",
+      "reason": "Vaso-Occlusive Crisis (VOC) ใน SCD:\n- Polymerization ของ HbS ใน hypoxic/dehydrated/acidotic states → sickling → vessel occlusion → ischemic pain\n\nManagement VOC:\n1. **Analgesics** (key): \n   - IV morphine (preferred) หรือ hydromorphone\n   - NSAIDs (ketorolac) ร่วมได้\n   - Patient-controlled analgesia (PCA) ถ้า admitted\n2. **IV hydration**: 1.25-1.5× maintenance rate (prevent dehydration + dilute HbS)\n3. **Supplemental O2**: ถ้า SpO2 < 95% (ป้องกัน sickling)\n4. **Incentive spirometry**: ป้องกัน acute chest syndrome\n5. **Warm compress**: ลดอาการ\n\n**Exchange transfusion**: สำหรับ acute stroke, acute chest syndrome severe, multi-organ failure\n**Hydroxyurea**: prevention ระยะยาว ไม่ใช่ acute treatment\nTransfusion เดี่ยว: ถ้า Hb ลดฮวบหรือ aplastic crisis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Exchange transfusion ทันที",
+          "is_correct": false,
+          "explanation": "Exchange transfusion สำหรับ acute stroke, severe ACS, multi-organ failure ไม่ใช่ uncomplicated VOC"
+        },
+        {
+          "label": "B",
+          "text": "Analgesics + IV fluids + supplemental O2",
+          "is_correct": true,
+          "explanation": "Standard VOC management: pain control + hydration + O2 support"
+        },
+        {
+          "label": "C",
+          "text": "Hydroxyurea เริ่มทันที",
+          "is_correct": false,
+          "explanation": "Hydroxyurea = prevention; ไม่ใช่ acute VOC treatment"
+        },
+        {
+          "label": "D",
+          "text": "Bone marrow biopsy",
+          "is_correct": false,
+          "explanation": "ไม่มี indication ใน uncomplicated VOC"
+        },
+        {
+          "label": "E",
+          "text": "Observation เท่านั้น",
+          "is_correct": false,
+          "explanation": "VOC severe ต้องการ analgesics + hydration ไม่ใช่แค่ observe"
+        }
+      ],
+      "key_takeaway": "SCD vaso-occlusive crisis → IV morphine + IV hydration + O2 (SpO2 < 95%); exchange transfusion สำหรับ stroke/severe ACS เท่านั้น"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 6 ปี Hb 6 g/dL MCV 62 Retic 0.8% WBC ปกติ Plt ปกติ ตรวจพบ pallor koilonychia stomatitis RDW 19% Serum ferritin 4 ng/mL (ต่ำ) TIBC สูง Iron saturation 8% สาเหตุที่พบบ่อยที่สุดในเด็กวัยนี้ไทยคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chronic disease anemia"
+      },
+      {
+        "label": "B",
+        "text": "Dietary iron deficiency + helminth infection"
+      },
+      {
+        "label": "C",
+        "text": "Beta thalassemia trait"
+      },
+      {
+        "label": "D",
+        "text": "Aplastic anemia"
+      },
+      {
+        "label": "E",
+        "text": "Lead poisoning"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "IDA ในเด็กไทยวัยเรียน: สาเหตุบ่อยที่สุดคือ dietary deficiency + helminth (hookworm) → ferritin ต่ำ + TIBC สูง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Dietary iron deficiency + helminth infection",
+      "reason": "Iron Deficiency Anemia (IDA) ในเด็กไทย:\n\nLaboratory ยืนยัน IDA:\n- Low ferritin (< 12-15 ng/mL): most specific\n- High TIBC (> 400 μg/dL)\n- Low iron saturation (< 16%)\n- High RDW\n- Low MCV + Hb\n\nสาเหตุหลักในเด็กไทย:\n1. **Dietary deficiency**: อาหารไม่สมดุล, กินข้าวเป็นหลัก\n2. **Hookworm (Necator americanus, Ancylostoma duodenale)**: ชนบท พบบ่อยมาก → blood loss intestinal\n3. Whipworm (Trichuris trichiura): ลำไส้ใหญ่ → blood loss\n\nKoilonychia = spoon nails: classic sign IDA\nStomatitis = angular cheilitis: iron deficiency\n\nการรักษา IDA:\n1. Iron supplementation: ferrous sulfate 3-6 mg elemental iron/kg/day × 3-6 เดือน\n2. Antiparasitic: albendazole/mebendazole ถ้า stool O&P positive\n3. Dietary counseling\n\nBeta thalassemia trait: ferritin ปกติ/สูง, MCV ต่ำ แต่ Hb ไม่ต่ำมาก, RDW ปกติ/เล็กน้อยสูง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chronic disease anemia",
+          "is_correct": false,
+          "explanation": "ACD: ferritin ปกติ/สูง, TIBC ต่ำ; ไม่ใช่ ferritin ต่ำ + TIBC สูง"
+        },
+        {
+          "label": "B",
+          "text": "Dietary iron deficiency + helminth infection",
+          "is_correct": true,
+          "explanation": "สาเหตุบ่อยที่สุด IDA ในเด็กไทย: ferritin ต่ำ + TIBC สูง + iron saturation ต่ำ"
+        },
+        {
+          "label": "C",
+          "text": "Beta thalassemia trait",
+          "is_correct": false,
+          "explanation": "Thal trait: ferritin ปกติ, Hb electrophoresis ผิดปกติ, MCV ต่ำ"
+        },
+        {
+          "label": "D",
+          "text": "Aplastic anemia",
+          "is_correct": false,
+          "explanation": "Aplastic: pancytopenia, WBC ต่ำ, platelets ต่ำ"
+        },
+        {
+          "label": "E",
+          "text": "Lead poisoning",
+          "is_correct": false,
+          "explanation": "Lead: basophilic stippling, wrist/foot drop, exposure history"
+        }
+      ],
+      "key_takeaway": "IDA เด็กไทย: dietary deficiency + helminth (hookworm) บ่อยที่สุด; ferritin ต่ำ = most specific; รักษา: iron supplement + antiparasitic"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดอายุ 2 วัน เกิดจากแม่หมู่เลือด O RhD+ ทารกหมู่เลือด A RhD+ ตรวจพบดีซ่านตั้งแต่แรกเกิด (< 24 ชั่วโมง) Total bilirubin 18 mg/dL (ใน 36 ชั่วโมง) Direct Coombs test (DAT) positive Hb 10.5 g/dL Reticulocyte 18% สาเหตุที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Physiologic jaundice"
+      },
+      {
+        "label": "B",
+        "text": "ABO incompatibility hemolytic disease of newborn"
+      },
+      {
+        "label": "C",
+        "text": "Rh incompatibility"
+      },
+      {
+        "label": "D",
+        "text": "G6PD deficiency"
+      },
+      {
+        "label": "E",
+        "text": "Breast milk jaundice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "แม่ O + ทารก A + early jaundice < 24 ชั่วโมง + positive DAT + hemolysis = ABO incompatibility HDN",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ABO incompatibility hemolytic disease of newborn",
+      "reason": "ABO Incompatibility HDN:\n- แม่ O → มี anti-A และ anti-B IgG (IgG สามารถข้าม placenta)\n- ทารก A → แม่ IgG anti-A จับ RBC ทารก → DAT positive → hemolysis\n\nFeatures:\n- Jaundice < 24 ชั่วโมง (pathological)\n- Positive DAT\n- Anemia + reticulocytosis\n- Spherocytes บน smear\n\nRh incompatibility:\n- แม่ RhD- ทารก RhD+ (ที่นี่ทั้งคู่ RhD+)\n- Typically more severe anemia + hydrops\n- จะไม่เกิดถ้าแม่ RhD+ แล้ว\n\nPhysiologic jaundice: เริ่ม > 24 ชั่วโมง + DAT negative + ไม่มี significant hemolysis\n\nG6PD: จะ DAT negative + exposure-related\n\nการรักษา ABO incompatibility HDN:\n1. Phototherapy: ถ้า bilirubin สูงแต่ยังไม่ถึง exchange transfusion threshold\n2. IVIg: ลด hemolysis (ลด Fc receptor-mediated destruction)\n3. Exchange transfusion: ถ้า bilirubin สูงมาก/ไม่ตอบสนอง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Physiologic jaundice",
+          "is_correct": false,
+          "explanation": "Physiologic: เริ่ม > 24 ชั่วโมง + DAT negative; ผู้ป่วยมี jaundice < 24 ชั่วโมง + DAT+"
+        },
+        {
+          "label": "B",
+          "text": "ABO incompatibility HDN",
+          "is_correct": true,
+          "explanation": "แม่ O + ทารก A + DAT+ + early jaundice + hemolysis = ABO incompatibility"
+        },
+        {
+          "label": "C",
+          "text": "Rh incompatibility",
+          "is_correct": false,
+          "explanation": "ทั้งแม่และทารก RhD+ ไม่สามารถเกิด Rh incompatibility ได้"
+        },
+        {
+          "label": "D",
+          "text": "G6PD deficiency",
+          "is_correct": false,
+          "explanation": "G6PD: DAT negative + precipitated by oxidative trigger; ผู้ป่วย DAT+"
+        },
+        {
+          "label": "E",
+          "text": "Breast milk jaundice",
+          "is_correct": false,
+          "explanation": "Breast milk jaundice: เริ่มสัปดาห์ที่ 1-2 ไม่มี hemolysis + DAT negative"
+        }
+      ],
+      "key_takeaway": "ABO incompatibility HDN (แม่ O, ทารก A/B): jaundice < 24 ชั่วโมง + DAT+ + hemolysis → phototherapy ± IVIg ± exchange transfusion"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 14 ปี มาด้วยไข้ ซีด เหนื่อย มา 3 สัปดาห์ เบื่ออาหาร ต่อมน้ำเหลืองคอโต ม้ามโต CBC: WBC 85,000 (lymphoblasts 90%) Hb 7.5 Plt 45,000 LDH 4,500 Uric acid สูง Bone marrow: hypercellular พบ lymphoblasts > 90% การรักษาเร่งด่วนก่อนเริ่ม chemotherapy คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Corticosteroids เดี่ยว"
+      },
+      {
+        "label": "B",
+        "text": "Allopurinol + rasburicase + IV hydration สำหรับ tumor lysis syndrome prevention"
+      },
+      {
+        "label": "C",
+        "text": "Platelet transfusion ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Bone marrow transplantation ก่อน"
+      },
+      {
+        "label": "E",
+        "text": "Radiation therapy ก่อน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ALL ที่ high tumor burden + uric acid สูง + LDH สูง → ป้องกัน tumor lysis syndrome ก่อนเริ่ม chemo",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Allopurinol + rasburicase + IV hydration สำหรับ tumor lysis syndrome prevention",
+      "reason": "Tumor Lysis Syndrome (TLS) ใน ALL ที่ high tumor burden:\n\n**Risk factors ใน case นี้**:\n- WBC สูงมาก (85,000 = hyperleukocytosis)\n- LDH สูง (tumor burden)\n- Uric acid สูงแล้ว\n- Lymphoma/ALL ที่ rapid proliferation\n\n**TLS features** (Cairo-Bishop criteria): ↑K, ↑PO4, ↓Ca, ↑uric acid, ↑creatinine\n→ AKI, arrhythmia, seizure, death\n\n**Prevention ก่อน chemo**:\n1. **IV hydration** (2-3× maintenance): dilute electrolytes + urine output ≥ 2 mL/kg/hr\n2. **Allopurinol**: ยับยั้ง xanthine oxidase → ลด uric acid production (ให้ก่อน chemo 2-3 วัน)\n3. **Rasburicase** (recombinant uricase): ย่อย uric acid → allantoin (water-soluble) → เร็วกว่า allopurinol ใช้เมื่อ uric acid สูงแล้ว\n\nCorticosteroids เดี่ยว: ไม่พอ\nPlatelet transfusion: ไม่จำเป็นทันที (Plt 45,000 ยังไม่ถึง threshold ถ้าไม่มี bleeding)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Corticosteroids เดี่ยว",
+          "is_correct": false,
+          "explanation": "Steroids เริ่ม chemo ได้แต่ต้องป้องกัน TLS ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Allopurinol + rasburicase + IV hydration",
+          "is_correct": true,
+          "explanation": "TLS prevention ก่อนเริ่ม chemo: hydration + allopurinol/rasburicase"
+        },
+        {
+          "label": "C",
+          "text": "Platelet transfusion ทันที",
+          "is_correct": false,
+          "explanation": "Plt 45,000 ยังไม่ถึง threshold สำหรับ prophylactic transfusion (threshold < 10,000-20,000)"
+        },
+        {
+          "label": "D",
+          "text": "Bone marrow transplantation ก่อน",
+          "is_correct": false,
+          "explanation": "BMT เป็น consolidation หลังได้ remission ไม่ใช่ first step"
+        },
+        {
+          "label": "E",
+          "text": "Radiation therapy ก่อน",
+          "is_correct": false,
+          "explanation": "RT ไม่ใช่ first-line ALL; ป้องกัน TLS ก่อนคือสำคัญที่สุด"
+        }
+      ],
+      "key_takeaway": "ALL + high tumor burden (WBC สูง, LDH สูง, uric acid สูง) → ป้องกัน TLS ก่อน chemo: IV hydration + allopurinol + rasburicase"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี มาด้วยซีด เหนื่อย เจริญเติบโตช้า CBC: Hb 5.5 g/dL MCV 58 fL Peripheral smear: hypochromic microcytic Serum ferritin 45 ng/mL (ปกติ) Hb electrophoresis: HbA 95% HbA2 5% HbF 0.5% สาเหตุของ anemia คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Iron deficiency anemia"
+      },
+      {
+        "label": "B",
+        "text": "Beta thalassemia trait"
+      },
+      {
+        "label": "C",
+        "text": "Alpha thalassemia trait"
+      },
+      {
+        "label": "D",
+        "text": "Hemoglobin E disease"
+      },
+      {
+        "label": "E",
+        "text": "Chronic disease anemia"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HbA2 5% (> 3.5%) + microcytic hypochromic anemia + normal ferritin = Beta thalassemia trait",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Beta thalassemia trait",
+      "reason": "Beta Thalassemia Trait (carrier):\n\nHb electrophoresis ยืนยัน:\n- **HbA2 > 3.5%** (ที่นี่ 5%) = pathognomonic สำหรับ beta thalassemia trait\n- HbF เล็กน้อยอาจสูง\n- HbA ลดลงเล็กน้อย\n\nClinical:\n- Mild microcytic hypochromic anemia (Hb 9-12 g/dL โดยทั่วไป)\n- Ferritin ปกติ/สูง (ไม่ใช่ iron deficiency)\n- ไม่ต้องการ iron supplementation\n- Genetic counseling สำคัญมาก\n\nIron deficiency:\n- Ferritin ต่ำ < 12 ng/mL\n- HbA2 ปกติหรือต่ำ\n\nAlpha thalassemia trait:\n- HbA2 ปกติ\n- Electrophoresis อาจปกติ (ต้องทำ DNA test)\n\nGenetic counseling: ถ้าทั้งคู่ beta thal trait → 25% ลูกเป็น beta thal major ควรตรวจ partner",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Iron deficiency anemia",
+          "is_correct": false,
+          "explanation": "IDA: ferritin ต่ำ + HbA2 ปกติ; ผู้ป่วย ferritin ปกติ + HbA2 5%"
+        },
+        {
+          "label": "B",
+          "text": "Beta thalassemia trait",
+          "is_correct": true,
+          "explanation": "HbA2 5% (> 3.5%) + microcytic + normal ferritin = beta thal trait"
+        },
+        {
+          "label": "C",
+          "text": "Alpha thalassemia trait",
+          "is_correct": false,
+          "explanation": "Alpha thal trait: HbA2 ปกติ; ต้องการ DNA analysis ยืนยัน"
+        },
+        {
+          "label": "D",
+          "text": "Hemoglobin E disease",
+          "is_correct": false,
+          "explanation": "HbE disease: HbE สูงบน electrophoresis; ไม่ใช่ HbA2 สูง"
+        },
+        {
+          "label": "E",
+          "text": "Chronic disease anemia",
+          "is_correct": false,
+          "explanation": "ACD: ferritin สูง/ปกติ, TIBC ต่ำ, underlying chronic disease; ไม่มี HbA2 สูง"
+        }
+      ],
+      "key_takeaway": "Beta thalassemia trait: HbA2 > 3.5% (pathognomonic) + microcytic + normal ferritin; ห้ามให้ iron; genetic counseling สำคัญ"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 12 ปี มาด้วยเลือดออกผิดปกติหลายจุด: เลือดกำเดา, เลือดออกในข้อ, ประจำเดือนมามาก CBC: Hb 10 Plt 320,000 WBC ปกติ PT ยาว aPTT ยาว Thrombin time ยาว Fibrinogen ต่ำ 80 mg/dL D-dimer สูงมาก ไม่มีไข้ สาเหตุที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Von Willebrand disease"
+      },
+      {
+        "label": "B",
+        "text": "Disseminated intravascular coagulation (DIC)"
+      },
+      {
+        "label": "C",
+        "text": "Liver disease"
+      },
+      {
+        "label": "D",
+        "text": "ITP"
+      },
+      {
+        "label": "E",
+        "text": "Vitamin K deficiency"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PT/aPTT/TT ยาว + fibrinogen ต่ำ + D-dimer สูง = DIC (consumption coagulopathy)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Disseminated intravascular coagulation (DIC)",
+      "reason": "DIC diagnosis (ISTH criteria): PT ยาว + aPTT ยาว + TT ยาว + fibrinogen ต่ำ + D-dimer/FDP สูง + ± thrombocytopenia\n\nDIC = consumptive coagulopathy: coagulation activation ทั่วไป → clotting factors ถูกใช้จนหมด → bleeding\n\nสาเหตุ DIC ในเด็ก: sepsis, malignancy (especially APL), trauma, obstetric complications\n\nในกรณีนี้ต้องหาสาเหตุ underlying: CBC ไม่มี blast → ต้องตรวจ bone marrow / blood culture\n\nการรักษา DIC: รักษา underlying cause + supportive (FFP, cryoprecipitate, platelet transfusion)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Von Willebrand disease",
+          "is_correct": false,
+          "explanation": "VWD: aPTT ยาว แต่ PT/TT ปกติ, fibrinogen ปกติ, D-dimer ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "DIC",
+          "is_correct": true,
+          "explanation": "PT/aPTT/TT ยาว + fibrinogen ต่ำ + D-dimer สูง = DIC"
+        },
+        {
+          "label": "C",
+          "text": "Liver disease",
+          "is_correct": false,
+          "explanation": "Liver disease: PT/aPTT ยาว แต่ fibrinogen มักสูง (acute phase), TT ปกติ, D-dimer เล็กน้อยสูง"
+        },
+        {
+          "label": "D",
+          "text": "ITP",
+          "is_correct": false,
+          "explanation": "ITP: thrombocytopenia เดี่ยว, PT/aPTT ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Vitamin K deficiency",
+          "is_correct": false,
+          "explanation": "Vit K def: PT ยาว + aPTT ยาว แต่ fibrinogen ปกติ, D-dimer ปกติ, TT ปกติ"
+        }
+      ],
+      "key_takeaway": "DIC: PT+aPTT+TT ยาว + fibrinogen ต่ำ + D-dimer สูง (consumption); รักษา underlying cause + FFP/cryoprecipitate"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 9 ปี SCD (HbSS) มาด้วย sudden onset pleuritic chest pain + fever 38.5 + hypoxia SpO2 88% New infiltrate bilateral lobes on CXR HR 120 RR 28 สิ่งที่สำคัญที่สุดในการรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV morphine เดี่ยว"
+      },
+      {
+        "label": "B",
+        "text": "Simple RBC transfusion เดี่ยว"
+      },
+      {
+        "label": "C",
+        "text": "Exchange transfusion + IV antibiotics + O2 + incentive spirometry"
+      },
+      {
+        "label": "D",
+        "text": "Chest tube insertion"
+      },
+      {
+        "label": "E",
+        "text": "IV steroids เดี่ยว"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Acute Chest Syndrome (ACS) ใน SCD = life-threatening → Exchange transfusion + antibiotics + O2 + respiratory support",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Exchange transfusion + IV antibiotics + O2 + incentive spirometry",
+      "reason": "Acute Chest Syndrome (ACS) ใน SCD:\nDefinition: chest pain + fever + new lung infiltrate + hypoxia\n\nPathophysiology: sickling ใน pulmonary vasculature + fat embolism from bone marrow + infection + atelectasis\n\nMortality: 3% แต่สูงถ้าไม่รักษาทัน\n\nManagement ACS:\n1. **Exchange transfusion** (ไม่ใช่ simple transfusion): ลด HbS% ลงเหลือ < 30% → ลด sickling อย่างรวดเร็ว\n2. **IV antibiotics**: macrolide + beta-lactam (atypical + typical coverage)\n3. **Supplemental O2**: target SpO2 ≥ 95%\n4. **Incentive spirometry**: ป้องกัน atelectasis\n5. **Bronchodilators**: ถ้า wheeze\n6. **Analgesics**: ระวัง oversedation → hypoventilation\n\nSimple transfusion เดี่ยว: ไม่ลด HbS% เพียงพอ และเพิ่ม blood viscosity\nExchange transfusion: สำคัญกว่าใน severe ACS",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV morphine เดี่ยว",
+          "is_correct": false,
+          "explanation": "Morphine ช่วย pain แต่ oversedation → hypoventilation → ACS แย่ลง"
+        },
+        {
+          "label": "B",
+          "text": "Simple RBC transfusion เดี่ยว",
+          "is_correct": false,
+          "explanation": "Simple transfusion ไม่ลด HbS% เพียงพอ; exchange transfusion ดีกว่าใน severe ACS"
+        },
+        {
+          "label": "C",
+          "text": "Exchange transfusion + IV antibiotics + O2 + incentive spirometry",
+          "is_correct": true,
+          "explanation": "ACS management: exchange transfusion (ลด HbS) + antibiotics + O2 + respiratory support"
+        },
+        {
+          "label": "D",
+          "text": "Chest tube insertion",
+          "is_correct": false,
+          "explanation": "ไม่มี pneumothorax/pleural effusion; ไม่ใช่ indication สำหรับ ACS"
+        },
+        {
+          "label": "E",
+          "text": "IV steroids เดี่ยว",
+          "is_correct": false,
+          "explanation": "Steroids อาจลด fever แต่ insufficient สำหรับ life-threatening ACS"
+        }
+      ],
+      "key_takeaway": "ACS ใน SCD (chest pain + fever + infiltrate + hypoxia) → Exchange transfusion + IV antibiotics + O2; ไม่ใช่ simple transfusion"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี รับประทานวิตามิน K เนื่องจากตัวเหลืองตั้งแต่แรกเกิด ปัจจุบันตรวจ CBC ปกติ PT ยาว aPTT ยาว Protein C activity 5% Protein S 60% ประวัติครอบครัว: ลุงมีภาวะ thrombosis ซ้ำ สาเหตุและการป้องกันคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antithrombin III deficiency → heparin"
+      },
+      {
+        "label": "B",
+        "text": "Protein C deficiency → Protein C concentrate หรือ warfarin ระยะยาว"
+      },
+      {
+        "label": "C",
+        "text": "Factor V Leiden → aspirin"
+      },
+      {
+        "label": "D",
+        "text": "Protein S deficiency เดี่ยว → no treatment"
+      },
+      {
+        "label": "E",
+        "text": "Prothrombin G20210A mutation → anticoagulation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Protein C activity 5% (severe deficiency) + ประวัติครอบครัว thrombosis → Protein C deficiency → anticoagulation ± Protein C concentrate",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Protein C deficiency → Protein C concentrate หรือ warfarin ระยะยาว",
+      "reason": "Protein C deficiency:\n- Autosomal dominant/recessive\n- Protein C: natural anticoagulant ยับยั้ง Factor Va และ VIIIa\n- Severe deficiency (< 1%): neonatal purpura fulminans (ถ้า homozygous)\n- Moderate deficiency: recurrent VTE\n\nการรักษา:\n- **Protein C concentrate**: acute episode หรือ prophylaxis\n- **Warfarin ระยะยาว**: anticoagulation\n- ระวัง: เริ่ม warfarin โดยไม่มี heparin ก่อน → warfarin-induced skin necrosis (เพราะ protein C short half-life)\n\nFamily history thrombosis = hypercoagulable workup สำคัญมาก\n\nPT/aPTT ยาว: อาจเพราะ Vitamin K ที่ได้รับ (ทำให้ protein C ต่ำ ในบางกรณี) หรือ associated defects\n\nตรวจเพิ่ม: homocysteine, antiphospholipid antibody, Factor V Leiden, prothrombin mutation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Antithrombin III deficiency → heparin",
+          "is_correct": false,
+          "explanation": "ATIII def: heparin therapy อาจไม่ work ดี (heparin ต้องการ ATIII); ไม่ใช่ diagnosis ที่นี่"
+        },
+        {
+          "label": "B",
+          "text": "Protein C deficiency → Protein C concentrate/warfarin",
+          "is_correct": true,
+          "explanation": "Protein C 5% = severe deficiency; ต้องการ anticoagulation + Protein C concentrate"
+        },
+        {
+          "label": "C",
+          "text": "Factor V Leiden → aspirin",
+          "is_correct": false,
+          "explanation": "FVL: anticoagulation ไม่ใช่ aspirin; ไม่ใช่ diagnosis ที่นี่"
+        },
+        {
+          "label": "D",
+          "text": "Protein S deficiency เดี่ยว → no treatment",
+          "is_correct": false,
+          "explanation": "Protein S def: ต้องการ anticoagulation ถ้า VTE; ไม่ใช่ diagnosis หลัก"
+        },
+        {
+          "label": "E",
+          "text": "Prothrombin G20210A mutation",
+          "is_correct": false,
+          "explanation": "Prothrombin mutation: prothrombin activity ปกติ; ไม่ใช่ diagnosis ที่นี่"
+        }
+      ],
+      "key_takeaway": "Protein C deficiency: natural anticoagulant ต่ำ → recurrent VTE; ระวัง warfarin-induced skin necrosis (ต้องมี heparin bridge)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 10 ปี ได้รับการวินิจฉัย Hemophilia A severe (FVIII < 1%) เข้าผ่าตัด appendectomy ฉุกเฉิน ควรให้ FVIII ก่อนผ่าตัดเท่าไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ต้องให้ เพราะผ่าตัดฉุกเฉิน"
+      },
+      {
+        "label": "B",
+        "text": "FVIII concentrate เพื่อ target activity 50% ก่อนผ่าตัด"
+      },
+      {
+        "label": "C",
+        "text": "FVIII concentrate เพื่อ target activity 80-100% ก่อนผ่าตัด + maintenance หลัง"
+      },
+      {
+        "label": "D",
+        "text": "FFP เดี่ยว"
+      },
+      {
+        "label": "E",
+        "text": "Cryoprecipitate เดี่ยว"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Major surgery ใน Hemophilia A → target FVIII 80-100% ก่อนผ่าตัด + maintenance 50% อย่างน้อย 7-14 วัน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. FVIII target 80-100% ก่อนผ่าตัด + maintenance หลัง",
+      "reason": "Hemophilia A perioperative management:\n\nTarget FVIII level:\n- **Major surgery**: pre-op target 80-100%, post-op maintain > 50% × 7-14 วัน\n- Minor surgery: target 50-80%\n- Life-threatening bleed: target 80-100%\n\nDose calculation: FVIII units = weight (kg) × desired rise (%) × 0.5\n\nMonitoring: FVIII activity levels q12-24 ชั่วโมง post-op\n\nFFP: ประกอบด้วย FVIII แต่ volume ใหญ่ + concentration ต่ำ ไม่แนะนำเป็น first-line\nCryoprecipitate: ประกอบด้วย FVIII + fibrinogen + VWF แต่ FVIII concentrate ดีกว่า (พยากรณ์ dose ได้แน่นอน)\n\nถ้ามี inhibitor: bypass agents (FEIBA, NovoSeven) แทน FVIII",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ไม่ต้องให้",
+          "is_correct": false,
+          "explanation": "ห้ามผ่าตัดโดยไม่ replace FVIII; surgical bleeding อาจถึงชีวิต"
+        },
+        {
+          "label": "B",
+          "text": "FVIII target 50% ก่อนผ่าตัด",
+          "is_correct": false,
+          "explanation": "50% ไม่เพียงพอสำหรับ major surgery; target 80-100%"
+        },
+        {
+          "label": "C",
+          "text": "FVIII target 80-100% + maintenance หลัง",
+          "is_correct": true,
+          "explanation": "Major surgery: pre-op 80-100%, post-op maintain > 50% × 7-14 วัน"
+        },
+        {
+          "label": "D",
+          "text": "FFP เดี่ยว",
+          "is_correct": false,
+          "explanation": "FFP volume ใหญ่ + FVIII concentration ต่ำ; FVIII concentrate ดีกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Cryoprecipitate เดี่ยว",
+          "is_correct": false,
+          "explanation": "FVIII concentrate ดีกว่า cryoprecipitate (predictable dosing + safer)"
+        }
+      ],
+      "key_takeaway": "Hemophilia A major surgery: FVIII target 80-100% pre-op + maintain > 50% × 7-14 วัน post-op"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดอายุ 2 วัน เลือดออกจากสะดือ ปัสสาวะเป็นเลือด CBC: Hb 13 Plt 280,000 PT 48 วินาที (ปกติ 11-15) aPTT 92 วินาที (ปกติ 25-40) ไม่ได้รับ Vitamin K prophylaxis ที่คลอด การวินิจฉัยและรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ITP → IVIg"
+      },
+      {
+        "label": "B",
+        "text": "Hemophilia A → FVIII concentrate"
+      },
+      {
+        "label": "C",
+        "text": "Hemorrhagic disease of newborn (Vitamin K deficiency bleeding) → Vitamin K IV"
+      },
+      {
+        "label": "D",
+        "text": "DIC → FFP + cryoprecipitate"
+      },
+      {
+        "label": "E",
+        "text": "Liver failure → Vitamin K + FFP"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Newborn + no Vitamin K at birth + PT/aPTT prolonged + platelet ปกติ = Vitamin K deficiency bleeding (VKDB) → Vitamin K IV",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Hemorrhagic disease of newborn → Vitamin K IV",
+      "reason": "Vitamin K Deficiency Bleeding (VKDB) / Hemorrhagic Disease of Newborn:\n\nPathophysiology: ทารกแรกเกิดขาด Vitamin K → Factors II, VII, IX, X (Vit K-dependent) ต่ำ → PT/aPTT ยาว → bleeding\n\nRisk factors: ไม่ได้รับ Vit K prophylaxis, exclusive breastfeeding, malabsorption\n\nClassification:\n- Early (< 24 ชั่วโมง): maternal drugs (warfarin, anticonvulsants)\n- Classic (2-7 วัน): ไม่ได้ Vit K prophylaxis\n- Late (2-12 สัปดาห์): malabsorption, cholestasis\n\nDiagnosis: PT/aPTT ยาว + platelets ปกติ + fibrinogen ปกติ + ไม่ได้ Vit K\n\nTreatment:\n- **Vitamin K IV** 1 mg: รัก PT/aPTT ภายใน 4-6 ชั่วโมง\n- FFP: ถ้า bleeding รุนแรง + ต้องการ immediate reversal\n\nPrevention: Vitamin K 1 mg IM ที่คลอดทุกทารก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ITP → IVIg",
+          "is_correct": false,
+          "explanation": "ITP: platelets ต่ำ + PT/aPTT ปกติ; ผู้ป่วย platelets ปกติ + PT/aPTT ยาว"
+        },
+        {
+          "label": "B",
+          "text": "Hemophilia A → FVIII concentrate",
+          "is_correct": false,
+          "explanation": "HA: aPTT ยาวเดี่ยว + PT ปกติ; ผู้ป่วย PT ยาวด้วย = Vit K dependent factors"
+        },
+        {
+          "label": "C",
+          "text": "VKDB → Vitamin K IV",
+          "is_correct": true,
+          "explanation": "Newborn + no Vit K + PT/aPTT long + platelets normal = VKDB classic"
+        },
+        {
+          "label": "D",
+          "text": "DIC → FFP + cryoprecipitate",
+          "is_correct": false,
+          "explanation": "DIC: fibrinogen ต่ำ + D-dimer สูง; ผู้ป่วยไม่มีข้อมูลนี้ + ไม่มี precipitating cause"
+        },
+        {
+          "label": "E",
+          "text": "Liver failure",
+          "is_correct": false,
+          "explanation": "Liver failure ทารกแรกเกิด: rare + other signs; VKDB classic ชัดกว่า"
+        }
+      ],
+      "key_takeaway": "VKDB ทารกแรกเกิด (ไม่ได้ Vit K): PT/aPTT ยาว + platelets ปกติ → Vitamin K IV; ป้องกัน: Vit K IM ที่คลอด"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 16 ปี มีประวัติเลือดออกง่ายตั้งแต่เด็ก เลือดกำเดา epistaxis ประจำเดือนมามาก aPTT ยาวเล็กน้อย BT นาน Platelet ปกติ VWF:Ag 35% (ต่ำ) VWF:RCo 32% FVIII 40% ควรให้ยาเพื่อรักษา acute bleeding episode คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "FVIII concentrate"
+      },
+      {
+        "label": "B",
+        "text": "Desmopressin (DDAVP) + tranexamic acid"
+      },
+      {
+        "label": "C",
+        "text": "FFP เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Platelet transfusion"
+      },
+      {
+        "label": "E",
+        "text": "Vitamin K IV"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "VWD type 1 (VWF:Ag 35%, VWF:RCo 32%) → DDAVP ปล่อย VWF จาก endothelium + tranexamic acid ป้องกัน clot ละลาย",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Desmopressin (DDAVP) + tranexamic acid",
+      "reason": "Von Willebrand Disease (VWD) type 1:\n- Most common (75%): quantitative deficiency ของ VWF (mild-moderate)\n- VWF:Ag 35% + VWF:RCo 32% = type 1\n\n**DDAVP (desmopressin)**:\n- ปล่อย VWF จาก Weibel-Palade bodies ใน endothelium\n- เพิ่ม VWF 3-5 เท่า ภายใน 30-60 นาที\n- Duration: 6-8 ชั่วโมง (tachyphylaxis หลัง 2-3 doses)\n- ใช้ได้ใน: mucosal bleeding, minor procedures, menorrhagia\n- Route: IV 0.3 mcg/kg ใน 50 mL NS over 30 นาที หรือ intranasal\n\n**Tranexamic acid**: antifibrinolytic → ป้องกัน clot dissolution → ดีสำหรับ mucosal bleeding\n\nVWF concentrate: สำหรับ VWD type 2-3 หรือ DDAVP fail\nFVIII concentrate เดี่ยว: ไม่มี VWF → ไม่เหมาะ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "FVIII concentrate",
+          "is_correct": false,
+          "explanation": "FVIII concentrate เดี่ยวไม่มี VWF; VWD ต้องการ VWF หรือ DDAVP"
+        },
+        {
+          "label": "B",
+          "text": "DDAVP + tranexamic acid",
+          "is_correct": true,
+          "explanation": "VWD type 1: DDAVP (ปล่อย endogenous VWF) + tranexamic acid (antifibrinolytic)"
+        },
+        {
+          "label": "C",
+          "text": "FFP เดี่ยว",
+          "is_correct": false,
+          "explanation": "FFP มี VWF แต่ volume ใหญ่; DDAVP ดีกว่าสำหรับ type 1"
+        },
+        {
+          "label": "D",
+          "text": "Platelet transfusion",
+          "is_correct": false,
+          "explanation": "Platelet ปกติ ไม่มี indication สำหรับ platelet transfusion"
+        },
+        {
+          "label": "E",
+          "text": "Vitamin K IV",
+          "is_correct": false,
+          "explanation": "Vit K สำหรับ Vit K-dependent factors ไม่ใช่ VWD"
+        }
+      ],
+      "key_takeaway": "VWD type 1: DDAVP (ปล่อย endogenous VWF 3-5x) + tranexamic acid; VWF concentrate สำหรับ type 2-3 หรือ DDAVP fail"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี มา follow up acute lymphoblastic leukemia (ALL) ที่กำลัง maintenance chemotherapy ตรวจพบ Hb 6.5 g/dL Retic 0.1% WBC 3,500 Plt 85,000 ไม่มีไข้ ไม่มี blast ใน peripheral blood เจ็บตัวเล็กน้อย สาเหตุของ anemia ในกรณีนี้คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Relapse ของ ALL"
+      },
+      {
+        "label": "B",
+        "text": "Chemotherapy-induced bone marrow suppression (aplastic anemia from chemo)"
+      },
+      {
+        "label": "C",
+        "text": "Iron deficiency"
+      },
+      {
+        "label": "D",
+        "text": "Autoimmune hemolytic anemia"
+      },
+      {
+        "label": "E",
+        "text": "B12/folate deficiency"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ALL maintenance + Hb ต่ำ + Retic ต่ำมาก + no blast = chemotherapy-induced bone marrow suppression",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Chemotherapy-induced bone marrow suppression",
+      "reason": "Anemia ระหว่าง cancer chemotherapy: สาเหตุหลักคือ bone marrow suppression\n\nFeatures ชี้ไปที่ chemo-induced suppression:\n- Retic 0.1% = hypoproliferative (bone marrow ไม่สร้าง RBC)\n- ไม่มี blast = ไม่สงสัย relapse\n- WBC + Plt ต่ำ = pancytopenia from marrow suppression\n- กำลัง maintenance chemo (6-mercaptopurine + methotrexate)\n\nRelapse ALL:\n- Blast ใน peripheral blood\n- Lymphadenopathy, hepatosplenomegaly\n- Bone marrow: blast > 5%\n\nManagement chemo-induced anemia:\n- Transfusion: ถ้า Hb < 7-8 g/dL หรือ symptomatic\n- ± EPO (erythropoiesis-stimulating agents)\n- ปรับ chemo dose ถ้า severe\n\nIron deficiency: retic สูง (มักไม่ต่ำมาก), ferritin ต่ำ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Relapse ของ ALL",
+          "is_correct": false,
+          "explanation": "Relapse: blast ใน peripheral blood; ไม่มี blast ในกรณีนี้"
+        },
+        {
+          "label": "B",
+          "text": "Chemotherapy-induced bone marrow suppression",
+          "is_correct": true,
+          "explanation": "Retic ต่ำมาก + pancytopenia + กำลัง chemo + no blast = chemo-induced suppression"
+        },
+        {
+          "label": "C",
+          "text": "Iron deficiency",
+          "is_correct": false,
+          "explanation": "IDA: retic เพิ่ม (compensatory), ferritin ต่ำ; ไม่ใช่ retic 0.1%"
+        },
+        {
+          "label": "D",
+          "text": "Autoimmune hemolytic anemia",
+          "is_correct": false,
+          "explanation": "AIHA: retic สูง (hemolytic), DAT positive; ไม่ใช่ retic 0.1%"
+        },
+        {
+          "label": "E",
+          "text": "B12/folate deficiency",
+          "is_correct": false,
+          "explanation": "B12/folate: macrocytic anemia; ไม่ใช่ context นี้ (on maintenance chemo)"
+        }
+      ],
+      "key_takeaway": "Anemia ระหว่าง chemo + Retic ต่ำ + no blast = Chemo-induced marrow suppression; transfusion ถ้า Hb < 7-8 g/dL"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี มาด้วยซีดเฉียบพลัน ภายใน 3 วัน ไม่มีเลือดออก ประวัติ SCD (HbSS) CBC: Hb 4 g/dL Retic 0.5% (ต่ำมาก จากปกติ 12%) WBC ปกติ Plt ปกติ ก่อนหน้านี้มีไข้จาก URTI สาเหตุและการรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Splenic sequestration → exchange transfusion"
+      },
+      {
+        "label": "B",
+        "text": "Aplastic crisis จาก parvovirus B19 → RBC transfusion + treat infection"
+      },
+      {
+        "label": "C",
+        "text": "Vaso-occlusive crisis → analgesics"
+      },
+      {
+        "label": "D",
+        "text": "Iron deficiency → iron supplementation"
+      },
+      {
+        "label": "E",
+        "text": "DIC → FFP + cryoprecipitate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SCD + sudden severe anemia + Retic ต่ำมาก หลัง viral illness = Aplastic crisis (parvovirus B19) → RBC transfusion",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Aplastic crisis จาก parvovirus B19 → RBC transfusion",
+      "reason": "Aplastic Crisis ใน SCD:\n\nCause: **Parvovirus B19** (erythrovirus) ติดเชื้อ erythroid precursors → หยุดสร้าง RBC ชั่วคราว 7-10 วัน\n\nFeatures:\n- SCD baseline: ชีวิต RBC สั้น (20-30 วัน) พึ่ง high reticulocyte ตลอด\n- Parvovirus หยุด erythropoiesis → Retic ลดฮวบ → anemia รุนแรงเฉียบพลัน\n- ไม่มีเลือดออก + ไม่มี hemolysis increased\n\nDiagnosis: anti-parvovirus IgM หรือ PCR\n\nTreatment:\n1. **RBC transfusion**: ทันทีถ้า Hb ต่ำ (symptomatic)\n2. Supportive: hydration, folic acid\n3. Self-limiting: erythropoiesis กลับมาเองใน 7-14 วัน\n4. ปัญหา contagious: ระวัง sickle cell ในครอบครัว\n\nSplenic sequestration: ม้ามโตฉับพลัน + acute anemia แต่ reticulocyte มักสูง\nVOC: ปวดกระดูก ไม่ใช่ acute anemia เดี่ยว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Splenic sequestration → exchange transfusion",
+          "is_correct": false,
+          "explanation": "Sequestration: ม้ามโตฉับพลัน + reticulocyte สูง (hemolysis); ไม่ใช่ retic ต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Aplastic crisis จาก parvovirus B19 → RBC transfusion",
+          "is_correct": true,
+          "explanation": "SCD + Retic ต่ำมาก + post-viral = aplastic crisis (parvovirus B19); RBC transfusion ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Vaso-occlusive crisis → analgesics",
+          "is_correct": false,
+          "explanation": "VOC: ปวดกระดูก ไม่ใช่ acute severe anemia + Retic ต่ำ"
+        },
+        {
+          "label": "D",
+          "text": "Iron deficiency → iron supplementation",
+          "is_correct": false,
+          "explanation": "IDA เรื้อรัง ไม่เฉียบพลัน; SCD มักมี iron overload ไม่ใช่ IDA"
+        },
+        {
+          "label": "E",
+          "text": "DIC → FFP",
+          "is_correct": false,
+          "explanation": "DIC: PT/aPTT ยาว + fibrinogen ต่ำ; ไม่ใช่ diagnosis ที่นี่"
+        }
+      ],
+      "key_takeaway": "SCD + Retic ต่ำมาก + post-viral = Aplastic crisis (parvovirus B19) → RBC transfusion ทันที (self-limiting 7-14 วัน)"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 3 ปี ซีด เหนื่อย Hb 9 g/dL MCV 78 fL ตัวเหลืองเล็กน้อย Retic 8% Peripheral smear: spherocytes +++, polychromasia Osmotic fragility test: increased fragility DAT negative สาเหตุคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Iron deficiency anemia"
+      },
+      {
+        "label": "B",
+        "text": "Hereditary spherocytosis"
+      },
+      {
+        "label": "C",
+        "text": "Autoimmune hemolytic anemia (AIHA)"
+      },
+      {
+        "label": "D",
+        "text": "Beta thalassemia major"
+      },
+      {
+        "label": "E",
+        "text": "Sickle cell disease"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Spherocytes + increased osmotic fragility + DAT negative + family history = Hereditary spherocytosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Hereditary spherocytosis",
+      "reason": "Hereditary Spherocytosis (HS):\n\nPathophysiology: defect ใน RBC membrane proteins (spectrin, ankyrin, Band 3, protein 4.2) → loss of membrane lipid → spherical shape → ออสโมซิสเปราะ → trapped ใน spleen → hemolysis\n\nFeatures:\n- Chronic hemolytic anemia\n- Spherocytes บน smear + polychromasia (reticulocytosis)\n- **Increased osmotic fragility**: spherocytes แตกได้ง่ายเมื่อ hypotonic solution\n- **DAT negative**: ไม่ใช่ autoimmune (AIHA DAT positive)\n- Splenomegaly\n- Jaundice (hemolytic)\n\nAIHA: DAT positive (autoantibody coated); ไม่มี family history\n\nDiagnosis HS: EMA binding test (eosin-5-maleimide) หรือ acidified glycerol lysis test\n\nTreatment:\n- Folic acid 5 mg/day\n- Splenectomy: อายุ ≥ 5-6 ปี ใน moderate-severe (ลด hemolysis ไม่ cure)\n- Vaccination ก่อน splenectomy: PCV13, MenACWY, Hib\n- Penicillin prophylaxis หลัง splenectomy (เด็กเล็ก)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Iron deficiency anemia",
+          "is_correct": false,
+          "explanation": "IDA: microcytic + ferritin ต่ำ; ไม่มี spherocytes หรือ osmotic fragility เพิ่ม"
+        },
+        {
+          "label": "B",
+          "text": "Hereditary spherocytosis",
+          "is_correct": true,
+          "explanation": "Spherocytes + increased osmotic fragility + DAT negative = HS"
+        },
+        {
+          "label": "C",
+          "text": "AIHA",
+          "is_correct": false,
+          "explanation": "AIHA: spherocytes + DAT POSITIVE; ผู้ป่วย DAT negative"
+        },
+        {
+          "label": "D",
+          "text": "Beta thalassemia major",
+          "is_correct": false,
+          "explanation": "Beta thal: target cells + nRBC + HbF สูง; ไม่ใช่ spherocytes + osmotic fragility"
+        },
+        {
+          "label": "E",
+          "text": "Sickle cell disease",
+          "is_correct": false,
+          "explanation": "SCD: sickle cells + HbSS on electrophoresis; ไม่ใช่ spherocytes + osmotic fragility"
+        }
+      ],
+      "key_takeaway": "Hereditary spherocytosis: spherocytes + DAT negative + increased osmotic fragility; รักษา: folic acid + splenectomy ≥ 5-6 ปี ใน moderate-severe"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 15 ปี มาด้วยซีดเฉียบพลัน ตัวเหลือง ปัสสาวะสีน้ำตาล ไม่มีเลือดออก Hb 6 g/dL Retic 18% Peripheral smear: polychromasia, spherocytes DAT positive (IgG coated) LDH สูง indirect bilirubin สูง Haptoglobin ต่ำ ไม่มี exposure to oxidative drugs การวินิจฉัยและการรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "G6PD deficiency → หยุด trigger"
+      },
+      {
+        "label": "B",
+        "text": "Warm autoimmune hemolytic anemia (wAIHA) → prednisolone"
+      },
+      {
+        "label": "C",
+        "text": "Cold agglutinin disease → warm environment"
+      },
+      {
+        "label": "D",
+        "text": "Hereditary spherocytosis → splenectomy"
+      },
+      {
+        "label": "E",
+        "text": "Aplastic crisis → RBC transfusion"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "DAT positive (IgG) + warm antibody + spherocytes + hemolysis = Warm AIHA → Prednisolone first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Warm AIHA → Prednisolone",
+      "reason": "Autoimmune Hemolytic Anemia (AIHA) — Warm type:\n- **DAT positive (IgG)**: warm IgG autoantibody จับ RBC ที่อุณหภูมิ 37°C\n- Spherocytes (IgG-coated RBCs ถูก splenic macrophages partial phagocytosis)\n- Hemolysis: high LDH, indirect bili, low haptoglobin, high retic\n\nCauses ของ warm AIHA: idiopathic, lymphoma, SLE, CLL, medications\n\nTreatment:\n1. **First-line**: Prednisolone 1-2 mg/kg/day × 3-4 สัปดาห์ แล้วค่อยๆ taper\n   - Response rate ~80%\n2. **Second-line** (steroid fail): Rituximab หรือ splenectomy\n3. **Blood transfusion**: ถ้า severe/life-threatening\n\nCold agglutinin: DAT positive (C3d/IgM), worse in cold, acrocyanosis\nHS: DAT negative\nG6PD: bite cells + Heinz bodies + exposure to oxidative trigger",
+      "choices": [
+        {
+          "label": "A",
+          "text": "G6PD deficiency",
+          "is_correct": false,
+          "explanation": "G6PD: DAT negative + bite cells/Heinz bodies + oxidative exposure; ผู้ป่วย DAT positive"
+        },
+        {
+          "label": "B",
+          "text": "Warm AIHA → prednisolone",
+          "is_correct": true,
+          "explanation": "DAT positive (IgG) + warm hemolysis + spherocytes = warm AIHA; prednisolone first-line"
+        },
+        {
+          "label": "C",
+          "text": "Cold agglutinin → warm environment",
+          "is_correct": false,
+          "explanation": "Cold: DAT positive C3d + IgM, worse in cold; ไม่ใช่ IgG"
+        },
+        {
+          "label": "D",
+          "text": "Hereditary spherocytosis → splenectomy",
+          "is_correct": false,
+          "explanation": "HS: DAT negative; ผู้ป่วย DAT positive = autoimmune"
+        },
+        {
+          "label": "E",
+          "text": "Aplastic crisis → RBC transfusion",
+          "is_correct": false,
+          "explanation": "Aplastic: retic ต่ำมาก; ผู้ป่วย retic 18% = hemolytic not aplastic"
+        }
+      ],
+      "key_takeaway": "Warm AIHA: DAT positive (IgG) + spherocytes + hemolysis → Prednisolone 1-2 mg/kg/day (80% response); second-line: rituximab/splenectomy"
+    },
+    "subject": "hemato_ped",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย 3 ปี มีไข้ 38.5°C ซีด ตาเหลือง ปัสสาวะสีเข้ม หลังรับประทานยาปฏิชีวนะ (cotrimoxazole) 2 วัน CBC: Hb 6.2 g/dL, reticulocyte 12%, smear พบ bite cells และ Heinz bodies",
+    "choices": [
+      "A: Sickle cell disease",
+      "B: G6PD deficiency",
+      "C: Hereditary spherocytosis",
+      "D: Autoimmune hemolytic anemia",
+      "E: Thalassemia intermedia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Bite cells, Heinz bodies หลังได้ oxidant drug (cotrimoxazole) → G6PD deficiency oxidative hemolysis",
+    "detailed_explanation": {
+      "summary": "G6PD deficiency: oxidant-induced hemolysis หลัง cotrimoxazole",
+      "reason": "G6PD ปกป้อง RBC จาก oxidative stress ผ่าน glutathione pathway เมื่อขาด G6PD + ได้ oxidant drug → Hb denatured → Heinz bodies → splenic macrophage กัด → bite cells → hemolysis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sickle cell disease",
+          "is_correct": false,
+          "explanation": "พบ sickle cells ไม่ใช่ bite cells, ไม่ triggered โดย cotrimoxazole"
+        },
+        {
+          "label": "B",
+          "text": "G6PD deficiency",
+          "is_correct": true,
+          "explanation": "Bite cells + Heinz bodies + oxidant drug (cotrimoxazole) = classic G6PD deficiency"
+        },
+        {
+          "label": "C",
+          "text": "Hereditary spherocytosis",
+          "is_correct": false,
+          "explanation": "พบ spherocytes, ไม่ถูก trigger โดย drug"
+        },
+        {
+          "label": "D",
+          "text": "Autoimmune hemolytic anemia",
+          "is_correct": false,
+          "explanation": "Coombs test positive, ไม่มี Heinz bodies"
+        },
+        {
+          "label": "E",
+          "text": "Thalassemia intermedia",
+          "is_correct": false,
+          "explanation": "Chronic, ไม่ acute after drug"
+        }
+      ],
+      "key_takeaway": "G6PD: bite cells + Heinz bodies + oxidant trigger (cotrimoxazole, primaquine, dapsone, fava beans)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 1 วัน แม่กรุ๊ปเลือด O+ ทารกกรุ๊ป A+ Hb 13 g/dL, bilirubin 8 mg/dL (อายุ 24 ชม.) DCT positive smear พบ spherocytes หลายตัว",
+    "choices": [
+      "A: Physiologic jaundice",
+      "B: ABO incompatibility",
+      "C: Rh incompatibility",
+      "D: G6PD deficiency",
+      "E: Hereditary spherocytosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "แม่ O+ ทารก A+ → anti-A IgG ข้ามรก → ABO incompatibility; DCT+ + spherocytes + early jaundice",
+    "detailed_explanation": {
+      "summary": "ABO HDN: แม่ O ทารก A/B, DCT positive, spherocytes",
+      "reason": "แม่กรุ๊ป O มี anti-A และ anti-B IgG (ต่างจาก Rh ที่ต้องได้รับ sensitization ก่อน) → ข้ามรกไปทำลาย RBC ทารก → hemolytic disease",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Physiologic jaundice",
+          "is_correct": false,
+          "explanation": "Physiologic jaundice ไม่มีก่อน 24 ชม., DCT ลบ"
+        },
+        {
+          "label": "B",
+          "text": "ABO incompatibility",
+          "is_correct": true,
+          "explanation": "แม่ O ทารก A, DCT+, spherocytes, jaundice < 24 ชม."
+        },
+        {
+          "label": "C",
+          "text": "Rh incompatibility",
+          "is_correct": false,
+          "explanation": "ทารกและแม่ Rh+ เหมือนกัน"
+        },
+        {
+          "label": "D",
+          "text": "G6PD deficiency",
+          "is_correct": false,
+          "explanation": "DCT ลบ, ไม่มี Heinz bodies ที่เด่น"
+        },
+        {
+          "label": "E",
+          "text": "Hereditary spherocytosis",
+          "is_correct": false,
+          "explanation": "DCT ลบ, ประวัติครอบครัว"
+        }
+      ],
+      "key_takeaway": "ABO HDN: แม่ O + ทารก A หรือ B → DCT+ + spherocytes + early jaundice ในวันแรก → phototherapy ± IVIG"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 7 ปี มีจุดเลือดออกใต้ผิวหนัง (petechiae, purpura) ทั่วตัว ไม่มีไข้ ม้ามไม่โต CBC: Plt 8,000/μL, Hb 12 g/dL, WBC 7,200/μL, smear ปกติ ไม่มีเลือดออกในกะโหลก",
+    "choices": [
+      "A: Aplastic anemia",
+      "B: Acute leukemia",
+      "C: Immune thrombocytopenia (ITP)",
+      "D: Thrombotic thrombocytopenic purpura",
+      "E: Hemolytic uremic syndrome"
+    ],
+    "correct_answer": "C",
+    "explanation": "ITP: thrombocytopenia isolated, Hb ปกติ, WBC ปกติ, ม้ามไม่โต, ไม่มี blasts → wet ITP (mucosal) → IVIG",
+    "detailed_explanation": {
+      "summary": "ITP wet purpura ใน เด็ก → IVIG",
+      "reason": "ITP เด็กมักเกิดหลัง viral illness → anti-platelet antibodies → ม้ามทำลาย Plt → isolated thrombocytopenia CBC อื่นปกติ Wet ITP (petechiae + purpura ขนาดใหญ่, mucosal bleeding) ที่ Plt < 20,000 → IVIG 1 g/kg",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aplastic anemia",
+          "is_correct": false,
+          "explanation": "Pancytopenia ทุก cell line"
+        },
+        {
+          "label": "B",
+          "text": "Acute leukemia",
+          "is_correct": false,
+          "explanation": "มักมี blasts ใน smear, อาจมี adenopathy"
+        },
+        {
+          "label": "C",
+          "text": "Immune thrombocytopenia",
+          "is_correct": true,
+          "explanation": "Isolated thrombocytopenia, CBC อื่นปกติ, ม้ามไม่โต → ITP"
+        },
+        {
+          "label": "D",
+          "text": "TTP",
+          "is_correct": false,
+          "explanation": "MAHA + thrombocytopenia + end-organ damage"
+        },
+        {
+          "label": "E",
+          "text": "HUS",
+          "is_correct": false,
+          "explanation": "MAHA + renal failure + thrombocytopenia, มักหลัง bloody diarrhea"
+        }
+      ],
+      "key_takeaway": "ITP เด็ก: isolated thrombocytopenia + CBC อื่นปกติ; wet ITP (Plt <20,000 + mucosal) → IVIG 1 g/kg"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 5 ปี เลือดออกในข้อเข่าขวาหลังล้ม CBC: Plt 280,000/μL, PT ปกติ, aPTT 68 วินาที (ปกติ 30 วินาที) Factor VIII assay: 3% (ปกติ 50-150%) ประวัติพ่อปกติ แม่ไม่มีอาการ",
+    "choices": [
+      "A: Hemophilia A",
+      "B: Hemophilia B",
+      "C: Von Willebrand disease type 3",
+      "D: Factor VII deficiency",
+      "E: ITP"
+    ],
+    "correct_answer": "A",
+    "explanation": "Hemophilia A: aPTT ยาว, PT ปกติ, FVIII ต่ำ, X-linked recessive (พ่อปกติ, แม่ carrier)",
+    "detailed_explanation": {
+      "summary": "Hemophilia A: FVIII deficiency, aPTT ยาว, hemarthrosis",
+      "reason": "X-linked recessive → ลูกชายเป็น, แม่ carrier Hemophilia A = FVIII deficiency → intrinsic pathway → aPTT ยาว PT ปกติ Severe: FVIII < 1%, Moderate: 1-5%, Mild: 5-40% → hemarthrosis เป็น hallmark",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hemophilia A",
+          "is_correct": true,
+          "explanation": "aPTT ยาว, FVIII 3%, hemarthrosis, X-linked"
+        },
+        {
+          "label": "B",
+          "text": "Hemophilia B",
+          "is_correct": false,
+          "explanation": "FIX deficiency ไม่ใช่ FVIII"
+        },
+        {
+          "label": "C",
+          "text": "VWD type 3",
+          "is_correct": false,
+          "explanation": "FVIII ต่ำได้ แต่ bleeding time ยาว, mucocutaneous bleeding"
+        },
+        {
+          "label": "D",
+          "text": "Factor VII deficiency",
+          "is_correct": false,
+          "explanation": "PT ยาว ไม่ใช่ aPTT"
+        },
+        {
+          "label": "E",
+          "text": "ITP",
+          "is_correct": false,
+          "explanation": "Plt ต่ำ, PT/aPTT ปกติ"
+        }
+      ],
+      "key_takeaway": "Hemophilia A: aPTT ยาว + FVIII ต่ำ → FVIII concentrate; hemarthrosis → RICE + factor replacement"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 8 ปี ป่วย ALL กำลังได้ induction chemotherapy (cyclophosphamide) CBC วันนี้: ANC 180/μL, ไข้ 38.9°C x 1 ชม. ไม่มี localizing signs CXR ปกติ UA ปกติ",
+    "choices": [
+      "A: ให้ยาปฏิชีวนะ oral amoxicillin",
+      "B: Admit และ IV broad-spectrum antibiotics ทันที",
+      "C: F/U ใน 24 ชม.",
+      "D: Blood culture แล้วรอผล",
+      "E: Antifungal empirical therapy"
+    ],
+    "correct_answer": "B",
+    "explanation": "Febrile neutropenia: ANC < 500 + fever → medical emergency → Admit + IV pip-tazo หรือ cefepime ทันที",
+    "detailed_explanation": {
+      "summary": "Febrile neutropenia: ANC <500 + fever → IV broad-spectrum antibiotics ทันที",
+      "reason": "ANC < 500 (หรือ < 1000 กำลังลดลงเร็ว) + fever ≥38.3°C → febrile neutropenia เป็น oncologic emergency ความเสี่ยงติดเชื้อ gram-negative สูง → sepsis → death ภายในชั่วโมง การรักษา: Admit ทันที, blood culture x2, IV antibiotics (piperacillin-tazobactam หรือ cefepime) ภายใน 60 นาที",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ยา oral amoxicillin",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม gram-negative, ไม่เหมาะกับ high-risk febrile neutropenia"
+        },
+        {
+          "label": "B",
+          "text": "Admit + IV broad-spectrum antibiotics",
+          "is_correct": true,
+          "explanation": "Febrile neutropenia = emergency → IV pip-tazo/cefepime ภายใน 1 ชม."
+        },
+        {
+          "label": "C",
+          "text": "F/U 24 ชม.",
+          "is_correct": false,
+          "explanation": "อันตรายมาก อาจ septic shock ก่อน F/U"
+        },
+        {
+          "label": "D",
+          "text": "Blood culture แล้วรอผล",
+          "is_correct": false,
+          "explanation": "เก็บ blood culture ก่อน แต่ต้องให้ยาทันที ไม่ต้องรอผล"
+        },
+        {
+          "label": "E",
+          "text": "Antifungal empirical",
+          "is_correct": false,
+          "explanation": "เพิ่ม antifungal เมื่อไข้นาน >4-7 วัน แม้ได้ antibiotics แล้ว ไม่ใช่ first-line"
+        }
+      ],
+      "key_takeaway": "Febrile neutropenia: ANC <500 + fever → Admit + blood culture + IV pip-tazo/cefepime ภายใน 60 นาที"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 4 ปี ซีดเรื้อรัง ตาเหลืองเล็กน้อย ม้ามโต CBC: Hb 8.5 g/dL, MCV 62 fL, MCH 19 pg, RDW สูง smear: target cells, tear-drop cells, nucleated RBC Hb electrophoresis: HbF 70%, HbA2 5%, HbA แทบไม่มี",
+    "choices": [
+      "A: IDA",
+      "B: Beta-thalassemia major",
+      "C: HbH disease",
+      "D: Sickle cell disease",
+      "E: AIHA"
+    ],
+    "correct_answer": "B",
+    "explanation": "Beta-thal major: HbF สูงมาก, HbA2 สูง, HbA แทบไม่มี, ซีดรุนแรง, nucleated RBC, ม้ามโต",
+    "detailed_explanation": {
+      "summary": "Beta-thalassemia major: HbF dominant, transfusion-dependent",
+      "reason": "Beta-thal major (β0/β0): ไม่สร้าง beta-chain เลย → globin chain imbalance → ineffective erythropoiesis → hemolytic anemia + extramedullary hematopoiesis Hb electrophoresis: HbF สูง (>60%), HbA2 > 3.5%, HbA แทบไม่มี → hallmark",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IDA",
+          "is_correct": false,
+          "explanation": "Hb electrophoresis ปกติ, ไม่มี nucleated RBC, ม้ามไม่โต"
+        },
+        {
+          "label": "B",
+          "text": "Beta-thalassemia major",
+          "is_correct": true,
+          "explanation": "HbF 70%, HbA2 5%, HbA minimal + nucleated RBC + ม้ามโต"
+        },
+        {
+          "label": "C",
+          "text": "HbH disease",
+          "is_correct": false,
+          "explanation": "Alpha-thal, HbH 5-30%, ไม่ใช่ HbF dominant"
+        },
+        {
+          "label": "D",
+          "text": "Sickle cell disease",
+          "is_correct": false,
+          "explanation": "HbS dominant ใน electrophoresis"
+        },
+        {
+          "label": "E",
+          "text": "AIHA",
+          "is_correct": false,
+          "explanation": "Coombs positive, Hb electrophoresis ปกติ"
+        }
+      ],
+      "key_takeaway": "Beta-thal major: Hb electrophoresis HbF↑↑ + HbA2↑ + HbA absent → transfusion + chelation (deferoxamine/deferasirox)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 10 ปี วินิจฉัย Hemophilia A severe (FVIII <1%) ถูกกำหนดผ่าตัดถอนฟัน CBC ปกติ aPTT 75 วินาที แพทย์วางแผน perioperative management",
+    "choices": [
+      "A: ให้ DDAVP ก่อนผ่าตัด",
+      "B: Fresh frozen plasma เท่านั้น",
+      "C: FVIII concentrate เพื่อ raise FVIII ≥50% ก่อนผ่าตัด",
+      "D: Tranexamic acid เพียงอย่างเดียว",
+      "E: ไม่ต้องทำอะไรพิเศษ"
+    ],
+    "correct_answer": "C",
+    "explanation": "Severe Hemophilia A ผ่าตัด → FVIII concentrate เป้าหมาย ≥50% (dental) หรือ ≥80-100% (major surgery)",
+    "detailed_explanation": {
+      "summary": "Hemophilia A perioperative: FVIII concentrate raise level ≥50%",
+      "reason": "Severe Hemophilia A (FVIII <1%) → ต้องการ FVIII replacement ก่อนผ่าตัด การผ่าตัดเล็ก (dental): FVIII ≥50% การผ่าตัดใหญ่: FVIII ≥80-100% Tranexamic acid ใช้เสริมได้ (โดยเฉพาะ dental) DDAVP ใช้ได้เฉพาะ mild Hemophilia A (FVIII >5%)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "DDAVP",
+          "is_correct": false,
+          "explanation": "DDAVP ใช้ได้เฉพาะ mild HA ไม่ใช่ severe"
+        },
+        {
+          "label": "B",
+          "text": "FFP เท่านั้น",
+          "is_correct": false,
+          "explanation": "FFP ปริมาณมาก volume overload ไม่ specific เท่า FVIII concentrate"
+        },
+        {
+          "label": "C",
+          "text": "FVIII concentrate ≥50%",
+          "is_correct": true,
+          "explanation": "Specific factor replacement เป้าหมาย ≥50% สำหรับ dental surgery"
+        },
+        {
+          "label": "D",
+          "text": "Tranexamic acid เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "เป็น adjunct ไม่ใช่ primary treatment สำหรับ severe HA"
+        },
+        {
+          "label": "E",
+          "text": "ไม่ต้องทำอะไร",
+          "is_correct": false,
+          "explanation": "อันตราย severe HA ต้องการ factor replacement ก่อนทุกหัตถการ"
+        }
+      ],
+      "key_takeaway": "Hemophilia A severe perioperative: FVIII concentrate target ≥50% (minor) หรือ ≥80-100% (major); DDAVP ใช้ได้เฉพาะ mild HA"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 2 วัน คลอดที่บ้าน ไม่ได้ฉีด Vitamin K มีเลือดออกจากสะดือ อุจจาระเป็นเลือด CBC ปกติ PT 45 วินาที aPTT 55 วินาที Plt 280,000/μL",
+    "choices": [
+      "A: Hemophilia A",
+      "B: Disseminated intravascular coagulation",
+      "C: Vitamin K deficiency bleeding (VKDB)",
+      "D: Factor XIII deficiency",
+      "E: ITP neonatal"
+    ],
+    "correct_answer": "C",
+    "explanation": "VKDB: ทารกไม่ได้ Vit K + PT ยาว + aPTT ยาว + Plt ปกติ → coagulation factor II, VII, IX, X ต่ำ",
+    "detailed_explanation": {
+      "summary": "VKDB: ไม่ได้ Vit K prophylaxis → PT+aPTT ยาว, Plt ปกติ",
+      "reason": "Vitamin K จำเป็นต่อ factor II, VII, IX, X, Protein C, S ทารกแรกเกิด Vit K ต่ำ (เกิดจากน้ำนมแม่มี Vit K น้อย + gut flora ยังไม่พัฒนา) Early VKDB: 0-24 ชม. (late neonatal HA), Classic: 2-7 วัน, Late: 2-12 สัปดาห์ การรักษา: Vit K IV/IM + FFP ถ้าเลือดออกรุนแรง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hemophilia A",
+          "is_correct": false,
+          "explanation": "aPTT ยาว แต่ PT ปกติ, X-linked (ผู้ชาย)"
+        },
+        {
+          "label": "B",
+          "text": "DIC",
+          "is_correct": false,
+          "explanation": "DIC มีสาเหตุชัดเจน (sepsis, abruption), fibrinogen ต่ำ, D-dimer สูง"
+        },
+        {
+          "label": "C",
+          "text": "VKDB",
+          "is_correct": true,
+          "explanation": "ไม่ได้ Vit K + PT+aPTT ยาว + Plt ปกติ = classic VKDB"
+        },
+        {
+          "label": "D",
+          "text": "Factor XIII deficiency",
+          "is_correct": false,
+          "explanation": "PT/aPTT ปกติ, เลือดออกจากสะดือในภายหลัง"
+        },
+        {
+          "label": "E",
+          "text": "Neonatal ITP",
+          "is_correct": false,
+          "explanation": "Plt ต่ำ, PT/aPTT ปกติ"
+        }
+      ],
+      "key_takeaway": "VKDB: ไม่ได้ Vit K prophylaxis → PT↑ + aPTT↑ + Plt ปกติ → Vit K IV + FFP ถ้ารุนแรง; ป้องกัน: Vit K 1 mg IM แรกเกิด"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 14 ปี ซีดเรื้อรังตั้งแต่เด็ก ม้ามโตมาก ตรวจ peripheral blood smear พบ spherocytes จำนวนมาก MCHC 37 g/dL (สูง) osmotic fragility test positive ประวัติปู่มีน้ำดีเป็นนิ่ว",
+    "choices": [
+      "A: Beta-thalassemia trait",
+      "B: Hereditary spherocytosis",
+      "C: AIHA",
+      "D: G6PD deficiency",
+      "E: Sickle cell trait"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hereditary spherocytosis: spherocytes, MCHC สูง, osmotic fragility test+, ประวัติครอบครัว, pigment gallstones",
+    "detailed_explanation": {
+      "summary": "Hereditary spherocytosis: spherocytes + MCHC↑ + osmotic fragility+ + family history",
+      "reason": "HS เกิดจาก spectrin/ankyrin/band 3 defect → RBC ขาด membrane → spherical shape → ม้ามทำลาย spherocytes สูง MCHC เป็น hallmark (>35.4 g/dL) Osmotic fragility test positive → confirmatory Complications: pigment gallstones (bilirubin), aplastic crisis (parvovirus B19)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Beta-thalassemia trait",
+          "is_correct": false,
+          "explanation": "Hypochromic microcytic ไม่ใช่ spherocytes, MCHC ปกติหรือต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Hereditary spherocytosis",
+          "is_correct": true,
+          "explanation": "Spherocytes + MCHC↑ + osmotic fragility+ + ม้ามโต + family history gallstones"
+        },
+        {
+          "label": "C",
+          "text": "AIHA",
+          "is_correct": false,
+          "explanation": "Coombs positive, ไม่ใช่ hereditary"
+        },
+        {
+          "label": "D",
+          "text": "G6PD deficiency",
+          "is_correct": false,
+          "explanation": "Bite cells ไม่ใช่ spherocytes, episodic ไม่ chronic"
+        },
+        {
+          "label": "E",
+          "text": "Sickle cell trait",
+          "is_correct": false,
+          "explanation": "Asymptomatic, HbS 35-45%"
+        }
+      ],
+      "key_takeaway": "Hereditary spherocytosis: MCHC↑ + spherocytes + osmotic fragility+ → splenectomy เมื่อ symptomatic (moderate-severe)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 6 ปี ป่วย SCD (HbSS) มีไข้ 39°C ANC 300/μL ซีดลงเฉียบพลัน Hb 4.5 g/dL (baseline 8 g/dL) Retic 0.1% ม้ามเล็กลง ประวัติสัมผัสเพื่อนที่มีผื่น lacy รูปแบบที่แก้ม 2 สัปดาห์ก่อน",
+    "choices": [
+      "A: Splenic sequestration",
+      "B: Hyperhemolytic crisis",
+      "C: Aplastic crisis จาก Parvovirus B19",
+      "D: Acute chest syndrome",
+      "E: Vaso-occlusive crisis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Aplastic crisis: Hb ลดฮวบ + Retic ต่ำมาก + ประวัติสัมผัส Parvovirus B19 (slapped cheek rash ในเพื่อน) → หยุดสร้าง RBC ชั่วคราว",
+    "detailed_explanation": {
+      "summary": "Aplastic crisis ใน SCD: Parvovirus B19 → Retic ต่ำ + Hb ลดฮวบ",
+      "reason": "Parvovirus B19 ทำลาย erythroid precursors ชั่วคราว ใน normal person: RBC อายุ 120 วัน ทนได้ 1-2 สัปดาห์ ใน SCD: RBC อายุสั้น (10-20 วัน) → หยุดสร้าง 1-2 สัปดาห์ → Hb ลดฮวบ, Retic ต่ำมาก Slapped cheek rash ในเพื่อน = erythema infectiosum = Parvovirus B19",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Splenic sequestration",
+          "is_correct": false,
+          "explanation": "ม้ามโตขึ้นฉับพลัน (จาก RBC สะสม), Retic สูง ไม่ต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Hyperhemolytic crisis",
+          "is_correct": false,
+          "explanation": "Retic สูง, hemolysis เพิ่ม"
+        },
+        {
+          "label": "C",
+          "text": "Aplastic crisis parvovirus B19",
+          "is_correct": true,
+          "explanation": "Retic 0.1% + Hb ลด + ประวัติ slapped cheek exposure = Parvovirus B19 aplastic crisis"
+        },
+        {
+          "label": "D",
+          "text": "Acute chest syndrome",
+          "is_correct": false,
+          "explanation": "ไข้ + respiratory symptoms + CXR infiltrate"
+        },
+        {
+          "label": "E",
+          "text": "VOC",
+          "is_correct": false,
+          "explanation": "ปวด, CBC เปลี่ยนน้อย, Retic ปกติ-สูง"
+        }
+      ],
+      "key_takeaway": "Aplastic crisis ใน SCD: Parvovirus B19 → Retic ต่ำมาก + Hb ลดฮวบ → transfusion; ใน normal: self-limited"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  }
+]

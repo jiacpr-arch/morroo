@@ -1,0 +1,3402 @@
+[
+  {
+    "scenario": "ชายอายุ 65 ปี มาด้วย LUTS มา 2 ปี ปัสสาวะบ่อย กลางคืน 3-4 ครั้ง ลำปัสสาวะเล็กลง DRE: prostate ใหญ่ นุ่ม PSA 2.8 ng/mL PVR 180 mL ควรรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Alpha-1 blocker (tamsulosin) เดี่ยว"
+      },
+      {
+        "label": "B",
+        "text": "5-alpha reductase inhibitor (finasteride) เดี่ยว"
+      },
+      {
+        "label": "C",
+        "text": "Combination therapy: alpha-1 blocker + 5-ARI"
+      },
+      {
+        "label": "D",
+        "text": "TURP ทันที"
+      },
+      {
+        "label": "E",
+        "text": "Watchful waiting เท่านั้น"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "BPH ขนาดใหญ่ + moderate-severe LUTS → combination therapy ลด symptom และ disease progression ดีกว่า monotherapy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Combination therapy: alpha-1 blocker + 5-ARI",
+      "reason": "BPH ขนาดใหญ่ (PSA > 1.5 บ่งชี้ prostate volume > 30-40 mL) ใน patient ที่มี moderate-severe LUTS + PVR 180 mL\n\nAlpha-1 blocker (tamsulosin): ผ่อนคลาย smooth muscle ของ bladder neck และ prostate → ลด outflow resistance → ปัสสาวะดีขึ้นเร็วภายใน 1-2 สัปดาห์\n\n5-Alpha reductase inhibitor (finasteride/dutasteride): ยับยั้งการแปลง testosterone → DHT → ลด prostate volume 20-30% ใน 6-12 เดือน ลด risk acute urinary retention และต้องผ่าตัด\n\nการศึกษา MTOPS และ CombAT แสดงว่า combination > monotherapy ในผู้ป่วยที่ PSA สูง (prostate ใหญ่) เพราะลดทั้ง symptom (alpha blocker) และ disease progression (5-ARI)\n\nPVR 180 mL ยังไม่ถึงเกณฑ์ผ่าตัด (> 300-400 mL หรือ AUR ซ้ำ, UTI ซ้ำ, bladder stones, renal insufficiency)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Alpha-1 blocker (tamsulosin) เดี่ยว",
+          "is_correct": false,
+          "explanation": "ดีในระยะสั้น แต่ไม่ลด disease progression ในต่อมที่ใหญ่"
+        },
+        {
+          "label": "B",
+          "text": "5-alpha reductase inhibitor (finasteride) เดี่ยว",
+          "is_correct": false,
+          "explanation": "ออกฤทธิ์ช้า 6-12 เดือน ไม่ตอบโจทย์ symptom relief เร็ว"
+        },
+        {
+          "label": "C",
+          "text": "Combination therapy: alpha-1 blocker + 5-ARI",
+          "is_correct": true,
+          "explanation": "ดีที่สุดสำหรับ BPH ใหญ่ + moderate-severe LUTS"
+        },
+        {
+          "label": "D",
+          "text": "TURP ทันที",
+          "is_correct": false,
+          "explanation": "ผ่าตัดเมื่อ medical therapy ล้มเหลว หรือมี absolute indications เท่านั้น"
+        },
+        {
+          "label": "E",
+          "text": "Watchful waiting เท่านั้น",
+          "is_correct": false,
+          "explanation": "เหมาะกับ mild LUTS เท่านั้น ผู้นี้มี moderate-severe LUTS + PVR สูง"
+        }
+      ],
+      "key_takeaway": "BPH ขนาดใหญ่ (PSA > 1.5) + moderate-severe LUTS → Combination alpha-blocker + 5-ARI ดีกว่า monotherapy (ลด symptom + progression)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 70 ปี ปัสสาวะเป็นเลือด painless 3 ครั้งใน 1 เดือน CT urogram พบ irregular filling defect ที่ left renal pelvis 2 cm ขั้นตอนต่อไปคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cystoscopy เท่านั้น"
+      },
+      {
+        "label": "B",
+        "text": "Urine cytology + ureteroscopy with biopsy"
+      },
+      {
+        "label": "C",
+        "text": "Radical nephrectomy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Ureteral stent placement"
+      },
+      {
+        "label": "E",
+        "text": "Repeat CT ใน 3 เดือน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Suspected UTUC → ureteroscopy + biopsy เพื่อ tissue diagnosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Urine cytology + ureteroscopy with biopsy",
+      "reason": "Painless hematuria ในผู้ชายสูงอายุ + CT filling defect ใน renal pelvis → สงสัย Upper Tract Urothelial Carcinoma (UTUC)\n\nการวินิจฉัย UTUC ต้องการ tissue diagnosis:\n- Urine cytology: sensitivity ต่ำ (~30-60%) แต่ specificity สูง\n- Ureteroscopy with biopsy: gold standard สำหรับ diagnosis + grade assessment\n\nการรักษาหลัก: Radical nephroureterectomy (RNU) + bladder cuff excision\nCystoscopy เดี่ยวไม่เพียงพอเพราะ lesion อยู่ที่ renal pelvis ไม่ใช่ bladder",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cystoscopy เท่านั้น",
+          "is_correct": false,
+          "explanation": "Cystoscopy ดู bladder เท่านั้น ไม่เห็น upper tract lesion"
+        },
+        {
+          "label": "B",
+          "text": "Urine cytology + ureteroscopy with biopsy",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ diagnosis UTUC"
+        },
+        {
+          "label": "C",
+          "text": "Radical nephrectomy ทันที",
+          "is_correct": false,
+          "explanation": "ต้อง biopsy confirm diagnosis ก่อน และ UTUC ต้องการ nephroureterectomy ไม่ใช่แค่ nephrectomy"
+        },
+        {
+          "label": "D",
+          "text": "Ureteral stent placement",
+          "is_correct": false,
+          "explanation": "ไม่ช่วย diagnosis และอาจขัดขวาง ureteroscopy"
+        },
+        {
+          "label": "E",
+          "text": "Repeat CT ใน 3 เดือน",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไปสำหรับ suspected malignancy"
+        }
+      ],
+      "key_takeaway": "Painless hematuria + CT filling defect ใน upper tract → สงสัย UTUC → ureteroscopy + biopsy เพื่อ tissue diagnosis"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี PSA 8.5 ng/mL (เพิ่มจาก 5.2 เมื่อปีที่แล้ว) DRE พบ hard nodule ที่ right lobe prostate ขั้นตอนต่อไปที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Repeat PSA ใน 6 เดือน"
+      },
+      {
+        "label": "B",
+        "text": "MRI prostate (mpMRI) ก่อน biopsy"
+      },
+      {
+        "label": "C",
+        "text": "Transrectal ultrasound-guided biopsy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Bone scan เพื่อ staging"
+      },
+      {
+        "label": "E",
+        "text": "Radical prostatectomy ทันที"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PSA rising + DRE abnormal → mpMRI ก่อน biopsy (EAU/AUA 2022-2023 guideline)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. MRI prostate (mpMRI) ก่อน biopsy",
+      "reason": "EAU/AUA guidelines ปัจจุบัน (2022-2023) แนะนำ multiparametric MRI (mpMRI) ก่อน biopsy เพราะ:\n1. PIRADS 1-2 → ลด unnecessary biopsy 28-30%\n2. PIRADS 3-5 → targeted (fusion) biopsy + systematic biopsy → detection rate สูงกว่า\n3. ลด missed high-grade cancer\n\nPSA velocity สูง (5.2 → 8.5 ใน 1 ปี = 3.3 ng/mL/yr > 0.75 ซึ่งเป็น red flag) + DRE abnormal → indication ชัดเจนสำหรับ biopsy แต่ต้อง mpMRI ก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Repeat PSA ใน 6 เดือน",
+          "is_correct": false,
+          "explanation": "DRE abnormal + PSA velocity สูง ล่าช้าเกินไป"
+        },
+        {
+          "label": "B",
+          "text": "MRI prostate (mpMRI) ก่อน biopsy",
+          "is_correct": true,
+          "explanation": "Current guideline: mpMRI first → targeted + systematic biopsy"
+        },
+        {
+          "label": "C",
+          "text": "Transrectal ultrasound-guided biopsy ทันที",
+          "is_correct": false,
+          "explanation": "Outdated; mpMRI-guided ดีกว่า systematic TRUS biopsy เดี่ยว"
+        },
+        {
+          "label": "D",
+          "text": "Bone scan เพื่อ staging",
+          "is_correct": false,
+          "explanation": "ยังไม่มี confirmed diagnosis และยังไม่ถึง high-risk criteria"
+        },
+        {
+          "label": "E",
+          "text": "Radical prostatectomy ทันที",
+          "is_correct": false,
+          "explanation": "ต้อง biopsy confirm diagnosis ก่อนผ่าตัด"
+        }
+      ],
+      "key_takeaway": "PSA rising + DRE abnormal → mpMRI ก่อน biopsy (guideline 2022-2023): ลด unnecessary biopsy + เพิ่ม detection high-grade cancer"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 35 ปี อัณฑะขวาบวมไม่เจ็บมา 3 เดือน Scrotal US: heterogeneous hypoechoic mass 3 cm ที่ right testis AFP 450 ng/mL, beta-hCG 80 IU/L การรักษาที่ถูกต้องคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Scrotal biopsy เพื่อยืนยัน diagnosis"
+      },
+      {
+        "label": "B",
+        "text": "Radical orchiectomy via inguinal approach"
+      },
+      {
+        "label": "C",
+        "text": "Chemotherapy BEP ก่อนผ่าตัด"
+      },
+      {
+        "label": "D",
+        "text": "Radiation therapy ไปยัง retroperitoneum"
+      },
+      {
+        "label": "E",
+        "text": "Watchful waiting + repeat ultrasound"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Testicular tumor → radical INGUINAL orchiectomy เป็น first step (ห้าม scrotal approach)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Radical orchiectomy via inguinal approach",
+      "reason": "Testicular germ cell tumor สงสัยจาก painless testicular mass + elevated tumor markers (AFP สูง → non-seminoma component)\n\nRadical inguinal orchiectomy คือ FIRST step เสมอ: diagnostic (pathology) + therapeutic (local control)\n\nห้าม scrotal approach/biopsy: violate scrotal skin → lymphatic drainage เปลี่ยนจาก retroperitoneal nodes → inguinal nodes → เพิ่ม local recurrence risk\n\nหลัง orchiectomy: CT abdomen/pelvis/chest + tumor markers → staging → adjuvant therapy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Scrotal biopsy เพื่อยืนยัน diagnosis",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด! Scrotal approach เปลี่ยน lymphatic drainage → worse prognosis"
+        },
+        {
+          "label": "B",
+          "text": "Radical orchiectomy via inguinal approach",
+          "is_correct": true,
+          "explanation": "First step เสมอ: diagnosis + treatment + preserves lymphatic drainage"
+        },
+        {
+          "label": "C",
+          "text": "Chemotherapy BEP ก่อนผ่าตัด",
+          "is_correct": false,
+          "explanation": "Neoadjuvant chemo ไม่ใช่ standard ยกเว้น extensive metastatic disease"
+        },
+        {
+          "label": "D",
+          "text": "Radiation therapy ไปยัง retroperitoneum",
+          "is_correct": false,
+          "explanation": "RT อาจมีบทบาทใน stage I seminoma หลัง orchiectomy แต่ไม่ใช่ first step"
+        },
+        {
+          "label": "E",
+          "text": "Watchful waiting + repeat ultrasound",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไปสำหรับ suspected malignancy"
+        }
+      ],
+      "key_takeaway": "Testicular cancer → Radical INGUINAL orchiectomy เป็น first step เสมอ (ห้าม scrotal approach/biopsy เด็ดขาด)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี ปวดสีข้างขวาร้าวลงขาหนีบ เฉียบพลัน คลื่นไส้อาเจียน hematuria CT KUB พบ calculus 6 mm ที่ right distal ureter (UVJ) ไม่มีไข้ creatinine ปกติ การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Emergency ureteroscopy + laser lithotripsy"
+      },
+      {
+        "label": "B",
+        "text": "Medical expulsive therapy (tamsulosin) + pain control"
+      },
+      {
+        "label": "C",
+        "text": "Percutaneous nephrostomy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ESWL"
+      },
+      {
+        "label": "E",
+        "text": "Open ureterolithotomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Distal ureteral stone 6 mm ไม่มี complications → Medical Expulsive Therapy (MET) ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Medical expulsive therapy (tamsulosin) + pain control",
+      "reason": "Ureteral calculus การตัดสินใจรักษาขึ้นกับขนาด stone และ complications:\n- < 5 mm: spontaneous passage ~68%; 5-10 mm: ~47%\n- Distal ureter (UVJ): passage rate สูงกว่า proximal ureter\n\nStone 6 mm ที่ distal ureter ไม่มี complications (ไม่มีไข้ ไม่มี AKI) → Medical Expulsive Therapy:\n- Tamsulosin 0.4 mg/day: ลด ureteral spasm → เพิ่ม passage rate 29% และเร็วขึ้น\n- NSAIDs/opioids: pain control\n- ติดตาม 4-6 สัปดาห์\n\nESWL ใช้กับ proximal ureteral/renal stones ดีกว่า\nPercutaneous nephrostomy: สำหรับ obstructed + infected (urosepsis)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Emergency ureteroscopy + laser lithotripsy",
+          "is_correct": false,
+          "explanation": "ใช้เมื่อ MET ล้มเหลว หรือมี indications (fever, AKI, uncontrolled pain)"
+        },
+        {
+          "label": "B",
+          "text": "Medical expulsive therapy (tamsulosin) + pain control",
+          "is_correct": true,
+          "explanation": "First-line สำหรับ distal ureteral stone ≤ 10 mm ไม่มี complications"
+        },
+        {
+          "label": "C",
+          "text": "Percutaneous nephrostomy ทันที",
+          "is_correct": false,
+          "explanation": "สำหรับ obstructed + infected (urosepsis) หรือ AKI เท่านั้น"
+        },
+        {
+          "label": "D",
+          "text": "ESWL",
+          "is_correct": false,
+          "explanation": "ESWL ดีกว่าสำหรับ renal/proximal ureteral stones ไม่ใช่ distal ureter"
+        },
+        {
+          "label": "E",
+          "text": "Open ureterolithotomy",
+          "is_correct": false,
+          "explanation": "Obsolete แทบไม่ใช้ในยุค endourology"
+        }
+      ],
+      "key_takeaway": "Distal ureteral stone ≤ 10 mm ไม่มี complications → MET (tamsulosin) + pain control 4-6 สัปดาห์ก่อน"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 30 ปี infertility 2 ปี ภรรยาตรวจปกติ Semen: concentration 2M/mL, motility 20%, morphology 2% Physical exam: bilateral varicocele grade 2-3 FSH ปกติ การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Clomiphene citrate"
+      },
+      {
+        "label": "B",
+        "text": "Microsurgical varicocelectomy"
+      },
+      {
+        "label": "C",
+        "text": "IVF/ICSI ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Testosterone replacement therapy"
+      },
+      {
+        "label": "E",
+        "text": "Antioxidant supplements เท่านั้น"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Clinical varicocele + abnormal semen + female normal → varicocelectomy (gold standard, correctable cause)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Microsurgical varicocelectomy",
+      "reason": "Varicocele เป็นสาเหตุที่แก้ไขได้บ่อยที่สุดของ male infertility (~35-40%)\n\nIndications สำหรับ repair:\n1. Palpable varicocele (grade 2-3)\n2. Couple infertility ≥ 1 ปี\n3. Abnormal semen parameters ≥ 1 parameter\n4. Female partner normal\n\nMicrosurgical subinguinal varicocelectomy = gold standard: recurrence < 1%, hydrocele < 1%\n- ปรับปรุง sperm parameters 60-70%\n- Natural pregnancy rate เพิ่มขึ้น\n\nห้ามให้ testosterone: ยับยั้ง spermatogenesis ผ่าน negative feedback\nIVF/ICSI: invasive + แพง ควร surgical correction ก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Clomiphene citrate",
+          "is_correct": false,
+          "explanation": "FSH ปกติ ไม่มี clear indication สู้ surgery ไม่ได้"
+        },
+        {
+          "label": "B",
+          "text": "Microsurgical varicocelectomy",
+          "is_correct": true,
+          "explanation": "Gold standard: correctable cause + meeting all indications"
+        },
+        {
+          "label": "C",
+          "text": "IVF/ICSI ทันที",
+          "is_correct": false,
+          "explanation": "ควรลอง surgical correction ก่อน: less invasive + cost-effective"
+        },
+        {
+          "label": "D",
+          "text": "Testosterone replacement therapy",
+          "is_correct": false,
+          "explanation": "ห้ามใช้ใน infertility! ยับยั้ง gonadotropins → spermatogenesis แย่ลง"
+        },
+        {
+          "label": "E",
+          "text": "Antioxidant supplements เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอเมื่อมี correctable cause (varicocele)"
+        }
+      ],
+      "key_takeaway": "Clinical varicocele + abnormal semen + normal female → Microsurgical varicocelectomy (gold standard); ห้าม testosterone ใน infertility"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี G3P3 BMI 32 ปัสสาวะราด (stress incontinence) เวลาไอ จาม 2 ปี DRE: cystocele grade 2 Urodynamics: urethral hypermobility ไม่มี detrusor overactivity การรักษาเบื้องต้นคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Midurethral sling (TVT/TOT) ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Pelvic floor muscle training (Kegel) + weight loss"
+      },
+      {
+        "label": "C",
+        "text": "Anticholinergic drugs (oxybutynin)"
+      },
+      {
+        "label": "D",
+        "text": "Colporrhaphy"
+      },
+      {
+        "label": "E",
+        "text": "Urethral bulking agent injection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SUI → Conservative first: PFMT + weight loss (ลด 50% incontinence episodes)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Pelvic floor muscle training (Kegel) + weight loss",
+      "reason": "Stress Urinary Incontinence (SUI) จาก urethral hypermobility — stepped approach:\n\nStep 1 Conservative (First line):\n- PFMT (Kegel): ≥ 3 เดือน → ลด SUI episodes 50-70% (Evidence 1A)\n- Weight loss: BMI ลด 5-10% → ลด incontinence 50%\n\nStep 2 Surgical (ถ้า conservative fail):\n- Midurethral sling (TVT/TOT): success rate 80-90%\n\nAnticholinergics (oxybutynin): สำหรับ overactive bladder ไม่ใช่ SUI\nBulking agent: สำหรับ intrinsic sphincter deficiency หรือ poor surgical candidate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Midurethral sling (TVT/TOT) ทันที",
+          "is_correct": false,
+          "explanation": "Surgery เป็น second line หลัง conservative fail ≥ 3 เดือน"
+        },
+        {
+          "label": "B",
+          "text": "Pelvic floor muscle training (Kegel) + weight loss",
+          "is_correct": true,
+          "explanation": "First-line conservative treatment สำหรับ SUI (Evidence 1A)"
+        },
+        {
+          "label": "C",
+          "text": "Anticholinergic drugs (oxybutynin)",
+          "is_correct": false,
+          "explanation": "สำหรับ urge incontinence (OAB) ไม่ใช่ SUI"
+        },
+        {
+          "label": "D",
+          "text": "Colporrhaphy",
+          "is_correct": false,
+          "explanation": "แก้ cystocele แต่ไม่แก้ SUI และไม่ใช่ first step"
+        },
+        {
+          "label": "E",
+          "text": "Urethral bulking agent injection",
+          "is_correct": false,
+          "explanation": "สำหรับ intrinsic sphincter deficiency หรือ poor surgical candidates"
+        }
+      ],
+      "key_takeaway": "SUI จาก urethral hypermobility → Conservative first: PFMT + weight loss ≥ 3 เดือน ก่อน surgery (midurethral sling)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 25 ปี อุบัติเหตุรถชน CT cystogram พบ extraperitoneal bladder rupture Hemodynamically stable ไม่มีบาดเจ็บอื่น การรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Emergency laparotomy + primary repair"
+      },
+      {
+        "label": "B",
+        "text": "Urethral Foley catheter drainage + conservative 2-3 สัปดาห์"
+      },
+      {
+        "label": "C",
+        "text": "Suprapubic cystostomy เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "Observation ไม่ต้องใส่ catheter"
+      },
+      {
+        "label": "E",
+        "text": "Cystoscopy + endoscopic repair"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Extraperitoneal bladder rupture → conservative: Foley catheter drainage 10-14 วัน (85% หายเอง)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Urethral Foley catheter drainage + conservative 2-3 สัปดาห์",
+      "reason": "Traumatic bladder rupture แบ่งเป็น:\n\nIntraperitoneal (IP) rupture: contrast รั่วเข้า peritoneal cavity → SURGICAL REPAIR เสมอ\n\nExtraperitoneal (EP) rupture: contrast รั่วอยู่ใน perivesical space → Conservative:\n- Foley catheter drainage 10-14 วัน\n- ~85% หายเองจาก tamponade โดย pelvic hematoma\n- Repeat cystogram ที่ 10-14 วัน\n- ผ่าตัดถ้าไม่หายใน 3 สัปดาห์ หรือมี bladder neck injury, rectal injury",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Emergency laparotomy + primary repair",
+          "is_correct": false,
+          "explanation": "สำหรับ intraperitoneal rupture เท่านั้น"
+        },
+        {
+          "label": "B",
+          "text": "Urethral Foley catheter drainage + conservative 2-3 สัปดาห์",
+          "is_correct": true,
+          "explanation": "Standard สำหรับ uncomplicated extraperitoneal bladder rupture (85% heal spontaneously)"
+        },
+        {
+          "label": "C",
+          "text": "Suprapubic cystostomy เท่านั้น",
+          "is_correct": false,
+          "explanation": "ใช้เมื่อ urethral injury ทำให้ใส่ Foley ไม่ได้"
+        },
+        {
+          "label": "D",
+          "text": "Observation ไม่ต้องใส่ catheter",
+          "is_correct": false,
+          "explanation": "ต้องใส่ catheter เพื่อ urine drainage และ bladder rest"
+        },
+        {
+          "label": "E",
+          "text": "Cystoscopy + endoscopic repair",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard approach สำหรับ traumatic bladder rupture"
+        }
+      ],
+      "key_takeaway": "Bladder rupture: Extraperitoneal → Foley catheter conservative; Intraperitoneal → surgical repair เสมอ"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายแรกเกิดพบ hypospadias (penoscrotal junction) + chordee + cryptorchidism ข้างซ้าย ควรรักษาเมื่อใดและอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "รอจนอายุ 10-12 ปี ก่อนผ่าตัด"
+      },
+      {
+        "label": "B",
+        "text": "ผ่าตัด hypospadias repair + orchiopexy อายุ 6-18 เดือน"
+      },
+      {
+        "label": "C",
+        "text": "ไม่ต้องรักษา หายเองได้"
+      },
+      {
+        "label": "D",
+        "text": "Hormone therapy (hCG) เพื่อให้อัณฑะลงมาเอง"
+      },
+      {
+        "label": "E",
+        "text": "Circumcision ทันทีแรกเกิด"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypospadias + cryptorchidism → surgical repair ที่อายุ 6-18 เดือน; ห้าม circumcision (ต้องใช้ foreskin ใน repair)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ผ่าตัด hypospadias repair + orchiopexy อายุ 6-18 เดือน",
+      "reason": "Timing การรักษา:\n- Orchiopexy (cryptorchidism): ก่อน 12-18 เดือน (ดีที่สุด 6-12 เดือน)\n  → spermatogonia เสื่อมถ้าอยู่ใน abdomen นาน → infertility + testicular cancer risk\n- Hypospadias repair: 6-18 เดือน (optimal 6-12 เดือน)\n  → ใช้ penile skin (foreskin) ทำ urethroplasty\n\nห้าม circumcision: foreskin จำเป็นสำหรับ urethroplasty skin graft\nHormone therapy (hCG, GnRH): ไม่แนะนำ (success rate ต่ำ + side effects)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "รอจนอายุ 10-12 ปี ก่อนผ่าตัด",
+          "is_correct": false,
+          "explanation": "ช้าเกินไป spermatogonia เสื่อม + psychological impact"
+        },
+        {
+          "label": "B",
+          "text": "ผ่าตัด hypospadias repair + orchiopexy อายุ 6-18 เดือน",
+          "is_correct": true,
+          "explanation": "Optimal timing: fertility preservation + surgical outcome"
+        },
+        {
+          "label": "C",
+          "text": "ไม่ต้องรักษา หายเองได้",
+          "is_correct": false,
+          "explanation": "Hypospadias ไม่หายเอง cryptorchidism เพิ่ม risk malignancy + infertility"
+        },
+        {
+          "label": "D",
+          "text": "Hormone therapy (hCG) เพื่อให้อัณฑะลงมาเอง",
+          "is_correct": false,
+          "explanation": "Success rate ต่ำ ไม่แนะนำใน current guidelines"
+        },
+        {
+          "label": "E",
+          "text": "Circumcision ทันทีแรกเกิด",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด foreskin จำเป็นสำหรับ hypospadias repair"
+        }
+      ],
+      "key_takeaway": "Hypospadias + cryptorchidism → repair ที่ 6-18 เดือน; ห้าม circumcision ก่อน (foreskin = graft material)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี อัณฑะขวาปวดเฉียบพลัน 4 ชั่วโมง คลื่นไส้อาเจียน Cremasteric reflex ไม่มีข้างขวา Doppler US: absent blood flow right testis การจัดการคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotics IV + observe 24 ชั่วโมง"
+      },
+      {
+        "label": "B",
+        "text": "Emergency scrotal exploration + detorsion + orchiopexy"
+      },
+      {
+        "label": "C",
+        "text": "Urology consult ใน 24 ชั่วโมง"
+      },
+      {
+        "label": "D",
+        "text": "Analgesics + repeat Doppler ใน 6 ชั่วโมง"
+      },
+      {
+        "label": "E",
+        "text": "MRI scrotum เพื่อ confirm diagnosis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Testicular torsion → Emergency surgery ทันที < 6 ชั่วโมง (salvage rate ~100%)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Emergency scrotal exploration + detorsion + orchiopexy",
+      "reason": "Testicular torsion = Urological emergency!\n\nSigns ชัดเจน: acute severe pain + absent cremasteric reflex (sensitivity 99%) + absent Doppler flow\n\nTime-to-detorsion และ salvage rate:\n- < 6 ชั่วโมง: ~100%\n- 6-12 ชั่วโมง: ~70%\n- 12-24 ชั่วโมง: ~20-50%\n- > 24 ชั่วโมง: < 10%\n\nผู้ป่วยมา 4 ชั่วโมง → ผ่าตัดทันทีมีโอกาสรักษาได้เกือบ 100%\n\nขั้นตอนผ่าตัด:\n1. Scrotal exploration\n2. Detorsion ของ spermatic cord\n3. ถ้า viable → bilateral orchiopexy (3-point fixation)\n4. ถ้าไม่รอด → orchiectomy + contralateral orchiopexy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Antibiotics IV + observe 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "นี่ไม่ใช่ epididymo-orchitis! Torsion ต้องผ่าตัดทันที"
+        },
+        {
+          "label": "B",
+          "text": "Emergency scrotal exploration + detorsion + orchiopexy",
+          "is_correct": true,
+          "explanation": "Emergency surgery ทันที < 6 ชั่วโมง = ~100% salvage rate"
+        },
+        {
+          "label": "C",
+          "text": "Urology consult ใน 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไป testis จะ necrosis"
+        },
+        {
+          "label": "D",
+          "text": "Analgesics + repeat Doppler ใน 6 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "เสียเวลาโดยไม่จำเป็น ต้องผ่าตัดทันที"
+        },
+        {
+          "label": "E",
+          "text": "MRI scrotum เพื่อ confirm diagnosis",
+          "is_correct": false,
+          "explanation": "ถ้าสงสัย torsion สูง ผ่าตัดทันทีดีกว่ารอ imaging"
+        }
+      ],
+      "key_takeaway": "Testicular torsion = Urological emergency → Emergency scrotal exploration ทันที; < 6 ชั่วโมง = ~100% salvage rate"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี ไตซ้ายมีก้อน 4 cm enhancement ชัด ไม่มี LN ไม่มี mets ไตขวาปกติ การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Radical nephrectomy"
+      },
+      {
+        "label": "B",
+        "text": "Partial nephrectomy (nephron-sparing)"
+      },
+      {
+        "label": "C",
+        "text": "Radiofrequency ablation"
+      },
+      {
+        "label": "D",
+        "text": "Active surveillance"
+      },
+      {
+        "label": "E",
+        "text": "Sunitinib"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Renal mass T1b + contralateral normal kidney → partial nephrectomy preferred (equivalent oncology + better renal function)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Partial nephrectomy (nephron-sparing)",
+      "reason": "RCC ที่สงสัยจาก enhancing renal mass 4 cm (T1b: 4-7 cm)\n\nPartial nephrectomy preferred สำหรับ T1 tumor:\n- Oncological outcome equivalent กับ radical nephrectomy\n- ลด risk CKD หลังผ่าตัด\n- เก็บ renal function ได้มากกว่า\n\nActive surveillance: สำหรับ small renal mass < 3 cm ใน elderly/comorbid\nRFA/ablation: สำหรับ poor surgical candidate\nSunitinib: สำหรับ metastatic RCC เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Radical nephrectomy",
+          "is_correct": false,
+          "explanation": "Acceptable แต่ไม่ preferred เมื่อ partial ทำได้"
+        },
+        {
+          "label": "B",
+          "text": "Partial nephrectomy (nephron-sparing)",
+          "is_correct": true,
+          "explanation": "Preferred: equivalent oncology + better renal function preservation"
+        },
+        {
+          "label": "C",
+          "text": "Radiofrequency ablation",
+          "is_correct": false,
+          "explanation": "สำหรับ poor surgical candidate; recurrence rate สูงกว่า"
+        },
+        {
+          "label": "D",
+          "text": "Active surveillance",
+          "is_correct": false,
+          "explanation": "สำหรับ < 3 cm elderly/comorbid เท่านั้น"
+        },
+        {
+          "label": "E",
+          "text": "Sunitinib",
+          "is_correct": false,
+          "explanation": "สำหรับ metastatic RCC เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Renal mass T1 + normal contralateral kidney → Partial nephrectomy preferred (same oncology + better renal function)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 75 ปี ปัสสาวะไม่ออกเลยครั้งแรก ปวดท้องน้อยมาก suprapubic fullness สิ่งที่ต้องทำทันทีคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Alpha-1 blocker (tamsulosin) และรอ 24 ชั่วโมง"
+      },
+      {
+        "label": "B",
+        "text": "Urethral catheterization (Foley) ทันที"
+      },
+      {
+        "label": "C",
+        "text": "TURP ฉุกเฉิน"
+      },
+      {
+        "label": "D",
+        "text": "IV furosemide เพื่อกระตุ้น diuresis"
+      },
+      {
+        "label": "E",
+        "text": "Ultrasound เพื่อยืนยันก่อน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute urinary retention = emergency → Foley catheter ทันที (immediate decompression)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Urethral catheterization (Foley) ทันที",
+      "reason": "Acute Urinary Retention (AUR) = urological emergency ต้องการ immediate bladder decompression:\n\n1. Insert Foley catheter ทันที (14-16 Fr) ก่อน imaging\n2. Drain ช้าๆ ถ้า volume > 1000 mL (ป้องกัน post-obstructive diuresis)\n3. ถ้าใส่ไม่ได้ (stricture, BPH severe) → suprapubic cystostomy\n\nหลัง decompression: trial voiding หลัง 3-7 วัน + alpha-blocker\nAUR ที่ไม่รักษา → renal damage จาก back pressure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Alpha-1 blocker (tamsulosin) และรอ 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "Alpha-blocker ไม่ช่วยในระยะเฉียบพลัน ต้อง immediate decompression ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Urethral catheterization (Foley) ทันที",
+          "is_correct": true,
+          "explanation": "Immediate bladder decompression = treatment of choice"
+        },
+        {
+          "label": "C",
+          "text": "TURP ฉุกเฉิน",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ emergency procedure ต้อง catheter stabilize ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "IV furosemide เพื่อกระตุ้น diuresis",
+          "is_correct": false,
+          "explanation": "ไม่มีประโยชน์ urine ออกไม่ได้เพราะ outlet obstruction"
+        },
+        {
+          "label": "E",
+          "text": "Ultrasound เพื่อยืนยันก่อน",
+          "is_correct": false,
+          "explanation": "Clinical diagnosis ชัดเจน ไม่ต้องรอ imaging ก่อน decompression"
+        }
+      ],
+      "key_takeaway": "Acute Urinary Retention = emergency → Foley catheter ทันที (decompression before any investigation)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี asymptomatic microscopic hematuria 25 RBC/HPF จาก routine UA ไม่มี proteinuria BP ปกติ ขั้นตอนต่อไปคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Repeat urinalysis ใน 6 เดือน"
+      },
+      {
+        "label": "B",
+        "text": "CT urography + cystoscopy"
+      },
+      {
+        "label": "C",
+        "text": "Kidney biopsy"
+      },
+      {
+        "label": "D",
+        "text": "Urine culture เพื่อ rule out infection"
+      },
+      {
+        "label": "E",
+        "text": "Renal ultrasound เท่านั้น"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Asymptomatic hematuria ชาย > 40 ปี → CT urography + cystoscopy (AUA guideline)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. CT urography + cystoscopy",
+      "reason": "Asymptomatic microscopic hematuria (AMH) ในชาย > 35-40 ปี → risk factor สำหรับ urothelial malignancy\n\nAUA guideline 2020:\n- CT urography: evaluate upper tract (renal mass, UTUC, stones)\n- Cystoscopy: evaluate bladder (bladder cancer พบบ่อย)\n\nKidney biopsy: สำหรับ suspected glomerular disease (proteinuria + RBC casts)\nRenal US เดี่ยว: ไม่เพียงพอ ไม่เห็น ureteral lesions",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Repeat urinalysis ใน 6 เดือน",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไปสำหรับชาย > 40 ปี + significant hematuria"
+        },
+        {
+          "label": "B",
+          "text": "CT urography + cystoscopy",
+          "is_correct": true,
+          "explanation": "AUA guideline: complete evaluation สำหรับ AMH ในชาย > 35-40 ปี"
+        },
+        {
+          "label": "C",
+          "text": "Kidney biopsy",
+          "is_correct": false,
+          "explanation": "สำหรับ suspected glomerulonephritis (proteinuria + RBC casts)"
+        },
+        {
+          "label": "D",
+          "text": "Urine culture เพื่อ rule out infection",
+          "is_correct": false,
+          "explanation": "ทำร่วมได้แต่ไม่ใช่ complete evaluation สำหรับ AMH"
+        },
+        {
+          "label": "E",
+          "text": "Renal ultrasound เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอ ไม่เห็น ureteral lesions + bladder"
+        }
+      ],
+      "key_takeaway": "Asymptomatic microscopic hematuria ชาย > 35-40 ปี → CT urography + cystoscopy (rule out urothelial malignancy)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 35 ปี อุบัติเหตุตกจากที่สูง CT: Grade III renal laceration + urinoma เล็กน้อย Hemodynamically stable BP 120/80 Hct ไม่ลดลง การรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Emergency surgical exploration ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Conservative management (bed rest + monitoring)"
+      },
+      {
+        "label": "C",
+        "text": "Embolization ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Ureteral stent + percutaneous drainage"
+      },
+      {
+        "label": "E",
+        "text": "Radical nephrectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Renal trauma Grade III + hemodynamically stable → conservative management (success > 90%)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Conservative management (bed rest + monitoring)",
+      "reason": "Renal trauma AAST grading:\n- Grade I-II: contusion/minor laceration → conservative\n- Grade III: laceration > 1 cm ถึง collecting system → usually conservative if stable\n- Grade IV: laceration ถึง pelvis/main vessels → embolization/surgery\n- Grade V: shattered/avulsion → surgery\n\nHemodynamically stable + Grade III → Conservative:\n- Bed rest, serial monitoring (BP, Hct, urine output)\n- Repeat imaging ถ้า deteriorate\n- > 90% success rate\n\nUrinoma เล็กน้อย: resolve เอง ถ้าโต → percutaneous drainage ± stent",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Emergency surgical exploration ทันที",
+          "is_correct": false,
+          "explanation": "Hemodynamically stable ไม่มี indication surgery ฉุกเฉิน"
+        },
+        {
+          "label": "B",
+          "text": "Conservative management (bed rest + monitoring)",
+          "is_correct": true,
+          "explanation": "Standard สำหรับ Grade I-III renal trauma ที่ stable (success > 90%)"
+        },
+        {
+          "label": "C",
+          "text": "Embolization ทันที",
+          "is_correct": false,
+          "explanation": "สำหรับ active arterial bleeding (Grade IV-V) หรือ conservative fail"
+        },
+        {
+          "label": "D",
+          "text": "Ureteral stent + percutaneous drainage",
+          "is_correct": false,
+          "explanation": "อาจจำเป็นถ้า urinoma โตขึ้น ไม่ใช่ first step"
+        },
+        {
+          "label": "E",
+          "text": "Radical nephrectomy",
+          "is_correct": false,
+          "explanation": "Last resort เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Renal trauma Grade I-III + hemodynamically stable → Conservative; surgery สำหรับ unstable หรือ Grade IV-V"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 28 ปี อัณฑะซ้ายโตช้าๆ 6 เดือน ไม่เจ็บ Scrotal US: avascular hydrocele smooth wall ไม่มี solid component AFP, hCG, LDH ปกติ การรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Radical inguinal orchiectomy"
+      },
+      {
+        "label": "B",
+        "text": "Aspiration + sclerotherapy"
+      },
+      {
+        "label": "C",
+        "text": "Surgical hydrocelectomy"
+      },
+      {
+        "label": "D",
+        "text": "Observation เท่านั้น"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy BEP"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Primary hydrocele + no solid component + normal markers → surgical hydrocelectomy (definitive treatment)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Surgical hydrocelectomy",
+      "reason": "Hydrocele = สะสม fluid ระหว่าง tunica vaginalis layers\nUS ไม่มี solid + markers ปกติ → ไม่สงสัย testicular tumor\n\nการรักษา primary hydrocele:\n- **Surgical hydrocelectomy** (Lord's plication หรือ Jaboulay eversion): recurrence < 5%\n- Aspiration ± sclerotherapy: recurrence 50-80%, เพิ่ม infection risk\n\nHydrocele โตขึ้น 6 เดือน → symptomatic → ต้องการรักษา\nไม่ใช่ tumor ดังนั้นไม่ต้อง orchiectomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Radical inguinal orchiectomy",
+          "is_correct": false,
+          "explanation": "ไม่สงสัย tumor ไม่มี indication"
+        },
+        {
+          "label": "B",
+          "text": "Aspiration + sclerotherapy",
+          "is_correct": false,
+          "explanation": "Recurrence 50-80% ไม่ใช่ preferred treatment"
+        },
+        {
+          "label": "C",
+          "text": "Surgical hydrocelectomy",
+          "is_correct": true,
+          "explanation": "Definitive treatment สำหรับ symptomatic primary hydrocele (recurrence < 5%)"
+        },
+        {
+          "label": "D",
+          "text": "Observation เท่านั้น",
+          "is_correct": false,
+          "explanation": "โตขึ้น 6 เดือน = symptomatic ต้องการรักษา"
+        },
+        {
+          "label": "E",
+          "text": "Chemotherapy BEP",
+          "is_correct": false,
+          "explanation": "สำหรับ testicular germ cell tumor ไม่ใช่ hydrocele"
+        }
+      ],
+      "key_takeaway": "Primary hydrocele + no tumor evidence → Surgical hydrocelectomy (Lord/Jaboulay); aspiration recurrence สูงมาก"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี DM 10 ปี HbA1c 9.5% IIEF-5 score 8 (severe ED) ทดสอบ nocturnal penile tumescence (NPT) ปกติ สาเหตุ ED ที่น่าจะเป็นที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vasculogenic (arterial insufficiency)"
+      },
+      {
+        "label": "B",
+        "text": "Psychogenic ED"
+      },
+      {
+        "label": "C",
+        "text": "Neurogenic ED"
+      },
+      {
+        "label": "D",
+        "text": "Hormonal (hypogonadism)"
+      },
+      {
+        "label": "E",
+        "text": "Venogenic (venous leak)"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "NPT ปกติ = organic mechanism intact → ED จาก psychological factors (psychogenic ED)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Psychogenic ED",
+      "reason": "Nocturnal Penile Tumescence (NPT) test:\n- NPT ปกติ → erection function ทางกายภาพยังปกติ → ED มาจาก psychological factors\n- NPT ผิดปกติ → organic cause (vasculogenic, neurogenic, hormonal)\n\nDiabetes เป็น risk factor สำหรับ organic ED แต่ NPT ปกติชี้ว่าระบบ neurovascular ยังทำงานได้ → Psychogenic\n\nการรักษา Psychogenic ED:\n1. Psychosexual counseling\n2. PDE-5 inhibitors (sildenafil) ± therapy\n3. Treat underlying psychological issues",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Vasculogenic (arterial insufficiency)",
+          "is_correct": false,
+          "explanation": "NPT ปกติ contradict vasculogenic"
+        },
+        {
+          "label": "B",
+          "text": "Psychogenic ED",
+          "is_correct": true,
+          "explanation": "NPT ปกติ = organic mechanism intact → ED จาก psychological factors"
+        },
+        {
+          "label": "C",
+          "text": "Neurogenic ED",
+          "is_correct": false,
+          "explanation": "NPT ปกติ contradict neurogenic cause"
+        },
+        {
+          "label": "D",
+          "text": "Hormonal (hypogonadism)",
+          "is_correct": false,
+          "explanation": "NPT ปกติ ทำให้ organic cause น้อยลง"
+        },
+        {
+          "label": "E",
+          "text": "Venogenic (venous leak)",
+          "is_correct": false,
+          "explanation": "NPT ปกติ contradict venous leak"
+        }
+      ],
+      "key_takeaway": "NPT ปกติ + ED = Psychogenic ED; NPT ผิดปกติ = Organic ED (vasculogenic/neurogenic/hormonal)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 38 ปี azoospermia FSH 28 IU/L (สูงมาก) testosterone ปกติ Karyotype 47,XXY การรักษา infertility ที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Testosterone replacement + IVF"
+      },
+      {
+        "label": "B",
+        "text": "Varicocelectomy"
+      },
+      {
+        "label": "C",
+        "text": "Micro-TESE + ICSI"
+      },
+      {
+        "label": "D",
+        "text": "Gonadotropin therapy (FSH/hCG)"
+      },
+      {
+        "label": "E",
+        "text": "Donor sperm เท่านั้น"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Klinefelter syndrome (47,XXY) + azoospermia → Micro-TESE + ICSI (sperm retrieval ~50%)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Micro-TESE + ICSI",
+      "reason": "Klinefelter syndrome (47,XXY) = non-obstructive azoospermia ที่พบบ่อยที่สุด\n\nMicro-TESE (Microsurgical Testicular Sperm Extraction):\n- Sperm retrieval rate ~50% ใน Klinefelter\n- ใช้ microscope x10-25 หา dilated seminiferous tubules\n- Sperm ที่ได้ → ICSI\n\nห้ามให้ testosterone ก่อน: ยับยั้ง FSH → spermatogenesis แย่ลง\nGonadotropin therapy: ใช้กับ hypogonadotropic hypogonadism (FSH ต่ำ) ไม่ใช่ Klinefelter (FSH สูง)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Testosterone replacement + IVF",
+          "is_correct": false,
+          "explanation": "Testosterone ยับยั้ง FSH → spermatogenesis แย่ลง"
+        },
+        {
+          "label": "B",
+          "text": "Varicocelectomy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่สาเหตุใน Klinefelter"
+        },
+        {
+          "label": "C",
+          "text": "Micro-TESE + ICSI",
+          "is_correct": true,
+          "explanation": "Sperm retrieval ~50% ใน Klinefelter + ICSI = best chance biological child"
+        },
+        {
+          "label": "D",
+          "text": "Gonadotropin therapy (FSH/hCG)",
+          "is_correct": false,
+          "explanation": "สำหรับ hypogonadotropic hypogonadism (FSH ต่ำ) ไม่ใช่ Klinefelter"
+        },
+        {
+          "label": "E",
+          "text": "Donor sperm เท่านั้น",
+          "is_correct": false,
+          "explanation": "ยังมีโอกาส ~50% ได้ biological sperm จาก micro-TESE"
+        }
+      ],
+      "key_takeaway": "Klinefelter (47,XXY) + azoospermia → Micro-TESE + ICSI (50% success); ห้าม testosterone ก่อน (ยับยั้ง spermatogenesis)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 55 ปี menopause ปัสสาวะบ่อย urgency 8-10 ครั้ง/วัน กลางคืน 3 ครั้ง บางครั้งราดก่อนถึงห้องน้ำ Urinalysis ปกติ Culture negative Urodynamics: detrusor overactivity การรักษาเบื้องต้นคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Midurethral sling"
+      },
+      {
+        "label": "B",
+        "text": "Behavioral therapy + bladder training + anticholinergics"
+      },
+      {
+        "label": "C",
+        "text": "Botulinum toxin injection ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Sacral neuromodulation"
+      },
+      {
+        "label": "E",
+        "text": "Augmentation cystoplasty"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OAB + detrusor overactivity → First line: behavioral therapy + anticholinergics/beta-3 agonist",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Behavioral therapy + bladder training + anticholinergics",
+      "reason": "Overactive Bladder (OAB) = urgency, frequency, nocturia ± urgency incontinence\n\nStepwise treatment:\n\nFirst line:\n- Behavioral therapy: fluid management, timed voiding, urgency suppression\n- Bladder training (gradually increase intervals)\n- Pelvic floor exercises\n\nSecond line:\n- Anticholinergics (oxybutynin, solifenacin): ลด detrusor overactivity\n- Beta-3 agonist (mirabegron): ถ้า anticholinergic side effects\n\nThird line (fail conservative + pharmacological):\n- Botulinum toxin A intravesical\n- Sacral neuromodulation\n\nAugmentation cystoplasty: refractory OAB last resort",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Midurethral sling",
+          "is_correct": false,
+          "explanation": "สำหรับ stress incontinence ไม่ใช่ OAB/urgency incontinence"
+        },
+        {
+          "label": "B",
+          "text": "Behavioral therapy + bladder training + anticholinergics",
+          "is_correct": true,
+          "explanation": "First-line combination สำหรับ OAB"
+        },
+        {
+          "label": "C",
+          "text": "Botulinum toxin injection ทันที",
+          "is_correct": false,
+          "explanation": "Third-line หลัง conservative + pharmacological fail"
+        },
+        {
+          "label": "D",
+          "text": "Sacral neuromodulation",
+          "is_correct": false,
+          "explanation": "Third-line option หลัง first/second line fail"
+        },
+        {
+          "label": "E",
+          "text": "Augmentation cystoplasty",
+          "is_correct": false,
+          "explanation": "Last resort สำหรับ refractory OAB"
+        }
+      ],
+      "key_takeaway": "OAB + detrusor overactivity → First line: Behavioral + bladder training + anticholinergics/mirabegron"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี DM มาด้วย painful priapism > 4 ชั่วโมง Corpus cavernosum blood gas: pH 7.1, pO2 30 mmHg, pCO2 70 mmHg การจัดการทันทีคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation + warm compress"
+      },
+      {
+        "label": "B",
+        "text": "Aspiration + irrigation ± intracavernosal phenylephrine"
+      },
+      {
+        "label": "C",
+        "text": "Penile ice pack"
+      },
+      {
+        "label": "D",
+        "text": "IV sildenafil"
+      },
+      {
+        "label": "E",
+        "text": "Surgical shunt ทันที"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ischemic priapism (pH<7.25, pO2<30, pCO2>60) → aspiration + phenylephrine ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Aspiration + irrigation ± intracavernosal phenylephrine",
+      "reason": "Ischemic (low-flow) priapism = urological emergency\n\nBlood gas ยืนยัน ischemic: pH < 7.25, pO2 < 30, pCO2 > 60\n\nTreatment:\n1. Aspiration + irrigation (NS/RL): ลด intracorporal pressure + แทนที่ deoxygenated blood\n2. Intracavernosal phenylephrine (alpha-1 selective): smooth muscle contraction, ทุก 5 นาที สูงสุด 1 ชั่วโมง\n\nSurgical shunt (Winter/Al-Ghorab): ถ้า aspiration + phenylephrine fail > 1 ชั่วโมง\nSildenafil: ห้ามใช้ (เพิ่ม erection)\n\nPriapism > 36-48 ชั่วโมง → likely ED ถาวร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observation + warm compress",
+          "is_correct": false,
+          "explanation": "Emergency ต้องรักษาทันที ไม่รอ"
+        },
+        {
+          "label": "B",
+          "text": "Aspiration + irrigation ± intracavernosal phenylephrine",
+          "is_correct": true,
+          "explanation": "First-line treatment สำหรับ ischemic priapism"
+        },
+        {
+          "label": "C",
+          "text": "Penile ice pack",
+          "is_correct": false,
+          "explanation": "ไม่มี evidence ไม่ใช่ standard treatment"
+        },
+        {
+          "label": "D",
+          "text": "IV sildenafil",
+          "is_correct": false,
+          "explanation": "ห้ามใช้ใน priapism (เพิ่ม erection)"
+        },
+        {
+          "label": "E",
+          "text": "Surgical shunt ทันที",
+          "is_correct": false,
+          "explanation": "Second-line หลัง aspiration + phenylephrine fail"
+        }
+      ],
+      "key_takeaway": "Ischemic priapism → Emergency: aspiration + irrigation + intracavernosal phenylephrine ทันที; surgical shunt ถ้า fail"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 70 ปี ได้รับการวินิจฉัย prostate cancer Gleason 7 (3+4) cT2N0M0 (localized) ขนาด 40 mL life expectancy > 10 ปี ทางเลือกการรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Active surveillance เท่านั้น"
+      },
+      {
+        "label": "B",
+        "text": "Radical prostatectomy หรือ radiotherapy (equivalent options)"
+      },
+      {
+        "label": "C",
+        "text": "Androgen deprivation therapy (ADT) เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Watchful waiting เท่านั้น"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy (docetaxel)"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Localized intermediate-risk PCa + good life expectancy → Radical prostatectomy หรือ RT (equivalent efficacy)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Radical prostatectomy หรือ radiotherapy (equivalent options)",
+      "reason": "Prostate cancer localized intermediate-risk (Gleason 7, cT2) + life expectancy > 10 ปี → Curative intent treatment\n\nทั้งสองทางเลือกมี evidence ว่า equivalent ใน localized disease:\n\n**Radical Prostatectomy (RP)**:\n- Robot-assisted laparoscopic RP (RALP) นิยมที่สุด\n- ได้ tissue pathology ชัดเจน\n- Risks: incontinence (~10%), ED (~50%)\n\n**Radiotherapy (RT)**:\n- External beam RT (EBRT) ± brachytherapy\n- Equivalent oncological outcomes\n- Risks: rectal/bladder side effects\n\nActive surveillance: สำหรับ low-risk ไม่ใช่ intermediate-risk Gleason 7 ที่ healthy\nADT เดี่ยว: ไม่ curative สำหรับ localized disease\nChemotherapy: สำหรับ metastatic castration-resistant PCa",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Active surveillance เท่านั้น",
+          "is_correct": false,
+          "explanation": "สำหรับ low-risk PCa (Gleason 6) เท่านั้น Gleason 7 = intermediate-risk ต้องการรักษา"
+        },
+        {
+          "label": "B",
+          "text": "Radical prostatectomy หรือ radiotherapy (equivalent options)",
+          "is_correct": true,
+          "explanation": "Curative treatment สำหรับ localized intermediate-risk PCa + good life expectancy"
+        },
+        {
+          "label": "C",
+          "text": "Androgen deprivation therapy (ADT) เดี่ยว",
+          "is_correct": false,
+          "explanation": "ไม่ curative สำหรับ localized disease ใช้ adjuvant กับ RT ใน high-risk"
+        },
+        {
+          "label": "D",
+          "text": "Watchful waiting เท่านั้น",
+          "is_correct": false,
+          "explanation": "สำหรับ elderly poor health/life expectancy ต่ำเท่านั้น"
+        },
+        {
+          "label": "E",
+          "text": "Chemotherapy (docetaxel)",
+          "is_correct": false,
+          "explanation": "สำหรับ metastatic castration-resistant PCa เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Localized intermediate-risk PCa + life expectancy > 10 ปี → Radical prostatectomy หรือ radiotherapy (equivalent outcomes); active surveillance ไม่เพียงพอ"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี ได้รับการวินิจฉัย muscle-invasive bladder cancer (MIBC) cT2N0M0 transitional cell carcinoma ขนาด 3 cm ไม่มี hydronephrosis creatinine 1.1 mg/dL การรักษามาตรฐานคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "TURBT เพียงอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Radical cystectomy + neoadjuvant cisplatin-based chemotherapy"
+      },
+      {
+        "label": "C",
+        "text": "Intravesical BCG instillation"
+      },
+      {
+        "label": "D",
+        "text": "Radiation therapy เดี่ยว"
+      },
+      {
+        "label": "E",
+        "text": "Immunotherapy (pembrolizumab) เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MIBC cT2 → Neoadjuvant cisplatin-based chemo + radical cystectomy = standard of care",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Radical cystectomy + neoadjuvant cisplatin-based chemotherapy",
+      "reason": "Muscle-invasive bladder cancer (MIBC, cT2+) standard treatment:\n\n**Neoadjuvant cisplatin-based chemotherapy** (MVAC หรือ GC) + **Radical cystectomy**:\n- Neoadjuvant chemo ก่อน surgery ลด micrometastasis\n- ปรับปรุง overall survival ~5-8% (NNT ~14)\n- Radical cystectomy: ผู้ชาย = cystoprostatectomy; ผู้หญิง = anterior exenteration\n- Urinary diversion: ileal conduit (standard), orthotopic neobladder, continent pouch\n\nTURBT เดี่ยว: เหมาะกับ non-muscle invasive (Ta, T1) ไม่ใช่ MIBC\nIntravesical BCG: สำหรับ high-risk non-muscle invasive (carcinoma in situ, T1 high grade)\nRT เดี่ยว: bladder preservation protocol (สำหรับ unfit surgery หรือ trimodality: TURBT + chemo + RT)\nImmunotherapy: สำหรับ metastatic/advanced หรือ adjuvant post-cystectomy (ล่าสุด)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TURBT เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "เพียงพอสำหรับ non-muscle invasive เท่านั้น ไม่ใช่ MIBC"
+        },
+        {
+          "label": "B",
+          "text": "Radical cystectomy + neoadjuvant cisplatin-based chemotherapy",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ MIBC cT2-T4a ที่ fit สำหรับ surgery"
+        },
+        {
+          "label": "C",
+          "text": "Intravesical BCG instillation",
+          "is_correct": false,
+          "explanation": "สำหรับ high-risk NMIBC (CIS, T1 HG) ไม่ใช่ MIBC"
+        },
+        {
+          "label": "D",
+          "text": "Radiation therapy เดี่ยว",
+          "is_correct": false,
+          "explanation": "RT เดี่ยว inferior; trimodality (TURBT+chemo+RT) ใช้ใน bladder preservation"
+        },
+        {
+          "label": "E",
+          "text": "Immunotherapy (pembrolizumab) เดี่ยว",
+          "is_correct": false,
+          "explanation": "สำหรับ metastatic/unresectable หรือ adjuvant ไม่ใช่ first-line localized"
+        }
+      ],
+      "key_takeaway": "MIBC (cT2+) + fit for surgery → Neoadjuvant cisplatin-based chemo + Radical cystectomy = standard of care"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี มาด้วย right flank pain มา 2 ชั่วโมง ไข้ 38.8°C WBC 18,000 CT KUB พบ right ureteral stone 8 mm พร้อมกับ hydronephrosis grade 3 Creatinine 1.8 mg/dL (baseline 1.0) การจัดการที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Medical expulsive therapy (tamsulosin) + antibiotics"
+      },
+      {
+        "label": "B",
+        "text": "Emergency decompression (ureteral stent หรือ nephrostomy) + antibiotics IV"
+      },
+      {
+        "label": "C",
+        "text": "Ureteroscopy + lithotripsy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ESWL ทันที"
+      },
+      {
+        "label": "E",
+        "text": "IV fluids + analgesics + recheck ใน 24 ชั่วโมง"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ureteral stone + fever + AKI = obstructed infected kidney → Emergency decompression + IV antibiotics (ห้าม ureteroscopy ขณะ infected)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Emergency decompression (ureteral stent หรือ nephrostomy) + antibiotics IV",
+      "reason": "Obstructed infected kidney = urological emergency!\n\nTriad: stone + fever + AKI → urosepsis risk\n\nManagement:\n1. **IV antibiotics ทันที** (broad spectrum: fluoroquinolone หรือ piperacillin-tazobactam)\n2. **Emergency decompression** (ทำในทันทีหรือภายใน 12 ชั่วโมง):\n   - Ureteral stent (JJ stent): ผ่าน cystoscopy\n   - Percutaneous nephrostomy (PCN): ใน septic/unstable หรือ stent fail\n\nห้าม ureteroscopy ขณะ infected: เพิ่ม bacteremia/sepsis risk จาก intrapelvic pressure\nหลัง infection control แล้ว (~1-2 สัปดาห์): definitive stone treatment (URS หรือ ESWL)\n\nUrosepsis risk: อาจถึงแก่ชีวิตได้ถ้าไม่ decompress ทันที",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Medical expulsive therapy (tamsulosin) + antibiotics",
+          "is_correct": false,
+          "explanation": "MET ไม่เพียงพอเมื่อมี fever + AKI + obstruction ต้องการ emergency decompression"
+        },
+        {
+          "label": "B",
+          "text": "Emergency decompression (ureteral stent หรือ nephrostomy) + antibiotics IV",
+          "is_correct": true,
+          "explanation": "Obstructed infected kidney → Emergency decompression + IV antibiotics ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Ureteroscopy + lithotripsy ทันที",
+          "is_correct": false,
+          "explanation": "ห้าม URS ขณะ infected เพิ่ม bacteremia/sepsis"
+        },
+        {
+          "label": "D",
+          "text": "ESWL ทันที",
+          "is_correct": false,
+          "explanation": "ห้ามขณะ infected; ESWL ใช้หลัง infection control"
+        },
+        {
+          "label": "E",
+          "text": "IV fluids + analgesics + recheck ใน 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไป urosepsis อาจถึงแก่ชีวิต"
+        }
+      ],
+      "key_takeaway": "Stone + fever + AKI = Obstructed infected kidney → Emergency decompression (stent/PCN) + IV antibiotics ทันที (ห้าม URS ขณะ infected)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี ตั้งครรภ์ 28 สัปดาห์ มาด้วย left flank pain ไข้ 38.5°C UA: pyuria, bacteriuria Urine culture: E. coli ไวต่อ cephalosporin ปวดมาก ทารกในครรภ์ปกติ การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral nitrofurantoin"
+      },
+      {
+        "label": "B",
+        "text": "IV cephalosporin (ceftriaxone) + admission"
+      },
+      {
+        "label": "C",
+        "text": "Oral fluoroquinolone (ciprofloxacin)"
+      },
+      {
+        "label": "D",
+        "text": "Oral trimethoprim-sulfamethoxazole"
+      },
+      {
+        "label": "E",
+        "text": "IV aminoglycoside เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pyelonephritis ในหญิงตั้งครรภ์ → IV cephalosporin + admission (ห้าม fluoroquinolone, TMP-SMX ไตรมาส 3, nitrofurantoin ไตรมาส 3)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IV cephalosporin (ceftriaxone) + admission",
+      "reason": "Acute pyelonephritis ในหญิงตั้งครรภ์:\n\n**Severity**: ไข้ + flank pain + pyuria = pyelonephritis ไม่ใช่ simple UTI → ต้องการ IV therapy + admission\n\n**ยาที่ปลอดภัยในตั้งครรภ์สำหรับ UTI/pyelonephritis**:\n- Beta-lactams (cephalosporins, penicillins): safe all trimesters → First choice\n- Nitrofurantoin: safe ไตรมาส 1-2 แต่ห้ามไตรมาส 3 (hemolytic anemia ใน neonate)\n- TMP-SMX: ห้ามไตรมาส 1 (teratogen) และไตรมาส 3 (kernicterus risk)\n\n**ห้ามใช้**:\n- Fluoroquinolones: Category C/D → ผลต่อกระดูกอ่อน/cartilage ทารก\n- Aminoglycosides: nephrotoxic + ototoxic ต่อทารก\n\nผู้ป่วย 28 สัปดาห์ (ไตรมาส 3) → IV ceftriaxone + admission",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral nitrofurantoin",
+          "is_correct": false,
+          "explanation": "ห้ามไตรมาส 3 (hemolysis ทารก) + oral ไม่เพียงพอสำหรับ pyelonephritis"
+        },
+        {
+          "label": "B",
+          "text": "IV cephalosporin (ceftriaxone) + admission",
+          "is_correct": true,
+          "explanation": "Safe all trimesters + adequate coverage สำหรับ pyelonephritis ในตั้งครรภ์"
+        },
+        {
+          "label": "C",
+          "text": "Oral fluoroquinolone (ciprofloxacin)",
+          "is_correct": false,
+          "explanation": "ห้ามในตั้งครรภ์: ผลต่อ cartilage ทารก"
+        },
+        {
+          "label": "D",
+          "text": "Oral trimethoprim-sulfamethoxazole",
+          "is_correct": false,
+          "explanation": "ห้ามไตรมาส 3: kernicterus risk"
+        },
+        {
+          "label": "E",
+          "text": "IV aminoglycoside เดี่ยว",
+          "is_correct": false,
+          "explanation": "Nephrotoxic + ototoxic ต่อทารก หลีกเลี่ยงในตั้งครรภ์"
+        }
+      ],
+      "key_takeaway": "Pyelonephritis ตั้งครรภ์ → IV cephalosporin + admission; ห้าม fluoroquinolone, TMP-SMX (ไตรมาส 3), nitrofurantoin (ไตรมาส 3)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 25 ปี มาด้วย left varicocele grade 1 (palpable เฉพาะเวลา Valsalva) ไม่มีอาการ Semen analysis ปกติทุกตัวชี้วัด ต้องการรักษาหรือไม่",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Microsurgical varicocelectomy ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Observation เท่านั้น"
+      },
+      {
+        "label": "C",
+        "text": "Embolization ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Clomiphene citrate"
+      },
+      {
+        "label": "E",
+        "text": "Scrotal support + ice packs ถาวร"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Varicocele grade 1 + ไม่มีอาการ + semen ปกติ → Observation ไม่ต้องการ intervention",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Observation เท่านั้น",
+      "reason": "Indications สำหรับ varicocele treatment ต้องครบ:\n1. Palpable varicocele (grade 2-3) ✓ แต่ grade 1 = borderline\n2. Couple infertility ≥ 1 ปี\n3. Abnormal semen parameters ≥ 1 parameter\n4. Female partner normal\n\nผู้ป่วยรายนี้: grade 1 + semen ปกติ + ไม่มีอาการ → ไม่มี indication สำหรับ intervention\n\nVaricocele grade 1 เดี่ยวไม่จำเป็นต้องรักษา\nติดตาม: annual semen analysis และ testicular volume assessment\n\nถ้าในอนาคต: สุ่มตรวจพบ semen abnormality หรือ infertility → re-evaluate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Microsurgical varicocelectomy ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี indications: grade 1 + normal semen + no symptoms"
+        },
+        {
+          "label": "B",
+          "text": "Observation เท่านั้น",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: grade 1 + normal semen → ไม่มี indication สำหรับ intervention"
+        },
+        {
+          "label": "C",
+          "text": "Embolization ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี indications สำหรับ intervention"
+        },
+        {
+          "label": "D",
+          "text": "Clomiphene citrate",
+          "is_correct": false,
+          "explanation": "ไม่มี indication ใน normal semen"
+        },
+        {
+          "label": "E",
+          "text": "Scrotal support + ice packs ถาวร",
+          "is_correct": false,
+          "explanation": "ไม่มี evidence ไม่ใช่ standard treatment"
+        }
+      ],
+      "key_takeaway": "Varicocele grade 1 + normal semen + no symptoms → Observation ไม่ต้องการ intervention (ต้องครบ criteria ถึงจะผ่าตัด)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 18 ปี ขับรถจักรยานยนต์ชน straddle injury บริเวณ perineum มาด้วยปัสสาวะไม่ออก meatal bleeding พบ perineal hematoma (butterfly pattern) X-ray: pelvic fracture ไม่มี การวินิจฉัยและการจัดการคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ใส่ Foley catheter ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Retrograde urethrogram ก่อน ถ้า injury → suprapubic cystostomy"
+      },
+      {
+        "label": "C",
+        "text": "Cystoscopy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "CT cystogram"
+      },
+      {
+        "label": "E",
+        "text": "Observation + repeat UA"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Straddle injury + meatal bleeding + ปัสสาวะไม่ออก → suspected urethral injury → Retrograde urethrogram ก่อน (ห้ามใส่ Foley ก่อนยืนยัน)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Retrograde urethrogram ก่อน ถ้า injury → suprapubic cystostomy",
+      "reason": "Signs ของ urethral injury:\n- Blood at urethral meatus\n- Inability to void\n- Perineal butterfly hematoma (ชี้ bulbar urethra injury)\n- High-riding prostate ใน pelvic fracture (posterior urethra)\n\n**ห้ามใส่ Foley catheter** ถ้าสงสัย urethral injury: อาจทำให้ partial injury กลายเป็น complete disruption\n\n**ขั้นตอนที่ถูกต้อง**:\n1. Retrograde urethrogram (RUG): ยืนยัน location และ extent ของ injury\n2. ถ้ายืนยัน urethral injury → Suprapubic cystostomy (เพื่อ urinary diversion)\n3. Delayed definitive urethroplasty หลัง 3-6 เดือน\n\nStraddle injury ทำให้ bulbar urethra บาดเจ็บ (against pubic arch)\nPelvic fracture ทำให้ membranous urethra บาดเจ็บ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ใส่ Foley catheter ทันที",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด! อาจทำ partial injury กลายเป็น complete disruption"
+        },
+        {
+          "label": "B",
+          "text": "Retrograde urethrogram ก่อน ถ้า injury → suprapubic cystostomy",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: ยืนยัน injury ก่อน แล้ว divert urine via suprapubic"
+        },
+        {
+          "label": "C",
+          "text": "Cystoscopy ทันที",
+          "is_correct": false,
+          "explanation": "Cystoscopy อาจทำให้ injury แย่ลงและไม่ใช่ first step"
+        },
+        {
+          "label": "D",
+          "text": "CT cystogram",
+          "is_correct": false,
+          "explanation": "CT cystogram สำหรับ bladder injury ไม่ใช่ urethral injury"
+        },
+        {
+          "label": "E",
+          "text": "Observation + repeat UA",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ suspected urethral injury"
+        }
+      ],
+      "key_takeaway": "Suspected urethral injury (meatal blood + ปัสสาวะไม่ออก + butterfly hematoma) → Retrograde urethrogram ก่อน (ห้าม Foley); ถ้า confirmed → suprapubic cystostomy"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 42 ปี มาด้วย painless scrotal swelling ซ้าย Transillumination test positive Scrotal US: anechoic fluid surrounding testis ไม่มี solid component Testis ปกติ AFP/hCG/LDH ปกติ ชนิดใดที่น่าจะเป็นมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Epididymal cyst"
+      },
+      {
+        "label": "B",
+        "text": "Testicular torsion"
+      },
+      {
+        "label": "C",
+        "text": "Primary hydrocele"
+      },
+      {
+        "label": "D",
+        "text": "Varicocele"
+      },
+      {
+        "label": "E",
+        "text": "Testicular tumor"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Transillumination positive + anechoic fluid surrounding testis + normal testis = hydrocele",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Primary hydrocele",
+      "reason": "Scrotal swelling differential diagnosis:\n\n**Hydrocele**: transillumination positive, anechoic fluid, surrounds testis, painless\n**Epididymal cyst (spermatocele)**: separate from testis, superior/posterior, transluminates\n**Varicocele**: 'bag of worms', worsens standing, does NOT transilluminate\n**Testicular tumor**: solid, hypoechoic, ↑tumor markers (AFP/hCG)\n**Torsion**: acute severe pain, absent cremasteric reflex\n\nผู้ป่วยรายนี้: transillumination positive + anechoic surrounding fluid + testis ปกติ + markers ปกติ → Primary hydrocele\n\nHydrocele ในผู้ใหญ่อาจเป็น primary (idiopathic) หรือ secondary (infection, trauma, tumor)\n→ US ยืนยันไม่มี tumor → primary",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Epididymal cyst",
+          "is_correct": false,
+          "explanation": "Epididymal cyst อยู่ posterior to testis ไม่ surrounds testis ทั้งหมด"
+        },
+        {
+          "label": "B",
+          "text": "Testicular torsion",
+          "is_correct": false,
+          "explanation": "Torsion = acute severe pain + absent cremasteric reflex ไม่ใช่ painless chronic swelling"
+        },
+        {
+          "label": "C",
+          "text": "Primary hydrocele",
+          "is_correct": true,
+          "explanation": "Transillumination + + anechoic surrounding fluid + normal testis = hydrocele"
+        },
+        {
+          "label": "D",
+          "text": "Varicocele",
+          "is_correct": false,
+          "explanation": "Varicocele ไม่ transilluminate + 'bag of worms' + worsens standing"
+        },
+        {
+          "label": "E",
+          "text": "Testicular tumor",
+          "is_correct": false,
+          "explanation": "Tumor = solid + hypoechoic + ↑markers ซึ่งไม่ตรงกับผู้ป่วยรายนี้"
+        }
+      ],
+      "key_takeaway": "Transillumination + + anechoic fluid surrounding testis + normal testis = Hydrocele; varicocele ไม่ transilluminate; tumor = solid + ↑markers"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 58 ปี เบาหวาน ปวด perineal และ dysuria มาก 3 วัน ไข้ 39.5°C WBC 22,000 Tender prostate มาก DRE กดเจ็บมาก PSA 45 ng/mL (เพิ่มฉับพลัน) ทำ TRUS: hypoechoic area ที่ prostate การวินิจฉัยและการรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Prostate cancer → TRUS-guided biopsy ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Prostatic abscess → drainage (TRUS-guided หรือ TURP) + IV antibiotics"
+      },
+      {
+        "label": "C",
+        "text": "BPH → alpha-blocker ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Prostatitis → oral antibiotics outpatient"
+      },
+      {
+        "label": "E",
+        "text": "Bladder cancer → cystoscopy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fever + tender prostate + hypoechoic area on TRUS + DM = prostatic abscess → drainage + IV antibiotics",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Prostatic abscess → drainage (TRUS-guided หรือ TURP) + IV antibiotics",
+      "reason": "Prostatic abscess สงสัยจาก:\n- High fever + toxic appearance\n- Exquisitely tender prostate\n- Diabetes mellitus (predisposing factor)\n- Hypoechoic area on TRUS (pus collection)\n- PSA สูงมากเฉียบพลัน (inflammation)\n\nการรักษา:\n1. **IV antibiotics** (broad spectrum ครอบคลุม gram-negative: ceftriaxone หรือ fluoroquinolone ± metronidazole)\n2. **Drainage** (สำคัญมาก):\n   - TRUS-guided transrectal/transperineal aspiration\n   - TURP (ถ้า abscess ใหญ่ > 3 cm หรือ multi-loculated)\n3. Urinary drainage: suprapubic catheter ถ้า AUR\n\nProstatitis เดี่ยว (ไม่มี abscess): IV antibiotics ไม่ต้อง drainage\nBiopsy ห้ามทำขณะ acute infection (bacteremia risk + misleading PSA)\n\nRisk factors: DM, immunosuppression, recent instrumentation, urethral stricture",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prostate cancer → TRUS-guided biopsy ทันที",
+          "is_correct": false,
+          "explanation": "ห้าม biopsy ขณะ acute infection; PSA สูงเพราะ inflammation ไม่ใช่ cancer"
+        },
+        {
+          "label": "B",
+          "text": "Prostatic abscess → drainage + IV antibiotics",
+          "is_correct": true,
+          "explanation": "DM + fever + tender prostate + hypoechoic TRUS = prostatic abscess → drainage + IV abx"
+        },
+        {
+          "label": "C",
+          "text": "BPH → alpha-blocker ทันที",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ BPH; ไม่รักษา infection"
+        },
+        {
+          "label": "D",
+          "text": "Prostatitis → oral antibiotics outpatient",
+          "is_correct": false,
+          "explanation": "Prostatic abscess ต้องการ drainage + IV antibiotics ไม่ใช่แค่ oral antibiotics"
+        },
+        {
+          "label": "E",
+          "text": "Bladder cancer → cystoscopy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ presentation ของ bladder cancer"
+        }
+      ],
+      "key_takeaway": "Prostatic abscess (fever + tender prostate + hypoechoic TRUS + DM) → TRUS-guided drainage + IV antibiotics; ห้าม biopsy ขณะ acute infection"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 68 ปี มา follow up prostate cancer Gleason 9 (4+5) T3bN1M1 (bone mets) PSA 85 ng/mL เพิ่ง diagnosed การรักษา first-line ที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Radical prostatectomy"
+      },
+      {
+        "label": "B",
+        "text": "Androgen deprivation therapy (ADT) + docetaxel หรือ abiraterone"
+      },
+      {
+        "label": "C",
+        "text": "External beam radiation เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Active surveillance"
+      },
+      {
+        "label": "E",
+        "text": "Enzalutamide เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Metastatic hormone-sensitive PCa (mHSPC) → ADT + docetaxel หรือ ADT + abiraterone (triplet therapy ถ้า high volume)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Androgen deprivation therapy (ADT) + docetaxel หรือ abiraterone",
+      "reason": "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC) = M1 disease ที่ naive ต่อ androgen deprivation\n\nStandard treatment (2019-2023 guideline):\n\n**ADT** (LHRH agonist/antagonist หรือ bilateral orchiectomy) = backbone\n\n**Combination intensification**:\n- **ADT + Docetaxel**: CHAARTED trial → ↑ overall survival ใน high-volume disease\n- **ADT + Abiraterone acetate**: LATITUDE trial → ↑ OS ใน high-risk\n- **ADT + Enzalutamide**: ARCHES/ENZAMET → ↑ OS\n- **Triplet** (ADT + docetaxel + darolutamide): สำหรับ high-volume disease\n\nMonotherapy ADT เดี่ยว: inferior ใน fit patients ที่ยังไม่มี castration resistance\nSurgery/RT: ไม่ standard สำหรับ metastatic disease (อาจพิจารณา cytoreductive RT ใน oligometastatic)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Radical prostatectomy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard สำหรับ M1 metastatic disease"
+        },
+        {
+          "label": "B",
+          "text": "Androgen deprivation therapy (ADT) + docetaxel หรือ abiraterone",
+          "is_correct": true,
+          "explanation": "Standard สำหรับ mHSPC: ADT + intensification ยืด OS อย่างมีนัยสำคัญ"
+        },
+        {
+          "label": "C",
+          "text": "External beam radiation เดี่ยว",
+          "is_correct": false,
+          "explanation": "ไม่ standard สำหรับ M1 disease; อาจ palliative RT ที่ bone mets บางแห่ง"
+        },
+        {
+          "label": "D",
+          "text": "Active surveillance",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสมกับ high-grade metastatic disease"
+        },
+        {
+          "label": "E",
+          "text": "Enzalutamide เดี่ยว",
+          "is_correct": false,
+          "explanation": "ต้องร่วมกับ ADT; enzalutamide เดี่ยวมีประสิทธิภาพน้อยกว่า"
+        }
+      ],
+      "key_takeaway": "Metastatic hormone-sensitive PCa → ADT + intensification (docetaxel หรือ abiraterone หรือ enzalutamide) ยืด OS"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี มาด้วย painless penile lesion สีแดง 1.5 cm ที่ glans มา 2 เดือน ไม่มี phimosis ไม่เจ็บ ไม่มีประวัติ STI Biopsy: squamous cell carcinoma, well-differentiated, depth < 1 mm ไม่ถึง corpora cavernosa inguinal lymph node ไม่โต การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Total penectomy"
+      },
+      {
+        "label": "B",
+        "text": "Organ-sparing surgery (wide local excision/glansectomy) ± prophylactic inguinal LND"
+      },
+      {
+        "label": "C",
+        "text": "Radiation therapy เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Watchful waiting"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy (cisplatin-based) ก่อน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Penile SCC T1a (< 1 mm depth, no corpus cavernosum) → organ-sparing surgery preferred",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Organ-sparing surgery (wide local excision/glansectomy) ± prophylactic inguinal LND",
+      "reason": "Penile SCC staging (EAU 2023):\n- **pTa**: carcinoma in situ\n- **pT1a**: invades subepithelial connective tissue, NO lymphovascular invasion, NOT high grade\n- **pT1b**: LVI or high grade\n- **pT2**: corpora cavernosa/spongiosum\n\nผู้ป่วยรายนี้ T1a (depth < 1 mm, ไม่ถึง CC) → Organ-sparing surgery:\n- Wide local excision (WLE)\n- Glansectomy ± resurfacing\n- ลด functional/psychological morbidity\n- Equivalent oncological outcome กับ penectomy สำหรับ T1-T2\n\nInguinal LND: T1a = low risk แต่ EAU แนะนำ surveillance หรือ sentinel node biopsy\n\nTotal penectomy: สำหรับ T3+ หรือ proximal disease เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Total penectomy",
+          "is_correct": false,
+          "explanation": "Mutilating surgery ไม่จำเป็นสำหรับ T1a; organ-sparing equivalent outcomes"
+        },
+        {
+          "label": "B",
+          "text": "Organ-sparing surgery (wide local excision/glansectomy) ± prophylactic inguinal LND",
+          "is_correct": true,
+          "explanation": "Preferred สำหรับ T1a: equivalent oncology + better quality of life"
+        },
+        {
+          "label": "C",
+          "text": "Radiation therapy เดี่ยว",
+          "is_correct": false,
+          "explanation": "Option แต่ไม่ใช่ standard first-line สำหรับ resectable lesion"
+        },
+        {
+          "label": "D",
+          "text": "Watchful waiting",
+          "is_correct": false,
+          "explanation": "SCC ไม่รักษา จะ progress"
+        },
+        {
+          "label": "E",
+          "text": "Chemotherapy (cisplatin-based) ก่อน",
+          "is_correct": false,
+          "explanation": "Neoadjuvant chemo สำหรับ node-positive หรือ locally advanced disease เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Penile SCC T1a → Organ-sparing surgery (WLE/glansectomy) = preferred (equivalent oncology + better functional outcome vs penectomy)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 1 วัน ตรวจพบ bilateral hydronephrosis จาก prenatal ultrasound หลังคลอด renal US ยืนยัน bilateral hydroureteronephrosis grade 3-4 creatinine 0.8 mg/dL (สูงสำหรับอายุ) micturating cystourethrogram (MCUG) พบ posterior urethral valves (PUV) การรักษาทันทีคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation รอ 6 เดือนก่อน intervention"
+      },
+      {
+        "label": "B",
+        "text": "Urethral catheter decompression + stabilize แล้ว cystoscopic valve ablation"
+      },
+      {
+        "label": "C",
+        "text": "Bilateral ureterostomy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Peritoneal dialysis ทันที"
+      },
+      {
+        "label": "E",
+        "text": "Pyeloplasty bilateral"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PUV (Posterior Urethral Valves) → urethral catheter decompression ก่อน แล้ว cystoscopic valve ablation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Urethral catheter decompression + stabilize แล้ว cystoscopic valve ablation",
+      "reason": "Posterior Urethral Valves (PUV) คือสาเหตุที่พบบ่อยที่สุดของ severe obstructive uropathy ในเด็กชาย\n\n**Immediate management**:\n1. **Urethral catheter** (6-8 Fr infant feeding tube): decompression ทันที\n2. Stabilize: electrolytes, renal function (ระวัง post-obstructive diuresis)\n3. IV antibiotics ป้องกัน UTI\n\n**Definitive treatment** (เมื่อ stable):\n- **Cystoscopic valve ablation**: incise/ablate valve endoscopically\n- ทำได้ตั้งแต่ทารกแรกเกิด (ถ้า urethra ใหญ่พอ)\n\n**ถ้า catheter decompression ไม่เพียงพอ** (persistent AKI, obstruction):\n- Vesicostomy (cutaneous bladder diversion)\n- Bilateral ureterostomy (last resort)\n\nLong-term: ~30% พัฒนา CKD stage 3-4 แม้รักษาแล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observation รอ 6 เดือน",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไป AKI + bilateral hydronephrosis ต้องการ immediate intervention"
+        },
+        {
+          "label": "B",
+          "text": "Urethral catheter decompression + cystoscopic valve ablation",
+          "is_correct": true,
+          "explanation": "Standard: immediate decompression แล้ว definitive ablation เมื่อ stable"
+        },
+        {
+          "label": "C",
+          "text": "Bilateral ureterostomy ทันที",
+          "is_correct": false,
+          "explanation": "Last resort ถ้า catheter decompression ไม่เพียงพอ ไม่ใช่ first step"
+        },
+        {
+          "label": "D",
+          "text": "Peritoneal dialysis ทันที",
+          "is_correct": false,
+          "explanation": "ถ้า AKI severe อาจต้องการ แต่ decompression ก่อนมักช่วยได้"
+        },
+        {
+          "label": "E",
+          "text": "Pyeloplasty bilateral",
+          "is_correct": false,
+          "explanation": "PUV ไม่ใช่ UPJ obstruction ไม่ต้องการ pyeloplasty"
+        }
+      ],
+      "key_takeaway": "Posterior Urethral Valves → Immediate urethral catheter decompression + stabilize → Definitive cystoscopic valve ablation"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี ได้รับการวินิจฉัย muscle-invasive bladder cancer (MIBC) cT2N0M0 transitional cell carcinoma ขนาด 3 cm ไม่มี hydronephrosis creatinine 1.1 mg/dL การรักษามาตรฐานคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "TURBT เพียงอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Radical cystectomy + neoadjuvant cisplatin-based chemotherapy"
+      },
+      {
+        "label": "C",
+        "text": "Intravesical BCG instillation"
+      },
+      {
+        "label": "D",
+        "text": "Radiation therapy เดี่ยว"
+      },
+      {
+        "label": "E",
+        "text": "Immunotherapy (pembrolizumab) เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MIBC cT2 → Neoadjuvant cisplatin-based chemo + radical cystectomy = standard of care",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Radical cystectomy + neoadjuvant cisplatin-based chemotherapy",
+      "reason": "Muscle-invasive bladder cancer (MIBC, cT2+) standard treatment:\n\n**Neoadjuvant cisplatin-based chemotherapy** (MVAC หรือ GC) + **Radical cystectomy**:\n- Neoadjuvant chemo ก่อน surgery ลด micrometastasis\n- ปรับปรุง overall survival ~5-8% (NNT ~14)\n- Radical cystectomy: ผู้ชาย = cystoprostatectomy; ผู้หญิง = anterior exenteration\n- Urinary diversion: ileal conduit (standard), orthotopic neobladder, continent pouch\n\nTURBT เดี่ยว: เหมาะกับ non-muscle invasive (Ta, T1) ไม่ใช่ MIBC\nIntravesical BCG: สำหรับ high-risk non-muscle invasive (carcinoma in situ, T1 high grade)\nRT เดี่ยว: bladder preservation protocol (สำหรับ unfit surgery หรือ trimodality: TURBT + chemo + RT)\nImmunotherapy: สำหรับ metastatic/advanced หรือ adjuvant post-cystectomy (ล่าสุด)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TURBT เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "เพียงพอสำหรับ non-muscle invasive เท่านั้น ไม่ใช่ MIBC"
+        },
+        {
+          "label": "B",
+          "text": "Radical cystectomy + neoadjuvant cisplatin-based chemotherapy",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ MIBC cT2-T4a ที่ fit สำหรับ surgery"
+        },
+        {
+          "label": "C",
+          "text": "Intravesical BCG instillation",
+          "is_correct": false,
+          "explanation": "สำหรับ high-risk NMIBC (CIS, T1 HG) ไม่ใช่ MIBC"
+        },
+        {
+          "label": "D",
+          "text": "Radiation therapy เดี่ยว",
+          "is_correct": false,
+          "explanation": "RT เดี่ยว inferior; trimodality (TURBT+chemo+RT) ใช้ใน bladder preservation"
+        },
+        {
+          "label": "E",
+          "text": "Immunotherapy (pembrolizumab) เดี่ยว",
+          "is_correct": false,
+          "explanation": "สำหรับ metastatic/unresectable หรือ adjuvant ไม่ใช่ first-line localized"
+        }
+      ],
+      "key_takeaway": "MIBC (cT2+) + fit for surgery → Neoadjuvant cisplatin-based chemo + Radical cystectomy = standard of care"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี มาด้วย right flank pain มา 2 ชั่วโมง ไข้ 38.8°C WBC 18,000 CT KUB พบ right ureteral stone 8 mm พร้อมกับ hydronephrosis grade 3 Creatinine 1.8 mg/dL (baseline 1.0) การจัดการที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Medical expulsive therapy (tamsulosin) + antibiotics"
+      },
+      {
+        "label": "B",
+        "text": "Emergency decompression (ureteral stent หรือ nephrostomy) + antibiotics IV"
+      },
+      {
+        "label": "C",
+        "text": "Ureteroscopy + lithotripsy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ESWL ทันที"
+      },
+      {
+        "label": "E",
+        "text": "IV fluids + analgesics + recheck ใน 24 ชั่วโมง"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ureteral stone + fever + AKI = obstructed infected kidney → Emergency decompression + IV antibiotics (ห้าม ureteroscopy ขณะ infected)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Emergency decompression (ureteral stent หรือ nephrostomy) + antibiotics IV",
+      "reason": "Obstructed infected kidney = urological emergency!\n\nTriad: stone + fever + AKI → urosepsis risk\n\nManagement:\n1. **IV antibiotics ทันที** (broad spectrum: fluoroquinolone หรือ piperacillin-tazobactam)\n2. **Emergency decompression** (ทำในทันทีหรือภายใน 12 ชั่วโมง):\n   - Ureteral stent (JJ stent): ผ่าน cystoscopy\n   - Percutaneous nephrostomy (PCN): ใน septic/unstable หรือ stent fail\n\nห้าม ureteroscopy ขณะ infected: เพิ่ม bacteremia/sepsis risk จาก intrapelvic pressure\nหลัง infection control แล้ว (~1-2 สัปดาห์): definitive stone treatment (URS หรือ ESWL)\n\nUrosepsis risk: อาจถึงแก่ชีวิตได้ถ้าไม่ decompress ทันที",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Medical expulsive therapy (tamsulosin) + antibiotics",
+          "is_correct": false,
+          "explanation": "MET ไม่เพียงพอเมื่อมี fever + AKI + obstruction ต้องการ emergency decompression"
+        },
+        {
+          "label": "B",
+          "text": "Emergency decompression (ureteral stent หรือ nephrostomy) + antibiotics IV",
+          "is_correct": true,
+          "explanation": "Obstructed infected kidney → Emergency decompression + IV antibiotics ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Ureteroscopy + lithotripsy ทันที",
+          "is_correct": false,
+          "explanation": "ห้าม URS ขณะ infected เพิ่ม bacteremia/sepsis"
+        },
+        {
+          "label": "D",
+          "text": "ESWL ทันที",
+          "is_correct": false,
+          "explanation": "ห้ามขณะ infected; ESWL ใช้หลัง infection control"
+        },
+        {
+          "label": "E",
+          "text": "IV fluids + analgesics + recheck ใน 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไป urosepsis อาจถึงแก่ชีวิต"
+        }
+      ],
+      "key_takeaway": "Stone + fever + AKI = Obstructed infected kidney → Emergency decompression (stent/PCN) + IV antibiotics ทันที (ห้าม URS ขณะ infected)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี ตั้งครรภ์ 28 สัปดาห์ มาด้วย left flank pain ไข้ 38.5°C UA: pyuria, bacteriuria Urine culture: E. coli ไวต่อ cephalosporin ปวดมาก ทารกในครรภ์ปกติ การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral nitrofurantoin"
+      },
+      {
+        "label": "B",
+        "text": "IV cephalosporin (ceftriaxone) + admission"
+      },
+      {
+        "label": "C",
+        "text": "Oral fluoroquinolone (ciprofloxacin)"
+      },
+      {
+        "label": "D",
+        "text": "Oral trimethoprim-sulfamethoxazole"
+      },
+      {
+        "label": "E",
+        "text": "IV aminoglycoside เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pyelonephritis ในหญิงตั้งครรภ์ → IV cephalosporin + admission (ห้าม fluoroquinolone, TMP-SMX ไตรมาส 3, nitrofurantoin ไตรมาส 3)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IV cephalosporin (ceftriaxone) + admission",
+      "reason": "Acute pyelonephritis ในหญิงตั้งครรภ์:\n\n**Severity**: ไข้ + flank pain + pyuria = pyelonephritis ไม่ใช่ simple UTI → ต้องการ IV therapy + admission\n\n**ยาที่ปลอดภัยในตั้งครรภ์สำหรับ UTI/pyelonephritis**:\n- Beta-lactams (cephalosporins, penicillins): safe all trimesters → First choice\n- Nitrofurantoin: safe ไตรมาส 1-2 แต่ห้ามไตรมาส 3 (hemolytic anemia ใน neonate)\n- TMP-SMX: ห้ามไตรมาส 1 (teratogen) และไตรมาส 3 (kernicterus risk)\n\n**ห้ามใช้**:\n- Fluoroquinolones: Category C/D → ผลต่อกระดูกอ่อน/cartilage ทารก\n- Aminoglycosides: nephrotoxic + ototoxic ต่อทารก\n\nผู้ป่วย 28 สัปดาห์ (ไตรมาส 3) → IV ceftriaxone + admission",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral nitrofurantoin",
+          "is_correct": false,
+          "explanation": "ห้ามไตรมาส 3 (hemolysis ทารก) + oral ไม่เพียงพอสำหรับ pyelonephritis"
+        },
+        {
+          "label": "B",
+          "text": "IV cephalosporin (ceftriaxone) + admission",
+          "is_correct": true,
+          "explanation": "Safe all trimesters + adequate coverage สำหรับ pyelonephritis ในตั้งครรภ์"
+        },
+        {
+          "label": "C",
+          "text": "Oral fluoroquinolone (ciprofloxacin)",
+          "is_correct": false,
+          "explanation": "ห้ามในตั้งครรภ์: ผลต่อ cartilage ทารก"
+        },
+        {
+          "label": "D",
+          "text": "Oral trimethoprim-sulfamethoxazole",
+          "is_correct": false,
+          "explanation": "ห้ามไตรมาส 3: kernicterus risk"
+        },
+        {
+          "label": "E",
+          "text": "IV aminoglycoside เดี่ยว",
+          "is_correct": false,
+          "explanation": "Nephrotoxic + ototoxic ต่อทารก หลีกเลี่ยงในตั้งครรภ์"
+        }
+      ],
+      "key_takeaway": "Pyelonephritis ตั้งครรภ์ → IV cephalosporin + admission; ห้าม fluoroquinolone, TMP-SMX (ไตรมาส 3), nitrofurantoin (ไตรมาส 3)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 25 ปี มาด้วย left varicocele grade 1 (palpable เฉพาะเวลา Valsalva) ไม่มีอาการ Semen analysis ปกติทุกตัวชี้วัด ต้องการรักษาหรือไม่",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Microsurgical varicocelectomy ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Observation เท่านั้น"
+      },
+      {
+        "label": "C",
+        "text": "Embolization ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Clomiphene citrate"
+      },
+      {
+        "label": "E",
+        "text": "Scrotal support + ice packs ถาวร"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Varicocele grade 1 + ไม่มีอาการ + semen ปกติ → Observation ไม่ต้องการ intervention",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Observation เท่านั้น",
+      "reason": "Indications สำหรับ varicocele treatment ต้องครบ:\n1. Palpable varicocele (grade 2-3) ✓ แต่ grade 1 = borderline\n2. Couple infertility ≥ 1 ปี\n3. Abnormal semen parameters ≥ 1 parameter\n4. Female partner normal\n\nผู้ป่วยรายนี้: grade 1 + semen ปกติ + ไม่มีอาการ → ไม่มี indication สำหรับ intervention\n\nVaricocele grade 1 เดี่ยวไม่จำเป็นต้องรักษา\nติดตาม: annual semen analysis และ testicular volume assessment\n\nถ้าในอนาคต: สุ่มตรวจพบ semen abnormality หรือ infertility → re-evaluate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Microsurgical varicocelectomy ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี indications: grade 1 + normal semen + no symptoms"
+        },
+        {
+          "label": "B",
+          "text": "Observation เท่านั้น",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: grade 1 + normal semen → ไม่มี indication สำหรับ intervention"
+        },
+        {
+          "label": "C",
+          "text": "Embolization ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี indications สำหรับ intervention"
+        },
+        {
+          "label": "D",
+          "text": "Clomiphene citrate",
+          "is_correct": false,
+          "explanation": "ไม่มี indication ใน normal semen"
+        },
+        {
+          "label": "E",
+          "text": "Scrotal support + ice packs ถาวร",
+          "is_correct": false,
+          "explanation": "ไม่มี evidence ไม่ใช่ standard treatment"
+        }
+      ],
+      "key_takeaway": "Varicocele grade 1 + normal semen + no symptoms → Observation ไม่ต้องการ intervention (ต้องครบ criteria ถึงจะผ่าตัด)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 18 ปี ขับรถจักรยานยนต์ชน straddle injury บริเวณ perineum มาด้วยปัสสาวะไม่ออก meatal bleeding พบ perineal hematoma (butterfly pattern) X-ray: pelvic fracture ไม่มี การวินิจฉัยและการจัดการคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ใส่ Foley catheter ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Retrograde urethrogram ก่อน ถ้า injury → suprapubic cystostomy"
+      },
+      {
+        "label": "C",
+        "text": "Cystoscopy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "CT cystogram"
+      },
+      {
+        "label": "E",
+        "text": "Observation + repeat UA"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Straddle injury + meatal bleeding + ปัสสาวะไม่ออก → suspected urethral injury → Retrograde urethrogram ก่อน (ห้ามใส่ Foley ก่อนยืนยัน)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Retrograde urethrogram ก่อน ถ้า injury → suprapubic cystostomy",
+      "reason": "Signs ของ urethral injury:\n- Blood at urethral meatus\n- Inability to void\n- Perineal butterfly hematoma (ชี้ bulbar urethra injury)\n- High-riding prostate ใน pelvic fracture (posterior urethra)\n\n**ห้ามใส่ Foley catheter** ถ้าสงสัย urethral injury: อาจทำให้ partial injury กลายเป็น complete disruption\n\n**ขั้นตอนที่ถูกต้อง**:\n1. Retrograde urethrogram (RUG): ยืนยัน location และ extent ของ injury\n2. ถ้ายืนยัน urethral injury → Suprapubic cystostomy (เพื่อ urinary diversion)\n3. Delayed definitive urethroplasty หลัง 3-6 เดือน\n\nStraddle injury ทำให้ bulbar urethra บาดเจ็บ (against pubic arch)\nPelvic fracture ทำให้ membranous urethra บาดเจ็บ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ใส่ Foley catheter ทันที",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด! อาจทำ partial injury กลายเป็น complete disruption"
+        },
+        {
+          "label": "B",
+          "text": "Retrograde urethrogram ก่อน ถ้า injury → suprapubic cystostomy",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: ยืนยัน injury ก่อน แล้ว divert urine via suprapubic"
+        },
+        {
+          "label": "C",
+          "text": "Cystoscopy ทันที",
+          "is_correct": false,
+          "explanation": "Cystoscopy อาจทำให้ injury แย่ลงและไม่ใช่ first step"
+        },
+        {
+          "label": "D",
+          "text": "CT cystogram",
+          "is_correct": false,
+          "explanation": "CT cystogram สำหรับ bladder injury ไม่ใช่ urethral injury"
+        },
+        {
+          "label": "E",
+          "text": "Observation + repeat UA",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ suspected urethral injury"
+        }
+      ],
+      "key_takeaway": "Suspected urethral injury (meatal blood + ปัสสาวะไม่ออก + butterfly hematoma) → Retrograde urethrogram ก่อน (ห้าม Foley); ถ้า confirmed → suprapubic cystostomy"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 42 ปี มาด้วย painless scrotal swelling ซ้าย Transillumination test positive Scrotal US: anechoic fluid surrounding testis ไม่มี solid component Testis ปกติ AFP/hCG/LDH ปกติ ชนิดใดที่น่าจะเป็นมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Epididymal cyst"
+      },
+      {
+        "label": "B",
+        "text": "Testicular torsion"
+      },
+      {
+        "label": "C",
+        "text": "Primary hydrocele"
+      },
+      {
+        "label": "D",
+        "text": "Varicocele"
+      },
+      {
+        "label": "E",
+        "text": "Testicular tumor"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Transillumination positive + anechoic fluid surrounding testis + normal testis = hydrocele",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Primary hydrocele",
+      "reason": "Scrotal swelling differential diagnosis:\n\n**Hydrocele**: transillumination positive, anechoic fluid, surrounds testis, painless\n**Epididymal cyst (spermatocele)**: separate from testis, superior/posterior, transluminates\n**Varicocele**: 'bag of worms', worsens standing, does NOT transilluminate\n**Testicular tumor**: solid, hypoechoic, ↑tumor markers (AFP/hCG)\n**Torsion**: acute severe pain, absent cremasteric reflex\n\nผู้ป่วยรายนี้: transillumination positive + anechoic surrounding fluid + testis ปกติ + markers ปกติ → Primary hydrocele\n\nHydrocele ในผู้ใหญ่อาจเป็น primary (idiopathic) หรือ secondary (infection, trauma, tumor)\n→ US ยืนยันไม่มี tumor → primary",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Epididymal cyst",
+          "is_correct": false,
+          "explanation": "Epididymal cyst อยู่ posterior to testis ไม่ surrounds testis ทั้งหมด"
+        },
+        {
+          "label": "B",
+          "text": "Testicular torsion",
+          "is_correct": false,
+          "explanation": "Torsion = acute severe pain + absent cremasteric reflex ไม่ใช่ painless chronic swelling"
+        },
+        {
+          "label": "C",
+          "text": "Primary hydrocele",
+          "is_correct": true,
+          "explanation": "Transillumination + + anechoic surrounding fluid + normal testis = hydrocele"
+        },
+        {
+          "label": "D",
+          "text": "Varicocele",
+          "is_correct": false,
+          "explanation": "Varicocele ไม่ transilluminate + 'bag of worms' + worsens standing"
+        },
+        {
+          "label": "E",
+          "text": "Testicular tumor",
+          "is_correct": false,
+          "explanation": "Tumor = solid + hypoechoic + ↑markers ซึ่งไม่ตรงกับผู้ป่วยรายนี้"
+        }
+      ],
+      "key_takeaway": "Transillumination + + anechoic fluid surrounding testis + normal testis = Hydrocele; varicocele ไม่ transilluminate; tumor = solid + ↑markers"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 58 ปี เบาหวาน ปวด perineal และ dysuria มาก 3 วัน ไข้ 39.5°C WBC 22,000 Tender prostate มาก DRE กดเจ็บมาก PSA 45 ng/mL (เพิ่มฉับพลัน) ทำ TRUS: hypoechoic area ที่ prostate การวินิจฉัยและการรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Prostate cancer → TRUS-guided biopsy ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Prostatic abscess → drainage (TRUS-guided หรือ TURP) + IV antibiotics"
+      },
+      {
+        "label": "C",
+        "text": "BPH → alpha-blocker ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Prostatitis → oral antibiotics outpatient"
+      },
+      {
+        "label": "E",
+        "text": "Bladder cancer → cystoscopy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fever + tender prostate + hypoechoic area on TRUS + DM = prostatic abscess → drainage + IV antibiotics",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Prostatic abscess → drainage (TRUS-guided หรือ TURP) + IV antibiotics",
+      "reason": "Prostatic abscess สงสัยจาก:\n- High fever + toxic appearance\n- Exquisitely tender prostate\n- Diabetes mellitus (predisposing factor)\n- Hypoechoic area on TRUS (pus collection)\n- PSA สูงมากเฉียบพลัน (inflammation)\n\nการรักษา:\n1. **IV antibiotics** (broad spectrum ครอบคลุม gram-negative: ceftriaxone หรือ fluoroquinolone ± metronidazole)\n2. **Drainage** (สำคัญมาก):\n   - TRUS-guided transrectal/transperineal aspiration\n   - TURP (ถ้า abscess ใหญ่ > 3 cm หรือ multi-loculated)\n3. Urinary drainage: suprapubic catheter ถ้า AUR\n\nProstatitis เดี่ยว (ไม่มี abscess): IV antibiotics ไม่ต้อง drainage\nBiopsy ห้ามทำขณะ acute infection (bacteremia risk + misleading PSA)\n\nRisk factors: DM, immunosuppression, recent instrumentation, urethral stricture",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prostate cancer → TRUS-guided biopsy ทันที",
+          "is_correct": false,
+          "explanation": "ห้าม biopsy ขณะ acute infection; PSA สูงเพราะ inflammation ไม่ใช่ cancer"
+        },
+        {
+          "label": "B",
+          "text": "Prostatic abscess → drainage + IV antibiotics",
+          "is_correct": true,
+          "explanation": "DM + fever + tender prostate + hypoechoic TRUS = prostatic abscess → drainage + IV abx"
+        },
+        {
+          "label": "C",
+          "text": "BPH → alpha-blocker ทันที",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ BPH; ไม่รักษา infection"
+        },
+        {
+          "label": "D",
+          "text": "Prostatitis → oral antibiotics outpatient",
+          "is_correct": false,
+          "explanation": "Prostatic abscess ต้องการ drainage + IV antibiotics ไม่ใช่แค่ oral antibiotics"
+        },
+        {
+          "label": "E",
+          "text": "Bladder cancer → cystoscopy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ presentation ของ bladder cancer"
+        }
+      ],
+      "key_takeaway": "Prostatic abscess (fever + tender prostate + hypoechoic TRUS + DM) → TRUS-guided drainage + IV antibiotics; ห้าม biopsy ขณะ acute infection"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 68 ปี มา follow up prostate cancer Gleason 9 (4+5) T3bN1M1 (bone mets) PSA 85 ng/mL เพิ่ง diagnosed การรักษา first-line ที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Radical prostatectomy"
+      },
+      {
+        "label": "B",
+        "text": "Androgen deprivation therapy (ADT) + docetaxel หรือ abiraterone"
+      },
+      {
+        "label": "C",
+        "text": "External beam radiation เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Active surveillance"
+      },
+      {
+        "label": "E",
+        "text": "Enzalutamide เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Metastatic hormone-sensitive PCa (mHSPC) → ADT + docetaxel หรือ ADT + abiraterone (triplet therapy ถ้า high volume)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Androgen deprivation therapy (ADT) + docetaxel หรือ abiraterone",
+      "reason": "Metastatic Hormone-Sensitive Prostate Cancer (mHSPC) = M1 disease ที่ naive ต่อ androgen deprivation\n\nStandard treatment (2019-2023 guideline):\n\n**ADT** (LHRH agonist/antagonist หรือ bilateral orchiectomy) = backbone\n\n**Combination intensification**:\n- **ADT + Docetaxel**: CHAARTED trial → ↑ overall survival ใน high-volume disease\n- **ADT + Abiraterone acetate**: LATITUDE trial → ↑ OS ใน high-risk\n- **ADT + Enzalutamide**: ARCHES/ENZAMET → ↑ OS\n- **Triplet** (ADT + docetaxel + darolutamide): สำหรับ high-volume disease\n\nMonotherapy ADT เดี่ยว: inferior ใน fit patients ที่ยังไม่มี castration resistance\nSurgery/RT: ไม่ standard สำหรับ metastatic disease (อาจพิจารณา cytoreductive RT ใน oligometastatic)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Radical prostatectomy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard สำหรับ M1 metastatic disease"
+        },
+        {
+          "label": "B",
+          "text": "Androgen deprivation therapy (ADT) + docetaxel หรือ abiraterone",
+          "is_correct": true,
+          "explanation": "Standard สำหรับ mHSPC: ADT + intensification ยืด OS อย่างมีนัยสำคัญ"
+        },
+        {
+          "label": "C",
+          "text": "External beam radiation เดี่ยว",
+          "is_correct": false,
+          "explanation": "ไม่ standard สำหรับ M1 disease; อาจ palliative RT ที่ bone mets บางแห่ง"
+        },
+        {
+          "label": "D",
+          "text": "Active surveillance",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสมกับ high-grade metastatic disease"
+        },
+        {
+          "label": "E",
+          "text": "Enzalutamide เดี่ยว",
+          "is_correct": false,
+          "explanation": "ต้องร่วมกับ ADT; enzalutamide เดี่ยวมีประสิทธิภาพน้อยกว่า"
+        }
+      ],
+      "key_takeaway": "Metastatic hormone-sensitive PCa → ADT + intensification (docetaxel หรือ abiraterone หรือ enzalutamide) ยืด OS"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี มาด้วย painless penile lesion สีแดง 1.5 cm ที่ glans มา 2 เดือน ไม่มี phimosis ไม่เจ็บ ไม่มีประวัติ STI Biopsy: squamous cell carcinoma, well-differentiated, depth < 1 mm ไม่ถึง corpora cavernosa inguinal lymph node ไม่โต การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Total penectomy"
+      },
+      {
+        "label": "B",
+        "text": "Organ-sparing surgery (wide local excision/glansectomy) ± prophylactic inguinal LND"
+      },
+      {
+        "label": "C",
+        "text": "Radiation therapy เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Watchful waiting"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy (cisplatin-based) ก่อน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Penile SCC T1a (< 1 mm depth, no corpus cavernosum) → organ-sparing surgery preferred",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Organ-sparing surgery (wide local excision/glansectomy) ± prophylactic inguinal LND",
+      "reason": "Penile SCC staging (EAU 2023):\n- **pTa**: carcinoma in situ\n- **pT1a**: invades subepithelial connective tissue, NO lymphovascular invasion, NOT high grade\n- **pT1b**: LVI or high grade\n- **pT2**: corpora cavernosa/spongiosum\n\nผู้ป่วยรายนี้ T1a (depth < 1 mm, ไม่ถึง CC) → Organ-sparing surgery:\n- Wide local excision (WLE)\n- Glansectomy ± resurfacing\n- ลด functional/psychological morbidity\n- Equivalent oncological outcome กับ penectomy สำหรับ T1-T2\n\nInguinal LND: T1a = low risk แต่ EAU แนะนำ surveillance หรือ sentinel node biopsy\n\nTotal penectomy: สำหรับ T3+ หรือ proximal disease เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Total penectomy",
+          "is_correct": false,
+          "explanation": "Mutilating surgery ไม่จำเป็นสำหรับ T1a; organ-sparing equivalent outcomes"
+        },
+        {
+          "label": "B",
+          "text": "Organ-sparing surgery (wide local excision/glansectomy) ± prophylactic inguinal LND",
+          "is_correct": true,
+          "explanation": "Preferred สำหรับ T1a: equivalent oncology + better quality of life"
+        },
+        {
+          "label": "C",
+          "text": "Radiation therapy เดี่ยว",
+          "is_correct": false,
+          "explanation": "Option แต่ไม่ใช่ standard first-line สำหรับ resectable lesion"
+        },
+        {
+          "label": "D",
+          "text": "Watchful waiting",
+          "is_correct": false,
+          "explanation": "SCC ไม่รักษา จะ progress"
+        },
+        {
+          "label": "E",
+          "text": "Chemotherapy (cisplatin-based) ก่อน",
+          "is_correct": false,
+          "explanation": "Neoadjuvant chemo สำหรับ node-positive หรือ locally advanced disease เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Penile SCC T1a → Organ-sparing surgery (WLE/glansectomy) = preferred (equivalent oncology + better functional outcome vs penectomy)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 1 วัน ตรวจพบ bilateral hydronephrosis จาก prenatal ultrasound หลังคลอด renal US ยืนยัน bilateral hydroureteronephrosis grade 3-4 creatinine 0.8 mg/dL (สูงสำหรับอายุ) micturating cystourethrogram (MCUG) พบ posterior urethral valves (PUV) การรักษาทันทีคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation รอ 6 เดือนก่อน intervention"
+      },
+      {
+        "label": "B",
+        "text": "Urethral catheter decompression + stabilize แล้ว cystoscopic valve ablation"
+      },
+      {
+        "label": "C",
+        "text": "Bilateral ureterostomy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Peritoneal dialysis ทันที"
+      },
+      {
+        "label": "E",
+        "text": "Pyeloplasty bilateral"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PUV (Posterior Urethral Valves) → urethral catheter decompression ก่อน แล้ว cystoscopic valve ablation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Urethral catheter decompression + stabilize แล้ว cystoscopic valve ablation",
+      "reason": "Posterior Urethral Valves (PUV) คือสาเหตุที่พบบ่อยที่สุดของ severe obstructive uropathy ในเด็กชาย\n\n**Immediate management**:\n1. **Urethral catheter** (6-8 Fr infant feeding tube): decompression ทันที\n2. Stabilize: electrolytes, renal function (ระวัง post-obstructive diuresis)\n3. IV antibiotics ป้องกัน UTI\n\n**Definitive treatment** (เมื่อ stable):\n- **Cystoscopic valve ablation**: incise/ablate valve endoscopically\n- ทำได้ตั้งแต่ทารกแรกเกิด (ถ้า urethra ใหญ่พอ)\n\n**ถ้า catheter decompression ไม่เพียงพอ** (persistent AKI, obstruction):\n- Vesicostomy (cutaneous bladder diversion)\n- Bilateral ureterostomy (last resort)\n\nLong-term: ~30% พัฒนา CKD stage 3-4 แม้รักษาแล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observation รอ 6 เดือน",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไป AKI + bilateral hydronephrosis ต้องการ immediate intervention"
+        },
+        {
+          "label": "B",
+          "text": "Urethral catheter decompression + cystoscopic valve ablation",
+          "is_correct": true,
+          "explanation": "Standard: immediate decompression แล้ว definitive ablation เมื่อ stable"
+        },
+        {
+          "label": "C",
+          "text": "Bilateral ureterostomy ทันที",
+          "is_correct": false,
+          "explanation": "Last resort ถ้า catheter decompression ไม่เพียงพอ ไม่ใช่ first step"
+        },
+        {
+          "label": "D",
+          "text": "Peritoneal dialysis ทันที",
+          "is_correct": false,
+          "explanation": "ถ้า AKI severe อาจต้องการ แต่ decompression ก่อนมักช่วยได้"
+        },
+        {
+          "label": "E",
+          "text": "Pyeloplasty bilateral",
+          "is_correct": false,
+          "explanation": "PUV ไม่ใช่ UPJ obstruction ไม่ต้องการ pyeloplasty"
+        }
+      ],
+      "key_takeaway": "Posterior Urethral Valves → Immediate urethral catheter decompression + stabilize → Definitive cystoscopic valve ablation"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 52 ปี มาด้วย painless gross hematuria 2 ครั้ง Cystoscopy พบ papillary tumor 2 cm ที่ posterior wall bladder TURBT: pT1 high grade, no carcinoma in situ ภายหลัง TURBT restaging แสดง T1 HG การรักษาต่อไปคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Radical cystectomy ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Intravesical BCG instillation (maintenance)"
+      },
+      {
+        "label": "C",
+        "text": "Intravesical mitomycin C single dose แล้ว surveillance เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "Systemic chemotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Radiation therapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "T1 high grade bladder cancer → intravesical BCG (induction + maintenance) เป็น standard",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Intravesical BCG instillation (maintenance)",
+      "reason": "Non-muscle invasive bladder cancer (NMIBC) T1 high grade = high risk disease:\n\nAUA/EAU guideline สำหรับ high-risk NMIBC:\n1. **Re-TURBT** (restaging TURBT) ใน 2-6 สัปดาห์: ยืนยัน staging + clear residual tumor\n2. **Intravesical BCG** (Bacillus Calmette-Guerin):\n   - Induction: 6 สัปดาห์ weekly\n   - Maintenance: 1-3 ปี (Lamm protocol: 3 สัปดาห์ที่ 3, 6, 12, 18, 24, 30, 36 เดือน)\n   - BCG ลด recurrence และ progression ดีกว่า chemotherapy\n\nRadical cystectomy: พิจารณาใน:\n- BCG failure\n- Very high risk (T1 HG + CIS หรือ variant histology)\n- Multifocal T1 HG\n\nMitomycin C single dose: สำหรับ low-risk NMIBC (Ta low grade) ไม่เพียงพอสำหรับ T1 HG",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Radical cystectomy ทันที",
+          "is_correct": false,
+          "explanation": "พิจารณาหลัง BCG fail หรือ very high risk features; ไม่ใช่ immediate first-line"
+        },
+        {
+          "label": "B",
+          "text": "Intravesical BCG instillation (maintenance)",
+          "is_correct": true,
+          "explanation": "Standard สำหรับ high-risk NMIBC (T1 HG): ลด recurrence + progression"
+        },
+        {
+          "label": "C",
+          "text": "Intravesical mitomycin C single dose แล้ว surveillance เท่านั้น",
+          "is_correct": false,
+          "explanation": "Single dose MMC สำหรับ low-risk เท่านั้น; T1 HG ต้องการ BCG"
+        },
+        {
+          "label": "D",
+          "text": "Systemic chemotherapy",
+          "is_correct": false,
+          "explanation": "สำหรับ muscle-invasive หรือ metastatic disease"
+        },
+        {
+          "label": "E",
+          "text": "Radiation therapy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard สำหรับ NMIBC"
+        }
+      ],
+      "key_takeaway": "T1 high grade bladder cancer → Re-TURBT + Intravesical BCG (induction + maintenance 1-3 ปี); radical cystectomy ถ้า BCG fail"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 48 ปี มาด้วย painless slowly enlarging left inguinal mass มา 3 เดือน ไม่มีประวัติ testicular pain Physical exam: left testis ปกติ ขนาดและ texture ปกติ Inguinal mass: hard, fixed, 4 cm AFP, hCG ปกติ CT: retroperitoneal lymph nodes ปกติ สาเหตุที่ต้องพิจารณาก่อนในผู้ชายวัยนี้คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Inguinal hernia"
+      },
+      {
+        "label": "B",
+        "text": "Metastatic testicular cancer (TGCT)"
+      },
+      {
+        "label": "C",
+        "text": "Lymphoma"
+      },
+      {
+        "label": "D",
+        "text": "Lipoma"
+      },
+      {
+        "label": "E",
+        "text": "Varicocele"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Hard fixed inguinal LN + ปกติ testis + AFP/hCG ปกติ → Lymphoma (NHL) เป็นสาเหตุสำคัญที่ต้องพิจารณา",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Lymphoma",
+      "reason": "Inguinal lymph node enlargement ที่ hard, fixed, painless มา 3 เดือน:\n\nDifferential diagnosis:\n- **Lymphoma (NHL/HL)**: พบบ่อยใน middle-aged adults; inguinal LN โต hard fixed → **most important to exclude**\n- Testicular cancer: AFP/hCG ปกติ + testis ปกติ → ไม่น่าเป็น; TGCT ส่วนมาก drain ไป retroperitoneal LN ไม่ใช่ inguinal (ยกเว้น scrotal involvement)\n- Squamous cell carcinoma (penile/anal): ต้องตรวจดู primary tumor\n- Infection/STI: reactive lymphadenopathy มักเจ็บ + มีประวัติ\n- Inguinal hernia: reducible, impulse on cough\n- Lipoma: soft, mobile\n\nLN biopsy (excisional preferred) จำเป็นสำหรับ diagnosis\n\nTesticular cancer ถ้า drain ไป inguinal = ต้องมี scrotal involvement ก่อน ซึ่งไม่มีในกรณีนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Inguinal hernia",
+          "is_correct": false,
+          "explanation": "Hernia reducible + impulse on cough + soft ไม่ใช่ hard fixed mass"
+        },
+        {
+          "label": "B",
+          "text": "Metastatic testicular cancer (TGCT)",
+          "is_correct": false,
+          "explanation": "Testis ปกติ + AFP/hCG ปกติ + ไม่มี retroperitoneal LN → ไม่น่าเป็น TGCT"
+        },
+        {
+          "label": "C",
+          "text": "Lymphoma",
+          "is_correct": true,
+          "explanation": "Hard, fixed, painless inguinal LN + ชาย middle-aged → Lymphoma สำคัญที่สุดที่ต้องพิจารณา"
+        },
+        {
+          "label": "D",
+          "text": "Lipoma",
+          "is_correct": false,
+          "explanation": "Lipoma นุ่ม mobile ไม่ใช่ hard fixed"
+        },
+        {
+          "label": "E",
+          "text": "Varicocele",
+          "is_correct": false,
+          "explanation": "Varicocele อยู่ใน scrotum ไม่ใช่ inguinal region"
+        }
+      ],
+      "key_takeaway": "Hard fixed painless inguinal LN → Lymphoma ต้องพิจารณาก่อน (excisional biopsy สำหรับ diagnosis); TGCT ไม่น่าเป็นถ้า testis ปกติ + markers ปกติ"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 72 ปี ตรวจ PSA ประจำปี 5.0 ng/mL (ปีที่แล้ว 4.8) DRE ปกติ Biopsy: Gleason 3+3=6 (Grade Group 1) 2 ใน 12 cores positive, ทั้ง cores < 50% involvement ทางเลือกการรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Radical prostatectomy ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Active surveillance"
+      },
+      {
+        "label": "C",
+        "text": "Radiation therapy + ADT"
+      },
+      {
+        "label": "D",
+        "text": "ADT เดี่ยว"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prostate cancer Gleason 6 (Grade Group 1) + very low risk → Active surveillance เป็น preferred option",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Active surveillance",
+      "reason": "Low-risk prostate cancer (Gleason 6/Grade Group 1):\n- PSA < 10 ng/mL\n- Gleason 3+3=6 (Grade Group 1)\n- Clinical stage T1-T2a\n- 2/12 cores positive, < 50% core involvement\n\n**Active Surveillance (AS)** = preferred สำหรับ low-risk:\n- ลด overtreatment (Gleason 6 แทบไม่ metastasize)\n- AS protocol: PSA q3-6 เดือน + DRE ประจำปี + Repeat biopsy (confirmatory ที่ 1-2 ปี, ± mpMRI)\n- Convert to definitive treatment ถ้า upgrade/upstage\n\n**Deferred treatment benefits**: หลีกเลี่ยง side effects (incontinence, ED) โดยไม่เสีย OS\n\nImmediate surgery/RT ไม่จำเป็นสำหรับ low-risk + Gleason 6 ใน elderly\n\nADT เดี่ยว: ไม่ curative สำหรับ localized disease",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Radical prostatectomy ทันที",
+          "is_correct": false,
+          "explanation": "Overtreatment สำหรับ very low-risk Gleason 6; AS เป็น preferred"
+        },
+        {
+          "label": "B",
+          "text": "Active surveillance",
+          "is_correct": true,
+          "explanation": "Preferred สำหรับ low-risk PCa (Gleason 6): ลด overtreatment โดยไม่เสีย OS"
+        },
+        {
+          "label": "C",
+          "text": "Radiation therapy + ADT",
+          "is_correct": false,
+          "explanation": "ADT เพิ่มไม่จำเป็นใน low-risk; RT อาจพิจารณาแต่ AS preferred first"
+        },
+        {
+          "label": "D",
+          "text": "ADT เดี่ยว",
+          "is_correct": false,
+          "explanation": "ไม่ curative สำหรับ localized low-risk disease"
+        },
+        {
+          "label": "E",
+          "text": "Chemotherapy",
+          "is_correct": false,
+          "explanation": "สำหรับ metastatic castration-resistant PCa เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Low-risk PCa (Gleason 6/Grade Group 1) → Active Surveillance preferred (Gleason 6 แทบไม่ metastasize; ลด overtreatment)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 28 ปี ขี่จักรยานยนต์ อัณฑะขวาถูกกระแทก เจ็บมาก ภายหลัง 2 ชั่วโมง อาการไม่ดีขึ้น scrotal hematoma โต Doppler US: decreased flow right testis + echogenic hematocele + disrupted tunica albuginea การจัดการที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ice pack + scrotal support + analgesics"
+      },
+      {
+        "label": "B",
+        "text": "Emergency scrotal exploration + repair"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotics IV + observation 24 ชั่วโมง"
+      },
+      {
+        "label": "D",
+        "text": "Aspiration of hematocele"
+      },
+      {
+        "label": "E",
+        "text": "MRI scrotum เพื่อยืนยันก่อน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Testicular trauma + disrupted tunica albuginea = testicular rupture → Emergency surgical exploration + repair",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Emergency scrotal exploration + repair",
+      "reason": "Testicular rupture (tunica albuginea disruption) = surgical emergency!\n\nUS findings ยืนยัน: disrupted tunica albuginea + echogenic hematocele + decreased flow\n\n**Immediate surgery ดีกว่า conservative**:\n- Testicular salvage rate: surgery ~90% vs conservative ~45%\n- ลด orchiectomy rate\n- ลด infection, hematocele organization, reactive hydrocele\n\n**Surgical approach**:\n1. Scrotal exploration\n2. Evacuate hematocele\n3. Debride extruded seminiferous tubules\n4. Primary repair tunica albuginea\n5. ถ้า salvage ไม่ได้ → orchiectomy\n\nDelay ผ่าตัด > 72 ชั่วโมง → ลด salvage rate อย่างมีนัยสำคัญ\n\nConservative (ice + support): สำหรับ minor trauma ไม่มี rupture เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ice pack + scrotal support + analgesics",
+          "is_correct": false,
+          "explanation": "Conservative สำหรับ minor trauma ไม่มี rupture; tunica disrupted ต้องผ่าตัด"
+        },
+        {
+          "label": "B",
+          "text": "Emergency scrotal exploration + repair",
+          "is_correct": true,
+          "explanation": "Testicular rupture → immediate surgery (salvage rate 90% vs 45% conservative)"
+        },
+        {
+          "label": "C",
+          "text": "Antibiotics IV + observation 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "ไม่รักษา rupture ล่าช้าลด salvage rate"
+        },
+        {
+          "label": "D",
+          "text": "Aspiration of hematocele",
+          "is_correct": false,
+          "explanation": "ไม่แก้ tunica rupture และเสี่ยง infection"
+        },
+        {
+          "label": "E",
+          "text": "MRI scrotum เพื่อยืนยันก่อน",
+          "is_correct": false,
+          "explanation": "US ยืนยันแล้ว ไม่ต้องรอ MRI เสียเวลา"
+        }
+      ],
+      "key_takeaway": "Testicular rupture (disrupted tunica albuginea on US) → Emergency scrotal exploration + repair ทันที (salvage 90%)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 48 ปี มีประวัติ recurrent UTI และ hesitancy มา 1 ปี Uroflowmetry: Qmax 8 mL/s (ปกติ > 15) Retrograde urethrogram พบ narrowing ที่ bulbar urethra 2 cm ยาว ลักษณะ irregular การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Urethral dilation ซ้ำๆ"
+      },
+      {
+        "label": "B",
+        "text": "Direct vision internal urethrotomy (DVIU)"
+      },
+      {
+        "label": "C",
+        "text": "Buccal mucosal graft urethroplasty"
+      },
+      {
+        "label": "D",
+        "text": "Ureteral stent"
+      },
+      {
+        "label": "E",
+        "text": "Alpha-1 blocker"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Bulbar urethral stricture 2 cm ยาว + failed prior management → urethroplasty (gold standard สำหรับ stricture > 1-2 cm)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Buccal mucosal graft urethroplasty",
+      "reason": "Urethral stricture management ขึ้นกับ ความยาว, ตำแหน่ง และ prior treatment:\n\n**DVIU/dilation**: สำหรับ short (< 1-1.5 cm), naive, single stricture\n- Success rate 50-60% ครั้งแรก, ลดลงมากถ้าทำซ้ำ\n\n**Urethroplasty** = gold standard สำหรับ:\n- Stricture > 1-2 cm ยาว\n- Recurrent/failed DVIU\n- สำเร็จ > 85-95% ระยะยาว\n\n**Buccal mucosal graft (BMG) urethroplasty**:\n- Substitution urethroplasty\n- Dorsal onlay หรือ ventral inlay\n- BMG เป็น graft ที่ดีที่สุด: robust, durable, moist environment\n\nผู้ป่วยนี้: 2 cm bulbar stricture + recurrent UTI + hesitancy = indication ชัดเจนสำหรับ urethroplasty\n\nDilation ซ้ำๆ: scarring มากขึ้น, success rate ลดลง, ไม่ curative",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urethral dilation ซ้ำๆ",
+          "is_correct": false,
+          "explanation": "ทำซ้ำๆ เพิ่ม scarring และ success rate ต่ำ ไม่ curative สำหรับ 2 cm stricture"
+        },
+        {
+          "label": "B",
+          "text": "Direct vision internal urethrotomy (DVIU)",
+          "is_correct": false,
+          "explanation": "สำหรับ short (< 1 cm) naive stricture; 2 cm recurrent = urethroplasty ดีกว่า"
+        },
+        {
+          "label": "C",
+          "text": "Buccal mucosal graft urethroplasty",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ bulbar stricture > 1-2 cm; success rate 85-95%"
+        },
+        {
+          "label": "D",
+          "text": "Ureteral stent",
+          "is_correct": false,
+          "explanation": "สำหรับ ureteral pathology ไม่ใช่ urethral stricture"
+        },
+        {
+          "label": "E",
+          "text": "Alpha-1 blocker",
+          "is_correct": false,
+          "explanation": "ช่วย BPH ไม่ใช่ urethral stricture"
+        }
+      ],
+      "key_takeaway": "Urethral stricture > 1-2 cm / recurrent → Urethroplasty (BMG) = gold standard (success 85-95%); DVIU/dilation สำหรับ short naive stricture เท่านั้น"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี ตั้งครรภ์ 20 สัปดาห์ Prenatal US พบ fetal right multicystic dysplastic kidney (MCDK) ไตซ้ายปกติ ไม่มี amniotic fluid abnormality การจัดการที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fetal intervention ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Terminate pregnancy"
+      },
+      {
+        "label": "C",
+        "text": "Expectant management + postnatal surveillance"
+      },
+      {
+        "label": "D",
+        "text": "Elective nephrectomy ทันทีหลังคลอด"
+      },
+      {
+        "label": "E",
+        "text": "Intrauterine shunt placement"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Unilateral MCDK + normal contralateral kidney + normal amniotic fluid → expectant management; ส่วนใหญ่ MCDK involution เอง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Expectant management + postnatal surveillance",
+      "reason": "Multicystic Dysplastic Kidney (MCDK) ข้างเดียว + ไตอีกข้างปกติ + amniotic fluid ปกติ:\n\n**Prognosis ดี**:\n- Contralateral kidney ปกติ → renal function เพียงพอ\n- Amniotic fluid ปกติ → lung development ปกติ\n\n**Management**:\n- **Antenatal**: expectant, serial US ติดตาม contralateral kidney compensation\n- **Postnatal**: renal US ยืนยัน diagnosis\n- MCDK involution (disappear): 60-70% ภายใน 2-5 ปี\n- Voiding cystourethrogram (VCUG): rule out contralateral VUR\n\n**Indications สำหรับ nephrectomy** (ปัจจุบัน controversial):\n- Hypertension จาก MCDK\n- Failure to involute after years\n- Suspicion of Wilms tumor (rare)\n\nFetal intervention: สำหรับ bilateral obstruction + oligohydramnios\nImmediate nephrectomy: ไม่จำเป็นใน uncomplicated MCDK",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fetal intervention ทันที",
+          "is_correct": false,
+          "explanation": "สำหรับ bilateral severe obstruction + oligohydramnios เท่านั้น; unilateral MCDK ไม่ต้องการ"
+        },
+        {
+          "label": "B",
+          "text": "Terminate pregnancy",
+          "is_correct": false,
+          "explanation": "Unilateral MCDK = non-lethal; prognosis ดีมาก ไม่มี indication"
+        },
+        {
+          "label": "C",
+          "text": "Expectant management + postnatal surveillance",
+          "is_correct": true,
+          "explanation": "Standard: unilateral MCDK + normal contralateral → expectant; 60-70% involute"
+        },
+        {
+          "label": "D",
+          "text": "Elective nephrectomy ทันทีหลังคลอด",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็นทันที; ส่วนใหญ่ involute เอง; nephrectomy ถ้ามี complications เท่านั้น"
+        },
+        {
+          "label": "E",
+          "text": "Intrauterine shunt placement",
+          "is_correct": false,
+          "explanation": "สำหรับ severe bilateral obstruction + oligohydramnios; ไม่ใช่สำหรับ unilateral MCDK"
+        }
+      ],
+      "key_takeaway": "Unilateral MCDK + normal contralateral kidney + normal amniotic fluid → Expectant management (60-70% involute ใน 2-5 ปี)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 35 ปี ตรวจพบ PSA 0.2 ng/mL หลัง radical prostatectomy เมื่อ 18 เดือนก่อน สำหรับ Gleason 7 pT2N0M0 ปัจจุบันตรวจ PSA ซ้ำ 0.25 ng/mL (PSA doubling time ~6 เดือน) CT + bone scan ปกติ ภาวะนี้เรียกว่าอะไรและรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Normal post-operative PSA → observation เท่านั้น"
+      },
+      {
+        "label": "B",
+        "text": "Biochemical recurrence → Salvage radiotherapy to prostate bed"
+      },
+      {
+        "label": "C",
+        "text": "Distant metastasis → ADT ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Anastomotic stricture → dilation"
+      },
+      {
+        "label": "E",
+        "text": "PSA bounce → observation 6 เดือน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Biochemical recurrence (BCR) หลัง RP (PSA > 0.2 x2) + no visible mets → Salvage radiotherapy to prostate bed",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Biochemical recurrence → Salvage radiotherapy to prostate bed",
+      "reason": "**Biochemical Recurrence (BCR)** หลัง radical prostatectomy:\n- Definition: PSA ≥ 0.2 ng/mL ที่ 2 consecutive ครั้ง\n- ผู้ป่วยนี้: PSA 0.2 → 0.25 = confirmed BCR\n\n**Risk stratification**:\n- PSA doubling time (PSADT) 6 เดือน = fast → higher risk\n- No visible distant mets (CT + bone scan negative)\n\n**Treatment สำหรับ BCR + no mets**:\n- **Salvage Radiotherapy (SRT) to prostate bed**: early SRT (PSA < 0.5) ดีที่สุด\n- EAU guideline: SRT เร็ว + ADT ± apalutamide/enzalutamide พิจารณาตาม risk\n\nADT เดี่ยว: ไม่ curative ใช้เป็น adjunct หรือ palliative\nObservation เดี่ยว: PSA doubling time 6 เดือน = high risk ไม่เหมาะ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal post-operative PSA → observation เท่านั้น",
+          "is_correct": false,
+          "explanation": "PSA > 0.2 x2 = BCR ไม่ใช่ normal; PSADT 6 เดือน = high risk"
+        },
+        {
+          "label": "B",
+          "text": "Biochemical recurrence → Salvage radiotherapy to prostate bed",
+          "is_correct": true,
+          "explanation": "BCR + no mets → early salvage RT to prostate bed = best chance of cure"
+        },
+        {
+          "label": "C",
+          "text": "Distant metastasis → ADT ทันที",
+          "is_correct": false,
+          "explanation": "CT + bone scan negative = no distant mets; salvage RT ดีกว่า ADT เดี่ยว"
+        },
+        {
+          "label": "D",
+          "text": "Anastomotic stricture → dilation",
+          "is_correct": false,
+          "explanation": "Stricture ทำให้ LUTS ไม่ใช่ PSA rise"
+        },
+        {
+          "label": "E",
+          "text": "PSA bounce → observation 6 เดือน",
+          "is_correct": false,
+          "explanation": "PSA bounce พบหลัง RT ไม่ใช่หลัง RP; RP ต้อง PSA undetectable"
+        }
+      ],
+      "key_takeaway": "BCR หลัง RP (PSA > 0.2 x2) + no mets → Early salvage radiotherapy to prostate bed (PSA < 0.5 ให้ผลดีที่สุด)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี T2DM, hypertension มาด้วย right ureteral stone 12 mm ที่ proximal ureter ตรวจ creatinine 1.6 mg/dL (baseline 1.3) ไม่มีไข้ มีปวด controlled กับ analgesics การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Medical expulsive therapy (tamsulosin) เท่านั้น"
+      },
+      {
+        "label": "B",
+        "text": "ESWL (extracorporeal shock wave lithotripsy)"
+      },
+      {
+        "label": "C",
+        "text": "Ureteroscopy + laser lithotripsy"
+      },
+      {
+        "label": "D",
+        "text": "Percutaneous nephrolithotomy (PCNL)"
+      },
+      {
+        "label": "E",
+        "text": "Open ureterolithotomy"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Proximal ureteral stone 12 mm + AKI → ureteroscopy + laser lithotripsy (stone > 10 mm ไม่ MET; proximal ureter)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Ureteroscopy + laser lithotripsy",
+      "reason": "Ureteral stone ขนาด 12 mm ที่ proximal ureter + AKI (Cr 1.6 จาก 1.3):\n\n**ขนาด > 10 mm**: spontaneous passage ต่ำมาก MET ไม่เพียงพอ → intervention จำเป็น\n\n**ESWL vs URS สำหรับ proximal ureteral stone**:\n- ESWL: success rate 60-80% สำหรับ proximal stones แต่ต้องการ multiple sessions + ผลช้า\n- **URS (Ureteroscopy) + laser**: success rate > 90% in single session, เร็วกว่า\n- AUA/EAU guideline: URS preferred สำหรับ stone > 10 mm (higher success rate)\n\n**ทำไมไม่ ESWL ในกรณีนี้**: AKI + stone ใหญ่ → URS faster resolution + better stone-free rate\n\n**ทำไมไม่ PCNL**: PCNL สำหรับ renal stones > 20 mm ไม่ใช่ ureteral stones (ยกเว้น บางกรณี)\n\nMET: ไม่เพียงพอสำหรับ stone 12 mm",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Medical expulsive therapy (tamsulosin) เท่านั้น",
+          "is_correct": false,
+          "explanation": "Stone 12 mm = spontaneous passage แทบเป็นไปไม่ได้ (< 5%)"
+        },
+        {
+          "label": "B",
+          "text": "ESWL",
+          "is_correct": false,
+          "explanation": "AKI + stone ใหญ่ → URS ดีกว่า: faster + higher success rate"
+        },
+        {
+          "label": "C",
+          "text": "Ureteroscopy + laser lithotripsy",
+          "is_correct": true,
+          "explanation": "Preferred สำหรับ ureteral stone > 10 mm: success > 90%, แก้ AKI ได้เร็วกว่า ESWL"
+        },
+        {
+          "label": "D",
+          "text": "Percutaneous nephrolithotomy (PCNL)",
+          "is_correct": false,
+          "explanation": "PCNL สำหรับ renal stones > 20 mm หรือ staghorn ไม่ใช่ ureteral stones ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Open ureterolithotomy",
+          "is_correct": false,
+          "explanation": "Obsolete ไม่ใช้แล้วในยุค endourology"
+        }
+      ],
+      "key_takeaway": "Ureteral stone > 10 mm → intervention จำเป็น; URS + laser ดีกว่า ESWL (success > 90% single session, resolves AKI faster)"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 6 เดือน พ่อแม่มาด้วยกังวลว่า foreskin ดึงออกไม่ได้ (ดึงออกได้แค่บางส่วน) ไม่มีประวัติ ปัสสาวะลำบาก ไม่มีการอักเสบ ปัสสาวะปกติ ควรจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Circumcision ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Manual retraction บังคับ"
+      },
+      {
+        "label": "C",
+        "text": "Reassurance เท่านั้น (physiologic phimosis หาย"
+      },
+      {
+        "label": "D",
+        "text": "Topical steroid cream (betamethasone)"
+      },
+      {
+        "label": "E",
+        "text": "Dorsal slit procedure"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Physiologic phimosis ในทารก < 1 ปี → Reassurance (ปกติ แก้เองตามอายุ 90% ภายใน 3 ปี)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Reassurance เท่านั้น (physiologic phimosis หายเอง)",
+      "reason": "Phimosis แบ่งเป็น:\n\n**Physiologic phimosis**: ปกติมากในทารก/เด็กเล็ก\n- แรกเกิด: 96% มี phimosis\n- อายุ 1 ปี: 50%\n- อายุ 3 ปี: 10%\n- อายุ 17 ปี: 1%\n→ ส่วนใหญ่แก้เองตามการเจริญเติบโต\n\n**ห้ามบังคับ retract**: เจ็บ + เกิด micro-tears → scarring → pathologic phimosis\n\n**Pathologic phimosis**: scarring จาก Balanitis Xerotica Obliterans (BXO) → แน่น, ขาว, ไม่ยืดหยุ่น → ต้องการ treatment\n\n**Indications สำหรับ treatment** (pathologic/symptomatic):\n- ปัสสาวะลำบาก, UTI ซ้ำ, paraphimosis, BXO\n- Topical steroid (betamethasone 0.05-0.1%): ก่อน circumcision ใน older children\n- Circumcision: สำหรับ pathologic หรือ steroid fail\n\nผู้ป่วยนี้: 6 เดือน + ไม่มีอาการ = physiologic → reassurance",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Circumcision ทันที",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็นสำหรับ physiologic phimosis ที่ไม่มีอาการในทารก"
+        },
+        {
+          "label": "B",
+          "text": "Manual retraction บังคับ",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด! เกิด micro-tears → scarring → pathologic phimosis"
+        },
+        {
+          "label": "C",
+          "text": "Reassurance เท่านั้น",
+          "is_correct": true,
+          "explanation": "Physiologic phimosis ในทารก = ปกติ หายเอง 90% ภายใน 3 ปี"
+        },
+        {
+          "label": "D",
+          "text": "Topical steroid cream (betamethasone)",
+          "is_correct": false,
+          "explanation": "ใช้ใน older children (3-5+ ปี) ที่ phimosis ยังอยู่หรือมีอาการ ไม่ใช่ทารก 6 เดือน"
+        },
+        {
+          "label": "E",
+          "text": "Dorsal slit procedure",
+          "is_correct": false,
+          "explanation": "Surgical option สำหรับ symptomatic/pathologic phimosis ไม่ใช่ทารก 6 เดือน physiologic"
+        }
+      ],
+      "key_takeaway": "Physiologic phimosis ทารก < 1 ปี ไม่มีอาการ → Reassurance (90% แก้เองภายใน 3 ปี); ห้าม force retract"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 62 ปี มาด้วย flank pain ขวา CT: right renal calculus 25 mm ที่ renal pelvis (staghorn partial) ไม่มีไข้ creatinine 1.2 mg/dL วิธีรักษาที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ESWL"
+      },
+      {
+        "label": "B",
+        "text": "Percutaneous nephrolithotomy (PCNL)"
+      },
+      {
+        "label": "C",
+        "text": "Ureteroscopy (flexible URS)"
+      },
+      {
+        "label": "D",
+        "text": "Medical expulsive therapy"
+      },
+      {
+        "label": "E",
+        "text": "Open pyelolithotomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Renal stone > 20 mm (25 mm) → PCNL เป็น first-line treatment (AUA/EAU guideline)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Percutaneous nephrolithotomy (PCNL)",
+      "reason": "Kidney stone treatment algorithm:\n\n**Stone > 20 mm (หรือ staghorn)**:\n- **PCNL = First-line** (AUA/EAU guideline)\n- Stone-free rate > 85% in single session\n\n**Stone 10-20 mm**:\n- ESWL หรือ URS หรือ PCNL (ขึ้นกับ location, density, anatomy)\n\n**Stone < 10 mm**:\n- ESWL หรือ URS preferred\n\n**ทำไม PCNL ดีกว่า ESWL สำหรับ stone > 20 mm**:\n- ESWL success rate ต่ำสำหรับ stone ใหญ่ (< 50% stone-free)\n- ESWL อาจต้องทำหลาย sessions\n- PCNL single session stone-free rate สูงกว่า\n\n**PCNL technique**: nephroscope เข้าผ่าน percutaneous access ที่ flank → ultrasonic/laser fragmentation\n\nOpen surgery: obsolete ยกเว้น failed PCNL หรือ complex anatomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ESWL",
+          "is_correct": false,
+          "explanation": "Stone 25 mm = ESWL success rate ต่ำ (< 50%), PCNL ดีกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Percutaneous nephrolithotomy (PCNL)",
+          "is_correct": true,
+          "explanation": "First-line สำหรับ renal stone > 20 mm (AUA/EAU guideline); stone-free rate > 85%"
+        },
+        {
+          "label": "C",
+          "text": "Ureteroscopy (flexible URS)",
+          "is_correct": false,
+          "explanation": "URS ดีสำหรับ stone < 15-20 mm; 25 mm = PCNL preferred"
+        },
+        {
+          "label": "D",
+          "text": "Medical expulsive therapy",
+          "is_correct": false,
+          "explanation": "สำหรับ ureteral stones ≤ 10 mm; renal stone 25 mm ไม่ผ่านเอง"
+        },
+        {
+          "label": "E",
+          "text": "Open pyelolithotomy",
+          "is_correct": false,
+          "explanation": "Obsolete ในยุค minimally invasive surgery"
+        }
+      ],
+      "key_takeaway": "Renal stone > 20 mm → PCNL first-line (stone-free > 85%); ESWL ไม่เพียงพอสำหรับ large stones"
+    },
+    "subject": "uro_surgery",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  }
+]

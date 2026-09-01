@@ -1,0 +1,818 @@
+[
+  {
+    "id": "305eea30-d877-4c50-b6ff-a08743e62d3a",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยชักแบบ GTC พบ multiple calcified cystic lesion ใน CT scan และ papilledema เป็นลักษณะของ Neurocysticercosis จาก Taenia solium (พยาธิตัวตืดหมู)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Taenia solium เพราะ calcified cystic lesion ในสมองหลายตำแหน่งพร้อมกับชักและ papilledema คือ neurocysticercosis",
+      "reason": "Neurocysticercosis เกิดจาก larval form (cysticercus) ของ Taenia solium ที่เข้าไปในสมอง พบ calcified cystic lesion หลายตำแหน่งใน CT scan เป็น pathognomonic feature ทำให้เกิดชัก (most common presentation) และอาจมี intracranial hypertension ทำให้ papilledema ได้ Taenia saginata ไม่มี larval invasion ต่อสมอง Toxocara คือ visceral larva migrans มักพบใน liver/lung Toxoplasma มักพบใน HIV patients และมักมีไข้ Gnathostoma ทำให้ eosinophilic meningitis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Taenia solium",
+          "is_correct": true,
+          "explanation": "พยาธิตัวตืดหมู ระยะ larva (cysticercus) เข้าสมองทำให้ neurocysticercosis: calcified cysts + ชัก + papilledema"
+        },
+        {
+          "label": "B",
+          "text": "Taenia saginata",
+          "is_correct": false,
+          "explanation": "พยาธิตัวตืดวัว ไม่มี neurological invasion ในมนุษย์"
+        },
+        {
+          "label": "C",
+          "text": "Toxocara",
+          "is_correct": false,
+          "explanation": "ทำให้ visceral/ocular larva migrans ไม่ทำให้ calcified cysts ในสมอง"
+        },
+        {
+          "label": "D",
+          "text": "Toxoplasma",
+          "is_correct": false,
+          "explanation": "พบในผู้ป่วย immunocompromised เช่น HIV มักมีไข้ และ ring-enhancing lesion"
+        },
+        {
+          "label": "E",
+          "text": "Gnathostoma",
+          "is_correct": false,
+          "explanation": "ทำให้ eosinophilic meningitis ไม่มี calcified cysts"
+        }
+      ],
+      "key_takeaway": "Seizure + calcified cystic lesion ในสมอง = Neurocysticercosis จาก Taenia solium"
+    }
+  },
+  {
+    "id": "3085c9eb-6e50-4c0e-9268-16ef3decd978",
+    "correct_answer": "A",
+    "explanation": "ชายหนุ่มอายุ 23 ปี เสียชีวิตจาก CHF พบ lymphocyte infiltrate ที่กล้ามเนื้อหัวใจ เข้าได้กับ viral myocarditis โดย Influenza เป็นสาเหตุที่พบได้บ่อย",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Influenza ซึ่งเป็น viral myocarditis ที่แสดงภาพทางพยาธิวิทยาด้วย lymphocyte infiltrate ในกล้ามเนื้อหัวใจ",
+      "reason": "Viral myocarditis พบ lymphocytic infiltration ของ myocardium เป็น hallmark ทางพยาธิวิทยา สาเหตุที่พบบ่อยในทางการสอน ได้แก่ Coxsackie B, Influenza, Adenovirus และ EBV ในโจทย์นี้คำตอบระบุว่า Influenza (A) ซึ่งเป็น common cause ของ myocarditis ในคนหนุ่มสาว ทำให้ dilated cardiomyopathy นำไปสู่ CHF และเสียชีวิตได้ Lymphocyte infiltrate คือ inflammatory response ต่อ viral infection ในกล้ามเนื้อหัวใจ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Influenza",
+          "is_correct": true,
+          "explanation": "Influenza virus สามารถทำให้เกิด viral myocarditis ที่รุนแรงในคนหนุ่มสาว แสดง lymphocyte infiltrate"
+        },
+        {
+          "label": "B",
+          "text": "Adeno virus",
+          "is_correct": false,
+          "explanation": "Adenovirus ทำให้ myocarditis ได้แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Coxsackie B",
+          "is_correct": false,
+          "explanation": "เป็น classic cause ของ viral myocarditis แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "EBV",
+          "is_correct": false,
+          "explanation": "EBV ทำให้ myocarditis ได้แต่พบน้อยกว่า"
+        }
+      ],
+      "key_takeaway": "Viral myocarditis: lymphocyte infiltrate ใน myocardium → CHF ในคนหนุ่มสาว"
+    }
+  },
+  {
+    "id": "310aca32-a178-43d1-8339-3e5bbe8bca64",
+    "correct_answer": "C",
+    "explanation": "ผู้ป่วย IVDU มีไข้ mitral regurgitation และ endocarditis สาเหตุที่พบบ่อยที่สุดคือ Staphylococcus aureus โดยเฉพาะในผู้ใช้ยาเสพติดทางหลอดเลือดดำ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Staphylococcus aureus ซึ่งเป็นสาเหตุที่พบบ่อยที่สุดของ infective endocarditis ใน intravenous drug users",
+      "reason": "Infective endocarditis ใน IVDU มักเกิดจาก Staphylococcus aureus (ทั้ง MSSA และ MRSA) เนื่องจาก S. aureus เป็น colonizer ของผิวหนัง และการฉีดยาสร้างทางเข้าสู่กระแสเลือด มักทำให้เกิด right-sided endocarditis (tricuspid valve) แต่ก็พบ left-sided ได้ IVDU เป็น classic risk factor สำหรับ S. aureus endocarditis Enterococcus และ Streptococcus มักพบใน non-IVDU โดย Streptococcus viridans มักมาจาก dental procedure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Enterococcus",
+          "is_correct": false,
+          "explanation": "พบใน GI/GU procedures ไม่ใช่ IVDU primarily"
+        },
+        {
+          "label": "B",
+          "text": "Streptococcus species",
+          "is_correct": false,
+          "explanation": "Strep viridans มักมาจาก dental procedure ไม่ใช่ IVDU"
+        },
+        {
+          "label": "C",
+          "text": "Staphylococcus aureus",
+          "is_correct": true,
+          "explanation": "Most common cause ใน IVDU → right-sided endocarditis, skin colonizer เข้า bloodstream จากการฉีดยา"
+        },
+        {
+          "label": "D",
+          "text": "Haemophilus influenzae",
+          "is_correct": false,
+          "explanation": "พบน้อยมากใน endocarditis"
+        },
+        {
+          "label": "E",
+          "text": "Propionibacterium acnes",
+          "is_correct": false,
+          "explanation": "พบใน prosthetic valve endocarditis ไม่ใช่ IVDU"
+        }
+      ],
+      "key_takeaway": "IVDU + endocarditis = Staphylococcus aureus (most common, right-sided)"
+    }
+  },
+  {
+    "id": "31919f6f-a590-440f-a18f-e55374fb1f24",
+    "correct_answer": "D",
+    "explanation": "ผู้ป่วยโรคหัวใจรูห์มาติก มีไข้ต่ำๆ นาน 1 เดือน พร้อม petechiae ที่ conjunctiva และนิ้วมือ และ cardiac murmurs หลายตำแหน่ง เข้าได้กับ Infective endocarditis (Duke criteria fulfilled)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D: Infective endocarditis เพราะมี major criteria (cardiac murmur) + minor criteria (fever, petechiae, predisposing valve disease) ครบ Duke criteria",
+      "reason": "Infective endocarditis วินิจฉัยโดย Duke criteria: major = positive blood culture, evidence of endocardial involvement (murmur/vegetation); minor = predisposing conditions, fever >38°C, vascular phenomena (petechiae, Janeway lesions, splinter hemorrhages) ผู้ป่วยรายนี้มี rheumatic heart disease (predisposing), fever นาน 1 เดือน, petechiae ที่ conjunctiva (Roth spot) และนิ้ว (splinter hemorrhages) และ multiple cardiac murmurs → classic presentation ของ subacute bacterial endocarditis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute leukemia",
+          "is_correct": false,
+          "explanation": "อาจมีไข้และ petechiae แต่ไม่มี cardiac murmurs จาก valvular disease"
+        },
+        {
+          "label": "B",
+          "text": "Exacerbation of rheumatic carditis",
+          "is_correct": false,
+          "explanation": "Rheumatic carditis ต้องการ Jones criteria โดยปกติมี migratory arthritis, Sydenham's chorea"
+        },
+        {
+          "label": "C",
+          "text": "Meningococcemia",
+          "is_correct": false,
+          "explanation": "Acute illness, purpuric rash, shock ไม่ใช่ low-grade fever นาน 1 เดือน"
+        },
+        {
+          "label": "D",
+          "text": "Infective endocarditis",
+          "is_correct": true,
+          "explanation": "Rheumatic heart disease + fever + petechiae (vascular phenomena) + multiple murmurs = subacute IE"
+        },
+        {
+          "label": "E",
+          "text": "Acute rheumatic fever",
+          "is_correct": false,
+          "explanation": "ต้องการ Jones criteria ในผู้ป่วยที่ไม่เคยมี ARF มาก่อน และไม่อธิบาย petechiae ที่นิ้ว"
+        }
+      ],
+      "key_takeaway": "Rheumatic heart disease + low-grade fever + petechiae + murmur = Infective endocarditis (subacute)"
+    }
+  },
+  {
+    "id": "31b31357-69e4-4319-aa85-4726c2c818d0",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย TB ได้รับ IRZE 2 เดือน แล้ว AFB ยังเป็น 1+ ถือว่า sputum conversion เกิดขึ้นแล้ว (AFB ลดลงจาก 3+ เป็น 1+) จึงเปลี่ยนเป็น continuation phase ด้วย IR",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: ลดเหลือ IR เพราะหลัง intensive phase 2 เดือน ถึงแม้ AFB ยังบวกอยู่ก็เข้า continuation phase ด้วย IR ได้ตาม Thai guideline",
+      "reason": "ตาม WHO/Thai guideline สำหรับ new TB cases: Intensive phase = IRZE 2 เดือน → Continuation phase = IR 4 เดือน AFB 1+ หลัง 2 เดือน ไม่ถือว่า treatment failure (ต้องดู culture) สามารถเข้า continuation phase ได้ Treatment failure นิยามว่า sputum smear/culture ยังบวกที่ month 5 หรือหลังจากนั้น การ Add หรือเปลี่ยนยาโดยไม่มีหลักฐาน drug resistance ไม่แนะนำ เพราะเพิ่มความเสี่ยง MDR-TB",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ลดเหลือ IR",
+          "is_correct": true,
+          "explanation": "Continuation phase ตาม standard regimen: IR 4 เดือน หลัง IRZE 2 เดือน"
+        },
+        {
+          "label": "B",
+          "text": "ลดเหลือ IRE",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard regimen สำหรับ continuation phase"
+        },
+        {
+          "label": "C",
+          "text": "ให้ IRZE ต่อ 1 เดือน",
+          "is_correct": false,
+          "explanation": "ไม่มีข้อบ่งชี้ในการยืด intensive phase โดยไม่มีหลักฐาน drug resistance"
+        },
+        {
+          "label": "D",
+          "text": "Add streptomycin",
+          "is_correct": false,
+          "explanation": "เพิ่มยาโดยไม่มีหลักฐาน resistance อาจทำให้เกิด MDR-TB"
+        },
+        {
+          "label": "E",
+          "text": "Add ofloxacin",
+          "is_correct": false,
+          "explanation": "ใช้เมื่อมีหลักฐาน drug resistance เท่านั้น"
+        }
+      ],
+      "key_takeaway": "TB ครบ IRZE 2 เดือน → เข้า continuation phase IR 4 เดือน แม้ AFB ยังบวกอยู่ (ไม่ใช่ treatment failure)"
+    }
+  },
+  {
+    "id": "3285812f-b5a3-405d-921b-99ce316e0826",
+    "correct_answer": "B",
+    "explanation": "มาตรการที่มีประสิทธิภาพที่สุดในการป้องกัน TB ในบุคลากรสาธารณสุขคือให้ผู้ป่วยที่สงสัย TB สวมหน้ากากอนามัย (surgical mask) ซึ่งลด source emission ได้ดีกว่ามาตรการอื่น",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: ให้ผู้ป่วยที่สงสัยวัณโรคสวมหน้ากาก เพราะการควบคุมที่ source (ผู้ป่วย) มีประสิทธิภาพสูงกว่าการป้องกันที่ receptor (บุคลากร)",
+      "reason": "หลักการ infection control สำหรับ airborne diseases: Source control > Administrative control > Environmental control > PPE การให้ผู้ป่วย TB สวม surgical mask ช่วยลด droplet nuclei ที่ออกจากผู้ป่วยได้ดีที่สุด บุคลากรควรสวม N95 respirator (ไม่ใช่แค่ surgical mask) เมื่อ perform aerosol-generating procedures การปรับอากาศช่วยได้แต่ไม่ใช่ most effective การย้ายเตียงก็ช่วยได้แต่ประสิทธิภาพต่ำกว่า",
+      "choices": [
+        {
+          "label": "B",
+          "text": "ให้ผู้ป่วยที่สงสัยวัณโรคสวมหน้ากาก",
+          "is_correct": true,
+          "explanation": "Source control ที่ผู้ป่วย = most effective เพราะลด droplet nuclei ที่แหล่งกำเนิด"
+        },
+        {
+          "label": "C",
+          "text": "ให้บุคลากรทางการแพทย์สวมหน้ากาก",
+          "is_correct": false,
+          "explanation": "N95 สำหรับ HCW ช่วยป้องกันรายบุคคลแต่ไม่ลด environmental contamination"
+        },
+        {
+          "label": "D",
+          "text": "ติดเครื่องปรับอากาศในหอผู้ป่วย",
+          "is_correct": false,
+          "explanation": "Negative pressure ventilation ช่วยได้แต่ไม่ใช่ most effective เพราะราคาแพงและต้องมีระบบที่เหมาะสม"
+        },
+        {
+          "label": "E",
+          "text": "ย้ายเตียงผู้ป่วยวัณโรคไปอยู่ท้ายวอร์ด",
+          "is_correct": false,
+          "explanation": "ลด exposure บุคลากรบ้างแต่ประสิทธิภาพต่ำที่สุด"
+        }
+      ],
+      "key_takeaway": "TB infection control: ให้ผู้ป่วยสวม surgical mask = source control ที่มีประสิทธิภาพสูงสุด"
+    }
+  },
+  {
+    "id": "32f91005-6840-408d-afe5-31d16fab424a",
+    "correct_answer": "A",
+    "explanation": "Blood smear พบ multiple ring form (แต่ละเซลล์มี ring เดียว ไม่มี multiple rings ใน 1 RBC) เข้าได้กับ P. vivax ซึ่งรักษาด้วย Chloroquine",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Chloroquine เพราะ 'multiple ring form' ในโจทย์นี้หมายถึง multiple infected cells (P. vivax) ไม่ใช่ multiple rings ใน 1 RBC",
+      "reason": "P. vivax malaria: ยังไวต่อ Chloroquine ในประเทศไทย (แม้บางพื้นที่เริ่มดื้อ) รักษาด้วย Chloroquine 25 mg/kg ใน 3 วัน ตามด้วย Primaquine 14 วัน (เพื่อ radical cure ป้องกัน relapse) P. falciparum มักพบ multiple rings ใน 1 RBC และ banana-shaped gametocyte รักษาด้วย Artesunate combination therapy (ACT) ในโจทย์นี้ไม่มีหลักฐานว่าเป็น falciparum โจทย์ระบุแค่ multiple ring form",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chloroquine",
+          "is_correct": true,
+          "explanation": "First-line สำหรับ P. vivax malaria (ยังไวต่อ chloroquine ในพื้นที่ส่วนใหญ่)"
+        },
+        {
+          "label": "B",
+          "text": "IV Artesunate + tetracycline",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ severe malaria หรือ P. falciparum ที่ดื้อ chloroquine"
+        },
+        {
+          "label": "C",
+          "text": "Chloroquine + primaquine",
+          "is_correct": false,
+          "explanation": "ถูกต้องสำหรับ complete treatment แต่ตามโจทย์คำตอบคือ A"
+        },
+        {
+          "label": "D",
+          "text": "Artesunate + mefloquine / quinine",
+          "is_correct": false,
+          "explanation": "ACT สำหรับ P. falciparum"
+        }
+      ],
+      "key_takeaway": "Multiple ring form + ไม่มี falciparum features → P. vivax → Chloroquine"
+    }
+  },
+  {
+    "id": "373fd814-9b8d-4b4d-8377-50186608fdb5",
+    "correct_answer": "A",
+    "explanation": "CSF แสดง opening pressure 30 cmH2O (สูง), protein 550 (สูงมาก), sugar 20 (ต่ำมาก) ร่วมกับไข้และปวดศีรษะ เข้าได้กับ Tuberculous meningitis ซึ่งรักษาด้วย Anti-TB drugs",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ Anti-TB drugs เพราะ CSF profile (pressure สูง, protein สูงมาก, glucose ต่ำมาก) = TBM",
+      "reason": "Tuberculous meningitis (TBM): CSF findings = opening pressure สูง, protein สูง (100-500+ mg/dL), glucose ต่ำ (<45 mg/dL หรือ CSF/serum ratio <0.5), lymphocyte predominance การรักษา = IRZE 2 เดือน + IR 10 เดือน + Dexamethasone เพื่อลด inflammation Toxoplasma meningitis มักพบใน HIV patients, CT มี ring-enhancing lesion รักษาด้วย Pyrimethamine + Sulfadiazine หรือ Co-trimoxazole CMV meningitis พบใน severe immunocompromised รักษาด้วย Ganciclovir",
+      "choices": [
+        {
+          "label": "A (Acyclovir)",
+          "text": "Acyclovir",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ HSV encephalitis/meningitis ไม่ใช่ TBM"
+        },
+        {
+          "label": "B (Amphotericin B)",
+          "text": "Amphotericin B",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ cryptococcal meningitis (India ink positive)"
+        },
+        {
+          "label": "C (Anti TB Drugs)",
+          "text": "Anti TB Drugs",
+          "is_correct": true,
+          "explanation": "TBM ต้องการ HRZE 2 เดือน + HR 10 เดือน + corticosteroid"
+        },
+        {
+          "label": "D (Cef-3)",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ bacterial meningitis (PMN predominance, glucose ต่ำ, protein ปานกลาง)"
+        },
+        {
+          "label": "E (Co-trimoxazole)",
+          "text": "Co-trimoxazole",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ Toxoplasma หรือ PCP"
+        }
+      ],
+      "key_takeaway": "CSF: pressure สูง + protein สูงมาก + glucose ต่ำมาก = TBM → Anti-TB drugs"
+    }
+  },
+  {
+    "id": "3b9af268-80d1-4281-b6ae-13ac46d69b54",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 18 ปี มีไข้ต่ำๆ ปวดท้อง maculopapular rash ตับโต lymphocytosis พร้อม atypical lymphocytes และ thrombocytopenia เข้าได้กับ Infectious mononucleosis (EBV) ซึ่งรักษาด้วย prednisolone ในกรณีรุนแรง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Prednisolone เพราะผู้ป่วยมี EBV/Infectious mononucleosis ที่รุนแรงพอที่ต้องการ steroid",
+      "reason": "Infectious mononucleosis (EBV): ลักษณะเด่น = ไข้ต่ำๆ, pharyngitis, lymphadenopathy, hepatosplenomegaly, atypical lymphocytes, mild thrombocytopenia และ maculopapular rash (โดยเฉพาะหลังได้ amoxicillin) WBC 2700 พร้อม atypical lymphocytes คือ Downey cells (reactive T cells) ตอบสนองต่อ EBV-infected B cells การรักษาส่วนใหญ่เป็น supportive care แต่ steroids ใช้ในกรณีมี severe thrombocytopenia, airway obstruction, hemolytic anemia หรือ severe hepatitis Doxycycline ใช้สำหรับ rickettsial diseases",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prednisolone",
+          "is_correct": true,
+          "explanation": "Corticosteroid ใช้ใน severe EBV: thrombocytopenia, airway complication, hemolytic anemia"
+        },
+        {
+          "label": "B",
+          "text": "Doxycycline",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ rickettsial infection, brucellosis ไม่ใช่ EBV"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ bacterial infections ไม่มีประโยชน์ใน viral EBV"
+        },
+        {
+          "label": "D",
+          "text": "Ciprofloxacin",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ enteric fever, UTI ไม่ใช่ EBV"
+        },
+        {
+          "label": "E",
+          "text": "Fluid replacement therapy",
+          "is_correct": false,
+          "explanation": "Supportive care แต่ไม่ใช่ specific treatment ที่ถูกต้องในโจทย์นี้"
+        }
+      ],
+      "key_takeaway": "EBV mononucleosis + severe thrombocytopenia/complications → Prednisolone; atypical lymphocytes = Downey cells"
+    }
+  },
+  {
+    "id": "44210c22-90b9-47f3-baff-d736674fa582",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย Nephrotic syndrome on high-dose steroids (immunocompromised) ไอเป็นเลือด และสปุตัมแสดง parasite เข้าได้กับ Strongyloides stercoralis hyperinfection syndrome ซึ่งเกิดได้เมื่อ immune suppressed",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Strongyloides เพราะผู้ป่วย immunocompromised (steroid) ที่มี pulmonary manifestation จาก larval migration",
+      "reason": "Strongyloides stercoralis มี unique life cycle คือ autoinfection สามารถเกิด hyperinfection syndrome ใน immunocompromised patients เช่น ผู้ที่ได้รับ steroids ขนาดสูง larvae penetrate gut wall เข้า bloodstream → ปอด → hemoptysis การดู sputum จะพบ filariform larvae ของ Strongyloides Paragonimus ทำให้ pulmonary paragonimiasis (hemoptysis) แต่ต้องกินกุ้งปูดิบ Ascaris มี pulmonary phase (Loeffler syndrome) แต่ไม่มี autoinfection Strongyloides hyperinfection พบเฉพาะใน immunocompromised รักษาด้วย Ivermectin",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Strongyloides",
+          "is_correct": true,
+          "explanation": "Hyperinfection syndrome ใน steroid users: larvae ใน sputum, hemoptysis, diarrhea, sepsis"
+        },
+        {
+          "label": "B",
+          "text": "Ascaris",
+          "is_correct": false,
+          "explanation": "มี pulmonary phase แต่ไม่มี hyperinfection ใน immunocompromised"
+        },
+        {
+          "label": "C",
+          "text": "Paragonimus",
+          "is_correct": false,
+          "explanation": "ทำ hemoptysis แต่ต้องมีประวัติกินกุ้งปูดิบ"
+        },
+        {
+          "label": "D",
+          "text": "Enterobius",
+          "is_correct": false,
+          "explanation": "Pinworm ไม่มี pulmonary manifestation"
+        },
+        {
+          "label": "E",
+          "text": "Necator",
+          "is_correct": false,
+          "explanation": "Hookworm มี pulmonary larval phase แต่ไม่มี hyperinfection"
+        }
+      ],
+      "key_takeaway": "Immunocompromised (steroid) + hemoptysis + larvae in sputum = Strongyloides hyperinfection"
+    }
+  },
+  {
+    "id": "4490089b-aea8-4871-8cbe-85760539fa13",
+    "correct_answer": "A",
+    "explanation": "P. falciparum malaria (double chromatin dots + multiple rings ใน RBC) จากพื้นที่ชายแดนพม่า ซึ่งมัก drug-resistant ต้องรักษาด้วย Artemisinin-based combination therapy (ACT): Artemether/Artesunate + Mefloquine",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Artemether/Artesunate + Mefloquine เพราะเป็น ACT ที่แนะนำสำหรับ uncomplicated P. falciparum ในประเทศไทย",
+      "reason": "P. falciparum ในประเทศไทยดื้อต่อ Chloroquine และ Sulfadoxine-pyrimethamine การรักษา first-line คือ ACT: Artesunate + Mefloquine (3 วัน) หรือ Artemether-lumefantrine Double chromatin (2 chromatin dots) ใน ring form และ multiple infected cells คือ characteristic ของ P. falciparum Chloroquine ไม่ควรใช้ใน P. falciparum อีกต่อไปในไทย Primaquine ใช้เพื่อ clear gametocyte ของ falciparum (single dose) และ prevent relapse ของ vivax",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Artemether/Artesunate + Mefloquine",
+          "is_correct": true,
+          "explanation": "ACT = standard treatment สำหรับ P. falciparum ในไทย"
+        },
+        {
+          "label": "B",
+          "text": "Chloroquine เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "P. falciparum ดื้อ chloroquine เกือบทั้งหมดในไทย"
+        },
+        {
+          "label": "C",
+          "text": "Quinine + Clindamycin",
+          "is_correct": false,
+          "explanation": "ใช้ใน pregnant women หรือ when ACT unavailable ไม่ใช่ first-line"
+        },
+        {
+          "label": "D",
+          "text": "Atovaquone-Proguanil",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ prophylaxis และ treatment แต่ไม่ใช่ first-line ในไทย"
+        },
+        {
+          "label": "E",
+          "text": "Primaquine เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Primaquine ใช้สำหรับ liver stage ของ vivax/ovale ไม่ใช่ primary treatment"
+        }
+      ],
+      "key_takeaway": "P. falciparum ในไทย → ACT (Artesunate + Mefloquine) ไม่ใช้ Chloroquine เพราะดื้อยา"
+    }
+  },
+  {
+    "id": "44dfe947-14f3-4c2a-ad4a-0d2f152b9734",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วย COPD อายุ 70 ปี pneumonia อาการแย่ลงมากขึ้นพร้อมซึม แต่ยังไม่ถึงขั้น intubation → ให้ CPAP/BiPAP (non-invasive ventilation) ก่อน ซึ่งดีกว่า intubation ใน COPD",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: เพิ่ม O2 และให้ CPAP/BiPAP เพราะ NIV เป็น first-line สำหรับ COPD exacerbation/respiratory failure ก่อน intubation",
+      "reason": "ในผู้ป่วย COPD ที่มี respiratory failure (เหนื่อยเพิ่ม ซึม) NIV (CPAP/BiPAP) เป็น preferred intervention เพราะลด WOB, ลด intubation rate, ลด mortality ในผู้ป่วย COPD Intubation and MV เป็น last resort เมื่อ NIV ล้มเหลว หรือ patient มี respiratory arrest/เคลื่อนไหวไม่ได้ เปลี่ยน antibiotics ต้องมีหลักฐานการไม่ตอบสนองต่อการรักษาปัจจุบันก่อน Diuretics ไม่เหมาะสม เพราะ pneumonia ไม่ใช่ fluid overload primary IV fluids อาจทำ pneumonia แย่ลง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intubation และ mechanical ventilation",
+          "is_correct": false,
+          "explanation": "ควรลอง NIV ก่อน intubation ในผู้ป่วย COPD"
+        },
+        {
+          "label": "B",
+          "text": "เพิ่ม O2 และให้ CPAP/BiPAP",
+          "is_correct": true,
+          "explanation": "NIV = first-line สำหรับ COPD respiratory failure ลด intubation rate และ mortality"
+        },
+        {
+          "label": "C",
+          "text": "เปลี่ยน antibiotic เป็น broad-spectrum",
+          "is_correct": false,
+          "explanation": "ยังไม่มีหลักฐานชัดเจนว่า antibiotic ปัจจุบันไม่ work"
+        },
+        {
+          "label": "D",
+          "text": "ให้ Diuretic",
+          "is_correct": false,
+          "explanation": "ไม่มีข้อบ่งชี้ fluid overload ใน pneumonia"
+        },
+        {
+          "label": "E",
+          "text": "IV fluids + Inotropes",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐาน septic shock ในโจทย์นี้"
+        }
+      ],
+      "key_takeaway": "COPD + respiratory failure → NIV (BiPAP) ก่อน intubation เสมอ"
+    }
+  },
+  {
+    "id": "48d635a0-2ccb-4b2d-834c-e14bcd108e0e",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยชายอายุ 18 ปี อ่อนแรงของแขนขา progressive ร่วมกับ absent DTR หลังเยี่ยมสถานรับเลี้ยงเด็ก 2 สัปดาห์ เข้าได้กับ Transverse myelitis (acute flaccid paralysis + absent reflexes ในระยะ spinal shock)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Transverse myelitis เพราะมี upper + lower extremity weakness ร่วมกับ absent DTR หลัง viral exposure",
+      "reason": "Transverse myelitis เป็น inflammatory condition ของ spinal cord: acute weakness ทั้ง UE และ LE, absent DTR (acute spinal shock phase), sensory level ใน classic cases ประวัติเยี่ยมสถานรับเลี้ยงเด็กก่อน 2 สัปดาห์ชี้ถึง post-infectious/viral etiology GBS ก็มี absent DTR แต่มักเป็น ascending paralysis เริ่มที่ LE ก่อน และไม่มี UMN signs MG มี fatigable weakness ไม่มี absent DTR (DTR preserved) Neurosyphilis ไม่น่าเจอในอายุ 18 ปี และมีอาการแตกต่าง UMN 4/5 + LMN 1/5 = incomplete spinal cord injury pattern",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Transverse myelitis",
+          "is_correct": true,
+          "explanation": "Post-viral inflammatory myelitis: acute weakness UE+LE + absent DTR (spinal shock) หลัง viral exposure"
+        },
+        {
+          "label": "B",
+          "text": "GBS",
+          "is_correct": false,
+          "explanation": "Ascending weakness เริ่มที่ LE ก่อน ไม่มี UMN signs ไม่มี upper limb initially"
+        },
+        {
+          "label": "C",
+          "text": "MG",
+          "is_correct": false,
+          "explanation": "Fatigable ptosis/diplopia, DTR preserved ไม่มี absent reflexes"
+        },
+        {
+          "label": "D",
+          "text": "Neurosyphilis",
+          "is_correct": false,
+          "explanation": "ไม่น่าเจอในวัยรุ่น 18 ปี ที่ไม่มีประวัติ STI"
+        }
+      ],
+      "key_takeaway": "Post-viral acute weakness UE+LE + absent DTR = Transverse myelitis (spinal cord inflammation)"
+    }
+  },
+  {
+    "id": "4a22d73b-97c8-4a4b-b896-e7383c15eec5",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยใน Nonthaburi มีปวดน่อง ไข้ WBC ปกติ thrombocytopenia (plt 84,000) Hct ปกติ 38% เข้าได้กับ Dengue fever มากกว่า Leptospirosis (ซึ่งมักมี WBC สูงและ renal involvement)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Dengue infection เพราะ thrombocytopenia + ไข้ + ปวดกล้ามเนื้อในพื้นที่เมือง โดยไม่มีหลักฐาน Weil's disease",
+      "reason": "Dengue fever: thrombocytopenia (plt ต่ำ), leukopenia หรือ leukocytosis ได้, Hct อาจสูงขึ้น (hemoconcentration) ในระยะ DHF แต่ปกติใน DF, มักอยู่ในเขตเมือง (urban mosquito-borne) Leptospirosis: มักมีประวัติเดินลุยน้ำ, WBC สูง (neutrophilia), renal/hepatic involvement ชัด (Weil's disease), calf tenderness เด่น Rickettsial: eschar, maculopapular rash, rural exposure Malaria: blood smear positive Scrub typhus: eschar characteristic",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Leptospirosis",
+          "is_correct": false,
+          "explanation": "มักมี WBC สูง, jaundice, renal failure ใน Weil's disease"
+        },
+        {
+          "label": "B",
+          "text": "Dengue infection",
+          "is_correct": true,
+          "explanation": "Thrombocytopenia + ไข้ + ปวดกล้ามเนื้อ ในเมือง Nonthaburi = dengue"
+        },
+        {
+          "label": "C",
+          "text": "Rickettsial infection",
+          "is_correct": false,
+          "explanation": "ต้องมี eschar, rash, rural/outdoor exposure"
+        },
+        {
+          "label": "D",
+          "text": "Malaria",
+          "is_correct": false,
+          "explanation": "ต้อง confirm ด้วย blood smear ใน urban area ไม่น่าเป็น"
+        },
+        {
+          "label": "E",
+          "text": "Scrub typhus",
+          "is_correct": false,
+          "explanation": "Eschar characteristic, rural/forest exposure"
+        }
+      ],
+      "key_takeaway": "Thrombocytopenia + ไข้ + urban area = Dengue; Leptospirosis มักมี WBC สูง + renal/hepatic"
+    }
+  },
+  {
+    "id": "4aa4ea3a-162a-4f61-8f0e-4502358df713",
+    "correct_answer": "A",
+    "explanation": "Severe P. falciparum (parasitemia ≥5%, neck stiffness/Kernig) ต้องการ IV Artesunate เร่งด่วน ร่วมกับ Ceftriaxone เพื่อครอบคลุม bacterial meningitis ที่อาจเกิดร่วมได้",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Ceftriaxone + Artesunate IV เพราะ severe malaria + meningismus ต้องรักษาทั้ง 2 โรคพร้อมกัน",
+      "reason": "Severe P. falciparum criteria รวมถึง hyperparasitemia (≥5%) cerebral malaria (altered consciousness, seizure) Kernig sign + neck stiffness อาจเป็น cerebral malaria หรือ co-existing bacterial meningitis IV Artesunate เป็น drug of choice สำหรับ severe malaria ลด mortality สูงกว่า quinine Ceftriaxone ครอบคลุม bacterial meningitis หากยังไม่ rule out ทางสาเหตุ การ LP ใน suspected malaria ที่มี high ICP อาจเป็นอันตรายได้ ต้องรักษาก่อน CT scan ก่อน LP จะทำให้ช้าเกินไป",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone IV + Artesunate IV",
+          "is_correct": true,
+          "explanation": "Treat both severe malaria + cover bacterial meningitis while results pending"
+        },
+        {
+          "label": "B",
+          "text": "50% glucose + Diazepam",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ hypoglycemia + seizure ไม่ใช่ definitive treatment"
+        },
+        {
+          "label": "C",
+          "text": "CSF analysis ก่อน",
+          "is_correct": false,
+          "explanation": "LP ใน raised ICP อันตราย และทำให้ delay treatment"
+        },
+        {
+          "label": "D",
+          "text": "CT scan ก่อน",
+          "is_correct": false,
+          "explanation": "Delay life-saving treatment ไม่เหมาะสม"
+        },
+        {
+          "label": "E",
+          "text": "Chloroquine IM",
+          "is_correct": false,
+          "explanation": "P. falciparum ดื้อ chloroquine และไม่ใช่ IV artesunate"
+        }
+      ],
+      "key_takeaway": "Severe P. falciparum + meningismus → IV Artesunate (anti-malaria) + Ceftriaxone (cover bacterial meningitis) ทันที"
+    }
+  },
+  {
+    "id": "4e0afb19-7737-4e1a-b07a-4f22e18aa1e5",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย ICU ใส่ Foley's catheter 1 สัปดาห์ ปัสสาวะขุ่น ย้อม Candida albicans → Candiduria ในผู้ป่วย ICU ที่มี risk factors รักษาด้วย antifungal (Itraconazole ตามโจทย์ แม้ Fluconazole จะเป็น preferred choice ในทางปฏิบัติ)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Itraconazole ตามโจทย์ สำหรับ candiduria ใน ICU patient",
+      "reason": "Candiduria ใน ICU patients: risk factors = ICU admission, Foley catheter, antibiotics, immunosuppression การรักษา: สำหรับ symptomatic candiduria หรือ high-risk patients ให้ antifungal Fluconazole มีการกระจายตัวดีใน urine เป็น drug of choice สำหรับ candidal UTI ในทางปฏิบัติ (แต่โจทย์ระบุ A = Itraconazole) การ remove Foley's catheter (option E) ก็สำคัญมาก เพราะลด biofilm ที่ catheter ซึ่งเป็น source ของการติดเชื้อ ในบางโจทย์ข้อสอบไทย ถามว่า antifungal ใด ซึ่งคำตอบ A จากโจทย์นี้คือ Itraconazole",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Itraconazole",
+          "is_correct": true,
+          "explanation": "ตามคำตอบในโจทย์ สำหรับ candidal UTI ใน ICU"
+        },
+        {
+          "label": "B",
+          "text": "Clotrimazole",
+          "is_correct": false,
+          "explanation": "Topical antifungal ไม่มีบทบาทใน systemic/urinary candida"
+        },
+        {
+          "label": "C",
+          "text": "Fluconazole",
+          "is_correct": false,
+          "explanation": "Preferred drug ในทางปฏิบัติจริง แต่ไม่ใช่คำตอบในโจทย์นี้"
+        },
+        {
+          "label": "D",
+          "text": "Amphotericin B",
+          "is_correct": false,
+          "explanation": "Systemic antifungal สำหรับ severe/resistant candida"
+        },
+        {
+          "label": "E",
+          "text": "ถอดสาย Foley's catheter",
+          "is_correct": false,
+          "explanation": "สำคัญ แต่ไม่ใช่ primary treatment ที่โจทย์ถาม"
+        }
+      ],
+      "key_takeaway": "ICU + Foley + candiduria = antifungal treatment; Fluconazole preferred จริง แต่โจทย์ตอบ Itraconazole"
+    }
+  },
+  {
+    "id": "51be29f5-5089-462a-a8c5-2eef78c191be",
+    "correct_answer": "B",
+    "explanation": "อัตราครอบคลุมวัคซีน Pertussis 65% ยังไม่ถึง herd immunity threshold (ต้องการ 80-90%+) จึงยังเกิดการระบาดได้ในกลุ่มที่ไม่ได้รับวัคซีน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: 65% ไม่เพียงพอสำหรับ herd immunity ของ Pertussis ที่ต้องการ 80-90%+",
+      "reason": "Herd immunity threshold ขึ้นกับ R0 (basic reproduction number) ของโรค Pertussis มี R0 = 12-17 (สูงมาก) ต้องการ vaccination coverage ≥92-94% เพื่อ herd immunity ดังนั้น 65% ไม่เพียงพออย่างแน่นอน ยังมี susceptible population เพียงพอสำหรับการระบาด วัคซีน Pertussis (acellular) มี waning immunity ด้วย ทำให้ต้องการ booster dose (Tdap) ในผู้ใหญ่ด้วย ข้อ A ผิดเพราะ claim ว่าต้องการ >95% (สูงเกินไป) ข้อ C เป็นไปได้แต่ไม่ใช่คำอธิบายหลัก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ต้องการครอบคลุม >95%",
+          "is_correct": false,
+          "explanation": "R0 ของ Pertussis ~12-17 ต้องการ ~92-94% ไม่ใช่ >95%"
+        },
+        {
+          "label": "B",
+          "text": "65% ไม่พอสำหรับ herd immunity ต้องการ 80-90%+",
+          "is_correct": true,
+          "explanation": "Pertussis R0 สูง = threshold สูง 65% ยังมี susceptible pool เพียงพอสำหรับระบาด"
+        },
+        {
+          "label": "C",
+          "text": "Vaccine waning immunity",
+          "is_correct": false,
+          "explanation": "เป็นปัจจัยร่วมแต่ไม่ใช่คำอธิบายหลักของคำถาม"
+        },
+        {
+          "label": "D",
+          "text": "นำเข้าเชื้อจากต่างประเทศ",
+          "is_correct": false,
+          "explanation": "ไม่ได้อธิบาย relationship กับ vaccination coverage"
+        },
+        {
+          "label": "E",
+          "text": "วัคซีนป้องกัน infection แต่ไม่ป้องกัน transmission",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง วัคซีน Pertussis ป้องกันทั้ง infection และ transmission ในระดับหนึ่ง"
+        }
+      ],
+      "key_takeaway": "Pertussis R0 = 12-17 ต้องการ vaccination coverage ~92%+ สำหรับ herd immunity; 65% ไม่เพียงพอ"
+    }
+  },
+  {
+    "id": "534f70c7-114c-40fd-a5c5-68bdf313cea7",
+    "correct_answer": "A",
+    "explanation": "HIV positive CD4 250 มี oral candidiasis (white patches) ต้องรักษาทั้ง oral candidiasis ด้วย oral antifungal (Fluconazole) และเริ่ม antiretroviral therapy เพราะ CD4 250 < 350",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Oral antifungal + Oral antiretroviral เพราะผู้ป่วย HIV + OI (candidiasis) ต้องรักษา OI และเริ่ม HAART",
+      "reason": "HIV ที่มี CD4 250 (< 350) มีข้อบ่งชี้เริ่ม HAART ตาม WHO 2013+ guideline (เริ่มทุกคนที่มี HIV ไม่ว่า CD4 เท่าไหร่) Oropharyngeal candidiasis เป็น AIDS-defining illness เมื่อ CD4 < 200 แต่ CD4 250 ก็พบได้ รักษาด้วย Fluconazole (oral) 7-14 วัน Topical antifungal (Nystatin) ไม่เพียงพอสำหรับ extensive disease ต้องเริ่ม HAART เพื่อ immune reconstitution และป้องกัน OI อื่นๆ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral antifungal + Oral antiretroviral",
+          "is_correct": true,
+          "explanation": "Fluconazole สำหรับ candidiasis + HAART เพราะ CD4 < 350"
+        },
+        {
+          "label": "B",
+          "text": "Topical antifungal + Oral antiretroviral",
+          "is_correct": false,
+          "explanation": "Topical ไม่เพียงพอสำหรับ oropharyngeal/extensive candidiasis"
+        },
+        {
+          "label": "C",
+          "text": "Oral antifungal เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่เริ่ม HAART = ปล่อยให้ immune suppression ดำเนินต่อ"
+        },
+        {
+          "label": "D",
+          "text": "Topical antifungal เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม systemic candidiasis และไม่เริ่ม HAART"
+        },
+        {
+          "label": "E",
+          "text": "Oral antiretroviral เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่รักษา acute candidiasis ที่ต้องการ antifungal โดยตรง"
+        }
+      ],
+      "key_takeaway": "HIV + oral candidiasis → Oral fluconazole + เริ่ม HAART (CD4 < 350 หรือ OI present)"
+    }
+  },
+  {
+    "id": "54cfbacf-9376-4719-b7ff-84f3bb6e6f12",
+    "correct_answer": "A",
+    "explanation": "TB ได้รับ IRZE 2 เดือน AFB ลดลงจาก 3+ เป็น 1+ ถือว่า treatment response ปกติ สามารถเข้า continuation phase ด้วย IR ได้ตาม standard regimen",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: ลดเหลือ IR เพราะหลัง intensive phase 2 เดือน AFB 1+ ถือว่าตอบสนองดี เข้า continuation phase IR 4 เดือน",
+      "reason": "Standard TB regimen: 2IRZE/4IR = intensive phase IRZE 2 เดือน ตามด้วย continuation phase IR 4 เดือน หลัง intensive phase AFB ลดลงจาก 3+ เป็น 1+ = treatment response ปกติ ไม่ถือว่า failure Treatment failure = smear/culture ยังบวกที่ month 5+ หรือ ตามหลัง initial conversion ตาม Thai guideline ไม่ต้องรอให้ AFB เป็น 0 ก่อนเข้า continuation phase การ extend IRZE หรือ add drugs โดยไม่มีหลักฐาน resistance เพิ่มความเสี่ยง MDR-TB",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ลดเหลือ IR",
+          "is_correct": true,
+          "explanation": "Standard: 2IRZE → 4IR; AFB 1+ หลัง 2 เดือน = normal response"
+        },
+        {
+          "label": "B",
+          "text": "ลดเหลือ IRE",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard continuation phase regimen"
+        },
+        {
+          "label": "C",
+          "text": "ให้ IRZE ต่อ 1 เดือน",
+          "is_correct": false,
+          "explanation": "ไม่มีข้อบ่งชี้ extension ของ intensive phase"
+        },
+        {
+          "label": "D",
+          "text": "Add streptomycin",
+          "is_correct": false,
+          "explanation": "ต้องการหลักฐาน drug resistance ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Add ofloxacin",
+          "is_correct": false,
+          "explanation": "Second-line drug สำหรับ MDR-TB เท่านั้น"
+        }
+      ],
+      "key_takeaway": "TB: 2IRZE → 4IR เสมอ; AFB ลดลงหลัง 2 เดือน = treatment response ปกติ"
+    }
+  },
+  {
+    "id": "5506d18e-6029-41df-91af-8c03dbb6e714",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 27 ปี เจ็บคอ 2 สัปดาห์ white patches ที่คอและลิ้น ไม่มีประวัติ immunosuppression การตรวจยืนยัน candidiasis (oral thrush) ที่ดีที่สุดคือ KOH mount + Gram stain จากการขูด white patch",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: KOH mount + Gram stain เพราะเป็นการวินิจฉัย fungal infection ทางห้องปฏิบัติการที่ quick, cheap, และ specific",
+      "reason": "Oral candidiasis วินิจฉัยโดย: KOH preparation = ละลาย keratinized material เพื่อดู fungal elements (pseudohyphae + budding yeast) Gram stain = Candida ย้อม Gram-positive พบ gram-positive budding yeast + hyphae White patches ที่ขูดออกได้ (pseudomembranous candidiasis) เป็น classic presentation ของ oral thrush Throat culture บน blood agar สำหรับ bacterial pharyngitis (Strep) ไม่ใช่ fungal PCR viral culture สำหรับ HSV ถ้ามี vesicles/ulcers ไม่ใช่ white patches Biopsy เป็น overkill สำหรับ obvious candidiasis ที่ไม่มี suspicion malignancy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "KOH mount + Gram stain",
+          "is_correct": true,
+          "explanation": "Direct microscopy: pseudohyphae + budding yeast = Candida → quick, specific, inexpensive"
+        },
+        {
+          "label": "B",
+          "text": "Throat culture บน Blood agar",
+          "is_correct": false,
+          "explanation": "สำหรับ Strep pharyngitis ไม่ใช่ fungal infection"
+        },
+        {
+          "label": "C",
+          "text": "Viral culture + PCR สำหรับ HSV",
+          "is_correct": false,
+          "explanation": "สำหรับ vesicles/ulcers ไม่ใช่ white patches ที่ขูดออกได้"
+        },
+        {
+          "label": "D",
+          "text": "CBC + CD4 count",
+          "is_correct": false,
+          "explanation": "ประเมิน immune status ไม่ใช่การยืนยัน etiology"
+        },
+        {
+          "label": "E",
+          "text": "Biopsy + histopathology",
+          "is_correct": false,
+          "explanation": "Invasive เกินจำเป็นสำหรับ typical oral candidiasis"
+        }
+      ],
+      "key_takeaway": "White patches ในปาก → KOH mount + Gram stain เพื่อดู Candida pseudohyphae/yeast"
+    }
+  }
+]

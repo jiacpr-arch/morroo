@@ -1,0 +1,842 @@
+[
+  {
+    "id": "9804e749-a238-4f67-872e-3623051f339e",
+    "correct_answer": "A",
+    "explanation": "หญิง 20 ปี มี STI risk factor + ระดูขาด 7 สัปดาห์ + ปวดท้องซ้าย + เลือดออกกะปริ = Ectopic pregnancy จนกว่าจะ prove otherwise",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Ectopic pregnancy เพราะ triad ของ ectopic: amenorrhea + pelvic pain + vaginal bleeding ในหญิงวัยเจริญพันธุ์",
+      "reason": "Ectopic pregnancy classic triad: Amenorrhea (ระดูขาด), Pelvic/abdominal pain, Vaginal bleeding Risk factors: multiple partners (STI → PID → tubal damage), IUD, prior ectopic, tubal surgery 90% ของ ectopic อยู่ที่ fallopian tube → ปวดท้องข้างใดข้างหนึ่ง Workup: serum β-hCG + TVUS, ถ้า β-hCG >1500 mIU/mL ไม่เห็น IUP = ectopic จนกว่าจะพิสูจน์อย่างอื่น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ectopic pregnancy",
+          "is_correct": true,
+          "explanation": "Amenorrhea 7wk + pain + bleeding + STI risk = ectopic pregnancy จนกว่าจะ rule out"
+        },
+        {
+          "label": "B",
+          "text": "Endometriotic cyst",
+          "is_correct": false,
+          "explanation": "ทำให้ปวดท้องได้ แต่ไม่มีประวัติ dysmenorrhea/dyspareunia และไม่ทำให้ amenorrhea"
+        },
+        {
+          "label": "C",
+          "text": "Dermoid cyst",
+          "is_correct": false,
+          "explanation": "ไม่ทำให้ amenorrhea + acute pain แบบนี้"
+        },
+        {
+          "label": "D",
+          "text": "Follicular cyst",
+          "is_correct": false,
+          "explanation": "เล็ก ไม่ค่อยทำให้ pain รุนแรง ไม่ทำให้ amenorrhea"
+        },
+        {
+          "label": "E",
+          "text": "Ovarian abscess",
+          "is_correct": false,
+          "explanation": "ต้องมีไข้ + ประวัติ PID; ไม่ทำให้ amenorrhea"
+        }
+      ],
+      "key_takeaway": "Amenorrhea + Pelvic pain + Vaginal bleeding = Ectopic pregnancy จนกว่าจะพิสูจน์อื่น → β-hCG + TVUS"
+    }
+  },
+  {
+    "id": "98fcf56c-1c29-44e3-849f-c115f250b43a",
+    "correct_answer": "A",
+    "explanation": "Emergency contraception ที่มีประสิทธิภาพและปลอดภัยที่สุดคือ Levonorgestrel 1.5mg single dose ภายใน 72-120 ชั่วโมง หรือ Mifepristone",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Levonorgestrel 1.5mg single dose เพราะเป็น WHO-recommended EC ที่ประสิทธิภาพสูง ผลข้างเคียงน้อย",
+      "reason": "Emergency contraception options (ปัจจุบัน): Levonorgestrel 1.5mg single dose (ดีที่สุด): ประสิทธิภาพ 85-95% ภายใน 72hr, ลดลงถ้าใช้หลัง 72hr แต่ยังใช้ได้ถึง 120hr Mifepristone 10mg: ประสิทธิภาพใกล้เคียง Copper IUD: ประสิทธิภาพ >99% ภายใน 5 วัน Ulipristal acetate 30mg: ใช้ได้ถึง 120hr ประสิทธิภาพดี Option A ถูกต้อง: LNG 1.5mg single หรือ mifepristone ซึ่งเป็น current standard",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Levonorgestrel 1.5mg single dose หรือ mifepristone",
+          "is_correct": true,
+          "explanation": "Current WHO standard EC ประสิทธิภาพสูง ผลข้างเคียงน้อย"
+        },
+        {
+          "label": "B",
+          "text": "รอดูว่าตั้งครรภ์หรือไม่",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม ผู้ป่วยต้องการป้องกัน ควรให้ EC ทันที"
+        },
+        {
+          "label": "C",
+          "text": "LNG 0.75mg BID",
+          "is_correct": false,
+          "explanation": "เป็น old regimen; single dose 1.5mg มีประสิทธิภาพเท่ากันและ compliance ดีกว่า"
+        },
+        {
+          "label": "D",
+          "text": "ส่งสูตินรีแพทย์ขัดขวางตั้งครรภ์",
+          "is_correct": false,
+          "explanation": "รุนแรงเกินไป EC เป็น contraception ไม่ใช่ abortion"
+        },
+        {
+          "label": "E",
+          "text": "Aspirin + รอ 1 สัปดาห์",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐานว่า aspirin ป้องกันการตั้งครรภ์ได้"
+        }
+      ],
+      "key_takeaway": "EC first-line: Levonorgestrel 1.5mg single dose ภายใน 72-120hr (ยิ่งเร็วยิ่งดี)"
+    }
+  },
+  {
+    "id": "9a4e7556-f737-407a-8710-b98ac3c8d689",
+    "correct_answer": "B",
+    "explanation": "H-SIL (CIN 2-3) ต้องทำ Conization ทันที เพราะมีความเสี่ยงสูงต่อการเป็น invasive cervical cancer และ conization ทำทั้ง diagnosis และ treatment ได้พร้อมกัน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Conization เพราะ H-SIL = CIN 2-3 ต้องการ excisional treatment ไม่ใช่แค่ biopsy",
+      "reason": "Abnormal Pap smear management: ASC-US → Reflex HPV test L-SIL → Colposcopy ± biopsy H-SIL (CIN 2-3) → Excisional procedure (LEEP/cold knife conization) Colposcopy + biopsy (A) เป็น first step สำหรับ L-SIL แต่ H-SIL ข้ามไป conization ได้เลยตาม guideline ล่าสุด เพราะ CIN 2-3 มี progression rate สูงถ้าไม่รักษา (~20-30%) Conization: ทั้ง diagnostic (histology) + therapeutic (excise lesion) ในครั้งเดียว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colposcopy + biopsy",
+          "is_correct": false,
+          "explanation": "สำหรับ L-SIL; H-SIL ข้ามไป conization ได้เลยตาม current guideline"
+        },
+        {
+          "label": "B",
+          "text": "Conization",
+          "is_correct": true,
+          "explanation": "H-SIL = CIN 2-3 → LEEP/cone = excisional treatment ที่แนะนำ"
+        },
+        {
+          "label": "C",
+          "text": "HPV testing",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ ASC-US triage ไม่ใช่ H-SIL management"
+        },
+        {
+          "label": "D",
+          "text": "Repeat Pap 3 เดือน",
+          "is_correct": false,
+          "explanation": "ล่าช้าเกินไปสำหรับ H-SIL ที่มี progression risk สูง"
+        },
+        {
+          "label": "E",
+          "text": "Liquid-based cytology ทุกเดือน",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม; H-SIL ต้องรักษาไม่ใช่แค่ follow up"
+        }
+      ],
+      "key_takeaway": "H-SIL (CIN 2-3) → Conization (LEEP) = Treatment of choice; ไม่ต้อง colposcopy ก่อนในกรณี H-SIL ชัดเจน"
+    }
+  },
+  {
+    "id": "9bc5bf36-3b7f-4e13-83ea-0307e5e15802",
+    "correct_answer": "C",
+    "explanation": "หญิง 35 ปี irregular uterus + os close + 10-week size = Uterine fibroid (myoma) ทำให้ menometrorrhagia, myomectomy เหมาะสำหรับผู้ที่ยังต้องการมีบุตร",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Myomectomy เพราะ uterus ขรุขระ (irregular) 10wk size = fibroid uteri และผู้ป่วย 35 ปียังควรอนุรักษ์มดลูก",
+      "reason": "Uterine fibroid สาเหตุของ menometrorrhagia: Irregular uterus (os close ≠ os open) = fibroid vs normal pregnancy ขนาด 10wk size = significant fibroid U/S proliferative endometrium อาจเป็น anovulatory bleeding ร่วมกับหรือ fibroid-related Myomectomy (C): เหมาะสมสำหรับหญิงที่ยังต้องการมีบุตร ผลดีกว่า hysterectomy ในแง่ fertility preservation Hysterectomy (A): definitive แต่รุนแรงเกิน สำหรับ 35 ปีที่อาจยังต้องการบุตร GnRH analog (B): ใช้ก่อน surgery เพื่อลดขนาด fibroid ไม่ใช่ long-term treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hysterectomy",
+          "is_correct": false,
+          "explanation": "รุนแรงเกินไปสำหรับ 35 ปีที่อาจยังต้องการบุตร"
+        },
+        {
+          "label": "B",
+          "text": "GnRH analog",
+          "is_correct": false,
+          "explanation": "ใช้ preoperative เพื่อลดขนาด fibroid ไม่ใช่ definitive treatment"
+        },
+        {
+          "label": "C",
+          "text": "Myomectomy",
+          "is_correct": true,
+          "explanation": "Irregular uterus = fibroid; myomectomy อนุรักษ์ fertility ในหญิง 35 ปี"
+        },
+        {
+          "label": "D",
+          "text": "Progestin",
+          "is_correct": false,
+          "explanation": "ช่วย anovulatory DUB แต่ไม่ใช่ treatment สำหรับ fibroid ขนาดใหญ่"
+        },
+        {
+          "label": "E",
+          "text": "Endometrial ablation",
+          "is_correct": false,
+          "explanation": "สำหรับ DUB ที่ไม่มี structural cause และไม่ต้องการมีบุตรแล้ว"
+        }
+      ],
+      "key_takeaway": "Fibroid (irregular uterus) + ยังต้องการมีบุตร → Myomectomy; ไม่ต้องการแล้ว → Hysterectomy"
+    }
+  },
+  {
+    "id": "9cbd7e77-3510-4507-84cf-796caa507e66",
+    "correct_answer": "A",
+    "explanation": "Emergency contraception ในกรณีนี้คำตอบคือ High dose estrogen (เป็น old Yuzpe regimen ที่ใช้ estrogen สูง) ซึ่งเป็น EC วิธีหนึ่งที่เคยใช้ในอดีต",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A — High dose estrogen pills ซึ่งเป็น emergency contraception method หนึ่งที่เคยใช้",
+      "reason": "Emergency contraception history: Oldest method: High dose estrogen อย่างเดียว (ไม่ใช่ standard แล้ว, ผลข้างเคียงมาก) Yuzpe regimen: EE 100μg + LNG 0.5mg × 2 doses ห่าง 12hr = ยังใช้ Levonorgestrel-only: 1.5mg single = current standard ที่ดีสุด ข้อสอบนี้ถามและตอบ A = high dose estrogen ซึ่งเป็น EC ที่ใช้ได้ แต่ไม่ใช่ first choice ในปัจจุบัน คำตอบ C (OCP) ก็คือ Yuzpe regimen แต่คำตอบที่ให้คือ A",
+      "choices": [
+        {
+          "label": "A",
+          "text": "High dose estrogen",
+          "is_correct": true,
+          "explanation": "EC method ที่ใช้ได้ตามข้อสอบ แม้จะไม่ใช่ current first-line"
+        },
+        {
+          "label": "B",
+          "text": "High dose progesterone",
+          "is_correct": false,
+          "explanation": "Progestin-only EC (LNG) เป็น standard แต่ option นี้คลุมเครือ"
+        },
+        {
+          "label": "C",
+          "text": "OCP (Combined)",
+          "is_correct": false,
+          "explanation": "Yuzpe regimen ใช้ได้แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "DMPA injection",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ EC; เป็น regular contraception"
+        },
+        {
+          "label": "E",
+          "text": "Curettage",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม ไม่ใช่ EC"
+        }
+      ],
+      "key_takeaway": "EC options: High-dose estrogen (เก่า), Yuzpe (OCP high dose), LNG 1.5mg (ดีสุดปัจจุบัน), Copper IUD"
+    }
+  },
+  {
+    "id": "9fe9a715-b4ff-4b37-a44b-ae0756e5b918",
+    "correct_answer": "B",
+    "explanation": "หญิง 30 ปี สุขภาพดี bilateral adnexal cysts (6cm, 5cm) = premenopausal woman ที่มี simple ovarian cyst ≤8cm ให้ pelvic ultrasound follow-up ใน 6-8 สัปดาห์",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Pelvic ultrasound follow-up in 6-8 weeks เพราะ premenopausal woman ที่มี simple cysts ≤8cm มักหายเองได้",
+      "reason": "Ovarian cysts management: Premenopausal หญิง: Simple cyst ≤3cm = physiologic → ไม่ต้องทำอะไร Simple cyst 3-8cm = follow up ultrasound 6-8 สัปดาห์ Simple cyst >8cm หรือ complex cyst = พิจารณา surgery Postmenopausal: threshold ต่ำกว่า → low threshold สำหรับ surgery Bilateral cysts 5-6cm ใน 30yo = ขนาดที่ follow up ได้ด้วย US ก่อน Surgery ทันทีใช้เมื่อ: torsion, rupture, complex cyst, suspect malignancy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "FSH/LH/Estradiol",
+          "is_correct": false,
+          "explanation": "ไม่ช่วย diagnose ovarian cyst; ใช้สำหรับ menopause/infertility workup"
+        },
+        {
+          "label": "B",
+          "text": "Pelvic US follow-up 6-8 weeks",
+          "is_correct": true,
+          "explanation": "Simple cysts 5-6cm ใน premenopausal → watch and wait with serial US"
+        },
+        {
+          "label": "C",
+          "text": "CT abdomen",
+          "is_correct": false,
+          "explanation": "US เพียงพอ CT ใช้ถ้า suspect malignancy หรือ US ไม่ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Exploratory laparotomy",
+          "is_correct": false,
+          "explanation": "รุนแรงเกินไป ยังไม่มี indication ชัดเจน"
+        },
+        {
+          "label": "E",
+          "text": "Immediate surgery",
+          "is_correct": false,
+          "explanation": "ไม่มี signs of torsion/rupture/malignancy → ไม่ต้องผ่าตัดทันที"
+        }
+      ],
+      "key_takeaway": "Bilateral simple cysts 5-6cm ใน premenopausal → US follow-up 6-8 สัปดาห์; >8cm หรือ complex → surgery"
+    }
+  },
+  {
+    "id": "a118915b-c15d-438d-8d47-8d60be5159b4",
+    "correct_answer": "A",
+    "explanation": "ชาย 25 ปี purulent discharge + dysuria + ประวัติ unprotected sex = Gonococcal urethritis → รักษาด้วย Ceftriaxone (สำหรับ N. gonorrhoeae) + Doxycycline (สำหรับ Chlamydia coinfection)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Ceftriaxone + Doxycycline เพราะ urethritis ต้องครอบคลุมทั้ง gonorrhea และ chlamydia (dual therapy)",
+      "reason": "Gonococcal urethritis (GU) treatment (CDC guideline): Ceftriaxone 500mg IM single dose (สำหรับ N. gonorrhoeae) + Doxycycline 100mg BID × 7 days (สำหรับ Chlamydia trachomatis coinfection) Dual therapy เพราะ coinfection ≥20-30% Greenish purulent = suggestive of gonorrhea (vs clear = chlamydia) Ciprofloxacin (C) ไม่ใช้แล้วเพราะ N. gonorrhoeae ดื้อยา Doxycycline alone (D) ครอบคลุม chlamydia แต่ไม่ครอบคลุม gonorrhea",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone + Doxycycline",
+          "is_correct": true,
+          "explanation": "Dual therapy: Ceftriaxone (GC) + Doxycycline (Chlamydia) = CDC standard"
+        },
+        {
+          "label": "B",
+          "text": "Cephalosporin + Clindamycin",
+          "is_correct": false,
+          "explanation": "Clindamycin ไม่ครอบคลุม Chlamydia หรือ GC ได้ดีพอ"
+        },
+        {
+          "label": "C",
+          "text": "Ciprofloxacin monotherapy",
+          "is_correct": false,
+          "explanation": "ไม่ใช้แล้ว GC ดื้อ fluoroquinolones สูง"
+        },
+        {
+          "label": "D",
+          "text": "Doxycycline monotherapy",
+          "is_correct": false,
+          "explanation": "ครอบคลุม Chlamydia แต่ไม่เพียงพอสำหรับ GC"
+        },
+        {
+          "label": "E",
+          "text": "Azithromycin monotherapy",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ GC ตาม current guideline"
+        }
+      ],
+      "key_takeaway": "Gonococcal urethritis → Ceftriaxone + Doxycycline (dual therapy ครอบคลุม GC + Chlamydia)"
+    }
+  },
+  {
+    "id": "a1d0e726-6f20-4722-b2a1-6aa78bd8500d",
+    "correct_answer": "A",
+    "explanation": "หญิง 40 ปี ไม่ได้กินยา มีเลือดออกกระปิบกระปรอยระหว่างรอบเดือน = Dysfunctional uterine bleeding (DUB) / anovulatory bleeding ในวัย perimenopause → ให้ Combined OCP ควบคุม",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Combined OCP เพราะ intermenstrual bleeding ใน 40 ปี ที่ไม่มีสาเหตุชัดเจน = DUB/anovulatory → OCP ควบคุม hormones",
+      "reason": "Dysfunctional uterine bleeding (DUB) / Abnormal uterine bleeding ใน perimenopause: สาเหตุ: anovulatory cycles, estrogen dominance, ไม่มี progesterone effect Management: ยืนยัน diagnosis ก่อน (ตัดสาเหตุ structural ออก) Combined OCP (A): ควบคุม hormone, ลด bleeding, ป้องกัน endometrial hyperplasia เหมาะสำหรับ 40 ปีที่ไม่ได้กินยาและไม่ต้องการบุตร Progestin-only (B): ใช้ได้แต่ OCP ครอบคลุมกว่า Fractional curettage (C): ทำเพื่อ R/O endometrial cancer ถ้า OCP ไม่ตอบสนอง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Combined OCP",
+          "is_correct": true,
+          "explanation": "DUB ในวัย perimenopause → OCP ควบคุม hormonal fluctuation ได้ดีที่สุด"
+        },
+        {
+          "label": "B",
+          "text": "Progestin-only",
+          "is_correct": false,
+          "explanation": "ใช้ได้แต่ Combined OCP ดีกว่า ครอบคลุม estrogen + progesterone"
+        },
+        {
+          "label": "C",
+          "text": "Fractional curettage",
+          "is_correct": false,
+          "explanation": "ทำเพื่อ R/O endometrial cancer ถ้า medical management ล้มเหลว"
+        },
+        {
+          "label": "D",
+          "text": "Endometrial ablation",
+          "is_correct": false,
+          "explanation": "สำหรับผู้ที่ medical treatment ล้มเหลวและไม่ต้องการบุตร"
+        },
+        {
+          "label": "E",
+          "text": "Hysterectomy",
+          "is_correct": false,
+          "explanation": "รุนแรงเกินไปสำหรับ first-line management ของ DUB"
+        }
+      ],
+      "key_takeaway": "Anovulatory DUB ใน perimenopause → Combined OCP (first-line); ถ้าไม่ตอบสนอง → curettage เพื่อ R/O malignancy"
+    }
+  },
+  {
+    "id": "a206899a-3e11-4e2b-99ff-e5090302dca1",
+    "correct_answer": "B",
+    "explanation": "G1P0 GA 10wk มีเลือดออกกะปริดกะปรอย PE ปกติ ต้องทำ Ultrasound เพื่อยืนยัน fetal viability และ locate pregnancy (IUP vs ectopic) ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Ultrasound เพราะต้องยืนยัน fetal cardiac activity, IUP location, และ rule out ectopic",
+      "reason": "Bleeding ใน first trimester (threatened abortion workup): Ultrasound (B) = ตรวจก่อน เพื่อ: ยืนยัน IUP (not ectopic), ดู fetal cardiac activity (viable vs non-viable), ดู location ของ gestational sac Urine pregnancy test (A) ไม่จำเป็นเพราะรู้ว่าตั้งครรภ์แล้ว Serum β-hCG (D) ช่วยแต่ US ให้ข้อมูลโดยตรงกว่า Progesterone supplement (E) ให้ได้ถ้า threatened abortion แต่ต้อง US ก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urine pregnancy test",
+          "is_correct": false,
+          "explanation": "รู้ว่าตั้งครรภ์แล้ว (G1P0 GA 10wk) ไม่จำเป็น"
+        },
+        {
+          "label": "B",
+          "text": "Ultrasound",
+          "is_correct": true,
+          "explanation": "ยืนยัน IUP + fetal viability + rule out ectopic = first-line investigation"
+        },
+        {
+          "label": "C",
+          "text": "Pelvic examination",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ US ให้ข้อมูลมากกว่า โดยเฉพาะ fetal viability"
+        },
+        {
+          "label": "D",
+          "text": "Serum β-hCG",
+          "is_correct": false,
+          "explanation": "ช่วยใน ectopic workup แต่ US ให้ข้อมูลโดยตรงกว่าในกรณีนี้"
+        },
+        {
+          "label": "E",
+          "text": "Progesterone supplement",
+          "is_correct": false,
+          "explanation": "อาจให้ใน threatened abortion แต่ต้อง US ก่อน"
+        }
+      ],
+      "key_takeaway": "First trimester bleeding → Ultrasound ก่อน เพื่อยืนยัน IUP + fetal viability + R/O ectopic"
+    }
+  },
+  {
+    "id": "a30e17dc-0a12-4e9e-b34e-0226db59c3d3",
+    "correct_answer": "C",
+    "explanation": "หญิง 60 ปี postmenopausal 10 ปี ไม่กินยา มีเลือดออก vaginal = postmenopausal bleeding สาเหตุที่พบบ่อยที่สุดคือ Atrophic endometritis/vaginitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Atrophic endometritis เพราะเป็นสาเหตุที่พบบ่อยที่สุดของ postmenopausal bleeding (~30-40%)",
+      "reason": "Postmenopausal bleeding สาเหตุ (ตามความถี่): 1. Atrophic endometritis/vaginitis (~30-40%) = พบบ่อยที่สุด 2. Hormone therapy (ไม่ใช่กรณีนี้เพราะไม่กินยา) 3. Endometrial polyp 4. Endometrial hyperplasia 5. Endometrial cancer (~10-15%) CA endometrium (D) เป็นสาเหตุที่สำคัญและต้อง R/O แต่ไม่ใช่ most common CA cervix (B) ทำให้ postcoital bleeding มากกว่า ไม่กินยา ไม่มี HRT → Atrophic change มากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cervicitis",
+          "is_correct": false,
+          "explanation": "พบน้อยใน postmenopause ที่ไม่ sexually active"
+        },
+        {
+          "label": "B",
+          "text": "CA cervix",
+          "is_correct": false,
+          "explanation": "ทำให้ postcoital bleeding; อาจเป็นได้แต่ไม่ใช่ most common"
+        },
+        {
+          "label": "C",
+          "text": "Atrophic endometritis",
+          "is_correct": true,
+          "explanation": "สาเหตุที่พบบ่อยที่สุดของ PMB ในผู้ที่ไม่ได้ใช้ HRT"
+        },
+        {
+          "label": "D",
+          "text": "CA endometrium",
+          "is_correct": false,
+          "explanation": "สำคัญต้อง R/O แต่ไม่ใช่ most common; ต้อง TVUS + biopsy เพื่อ R/O"
+        },
+        {
+          "label": "E",
+          "text": "Anovulation",
+          "is_correct": false,
+          "explanation": "ไม่ใช่สาเหตุในวัย postmenopause (ไม่มี ovulation แล้ว)"
+        }
+      ],
+      "key_takeaway": "Postmenopausal bleeding most common cause = Atrophic endometritis/vaginitis; ต้อง R/O CA endometrium ด้วย TVUS"
+    }
+  },
+  {
+    "id": "a567fdf4-42ec-43c2-a899-eb8a135b333d",
+    "correct_answer": "A",
+    "explanation": "เด็กหญิง 12 ปี menarche 2 เดือนแล้ว ประจำเดือนนาน 14 วัน แต่ปริมาณปกติ ไม่มีอาการ = Anovulatory (physiologic) DUB ในช่วงแรกหลัง menarche ให้ reassure",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Reassure เพราะ irregular/prolonged periods ใน 2 ปีแรกหลัง menarche เป็น physiologic anovulatory bleeding",
+      "reason": "Anovulatory cycles ในวัยรุ่น: HPO axis (hypothalamus-pituitary-ovary) ยังไม่ mature ใน 1-2 ปีแรกหลัง menarche Irregular periods, prolonged bleeding เป็น normal physiologic process เด็กหญิงนี้: menarche 2 เดือน, period 14 วัน, ปริมาณปกติ, ไม่มีอาการ = ผิดปกติในแง่ระยะเวลาแต่ physiologically normal Reassure ผู้ปกครองว่าจะปรับตัวได้ใน 1-2 ปี Curettage (C) ห้ามทำในเด็ก ไม่มี indication",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure and observe",
+          "is_correct": true,
+          "explanation": "Physiologic anovulatory DUB ใน 2 ปีแรกหลัง menarche = reassure ผู้ปกครอง"
+        },
+        {
+          "label": "B",
+          "text": "OCP ทันที",
+          "is_correct": false,
+          "explanation": "ยังไม่จำเป็น เว้นแต่ bleeding รุนแรง หรือ anemia"
+        },
+        {
+          "label": "C",
+          "text": "Curettage",
+          "is_correct": false,
+          "explanation": "ห้ามทำในเด็กวัยรุ่นที่ไม่มี pathology ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Tranexamic acid + iron",
+          "is_correct": false,
+          "explanation": "ใช้ถ้ามี anemia หรือ heavy bleeding แต่กรณีนี้ปริมาณปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Hematology referral",
+          "is_correct": false,
+          "explanation": "ทำถ้าสงสัย coagulopathy (VWD) แต่ไม่ใช่ first step"
+        }
+      ],
+      "key_takeaway": "Prolonged/irregular periods ใน 2 ปีแรกหลัง menarche = Physiologic anovulatory DUB → Reassure"
+    }
+  },
+  {
+    "id": "aadba4a0-6779-4341-baa5-93f821419217",
+    "correct_answer": "A",
+    "explanation": "หญิง 30 ปี คัน + yellowish leukorrhea ต้องทำ KOH preparation เพื่อ identify organism (yeast/candida = budding cells) ก่อนรักษา",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — KOH preparation เพราะ yellowish/white discharge + คัน = suspected candidal vaginitis → KOH ช่วย identify yeast",
+      "reason": "Vaginitis workup: KOH prep: ละลาย cell debris ออก เห็น pseudohyphae/budding yeast = Candida Wet mount (saline): clue cells = BV, motile trichomonads = Trichomoniasis Gram stain (C): ใช้สำหรับ gonorrhea (gram-negative intracellular diplococci) Tzanck smear (D): สำหรับ herpetic lesions (HSV) Culture (E): ทำเมื่อ initial workup ไม่ชัดเจน KOH เป็น rapid, simple, cheap test ที่ทำ bedside ได้เลย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "KOH preparation",
+          "is_correct": true,
+          "explanation": "Suspected candidal vaginitis → KOH ช่วยเห็น pseudohyphae/budding yeast"
+        },
+        {
+          "label": "B",
+          "text": "Pap smear",
+          "is_correct": false,
+          "explanation": "สำหรับ cervical cancer screening ไม่ใช่ vaginitis diagnosis"
+        },
+        {
+          "label": "C",
+          "text": "Gram stain",
+          "is_correct": false,
+          "explanation": "สำหรับ gonorrhea urethritis ไม่ใช่ first-line สำหรับ vaginal candida"
+        },
+        {
+          "label": "D",
+          "text": "Tzanck smear",
+          "is_correct": false,
+          "explanation": "สำหรับ herpetic vesicles ไม่ใช่ leukorrhea"
+        },
+        {
+          "label": "E",
+          "text": "Culture for anaerobes",
+          "is_correct": false,
+          "explanation": "ทำเมื่อสงสัย BV/TOA ไม่ใช่ first step สำหรับ yeast vaginitis"
+        }
+      ],
+      "key_takeaway": "คัน + leukorrhea + สงสัย candida → KOH preparation (เห็น pseudohyphae/budding yeast)"
+    }
+  },
+  {
+    "id": "aeb86f91-9d0a-4708-8195-589b93a21629",
+    "correct_answer": "A",
+    "explanation": "G5P4 ประวัติ C/S มาก่อน + เลือดออกไม่เจ็บ = Placenta previa (painless antepartum bleeding) ซึ่งพบบ่อยใน grand multipara + prior uterine surgery",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Placenta previa เพราะ painless vaginal bleeding ใน G5P4 ที่มีประวัติ C/S = classic placenta previa",
+      "reason": "Antepartum hemorrhage differential: Placenta previa: Painless bright red bleeding, grand multipara, prior uterine surgery Risk factors: Grand multipara (G5), prior C/S (uterine scar ใกล้ lower segment) Placental abruption (D): Painful bleeding, hypertension, trauma Vasa previa (C): เลือดออกหลัง ROM, fetal blood, มักใน IVF/low-lying placenta Uterine rupture (B): Severe pain, loss of fetal station, shock Grand multipara + prior C/S → lower uterine segment ถูกทำลาย → placenta previa เพิ่มขึ้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Placenta previa",
+          "is_correct": true,
+          "explanation": "Painless bleeding + grand multipara + prior C/S = classic placenta previa risk factors"
+        },
+        {
+          "label": "B",
+          "text": "Ruptured uterus",
+          "is_correct": false,
+          "explanation": "Severe pain + fetal distress + abdomen rigid; ไม่ใช่ painless bleeding"
+        },
+        {
+          "label": "C",
+          "text": "Ruptured vasa previa",
+          "is_correct": false,
+          "explanation": "เกิดหลัง ROM ไม่ใช่ antepartum; เลือดเป็น fetal blood"
+        },
+        {
+          "label": "D",
+          "text": "Abruptio placenta",
+          "is_correct": false,
+          "explanation": "Painful bleeding + hypertension + uterine tenderness"
+        },
+        {
+          "label": "E",
+          "text": "Latent phase of labor",
+          "is_correct": false,
+          "explanation": "Bloody show เล็กน้อย ไม่ใช่ significant bleeding"
+        }
+      ],
+      "key_takeaway": "Painless antepartum bleeding + grand multipara + prior C/S = Placenta previa → Ultrasound; ห้าม digital exam"
+    }
+  },
+  {
+    "id": "b2bf5a9f-ef43-4675-b9bc-63d73fcbdc8b",
+    "correct_answer": "B",
+    "explanation": "Chorioamnionitis ที่ GA 32 สัปดาห์ ให้ antibiotics แล้ว stable → ให้ betamethasone เพื่อ fetal lung maturity ก่อน แล้วค่อย deliver หลัง 48hr",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Betamethasone × 2 doses (24hr apart) + expectant management เพราะ GA 32wk ได้ประโยชน์จาก steroids ก่อน delivery",
+      "reason": "Chorioamnionitis management ที่ GA 32wk: Antibiotics IV ทันที (ครอบคลุม GBS + anaerobes + gram-negative) Corticosteroids (betamethasone): ให้ที่ GA 24-34wk เพื่อ fetal lung maturity (ลด RDS, IVH, NEC) Course: betamethasone 12mg IM ทุก 24hr × 2 doses Delivery หลัง steroid course (48hr ถ้า stable) หรือทันทีถ้า deteriorating ข้อ B ถูก: betamethasone × 2 doses + expectant 48hr แล้ว deliver ข้อ A ผิดที่: dexamethasone ใช้ได้แต่ betamethasone เป็น standard; expectant 48hr เพื่อ steroid effect",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV dexamethasone + expectant 48hr",
+          "is_correct": false,
+          "explanation": "Dexamethasone ใช้ได้แต่ betamethasone เป็น standard; concept คล้ายกันแต่ B ถูกกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Betamethasone × 2 + expectant",
+          "is_correct": true,
+          "explanation": "Standard: betamethasone IM 24hr apart × 2 doses ให้ GA 32wk ก่อน deliver"
+        },
+        {
+          "label": "C",
+          "text": "Immediate delivery",
+          "is_correct": false,
+          "explanation": "ถ้า stable และ GA <34wk ควรให้ steroids ก่อน 48hr แล้วค่อย deliver"
+        },
+        {
+          "label": "D",
+          "text": "รอถึง 37wk",
+          "is_correct": false,
+          "explanation": "Chorioamnionitis = ต้อง deliver ไม่รอจน term เพราะเสี่ยง sepsis"
+        },
+        {
+          "label": "E",
+          "text": "MgSO4 neuroprotection",
+          "is_correct": false,
+          "explanation": "MgSO4 ให้ใน preterm <32wk เพื่อ cerebral palsy prevention แต่ไม่ใช่ first step"
+        }
+      ],
+      "key_takeaway": "Chorioamnionitis GA 32wk stable → ATB + Betamethasone × 2 doses → Deliver หลัง 48hr"
+    }
+  },
+  {
+    "id": "b6a6fa6e-1239-48bc-9e59-b9f0d65590b3",
+    "correct_answer": "B",
+    "explanation": "PGE2 suppository (Cervidil/dinoprostone) ต้องเก็บในตู้เย็น 2-8°C เพราะตัวยาเสื่อมสภาพได้ง่ายเมื่ออุณหภูมิสูง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — เก็บ 2-8°C เพราะ prostaglandin E2 ไม่เสถียรที่อุณหภูมิสูง จึงต้องแช่เย็นตลอด",
+      "reason": "Prostaglandin E2 (dinoprostone/Cervidil) สำหรับ cervical ripening: Storage: 2-8°C (ตู้เย็น) เพราะ prostaglandins เสื่อมสภาพได้ง่ายที่อุณหภูมิห้อง นำออกจากตู้เย็นเมื่อจะใช้ ไม่จำเป็นต้องใช้ภายใน 30 นาที (option E ผิด) สามารถเก็บที่ 2-8°C ได้นาน 2 ปีจาก manufacturing date ใช้ PGE2 ใน: cervical ripening เมื่อ Bishop score <8 (induction), incomplete abortion ข้อ B ถูก: เก็บ 2-8°C เพราะ unstable ที่ room temperature",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เก็บ 2-8°C เพราะมีเสถียรภาพนาน",
+          "is_correct": false,
+          "explanation": "เก็บ 2-8°C ถูก แต่เหตุผลผิด เก็บเย็นเพราะ unstable ที่ room temp ไม่ใช่เพราะ stable"
+        },
+        {
+          "label": "B",
+          "text": "เก็บ 2-8°C เพราะตัวยาเสื่อมได้ง่ายที่อุณหภูมิสูง",
+          "is_correct": true,
+          "explanation": "ถูกทั้ง storage requirement และเหตุผล"
+        },
+        {
+          "label": "C",
+          "text": "เก็บ 25°C ได้ 24hr",
+          "is_correct": false,
+          "explanation": "ผิด prostaglandins เสื่อมเร็วที่ room temp"
+        },
+        {
+          "label": "D",
+          "text": "ไม่ต้องเย็น แต่ห่างแสง",
+          "is_correct": false,
+          "explanation": "ผิด ต้องแช่เย็น 2-8°C"
+        },
+        {
+          "label": "E",
+          "text": "ใช้ภายใน 30 นาทีหลังนำออก",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง ไม่มี requirement ใช้ภายใน 30 นาที"
+        }
+      ],
+      "key_takeaway": "PGE2 suppository → เก็บ 2-8°C เพราะ prostaglandin เสื่อมสภาพที่อุณหภูมิห้อง"
+    }
+  },
+  {
+    "id": "bb065901-7728-4739-ae22-c9dec3f6b6e5",
+    "correct_answer": "A",
+    "explanation": "Purulent discharge + blood clot + cervical bleeding (friability) = Cervicitis (เป็นข้อเดียวกับที่ตอบมาก่อนหน้า) สาเหตุ: N. gonorrhoeae หรือ Chlamydia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Cervicitis เพราะ cervical friability (เลือดออกจาก cervix) + purulent discharge = classic cervicitis",
+      "reason": "Cervicitis diagnosis: Mucopurulent cervical discharge (yellow/green, >10 WBC/HPF) Cervical friability: bleeding เมื่อ swab หรือ contact Edema/erythema ของ cervix Caused by: Chlamydia trachomatis (most common STI), N. gonorrhoeae, Herpes Vaginitis (B): vaginal wall inflamed, discharge มีกลิ่น แต่ cervix ปกติ Cervical polyp (C): มีก้อนที่ cervix, เลือดออกเมื่อ touch Cervical cancer (D): ก้อนแข็งที่ cervix, postcoital bleeding Endometritis (E): ปวดท้องน้อย + lochia ผิดปกติหลังคลอด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cervicitis",
+          "is_correct": true,
+          "explanation": "Cervical friability + mucopurulent discharge = cervicitis from STI"
+        },
+        {
+          "label": "B",
+          "text": "Vaginitis",
+          "is_correct": false,
+          "explanation": "Vaginal wall ไม่ใช่ cervix ที่มีปัญหา"
+        },
+        {
+          "label": "C",
+          "text": "Cervical polyp with infection",
+          "is_correct": false,
+          "explanation": "ต้องมีก้อนที่ cervix เห็นชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Cervical cancer",
+          "is_correct": false,
+          "explanation": "ต้องมีก้อนแข็ง irregular ที่ cervix"
+        },
+        {
+          "label": "E",
+          "text": "Endometritis",
+          "is_correct": false,
+          "explanation": "เป็นหลังคลอด ไม่ใช่ cervical finding"
+        }
+      ],
+      "key_takeaway": "Cervical friability (bleeding on contact) + mucopurulent discharge = Cervicitis → Rx: Ceftriaxone + Doxycycline"
+    }
+  },
+  {
+    "id": "beab72de-0538-4763-be9b-430a29adff22",
+    "correct_answer": "A",
+    "explanation": "G1P0 หลัง amniotomy พบเลือดในน้ำคร่าว + FHR drops = Umbilical cord prolapse ต้องผ่าตัดฉุกเฉินทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Umbilical cord prolapse → emergency C/S ด่วน เพราะ cord ถูกกดทำให้ fetal asphyxia",
+      "reason": "Umbilical cord prolapse: เกิดเมื่อ cord ลงมาต่ำกว่า presenting part หลัง rupture of membranes Precipitating factors: amniotomy (AROM), malpresentation, grand multiparity, PPROM อาการ: FHR deceleration (variable deceleration) ทันทีหลัง amniotomy Emergency management: ยก presenting part ขึ้น (manual/knee-chest position), immediate C/S เลือดในน้ำคร่าว + FHR ลดลงทันที = cord prolapse จนกว่าจะ prove otherwise Vasa previa (D): เลือดเป็น fetal blood, มักใน succenturiate lobe หรือ velamentous insertion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cord prolapse → Emergency C/S ด่วน",
+          "is_correct": true,
+          "explanation": "AROM + FHR drops + bloody fluid = cord prolapse → Emergency C/S ทันที"
+        },
+        {
+          "label": "B",
+          "text": "Placental abruption → fluid + OR",
+          "is_correct": false,
+          "explanation": "Abruption มักมี painful uterine tenderness ไม่ใช่ immediate FHR drop หลัง amniotomy"
+        },
+        {
+          "label": "C",
+          "text": "Fetal distress จาก cord compression",
+          "is_correct": false,
+          "explanation": "ถูกบางส่วน แต่ diagnosis ไม่สมบูรณ์ ต้องบอกว่าเป็น cord prolapse"
+        },
+        {
+          "label": "D",
+          "text": "Vasa previa → blood transfusion + OR",
+          "is_correct": false,
+          "explanation": "Vasa previa เกิดเมื่อ fetal vessels ผ่าน internal os ถูก rupture หลัง ROM; เลือดออกเป็นสีแดงสด"
+        },
+        {
+          "label": "E",
+          "text": "Uterine rupture → normal saline + OR",
+          "is_correct": false,
+          "explanation": "Uterine rupture มักมี severe pain + sudden loss of fetal station"
+        }
+      ],
+      "key_takeaway": "AROM → FHR drops ทันที = Cord prolapse → ยก presenting part ขึ้น + Emergency C/S ทันที"
+    }
+  },
+  {
+    "id": "bfa04cbf-9a8c-4669-8e55-71c8b6eb822c",
+    "correct_answer": "A",
+    "explanation": "GA 39wk เข้ามาด้วย cervix 2cm ต่อมา 4 ชั่วโมงเปิดขึ้นเป็น 3cm = ขยาย 1cm ใน 4hr = ช้า แต่ยังอยู่ใน latent phase = Normal labor progression",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Normal labor เพราะ cervix 2→3cm ใน 4hr อยู่ใน latent phase ซึ่งมีนิยาม progress ที่ช้ากว่า active phase",
+      "reason": "Labor phases: Latent phase: cervix 0-6cm (เดิมนิยาม 0-4cm) Active phase: ≥6cm Progress in latent phase: >0.5cm/hr ใน nulliparous = abnormal (prolonged latent) Cervix 2→3cm ใน 4hr = 0.25cm/hr = ช้าแต่ในความเป็นจริงยังอยู่ใน latent phase ซึ่งไม่มี strict rate requirement Prolonged latent phase: nullipara >20hr, multipara >14hr เกิน limit นั้น กรณีนี้ 4hr เท่านั้น = ยัง normal",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal labor",
+          "is_correct": true,
+          "explanation": "Cervix 2→3cm ใน 4hr อยู่ใน latent phase ยังไม่ถือว่า abnormal"
+        },
+        {
+          "label": "B",
+          "text": "Prolonged latent phase",
+          "is_correct": false,
+          "explanation": "Prolonged latent phase = นาน >20hr (nulliparous) ยังไม่ถึง"
+        },
+        {
+          "label": "C",
+          "text": "Protracted active phase",
+          "is_correct": false,
+          "explanation": "Active phase เริ่มที่ ≥6cm ยังไม่ถึง active phase"
+        },
+        {
+          "label": "D",
+          "text": "Arrest of descent",
+          "is_correct": false,
+          "explanation": "Arrest ต้องอยู่ใน second stage (fully dilated) แล้ว"
+        },
+        {
+          "label": "E",
+          "text": "Arrest",
+          "is_correct": false,
+          "explanation": "ไม่มีสัญญาณ arrest ใน first stage"
+        }
+      ],
+      "key_takeaway": "Cervix 2→3cm (latent phase), ระยะเวลา 4hr = ยัง Normal labor; Prolonged latent >20hr ใน nulliparous"
+    }
+  },
+  {
+    "id": "c1aa1a94-028c-4192-97ff-23c53e6192fb",
+    "correct_answer": "A",
+    "explanation": "หญิง 30 ปี ระดูขาด 6 สัปดาห์ ปวดท้องน้อย mild LLQ V/S stable = suspected ectopic pregnancy ในบริบทนี้คำตอบคือ Serial Hct เพื่อ monitor bleeding",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A — Serial Hct เพื่อ monitor hemodynamic stability ใน suspected ectopic ที่ V/S stable",
+      "reason": "ข้อสอบนี้คล้ายกับข้อก่อน (Q100) ที่มีสถานการณ์เดียวกันแต่คำตอบต่างกัน ข้อนั้นตอบ β-hCG serial, ข้อนี้ตอบ Serial Hct Serial Hct ใช้ monitor ว่ามี internal bleeding หรือไม่ เพราะ ruptured ectopic ทำให้ Hct ลดลง เป็นการ monitor hemodynamic stability ร่วมกับ V/S ใน suspected ectopic ที่ยัง stable",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Serial Hct",
+          "is_correct": true,
+          "explanation": "Monitor hemodynamic stability ใน suspected ectopic ที่ V/S stable; ดู Hct ลดลงหมายถึง internal bleeding"
+        },
+        {
+          "label": "B",
+          "text": "Serial β-hCG",
+          "is_correct": false,
+          "explanation": "ทำด้วยได้ แต่ข้อนี้เน้น hemodynamic monitoring ด้วย serial Hct"
+        },
+        {
+          "label": "C",
+          "text": "Admit and observe",
+          "is_correct": false,
+          "explanation": "ทำควบคู่ แต่ไม่ใช่คำตอบหลัก"
+        },
+        {
+          "label": "D",
+          "text": "Methotrexate",
+          "is_correct": false,
+          "explanation": "ให้เมื่อ dx ectopic confirmed ไม่ใช่ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Exploratory laparotomy",
+          "is_correct": false,
+          "explanation": "ทำเมื่อ unstable หรือ ruptured ectopic"
+        }
+      ],
+      "key_takeaway": "Suspected ectopic (stable) → Serial Hct + Serial β-hCG + TVUS; Hct ลด = internal bleeding → OR"
+    }
+  },
+  {
+    "id": "c54640da-4100-4565-b7f4-7dbe80484e47",
+    "correct_answer": "A",
+    "explanation": "หญิง 52 ปี amenorrhea 6 เดือน ดื่มไวน์ สูบบุหรี่ เดิน ถามปัจจัยเสี่ยง (น่าจะเป็น osteoporosis ในวัย perimenopause) → Age เป็น risk factor ที่สำคัญที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Age เพราะอายุเป็น non-modifiable risk factor ที่สำคัญที่สุดสำหรับ osteoporosis และ cardiovascular disease ในวัยหมดประจำเดือน",
+      "reason": "ผู้หญิง 52 ปี amenorrhea 6 เดือน = perimenopause/early menopause ปัจจัยเสี่ยงสำหรับ osteoporosis/CVD ในวัยนี้: Age (A) = non-modifiable, เพิ่มขึ้นเรื่อยๆ Alcohol (E) = เพิ่มเสี่ยง osteoporosis และ CVD Smoking (D) = เพิ่มเสี่ยง osteoporosis, CVD, early menopause Exercise (walking) = protective ไม่ใช่ risk factor Obesity (B) = เพิ่มเสี่ยง CVD และ endometrial cancer ในบริบทนี้ Age เป็นคำตอบเพราะเป็น primary risk factor ที่ไม่สามารถแก้ไขได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Age",
+          "is_correct": true,
+          "explanation": "Non-modifiable primary risk factor สำหรับ osteoporosis/CVD ในวัยหมดประจำเดือน"
+        },
+        {
+          "label": "B",
+          "text": "Obesity",
+          "is_correct": false,
+          "explanation": "ไม่มีประวัติ obesity ในโจทย์; ไม่ใช่ strongest factor"
+        },
+        {
+          "label": "C",
+          "text": "Decrease activity",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยเดินออกกำลังกาย = ไม่ใช่ risk factor"
+        },
+        {
+          "label": "D",
+          "text": "Smoking",
+          "is_correct": false,
+          "explanation": "Risk factor แต่ไม่ใช่ primary/strongest compared to age"
+        },
+        {
+          "label": "E",
+          "text": "Alcohol",
+          "is_correct": false,
+          "explanation": "Risk factor แต่ 1 แก้วต่อวัน = moderate; age เป็น strongest"
+        }
+      ],
+      "key_takeaway": "Perimenopause osteoporosis risk → Age เป็น primary non-modifiable risk factor; Smoking+Alcohol เป็น modifiable risk"
+    }
+  }
+]

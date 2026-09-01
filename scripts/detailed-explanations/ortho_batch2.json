@@ -1,0 +1,836 @@
+[
+  {
+    "id": "1ff59fb5-17d8-4444-937b-30c113d9e97d",
+    "correct_answer": "A",
+    "explanation": "ชายอายุ 75 ปี ยกของหนักแล้วได้ยินเสียง pop พร้อมปวดแขน บวม ecchymosis = Biceps tendon rupture (proximal long head) → supination impaired",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Biceps tendon rupture → supination impaired เพราะ biceps เป็น major supinator ของ forearm",
+      "reason": "Biceps tendon rupture (proximal long head): พบบ่อยในผู้ชายสูงอายุ หรือ bodybuilders Pop sound ขณะออกแรง = tendon rupture Popeye deformity: muscle bunches up ที่ arm Functional deficit: weakness of supination (biceps เป็น powerful supinator) + weak flexion Distal biceps rupture ที่ radial tuberosity: supination impaired มากกว่า proximal Triceps rupture: extension impaired Brachialis: flexion impaired แต่ไม่มี Popeye sign",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Biceps tendon rupture - supination impaired",
+          "is_correct": true,
+          "explanation": "Pop + ecchymosis ขณะยก = biceps rupture; supination เป็น primary function → impaired"
+        },
+        {
+          "label": "B",
+          "text": "Triceps tendon rupture - extension impaired",
+          "is_correct": false,
+          "explanation": "Triceps rupture = extension impaired, เกิดจาก fall on outstretched hand"
+        },
+        {
+          "label": "C",
+          "text": "Brachialis rupture - flexion impaired",
+          "is_correct": false,
+          "explanation": "Brachialis rupture rare; ไม่ทำ supination impairment"
+        },
+        {
+          "label": "D",
+          "text": "Brachial artery injury",
+          "is_correct": false,
+          "explanation": "ไม่มี 'pop' sound; แสดง ischemia signs"
+        },
+        {
+          "label": "E",
+          "text": "Nerve injury - sensory loss",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ primary feature ของ lifting injury"
+        }
+      ],
+      "key_takeaway": "Pop + ecchymosis ขณะยกของ = Biceps tendon rupture → Popeye deformity + supination weakness"
+    }
+  },
+  {
+    "id": "201a909c-9b79-4b7d-b9ab-ed7faf37860a",
+    "correct_answer": "C",
+    "explanation": "ชายอายุ 45 ปี ปวดบ่าเรื้อรัง >3 เดือน painful arc = Rotator cuff pathology การตรวจที่เหมาะสมคือ Ultrasound shoulder เพราะประสิทธิผลสูง ราคาถูกกว่า MRI",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Ultrasound shoulder เพราะ cost-effective, dynamic evaluation ของ rotator cuff, first-line imaging",
+      "reason": "Rotator cuff pathology: Ultrasound: sensitivity ~80-95% สำหรับ full-thickness tear ราคาถูกกว่า MRI มาก, real-time dynamic assessment, ไม่มี radiation MRI: gold standard แต่แพงกว่า ใช้เมื่อ US inconclusive หรือ pre-operative planning X-ray: ตรวจ bone เป็น first-line แต่ไม่ดี soft tissue CT: เหมาะสำหรับ bony detail ไม่ใช่ rotator cuff EMG: สำหรับ nerve pathology ไม่ใช่ tendon tear",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI shoulder",
+          "is_correct": false,
+          "explanation": "Gold standard แต่แพง; ใช้เมื่อ US inconclusive หรือ preop"
+        },
+        {
+          "label": "B",
+          "text": "X-ray shoulder",
+          "is_correct": false,
+          "explanation": "First step แต่ไม่ evaluate soft tissue/rotator cuff"
+        },
+        {
+          "label": "C",
+          "text": "Ultrasound shoulder",
+          "is_correct": true,
+          "explanation": "Cost-effective, dynamic, sensitivity 80-95% สำหรับ rotator cuff tear = first-line imaging"
+        },
+        {
+          "label": "D",
+          "text": "CT shoulder",
+          "is_correct": false,
+          "explanation": "Bony detail เท่านั้น ไม่ดีสำหรับ soft tissue"
+        },
+        {
+          "label": "E",
+          "text": "EMG",
+          "is_correct": false,
+          "explanation": "สำหรับ nerve compression/neurogenic atrophy ไม่ใช่ tendon pathology"
+        }
+      ],
+      "key_takeaway": "Rotator cuff pathology → Ultrasound shoulder (first-line); MRI ถ้า US inconclusive"
+    }
+  },
+  {
+    "id": "2638dae4-7dc1-42f0-b623-6b9eb6e32e92",
+    "correct_answer": "E",
+    "explanation": "หญิงอายุ 70 ปี ล้มในห้องน้ำ เจ็บขาหนีบ เดินไม่ได้ external rotation + shortening = Fracture neck of femur",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E: Fracture neck of femur เพราะ elderly woman + fall + groin pain + ER + shortening = intracapsular hip fracture",
+      "reason": "Femoral neck fracture: Classic signs = ER + shortening + inability to bear weight + groin pain Deformity จาก iliopsoas pulling lesser trochanter ทำ ER ของ lower limb Ischial bursitis: ปวดที่ buttock ขณะนั่ง Trochanteric bursitis: ปวดที่ lateral hip ไม่มี deformity Osteoarthritis: chronic, ไม่ acute onset หลัง fall AVN: subacute, ไม่ acute deformity Femoral neck fracture ใน elderly (osteoporosis) เป็น most common hip fracture",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ischial bursitis",
+          "is_correct": false,
+          "explanation": "ปวดที่ buttock ขณะนั่ง ไม่มี deformity"
+        },
+        {
+          "label": "B",
+          "text": "Trochanteric bursitis",
+          "is_correct": false,
+          "explanation": "Lateral hip pain ไม่มี ER/shortening deformity"
+        },
+        {
+          "label": "C",
+          "text": "Osteoarthritis",
+          "is_correct": false,
+          "explanation": "Chronic course ไม่ acute onset หลัง fall"
+        },
+        {
+          "label": "D",
+          "text": "Avascular necrosis",
+          "is_correct": false,
+          "explanation": "Subacute/chronic ไม่ acute deformity"
+        },
+        {
+          "label": "E",
+          "text": "Fracture neck of femur",
+          "is_correct": true,
+          "explanation": "Elderly + fall + ER + shortening + groin pain = classic FNF presentation"
+        }
+      ],
+      "key_takeaway": "Elderly + fall + ER + shortening + groin pain = Femoral neck fracture; X-ray confirms"
+    }
+  },
+  {
+    "id": "2935a57c-fd4e-45a0-a725-cb4841520d42",
+    "correct_answer": "B",
+    "explanation": "Burst fracture ของ TL spine: ข้อใดถูก? B = Posterior ligamentous complex ยังคง intact ใน typical burst fracture (เป็น stable injury)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Posterior ligamentous complex intact ใน burst fracture เพราะเป็น axial compression injury ไม่ disruption posterior elements",
+      "reason": "Burst fracture กลไก: axial compression → anterior + middle column injury Denis 3-column concept: Anterior column (A): vertebral body anterior half; Middle (B): posterior vertebral body; Posterior (C): facets/spinous process Burst fracture = anterior + middle column compression Posterior column (PLC = posterior ligamentous complex) ยัง intact ใน stable burst fracture Retropulsion of bone into spinal canal (ข้อ C) = TRUE ใน burst fracture เป็น cause of neurological deficit ข้อ B ถูกเพราะ PLC intact = stable fracture vs Chance fracture ที่ PLC disrupted",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Anterior column ถูก compression",
+          "is_correct": false,
+          "explanation": "TRUE ใน burst fracture แต่ไม่ใช่ unique feature; compression fracture ก็มี"
+        },
+        {
+          "label": "B",
+          "text": "Posterior ligamentous complex intact",
+          "is_correct": true,
+          "explanation": "Stable burst fracture: anterior+middle column, PLC intact; PLC disruption = unstable"
+        },
+        {
+          "label": "C",
+          "text": "Retropulsion ของ bone fragment เข้า spinal canal",
+          "is_correct": false,
+          "explanation": "TRUE ใน burst fracture แต่ไม่ใช่คำตอบที่ถูกต้องในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "Burst pattern 4 ด้าน",
+          "is_correct": false,
+          "explanation": "ไม่ accurate; burst = anterior+posterior cortex split ไม่ใช่ทุกด้าน"
+        },
+        {
+          "label": "E",
+          "text": "Disruption ของ PLL และ spinal cord injury",
+          "is_correct": false,
+          "explanation": "PLL อาจได้รับผลกระทบจาก retropulsed fragment แต่ไม่ disrupted ใน stable burst"
+        }
+      ],
+      "key_takeaway": "Stable burst fracture = anterior+middle column + PLC intact; retropulsion เป็น cause ของ neurological deficit"
+    }
+  },
+  {
+    "id": "2d901dc7-9ce7-4366-b08d-876b41bbd421",
+    "correct_answer": "A",
+    "explanation": "Fracture neck of humerus (surgical neck) → Axillary nerve injury → กระทบกล้ามเนื้อ Deltoid ตามโจทย์คำตอบ A = Brachioradialis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Brachioradialis ตามโจทย์ — อย่างไรก็ตาม Deltoid (B) เป็นคำตอบที่สมเหตุสมผลทางกายวิภาคมากกว่า",
+      "reason": "Fracture neck of humerus: Axillary nerve injury (C5,C6): deltoid + teres minor → shoulder abduction impaired Brachioradialis: innervated by radial nerve (C5,C6) วิ่งผ่าน spiral groove ของ humerus shaft ไม่ใช่ surgical neck Surgical neck fracture primarily affects: Axillary nerve → deltoid Radial nerve injury เกิดใน mid-shaft fracture (spiral groove) ไม่ใช่ surgical neck คำตอบ A = Brachioradialis ตามโจทย์ แม้ทางกายวิภาคจะเป็น B (Deltoid) ที่สมเหตุสมผลกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Brachioradialis m.",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์; innervated by radial nerve"
+        },
+        {
+          "label": "B",
+          "text": "Deltoid m.",
+          "is_correct": false,
+          "explanation": "Clinically correct สำหรับ axillary nerve injury จาก surgical neck fracture แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Brachialis m.",
+          "is_correct": false,
+          "explanation": "Musculocutaneous nerve; ไม่ได้รับผลกระทบจาก humeral neck fracture"
+        },
+        {
+          "label": "D",
+          "text": "Coracobrachialis m.",
+          "is_correct": false,
+          "explanation": "Musculocutaneous nerve; ไม่ affected โดยตรง"
+        },
+        {
+          "label": "E",
+          "text": "Biceps m.",
+          "is_correct": false,
+          "explanation": "Musculocutaneous nerve; ไม่ affected โดยตรง"
+        }
+      ],
+      "key_takeaway": "Surgical neck humerus fracture → Axillary nerve → Deltoid (clinical); Radial nerve ใน mid-shaft → Brachioradialis/wrist extensors"
+    }
+  },
+  {
+    "id": "2edd3092-7511-4b5f-9154-0d4af016735e",
+    "correct_answer": "C",
+    "explanation": "ผู้ชายหลัง accident ได้ NSAIDs แล้วดีขึ้น แต่มี loss of lumbar lordosis การจัดการเพิ่มเติมที่เหมาะสมคือ Rehabilitation exercise ที่บ้าน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Rehabilitation exercise ที่บ้าน เพราะ lumbar muscle spasm ที่ตอบสนองต่อ NSAIDs ควรรักษาด้วย active rehabilitation",
+      "reason": "Non-specific low back pain หลัง trauma ที่ตอบสนองต่อ NSAIDs: Loss of lumbar lordosis = muscle spasm ปกป้อง spine การรักษาที่ดีที่สุด: active rehabilitation > bed rest Evidence-based: bed rest > 2 วัน ทำ outcomes แย่ลง; return to normal activity + exercise เร็วที่สุด Rehabilitation exercise: core strengthening, flexibility, posture training NSAIDs ต่อเนื่อง = ไม่จำเป็นถ้าดีขึ้น MRI ไม่มีข้อบ่งชี้ในกรณีที่ตอบสนองดี (ไม่มี red flags)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ NSAIDs ต่อ",
+          "is_correct": false,
+          "explanation": "ดีแล้ว ไม่จำเป็นต้องให้ NSAIDs ต่อเนื่องในกรณีที่ดีขึ้น"
+        },
+        {
+          "label": "B",
+          "text": "ให้ NSAIDs เฉพาะตอนปวด",
+          "is_correct": false,
+          "explanation": "ไม่ address underlying muscle deconditioning"
+        },
+        {
+          "label": "C",
+          "text": "Rehabilitation exercise",
+          "is_correct": true,
+          "explanation": "Active rehabilitation = best management สำหรับ non-specific LBP; core strengthening + posture"
+        },
+        {
+          "label": "D",
+          "text": "Bed rest 1-2 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Prolonged bed rest ทำ outcomes แย่ลง; ห้ามแนะนำ"
+        },
+        {
+          "label": "E",
+          "text": "MRI lumbar spine",
+          "is_correct": false,
+          "explanation": "ไม่มี red flags; imaging ไม่จำเป็นในกรณีที่ตอบสนองต่อ conservative treatment"
+        }
+      ],
+      "key_takeaway": "Non-specific LBP ที่ตอบสนองต่อ NSAIDs → Rehabilitation exercise; ห้าม bed rest นานเกิน 2 วัน"
+    }
+  },
+  {
+    "id": "2f880544-795d-4d3b-8c54-db3832daa185",
+    "correct_answer": "A",
+    "explanation": "Epidural steroid injection (ESI) ใช้สำหรับ nerve root pain (radiculopathy) ที่ไม่ตอบสนองต่อ conservative treatment 2-4 สัปดาห์ ข้อ A เป็น statement ที่ถูกต้อง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: ESI ใช้เมื่อ conservative treatment ล้มเหลว 2-4 สัปดาห์ ไม่ใช่ first-line treatment",
+      "reason": "Epidural steroid injection indications: Radiculopathy (nerve root compression) ที่ไม่ตอบสนองต่อ NSAIDs + PT 2-4 สัปดาห์ ลด nerve root edema + inflammation ชั่วคราว ข้อ B ผิด: ESI ไม่ใช่ first-line สำหรับทุก herniated disc ข้อ C ผิด: onset ใช้เวลา 2-7 วัน ไม่ใช่ 1-2 วัน ข้อ D ผิด: ไม่สามารถแทน surgical decompression ในทุกกรณี โดยเฉพาะ cauda equina syndrome ข้อ E ผิด: มีความเสี่ยง epidural abscess, bleeding, nerve injury ใน neurological deficit patients",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ใช้เมื่อ conservative treatment ล้มเหลว 2-4 สัปดาห์",
+          "is_correct": true,
+          "explanation": "Correct indication: ESI หลัง NSAIDs+PT ล้มเหลว; ไม่ใช่ first-line"
+        },
+        {
+          "label": "B",
+          "text": "First-line สำหรับทุก herniated disc",
+          "is_correct": false,
+          "explanation": "ESI ไม่ใช่ first-line; เริ่มด้วย conservative treatment ก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Onset 1-2 วัน หายเฉียบพลัน",
+          "is_correct": false,
+          "explanation": "Onset 2-7 วัน ไม่ใช่ 1-2 วัน และไม่ 'หายเฉียบพลัน'"
+        },
+        {
+          "label": "D",
+          "text": "แทน surgical decompression ได้ทุกกรณี",
+          "is_correct": false,
+          "explanation": "Cauda equina syndrome, progressive deficit = ต้องผ่าตัด"
+        },
+        {
+          "label": "E",
+          "text": "ใช้ได้ทั้งที่มีและไม่มี neurological deficit ไม่มีความเสี่ยง",
+          "is_correct": false,
+          "explanation": "มีความเสี่ยง; progressive neurological deficit = relative contraindication"
+        }
+      ],
+      "key_takeaway": "ESI indication: radiculopathy ไม่ตอบสนอง conservative 2-4 สัปดาห์; ไม่ใช่ first-line; onset 2-7 วัน"
+    }
+  },
+  {
+    "id": "311ed12a-26ee-4dc4-a156-653f24c4a648",
+    "correct_answer": "C",
+    "explanation": "ในการบาดเจ็บ acute thoracolumbar สาเหตุของ neurological dysfunction ที่ไม่ใช่ primary cause คือ Arterial occlusion (C)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Arterial occlusion ไม่ใช่ classic cause ของ neurological dysfunction ใน acute thoracolumbar injury",
+      "reason": "Causes ของ neurological dysfunction ใน acute TL injury: Hematoma: epidural hematoma กด spinal cord Bony fragment: retropulsion เข้า spinal canal Disc ruptured fragments: herniated disc material กด neural elements Displaced fracture: bony displacement กด cord/nerve Arterial occlusion: ไม่ใช่ direct mechanism ใน acute fracture; spinal cord ischemia เกิดจาก anterior spinal artery occlusion ได้แต่ไม่ใช่ primary mechanism ของ acute TL fracture",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hematoma",
+          "is_correct": false,
+          "explanation": "Epidural hematoma กด spinal cord = direct cause"
+        },
+        {
+          "label": "B",
+          "text": "Bony fragment",
+          "is_correct": false,
+          "explanation": "Retropulsed bone = direct spinal cord compression"
+        },
+        {
+          "label": "C",
+          "text": "Arterial occlusion",
+          "is_correct": true,
+          "explanation": "ไม่ใช่ primary mechanism; spinal cord ischemia เกิดจาก anterior spinal artery syndrome แต่ไม่ใช่ classic TL injury cause"
+        },
+        {
+          "label": "D",
+          "text": "Disc ruptured fragments",
+          "is_correct": false,
+          "explanation": "Acute disc herniation จาก trauma กด neural elements"
+        },
+        {
+          "label": "E",
+          "text": "Displaced fracture",
+          "is_correct": false,
+          "explanation": "Fracture-dislocation = direct cord compression/transection"
+        }
+      ],
+      "key_takeaway": "Neurological dysfunction ใน TL fracture = hematoma, bone fragments, disc, displaced fracture; Arterial occlusion = NOT primary"
+    }
+  },
+  {
+    "id": "322e1044-60c0-434c-b45e-1c894662d909",
+    "correct_answer": "A",
+    "explanation": "ชายอายุ 63 ปี ปวดสะโพกร้าวลงขา เดิน 300 เมตรต้องพัก 5 นาที ดีขึ้นแล้วเดินต่อ = Neurogenic claudication จาก Spinal instability ตามคำตอบ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Spinal instability ตามโจทย์ — อาการ neurogenic claudication ที่ดีขึ้นเมื่อพัก",
+      "reason": "Neurogenic claudication: ปวดขาเมื่อเดิน ดีขึ้นเมื่อพัก/forward flexion เกิดจาก spinal stenosis หรือ instability ที่ทำให้ dynamic narrowing ขณะ upright Spinal instability (spondylolisthesis): vertebra slip forward ขณะเดิน → dynamic stenosis → neurogenic claudication ดีขึ้นเมื่อพักเพราะ บรรเทา load Spinal stenosis (ข้อ B) ก็เหมาะสม แต่คำตอบในโจทย์ = A Arterial occlusion: vascular claudication ดีขึ้นเมื่อหยุดเดิน แต่ไม่ต้อง flex",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spinal instability",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์: dynamic instability → neurogenic claudication ขณะเดิน"
+        },
+        {
+          "label": "B",
+          "text": "Spinal stenosis",
+          "is_correct": false,
+          "explanation": "Clinically most appropriate แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Spondylosis",
+          "is_correct": false,
+          "explanation": "Degenerative changes อาจทำ stenosis แต่ไม่ใช่คำตอบ"
+        },
+        {
+          "label": "D",
+          "text": "Chronic arterial occlusion",
+          "is_correct": false,
+          "explanation": "Vascular claudication: ดีขึ้นเมื่อหยุดเดิน ไม่ต้อง flex หลัง"
+        },
+        {
+          "label": "E",
+          "text": "Protruded nucleus pulposus",
+          "is_correct": false,
+          "explanation": "ทำ radiculopathy ไม่ใช่ classic claudication pattern"
+        }
+      ],
+      "key_takeaway": "Neurogenic claudication (เดิน→ปวด, หยุด/flex ดีขึ้) = lumbar stenosis/instability; vascular claudication = หยุดเดินพอ"
+    }
+  },
+  {
+    "id": "333fbdd8-c545-4c48-bd86-adf875e2c33e",
+    "correct_answer": "D",
+    "explanation": "Open fracture 15cm wound + soil contamination + no distal pulse = Grade IIIC (>10cm + vascular injury) ต้องการ cephalosporin + aminoglycoside + penicillin (สำหรับ soil/clostridial)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D: Grade IIIC + Cephalosporin + Aminoglycoside + Penicillin เพราะ large wound + vascular injury + soil = highest risk",
+      "reason": "Gustilo-Anderson Grade IIIC: wound >10cm + vascular injury requiring repair + severe contamination (soil) Antibiotic coverage สำหรับ open fracture: Grade I-II: cephalosporin (generation 1) Grade III: cephalosporin + aminoglycoside Grade IIIc + soil contamination: + penicillin (สำหรับ Clostridium/anaerobes จาก soil) Cephalosporin: gram-positive coverage Aminoglycoside: gram-negative coverage Penicillin: Clostridial/anaerobic coverage (soil, barnyard) ไม่มี distal pulse = vascular injury = Grade IIIc",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Grade IIIA + cephalosporin",
+          "is_correct": false,
+          "explanation": "IIIA = wound >10cm แต่ adequate soft tissue; ไม่มี vascular injury; antibiotic ไม่เพียงพอ"
+        },
+        {
+          "label": "B",
+          "text": "Grade IIIB + cephalosporin + aminoglycoside",
+          "is_correct": false,
+          "explanation": "IIIB ไม่มี vascular injury; soil contamination ต้องการ penicillin เพิ่ม"
+        },
+        {
+          "label": "C",
+          "text": "Grade IIIA + cephalosporin + aminoglycoside",
+          "is_correct": false,
+          "explanation": "ไม่มี vascular injury criteria; antibiotic ขาด penicillin สำหรับ soil"
+        },
+        {
+          "label": "D",
+          "text": "Grade IIIC + cephalosporin + aminoglycoside + penicillin",
+          "is_correct": true,
+          "explanation": "15cm + no pulse (vascular) + soil = IIIC; triple antibiotics สำหรับ anaerobic coverage"
+        },
+        {
+          "label": "E",
+          "text": "Grade IIIB + cephalosporin + aminoglycoside + penicillin",
+          "is_correct": false,
+          "explanation": "ควรเป็น IIIC เพราะมี vascular injury (no pulse)"
+        }
+      ],
+      "key_takeaway": "Open fracture + soil + no pulse = Grade IIIC → Cephalosporin + Aminoglycoside + Penicillin (soil/anaerobic coverage)"
+    }
+  },
+  {
+    "id": "39cc6915-8ab8-458f-b2e7-f5eb472d05a2",
+    "correct_answer": "B",
+    "explanation": "เด็ก 5 ปี humerus fracture on skin traction เกิด complication ต้องหยุด skin traction ทันที (B) เพราะ skin traction เสี่ยง compartment syndrome หรือ skin breakdown",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: หยุด skin traction ทันที เพราะมี complication (น่าจะ compartment syndrome หรือ vascular compromise)",
+      "reason": "Skin traction complications ในเด็ก: Vascular compromise: tight bandage ทำ ischemia ต้อง remove ทันที Compartment syndrome: 5 P's (Pain, Pallor, Pulselessness, Paresthesia, Paralysis) Skin breakdown/blistering: esp. ใน young skin Nerve compression การ management: remove traction ทันที assess neurovascular status carefully re-evaluate alternative treatment (open reduction หรือ cast) การเพิ่มน้ำหนัก/ให้ยาแก้ปวดแล้วรอ = อันตราย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ต่อ skin traction + เพิ่มน้ำหนัก",
+          "is_correct": false,
+          "explanation": "อันตรายมาก เพิ่ม vascular compromise"
+        },
+        {
+          "label": "B",
+          "text": "หยุด skin traction ทันที",
+          "is_correct": true,
+          "explanation": "Complication จาก traction → remove ทันที ก่อน vascular injury irreversible"
+        },
+        {
+          "label": "C",
+          "text": "ลดน้ำหนักลงครึ่งหนึ่ง",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอถ้ามี compartment syndrome/ischemia"
+        },
+        {
+          "label": "D",
+          "text": "Blood test หาสาเหตุ",
+          "is_correct": false,
+          "explanation": "Delay critical action; clinical diagnosis ≠ lab"
+        },
+        {
+          "label": "E",
+          "text": "ให้ยาแก้ปวด + ต่อ traction",
+          "is_correct": false,
+          "explanation": "Masking symptoms ของ compartment syndrome = อันตราย"
+        }
+      ],
+      "key_takeaway": "Skin traction complications in children → หยุด traction ทันที; compartment syndrome = surgical emergency"
+    }
+  },
+  {
+    "id": "3a7b8f10-0283-4a7f-a710-88e91338c871",
+    "correct_answer": "A",
+    "explanation": "Joint aspirate cloudy, WBC 30,000, rhomboid shape crystal = CPPD (Calcium Pyrophosphate Deposition) / Pseudogout ตามโจทย์คำตอบ A = Allopurinol",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Allopurinol ตามโจทย์ — แม้ทางคลินิก CPPD ควรรักษาด้วย NSAIDs/Colchicine",
+      "reason": "Crystal arthropathy: Rhomboid (rectangular) crystals = Calcium Pyrophosphate (CPPD) = Pseudogout Needle-shaped crystals = Monosodium urate = Gout CPPD treatment: Colchicine, NSAIDs, intra-articular steroid Gout treatment: Colchicine (acute), Allopurinol (chronic; xanthine oxidase inhibitor ลด uric acid) Allopurinol ใช้สำหรับ chronic gout prevention ไม่ใช่ CPPD คำตอบในโจทย์ A = Allopurinol (อาจมีความสับสนระหว่าง gout และ CPPD ในข้อสอบ)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allopurinol",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์; ปกติใช้สำหรับ chronic gout (uric acid lowering)"
+        },
+        {
+          "label": "B",
+          "text": "Colchicine",
+          "is_correct": false,
+          "explanation": "Clinically appropriate สำหรับ CPPD acute flare และ gout แต่ไม่ใช่คำตอบ"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "สำหรับ septic arthritis (bacterial) ไม่ใช่ crystal arthropathy"
+        },
+        {
+          "label": "D",
+          "text": "Diclofenac",
+          "is_correct": false,
+          "explanation": "NSAID ใช้ได้สำหรับ CPPD แต่ไม่ใช่คำตอบ"
+        }
+      ],
+      "key_takeaway": "Rhomboid crystals = CPPD (Pseudogout); Needle crystals = Gout; รักษา acute = Colchicine/NSAIDs; chronic gout = Allopurinol"
+    }
+  },
+  {
+    "id": "3a991662-32ef-4fe7-9cae-34f2fc77a0df",
+    "correct_answer": "A",
+    "explanation": "Ballet dancer ปวดส้นเท้าด้านหลัง 7 เดือน จาก en-pointe dancing = Os trigonum syndrome รักษาด้วย Os trigonum excision หลัง conservative treatment ล้มเหลว",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Os trigonum excision เพราะ 7 เดือน conservative treatment ไม่หาย = surgical excision indicated",
+      "reason": "Os trigonum syndrome: os trigonum = accessory ossicle ด้านหลัง talus ถูกบีบ (impingement) ขณะ plantar flexion สุด (en-pointe ใน ballet) Symptoms: posterior heel pain ขณะ plantarflexion Conservative: rest, PT, NSAIDs, steroid injection Surgical: os trigonum excision เมื่อ conservative treatment ล้มเหลว >3-6 เดือน Achilles tendon reconstruction/debridement ใช้สำหรับ Achilles pathology ไม่ใช่ os trigonum ESWT ใช้สำหรับ plantar fasciitis/calcific tendinitis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Os trigonum excision",
+          "is_correct": true,
+          "explanation": "7 เดือน + ballet en-pointe = os trigonum syndrome; surgical excision หลัง conservative fail"
+        },
+        {
+          "label": "B",
+          "text": "Achilles tendon reconstruction",
+          "is_correct": false,
+          "explanation": "สำหรับ severe Achilles tendon rupture ไม่ใช่ os trigonum"
+        },
+        {
+          "label": "C",
+          "text": "Debridement + calcification removal",
+          "is_correct": false,
+          "explanation": "สำหรับ calcific Achilles tendinitis ไม่ใช่ os trigonum"
+        },
+        {
+          "label": "D",
+          "text": "Extracorporeal shock wave therapy",
+          "is_correct": false,
+          "explanation": "สำหรับ plantar fasciitis/calcific tendinitis"
+        },
+        {
+          "label": "E",
+          "text": "Conservative management + PT",
+          "is_correct": false,
+          "explanation": "7 เดือน conservative ไม่หาย = surgical indication"
+        }
+      ],
+      "key_takeaway": "Ballet dancer + posterior heel pain + en-pointe = Os trigonum syndrome; 7 เดือน fail conservative → Os trigonum excision"
+    }
+  },
+  {
+    "id": "3af5598e-3ffb-4f7b-94b2-379b702d31f1",
+    "correct_answer": "A",
+    "explanation": "ผู้หญิงอายุ 50 ปี ปวดส้นเท้าใต้ฝ่าเท้า 5 เดือน แย่ลงตอนเช้า first step = Plantar fasciitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Plantar fasciitis เพราะ plantar heel pain ที่แย่ที่สุด 'first step in the morning' = pathognomonic",
+      "reason": "Plantar fasciitis: ปวดที่ plantar medial heel ที่ insertion ของ plantar fascia ที่ calcaneus First step morning pain: plantar fascia shortens ขณะนอน → painful stretch ขณะลุกเดิน → ดีขึ้นหลังเดิน (warm up) Risk factors: obesity, flat foot, tight Achilles, repetitive impact Treatment: stretching, insole/orthotics, NSAIDs, steroid injection, ESWT Achilles tendinitis: ปวดที่ posterior heel/Achilles Tarsal tunnel: burning/tingling medial ankle และ sole (tarsal tunnel = medial malleolus) Calcaneal stress fracture: ปวดมากเมื่อ squeeze heel",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Plantar fasciitis",
+          "is_correct": true,
+          "explanation": "Plantar heel pain + worst first step morning = plantar fascia; tight with sleep → painful stretch"
+        },
+        {
+          "label": "B",
+          "text": "Achilles tendinitis",
+          "is_correct": false,
+          "explanation": "Posterior heel/Achilles pain ไม่ใช่ plantar"
+        },
+        {
+          "label": "C",
+          "text": "Tarsal tunnel syndrome",
+          "is_correct": false,
+          "explanation": "Burning/tingling medial ankle ไม่ใช่ plantar point tenderness"
+        },
+        {
+          "label": "D",
+          "text": "Heel spur syndrome",
+          "is_correct": false,
+          "explanation": "Heel spur มักพบร่วมกับ plantar fasciitis แต่ไม่ใช่ diagnosis เอง"
+        },
+        {
+          "label": "E",
+          "text": "Calcaneal stress fracture",
+          "is_correct": false,
+          "explanation": "Squeeze test positive; ไม่มี 'worst first step' pattern ชัดเจน"
+        }
+      ],
+      "key_takeaway": "Plantar heel pain + worst first step morning = Plantar fasciitis; treatment = stretching + orthotics + NSAID"
+    }
+  },
+  {
+    "id": "3d77517c-0498-4464-9a38-204c545ac066",
+    "correct_answer": "C",
+    "explanation": "หญิง 55 ปี ปวดไหล่ขวา 6 เดือน แย่ลงเมื่อ hooks her bra (internal rotation behind back) = Rotator cuff arthritis (internal rotation restricted = subscapularis/posterior capsule)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Rotator cuff arthritis เพราะ chronic shoulder pain + difficulty hooking bra (IR) = rotator cuff tendinopathy/arthritis",
+      "reason": "Hooking bra = internal rotation behind back = tests IR ของ shoulder Rotator cuff arthritis: chronic tendinopathy ที่ IR impaired Frozen shoulder: ALL ROM impaired (IR + ER + abduction) ไม่ใช่เฉพาะ IR Subacromial bursitis: painful arc 60-120° impingement ไม่ใช่ mainly IR AC arthritis: pain on cross-body adduction ไม่ใช่ IR TB glenohumeral joint: chronic มักมีไข้ + swelling",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Frozen shoulder",
+          "is_correct": false,
+          "explanation": "ALL movements restricted; ER restricted มากที่สุด"
+        },
+        {
+          "label": "B",
+          "text": "Subacromial bursitis",
+          "is_correct": false,
+          "explanation": "Painful arc (60-120°) ใน abduction"
+        },
+        {
+          "label": "C",
+          "text": "Rotator cuff arthritis",
+          "is_correct": true,
+          "explanation": "IR restriction (hooking bra) + chronic = rotator cuff tendinopathy/arthritis"
+        },
+        {
+          "label": "D",
+          "text": "AC arthritis",
+          "is_correct": false,
+          "explanation": "Cross-body adduction pain ไม่ใช่ IR restriction"
+        },
+        {
+          "label": "E",
+          "text": "TB glenohumeral joint",
+          "is_correct": false,
+          "explanation": "Chronic สบายๆ + systemic symptoms มักมีไข้"
+        }
+      ],
+      "key_takeaway": "Difficulty hooking bra (IR behind back) = Internal rotation restriction = Rotator cuff pathology"
+    }
+  },
+  {
+    "id": "3e7b23f9-b41a-4cd3-ad6a-97878b900f7d",
+    "correct_answer": "B",
+    "explanation": "Joint aspirate WBC 30,000, rhomboid shape crystal = CPPD (Pseudogout) รักษา acute attack ด้วย Colchicine",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Colchicine เพราะ rhomboid crystals = CPPD (pseudogout) และ colchicine เป็น treatment ที่เหมาะสมสำหรับ crystal arthropathy acute attack",
+      "reason": "CPPD disease (Pseudogout): Rhomboid/square crystals = calcium pyrophosphate ย้อม Weakly positive birefringent (ต่างจาก gout = needle-shaped, strongly negative) Acute CPPD attack treatment: Colchicine (ปลอดภัย effective), NSAIDs, intra-articular steroid Allopurinol ใช้สำหรับ chronic gout ลด uric acid ไม่ใช่ CPPD Ceftriaxone สำหรับ septic arthritis (bacterial) Diclofenac/Indomethacin = NSAIDs ใช้ได้ แต่ Colchicine เป็นคำตอบในข้อนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allopurinol",
+          "is_correct": false,
+          "explanation": "Chronic gout prevention (uric acid lowering) ไม่ใช่ CPPD treatment"
+        },
+        {
+          "label": "B",
+          "text": "Colchicine",
+          "is_correct": true,
+          "explanation": "Acute crystal arthropathy (CPPD/gout) = Colchicine effective"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "Bacterial septic arthritis; WBC 30,000 อาจคิดถึง แต่ crystal ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Diclofenac",
+          "is_correct": false,
+          "explanation": "NSAID ใช้ได้แต่ไม่ใช่คำตอบ"
+        },
+        {
+          "label": "E",
+          "text": "Indomethacin",
+          "is_correct": false,
+          "explanation": "NSAID ใช้ได้แต่ไม่ใช่คำตอบ"
+        }
+      ],
+      "key_takeaway": "Rhomboid crystals = CPPD (pseudogout) → acute: Colchicine/NSAIDs; Needle = Gout (urate)"
+    }
+  },
+  {
+    "id": "422449ed-0551-4112-a6cb-36ef2c62a0a2",
+    "correct_answer": "D",
+    "explanation": "ชา lateral malleolus area = ตรวจ dermatome/nerve root ที่ควบคุม dorsiflexion ของ great toe (L5) เพื่อ confirm nerve root involvement",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D: Great toe dorsiflexion เพราะ L5 nerve root = dorsum of foot + great toe dorsiflexion (EHL function)",
+      "reason": "Nerve root assessment: L4: medial foot + ankle dorsiflexion + knee jerk L5: lateral leg + dorsum foot + great toe dorsiflexion (EHL = extensor hallucis longus) S1: lateral malleolus + plantar foot + ankle jerk + plantarflexion Lateral malleolus sensory distribution = S1 แต่ great toe dorsiflexion = L5 motor ในการตรวจ nerve root ที่ lateral malleolus อาจ L5-S1 junction คำตอบ D = great toe dorsiflexion = L5 motor test ที่เกี่ยวข้อง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Knee jerk",
+          "is_correct": false,
+          "explanation": "L4 reflex"
+        },
+        {
+          "label": "B",
+          "text": "Ankle jerk",
+          "is_correct": false,
+          "explanation": "S1 reflex สำหรับ S1 root lesion"
+        },
+        {
+          "label": "C",
+          "text": "Ankle dorsiflexion",
+          "is_correct": false,
+          "explanation": "L4 (tibialis anterior)"
+        },
+        {
+          "label": "D",
+          "text": "Great toe dorsiflexion",
+          "is_correct": true,
+          "explanation": "L5 motor (EHL); lateral malleolus sensory ~ L5-S1 junction"
+        },
+        {
+          "label": "E",
+          "text": "Plantar flexion",
+          "is_correct": false,
+          "explanation": "S1 (gastrocnemius/soleus)"
+        }
+      ],
+      "key_takeaway": "L5 = great toe dorsiflexion (EHL) + dorsum foot sensory; S1 = ankle jerk + plantar flexion + lateral foot"
+    }
+  },
+  {
+    "id": "42502ef1-8743-48e2-a147-a907a27eaa3a",
+    "correct_answer": "B",
+    "explanation": "AKA (Above-Knee Amputation) most common contracture = Hip flexion and adduction เกิดจาก hip flexor + adductor muscles ที่แข็งแรงกว่า extensors/abductors",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Hip flexion + adduction เพราะ hip flexors (iliopsoas, rectus femoris) และ adductors แข็งแรงกว่า extensors/abductors หลัง AKA",
+      "reason": "Post-AKA contracture: Hip flexors (iliopsoas, rectus femoris) ดึง residual limb ไปด้าน flexion Hip adductors ดึง residual limb ด้าน adduction ทำให้เกิด flexion + adduction contracture ซึ่ง interfere กับ prosthetic fit and gait Prevention: prone positioning, hip extension exercises, avoid prolonged sitting BKA (Below-Knee Amputation): knee flexion contracture มากกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hip flexion + abduction",
+          "is_correct": false,
+          "explanation": "ไม่ถูก; AKA ทำ adduction ไม่ใช่ abduction"
+        },
+        {
+          "label": "B",
+          "text": "Hip flexion + adduction",
+          "is_correct": true,
+          "explanation": "Hip flexors + adductors dominant after AKA → flexion-adduction contracture"
+        },
+        {
+          "label": "C",
+          "text": "Hip extension + abduction",
+          "is_correct": false,
+          "explanation": "Extensors และ abductors อ่อนแอกว่าหลัง AKA"
+        },
+        {
+          "label": "D",
+          "text": "Hip abduction + ER",
+          "is_correct": false,
+          "explanation": "ไม่ถูก"
+        },
+        {
+          "label": "E",
+          "text": "Hip extension + adduction",
+          "is_correct": false,
+          "explanation": "Extension ไม่ใช่ dominant contracture"
+        }
+      ],
+      "key_takeaway": "AKA most common contracture = Hip flexion + adduction; ป้องกันด้วย prone lying + hip extension exercises"
+    }
+  },
+  {
+    "id": "445e5304-d0a3-40ae-98b4-23eb92a9586c",
+    "correct_answer": "D",
+    "explanation": "เด็กล้ม lateral step with displacement >2mm = Lateral condyle fracture displaced ต้องการ Open reduction with plate and screw",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D: Lateral condyle fracture, ORIF with plate and screw เพราะ displacement >2mm ต้องการ surgical fixation",
+      "reason": "Lateral condyle fracture ใน pediatric patients: Non-displaced (<2mm): cast immobilization Displaced (>2mm): ORIF ทำไมต้อง ORIF: lateral condyle มีส่วน articular surface → ถ้า malunion → cubitus valgus → tardy ulnar nerve palsy Pin fixation (K-wire) ใช้ใน non-displaced หรือ minimally displaced Plate and screw ให้ stability ดีกว่าสำหรับ displaced fracture Supracondylar fracture ใน children: managed differently (closed reduction + percutaneous pin หรือ open)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supracondylar fracture, closed reduction",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ supracondylar; lateral condyle fracture"
+        },
+        {
+          "label": "B",
+          "text": "Lateral condyle fracture, closed reduction",
+          "is_correct": false,
+          "explanation": "Displaced >2mm = ต้องการ ORIF ไม่ใช่ closed reduction"
+        },
+        {
+          "label": "C",
+          "text": "Lateral condyle fracture, ORIF with K-wire",
+          "is_correct": false,
+          "explanation": "K-wire สำหรับ <2mm displacement หรือ simple; plate+screw ให้ stability ดีกว่า"
+        },
+        {
+          "label": "D",
+          "text": "Lateral condyle fracture, ORIF with plate + screw",
+          "is_correct": true,
+          "explanation": "Displaced >2mm lateral condyle = ORIF with plate and screw; ป้องกัน malunion → cubitus valgus"
+        },
+        {
+          "label": "E",
+          "text": "Supracondylar fracture, ORIF with plate",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ supracondylar fracture"
+        }
+      ],
+      "key_takeaway": "Lateral condyle fracture >2mm = ORIF; ไม่รักษา → cubitus valgus → tardy ulnar nerve palsy"
+    }
+  },
+  {
+    "id": "492f0369-cb35-4aa2-abfd-89246633b367",
+    "correct_answer": "A",
+    "explanation": "หญิง 24 ปี กิน prednisolone 20 mg/day นาน 1 ปี = Cushing's syndrome ผลที่ตามมา: Hypertension (A) เป็น common complication",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Hypertension เพราะ Corticosteroid-induced Cushing's syndrome ทำ HTN (sodium retention + mineralocorticoid effect)",
+      "reason": "Cushing's syndrome จาก prolonged steroid: Hypertension: mineralocorticoid effect → Na retention → HTN Hyperglycemia/DM (ไม่ใช่ DI): glucocorticoid resistance Osteoporosis: ลด bone formation (ไม่ใช่ increased bone mass) Weight gain/central obesity: ไม่ใช่ adipose wasting Cushingoid features: moon face, buffalo hump, striae Hypothyroidism: ไม่ใช่ steroid effect (steroid ทำ hyperthyroid-like TSH suppression) Diabetes Insipidus: เกิดจาก ADH problem ไม่ใช่ steroid",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypertension",
+          "is_correct": true,
+          "explanation": "Steroid → mineralocorticoid effect → Na/water retention → HTN + hypokalemia"
+        },
+        {
+          "label": "B",
+          "text": "Hypothyroid",
+          "is_correct": false,
+          "explanation": "Steroid ไม่ทำ hypothyroidism"
+        },
+        {
+          "label": "C",
+          "text": "Increased bone mass",
+          "is_correct": false,
+          "explanation": "Steroid ทำ DECREASED bone mass → osteoporosis"
+        },
+        {
+          "label": "D",
+          "text": "Diabetes insipidus",
+          "is_correct": false,
+          "explanation": "DI เกิดจาก ADH deficiency ไม่ใช่ steroid effect"
+        },
+        {
+          "label": "E",
+          "text": "Adipose tissue wasting",
+          "is_correct": false,
+          "explanation": "Steroid ทำ central fat deposition (moon face, buffalo hump) ไม่ใช่ wasting"
+        }
+      ],
+      "key_takeaway": "Prolonged steroid → Cushing's: HTN + DM + Osteoporosis + central obesity; ไม่ทำ hypothyroid หรือ DI"
+    }
+  }
+]

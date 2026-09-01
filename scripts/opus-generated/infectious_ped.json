@@ -1,0 +1,2272 @@
+[
+  {
+    "scenario": "เด็กชายอายุ 3 ปี มาด้วยไข้สูง 5 วัน ปากแดง ลิ้นแดง strawberry tongue ตาแดง bilateral non-exudative ต่อมน้ำเหลืองคอโตข้างเดียว ผิวลอกปลายนิ้ว echo: coronary artery dilation การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Viral pharyngitis"
+      },
+      {
+        "label": "B",
+        "text": "Kawasaki disease"
+      },
+      {
+        "label": "C",
+        "text": "Scarlet fever"
+      },
+      {
+        "label": "D",
+        "text": "Steven-Johnson syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Juvenile idiopathic arthritis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fever >5d + strawberry tongue + conjunctivitis + desquamation + lymphadenopathy + coronary dilation = Kawasaki disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Kawasaki disease",
+      "reason": "Kawasaki disease เป็น acute febrile vasculitis ที่พบบ่อยในเด็กอายุ <5 ปี\n\nCriteria: ไข้ >= 5 วัน + >= 4/5: bilateral non-exudative conjunctivitis oral changes (strawberry tongue) rash cervical lymphadenopathy extremity changes (desquamation)\n\nComplication สำคัญ: Coronary artery aneurysm 20-25% ถ้าไม่รักษา\n\nรักษา: IVIG 2 g/kg single dose + Aspirin ลด coronary aneurysm",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Viral pharyngitis",
+          "is_correct": false,
+          "explanation": "Viral pharyngitis ไม่มี coronary dilation ไม่มี desquamation"
+        },
+        {
+          "label": "B",
+          "text": "Kawasaki disease",
+          "is_correct": true,
+          "explanation": "ตรงตาม KD criteria ทุกข้อ + coronary dilation"
+        },
+        {
+          "label": "C",
+          "text": "Scarlet fever",
+          "is_correct": false,
+          "explanation": "Scarlet fever มี pharyngitis GAS ไม่มี conjunctivitis ไม่มี coronary dilation"
+        },
+        {
+          "label": "D",
+          "text": "Steven-Johnson syndrome",
+          "is_correct": false,
+          "explanation": "SJS มี blistering mucous membrane ไม่มี coronary involvement"
+        },
+        {
+          "label": "E",
+          "text": "Juvenile idiopathic arthritis",
+          "is_correct": false,
+          "explanation": "JIA มีข้ออักเสบเด่น ไม่มี coronary dilation"
+        }
+      ],
+      "key_takeaway": "Kawasaki disease: ไข้ >=5d + >=4/5 criteria -> IVIG + Aspirin ป้องกัน coronary aneurysm"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 7 ปี มาด้วยไข้สูง คอแข็ง ปวดศีรษะรุนแรง สับสน มีผื่น petechiae/purpura ที่ขา Kernig Brudzinski positive BP 90/60 สิ่งที่ต้องทำทันทีคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "รอผล LP ก่อนให้ยา"
+      },
+      {
+        "label": "B",
+        "text": "IV Ceftriaxone + Dexamethasone ทันที"
+      },
+      {
+        "label": "C",
+        "text": "CT brain ก่อน LP"
+      },
+      {
+        "label": "D",
+        "text": "Acyclovir IV"
+      },
+      {
+        "label": "E",
+        "text": "Blood culture แล้วรอ 1 ชั่วโมง"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bacterial meningitis + septic shock + petechiae -> IV Ceftriaxone ทันที อย่า delay",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IV Ceftriaxone + Dexamethasone ทันที",
+      "reason": "Petechiae/purpura + meningitis + hemodynamic instability = Neisseria meningitidis (meningococcemia)\n\nอย่า delay antibiotics รอ LP หรือ CT ใน unstable patient\n\nCeftriaxone 100 mg/kg IV + Dexamethasone 0.15 mg/kg q6h x 4d\n\nResuscitation fluid สำหรับ septic shock",
+      "choices": [
+        {
+          "label": "A",
+          "text": "รอผล LP ก่อนให้ยา",
+          "is_correct": false,
+          "explanation": "การรอ LP ใน hemodynamically unstable เพิ่ม mortality"
+        },
+        {
+          "label": "B",
+          "text": "IV Ceftriaxone + Dexamethasone ทันที",
+          "is_correct": true,
+          "explanation": "Bacterial meningitis + septic shock -> IV antibiotic ทันที"
+        },
+        {
+          "label": "C",
+          "text": "CT brain ก่อน LP",
+          "is_correct": false,
+          "explanation": "ไม่ควร delay antibiotics รอ CT"
+        },
+        {
+          "label": "D",
+          "text": "Acyclovir IV",
+          "is_correct": false,
+          "explanation": "Acyclovir สำหรับ HSV encephalitis ไม่ใช่ meningococcemia"
+        },
+        {
+          "label": "E",
+          "text": "Blood culture แล้วรอ 1 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "ทำ blood culture แต่ให้ antibiotics ทันทีหลัง culture ไม่ต้องรอผล"
+        }
+      ],
+      "key_takeaway": "Bacterial meningitis + petechiae + septic shock = IV Ceftriaxone ทันที ห้าม delay รอ LP"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กอายุ 18 เดือน ไม่ได้รับ MMR มาด้วยไข้สูง ผื่นแดงเริ่มจากหน้าลามลง Koplik spots ใน buccal mucosa ตาแดง ไอ น้ำมูก การวินิจฉัยและ complication ที่ต้องระวังมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rubella -> congenital defects"
+      },
+      {
+        "label": "B",
+        "text": "Measles -> pneumonia, encephalitis"
+      },
+      {
+        "label": "C",
+        "text": "Roseola -> febrile seizure"
+      },
+      {
+        "label": "D",
+        "text": "Scarlet fever -> rheumatic fever"
+      },
+      {
+        "label": "E",
+        "text": "Varicella -> Reye syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Koplik spots + 3C (Cough Coryza Conjunctivitis) + descending rash = Measles",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Measles -> pneumonia, encephalitis",
+      "reason": "Measles (Morbillivirus) มี prodrome 3Cs: Cough Coryza Conjunctivitis\n\nKoplik spots = pathognomonic เกิดก่อน rash 1-2 วัน\n\nRash: Maculopapular cephalocaudal spread (face -> trunk -> limbs)\n\nComplications: Pneumonia (mortality #1) Encephalitis SSPE (late)\n\nVitamin A supplement ลด mortality",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rubella -> congenital defects",
+          "is_correct": false,
+          "explanation": "Rubella ไม่มี Koplik spots ไม่มี 3Cs"
+        },
+        {
+          "label": "B",
+          "text": "Measles -> pneumonia, encephalitis",
+          "is_correct": true,
+          "explanation": "Koplik spots + 3Cs + cephalocaudal rash = measles"
+        },
+        {
+          "label": "C",
+          "text": "Roseola -> febrile seizure",
+          "is_correct": false,
+          "explanation": "Roseola: ไข้สูง 3-5 วัน แล้วผื่นขึ้น (rash after fever breaks) ไม่มี Koplik spots"
+        },
+        {
+          "label": "D",
+          "text": "Scarlet fever -> rheumatic fever",
+          "is_correct": false,
+          "explanation": "Scarlet fever มี strawberry tongue sandpaper rash GAS ไม่มี Koplik spots"
+        },
+        {
+          "label": "E",
+          "text": "Varicella -> Reye syndrome",
+          "is_correct": false,
+          "explanation": "Varicella มี vesicular polymorphic rash ไม่มี Koplik spots"
+        }
+      ],
+      "key_takeaway": "Measles: Koplik spots + 3Cs + cephalocaudal rash -> Complications: Pneumonia (#1) + Encephalitis"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กอายุ 6 ปี ไม่รับวัคซีน มาด้วย pharyngeal exudate สีเทา ลอกออกยาก มีเลือดออก bull neck มาด้วย การวินิจฉัยและการรักษาเร่งด่วนที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "GAS pharyngitis -> Penicillin"
+      },
+      {
+        "label": "B",
+        "text": "Diphtheria -> Antitoxin + Erythromycin"
+      },
+      {
+        "label": "C",
+        "text": "Peritonsillar abscess -> Drainage"
+      },
+      {
+        "label": "D",
+        "text": "Epiglottitis -> IV Ceftriaxone"
+      },
+      {
+        "label": "E",
+        "text": "EBV mono -> Supportive"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Grayish adherent membrane + bull neck + bleeding on removal = Diphtheria",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Diphtheria -> Antitoxin + Erythromycin",
+      "reason": "Diphtheria จาก Corynebacterium diphtheriae produce exotoxin\n\nLandmark: Grayish adherent pseudomembrane (ลอกยาก เลือดออก) + bull neck + low-grade fever\n\nToxin complications: Myocarditis (cause of death) Neuropathy\n\nรักษา: Antitoxin ทันที (neutralize circulating toxin) + Erythromycin/Penicillin",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GAS pharyngitis -> Penicillin",
+          "is_correct": false,
+          "explanation": "GAS exudate สีขาว ลอกง่าย ไม่มี bull neck"
+        },
+        {
+          "label": "B",
+          "text": "Diphtheria -> Antitoxin + Erythromycin",
+          "is_correct": true,
+          "explanation": "Grayish adherent membrane + bull neck + bleeding = diphtheria -> antitoxin ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Peritonsillar abscess -> Drainage",
+          "is_correct": false,
+          "explanation": "PTA มี unilateral swelling uvula deviation ไม่มี grayish membrane ทั่ว"
+        },
+        {
+          "label": "D",
+          "text": "Epiglottitis -> IV Ceftriaxone",
+          "is_correct": false,
+          "explanation": "Epiglottitis มีไข้สูง drooling tripod position ไม่มี visible membrane"
+        },
+        {
+          "label": "E",
+          "text": "EBV mono -> Supportive",
+          "is_correct": false,
+          "explanation": "EBV ไม่มี bull neck หรือ adherent grayish membrane"
+        }
+      ],
+      "key_takeaway": "Diphtheria: Grayish adherent membrane + bull neck -> Antitoxin ทันที + Erythromycin/Penicillin"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกอายุ 2 สัปดาห์ มาด้วยไข้ ซึม LP: WBC 500 (90% neutrophil) protein 150 mg/dL glucose 20 mg/dL (blood glucose 80) สาเหตุพบบ่อยที่สุดและการรักษาที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "GBS + Ampicillin/Gentamicin"
+      },
+      {
+        "label": "B",
+        "text": "Listeria + Ampicillin/Gentamicin"
+      },
+      {
+        "label": "C",
+        "text": "Viral meningitis + Supportive"
+      },
+      {
+        "label": "D",
+        "text": "TB meningitis + ATB"
+      },
+      {
+        "label": "E",
+        "text": "E.coli + Ceftriaxone เพียงอย่างเดียว"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Neonatal bacterial meningitis สาเหตุ #1 คือ GBS -> Ampicillin + Gentamicin",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. GBS + Ampicillin/Gentamicin",
+      "reason": "Neonatal meningitis <3 เดือน CSF ที่แสดง bacterial meningitis: WBC สูง predominantly neutrophil protein สูง glucose ต่ำ\n\nสาเหตุ: #1 GBS #2 E.coli #3 Listeria\n\nEmpiric: Ampicillin (cover GBS Listeria) + Gentamicin\n\nDuration: GBS meningitis 14-21 วัน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GBS + Ampicillin/Gentamicin",
+          "is_correct": true,
+          "explanation": "GBS เป็นสาเหตุ #1 neonatal meningitis Ampicillin + Gentamicin เป็น empiric standard"
+        },
+        {
+          "label": "B",
+          "text": "Listeria + Ampicillin/Gentamicin",
+          "is_correct": false,
+          "explanation": "Listeria พบน้อยกว่า GBS แต่ regimen เดียวกัน"
+        },
+        {
+          "label": "C",
+          "text": "Viral meningitis + Supportive",
+          "is_correct": false,
+          "explanation": "CSF neutrophil predominant protein สูง glucose ต่ำ = bacterial"
+        },
+        {
+          "label": "D",
+          "text": "TB meningitis + ATB",
+          "is_correct": false,
+          "explanation": "TB meningitis เป็น subacute CSF lymphocyte predominance"
+        },
+        {
+          "label": "E",
+          "text": "E.coli + Ceftriaxone เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Ceftriaxone เพียงอย่างเดียวไม่ cover Listeria ต้องเพิ่ม Ampicillin"
+        }
+      ],
+      "key_takeaway": "Neonatal meningitis: GBS #1 -> Ampicillin + Gentamicin (Ceftriaxone ระวังใน newborn)"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 4 ปี มาด้วยผื่นคันมาก ตุ่มน้ำใสบนผิวแดง พบผื่นหลายระยะในเวลาเดียวกัน ไม่ได้รับวัคซีน varicella การรักษาที่เหมาะสมและสิ่งที่ต้องระวังมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acyclovir + ห้ามให้ Aspirin"
+      },
+      {
+        "label": "B",
+        "text": "Antibiotic + Steroid"
+      },
+      {
+        "label": "C",
+        "text": "Corticosteroid cream ทา"
+      },
+      {
+        "label": "D",
+        "text": "Aspirin ลดไข้"
+      },
+      {
+        "label": "E",
+        "text": "IV Acyclovir ทันที"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Varicella -> Symptomatic +/- oral Acyclovir + ห้าม Aspirin (Reye syndrome)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Acyclovir + ห้ามให้ Aspirin",
+      "reason": "Varicella (VZV) มี polymorphic pruritic rash (macules papules vesicles pustules crusts) พร้อมกัน\n\nManagement healthy children: Symptomatic + oral acyclovir (ภายใน 24-72h)\n\nIV Acyclovir สำหรับ immunocompromised หรือ severe varicella\n\nข้อห้าม: Aspirin ใน varicella -> Reye syndrome (hepatic failure + encephalopathy)\n\nลดไข้ด้วย Paracetamol",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acyclovir + ห้ามให้ Aspirin",
+          "is_correct": true,
+          "explanation": "Varicella -> oral acyclovir +/- antihistamine ห้าม Aspirin (Reye syndrome)"
+        },
+        {
+          "label": "B",
+          "text": "Antibiotic + Steroid",
+          "is_correct": false,
+          "explanation": "Antibiotic ไม่มีบทบาทใน uncomplicated varicella Steroid ทำให้รุนแรงขึ้น"
+        },
+        {
+          "label": "C",
+          "text": "Corticosteroid cream ทา",
+          "is_correct": false,
+          "explanation": "Topical steroid ห้ามทา varicella lesions เพิ่ม secondary infection"
+        },
+        {
+          "label": "D",
+          "text": "Aspirin ลดไข้",
+          "is_correct": false,
+          "explanation": "Aspirin ห้ามให้ใน varicella เสี่ยง Reye syndrome"
+        },
+        {
+          "label": "E",
+          "text": "IV Acyclovir ทันที",
+          "is_correct": false,
+          "explanation": "IV Acyclovir สำหรับ immunocompromised หรือ severe varicella เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Varicella = polymorphic vesicular rash -> ห้าม Aspirin (Reye syndrome) -> Paracetamol + oral Acyclovir (ภายใน 72h)"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กอายุ 6 ปี ใน endemic area ไข้ทุก 48 ชั่วโมง หนาวสั่น ซีด ม้ามโต peripheral blood smear: multiple ring forms per cell + crescent gametocytes การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Plasmodium vivax"
+      },
+      {
+        "label": "B",
+        "text": "Plasmodium falciparum"
+      },
+      {
+        "label": "C",
+        "text": "Plasmodium malariae"
+      },
+      {
+        "label": "D",
+        "text": "Plasmodium ovale"
+      },
+      {
+        "label": "E",
+        "text": "Dengue fever"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multiple ring forms per cell + crescent gametocytes = Plasmodium falciparum (most dangerous)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Plasmodium falciparum",
+      "reason": "P. falciparum มีลักษณะใน smear: Multiple ring forms per RBC + Crescent/banana gametocytes (pathognomonic)\n\nP. falciparum อันตรายที่สุด: Cerebral malaria Severe anemia Respiratory distress\n\nรักษา: Artemisinin-based combination therapy (ACT)\n\nP. vivax: enlarged RBC + Schuffner dots + relapsing (hypnozoites) ต้องให้ Primaquine",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Plasmodium vivax",
+          "is_correct": false,
+          "explanation": "P. vivax มี enlarged RBC Schuffner dots ไม่มี crescent gametocytes"
+        },
+        {
+          "label": "B",
+          "text": "Plasmodium falciparum",
+          "is_correct": true,
+          "explanation": "Multiple rings per cell + crescent gametocytes = pathognomonic P. falciparum"
+        },
+        {
+          "label": "C",
+          "text": "Plasmodium malariae",
+          "is_correct": false,
+          "explanation": "P. malariae มี quartan fever (72h) band forms ไม่มี crescent gametocytes"
+        },
+        {
+          "label": "D",
+          "text": "Plasmodium ovale",
+          "is_correct": false,
+          "explanation": "P. ovale คล้าย P. vivax ไม่มี crescent gametocytes"
+        },
+        {
+          "label": "E",
+          "text": "Dengue fever",
+          "is_correct": false,
+          "explanation": "Dengue เป็น viral ไม่มี parasites ใน RBC"
+        }
+      ],
+      "key_takeaway": "P. falciparum: Multiple rings per cell + Crescent gametocytes = Most dangerous -> ACT (Artemether-Lumefantrine)"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 9 ปี ไข้สูง ปวดศีรษะ ปวดกล้ามเนื้อ ผื่น maculopapular เริ่มจาก wrist/ankle ลามไปลำตัว กลับจากป่า 1 สัปดาห์ มีรอยกัดที่ขา การวินิจฉัยที่สำคัญต้องพิจารณาก่อนคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dengue fever"
+      },
+      {
+        "label": "B",
+        "text": "Rocky Mountain spotted fever (Rickettsia)"
+      },
+      {
+        "label": "C",
+        "text": "Measles"
+      },
+      {
+        "label": "D",
+        "text": "Typhoid fever"
+      },
+      {
+        "label": "E",
+        "text": "Leptospirosis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Centripetal rash (wrist/ankle -> trunk) + tick bite + fever + ป่า = Rocky Mountain spotted fever",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Rocky Mountain spotted fever",
+      "reason": "RMSF (Rickettsia rickettsii) ถ่ายทอดโดย tick bite\n\nClassic triad: ไข้สูง + Headache + Centripetal rash (wrist/ankle -> trunk)\n\nCentripetal spread: periphery -> trunk = classic RMSF (ต่างจาก measles: face -> down)\n\nรักษา: Doxycycline เป็น drug of choice ทั้งเด็กและผู้ใหญ่ ให้ empirically ทันที\n\nไทย: Scrub typhus (Orientia tsutsugamushi) พบบ่อยที่สุด มี eschar",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dengue fever",
+          "is_correct": false,
+          "explanation": "Dengue ไม่ได้เริ่มจาก wrist/ankle มี thrombocytopenia เด่น hemorrhagic"
+        },
+        {
+          "label": "B",
+          "text": "Rocky Mountain spotted fever (Rickettsia)",
+          "is_correct": true,
+          "explanation": "Centripetal rash + tick bite + fever + headache = RMSF -> Doxycycline ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Measles",
+          "is_correct": false,
+          "explanation": "Measles ผื่นเริ่มจาก face/hairline ลามลง มี Koplik spots"
+        },
+        {
+          "label": "D",
+          "text": "Typhoid fever",
+          "is_correct": false,
+          "explanation": "Typhoid มี rose spots บริเวณหน้าท้อง GI symptoms ไม่มี tick bite"
+        },
+        {
+          "label": "E",
+          "text": "Leptospirosis",
+          "is_correct": false,
+          "explanation": "Leptospirosis มี conjunctival suffusion myalgia exposure to water ไม่มี centripetal rash"
+        }
+      ],
+      "key_takeaway": "RMSF: Centripetal rash (wrist/ankle -> trunk) + tick bite -> Doxycycline ทันที ไม่รอยืนยัน"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดอายุ 3 วัน แม่มีประวัติ genital herpes ทารกมาด้วยไข้ ชัก vesicular skin lesions LP: WBC 60 (lymphocyte) protein 150 RBC 30 cells การรักษาเร่งด่วนที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone IV"
+      },
+      {
+        "label": "B",
+        "text": "Acyclovir IV ทันที"
+      },
+      {
+        "label": "C",
+        "text": "Ampicillin + Gentamicin"
+      },
+      {
+        "label": "D",
+        "text": "Ganciclovir IV"
+      },
+      {
+        "label": "E",
+        "text": "Observation และ LP repeat"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neonatal HSV encephalitis (แม่ genital herpes + vesicular + CSF lymphocytosis + RBC) -> IV Acyclovir ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Acyclovir IV ทันที",
+      "reason": "Neonatal HSV CNS disease: fever + seizure + vesicular lesion + CSF lymphocytosis + RBC (hemorrhagic encephalitis)\n\nIV Acyclovir 60 mg/kg/day แบ่ง 3 doses นาน 21 วัน\n\nอย่า delay รักษา Mortality ถ้าไม่รักษา = 80%",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone IV",
+          "is_correct": false,
+          "explanation": "CSF lymphocyte predominance + RBC บ่งชี้ viral/HSV ไม่ใช่ bacterial"
+        },
+        {
+          "label": "B",
+          "text": "Acyclovir IV ทันที",
+          "is_correct": true,
+          "explanation": "Neonatal HSV encephalitis -> IV Acyclovir 60 mg/kg/day ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Ampicillin + Gentamicin",
+          "is_correct": false,
+          "explanation": "Bacterial coverage ไม่เพียงพอสำหรับ HSV ต้องเพิ่ม Acyclovir"
+        },
+        {
+          "label": "D",
+          "text": "Ganciclovir IV",
+          "is_correct": false,
+          "explanation": "Ganciclovir สำหรับ CMV ไม่ใช่ HSV"
+        },
+        {
+          "label": "E",
+          "text": "Observation และ LP repeat",
+          "is_correct": false,
+          "explanation": "Delay รักษา neonatal HSV เพิ่ม mortality มาก"
+        }
+      ],
+      "key_takeaway": "Neonatal HSV encephalitis: แม่ genital HSV + vesicular + CSF lymphocytosis + RBC -> IV Acyclovir 60 mg/kg/day (21 วัน)"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 12 ปี มาด้วยไข้ต่ำ ต่อมน้ำเหลืองคอโตทั้งสองข้าง ม้ามโต tonsils มีเยื่อขาว CBC: 50% lymphocyte 20% atypical lymphocyte Monospot test positive การวินิจฉัยและคำแนะนำที่สำคัญที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "GAS tonsillitis -> Penicillin V"
+      },
+      {
+        "label": "B",
+        "text": "EBV mono -> ห้าม Ampicillin + ห้าม contact sports"
+      },
+      {
+        "label": "C",
+        "text": "ALL -> Bone marrow biopsy"
+      },
+      {
+        "label": "D",
+        "text": "CMV -> Ganciclovir"
+      },
+      {
+        "label": "E",
+        "text": "Diphtheria -> Antitoxin"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Atypical lymphocytes + monospot positive + splenomegaly = EBV mono -> ห้าม Ampicillin + ห้าม contact sports",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. EBV mono -> ห้าม Ampicillin + ห้าม contact sports",
+      "reason": "EBV infectious mononucleosis: ไข้ + pharyngitis + lymphadenopathy + splenomegaly\n\nLabs: Atypical lymphocytes + Monospot (heterophile antibodies) positive\n\nข้อห้าม 2 อย่าง:\n1. ห้าม Ampicillin/Amoxicillin -> diffuse maculopapular rash >90%\n2. ห้าม contact sports -> splenomegaly เสี่ยง splenic rupture\n\nรักษา: Supportive Steroids ถ้า severe airway compromise",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GAS tonsillitis -> Penicillin V",
+          "is_correct": false,
+          "explanation": "GAS ไม่มี atypical lymphocytes Monospot negative ม้ามไม่โต"
+        },
+        {
+          "label": "B",
+          "text": "EBV mono -> ห้าม Ampicillin + ห้าม contact sports",
+          "is_correct": true,
+          "explanation": "Atypical lymphocytes + monospot positive + splenomegaly = EBV mono"
+        },
+        {
+          "label": "C",
+          "text": "ALL -> Bone marrow biopsy",
+          "is_correct": false,
+          "explanation": "ALL มี blast cells ไม่ใช่ atypical lymphocytes monospot negative"
+        },
+        {
+          "label": "D",
+          "text": "CMV -> Ganciclovir",
+          "is_correct": false,
+          "explanation": "CMV mono monospot negative Ganciclovir ไม่จำเป็นใน immunocompetent"
+        },
+        {
+          "label": "E",
+          "text": "Diphtheria -> Antitoxin",
+          "is_correct": false,
+          "explanation": "Diphtheria มี adherent membrane + bull neck ไม่มี atypical lymphocytes"
+        }
+      ],
+      "key_takeaway": "EBV mono: Atypical lymphocytes + Monospot positive -> ห้าม Ampicillin (rash) + ห้าม contact sports (splenic rupture)"
+    },
+    "subject": "infectious_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง 3 ปี ไข้ 5 วัน ผื่น maculopapular ทั่วตัว ตาแดง 2 ข้าง ปากแตกเป็นแผล ลิ้นสีแดงเป็นตุ่ม (strawberry tongue) ต่อมน้ำเหลืองที่คอโต 1.5 cm CBC: WBC 18,000 (neut 75%), Plt 550,000, CRP 120 Echo: coronary artery z-score +2.8",
+    "choices": [
+      "A: Scarlet fever",
+      "B: Kawasaki disease",
+      "C: Measles",
+      "D: Adenovirus infection",
+      "E: Systemic JIA"
+    ],
+    "correct_answer": "B",
+    "explanation": "Kawasaki disease: 5 criteria (ไข้ ≥5 วัน + ผื่น + ตาแดง + ปากแดง/ลิ้น + ต่อมน้ำเหลือง) + coronary dilatation",
+    "detailed_explanation": {
+      "summary": "Kawasaki disease: vasculitis ใน เด็กเล็ก, classic 5 criteria + coronary complications",
+      "reason": "Kawasaki disease เป็น medium-vessel vasculitis ที่พบในเด็ก <5 ปี Diagnostic criteria: ไข้ ≥5 วัน + ≥4 ใน 5 อาการ (ผื่น, bilateral non-purulent conjunctivitis, oral changes, lymphadenopathy, changes in extremities) ภาวะแทรกซ้อนหลัก: coronary artery aneurysm (2-4%) การรักษา: IVIG 2 g/kg + aspirin",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Scarlet fever",
+          "is_correct": false,
+          "explanation": "ผื่น sandpaper texture, GAS pharyngitis, ไม่มี coronary involvement"
+        },
+        {
+          "label": "B",
+          "text": "Kawasaki disease",
+          "is_correct": true,
+          "explanation": "5 criteria ครบ + coronary dilatation z-score >2.5 → Kawasaki disease confirmed"
+        },
+        {
+          "label": "C",
+          "text": "Measles",
+          "is_correct": false,
+          "explanation": "Koplik spots, cough+coryza+conjunctivitis, ไม่มี coronary"
+        },
+        {
+          "label": "D",
+          "text": "Adenovirus",
+          "is_correct": false,
+          "explanation": "ไม่มี coronary involvement, ไม่ครบ criteria"
+        },
+        {
+          "label": "E",
+          "text": "Systemic JIA",
+          "is_correct": false,
+          "explanation": "ผื่น salmon-colored evanescent, arthritis, ไม่มี oral changes classic"
+        }
+      ],
+      "key_takeaway": "Kawasaki: ไข้ ≥5 วัน + 4/5 criteria → IVIG 2 g/kg + aspirin; Echo ติดตาม coronary; ป้องกัน aneurysm"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 2 ปี ไข้สูง 40°C นาน 3 วัน คอแข็ง (neck stiffness) กระหม่อมโป่ง ซึม CSF: pressure สูง, WBC 2,500 (PMN 90%), glucose 15 mg/dL (serum glucose 80 mg/dL), protein 320 mg/dL, Gram stain พบ gram-positive diplococci",
+    "choices": [
+      "A: Viral meningitis",
+      "B: TB meningitis",
+      "C: Bacterial meningitis จาก S. pneumoniae",
+      "D: Fungal meningitis",
+      "E: Brain abscess"
+    ],
+    "correct_answer": "C",
+    "explanation": "Bacterial meningitis: CSF PMN dominant, glucose ต่ำมาก, protein สูง, gram-positive diplococci = S. pneumoniae → ceftriaxone + dexamethasone",
+    "detailed_explanation": {
+      "summary": "Bacterial meningitis (S. pneumoniae): CSF PMN + low glucose + gram-positive diplococci",
+      "reason": "S. pneumoniae meningitis เป็น most common bacterial meningitis ในเด็ก >2 เดือน CSF characteristics: WBC > 1000 (PMN), glucose < 40 mg/dL หรือ CSF:serum glucose <0.4, protein > 200 mg/dL, Gram stain positive Gram-positive diplococci = pneumococcus การรักษา: ceftriaxone IV + dexamethasone (ลด sequelae)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Viral meningitis",
+          "is_correct": false,
+          "explanation": "Lymphocyte dominant, glucose ปกติ, protein เล็กน้อยสูง"
+        },
+        {
+          "label": "B",
+          "text": "TB meningitis",
+          "is_correct": false,
+          "explanation": "Lymphocyte dominant, glucose ต่ำปานกลาง, protein สูง, AFB smear"
+        },
+        {
+          "label": "C",
+          "text": "Bacterial meningitis S. pneumoniae",
+          "is_correct": true,
+          "explanation": "PMN 90%, glucose 15/80=0.19, protein 320, diplococci gram+ = pneumococcal meningitis"
+        },
+        {
+          "label": "D",
+          "text": "Fungal meningitis",
+          "is_correct": false,
+          "explanation": "India ink positive, cryptococcal antigen, lymphocyte dominant"
+        },
+        {
+          "label": "E",
+          "text": "Brain abscess",
+          "is_correct": false,
+          "explanation": "Focal deficit, ไม่ทำ LP ถ้าสงสัย abscess"
+        }
+      ],
+      "key_takeaway": "Bacterial meningitis: ceftriaxone + dexamethasone IV ทันที; S. pneumoniae = gram-positive diplococci; ลด sequelae ด้วย dexa"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 8 เดือน ไข้ 39.5°C ไอ หอบ อัตราหายใจ 58 ครั้ง/นาที O2 sat 91% retraction ชัดเจน CXR: bilateral interstitial infiltrates + hyperinflation RSV antigen positive",
+    "choices": [
+      "A: Pneumonia จาก bacteria",
+      "B: Bronchiolitis จาก RSV",
+      "C: Asthma acute exacerbation",
+      "D: Pertussis",
+      "E: Foreign body aspiration"
+    ],
+    "correct_answer": "B",
+    "explanation": "Bronchiolitis RSV: เด็ก <2 ปี ไข้ + wheeze + hyperinflation + RSV positive → supportive care (O2, NG feeding)",
+    "detailed_explanation": {
+      "summary": "RSV bronchiolitis: เด็ก <2 ปี, bilateral wheeze + hyperinflation + RSV+",
+      "reason": "RSV เป็น most common cause ของ bronchiolitis ใน เด็ก <2 ปี Pathophysiology: lower airway edema + mucus → air trapping → hyperinflation Clinical: tachypnea, wheeze, retraction, hypoxia Management: Supportive (O2, NG feeding, สารน้ำ) ไม่ใช้ antibiotics, bronchodilators, steroids เป็น routine",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bacterial pneumonia",
+          "is_correct": false,
+          "explanation": "Lobar consolidation ไม่ใช่ bilateral interstitial, ตอบสนองต่อ antibiotics"
+        },
+        {
+          "label": "B",
+          "text": "RSV bronchiolitis",
+          "is_correct": true,
+          "explanation": "8 เดือน + bilateral interstitial + hyperinflation + RSV+ = classic bronchiolitis"
+        },
+        {
+          "label": "C",
+          "text": "Asthma",
+          "is_correct": false,
+          "explanation": "ไม่วินิจฉัย asthma ใน เด็ก <2 ปี, first episode"
+        },
+        {
+          "label": "D",
+          "text": "Pertussis",
+          "is_correct": false,
+          "explanation": "Paroxysmal cough + whoop, ไม่มี bilateral infiltrate"
+        },
+        {
+          "label": "E",
+          "text": "Foreign body",
+          "is_correct": false,
+          "explanation": "Unilateral hyperinflation, ประวัติ choking"
+        }
+      ],
+      "key_takeaway": "RSV bronchiolitis: O2 supplement + NG feeding + hydration; ไม่ใช้ antibiotic/bronchodilator/steroid เป็น routine"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 5 ปี ไข้ 3 วัน เจ็บคอ กลืนลำบาก พบ tonsillar exudate ทั้ง 2 ข้าง ต่อมน้ำเหลืองที่ anterior cervical โต Rapid strep test positive ไม่มีไอ ไม่มีน้ำมูก",
+    "choices": [
+      "A: Viral pharyngitis",
+      "B: Infectious mononucleosis",
+      "C: GAS pharyngitis",
+      "D: Peritonsillar abscess",
+      "E: Epiglottitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "GAS pharyngitis: Centor criteria (exudate, tender anterior cervical LN, ไม่ไอ, ไข้) + rapid strep positive → penicillin V หรือ amoxicillin 10 วัน",
+    "detailed_explanation": {
+      "summary": "GAS pharyngitis: Centor ≥3 + rapid strep+ → penicillin/amoxicillin",
+      "reason": "Group A Streptococcus pharyngitis มี Centor criteria: tonsillar exudate, tender anterior cervical LN, ไข้, ไม่ไอ (4 คะแนน) คะแนน ≥3 → ทดสอบ rapid strep หรือ throat culture ผลบวก → ให้ยา antibiotics เพื่อป้องกัน rheumatic fever การรักษา: Penicillin V oral 10 วัน หรือ Amoxicillin",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Viral pharyngitis",
+          "is_correct": false,
+          "explanation": "มักมีไอ น้ำมูก rapid strep ลบ"
+        },
+        {
+          "label": "B",
+          "text": "Infectious mononucleosis",
+          "is_correct": false,
+          "explanation": "Splenomegaly, atypical lymphocytes, monospot positive"
+        },
+        {
+          "label": "C",
+          "text": "GAS pharyngitis",
+          "is_correct": true,
+          "explanation": "Centor 4/4 + rapid strep positive → GAS pharyngitis → penicillin 10 วัน"
+        },
+        {
+          "label": "D",
+          "text": "Peritonsillar abscess",
+          "is_correct": false,
+          "explanation": "Unilateral swelling, uvula deviation, muffled voice"
+        },
+        {
+          "label": "E",
+          "text": "Epiglottitis",
+          "is_correct": false,
+          "explanation": "Drooling, tripod position, ไม่มี exudate"
+        }
+      ],
+      "key_takeaway": "GAS pharyngitis: Centor + rapid strep → Penicillin V หรือ Amoxicillin 10 วัน; ป้องกัน rheumatic fever"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 18 เดือน ไม่ได้รับวัคซีน ไข้ 38.5°C ไอแห้งๆ น้ำมูกใส ตาแดง 2 ข้าง วันที่ 3 พบ Koplik spots ในช่องปาก วันที่ 4 เกิดผื่น maculopapular เริ่มจากใบหน้าลงมาลำตัว",
+    "choices": [
+      "A: Rubella",
+      "B: Roseola infantum",
+      "C: Measles",
+      "D: Kawasaki disease",
+      "E: Drug reaction"
+    ],
+    "correct_answer": "C",
+    "explanation": "Measles: 3C (Cough, Coryza, Conjunctivitis) + Koplik spots + cephalocaudal rash → pathognomonic",
+    "detailed_explanation": {
+      "summary": "Measles: 3C + Koplik spots + cephalocaudal rash",
+      "reason": "Measles (Rubeola): prodrome 3C = Cough, Coryza, Conjunctivitis ตามด้วย Koplik spots (เยื่อบุแก้ม) ก่อนผื่น 1-2 วัน ผื่น: maculopapular เริ่มหัว → ลำตัว → แขนขา (cephalocaudal) ภาวะแทรกซ้อน: pneumonia (most common cause of death), encephalitis Notifiable disease; การรักษา: Vitamin A + supportive",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rubella",
+          "is_correct": false,
+          "explanation": "ผื่นคล้าย measles แต่เบากว่า, post-auricular LN, ไม่มี Koplik"
+        },
+        {
+          "label": "B",
+          "text": "Roseola infantum",
+          "is_correct": false,
+          "explanation": "ไข้สูงหาย → ผื่นออก (fever first then rash), HHV-6"
+        },
+        {
+          "label": "C",
+          "text": "Measles",
+          "is_correct": true,
+          "explanation": "3C + Koplik spots + cephalocaudal rash = Measles pathognomonic"
+        },
+        {
+          "label": "D",
+          "text": "Kawasaki",
+          "is_correct": false,
+          "explanation": "ไม่มี Koplik, criteria ต่างกัน"
+        },
+        {
+          "label": "E",
+          "text": "Drug reaction",
+          "is_correct": false,
+          "explanation": "ประวัติยา, ไม่มี Koplik"
+        }
+      ],
+      "key_takeaway": "Measles: 3C + Koplik spots + cephalocaudal rash → Vitamin A 2 doses; ป้องกัน MMR vaccine"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 10 ปี ไข้ 39°C ปวดศีรษะ อาเจียน ผื่น petechiae/purpura ที่ขาและลำตัว ซึมลง BP 70/40 mmHg ผื่นขยายเร็วมากใน 2 ชม. CBC: WBC 3,200, Plt 45,000, CRP 250",
+    "choices": [
+      "A: ITP",
+      "B: Meningococcal septicemia",
+      "C: Rocky Mountain spotted fever",
+      "D: HSP",
+      "E: Viral hemorrhagic fever"
+    ],
+    "correct_answer": "B",
+    "explanation": "Meningococcal septicemia: petechiae/purpura + septic shock + rapid progression + thrombocytopenia → IV ceftriaxone ทันที",
+    "detailed_explanation": {
+      "summary": "Meningococcal septicemia: petechiae+purpura + shock + rapid progression",
+      "reason": "Neisseria meningitidis สร้าง endotoxin → DIC + septic shock Hallmark: non-blanching petechiae/purpura ที่ขยายเร็ว + shock ภาวะแทรกซ้อน: Waterhouse-Friderichsen syndrome (adrenal hemorrhage) การรักษา: IV ceftriaxone ทันทีก่อน LP; Prophylaxis: rifampin/ciprofloxacin ให้ contacts",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ITP",
+          "is_correct": false,
+          "explanation": "ไม่ไข้, ไม่ shock, CBC WBC ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Meningococcal septicemia",
+          "is_correct": true,
+          "explanation": "Non-blanching petechiae + shock + rapid progression = meningococcemia → IV ceftriaxone ด่วน"
+        },
+        {
+          "label": "C",
+          "text": "RMSF",
+          "is_correct": false,
+          "explanation": "ผื่นเริ่มจาก wrist/ankle, ประวัติ tick exposure"
+        },
+        {
+          "label": "D",
+          "text": "HSP",
+          "is_correct": false,
+          "explanation": "ผื่นที่ขา, ไม่มี shock, ไม่ rapid progression"
+        },
+        {
+          "label": "E",
+          "text": "Viral hemorrhagic fever",
+          "is_correct": false,
+          "explanation": "ประวัติ exposure, ประเทศเฉพาะ"
+        }
+      ],
+      "key_takeaway": "Meningococcemia: petechiae + shock + rapid spread → IV ceftriaxone ทันที ก่อน LP; ให้ chemoprophylaxis contacts"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 7 ปี กลับจากชายแดงพม่า มีไข้สูงสลับหนาวสั่น ทุก 48 ชม. ซีดลง ม้ามโต CBC: Hb 9.0 g/dL, WBC 4,500, Plt 85,000 PBS: ring-form trophozoites ใน RBC หลายเซลล์ พบ P. falciparum",
+    "choices": [
+      "A: ยา chloroquine oral",
+      "B: IV artesunate เพราะ severe malaria",
+      "C: IV quinine + doxycycline",
+      "D: Primaquine ทันที",
+      "E: รอ culture ก่อน"
+    ],
+    "correct_answer": "B",
+    "explanation": "P. falciparum ในเด็กจากชายแดง → ต้องประเมิน severe malaria; ถ้า severe → IV artesunate เป็น first-line",
+    "detailed_explanation": {
+      "summary": "Severe P. falciparum malaria → IV artesunate first-line",
+      "reason": "P. falciparum มีอัตราการเสียชีวิตสูงถ้า severe (cerebral malaria, severe anemia, renal failure) Severe malaria criteria: Hb <7, Plt <50k, parasitemia >5%, altered consciousness, respiratory distress ฯลฯ IV Artesunate เป็น WHO first-line สำหรับ severe falciparum malaria ดีกว่า IV quinine (ลด mortality) Chloroquine ใช้ไม่ได้กับ P. falciparum ส่วนใหญ่ (resistance)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chloroquine oral",
+          "is_correct": false,
+          "explanation": "P. falciparum ส่วนใหญ่ resistant chloroquine"
+        },
+        {
+          "label": "B",
+          "text": "IV artesunate",
+          "is_correct": true,
+          "explanation": "Severe P. falciparum → IV artesunate เป็น WHO first-line"
+        },
+        {
+          "label": "C",
+          "text": "IV quinine + doxycycline",
+          "is_correct": false,
+          "explanation": "ทางเลือกถ้า artesunate ไม่มี แต่ไม่ใช่ first-line"
+        },
+        {
+          "label": "D",
+          "text": "Primaquine ทันที",
+          "is_correct": false,
+          "explanation": "Primaquine สำหรับ radical cure P. vivax/ovale (liver stage), ไม่ใช่ acute falciparum"
+        },
+        {
+          "label": "E",
+          "text": "รอ culture",
+          "is_correct": false,
+          "explanation": "Malaria วินิจฉัยด้วย PBS ไม่ใช่ culture; รอไม่ได้"
+        }
+      ],
+      "key_takeaway": "Severe P. falciparum: IV artesunate (WHO first-line); Uncomplicated falciparum: artemisinin-based combination therapy (ACT)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 6 เดือน ไข้ 38°C มาตรวจ ประวัติ: ไม่ได้ให้นมแม่ พ่อแม่ทั้งคู่ HIV positive ไม่ได้รับ PMTCT เด็กมีน้ำหนักไม่ขึ้น ลำไส้ติดเชื้อซ้ำๆ ปากเป็นฝ้าขาว พบ hepatosplenomegaly CD4 ทารก 150 cells/μL",
+    "choices": [
+      "A: HIV-exposed แต่ไม่ติดเชื้อ",
+      "B: Pediatric HIV infection",
+      "C: Severe combined immunodeficiency",
+      "D: Congenital CMV",
+      "E: DiGeorge syndrome"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric HIV: พ่อแม่ HIV+ + ไม่ได้ PMTCT + failure to thrive + oral candidiasis + CD4 ต่ำ → pediatric HIV",
+    "detailed_explanation": {
+      "summary": "Pediatric HIV: MTCT risk + clinical immunodeficiency + CD4 ต่ำ",
+      "reason": "HIV MTCT สูงถ้าไม่ได้ PMTCT (25-40%) Diagnosis < 18 เดือน: ต้องใช้ HIV DNA/RNA PCR (ไม่ใช่ antibody เพราะ maternal Ab ยังอยู่) อาการ: failure to thrive, recurrent infections, oral candidiasis, lymphadenopathy, hepatosplenomegaly การรักษา: ART ทุก HIV-infected ไม่ว่า CD4 เท่าไร + co-trimoxazole prophylaxis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "HIV-exposed ไม่ติด",
+          "is_correct": false,
+          "explanation": "CD4 ต่ำ + คลินิกอาการ immunodeficiency → ไม่ใช่แค่ exposed"
+        },
+        {
+          "label": "B",
+          "text": "Pediatric HIV",
+          "is_correct": true,
+          "explanation": "MTCT risk + failure to thrive + candidiasis + CD4 150 → pediatric HIV; HIV PCR ยืนยัน"
+        },
+        {
+          "label": "C",
+          "text": "SCID",
+          "is_correct": false,
+          "explanation": "Primary immunodeficiency ตั้งแต่กำเนิด พ่อแม่ไม่ HIV"
+        },
+        {
+          "label": "D",
+          "text": "Congenital CMV",
+          "is_correct": false,
+          "explanation": "Microcephaly, hearing loss, petechiae แรกเกิด"
+        },
+        {
+          "label": "E",
+          "text": "DiGeorge",
+          "is_correct": false,
+          "explanation": "Conotruncal heart defect, hypocalcemia, T-cell deficiency"
+        }
+      ],
+      "key_takeaway": "Pediatric HIV: MTCT → HIV PCR (ไม่ใช่ Ab) ใน <18 เดือน; ให้ ART ทุกคน + cotrimoxazole prophylaxis (CD4 <25%)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 4 ปี ไข้ 38°C ผื่น vesicular เริ่มจากหน้าอกลามไปหน้า แขน ขา ผื่นมีหลายระยะ (vesicle, pustule, crust) อยู่พร้อมกัน คัน ไม่ได้รับวัคซีน",
+    "choices": [
+      "A: Herpes zoster",
+      "B: Smallpox",
+      "C: Hand-foot-mouth disease",
+      "D: Varicella (chickenpox)",
+      "E: Impetigo"
+    ],
+    "correct_answer": "D",
+    "explanation": "Varicella: ผื่นหลายระยะพร้อมกัน (polymorphic lesions), centripetal distribution (trunk→face→extremities), คัน, ไม่ได้วัคซีน",
+    "detailed_explanation": {
+      "summary": "Varicella: polymorphic lesions (หลายระยะพร้อมกัน) + centripetal + คัน",
+      "reason": "VZV varicella: incubation 10-21 วัน Characteristic: lesions ในหลาย stages พร้อมกัน (macule→papule→vesicle→pustule→crust) Distribution: centripetal (ลำตัว > หน้า > แขนขา) ภาวะแทรกซ้อน: secondary bacterial skin infection, pneumonia, encephalitis Contagious: 2 วันก่อนผื่น ถึง lesions crusted ทั้งหมด การรักษา: acyclovir (immunocompromised, adolescent, adult, severe); ปกติ supportive",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Herpes zoster",
+          "is_correct": false,
+          "explanation": "Dermatomal distribution, ผู้สูงอายุ หรือ immunocompromised"
+        },
+        {
+          "label": "B",
+          "text": "Smallpox",
+          "is_correct": false,
+          "explanation": "Eradicated, lesions ในระยะเดียวกัน (monomorphic), centrifugal"
+        },
+        {
+          "label": "C",
+          "text": "HFMD",
+          "is_correct": false,
+          "explanation": "ฝ่ามือ ฝ่าเท้า ปาก ไม่ใช่ centripetal"
+        },
+        {
+          "label": "D",
+          "text": "Varicella",
+          "is_correct": true,
+          "explanation": "Polymorphic + centripetal + คัน + ไม่ได้วัคซีน = varicella"
+        },
+        {
+          "label": "E",
+          "text": "Impetigo",
+          "is_correct": false,
+          "explanation": "Honey-colored crust, ไม่มี vesicle หลายระยะ"
+        }
+      ],
+      "key_takeaway": "Varicella: polymorphic lesions + centripetal distribution + คัน → supportive; acyclovir ใน immunocompromised/severe"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 1 ปี 6 เดือน พ่อเพิ่งวินิจฉัย pulmonary TB smear positive เด็กไม่มีอาการ Mantoux test 15 mm CXR ปกติ เด็กไม่ได้รับ BCG",
+    "choices": [
+      "A: ให้ BCG ทันที",
+      "B: ให้ isoniazid prophylaxis 6 เดือน",
+      "C: ให้ HRZE 2 เดือน ตามด้วย HR 4 เดือน",
+      "D: ไม่ต้องรักษาเพราะไม่มีอาการ",
+      "E: Repeat Mantoux ใน 3 เดือน"
+    ],
+    "correct_answer": "B",
+    "explanation": "LTBI ในเด็ก <5 ปี สัมผัส smear-positive TB + Mantoux ≥10 mm + CXR ปกติ → isoniazid prophylaxis (LTBI treatment) 6-9 เดือน",
+    "detailed_explanation": {
+      "summary": "LTBI ในเด็กเล็ก หลัง TB contact → INH prophylaxis 6-9 เดือน",
+      "reason": "เด็ก < 5 ปี สัมผัส smear-positive TB มีความเสี่ยงสูงที่จะ progress to active TB (โดยเฉพาะ miliary/meningeal) Latent TB Infection (LTBI) = Mantoux positive + ไม่มีอาการ + CXR ปกติ Treatment: INH 10 mg/kg/day 6-9 เดือน (ไม่ใช่ full 4-drug regimen) BCG ไม่ให้ถ้า Mantoux already positive",
+      "choices": [
+        {
+          "label": "A",
+          "text": "BCG ทันที",
+          "is_correct": false,
+          "explanation": "BCG contraindicated ถ้า Mantoux positive แล้ว"
+        },
+        {
+          "label": "B",
+          "text": "INH prophylaxis 6 เดือน",
+          "is_correct": true,
+          "explanation": "LTBI ในเด็กเล็ก → INH monotherapy 6-9 เดือน เพื่อป้องกัน progression"
+        },
+        {
+          "label": "C",
+          "text": "HRZE full regimen",
+          "is_correct": false,
+          "explanation": "Full regimen สำหรับ active TB ไม่ใช่ LTBI"
+        },
+        {
+          "label": "D",
+          "text": "ไม่ต้องรักษา",
+          "is_correct": false,
+          "explanation": "เด็ก <5 ปี LTBI มีความเสี่ยงสูง → ต้องรักษา"
+        },
+        {
+          "label": "E",
+          "text": "Repeat Mantoux 3 เดือน",
+          "is_correct": false,
+          "explanation": "Mantoux positive แล้ว + close contact → เริ่มรักษาทันที"
+        }
+      ],
+      "key_takeaway": "LTBI เด็ก <5 ปี + TB contact: INH 10 mg/kg/day × 6-9 เดือน; BCG ห้ามให้ถ้า TST positive แล้ว"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 9 ปี มีไข้ 39°C ปวดน่อง อ่อนแรง ตาเหลือง ปัสสาวะสีเข้ม ประวัติ: ลงเล่นน้ำท่วมในหมู่บ้านหลังพายุ 2 สัปดาห์ก่อน CBC: WBC 12,000, Plt 65,000, creatinine 2.8 mg/dL, bilirubin 4.5 mg/dL, CRP 180",
+    "choices": [
+      "A: Dengue",
+      "B: Leptospirosis",
+      "C: Malaria falciparum",
+      "D: Hepatitis A",
+      "E: Viral hemorrhagic fever"
+    ],
+    "correct_answer": "B",
+    "explanation": "Leptospirosis: ประวัติสัมผัสน้ำท่วม + ไข้ + ปวดน่อง + jaundice + renal failure = Weil's disease → IV penicillin",
+    "detailed_explanation": {
+      "summary": "Leptospirosis (Weil's disease): น้ำท่วม + ปวดน่อง + jaundice + AKI",
+      "reason": "Leptospira interrogans ติดเชื้อผ่านผิวหนังหรือเยื่อเมือกที่สัมผัสน้ำหรือดินปนเปื้อนปัสสาวะสัตว์ Weil's disease (severe): jaundice + AKI + thrombocytopenia Myalgia/calf tenderness เป็น hallmark การรักษา: IV penicillin G (severe) หรือ doxycycline (mild)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dengue",
+          "is_correct": false,
+          "explanation": "ไม่มี calf pain, ไม่มี jaundice ชัด, ไม่มี AKI"
+        },
+        {
+          "label": "B",
+          "text": "Leptospirosis",
+          "is_correct": true,
+          "explanation": "น้ำท่วม + calf pain + jaundice + AKI = Weil's disease"
+        },
+        {
+          "label": "C",
+          "text": "Malaria falciparum",
+          "is_correct": false,
+          "explanation": "PBS required, ไม่มี calf pain"
+        },
+        {
+          "label": "D",
+          "text": "Hepatitis A",
+          "is_correct": false,
+          "explanation": "Jaundice แต่ไม่มี AKI หรือ calf pain"
+        },
+        {
+          "label": "E",
+          "text": "VHF",
+          "is_correct": false,
+          "explanation": "Hemorrhagic features, endemic areas"
+        }
+      ],
+      "key_takeaway": "Leptospirosis: น้ำท่วม + calf pain + jaundice + AKI → IV penicillin G; doxycycline สำหรับ prophylaxis/mild"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารก 2 เดือน มีไอรุนแรงเป็นชุด (paroxysmal) หายใจ whoop เสียง อาเจียนหลังไอ หน้าเขียวระหว่างไอ ไม่ได้รับวัคซีน CBC: WBC 35,000 lymphocytes 85%",
+    "choices": [
+      "A: Bronchiolitis RSV",
+      "B: Chlamydia trachomatis pneumonia",
+      "C: Pertussis (whooping cough)",
+      "D: Croup",
+      "E: Foreign body aspiration"
+    ],
+    "correct_answer": "C",
+    "explanation": "Pertussis: paroxysmal cough + whoop + post-tussive vomiting + lymphocytosis สูง + ทารกไม่ได้วัคซีน → azithromycin",
+    "detailed_explanation": {
+      "summary": "Pertussis: paroxysmal cough + whoop + leukocytosis lymphocytic",
+      "reason": "Bordetella pertussis ทารก <6 เดือน อันตรายมาก (apnea ไม่มี whoop) Phases: catarrhal (1-2 wk), paroxysmal (2-6 wk), convalescent Lymphocytosis สูง (WBC > 20,000 lymph dominant) เป็น hallmark CBC การรักษา: Azithromycin (safe ใน <1 เดือน) หรือ clarithromycin; Erythromicin ทำให้ pyloric stenosis ในทารก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bronchiolitis RSV",
+          "is_correct": false,
+          "explanation": "Wheeze ไม่ใช่ whoop, lymphocytosis ไม่สูง"
+        },
+        {
+          "label": "B",
+          "text": "Chlamydia pneumonia",
+          "is_correct": false,
+          "explanation": "Staccato cough, eosinophilia, ไม่มี whoop"
+        },
+        {
+          "label": "C",
+          "text": "Pertussis",
+          "is_correct": true,
+          "explanation": "Paroxysmal + whoop + post-tussive vomiting + lymphocytosis = pertussis → azithromycin"
+        },
+        {
+          "label": "D",
+          "text": "Croup",
+          "is_correct": false,
+          "explanation": "Barking cough + stridor, ไม่มี whoop"
+        },
+        {
+          "label": "E",
+          "text": "Foreign body",
+          "is_correct": false,
+          "explanation": "ประวัติ choking, unilateral wheeze"
+        }
+      ],
+      "key_takeaway": "Pertussis: paroxysmal cough + whoop + lymphocytosis → Azithromycin; ทารก <1 เดือน ระวัง pyloric stenosis จาก erythromycin"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 6 ปี ไข้ 38.5°C ปัสสาวะแสบขัด บ่อย ปัสสาวะสีขุ่น UA: WBC > 50/HPF, nitrite positive, bacteria 3+, RBC 10/HPF ไม่มีไข้สูง ไม่ปวดเอว",
+    "choices": [
+      "A: Acute pyelonephritis",
+      "B: Urinary tract infection (cystitis)",
+      "C: Urethritis",
+      "D: Vulvovaginitis",
+      "E: Renal calculus"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lower UTI (cystitis): dysuria + frequency + pyuria + nitrite positive แต่ไม่มีไข้สูง ไม่ปวดเอว → oral antibiotics 3-5 วัน",
+    "detailed_explanation": {
+      "summary": "Lower UTI (cystitis): dysuria+frequency + UA pyuria/nitrite+ → oral antibiotics",
+      "reason": "Lower UTI (cystitis): อาการปัสสาวะแสบขัด บ่อย ไม่มี fever สูง ไม่มี flank pain Pyelonephritis: fever สูง ปวดเอว costovertebral angle tenderness UA การรักษา Lower UTI: oral co-trimoxazole หรือ nitrofurantoin 3-5 วัน Culture before treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute pyelonephritis",
+          "is_correct": false,
+          "explanation": "ต้องมีไข้สูง CVA tenderness → IV antibiotics"
+        },
+        {
+          "label": "B",
+          "text": "UTI cystitis",
+          "is_correct": true,
+          "explanation": "Dysuria + UA pyuria + nitrite + ไม่มีไข้สูง = lower UTI → oral antibiotics"
+        },
+        {
+          "label": "C",
+          "text": "Urethritis",
+          "is_correct": false,
+          "explanation": "STI ในวัยรุ่น ไม่ใช่ เด็ก 6 ปี, discharge"
+        },
+        {
+          "label": "D",
+          "text": "Vulvovaginitis",
+          "is_correct": false,
+          "explanation": "Discharge, ไม่มี pyuria ชัด"
+        },
+        {
+          "label": "E",
+          "text": "Renal calculus",
+          "is_correct": false,
+          "explanation": "Colicky pain, hematuria, ไม่มี pyuria/nitrite"
+        }
+      ],
+      "key_takeaway": "Lower UTI เด็ก: UA pyuria + nitrite → urine culture + oral antibiotic 3-5 วัน; ถ้า upper UTI → IV antibiotics"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 12 ปี ไข้ 38°C ปวดศีรษะรุนแรง ผื่น maculopapular ที่ wrist → ลามไปลำตัว ประวัติ: ไปค่ายป่า พบเห็บกัด 1 สัปดาห์ก่อน CBC: WBC 6,000, Plt 95,000, Na 128 mEq/L ตับอักเสบเล็กน้อย",
+    "choices": [
+      "A: Dengue",
+      "B: Leptospirosis",
+      "C: Rocky Mountain spotted fever",
+      "D: Scrub typhus",
+      "E: Measles"
+    ],
+    "correct_answer": "C",
+    "explanation": "RMSF: ผื่นเริ่มจาก wrist → centripetal + ประวัติ tick bite + ไข้ + thrombocytopenia → doxycycline ทันที",
+    "detailed_explanation": {
+      "summary": "RMSF: wrist rash + tick exposure + fever → doxycycline ด่วน",
+      "reason": "Rickettsia rickettsii ติดจาก tick bite Hallmark: rash เริ่มที่ wrist และ ankle → centripetal (เข้าลำตัว) ต่างจาก measles (centrifugal จากหน้า) Triad: fever + headache + rash (เกิดวันที่ 3-5) Thrombocytopenia, hyponatremia, hepatitis พบบ่อย การรักษา: Doxycycline ทันที ไม่ต้องรอยืนยัน (delay → death)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dengue",
+          "is_correct": false,
+          "explanation": "ไม่มี wrist rash pattern, ไม่มี tick history"
+        },
+        {
+          "label": "B",
+          "text": "Leptospirosis",
+          "is_correct": false,
+          "explanation": "น้ำท่วม, calf pain, jaundice, ไม่มี wrist rash"
+        },
+        {
+          "label": "C",
+          "text": "RMSF",
+          "is_correct": true,
+          "explanation": "Wrist rash → centripetal + tick bite + thrombocytopenia = RMSF → doxycycline ทันที"
+        },
+        {
+          "label": "D",
+          "text": "Scrub typhus",
+          "is_correct": false,
+          "explanation": "Eschar ที่ mite bite site, ป่าพงหญ้า ไม่ใช่ tick"
+        },
+        {
+          "label": "E",
+          "text": "Measles",
+          "is_correct": false,
+          "explanation": "Koplik spots, cephalocaudal ไม่ใช่ wrist"
+        }
+      ],
+      "key_takeaway": "RMSF: fever + wrist/ankle rash → trunk (centripetal) + tick bite → Doxycycline ทันที; ไม่รอ serology"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 3 ปี ไข้ 40°C 2 วัน ไม่มีอาการอื่น ไม่ไอ ไม่มีน้ำมูก ตรวจร่างกาย: ปกติทุกระบบ UA ปกติ CXR ปกติ อุณหภูมิวันที่ 3 กลับมาปกติ เกิดผื่น maculopapular ทั่วตัวทันที",
+    "choices": [
+      "A: Varicella",
+      "B: Measles",
+      "C: Roseola infantum (Exanthem subitum)",
+      "D: Kawasaki disease",
+      "E: Drug reaction"
+    ],
+    "correct_answer": "C",
+    "explanation": "Roseola: ไข้สูง 3-5 วัน → ไข้ลง → ผื่นออกทันที (fever first, rash after) ในเด็กเล็ก → HHV-6",
+    "detailed_explanation": {
+      "summary": "Roseola infantum: ไข้สูง → หาย → ผื่นออก (HHV-6)",
+      "reason": "HHV-6 (Human Herpesvirus 6) ทำให้ Roseola infantum พบในเด็ก 6 เดือน - 2 ปี Classic pattern: ไข้สูง 39-40°C 3-5 วัน → ไข้ลงฉับพลัน → ผื่น maculopapular ออกทั่วตัว Rash เกิดขณะไข้ลง (ต่างจาก measles ที่ผื่นออกขณะยังไข้) Benign, self-limited",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Varicella",
+          "is_correct": false,
+          "explanation": "Polymorphic vesicular rash ไม่ใช่ maculopapular หลังไข้ลง"
+        },
+        {
+          "label": "B",
+          "text": "Measles",
+          "is_correct": false,
+          "explanation": "ผื่นออกขณะยังไข้, Koplik spots, 3C"
+        },
+        {
+          "label": "C",
+          "text": "Roseola infantum",
+          "is_correct": true,
+          "explanation": "ไข้สูง 3 วัน → ไข้ลง → ผื่น maculopapular = classic roseola HHV-6"
+        },
+        {
+          "label": "D",
+          "text": "Kawasaki",
+          "is_correct": false,
+          "explanation": "ไข้ ≥5 วัน + criteria อื่น"
+        },
+        {
+          "label": "E",
+          "text": "Drug reaction",
+          "is_correct": false,
+          "explanation": "ประวัติยา, ไม่มี pattern fever-then-rash"
+        }
+      ],
+      "key_takeaway": "Roseola: ไข้สูง → ลงฉับพลัน → ผื่นออก (HHV-6); ภาวะแทรกซ้อน febrile seizure ขณะไข้สูง"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 4 ปี กินหอยดิบที่งานเลี้ยง พร้อมกับเพื่อนอีก 3 คน เกิดอาเจียน ท้องเสีย (watery) 6 ชั่วโมงต่อมา CBC ปกติ ไข้ 37.5°C อาการดีขึ้นใน 24 ชม.",
+    "choices": [
+      "A: Typhoid fever",
+      "B: Norovirus gastroenteritis",
+      "C: Salmonella typhi",
+      "D: E. coli EHEC",
+      "E: Cholera"
+    ],
+    "correct_answer": "B",
+    "explanation": "Norovirus: cluster outbreak + short incubation (6-24 ชม.) + vomiting prominent + self-limited 24-48 ชม. → หอยดิบเป็น classic source",
+    "detailed_explanation": {
+      "summary": "Norovirus: cluster + short incubation + vomiting dominant + self-limited",
+      "reason": "Norovirus เป็น most common cause ของ viral gastroenteritis ทั่วโลก Incubation: 12-48 ชม. (short) Symptoms: vomiting (prominent) + diarrhea, ไข้ต่ำ Duration: 24-72 ชม. Outbreaks: shellfish (raw oysters/clams), cruise ships, schools Self-limited: rehydration เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Typhoid",
+          "is_correct": false,
+          "explanation": "Incubation 1-3 สัปดาห์, ไข้สูงต่อเนื่อง"
+        },
+        {
+          "label": "B",
+          "text": "Norovirus",
+          "is_correct": true,
+          "explanation": "Cluster + shellfish + short incubation + vomiting + self-limited = Norovirus"
+        },
+        {
+          "label": "C",
+          "text": "Salmonella typhi",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ Salmonella typhi ที่ cluster outbreak แบบนี้"
+        },
+        {
+          "label": "D",
+          "text": "EHEC",
+          "is_correct": false,
+          "explanation": "Bloody diarrhea, HUS, hamburger"
+        },
+        {
+          "label": "E",
+          "text": "Cholera",
+          "is_correct": false,
+          "explanation": "Rice-water stool ปริมาณมาก, vomiting น้อยกว่า, endemic area"
+        }
+      ],
+      "key_takeaway": "Norovirus gastroenteritis: shellfish/oyster + cluster + short incubation + vomiting prominent → rehydration; ไม่ต้องใช้ antibiotics"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 8 ปี ไข้ 39°C นาน 7 วัน ปวดท้อง ท้องผูก ผื่น rose spots ที่หน้าท้อง ม้ามโตเล็กน้อย CBC: WBC 4,000 (relative lymphocytosis), Plt 120,000 Widal test positive O:1/320, H:1/160",
+    "choices": [
+      "A: Dengue fever",
+      "B: Typhoid fever",
+      "C: Malaria",
+      "D: Brucellosis",
+      "E: Leptospirosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Typhoid fever: ไข้นาน 7 วัน + rose spots + ม้ามโต + leukopenia + Widal O ≥1/160 → azithromycin หรือ ceftriaxone",
+    "detailed_explanation": {
+      "summary": "Typhoid: ไข้นาน + rose spots + leukopenia + Widal+ → azithromycin",
+      "reason": "Salmonella typhi/paratyphi ติดทางอาหาร/น้ำปนเปื้อน Classic: ไข้ step-ladder ขึ้นเรื่อยๆ + relative bradycardia + rose spots (10-20% patients) + splenomegaly Leukopenia (ต่างจาก bacterial infection ทั่วไป) Blood culture positive สัปดาห์แรก Widal O ≥1/160 meaningful การรักษา: azithromycin (oral, MDR) หรือ ceftriaxone IV",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dengue",
+          "is_correct": false,
+          "explanation": "ไข้ 5-7 วัน thrombocytopenia รุนแรง ไม่มี rose spots"
+        },
+        {
+          "label": "B",
+          "text": "Typhoid",
+          "is_correct": true,
+          "explanation": "Rose spots + leukopenia + Widal O 1/320 + ม้ามโต = typhoid → azithromycin"
+        },
+        {
+          "label": "C",
+          "text": "Malaria",
+          "is_correct": false,
+          "explanation": "PBS ต้องทำ, ไม่มี rose spots"
+        },
+        {
+          "label": "D",
+          "text": "Brucellosis",
+          "is_correct": false,
+          "explanation": "ประวัติสัมผัสปศุสัตว์, undulant fever"
+        },
+        {
+          "label": "E",
+          "text": "Leptospirosis",
+          "is_correct": false,
+          "explanation": "Calf pain, jaundice, AKI, ประวัติน้ำท่วม"
+        }
+      ],
+      "key_takeaway": "Typhoid: ไข้นาน + rose spots + leukopenia + Widal O ≥1/160 → azithromycin หรือ ceftriaxone; blood culture สัปดาห์แรก"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 1 ปี ไม่ได้รับ BCG ตรวจพบว่าแม่เป็น pulmonary TB smear positive ทารกไม่มีอาการ น้ำหนักขึ้นปกติ CXR ปกติ แพทย์ไม่สามารถทำ TST ได้เนื่องจากไม่มี",
+    "choices": [
+      "A: รอ TST แล้วค่อยตัดสิน",
+      "B: ให้ isoniazid prophylaxis ทันที",
+      "C: BCG ทันที",
+      "D: Full ATT (HRZE)",
+      "E: ไม่ต้องทำอะไร รอ 3 เดือน"
+    ],
+    "correct_answer": "B",
+    "explanation": "ทารก <5 ปี สัมผัส smear-positive TB ต้องได้ INH prophylaxis ทันทีแม้ไม่มี TST เพราะ risk สูงมาก",
+    "detailed_explanation": {
+      "summary": "TB contact ในทารก <5 ปี → INH prophylaxis ทันทีแม้ TST ไม่ได้ทำ",
+      "reason": "WHO และ Thai guidelines: ทารก <5 ปี + close contact smear-positive TB → INH prophylaxis โดยไม่ต้องรอ TST เพราะ: 1) ทารกเล็กมีความเสี่ยงสูงมากต่อ miliary TB/TB meningitis, 2) TST อาจ false negative ใน immunocompromised/early exposure INH 10 mg/kg/day 6 เดือน BCG ไม่ให้ถ้า possible active TB หรือ immunocompromised",
+      "choices": [
+        {
+          "label": "A",
+          "text": "รอ TST ก่อน",
+          "is_correct": false,
+          "explanation": "ทารก <5 ปี ไม่ควรรอ TST ถ้าไม่มี เพราะ risk ของ progression สูง"
+        },
+        {
+          "label": "B",
+          "text": "INH prophylaxis ทันที",
+          "is_correct": true,
+          "explanation": "ทารก <5 ปี + smear-positive contact → INH ทันทีแม้ไม่มี TST"
+        },
+        {
+          "label": "C",
+          "text": "BCG ทันที",
+          "is_correct": false,
+          "explanation": "BCG ไม่ทำในสถานการณ์นี้ (possible active infection)"
+        },
+        {
+          "label": "D",
+          "text": "Full ATT",
+          "is_correct": false,
+          "explanation": "สำหรับ active TB ไม่ใช่ LTBI/prophylaxis"
+        },
+        {
+          "label": "E",
+          "text": "รอ 3 เดือน",
+          "is_correct": false,
+          "explanation": "ทารก <5 ปี ไม่รอ ให้ INH ทันที"
+        }
+      ],
+      "key_takeaway": "TB prophylaxis ทารก <5 ปี: INH 10 mg/kg/day ทันที ไม่ต้องรอ TST; ทำ TST และ CXR เพื่อ assessment แต่ไม่ delay treatment"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 2 ปี ไข้ 38°C มีตุ่มน้ำพองและแผลในปาก บริเวณฝ่ามือ ฝ่าเท้า และก้น ร้องไห้ไม่หยุด กินข้าวไม่ได้ CBC ปกติ ไม่ซึม",
+    "choices": [
+      "A: Herpes simplex stomatitis",
+      "B: Varicella",
+      "C: Hand-foot-mouth disease",
+      "D: Herpangina",
+      "E: Aphthous ulcer"
+    ],
+    "correct_answer": "C",
+    "explanation": "HFMD: vesicles/ulcers ที่ปาก + ฝ่ามือ ฝ่าเท้า ก้น ในเด็กเล็ก Enterovirus (EV71, Coxsackievirus) → supportive",
+    "detailed_explanation": {
+      "summary": "HFMD: oral ulcers + vesicles ที่มือ เท้า ก้น → Enterovirus",
+      "reason": "HFMD (Hand-Foot-Mouth Disease): Enterovirus 71 หรือ Coxsackievirus A16 Distribution: oral ulcers + macular/vesicular rash ที่ฝ่ามือ ฝ่าเท้า ก้น (palms, soles, buttocks) ต่างจาก Varicella (centripetal, polymorphic) Herpangina: ulcers เฉพาะ posterior oropharynx EV71 อาจ severe (brainstem encephalitis, pulmonary edema) การรักษา: supportive, oral hygiene, hydration",
+      "choices": [
+        {
+          "label": "A",
+          "text": "HSV stomatitis",
+          "is_correct": false,
+          "explanation": "Oral ulcers เท่านั้น ไม่มีที่มือเท้า, gingivostomatitis"
+        },
+        {
+          "label": "B",
+          "text": "Varicella",
+          "is_correct": false,
+          "explanation": "Centripetal, polymorphic stages, ไม่เฉพาะที่มือเท้า"
+        },
+        {
+          "label": "C",
+          "text": "HFMD",
+          "is_correct": true,
+          "explanation": "Oral ulcers + palm/sole/buttock vesicles = classic HFMD"
+        },
+        {
+          "label": "D",
+          "text": "Herpangina",
+          "is_correct": false,
+          "explanation": "Ulcers เฉพาะ posterior pharynx, ไม่มีที่มือเท้า"
+        },
+        {
+          "label": "E",
+          "text": "Aphthous ulcer",
+          "is_correct": false,
+          "explanation": "Recurrent, ไม่มีที่มือเท้า, ไม่ไข้"
+        }
+      ],
+      "key_takeaway": "HFMD: oral + palm + sole + buttock → Enterovirus; Monitor สัญญาณ EV71 severe (myoclonus, lethargy, rapid breathing)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 5 ปี ไข้ 38°C ปวดหู ดึงหูบ่อย ร้องไห้กลางดึก ไม่ยอมกินนม ตรวจ otoscope: แก้วหูสีแดง บวม สูญเสียแสงสะท้อน (light reflex) ขยับไม่ได้ (reduced mobility)",
+    "choices": [
+      "A: Otitis externa",
+      "B: Otitis media with effusion",
+      "C: Acute otitis media",
+      "D: Eustachian tube dysfunction",
+      "E: Mastoiditis"
+    ],
+    "correct_answer": "C",
+    "explanation": "AOM: แก้วหูแดง บวม สูญเสีย light reflex + reduced mobility + อาการปวดหูเฉียบพลัน → amoxicillin 10 วัน",
+    "detailed_explanation": {
+      "summary": "Acute otitis media: แก้วหูแดง บวม เคลื่อนไม่ได้ → amoxicillin",
+      "reason": "AOM: S. pneumoniae, H. influenzae, M. catarrhalis Criteria: ≥1 ใน 3: (1) bulging tympanic membrane, (2) new otorrhea, (3) ไข้+ปวดหูเฉียบพลัน + TM แดง/reduced mobility การรักษา: Amoxicillin 80-90 mg/kg/day 5-10 วัน ถ้า amoxicillin fail (PRSP) → amoxicillin-clavulanate OME (Otitis media with effusion): ไม่ไข้ ไม่ปวด มีน้ำใน middle ear เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Otitis externa",
+          "is_correct": false,
+          "explanation": "ปวดเมื่อดึงใบหู (tragus), external canal inflamed"
+        },
+        {
+          "label": "B",
+          "text": "OME",
+          "is_correct": false,
+          "explanation": "ไม่ไข้ ไม่ปวดเฉียบพลัน แค่ hearing loss จากน้ำ"
+        },
+        {
+          "label": "C",
+          "text": "AOM",
+          "is_correct": true,
+          "explanation": "แก้วหูแดง + บวม + reduced mobility + ปวดหูเฉียบพลัน = AOM → amoxicillin"
+        },
+        {
+          "label": "D",
+          "text": "Eustachian tube dysfunction",
+          "is_correct": false,
+          "explanation": "ไม่มีอาการเฉียบพลัน, pressure changes"
+        },
+        {
+          "label": "E",
+          "text": "Mastoiditis",
+          "is_correct": false,
+          "explanation": "Postauricular swelling/erythema, displaced auricle, late complication"
+        }
+      ],
+      "key_takeaway": "AOM: amoxicillin 80-90 mg/kg/day 5-10 วัน; ถ้า fail ใน 48-72 ชม. → amoxicillin-clavulanate"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 7 ปี ไข้ 39°C ปวดศีรษะ คอแข็ง แสงสว่างทำให้ไม่สบาย (photophobia) kernig sign positive ตัดสินใจทำ LP CSF: WBC 120 lymphocytes 80%, glucose 45 mg/dL (serum 80), protein 80 mg/dL, Gram stain negative, India ink negative",
+    "choices": [
+      "A: Bacterial meningitis",
+      "B: Viral (aseptic) meningitis",
+      "C: TB meningitis",
+      "D: Fungal meningitis",
+      "E: Brain abscess"
+    ],
+    "correct_answer": "B",
+    "explanation": "Viral meningitis: CSF lymphocyte dominant, glucose ปกติ (45/80=0.56 > 0.5), protein เล็กน้อยสูง, cultures negative → self-limited",
+    "detailed_explanation": {
+      "summary": "Viral meningitis: CSF lymphocyte + glucose ปกติ + protein เล็กน้อยสูง",
+      "reason": "Viral (aseptic) meningitis: most commonly Enterovirus CSF pattern: lymphocyte dominant (>50%), glucose ปกติ (CSF:serum >0.5), protein 50-200 mg/dL ต่างจาก bacterial (PMN, glucose ต่ำมาก, protein สูงมาก) การรักษา: supportive ส่วนใหญ่ self-limited 7-10 วัน HSV meningitis: ให้ acyclovir ถ้า immunocompromised หรือ neonate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bacterial meningitis",
+          "is_correct": false,
+          "explanation": "PMN dominant, glucose ต่ำมาก (<40), protein สูงมาก (>200)"
+        },
+        {
+          "label": "B",
+          "text": "Viral meningitis",
+          "is_correct": true,
+          "explanation": "Lymphocyte 80% + glucose 45/80=0.56 (ปกติ) + protein 80 + cultures negative = viral"
+        },
+        {
+          "label": "C",
+          "text": "TB meningitis",
+          "is_correct": false,
+          "explanation": "Lymphocyte dominant + glucose ต่ำปานกลาง (0.3-0.45) + protein 100-500"
+        },
+        {
+          "label": "D",
+          "text": "Fungal meningitis",
+          "is_correct": false,
+          "explanation": "India ink positive หรือ cryptococcal Ag, immunocompromised"
+        },
+        {
+          "label": "E",
+          "text": "Brain abscess",
+          "is_correct": false,
+          "explanation": "LP contraindicated ถ้า focal lesion, imaging ก่อน"
+        }
+      ],
+      "key_takeaway": "Viral meningitis: CSF lymphocyte + glucose ปกติ → supportive; Acyclovir ถ้าสงสัย HSV (neonate, severe, immunocompromised)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกอายุ 3 สัปดาห์ มีไข้ 38.2°C ซึม กินนมน้อยลง ร้องเสียงแหลม ตรวจร่างกาย: กระหม่อมหน้าตึง CBC: WBC 18,000 (PMN 78%) CSF: WBC 850 (PMN 90%), glucose 20 mg/dL, protein 280 mg/dL Gram stain: gram-negative rods",
+    "choices": [
+      "A: GBS meningitis",
+      "B: Listeria meningitis",
+      "C: E. coli meningitis",
+      "D: Pneumococcal meningitis",
+      "E: HSV encephalitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Neonatal meningitis: gram-negative rods ในทารก = E. coli (most common gram-negative นอกจาก GBS) → ampicillin + cefotaxime",
+    "detailed_explanation": {
+      "summary": "Neonatal meningitis E. coli: gram-negative rods ในทารก <3 เดือน",
+      "reason": "Neonatal bacterial meningitis สาเหตุหลัก: GBS (gram-positive cocci), E. coli (gram-negative rods), Listeria (gram-positive rods) Gram-negative rods → E. coli (most common GNR ใน neonates) การรักษา: Ampicillin + Cefotaxime (ดีกว่า ceftriaxone ใน neonate เพราะ bilirubin displacement) ระยะเวลา: 21 วัน (gram-negative); 14-21 วัน (GBS)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GBS",
+          "is_correct": false,
+          "explanation": "GBS = gram-positive cocci ใน chains"
+        },
+        {
+          "label": "B",
+          "text": "Listeria",
+          "is_correct": false,
+          "explanation": "Gram-positive rods, ประวัติแม่กินอาหารดิบ"
+        },
+        {
+          "label": "C",
+          "text": "E. coli",
+          "is_correct": true,
+          "explanation": "Gram-negative rods + neonate = E. coli meningitis → ampicillin + cefotaxime"
+        },
+        {
+          "label": "D",
+          "text": "Pneumococcal",
+          "is_correct": false,
+          "explanation": "Gram-positive diplococci, เด็กโตกว่า"
+        },
+        {
+          "label": "E",
+          "text": "HSV encephalitis",
+          "is_correct": false,
+          "explanation": "CSF lymphocyte dominant, hemorrhagic, Gram stain negative"
+        }
+      ],
+      "key_takeaway": "Neonatal meningitis: GBS / E. coli / Listeria; gram-negative rods → E. coli → ampicillin + cefotaxime 21 วัน"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 11 ปี มีอาการไข้ 38°C ต่อมน้ำเหลืองโต หลายตำแหน่ง ม้ามโต คอเจ็บมาก ตรวจ CBC: WBC 14,000 lymphocytes 60% atypical lymphocytes 20% Monospot test positive",
+    "choices": [
+      "A: GAS pharyngitis",
+      "B: CMV mononucleosis",
+      "C: Infectious mononucleosis (EBV)",
+      "D: HIV acute infection",
+      "E: Toxoplasmosis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Infectious mononucleosis: EBV, atypical lymphocytes + Monospot positive + triad (pharyngitis, lymphadenopathy, splenomegaly) → ห้ามให้ amoxicillin (rash)",
+    "detailed_explanation": {
+      "summary": "EBV infectious mononucleosis: triad + atypical lymphocytes + Monospot+",
+      "reason": "EBV ติดผ่านน้ำลาย (kissing disease) Triad: pharyngitis + posterior cervical lymphadenopathy + splenomegaly CBC: atypical lymphocytes (Downey cells) >10% Monospot (heterophile Ab) positive ในเด็กโต สำคัญ: ห้ามให้ Ampicillin/Amoxicillin → maculopapular rash (80-100%) ภาวะแทรกซ้อน: splenic rupture (ห้าม contact sports 4 สัปดาห์)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GAS pharyngitis",
+          "is_correct": false,
+          "explanation": "Monospot negative, ไม่มี atypical lymphocytes, ไม่ม้ามโต"
+        },
+        {
+          "label": "B",
+          "text": "CMV mononucleosis",
+          "is_correct": false,
+          "explanation": "Monospot negative, ม้ามโต แต่ pharyngitis น้อย"
+        },
+        {
+          "label": "C",
+          "text": "EBV mononucleosis",
+          "is_correct": true,
+          "explanation": "Triad + atypical lymphocytes + Monospot+ = EBV IM; ห้าม amoxicillin"
+        },
+        {
+          "label": "D",
+          "text": "HIV acute",
+          "is_correct": false,
+          "explanation": "Monospot negative, ประวัติ risk"
+        },
+        {
+          "label": "E",
+          "text": "Toxoplasmosis",
+          "is_correct": false,
+          "explanation": "Lymphadenopathy แต่ Monospot negative, ประวัติแมว"
+        }
+      ],
+      "key_takeaway": "EBV mononucleosis: ห้าม amoxicillin/ampicillin (→ rash); ห้าม contact sports 4 สัปดาห์ (splenic rupture risk)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 8 เดือน ไม่ได้ฉีดวัคซีน Hib ไข้ 39.5°C drooling ไม่กลืน นั่งเอนหน้า (tripod position) เสียงแหบ หายใจมีเสียงดัง (inspiratory stridor) ดูดเจ็บ",
+    "choices": [
+      "A: Croup (laryngotracheobronchitis)",
+      "B: Bacterial tracheitis",
+      "C: Epiglottitis",
+      "D: Peritonsillar abscess",
+      "E: Foreign body airway"
+    ],
+    "correct_answer": "C",
+    "explanation": "Epiglottitis: tripod position + drooling + inspiratory stridor + ไข้สูง + ดูดเจ็บ → H. influenzae type b; อย่า examine oropharynx; airway management + ceftriaxone",
+    "detailed_explanation": {
+      "summary": "Epiglottitis: tripod + drooling + stridor → H. influenzae; อย่า examine ปาก",
+      "reason": "Epiglottitis: Haemophilus influenzae type b (Hib) ในยุคก่อน vaccine Classic presentation: hot potato voice, drooling, tripod/sniffing position, inspiratory stridor, ไม่ยอมนอนราบ X-ray: thumb sign (epiglottis โต) อันตราย: อย่า examine oropharynx หรือทำ agitated procedures → airway obstruction การรักษา: Secure airway (OR/ICU) + IV ceftriaxone",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Croup",
+          "is_correct": false,
+          "explanation": "Barking cough + inspiratory stridor, ไม่มี drooling, นอนลงได้"
+        },
+        {
+          "label": "B",
+          "text": "Bacterial tracheitis",
+          "is_correct": false,
+          "explanation": "Post-viral, toxic, thick secretions, ไม่มี drooling/tripod"
+        },
+        {
+          "label": "C",
+          "text": "Epiglottitis",
+          "is_correct": true,
+          "explanation": "Tripod + drooling + stridor + ไม่ได้ Hib vaccine = epiglottitis → airway + ceftriaxone"
+        },
+        {
+          "label": "D",
+          "text": "Peritonsillar abscess",
+          "is_correct": false,
+          "explanation": "Unilateral swelling, muffled voice, uvula deviation, ไม่ stridor"
+        },
+        {
+          "label": "E",
+          "text": "Foreign body",
+          "is_correct": false,
+          "explanation": "ประวัติ choking, ไม่มี fever/drooling"
+        }
+      ],
+      "key_takeaway": "Epiglottitis: อย่า examine oropharynx → airway management first (OR/ICU) + IV ceftriaxone; ป้องกันด้วย Hib vaccine"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 3 ปี ไข้ 37.8°C น้ำมูก ไอ เจ็บคอ 3 วัน เด็กร่าเริง กินข้าวได้ ไม่ซึม ตรวจร่างกาย: 咽頭 mild erythema ไม่มี exudate ต่อมน้ำเหลืองไม่โต Rapid strep negative",
+    "choices": [
+      "A: ให้ amoxicillin 10 วัน",
+      "B: ให้ azithromycin 5 วัน",
+      "C: Supportive care เท่านั้น",
+      "D: ส่ง throat culture ก่อนตัดสิน",
+      "E: ให้ penicillin V ทันที"
+    ],
+    "correct_answer": "C",
+    "explanation": "Viral pharyngitis: ไม่มี exudate ไม่มี LN ไม่มี rapid strep positive → ไม่ต้องใช้ antibiotics; supportive เท่านั้น",
+    "detailed_explanation": {
+      "summary": "Viral pharyngitis: Centor ต่ำ + rapid strep negative → supportive ไม่ใช้ antibiotics",
+      "reason": "Viral pharyngitis (rhinovirus, adenovirus) ไม่ต้องการ antibiotics Centor criteria ต่ำ (ไม่มี exudate, ไม่มี LN, มีไอ) + rapid strep negative → GAS unlikely การให้ antibiotics โดยไม่จำเป็น → antibiotic resistance, side effects Supportive: paracetamol, adequate fluid, rest",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amoxicillin 10 วัน",
+          "is_correct": false,
+          "explanation": "Rapid strep negative + viral symptoms → ไม่ต้อง antibiotics"
+        },
+        {
+          "label": "B",
+          "text": "Azithromycin 5 วัน",
+          "is_correct": false,
+          "explanation": "ไม่มี indication"
+        },
+        {
+          "label": "C",
+          "text": "Supportive care",
+          "is_correct": true,
+          "explanation": "Viral pharyngitis + rapid strep negative → supportive เท่านั้น"
+        },
+        {
+          "label": "D",
+          "text": "Throat culture",
+          "is_correct": false,
+          "explanation": "Centor ต่ำ + rapid strep negative → ไม่จำเป็น culture"
+        },
+        {
+          "label": "E",
+          "text": "Penicillin V ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี indication GAS"
+        }
+      ],
+      "key_takeaway": "Viral pharyngitis: Centor <2 + rapid strep negative → supportive เท่านั้น; ไม่ใช้ antibiotics เพื่อลด resistance"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 2 ปี ไข้ 38.5°C ไอมีเสียงก้อง (barking cough) เสียงแหบ หายใจมีเสียงดัง inspiratory stridor ยิ่งดังขึ้นเมื่อกระสับกระส่าย เริ่มเป็นตอนกลางคืน O2 sat 96%",
+    "choices": [
+      "A: Epiglottitis",
+      "B: Croup (viral laryngotracheobronchitis)",
+      "C: Bacterial tracheitis",
+      "D: Foreign body",
+      "E: Retropharyngeal abscess"
+    ],
+    "correct_answer": "B",
+    "explanation": "Croup: barking cough + inspiratory stridor + อาการตอนกลางคืน ในเด็กเล็ก → steroid (dexamethasone) ± nebulized epinephrine",
+    "detailed_explanation": {
+      "summary": "Croup: barking cough + stridor + กลางคืน → dexamethasone",
+      "reason": "Viral croup (LTB): Parainfluenza virus most common Subglottic edema → inspiratory stridor + barking cough Steeple sign ใน X-ray (subglottic narrowing) Westley croup score การรักษา: Dexamethasone 0.6 mg/kg oral/IM (single dose) Nebulized epinephrine ถ้า moderate-severe (O2 sat ต่ำ, severe retractions) Humidified air ไม่มีหลักฐาน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Epiglottitis",
+          "is_correct": false,
+          "explanation": "ไม่มี barking cough, drooling, tripod position"
+        },
+        {
+          "label": "B",
+          "text": "Croup",
+          "is_correct": true,
+          "explanation": "Barking cough + inspiratory stridor + กลางคืน + เด็กเล็ก = croup → dexamethasone"
+        },
+        {
+          "label": "C",
+          "text": "Bacterial tracheitis",
+          "is_correct": false,
+          "explanation": "Toxic appearance, ไม่ตอบสนองต่อ epinephrine"
+        },
+        {
+          "label": "D",
+          "text": "Foreign body",
+          "is_correct": false,
+          "explanation": "ประวัติ choking ฉับพลัน, ไม่มี barking cough/fever"
+        },
+        {
+          "label": "E",
+          "text": "Retropharyngeal abscess",
+          "is_correct": false,
+          "explanation": "Neck stiffness, drooling, bulging posterior pharynx"
+        }
+      ],
+      "key_takeaway": "Croup: dexamethasone 0.6 mg/kg (single dose) oral/IM; severe → nebulized epinephrine + observe 4 ชม."
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 6 ปี เพิ่งกลับจากภาคใต้ มีไข้ 39.5°C ปวดศีรษะ ปวดกระบอกตา ปวดกล้ามเนื้อรุนแรง ออกผื่น maculopapular วันที่ 3 Plt ลดเหลือ 65,000, Hct 48% (baseline 36%), WBC 3,500 NS1 antigen positive",
+    "choices": [
+      "A: Malaria",
+      "B: Dengue fever",
+      "C: Chikungunya",
+      "D: Leptospirosis",
+      "Eye: Scrub typhus"
+    ],
+    "correct_answer": "B",
+    "explanation": "Dengue: NS1 antigen positive + ไข้ 3 วัน + thrombocytopenia + hemoconcentration (Hct rise >20%) + tourniquet test +",
+    "detailed_explanation": {
+      "summary": "Dengue fever: NS1+ + Plt↓ + Hct↑ (hemoconcentration)",
+      "reason": "Dengue virus (DENV 1-4): Aedes aegypti mosquito 4 phases: Febrile (1-3 วัน), Critical (4-5 วัน, plasma leakage), Recovery Warning signs: abdominal pain, persistent vomiting, bleeding, Hct rise ≥20%, Plt < 100k NS1 antigen positive ใน 5 วันแรก Hemoconcentration = plasma leakage → dengue hemorrhagic fever/shock การรักษา: supportive, hydration carefully",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Malaria",
+          "is_correct": false,
+          "explanation": "PBS required, ไม่มี NS1, ไม่มี Hct rise"
+        },
+        {
+          "label": "B",
+          "text": "Dengue",
+          "is_correct": true,
+          "explanation": "NS1+ + Plt↓ + Hct rise + ปวดกระบอกตา = dengue fever"
+        },
+        {
+          "label": "C",
+          "text": "Chikungunya",
+          "is_correct": false,
+          "explanation": "Severe polyarthritis, NS1 negative"
+        },
+        {
+          "label": "D",
+          "text": "Leptospirosis",
+          "is_correct": false,
+          "explanation": "Calf pain, jaundice, AKI, น้ำท่วม"
+        },
+        {
+          "label": "Eye",
+          "text": "Scrub typhus",
+          "is_correct": false,
+          "explanation": "Eschar, rural area"
+        }
+      ],
+      "key_takeaway": "Dengue warning signs: Plt <100k + Hct rise ≥20% + abdominal pain → admit; NS1+ ใน 5 วันแรก"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 10 ปี มีแผลถลอกที่ขาหลังเดินป่า 10 วันก่อน ปัจจุบัน ขากรามแข็ง (trismus) กลืนลำบาก (dysphagia) กล้ามเนื้อกระตุก opisthotonus ประวัติไม่ได้รับวัคซีน Td",
+    "choices": [
+      "A: Rabies",
+      "B: Tetanus",
+      "C: Strychnine poisoning",
+      "D: Meningitis",
+      "E: Hypocalcemia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Tetanus: trismus + dysphagia + opisthotonus หลัง wound contamination ในผู้ที่ไม่ได้รับวัคซีน → wound care + TIG + metronidazole + sedation",
+    "detailed_explanation": {
+      "summary": "Tetanus: trismus + opisthotonus + wound + ไม่ได้วัคซีน",
+      "reason": "Clostridium tetani สร้าง tetanospasmin → ยับยั้ง inhibitory neurotransmitters (glycine, GABA) → spastic paralysis Lockjaw (trismus) เป็นอาการแรก → risus sardonicus → opisthotonus การรักษา: TIG (tetanus immune globulin) + wound debridement + metronidazole + benzodiazepine (muscle relaxation) + Td vaccine series",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rabies",
+          "is_correct": false,
+          "explanation": "Hydrophobia, aerophobia, ไม่มี trismus, ประวัติสัตว์กัด"
+        },
+        {
+          "label": "B",
+          "text": "Tetanus",
+          "is_correct": true,
+          "explanation": "Trismus + opisthotonus + wound + ไม่ได้วัคซีน = tetanus → TIG + wound care + metronidazole"
+        },
+        {
+          "label": "C",
+          "text": "Strychnine",
+          "is_correct": false,
+          "explanation": "ประวัติ ingestion, ไม่มี wound"
+        },
+        {
+          "label": "D",
+          "text": "Meningitis",
+          "is_correct": false,
+          "explanation": "Fever + CSF changes, ไม่มี trismus"
+        },
+        {
+          "label": "E",
+          "text": "Hypocalcemia",
+          "is_correct": false,
+          "explanation": "Tetany, Trousseau sign, ไม่มี trismus/wound"
+        }
+      ],
+      "key_takeaway": "Tetanus: TIG 3000-6000 IU IM + wound debridement + metronidazole + benzodiazepine; ป้องกัน: Td vaccine"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 4 ปี ไข้ 38°C มีตุ่มหนองที่ผิวหนัง (pustules) รอบจมูกและปาก สีน้ำผึ้งตกสะเก็ด (honey-colored crusts) ไม่เจ็บปวดมาก เริ่มมีที่แก้มแล้วลามออก CBC ปกติ",
+    "choices": [
+      "A: Herpes simplex labialis",
+      "B: Varicella",
+      "C: Impetigo contagiosa",
+      "D: Cellulitis",
+      "E: Contact dermatitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Impetigo: honey-colored crust ที่ใบหน้า ในเด็ก → S. aureus หรือ S. pyogenes → mupirocin (topical) หรือ cephalexin (extensive)",
+    "detailed_explanation": {
+      "summary": "Impetigo contagiosa: honey-colored crusts ที่ใบหน้า → mupirocin ทา",
+      "reason": "Impetigo เกิดจาก S. aureus (non-bullous) หรือ S. pyogenes Honey-colored crusts เป็น hallmark ตำแหน่ง: รอบจมูก ปาก บ่อยในเด็ก Contagious ต่อจนแผลหาย การรักษา: Mupirocin topical (limited) หรือ Oral cephalexin/amoxicillin-clavulanate (extensive) ภาวะแทรกซ้อน: Post-streptococcal glomerulonephritis (PSGN)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Herpes simplex labialis",
+          "is_correct": false,
+          "explanation": "Painful vesicles, recurrent, single dermatome"
+        },
+        {
+          "label": "B",
+          "text": "Varicella",
+          "is_correct": false,
+          "explanation": "Polymorphic, centripetal, fever, pruritic"
+        },
+        {
+          "label": "C",
+          "text": "Impetigo",
+          "is_correct": true,
+          "explanation": "Honey-colored crusts ที่ใบหน้า = impetigo → mupirocin topical"
+        },
+        {
+          "label": "D",
+          "text": "Cellulitis",
+          "is_correct": false,
+          "explanation": "Erythema + warmth + swelling, ไม่มี crusts"
+        },
+        {
+          "label": "E",
+          "text": "Contact dermatitis",
+          "is_correct": false,
+          "explanation": "ประวัติ allergen, เป็น eczematous ไม่มี honey crust"
+        }
+      ],
+      "key_takeaway": "Impetigo: honey-colored crusts → mupirocin topical (limited); oral cephalexin ถ้า extensive; monitor PSGN"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 5 ปี ไข้ 38°C ปวดท้องขวาล่าง ท้องเดินวันละ 5-6 ครั้ง มีเลือดและเมือกในอุจจาระ Stool culture: Salmonella typhi นาน 3 สัปดาห์ ไม่หาย วัฒนธรรมจาก blood culture positive",
+    "choices": [
+      "A: Salmonellosis ไม่ซับซ้อน: supportive เท่านั้น",
+      "B: Typhoid fever (bacteremia): ceftriaxone IV",
+      "C: Shigellosis: ciprofloxacin",
+      "D: E. coli EHEC: supportive ไม่ใช้ antibiotics",
+      "E: Campylobacter: azithromycin"
+    ],
+    "correct_answer": "B",
+    "explanation": "Typhoid fever: S. typhi bacteremia + ไข้นาน ปวดท้อง เลือดออก → ceftriaxone IV (หรือ azithromycin oral ถ้า uncomplicated)",
+    "detailed_explanation": {
+      "summary": "Typhoid fever bacteremia: ceftriaxone IV (ไม่ใช้ fluoroquinolone ใน เด็ก)",
+      "reason": "Salmonella typhi bacteremia (typhoid fever) → systemic disease ต้องได้ antibiotics ไม่เหมือน non-typhi Salmonella gastroenteritis (ส่วนใหญ่ self-limited ยกเว้น immunocompromised) การรักษา: Ceftriaxone IV (first-line เด็ก) หรือ azithromycin (uncomplicated, oral) Fluoroquinolones ไม่แนะนำ <18 ปี (ผลต่อ cartilage) ไม่ใช้ใน MDR typhoid → ใช้ ceftriaxone",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Salmonella supportive",
+          "is_correct": false,
+          "explanation": "Non-typhi Salmonella gastroenteritis ส่วนใหญ่ supportive แต่นี่คือ S. typhi bacteremia"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone IV",
+          "is_correct": true,
+          "explanation": "Typhoid fever bacteremia → ceftriaxone IV; azithromycin สำหรับ uncomplicated"
+        },
+        {
+          "label": "C",
+          "text": "Ciprofloxacin (Shigella)",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ Shigella; fluoroquinolone ไม่แนะนำ <18 ปี"
+        },
+        {
+          "label": "D",
+          "text": "EHEC supportive",
+          "is_correct": false,
+          "explanation": "EHEC (E. coli O157) ไม่ใช้ antibiotics (เพิ่มความเสี่ยง HUS) แต่นี่ไม่ใช่ EHEC"
+        },
+        {
+          "label": "E",
+          "text": "Campylobacter azithromycin",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ Campylobacter"
+        }
+      ],
+      "key_takeaway": "Typhoid fever: ceftriaxone IV (pediatric first-line); azithromycin สำหรับ uncomplicated; ห้าม fluoroquinolone <18 ปี"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  }
+]

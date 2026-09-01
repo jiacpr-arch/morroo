@@ -1,0 +1,228 @@
+import { NextResponse } from "next/server";
+import { createClient } from "@/lib/supabase/server";
+import { createAnthropic } from "@/lib/anthropic";
+import { logAIError } from "@/lib/anthropic-error";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { sendLineMessage } from "@/lib/line";
+import { buildExamResultFlex } from "@/lib/line-flex-templates";
+import { getUserWeakTopics } from "@/lib/supabase/queries-analytics";
+
+export async function POST(request: Request) {
+  try {
+    // 1. Authenticate user via Supabase
+    const supabase = await createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      return NextResponse.json(
+        { error: "กรุณาเข้าสู่ระบบก่อนใช้งาน AI ตรวจคำตอบ" },
+        { status: 401 }
+      );
+    }
+
+    // 2. Check membership — free users cannot use AI grading
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("membership_type, membership_expires_at, line_user_id")
+      .eq("id", user.id)
+      .single();
+
+    if (!profile || profile.membership_type === "free") {
+      return NextResponse.json(
+        { error: "ฟีเจอร์ AI ตรวจคำตอบสำหรับสมาชิก Premium เท่านั้น" },
+        { status: 403 }
+      );
+    }
+
+    // Check if membership has expired
+    if (
+      profile.membership_expires_at &&
+      new Date(profile.membership_expires_at) < new Date()
+    ) {
+      return NextResponse.json(
+        { error: "สมาชิกของคุณหมดอายุแล้ว กรุณาต่ออายุสมาชิก" },
+        { status: 403 }
+      );
+    }
+
+    // 3. Parse request body
+    const body = await request.json();
+    const { studentAnswer, correctAnswer, keyPoints, question, subjectLabel } =
+      body;
+
+    if (!studentAnswer || !correctAnswer || !question) {
+      return NextResponse.json(
+        { error: "กรุณากรอกข้อมูลให้ครบถ้วน" },
+        { status: 400 }
+      );
+    }
+
+    // 4. Check API key
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      console.error("ANTHROPIC_API_KEY is not configured");
+      return NextResponse.json(
+        { error: "ระบบ AI ยังไม่พร้อมใช้งาน กรุณาลองใหม่ภายหลัง" },
+        { status: 500 }
+      );
+    }
+
+    // 5. Call Claude Haiku
+    const anthropic = createAnthropic();
+
+    const keyPointsList = (keyPoints || [])
+      .map((kp: string, i: number) => `${i + 1}. ${kp}`)
+      .join("\n");
+
+    const message = await anthropic.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1024,
+      messages: [
+        {
+          role: "user",
+          content: `คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญ กำลังตรวจคำตอบข้อสอบ MEQ (Modified Essay Question) ของนักศึกษาแพทย์
+
+## โจทย์
+${question}
+
+## เฉลย (คำตอบที่ถูกต้อง)
+${correctAnswer}
+
+## Key Points ที่ควรตอบได้
+${keyPointsList || "ไม่มี Key Points"}
+
+## คำตอบของนักศึกษา
+${studentAnswer}
+
+---
+
+กรุณาตรวจคำตอบและตอบกลับเป็น JSON ในรูปแบบนี้เท่านั้น (ห้ามมีข้อความอื่นนอก JSON):
+{
+  "score": <คะแนน 0-10>,
+  "feedback": "<คำแนะนำสั้นๆ เป็นภาษาไทย 2-3 ประโยค ให้กำลังใจแต่ตรงไปตรงมา>",
+  "matched_points": [<หมายเลข key points ที่นักศึกษาตอบได้ เช่น 1, 3, 5>]
+}
+
+เกณฑ์การให้คะแนน:
+- 9-10: ตอบครบถ้วน ถูกต้อง ครอบคลุม key points เกือบทั้งหมด
+- 7-8: ตอบได้ดี แต่ขาดบางประเด็นสำคัญ
+- 5-6: ตอบได้พอสมควร แต่ยังขาดหลายประเด็น
+- 3-4: ตอบได้บางส่วน มีข้อผิดพลาดที่สำคัญ
+- 1-2: ตอบได้น้อยมาก หรือเข้าใจผิดในสาระสำคัญ
+- 0: ไม่ได้ตอบ หรือคำตอบไม่เกี่ยวข้องกับคำถามเลย`,
+        },
+      ],
+    });
+
+    // 6. Parse Claude's response
+    const responseText =
+      message.content[0].type === "text" ? message.content[0].text : "";
+
+    // Extract JSON from the response (handle potential markdown code blocks)
+    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.error("Failed to parse AI response:", responseText);
+      void logAiGradeError({
+        userId: user.id,
+        stage: "parse",
+        message: responseText.slice(0, 500),
+      });
+      return NextResponse.json(
+        { error: "ไม่สามารถวิเคราะห์คำตอบจาก AI ได้ กรุณาลองใหม่" },
+        { status: 500 }
+      );
+    }
+
+    const result = JSON.parse(jsonMatch[0]);
+
+    // Validate the response structure
+    const score = Math.min(10, Math.max(0, Math.round(Number(result.score))));
+    const feedback = String(result.feedback || "");
+    const matchedPoints: number[] = Array.isArray(result.matched_points)
+      ? result.matched_points.map(Number).filter((n: number) => !isNaN(n))
+      : [];
+
+    // 7. Push LINE summary if the user has linked their LINE account.
+    // Fire-and-forget so grading response is not blocked.
+    if (profile.line_user_id) {
+      void pushExamResultToLine({
+        lineUserId: profile.line_user_id,
+        userId: user.id,
+        score,
+        feedback,
+        matchedCount: matchedPoints.length,
+        totalKeyPoints: Array.isArray(keyPoints) ? keyPoints.length : 0,
+        question: String(question),
+        subjectLabel: typeof subjectLabel === "string" ? subjectLabel : "MEQ",
+      }).catch((err) => {
+        console.error("[grade] LINE push failed:", err);
+      });
+    }
+
+    return NextResponse.json({
+      score,
+      feedback,
+      matched_points: matchedPoints,
+    });
+  } catch (error) {
+    logAIError("grade", error);
+    void logAiGradeError({
+      stage: "unknown",
+      message: error instanceof Error ? error.message : String(error),
+    });
+    return NextResponse.json(
+      { error: "เกิดข้อผิดพลาดในการตรวจคำตอบ กรุณาลองใหม่" },
+      { status: 500 }
+    );
+  }
+}
+
+async function logAiGradeError(params: {
+  userId?: string;
+  stage: "parse" | "anthropic" | "validation" | "unknown";
+  message: string;
+  httpStatus?: number;
+}): Promise<void> {
+  try {
+    const admin = createAdminClient();
+    await admin.from("_ai_grade_errors").insert({
+      user_id: params.userId ?? null,
+      stage: params.stage,
+      error_message: params.message,
+      http_status: params.httpStatus ?? null,
+    });
+  } catch (err) {
+    console.error("[ai-grade-errors] log insert failed:", err);
+  }
+}
+
+async function pushExamResultToLine(params: {
+  lineUserId: string;
+  userId: string;
+  score: number;
+  feedback: string;
+  matchedCount: number;
+  totalKeyPoints: number;
+  question: string;
+  subjectLabel: string;
+}): Promise<void> {
+  const weak = await getUserWeakTopics(params.userId).catch(() => []);
+  const weakTopics = weak
+    .slice(0, 3)
+    .map((w) => `${w.subject_icon ?? ""} ${w.subject_name_th}`.trim());
+
+  const flex = buildExamResultFlex({
+    score: params.score,
+    maxScore: 10,
+    subjectLabel: params.subjectLabel,
+    questionPreview: params.question,
+    feedback: params.feedback,
+    matchedCount: params.matchedCount,
+    totalKeyPoints: params.totalKeyPoints,
+    weakTopics,
+  });
+
+  await sendLineMessage(params.lineUserId, [flex]);
+}

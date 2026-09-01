@@ -1,0 +1,123 @@
+import { NextRequest, NextResponse, after } from "next/server";
+import Stripe from "stripe";
+import { fulfillCheckoutSession } from "@/lib/billing/fulfill-checkout";
+import { sendFulfillmentNotifications } from "@/lib/billing/send-fulfillment-notifications";
+import { sendTikTokEvent } from "@/lib/tiktok/events-api";
+import { sendMetaEvent } from "@/lib/meta/events-api";
+
+export const runtime = "nodejs";
+
+// Lazy-initialize Stripe so module load never touches
+// process.env.STRIPE_SECRET_KEY. Stripe v21 throws at construction when
+// the key is missing ("Neither apiKey nor config.authenticator
+// provided"), and Next.js imports every route module at build time to
+// analyze it. If the build environment doesn't have the secret set
+// (common when a key is rotated in Production only, or in Vercel
+// Preview environments where env vars are scoped separately), an eager
+// `new Stripe(...)` at the top of this file would crash the entire
+// deploy before webpack even starts compiling.
+let _stripeForWebhook: Stripe | null = null;
+function getStripeForWebhook(): Stripe {
+  if (!_stripeForWebhook) {
+    _stripeForWebhook = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  }
+  return _stripeForWebhook;
+}
+
+export async function POST(request: NextRequest) {
+  const body = await request.text();
+  const signature = request.headers.get("stripe-signature");
+
+  if (!signature) {
+    return NextResponse.json({ error: "Missing stripe-signature" }, { status: 400 });
+  }
+
+  const whSecret = (process.env.STRIPE_WEBHOOK_SECRET ?? "").trim();
+
+  let event: Stripe.Event;
+  try {
+    event = getStripeForWebhook().webhooks.constructEvent(body, signature, whSecret);
+  } catch (err) {
+    console.error("[webhook] sig failed:", String(err).slice(0, 100));
+    return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
+  }
+
+  // After the signature is valid, we always ack with 200 so Stripe stops
+  // retrying. Any processing failure is logged for manual follow-up.
+  try {
+    // PromptPay (and other async payment methods) fire
+    // `checkout.session.completed` with payment_status "unpaid" and only
+    // confirm later via `checkout.session.async_payment_succeeded`.
+    // Cards arrive already "paid" inside the completed event. Fulfilling
+    // on completed alone would grant membership for async sessions whose
+    // payment later fails, so both event types funnel through the same
+    // paid-only check.
+    if (
+      event.type === "checkout.session.completed" ||
+      event.type === "checkout.session.async_payment_succeeded"
+    ) {
+      const session = event.data.object as Stripe.Checkout.Session;
+
+      if (session.payment_status !== "paid") {
+        return NextResponse.json({ received: true }, { status: 200 });
+      }
+
+      const result = await fulfillCheckoutSession(session);
+
+      if (result.notify) {
+        // Schedule non-critical HTTP side effects to run AFTER the 200
+        // response is sent to Stripe. Slow or failing third-party APIs
+        // can no longer cause Stripe to mark the delivery as failed.
+        const notify = result.notify;
+        after(() => sendFulfillmentNotifications(notify));
+
+        const buyerEmail =
+          session.customer_details?.email ?? session.customer_email ?? null;
+        const ttclid = session.metadata?.ttclid || null;
+        const ttp = session.metadata?.ttp || null;
+        const currency = (session.currency ?? "thb").toUpperCase();
+        const fbc = session.metadata?.fbc || null;
+        const fbp = session.metadata?.fbp || null;
+        // เดิมใช้ after() แต่พบว่าหายเงียบเกือบหมดบน production (ดู
+        // app/api/track/casegame/route.ts) — Purchase คือ event ที่สำคัญที่สุด
+        // ในบรรดา CAPI ทั้งหมด ยิงครั้งต่อการชำระเงินหนึ่งครั้งเท่านั้น จึงแลก
+        // latency เพื่อความชัวร์ได้ (ต่างจาก sendFulfillmentNotifications ด้านบน
+        // ที่ยังปล่อยเป็น after() ไว้เหมือนเดิม เพราะเป็นงานไม่จำกัดเวลา — LINE
+        // + อีเมล 3 ฉบับ + ออกใบกำกับภาษีที่ FlowAccount — awaited ตรงนี้จะเสี่ยง
+        // ให้ Stripe webhook ตอบช้าจนถูก mark ว่า fail แล้ว retry ซ้ำ)
+        await Promise.all([
+          sendTikTokEvent({
+            event: "Subscribe",
+            eventId: session.id,
+            email: buyerEmail,
+            externalId: notify.userId,
+            ttclid,
+            ttp,
+            value: notify.totalAmount,
+            currency,
+            contentId: notify.planType,
+            contentName: notify.planLabel,
+            contentType: "subscription",
+          }),
+          sendMetaEvent({
+            event: "Purchase",
+            eventId: session.id,
+            email: buyerEmail,
+            externalId: notify.userId,
+            fbc,
+            fbp,
+            value: notify.totalAmount,
+            currency,
+            contentIds: [notify.planType],
+            contentName: notify.planLabel,
+            contentType: "product",
+          }),
+        ]);
+      }
+    }
+  } catch (err) {
+    console.error("[webhook] handler error:", err);
+  }
+
+  return NextResponse.json({ received: true }, { status: 200 });
+}

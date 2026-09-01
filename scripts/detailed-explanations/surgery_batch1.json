@@ -1,0 +1,830 @@
+[
+  {
+    "id": "00787001-5441-4f10-b03b-988cb26b974c",
+    "correct_answer": "C",
+    "explanation": "หลังทำ esophageal dilatation แล้วเกิด acute chest pain รุนแรง = Esophageal perforation (Boerhaave-like complication)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Esophageal perforation) เพราะ acute severe chest pain หลัง esophageal procedure เป็น classic sign ของ iatrogenic esophageal perforation",
+      "reason": "Esophageal dilatation เป็น procedure ที่เสี่ยงต่อ perforation โดยเฉพาะใน stricture ที่ไม่ยืดหยุ่น Esophageal perforation signs: sudden severe chest/back pain, subcutaneous emphysema, mediastinitis, fever CXR/CT: mediastinal air, pleural effusion Treatment: NPO, IV antibiotics, emergency repair หรือ conservative Pneumothorax ก็เกิดได้แต่ไม่ใช่ direct complication ของ dilatation มากเท่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pneumothorax",
+          "is_correct": false,
+          "explanation": "Pneumothorax อาจเกิดได้แต่ rare กว่า esophageal perforation จาก dilatation"
+        },
+        {
+          "label": "B",
+          "text": "Pulmonary embolism",
+          "is_correct": false,
+          "explanation": "PE ไม่ใช่ direct complication ของ esophageal procedure"
+        },
+        {
+          "label": "C",
+          "text": "Esophageal perforation",
+          "is_correct": true,
+          "explanation": "Acute severe pain หลัง esophageal dilatation = iatrogenic esophageal perforation จนกว่าจะพิสูจน์ว่าไม่ใช่"
+        },
+        {
+          "label": "D",
+          "text": "Acute myocardial infarction",
+          "is_correct": false,
+          "explanation": "AMI ไม่ใช่ direct complication ของ esophageal procedure"
+        },
+        {
+          "label": "E",
+          "text": "Pericarditis",
+          "is_correct": false,
+          "explanation": "Pericarditis ไม่ใช่ immediate complication ของ esophageal dilatation"
+        }
+      ],
+      "key_takeaway": "Acute severe pain หลัง esophageal dilatation = Esophageal perforation (orthopedic emergency → mediastinitis)"
+    }
+  },
+  {
+    "id": "044fa007-2ff4-420d-9a1e-a953b0adfde6",
+    "correct_answer": "B",
+    "explanation": "3 สาเหตุการเสียชีวิตจาก trauma ในเด็กตามลำดับความสำคัญ: Airway obstruction > Bleeding > CNS injury",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Airway obstruction, bleeding, CNS injury) เพราะในเด็ก airway management เป็น priority สูงสุด",
+      "reason": "Pediatric trauma mortality: Airway obstruction เป็นสาเหตุแรก เพราะเด็กมี smaller airway diameter, larger tongue proportionally, ง่ายต่อการ obstruct Bleeding เป็นที่สอง เด็กมี proportionally larger blood volume แต่ compensate ได้ดีจนกว่าจะ decompensate ทันที CNS injury เป็นที่สาม เด็กมี proportionally larger head = มากกว่า CNS injury ใน blunt trauma ATLS เน้น A-B-C ใน pediatric trauma",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bleeding, CNS injury, Airway obstruction",
+          "is_correct": false,
+          "explanation": "ลำดับผิด; Airway ต้องมาก่อนเสมอ"
+        },
+        {
+          "label": "B",
+          "text": "Airway obstruction, bleeding, CNS injury",
+          "is_correct": true,
+          "explanation": "Pediatric trauma mortality: Airway > Bleeding > CNS ตาม ATLS principle"
+        },
+        {
+          "label": "C",
+          "text": "Airway obstruction, bleeding, chest trauma",
+          "is_correct": false,
+          "explanation": "Chest trauma ไม่ใช่ top 3; CNS injury พบบ่อยกว่าในเด็ก"
+        },
+        {
+          "label": "D",
+          "text": "Bleeding, chest trauma, abdominal injury",
+          "is_correct": false,
+          "explanation": "Airway ต้องเป็นอันดับ 1 เสมอ"
+        },
+        {
+          "label": "E",
+          "text": "CNS injury, bleeding, abdominal injury",
+          "is_correct": false,
+          "explanation": "Airway obstruction คือ #1 preventable cause of death ในเด็ก"
+        }
+      ],
+      "key_takeaway": "Pediatric trauma death: #1 Airway obstruction, #2 Bleeding, #3 CNS injury (ABC order)"
+    }
+  },
+  {
+    "id": "0792545a-cf5f-4bd1-974e-99cc77e22679",
+    "correct_answer": "A",
+    "explanation": "ชาย 55 ปี หัวกระแทกกระจก ไม่มี loss of consciousness แต่ต่อมามี focal deficit = Intracerebral hematoma",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Intracerebral hematoma) เพราะ direct head impact + delayed neurological deficit โดยไม่มี lucid interval = contusion/intracerebral hematoma",
+      "reason": "Head injury classification: Epidural hematoma: lucid interval + GCS deterioration (middle meningeal artery) Subdural hematoma: bridging vein, ไม่มี lucid interval ชัดเจน Intracerebral hematoma: direct parenchymal injury จาก blunt trauma, ไม่มี lucid interval Cerebral contusion: bruising ของ brain parenchyma Subarachnoid hemorrhage: thunderclap headache, neck stiffness ในกรณีนี้ไม่มี lucid interval + direct impact = intracerebral hematoma",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intracerebral hematoma",
+          "is_correct": true,
+          "explanation": "Direct head impact ไม่มี LOC + delayed deficits = intracerebral hematoma จาก brain parenchyma"
+        },
+        {
+          "label": "B",
+          "text": "Cerebral contusion",
+          "is_correct": false,
+          "explanation": "Contusion เป็น mechanism เดียวกัน แต่ exam ตอบ intracerebral hematoma"
+        },
+        {
+          "label": "C",
+          "text": "Epidural hematoma",
+          "is_correct": false,
+          "explanation": "Epidural: lucid interval ชัดเจน จากนั้น deteriorate; ไม่มีในกรณีนี้"
+        },
+        {
+          "label": "D",
+          "text": "Subarachnoid hemorrhage",
+          "is_correct": false,
+          "explanation": "SAH: thunderclap headache 'worst headache of life' + meningismus"
+        },
+        {
+          "label": "E",
+          "text": "Chronic subdural hematoma",
+          "is_correct": false,
+          "explanation": "Chronic SDH เกิดช้าๆ สัปดาห์-เดือน ในผู้สูงอายุ"
+        }
+      ],
+      "key_takeaway": "Direct head impact + ไม่มี lucid interval + delayed deficit = Intracerebral hematoma"
+    }
+  },
+  {
+    "id": "0a3669b4-a746-42d6-928b-a1d942d824f7",
+    "correct_answer": "A",
+    "explanation": "ชาย 30 ปี ปวดอัณฑะขวา มีไข้ 38.5°C Prehn's sign positive (ยกอัณฑะแล้วดีขึ้น) = Orchitis รักษาด้วย antibiotics + NSAIDs",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Orchitis รักษาด้วย antibiotics + NSAIDs) เพราะ มีไข้ + Prehn's sign positive + อายุ 30 ปี = inflammatory (orchitis/epididymitis) ไม่ใช่ torsion",
+      "reason": "Testicular torsion vs Orchitis/Epididymitis: Torsion: อายุน้อย (10-25 ปี), sudden severe pain, ไม่มีไข้, Prehn's sign negative (ยกแล้วปวดมากขึ้น) Orchitis/Epididymitis: มีไข้, ค่อยๆ เริ่ม, Prehn's sign positive (ยกแล้วดีขึ้น), มักมีประวัติ STI หรือ UTI Doppler US: ช่วย diagnose; torsion = ไม่มี flow Treatment orchitis: antibiotics (fluoroquinolone) + NSAIDs + scrotal support",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Orchitis รักษาด้วย antibiotics + NSAIDs",
+          "is_correct": true,
+          "explanation": "ไข้ + Prehn's positive + อายุ 30 = orchitis; รักษา antibiotics + NSAIDs"
+        },
+        {
+          "label": "B",
+          "text": "Testicular torsion → Emergency exploration",
+          "is_correct": false,
+          "explanation": "Torsion: ไม่มีไข้, อายุน้อย, Prehn's negative; ต้อง emergency ภายใน 6 ชั่วโมง"
+        },
+        {
+          "label": "C",
+          "text": "Epididymitis รักษาด้วย antibiotics + scrotal support",
+          "is_correct": false,
+          "explanation": "Epididymitis เป็น differential ที่ใกล้เคียง แต่ exam ตอบ orchitis"
+        },
+        {
+          "label": "D",
+          "text": "Testicular cancer → Testicular biopsy",
+          "is_correct": false,
+          "explanation": "Testicular cancer ไม่มีไข้เฉียบพลัน ก้อนแข็งไม่เจ็บ"
+        },
+        {
+          "label": "E",
+          "text": "Testicular cancer → Inguinal orchiectomy",
+          "is_correct": false,
+          "explanation": "Orchiectomy สำหรับ confirmed testicular cancer ไม่ใช่กรณีนี้"
+        }
+      ],
+      "key_takeaway": "ไข้ + Prehn's sign positive + อายุ >25 = Orchitis/Epididymitis; รักษา antibiotics + NSAIDs (ไม่ใช่ surgery)"
+    }
+  },
+  {
+    "id": "0e05a840-8b06-4835-be3d-4283ba5ccb91",
+    "correct_answer": "A",
+    "explanation": "ตกจากบันไดลิง BP 140/90 FAST positive ที่ retrohepatic/Morrison's pouch = Plain film abdomen ตาม exam",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Plain film abdomen) ตาม exam; ผู้ป่วย hemodynamically stable + FAST positive",
+      "reason": "ใน hemodynamic stable patient ที่มี FAST positive (free fluid ใน abdomen): สามารถทำ CT abdomen ได้ (more informative) Plain film abdomen (AXR) ให้ข้อมูลจำกัด ในกรณีนี้ BP 140/90 = stable ตาม exam คำตอบคือ plain film แม้ว่า CT จะ preferred ใน stable patient ใน hemodynamic unstable → exploratory laparotomy ทันที",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Plain film abdomen",
+          "is_correct": true,
+          "explanation": "ตาม exam answer; stable patient + FAST positive"
+        },
+        {
+          "label": "B",
+          "text": "CT abdomen",
+          "is_correct": false,
+          "explanation": "CT เป็น preferred investigation ใน stable patient แต่ exam ตอบ plain film"
+        },
+        {
+          "label": "C",
+          "text": "Peritoneal lavage",
+          "is_correct": false,
+          "explanation": "DPL ถูก replace ด้วย FAST + CT ในปัจจุบัน"
+        },
+        {
+          "label": "D",
+          "text": "Exploratory laparotomy",
+          "is_correct": false,
+          "explanation": "Explore ทันทีในผู้ป่วย unstable เท่านั้น; BP 140/90 = stable"
+        }
+      ],
+      "key_takeaway": "Blunt abdominal trauma + hemodynamically stable + FAST positive → CT abdomen (preferred) หรือ plain film"
+    }
+  },
+  {
+    "id": "0ef6413a-8da0-4f49-ba76-e551e3832889",
+    "correct_answer": "A",
+    "explanation": "Stab wound อกซ้าย RR 32 หายใจไม่สะดวก conscious ตาม exam = IV resuscitation เป็น first step",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (IV resuscitation) ตาม exam; penetrating chest trauma ต้องการ IV access และ fluid resuscitation",
+      "reason": "Penetrating chest trauma management: ประเมิน ABCDE ก่อน: A: Airway ยังดี (conscious, talking) B: Breathing: RR 32 = tachypnea C: Circulation: ต้องการ IV resuscitation D: Disability E: Exposure IV resuscitation เป็น first step ใน trauma management เพื่อ maintain perfusion ในขณะที่ evaluate เพิ่มเติม Tension pneumothorax: needle decompression ถ้า tracheal deviation, absent breath sounds, hypotension",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV resuscitation",
+          "is_correct": true,
+          "explanation": "ตาม exam; trauma management ต้องการ IV access + resuscitation ในทุกราย"
+        },
+        {
+          "label": "B",
+          "text": "O2 + CXR",
+          "is_correct": false,
+          "explanation": "O2 ให้ควบคู่ แต่ IV resuscitation = first priority ใน trauma"
+        },
+        {
+          "label": "C",
+          "text": "ET + ventilation support",
+          "is_correct": false,
+          "explanation": "Intubation ถ้า airway compromised; ผู้ป่วยยัง conscious"
+        },
+        {
+          "label": "D",
+          "text": "Needle thoracotomy + ICD",
+          "is_correct": false,
+          "explanation": "Needle decompression ถ้า tension pneumothorax (tracheal deviation, hypotension, absent BS)"
+        }
+      ],
+      "key_takeaway": "Penetrating chest trauma: ประเมิน ABCDE → IV resuscitation เป็น early step; needle decompression ถ้า tension PTX"
+    }
+  },
+  {
+    "id": "15741f03-250e-4652-9f7a-3f7ead27281f",
+    "correct_answer": "A",
+    "explanation": "ชาย 63 ปี acute urinary retention หลังใส่ Foley ต้องตรวจ serum creatinine เพื่อประเมิน renal function",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Serum creatinine) เพราะ acute urinary retention อาจทำให้ post-obstructive uropathy และ acute kidney injury ต้องตรวจ Cr",
+      "reason": "Acute urinary retention (AUR) evaluation: Serum creatinine: ตรวจ renal function เพราะ chronic obstruction ทำให้ hydronephrosis + renal insufficiency เกิด post-obstructive diuresis หลัง relief ซึ่ง Cr สูงจะมีเพิ่ม diuresis มาก ต้อง monitor Urinalysis: ตรวจ UTI ร่วมด้วย Ultrasound (post-void residual): ตรวจก่อน Foley แต่ Foley ใส่แล้ว ตรวจ Cr ก่อน PSA: ตรวจ BPH/prostate cancer ไม่ urgent",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Serum creatinine",
+          "is_correct": true,
+          "explanation": "AUR → post-obstructive uropathy → AKI → ตรวจ Cr ก่อน monitor renal function"
+        },
+        {
+          "label": "B",
+          "text": "Ultrasound (post-void residual)",
+          "is_correct": false,
+          "explanation": "PVR US ทำก่อนใส่ Foley; หลังใส่แล้ว Cr เป็น priority"
+        },
+        {
+          "label": "C",
+          "text": "Urinalysis",
+          "is_correct": false,
+          "explanation": "UA ตรวจ UTI ได้แต่ไม่ priority เท่า renal function assessment"
+        },
+        {
+          "label": "D",
+          "text": "Cystoscopy",
+          "is_correct": false,
+          "explanation": "Cystoscopy ไม่ใช่ urgent investigation ใน AUR"
+        },
+        {
+          "label": "E",
+          "text": "Urodynamic examination",
+          "is_correct": false,
+          "explanation": "Urodynamics ใช้ evaluate bladder function ไม่ใช่ acute management"
+        }
+      ],
+      "key_takeaway": "Acute urinary retention หลังใส่ Foley → ตรวจ Serum creatinine เพื่อ assess post-obstructive renal injury"
+    }
+  },
+  {
+    "id": "16c5373b-9979-4d0d-b4fe-047230480fe0",
+    "correct_answer": "B",
+    "explanation": "แผล appendectomy 4 วันมีหนอง ต้องถอดไหมและล้างแผล บรรจุผ้าเปียก (wound debridement + secondary intention)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (ถอดไหม + ล้างน้ำเกลือ + บรรจุผ้าเปียก + antibiotics) เพราะ surgical wound infection ต้องการ open + drain + secondary closure",
+      "reason": "Surgical site infection (SSI) management: Grade ขึ้นอยู่กับ depth: Superficial SSI: เปิดแผล + ล้าง + bactrim packing Deep SSI / organ space: CT เพื่อ rule out intra-abdominal collection หลัง appendectomy 4 วัน แผลมีหนอง = superficial SSI รักษา: 1) ถอดไหม 2) Open wound 3) Normal saline irrigation 4) ผ้าเปียก packing 5) Antibiotics ตาม culture ห้าม re-suture wound ที่ infected",
+      "choices": [
+        {
+          "label": "A",
+          "text": "รอ self-improvement",
+          "is_correct": false,
+          "explanation": "SSI ไม่ resolve เอง ต้องทำ intervention"
+        },
+        {
+          "label": "B",
+          "text": "ถอดไหม + ล้าง + ผ้าเปียก + antibiotics",
+          "is_correct": true,
+          "explanation": "Superficial SSI: open + drain + pack = standard management"
+        },
+        {
+          "label": "C",
+          "text": "เปิดทั้งหมด + blood culture + intensive antibiotics",
+          "is_correct": false,
+          "explanation": "Blood culture ใช้สำหรับ sepsis; superficial SSI ไม่ต้องการ blood culture routine"
+        },
+        {
+          "label": "D",
+          "text": "ผ่าตัดหาสาเหตุ intra-abdominal",
+          "is_correct": false,
+          "explanation": "ทำเมื่อสงสัย deep infection/intra-abdominal collection จาก imaging"
+        },
+        {
+          "label": "E",
+          "text": "ล้างด้วยน้ำแร่ + occlusive dressing",
+          "is_correct": false,
+          "explanation": "Occlusive dressing ใน infected wound จะ trap bacteria ทำให้ worse"
+        }
+      ],
+      "key_takeaway": "Surgical site infection: ถอดไหม + open wound + NS irrigation + wet packing + antibiotics"
+    }
+  },
+  {
+    "id": "16f13897-4c6d-4343-9b3f-829b035703ac",
+    "correct_answer": "A",
+    "explanation": "หญิง 60 ปี ทาน NSAIDs 2 สัปดาห์ แล้วเกิด dysphagia + odynophagia = ตาม exam คือ Corrosive ingestion (pill-induced esophagitis)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Corrosive ingestion) ตาม exam; NSAIDs สามารถทำให้เกิด chemical esophagitis ที่คล้าย corrosive injury",
+      "reason": "NSAIDs-induced esophagitis: NSAIDs (เช่น Diclofenac) ทำให้เกิด direct mucosal damage ต่อ esophagus โดยเฉพาะถ้ากลืนโดยไม่ดื่มน้ำตาม Pill-induced esophagitis อาจทำให้ ulcer ลึกได้คล้าย corrosive injury Dysphagia + odynophagia + NSAIDs use ตาม exam = corrosive-like esophagitis การวินิจฉัยยืนยัน: endoscopy แสดง mucosal ulceration รักษา: หยุด NSAIDs, PPI, soft diet",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Corrosive ingestion",
+          "is_correct": true,
+          "explanation": "ตาม exam; NSAIDs-induced chemical esophagitis คล้าย corrosive injury"
+        },
+        {
+          "label": "B",
+          "text": "Acute ulcerative reflux esophagitis",
+          "is_correct": false,
+          "explanation": "GERD esophagitis: heartburn ที่ worse หลังอาหาร ไม่ใช่ acute onset หลัง NSAIDs"
+        },
+        {
+          "label": "C",
+          "text": "Recurrent CA",
+          "is_correct": false,
+          "explanation": "Esophageal cancer: progressive dysphagia สัปดาห์-เดือน ไม่ใช่ acute 3 วัน"
+        },
+        {
+          "label": "D",
+          "text": "Pill-induced gastritis",
+          "is_correct": false,
+          "explanation": "Pill-induced เป็น mechanism ที่ถูกต้อง แต่ exam ตอบ corrosive ingestion"
+        },
+        {
+          "label": "E",
+          "text": "Achalasia",
+          "is_correct": false,
+          "explanation": "Achalasia: progressive dysphagia ทั้ง solid + liquid ไม่ใช่ acute after NSAIDs"
+        }
+      ],
+      "key_takeaway": "NSAIDs + dysphagia + odynophagia = NSAIDs-induced esophageal injury (pill esophagitis); รักษา: หยุดยา + PPI"
+    }
+  },
+  {
+    "id": "184cec85-fb10-4153-9f3a-d6a25704f9aa",
+    "correct_answer": "A",
+    "explanation": "Motorcycle accident unconscious GCS 8 BP 90/60 RR 24 = first priority ตาม ATLS คือ airway management (intubation) แต่ exam ตอบ CT abdomen",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (CT abdomen) ตาม exam; แต่ใน ATLS จริงๆ intubation ควรทำก่อนในผู้ป่วยที่ GCS 8",
+      "reason": "Trauma management ATLS: GCS 8 = indication สำหรับ intubation BP 90/60 = hypotension ต้องการ resuscitation ตาม exam คำตอบคือ CT abdomen ซึ่งอาจ interpret ว่า หลังจัดการ airway/breathing แล้ว CT เป็น next step สำหรับ evaluate injury ใน real practice: intubation → fluid resuscitation → CT abdomen (ถ้า stable) หรือ exploratory laparotomy (ถ้า unstable)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CT abdomen",
+          "is_correct": true,
+          "explanation": "ตาม exam answer; evaluate intra-abdominal injury หลัง initial resuscitation"
+        },
+        {
+          "label": "B",
+          "text": "CT brain",
+          "is_correct": false,
+          "explanation": "CT brain สำหรับ head injury แต่ BP ต่ำ = abdominal priority"
+        },
+        {
+          "label": "C",
+          "text": "Blood transfusion",
+          "is_correct": false,
+          "explanation": "Blood transfusion ส่วนหนึ่งของ resuscitation แต่ CT abdomen เพื่อ find source"
+        },
+        {
+          "label": "D",
+          "text": "Endotracheal intubation",
+          "is_correct": false,
+          "explanation": "GCS 8 = intubate แต่ exam ตอบ CT abdomen"
+        }
+      ],
+      "key_takeaway": "Trauma: GCS 8 = intubation; BP ต่ำ + abdominal trauma → CT abdomen เพื่อ find bleeding source"
+    }
+  },
+  {
+    "id": "1940e7fd-33c0-44de-ac17-8a07b9998715",
+    "correct_answer": "A",
+    "explanation": "อาเจียนเป็นเลือด หลัง resuscitation แล้ว ต้องทำ NG tube เพื่อ evaluate และ decompress stomach",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (NG tube) เพราะหลัง initial resuscitation ของ upper GI bleed การใส่ NG tube ช่วย confirm UGI source และ prepare สำหรับ endoscopy",
+      "reason": "Upper GI bleeding management: Initial: resuscitation (IV fluid, blood transfusion, O2) NG tube: ยืนยัน UGI source, lavage, decompress stomach, prepare for endoscopy Gastroscopy: definitive diagnosis + therapeutic (injection, cauterization, clipping) NG tube เป็น next step หลัง resuscitation ก่อน endoscopy Colonoscopy ใช้สำหรับ lower GI bleeding ERCP ใช้สำหรับ biliary pathology",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NG tube",
+          "is_correct": true,
+          "explanation": "หลัง resuscitation: NG tube → confirm UGI source + gastric lavage + prepare endoscopy"
+        },
+        {
+          "label": "B",
+          "text": "Gastroscope",
+          "is_correct": false,
+          "explanation": "Endoscopy เป็น definitive แต่ทำหลัง NG tube + เมื่อ stable"
+        },
+        {
+          "label": "C",
+          "text": "Colonoscopy",
+          "is_correct": false,
+          "explanation": "Colonoscopy สำหรับ lower GI bleeding ไม่ใช่ upper"
+        },
+        {
+          "label": "A",
+          "text": "CT",
+          "is_correct": false,
+          "explanation": "CT ไม่ใช่ first-line สำหรับ acute UGI bleeding"
+        },
+        {
+          "label": "B",
+          "text": "MRI",
+          "is_correct": false,
+          "explanation": "MRI ไม่ใช่ acute UGI bleeding management"
+        },
+        {
+          "label": "C",
+          "text": "ERCP",
+          "is_correct": false,
+          "explanation": "ERCP ใช้สำหรับ biliary/pancreatic bleeding ไม่ใช่ routine UGI bleed"
+        }
+      ],
+      "key_takeaway": "Upper GI bleeding: Resuscitation → NG tube → Gastroscopy (diagnosis + treatment)"
+    }
+  },
+  {
+    "id": "20166184-6c99-42fc-b250-a38c1bb1fa6e",
+    "correct_answer": "D",
+    "explanation": "ไข้ + jaundice + RUQ pain (Charcot's triad) = cholangitis/liver abscess ต้องการ percutaneous catheter drainage",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Percutaneous catheter drainage) เพราะ liver abscess ที่ present ด้วย Charcot's triad ต้องการ drainage ที่มีประสิทธิภาพ",
+      "reason": "Pyogenic liver abscess management: Percutaneous catheter drainage (PCD) = gold standard สำหรับ large abscess (>5cm) เพราะ: 1) Continuous drainage 2) Less invasive กว่า surgery 3) ลด hospitalization Percutaneous aspiration ใช้ได้สำหรับ small abscess (<5cm) แต่ recurrence rate สูงกว่า PCD Endoscopic drainage ใช้สำหรับ biliary drainage ถ้ามี biliary obstruction ร่วมด้วย Open surgery เป็น last resort ถ้า PCD ล้มเหลว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Laparoscopic drainage",
+          "is_correct": false,
+          "explanation": "Laparoscopic drainage ไม่ใช่ first-line สำหรับ liver abscess"
+        },
+        {
+          "label": "B",
+          "text": "Endoscopic drainage",
+          "is_correct": false,
+          "explanation": "Endoscopic drainage ใช้สำหรับ biliary obstruction ร่วมกับ cholangitis"
+        },
+        {
+          "label": "C",
+          "text": "Percutaneous aspiration",
+          "is_correct": false,
+          "explanation": "Single aspiration มี recurrence rate สูงกว่า PCD ใน large abscess"
+        },
+        {
+          "label": "D",
+          "text": "Percutaneous catheter drainage",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ large pyogenic liver abscess; continuous drainage ลด recurrence"
+        },
+        {
+          "label": "E",
+          "text": "Open drainage",
+          "is_correct": false,
+          "explanation": "Open surgery เป็น last resort หลัง PCD ล้มเหลว"
+        }
+      ],
+      "key_takeaway": "Pyogenic liver abscess large (>5cm): Percutaneous catheter drainage (PCD) = gold standard"
+    }
+  },
+  {
+    "id": "2469ee59-4d36-4939-a228-19fa98106fba",
+    "correct_answer": "E",
+    "explanation": "เด็กชาย 2 ปี ปัสสาวะไม่ออก ปลายอวัยวะบวมขนาดใหญ่ = Paraphimosis (ฉีก foreskin ค้างอยู่)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Paraphimosis) เพราะ acute urinary retention + foreskin ถูกดึงกลับไม่ได้ + ปลายบวม = paraphimosis ซึ่งเป็น urological emergency",
+      "reason": "Paraphimosis: foreskin ถูกดึงกลับไปด้านหลัง glans แล้วไม่สามารถดึงกลับมาได้ กดเส้นเลือดดำ ทำให้ glans บวม ปวดมาก ในเด็กอาจเกิดหลัง catheterization หรือ examination Phimosis: foreskin แคบดึงกลับไม่ได้ แต่ไม่มี constriction ring Paraphimosis = emergency: manual reduction (ice + compression + push glans) หรือ dorsal slit/circumcision",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Priapism",
+          "is_correct": false,
+          "explanation": "Priapism = persistent unwanted erection ไม่ใช่ acute retention ในเด็ก"
+        },
+        {
+          "label": "B",
+          "text": "Phimosis",
+          "is_correct": false,
+          "explanation": "Phimosis = foreskin แคบดึงกลับไม่ได้ แต่ไม่มี constricting ring"
+        },
+        {
+          "label": "C",
+          "text": "Balanitis",
+          "is_correct": false,
+          "explanation": "Balanitis = inflammation ของ glans มีไข้ + discharge ไม่ใช่ acute retention"
+        },
+        {
+          "label": "D",
+          "text": "Prostatitis",
+          "is_correct": false,
+          "explanation": "Prostatitis ไม่พบในเด็ก 2 ปี"
+        },
+        {
+          "label": "E",
+          "text": "Paraphimosis",
+          "is_correct": true,
+          "explanation": "Foreskin retracted + glans บวม + acute retention = paraphimosis (urological emergency)"
+        }
+      ],
+      "key_takeaway": "Paraphimosis = foreskin ค้างด้านหลัง glans + บวม = emergency; manual reduction/dorsal slit"
+    }
+  },
+  {
+    "id": "258e24b6-cf6e-4798-894f-f94568f621f8",
+    "correct_answer": "A",
+    "explanation": "หญิง 60 ปี ปวดท้องบิด (colicky) มีก้อนท้อง เคยผ่าตัด = Small bowel obstruction จาก adhesion",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Small bowel obstruction) เพราะ colicky pain + abdominal distension + history ของ abdominal surgery = adhesion SBO",
+      "reason": "Small bowel obstruction (SBO): most common cause in adults with prior abdominal surgery = adhesions Colicky abdominal pain + distension + high-pitched bowel sounds + obstipation ± vomiting X-ray: dilated small bowel loops + air-fluid levels ± step-ladder pattern Conservative management (NGT + IV fluid): ถ้าไม่มี strangulation ผ่าตัด: ถ้า strangulation suspected, complete obstruction, failure of conservative Diverticulitis: LLQ pain, fever ไม่ใช่ colicky",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Small bowel obstruction",
+          "is_correct": true,
+          "explanation": "Colicky pain + distension + prior surgery = adhesion SBO; most common diagnosis"
+        },
+        {
+          "label": "B",
+          "text": "Diverticulitis",
+          "is_correct": false,
+          "explanation": "Diverticulitis: LLQ constant pain + fever ไม่ใช่ colicky + mass"
+        },
+        {
+          "label": "C",
+          "text": "Impacted feces",
+          "is_correct": false,
+          "explanation": "Fecal impaction: constipation + hard stool on PR exam ไม่ colicky"
+        },
+        {
+          "label": "D",
+          "text": "Bowel ischemia",
+          "is_correct": false,
+          "explanation": "Ischemia: severe constant pain out of proportion ไม่ colicky"
+        },
+        {
+          "label": "E",
+          "text": "Irritable bowel syndrome",
+          "is_correct": false,
+          "explanation": "IBS ไม่มี palpable mass และเป็น chronic functional disorder"
+        }
+      ],
+      "key_takeaway": "Colicky pain + distension + prior abdominal surgery = Small bowel obstruction (adhesion) → X-ray + NGT"
+    }
+  },
+  {
+    "id": "25e9e433-c7aa-4315-af5c-a07a9daacefe",
+    "correct_answer": "A",
+    "explanation": "หญิง 45 ปี breast mass 2.5cm + enlarged axillary LN → ตาม exam: Excisional biopsy mass",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Excisional biopsy mass) ตาม exam; breast mass ที่มี axillary LN ต้องการ tissue diagnosis",
+      "reason": "Breast biopsy options: Core needle biopsy (CNB): standard สำหรับ solid breast mass ปัจจุบัน - less invasive, good tissue FNA: ใช้สำหรับ cystic lesions หรือ LN Excisional biopsy: เอา whole lump ออก ใช้เมื่อ CNB inconclusive หรือ specific indications ตาม exam คำตอบคือ excisional biopsy ของ mass ซึ่งใช้เมื่อต้องการ complete removal หรือ CNB ไม่ได้ทำ LN ใน axilla: FNA หรือ core biopsy ตาม staging",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Excisional biopsy mass",
+          "is_correct": true,
+          "explanation": "ตาม exam; excisional biopsy = complete removal + diagnosis ของ breast mass"
+        },
+        {
+          "label": "B",
+          "text": "Incisional biopsy mass",
+          "is_correct": false,
+          "explanation": "Incisional biopsy (partial removal) ไม่ preferred ใน breast; CNB หรือ excisional ดีกว่า"
+        },
+        {
+          "label": "C",
+          "text": "Core needle biopsy mass",
+          "is_correct": false,
+          "explanation": "CNB เป็น modern standard แต่ exam ตอบ excisional"
+        },
+        {
+          "label": "D",
+          "text": "Core needle biopsy LN",
+          "is_correct": false,
+          "explanation": "LN biopsy ใช้ถ้าสงสัย lymphoma ไม่ใช่ primary breast evaluation"
+        },
+        {
+          "label": "E",
+          "text": "FNA LN",
+          "is_correct": false,
+          "explanation": "FNA LN ใช้สำหรับ staging ไม่ใช่ primary diagnosis"
+        }
+      ],
+      "key_takeaway": "Breast mass + axillary LN → Biopsy (excisional หรือ core needle) สำหรับ tissue diagnosis"
+    }
+  },
+  {
+    "id": "2a6d8ae6-3982-4dbd-8389-57eb7b8c9531",
+    "correct_answer": "A",
+    "explanation": "Septic shock หลัง cholecystectomy BP 70/40 CO สูง = Distributive shock ต้องการ Dopamine/Norepinephrine ตาม exam = Dopamine",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Dopamine IV) เพราะ septic shock ที่มี low BP + high cardiac output (warm shock) ต้องการ vasopressor",
+      "reason": "Septic shock management: แรก: IV fluid resuscitation (30 mL/kg crystalloid) ถ้า MAP ยังต่ำ (<65 mmHg) หลัง adequate fluid: Vasopressor Norepinephrine: first-line vasopressor ตาม Surviving Sepsis Campaign Dopamine: ใช้ได้แต่มี more side effects (arrhythmia) ในกรณีนี้ cardiac output สูง (warm shock) = vasodilatory septic shock ต้องการ vasopressor ตาม exam คำตอบคือ Dopamine",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dopamine IV",
+          "is_correct": true,
+          "explanation": "ตาม exam; vasopressor สำหรับ septic shock หลัง fluid resuscitation"
+        },
+        {
+          "label": "B",
+          "text": "Norepinephrine IV",
+          "is_correct": false,
+          "explanation": "NE เป็น first-line ตาม Surviving Sepsis guidelines แต่ exam ตอบ Dopamine"
+        },
+        {
+          "label": "C",
+          "text": "Antibiotics IV",
+          "is_correct": false,
+          "explanation": "Antibiotics สำคัญในการรักษา sepsis แต่ไม่ใช่ immediate hemodynamic support"
+        },
+        {
+          "label": "D",
+          "text": "Intubation + ventilation",
+          "is_correct": false,
+          "explanation": "Intubation ถ้า respiratory failure; ข้อมูลไม่แสดง respiratory compromise"
+        },
+        {
+          "label": "E",
+          "text": "IV fluid resuscitation",
+          "is_correct": false,
+          "explanation": "Fluid ควรทำก่อนแล้ว; BP ยังต่ำ = ต้องการ vasopressor"
+        }
+      ],
+      "key_takeaway": "Septic shock หลัง fluid: Vasopressor (Norepinephrine first-line; ตาม exam = Dopamine)"
+    }
+  },
+  {
+    "id": "329a6ea2-5600-48fd-ad9c-ce825eafe5be",
+    "correct_answer": "A",
+    "explanation": "เด็กชาย 14 ปี ปวดอัณฑะซ้ายเฉียบพลัน 2 ชั่วโมง ไม่มีไข้ = Testicular torsion ต้อง emergency exploration",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Testicular torsion) เพราะ sudden severe testicular pain ในเด็กวัยรุ่นโดยไม่มีไข้ = testicular torsion จนกว่าจะพิสูจน์ว่าไม่ใช่",
+      "reason": "Testicular torsion: Peak incidence อายุ 12-18 ปี Sudden severe scrotal pain (onset <6 ชั่วโมง best prognosis) ไม่มีไข้ (ต่างจาก epididymitis ที่มีไข้) Prehn's sign negative (ยกแล้วปวดมากขึ้น) High-riding testis, absent cremasteric reflex Treatment: Surgical exploration + detorsion + bilateral orchiopexy ภายใน 6 ชั่วโมง = 100% salvage ภายใน 12 ชั่วโมง = 50% ภายใน 24 ชั่วโมง = 10%",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Testicular torsion",
+          "is_correct": true,
+          "explanation": "เด็กวัยรุ่น + sudden pain + ไม่มีไข้ = torsion; emergency exploration ภายใน 6 ชั่วโมง"
+        },
+        {
+          "label": "B",
+          "text": "Acute epididymitis",
+          "is_correct": false,
+          "explanation": "Epididymitis: มีไข้, gradual onset, ผู้ใหญ่, มักมีประวัติ STI/UTI"
+        },
+        {
+          "label": "C",
+          "text": "Inguinal hernia",
+          "is_correct": false,
+          "explanation": "Inguinal hernia: ก้อนที่ groin ไม่ใช่ acute scrotal pain"
+        },
+        {
+          "label": "D",
+          "text": "Undescended testis",
+          "is_correct": false,
+          "explanation": "Cryptorchidism ไม่ทำให้ acute pain ในอัณฑะที่ descended"
+        },
+        {
+          "label": "E",
+          "text": "Testicular trauma",
+          "is_correct": false,
+          "explanation": "Trauma ไม่มีในประวัติ"
+        }
+      ],
+      "key_takeaway": "เด็กวัยรุ่น + sudden scrotal pain + ไม่มีไข้ = Testicular torsion → Emergency exploration ภายใน 6 ชั่วโมง"
+    }
+  },
+  {
+    "id": "35159185-10ad-4df4-aaf2-8b884c5e4c2c",
+    "correct_answer": "C",
+    "explanation": "ผู้ป่วยเคยผ่าตัด appendectomy มา present ด้วย distension + vomiting + obstipation = SBO ตรวจด้วย Acute abdomen series (plain films)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Acute abdomen series: supine + upright + lateral decubitus plain films) เพราะ bowel obstruction ใน stable patient ต้องการ X-ray ก่อน",
+      "reason": "Suspected bowel obstruction investigation: Acute abdomen series (3 views): supine, upright (erect), lateral decubitus หา: air-fluid levels, dilated bowel loops, free air ใต้ diaphragm Cost-effective, available, quick X-ray findings ใน SBO: multiple air-fluid levels, dilated small bowel >3cm, step-ladder pattern CT abdomen: ให้ข้อมูลเพิ่มเติม (cause, transition point, strangulation) แต่ X-ray ทำก่อน ใน stable patient",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CT abdomen",
+          "is_correct": false,
+          "explanation": "CT ให้ข้อมูลดีกว่า แต่ plain films เป็น first-line cost-effective investigation"
+        },
+        {
+          "label": "B",
+          "text": "Ultrasound abdomen",
+          "is_correct": false,
+          "explanation": "US มีข้อจำกัดใน gas-filled bowel; ไม่ใช่ first-line SBO"
+        },
+        {
+          "label": "C",
+          "text": "Acute abdomen series (3 plain films)",
+          "is_correct": true,
+          "explanation": "SBO suspected: X-ray supine + erect + lateral decubitus = first-line investigation"
+        },
+        {
+          "label": "D",
+          "text": "Upper GI endoscopy",
+          "is_correct": false,
+          "explanation": "Endoscopy ไม่ใช่ investigation สำหรับ SBO"
+        },
+        {
+          "label": "E",
+          "text": "Immediate surgical consultation",
+          "is_correct": false,
+          "explanation": "Surgical consult สำคัญแต่ X-ray ก่อน เว้นแต่ peritonitis/strangulation"
+        }
+      ],
+      "key_takeaway": "Suspected bowel obstruction → Acute abdomen series (supine + erect + lateral decubitus plain films) เป็น first-line"
+    }
+  },
+  {
+    "id": "35ecab41-a32d-4012-bf27-123c322fd50a",
+    "correct_answer": "C",
+    "explanation": "Deceleration injury ทำให้ aortic tear บ่อยที่สุดที่ ligamentum arteriosum (ตรงข้ามต่อ left subclavian artery)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Level of left subclavian artery / ligamentum arteriosum) เพราะ traumatic aortic injury จาก deceleration เกิดบ่อยที่สุดที่ aortic isthmus",
+      "reason": "Traumatic aortic injury (TAI) จาก deceleration: Most common site: Aortic isthmus ที่ ligamentum arteriosum (ตรงข้ามต่อ left subclavian artery origin) เพราะ aortic arch และ descending aorta มี differential movement เมื่อ decelerate ทำให้ shear force สูงสุดที่จุดนี้ CXR findings: widened mediastinum, tracheal deviation right, left hemothorax, obliteration aortic knob CT: definitive diagnosis Treatment: Thoracic endovascular aortic repair (TEVAR)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Root of aorta",
+          "is_correct": false,
+          "explanation": "Aortic root injury พบน้อยกว่ามากใน blunt trauma"
+        },
+        {
+          "label": "B",
+          "text": "Level of right innominate artery",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ most common site ของ TAI"
+        },
+        {
+          "label": "C",
+          "text": "Level of left subclavian artery (ligamentum arteriosum)",
+          "is_correct": true,
+          "explanation": "Aortic isthmus = most common site ของ TAI จาก deceleration injury"
+        },
+        {
+          "label": "D",
+          "text": "2/3 descending thoracic aorta",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ most common site"
+        },
+        {
+          "label": "E",
+          "text": "Infrarenal abdominal aorta",
+          "is_correct": false,
+          "explanation": "Thoracic aorta พบบ่อยกว่า infrarenal ใน deceleration injury"
+        }
+      ],
+      "key_takeaway": "Deceleration injury → Aortic tear most common at aortic isthmus (ligamentum arteriosum / left subclavian origin)"
+    }
+  },
+  {
+    "id": "39740f3f-3b4a-4cfe-8885-48c66330f8d9",
+    "correct_answer": "D",
+    "explanation": "ชาย 55 ปี large left renal mass บน CT = Renal cell carcinoma ต้องทำ radical nephrectomy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Radical left nephrectomy) เพราะ large renal mass ที่ CT scan = RCC จนกว่าจะพิสูจน์ว่าไม่ใช่ และ radical nephrectomy เป็น standard treatment",
+      "reason": "Renal cell carcinoma (RCC): Large solid renal mass บน CT = RCC จนกว่าจะพิสูจน์ว่าไม่ใช่ Radical nephrectomy (complete kidney removal ± adrenal ± lymph node): standard สำหรับ large tumor (>4cm) หรือ centrally located Partial nephrectomy: เฉพาะ tumor <4cm, single kidney, bilateral Fine needle aspiration: ห้ามทำสำหรับ suspected RCC เพราะ seeding risk Cryoablation: เฉพาะ elderly/poor surgical candidate MRI: imaging ไม่ใช่ treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI left kidney",
+          "is_correct": false,
+          "explanation": "MRI เป็น imaging ไม่ใช่ treatment; CT แล้วก็วินิจฉัยได้"
+        },
+        {
+          "label": "B",
+          "text": "Renal cryoablation",
+          "is_correct": false,
+          "explanation": "Cryoablation สำหรับ elderly/poor candidate; ไม่ใช่ standard ของ large tumor"
+        },
+        {
+          "label": "C",
+          "text": "Partial left nephrectomy",
+          "is_correct": false,
+          "explanation": "Partial nephectomy สำหรับ small tumor (<4cm) หรือ single kidney"
+        },
+        {
+          "label": "D",
+          "text": "Radical left nephrectomy",
+          "is_correct": true,
+          "explanation": "Large renal mass = RCC → radical nephrectomy เป็น standard treatment"
+        },
+        {
+          "label": "E",
+          "text": "Fine needle aspiration biopsy",
+          "is_correct": false,
+          "explanation": "FNA ห้ามทำใน suspected RCC เพราะ tumor seeding risk"
+        }
+      ],
+      "key_takeaway": "Large renal mass on CT = RCC → Radical nephrectomy (ห้าม FNA สำหรับ suspected RCC)"
+    }
+  }
+]

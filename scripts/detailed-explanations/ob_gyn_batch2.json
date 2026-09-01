@@ -1,0 +1,836 @@
+[
+  {
+    "id": "1c1c3245-7d05-4907-b741-a94a5c5e2092",
+    "correct_answer": "B",
+    "explanation": "GA 39 สัปดาห์ second stage 2 ชั่วโมง station +3 FHR 148 bpm (reassuring) → ยังปล่อยเบ่งต่อได้อีก 1 ชั่วโมง ยังไม่มี indication สำหรับ operative delivery",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. ปล่อยเบ่งต่อ 1 ชั่วโมง เพราะ FHR 148 bpm เป็น reassuring pattern และ second stage ยังอยู่ในเวลา acceptable",
+      "reason": "Second stage of labor ใน nullipara: ปกติไม่เกิน 3 ชั่วโมง (หรือ 2 ชั่วโมงโดยไม่ epidural) ในเคสนี้เบ่ง 2 ชั่วโมง station +3 FHR 148 bpm (normal 110-160) = reassuring → ยังปล่อยเบ่งต่อได้ FHR 148 ไม่ใช่ bradycardia (< 110) ดังนั้น forceps delivery ยังไม่ indicated และ C/S ก็ไม่ indicated เมื่อ FHR ปกติ การรอ 1 ชั่วโมงและพิจารณา operative delivery ถ้าไม่คลอดเป็น standard",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Forceps delivery เพราะ bradycardia",
+          "is_correct": false,
+          "explanation": "FHR 148 ไม่ใช่ bradycardia (< 110) ดังนั้นไม่มี indication สำหรับ forceps ในขณะนี้"
+        },
+        {
+          "label": "B",
+          "text": "ปล่อยเบ่งต่อ 1 ชั่วโมง แล้วพิจารณา operative delivery",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: FHR reassuring + second stage ยังไม่เกิน limit → รอต่อ ถ้าไม่คลอดอีก 1 ชั่วโมง → operative (vacuum/forceps)"
+        },
+        {
+          "label": "C",
+          "text": "C/S ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี indication สำหรับ emergency C/S เมื่อ FHR ปกติและ station +3 (engaged ดี)"
+        },
+        {
+          "label": "D",
+          "text": "Oxytocin เพิ่มและเบ่งต่อ",
+          "is_correct": false,
+          "explanation": "ใน second stage ที่ fully dilated + station +3 มักไม่ต้องเพิ่ม oxytocin เพราะ contraction ปกติแล้ว"
+        },
+        {
+          "label": "E",
+          "text": "Fetal scalp pH",
+          "is_correct": false,
+          "explanation": "FHR reassuring ไม่มี indication สำหรับ fetal scalp pH ทำเฉพาะเมื่อ non-reassuring FHR"
+        }
+      ],
+      "key_takeaway": "Second stage nullipara: ยาวได้ถึง 3 ชั่วโมง | FHR 148 = reassuring → เบ่งต่อ | FHR < 110 หรือ > 160 ต่อเนื่อง → operative delivery | Station +3 = พร้อม operative vaginal delivery"
+    }
+  },
+  {
+    "id": "1cc6a201-31b5-4bb9-a222-89a00eccfa22",
+    "correct_answer": "C",
+    "explanation": "Postpartum mastitis ที่มี induration รักษาด้วย oral antibiotics (dicloxacillin หรือ cephalexin) ต้องให้นมต่อเพื่อระบาย",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C. Oral antibiotics เพราะ mastitis ที่มีไข้และ induration ต้องการ antibiotic treatment ไม่ใช่แค่ conservative",
+      "reason": "Lactational mastitis ที่มีไข้ + induration = bacterial mastitis (S. aureus ที่พบบ่อย) → ต้องการ oral antibiotics เช่น dicloxacillin หรือ cephalexin นาน 10-14 วัน ยังคงให้นมบุตรต่อเพราะ: (1) ช่วยระบาย milk duct ป้องกัน abscess (2) น้ำนมไม่เป็นอันตราย (3) หยุดนมทำให้ milk stasis แย่ลง ถ้าไม่ตอบสนองใน 24-48 ชั่วโมง → U/S หาก abscess → I&D",
+      "choices": [
+        {
+          "label": "A",
+          "text": "หยุดนมและสังเกตอาการ",
+          "is_correct": false,
+          "explanation": "ผิด: หยุดนมทำให้ milk stasis แย่ลง เพิ่มความเสี่ยง abscess ควรให้นมต่อหรือ pump"
+        },
+        {
+          "label": "B",
+          "text": "Warm compression",
+          "is_correct": false,
+          "explanation": "Warm compress อาจช่วย milk flow แต่ไม่เพียงพอสำหรับ bacterial mastitis ที่มีไข้และ induration"
+        },
+        {
+          "label": "C",
+          "text": "Oral antibiotics",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Bacterial mastitis (ไข้ + induration) → oral antibiotics (dicloxacillin/cephalexin) + continued breastfeeding"
+        },
+        {
+          "label": "D",
+          "text": "IV antibiotics",
+          "is_correct": false,
+          "explanation": "IV ไม่จำเป็นสำหรับ uncomplicated mastitis; ใช้เมื่อ severe/septic mastitis หรือ abscess ขนาดใหญ่"
+        },
+        {
+          "label": "E",
+          "text": "Incision and drainage",
+          "is_correct": false,
+          "explanation": "I&D สำหรับ breast abscess (fluctuant/cystic) ยังเป็นแค่ induration (solid) ไม่ใช่ abscess ยัง"
+        }
+      ],
+      "key_takeaway": "Mastitis ที่มีไข้ + induration = Bacterial mastitis → Oral antibiotics (dicloxacillin/cephalexin) + ให้นมต่อ | Fluctuant mass (abscess) → U/S + I&D"
+    }
+  },
+  {
+    "id": "1e68de5c-2d05-4c84-a20e-5d06490beea0",
+    "correct_answer": "A",
+    "explanation": "กรณีข่มขืน ต้องการหลักฐานทางนิติเวช การทำ Pap smear เพื่อตรวจหา sperm และ acid phosphatase ใน cervicovaginal secretions",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Pap smear เพื่อตรวจหา spermatozoa และ acid phosphatase เป็น forensic evidence ในกรณีข่มขืน",
+      "reason": "ในกรณี sexual assault การเก็บหลักฐาน forensic: (1) Pap smear จาก cervicovaginal secretions → ตรวจหา sperm morphology + motility + acid phosphatase (marker ของ seminal fluid) (2) Vaginal swab + DNA analysis สำหรับ rapist identification (3) Acid phosphatase เป็น enzyme สำคัญจาก seminal fluid ที่คงอยู่นานหลายชั่วโมง แม้ไม่พบ sperm Pap smear ที่นี่หมายถึง cervicovaginal smear สำหรับ forensic ไม่ใช่ cervical cancer screening",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pap smear",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Cervicovaginal smear สำหรับ forensic → ตรวจหา spermatozoa, acid phosphatase จาก seminal fluid เป็น evidence ยืนยัน sexual assault"
+        },
+        {
+          "label": "B",
+          "text": "KOH",
+          "is_correct": false,
+          "explanation": "KOH preparation ใช้ตรวจหา fungal elements (Candida) ไม่ใช่ forensic evidence สำหรับ sexual assault"
+        },
+        {
+          "label": "C",
+          "text": "Tzank's smear",
+          "is_correct": false,
+          "explanation": "Tzank's smear ใช้ตรวจ Herpes simplex (multinucleated giant cells) ไม่ใช่ forensic evidence หลัก"
+        },
+        {
+          "label": "D",
+          "text": "Acid phosphatase",
+          "is_correct": false,
+          "explanation": "Acid phosphatase ตรวจจาก vaginal secretions แต่มักใช้ใน forensic lab ไม่ใช่ bedside test ในเคสนี้ Pap smear ครอบคลุมการตรวจมากกว่า"
+        }
+      ],
+      "key_takeaway": "Sexual assault forensic: Pap smear/cervicovaginal swab → Spermatozoa + Acid phosphatase | DNA analysis → Rapist ID | เก็บหลักฐานทันทีก่อนอาบน้ำหรือเปลี่ยนเสื้อผ้า"
+    }
+  },
+  {
+    "id": "1ebb513a-5068-4ea0-a0c9-90cc1db81a5f",
+    "correct_answer": "C",
+    "explanation": "BP 160/110 + proteinuria 2+ ที่ GA 35 สัปดาห์ = Preeclampsia with severe features (BP ≥160/110 เป็น severe criterion)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C. Preeclampsia with severe features เพราะ BP ≥160/110 mmHg เป็น severe criterion ตาม ACOG",
+      "reason": "Preeclampsia classification: (1) Without severe features: BP 140-159/90-109 + proteinuria (2) With severe features: อย่างน้อย 1 ใน: BP ≥160/110, severe headache, visual disturbance, epigastric pain, thrombocytopenia < 100K, renal failure, pulmonary edema, hepatic dysfunction ในเคสนี้: BP 160/110 (repeated) + proteinuria 2+ = severe features (BP criterion) ต้องรักษาด้วย IV MgSO4 prophylaxis + antihypertensives + deliver เมื่อ stabilize",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gestational hypertension",
+          "is_correct": false,
+          "explanation": "Gestational HT: BP ≥140/90 ไม่มี proteinuria ในเคสนี้มี proteinuria 2+ จึงเป็น preeclampsia"
+        },
+        {
+          "label": "B",
+          "text": "Preeclampsia without severe features",
+          "is_correct": false,
+          "explanation": "Without severe features: BP 140-159/90-109; ในเคสนี้ BP 160/110 เกิน threshold → เป็น severe features แล้ว"
+        },
+        {
+          "label": "C",
+          "text": "Preeclampsia with severe features",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: BP ≥160/110 (repeated) + proteinuria = Preeclampsia with severe features | Rx: MgSO4 IV + antihypertensive + delivery planning"
+        },
+        {
+          "label": "D",
+          "text": "Eclampsia",
+          "is_correct": false,
+          "explanation": "Eclampsia = Preeclampsia + seizure ในเคสนี้ยังไม่มีชัก"
+        },
+        {
+          "label": "E",
+          "text": "Chronic HT with superimposed PE",
+          "is_correct": false,
+          "explanation": "Chronic HT ต้องมี BP สูงก่อน GA 20 สัปดาห์ ในเคสนี้ไม่มีประวัติ HT เดิม"
+        }
+      ],
+      "key_takeaway": "Preeclampsia severe features: BP ≥160/110 | severe headache | visual changes | epigastric pain | thrombocytopenia | renal/hepatic dysfunction | Rx: MgSO4 + antihypertensive + deliver"
+    }
+  },
+  {
+    "id": "1f2c2d36-e154-4eb1-b640-b3eee3c9a069",
+    "correct_answer": "B",
+    "explanation": "Cervical motion tenderness + adnexal mass 6 cm + bulging cul de sac + systemic signs = TOA ไม่ใช่ ruptured ectopic เพราะมี adnexal mass ขนาดใหญ่และ pelvic signs",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. TOA เพราะมีลักษณะ CMT bilateral + adnexal mass 6 cm + bulging cul de sac ที่บ่งชี้ inflammatory mass",
+      "reason": "TOA (Tubo-Ovarian Abscess): สาเหตุจาก PID ที่ไม่ได้รับการรักษา → abscess formation ที่ tube + ovary อาการ: (1) Pelvic pain bilateral (2) CMT bilateral (3) Adnexal mass tender (4) Fever/leukocytosis (5) Bulging cul-de-sac (pus สะสม) แยกจาก ruptured ectopic: LMP 7 วัน (ไม่ใช่ missed period ยาวนาน), bilateral CMT (ectopic มักข้างเดียว), mass ขนาดใหญ่ 6 cm รักษา TOA: IV antibiotics (cefoxitin + doxycycline หรือ pip-tazo) ± drainage",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rupture ectopic pregnancy",
+          "is_correct": false,
+          "explanation": "Ruptured ectopic: LMP ปกติมักขาด 6-8 สัปดาห์, unilateral pain/mass, β-hCG positive แต่ในเคสนี้ LMP 7 วันและ bilateral signs"
+        },
+        {
+          "label": "B",
+          "text": "TOA",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Bilateral CMT + adnexal mass 6 cm + bulging cul-de-sac + N/V = TOA; รักษา: IV antibiotics ± percutaneous drainage"
+        },
+        {
+          "label": "C",
+          "text": "Acute salpingitis",
+          "is_correct": false,
+          "explanation": "Acute salpingitis ไม่มี adnexal mass ขนาดใหญ่ เป็น precursor ก่อนเกิด TOA"
+        },
+        {
+          "label": "D",
+          "text": "Ruptured ovarian cyst",
+          "is_correct": false,
+          "explanation": "Ruptured cyst มักปวดเฉียบพลัน peritoneal irritation แต่ไม่มี bilateral CMT หรือ inflammatory signs"
+        },
+        {
+          "label": "E",
+          "text": "Appendicitis",
+          "is_correct": false,
+          "explanation": "Appendicitis: RLQ pain, Rovsing sign, ไม่มี bilateral CMT และมักไม่มี adnexal mass ขนาดใหญ่"
+        }
+      ],
+      "key_takeaway": "TOA = PID complicated → Bilateral CMT + adnexal mass + fever | Rx: IV pip-tazo หรือ cefoxitin+doxy | ไม่ดีใน 72h → Drainage | Ruptured TOA → Surgery ด่วน"
+    }
+  },
+  {
+    "id": "1f8f917c-dfe1-4263-a470-6cfd5409b0b1",
+    "correct_answer": "B",
+    "explanation": "Robertsonian translocation ใน fetus ต้องทำ karyotype ของพ่อแม่ก่อน เพื่อดูว่าเป็น de novo หรือ familial balanced translocation ซึ่งมีผลต่อการทำนาย recurrence risk",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. ทำ karyotype ของพ่อแม่ก่อน เพื่อยืนยัน balanced translocation carrier และให้ genetic counseling ที่ถูกต้อง",
+      "reason": "Robertsonian translocation 14;15 ใน fetus: ต้องแยกว่าเป็น de novo หรือ inherited จากพ่อแม่ที่เป็น balanced carrier ถ้าพ่อแม่เป็น balanced carrier (45,XX/XY,rob(14;15)) → recurrence risk สูงขึ้น ถ้า de novo → recurrence risk ต่ำ CVS สามารถทำได้เฉพาะ GA 10-13 สัปดาห์ ไม่ใช่ 20 สัปดาห์ (ซึ่งเป็น amniocentesis range) ดังนั้น ข้อ A ที่บอกว่า CVS ยังทำได้ที่ 20 สัปดาห์เป็น ข้อที่ไม่ถูกต้อง แต่คำตอบคือ B เพราะถามว่าต้องทำอะไรต่อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Genetic counseling + โอกาส Down 10-15% + แนะนำยุติครรภ์",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง: rob(14;15) ไม่เพิ่มความเสี่ยง Down syndrome (Trisomy 21) โดยตรง Down เกิดจาก rob(14;21) ไม่ใช่ rob(14;15)"
+        },
+        {
+          "label": "B",
+          "text": "ทำ karyotype ของพ่อแม่ + Genetic counseling",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: ต้องรู้ว่าพ่อแม่เป็น balanced carrier หรือไม่ เพื่อประเมิน recurrence risk และให้ counseling ที่ถูกต้อง"
+        },
+        {
+          "label": "C",
+          "text": "ไม่ต้องทำอะไร Robertsonian ไม่มีผล",
+          "is_correct": false,
+          "explanation": "ผิด: Robertsonian translocation อาจส่งผลต่อ viability และ recurrence risk โดยเฉพาะถ้าพ่อแม่เป็น carrier"
+        },
+        {
+          "label": "D",
+          "text": "FISH + Microarray เพิ่มเติม",
+          "is_correct": false,
+          "explanation": "ขั้นตอนนี้ไม่จำเป็นก่อนทำ parental karyotype; FISH ใช้ rapid diagnosis แต่ไม่ใช่ step แรก"
+        },
+        {
+          "label": "E",
+          "text": "Cordocentesis เพื่อ confirm Trisomy 21",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็น rob(14;15) ไม่ได้บ่งชี้ Trisomy 21 โดยตรง และ amniocentesis ได้ result แล้ว"
+        }
+      ],
+      "key_takeaway": "Robertsonian translocation ใน fetus → Parental karyotype ก่อน | De novo = recurrence risk ต่ำ | Inherited balanced carrier = risk สูงขึ้น | CVS: เฉพาะ 10-13 สัปดาห์ ไม่ใช่ 20 สัปดาห์"
+    }
+  },
+  {
+    "id": "2057e19f-8185-45fe-8623-7128cc62f8c6",
+    "correct_answer": "B",
+    "explanation": "Elevated AFP ในน้ำคร่ำ/maternal serum สัมพันธ์กับ open neural tube defects (spina bifida, anencephaly) และ abdominal wall defects",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. Open neural tube defect เพราะ AFP รั่วออกมาทาง open defect เข้าสู่ amniotic fluid",
+      "reason": "AFP (alpha-fetoprotein) สร้างโดย fetal liver และ yolk sac ระดับสูงสัมพันธ์กับ: ELEVATED AFP: Open NTD (spina bifida, anencephaly) - AFP รั่วผ่าน open defect, Abdominal wall defect (gastroschisis, omphalocele), Multiple gestation, Fetal demise, Incorrect dating DECREASED AFP: Down syndrome (Trisomy 21), Trisomy 18, Hydatidiform mole",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Down syndrome",
+          "is_correct": false,
+          "explanation": "Down syndrome สัมพันธ์กับ DECREASED AFP (ต่ำกว่าปกติ) ไม่ใช่สูง"
+        },
+        {
+          "label": "B",
+          "text": "Open neural tube defect",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Spina bifida/anencephaly = open defect → AFP รั่วเข้า amniotic fluid → maternal serum AFP สูง"
+        },
+        {
+          "label": "C",
+          "text": "Abdominal wall defect",
+          "is_correct": false,
+          "explanation": "Gastroschisis/omphalocele ก็ทำให้ AFP สูงได้ แต่ไม่ใช่คำตอบหลักในโจทย์นี้ (B ถูกกว่า)"
+        },
+        {
+          "label": "D",
+          "text": "Congenital nephrotic syndrome",
+          "is_correct": false,
+          "explanation": "Congenital nephrotic syndrome ทำให้ AFP สูงได้ (protein loss ทาง urine) แต่หายากกว่า NTD มาก"
+        },
+        {
+          "label": "E",
+          "text": "IUGR",
+          "is_correct": false,
+          "explanation": "IUGR ไม่ได้ทำให้ AFP สูงโดยตรง"
+        }
+      ],
+      "key_takeaway": "AFP ↑ = Open NTD, Abdominal wall defect, fetal demise | AFP ↓ = Down syndrome, Trisomy 18 | Follow-up: Level II U/S + amniocentesis ถ้า AFP สูงมาก"
+    }
+  },
+  {
+    "id": "20822d82-1002-44cc-b525-efca6607fdd3",
+    "correct_answer": "A",
+    "explanation": "Levonorgestrel emergency contraception ออกฤทธิ์หลักโดยยับยั้ง LH surge → ป้องกัน ovulation ไม่ใช่ทำแท้ง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. ยับยั้ง LH surge และ ovulation เพราะนี่คือกลไกหลักของ levonorgestrel emergency contraception",
+      "reason": "Levonorgestrel (Plan B, Morning-after pill) กลไก: (1) Primary: ยับยั้ง LH surge → ป้องกัน ovulation (ประสิทธิภาพสูงสุดถ้าใช้ก่อน ovulation) (2) Secondary: ทำให้ cervical mucus ข้นขึ้น → ขัดขวาง sperm penetration (3) ไม่มีหลักฐานชัดว่าทำให้ endometrium เปลี่ยนแปลงถึงขั้นป้องกัน implantation ประสิทธิภาพ: ใช้ใน 72 ชั่วโมง ~89%, 72-120 ชั่วโมง ลดลง แต่ยังใช้ได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ยับยั้ง LH surge → ป้องกัน ovulation",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: กลไกหลักของ levonorgestrel คือ suppression of LH surge → ป้องกัน follicle rupture และ ovulation"
+        },
+        {
+          "label": "B",
+          "text": "ทำให้ cervical mucus ข้นขึ้น",
+          "is_correct": false,
+          "explanation": "เป็นกลไกรอง ไม่ใช่กลไกหลัก"
+        },
+        {
+          "label": "C",
+          "text": "Endometrial atrophy ป้องกัน implantation",
+          "is_correct": false,
+          "explanation": "หลักฐานปัจจุบันไม่สนับสนุนว่า levonorgestrel ป้องกัน implantation ถ้า fertilization เกิดขึ้นแล้ว"
+        },
+        {
+          "label": "D",
+          "text": "Spermicidal effect",
+          "is_correct": false,
+          "explanation": "Levonorgestrel ไม่มี spermicidal effect โดยตรง"
+        },
+        {
+          "label": "E",
+          "text": "Ovarian follicle atresia",
+          "is_correct": false,
+          "explanation": "ไม่ใช่กลไกของ levonorgestrel; ยาออกฤทธิ์ผ่าน LH suppression ไม่ใช่ follicular atresia"
+        }
+      ],
+      "key_takeaway": "Levonorgestrel EC: กลไกหลัก = ยับยั้ง LH surge → ป้องกัน ovulation | ประสิทธิภาพสูงสุดถ้าใช้ก่อน LH surge | ไม่ทำให้แท้งถ้า fertilization/implantation เกิดขึ้นแล้ว"
+    }
+  },
+  {
+    "id": "20c84645-c0d1-4453-a95f-de1c8630acb0",
+    "correct_answer": "A",
+    "explanation": "Imperforate hymen ที่มี hematocolpos → รักษาด้วย cruciate incision เพื่อระบาย blood ที่สะสม",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Cruciate incision of hymen เพราะเป็น definitive treatment สำหรับ imperforate hymen + hematocolpos",
+      "reason": "Imperforate hymen รักษาด้วยการผ่าตัดใน OR: (1) Cruciate incision (ผ่าแบบ + บนเนื้อเยื่อ hymen) เพื่อสร้าง opening ให้เลือดที่สะสม (hematocolpos) ออก (2) หรือ hymenectomy (ผ่าเอา hymen ออก) สิ่งสำคัญ: ห้ามดูด/เจาะ hematocolpos ที่ bedside โดยไม่เตรียม OR เพราะเสี่ยง infection และ inadequate drainage",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cruciate incision of hymen",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: การผ่า hymen แบบ cruciate (+) ให้ hematocolpos ออก ทำใน OR ภายใต้ anesthesia เป็น standard treatment"
+        },
+        {
+          "label": "B",
+          "text": "Complete hymenectomy",
+          "is_correct": false,
+          "explanation": "Hymenectomy ก็เป็น option แต่ cruciate incision นิยมมากกว่าในบางสถาบัน เพราะ preserve บางส่วนของ hymen ring"
+        },
+        {
+          "label": "C",
+          "text": "Kegel exercises",
+          "is_correct": false,
+          "explanation": "Kegel exercises สำหรับ pelvic floor strengthening ไม่มีประโยชน์สำหรับ structural obstruction เช่น imperforate hymen"
+        },
+        {
+          "label": "D",
+          "text": "Hormonal therapy",
+          "is_correct": false,
+          "explanation": "Hormonal therapy ไม่ได้แก้ obstruction ทางกายภาพ ไม่มี indication ในกรณีนี้"
+        },
+        {
+          "label": "E",
+          "text": "Vaginal dilation",
+          "is_correct": false,
+          "explanation": "Vaginal dilation ใช้สำหรับ vaginal hypoplasia หรือ MRKH ไม่ใช่ imperforate hymen ที่มี obstruction ชัดเจน"
+        }
+      ],
+      "key_takeaway": "Imperforate hymen + Hematocolpos → Cruciate incision หรือ Hymenectomy ใน OR | ห้าม bedside aspiration เสี่ยง infection | Confirm ด้วย U/S ก่อน OR"
+    }
+  },
+  {
+    "id": "21b1b0d8-9373-4f6c-bb6b-783c7e6bf1ec",
+    "correct_answer": "A",
+    "explanation": "Yellowish foamy discharge + motile trophozoites = Trichomonas vaginalis → Trichomoniasis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Trichomoniasis เพราะพบ motile trophozoites ใน wet mount ซึ่งเป็น pathognomonic ของ Trichomonas vaginalis",
+      "reason": "Trichomonas vaginalis: (1) Yellowish-green frothy discharge (2) Pruritus/burning (3) Inflamed cervix (strawberry cervix) (4) pH > 4.5 (5) Wet mount: motile trophozoites (flagellated protozoa) การวินิจฉัย: wet mount เห็น motile trophozoites เป็น gold standard รักษา: Metronidazole 2g PO single dose (หรือ 500 mg bid 7 วัน) ทั้งคู่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Trichomoniasis",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Frothy yellow discharge + inflamed cervix + motile trophozoites = Trichomonas vaginalis; Rx: Metronidazole"
+        },
+        {
+          "label": "B",
+          "text": "Cervicitis from N. gonorrhoeae",
+          "is_correct": false,
+          "explanation": "GC: mucopurulent cervical discharge แต่ไม่มี trophozoites ใน wet mount ต้องตรวจ Gram stain (intracellular gram-negative diplococci)"
+        },
+        {
+          "label": "C",
+          "text": "Candidiasis",
+          "is_correct": false,
+          "explanation": "Candida: white curd-like discharge, itching ≫ odor, pH < 4.5, KOH: pseudohyphae/budding yeast"
+        },
+        {
+          "label": "D",
+          "text": "Bacterial vaginosis",
+          "is_correct": false,
+          "explanation": "BV: gray thin discharge, fishy odor, pH > 4.5, clue cells ใน wet mount ไม่มี trophozoites"
+        },
+        {
+          "label": "E",
+          "text": "Chlamydial cervicitis",
+          "is_correct": false,
+          "explanation": "Chlamydia: mucopurulent discharge, ไม่ค่อยมี frothy appearance, ต้องตรวจ NAAT"
+        }
+      ],
+      "key_takeaway": "Frothy yellow discharge + motile trophozoites = Trichomoniasis | BV = Clue cells + fishy odor | Candida = Pseudohyphae + KOH | GC = Gram-negative diplococci"
+    }
+  },
+  {
+    "id": "27b9310d-0fad-45c8-802a-351b4a1a228c",
+    "correct_answer": "A",
+    "explanation": "เด็กอายุ 12 ปี มีประจำเดือนครั้งแรกเมื่อ 2 เดือน ประจำเดือนมา 14 วัน = ปกติในช่วงแรกๆ หลัง menarche → Reassure",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Reassure เพราะประจำเดือนที่ไม่สม่ำเสมอหรือมานานในช่วง 1-2 ปีแรกหลัง menarche เป็นเรื่องปกติ",
+      "reason": "หลัง menarche ปีแรกๆ HPO axis ยังไม่สมบูรณ์ → anovulatory cycles → irregular/prolonged menstruation ถือเป็นปกติ ไม่ต้องการ treatment ใดๆ ยกเว้น: (1) Heavy bleeding (flooding, soaking pads hourly) (2) Anemia (3) Hemodynamic instability เด็ก 12 ปี menarche 2 เดือน ประจำเดือนมา 14 วัน → Reassure + explain natural history",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Irregular/prolonged periods หลัง menarche ปีแรกๆ = anovulatory cycles = physiological ไม่ต้องรักษา"
+        },
+        {
+          "label": "B",
+          "text": "OCP",
+          "is_correct": false,
+          "explanation": "OCP ไม่จำเป็นสำหรับ physiological anovulatory bleeding ใช้เมื่อ bleeding รุนแรงหรือ anemia"
+        },
+        {
+          "label": "C",
+          "text": "Progestin therapy",
+          "is_correct": false,
+          "explanation": "Progestin ใช้สำหรับ DUB รุนแรง หรือ anovulatory bleeding ที่มีอาการ ไม่ใช่ routine"
+        },
+        {
+          "label": "D",
+          "text": "Uterine curettage",
+          "is_correct": false,
+          "explanation": "ห้ามทำ curettage ในวัยรุ่นที่มี physiological bleeding ไม่มี indication"
+        },
+        {
+          "label": "E",
+          "text": "Thyroid function test",
+          "is_correct": false,
+          "explanation": "TFT ตรวจเมื่อสงสัย thyroid disease ร่วม เช่น น้ำหนักเปลี่ยน, ผมร่วง, fatigue ไม่ใช่ first-line investigation"
+        }
+      ],
+      "key_takeaway": "Irregular periods 1-2 ปีแรกหลัง menarche = ปกติ = Anovulatory → Reassure | Intervention เมื่อ: bleeding รุนแรง/anemia/hemodynamic unstable"
+    }
+  },
+  {
+    "id": "28b1ad72-ad49-404a-a9ac-54fbf8aab4ed",
+    "correct_answer": "D",
+    "explanation": "COCP สามารถเริ่มได้ในวันที่ 1-5 ของรอบเดือน ถ้าเริ่มหลังวันที่ 1 ต้องใช้ backup contraception 7 วัน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D. เริ่มวันที่ 5 ของรอบเดือน + ใช้ backup ป้องกันสัปดาห์แรก เป็นวิธีที่ถูกต้องตาม guidelines",
+      "reason": "COCP (Combined Oral Contraceptive Pill) วิธีเริ่ม: (1) Quick start: เริ่มได้ทุกวัน ถ้าไม่ได้ตั้งครรภ์ แต่ต้องใช้ backup 7 วัน (2) Day 1 start: เริ่มวันที่ 1 ของรอบเดือน = immediate protection ไม่ต้องใช้ backup (3) Day 5 start: เริ่มวันที่ 5 ของรอบเดือน ต้องใช้ backup 7 วัน หยุดยาแบบ drug holiday ไม่จำเป็น (ข้อ C ผิด) ไม่มีข้อกำหนดว่าต้องทดสอบตั้งครรภ์ก่อนเริ่ม (ข้อ E) ถ้าประจำเดือนมาปกติ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เริ่มวันแรกของรอบเดือน",
+          "is_correct": false,
+          "explanation": "Day 1 start ก็ถูกและให้ immediate protection แต่ไม่ใช่คำตอบเพียงคำตอบเดียว และโจทย์ถามวิธีที่ 'ถูกต้อง'"
+        },
+        {
+          "label": "B",
+          "text": "กินต่อเนื่อง 28 วัน ไม่หยุด",
+          "is_correct": false,
+          "explanation": "COCP แบบ 21 วัน ต้องหยุด 7 วัน (หรือกินยาหลอก 7 เม็ด) เพื่อให้มี withdrawal bleeding"
+        },
+        {
+          "label": "C",
+          "text": "ใช้ปีแล้วหยุด 2-3 เดือน",
+          "is_correct": false,
+          "explanation": "Drug holiday ไม่มีหลักฐานรองรับ และอาจทำให้ unintended pregnancy ระหว่างหยุดยา"
+        },
+        {
+          "label": "D",
+          "text": "เริ่มวันที่ 5 + backup สัปดาห์แรก",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: เริ่ม day 5 ได้ แต่ต้องใช้ condom หรือ backup method ใน 7 วันแรกเพราะยายังไม่ suppressed ovulation เต็มที่"
+        },
+        {
+          "label": "E",
+          "text": "รอ urine pregnancy test ก่อน",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็นถ้า LMP ปกติและไม่มีประวัติ unprotected sex ล่าสุด"
+        }
+      ],
+      "key_takeaway": "COCP Day 1 start = Immediate protection | Day 2-5 start = ต้องใช้ backup 7 วัน | ไม่จำเป็นต้อง drug holiday | ข้อห้ามสำคัญ: DVT, migraine with aura, age > 35 + smoke"
+    }
+  },
+  {
+    "id": "2ba1e737-750a-4330-a8e8-08e0d3c25ed8",
+    "correct_answer": "A",
+    "explanation": "CVS ทำได้ที่ GA 10-13 สัปดาห์เท่านั้น ไม่สามารถทำที่ GA 20 สัปดาห์ได้ → ข้อ A เป็นข้อที่ไม่ถูกต้อง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง (ข้อที่ไม่ถูกต้อง) คือ A. เพราะ CVS สามารถทำได้เฉพาะ GA 10-13 สัปดาห์ ไม่ใช่ 20 สัปดาห์",
+      "reason": "CVS (Chorionic Villus Sampling): ทำที่ GA 10-13 สัปดาห์ (ไม่ใช่ 20 สัปดาห์ ซึ่งเป็น GA สำหรับ amniocentesis) ข้อเท็จจริงเกี่ยวกับ CVS: (B) Risk ประมาณ 0.5-1% higher than amniocentesis (C) DNA analysis สามารถวินิจฉัย CF ได้ (D) Confined placental mosaicism พบ 1-2% เป็นข้อจำกัด (E) Invasive test สำหรับ high-risk เท่านั้น ทั้ง B, C, D, E เป็นข้อถูกต้อง ข้อ A เป็นข้อไม่ถูกต้อง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CVS ทำได้ GA 10-13 สัปดาห์ แต่ที่ 20 สัปดาห์ก็ยังทำได้",
+          "is_correct": true,
+          "explanation": "ไม่ถูกต้อง: CVS ทำได้เฉพาะ GA 10-13 สัปดาห์เท่านั้น ที่ 20 สัปดาห์ต้องทำ Amniocentesis แทน"
+        },
+        {
+          "label": "B",
+          "text": "CVS มี risk 0.2-0.5% สูงกว่า amniocentesis",
+          "is_correct": false,
+          "explanation": "ถูกต้อง: CVS มี procedure-related loss rate ประมาณ 0.5-1% สูงกว่า amniocentesis (0.1-0.3%)"
+        },
+        {
+          "label": "C",
+          "text": "CVS วินิจฉัย CF ได้จาก DNA analysis",
+          "is_correct": false,
+          "explanation": "ถูกต้อง: chorionic villi → DNA extraction → CFTR mutation analysis"
+        },
+        {
+          "label": "D",
+          "text": "Confined placental mosaicism 1-2%",
+          "is_correct": false,
+          "explanation": "ถูกต้อง: เป็นข้อจำกัดสำคัญของ CVS ที่อาจต้องการ confirmatory amniocentesis"
+        },
+        {
+          "label": "E",
+          "text": "CVS เป็น invasive test ไม่เหมาะสำหรับ general screening",
+          "is_correct": false,
+          "explanation": "ถูกต้อง: ใช้เฉพาะ high-risk cases เช่น advanced maternal age, family history ของ genetic disease"
+        }
+      ],
+      "key_takeaway": "CVS: GA 10-13 สัปดาห์ | Amniocentesis: GA 15-20 สัปดาห์ | CVS risk > amniocentesis | CVS advantage: earlier result (T1)"
+    }
+  },
+  {
+    "id": "2de89420-2802-4690-8b42-207506d2f50a",
+    "correct_answer": "E",
+    "explanation": "Small shallow erosions บน erythematous base ที่อวัยวะเพศ เจ็บและคัน = Herpes genitalis → ยืนยันด้วย dark field microscopy หรือ Tzanck smear",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ E. Dark field microscopy อย่างไรก็ตาม สำหรับ genital herpes การตรวจที่ appropriate มากกว่าคือ Tzanck smear หรือ viral culture",
+      "reason": "Painful shallow erosions on erythematous base at labia = Herpes simplex genitalis ลักษณะ: painful grouped vesicles/shallow ulcers บน erythematous base การตรวจ: Tzanck smear (multinucleated giant cells), HSV culture, HSV PCR เป็น definitive Dark field microscopy ใช้สำหรับ Treponema pallidum (syphilis) ซึ่งมี painless ulcer (chancre) ไม่ใช่ painful erosions อย่างไรก็ตาม ตามที่ข้อสอบบันทึก คำตอบคือ E",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gram stain",
+          "is_correct": false,
+          "explanation": "Gram stain ใช้ตรวจ bacterial infection เช่น GC (gram-negative diplococci) ไม่ใช่ HSV"
+        },
+        {
+          "label": "B",
+          "text": "KOH",
+          "is_correct": false,
+          "explanation": "KOH ใช้ตรวจ fungal infection (Candida) ไม่เหมาะกับ painful erosions"
+        },
+        {
+          "label": "C",
+          "text": "Wright's stain",
+          "is_correct": false,
+          "explanation": "Wright's stain ใช้ใน hematology ไม่ใช่ dermatology STI"
+        },
+        {
+          "label": "D",
+          "text": "MAF (methylene blue)",
+          "is_correct": false,
+          "explanation": "Methylene blue ใช้บางกรณีของ staining แต่ไม่ใช่ standard สำหรับ STI diagnosis"
+        },
+        {
+          "label": "E",
+          "text": "Dark field microscopy",
+          "is_correct": true,
+          "explanation": "ตามที่ข้อสอบระบุ: dark field microscopy ใช้สำหรับ Treponema pallidum แต่ในทางคลินิก painful erosion = HSV → ควรใช้ Tzanck smear หรือ HSV PCR"
+        }
+      ],
+      "key_takeaway": "Painful shallow erosion = HSV genitalis → Tzanck smear (multinucleated giant cells) หรือ HSV PCR | Painless ulcer = Syphilis → Dark field microscopy | ความแตกต่างสำคัญ"
+    }
+  },
+  {
+    "id": "2ee7814a-71a7-4a48-92db-ef314feacec2",
+    "correct_answer": "A",
+    "explanation": "Anterior bulging 2/3 ที่ upper vaginal wall = Cystocele (ไม่ใช่ urethrocele) + cervix at vaginal entry = Grade 2 uterine prolapse",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Urethrocele with Grade 2 uterine prolapse ตามที่ข้อสอบระบุ แต่ในทางคลินิกต้องพิจารณาว่า bulging 2/3 anterior wall น่าจะเป็น cystocele มากกว่า",
+      "reason": "POP-Q classification: Uterine prolapse grades: Grade 1: Cervix > 1 cm above hymen, Grade 2: Cervix at or near hymen (-1 to +1 cm), Grade 3: Cervix > 1 cm below hymen, Grade 4: Complete procidentia Anterior wall defect: Urethrocele (lower 1/3), Cystocele (upper 2/3), Cystourethrocele (ทั้ง anterior wall) ในเคสนี้: bulging 2/3 anterior wall = น่าจะเป็น cystourethrocele, cervix at vaginal entry = Grade 2",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urethrocele + Grade 2 uterine prolapse",
+          "is_correct": true,
+          "explanation": "ตามที่ข้อสอบระบุ: stress incontinence + anterior wall bulging + cervix at entry = urethrocele + grade 2 prolapse"
+        },
+        {
+          "label": "B",
+          "text": "Urethrocele + Grade 3 uterine prolapse",
+          "is_correct": false,
+          "explanation": "Grade 3 = cervix > 1 cm below hymen (protruding) ในเคสนี้ cervix อยู่ที่ vaginal entry = Grade 2"
+        },
+        {
+          "label": "C",
+          "text": "Cystocele + Grade 2 uterine prolapse",
+          "is_correct": false,
+          "explanation": "Cystocele อยู่ที่ 2/3 ส่วนบนของ anterior wall; ในทางคลินิก bulging 2/3 น่าเป็น cystocele มากกว่า แต่ตามข้อสอบ A ถูก"
+        },
+        {
+          "label": "D",
+          "text": "Cystocele + Grade 3 uterine prolapse",
+          "is_correct": false,
+          "explanation": "Grade ไม่ตรง: cervix ที่ vaginal entry = Grade 2 ไม่ใช่ Grade 3"
+        },
+        {
+          "label": "E",
+          "text": "Urethrocystocele + Grade 2 uterine prolapse",
+          "is_correct": false,
+          "explanation": "ไม่ใช่คำตอบที่ข้อสอบระบุ แม้อาจถูกต้องทางคลินิก"
+        }
+      ],
+      "key_takeaway": "Uterine prolapse grade: Cervix > hymen = G1 | Cervix at hymen = G2 | Cervix below hymen = G3 | Complete = G4 | Anterior wall: Urethrocele (lower) + Cystocele (upper 2/3)"
+    }
+  },
+  {
+    "id": "2ef552ce-e17b-47df-b457-71e027815dd2",
+    "correct_answer": "A",
+    "explanation": "Ruptured ectopic pregnancy ที่มี severe hemorrhage → ต้องผ่าตัดทาง laparotomy เปิดแผลกว้างพอเพื่อ control bleeding",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. เปิดแผลให้กว้างเพื่อ control bleeding และเข้าถึง adnexa ได้รวดเร็ว",
+      "reason": "Ruptured ectopic pregnancy ที่ hemodynamically unstable: (1) Emergency laparotomy (ไม่ใช่ laparoscopy ในกรณี unstable) (2) Pfannenstiel หรือ midline incision เพื่อ rapid access (3) Salpingectomy (ตัด tube ข้างที่มี ectopic) ยกเว้นกรณีต้องการรักษา tube (salpingostomy) (4) Resuscitate พร้อมกัน: massive transfusion protocol การเลือก laparoscopy (C) เหมาะกับ hemodynamically STABLE เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เปิดแผลกว้าง เข้าถึง adnexa รวดเร็ว",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Hemodynamically unstable ruptured ectopic → Emergency laparotomy เปิดแผลกว้างพอ control bleeding ได้รวดเร็ว"
+        },
+        {
+          "label": "B",
+          "text": "Drain + interrupted sutures ทุกชั้น",
+          "is_correct": false,
+          "explanation": "วิธีปิดแผลปกติ แต่ไม่ใช่ priority ใน emergency ที่มี active hemorrhage"
+        },
+        {
+          "label": "C",
+          "text": "Laparoscopic ด้วยแผลเล็ก",
+          "is_correct": false,
+          "explanation": "Laparoscopy เหมาะกับ hemodynamically STABLE เท่านั้น unstable → laparotomy"
+        },
+        {
+          "label": "D",
+          "text": "เปิดแผลใหญ่เพื่อเอา embolus",
+          "is_correct": false,
+          "explanation": "ไม่ถูก concept; ruptured ectopic ปัญหาคือ hemorrhage ไม่ใช่ embolism"
+        },
+        {
+          "label": "E",
+          "text": "ปิดแผล continuous suture ไม่ใช้ drain",
+          "is_correct": false,
+          "explanation": "การปิดแผลไม่ใช่ priority หลักใน acute hemorrhage"
+        }
+      ],
+      "key_takeaway": "Ruptured ectopic + unstable → Laparotomy | Ruptured ectopic + stable → Laparoscopy | Salpingectomy เป็น standard | Salpingostomy ถ้าต้องการ preserve fertility และ contralateral tube เสียหาย"
+    }
+  },
+  {
+    "id": "36626283-be0c-4897-b0bc-dda304e06367",
+    "correct_answer": "A",
+    "explanation": "FHR deceleration ที่เกิดขณะนอนหงาย เมื่อมี uterine contraction → อาจเป็น supine hypotension syndrome → เปลี่ยนท่าตะแคงซ้ายก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. เปลี่ยนท่าตะแคงซ้าย เพราะ FHR drop ขณะ NST นอนหงาย อาจเกิดจาก supine hypotension / aortocaval compression",
+      "reason": "ใน NST ที่นอนหงาย: uterus ทับ inferior vena cava → venous return ลด → cardiac output ลด → uteroplacental perfusion ลด → FHR deceleration ที่เห็น: FHR 140 → 100 ขณะ contraction แต่โจทย์บอกนอนหงาย → ก่อนอื่น เปลี่ยนท่าตะแคงซ้าย (left lateral decubitus) เพื่อแก้ aortocaval compression ถ้า deceleration เป็น late deceleration จริงๆ จาก uteroplacental insufficiency → ต้องการ immediate delivery แต่ step แรกคือ reposition",
+      "choices": [
+        {
+          "label": "A",
+          "text": "นอนตะแคงซ้าย",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: FHR drop ขณะนอนหงาย = อาจเป็น supine hypotension → เปลี่ยนท่าตะแคงซ้ายเป็น step แรก เพื่อแก้ aortocaval compression"
+        },
+        {
+          "label": "B",
+          "text": "O2 inhalation 10 L/min",
+          "is_correct": false,
+          "explanation": "O2 เป็น supportive measure แต่ไม่ใช่ first-line สำหรับ positional FHR change"
+        },
+        {
+          "label": "C",
+          "text": "IV fluid bolus + tocolysis",
+          "is_correct": false,
+          "explanation": "ใช้ใน specific situations เช่น tachysystole แต่ไม่ใช่ first-line สำหรับ NST supine deceleration"
+        },
+        {
+          "label": "D",
+          "text": "U/S ประเมิน amniotic fluid",
+          "is_correct": false,
+          "explanation": "ไม่ urgent ก่อน; ต้องแก้ immediate problem (supine position) ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Fetal scalp sampling",
+          "is_correct": false,
+          "explanation": "Fetal scalp pH ทำใน labor ไม่ใช่ antenatal NST และต้องมี cervical dilation"
+        }
+      ],
+      "key_takeaway": "NST นอนหงาย + FHR drop ขณะ contraction → Left lateral decubitus ก่อน (แก้ supine hypotension) | ถ้ายังมี deceleration หลัง reposition → evaluate further"
+    }
+  },
+  {
+    "id": "36f3f0f8-4206-45a5-b9cc-ea0db9ac3b9b",
+    "correct_answer": "A",
+    "explanation": "Amenorrhea + hirsutism + acne + obesity + acanthosis nigricans + borderline glucose = PCOS (Rotterdam criteria: oligo/anovulation + hyperandrogenism + PCO)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. PCOS เพราะมีลักษณะครบ: amenorrhea (anovulation) + hyperandrogenism (hirsutism, acne) + metabolic features (obesity, insulin resistance)",
+      "reason": "Rotterdam criteria PCOS (ต้องมี ≥2 ใน 3): (1) Oligo/anovulation (amenorrhea 15 เดือน ✓), (2) Hyperandrogenism: clinical (hirsutism, acne) หรือ biochemical, (3) Polycystic ovaries ใน U/S เคสนี้: anovulation + hyperandrogenism ✓ ✓ = PCOS Metabolic features: BMI 30 (obesity), BS 110 (borderline), elevated lipids, acanthosis nigricans (insulin resistance) ทั้งหมดสนับสนุน PCOS + insulin resistance",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PCOS",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Rotterdam criteria ≥2/3 ✓ Amenorrhea (anovulation) + Hirsutism/acne (hyperandrogenism) = PCOS confirmed"
+        },
+        {
+          "label": "B",
+          "text": "Prolactinoma",
+          "is_correct": false,
+          "explanation": "Prolactinoma: amenorrhea + galactorrhea, ไม่มี hyperandrogenism หรือ metabolic syndrome ตรวจ prolactin level"
+        },
+        {
+          "label": "C",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "Hypothyroid: amenorrhea ได้ แต่ไม่มี hirsutism, acne หรือ metabolic syndrome ตรวจ TSH"
+        },
+        {
+          "label": "D",
+          "text": "Cushing syndrome",
+          "is_correct": false,
+          "explanation": "Cushing: central obesity + buffalo hump + moon face + striae แต่มักไม่มี hirsutism รุนแรงหรือ acne แบบนี้"
+        },
+        {
+          "label": "E",
+          "text": "Adrenal hyperplasia",
+          "is_correct": false,
+          "explanation": "Non-classic CAH ต้องตรวจ 17-OHP สูง; PCOS ยังเป็น diagnosis ที่พบบ่อยกว่ามาก"
+        }
+      ],
+      "key_takeaway": "PCOS: Oligo/anovulation + Hyperandrogenism (hirsutism/acne) + PCO ultrasound (≥2/3 Rotterdam) | Metabolic: Insulin resistance, DM risk, dyslipidemia | รักษา: Lifestyle + Metformin + OCP"
+    }
+  },
+  {
+    "id": "39c6e842-f92a-4075-9404-57e9e61677c7",
+    "correct_answer": "B",
+    "explanation": "หญิง 51 ปี เลือดออกกระปริดกระปรอย ต้องประเมิน endometrium ด้วย U/S ก่อน ถ้า endometrial thickness > 5 mm จึงทำ endometrial biopsy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. U/S ดู endometrial thickness ก่อน ถ้า > 5 mm จึงทำ biopsy/curettage",
+      "reason": "Postmenopausal bleeding (PMB): ต้องประเมินเพื่อ rule out endometrial carcinoma แนวทาง: (1) Transvaginal U/S วัด endometrial thickness: ≤4-5 mm = low risk, สามารถ observe หรือ repeat U/S (2) > 5 mm = ต้องทำ endometrial biopsy (office biopsy, Pipelle) หรือ D&C ± hysteroscopy (3) ถ้า biopsy ไม่เพียงพอ → hysteroscopy + D&C การทำ curettage ทันทีโดยไม่มี U/S ก่อนเป็นการ over-investigate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ขูดมดลูก + ตรวจปากมดลูก ส่ง pathology",
+          "is_correct": false,
+          "explanation": "ขูดทันทีโดยไม่มี U/S ก่อนอาจเป็น over-investigation; U/S ก่อนช่วย triage ว่าใครต้องการ invasive procedure"
+        },
+        {
+          "label": "B",
+          "text": "U/S ดู endometrium > 5 mm จึงขูด",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Transvaginal U/S วัด ET เป็น standard ขั้นแรก ≤4mm = low risk; >5mm = ต้องทำ biopsy"
+        },
+        {
+          "label": "C",
+          "text": "Follow-up ทุก 3 เดือน",
+          "is_correct": false,
+          "explanation": "PMB ทุกรายต้องประเมิน endometrium เพื่อ rule out cancer ไม่ใช่ observe โดยไม่ตรวจ"
+        },
+        {
+          "label": "D",
+          "text": "ให้ Progestin",
+          "is_correct": false,
+          "explanation": "Progestin อาจใช้ใน DUB ของ premenopausal แต่ PMB ต้องการ workup ก่อน ไม่ใช่ treat โดยไม่วินิจฉัย"
+        },
+        {
+          "label": "E",
+          "text": "ให้ COCP",
+          "is_correct": false,
+          "explanation": "COCP ไม่เหมาะในหญิงวัยหมดประจำเดือน และไม่ได้แก้ underlying endometrial pathology"
+        }
+      ],
+      "key_takeaway": "Postmenopausal bleeding → TVUS ก่อน | ET ≤4 mm = low risk (observe) | ET >5 mm → Endometrial biopsy | Pipelle biopsy สะดวก; ถ้าไม่เพียงพอ → Hysteroscopy + D&C"
+    }
+  },
+  {
+    "id": "3a7284b8-5486-433a-9e19-7b3e97a1607f",
+    "correct_answer": "D",
+    "explanation": "กรณีข่มขืน การยืนยันการมีเพศสัมพันธ์ใช้ Acid phosphatase จาก seminal fluid ซึ่งคงอยู่ในช่องคลอดนาน 24-48 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D. Acid phosphatase เพราะเป็น enzyme marker ของ seminal fluid ที่ใช้ยืนยัน sexual assault ทาง forensic",
+      "reason": "Acid phosphatase (prostatic origin) เป็น marker ใน seminal fluid ที่ใช้ทาง forensic เพื่อยืนยัน การมีเพศสัมพันธ์: คงอยู่ในช่องคลอดได้ 24-48 ชั่วโมง แม้ไม่พบ spermatozoa (เช่น vasectomized, azoospermia) ทดสอบด้วย AP spot test จาก vaginal swabs DNA analysis (E) ใช้สำหรับ identify rapist (ไม่ใช่แค่ confirm intercourse) ในเคสนี้ถามเพื่อ 'ยืนยัน' (confirm sexual assault เกิดขึ้น) → Acid phosphatase",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pap smear",
+          "is_correct": false,
+          "explanation": "Pap smear ตรวจหา cervical cells ไม่ใช่ forensic marker หลักสำหรับ sexual assault confirmation"
+        },
+        {
+          "label": "B",
+          "text": "KOH preparation",
+          "is_correct": false,
+          "explanation": "KOH ใช้ตรวจ Candida ไม่ใช่ forensic evidence"
+        },
+        {
+          "label": "C",
+          "text": "Tzank's smear",
+          "is_correct": false,
+          "explanation": "Tzanck smear ใช้ตรวจ herpes (multinucleated giant cells) ไม่ใช่ confirmation of sexual assault"
+        },
+        {
+          "label": "D",
+          "text": "Acid phosphatase",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Prostatic acid phosphatase (PAP) จาก seminal fluid คงอยู่ในช่องคลอด 24-48 ชม. เป็น forensic marker ยืนยัน sexual intercourse"
+        },
+        {
+          "label": "E",
+          "text": "Forensic DNA analysis",
+          "is_correct": false,
+          "explanation": "DNA ใช้ identify perpetrator แต่ acid phosphatase ใช้ยืนยันว่ามี sexual intercourse เกิดขึ้น"
+        }
+      ],
+      "key_takeaway": "Sexual assault confirmation → Acid phosphatase (seminal fluid marker, คงอยู่ 24-48h) | Rapist identification → DNA analysis | Spermatozoa (หายในชั่วโมง) | เก็บหลักฐานทันที"
+    }
+  }
+]

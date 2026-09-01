@@ -1,0 +1,124 @@
+const PIXEL_ID = "966371002896288";
+const API_VERSION = "v18.0";
+
+type MetaEventName =
+  | "PageView"
+  | "ViewContent"
+  | "Lead"
+  | "CompleteRegistration"
+  | "Subscribe"
+  | "Purchase"
+  | "InitiateCheckout"
+  | "AddToCart";
+
+export interface MetaEventInput {
+  event: MetaEventName;
+  eventId?: string;
+  email?: string | null;
+  phone?: string | null;
+  externalId?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  ip?: string | null;
+  userAgent?: string | null;
+  fbc?: string | null;
+  fbp?: string | null;
+  url?: string | null;
+  value?: number;
+  currency?: string;
+  contentIds?: string[];
+  contentName?: string;
+  contentType?: string;
+}
+
+// Web Crypto API — works in both Node.js 18+ and Edge runtimes (unlike node:crypto)
+async function sha256Lower(value: string): Promise<string> {
+  const data = new TextEncoder().encode(value.trim().toLowerCase());
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+/**
+ * test_event_code ต้องไม่หลุดขึ้น production เด็ดขาด
+ *
+ * Meta ถือว่า event ที่แนบ test_event_code เป็น "อีเวนต์ทดสอบ" — โผล่ในแท็บ
+ * Test Events ให้ดูได้ แต่ **ไม่นับเป็น conversion จริง** จึงใช้ทำ Custom
+ * Conversion / optimization / attribution ไม่ได้เลย
+ *
+ * เคยเกิดขึ้นจริง: `META_TEST_EVENT_CODE` ถูกตั้งเป็น All Environments ใน Vercel
+ * ตั้งแต่ 2026-05-14 ทำให้ CAPI ของ production ทั้งระบบ (PageView, ViewContent
+ * ของเกมเคส, CompleteRegistration, Purchase) กลายเป็น test ทั้งหมดโดยไม่มีใคร
+ * รู้ — ตรวจพบ 2026-07-27 ตอนไล่หาสาเหตุที่ Meta ได้รับ ViewContent วันละ ~5
+ * ครั้ง ทั้งที่ระบบยิงไป ~900 ครั้ง
+ *
+ * ตัด env ทิ้งอย่างเดียวไม่พอ เพราะใครตั้งใหม่ผิดช่องก็พังเงียบอีก — gate ที่
+ * โค้ดจึงเป็นด่านที่เชื่อถือได้กว่า
+ */
+function resolveTestEventCode(): string | undefined {
+  if (process.env.VERCEL_ENV === "production") return undefined;
+  return process.env.META_TEST_EVENT_CODE?.trim() || undefined;
+}
+
+export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
+  const token = process.env.META_CAPI_ACCESS_TOKEN;
+  if (!token) return;
+
+  const userData: Record<string, unknown> = {};
+  if (input.email) userData.em = [await sha256Lower(input.email)];
+  if (input.phone) {
+    const digits = input.phone.replace(/\D/g, "");
+    if (digits) userData.ph = [await sha256Lower(digits)];
+  }
+  if (input.firstName) userData.fn = [await sha256Lower(input.firstName)];
+  if (input.lastName) userData.ln = [await sha256Lower(input.lastName)];
+  if (input.externalId) userData.external_id = [await sha256Lower(input.externalId)];
+  if (input.ip) userData.client_ip_address = input.ip;
+  if (input.userAgent) userData.client_user_agent = input.userAgent;
+  if (input.fbc) userData.fbc = input.fbc;
+  if (input.fbp) userData.fbp = input.fbp;
+
+  const customData: Record<string, unknown> = {};
+  if (input.value !== undefined) customData.value = input.value;
+  if (input.currency) customData.currency = input.currency;
+  if (input.contentIds?.length) customData.content_ids = input.contentIds;
+  if (input.contentName) customData.content_name = input.contentName;
+  if (input.contentType) customData.content_type = input.contentType;
+
+  const eventData: Record<string, unknown> = {
+    event_name: input.event,
+    event_time: Math.floor(Date.now() / 1000),
+    event_id: input.eventId ?? crypto.randomUUID(),
+    action_source: "website",
+    user_data: userData,
+  };
+  if (input.url) eventData.event_source_url = input.url;
+  if (Object.keys(customData).length) eventData.custom_data = customData;
+
+  const payload: Record<string, unknown> = { data: [eventData] };
+  const testCode = resolveTestEventCode();
+  if (testCode) payload.test_event_code = testCode;
+
+  const endpoint = `https://graph.facebook.com/${API_VERSION}/${PIXEL_ID}/events?access_token=${encodeURIComponent(token)}`;
+
+  try {
+    // callers ที่ต้องการความชัวร์ (เช่น app/api/track/casegame) รอผลลัพธ์นี้
+    // ก่อนตอบ response แล้ว — ต้องมี timeout กันไม่ให้ Meta ช้าแล้วดึงเวลาตอบ
+    // ผู้ใช้ยืดไม่มีที่สิ้นสุด
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(5_000),
+    });
+    if (!res.ok) {
+      const text = await res.text().catch(() => "");
+      console.error(
+        `[meta-capi] ${input.event} failed: ${res.status} ${text.slice(0, 200)}`
+      );
+    }
+  } catch (err) {
+    console.error(`[meta-capi] ${input.event} fetch error:`, err);
+  }
+}

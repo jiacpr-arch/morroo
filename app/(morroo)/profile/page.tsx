@@ -1,0 +1,541 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { createClient } from "@/lib/supabase/client";
+import { track } from "@/lib/analytics";
+import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins, Sparkles, GraduationCap } from "lucide-react";
+import { xpToRank } from "@/lib/school/rank";
+import type { Profile } from "@/lib/types";
+import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
+
+const membershipLabels: Record<string, string> = {
+  free: "ฟรี",
+  monthly: "รายเดือน",
+  yearly: "รายปี",
+  bundle: "ชุดข้อสอบ",
+};
+
+const membershipColors: Record<string, string> = {
+  free: "bg-gray-100 text-gray-700",
+  monthly: "bg-brand/10 text-brand",
+  yearly: "bg-amber-100 text-amber-700",
+  bundle: "bg-blue-100 text-blue-700",
+};
+
+export default function ProfilePage() {
+  const router = useRouter();
+  const [profile, setProfile] = useState<Profile | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [userEmail, setUserEmail] = useState("");
+  const [referralCode, setReferralCode] = useState<string | null>(null);
+  const [referralStats, setReferralStats] = useState({ total: 0, rewarded: 0 });
+  const [copied, setCopied] = useState(false);
+  const [generatingCode, setGeneratingCode] = useState(false);
+  const [lineLinked, setLineLinked] = useState(false);
+  const [lineCode, setLineCode] = useState<string | null>(null);
+  const [lineCopied, setLineCopied] = useState(false);
+  const [generatingLine, setGeneratingLine] = useState(false);
+  const [redeemingTier, setRedeemingTier] = useState<string | null>(null);
+  const [redeemMsg, setRedeemMsg] = useState<{ kind: "ok" | "error"; text: string } | null>(null);
+
+  useEffect(() => {
+    async function loadProfile() {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (!user) {
+        router.push("/login");
+        return;
+      }
+
+      setUserEmail(user.email || "");
+
+      const { data } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", user.id)
+        .single();
+
+      setProfile(data);
+      if (data?.line_user_id) setLineLinked(true);
+      if (data?.referral_code) {
+        setReferralCode(data.referral_code);
+        // fetch stats
+        const res = await fetch(`/api/referral/apply`);
+        if (res.ok) {
+          const stats = await res.json();
+          setReferralStats(stats);
+        }
+      }
+      setLoading(false);
+    }
+    loadProfile();
+  }, [router]);
+
+  const handleLogout = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+  };
+
+  const handleGenerateCode = async () => {
+    setGeneratingCode(true);
+    const res = await fetch("/api/referral/generate", { method: "POST" });
+    if (res.ok) {
+      const { code } = await res.json();
+      setReferralCode(code);
+      // fetch stats after generating
+      const statsRes = await fetch(`/api/referral/apply`);
+      if (statsRes.ok) setReferralStats(await statsRes.json());
+    }
+    setGeneratingCode(false);
+  };
+
+  const handleGenerateLine = async () => {
+    setGeneratingLine(true);
+    const supabase = createClient();
+    const { data: { session } } = await supabase.auth.getSession();
+    const res = await fetch("/api/line/generate-code", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${session?.access_token}` },
+    });
+    if (res.ok) {
+      const { code } = await res.json();
+      setLineCode(code);
+    }
+    setGeneratingLine(false);
+  };
+
+  const handleCopyLineCode = async () => {
+    if (!lineCode) return;
+    await navigator.clipboard.writeText(lineCode);
+    setLineCopied(true);
+    setTimeout(() => setLineCopied(false), 2000);
+  };
+
+  const handleRedeemPoints = async (tierId: string, cost: number, days: number) => {
+    setRedeemingTier(tierId);
+    setRedeemMsg(null);
+    try {
+      const res = await fetch("/api/mcq/redeem-points", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tier: tierId }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setRedeemMsg({ kind: "error", text: json?.error ?? "แลกแต้มไม่สำเร็จ" });
+        return;
+      }
+      // Reflect the spend + new membership locally without a full reload.
+      setProfile((prev) =>
+        prev
+          ? {
+              ...prev,
+              reporter_points_spent: (prev.reporter_points_spent ?? 0) + cost,
+              membership_type:
+                prev.membership_type === "free" ? "monthly" : prev.membership_type,
+              membership_expires_at:
+                json.membership_expires_at ?? prev.membership_expires_at,
+            }
+          : prev
+      );
+      track("bug_hunter_redeem", { tier: tierId, days });
+      setRedeemMsg({
+        kind: "ok",
+        text: `แลกสำเร็จ! ได้สมาชิกฟรีเพิ่ม ${days} วัน`,
+      });
+    } catch {
+      setRedeemMsg({ kind: "error", text: "เกิดข้อผิดพลาดในการเชื่อมต่อ" });
+    } finally {
+      setRedeemingTier(null);
+    }
+  };
+
+  const handleCopy = async () => {
+    if (!referralCode) return;
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
+    await navigator.clipboard.writeText(`${siteUrl}/register?ref=${referralCode}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[calc(100vh-12rem)]">
+        <p className="text-muted-foreground">กำลังโหลด...</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
+      <h1 className="text-3xl font-bold mb-8">โปรไฟล์</h1>
+
+      <div className="space-y-6">
+        {/* Profile Info */}
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center">
+                <User className="h-8 w-8 text-brand" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold">
+                  {profile?.name || "ผู้ใช้งาน"}
+                </h2>
+                <p className="text-sm text-muted-foreground flex items-center gap-1">
+                  <Mail className="h-3.5 w-3.5" />
+                  {profile?.email || userEmail}
+                </p>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
+
+        {/* Membership */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Crown className="h-5 w-5 text-brand" /> สถานะสมาชิก
+            </h3>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground">แพ็กเกจ</span>
+              <Badge
+                className={membershipColors[profile?.membership_type || "free"]}
+              >
+                {membershipLabels[profile?.membership_type || "free"]}
+              </Badge>
+            </div>
+            {profile?.membership_expires_at && (
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground flex items-center gap-1">
+                  <Calendar className="h-4 w-4" /> วันหมดอายุ
+                </span>
+                <span className="text-sm font-medium">
+                  {new Date(profile.membership_expires_at).toLocaleDateString("th-TH", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+              </div>
+            )}
+            {(!profile || profile.membership_type === "free") && (
+              <Link href="/pricing">
+                <Button className="w-full bg-brand hover:bg-brand-light text-white mt-2">
+                  อัปเกรดแพ็กเกจ
+                </Button>
+              </Link>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* ความก้าวหน้าการเรียน — ยศแพทย์จาก XP สะสม */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <GraduationCap className="h-5 w-5 text-amber-600" /> ความก้าวหน้าการเรียน
+            </h3>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {(() => {
+              const xp = profile?.school_xp ?? 0;
+              const { rank, next, xpIntoRank, xpForNext, progress } = xpToRank(xp);
+              return (
+                <>
+                  <div className="flex items-start gap-3">
+                    <span className="text-3xl leading-none" aria-hidden>{rank.icon}</span>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-lg font-extrabold leading-snug">{rank.title}</p>
+                      <p className="mt-0.5 text-sm text-muted-foreground">{rank.trait}</p>
+                    </div>
+                    <span className="shrink-0 text-sm font-bold text-amber-700">
+                      {xp.toLocaleString("th-TH")} XP
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      className="h-2 overflow-hidden rounded-full bg-gray-200"
+                      role="progressbar"
+                      aria-valuenow={progress}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-label={next ? `ความคืบหน้าไปยัง${next.title}` : "ถึงขั้นสูงสุดแล้ว"}
+                    >
+                      <span
+                        className="block h-full rounded-full bg-amber-500"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                    <p className="mt-1.5 text-xs text-muted-foreground">
+                      {next
+                        ? `${xpIntoRank.toLocaleString("th-TH")} / ${xpForNext.toLocaleString("th-TH")} XP — อีก ${(xpForNext - xpIntoRank).toLocaleString("th-TH")} XP ถึง${next.title}`
+                        : "ขั้นสูงสุดของสายวิชาการแล้ว"}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/school/badges">
+                      <Button variant="outline" size="sm">เหรียญของฉัน</Button>
+                    </Link>
+                    <Link href="/school/leaderboard">
+                      <Button variant="outline" size="sm">Leaderboard</Button>
+                    </Link>
+                  </div>
+                </>
+              );
+            })()}
+          </CardContent>
+        </Card>
+
+        {/* MEQ Coins — earned from long case exams */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Coins className="h-5 w-5 text-amber-600" /> MEQ Coins — รางวัลจากการฝึก Long Case
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              ทำ Long Case จบ +20 · คะแนน ≥70% +10 · ส่ง feedback +10
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center justify-between rounded-lg bg-amber-50 border border-amber-200 p-4">
+              <span className="text-sm text-amber-800">เหรียญสะสมของคุณ</span>
+              <span className="text-2xl font-bold text-amber-700">
+                {profile?.meq_coins ?? 0}
+              </span>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Bug Hunter / reporter points */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Flag className="h-5 w-5 text-amber-600" /> Bug Hunter — ช่วยตรวจเฉลย
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              เจอข้อสอบที่เฉลยไม่ตรง หรือโจทย์กำกวม? กดปุ่ม
+              <span className="inline-flex items-center gap-1 mx-1 px-1.5 rounded bg-amber-100 text-amber-800 text-xs">
+                <Flag className="h-3 w-3" /> เฉลยไม่ถูก?
+              </span>
+              ใต้เฉลยแต่ละข้อ รับ +1 คะแนนทันที และ +10 คะแนนเมื่อแอดมินยืนยัน
+              แล้วนำคะแนนมาแลกเป็นสมาชิกฟรีได้
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between rounded-lg bg-amber-50 border border-amber-200 p-4">
+              <div>
+                <span className="text-sm text-amber-800">คะแนนที่ใช้แลกได้</span>
+                {profile && (profile.reporter_points_spent ?? 0) > 0 && (
+                  <p className="text-xs text-muted-foreground">
+                    สะสมทั้งหมด {profile.reporter_points ?? 0} · ใช้ไปแล้ว{" "}
+                    {profile.reporter_points_spent ?? 0}
+                  </p>
+                )}
+              </div>
+              <span className="text-2xl font-bold text-amber-700">
+                {profile ? availableReporterPoints(profile) : 0}
+              </span>
+            </div>
+
+            {/* Redeem points → free membership */}
+            <div className="space-y-2">
+              <p className="text-xs font-medium text-muted-foreground">
+                แลกคะแนนเป็นสมาชิกฟรี
+              </p>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {REWARD_TIER_LIST.map((tier) => {
+                  const avail = profile ? availableReporterPoints(profile) : 0;
+                  const canRedeem = avail >= tier.cost;
+                  return (
+                    <div
+                      key={tier.id}
+                      className="flex items-center justify-between gap-2 rounded-lg border p-3"
+                    >
+                      <div>
+                        <p className="text-sm font-medium">{tier.label}</p>
+                        <p className="text-xs text-muted-foreground">
+                          ใช้ {tier.cost} คะแนน
+                        </p>
+                      </div>
+                      <Button
+                        size="sm"
+                        disabled={!canRedeem || redeemingTier !== null}
+                        onClick={() =>
+                          handleRedeemPoints(tier.id, tier.cost, tier.days)
+                        }
+                        className="bg-amber-500 hover:bg-amber-600 text-white gap-1.5 shrink-0"
+                      >
+                        {redeemingTier === tier.id ? (
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <Sparkles className="h-4 w-4" />
+                        )}
+                        แลก
+                      </Button>
+                    </div>
+                  );
+                })}
+              </div>
+              {redeemMsg && (
+                <p
+                  className={`text-xs rounded px-2 py-1.5 ${
+                    redeemMsg.kind === "ok"
+                      ? "bg-green-50 text-green-700 border border-green-200"
+                      : "bg-red-50 text-red-600 border border-red-200"
+                  }`}
+                >
+                  {redeemMsg.text}
+                </p>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Referral */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Gift className="h-5 w-5 text-brand" /> ชวนเพื่อน รับ 30 วันฟรี
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              เพื่อนสมัครสมาชิกผ่านลิงก์คุณ → คุณได้สิทธิ์ใช้งานเพิ่ม 30 วันทันที
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {referralCode ? (
+              <>
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-lg bg-muted/50 p-3 text-center">
+                    <p className="text-2xl font-bold text-brand">{referralStats.total}</p>
+                    <p className="text-xs text-muted-foreground flex items-center justify-center gap-1 mt-1">
+                      <Users className="h-3 w-3" /> เพื่อนที่ชวนมา
+                    </p>
+                  </div>
+                  <div className="rounded-lg bg-muted/50 p-3 text-center">
+                    <p className="text-2xl font-bold text-green-600">{referralStats.rewarded * 30}</p>
+                    <p className="text-xs text-muted-foreground mt-1">วันที่ได้รับแล้ว</p>
+                  </div>
+                </div>
+
+                {/* Code display */}
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">รหัสของคุณ</p>
+                  <div className="flex items-center gap-2">
+                    <code className="flex-1 bg-muted px-3 py-2 rounded-lg text-sm font-mono font-semibold tracking-wider">
+                      {referralCode}
+                    </code>
+                    <Button size="sm" variant="outline" onClick={handleCopy} className="gap-1.5 shrink-0">
+                      {copied ? (
+                        <><Check className="h-4 w-4 text-green-600" /> คัดลอกแล้ว</>
+                      ) : (
+                        <><Copy className="h-4 w-4" /> คัดลอกลิงก์</>
+                      )}
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    กด &ldquo;คัดลอกลิงก์&rdquo; เพื่อแชร์ลิงก์สมัครที่ฝังรหัสไว้แล้ว
+                  </p>
+                </div>
+              </>
+            ) : (
+              <div className="text-center py-2">
+                <p className="text-sm text-muted-foreground mb-3">
+                  สร้างรหัสชวนเพื่อนของคุณ เพื่อเริ่มรับสิทธิ์พิเศษ
+                </p>
+                <Button
+                  onClick={handleGenerateCode}
+                  disabled={generatingCode}
+                  className="bg-brand hover:bg-brand-light text-white"
+                >
+                  {generatingCode ? "กำลังสร้าง..." : "สร้างรหัสชวนเพื่อน"}
+                </Button>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* LINE Notification */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <MessageSquare className="h-5 w-5 text-green-600" /> เชื่อมต่อ LINE
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              รับข้อสอบประจำวัน + การแจ้งเตือนจาก MorRoo ผ่าน LINE
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {/* Add Friend — always visible */}
+            <a
+              href="https://line.me/R/ti/p/@901nmwcd"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track("social_click", { platform: "line", surface: "profile" })}
+              className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#06C755] hover:bg-[#05b34c] text-white font-semibold py-2.5 px-4 text-sm transition-colors"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.02 2 11c0 3.39 1.9 6.35 4.75 8.07L6 22l3.29-1.72C10.15 20.73 11.06 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/>
+              </svg>
+              เพิ่มเพื่อน LINE OA (@901nmwcd)
+            </a>
+
+            {/* Linking status */}
+            {lineLinked ? (
+              <div className="flex items-center gap-2 text-green-700 bg-green-50 rounded-lg px-4 py-3">
+                <Link2 className="h-4 w-4 shrink-0" />
+                <span className="text-sm font-medium">เชื่อมต่อ LINE แล้ว ✓ — รับข้อสอบทุกเช้า 7 โมง</span>
+              </div>
+            ) : lineCode ? (
+              <div className="space-y-2 rounded-lg border border-green-200 bg-green-50/50 p-3">
+                <p className="text-sm font-medium text-green-800">ขั้นตอนที่ 2 — ส่งรหัสนี้ใน LINE OA:</p>
+                <div className="flex items-center gap-2">
+                  <code className="flex-1 bg-white px-3 py-2 rounded-lg text-sm font-mono font-bold tracking-widest text-center border">
+                    {lineCode}
+                  </code>
+                  <Button size="sm" variant="outline" onClick={handleCopyLineCode} className="shrink-0 gap-1">
+                    {lineCopied ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground">รหัสหมดอายุใน 24 ชั่วโมง</p>
+              </div>
+            ) : (
+              <Button
+                onClick={handleGenerateLine}
+                disabled={generatingLine}
+                variant="outline"
+                className="w-full gap-2 border-green-300 text-green-700 hover:bg-green-50"
+              >
+                {generatingLine ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Link2 className="h-4 w-4" />
+                )}
+                สร้างรหัสเชื่อมต่อบัญชี (ขั้นตอนที่ 2)
+              </Button>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Logout */}
+        <Button
+          variant="outline"
+          className="w-full gap-2 text-destructive border-destructive/30 hover:bg-destructive/5"
+          onClick={handleLogout}
+        >
+          <LogOut className="h-4 w-4" /> ออกจากระบบ
+        </Button>
+      </div>
+    </div>
+  );
+}

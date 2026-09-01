@@ -1,0 +1,824 @@
+[
+  {
+    "id": "00a6f910-7552-46b2-b94a-a3875ed4a751",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยหญิงตกจากที่สูง แขนผิดรูป crepitus กระดกข้อมือไม่ได้ = fracture of forearm รักษาด้วยการใส่เฝือกทั้งท่อนบนและท่อนล่าง (long arm cast) เนื่องจากยังไม่มีข้อบ่งชี้ผ่าตัด",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: ใส่เฝือกแขนท่อนบนและท่อนล่าง เพราะ closed fracture forearm ที่ไม่มี neurovascular compromise ชัดเจน รักษา conservative ได้",
+      "reason": "Forearm fracture ที่ทั้ง radius/ulna: การใส่ long arm cast (ท่อนบน + ท่อนล่าง) ครอบคลุม elbow และ wrist ป้องกัน rotation ที่จะทำให้กระดูกเคลื่อน กระดกข้อมือไม่ได้อาจเกิดจาก pain inhibition ไม่จำเป็นต้องมี nerve injury การทำ EMG ไม่จำเป็นใน acute phase ผ่าตัดดามกระดูก (ORIF) ใช้เมื่อมี: displacement มาก, open fracture, failed closed reduction, neurovascular compromise ชัดเจน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ใส่เฝือกแขนท่อนบนและท่อนล่าง",
+          "is_correct": true,
+          "explanation": "Long arm cast สำหรับ closed forearm fracture ที่ไม่มี complication"
+        },
+        {
+          "label": "B",
+          "text": "ทำ EMG และใส่เฝือก",
+          "is_correct": false,
+          "explanation": "EMG ไม่ใช่ acute management; ทำเมื่อต้องการ assess chronic nerve injury"
+        },
+        {
+          "label": "C",
+          "text": "ผ่าตัดดามกระดูกและต่อเส้นประสาท",
+          "is_correct": false,
+          "explanation": "Over-treatment; ต้องมีหลักฐาน nerve transection ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "ผ่าตัดดามกระดูกและใส่เฝือก",
+          "is_correct": false,
+          "explanation": "ORIF ไม่จำเป็นสำหรับ closed non-displaced fracture"
+        },
+        {
+          "label": "E",
+          "text": "ผ่าตัดต่อเส้นประสาทและใส่เฝือก",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐาน nerve transection ชัดเจน"
+        }
+      ],
+      "key_takeaway": "Closed forearm fracture → Long arm cast (ท่อนบน+ล่าง); ORIF เมื่อมี displacement/open/vascular compromise"
+    }
+  },
+  {
+    "id": "00bc4de4-e876-494f-b8c0-2cc91cc3b6bc",
+    "correct_answer": "B",
+    "explanation": "เด็กอายุ 6 ปี ล้มกระแทกข้อศอกด้านข้าง = lateral condyle fracture ของ humerus สิ่งสำคัญที่สุดคือการ assess neurovascular status ก่อนทำ intervention",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: ตรวจประเมิน neurovascular compromise ก่อนเสมอ เพราะ fracture รอบข้อศอกในเด็กมีความเสี่ยงต่อ anterior interosseous nerve และ brachial artery",
+      "reason": "Lateral condyle fracture ในเด็ก: พบบ่อยอายุ 5-10 ปี มักเกิดจาก varus stress ที่ extended elbow การประเมิน neurovascular (radial pulse, capillary refill, nerve function) เป็น Priority #1 ก่อน treatment Anterior interosseous nerve (AIN) branch of median nerve อาจได้รับบาดเจ็บ Brachial artery injury อาจเกิดใน supracondylar fracture เฉียบพลัน Emergency ORIF ถ้ามี neurovascular compromise, displaced >2mm, open fracture Conservative (splint) ถ้า non-displaced (<2mm)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Emergency ORIF ทันที",
+          "is_correct": false,
+          "explanation": "ต้องประเมิน neurovascular ก่อน ไม่ใช่ OR ทันที"
+        },
+        {
+          "label": "B",
+          "text": "ตรวจประเมิน neurovascular compromise",
+          "is_correct": true,
+          "explanation": "Priority #1: assess pulse, nerve, perfusion ก่อนตัดสินใจรักษา"
+        },
+        {
+          "label": "C",
+          "text": "น้ำแข็ง + ยาแก้ปวด แล้วส่งต่อ",
+          "is_correct": false,
+          "explanation": "ไม่ include การ assess neurovascular ที่สำคัญ"
+        },
+        {
+          "label": "D",
+          "text": "จำกัดการเคลื่อนไหวด้วย posterior slab",
+          "is_correct": false,
+          "explanation": "อาจทำได้ แต่ต้อง assess neurovascular ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Closed reduction แล้วรอ heal",
+          "is_correct": false,
+          "explanation": "Lateral condyle fracture ที่ displaced ต้องการ ORIF ไม่ใช่ closed reduction"
+        }
+      ],
+      "key_takeaway": "Elbow fracture ในเด็ก → ประเมิน neurovascular (pulse + nerve) ก่อนทุกครั้ง; Lateral condyle fracture displaced >2mm = ORIF"
+    }
+  },
+  {
+    "id": "02a59e84-f5f8-419c-a618-f9bb1d7c1963",
+    "correct_answer": "B",
+    "explanation": "Stimson technique เป็นวิธีลดข้อไหล่หลุดที่ traumatic น้อยที่สุด โดยผู้ป่วยนอนคว่ำ แขนห้อยลง ใช้แรงดึงจากแรงโน้มถ่วง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Stimson technique เพราะใช้ gravity-assisted reduction ไม่ต้องออกแรงมาก กล้ามเนื้อคลาย trauma น้อยที่สุด",
+      "reason": "Shoulder dislocation reduction techniques: Stimson: prone position, arm hangs down, 5-10 lb weight สวมข้อมือ หรือ gentle traction → least traumatic Milch: supine, arm abduction + external rotation + axial traction Hippocrates: supine, foot in axilla for counter-traction (classic แต่ traumatic) Kocher: ER + adduction + IR → force technique External rotation: slow ER while adducted → reduces Bankart lesion Stimson เหมาะสำหรับผู้ป่วยที่ต้องการ minimal force เช่น elderly หรือ pain sensitive",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Milch technique",
+          "is_correct": false,
+          "explanation": "ใช้ได้ดีแต่ต้องออกแรงมากกว่า Stimson"
+        },
+        {
+          "label": "B",
+          "text": "Stimson technique",
+          "is_correct": true,
+          "explanation": "Gravity-assisted reduction; prone, arm hangs → กล้ามเนื้อคลาย → least traumatic"
+        },
+        {
+          "label": "C",
+          "text": "Hippocrates technique",
+          "is_correct": false,
+          "explanation": "Foot in axilla technique; traumatic, เสี่ยง neurovascular injury มากที่สุด"
+        },
+        {
+          "label": "D",
+          "text": "Kocher technique",
+          "is_correct": false,
+          "explanation": "Force technique; เสี่ยง fracture neck of humerus"
+        },
+        {
+          "label": "E",
+          "text": "External rotation technique",
+          "is_correct": false,
+          "explanation": "Gentle แต่ไม่ใช่ least traumatic เทียบ Stimson"
+        }
+      ],
+      "key_takeaway": "Shoulder dislocation: least traumatic reduction = Stimson (prone, gravity); Hippocrates = most traumatic"
+    }
+  },
+  {
+    "id": "02e605ad-718f-4f6b-ad70-e24dfb34ee99",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 50 ปี ล้มศอกยันพื้น (FOOSH - fall on outstretched hand) ข้อมือขวาบวมผิดรูป = Colles' fracture (distal radius fracture with dorsal angulation)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Colles' fracture เพราะ FOOSH + wrist deformity ในผู้ใหญ่ = classic presentation",
+      "reason": "Colles' fracture: ชนิดที่พบบ่อยที่สุดของ distal radius fracture กลไก = FOOSH (Fall on Outstretched Hand) ใน elderly/postmenopausal women (osteoporosis) Deformity = 'dinner fork' appearance: dorsal angulation + radial shortening + dorsal displacement Greenstick fracture ใน pediatric patients (ไม่ใช่ผู้ใหญ่) Wrist dislocation หายาก Supracondylar fracture ที่ elbow ไม่ใช่ wrist Smith's fracture (reverse Colles') = volar angulation จาก fall on flexed wrist",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colles' fracture",
+          "is_correct": true,
+          "explanation": "FOOSH + wrist deformity ในผู้ใหญ่ = distal radius fracture with dorsal angulation (dinner fork deformity)"
+        },
+        {
+          "label": "B",
+          "text": "Greenstick fracture",
+          "is_correct": false,
+          "explanation": "พบในเด็ก ไม่ใช่ผู้ใหญ่ 50 ปี"
+        },
+        {
+          "label": "C",
+          "text": "Fracture both bone",
+          "is_correct": false,
+          "explanation": "Both bone forearm fracture ไม่ใช่ wrist fracture"
+        },
+        {
+          "label": "D",
+          "text": "Wrist dislocation",
+          "is_correct": false,
+          "explanation": "Rare กว่า fracture มาก"
+        },
+        {
+          "label": "E",
+          "text": "Supracondylar fracture",
+          "is_correct": false,
+          "explanation": "ที่ elbow ไม่ใช่ wrist"
+        }
+      ],
+      "key_takeaway": "FOOSH + wrist deformity ในผู้ใหญ่ = Colles' fracture (distal radius); dinner fork deformity"
+    }
+  },
+  {
+    "id": "064f7056-f159-4027-b67c-df317f6773d7",
+    "correct_answer": "A",
+    "explanation": "Surgical neck of humerus fracture → Axillary nerve injury → Deltoid muscle weakness/paralysis เป็น complication ที่สำคัญ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Deltoid muscle เพราะ Axillary nerve (C5,C6) วิ่งรอบ surgical neck of humerus → fracture → nerve injury → deltoid paralysis",
+      "reason": "Surgical neck of humerus fracture complications: Axillary nerve (C5,C6) วิ่งผ่าน quadrilateral space รอบ surgical neck → most commonly injured nerve ใน proximal humerus fracture Deltoid muscle (abduction): innervated by axillary nerve → paralysis = loss of shoulder abduction Teres minor ก็ innervated by axillary nerve แต่ deltoid เป็น major muscle ที่ affected อย่างชัดเจน ตรวจ: sensory loss over 'regimental badge area' (lateral deltoid) และ weakness in arm abduction",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Deltoid muscle",
+          "is_correct": true,
+          "explanation": "Axillary nerve injury จาก surgical neck fracture → deltoid paralysis → loss of shoulder abduction"
+        },
+        {
+          "label": "B",
+          "text": "Supraspinatus",
+          "is_correct": false,
+          "explanation": "Innervated by suprascapular nerve (C5,C6) ไม่ใช่ axillary nerve"
+        },
+        {
+          "label": "C",
+          "text": "Infraspinatus",
+          "is_correct": false,
+          "explanation": "Suprascapular nerve ไม่ใช่ axillary nerve"
+        },
+        {
+          "label": "D",
+          "text": "Subscapularis",
+          "is_correct": false,
+          "explanation": "Upper/lower subscapular nerves ไม่ใช่ axillary nerve"
+        },
+        {
+          "label": "E",
+          "text": "Pectoralis major",
+          "is_correct": false,
+          "explanation": "Medial/lateral pectoral nerves ไม่ใช่ axillary nerve"
+        }
+      ],
+      "key_takeaway": "Surgical neck of humerus fracture → Axillary nerve injury → Deltoid paralysis; sensory loss lateral deltoid"
+    }
+  },
+  {
+    "id": "086c7cf4-3396-491b-894c-3771043c815f",
+    "correct_answer": "B",
+    "explanation": "ผู้สูงอายุ 70 ปี ลื่นล้ม เจ็บขาหนีบ เดินไม่ได้ external rotation = Classic Femoral neck fracture (intracapsular hip fracture)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Femoral neck fracture เพราะ elderly + fall + groin pain + unable to walk + external rotation = classic triad",
+      "reason": "Femoral neck fracture (intracapsular): พบบ่อยในผู้สูงอายุ โดยเฉพาะหญิง osteoporosis Classic signs: shortening + external rotation + inability to bear weight + groin pain External rotation เกิดจาก iliopsoas muscle pulling lesser trochanter Intertrochanteric fracture: ER + shortening เช่นกัน แต่ swelling + bruising บริเวณ greater trochanter มากกว่า Anterior hip dislocation: internal rotation + flexion ไม่ใช่ ER Hip osteoarthritis: chronic course ไม่ acute Posterior hip dislocation: flexion + IR + adduction",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hip osteoarthritis",
+          "is_correct": false,
+          "explanation": "Chronic progressive ไม่ใช่ acute onset หลัง fall"
+        },
+        {
+          "label": "B",
+          "text": "Femoral neck fracture",
+          "is_correct": true,
+          "explanation": "Elderly + fall + groin pain + ER + unable to bear weight = intracapsular hip fracture"
+        },
+        {
+          "label": "C",
+          "text": "Muscle strain",
+          "is_correct": false,
+          "explanation": "ไม่ทำให้ deformity หรือ severe functional loss"
+        },
+        {
+          "label": "D",
+          "text": "Intertrochanteric fracture",
+          "is_correct": false,
+          "explanation": "คล้ายกันแต่ bruising ที่ trochanter มากกว่า groin pain"
+        },
+        {
+          "label": "E",
+          "text": "Posterior hip dislocation",
+          "is_correct": false,
+          "explanation": "Flexion + IR + adduction ไม่ใช่ ER"
+        }
+      ],
+      "key_takeaway": "Elderly + fall + groin pain + ER + unable to walk = Femoral neck fracture → X-ray hip AP + lateral"
+    }
+  },
+  {
+    "id": "086d070d-8313-4015-a487-d9708867f747",
+    "correct_answer": "C",
+    "explanation": "ผู้หญิงอายุ 50 ปี ปวดไหล่ไม่มีประวัติ trauma หลังปวดหาย ROM ลดลง = Adhesive capsulitis (Frozen shoulder) รักษาด้วย Intra-articular steroid injection",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Intra-articular steroid injection เพราะ frozen shoulder (adhesive capsulitis) ตอบสนองดีต่อ steroid injection ในระยะเฉียบพลัน",
+      "reason": "Adhesive capsulitis (Frozen shoulder): สามค่าย: Freezing (painful) → Frozen (stiff) → Thawing (improving) Management: Freezing phase: NSAIDs + intra-articular steroid injection ลด inflammation Frozen phase: Physical therapy (ROM exercises), joint manipulation under anesthesia Thawing: continue exercise ระยะใน case = ปวดหาย แล้ว ROM ลด = Frozen phase Exercise ROM สำคัญแต่ steroid injection ในระยะแรกช่วยลด inflammation ได้ดีกว่า Rest/immobilization ทำให้ worse ใน frozen shoulder",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Exercise range of motion",
+          "is_correct": false,
+          "explanation": "สำคัญมากในระยะ frozen แต่ steroid injection ช่วย inflammation ได้ดีกว่าในระยะแรก"
+        },
+        {
+          "label": "B",
+          "text": "Anti-inflammatory drugs",
+          "is_correct": false,
+          "explanation": "ช่วยบรรเทา pain แต่ intra-articular steroid มีประสิทธิภาพสูงกว่า"
+        },
+        {
+          "label": "C",
+          "text": "Intra-articular steroid injection",
+          "is_correct": true,
+          "explanation": "Corticosteroid injection ลด capsular inflammation ได้ดี = most effective initial treatment"
+        },
+        {
+          "label": "D",
+          "text": "Rest and immobilization",
+          "is_correct": false,
+          "explanation": "Immobilization ทำ adhesion แย่ลง ห้ามทำใน frozen shoulder"
+        },
+        {
+          "label": "E",
+          "text": "Surgical release",
+          "is_correct": false,
+          "explanation": "Last resort เมื่อ conservative treatment fail > 6-12 เดือน"
+        }
+      ],
+      "key_takeaway": "Frozen shoulder (adhesive capsulitis): Intra-articular steroid injection + ROM exercises; ห้าม immobilize"
+    }
+  },
+  {
+    "id": "0872a86c-973c-4bd6-aea9-f2155a2cda84",
+    "correct_answer": "E",
+    "explanation": "Motorcycle accident, right groin pain, X-ray shows 1mm displaced hip fracture = Femoral neck fracture ที่ displacement น้อยมาก รักษาด้วย Closed reduction with percutaneous screw fixation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E: Closed reduction with percutaneous screw เพราะ minimally displaced femoral neck fracture ในคนอายุน้อยต้องการ fixation เพื่อรักษา femoral head",
+      "reason": "Femoral neck fracture ในคนอายุน้อย (young adult): Priority = preserve femoral head (ป้องกัน avascular necrosis) Treatment: Closed reduction + percutaneous cannulated screw fixation ถ้า displacement น้อย หรือ ORIF ถ้า displacement มาก 1mm displacement = Garden type I-II → closed reduction + percutaneous screws เพียงพอ Bed rest 6 weeks ไม่เพียงพอ ต้องมี fixation เพื่อป้องกัน displacement Open reduction + plate = ORIF ใช้เมื่อ closed reduction ล้มเหลว Walk with crutch โดยไม่ fixation = ไม่เหมาะสม",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Walk with crutch",
+          "is_correct": false,
+          "explanation": "Femoral neck fracture ต้องการ fixation ไม่ใช่ ambulation โดยไม่รักษา"
+        },
+        {
+          "label": "B",
+          "text": "Bed rest 6 weeks",
+          "is_correct": false,
+          "explanation": "ไม่ prevent displacement หรือ AVN"
+        },
+        {
+          "label": "C",
+          "text": "Traction 6 hours",
+          "is_correct": false,
+          "explanation": "Pre-operative traction ไม่ใช่ definitive treatment"
+        },
+        {
+          "label": "D",
+          "text": "Open reduction with plate",
+          "is_correct": false,
+          "explanation": "Overkill สำหรับ 1mm displacement"
+        },
+        {
+          "label": "E",
+          "text": "Closed reduction with percutaneous screw",
+          "is_correct": true,
+          "explanation": "Minimally displaced FNF ในคนอายุน้อย = percutaneous cannulated screws เพื่อ preserve femoral head"
+        }
+      ],
+      "key_takeaway": "Femoral neck fracture อายุน้อย + minimal displacement → Closed reduction + percutaneous screws; ป้องกัน AVN"
+    }
+  },
+  {
+    "id": "08e57b19-4b26-4e00-ab0e-6509f59bf33f",
+    "correct_answer": "B",
+    "explanation": "SLE on prolonged steroid ปวดสะโพกขณะเดิน = Avascular necrosis (AVN) of femoral head การตรวจที่ sensitive ที่สุดในระยะแรกคือ MRI",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: MRI pelvis (T1 and T2 weighted) เพราะ sensitive ที่สุดสำหรับ early AVN ก่อนที่ X-ray จะผิดปกติ",
+      "reason": "Avascular necrosis (AVN) ของ femoral head: risk factors = prolonged steroid (SLE), alcohol, trauma, sickle cell MRI: early AVN แสดง double-line sign ใน T2 (necrotic bone = low signal T1, high signal T2 edema border) Sensitivity MRI ~90-100% สำหรับ early AVN X-ray AP: normal ในระยะแรก; ต่อมาเห็น subchondral collapse (crescent sign) CT: ดีสำหรับ structural detail แต่ late changes Bone scan: sensitive แต่ไม่ specific เหมือน MRI Ultrasound: ดี joint effusion แต่ไม่ diagnose AVN",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pelvic X-ray AP",
+          "is_correct": false,
+          "explanation": "Normal ใน early AVN ไม่เหมาะสำหรับ early detection"
+        },
+        {
+          "label": "B",
+          "text": "MRI pelvis T1 and T2",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ early AVN: double-line sign T2; sensitivity >90%"
+        },
+        {
+          "label": "C",
+          "text": "CT pelvis with contrast",
+          "is_correct": false,
+          "explanation": "ดีสำหรับ late structural damage ไม่ใช่ early detection"
+        },
+        {
+          "label": "D",
+          "text": "Bone scan Tc-99m",
+          "is_correct": false,
+          "explanation": "Sensitive แต่ไม่ specific เท่า MRI สำหรับ AVN"
+        },
+        {
+          "label": "E",
+          "text": "Ultrasound hip",
+          "is_correct": false,
+          "explanation": "ตรวจ joint effusion ได้แต่ไม่ diagnose AVN"
+        }
+      ],
+      "key_takeaway": "Steroid + hip pain = AVN → MRI เป็น gold standard (early detection ก่อน X-ray ผิดปกติ)"
+    }
+  },
+  {
+    "id": "0a900c15-1a0d-4f8b-b18e-83f59513879e",
+    "correct_answer": "E",
+    "explanation": "Dashboard injury = แรงกระแทกที่หัวเข่าขณะรถชน → force จาก anterior tibia → ทำ PCL injury → posterior tibial sagging sign",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E: Look for tibial sagging เพราะ dashboard injury ทำ PCL (posterior cruciate ligament) injury → posterior sag sign",
+      "reason": "Dashboard injury mechanism: แรงจากกระแทก anterior tibia backward → PCL injury (posterior cruciate ligament) Posterior sag sign (posterior drawer sign): เมื่อ knee งอ 90° tibia จะ sag posteriorly เมื่อมี PCL injury Posterior drawer test ก็ใช้ได้ Anterior drawer test ใช้สำหรับ ACL injury (ไม่ใช่ PCL) McMurray's test สำหรับ meniscal tear Pivot shift test สำหรับ ACL injury Patellar gliding test สำหรับ patellofemoral syndrome",
+      "choices": [
+        {
+          "label": "A",
+          "text": "McMurray's test",
+          "is_correct": false,
+          "explanation": "สำหรับ meniscal tear ไม่ใช่ PCL injury"
+        },
+        {
+          "label": "B",
+          "text": "Pivot shift test",
+          "is_correct": false,
+          "explanation": "สำหรับ ACL injury (anterior instability) ไม่ใช่ PCL"
+        },
+        {
+          "label": "C",
+          "text": "Patellar gliding test",
+          "is_correct": false,
+          "explanation": "สำหรับ patellofemoral syndrome"
+        },
+        {
+          "label": "D",
+          "text": "Anterior drawer test",
+          "is_correct": false,
+          "explanation": "สำหรับ ACL injury ไม่ใช่ PCL"
+        },
+        {
+          "label": "E",
+          "text": "Look for tibial sagging",
+          "is_correct": true,
+          "explanation": "Dashboard injury → PCL injury → posterior tibial sag sign; tibia ห้อยลงด้านหลังใน 90° flexion"
+        }
+      ],
+      "key_takeaway": "Dashboard injury = PCL injury → Posterior tibial sag sign; vs ACL = Anterior drawer/Lachman/Pivot shift"
+    }
+  },
+  {
+    "id": "0c6bbf9b-0274-4319-9558-c54751f59c5d",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 63 ปี ปวดหลังร้าวลงขา 2 ข้าง เดินได้ ~300 เมตรแล้วต้องนั่งยองๆ พัก อาการดีขึ้น = Neurogenic claudication จาก Lumbar spine instability ตามคำตอบ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Lumbar spine instability ตามโจทย์ — อาการ neurogenic claudication ที่ดีขึ้นเมื่อ forward flexion (นั่งยองๆ)",
+      "reason": "Neurogenic claudication (walking-induced leg pain that improves with flexion): พบใน lumbar spinal stenosis หรือ spondylolisthesis (instability) การนั่งยองๆ = forward flexion ทำให้ spinal canal กว้างขึ้น → อาการดีขึ้น (ต่างจาก arterial claudication ที่ต้องหยุดเดินแต่ไม่ต้องงอหลัง) Lumbar stenosis (ข้อ B): เหมาะสมทางคลินิก แต่คำตอบในโจทย์คือ A = lumbar instability Spondylolisthesis อาจเป็นสาเหตุ ทำ dynamic instability",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lumbar spine instability",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์: dynamic instability ทำ neurogenic claudication"
+        },
+        {
+          "label": "B",
+          "text": "Lumbar stenosis",
+          "is_correct": false,
+          "explanation": "Clinically most likely cause แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Spondylolisthesis",
+          "is_correct": false,
+          "explanation": "อาจเป็นสาเหตุของ instability แต่ไม่ใช่คำตอบหลัก"
+        },
+        {
+          "label": "D",
+          "text": "Arterial insufficiency",
+          "is_correct": false,
+          "explanation": "Vascular claudication ไม่ดีขึ้นเมื่อนั่งยองๆ ต้องหยุดเดินเท่านั้น"
+        }
+      ],
+      "key_takeaway": "Neurogenic claudication (ดีขึ้นเมื่องอหลัง/นั่งยองๆ) = lumbar stenosis/instability; Vascular claudication = ดีขึ้นเมื่อหยุดเดิน"
+    }
+  },
+  {
+    "id": "0e388e5b-2962-4f4c-90f0-74a0f4c953a2",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยถูกรถชน แผล 1cm ที่แข้ง คลำ pulse ไม่ได้ Gustilo-Anderson Classification สำหรับ open fracture: Class I = wound <1cm, clean",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Class I ตาม Gustilo-Anderson open fracture classification สำหรับ wound <1cm",
+      "reason": "Gustilo-Anderson open fracture classification: Class I: wound <1cm, clean, minimal contamination, simple fracture Class II: wound 1-10cm, moderate contamination Class IIIa: wound >10cm, adequate soft tissue coverage Class IIIb: wound >10cm, periosteal stripping, requires flap Class IIIc: any size wound + vascular injury requiring repair แม้ว่าจะคลำ pulse ไม่ได้ ซึ่งน่าจะเป็น Class IIIc แต่คำตอบในโจทย์ระบุ Class I ซึ่งอาจหมายความว่า Doppler ยังพบ perfusion อยู่ หรือโจทย์ focus ที่ wound size เพียงอย่างเดียว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Class I",
+          "is_correct": true,
+          "explanation": "Wound <1cm = Class I ตามโจทย์; คำนึงถึง wound size primarily"
+        },
+        {
+          "label": "B",
+          "text": "Class II",
+          "is_correct": false,
+          "explanation": "Wound 1-10cm = Class II"
+        },
+        {
+          "label": "C",
+          "text": "Class IIIa",
+          "is_correct": false,
+          "explanation": "Wound >10cm + adequate soft tissue coverage"
+        },
+        {
+          "label": "D",
+          "text": "Class IIIb",
+          "is_correct": false,
+          "explanation": "Wound >10cm + periosteal stripping + requires flap"
+        },
+        {
+          "label": "E",
+          "text": "Class IIIc",
+          "is_correct": false,
+          "explanation": "Any wound + vascular injury requiring repair"
+        }
+      ],
+      "key_takeaway": "Gustilo open fracture: Class I (<1cm) → Class II (1-10cm) → IIIa/b (>10cm) → IIIc (vascular injury)"
+    }
+  },
+  {
+    "id": "0e8ad9d0-762d-47b5-9004-beb48509136c",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 65 ปี ปวดเข่าเรื้อรัง แย่ลงเมื่อขึ้นบันได crepitation ไม่มีประวัติ trauma ไม่มี systemic disease = Osteoarthritis of the knee",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Osteoarthritis of the knee เพราะ elderly + chronic joint pain + crepitation + activity-related pain = degenerative joint disease",
+      "reason": "Knee osteoarthritis: พบบ่อยที่สุดในผู้สูงอายุ risk factors: age, obesity, previous injury, female sex Symptoms: chronic pain แย่ลงเมื่อกิจกรรม (ขึ้นบันได), crepitation, stiffness เช้า <30 นาที, decreased ROM X-ray: joint space narrowing, osteophytes, subchondral sclerosis Rheumatoid arthritis: symmetric, prolonged morning stiffness >1 hr, systemic symptoms Patellofemoral syndrome: anterior knee pain, worse stairs, younger patients Meniscal tear: acute onset + locking/giving way",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Osteoarthritis of the knee",
+          "is_correct": true,
+          "explanation": "Elderly + chronic activity-related pain + crepitation + no systemic disease = degenerative joint disease"
+        },
+        {
+          "label": "B",
+          "text": "Rheumatoid arthritis",
+          "is_correct": false,
+          "explanation": "Symmetric joint involvement, prolonged morning stiffness, systemic symptoms"
+        },
+        {
+          "label": "C",
+          "text": "Patellofemoral syndrome",
+          "is_correct": false,
+          "explanation": "Younger patients, anterior knee pain, no crepitation throughout ROM"
+        },
+        {
+          "label": "D",
+          "text": "Meniscal tear",
+          "is_correct": false,
+          "explanation": "Acute/subacute, locking, giving way ไม่ใช่ chronic crepitation"
+        },
+        {
+          "label": "E",
+          "text": "Ligamentous injury",
+          "is_correct": false,
+          "explanation": "Acute onset หลัง trauma"
+        }
+      ],
+      "key_takeaway": "Elderly + chronic knee pain + crepitation + worse with stairs = Osteoarthritis; X-ray: joint space narrowing"
+    }
+  },
+  {
+    "id": "112feb45-1e44-4299-a0de-defebe5ffb3e",
+    "correct_answer": "A",
+    "explanation": "ผู้สูงอายุ 70 ปี ปวดสะโพกซ้ายหลัง fall 3 วัน external rotation + abduction = Fracture neck of femur (intracapsular hip fracture)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Fracture neck of femur เพราะ elderly + fall + hip pain + ER = classic intracapsular hip fracture",
+      "reason": "Femoral neck fracture (intracapsular): External rotation + shortening + groin pain + inability to bear weight Abduction ใน femoral neck fracture อาจเกิดจาก iliopsoas pulling lesser trochanter Anterior hip dislocation: ER + abduction + extension Posterior hip dislocation: IR + adduction + flexion Intertrochanteric fracture: ER + shortening แต่ swelling/bruising ที่ trochanteric region มากกว่า Treatment ขึ้นกับ Garden classification: I-II = internal fixation; III-IV = hemi/total hip arthroplasty ใน elderly",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fracture neck of femur",
+          "is_correct": true,
+          "explanation": "ER + groin pain + elderly + fall = intracapsular hip fracture"
+        },
+        {
+          "label": "B",
+          "text": "Anterior hip dislocation",
+          "is_correct": false,
+          "explanation": "ER + abduction ได้แต่ต้องมี high-energy trauma"
+        },
+        {
+          "label": "C",
+          "text": "Posterior hip dislocation",
+          "is_correct": false,
+          "explanation": "IR + adduction + flexion ไม่ใช่ ER"
+        },
+        {
+          "label": "D",
+          "text": "Intertrochanteric fracture",
+          "is_correct": false,
+          "explanation": "คล้ายกัน แต่ trochanteric tenderness + bruising ชัดกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Fracture + dislocation of femoral head",
+          "is_correct": false,
+          "explanation": "Rare, high-energy trauma, มักมี sciatic nerve injury"
+        }
+      ],
+      "key_takeaway": "Elderly + fall + ER + groin pain = Femoral neck fracture; ER+adduction = anterior dislocation; IR+flexion = posterior"
+    }
+  },
+  {
+    "id": "128de9d0-b2b5-4b7a-85eb-eff268add821",
+    "correct_answer": "A",
+    "explanation": "ช่างไม้ปวดศอก tender ที่ lateral epicondyle = Tennis elbow (lateral epicondylitis) การตรวจ diagnostic คือ resist wrist extension (Cozen's test) ตามโจทย์คำตอบ A = Tinel test ที่ forearm",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Tinel test at forearm ตามโจทย์ — อาจประเมิน radial nerve entrapment (Radial tunnel syndrome) ที่คล้ายกับ lateral epicondylitis",
+      "reason": "Lateral epicondylitis (Tennis elbow): อาชีพที่ต้องใช้ wrist extension ซ้ำๆ เช่น ช่างไม้ Tender at lateral epicondyle กลไก: tendinopathy ของ ECRB (extensor carpi radialis brevis) Differential: Radial tunnel syndrome = radial nerve entrapment distal to lateral epicondyle ทำ forearm pain Tinel test ที่ forearm = test สำหรับ radial nerve entrapment (Radial tunnel) Cozen's test = resisted wrist extension = test สำหรับ lateral epicondylitis คำตอบโจทย์ = A = Tinel test (น่าจะ differentiate จาก radial tunnel syndrome)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Tinel test at forearm",
+          "is_correct": true,
+          "explanation": "Test radial nerve entrapment (radial tunnel syndrome) ที่แยกจาก lateral epicondylitis"
+        },
+        {
+          "label": "B",
+          "text": "Phalen test",
+          "is_correct": false,
+          "explanation": "สำหรับ Carpal tunnel syndrome (median nerve)"
+        },
+        {
+          "label": "C",
+          "text": "Resist wrist extensor test (Cozen's)",
+          "is_correct": false,
+          "explanation": "Classic test สำหรับ lateral epicondylitis แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "Resist pronation test",
+          "is_correct": false,
+          "explanation": "สำหรับ pronator syndrome (median nerve entrapment)"
+        }
+      ],
+      "key_takeaway": "Lateral epicondylitis = Cozen's test; Radial tunnel syndrome = Tinel at forearm; แยกกันด้วย tender spot location"
+    }
+  },
+  {
+    "id": "1909fe42-2e90-4ac3-bfdd-45449ce43d57",
+    "correct_answer": "B",
+    "explanation": "SLE on prolonged steroid ปวดสะโพกขณะเดิน = AVN of femoral head ต้องการ MRI pelvis เพื่อ early detection",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: MRI pelvis เพราะ steroid-induced AVN ต้องการ sensitive imaging ก่อน X-ray ผิดปกติ",
+      "reason": "AVN (Avascular necrosis) ของ femoral head จาก steroid: Steroid ทำ fat cell hypertrophy ใน subchondral bone → ischemia → necrosis MRI เป็น most sensitive modality: T1: low signal area (necrosis), T2: double-line sign (reactive interface) X-ray AP: แสดง crescent sign หรือ head collapse ใน late stage (stage III-IV) MRI ช่วย stage AVN ตาม Ficat classification: Stage I-II (early) = MRI+ X-ray- → core decompression ช่วยได้ Stage III-IV (late) = X-ray+ → hip replacement",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pelvic X-ray AP",
+          "is_correct": false,
+          "explanation": "Normal ใน early AVN; late stage เห็น crescent sign หรือ head collapse"
+        },
+        {
+          "label": "B",
+          "text": "MRI pelvis",
+          "is_correct": true,
+          "explanation": "Most sensitive: double-line sign T2 ใน early AVN ก่อน X-ray ผิดปกติ"
+        },
+        {
+          "label": "C",
+          "text": "CT pelvis",
+          "is_correct": false,
+          "explanation": "ดีสำหรับ structural detail แต่ sensitivity ต่ำกว่า MRI ในระยะแรก"
+        },
+        {
+          "label": "D",
+          "text": "Bone scan",
+          "is_correct": false,
+          "explanation": "Sensitive แต่ไม่ specific; non-specific uptake pattern"
+        },
+        {
+          "label": "E",
+          "text": "Physical examination only",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ diagnose และ stage AVN"
+        }
+      ],
+      "key_takeaway": "Steroid + hip pain = AVN → MRI (early detection); X-ray ปกติในระยะแรก"
+    }
+  },
+  {
+    "id": "1dbce92f-e861-4723-8b67-d578bce9d227",
+    "correct_answer": "C",
+    "explanation": "ชายปวดไหล่เรื้อรัง บวม ROM ลด blood/X-ray ปกติ arthroscopy พบ inflammation = Septic arthritis/TB arthritis → PCR หรือ AFB stain จาก joint fluid เพื่อยืนยัน TB",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: PCR หรือ AFB stain จาก joint fluid เพราะ chronic shoulder arthritis + normal blood/X-ray = suspect TB joint → ต้องการ microbiological confirmation",
+      "reason": "Septic arthritis chronic course + normal X-ray + lymphocytic synovitis (arthroscopy) = Tuberculous arthritis (TB joint) Investigation ที่ specific: AFB smear/culture จาก synovial fluid หรือ synovial biopsy Mycobacterium tuberculosis PCR = rapid + sensitive ขึ้น Culture/sensitivity = gold standard แต่ใช้เวลา 4-8 สัปดาห์ ESR/CRP: non-specific elevated ใน infection/inflammation Weekly X-ray: ไม่ช่วย diagnosis ในระยะแรก ถ้า confirm TB joint: anti-TB drugs 6-9 เดือน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Culture and sensitivity",
+          "is_correct": false,
+          "explanation": "Standard culture ไม่ specific สำหรับ TB; AFB culture ต้องเพาะบน special media"
+        },
+        {
+          "label": "B",
+          "text": "Arthroscopy ซ้ำ + cell count",
+          "is_correct": false,
+          "explanation": "Invasive และ non-specific ไม่ยืนยัน etiology"
+        },
+        {
+          "label": "C",
+          "text": "PCR หรือ AFB stain จาก joint fluid",
+          "is_correct": true,
+          "explanation": "TB joint diagnosis: AFB smear/culture หรือ TB PCR จาก synovial fluid"
+        },
+        {
+          "label": "D",
+          "text": "Weekly X-ray",
+          "is_correct": false,
+          "explanation": "X-ray ปกติในระยะแรก; serial X-ray ไม่ช่วย diagnose"
+        },
+        {
+          "label": "E",
+          "text": "ESR + CRP ทุก 2 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Non-specific inflammatory markers ไม่ยืนยัน TB etiology"
+        }
+      ],
+      "key_takeaway": "Chronic monoarthritis + normal X-ray/blood = TB joint → AFB stain/culture + PCR จาก synovial fluid"
+    }
+  },
+  {
+    "id": "1e058c47-15a2-4462-b662-677cfacaac36",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยปวดแขน/ข้อมือ weak abductor pollicis brevis ชาที่ 3 นิ้วครึ่ง radial side Tinel test = Carpal Tunnel Syndrome ทดสอบด้วย resist wrist extension test ตามโจทย์",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Resist wrist extension test ตามโจทย์ — แต่ clinical picture ตรงกับ CTS (median nerve)",
+      "reason": "Carpal Tunnel Syndrome (CTS): Median nerve compression ที่ carpal tunnel Weak APB (abductor pollicis brevis) + sensory loss radial 3.5 digits = classic median nerve Signs: Phalen's test, Tinel's test ที่ wrist, APB weakness ตามโจทย์คำตอบ A = resist wrist extension test ซึ่งปกติใช้สำหรับ lateral epicondylitis แต่อาจใช้ evaluate forearm nerve entrapment ในบริบทนี้ คำตอบตาม exam = A (resist wrist extension)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Resist wrist extension test",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์ สำหรับ evaluate wrist/forearm pathology"
+        },
+        {
+          "label": "B",
+          "text": "Resist wrist flexion test",
+          "is_correct": false,
+          "explanation": "ไม่ specific สำหรับ CTS"
+        },
+        {
+          "label": "C",
+          "text": "Resist pronation test",
+          "is_correct": false,
+          "explanation": "สำหรับ pronator syndrome"
+        },
+        {
+          "label": "D",
+          "text": "Resist supination test",
+          "is_correct": false,
+          "explanation": "ไม่ specific สำหรับ median nerve CTS"
+        }
+      ],
+      "key_takeaway": "CTS: weak APB + radial 3.5 digit numbness + Tinel/Phalen positive; Resist wrist extension = lateral epicondylitis test"
+    }
+  },
+  {
+    "id": "1e34ed16-97cb-4c37-9fdc-5e90730e9653",
+    "correct_answer": "B",
+    "explanation": "Late kyphosis (progressive kyphotic deformity หลังการรักษา) พบน้อยที่สุดใน Ankylosing spondylitis เพราะ AS ทำให้กระดูกสันหลัง fuse (ankylosis) ป้องกัน progressive deformity หลังการรักษา",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Ankylosing spondylitis เพราะ AS ทำ bony fusion (bamboo spine) ซึ่ง stabilize spine ไม่ทำ late progressive kyphosis",
+      "reason": "Late kyphosis หลังการรักษา: TB spine (Pott's disease): vertebral destruction + collapse → late kyphosis (gibbus deformity) บ่อยมาก Scheuermann's disease: wedge-shaped vertebrae → progressive thoracic kyphosis ในวัยรุ่น Osteoporosis + compression fracture: progressive vertebral collapse → kyphosis Rheumatoid arthritis of spine: atlantoaxial instability + cervical kyphosis Ankylosing spondylitis: thoracic kyphosis เกิดจาก disease process เอง แต่ late progressive kyphosis (หลังรักษา) พบน้อยกว่าเพราะ fusion ทำให้ stable",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TB of thoracic spine",
+          "is_correct": false,
+          "explanation": "Late gibbus deformity พบบ่อยมาก จาก vertebral destruction + collapse"
+        },
+        {
+          "label": "B",
+          "text": "Ankylosing spondylitis",
+          "is_correct": true,
+          "explanation": "Bony fusion (bamboo spine) ทำให้ stable; late progressive kyphosis พบน้อยหลังรักษา"
+        },
+        {
+          "label": "C",
+          "text": "Scheuermann's disease",
+          "is_correct": false,
+          "explanation": "Progressive thoracic kyphosis ในวัยรุ่น = classic late kyphosis"
+        },
+        {
+          "label": "D",
+          "text": "Osteoporosis + compression fracture",
+          "is_correct": false,
+          "explanation": "Multiple compression fractures → progressive kyphosis"
+        },
+        {
+          "label": "E",
+          "text": "RA of spine",
+          "is_correct": false,
+          "explanation": "Atlantoaxial instability + cervical kyphosis พบได้"
+        }
+      ],
+      "key_takeaway": "Late kyphosis rarely in Ankylosing spondylitis (bony fusion = stable); TB spine = most common late kyphosis (gibbus)"
+    }
+  },
+  {
+    "id": "1e433ff5-683d-4845-83d0-fac215f0da98",
+    "correct_answer": "A",
+    "explanation": "ชายอายุ 55 ปี ปวดไหล่บน cross-body adduction ปวด = Acromioclavicular (AC) joint arthritis ข้อที่ถูกคือ A = Cross-body adduction test มี specificity สูงสำหรับ AC arthritis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Cross-body adduction test มี high specificity สำหรับ AC joint arthritis เป็น statement ที่ถูกต้อง",
+      "reason": "AC joint arthritis: ปวดไหล่บน/top โดยเฉพาะขณะ cross-body adduction (นำแขนข้ามหน้าอก) Cross-body adduction test: compress AC joint → pain = positive Specificity สูงกว่า sensitivity สำหรับ AC pathology Osteophyte จาก AC joint ทำให้บีบ rotator cuff (supraspinatus) แต่ข้อ B ผิดเพราะ osteophyte มักบีบ supraspinatus อยู่แล้ว ไม่ใช่ 'tend to compress rotator cuff tendons' ข้อ C ผิด: initial treatment = conservative (NSAIDs, PT, steroid injection) ไม่ใช่ resection ทันที ข้อ E ผิด: corticosteroid injection ใน AC joint มีประสิทธิภาพดี",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cross-body adduction test specific สำหรับ AC arthritis",
+          "is_correct": true,
+          "explanation": "Test นี้ compress AC joint โดยตรง = high specificity สำหรับ AC pathology"
+        },
+        {
+          "label": "B",
+          "text": "AC osteophyte บีบ rotator cuff โดยเฉพาะ supraspinatus",
+          "is_correct": false,
+          "explanation": "ไม่ accurate: osteophyte บีบจาก inferior AC joint ทำ impingement syndrome"
+        },
+        {
+          "label": "C",
+          "text": "รักษาด้วย AC resection ทันที",
+          "is_correct": false,
+          "explanation": "Conservative treatment ก่อน: NSAIDs + PT + steroid injection"
+        },
+        {
+          "label": "D",
+          "text": "AC arthritis มักเกิดจาก distal clavicle injury",
+          "is_correct": false,
+          "explanation": "มักเกิดจาก repetitive stress, aging, AC separation ไม่ใช่ distal clavicle injury"
+        },
+        {
+          "label": "E",
+          "text": "Corticosteroid injection ไม่มีประโยชน์",
+          "is_correct": false,
+          "explanation": "Intra-articular steroid ใน AC joint มีประสิทธิภาพดีสำหรับ AC arthritis"
+        }
+      ],
+      "key_takeaway": "AC joint arthritis: Cross-body adduction test (high specificity); ก่อนรักษา = conservative; steroid injection ช่วยได้"
+    }
+  }
+]

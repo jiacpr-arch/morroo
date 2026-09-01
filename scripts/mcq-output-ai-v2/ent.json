@@ -1,0 +1,2338 @@
+[
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี รู้สึกคุยโทรศัพท์ข้างซ้ายไม่ได้ยิน Otoscopic exam ปกติ ส่งตรวจการได้ยิน pure tone audiometry : Rt. threshold 25 dB speech discrimination 100% Lt. threshold 35 dB speech discrimination 25% ข้อใดช่วยในการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tympanometry"
+      },
+      {
+        "label": "B",
+        "text": "CT temporal lobe"
+      },
+      {
+        "label": "C",
+        "text": "Auditory brainstem response"
+      },
+      {
+        "label": "D",
+        "text": "Acoustic impedance"
+      },
+      {
+        "label": "E",
+        "text": "MRI brain with contrast"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี sensorineural hearing loss ด้านซ้ายที่มี poor speech discrimination (25%) ซึ่งบ่งชี้ปัญหาที่ส่วนกลาง Auditory brainstem response (ABR) เป็นการตรวจที่ดีในการตรวจสอบการได้ยินระดับ brainstem และสามารถตรวจหา retrocochlear pathology เช่น acoustic neuroma หรือ lesion ที่ CNS ได้ดีที่สุด",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยแมลงเข้าหู 2 ชั่วโมง รู้สึกยังมีแมลงดิ้นในหูขรุขระ Physical examination พบมีแมลงจริงในช่องหูชั่วคราว ยังมองเห็นแมบอลแดรม ควรทาอะไรก่อน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "70% alcohol"
+      },
+      {
+        "label": "B",
+        "text": "3% boric acid"
+      },
+      {
+        "label": "C",
+        "text": "Vegetable oil"
+      },
+      {
+        "label": "D",
+        "text": "Normal saline"
+      },
+      {
+        "label": "E",
+        "text": "Ether"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "การหยอด vegetable oil ช่วยในการทำให้แมลงตายและลดการเคลื่อนไหว โดยจะเข้าไปในการหายใจของแมลง ทำให้สามารถนำออกได้ง่าย ควรหยอดแล้วรอ 10-15 นาทีจึงดำเนินการนำออก",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 55 ปี มาด้วยเรื่องอาการวิงเวียนศีรษะมา 3 วัน เป็นมากเวลาตื่นตอนเช้า และเวลาหันศีรษะไปมา มีอาการคลื่นไส้ แต่ไม่อาเจียน ตรวจร่างกาย Weber's test ปกติ (ไม่มี lateralization) Rinne's test บวกทั้งสองหู (AC>BC) การทาการทดสอบใดเป็นการช่วยวินิจฉัยผู้ป่วยรายนี้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Romberg test"
+      },
+      {
+        "label": "B",
+        "text": "Dix Hallpike test"
+      },
+      {
+        "label": "C",
+        "text": "Unterberger test"
+      },
+      {
+        "label": "D",
+        "text": "Caloric test"
+      },
+      {
+        "label": "E",
+        "text": "Nystagmus assessment"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "อาการวิงเวียนที่เพิ่มขึ้นเมื่อหันศีรษะและตื่นในตอนเช้า เป็นลักษณะของ Benign Paroxysmal Positional Vertigo (BPPV) Dix Hallpike test เป็นการทดสอบที่เหมาะสมที่สุดสำหรับการวินิจฉัย BPPV",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 3 ปี มาด้วยอาการหูอื้อ 1 วันก่อนมาโรงพยาบาล 2 วันก่อนมาโรงพยาบาล ผู้ป่วยเดินทางโดยเครื่องบิน มีอาการหูอื้อ และปวดหูมากขณะเครื่องลง ขณะนี้ ไม่ปวดหูแล้ว แต่ยังมีอาการหูอื้ออยู่ Physical examination: หูซ้ายปกติ หูขวาแดรมสีเข้มน้ำเงินและหดเข้า Weber lateralize ไปขวา Rinne ซ้าย AC>BC ขวา BC>AC ให้การรักษาที่เหมาะสมกับผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Loratadine"
+      },
+      {
+        "label": "B",
+        "text": "Pseudoephedrine"
+      },
+      {
+        "label": "C",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "D",
+        "text": "Steroid + antibiotic ear drop"
+      },
+      {
+        "label": "E",
+        "text": "Myringotomy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี serous otitis media (otitis media with effusion) หลังจากการเดินทางด้วยเครื่องบิน ที่สำคัญคือการแก้ไขปัญหาการอักเสบและความหนาแน่นในช่องหูตรงกลาง Pseudoephedrine เป็นยา decongestant ที่ช่วยในการลดการอักเสบและการหลั่งของหนาแน่นในหลอดอุสตาเคียน ซึ่งเหมาะสมที่สุดในกรณีนี้",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี ตื่นเช้ามามีใบหน้าซีกซ้ายเบี้ยว ชากระพุ้งแก้มซ้าย หลับตาไม่สนิท น้าลายไหลมุมปากซ้าย Vital signs BP 110/70 mmHg PR 72 ครั้ง/นาที Physical examination พบ weakness ของมดลูกด้านซ้าย ไม่มีข้อบกพร่องของระบบประสาทอื่น จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trigeminal neuralgia"
+      },
+      {
+        "label": "B",
+        "text": "Idiopathic facial palsy (Bell's palsy)"
+      },
+      {
+        "label": "C",
+        "text": "Ramsay Hunt syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Ruptured cerebral aneurysm"
+      },
+      {
+        "label": "E",
+        "text": "Cerebellopontine angle tumor"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "โดยทั่วไปแล้ว Bell's palsy (idiopathic facial palsy) เป็นสาเหตุสำคัญที่สุดของ acute facial palsy คิดเป็น 60-75% ของกรณีทั้งหมด ผู้ป่วยนี้ไม่มีอาการที่บ่งชี้ถึง Ramsay Hunt (ไม่มี vesicles ในหู) ไม่มีอาการของ CVA หรือ tumor",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยนอนกรนมีประวัติ OSA ตรวจเจอ tonsil แค่ grade 2 การรักษาที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tonsillectomy"
+      },
+      {
+        "label": "B",
+        "text": "Uvuloplasty"
+      },
+      {
+        "label": "C",
+        "text": "Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Corticosteroid"
+      },
+      {
+        "label": "E",
+        "text": "CPAP therapy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "Tonsil grade 2 ไม่ใหญ่พอที่จะเป็นสาเหตุหลักของ OSA จึงไม่มีข้อบ่งชี้ในการทำ tonsillectomy CPAP therapy เป็นการรักษาของเลือกสำหรับ OSA",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็กหญิงอายุ 3 ปี หนัก 15 กิโลกรัม สูง 89 เซนติเมตร มีอาการนอนกรนมา 2 เดือน Physical examination พบการบวมเล็กน้อยของท่อไขสวนซ้ายและมีสีซีด เด็กคนนี้มีความเสี่ยงต่อภาวะใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Obesity"
+      },
+      {
+        "label": "B",
+        "text": "Adenotonsillar hypertrophy"
+      },
+      {
+        "label": "C",
+        "text": "Cor pulmonale"
+      },
+      {
+        "label": "D",
+        "text": "Pulmonary hypertension"
+      },
+      {
+        "label": "E",
+        "text": "Growth retardation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีการบวมของท่อไขสวน (turbinate) ซึ่งเป็นอาการของการอักเสบ นอนกรนมา 2 เดือน บ่งชี้ว่าอาจมี sleep apnea ซึ่งทำให้เกิด hypoxemia ส่งผลต่อ pulmonary vasculature ซึ่งสามารถนำไปสู่ pulmonary hypertension ได้ ค่อนข้างเสี่ยง",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยมาพบแพทย์ด้วยปวดหู 2 วัน เอาไม้หูมาทำให้ได้เมือกเหนียวสีดำ ส่องหูพบภาพการอักเสบ (ตามรูปสีที่ให้ไว้) ผู้ป่วยนี้ได้รับการวินิจฉัยว่าเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Malignant otitis externa"
+      },
+      {
+        "label": "B",
+        "text": "Diffuse otitis externa"
+      },
+      {
+        "label": "C",
+        "text": "Localized otitis externa (furuncle)"
+      },
+      {
+        "label": "D",
+        "text": "Mycotic otitis externa"
+      },
+      {
+        "label": "E",
+        "text": "Chronic suppurative otitis media"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "การพบเมือกเหนียวสีดำ (black necrotic eschar) เป็นลักษณะที่อาจชี้ไปยัง mycotic otitis externa หรือ malignant otitis externa อย่างไรก็ตาม mycotic otitis จะมีการหลั่งของเมือกเหนียวสีดำเป็นอาการทั่วไป",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี ตอนเด็กเป็นหูน้าหนวกข้างขวาบ่อย พักหลังเป็นหูน้าหนวกมากขึ้น วันนี้มามีอาการวิงเวียนศีรษะ จะให้การรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Film mastoid"
+      },
+      {
+        "label": "B",
+        "text": "Audiogram & tympanogram"
+      },
+      {
+        "label": "C",
+        "text": "IV antivertigo drugs"
+      },
+      {
+        "label": "D",
+        "text": "IV ciprofloxacin admit"
+      },
+      {
+        "label": "E",
+        "text": "Oral ciprofloxacin + follow-up 2 วัน"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "ประวัติหูน้าหนวกซ้ำๆ ร่วมกับวิงเวียนศีรษะใหม่บ่งชี้ว่า อาจเกิดจากการติดเชื้อของหูขวาที่ร้ายแรง หรือแม้แต่ mastoiditis ที่สามารถนำไปสู่ labyrinthitis IV ciprofloxacin พร้อมการรับปรึกษาจำเป็นเพื่อการรักษาที่เหมาะสม",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 20 ปี มีอาการปวดหู หูอื้อทันทีหลังจากแมลงเข้าหู เมื่อคืนนี้ วันนี้หูอื้อมาก ตรวจพบแมลงสาบขนาดเล็กตายแล้วอยู่ในหูขวา จะรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Remove by hook"
+      },
+      {
+        "label": "B",
+        "text": "Remove by prick"
+      },
+      {
+        "label": "C",
+        "text": "Remove by bayonet forceps"
+      },
+      {
+        "label": "D",
+        "text": "Remove by alligator forceps"
+      },
+      {
+        "label": "E",
+        "text": "Remove by suction"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Alligator forceps เป็นเครื่องมือที่ดีที่สุดสำหรับการนำแมลงออก เพราะสามารถจับแมลงได้อย่างแน่นหนา ลดการสูญเสียส่วนของแมลงและเนื้อเยื่อในช่องหูชั่วคราว",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี มี left cervical lymphadenopathy ขนาด 2 เซนติเมตร มา 3 สัปดาห์ ไม่มีความปวด ไม่มีไข้ ไม่มีอาการอื่น Physical examination ปกติ ENT examination ปกติ ข้อใดควรทำเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymph node biopsy"
+      },
+      {
+        "label": "B",
+        "text": "Lymph node fine needle aspiration"
+      },
+      {
+        "label": "C",
+        "text": "Tuberculin test (Mantoux)"
+      },
+      {
+        "label": "D",
+        "text": "Bone marrow aspiration"
+      },
+      {
+        "label": "E",
+        "text": "Observe and follow-up"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Lymphadenopathy ขนาด 2 เซนติเมตร ในผู้ป่วยที่ไม่มีอาการอื่น ไม่มีไข้ ไม่มีความปวด อาจเป็นขนาดปกติหรือมาจากการติดเชื้อเล็กน้อย การสังเกตและติดตามผลการรักษาจึงเป็นตัวเลือกที่เหมาะสม หากยังคงอยู่หรือเพิ่มขึ้นอาจต้องทำ biopsy",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กมี earwax แข็งมาก ต้องทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Immediate removal with instrument"
+      },
+      {
+        "label": "B",
+        "text": "Instill oil drops and schedule removal appointment"
+      },
+      {
+        "label": "C",
+        "text": "Instill ceruminolytic agent and immediate removal"
+      },
+      {
+        "label": "D",
+        "text": "Use hydrogen peroxide only"
+      },
+      {
+        "label": "E",
+        "text": "Referral to ENT without intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Earwax แข็งมาก ควรหยอดน้ามันหรือ ceruminolytic agent เพื่อให้นุ่มก่อน แล้วจึงนัดมากลับเพื่อนำออก การพยายามนำออกโดยเครื่องมืออาจเกิดอันตรายต่อช่องหูชั่วคราวและแดรม",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยกินอาหารมีก้างปลาติดคอ 1 สัปดาห์ก่อนมาพบแพทย์ มีอาการกลืนแล้วเจ็บเป็นๆหายๆ มาพบแพทย์ ตรวจไม่พบก้างปลา จงให้การรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotic 7 วัน กลับบ้าน"
+      },
+      {
+        "label": "B",
+        "text": "Soft tissue neck film"
+      },
+      {
+        "label": "C",
+        "text": "Barium swallow"
+      },
+      {
+        "label": "D",
+        "text": "Fiberoptic esophagoscopy"
+      },
+      {
+        "label": "E",
+        "text": "Reassure patient that no foreign body found, provide symptomatic relief"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "หลังจากตรวจไม่พบก้างปลาและอาการเจ็บเป็นๆหายๆ แสดงว่าก้างปลาอาจเคลื่อนตัวไปแล้วหรือสม่อมอยู่ในจุดที่ไม่เป็นอันตราย การให้ความมั่นใจและแนะนำการรักษาอาการเป็นการจัดการที่เหมาะสม",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "นักบาสเกตบอลถูกเพื่อนศอกที่หู มีอาการหูอื้อทันทีและมีเลือดออก ตรวจร่างกายพบ rupture of eardrum มี blood clot การรักษาโดยนำเลือดออก แล้ว step ต่อไปคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Antibiotic ear drop"
+      },
+      {
+        "label": "C",
+        "text": "Antihistamine"
+      },
+      {
+        "label": "D",
+        "text": "Paper patch over the perforation"
+      },
+      {
+        "label": "E",
+        "text": "Immediate tympanoplasty"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Traumatic perforation of tympanum สามารถหายได้เอง หลังจากนำ blood clot ออกแล้ว ควรแปะ paper patch เพื่อปกป้องแดรมและช่วยให้หายเร็วขึ้น การทำ tympanoplasty ควรรอสักเวลาหากแดรมไม่หาย",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 15 ปี มีรูที่หน้าหู ขวามาตั้งแต่เกิด 2 ปี มีน้าใสๆไหลออกมา ขณะนี้บวมแดง ปวดมาก จงให้การวินิจฉัยและการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymphadenitis treated with antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Branchial cleft cyst treated with excision"
+      },
+      {
+        "label": "C",
+        "text": "Preauricular abscess treated with incision and drainage"
+      },
+      {
+        "label": "D",
+        "text": "Infected preauricular sinus treated with excision"
+      },
+      {
+        "label": "E",
+        "text": "Preauricular cyst treated with observation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "รูที่หน้าหู (pit) มาตั้งแต่เกิด เป็นสัญลักษณ์ของ preauricular sinus หรือ preauricular pit ที่มักติดเชื้อได้ การไหลของน้าใสๆและการบวมแดงปวดแสดงว่ามีการติดเชื้อ การรักษาในกรณีติดเชื้อคือ incision and drainage หรือ excision ของสิ่งที่อักเสบ",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี เสียงแหบมา 1 เดือน อาการคงที่ มีประวัติสูบบุหรี่มา 30 ปี ตรวจร่างกายเจอสายเสียงซ้ายไม่ขยับ ข้างขวาบวมเล็กน้อยขยับได้นิดหน่อย ทำอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chest X-Ray"
+      },
+      {
+        "label": "B",
+        "text": "Stroboscope"
+      },
+      {
+        "label": "C",
+        "text": "Voice rest"
+      },
+      {
+        "label": "D",
+        "text": "Speech therapy"
+      },
+      {
+        "label": "E",
+        "text": "Direct laryngoscope with biopsy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีประวัติสูบบุหรี่นาน 30 ปี เสียงแหบมา 1 เดือน และพบ vocal cord palsy (left vocal cord immobile) บ่งชี้ว่า recurrent laryngeal nerve อาจถูกบีบอัด ดังนั้นต้องทำ Chest X-Ray เพื่อตรวจสอบว่ามี lung cancer หรือ mediastinal pathology ที่อาจบีบอัด RLN หรือไม่ ซึ่งมีความเสี่ยงสูงในผู้สูบบุหรี่ยาวนาน",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชาย 70 ปี มาด้วยแผลที่ปากขนาด 2 cm มีขอบยกสูง (elevated border) มีแผล/แผลเป็น (ulceration) บริเวณนี้เป็นมา 6 เดือน ไม่หายแม้ได้รับการรักษา ผลรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Biopsy เพื่อวินิจฉัยทาง组织学ก่อนการรักษา"
+      },
+      {
+        "label": "B",
+        "text": "ใช้ยา topical steroid ต้อทั้งหมด 4-6 สัปดาห์"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ยา antifungal ในกรณีสงสัย candidiasis"
+      },
+      {
+        "label": "D",
+        "text": "ข้อมูลทางคลินิกปกติ ไม่จำเป็นต้องตรวจเพิ่มเติม"
+      },
+      {
+        "label": "E",
+        "text": "ส่งเสริมการบริหารจัดการกลุ่มเสี่ยง เท่านั้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "แผลที่ปากขนาด 2 ซม. ที่มีขอบยกสูง (indurated elevated border) และมี ulceration เป็นเวลา 6 เดือนคือ ulcer ที่ไม่หายในระยะยาว สิ่งนี้ชี้ไปถึงความเป็นไปได้ของโอรัล แคนเซอร์ (oral squamous cell carcinoma) โดยเฉพาะในผู้สูงอายุ การ biopsy เป็น gold standard ในการวินิจฉัยแล้วจะสามารถตัดสินใจการรักษาต่อไปได้ทั้ง surgery หรือ radiotherapy/chemotherapy ขึ้นอยู่กับ stage",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยแผลเปิดที่จมูก เนื่องจากอุบัติเหตุ พบว่าเนื้อเยื่อเสียและติดเชื้อ แพทย์วินิจฉัยว่า Necrotizing fasciitis ของจมูก การรักษาแรกที่สำคัญคือการทำอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ยาปฏิชีวนะระบบเข้าหลอดเลือด (IV antibiotics) อย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Surgical debridement ของเนื้อเยื่อที่เสียหาย พร้อมกับ topical antibiotic"
+      },
+      {
+        "label": "C",
+        "text": "ทำแต่ wound cleaning และ dressing เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "ปล่อยให้เนื้อเยื่อผุ่นด้วยตัวเองตามธรรมชาติ"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยาคลายกล้ามเนื้อ (muscle relaxant) เพื่อลดอาการบวม"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "Necrotizing fasciitis เป็นโรคอักเสบเนื้อเยื่อขาดเลือดที่รุนแรงและอันตราย ต้องทำ surgical debridement (การตัดเนื้อเยื่อที่ตายแล้ว) อย่างรวดเร็วโดยไม่ชักช้า เพื่อหยุดการแพร่ของการติดเชื้อและรักษาชีวิตของผู้ป่วย ร่วมกับการใช้ topical antibiotic และ IV antibiotics เป็นการรักษามาตรฐาน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 45 ปี มาด้วยอาการก้อนในช่องปาก ที่บริเวณฟ้าแข็ง ขนาด 2 ซม. สงสัยเป็นมะเร็งจากการตรวจคลินิก แพทย์ตัดสินใจทำการ wide excisional biopsy แล้ว ควรสนใจข้อใดต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ขยายกระบวนการผ่าตัดเพื่อขจัดส่วนเนื้อที่ผิดปกติทั้งหมดพร้อมกับเนื้อเยื่อปกติโดยรอบ"
+      },
+      {
+        "label": "B",
+        "text": "ส่งตรวจทาง病理เพื่อศึกษาขอบของการผ่าตัด (surgical margin) และระดับการบุกรุกของเนื้องอก"
+      },
+      {
+        "label": "C",
+        "text": "ติดตามตรวจการไหลเวียนเลือด และระบายน้ำผ่านอาหารหลอดเท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ต้องให้สารต้านชีวนะเพราะเป็นการผ่าตัดในช่องปาก"
+      },
+      {
+        "label": "E",
+        "text": "รอผลการตรวจทางจีนวิทยาก่อนดำเนินการรักษาเพิ่มเติม"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "Wide excisional biopsy นอกจากเป็นการเอาเนื้อเยื่อผิดปกติออกมาแล้ว ยังต้องมีเนื้อเยื่อปกติโดยรอบ ส่วนที่สำคัญของการผ่าตัดดังกล่าวคือการตรวจสอบขอบของการผ่าตัด (surgical margin) และระดับความลึกของการบุกรุกของเนื้องอก ซึ่งจะช่วยกำหนดการรักษาเพิ่มเติมและพยากรณ์โรคได้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 30 ปี มีประวัติได้รับบาดเจอจากประทัดใกล้หู ตรวจร่างกายพบเยื่อแก้วหูเสียหายแบบ dry perforation ประมาณ 40% ของพื้นที่เยื่อแก้วหู มีการไหลออกจากหู ไม่มีเลือด ไม่มีน้ำในหูช่องหนึ่ง ผู้ป่วยมีอาการหูหนวก ชั่วคราว การรักษาที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ยาอะนติบायโอติกมากินทั่วไป และสังเกตการณ์ 6-8 สัปดาห์"
+      },
+      {
+        "label": "B",
+        "text": "ท่อสวนหู (ear canal packing) และใช้ยาอะนติบายโอติกหยดหู"
+      },
+      {
+        "label": "C",
+        "text": "ผ่าตัดซ่อมแซมเยื่อแก้วหูทันที (immediate tympanoplasty)"
+      },
+      {
+        "label": "D",
+        "text": "ห้ามสัมผัสน้ำหูช่องหนึ่ง และรอการติดตั้งหนองน้ำเทียม"
+      },
+      {
+        "label": "E",
+        "text": "ผ่าตัดขยายทะลุจัตรัส (cortical mastoidectomy) ทันที"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "Dry perforation ขนาดเล็กถึงกลาง (40%) จากอุบัติเหตุด้วยบาดแผล blast แบบเฉียบพลัน มีแนวโน้มที่จะติดตั้งเอง (spontaneous healing) ได้สูง ประมาณ 80-90% ในเวลา 6-8 สัปดาห์ ดังนั้นการรักษาเบื้องต้นคือให้ยาอะนติบายโอติกทั่วไปป้องกันการติดเชื้อ และสังเกตการณ์ หากไม่ติดตั้งเองหลังจาก 8 สัปดาห์ ก็อาจพิจารณาผ่าตัด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยมาด้วยอาการเหน็บคออักเสบเรื้อรังกับเสมหะเข้าข้างเดียวติดแน่น เมื่อนำกล้องส่องตรวจเห็นเลือดเสม็ดสะสมในโพรงจมูก และมีเอื้อมเนื้อที่บวมมีลักษณะคล้ายลูกไข่ (polyp) ซึ่งยืดยาวลงมาจากกำแพงด้านข้าง ตัดอกแล้ว ต้องการทำการบำรุงแผลเพื่อป้องกันการติดเชื้อในระยะแรก ควรทำการทำให้เห็นแหล่งเลือดออก และทาสารต้านจุลชีพ เลือกสารใดที่เหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทำให้เห็นแหล่งเลือดออกด้วยการตั้งตัวศีรษะหลัง และทาสีแจ่มเจียว (Gentian Violet)"
+      },
+      {
+        "label": "B",
+        "text": "ทำให้เห็นแหล่งเลือดออกด้วยการตั้งตัวศีรษะหลัง และทาไอโอดีน (Iodine solution)"
+      },
+      {
+        "label": "C",
+        "text": "ทำให้เห็นแหล่งเลือดออกด้วยการตั้งตัวศีรษะหลัง และทาปราณีสารกำจัดเชื้อ (Hydrogen peroxide)"
+      },
+      {
+        "label": "D",
+        "text": "ทำให้เห็นแหล่งเลือดออกด้วยการเพิ่มแรงดันในโพรงจมูก และทาแนฟทาโซลิน (Naphazoline)"
+      },
+      {
+        "label": "E",
+        "text": "ทำให้เห็นแหล่งเลือดออกด้วยการตั้งตัวศีรษะหลัง และทาแนฟทาโซลิน (Naphazoline)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "สีแจ่มเจียว (Gentian Violet) เป็นสารระงับเชื้อและยาฆ่าเชื้อที่มีประสิทธิภาพหลังการผ่าตัดจมูก โดยช่วยหยุดเลือดและป้องกันการติดเชื้อ การตั้งตัวศีรษะหลังช่วยให้เห็นแหล่งเลือดออกที่จะได้ยาชุมชื้น Gentian Violet ปลอดภัยและเป็นมาตรฐานทางการแพทย์ไทยสำหรับการดูแลแผลภายในจมูก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการหูน้อยหนวกและหูอื่น มีสิ่งแปลกปลอมในช่องหูชั้นนอก แพทย์ตัดสินใจให้การรักษาโดยใส่ Gelfoam ผสมกับหยดน้ำหูที่มีสารต้านจุลชีพ (ATB ear drop) ข้อใดคือข้อบ่งชี้หลักสำหรับการใช้งานแบบนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การอักเสบของช่องหูชั้นนอกอย่างเฉียบพลันที่มีสิ่งแปลกปลอมและต้องการให้ยาเข้าไปพอกพูนและปล่อยยาต่อเนื่อง"
+      },
+      {
+        "label": "B",
+        "text": "การอักเสบเรื้อรังของช่องหูชั้นนอกเท่านั้นโดยไม่มีสิ่งแปลกปลอม"
+      },
+      {
+        "label": "C",
+        "text": "สิ่งแปลกปลอมในช่องหูชั้นนอกที่ไม่มีการอักเสบ"
+      },
+      {
+        "label": "D",
+        "text": "อื่นหลุดออก (Perforation) ที่มีการสึกเสียน้อยมาก"
+      },
+      {
+        "label": "E",
+        "text": "การติดเชื้อรูปแบบ Malignant otitis externa ที่รักษาด้วยยาเดียวเพียงพอ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "การใช้ Gelfoam ผสมกับสารต้านจุลชีพในช่องหูชั้นนอก มีข้อบ่งชี้สำหรับกรณีอักเสบเฉียบพลันกับสิ่งแปลกปลอม เพราะ Gelfoam ทำหน้าที่เป็นตัวพกพายา มีความเหนียวเหนอะหนะ ช่วยให้ยาคงอยู่ในพื้นที่นานขึ้น และให้การปล่อยยาต่อเนื่อง ช่วยลดอาการบวม คัน และอักเสบ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 35 ปี มาด้วยอาการหูอื้อ ประวัติเป็นโรคหูอักเสบเรื้อรังมาตั้งแต่เด็ก มีการรั่วซึมน้ำหูชำรุด และการไหลออกของหนองเหลวจากหู จึงได้รับการวินิจฉัยว่า perforated tympanic membrane ขนาดเล็ก ที่อยู่ครึ่งล่างของ pars tensa โดยไม่มีขอบอักเสบ ปัจจุบันระบายน้ำหูหมาดๆ แต่ยังมีอาการหูอื้อปานกลาง ปัจจุบันอาการเสถียร ไม่มีการไหลออกจากหู 1 เดือน ผู้ป่วยต้องการแก้ไขปัญหา ควรจัดตารางเวลา (schedule) สำหรับการทำ tympanoplasty ไว้เมื่อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทันทีในการเข้ามาครั้งแรก (immediate scheduling) เพราะเพื่อลดการรั่วซึมน้ำหูให้มากที่สุด"
+      },
+      {
+        "label": "B",
+        "text": "หลังจากระบายน้ำหูเลิกไหลออกมา 2-4 สัปดาห์ และตรวจสอบว่าหูไม่มีการอักเสบหรือการติดเชื้อ"
+      },
+      {
+        "label": "C",
+        "text": "รอจนกว่าผู้ป่วยจะมีการรั่วซึมน้ำหูติดต่อเป็นเวลา 3-6 เดือน เพื่อให้แน่ใจว่ามีการเปลี่ยนแปลงในระยะยาว"
+      },
+      {
+        "label": "D",
+        "text": "หลังจาก 1 ปี ของการเฝ้าดูอย่างใกล้ชิด เพื่อให้มีโอกาสที่หูจะหายตัวเองโดยธรรมชาติ"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ต้องทำ tympanoplasty เนื่องจากเป็น small perforation ที่สามารถหายได้เอง ในกรณีส่วนใหญ่"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "การผ่าตัด tympanoplasty ควรทำเมื่อหูระบายออกเสร็จสิ้น (dry ear) โดยไม่มีการอักเสบหรือติดเชื้ออย่างน้อย 2-4 สัปดาห์ เพื่อให้ได้ผลการศัลยกรรมที่ดีที่สุด หากหูยังมีการไหลออก การศัลยกรรมจะมีอัตราความสำเร็จที่ต่ำกว่า เนื่องจากความชื้นและการติดเชื้อจะส่งผลต่อการติดตัวของกระดาษแก้ว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 40 ปี มีไข้ เจ็บคอ กลืนเจ็บ และกลืนลาบาก ซื้อยามาทานเองไม่หาย ตรวจร่างกายพบ muffled voice film lateral neck ด้วย soft tissue technique ได้ผลการตรวจดังภาพ การวินิจฉัยใดถูกต้องมากที่สุด (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Epiglotitis"
+      },
+      {
+        "label": "B",
+        "text": "Ludwig angina"
+      },
+      {
+        "label": "C",
+        "text": "Laryngotracheitis"
+      },
+      {
+        "label": "D",
+        "text": "Retropharyngeal abscess"
+      },
+      {
+        "label": "E",
+        "text": "Parapharyngeal abscess"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี มาด้วยหูขวาอื้อมา 1 วัน ผู้ป่วยต้องเดินทางโดยเครื่องบินบ่อยๆ และมักหูอื้อเวลาเครื่องบินขึ้นหรือลง สักพักจะหายไปเอง 2 วันก่อน ขณะเครื่องบินลงจอดที่ลาน รู้สึกหูขวาอื้อและปวดหูมาก การได้ยินลดลง เช้านี้ยังหูอื้ออยู่แต่ไม่ปวดหูแล้ว ตรวจ left ear drum: normal , right ear drum: dark blue, retracted ear drum,\nWeber test: localized to right, Rinne test: left AC>BC, right BC>AC จงบอกการรักษาที่เหมาะสม (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Loratadine"
+      },
+      {
+        "label": "B",
+        "text": "Pseudoephredine"
+      },
+      {
+        "label": "C",
+        "text": "Serrtic peptidase"
+      },
+      {
+        "label": "D",
+        "text": "Chloramphenical eardrop"
+      },
+      {
+        "label": "E",
+        "text": "Myringotomy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หลังจากฝึกซ้อมยิงปืน หูขวาอื้อมีเสียงดังอื้อในหู ตรวจร่างกายมี ear drum : intact , Weber : no lateralization , Renne : Rt BC > AC , Lt AC>BC จงวินิจฉัย (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acoustic trauma"
+      },
+      {
+        "label": "B",
+        "text": "Otosclerosis"
+      },
+      {
+        "label": "C",
+        "text": "Meniere"
+      },
+      {
+        "label": "D",
+        "text": "Steatosis"
+      },
+      {
+        "label": "E",
+        "text": "Otitis media"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยเด็ก มีไข้ น้ามูกไหล ตรวจหูพบ erythematous with bulging at posterior TM จะให้ยาใดรักษา(ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tetracycline"
+      },
+      {
+        "label": "B",
+        "text": "Amoxycillin"
+      },
+      {
+        "label": "C",
+        "text": "Erythromycin"
+      },
+      {
+        "label": "D",
+        "text": "Doxycycline"
+      },
+      {
+        "label": "E",
+        "text": "Amoxy-clavulonic"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี มีไข้ หายใจเสียงดัง น้ามูกไหลจากจมูกทั้งสองข้าง นอนกรนมา 2 ปี น่าจะเป็นจากอะไร(ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Choanal atresia"
+      },
+      {
+        "label": "B",
+        "text": "High arch palate"
+      },
+      {
+        "label": "C",
+        "text": "Hypertrophy of adenoid"
+      },
+      {
+        "label": "D",
+        "text": "Foreign body of nasal cavity"
+      },
+      {
+        "label": "E",
+        "text": "Congenital tumor of nasal cavity"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "เด็กอายุ 4 ขวบ มาด้วยอาการน้ามูกเขียวเหม็นไหลออกจากจมูกข้างซ้ายเพียงข้างเดียวมาเป็นเวลา 2 สัปดาห์ ใช้ยาหลายตัวแล้วแต่ไม่ดีขึ้น ไม่มีประวัติหวัด เด็กบอกว่าจมูกซ้ายมีสิ่งของอยู่ข้างใน ควรคิดว่าเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "วัตถุแปลกปลอม (Foreign Body) ในจมูก"
+      },
+      {
+        "label": "B",
+        "text": "หนองน้ำในจมูก (Nasal Cyst)"
+      },
+      {
+        "label": "C",
+        "text": "ไซนัสอักเสบเรื้อรัง (Chronic Sinusitis)"
+      },
+      {
+        "label": "D",
+        "text": "โปลิพในจมูก (Nasal Polyp)"
+      },
+      {
+        "label": "E",
+        "text": "เนื้องอกจมูก (Nasal Tumor)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "กรณีนี้มีลักษณะเป็นอาการน้ามูกเหม็นอักเสบจากข้างเดียว ต่อเมื่อปฏิเสธยา และเด็กสามารถอธิบายว่ามีสิ่งของอยู่ข้างใน ซึ่งเป็นคลินิกัลซัพทอมของวัตถุแปลกปลอมในจมูก ต้องทำการตรวจ endoscopy และสักหลาดออกมา วัตถุแปลกปลอมเป็นเหตุการณ์ที่พบบ่อยในเด็ก โดยเฉพาะเด็กอายุ 2-4 ปี",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย อายุ 45 ปี มาด้วยอาการคัดจมูกด้านซ้าย น้ามูกปนเลือด หูอื้อ และมีก้อนที่คอ (lymphadenopathy) เป็นเวลา 3 เดือน (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nasopharyngeal carcinoma"
+      },
+      {
+        "label": "B",
+        "text": "Otitis media with effusion"
+      },
+      {
+        "label": "C",
+        "text": "Chronic rhinosinusitis with nasal polyp"
+      },
+      {
+        "label": "D",
+        "text": "Allergic rhinitis"
+      },
+      {
+        "label": "E",
+        "text": "Nasopharyngeal tuberculosis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "สาเหตุการมาของผู้ป่วยพบลักษณะเฉพาะของมะเร็งจมูก咽(Nasopharyngeal carcinoma) ได้แก่ คัดจมูกด้านเดียว น้ามูกปนเลือด หูอื้อ (ที่มาจากอุดตันหลอด Eustachian) และ cervical lymphadenopathy โรคนี้พบได้บ่อยในประเทศไทยและเกี่ยวข้องกับ EBV infection",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 25 ปี คัดจมูก มีน้ามูก และจามอยู่บ่อยๆ ไปพบแพทย์ ได้รับการวินิจฉัยว่าเป็น จมูกอักเสบจากภูมิแพ้ ได้ยาหยอดจมูก 6 เดือน อาการไม่ดีขึ้น จึ่งซื้อยามาหยอดจมูกเอง 3 เดือน อาการแย่ลง น้ามูกมากขึ้น หายใจไม่ค่อยออก Dx? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Atrophic rhinitis"
+      },
+      {
+        "label": "B",
+        "text": "Vasomotor rhinitis"
+      },
+      {
+        "label": "C",
+        "text": "Chronic irritative rhinitis"
+      },
+      {
+        "label": "D",
+        "text": "Rhinitis medicamentosa"
+      },
+      {
+        "label": "E",
+        "text": "Severe allergic rhinitis with polypoid change"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 28 ปีไข้ต่าๆไอมีเสมหะมี bullous myringitisคิดถึงเชื้ออะไร (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "S.pneumoniae"
+      },
+      {
+        "label": "B",
+        "text": "H.influenzae"
+      },
+      {
+        "label": "C",
+        "text": "RSV"
+      },
+      {
+        "label": "D",
+        "text": "Mycoplasma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 28 ปี มาพบแพทย์ด้วยอาการไข้สูง ไอ และอ่อนเพลีย เมื่อตรวจโอโตสโคปพบ bullous myringitis ที่แนบเบื้องหน้า ซึ่งมีลักษณะเป็นฟองน้ำที่มีของเหลวในกลางพื้นผิวแก้ว ยาที่เหมาะสมที่สุดในกลุ่ม Macrolide สำหรับรักษาภาวะนี้ คือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Azithromycin (Zithromax)"
+      },
+      {
+        "label": "B",
+        "text": "Erythromycin"
+      },
+      {
+        "label": "C",
+        "text": "Clarithromycin (Biaxin)"
+      },
+      {
+        "label": "D",
+        "text": "Roxithromycin"
+      },
+      {
+        "label": "E",
+        "text": "Spiramycin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Bullous myringitis มักเกิดจากเชื้อไวรัส (โปรแกรม Influenza, Parainfluenza) หรือแบคทีเรีย (Mycoplasma pneumoniae, Streptococcus pneumoniae) Azithromycin เป็นยา macrolide ที่เหมาะสมมากที่สุดเพราะ: (1) ให้ปฏิกิริยากับ Mycoplasma pneumoniae ซึ่งเป็นสาเหตุ bullous myringitis ที่พบบ่อยในผู้ป่วยไข้ ไอ (2) มีการซึมผ่านเนื้อเยื่อและความเข้มข้นสูง (3) ให้ปฏิกิริยากับไวรัสได้บ้าง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กอายุ 8 ปี มาด้วยอาการปวดฟันกรามขวา อ้าปากไม่ได้ (trismus) PE พบฟันกรามผุทั้งซ้ายและขวา แก้มด้านขวาปูด มีก้อนแข็งนูนออกมา ไม่มีไข้ ลิมโฟโนด์ใต้ขากรรไกรขยายใหญ่ เอกซเรย์ฟันแสดงโคลงฟัน ให้วินิจฉัยโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute dentoalveolar abscess (ร้อยละของฟันคุด)"
+      },
+      {
+        "label": "B",
+        "text": "Odontogenic osteomyelitis with cellulitis (โอสโตมีเอไลติสจากฟัน)"
+      },
+      {
+        "label": "C",
+        "text": "Submandibular lymphadenitis (ไลมโฟดีนิติสใต้ขากรรไกร)"
+      },
+      {
+        "label": "D",
+        "text": "Pericoronitis with localized swelling (ปวดรอบเหงือก)"
+      },
+      {
+        "label": "E",
+        "text": "Dentigerous cyst (โคลงที่เกี่ยวข้องกับฟัน)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยนี้มีลักษณะของ acute dentoalveolar abscess จากฟันผุ ได้แก่ ปวดแหลมของฟันเฉพาะที่ trismus (อ้าปากไม่ได้) แก้มปูดนูน และฟันสาเหตุผุ (carious tooth) การวินิจฉัยนี้สอดคล้องกับแหล่งที่มาจากเข็มทางนอก (extraoral abscess) ที่เกิดจากการแพร่กระจายของการติดเชื้อจากโพรงปากสู่เนื้อเยื่อล้อมรอบ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 35 ปี มาด้วยอาการบวมและเจ็บปวดที่บริเวณใต้ขากรรไกร ติดต่อจากการติดเชื้อฟันที่มีอาการเฉพาะที่เป็นเนื้องอกเต่อมน้ำลายและมีการหลั่งหนองหรือหนอง สัญญาณชีพมีไข้ 38.5°C พบการบวมและมีจุดนิ่มตรงที่เป็นปัญหา ต้องการวินิจฉัย dentoalveolar abscess จะต้องตรวจอะไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Panoramic radiograph และ Periapical radiograph เพื่อยืนยันการติดเชื้อในช่องฟัน"
+      },
+      {
+        "label": "B",
+        "text": "CT scan ทั้งแบบ axial และ coronal เพื่อประเมินขอบเขตและการลุกลามของการติดเชื้อ"
+      },
+      {
+        "label": "C",
+        "text": "Culture and sensitivity test จากการดึงหนองเพื่อเลือกยาปฏิชีวนะที่เหมาะสม"
+      },
+      {
+        "label": "D",
+        "text": "Blood culture เพื่อตรวจหาการติดเชื้อในเลือดและความเสี่ยงของ septicemia"
+      },
+      {
+        "label": "E",
+        "text": "Complete blood count เพื่อประเมินระดับ white blood cell และสัญญาณการติดเชื้อทั่วไป"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การวินิจฉัย dentoalveolar abscess ต้องมี clinical finding พร้อมยืนยันด้วยภาพ radiographic ที่แสดงการสูญเสียกระดังหลังของแกนฟัน (periapical radiolucency) ซึ่ง periapical radiograph นั้นเหมาะสมที่สุดในการตรวจฟัน ในขณะที่ panoramic ใช้ดูภาพรวม ตัวเลือก B, D, E เป็นการตรวจเพิ่มเติมเมื่อมีความสงสัยในการลุกลามเป็นวงกว้างหรือ systemic infection เท่านั้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 35 ปี มาด้วยอาการบวมหน้า บวมคลอม บวมพื้นปาก และมีไข้ 38.5°C เป็นเวลา 3 วัน ตรวจพบฟัน 46 ตายและมีอาการเจ็บตามแนวรากฟัน ผลตรวจ CT แสดง air space ที่ชัดเจน จากการเก็บเชื้อพบ Streptococcus viridans และ Anaerobes Space infection นี้ควรอยู่ในช่องว่างใดที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Submental space"
+      },
+      {
+        "label": "B",
+        "text": "Submandibular space (sublingual + submaxillary)"
+      },
+      {
+        "label": "C",
+        "text": "Buccal space"
+      },
+      {
+        "label": "D",
+        "text": "Lateral pharyngeal space"
+      },
+      {
+        "label": "E",
+        "text": "Retropharyngeal space"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ฟัน 46 (lower right first molar) มีรากแทงผ่านผนังกระดูกใต้ mylohyoid line ทำให้ infection ไหลลงสู่ submandibular space ที่ประกอบด้วย sublingual ด้านบน และ submaxillary ด้านล่าง ซึ่งเป็นพื้นที่ที่พบ air space ในกรณี necrotizing infection ที่สุด อาการบวมพื้นปากและคลอมจึงสอดคล้องกับ submandibular space infection",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 19 ปี มีอาการคัดจมูกเป็นๆ หายๆ มา 2 ปี อาการเพิ่มขึ้นเรื่อยๆ บางครั้งมีน้ามูกขุ่น ไม่มีเลือดกาเดาออก การได้กลิ่นลดลง แพทย์ตรวจพบก้อนในโพรงจมูก 2 ข้าง ก้อนกลม มัน ผิวเรียบ ไม่มีอาการปวด วินิจฉัยว่าเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "โพลิป (Nasal polyp)"
+      },
+      {
+        "label": "B",
+        "text": "เนื้องอกชนิดยอดคุณภาพ (Benign tumor) - Angiofibroma"
+      },
+      {
+        "label": "C",
+        "text": "หินจมูก (Nasal stone/Rhinolith)"
+      },
+      {
+        "label": "D",
+        "text": "เนื้อเพาะเข้าไป (Nasal dermoid cyst)"
+      },
+      {
+        "label": "E",
+        "text": "เนื้องอกชนิดร้าย (Malignant tumor)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "โพลิปจมูกมักเป็นจำนวน 2 ข้าง (bilateral) ผิวเรียบ มัน ไม่เจ็บ มีอาการคัดจมูกเรื้อรัง ลดการได้กลิ่น และมีน้ามูกขุ่นจากการอักเสบ เนื้องอก angiofibroma มักเลือดออก หินจมูกมีประวัติการสูดยาหรือวัตถุเข้าจมูก เนื้อ cyst มักเป็นเดี่ยว และมะเร็งจะมีอาการหนักกว่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กอายุ 8 ขวบ เป็น acute otitis media มีอาการ post nasal drip สงสัย acute sinusitis ส่ง film Caldwell View พบรูป halo sign ที่ sinus ใด ที่บ่งชี้ว่าเป็น acute sinusitis แน่นอน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Maxillary sinus (halo sign ที่ด้านข้าง)"
+      },
+      {
+        "label": "B",
+        "text": "Ethmoid sinus (opacity ของ ethmoidal air cells)"
+      },
+      {
+        "label": "C",
+        "text": "Frontal sinus (opacity ที่ด้านบน)"
+      },
+      {
+        "label": "D",
+        "text": "Sphenoid sinus (opacity ที่ลึก)"
+      },
+      {
+        "label": "E",
+        "text": "Temporal bone (opacity ทั่วไป)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Caldwell View (occipito-frontal view) เป็นการถ่ายรูป X-ray หลักในการตรวจ sinusitis ซึ่งมองเห็น ethmoid sinus ได้ชัดที่สุด เด็กที่มี acute otitis media กับ post nasal drip มักมี concurrent acute sinusitis โดยเฉพาะ ethmoid sinusitis ซึ่งจะแสดง opacity ของ ethmoidal air cells ใน Caldwell View",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการปวดหน้าผากและรู้สึกมีน้ำหนักหน้าผาก พบว่ามีการหนาตัวของผนังกระพุ้งกรามทั้งสองข้าง (thickening of ethmoid sinus walls) ในการตรวจด้วย CT scan อักษร ควรส่งต่อไปที่แพทย์สาขาใดเพื่อประเมินการมีเหตุไปเป็นโรคอื่น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "อายุรศาสตร์ เพื่อประเมินโรคระบบเลือด"
+      },
+      {
+        "label": "B",
+        "text": "ศัลยศาสตร์ประสาท เพื่อประเมินการรุกล้ำของมดลูกหรือเนื้องอกทั่วไป"
+      },
+      {
+        "label": "C",
+        "text": "โสต ศอ นาสิก เพื่อประเมินการติดเชื้อหรือการอักษรเรื้อรัง"
+      },
+      {
+        "label": "D",
+        "text": "จิตเวช เพื่อประเมินอาการปวดหน้าผากแบบฟังก์ชัน"
+      },
+      {
+        "label": "E",
+        "text": "ตา เพื่อประเมินความดันนอกลูกตา"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การหนาตัวของผนังกระพุ้งกรามมักเกี่ยวข้องกับการอักษรเรื้อรัง (chronic sinusitis) หรือการติดเชื้อ ซึ่งต้องการการประเมินและการรักษาจากแพทย์โสต ศอ นาสิก การค้นหาสาเหตุการอักษรและการหนาตัวของผนังกระพุ้งกรามต้องทำการตรวจเอนโดสโคปโพรงจมูก (nasal endoscopy) และอาจต้องมีการผ่าตัด functional endoscopic sinus surgery (FESS)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 45 ปี มาด้วยอาการปวดหน้าผากซ้ำๆ และรู้สึกมีน้ำหนักที่หน้าผาก CT scan พบการหนาตัวของผนังกระดูกของ frontal sinus ทั้งสองข้าง (thickening of frontal sinus wall) การวินิจฉัยที่น่าจะเป็นได้มากที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Osteoma of frontal sinus"
+      },
+      {
+        "label": "B",
+        "text": "Chronic rhinosinusitis with osteoneogenesis"
+      },
+      {
+        "label": "C",
+        "text": "Mucocele of frontal sinus"
+      },
+      {
+        "label": "D",
+        "text": "Sinus carcinoma"
+      },
+      {
+        "label": "E",
+        "text": "Paget's disease of bone"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การหนาตัวของผนังกระดูก (thickening) ของ frontal sinus โดยทั่วไปเกิดจากการอักเสบเรื้อรังของโพรงจมูกและ paranasal sinuses (chronic rhinosinusitis) ที่ทำให้มีการสร้างกระดูกใหม่ (osteoneogenesis) เพื่อตอบสนองต่อการอักเสบเรื้อรัง ต่างจาก osteoma ซึ่งมักเป็นเนื้องอกขนาดเดียว และ mucocele ที่มีลักษณ์เป็นการบวมกูดของเนื้อเยื่อ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 45 ปี มาด้วยอาการปวดหน้าผนึก และมีน้ำมูกเหลืองขุ่นมาสองสัปดาห์ ตรวจ CT Paranasal sinus พบ haziness ของ maxillary sinus ทั้งสองข้าง สิ่งใดต่อไปนี้เป็นสาเหตุที่พบบ่อยที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute maxillary sinusitis เนื่องจากการติดเชื้อแบคทีเรีย"
+      },
+      {
+        "label": "B",
+        "text": "Chronic rhinosinusitis ด้วยภาวะ edema ของ mucosa"
+      },
+      {
+        "label": "C",
+        "text": "Maxillary sinus mucocele"
+      },
+      {
+        "label": "D",
+        "text": "Malignancy ของ maxillary sinus"
+      },
+      {
+        "label": "E",
+        "text": "Periapical pathology จากฟันเสีย"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Haziness ของ maxillary sinus บน CT scan บ่งชี้ถึงการมีสารเหลวหรือ edema ภายในสายน้ำเหลือง ซึ่งพบบ่อยที่สุดในภาวะ acute maxillary sinusitis เนื่องจากการติดเชื้อแบคทีเรีย โดยเฉพาะในผู้ป่วยที่มีอาการปวดหน้าผนึก น้ำมูกเหลืองขุ่น และระยะเวลาระหว่าง 1-2 สัปดาห์ ซึ่งสอดคล้องกับอาการและแสดงผลทาง影像ทั่วไปของโรคนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการปวดหน้าซ้ำซ้อนและมีน้ำมูกเขียวเหลือง ทำ CT scan พบ air fluid level ในไซนัสแม็กซิลลารี่ด้านซ้าย สิ่งที่พบนี้บ่งชี้ว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "มีการอักเสบของไซนัสแม็กซิลลารี่พร้อมกับการสะสมของหนองน้ำมูก"
+      },
+      {
+        "label": "B",
+        "text": "มีการติดเชื้อแบคทีเรียในไซนัสแม็กซิลลารี่เฉียบพลัน"
+      },
+      {
+        "label": "C",
+        "text": "มีการไหลบาออกของหนองน้ำมูกอย่างสมบูรณ์จากไซนัส"
+      },
+      {
+        "label": "D",
+        "text": "มีการเติบโตของก้อนเนื้อในไซนัสแม็กซิลลารี่"
+      },
+      {
+        "label": "E",
+        "text": "มีการอักเสบของเยื่อบุตาแต่ไม่มีการสะสมของเหลว"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Air fluid level ในไซนัสแม็กซิลลารี่ (หรือเรียกว่า hydro-air level) เป็นสัญญาณคลาสสิกของ sinusitis โดยแสดงให้เห็นการมีอยู่ของเหลว (สารหลั่งเลือดหรือเนื้อเสียด์) ในส่วนล่างของไซนัส และอากาศในส่วนบน นี่คือสัญญาณของการอักเสบและการสะสมของเหลวในโพรงไซนัส ไม่ใช่การติดเชื้อแบคทีเรียโดยตรง การไหลบาออกสมบูรณ์ หรือเนื้องอก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการคัดจมูกเรื้อรัง และมีน้ำมูกไหลออกมาจากจมูก ตรวจด้วย nasal endoscopy พบ periosteal mucosa หนาเกินปกติ (≥5 mm) ในบริเวณ maxillary sinus ทั้งสองข้าง การหนาของ periosteal mucosa ที่มากกว่าหรือเท่ากับ 5 mm นี้บ่งชี้ถึงสภาวะใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เยื่อบุจมูกปกติที่มีการบวมอักเสบเล็กน้อย"
+      },
+      {
+        "label": "B",
+        "text": "โรคเดือยกระดูก (nasal polyp) ที่มีการหดตัว"
+      },
+      {
+        "label": "C",
+        "text": "การอักเสบของเยื่อบุกระดูกจมูกเรื้อรัง (chronic rhinosinusitis) หรืออักเสบของกระดูกขากรรไกร"
+      },
+      {
+        "label": "D",
+        "text": "ความผิดปกติของเยื่อบุจากการติดเชื้อไวรัส"
+      },
+      {
+        "label": "E",
+        "text": "ความบกพร่องของระบบภูมิคุ้มกันที่ทำให้เกิดการติดเชื้อรอบจมูก"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Periosteal mucosa หนาตั้งแต่ 5 mm ขึ้นไปเป็นเกณฑ์สำคัญในการวินิจฉัย chronic rhinosinusitis และการอักเสบของกระดูกขากรรไกร (osteitis) ตามเกณฑ์ EPOS (European Position Paper on Rhinosinusitis and Nasal Polyps) ความหนาดังกล่าวแสดงถึงการอักเสบที่เรื้อรัง ไม่ใช่การอักเสบเฉียบพลัน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุกลางคน ประวัติสูบบุหรี่วันละ 2 ซอง มา 30 ปี เข้ามาด้วยไอเรื้อรัง และเสียงแหบ กลืนอาหารปกติ ไม่มีหอบเหนื่อย ไม่มีหายใจลาบาก ตรวจร่างกายไม่พบต่อมน้ำเหลืองโต ไม่มีลงแหนบลำคอ วินิจฉัยว่าเป็นอะไร (NLE 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ลาริงจิแอลคาร์ซิโนม่า"
+      },
+      {
+        "label": "B",
+        "text": "ลาริงจิไทส์เรื้อรัง"
+      },
+      {
+        "label": "C",
+        "text": "โนดูลส์ของสายเสียง"
+      },
+      {
+        "label": "D",
+        "text": "โพลิปของสายเสียง"
+      },
+      {
+        "label": "E",
+        "text": "พาราไลซิสของสายเสียง"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีปัจจัยเสี่ยงหลัก (สูบบุหรี่นาน 30 ปี ขนาดหนัก) พร้อมอาการลักษณ์เฉพาะของโรคมะเร็งลาริงซ์ ได้แก่ ไอเรื้อรังและเสียงแหบที่ไม่ดีขึ้นด้วยการรักษา สำคัญคือไม่มีเหตุผลสำหรับวินิจฉัยอื่น (กลืนปกติ ไม่มีต่อมน้ำเหลืองโต) ลาริงจิแอลคาร์ซิโนม่าต้องสงสัยสูง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 65 ปี มาด้วยอาการเสียงแหบเรื้อรังมากกว่า 3 เดือน มีประวัติสูบบุหรี่ 40 ปีบาป และดื่มแอลกอฮอล์เรื้อรัง ตรวจด้วยไฟเบอร์โอปติกส์พบมวลบนสายเสียงด้านขวา ตรวจ CT พบมวลจำกัดในส่วน glottic และไม่มี lymph node involvement ส่วนการตรวจ general health ปกติ ผู้ป่วยรายนี้ได้รับวินิจฉัยว่าเป็น Laryngeal cancer glottic type Stage T1 ซึ่งหมายความว่ามวลมีขนาดอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ขนาดไม่เกิน 2 cm และจำกัดอยู่ในสายเสียง (confined to vocal cord)"
+      },
+      {
+        "label": "B",
+        "text": "ขนาด 2-4 cm และรุกไปยังโครงสร้างข้างเคียง (extension to adjacent structures)"
+      },
+      {
+        "label": "C",
+        "text": "ขนาดมากกว่า 4 cm และรุกทะลุผ่านกระดูกอ่อนของ喉头"
+      },
+      {
+        "label": "D",
+        "text": "ขนาดใหญ่พร้อมการแพร่กระจายไปยัง lymph node ระดับ cervical"
+      },
+      {
+        "label": "E",
+        "text": "ขนาดเล็กแต่มีการแพร่กระจายไปยังปอด (distant metastasis)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ลาริงเจียลแคนเซอร์ชนิด glottic type Stage T1 นิยามว่าเป็นมวลที่มีขนาดไม่เกิน 2 cm และจำกัดอยู่เพียงสายเสียงเดียวหรือทั้งสองข้างโดยไม่มีการรุกลึกไปยังโครงสร้างข้างเคียง ระยะนี้มีพยากรณ์ที่ดีและสามารถรักษาได้ด้วยวิธีการอนุรักษ์ เช่น radiotherapy หรือ laser microsurgery อัตราการรักษาหายได้ถึง 85-95%",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี มาด้วยอาการเสียงแหบเรื้อรังมากกว่า 3 เดือน และอาการน้อยลงเมื่อนอน ส่วนสำรวจโพรงปาก คออพยพสายต่างไม่พบความผิดปกติ การตรวจด้วยไฟเบอร์สโคปพบมวลที่บริเวณ epiglottis ด้านข้าง ซึ่งเมื่อตรวจส病理แสดงการเกิดของเนื้อเยื่อบวม (edema) มากมาย มีการแพร่กระจายของเซลล์มะเร็งเป็นแถบไปยังพื้นที่อื่นๆ ผู้ป่วยอาจมีความเสี่ยงต่อภาวะใดต่อไปนี้สูงที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เสื้อเสียงการหายใจหรือ Asphyxia"
+      },
+      {
+        "label": "B",
+        "text": "อาการปวดคอและอาการลิ้นหลวก"
+      },
+      {
+        "label": "C",
+        "text": "การแพร่กระจายไปยัง laryngeal ventricle และ anterior commissure"
+      },
+      {
+        "label": "D",
+        "text": "การแพร่กระจายไปยัง arytenoid cartilage เท่านั้น"
+      },
+      {
+        "label": "E",
+        "text": "การแพร่กระจายไปยัง vocal cord inferior surface เท่านั้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "มะเร็งแอมนิจ (supraglottic laryngeal cancer) ที่อยู่บริเวณ epiglottis มีแนวโน้มที่จะแพร่กระจายขึ้นด้านบนและเข้าไปในพื้นที่ epiglottis ซึ่งอาจส่วนขยาย infrahyoid epiglottis ทำให้เกิดอาการบวมและอุดกั้นทางเดินหายใจ (airway obstruction) ความเสี่ยงต่อการเกิด asphyxia จึงสูงเป็นอันดับแรก ลักษณะการแพร่กระจายของ supraglottic cancer โดยทั่วไปจะไปสู่ lymph node ต่างๆ และอาจไปด้านข้างได้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี ถูกทาร้ายร่างกาย หายใจเหนื่อย ไอเป็นเลือด เสียงแหบ มี subcutaneous emphysema at neck, air hunger management คอ (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intubation"
+      },
+      {
+        "label": "B",
+        "text": "CT larynx"
+      },
+      {
+        "label": "C",
+        "text": "Tracheotomy"
+      },
+      {
+        "label": "D",
+        "text": "barium swallowing"
+      },
+      {
+        "label": "E",
+        "text": "ABG"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิงอายุ 30ปี ทางานโรงงานเย็บผ้า 5ป หูซ้ายได้ยิน ลดลงเรื่อยๆมา 1 ปี ต้องรับโทรศัพท์ด้านขวา TM:intact both, Weber:lateral to left, Rinne: right +, left - (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Otosclerosis"
+      },
+      {
+        "label": "B",
+        "text": "Meniere"
+      },
+      {
+        "label": "C",
+        "text": "noiseginduced hearing loss"
+      },
+      {
+        "label": "D",
+        "text": "acoustic neuroma"
+      },
+      {
+        "label": "E",
+        "text": "cholesteatoma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 5 ขวบ ไข้ ไอ เจ็บคอ มีน้ามูก ปวดหู ส่องดูเห็น แดง ๆ การวินิจฉัยที่เหมาะสมคือ (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AOM"
+      },
+      {
+        "label": "B",
+        "text": "Myringotomy"
+      },
+      {
+        "label": "C",
+        "text": "ATB ear drop"
+      },
+      {
+        "label": "D",
+        "text": "oral ATB"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 20 ปี แผลเจ็บที่ริมฝีปาก 1 cm preauricular LN โต กดเจ็บ ทาอะไร (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe"
+      },
+      {
+        "label": "B",
+        "text": "FNA LN"
+      },
+      {
+        "label": "C",
+        "text": "LN Bx"
+      },
+      {
+        "label": "D",
+        "text": "Incision แผลในปาก"
+      },
+      {
+        "label": "E",
+        "text": "Excision แผลในปาก"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 16 ปีล่องเรือไปเที่ยวเกาะ ขณะเรือออกกลางทะเลมคลื่นไส้ อาเจียน ใช้ยาอะไร (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Paracetamol"
+      },
+      {
+        "label": "B",
+        "text": "Dimenhydrinate"
+      },
+      {
+        "label": "C",
+        "text": "Propanolol"
+      },
+      {
+        "label": "D",
+        "text": "tramadol"
+      },
+      {
+        "label": "E",
+        "text": "Cinnarizine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 40 ปี จะไปเที่ยวภูเขาหิมาลัย มาพบแพทย์เพื่อขอคาปรึกษาและยา เพื่อลดอาการคลื่นไส้\nขณะไปเที่ยว ข้อใดควรปฏิบัติมากที่สุด (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "omeprazole"
+      },
+      {
+        "label": "B",
+        "text": "Altitude acclimation"
+      },
+      {
+        "label": "C",
+        "text": "Chloroquine"
+      },
+      {
+        "label": "D",
+        "text": "Hydrochlorothiazide"
+      },
+      {
+        "label": "E",
+        "text": "Melatonin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 20 ปี ตกจากที่สูง คอซ้ายกระแทกเก้าอี้ปูนหายใจลาบาก 2 ชม. PTA RR 24/min, hoarseness, forceful inspiration, มี retraction of subcostal muscle during inspiration, anterior cervical soft tissue swelling & ecchymosis, cervical subcutaneous emphysema, diminish air entry both lung Management? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oxygen face mask"
+      },
+      {
+        "label": "B",
+        "text": "Nasolaryngeal airway"
+      },
+      {
+        "label": "C",
+        "text": "Nasal endotracheal intubation"
+      },
+      {
+        "label": "D",
+        "text": "Oral endotracheal intubation"
+      },
+      {
+        "label": "E",
+        "text": "Tracheostomy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 20 ปี มาด้วยอาการหูซ้ายอื้อมา 1 ปี ปวดหู มีน้าใสๆไหลออกจากหูเป็นๆ หายๆ ตรวจพบแก้วหูทะลุที่ขอบด้านบน มีก้อนสีขาว มีน้ามวลไหลออกมาและมีกลิ่นเหม็น ควรจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cortical mastoidectomy with tympanoplasty"
+      },
+      {
+        "label": "B",
+        "text": "Canal wall down mastoidectomy (CWDM)"
+      },
+      {
+        "label": "C",
+        "text": "Observation with topical antibiotic drops only"
+      },
+      {
+        "label": "D",
+        "text": "Tympanoplasty alone without mastoidectomy"
+      },
+      {
+        "label": "E",
+        "text": "Myringotomy and grommet insertion"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีลักษณะของ cholesteatoma (ก้อนสีขาว, กลิ่นเหม็น) ที่ทะลุแก้วหูด้านบนซึ่งชี้ว่ามี erosion ของกระดูก แสดงว่า cholesteatoma ร้ายแรงและต้องการผ่าตัด Canal wall down mastoidectomy (CWDM) เป็นวิธีการมาตรฐานเพื่อขจัด disease ทั้งหมดและลดความเสี่ยงการเกิด recurrence",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 28 ปี มาด้วยอาการไอ มีผ่อนเสียงหายใจลดลงที่ฐานปอดขวา (RLL) บนภาพ CXR พบ infiltrate ที่ RLL นอกจากนี้ยังพบ bullous myringitis ที่ทั้งสองข้าง เชื้อก่อโรคที่พบบ่อยที่สุดคือ?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Streptococcus pneumoniae"
+      },
+      {
+        "label": "B",
+        "text": "Mycoplasma pneumoniae"
+      },
+      {
+        "label": "C",
+        "text": "Haemophilus influenzae"
+      },
+      {
+        "label": "D",
+        "text": "Chlamydia pneumoniae"
+      },
+      {
+        "label": "E",
+        "text": "Legionella pneumophila"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Mycoplasma pneumoniae เป็นเชื้อที่พบบ่อยที่สุดที่ทำให้เกิด atypical pneumonia พร้อมกับ bullous myringitis (ตุ่มน้ำในเยื่อไทแมนัม) ซึ่งเป็น pathognomonic sign ของ Mycoplasma infection Bullous myringitis มักปรากฏในผู้ป่วยสูงวัยและเด็กที่ติดเชื้อ Mycoplasma เชื้ออื่นๆ เช่น S. pneumoniae และ H. influenzae มักแสดงรูปแบบ CAP ทั่วไปโดยไม่มี bullous myringitis",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี ว่ายน้าเป็นประจำ มาด้วยอาการปวดหู (otalgia) และหูอื้อ Otoscopy พบ: ear canal มีความแดงและบวม มีน้ำหนองแบบ purulent มีกลิ่นเหม็น เยื่อแก้วหูปกติ ปวดเมื่อดึง pinna ความดันอากาศในหูกลม ถามว่า สิ่งก่อโรคที่เป็นสาเหตุมีแนวโน้มสูงสุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Otitis externa (swimmer's ear)"
+      },
+      {
+        "label": "B",
+        "text": "Acute otitis media"
+      },
+      {
+        "label": "C",
+        "text": "Otomycosis"
+      },
+      {
+        "label": "D",
+        "text": "Herpes zoster oticus"
+      },
+      {
+        "label": "E",
+        "text": "Cerumen impaction"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Otitis externa (swimmer's ear) เป็นโรคที่พบได้บ่อยในเด็กที่ว่ายน้าประจำ สาเหตุจากการเข้าน้ำทำให้เยื่อบุ ear canal แ축และชุ่มชื้น ช่วยให้เชื้อแบคทีเรีย (Pseudomonas aeruginosa, Staphylococcus aureus) สัมมาคารณ์ และเติบโต อาการคือ ปวดหูรุนแรง canal มีความแดงบวม exudate purulent และ tenderness เมื่อดึง pinna ซึ่งตรงกับ clinical presentation ในกรณีนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 15 ปี มีก้อนด้านหน้าคอมา 1 wk ก้อนโต ช้า ไม่เจ็บ PE: ~2 cm. anterior neck mass at thyroid level with upward movement on tongue protrude Diagnosis? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Laryngocele"
+      },
+      {
+        "label": "B",
+        "text": "Ranular cyst"
+      },
+      {
+        "label": "C",
+        "text": "Dermoid cyst"
+      },
+      {
+        "label": "D",
+        "text": "Nodular cyst"
+      },
+      {
+        "label": "E",
+        "text": "Thyroglossal duct cyst"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 50 ปี มีอาการเสียงแหบมากขึ้นมา 3 เดือน เริ่มจากอาการเป็นหวัด แล้วอาการเสียงแหบเป็นมากขึ้นเรื่อยๆ มีหายใจลาบากมา 2 สัปดาห์ เคยใส่ท่อช่วยหายใจตอนผ่าตัดต่อมไทรอยด์เมื่อ 2 ปีก่อน เคยสูบบุหรี่ 1 ซองต่อวัน มา 20 ปี หยุดสูบแล้วหลังผ่าตัด PE : BP 140/80 mmHg, PR 84/min, RR 20/min, forceful breathing, hoarseness, no palpable neck mass, mild decreased air entry both lungs การวินิจฉัยโรคข้อใดเข้ากับผู้ป่วยรายนี้มากที่สุด (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Laryngeal web"
+      },
+      {
+        "label": "B",
+        "text": "Laryngeal cancer"
+      },
+      {
+        "label": "C",
+        "text": "Laryngeal papilloma"
+      },
+      {
+        "label": "D",
+        "text": "Intubation granuloma"
+      },
+      {
+        "label": "E",
+        "text": "PostKoperative laryngeal paralysis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยมาด้วยแมลงเข้าหู 2 ชั่วโมงที่แล้ว รู้สึกว่ายังมีแมลงดิ้นอยู่ในหู Physical examination: เห็นแมลงมีชีวิตในช่องหูชั้นนอก ไม่สามารถมองเห็นเยื่อแก้วหู ควรทำการรักษาแบบใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ผู้ป่วยนอนตัวตรง ใส่น้ำอุ่นแล้วปล่อยให้แมลงลอยออกมา หรือใช้น้ำมัน/แอลกอฮอล์เพื่อฉีดออก"
+      },
+      {
+        "label": "B",
+        "text": "ให้ผู้ป่วยนอนตะแคงกลับหูที่ป่วย ใส่ฉีดน้ำแรงเพื่อให้แมลงออกมา"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ otoscope ขนาดใหญ่เข้าไปจับและหนีบแมลงออกมาด้วยแรง"
+      },
+      {
+        "label": "D",
+        "text": "ส่งต่อไปผู้เชี่ยวชาญ ENT ทันทีโดยไม่มีการประเมินเพิ่มเติม"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยาตาบอดเพื่อให้แมลงสมบูรณ์ แล้วรอให้ตายก่อน จึงนำออกมาด้วยกรีบเซอร์"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การรักษาเบื้องต้นสำหรับแมลงเข้าหูที่มีชีวิต ควรให้ผู้ป่วยนอนตัวตรงด้านข้างที่ป่วย แล้วใส่สารเหลวลงไปเช่น น้ำอุ่น น้ำมัน หรือแอลกอฮอล์ เพื่อให้แมลงลอยออกมาเองหรือฉีดออกมาเบาๆ ห้ามจับแรง ฉีดแรง หรือใช้เครื่องมือรุนแรง เพราะเสี่ยงทำให้เยื่อแก้วหูแตก โดยเฉพาะ TM ไม่เห็นอยู่แล้วแสดงว่าอาจมีน้ำหรือหนองถมได้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 3 ปี มาด้วยอาการหูอื้อ 1 วันก่อนมารพ หลังจากเดินทางโดยเครื่องบิน 2 วันก่อนมาโรงพยาบาล มีอาการหูอื้อและปวดหูมากขณะเครื่องลง ปัจจุบันไม่ปวดหูแล้ว แต่ยังมีอาการหูอื้ออยู่ การตรวจ PE: หูซ้าย - แก้วหูกลองปกติ หูขวา - แก้วหูกลองมีสีน้ำเงินเข้ม หดเข้า Weber lateralize ไปทางขวา Rinne หูซ้าย AC>BC หูขวา BC>AC ให้การรักษาที่เหมาะสมกับผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nasal decongestant และ Eustachian tube autoinflation therapy (Valsalva maneuver)"
+      },
+      {
+        "label": "B",
+        "text": "Tympanostomy tube insertion ทันที"
+      },
+      {
+        "label": "C",
+        "text": "Oral antibiotics กับ Antihistamine"
+      },
+      {
+        "label": "D",
+        "text": "Myringotomy เพื่อให้ระบายของเหลวในหลุมกลัม"
+      },
+      {
+        "label": "E",
+        "text": "Observation เพราะจะหายเอง และ Follow-up ในอีก 3 เดือน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีอาการ Barotrauma ของหลุมกลัม (Otitic barotrauma) จากการเปลี่ยนแปลงความดันอากาศระหว่างเที่ยวบิน หลักฐานร่วม: ประวัติเที่ยวบิน อาการหูอื้อหลังการบิน แก้วหูกลองมีสีน้ำเงินเข้มและหดเข้า (fluid level หรือ blood in middle ear) การนำหูขวา (Weber lateralize ขวา) และเสียงกระแทกลดลง (BC>AC) บ่งชี้การสูญเสียการได้ยินแบบ Conductive ทางขวา การรักษาเบื้องต้นคือ Nasal decongestant เพื่อลดอาการบวมของ Eustachian tube และสอนให้ทำ Valsalva maneuver เพื่อช่วยให้ลิ้นหลังคาคลายตัว ส่วนใหญ่ผู้ป่วยจะหายได้เอง หาก 3 เดือนยังไม่ดีขึ้นจึงพิจารณา Tympanostomy tube",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี มาด้วยอาการหูอื้อ มีน้ำหนวดไหลออกมาจากช่องหูเป็นเวลา 3 วัน ตรวจสมดุลไม่พบความผิดปกติ ส่วนการฟังจะพบการลดลงของการนำเสียงทางกระดูก แพทย์วินิจฉัยว่าเป็นโอติติส เมเดีย กับเยื่อแกนกลางหูอักเสบ ควรใช้ยารหม่อม (ear drop) ชนิดใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Steroid + Antibiotic (เช่น dexamethasone + ciprofloxacin) สำหรับอักเสบและติดเชื้อพร้อมกัน"
+      },
+      {
+        "label": "B",
+        "text": "Antibiotic เพียงอย่างเดียว (เช่น amoxicillin) โดยไม่ใช้ steroid"
+      },
+      {
+        "label": "C",
+        "text": "Steroid เพียงอย่างเดียว (เช่น dexamethasone) เพื่อลดอาการอักเสบ"
+      },
+      {
+        "label": "D",
+        "text": "Antihistamine + Decongestant เพื่อบรรเทาอาการเพียงอย่างเดียว"
+      },
+      {
+        "label": "E",
+        "text": "Antifungal agent (เช่น clotrimazole) สำหรับสงสัยมีเชื้อรา"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในกรณีอุติติส มีเดียที่มีการไหลของน้ำหนวดออกมา ควรใช้ยา combination steroid + antibiotic ear drop เพื่อลดการอักเสบและกำจัดเชื้อแบคทีเรีย Steroid ช่วยลดการอักเสบและอาการปวด ขณะที่ antibiotic จะต้องใช้เพื่อต่อต้านเชื้อ โดยเลือก antibiotic ที่ปลอดภัยสำหรับเมื่อมีการเจาะหนังกลอง (quinolone เช่น ciprofloxacin มีความปลอดภัยสูง)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี มาด้วยอาการหน้าเบี้ยว ด้านขวา เกิดขึ้นเฉพาะด้านหนึ่งเป็นระยะเวลา 2 วัน ไม่มีประวัติการสัมผัสกับเย็ด ไม่มีอาการปวดหู ไม่มีผื่นน้ำไหม ไม่มีไข้ ได้รับการวินิจฉัยว่าเป็น Idiopathic facial palsy (Bell's palsy) โดยการตรวจคลื่นไฟฟ้าหัวใจและการตรวจอื่นๆ พบว่าปกติ อยากทราบว่าสิ่งใดคือการจัดการเบื้องต้นที่เหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ยาสเตียรอยด์ในขนาดสูง (high-dose corticosteroids) และแนะนำการดูแลตาที่เหมาะสม"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยาแอนติไวรัส (acyclovir) เพียงอย่างเดียว"
+      },
+      {
+        "label": "C",
+        "text": "ทำการศัลยกรรมสลายเส้นประสาท (nerve decompression surgery) ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ให้ยาบ้าน (analgesics) และคอยสังเกตการณ์เพียงอย่างเดียว"
+      },
+      {
+        "label": "E",
+        "text": "ส่งตรวจ MRI สมองและทำการฟิสิโอเทอราปี่ก่อนการรักษาอื่นๆ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Bell's palsy เป็น idiopathic facial palsy ที่มีการแสดงหลักฐานว่ายาสเตียรอยด์ขนาดสูง (เช่น prednisone 1 mg/kg/day หรือ 50-80 mg/day สำหรับ 7 วัน ตามด้วยการลดขนาดค่อยๆ) ช่วยให้ผลลัพธ์ที่ดีขึ้นหากเริ่มให้ภายใน 72 ชั่วโมง การดูแลตาที่เหมาะสม (eye care) เพื่อป้องกันการแห้งและการบาดเจอของจอตาเป็นสิ่งสำคัญเช่นกัน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี มาถึง ER ด้วยอาการปวดหัวรุนแรงเฉียบพลัน (thunderclap headache) พร้อมอาการติดเชื้อท่อสันหลังและอาการตัวแข็ง ได้รับการวินิจฉัยว่าเป็น Ruptured cerebral aneurysm จากการ CT angiography พยาบาลควรปฏิบัติการพยาบาลอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ลดแสง เสียงรบกวน รักษาความเงียบสงบ หลีกเลี่ยงการกระทำที่เพิ่มความดันในหลวม เช่น การเรียนไหม่ ยกศีรษะ 30 องศา"
+      },
+      {
+        "label": "B",
+        "text": "บังคับให้คนไข้อยู่นอน รักษาความอบอุ่น ให้เข้าทำการผ่าตัดด่วน โดยไม่ต้องสนใจการเตรียมความพร้อม"
+      },
+      {
+        "label": "C",
+        "text": "ให้คนไข้เดินเพื่อ mobilization ลดความเสี่ยงจากการทรอมโบออลี ให้หลับอย่างมากโดยการให้ยาสลบ"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ต้องให้เข้าห้องผ่าตัด รักษาด้วยยาวาโซไดเลเตอร์เพียงอย่างเดียวเพื่อ dilate ลงสมองและลดความดันภายในกะโหลก"
+      },
+      {
+        "label": "E",
+        "text": "ให้คนไข้กระตุกตัว ขยับแขนขาเพื่อเพิ่มการไหลเวียนเลือด และเอนศีรษะต่ำเพื่อระบายน้ำในโพรงกะโหลก"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การพยาบาลคนไข้ Ruptured cerebral aneurysm ต้องลดปัจจัยที่เพิ่มความดันในหลวมและความเสี่ยงจากการเกิด rebleeding เช่น ลดแสง เสียง ยกศีรษะ 30 องศา หลีกเลี่ยงการเรียนไหม่ การเคลื่อนไหวรุนแรง และรักษาความเงียบสงบ คนไข้ต้องเข้ารับการผ่าตัดโดยเร็วเพื่อป้องกัน rebleeding และ vasospasm",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาด้วยอาการหูทางเดียวหนวกเพิ่มขึ้นค่อยเป็นค่อยไป ประกอบกับอาการวิงวอนหู ตรวจพบ CN VIII บกพร่องโดยเฉพาะด้านการได้ยิน ยังไม่มีอาการประสาทหมวดอื่นผิดปกติ MRI แสดงมวลที่ cerebellopontine angle (CPA) ผลักดันสมองเล็ก อาการและลักษณะภาพวินิจฉัยที่พบมากที่สุดตรงกับ tumor ชนิดใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acoustic neuroma (Vestibular schwannoma)"
+      },
+      {
+        "label": "B",
+        "text": "Meningioma"
+      },
+      {
+        "label": "C",
+        "text": "Epidermoid cyst (Cholesteatoma)"
+      },
+      {
+        "label": "D",
+        "text": "Facial nerve schwannoma"
+      },
+      {
+        "label": "E",
+        "text": "Hemangioblastoma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Acoustic neuroma (Vestibular schwannoma) เป็น tumor ที่พบบ่อยที่สุดในบริเวณ CPA โดยเกิดจาก CN VIII มักมีอาการหูทางเดียวหนวกเพิ่มขึ้นค่อยเป็นค่อยไปและวิงวอนหูเป็นอาการแรกในช่วง 80% ของผู้ป่วย ปัจจุบันการวินิจฉัยด้วย MRI Gadolinium สามารถแสดงลักษณะ tumor ได้อย่างชัดเจน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชาย 5 ขวบ มาด้วยอาการนอนกรนเสียงดัง หายใจหลอดลมติดขัด และหยุดหายใจชั่วครู่ขณะนอน แม่รายงานว่าเด็กได้ยินเสียงจมูกติดขัด ตรวจร่างกายพบอาการซ้ำซาก และการแตกตัวเบี่ยงเบน ส่วนการตรวจ oropharynx พบการโตของทอนซิลและอะเดโนอיด์ที่โตพอสมควร วินิจฉัยการโตขึ้นของทอนซิลและอะเดโนอิด (adenotonsillar hypertrophy) การตรวจวินิจฉัยเพิ่มเติมควรมีอะไรก่อน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การตรวจ Nasal endoscopy เพื่อประเมินปริมาณอะเดโนอิด์"
+      },
+      {
+        "label": "B",
+        "text": "การถ่ายภาพ CT scan ของ nasopharynx เพื่อสนับสนุนการวินิจฉัย"
+      },
+      {
+        "label": "C",
+        "text": "การตรวจ Sleep study (Polysomnography) เพื่อวินิจฉัย Obstructive Sleep Apnea"
+      },
+      {
+        "label": "D",
+        "text": "การตรวจทำหนาที่หัวใจและปอด เพื่อประเมินผลกระทบต่อระบบหัวใจ"
+      },
+      {
+        "label": "E",
+        "text": "การตรวจด้วย Fiberoptic bronchoscopy เพื่อตรวจเช่นการติดขัดของ气道"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในเด็กที่มี adenotonsillar hypertrophy กับอาการ obstructive sleep apnea (OSA) ที่สงสัย การตรวจ polysomnography (sleep study) เป็นมาตรฐานทองคำในการวินิจฉัยและประเมินความรุนแรงของ OSA ก่อนตัดสินใจรักษา ซึ่งจำเป็นต่อการบันทึกเหตุการณ์หยุดหายใจและลดออกซิเจนขณะนอน การตรวจทั่วไปและ nasal endoscopy สามารถใช้เพื่อวินิจฉัยการโตของอะเดโนอิด แต่ sleep study มีความสำคัญในการกำหนดความรุนแรงและความจำเป็นของการผ่าตัด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 35 ปี มาด้วยปวดหู 2 วัน เอาไม้ปั่นหู ได้เมือกเหนียวสีดำ ส่องหูพบเยื่อแกนนำหูแดงบวมและมีเมือกเหนียวสีดำอุดปากท่อหูชั้นนอก ตรวจอุณหภูมิ 38.5°C",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute suppurative otitis externa (เชื้อแบคทีเรียสะสม)"
+      },
+      {
+        "label": "B",
+        "text": "Acute otitis media with perforation (มีหนองในกลางหู)"
+      },
+      {
+        "label": "C",
+        "text": "Acute fungal otitis externa (Aspergillus niger เป็นหลัก)"
+      },
+      {
+        "label": "D",
+        "text": "Ceruminous impaction (ขี้หูสะสม)"
+      },
+      {
+        "label": "E",
+        "text": "Otitis externa with abscess formation (มีหนองเกิดขึ้น)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "เมือกเหนียวสีดำที่ได้จากการปั่นหูเป็นลักษณะเฉพาะของ Aspergillus niger ซึ่งเป็นเชื้อราที่พบบ่อยที่สุดในอุตสาหกรรมอักษรเทียม (otomycosis) ส่วน otitis externa แบบแบคทีเรียจะให้เมือกหนองเหลืองหรือเขียว และขี้หูปกติจะเป็นสีเหลืองไข่ห่าม ไม่ใช่สีดำ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาด้วยอาการหูคัน เจ็บหู และมีน้ำหูไหลออกมาหลายวัน รักษาด้วยแอนติบायโอติกชนิดต่างๆ แต่ไม่ดีขึ้น เมื่อตรวจดูช่องหูชั้นนอกพบมีสิ่งที่ดูเหมือนสีเทาหรือสีดำอยู่ที่ผนังช่องหูชั้นนอก บ้าง พบว่าเป็น Mycotic otitis โดยคำตอบที่ถูกต้องสำหรับการจัดการเบื้องต้นคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทำความสะอาดช่องหูชั้นนอกและใช้ยาคุณแนนต่อเนื่อง"
+      },
+      {
+        "label": "B",
+        "text": "ใช้ยาแอนติฟังจัลเช่น Clotrimazole หรือ Tolnaftate เป็นการเฉพาะเจาะจง"
+      },
+      {
+        "label": "C",
+        "text": "ใช้แอนติบายโอติกที่ความเข้มข้นสูงขึ้น"
+      },
+      {
+        "label": "D",
+        "text": "ส่งตรวจเชื้อแบคทีเรีย (Bacterial culture) เพื่อให้แน่ใจ"
+      },
+      {
+        "label": "E",
+        "text": "ทำการผ่าตัดเอาเนื้อเยื่อที่ติดเชื้อออก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Mycotic otitis (Otomycosis) เกิดจากเชื้อรา ส่วนใหญ่เป็น Aspergillus หรือ Candida มักพัฒนาขึ้นเมื่อใช้แอนติบายโอติกเป็นเวลานาน การรักษาเบื้องต้นคือการทำความสะอาดและใช้ยาแอนติฟังจัลโดยตรงเช่น Clotrimazole ear drops หรือ Tolnaftate ไม่ควรใช้แอนติบายโอติกเพิ่มเติมเพราะจะทำให้เสีย่สมดุลของจุลินทรีย์มากขึ้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 45 ปี มาด้วยอาการหูหนวก ทั้งสองข้าง แบบค่อยเป็นค่อยไป Audiogram แสดงการลดลงของการได้ยินในย่านความถี่สูง (high frequency sensorineural hearing loss) โดยเฉพาะที่ 3000-6000 Hz Tympanogram แสดง Type A ปกติ ข้อมูลนี้บ่งชี้ถึงโรคใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Presbycusis (หูหนวกเกิดจากอายุ)"
+      },
+      {
+        "label": "B",
+        "text": "Chronic otitis media (โรคหูกลางอักเสบเรื้อรัง)"
+      },
+      {
+        "label": "C",
+        "text": "Conductive hearing loss จากการอื่น"
+      },
+      {
+        "label": "D",
+        "text": "Sudden sensorineural hearing loss (หูหนวกอย่างฉับพลัน)"
+      },
+      {
+        "label": "E",
+        "text": "Cerumen impaction (ขี้หูอุดตัน)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Presbycusis เป็นการหูหนวกประเภท sensorineural ที่พบได้ทั่วไปในผู้สูงอายุ มีลักษณะเฉพาะคือการลดลงของการได้ยินในย่านความถี่สูง (high frequency loss) ส่วน Tympanogram Type A ปกติแสดงว่าหูกลางทำงานปกติ ซึ่งตรงกับการหูหนวกประเภท sensorineural ไม่ได้เป็นแบบการนำเสียง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มารับการรักษาด้วย IV ciprofloxacin เนื่องจากการติดเชื้อแบคทีเรียในโพรงจมูก และได้รับการรักษามาแล้ว 5 วัน อาการดีขึ้น อยากทราบว่าเมื่อใดจึงควรเปลี่ยนจาก IV ciprofloxacin เป็น oral form",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เมื่ออาการลดลงและผู้ป่วยสามารถรับประทานอาหารได้ปกติ"
+      },
+      {
+        "label": "B",
+        "text": "เมื่อผู้ป่วยมีไข้ลดลง และสามารถรับประทานยาทางปากได้อย่างดี (step down therapy)"
+      },
+      {
+        "label": "C",
+        "text": "เมื่อผู้ป่วยหายจากโรคอย่างสมบูรณ์และได้รับการรักษา IV อย่างน้อย 10 วัน"
+      },
+      {
+        "label": "D",
+        "text": "เมื่อทำการเลิกยาตั้งแต่วันแรกของการรักษาให้ใช้เฉพาะ oral form เท่านั้น"
+      },
+      {
+        "label": "E",
+        "text": "เมื่อผู้ป่วยไม่มีความสูญเสียเลือดและไม่มีการระบาย"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "หลักการ step down therapy ในการติดเชื้อของศร费นาสิก ควรเปลี่ยนจาก IV antibiotics เป็น oral form เมื่ออาการดีขึ้น ไข้ลดลง และผู้ป่วยสามารถรับประทานยาทางปากได้อย่างดี เพื่อลดค่าใช้จ่ายและอาการข้างเคียง ตัวเลือก B เป็นเกณฑ์ที่เหมาะสมและใช้ในการรักษาจริง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 35 ปี มาด้วยอาการเจ็บคอ มีไข้ 38.5°C ตรวจสอบท้องคอพบเยื่อบุผิวอักเสบ มีน้ำหนึ่งหนาสีขาว ส่วนหนึ่งปกคลุมทอนซิลลิ่น ต้องสงสัยการติดเชื้อแบคทีเรียหรือไวรัส แพทย์ให้การรักษาด้วย Oral ciprofloxacin และนัด follow-up 2 วัน เพื่อประเมินผลการรักษา ในกรณีนี้ การใช้ ciprofloxacin เหมาะสมหรือไม่ และทำไม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เหมาะสม เพราะ ciprofloxacin มีประสิทธิภาพสูงต่อเชื้อ Streptococcus pyogenes ที่เป็นสาเหตุหลักของ acute pharyngitis"
+      },
+      {
+        "label": "B",
+        "text": "ไม่เหมาะสม ควรใช้ penicillin V หรือ amoxicillin เป็นตัวเลือกแรก เพราะ ciprofloxacin ไม่มีประสิทธิภาพดีต่อ Streptococcus pyogenes"
+      },
+      {
+        "label": "C",
+        "text": "เหมาะสม เพราะ ciprofloxacin เป็น broad-spectrum antibiotic ที่ครอบคลุมเชื้อ gram-negative ที่พบในกรณี acute pharyngitis"
+      },
+      {
+        "label": "D",
+        "text": "ไม่เหมาะสม เพราะเป็นการใช้ยาแบบ empirical ที่ไม่ได้ขึ้นอยู่กับผลการเพาะเชื้อ"
+      },
+      {
+        "label": "E",
+        "text": "เหมาะสม เพราะ ciprofloxacin มีการดูดซึมที่ดีทางเดินปากและ follow-up 2 วันเพียงพอสำหรับการประเมิน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Acute pharyngitis ที่เกิดจากเชื้อแบคทีเรียส่วนใหญ่มาจาก Streptococcus pyogenes (Group A Streptococcus) ซึ่ง ciprofloxacin มีประสิทธิภาพต่ำต่อเชื้อนี้ การรักษาตัวเลือกแรก (first-line treatment) คือ penicillin V หรือ amoxicillin ตามแนวทาง NLE และ WHO guideline สำหรับการรักษา acute pharyngitis ที่อาจเป็นแบคทีเรีย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 20 ปีมีอาการปวดหู หูอื้อทันทีหลังจากแมลงเข้าหู เมื่อคืนนี้ วันนี้หูอื้อมาก ตรวจพบแมลงสาบขนาดเล็กตายแล้วอยู่ในหูขวา จะรักษาอย่างไร (คอมพรี จุฬาฯ 2012)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Remove by hook"
+      },
+      {
+        "label": "B",
+        "text": "Remove by prick"
+      },
+      {
+        "label": "C",
+        "text": "Remove by byonet forcep"
+      },
+      {
+        "label": "D",
+        "text": "Remove by alligator forcep"
+      },
+      {
+        "label": "E",
+        "text": "Remove by suction"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยกินอาหารมีก้างปลติดคอ 1 wkPTA มีอาการกลืนแล้วเจ็บเป็นๆหายๆ มาพบแพทย์ ตรวจไม่พบก้างปลา จงให้การรักษา (คอมพรี จุฬาฯ 2012)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral ATBกลับบ้าน 7 วัน"
+      },
+      {
+        "label": "B",
+        "text": "Film soft tissue neck"
+      },
+      {
+        "label": "C",
+        "text": "Swab soaked Barium swallowing"
+      },
+      {
+        "label": "D",
+        "text": "Fiberoptic esophagography"
+      },
+      {
+        "label": "E",
+        "text": "แจ้งว่าทานได้ตรวจไม่พบสิ่งผิดปกติให้ผู้ป่วยสบายใจได้"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ent",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  }
+]

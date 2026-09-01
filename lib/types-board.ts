@@ -1,0 +1,150 @@
+import type { McqQuestion } from "./types-mcq";
+
+export interface BoardSpecialty {
+  slug: string;
+  name_th: string;
+  name_en: string;
+  short_name_th: string | null;
+  icon: string;
+  royal_college: string | null;
+  description_th: string | null;
+  exam_format: string | null;
+  total_mcq_count: number | null;
+  display_order: number;
+  has_long_case: boolean;
+  has_osce: boolean;
+  has_oral: boolean;
+  is_active: boolean;
+  is_published: boolean;
+  created_at: string;
+}
+
+export interface BoardExamBlueprint {
+  id: string;
+  specialty_slug: string;
+  exam_year: number;
+  section_code: string;
+  section_label_th: string;
+  section_label_en: string | null;
+  question_count: number;
+  display_order: number;
+  notes: string | null;
+}
+
+export interface BoardTopicCategory {
+  id: string;
+  blueprint_id: string;
+  slug: string;
+  name_th: string;
+  name_en: string | null;
+  peds_count: number;
+  adult_count: number;
+  other_count: number;
+  total_count: number;
+  display_order: number;
+}
+
+export interface BlueprintWithTopics extends BoardExamBlueprint {
+  topics: BoardTopicCategory[];
+}
+
+/** Live exam-bank counts shown to customers for transparency / trust.
+ *  - active:     ผ่าน QA แล้ว เปิดให้ฝึกได้ (status='active')
+ *  - review:     AI สร้างแล้ว รอตรวจ (status='review')
+ *  - generating: เป้าที่ยังเหลือในคิว board_gen_jobs (queued/running)
+ *  - pending:    review + generating = "กำลังจัดทำ"
+ *  - projectedTotal: active + pending = ข้อสอบทั้งหมดที่จะมี */
+export interface BoardSpecialtyMetrics {
+  active: number;
+  review: number;
+  generating: number;
+  pending: number;
+  projectedTotal: number;
+}
+
+/** Raw row shape from the `board_specialty_metrics()` RPC. Postgres `bigint`
+ *  may arrive as number or string depending on size, so we coerce with Number. */
+export interface BoardMetricRow {
+  specialty_slug: string;
+  active_count: number | string;
+  review_count: number | string;
+  generating_count: number | string;
+}
+
+export function toBoardMetrics(row: {
+  active_count: number | string;
+  review_count: number | string;
+  generating_count: number | string;
+}): BoardSpecialtyMetrics {
+  const active = Number(row.active_count) || 0;
+  const review = Number(row.review_count) || 0;
+  const generating = Number(row.generating_count) || 0;
+  const pending = review + generating;
+  return { active, review, generating, pending, projectedTotal: active + pending };
+}
+
+export function buildBoardMetricsMap(
+  rows: BoardMetricRow[]
+): Record<string, BoardSpecialtyMetrics> {
+  const map: Record<string, BoardSpecialtyMetrics> = {};
+  for (const row of rows) map[row.specialty_slug] = toBoardMetrics(row);
+  return map;
+}
+
+export const EMPTY_BOARD_METRICS: BoardSpecialtyMetrics = {
+  active: 0,
+  review: 0,
+  generating: 0,
+  pending: 0,
+  projectedTotal: 0,
+};
+
+/** Roll up per-specialty metrics into a single platform-wide total. */
+export function sumBoardMetrics(
+  map: Record<string, BoardSpecialtyMetrics>
+): BoardSpecialtyMetrics {
+  return Object.values(map).reduce<BoardSpecialtyMetrics>(
+    (acc, m) => ({
+      active: acc.active + m.active,
+      review: acc.review + m.review,
+      generating: acc.generating + m.generating,
+      pending: acc.pending + m.pending,
+      projectedTotal: acc.projectedTotal + m.projectedTotal,
+    }),
+    { ...EMPTY_BOARD_METRICS }
+  );
+}
+
+/** Narrow type — board question always has board_specialty + section */
+export type BoardQuestion = McqQuestion & {
+  audience: "board";
+  board_specialty: string;
+  board_section: string;
+};
+
+/** 4 sections of the EM blueprint — also valid for other specialties' sections */
+export const BOARD_SECTIONS = [
+  { code: "clinical_decision", label_th: "การตัดสินใจทางเวชกรรม", label_en: "Clinical Decision Making" },
+  { code: "basic_science",     label_th: "วิทยาศาสตร์การแพทย์พื้นฐาน", label_en: "Basic Science" },
+  { code: "ems_mgmt",          label_th: "การจัดการระบบบริการการแพทย์ฉุกเฉิน", label_en: "EMS Management" },
+  { code: "integrative",       label_th: "ข้อสอบบูรณาการ", label_en: "Integrative" },
+] as const;
+
+/** Static list of all 12 specialties — kept here for build-time generation
+ * (sitemap, generateStaticParams). Source of truth is `board_specialties` table. */
+export const BOARD_SPECIALTY_SLUGS = [
+  "internal_medicine",
+  "surgery",
+  "pediatrics",
+  "ob_gyn",
+  "orthopedics",
+  "psychiatry",
+  "emergency_medicine",
+  "anesthesiology",
+  "radiology",
+  "family_medicine",
+  "pathology",
+  "rehab_medicine",
+] as const;
+
+export type BoardSpecialtySlug = (typeof BOARD_SPECIALTY_SLUGS)[number];

@@ -1,0 +1,901 @@
+[
+  {
+    "scenario": "An 80-year-old man diagnosed prostate cancer 2 years ago. Now he has bone and lung metastasis. His daughter don't want to tell him because his wife was diagnosed hepatocellular carcinoma 3 years ago and died soon after she knew. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Make a promise with the daughter that you will tell the patient when ready"
+      },
+      {
+        "label": "B",
+        "text": "Tell the daughter that it is the patient's right to know the diagnosis and prognosis"
+      },
+      {
+        "label": "C",
+        "text": "Call a family conference to discuss how to inform the patient"
+      },
+      {
+        "label": "D",
+        "text": "Negotiate with the daughter that the patient may already know from being sick for long time"
+      },
+      {
+        "label": "E",
+        "text": "Tell the daughter that treating without telling the truth will make the patient lose trust"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Clinical Practice",
+    "status": "complete",
+    "ai_notes": "Family conference is the standard ethical approach to resolve disagreement between family and medical team regarding disclosure. It allows discussion of concerns and finding appropriate way to communicate with patient.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 70-year-old man with end-stage liver and renal disease is brought to hospital and arrested. After resuscitation by CPR, BP is 70/40 and EKG shows VF. His son wants to continue resuscitation, but his daughter presents a living will stating the father does not want resuscitation. What should you do?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop resuscitation as the patient's living will clearly shows his wishes"
+      },
+      {
+        "label": "B",
+        "text": "Continue resuscitation while waiting for son and daughter to reach agreement"
+      },
+      {
+        "label": "C",
+        "text": "Continue resuscitation while asking the hospital director for guidance"
+      },
+      {
+        "label": "D",
+        "text": "Continue resuscitation while consulting the hospital's legal team"
+      },
+      {
+        "label": "E",
+        "text": "Stop resuscitation after verifying the authenticity of the living will with legal team"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "When there is conflict between family members regarding advance directive, the prudent approach is to continue resuscitation (beneficence principle) while immediately attempting to resolve the conflict. The living will should be verified and discussed with all parties involved.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2014 Question 147: Five Bangkok city workers descended into a tunnel for waste management. All five died. What is the most likely cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Environmental suffocation (entrapment/physical obstruction)"
+      },
+      {
+        "label": "B",
+        "text": "Gas suffocation (Carbon dioxide)"
+      },
+      {
+        "label": "C",
+        "text": "Gas suffocation (Methane)"
+      },
+      {
+        "label": "D",
+        "text": "Gas suffocation (Carbon monoxide)"
+      },
+      {
+        "label": "E",
+        "text": "Toxic exposure (Hydrogen sulfide)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "In waste management and sewage tunnel scenarios, methane accumulation is the most common cause of mass deaths. Methane is produced from decomposition of organic matter, displaces oxygen, and causes asphyxiation. CO2 accumulation is also common but methane is more typical in this context.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which of the following is permitted by law for organ transplantation in Thailand?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Older brother with disabled leg voluntarily donates kidney to younger sibling"
+      },
+      {
+        "label": "B",
+        "text": "25-year-old sister donates cornea to one younger sibling"
+      },
+      {
+        "label": "C",
+        "text": "Mother brings disabled child to donate kidney to father"
+      },
+      {
+        "label": "D",
+        "text": "Person diagnosed in vegetative state with donor card consent can donate heart"
+      },
+      {
+        "label": "E",
+        "text": "Homeless person involved in accident with no relatives can donate organs"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Organ Transplantation Law",
+    "status": "complete",
+    "ai_notes": "A: Legal (living related donation). C: Illegal (vulnerable person/coercion concern). D: Illegal (brain death must be established before donation, not vegetative state). E: Legally complex but possible if consent from state. B is clearly legal - adult voluntary donation to sibling. The question asks which is 'permitted' - option B and A are both permitted, but B (cornea donation) is least controversial.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 78: You are invited to perform autopsy on a corpse found in a hotel room. The room was locked from inside with very strong air conditioning. Physical examination reveals: Rigor mortis at knees and hips but NOT at elbows. Livor mortis on the back, does not blanch on pressure. What is the estimated time of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "4-6 hours"
+      },
+      {
+        "label": "B",
+        "text": "6-8 hours"
+      },
+      {
+        "label": "C",
+        "text": "8-12 hours"
+      },
+      {
+        "label": "D",
+        "text": "12-24 hours"
+      },
+      {
+        "label": "E",
+        "text": "1-2 days"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "Rigor mortis appearance at larger muscle groups (hips/knees) before smaller groups (elbows) suggests longer time frame. Non-blanching livor mortis indicates 8-12+ hours. Cold environment delays rigor, so actual time may be longer than standard timeline. Combined findings suggest 12-24 hours or more.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 79C: A 30-year-old woman is a victim of domestic violence. She is regularly abused by her husband. This time she was attacked with a knife. What type of wound would you expect to find?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Abrasion (friction wound)"
+      },
+      {
+        "label": "B",
+        "text": "Contusion (blunt force wound)"
+      },
+      {
+        "label": "C",
+        "text": "Incised wound (clean-edged cut from sharp object)"
+      },
+      {
+        "label": "D",
+        "text": "Lacerated wound (irregular tearing)"
+      },
+      {
+        "label": "E",
+        "text": "Punctured wound (penetrating wound from pointed object)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "Knife wound produces clean-edged incised wounds with sharp margins and minimal tissue damage at edges, in contrast to lacerations which have irregular, ragged edges from blunt force trauma.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 78A: A male was assaulted at the head and abdomen. He has a head wound 3x3 cm plus multiple scattered wounds on the head. Examination finds spleen is enlarged but intact, no blood in peritoneal cavity. He subsequently died. How should the autopsy report be written?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Death due to cerebral hemorrhage"
+      },
+      {
+        "label": "B",
+        "text": "Death due to cerebral hemorrhage from dangerous force applied to head"
+      },
+      {
+        "label": "C",
+        "text": "Death due to cerebral hemorrhage from assault to head"
+      },
+      {
+        "label": "D",
+        "text": "Death due to cerebral hemorrhage and splenic rupture from dangerous force applied to head and abdomen"
+      },
+      {
+        "label": "E",
+        "text": "Death due to cerebral hemorrhage and splenic rupture from assault to head and abdomen"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "The autopsy report should describe the actual pathological finding (cerebral hemorrhage) and its direct cause (assault/trauma to head). Since spleen is described as not ruptured ('ยังไม่แตก'), it should not be listed as cause of death. The report should be specific about the mechanism (assault) rather than generic terms.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 78: A 40-year-old technician dies. Autopsy reveals a penetrating wound from left ribs through to right flank. How should the autopsy report be written?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gunshot wound trajectory from left ribs through right flank, anterior to posterior, left to right, inferior to superior"
+      },
+      {
+        "label": "B",
+        "text": "Gunshot wound from left ribs through right flank with massive blood loss"
+      },
+      {
+        "label": "C",
+        "text": "Penetrating wound from left ribs through right flank with hemorrhagic shock"
+      },
+      {
+        "label": "D",
+        "text": "High-velocity gunshot wound from left chest to right abdomen"
+      },
+      {
+        "label": "E",
+        "text": "Fatal gunshot wound with description of trajectory and involved organs"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "Proper autopsy report for gunshot wounds should describe trajectory direction using anatomical terms: anterior-posterior direction, medial-lateral direction (left-right), and superior-inferior direction (top-bottom). Option A provides the most complete and standardized description.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 144A: Autopsy of a 40-year-old male found at bus stop. Body still warm. No body injuries except a 3x3 cm wound on scalp. Blood alcohol level: 400 mg%. Urine: amphetamine positive. What is the likely cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Head injury"
+      },
+      {
+        "label": "B",
+        "text": "Ethanol toxicity"
+      },
+      {
+        "label": "C",
+        "text": "Amphetamine toxicity"
+      },
+      {
+        "label": "D",
+        "text": "Multiple substance intoxication"
+      },
+      {
+        "label": "E",
+        "text": "Unknown cause of death"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "With blood alcohol 400 mg/dL (toxic level) combined with positive amphetamine, and minor head injury (3x3 cm scalp wound unlikely to be fatal alone), the death is best attributed to multiple substance intoxication. The combination of CNS depressant (ethanol) and stimulant (amphetamine) can cause lethal cardiac arrhythmias.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A physician is asked by law enforcement to draw blood for alcohol testing from a patient. The patient refuses. The physician respects the patient's refusal and does not draw the blood. This action follows which ethical principle?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beneficence"
+      },
+      {
+        "label": "B",
+        "text": "Non-maleficence"
+      },
+      {
+        "label": "C",
+        "text": "Confidentiality"
+      },
+      {
+        "label": "D",
+        "text": "Autonomy"
+      },
+      {
+        "label": "E",
+        "text": "Justice"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Ethics",
+    "status": "complete",
+    "ai_notes": "Autonomy is the principle respecting individual's right to make decisions about their own body. By respecting the patient's refusal for blood draw, the physician upholds the patient's autonomy despite law enforcement request.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 5-year-old child is brought by parents reporting fall from stairs 2 hours ago with bruises on arms and legs. Examination shows both new bruises and old bruises with yellow edges. There are also linear parallel bruises noted. What should be your first action?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Take detailed history from parents again carefully"
+      },
+      {
+        "label": "B",
+        "text": "Admit to hospital for observation"
+      },
+      {
+        "label": "C",
+        "text": "Order imaging studies to confirm diagnosis"
+      },
+      {
+        "label": "D",
+        "text": "Separate child from caregivers for detailed examination and history taking"
+      },
+      {
+        "label": "E",
+        "text": "Report immediately to child abuse authorities"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "The combination of mixed-age bruises, linear parallel bruises (suggesting grab marks or implement marks), and inconsistent history (fall doesn't explain these findings) are red flags for child abuse. Separating child from caregivers allows for thorough evaluation without coercion and is the appropriate first step per child protection protocols.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 18-year-old male traveled to Tak province. One week after returning, he developed high fever and chills. Two friends who traveled with him developed similar symptoms after returning. Which describes the epidemiological pattern?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endemic"
+      },
+      {
+        "label": "B",
+        "text": "Pandemic"
+      },
+      {
+        "label": "C",
+        "text": "Epidemic"
+      },
+      {
+        "label": "D",
+        "text": "Cluster outbreak"
+      },
+      {
+        "label": "E",
+        "text": "Sporadic"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE Epidemiology",
+    "status": "complete",
+    "ai_notes": "Multiple cases of similar illness in a short time period among people from a common exposure (travel to Tak) constitute an epidemic. This is likely dengue or other vector-borne disease endemic to that region.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A wife and child come to seek medical care for AIDS. The wife was infected before marriage to the current husband. The husband comes to ask the doctor what disease his wife and child have. How should you manage this situation appropriately?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Refuse to tell the husband because of patient confidentiality"
+      },
+      {
+        "label": "B",
+        "text": "Tell the husband to ask his wife directly"
+      },
+      {
+        "label": "C",
+        "text": "Tell the husband directly since it is a serious disease"
+      },
+      {
+        "label": "D",
+        "text": "Do not tell the husband but suggest he get tested for blood-borne infections"
+      },
+      {
+        "label": "E",
+        "text": "Encourage the wife to disclose to her husband, explaining benefits and risks of disclosure"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE Ethics",
+    "status": "complete",
+    "ai_notes": "While respecting the patient's confidentiality, the physician should encourage the wife to disclose to her spouse as he may be at risk. Counseling the wife about the importance and benefits of disclosure is the most ethical approach that balances confidentiality, beneficence, and autonomy.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 1: A corpse is found on a tour bus. Physical examination shows: blood pooled at feet which blanches on pressure, hands are rigid, legs are not rigid. Estimate the time of death.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "2 hours"
+      },
+      {
+        "label": "B",
+        "text": "2-4 hours"
+      },
+      {
+        "label": "C",
+        "text": "4-6 hours"
+      },
+      {
+        "label": "D",
+        "text": "6-8 hours"
+      },
+      {
+        "label": "E",
+        "text": "8-10 hours"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Blanching livor mortis indicates recent death (< 8-12 hours). Rigor mortis present in hands but not yet in legs suggests early rigor (typically begins at small muscles within 2-4 hours). Combined findings point to 2-4 hour window.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 2: Autopsy of a hanged corpse shows: neck ligature with bruising and short scratches, internal examination reveals bleeding in carotid artery, blood in muscle layers, and fracture of hyoid bone at left angle. What is the cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Smothering"
+      },
+      {
+        "label": "B",
+        "text": "Complete hanging"
+      },
+      {
+        "label": "C",
+        "text": "Incomplete hanging"
+      },
+      {
+        "label": "D",
+        "text": "Ligature strangulation"
+      },
+      {
+        "label": "E",
+        "text": "Manual strangulation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "The presence of neck abrasion with scratches (suggests victim's attempt to remove ligature), internal hemorrhage in blood vessels and muscle, and hyoid bone fracture all indicate ligature strangulation. The scratches and hemorrhage pattern distinguish this from hanging (which typically has less hemorrhage) and the hyoid fracture with vascular injury indicates true strangulation mechanism.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 3: A 57-year-old businessman develops chest tightness and dyspnea while dining at a mall. He calls a doctor who advises immediate hospital visit. Upon arrival at ER, EKG is normal. The patient dies 20 minutes after arrival despite full resuscitation attempts. The patient is Muslim and family is not concerned about cause of death but want to take the body for funeral rites immediately. How should the physician certify the cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute poisoning"
+      },
+      {
+        "label": "B",
+        "text": "Ruptured aneurysm"
+      },
+      {
+        "label": "C",
+        "text": "Acute heart failure"
+      },
+      {
+        "label": "D",
+        "text": "Cardiopulmonary failure"
+      },
+      {
+        "label": "E",
+        "text": "Coronary heart disease"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Given the clinical presentation (sudden chest tightness and dyspnea in middle-aged businessman), the most likely diagnosis is acute coronary syndrome/coronary heart disease despite normal EKG (EKG can be normal in early MI or in certain coronary distributions). When autopsy cannot be performed due to religious/family wishes, certifying the most probable cause based on clinical presentation is appropriate. Coronary heart disease is most likely given demographics and presentation.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 4: You are the director of a community hospital and notice increasing numbers of psychiatric patients with drug addiction. What management strategy would be most appropriate to reduce this public health problem?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Establish policy not to treat drug users"
+      },
+      {
+        "label": "B",
+        "text": "Request government authority to prosecute and arrest users with positive drug screening"
+      },
+      {
+        "label": "C",
+        "text": "Implement comprehensive drug addiction prevention and treatment programs"
+      },
+      {
+        "label": "D",
+        "text": "Refer all drug-addicted patients to psychiatric facilities only"
+      },
+      {
+        "label": "E",
+        "text": "Establish strict screening to deny hospital services to drug users"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Public health approach requires comprehensive prevention, treatment, and rehabilitation programs rather than punitive measures. Hospital administrators should develop evidence-based addiction services, harm reduction, and rehabilitation programs. Options A, B, and E violate medical ethics and would worsen public health outcomes.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 5-year-old child is brought by parents reporting a fall from a 2-week-old staircase injury. Examination shows bruises on arms and legs that are both new and old (yellow edges indicating older bruises). Additionally, there are parallel linear bruises noted on the body. What should be done FIRST?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Obtain detailed history from parents"
+      },
+      {
+        "label": "B",
+        "text": "Admit to hospital for observation"
+      },
+      {
+        "label": "C",
+        "text": "Request radiologic imaging to confirm diagnosis"
+      },
+      {
+        "label": "D",
+        "text": "Separate child from guardians and conduct thorough examination and history independently"
+      },
+      {
+        "label": "E",
+        "text": "Immediately report to child protection services"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic/Pediatrics",
+    "status": "complete",
+    "ai_notes": "Multiple red flags for abuse present: mixed-age bruises (old + new), linear parallel pattern (consistent with grab marks or implement marks), inconsistent history with findings. Separating child from caregivers allows uncoerced history and thorough examination. This is protocol before reporting to authorities.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child underwent appendectomy at provincial hospital for acute appendicitis after being initially diagnosed with gastroenteritis at a district hospital. The child had been hospitalized for 2 weeks post-operatively. The mother suspects the initial diagnosis at the district hospital was wrong. How should you explain this to the mother?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The district hospital lacks modern equipment"
+      },
+      {
+        "label": "B",
+        "text": "The district hospital staff had insufficient experience"
+      },
+      {
+        "label": "C",
+        "text": "The district hospital diagnosis was initially correct but appendicitis developed later"
+      },
+      {
+        "label": "D",
+        "text": "Early appendicitis symptoms resemble gastroenteritis symptoms"
+      },
+      {
+        "label": "E",
+        "text": "The district hospital should have used ultrasound for faster diagnosis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic/Medical Education",
+    "status": "complete",
+    "ai_notes": "Option D is most educationally appropriate - it explains the diagnostic difficulty without blaming the district hospital, while validating the mother's concerns. Early acute appendicitis can present with non-specific abdominal pain similar to gastroenteritis, and progression to rupture/complications can occur. This is medically accurate and addresses the legitimate diagnostic challenge.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี แม่พามา ER เพราะตกบันได 3 ชั่วโมงที่แล้ว PE: เด็กตัวเล็ก (เล็กกว่าอายุ) มีรอยฟกช้าเก่าและใหม่หลายรอย พบ 6th healed rib fracture โรคนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Child abuse"
+      },
+      {
+        "label": "B",
+        "text": "Accidental trauma from fall"
+      },
+      {
+        "label": "C",
+        "text": "Osteogenesis imperfecta"
+      },
+      {
+        "label": "D",
+        "text": "Rickets"
+      },
+      {
+        "label": "E",
+        "text": "Bleeding disorder"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "เด็กตัวเล็กกว่าอายุ + รอยฟกหลายรอย (เก่าและใหม่) + healed rib fracture เป็น red flag ของ child abuse rib fracture ในเด็กเล็กหากมีหลายรอยและในระยะ healing ต่างๆ บ่งชี้การใช้ความรุนแรงซ้ำๆ",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "นักท่องเที่ยวอยู่บนดอยอินทนนท์ กางเต็นท์นอนจุดตะเกียงข้างในเต็นท์ วันรุ่งขึ้นมีคนพบว่าเสียชีวิตแล้ว สาเหตุของการเสียชีวิตคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbon monoxide"
+      },
+      {
+        "label": "B",
+        "text": "Ozone"
+      },
+      {
+        "label": "C",
+        "text": "Sulfur dioxide"
+      },
+      {
+        "label": "D",
+        "text": "Carbon dioxide"
+      },
+      {
+        "label": "E",
+        "text": "Nitrogen dioxide"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ตะเกียง (ที่เผาเชื้อเพลิง) ในพื้นที่ปิด (เต็นท์) ผลิต CO ซึ่งเป็นแก๊สไร้กลิ่น ไร้สี ติดเฮโมโกลบิน ได้ดีกว่า O2 ทำให้เกิด hypoxia และตายได้ ปัญหาสุขภาพส่วนใหญ่เกี่ยวข้องกับเต็นท์ปิด CO poisoning",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี ติดอยู่ในบ้านที่มีเพลิงไหม้ มี 30% TBSA burn ที่แขน ท้อง สองข้าง นำส่งและรับไว้ในโรงพยาบาล ต่อมาผู้ป่วยแย่ลงเรื่อยๆ แล้วเสียชีวิตใน 2 ชั่วโมง จงลงสาเหตุการตายในใบรับรอง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Inhalation injury"
+      },
+      {
+        "label": "B",
+        "text": "Acute renal failure"
+      },
+      {
+        "label": "C",
+        "text": "Severe electrolyte disturbance"
+      },
+      {
+        "label": "D",
+        "text": "Congestive heart failure"
+      },
+      {
+        "label": "E",
+        "text": "Full thickness skin burn"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ตายภายใน 2 ชั่วโมงหลังเข้าโรงพยาบาลที่ 30% TBSA burn อาการแย่ลงอย่างรวดเร็วหมายถึง inhalation injury (smoke inhalation, CO poisoning, thermal injury to airways) ซึ่งสามารถโจมตีอย่างรวดเร็วกว่า hypovolemic shock จากการสูญเสียของเหลว ARF และปัญหาอื่นๆ โดยทั่วไปเกิดทีหลังกว่า",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ศพมีบาดแผลกระสุนปืนขนาด 6 mm ที่หน้าผากซ้าย มีจุดดา (tattooing/stippling) กระจายเป็นวงรอบรอยแผลขนาดประมาณ 6 cm ถามว่าเกิดจากระยะยิงแบบใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intermediate range gun shot"
+      },
+      {
+        "label": "B",
+        "text": "Long range gun shot"
+      },
+      {
+        "label": "C",
+        "text": "Contact gun shot"
+      },
+      {
+        "label": "D",
+        "text": "Close range gun shot"
+      },
+      {
+        "label": "E",
+        "text": "Stab wound"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "จุดดา (stippling/tattooing) บ่งชี้ระยะยิง intermediate range (1-15 เมตร) ที่ contact range จะมี powder burn ไม่มี stippling ที่ long range ไม่มีทั้ง powder burn และ stippling stippling กระจายรอบแผลขนาด 6 cm ชี้ไปที่ intermediate range",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุมากมี underlying เป็น Atherosclerosis และ CHF โดนโจรเข้าบ้านทาร้ายร่างกาย ตีท้ายทอย แล้วสลบ มา admit ต่อมา 2 สัปดาห์มี Bronchopneumonia, Sepsis, Acute renal failure จากนั้นจึงเสียชีวิต ข้อใดเป็นสาเหตุของการตายที่ควรลงในใบรับรอง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute renal failure"
+      },
+      {
+        "label": "B",
+        "text": "CHF"
+      },
+      {
+        "label": "C",
+        "text": "Blunt trauma"
+      },
+      {
+        "label": "D",
+        "text": "Bronchopneumonia"
+      },
+      {
+        "label": "E",
+        "text": "Sepsis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ในการลงสาเหตุการตาย ให้ลงรูปแบบ underlying cause นั่นคือเหตุที่ก่อให้เกิด chain of events ที่นำไปสู่การตาย Blunt trauma เป็น initiating event ที่นำไปสู่ complications ต่างๆ (pneumonia, sepsis, ARF) และในที่สุดการตาย principal cause ควรเป็น blunt trauma แม้ว่า immediate cause อาจเป็น sepsis หรือ ARF",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ท่านเป็นแพทย์เวรได้รับการเรียกไปชันสูตรพลิกศพหญิงอายุ 70 ปี เสียชีวิตในห้องน้ามา 1 ชั่วโมง ลูกสาวบอกว่ามารดามีโรคประจำตัวเป็นโรคความดันโลหิตสูงและเบาหวาน เพิ่งคุยกันเมื่อ 6 ชั่วโมงก่อน ไปอาบน้า ณสถานที่เกิดเหตุพบศพหญิงเสียชีวิตในห้องน้า มีเครื่องทำน้ำอุ่นเปิดทิ้งอยู่ ไม่มีร่องรอยการบุกรุก ตรวจศพเพิ่มเติมพบ subarachnoid hemorrhage และ bilateral inferior frontal lobes contusion ท่านจะคิดว่าผู้ตายเสียชีวิตจากสาเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fall"
+      },
+      {
+        "label": "B",
+        "text": "Electrocution"
+      },
+      {
+        "label": "C",
+        "text": "Myocardial infarction"
+      },
+      {
+        "label": "D",
+        "text": "Drowning"
+      },
+      {
+        "label": "E",
+        "text": "Cerebrovascular accident"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "พบ subarachnoid hemorrhage + bilateral inferior frontal lobes contusion บ่งชี้ head trauma จากการหกล้มในห้องน้า elderly patient ในห้องน้าอาจลื่นและหกล้มได้ ศีรษะชนกับ hard surface ต่างๆ SAH และ contusion ตรงกับ mechanism สำหรับ electrocution จะมีจุด entry/exit drowning ศพต้องมีน้ำในปอด CVA หรือ MI จะไม่มี traumatic findings เช่นนี้",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "พบศพชายนอนเสียชีวิตริมถนน มีแผลเต็มไปหมด (scalp laceration wound at temporal area, เลือดออกปากและจมูก, open fracture Rt tibia) มี abrasion ที่ลาตัว, rigor mortis ที่ขากรรไกร, livor mortis กดจาง ข้อใดถูก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เสียชีวิตนาน 6-8 ชั่วโมง"
+      },
+      {
+        "label": "B",
+        "text": "ความสูงของ tibial fracture มีความสำคัญในการชันสูตร"
+      },
+      {
+        "label": "C",
+        "text": "ผู้ป่วยสงสัย fracture base of skull และสามารถเป็นสาเหตุการตายได้"
+      },
+      {
+        "label": "D",
+        "text": "Temporal area laceration อาจบ่งชี้ middle meningeal artery injury"
+      },
+      {
+        "label": "E",
+        "text": "Livor mortis กดจางแสดงว่าตายจากการกด pressure"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ตัวเลือก A: Rigor mortis ที่ขากรรไกร แสดงว่าเสียชีวิต 2-12 ชั่วโมง ไม่ชัดเจนเป็น 6-8 เท่านั้น / B: ความสูง tibial fracture ไม่มีความสำคัญมากนัก / C: Temporal area laceration + เลือดออกปากจมูก + SAH findings บ่งชี้ base of skull fracture ซึ่งอาจ tear vessels และเป็นสาเหตุตายได้ / D: Temporal artery อยู่บริเวณ temporal สามารถทำให้ epidural hematoma เกิดขึ้นได้ / E: Livor mortis กดจาง = ตายไม่นานหรืออาจเป็นเครื่องหมายของการสิ้นสุดชีวิตอื่นๆ ไม่จำเป็นจากการกดเสมอไป",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "สงสัย base of skull fracture ต้องทำการตรวจทางเพิ่มเติม (Imaging) อะไรสำหรับการชันสูตร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AP and Lateral film of skull"
+      },
+      {
+        "label": "B",
+        "text": "CT scan head with bone windows"
+      },
+      {
+        "label": "C",
+        "text": "MRI head"
+      },
+      {
+        "label": "D",
+        "text": "3D reconstruction CT"
+      },
+      {
+        "label": "E",
+        "text": "X-ray skull base view (Towne's view)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ประเมิน base of skull fracture ที่ดีที่สุดคือ CT scan with bone windows สามารถแสดง fine fracture line และ pneumocephalus ได้ชัดเจน plain skull X-ray ความไว (sensitivity) ต่ำ 3D reconstruction เป็นการเพิ่มเติมเพื่อจำลองสามารถ",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ชายอะลาวาด หวาดระแวง คลุ้มคลั่ง ไม่ยอมให้รักษา ท่านเป็นแพทย์จะทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ตำรวจจับ"
+      },
+      {
+        "label": "B",
+        "text": "รักษาแล้วรับไว้ในโรงพยาบาล"
+      },
+      {
+        "label": "C",
+        "text": "ให้ผู้ใหญ่บ้านเซ็นยินยอม"
+      },
+      {
+        "label": "D",
+        "text": "ส่งตัวไปโรงพยาบาลจิตเวช"
+      },
+      {
+        "label": "E",
+        "text": "ปล่อยให้กลับไปพร้อมให้คำแนะนำสุขภาพ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยที่มีอาการหวาดระแวง คลุ้มคลั่ง มีความสำคัญต่อสาธารณะหรือตัวเอง สามารถรักษาได้โดยไม่ได้รับการยินยอม (involuntary treatment) ตามกฎหมายจิตเวช และรับไว้ในโรงพยาบาลโดยระมัดระวังอย่างเคร่งครัด ตัวเลือก B ถูกต้องที่สุด",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยจิตเวชชายผูกคอตนเองด้วยเชือก แล้วกระโดดลงจากสะพานแขวน เสียชีวิต สาเหตุการตายที่ควรลงในใบรับรองคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "โรคทางจิตเวชเดิม"
+      },
+      {
+        "label": "B",
+        "text": "C-spine subluxation from hanging"
+      },
+      {
+        "label": "C",
+        "text": "Traumatic injuries from fall"
+      },
+      {
+        "label": "D",
+        "text": "Asphyxia from hanging"
+      },
+      {
+        "label": "E",
+        "text": "Multiple injuries from blunt trauma"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "เมื่อผูกคอแล้วกระโดด immediate cause of death คือ asphyxia จาก hanging (ไม่ว่าจะเกิด fracture-dislocation หรือไม่) โรคจิตเวชเป็น underlying cause (เหตุผลในการกระทำ) แต่ principal cause ที่ลงในใบรับรองคือ asphyxia/hanging ตัวเลือก D ถูกต้อง",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  }
+]

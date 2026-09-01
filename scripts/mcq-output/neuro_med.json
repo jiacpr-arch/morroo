@@ -1,0 +1,1423 @@
+{
+  "filename": "neuro med1_2",
+  "subject": "neuro_med",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 71,
+    "no_choices": 43,
+    "few_choices": 8,
+    "good": 20,
+    "no_scenario": 0,
+    "short_scenario": 29
+  },
+  "issues": [
+    {
+      "index": 3,
+      "question_number": 10,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "หญิงไทย 70 ปี no Underlying Disease สบายดีมาตลอด มีอาการแขนซ้ายอ่อนแรง 5 นาที EK",
+      "choices_count": 3
+    },
+    {
+      "index": 4,
+      "question_number": 11,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ชายอายุ 20 ปี Motorcycle Accident ทา CT พบ crescent shape at frontal region ในผู",
+      "choices_count": 3
+    },
+    {
+      "index": 11,
+      "question_number": 2,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ชายปวดหัว ปวดเบ้าตาจนต้องตื่นกลางดึก มีอาการนาน 2เดือน แล้วหายไป ตอนนี้กลับมา",
+      "choices_count": 3
+    },
+    {
+      "index": 15,
+      "question_number": 58,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายอายุ 70 ปี มีประวัติชักอยู่เดิม วันนี้ชัก GTC seizure30 mins ที่บ้าน ใ",
+      "choices_count": 3
+    },
+    {
+      "index": 16,
+      "question_number": 60,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยอายุ 80 ปีมาด้วยซึมลงเรียกตื่นแล้วหลับต่อไม่ยอมลงจากเตียง อาเจียนเป็นอาหา",
+      "choices_count": 2
+    },
+    {
+      "index": 19,
+      "question_number": 64,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้หญิงอายุ 30 ปี นักกีฬามาราธอนแต่งงานแล้ว ยังไม่เคยตั้งครรภ์ ปวดหัวตามัว ไม่มี",
+      "choices_count": 3
+    },
+    {
+      "index": 20,
+      "question_number": 67,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายอายุ 70 ปี มี postural tremor dx?",
+      "choices_count": 2
+    },
+    {
+      "index": 23,
+      "question_number": 12,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยอายุ 75 yrs มาด้วยอาการใจสั่น ทา EKG เป็น Atrial fibrillation เคยมีประวัต",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ASA",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "warfarin",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 51,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง อายุ 10 ปี มาด้วย clinical ตาเหม่อลอย นิ่ง ไม่มีเคี้ยวปาก น้าลายไหลเป็น 10 ",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Pseudoseizure",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "absence seizure",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "simple partial seizure",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "complex partial seizure",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 57,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 55 ปี ปวดศีรษะ 1 เดือน ปวดแปล๊บๆ หน้าซีกซ้าย โดยเฉพาะกกหู กินยา Paracetamol",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "midazolam",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "alprazolam",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Indomethacin",
+      "choices_count": 0
+    },
+    {
+      "index": 35,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "carbamazepine",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "sodium valproate",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 61,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 45 ปี ชักแบบ GTC หลังชักมี postictal phase 30 นาที จากนั้นปกติ จงสั่ง inves",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "serum ca",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "serum e’ lyte",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "EEG",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "MRI brain",
+      "choices_count": 0
+    },
+    {
+      "index": 42,
+      "question_number": 92,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Pt. GTC seizure หลังชักซึมลง 30 นาที จากนั้นปกติ no neurological deficit PE:WNL ",
+      "choices_count": 0
+    },
+    {
+      "index": 43,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Serum Ca",
+      "choices_count": 0
+    },
+    {
+      "index": 44,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Serum E lyte",
+      "choices_count": 0
+    },
+    {
+      "index": 45,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "EEG",
+      "choices_count": 0
+    },
+    {
+      "index": 46,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "MRI brain",
+      "choices_count": 0
+    },
+    {
+      "index": 47,
+      "question_number": 158,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Female age ?? อาการ migraine ถามยาที่ใช้รักษาขณะมีอาการ (ศรว. มี.ค. 2555)",
+      "choices_count": 0
+    },
+    {
+      "index": 48,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Paracetamol",
+      "choices_count": 0
+    },
+    {
+      "index": 49,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Amitryptyline",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Flumarizine",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Valpoate",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "B-Blocker",
+      "choices_count": 0
+    },
+    {
+      "index": 56,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย25ปี หน้าและมือด้านขวาชักเกร็งกระตุก ต่อมาชักทั้งตัว เป็นอยู่นาน2นาที หลังจาก",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "phenytoin",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "alprazolam",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "lorazepam",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "clonazepam",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "phenobarbital",
+      "choices_count": 0
+    },
+    {
+      "index": 62,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผป เคย self limited ishemic stroke ครั้งนี้มาด้วยอ่อนแรงครึ่ง bp สูงนิดหน่อย ถาม",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Migraine",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "bacterial meningitis",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "subarachnoid hemorrhage",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "subdural hemorrhage",
+      "choices_count": 0
+    },
+    {
+      "index": 67,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "intracerebral hematoma",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 6,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยดื่มเหล้าทุกวัน 1วันก่อนดื่มเหล้าลดลง มาด้วยagitation tremor แต่neuro sig",
+      "choices_count": 2
+    },
+    {
+      "index": 70,
+      "question_number": 7,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "a 14 yo girl hx of off and on headache for 5 mo with N/V clinical improve by par",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 4,
+      "scenario": "หญิง 15 ปี มาด้วยอาการปวดศีรษะข้างเดียว มา 4 เดือน มีอาการ เดือนละ 2-3 ครั้ง จงให้ Prophylaxis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Propanolol"
+        },
+        {
+          "label": "B",
+          "text": "Sumatriptan"
+        },
+        {
+          "label": "C",
+          "text": "Flunazine"
+        },
+        {
+          "label": "D",
+          "text": "A,B"
+        },
+        {
+          "label": "E",
+          "text": "A,C"
+        }
+      ],
+      "exam_source": "ศรว 2008"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ป่วยชาย 30 yr ปวดศีรษะมากทันที เวียนหัว คลื่นไส้อาเจียน drowsiness, BP 150/110, PR 80, RR 22, stiffness of neck, Babinski’s sign - neg, Retinal a. - absence of pulse, no papilledema ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Migraine"
+        },
+        {
+          "label": "B",
+          "text": "Viral encephalitis"
+        },
+        {
+          "label": "C",
+          "text": "Subarachnoid hemorrhage"
+        },
+        {
+          "label": "D",
+          "text": "Bacterial meningitis"
+        }
+      ],
+      "exam_source": "ศรว 2008"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ผู้ป่วยหญิง 70 yr มีแขนขาซ้ายอ่อนแรง และมี EKG ดังนี้ (มี ST elevate)ให้ยาใดป้องกันอาการดังกล่าว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aspirin"
+        },
+        {
+          "label": "B",
+          "text": "Enoxaparin"
+        },
+        {
+          "label": "C",
+          "text": "Clopidogrel"
+        },
+        {
+          "label": "D",
+          "text": "Warfarin"
+        },
+        {
+          "label": "E",
+          "text": "Dipyramidamole"
+        }
+      ],
+      "exam_source": "ศรว 2008"
+    },
+    {
+      "question_number": 10,
+      "scenario": "หญิงไทย 70 ปี no Underlying Disease สบายดีมาตลอด มีอาการแขนซ้ายอ่อนแรง 5 นาที EKG เป็น AF ใช้ยาอะไรป้องกันอาการอ่อนแรง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASA"
+        },
+        {
+          "label": "B",
+          "text": "Warfarin"
+        },
+        {
+          "label": "C",
+          "text": "Clopidogrel"
+        }
+      ],
+      "exam_source": "ศรว 2008"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ชายอายุ 20 ปี Motorcycle Accident ทา CT พบ crescent shape at frontal region ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute epidural hemorrhage"
+        },
+        {
+          "label": "B",
+          "text": "Acute subdural hemorrhage"
+        },
+        {
+          "label": "C",
+          "text": "Subacute epidural hemorrhage"
+        }
+      ],
+      "exam_source": "ศรว 2008"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้ป่วยหญิงอายุ 50 ปี ขณะดูโทรทัศน์ ขณะดูโทรทัศน์ที่โซฟา มีอาการปวดท้ายทอย ลุกเดินขึ้นมีเดินเซขวา PE : pupil 1mm แขนขาอ่อนแรง ถามหา lesion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pontine hemorrhage"
+        },
+        {
+          "label": "B",
+          "text": "Cellebellar hemorrhage"
+        },
+        {
+          "label": "C",
+          "text": "Subarchnoid hemorrhage"
+        },
+        {
+          "label": "D",
+          "text": "Basal ganglion hemorrhage"
+        },
+        {
+          "label": "E",
+          "text": "Intraventricular hemorrhage"
+        }
+      ],
+      "exam_source": "ศรว 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ ป่วยชายอายุ 65 ปี เป็ นมะเร็งปอดระยะที่ 1 ได้ รับการผ่าตัดไปแล้ ว หลังผ่าไม่ ได้ รับเคมีบาบัดหรือรังสีรักษาต่อมามีอาการซีกขวาอ่อนแรง gr.4 ร่ วมกับมีอาการชักเกร็งทั่วตัว ก่อนมา 30 นาที ชักเกร็งกระตุกจากแขนขา แล้ วต่อมาชักทั่วตัว หลังชักรู้ สึกตัวดี PE : good conciousness , Lung - clear ,scar at Lt. chest wall , tracheotomy scar จะให้ ยาอะไร (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Clonazepam"
+        },
+        {
+          "label": "B",
+          "text": "Phenobarbital"
+        },
+        {
+          "label": "C",
+          "text": "Phenytoin"
+        },
+        {
+          "label": "D",
+          "text": "Carbamazepine"
+        }
+      ],
+      "exam_source": "ศรว 2009"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ชาย 20 ปี ไข้สูง ปวดหัว PE: subconjunctival hemorrhage BT 39 C, stiff neck positive, petechia and purpura on both legs จงบอก organism",
+      "choices": [
+        {
+          "label": "A",
+          "text": "N. meningitides"
+        },
+        {
+          "label": "B",
+          "text": "H. influenzae"
+        },
+        {
+          "label": "C",
+          "text": "S. pneumoniae"
+        },
+        {
+          "label": "D",
+          "text": "S. aureus"
+        },
+        {
+          "label": "E",
+          "text": "M. pneumonia"
+        }
+      ],
+      "exam_source": "ศรว 2009"
+    },
+    {
+      "question_number": 8,
+      "scenario": "หญิง 30 ปี มีอาการปวดหัวเป็นๆ หาย ๆ 3-4 ครั้งต่อเดือน เป็นมา 2 ปี ตรวจร่างกายปกติดี",
+      "choices": [
+        {
+          "label": "A",
+          "text": "diazepam"
+        },
+        {
+          "label": "B",
+          "text": "amitryptyline"
+        },
+        {
+          "label": "C",
+          "text": "lorazepam"
+        },
+        {
+          "label": "D",
+          "text": "CT brain"
+        }
+      ],
+      "exam_source": "ศรว 2009"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ชาย 24 ปี ชัก 1 hr ชักตั้งแต่อายุ 15 ปี ชัก 3-4 ครั้ง/ปี ไม่ได้รักษามา 1 ปี ตอนนี้ไม่มีอาการ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "diazepam"
+        },
+        {
+          "label": "B",
+          "text": "phenyltoin"
+        },
+        {
+          "label": "C",
+          "text": "phenobarb"
+        },
+        {
+          "label": "D",
+          "text": "midazolam"
+        },
+        {
+          "label": "E",
+          "text": "gabapentin"
+        }
+      ],
+      "exam_source": "ศรว 2009"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยหญิงอายุ 80 ปี มาด้วยอ่อนแรงซีกซ้าย หมดสติ 5 dayPTA ขณะนั่งดูโทรทัศน์ PE: stupor HR 60 totally irregular RR 12 Lt.hemiparesis pupil 2 mm Lt. 4 mm Rt. UpgoingLt.plantar reflex ท่านเป็นแพทย์ที่ ER จง Manage เบื้องต้นอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV furosemide"
+        },
+        {
+          "label": "B",
+          "text": "IV nitroglycerine"
+        },
+        {
+          "label": "C",
+          "text": "IV heparin drip"
+        },
+        {
+          "label": "D",
+          "text": "Et tube"
+        },
+        {
+          "label": "E",
+          "text": "IV Dexamethasone"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ชายปวดหัว ปวดเบ้าตาจนต้องตื่นกลางดึก มีอาการนาน 2เดือน แล้วหายไป ตอนนี้กลับมาเป็นใหม่มีปวดเบ้าตาซ้ายบ้างหรือเบ้าตาขวาอย่างเดียว การวินิจฉัยที่เหมาะสมคือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cluster headache"
+        },
+        {
+          "label": "B",
+          "text": "Tension headache"
+        },
+        {
+          "label": "C",
+          "text": "Migraine"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ชาย 65 ปี เป็นมะเร็งปอดระยะที่ 1 ได้รับการผ่าตัดไปแล้ว หลังผ่าไม่ได้รับเคมีบาบัดหรือรังสีรักษาต่อมามีอาการซีกขวาอ่อนแรง gr.4 ร่วมกับมีอาการชักเกร็งทั่วตัว ก่อนมา 30 นาที ชักเกร็งกระตุกจากแขนขา แล้วต่อมาชักทั่วตัว หลังชักรู้สึกตัวดี PE : good conciousness , Lung - clear ,scar at Lt. chest wall , tracheotomy scar Mx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Clonazepam"
+        },
+        {
+          "label": "B",
+          "text": "Phenobarbital"
+        },
+        {
+          "label": "C",
+          "text": "Phenytoin"
+        },
+        {
+          "label": "D",
+          "text": "Carbamazepine"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ชายไทยอายุ 25 ปี มีประวัติชักทั้งตัวมา 2 ครั้ง on phenytoin 300 mg/day หลังจากนั้นไม่มีอาการชักอีก , 3 วันมีไข้ ชักทั้งตัว , CT : calcified 3 mm. , no edema รอบๆ ถาม Management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "albendazole"
+        },
+        {
+          "label": "B",
+          "text": "ให้ยาเดิมต่อ"
+        },
+        {
+          "label": "C",
+          "text": "เปลี่ยนเป็น Na Valproate"
+        },
+        {
+          "label": "D",
+          "text": "เปลียนยาเป็น ..."
+        },
+        {
+          "label": "E",
+          "text": "surgery เอา calcification ออก"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 7,
+      "scenario": "มีอาการ migraine ถามว่ายาใดที่ป้องกันอาการmigraine ได้ดีสุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASA"
+        },
+        {
+          "label": "B",
+          "text": "Propanolol"
+        },
+        {
+          "label": "C",
+          "text": "Indolmethacin"
+        },
+        {
+          "label": "D",
+          "text": "Etgotamine"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 58,
+      "scenario": "ผู้ป่วยชายอายุ 70 ปี มีประวัติชักอยู่เดิม วันนี้ชัก GTC seizure30 mins ที่บ้าน ในรถพยาบาลชักอีก 2 ครั้งได้ diazepam iv ไป 2 ครั้ง\nมาถึงรพ.ชักอีก 1 ครั้ง30 sec หยุดแล้ว DTX 140 จะให้ยา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Diazepam b. Clonazepam c. Phenytoin"
+        },
+        {
+          "label": "D",
+          "text": "Phenobarbital e. Valproate f. Carbamazepine"
+        },
+        {
+          "label": "C",
+          "text": "g. thiamine"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 60,
+      "scenario": "ผู้ป่วยอายุ 80 ปีมาด้วยซึมลงเรียกตื่นแล้วหลับต่อไม่ยอมลงจากเตียง อาเจียนเป็นอาหารหลังให้ feed 1 ครั้งPE P80/min ตรวจร่างกายปกติ K,Mg,PO4 อยู่ในเกณฑ์ปกติ ไม่มีอ่อนแรง จง investigate เพิ่มเติม",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Thyroid function scan"
+        },
+        {
+          "label": "B",
+          "text": "CT-scan"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 61,
+      "scenario": "ผู้ป่วยชายอายุ 80 ปี สุขภาพแข็งแรงดีมาตลอด ซึมลง 5 วันPTA กินไม่ค่อยได้ เช้านี้ปลุกตื่นแล้วนอนต่อ กินข้าวแล้วอาเจียนออกมาเป็นเศษอาหาร U/D : Cardiac arrhythmia (เป็น off and on) และ DM on ยาละลายลิhมเลือดและยาเบาหวานต่อเนื่อง PE : muscle power grade 3 all ext., V/S-stable PR 90/min regular , E’lyte, Calcium, Magnesium : normal, Glucose 65 ให้ IV glucose 50 mg 50 ml. แล้วผู้ป่วยยังซึมอยู่ Management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "EKG"
+        },
+        {
+          "label": "B",
+          "text": "CT Brain"
+        },
+        {
+          "label": "C",
+          "text": "Thiamine IV"
+        },
+        {
+          "label": "D",
+          "text": "LP"
+        },
+        {
+          "label": "E",
+          "text": "Observe"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 62,
+      "scenario": "ผู้ป่วยหญิง อายุ 70 ปี U/D : DM, HTN 10 yr on ยาสม่าเสมอ ตื่นนอนตอนเช้ามีอ่อนแรงแขนขาซีกขวา 6 hr PTA ไม่ชา พูดคุยรู้เรื่อง ลุกจากเตียงไม่ขึ้น ญาติพาส่งโรงพยาบาลPE: V/S-stable BP สูงนิดๆ , CBC – normal, FBS 200 mg/dl Diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lacunar infarction"
+        },
+        {
+          "label": "B",
+          "text": "Frontal lobe infarction"
+        },
+        {
+          "label": "C",
+          "text": "Pontine hemorrhage"
+        },
+        {
+          "label": "D",
+          "text": "Cerebellar hemorrhage"
+        },
+        {
+          "label": "E",
+          "text": "Parietal lobe hemorrhage"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 64,
+      "scenario": "ผู้หญิงอายุ 30 ปี นักกีฬามาราธอนแต่งงานแล้ว ยังไม่เคยตั้งครรภ์ ปวดหัวตามัว ไม่มีประจาเดือนมา 1 ปี มีน้าสีขาวไหลมาจากเต้านมทั้งสองข้าง มีอาการตามัวมากขึ้น PE: bilateral hemianopia",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pregnancy"
+        },
+        {
+          "label": "B",
+          "text": "Hypogonadism"
+        },
+        {
+          "label": "C",
+          "text": "Prolactinoma"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 67,
+      "scenario": "ผู้ป่วยชายอายุ 70 ปี มี postural tremor dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal age change"
+        },
+        {
+          "label": "B",
+          "text": "Alcohol induce"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 68,
+      "scenario": "ผู้ป่วยชายอายุ 40 ปี มาด้วยอาการปวดหัวมากแบบ tension type ปวด 2-3 hr ต่อครั้งกินยาพาราเซตามอลแล้วยังไม่ดีขึ้น ให้ยาอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amitryptyline"
+        },
+        {
+          "label": "B",
+          "text": "Flunarizine"
+        },
+        {
+          "label": "C",
+          "text": "Topiramate"
+        },
+        {
+          "label": "D",
+          "text": "Propanolol"
+        },
+        {
+          "label": "E",
+          "text": "tramadal"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 100,
+      "scenario": "ชายอายุ 40 ปี แข็งแรงดี วิ่งมาราธอนได้ 5-10 km(30นาที) แล้วเริ่มเหนื่อย วิ่งห่างจากคนอื่น อาเจียน ล้มลงบนพื้น เกร็งกระตุก 2 ครั้งหมดสติ ตรวจร่างกาย BT40 PR120 BP160/100 RR30 หายใจดัง อื่นๆปกติดี no focal neurological deficit ปวดหัวมาก Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Heat stroke"
+        },
+        {
+          "label": "B",
+          "text": "TIA"
+        },
+        {
+          "label": "C",
+          "text": "Acute MI"
+        },
+        {
+          "label": "D",
+          "text": "Pulmonary embolism"
+        },
+        {
+          "label": "E",
+          "text": "Intracerebral hemorrhage"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้ป่วยอายุ 75 yrs มาด้วยอาการใจสั่น ทา EKG เป็น Atrial fibrillation เคยมีประวัติ TIA โจทย์ถามจะป้องกันการเกิด TIA ซ้า ยาใดมีประสิทธิภาพดีที่สุด",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ASA",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "warfarin",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 51,
+      "scenario": "หญิง อายุ 10 ปี มาด้วย clinical ตาเหม่อลอย นิ่ง ไม่มีเคี้ยวปาก น้าลายไหลเป็น 10 วินาที วันละ 10-20 ครั้ง ประมาณ 2-3 weeks ประวัติแม่เป็นลมชัก PE : Normal, Neuro exam Normal",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Pseudoseizure",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "absence seizure",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "simple partial seizure",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "complex partial seizure",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 57,
+      "scenario": "หญิง 55 ปี ปวดศีรษะ 1 เดือน ปวดแปล๊บๆ หน้าซีกซ้าย โดยเฉพาะกกหู กินยา Paracetamol ไม่ดีขึ้น ให้การรักษาใดเหมาะสมที่สุด",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "midazolam",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "alprazolam",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Indomethacin",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "carbamazepine",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "sodium valproate",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 61,
+      "scenario": "หญิง 45 ปี ชักแบบ GTC หลังชักมี postictal phase 30 นาที จากนั้นปกติ จงสั่ง investigation ที่จาเป็น",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "serum ca",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "serum e’ lyte",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "EEG",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "MRI brain",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 92,
+      "scenario": "Pt. GTC seizure หลังชักซึมลง 30 นาที จากนั้นปกติ no neurological deficit PE:WNL Investigation ใดมีประโยชน์ต่อ Pt มากที่สุด",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Serum Ca",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Serum E lyte",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "EEG",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "MRI brain",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 158,
+      "scenario": "Female age ?? อาการ migraine ถามยาที่ใช้รักษาขณะมีอาการ (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Paracetamol",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Amitryptyline",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Flumarizine",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Valpoate",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "B-Blocker",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 45,
+      "scenario": "หญิง 70 ปี ปวดหัว temporal Rt. เป็นๆหายๆ ปวดตา ปวดกรามมากเวลาเคี้ยว จงให้การวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Optic neuritis"
+        },
+        {
+          "label": "B",
+          "text": "Facial migraine"
+        },
+        {
+          "label": "C",
+          "text": "Giant cell arteritis"
+        },
+        {
+          "label": "D",
+          "text": "Carvenous venous thrombosis"
+        },
+        {
+          "label": "E",
+          "text": "Posterior communicating artery aneurysm"
+        }
+      ],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 76,
+      "scenario": "A 45 years old healthy female has headache PE reveal stiff neck+Ve CT : leptomeningeal enhancement\nLP CSF open pressure 28 cm H2O, wbc 300(L>N) , protein 400 ,sugar 25 (plasma glucose 100) no bacteria in gram stain . What is your diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TB meningitis"
+        },
+        {
+          "label": "B",
+          "text": "Aseptic meningitis"
+        },
+        {
+          "label": "C",
+          "text": "Purulent meningitis"
+        },
+        {
+          "label": "D",
+          "text": "Lymphophilic meningitis"
+        },
+        {
+          "label": "E",
+          "text": "Cryptococcal meningitis"
+        }
+      ],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 130,
+      "scenario": "A 50-year-old man had involved a vehicle accident, he didn’t wear any restraint and stuck by the windshil of his van, he didn’t loss consciousness at that time of at any time after. But 1 month ago he complain of headache, become irritable and act strangely. What is the most possible diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Epidural hematoma"
+        },
+        {
+          "label": "B",
+          "text": "Cerebral contusion"
+        },
+        {
+          "label": "C",
+          "text": "Intracerebral hematoma"
+        },
+        {
+          "label": "D",
+          "text": "Subarachnoid hemorrhage"
+        },
+        {
+          "label": "E",
+          "text": "Chronic subdural hematoma"
+        }
+      ],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ชาย25ปี หน้าและมือด้านขวาชักเกร็งกระตุก ต่อมาชักทั้งตัว เป็นอยู่นาน2นาที หลังจากหยุดชัก มีอ่อนแรงทั้งตัว 6ชม. แล้วกลับมาเป็นปกติ lab: glucose elyte Ca ปกติหมดถามว่าให้ยาอะไร",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "phenytoin",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "alprazolam",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "lorazepam",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "clonazepam",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "phenobarbital",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผป เคย self limited ishemic stroke ครั้งนี้มาด้วยอ่อนแรงครึ่ง bp สูงนิดหน่อย ถามว่าทาอะไร A.ct brain B. SK C.antiHTN 4.หญิง 60ปี abrupt onset of severe headache, no past history of headace before v/s (ไม่มีไข้) BP 140/90 stiff neck positive, no neurological deficit",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Migraine",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "bacterial meningitis",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "subarachnoid hemorrhage",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "subdural hemorrhage",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "intracerebral hematoma",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ชาย u/d epilepsy กิน multiple antileptic drug วันนึงพอนอนอยุ่ในห้อง stupor pupil 2mm RR- 8/min decrease deep tendon reflect อาการอื่นๆไม่แน่ใจ ถามว่าเกิดจากยาใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "carbamazepine"
+        },
+        {
+          "label": "B",
+          "text": "phenytoin"
+        },
+        {
+          "label": "C",
+          "text": "BDZ"
+        },
+        {
+          "label": "D",
+          "text": "phenobarb"
+        },
+        {
+          "label": "E",
+          "text": "valproic acid"
+        }
+      ],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยดื่มเหล้าทุกวัน 1วันก่อนดื่มเหล้าลดลง มาด้วยagitation tremor แต่neuro signปกติ ถามappropiate management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "thiamine"
+        },
+        {
+          "label": "B",
+          "text": "diazepam"
+        }
+      ],
+      "exam_source": "ศรว  2014"
+    },
+    {
+      "question_number": 7,
+      "scenario": "a 14 yo girl hx of off and on headache for 5 mo with N/V clinical improve by paracetamol\nPE : bp 120/80mmHg HR 90/min no neuro deficit ,no ocular papillema\nwhat is the most likely diagnosis\na migraine\nb cluster headache\nc tension headache\nd psychological\nA patient with right hemiparesis and motor aphasia. Where is the lesion\nLacunar infarction\nLeft middle cerebral artery\nRight middle cerebral artery\nLeft posterior cerebral artery\nRight posterior cerebral artery\nA patient was normal until morning when he wake up 2hr PTA. BP high, no murmur, no carotid bruit. CT as shown. What is the management\nASA\nHeparin\nStreptokinase\nTissue plasminogen activator\nA 40-year-old woman sudden convulsion, loss of consciousness. At ER, BP 180/90 mmHg, PR 100/min, RR 20/min, E3M6V5, pupil right 3 mm, left 5 mm. What is the most likely diagnosis\nSubarachnoid hemorrhage\nRuptured AVM at parietal lobe\nIntraventricular hemorrhage\nEpidural hematoma\nIntracerebral hemorrhage frontal lobe\nA patient acute headache. PE: left eye 5 mm NRTL, right eye 2 mm RTL, right hemiparesis. What is the diagnosis\nEpidural hematoma\nSubdural hemorrhage\nSubarachnoid hemorrhage\nWhat is the diagnosis\nEpidural hemorrhage\nSubdural hemorrhage\nSubarachnoid hemorrhage\nIntracerebral hemorrhage\nIntraventricular hemorrhage\nA 70-year-old woman with underlying disease diabetes, hypertension, dyslipidemia. She was found unconscious in her bathroom 1 hour PTA. Physical examination revealed BP 220/120 mmHg, E2M4V1, motor grade III all. CT scan reveals as the following. Which is unnecessary management\nIV corticosteroid\nIV 20% mannitol\nVentricular drainage\nIntubate and assisted ventilation\nParenteral antihypertensive drug\nA patient epidural hematoma with midline shift intubation. What is the initial management\nMannitol\nHyperventilate\nDexamethasone\nBrain hemorrhage RR 28/min. What is the initial effective treatment\nMannitol\nHyperventilate\nAcetazolamide\nCorticosteroid\nคนที่เป็น DM,HTN มีประวัติ stroke ลืมทุกอย่างในชีวิต\nVascular dementia\nA dementia patient. She has ataxic gait. What is the investigation\nCT brain\nA 30-year-old woman presents with headache at bitemporal and occipital lobe. It occurs 2-3 times/week duration 5-6 hours. What is the prophylaxis treatment\nTopiramate\nGabapentin\nFlunarizine\nAmitriptyline\nSodium valproate\nA woman GA 10 week has photophobia and headache. The headache usually unilateral and radiate from … to occipital. What is the management\nAmlodipine\nNSAID\nA 25-year-old woman history of nocturnal generalized tonic-clonic seizure at 10 years old. Now she has no symptom (controllable) on valproic acid 600 mg/day and phenytoin 200 mg/day. She has pregnant for 3 months unexpectedly. What is your management\nterminate pregnancy\nc/s to prevent perinatal seizure\ngive folic acid supplement\ncheck antiepileptic drug level\nchange valproic acid to phenytoin monotherapy",
+      "choices": [],
+      "exam_source": "ศรว  2014"
+    }
+  ]
+}

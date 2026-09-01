@@ -1,0 +1,2802 @@
+[
+  {
+    "scenario": "ชายอายุ 65 ปี มาด้วยตามัวแบบค่อยๆ เป็น ไม่เจ็บตา มองไม่ชัดในแสงน้อย ตรวจพบ visual acuity ลดลงทั้งสองข้าง ตรวจด้วย slit lamp พบ lens opacity สีเหลือง-น้ำตาล ที่ nucleus of the lens การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Posterior subcapsular cataract"
+      },
+      {
+        "label": "B",
+        "text": "Nuclear cataract"
+      },
+      {
+        "label": "C",
+        "text": "Cortical cataract"
+      },
+      {
+        "label": "D",
+        "text": "Glaucoma"
+      },
+      {
+        "label": "E",
+        "text": "Macular degeneration"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lens opacity ที่ nucleus สีเหลือง-น้ำตาล + ผู้สูงอายุ + แย่ลงในแสงน้อย = Nuclear cataract",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Nuclear cataract",
+      "reason": "Cataract แบ่งตามตำแหน่ง:\n1. Nuclear cataract (nuclear sclerosis): สีเหลือง-น้ำตาล opacity ที่ nucleus พบบ่อยที่สุดในผู้สูงอายุ แย่ลงในแสงน้อย (pupil ขยาย ให้แสงผ่าน peripheral lens ที่มี opacity มากกว่า)\n2. Cortical cataract: spoke-like opacity ที่ cortex\n3. Posterior subcapsular cataract (PSC): opacity ใต้ posterior capsule แย่ลงในแสงสว่าง (pupil เล็ก แสงผ่านกลาง lens ที่มี PSC) พบในผู้ใช้ steroid, radiation\n\nรักษา: Phacoemulsification + IOL implantation เมื่อ vision ลดลงถึง 6/18 หรือ functional impairment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Posterior subcapsular cataract",
+          "is_correct": false,
+          "explanation": "PSC มักแย่ลงในแสงสว่าง (glare) ไม่ใช่แสงน้อย opacity อยู่ที่ posterior capsule ไม่ใช่ nucleus"
+        },
+        {
+          "label": "B",
+          "text": "Nuclear cataract",
+          "is_correct": true,
+          "explanation": "Nuclear opacity สีเหลือง-น้ำตาล + แย่ลงในแสงน้อย (dim light) + ผู้สูงอายุ = nuclear sclerosis"
+        },
+        {
+          "label": "C",
+          "text": "Cortical cataract",
+          "is_correct": false,
+          "explanation": "Cortical cataract เป็น spoke-like/wedge-shaped opacity ที่ cortex ไม่ใช่ nucleus"
+        },
+        {
+          "label": "D",
+          "text": "Glaucoma",
+          "is_correct": false,
+          "explanation": "Glaucoma ทำให้ visual field defect ไม่ใช่ lens opacity และมี IOP สูง optic disc changes"
+        },
+        {
+          "label": "E",
+          "text": "Macular degeneration",
+          "is_correct": false,
+          "explanation": "AMD ทำให้ central vision ลดลง metamorphopsia ไม่มี lens opacity"
+        }
+      ],
+      "key_takeaway": "Nuclear cataract: Nucleus opacity สีเหลือง-น้ำตาล + แย่ลงในแสงน้อย ← ผู้สูงอายุ; PSC: แย่ลงในแสงสว่าง ← steroid"
+    },
+    "subject": "eye",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มาด้วยตาขวาแดง ปวดตารุนแรงฉับพลัน มองเห็น halos รอบแสง คลื่นไส้อาเจียน ตรวจพบ visual acuity ลดลง cornea มีลักษณะ steamy (edema) pupil mid-dilated fixed IOP 65 mmHg การวินิจฉัยที่ถูกต้องและการรักษาเร่งด่วนคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Open-angle glaucoma -> Topical beta-blocker"
+      },
+      {
+        "label": "B",
+        "text": "Acute angle-closure glaucoma -> IV acetazolamide + topical pilocarpine + IV mannitol"
+      },
+      {
+        "label": "C",
+        "text": "Uveitis -> Topical steroid"
+      },
+      {
+        "label": "D",
+        "text": "Corneal abrasion -> Topical antibiotic"
+      },
+      {
+        "label": "E",
+        "text": "Scleritis -> NSAIDs"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute red eye + severe pain + halos + steamy cornea + mid-dilated fixed pupil + IOP 65 = Acute angle-closure glaucoma emergency",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Acute angle-closure glaucoma -> IV acetazolamide + topical pilocarpine + IV mannitol",
+      "reason": "Acute angle-closure glaucoma (AACG) เป็น ophthalmic emergency\n\nLandmarks: Sudden severe eye pain + blurred vision + halos around lights + N/V (เพราะ vagal response จาก IOP สูงมาก) + Steamy cornea (corneal edema จาก IOP สูง) + Mid-dilated fixed pupil (sphincter ischemia) + IOP สูงมาก (>40 mmHg)\n\nเกิดจาก pupillary block: iris ขวาง trabecular meshwork ทำให้ aqueous outflow ลดลง\n\nรักษา:\n1. ลด IOP: IV acetazolamide 500 mg + topical beta-blocker + IV mannitol (hyperosmotic)\n2. Pilocarpine 2% ทำ miosis เปิด anterior chamber angle\n3. Definitive: Laser peripheral iridotomy (LPI) สร้าง hole ใน iris ให้ aqueous ผ่าน\n4. ทำ prophylactic LPI ตาอีกข้างด้วย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Open-angle glaucoma -> Topical beta-blocker",
+          "is_correct": false,
+          "explanation": "Open-angle glaucoma เป็น chronic progressive ไม่มี acute symptoms ไม่มี steamy cornea mid-dilated fixed pupil"
+        },
+        {
+          "label": "B",
+          "text": "Acute angle-closure glaucoma -> IV acetazolamide + topical pilocarpine + IV mannitol",
+          "is_correct": true,
+          "explanation": "Acute AACG emergency: ลด IOP ทันทีด้วย IV acetazolamide + mannitol + topical pilocarpine -> Laser iridotomy"
+        },
+        {
+          "label": "C",
+          "text": "Uveitis -> Topical steroid",
+          "is_correct": false,
+          "explanation": "Anterior uveitis มีปวดตา photophobia ไม่มี mid-dilated fixed pupil IOP ไม่สูงถึง 65 มักมี KP ใน slit lamp"
+        },
+        {
+          "label": "D",
+          "text": "Corneal abrasion -> Topical antibiotic",
+          "is_correct": false,
+          "explanation": "Corneal abrasion มีปวดตา ตาแดง แต่ IOP ปกติ ไม่มี steamy cornea mid-dilated pupil"
+        },
+        {
+          "label": "E",
+          "text": "Scleritis -> NSAIDs",
+          "is_correct": false,
+          "explanation": "Scleritis มีปวดตาลึกมาก ตาแดง ไม่มี mid-dilated fixed pupil หรือ IOP สูงมาก"
+        }
+      ],
+      "key_takeaway": "Acute angle-closure glaucoma: Severe eye pain + steamy cornea + mid-dilated fixed pupil + IOP >40 -> Emergency: IV Acetazolamide + Mannitol + Pilocarpine -> Laser iridotomy"
+    },
+    "subject": "eye",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี มาตรวจสายตา พบว่า BCVA ตาซ้าย 6/60 แม้ใส่แว่นตาแก้ไขแล้ว ตาขวา 6/6 ตาซ้ายมี esotropia cornea ปกติ fundus ปกติ ทั้งสองข้าง การวินิจฉัยและการรักษาที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Myopia -> ใส่แว่น"
+      },
+      {
+        "label": "B",
+        "text": "Amblyopia -> Patching ตาดี + แก้ไข refractive error"
+      },
+      {
+        "label": "C",
+        "text": "Retinoblastoma -> Chemotherapy"
+      },
+      {
+        "label": "D",
+        "text": "Congenital cataract -> Surgery ทันที"
+      },
+      {
+        "label": "E",
+        "text": "Optic neuritis -> IV steroid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ตาซ้าย BCVA ต่ำแม้ใส่แว่น + esotropia + เด็ก + fundus ปกติ = Amblyopia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Amblyopia -> Patching ตาดี + แก้ไข refractive error",
+      "reason": "Amblyopia (lazy eye) คือ visual acuity ลดลงโดยไม่มี organic pathology สาเหตุจาก abnormal visual development ในช่วง critical period (0-7 ปี)\n\nสาเหตุ: Strabismus (esotropia/exotropia), Refractive error (anisometropia), Visual deprivation (cataract, ptosis)\n\nผู้ป่วยมี esotropia + BCVA ตาซ้าย 6/60 แม้ใส่แว่น + fundus ปกติ = Strabismic amblyopia\n\nรักษา: 1) แก้ไข underlying cause (แว่น/surgery ถ้า esotropia) 2) Occlusion therapy (patching ตาดี): บังคับให้ตาที่ amblyopic ทำงาน 3) Atropine penalization: หยอด atropine ตาดี ทำให้ตาดีพร่ามัว 4) Visual training\n\nต้องรักษาก่อนอายุ 7-8 ปี เพราะหลังจากนั้น cortical plasticity ลดลงมาก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Myopia -> ใส่แว่น",
+          "is_correct": false,
+          "explanation": "BCVA ลดลงแม้ใส่แว่นแก้ไขแล้ว ไม่ใช่แค่ refractive error ต้อง treat amblyopia"
+        },
+        {
+          "label": "B",
+          "text": "Amblyopia -> Patching ตาดี + แก้ไข refractive error",
+          "is_correct": true,
+          "explanation": "Esotropia + BCVA ต่ำแม้ใส่แว่น + fundus ปกติ = strabismic amblyopia -> patch ตาดี + แก้ strabismus"
+        },
+        {
+          "label": "C",
+          "text": "Retinoblastoma -> Chemotherapy",
+          "is_correct": false,
+          "explanation": "Retinoblastoma มี white pupillary reflex (leukocoria) strabismus ไม่มี fundus ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Congenital cataract -> Surgery ทันที",
+          "is_correct": false,
+          "explanation": "Congenital cataract มี lens opacity ไม่ใช่ strabismus เพียงอย่างเดียว fundus ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Optic neuritis -> IV steroid",
+          "is_correct": false,
+          "explanation": "Optic neuritis มี RAPD painful visual loss ไม่ใช่ chronic vision loss ใน 6 ปีที่มี strabismus"
+        }
+      ],
+      "key_takeaway": "Amblyopia: Visual acuity ลดแม้ใส่แว่น + fundus ปกติ (ไม่มี organic pathology) -> Patching ตาดี + แก้ refractive error ก่อนอายุ 7-8 ปี"
+    },
+    "subject": "eye",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี เบาหวาน 20 ปี มาด้วยตามัวแบบค่อยๆ เป็น ตรวจ fundus พบ cotton wool spots, flame-shaped hemorrhages, neovascularization ที่ disc (NVD) และ retina (NVE) การวินิจฉัยและการรักษาที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Non-proliferative diabetic retinopathy -> Observation"
+      },
+      {
+        "label": "B",
+        "text": "Proliferative diabetic retinopathy -> Panretinal photocoagulation (PRP)"
+      },
+      {
+        "label": "C",
+        "text": "Hypertensive retinopathy -> Antihypertensive"
+      },
+      {
+        "label": "D",
+        "text": "CRVO -> Observation"
+      },
+      {
+        "label": "E",
+        "text": "Macular degeneration -> Anti-VEGF injection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "เบาหวาน + neovascularization disc/retina = Proliferative diabetic retinopathy -> Panretinal photocoagulation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Proliferative diabetic retinopathy -> Panretinal photocoagulation (PRP)",
+      "reason": "Diabetic retinopathy แบ่งเป็น:\n1. NPDR: microaneurysms dot/blot hemorrhages cotton wool spots hard exudates (ยังไม่มี neovascularization)\n2. PDR: neovascularization ที่ disc (NVD) หรือ retina (NVE) = Proliferative DR\n\nNeovascularization เกิดจาก ischemic retina ผลิต VEGF ทำให้เกิดเส้นเลือดใหม่ที่เปราะและเสี่ยงเลือดออก\n\nComplications ของ PDR: Vitreous hemorrhage, Tractional retinal detachment, Neovascular glaucoma\n\nรักษา PDR: Panretinal photocoagulation (PRP) - laser ทำลาย ischemic retina ลด VEGF ป้องกัน neovascularization progression + Anti-VEGF (bevacizumab/ranibizumab) ถ้ามี macular edema\n\nPRP เป็น standard treatment สำหรับ high-risk PDR",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Non-proliferative diabetic retinopathy -> Observation",
+          "is_correct": false,
+          "explanation": "NPDR ไม่มี neovascularization ผู้ป่วยรายนี้มี NVD NVE = PDR ซึ่งต้องการ PRP ทันที"
+        },
+        {
+          "label": "B",
+          "text": "Proliferative diabetic retinopathy -> Panretinal photocoagulation (PRP)",
+          "is_correct": true,
+          "explanation": "NVD/NVE = PDR -> PRP ลด ischemic retina ลด VEGF ป้องกัน vitreous hemorrhage tractional RD"
+        },
+        {
+          "label": "C",
+          "text": "Hypertensive retinopathy -> Antihypertensive",
+          "is_correct": false,
+          "explanation": "Hypertensive retinopathy มี AV nicking copper/silver wiring papilledema ไม่มี neovascularization ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "CRVO -> Observation",
+          "is_correct": false,
+          "explanation": "CRVO มี flame-shaped hemorrhages 4 quadrants + disc edema ไม่มีประวัติ DM ไม่มี NVD/NVE"
+        },
+        {
+          "label": "E",
+          "text": "Macular degeneration -> Anti-VEGF injection",
+          "is_correct": false,
+          "explanation": "AMD มี drusen pigmentary changes ที่ macula ไม่มี NVD/NVE แบบ PDR"
+        }
+      ],
+      "key_takeaway": "PDR: Neovascularization disc (NVD) หรือ retina (NVE) ใน DM -> Panretinal Photocoagulation (PRP) ทันที"
+    },
+    "subject": "eye",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 70 ปี มาด้วยตาขวาแดง เจ็บตา มองเห็นคู่ ตรวจพบ proptosis ตาขวา ophthalmoplegia ทุก direction ptosis เล็กน้อย ไม่มีไข้ ไม่มีปวดหัว CT orbit พบ diffuse enlargement of the extraocular muscles เป็น bilateral สาเหตุที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Orbital cellulitis"
+      },
+      {
+        "label": "B",
+        "text": "Thyroid eye disease (Graves ophthalmopathy)"
+      },
+      {
+        "label": "C",
+        "text": "Orbital pseudotumor"
+      },
+      {
+        "label": "D",
+        "text": "Carotid-cavernous fistula"
+      },
+      {
+        "label": "E",
+        "text": "Orbital lymphoma"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bilateral proptosis + extraocular muscle enlargement + ผู้หญิงสูงอายุ = Thyroid eye disease (Graves ophthalmopathy)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Thyroid eye disease (Graves ophthalmopathy)",
+      "reason": "Thyroid eye disease (TED) หรือ Graves ophthalmopathy เกิดจาก autoimmune inflammation ของ orbital tissues\n\nLandmarks: Bilateral proptosis/exophthalmos, Periorbital edema, Lid retraction (stare appearance), Enlarged extraocular muscles ใน CT (belly of muscle enlarged, sparing tendon = hallmark), Diplopia (EOM restriction), Exposure keratopathy\n\nCT findings: Bilateral enlarged extraocular muscles ที่ belly ไม่รวม tendon (ต่างจาก inflammatory myositis ที่รวม tendon)\n\nThyroid status: อาจเป็น hyperthyroid hypothyroid หรือ euthyroid ก็ได้\n\nClinical Activity Score (CAS) ช่วย guide treatment\n\nรักษา: Active TED: IV methylprednisolone + Teprotumumab (anti-IGF-1R) ± radiation Severe/sight-threatening: Orbital decompression",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Orbital cellulitis",
+          "is_correct": false,
+          "explanation": "Orbital cellulitis มีไข้สูง ปวดมาก proptosis unilateral มักมาจาก sinusitis ไม่มี bilateral EOM enlargement"
+        },
+        {
+          "label": "B",
+          "text": "Thyroid eye disease (Graves ophthalmopathy)",
+          "is_correct": true,
+          "explanation": "Bilateral proptosis + diffuse EOM enlargement bilateral ใน CT ผู้หญิงสูงอายุ = classic Graves ophthalmopathy"
+        },
+        {
+          "label": "C",
+          "text": "Orbital pseudotumor",
+          "is_correct": false,
+          "explanation": "Orbital pseudotumor มักเป็น unilateral มี severe pain proptosis CT พบ ill-defined orbital mass ตอบสนอง steroid ดีมาก"
+        },
+        {
+          "label": "D",
+          "text": "Carotid-cavernous fistula",
+          "is_correct": false,
+          "explanation": "CCF มี pulsating proptosis orbital bruit arterialized conjunctival vessels มักหลังมีประวัติ trauma"
+        },
+        {
+          "label": "E",
+          "text": "Orbital lymphoma",
+          "is_correct": false,
+          "explanation": "Orbital lymphoma มี salmon-pink subconjunctival mass ไม่ค่อยมี bilateral EOM enlargement แบบนี้"
+        }
+      ],
+      "key_takeaway": "Thyroid Eye Disease: Bilateral proptosis + EOM enlargement (belly, sparing tendon) ใน CT -> ตรวจ TFT + Thyroid antibodies"
+    },
+    "subject": "eye",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี มาด้วย pupil ขาว (leukocoria) ตาขวา ตรวจพบ strabismus ตาขวา ประวัติ: ครอบครัวมีญาติที่มีโรคตา หมอส่งตรวจ CT orbit พบ calcification ใน vitreous cavity ตาขวา การวินิจฉัยที่ต้องพิจารณาเร่งด่วนที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Congenital cataract"
+      },
+      {
+        "label": "B",
+        "text": "Retinoblastoma"
+      },
+      {
+        "label": "C",
+        "text": "Coat's disease"
+      },
+      {
+        "label": "D",
+        "text": "Persistent fetal vasculature"
+      },
+      {
+        "label": "E",
+        "text": "Toxocariasis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Leukocoria + strabismus + calcification ใน vitreous + เด็กอายุน้อย + family history = Retinoblastoma จนกว่าจะพิสูจน์ได้ว่าไม่ใช่",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Retinoblastoma",
+      "reason": "Retinoblastoma เป็น malignant intraocular tumor ที่พบบ่อยที่สุดในเด็ก อายุ 0-5 ปี\n\nPresentation: Leukocoria (white pupillary reflex, cat eye reflex) เป็น most common presentation, Strabismus, Redness, Pain ใน advanced case\n\nRisk: Hereditary (germline mutation RB1) = bilateral 40% family history non-hereditary = unilateral\n\nCT: Calcification ใน tumor เป็น hallmark\n\nLeukocoria DDx: Congenital cataract Coat's disease Persistent fetal vasculature Toxocariasis ROP\n\nRetinoblastoma ต้อง exclude ก่อนเสมอ เพราะ life-threatening\n\nรักษา: Chemotherapy (intravenous or intra-arterial) + focal therapy (laser/cryotherapy) Enucleation ถ้า advanced unilateral Radiotherapy ใน selected cases",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Congenital cataract",
+          "is_correct": false,
+          "explanation": "Congenital cataract ทำให้ leukocoria ได้ แต่ CT ไม่มี calcification intravitreal Retinoblastoma ต้อง exclude ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Retinoblastoma",
+          "is_correct": true,
+          "explanation": "Leukocoria + strabismus + calcification ใน CT + เด็กอายุน้อย + family history = Retinoblastoma จนกว่าจะพิสูจน์ว่าไม่ใช่"
+        },
+        {
+          "label": "C",
+          "text": "Coat's disease",
+          "is_correct": false,
+          "explanation": "Coat's disease มี leukocoria จาก exudative RD ไม่มี calcification มักในเด็กชายอายุ 5-10 ปี ไม่มี family history"
+        },
+        {
+          "label": "D",
+          "text": "Persistent fetal vasculature",
+          "is_correct": false,
+          "explanation": "PFV มี leukocoria unilateral ตาเล็ก ไม่มี calcification และไม่มี family history"
+        },
+        {
+          "label": "E",
+          "text": "Toxocariasis",
+          "is_correct": false,
+          "explanation": "Toxocariasis ocular มี leukocoria จาก granuloma มักมีประวัติสัมผัสดิน/สัตว์ ไม่มี calcification ไม่มี family history"
+        }
+      ],
+      "key_takeaway": "Leukocoria ในเด็ก = Retinoblastoma จนกว่าจะพิสูจน์ว่าไม่ใช่ CT calcification = hallmark -> Oncology referral ทันที"
+    },
+    "subject": "eye",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี มาด้วยตาขวาแดง ปวดตา ตาไวต่อแสง (photophobia) ตาพร่า ตรวจ slit lamp พบ cells ใน anterior chamber keratic precipitates (KP) ที่ corneal endothelium Tyndall effect positive ตรวจ fundus: vitreous haze เล็กน้อย ไม่มีไข้ การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bacterial conjunctivitis"
+      },
+      {
+        "label": "B",
+        "text": "Anterior uveitis (iridocyclitis)"
+      },
+      {
+        "label": "C",
+        "text": "Acute angle-closure glaucoma"
+      },
+      {
+        "label": "D",
+        "text": "Corneal ulcer"
+      },
+      {
+        "label": "E",
+        "text": "Episcleritis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cells + KP ที่ corneal endothelium + Tyndall effect + photophobia + ตาขวาแดง = Anterior uveitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Anterior uveitis (iridocyclitis)",
+      "reason": "Anterior uveitis (AU) เป็นการอักเสบของ anterior uveal tract (iris + ciliary body)\n\nSymptoms: Eye pain, Photophobia (ciliary spasm), Blurred vision, Redness (circumcorneal/ciliary flush)\n\nSlit lamp findings: Cells in anterior chamber (AC cells), Tyndall effect (flare = protein leakage), Keratic precipitates (KP) ที่ corneal endothelium\n\nKP characteristics: Mutton-fat KP (granulomatous AU: sarcoid, TB, syphilis), Fine KP (non-granulomatous: HLA-B27 related, viral)\n\nSauses: HLA-B27 related (ankylosing spondylitis, reactive arthritis, IBD, psoriatic arthritis), Sarcoidosis, TB, Herpetic, Idiopathic\n\nรักษา: Topical steroid (prednisolone acetate) + Cycloplegic (atropine/cyclopentolate ลด ciliary spasm และป้องกัน posterior synechiae)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bacterial conjunctivitis",
+          "is_correct": false,
+          "explanation": "Bacterial conjunctivitis มี discharge (purulent) ไม่มี KP ไม่มี cells in AC ไม่มี photophobia รุนแรง"
+        },
+        {
+          "label": "B",
+          "text": "Anterior uveitis (iridocyclitis)",
+          "is_correct": true,
+          "explanation": "Cells in AC + KP + Tyndall effect + photophobia + ciliary flush = classic anterior uveitis"
+        },
+        {
+          "label": "C",
+          "text": "Acute angle-closure glaucoma",
+          "is_correct": false,
+          "explanation": "AACG มี IOP สูงมาก steamy cornea mid-dilated fixed pupil severe pain N/V ไม่มี KP cells in AC"
+        },
+        {
+          "label": "D",
+          "text": "Corneal ulcer",
+          "is_correct": false,
+          "explanation": "Corneal ulcer มี epithelial defect fluorescein staining positive ปวดมาก foreign body sensation"
+        },
+        {
+          "label": "E",
+          "text": "Episcleritis",
+          "is_correct": false,
+          "explanation": "Episcleritis มีตาแดง mild discomfort ไม่มี cells in AC ไม่มี photophobia รุนแรง ไม่มี KP"
+        }
+      ],
+      "key_takeaway": "Anterior uveitis: Cells + flare in AC + KP ที่ corneal endothelium + photophobia -> Topical steroid + Cycloplegic + ตรวจ HLA-B27 systemic"
+    },
+    "subject": "eye",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 35 ปี มาด้วยตามัว กลางสนาม visual field ของตาขวา มา 3 วัน ปวดตาเล็กน้อย ตรวจพบ central scotoma ตาขวา สีผิดปกติ (dyschromatopsia) RAPD positive ตาขวา fundus ปกติ MRI brain พบ demyelinating lesion temporal lobe ขวา การวินิจฉัยของตาคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Central retinal artery occlusion"
+      },
+      {
+        "label": "B",
+        "text": "Optic neuritis"
+      },
+      {
+        "label": "C",
+        "text": "Macular degeneration"
+      },
+      {
+        "label": "D",
+        "text": "Retinal detachment"
+      },
+      {
+        "label": "E",
+        "text": "Ischemic optic neuropathy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Central scotoma + dyschromatopsia + RAPD + painful + normal fundus + demyelinating lesion = Optic neuritis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Optic neuritis",
+      "reason": "Optic neuritis = inflammation ของ optic nerve มักสัมพันธ์กับ MS\n\nCharacteristics: Subacute painful visual loss, Central/cecocentral scotoma, Dyschromatopsia (สีแดงดูซีด), RAPD positive (unilateral or asymmetric), Fundus อาจปกติ (retrobulbar neuritis 2/3 กรณี) หรือมี disc swelling (1/3)\n\nRAPD = relative afferent pupillary defect: swinging flashlight test มักพบในโรคที่กระทบ afferent pathway (optic nerve, retina)\n\nAssociation with MS: 50% ของ optic neuritis จะพัฒนาเป็น MS ใน 15 ปี การมี MRI brain lesions เพิ่ม risk มาก\n\nรักษา: IV methylprednisolone 1g/day x 3 วัน เร่งการฟื้นตัวแต่ไม่ปรับ final vision การรักษา MS ด้วย DMT ลด risk conversion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Central retinal artery occlusion",
+          "is_correct": false,
+          "explanation": "CRAO มี sudden painless visual loss fundus เห็น pale retina cherry red spot ไม่มี dyschromatopsia ชัดเจน ไม่สัมพันธ์ demyelinating"
+        },
+        {
+          "label": "B",
+          "text": "Optic neuritis",
+          "is_correct": true,
+          "explanation": "Central scotoma + dyschromatopsia + RAPD + mild pain + normal fundus + demyelinating lesion = retrobulbar optic neuritis MS-related"
+        },
+        {
+          "label": "C",
+          "text": "Macular degeneration",
+          "is_correct": false,
+          "explanation": "AMD มี metamorphopsia central scotoma ในผู้สูงอายุ fundus พบ drusen CNVM ไม่มี RAPD ไม่มี demyelinating"
+        },
+        {
+          "label": "D",
+          "text": "Retinal detachment",
+          "is_correct": false,
+          "explanation": "RD มีผ้าม่านบดบังสนาม visual painless fundus เห็น detached retina ไม่มี RAPD ชัดเจน"
+        },
+        {
+          "label": "E",
+          "text": "Ischemic optic neuropathy",
+          "is_correct": false,
+          "explanation": "AION มี sudden painless visual loss altitudinal field defect มักในผู้สูงอายุ cardiovascular risk factors disc pallor swelling ไม่มี demyelinating"
+        }
+      ],
+      "key_takeaway": "Optic neuritis: Central scotoma + Dyschromatopsia + RAPD + Painful + Normal fundus -> IV Methylprednisolone + MRI screen MS"
+    },
+    "subject": "eye",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 75 ปี มาด้วยตาซ้ายมัวลงเรื่อยๆ กลางสนาม เห็นเส้นตรงโค้ง (metamorphopsia) ตรวจ Amsler grid: central distortion ตาซ้าย fundus: drusen + subretinal hemorrhage + grayish membrane ที่ macular การวินิจฉัยและการรักษาที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dry AMD -> Observation only"
+      },
+      {
+        "label": "B",
+        "text": "Wet AMD (neovascular) -> Intravitreal anti-VEGF injection"
+      },
+      {
+        "label": "C",
+        "text": "Central serous retinopathy -> Laser photocoagulation"
+      },
+      {
+        "label": "D",
+        "text": "Diabetic macular edema -> Anti-VEGF"
+      },
+      {
+        "label": "E",
+        "text": "Epiretinal membrane -> Vitrectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Drusen + subretinal hemorrhage + grayish membrane (CNVM) + metamorphopsia ในผู้สูงอายุ = Wet AMD -> Anti-VEGF",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Wet AMD (neovascular) -> Intravitreal anti-VEGF injection",
+      "reason": "Age-related macular degeneration (AMD) แบ่งเป็น:\n1. Dry AMD: Drusen, Geographic atrophy, ค่อยๆ เสียสนาม no treatment proven (AREDS vitamins)\n2. Wet AMD (neovascular): Choroidal neovascular membrane (CNVM) เกิดขึ้น ทำให้ subretinal fluid/blood metamorphopsia rapid vision loss\n\nGrayish membrane = CNVM (new abnormal vessels จาก choroid ทะลุ Bruch membrane เข้า subretinal space)\n\nOCT: Subretinal fluid, intraretinal fluid, CNVM ยืนยัน diagnosis\n\nรักษา Wet AMD: Intravitreal anti-VEGF (Ranibizumab Bevacizumab Aflibercept) ทุก 4-8 สัปดาห์ ลด neovascularization รักษา vision\n\nCentral scotoma + metamorphopsia + rapid onset = Wet AMD จนกว่าจะพิสูจน์ว่าไม่ใช่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dry AMD -> Observation only",
+          "is_correct": false,
+          "explanation": "Dry AMD ไม่มี CNVM hemorrhage หรือ subretinal fluid มี drusen + geographic atrophy รายนี้มี subretinal hemorrhage + grayish membrane = Wet AMD"
+        },
+        {
+          "label": "B",
+          "text": "Wet AMD (neovascular) -> Intravitreal anti-VEGF injection",
+          "is_correct": true,
+          "explanation": "CNVM (grayish membrane) + subretinal hemorrhage + metamorphopsia = Wet AMD -> Anti-VEGF ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Central serous retinopathy -> Laser photocoagulation",
+          "is_correct": false,
+          "explanation": "CSR พบในชายวัยกลางคน stress มี subretinal fluid สะสม ไม่มี drusen hemorrhage CNVM"
+        },
+        {
+          "label": "D",
+          "text": "Diabetic macular edema -> Anti-VEGF",
+          "is_correct": false,
+          "explanation": "DME ต้องมีประวัติ DM มี macular thickening ใน OCT ไม่มี drusen หรือ CNVM"
+        },
+        {
+          "label": "E",
+          "text": "Epiretinal membrane -> Vitrectomy",
+          "is_correct": false,
+          "explanation": "ERM มีผิว macular皱ๆ (wrinkling) metamorphopsia ไม่มี subretinal hemorrhage หรือ CNVM"
+        }
+      ],
+      "key_takeaway": "Wet AMD: Drusen + CNVM (grayish membrane) + Subretinal hemorrhage + Metamorphopsia -> Anti-VEGF injection ทันที"
+    },
+    "subject": "eye",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกคลอดก่อนกำหนดอายุ 28 สัปดาห์ หนัก 1,000 g ได้รับการรักษาใน NICU มา 6 สัปดาห์ รับ O2 ขนาดสูง ตรวจ fundus: neovascularization ที่ periphery retina ตาทั้งสองข้าง demarcation line ระหว่าง vascularized และ avascular retina การวินิจฉัยคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Retinoblastoma"
+      },
+      {
+        "label": "B",
+        "text": "Retinopathy of prematurity (ROP)"
+      },
+      {
+        "label": "C",
+        "text": "Persistent fetal vasculature"
+      },
+      {
+        "label": "D",
+        "text": "Coat's disease"
+      },
+      {
+        "label": "E",
+        "text": "Familial exudative vitreoretinopathy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Premature + O2 + neovascularization peripheral retina + demarcation line = Retinopathy of prematurity",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Retinopathy of prematurity (ROP)",
+      "reason": "ROP เกิดในทารก premature จาก abnormal retinal vascularization\n\nRisk factors: GA <32 สัปดาห์ BW <1500 g (high risk: GA <28 wk, BW <1000 g) + supplemental O2 + other illness\n\nClassification (ICROP):\n- Zone I-III: ตำแหน่งของ vasculature\n- Stage 1-5: ความรุนแรง (Stage 3: neovascularization + ridge = treatment threshold)\n- Plus disease: vascular dilation tortuosity\n\nScreening: Ophthalmology exam ที่ 31 weeks PMA หรือ 4-6 weeks postnatal age (whichever is later)\n\nรักษา:\n- Stage 1-2: Observe\n- Type 1 ROP (Stage 3+ zone I or II + plus): Laser photocoagulation หรือ Anti-VEGF (Bevacizumab)\n- Stage 4-5 (RD): Vitreoretinal surgery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Retinoblastoma",
+          "is_correct": false,
+          "explanation": "Retinoblastoma มี leukocoria strabismus calcification ใน CT ไม่ใช่ demarcation line ใน peripheral retina"
+        },
+        {
+          "label": "B",
+          "text": "Retinopathy of prematurity (ROP)",
+          "is_correct": true,
+          "explanation": "Premature (28 wk) + O2 + neovascularization peripheral retina + demarcation line = classic ROP"
+        },
+        {
+          "label": "C",
+          "text": "Persistent fetal vasculature",
+          "is_correct": false,
+          "explanation": "PFV มักเป็น unilateral ตาเล็ก ไม่สัมพันธ์กับ prematurity"
+        },
+        {
+          "label": "D",
+          "text": "Coat's disease",
+          "is_correct": false,
+          "explanation": "Coat's disease พบในเด็กชาย 5-10 ปี ไม่มีประวัติ prematurity"
+        },
+        {
+          "label": "E",
+          "text": "Familial exudative vitreoretinopathy",
+          "is_correct": false,
+          "explanation": "FEVR มี family history เป็น genetic ไม่สัมพันธ์กับ prematurity หรือ O2 exposure"
+        }
+      ],
+      "key_takeaway": "ROP: Premature <32 wk + O2 + neovascularization peripheral retina + demarcation line -> Screening + Laser หรือ Anti-VEGF ถ้า Type 1 ROP"
+    },
+    "subject": "eye",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 65 ปี DM มา 15 ปี ตรวจพบ fundus: dot-blot hemorrhages, hard exudates, microaneurysms ทั้ง 2 ข้าง ไม่มี neovascularization ไม่มี macular edema สายตาปกติ 20/20",
+    "choices": [
+      "A: Non-proliferative diabetic retinopathy (moderate) - ติดตาม",
+      "B: Proliferative DR - laser photocoagulation ทันที",
+      "C: NPDR mild - ตรวจตาทุก 3 ปี",
+      "D: NPDR severe - ส่ง vitrectomy",
+      "E: Normal fundus - ไม่ต้องทำอะไร"
+    ],
+    "correct_answer": "A",
+    "explanation": "Moderate NPDR: dot-blot + hard exudates + microaneurysms ไม่มี neovascularization → ควบคุม DM + ติดตาม ophthalmologist ทุก 6-12 เดือน",
+    "detailed_explanation": {
+      "summary": "Moderate NPDR: ติดตาม + ควบคุม DM; ยังไม่ต้อง laser",
+      "reason": "NPDR staging: Mild: microaneurysms เท่านั้น Moderate: microaneurysms + dot-blot + hard exudates Severe: 4-2-1 rule (4 quadrants hemorrhage, 2 quadrants IRMA, 1 quadrant venous beading) PDR: neovascularization การรักษา: Moderate NPDR = ควบคุม DM HbA1c <7% + BP + lipid + ติดตาม 6-12 เดือน Severe NPDR = ติดตาม 3-4 เดือน ± panretinal photocoagulation (PRP) PDR = PRP + anti-VEGF ± vitrectomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Moderate NPDR - ติดตาม",
+          "is_correct": true,
+          "explanation": "Dot-blot + hard exudates + microaneurysms + ไม่มี neovascular = moderate NPDR → ควบคุม DM + ติดตาม"
+        },
+        {
+          "label": "B",
+          "text": "PDR - laser ทันที",
+          "is_correct": false,
+          "explanation": "ไม่มี neovascularization → ยังไม่ PDR"
+        },
+        {
+          "label": "C",
+          "text": "NPDR mild - ทุก 3 ปี",
+          "is_correct": false,
+          "explanation": "Mild = microaneurysms เท่านั้น ตรวจทุก 1-2 ปี"
+        },
+        {
+          "label": "D",
+          "text": "NPDR severe - vitrectomy",
+          "is_correct": false,
+          "explanation": "Vitrectomy สำหรับ vitreous hemorrhage/TRD PDR"
+        },
+        {
+          "label": "E",
+          "text": "Normal - ไม่ทำอะไร",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ normal; มี DR อยู่"
+        }
+      ],
+      "key_takeaway": "Moderate NPDR: ควบคุม DM + ติดตาม 6-12 เดือน; Severe NPDR → 3-4 เดือน; PDR → PRP + anti-VEGF"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 70 ปี ตามัวข้างขวาอย่างช้าๆ ใน 6 เดือน ตรวจ: VA 20/200 OD ใส่แว่นแล้วไม่ดีขึ้น IOP ปกติ fundus: drusen กระจาย subfoveal, geographic atrophy ที่ macula ขวา Amsler grid: central scotoma",
+    "choices": [
+      "A: Dry AMD (geographic atrophy)",
+      "B: Wet AMD (neovascular)",
+      "C: Central serous chorioretinopathy",
+      "D: Macular hole",
+      "E: Epiretinal membrane"
+    ],
+    "correct_answer": "A",
+    "explanation": "Dry AMD (geographic atrophy): drusen + geographic atrophy ที่ macula + VA ลดช้าๆ → ไม่มี treatment specific; vitamin AREDS2 supplement",
+    "detailed_explanation": {
+      "summary": "Dry AMD (geographic atrophy): drusen + atrophy → AREDS2 supplement; ไม่มี anti-VEGF",
+      "reason": "AMD: leading cause of visual loss ในผู้สูงอายุ Dry AMD (85-90%): drusen → RPE atrophy → geographic atrophy → slow vision loss Wet AMD (10-15%): choroidal neovascularization → rapid vision loss Amsler grid: distortion (metamorphopsia) ใน wet; scotoma ใน dry/severe dry การรักษา: Dry AMD: AREDS2 (Vit C, E, lutein, zeaxanthin, zinc) ลด progression 25%; smoking cessation Wet AMD: anti-VEGF injection (bevacizumab, ranibizumab, aflibercept)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dry AMD geographic atrophy",
+          "is_correct": true,
+          "explanation": "Drusen + geographic atrophy + VA ลดช้า = dry AMD → AREDS2; ไม่มี anti-VEGF"
+        },
+        {
+          "label": "B",
+          "text": "Wet AMD",
+          "is_correct": false,
+          "explanation": "Wet AMD: rapid vision loss + subretinal fluid/hemorrhage; OCT จะเห็น fluid"
+        },
+        {
+          "label": "C",
+          "text": "CSCR",
+          "is_correct": false,
+          "explanation": "Young male, serous RD ที่ macula, ไม่มี drusen"
+        },
+        {
+          "label": "D",
+          "text": "Macular hole",
+          "is_correct": false,
+          "explanation": "OCT: full-thickness hole ที่ fovea, metamorphopsia"
+        },
+        {
+          "label": "E",
+          "text": "ERM",
+          "is_correct": false,
+          "explanation": "Wrinkling/distortion ไม่มี drusen/atrophy"
+        }
+      ],
+      "key_takeaway": "Dry AMD: AREDS2 supplement + หยุดสูบบุหรี่; Wet AMD → anti-VEGF injection; ติดตาม Amsler grid ที่บ้าน"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 35 ปี ตรวจสุขภาพ ไม่มีอาการ IOP วัดได้ 28 mmHg ตา ข้างซ้าย และ 26 mmHg ตาข้างขวา Optic disc: ปกติ C/D ratio 0.4 Visual field: ปกติ Corneal thickness (CCT): 600 μm (หนา)",
+    "choices": [
+      "A: Primary open angle glaucoma - รักษาทันที",
+      "B: Ocular hypertension - ติดตาม ± ยาลด IOP",
+      "C: Normal tension glaucoma",
+      "D: Acute angle closure glaucoma",
+      "E: Secondary glaucoma"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ocular hypertension: IOP สูง แต่ disc ปกติ visual field ปกติ; CCT หนา (600 μm) ทำให้ IOP อ่านสูงกว่าจริง → ติดตาม ± พิจารณา treatment",
+    "detailed_explanation": {
+      "summary": "Ocular hypertension: IOP↑ + disc ปกติ + VF ปกติ → ติดตาม; CCT หนาทำให้ IOP false high",
+      "reason": "Ocular hypertension (OHT): IOP > 21 mmHg แต่ ไม่มี glaucomatous damage CCT (corneal thickness) ส่งผลต่อ Goldmann tonometry: CCT หนา (>555 μm) → IOP อ่านสูงกว่าจริง; CCT บาง → IOP อ่านต่ำกว่าจริง ผู้ป่วยนี้: CCT 600 μm (หนา) → adjusted IOP ต่ำกว่าที่อ่านได้ OHT risk factors for glaucoma: IOP >26, CCT บาง, family history การรักษา: ถ้า risk สูง → prostaglandin analog (latanoprost); ถ้า low risk → ติดตาม",
+      "choices": [
+        {
+          "label": "A",
+          "text": "POAG",
+          "is_correct": false,
+          "explanation": "POAG: disc damage + visual field loss; ผู้ป่วยนี้ disc ปกติ VF ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Ocular hypertension",
+          "is_correct": true,
+          "explanation": "IOP สูง + disc ปกติ + VF ปกติ + CCT หนา = OHT → ติดตาม ± treatment"
+        },
+        {
+          "label": "C",
+          "text": "Normal tension glaucoma",
+          "is_correct": false,
+          "explanation": "NTG: IOP ปกติ แต่มี disc damage + VF loss"
+        },
+        {
+          "label": "D",
+          "text": "Acute ACG",
+          "is_correct": false,
+          "explanation": "ปวดตารุนแรง, ตาแดง, halos, ไม่ใช่ asymptomatic"
+        },
+        {
+          "label": "E",
+          "text": "Secondary glaucoma",
+          "is_correct": false,
+          "explanation": "มีสาเหตุ (steroid, trauma, inflammation)"
+        }
+      ],
+      "key_takeaway": "OHT: CCT หนา → adjusted IOP; risk assessment: ICP ≥24-26 + VF/disc ปกติ → ติดตาม; ถ้า risk สูง → latanoprost"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 28 ปี ตาขาวแดง 2 วัน ตาซ้าย น้ำตาไหล เคืองตา ไม่กลัวแสง ไม่ลดสายตา ตรวจ: ตาขาวแดงทั่ว (diffuse conjunctival injection) ไม่มี mucopurulent discharge ไม่มี follicles โดดเด่น slit lamp ปกติ",
+    "choices": [
+      "A: Bacterial conjunctivitis",
+      "B: Viral conjunctivitis (Adenovirus)",
+      "C: Allergic conjunctivitis",
+      "D: Episcleritis",
+      "E: Anterior uveitis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Viral conjunctivitis (Adenovirus): ตาแดง น้ำตาไหล เคือง ไม่มี mucopurulent discharge → supportive; เป็นโรคติดต่อ",
+    "detailed_explanation": {
+      "summary": "Viral conjunctivitis: ตาแดง น้ำตาไหล เคือง ไม่มี pus → supportive treatment",
+      "reason": "Viral conjunctivitis: most commonly Adenovirus ก่อน URI, ticulate ตาขาวแดง, watery discharge ไม่ใช่ mucopurulent, follicles ที่ inferior tarsal conjunctiva Bacterial: mucopurulent/purulent discharge Allergic: คัน cobblestone papillae Anterior uveitis: keratic precipitates, photophobia, circumcorneal injection การรักษา: Supportive (cold compress, artificial tears) ห้ามใส่ contact lens; highly contagious 10-14 วัน; เช็ดมือบ่อย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bacterial",
+          "is_correct": false,
+          "explanation": "Mucopurulent/purulent discharge + gram stain positive; ใช้ antibiotic drops"
+        },
+        {
+          "label": "B",
+          "text": "Viral conjunctivitis",
+          "is_correct": true,
+          "explanation": "Watery + ไม่มี pus + ไม่มี photophobia + ตาแดงทั่ว = viral → supportive; แยกจากคน 10-14 วัน"
+        },
+        {
+          "label": "C",
+          "text": "Allergic",
+          "is_correct": false,
+          "explanation": "คัน, bilateral, cobblestone papillae, eosinophils, ประวัติ atopy"
+        },
+        {
+          "label": "D",
+          "text": "Episcleritis",
+          "is_correct": false,
+          "explanation": "Sectoral redness ไม่ใช่ diffuse, มักไม่มี discharge"
+        },
+        {
+          "label": "E",
+          "text": "Anterior uveitis",
+          "is_correct": false,
+          "explanation": "Photophobia + KPs + AC flare/cells + ciliary injection"
+        }
+      ],
+      "key_takeaway": "Viral conjunctivitis: supportive only; contagious 10-14 วัน; ห้ามให้ topical steroid (prolonged viral replication)"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 50 ปี มองเห็นแสงวาบ (photopsia) และเงาดำลอย 1 วัน ต่อมาเห็น 'ม่านดำ' ปิดตาด้านล่างและค่อยขึ้นมาด้านบน VA 20/40 ตรวจ fundus: retinal detachment inferior",
+    "choices": [
+      "A: Posterior vitreous detachment ไม่ต้องรักษา",
+      "B: Rhegmatogenous retinal detachment → surgery ทันที",
+      "C: Exudative RD → treat underlying cause",
+      "D: Tractional RD → vitrectomy",
+      "E: Central retinal artery occlusion"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rhegmatogenous RD: photopsia + floaters + curtain → retinal break + vitreous traction → emergency surgery (scleral buckle/vitrectomy)",
+    "detailed_explanation": {
+      "summary": "Rhegmatogenous RD: photopsia + floaters + curtain → emergency surgery",
+      "reason": "Rhegmatogenous RD: retinal break ทำให้ vitreous fluid ไหลใต้ retina Symptoms: Photopsia (flashes) = vitreoretinal traction Floaters (dark spots/webs) = vitreous hemorrhage หรือ pigment cells Curtain = progression of detachment มักเริ่มจาก inferior/peripheral → ลาม Risk factors: myopia, trauma, cataract surgery, family history การรักษา: Surgery ด่วน (ถ้า macula ยังไม่ detach = macula-on → urgent; macula-off → soon) Scleral buckle หรือ vitrectomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PVD ไม่ต้องรักษา",
+          "is_correct": false,
+          "explanation": "PVD = posterior vitreous detachment ไม่มี retinal detachment; ผู้ป่วยนี้มี curtain = RD"
+        },
+        {
+          "label": "B",
+          "text": "Rhegmatogenous RD → surgery",
+          "is_correct": true,
+          "explanation": "Photopsia + floaters + curtain + inferior RD = rhegmatogenous RD → emergency surgery"
+        },
+        {
+          "label": "C",
+          "text": "Exudative RD",
+          "is_correct": false,
+          "explanation": "ไม่มี break; caused by tumors/inflammation; shifting fluid"
+        },
+        {
+          "label": "D",
+          "text": "Tractional RD",
+          "is_correct": false,
+          "explanation": "PDR/sickle cell/trauma; ไม่มี photopsia มักช้า"
+        },
+        {
+          "label": "E",
+          "text": "CRAO",
+          "is_correct": false,
+          "explanation": "Sudden painless VA loss; pale retina; cherry red spot; ไม่มี floaters/curtain"
+        }
+      ],
+      "key_takeaway": "Rhegmatogenous RD: Macula-on → urgent surgery วันนั้น/วันรุ่งขึ้น; Macula-off → surgery soon แต่ไม่ immediate; ยิ่งรักษาเร็ว visual prognosis ดีกว่า"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 25 ปี ตรวจพบ VA 20/20 ทั้ง 2 ข้าง เมื่อวัดสายตาพบ Myopia -6.00 D ทั้ง 2 ข้าง ผู้ป่วยต้องการทำ LASIK retinal exam ปกติ corneal thickness 480 μm กังวลเรื่องโรคแทรกซ้อน",
+    "choices": [
+      "A: LASIK ปลอดภัย corneal thickness เพียงพอ",
+      "B: Corneal thickness ไม่เพียงพอ → ห้ามทำ LASIK",
+      "C: Myopia สูงเกินไป → ห้ามทำ",
+      "D: ต้อง PRK แทน LASIK",
+      "E: ต้องรอ cornea หนาขึ้นก่อน"
+    ],
+    "correct_answer": "B",
+    "explanation": "Corneal thickness 480 μm ไม่เพียงพอสำหรับ LASIK (ต้องการ residual stromal bed ≥250 μm หลังทำ flap ~100 μm) → พิจารณา PRK หรือ ICL",
+    "detailed_explanation": {
+      "summary": "LASIK: corneal thickness ต้องพอสำหรับ residual stromal bed ≥250 μm",
+      "reason": "LASIK eligibility: Corneal thickness: residual stromal bed (RSB) ≥250 μm ป้องกัน ectasia Calculation: CCT - flap (~110 μm) - ablation depth RSB = 480 - 110 - ablation ถ้า myopia -6D ablation depth ≈ 80-100 μm → RSB = 480 - 110 - 90 = 280 μm ≈ borderline Dry corneas มักใช้ safe threshold RSB >250 μm ถ้าไม่พอ → PRK (ไม่ตัด flap) หรือ ICL (phakic IOL)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "LASIK ปลอดภัย",
+          "is_correct": false,
+          "explanation": "480 μm กับ -6D = RSB borderline; ต้องคำนวณ ablation depth ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Corneal thickness ไม่พอ",
+          "is_correct": true,
+          "explanation": "CCT 480 + -6D → RSB อาจ <250 μm → ห้าม LASIK; พิจารณา PRK หรือ ICL"
+        },
+        {
+          "label": "C",
+          "text": "Myopia สูงเกินไป",
+          "is_correct": false,
+          "explanation": "LASIK range -0.5 ถึง -12D ขึ้นกับ corneal thickness"
+        },
+        {
+          "label": "D",
+          "text": "PRK แทน",
+          "is_correct": false,
+          "explanation": "PRK เป็นทางเลือก แต่ยังต้องคำนวณ ablation depth ด้วย"
+        },
+        {
+          "label": "E",
+          "text": "รอ cornea หนาขึ้น",
+          "is_correct": false,
+          "explanation": "Corneal thickness ไม่เพิ่มตามอายุ"
+        }
+      ],
+      "key_takeaway": "LASIK: RSB = CCT - flap(110) - ablation depth; ต้อง RSB ≥250 μm; CCT 480 + high myopia = borderline/ห้าม → PRK หรือ ICL"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารก 4 สัปดาห์ มีขี้ตาและน้ำตาไหลข้างขวาตั้งแต่อายุ 1 สัปดาห์ หนองเหลืองๆ เช้ามาตาติดกัน ไม่มีตาแดง ตรวจ: punctal area กดแล้วมีหนองออก ไม่มี periorbital swelling",
+    "choices": [
+      "A: Ophthalmia neonatorum (gonococcal)",
+      "B: Chlamydial neonatal conjunctivitis",
+      "C: Congenital nasolacrimal duct obstruction",
+      "D: Bacterial conjunctivitis",
+      "E: Dacryocystitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Congenital NLD obstruction: น้ำตาไหลข้างเดียว + กดได้หนอง (mucopurulent discharge ออก) + ทารก 1-4 สัปดาห์ → lacrimal massage + ถ้าไม่หาย probing ที่ 1 ปี",
+    "detailed_explanation": {
+      "summary": "Congenital NLD obstruction: น้ำตาไหล + กดที่ puncta ได้หนอง → lacrimal massage",
+      "reason": "Congenital NLD obstruction: valve of Hasner ไม่เปิดหลังเกิด 90% เปิดเองใน 1 ปีแรก น้ำตาไหลเรื้อรัง + mucopurulent discharge (ไม่ใช่ conjunctivitis เพราะตาขาวไม่แดง) กด medial canthal area → หนองออก (regurgitation test positive) การรักษา: Lacrimal massage (Crigler massage) 2-4 ครั้ง/วัน + antibiotic drops ถ้าติดเชื้อ ถ้าไม่หายภายใน 12-13 เดือน → nasolacrimal duct probing",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gonococcal",
+          "is_correct": false,
+          "explanation": "Day 1-5, hyperacute purulent conjunctivitis, ตาแดงมาก, gram-negative diplococci"
+        },
+        {
+          "label": "B",
+          "text": "Chlamydial",
+          "is_correct": false,
+          "explanation": "Day 5-14, mucopurulent conjunctivitis แต่ตาแดงด้วย, ไม่มี regurgitation"
+        },
+        {
+          "label": "C",
+          "text": "Congenital NLD obstruction",
+          "is_correct": true,
+          "explanation": "น้ำตาไหล + กดออกหนอง + ตาขาวไม่แดง = NLD obstruction → lacrimal massage"
+        },
+        {
+          "label": "D",
+          "text": "Bacterial conjunctivitis",
+          "is_correct": false,
+          "explanation": "ตาขาวแดง + discharge แต่กดไม่ได้หนองจาก puncta"
+        },
+        {
+          "label": "E",
+          "text": "Dacryocystitis",
+          "is_correct": false,
+          "explanation": "Periorbital swelling, redness ที่ medial canthal area, acute infection"
+        }
+      ],
+      "key_takeaway": "Congenital NLD obstruction: 90% หายเองใน 1 ปี; lacrimal massage 2-4 ครั้ง/วัน; probing ถ้า ≥12-13 เดือนยังไม่หาย"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 45 ปี มาด้วยตาแดงข้างขวา 3 วัน เจ็บตามาก เจ็บเมื่อกดลูกตา ตรวจ: sectoral redness ที่ temporal area สีม่วงแดงเข้ม กดแล้วเจ็บมาก ไม่มี discharge ไม่ลดสายตา IOP ปกติ",
+    "choices": [
+      "A: Bacterial conjunctivitis",
+      "B: Episcleritis",
+      "C: Scleritis",
+      "D: Anterior uveitis",
+      "E: Corneal ulcer"
+    ],
+    "correct_answer": "C",
+    "explanation": "Scleritis: deep, violaceous redness + severe pain + tender globe + systemic association (RA, vasculitis) → NSAIDs/oral steroids + workup systemic",
+    "detailed_explanation": {
+      "summary": "Scleritis: deep violaceous redness + severe pain + tender globe → systemic workup + NSAIDs",
+      "reason": "Scleritis ต่างจาก Episcleritis: Scleritis: deep aching pain (radiate ไป head), tender to palpation, violaceous hue, severe, สัมพันธ์กับ systemic disease (RA 30%, IBD, vasculitis) Episcleritis: mild discomfort, sectoral or diffuse superficial redness, NOT tender, blanches with phenylephrine, usually idiopathic/mild Scleritis: bilateral possible, complication (PUK, uveitis) การรักษา: Mild scleritis: oral NSAIDs; Severe: oral prednisone ± immunosuppressant; workup RA, ANCA, ANA",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bacterial conjunctivitis",
+          "is_correct": false,
+          "explanation": "Mucopurulent, ไม่ tender, ไม่ violaceous"
+        },
+        {
+          "label": "B",
+          "text": "Episcleritis",
+          "is_correct": false,
+          "explanation": "Mild discomfort, NOT tender, superficial injection, blanches phenylephrine"
+        },
+        {
+          "label": "C",
+          "text": "Scleritis",
+          "is_correct": true,
+          "explanation": "Violaceous deep injection + severe pain + tender = scleritis → NSAIDs + systemic workup (RA, vasculitis)"
+        },
+        {
+          "label": "D",
+          "text": "Anterior uveitis",
+          "is_correct": false,
+          "explanation": "Photophobia + KPs + ciliary injection + AC reaction"
+        },
+        {
+          "label": "E",
+          "text": "Corneal ulcer",
+          "is_correct": false,
+          "explanation": "Corneal infiltrate/white spot + pain + decreased VA + fluorescein stain+"
+        }
+      ],
+      "key_takeaway": "Scleritis: violaceous + tender + severe pain → systemic workup (RA, ANCA, ANA); Episcleritis: blanches phenylephrine → mild/idiopathic"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 6 ปี ตรวจพบ VA OD 20/20, OS 20/100 ไม่ดีขึ้นแม้ใส่แว่น ตรวจพบ myopia OS -3.00 D, OD -0.50 D ไม่มี strabismus fundus ปกติ ปิดตาขวาแล้วเด็กไม่ยอม",
+    "choices": [
+      "A: ปกติ เด็กเล็กสายตาไม่ชัด",
+      "B: Amblyopia (anisometropic)",
+      "C: Organic vision loss OS",
+      "D: Congenital cataract OS",
+      "E: Cortical visual impairment"
+    ],
+    "correct_answer": "B",
+    "explanation": "Anisometropic amblyopia: sphère ต่างกันมาก → OS ไม่ใช้งาน → amblyopia; VA ไม่ดีขึ้นด้วยแว่น → ต้องทำ patching (occlusion therapy)",
+    "detailed_explanation": {
+      "summary": "Anisometropic amblyopia: VA ต่างกัน + ใส่แว่นไม่ดีขึ้น → patching OD + แว่น OS",
+      "reason": "Amblyopia (lazy eye): VA ลดลงโดยไม่มี organic cause ที่แก้ได้ Anisometropic amblyopia: significant refraction ต่างกัน (ตาหนึ่ง myopia/hyperopia มาก) → brain ไม่ใช้งานตาข้างนั้น Critical period: < 7-8 ปี (ยิ่งรักษาเร็วยิ่งดี) การรักษา: แว่นตาก่อน (full optical correction) 3-6 เดือน → ถ้า VA ไม่ดีขึ้น → patching ตาดี (OD) 2-6 ชั่วโมง/วัน เพื่อบังคับให้ใช้ตา amblyopic หรือ atropine penalization",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ปกติ",
+          "is_correct": false,
+          "explanation": "VA 20/100 ใส่แว่นไม่ดีขึ้น = amblyopia"
+        },
+        {
+          "label": "B",
+          "text": "Anisometropic amblyopia",
+          "is_correct": true,
+          "explanation": "Myopia ต่างกันมาก (OS -3 OD -0.5) + VA OS ต่ำ + ไม่ดีขึ้นด้วยแว่น = anisometropic amblyopia → patching"
+        },
+        {
+          "label": "C",
+          "text": "Organic vision loss",
+          "is_correct": false,
+          "explanation": "Fundus ปกติ ไม่มี organic cause"
+        },
+        {
+          "label": "D",
+          "text": "Congenital cataract",
+          "is_correct": false,
+          "explanation": "Fundus ปกติ ไม่มี lens opacity"
+        },
+        {
+          "label": "E",
+          "text": "Cortical VI",
+          "is_correct": false,
+          "explanation": "VA ทั้ง 2 ข้าง ลดลง ไม่ใช่เฉพาะข้างเดียว"
+        }
+      ],
+      "key_takeaway": "Amblyopia: รักษาก่อน 7-8 ปี (critical period); anisometropic → แว่น + patching; ยิ่งรักษาเร็ว outcome ดีกว่า"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 72 ปี ตาพร่า OD ค่อยๆ มากขึ้น 2 ปี VA OD 20/200, OS 20/30 ตรวจ slit lamp: lens OD มีความขุ่นหนาแน่นบริเวณ nucleus สีน้ำตาลอำพัน (brunescent nucleus) ตา OS lens เล็กน้อยขุ่น IOP ปกติ retina ปกติ",
+    "choices": [
+      "A: Posterior subcapsular cataract",
+      "B: Nuclear sclerotic cataract",
+      "C: Cortical cataract",
+      "D: Anterior subcapsular cataract",
+      "E: Traumatic cataract"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nuclear sclerotic cataract: ผู้สูงอายุ + lens nucleus ขุ่นหนาแน่น สีน้ำตาล (brunescent) + VA ลดช้า + myopic shift → cataract extraction",
+    "detailed_explanation": {
+      "summary": "Nuclear sclerotic cataract: สีน้ำตาลอำพัน + ผู้สูงอายุ + VA ลดช้า → phacoemulsification",
+      "reason": "Cataract types: Nuclear sclerosis: เปลือกนอก lens แข็ง สีน้ำตาล myopic shift (second sight), ค่อยๆ เพิ่ม Posterior subcapsular (PSC): steroid, DM, radiation, UV; เห็นแสงจ้า glare มาก Cortical: spoke-like opacities, elderly, UV exposure Anterior subcapsular: trauma, atopic Brunescent: advanced nuclear สีน้ำตาลเข้ม VA ลดมาก การรักษา: Phacoemulsification + IOL เมื่อ VA < 20/40 หรือ กระทบ daily function",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PSC",
+          "is_correct": false,
+          "explanation": "พบที่ posterior pole ของ lens; glare ทำให้ VA แย่ในที่สว่าง"
+        },
+        {
+          "label": "B",
+          "text": "Nuclear sclerotic cataract",
+          "is_correct": true,
+          "explanation": "Nucleus ขุ่นสีน้ำตาลอำพัน (brunescent) = nuclear sclerotic cataract → phacoemulsification"
+        },
+        {
+          "label": "C",
+          "text": "Cortical cataract",
+          "is_correct": false,
+          "explanation": "Spoke-like opacities ที่ cortex ไม่ใช่ nucleus"
+        },
+        {
+          "label": "D",
+          "text": "Anterior subcapsular",
+          "is_correct": false,
+          "explanation": "ที่ anterior pole trauma/atopic"
+        },
+        {
+          "label": "E",
+          "text": "Traumatic cataract",
+          "is_correct": false,
+          "explanation": "ประวัติ trauma, stellate/rosette pattern"
+        }
+      ],
+      "key_takeaway": "Nuclear sclerotic cataract: phacoemulsification + foldable IOL เมื่อ VA กระทบ quality of life; myopic shift = second sight"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 40 ปี ปวดตาซ้ายรุนแรงฉับพลัน เห็นแสงสีรุ้ง (halos) รอบดวงไฟ คลื่นไส้อาเจียน VA 20/200 IOP 52 mmHg ตาขาวแดง cornea ขุ่น (corneal edema) ม่านตากลม ไม่ reactive pupil mid-dilated",
+    "choices": [
+      "A: Uveitis anterior acute",
+      "B: Acute angle closure glaucoma attack",
+      "C: Corneal ulcer",
+      "D: Endophthalmitis",
+      "E: Orbital cellulitis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute ACG: IOP 52 + halos + ปวดตารุนแรง + corneal edema + mid-dilated fixed pupil → IV acetazolamide + topical IOP-lowering + laser iridotomy",
+    "detailed_explanation": {
+      "summary": "Acute ACG: IOP↑↑ + halos + corneal edema + mid-dilated pupil → ลด IOP ด่วน",
+      "reason": "Acute angle closure: anterior chamber angle ปิด → IOP สูงฉับพลัน Precipitating factors: dim light (pupil dilate) drugs (anticholinergic, sympathomimetic) Classic: small eye (hyperopic), shallow AC, narrow angle Symptoms: severe eye pain, halos, nausea/vomiting, VA ลด IOP > 40 mmHg → corneal edema (ขุ่น), pupil mid-dilated fixed การรักษา: ลด IOP ด่วน: IV acetazolamide 500 mg + topical timolol + pilocarpine (constrict pupil) + iv mannitol ถ้าต้องการ Definitive: Laser iridotomy (ทั้ง 2 ข้าง) ป้องกัน recurrence",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Anterior uveitis",
+          "is_correct": false,
+          "explanation": "Photophobia, miosis ไม่ใช่ mydriasis, IOP ต่ำกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Acute ACG",
+          "is_correct": true,
+          "explanation": "IOP 52 + halos + corneal edema + mid-dilated fixed = acute ACG → IV acetazolamide + laser iridotomy"
+        },
+        {
+          "label": "C",
+          "text": "Corneal ulcer",
+          "is_correct": false,
+          "explanation": "Fluorescein stain+, corneal infiltrate, IOP ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Endophthalmitis",
+          "is_correct": false,
+          "explanation": "Post-surgery/injection, hypopyon, VA ลดมาก, ไม่มี IOP สูง"
+        },
+        {
+          "label": "E",
+          "text": "Orbital cellulitis",
+          "is_correct": false,
+          "explanation": "Proptosis, restricted EOM, periorbital swelling"
+        }
+      ],
+      "key_takeaway": "Acute ACG: ลด IOP ด่วน (IV acetazolamide + mannitol); Laser iridotomy ทั้ง 2 ข้าง; ป้องกันตาเสียถาวร"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 60 ปี RA มา 20 ปี ตาแห้งมาก เคืองตาตลอด น้ำตาไหล ตรวจ Schirmer test: 3 mm/5 min (ปกติ >10 mm) Rose bengal staining: cornea และ conjunctiva stain+ diffuse TBUT: 5 วินาที (ปกติ >10 sec)",
+    "choices": [
+      "A: Allergic conjunctivitis",
+      "B: Dry eye disease (keratoconjunctivitis sicca)",
+      "C: Scleritis",
+      "D: Blepharitis",
+      "E: Sjögren's syndrome"
+    ],
+    "correct_answer": "E",
+    "explanation": "Sjögren's syndrome: RA + severe dry eye (Schirmer ต่ำ, TBUT ต่ำ, rose bengal+) + likely dry mouth → anti-SSA/SSB + artificial tears + systemic management",
+    "detailed_explanation": {
+      "summary": "Sjögren's syndrome: RA + xerophthalmia + Schirmer↓ + TBUT↓ → artificial tears + workup",
+      "reason": "Primary Sjögren's syndrome: เป็นเอง Secondary: ร่วมกับ RA, SLE, Scleroderma Criteria: ocular (Schirmer ≤5 mm/5 min, TBUT <10s) + dry mouth + Anti-SSA/SSB antibody + salivary gland biopsy Keratoconjunctivitis sicca = ตาแห้งจาก Sjögren's Rose bengal: stain damaged corneal/conjunctival cells การรักษา: Preservative-free artificial tears (บ่อยๆ), punctal plugs, cyclosporine drops; Systemic: hydroxychloroquine",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allergic conjunctivitis",
+          "is_correct": false,
+          "explanation": "คัน papillary, RA ไม่เกี่ยว"
+        },
+        {
+          "label": "B",
+          "text": "Dry eye disease isolated",
+          "is_correct": false,
+          "explanation": "RA + severe KCS → ต้องนึกถึง Sjögren's secondary"
+        },
+        {
+          "label": "C",
+          "text": "Scleritis",
+          "is_correct": false,
+          "explanation": "Deep pain, violaceous, tender; ไม่ใช่ dry eye"
+        },
+        {
+          "label": "D",
+          "text": "Blepharitis",
+          "is_correct": false,
+          "explanation": "Meibomian gland dysfunction, lid margin คัน/แดง, แต่ไม่ Schirmer ต่ำ"
+        },
+        {
+          "label": "E",
+          "text": "Sjögren's syndrome",
+          "is_correct": true,
+          "explanation": "RA + Schirmer 3 + TBUT 5 + rose bengal+ = secondary Sjögren's → workup Anti-SSA/SSB + artificial tears"
+        }
+      ],
+      "key_takeaway": "Sjögren's: RA/SLE + dry eye + dry mouth → Anti-SSA/SSB + salivary gland biopsy; preservative-free tears + punctal plugs"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกชาย 3 เดือน พ่อแม่สังเกตว่าตาดำข้างขวาใหญ่กว่าปกติ (buphthalmos) ตาขาวสีเทาๆ photophobia ร้องไห้ บีบตา cornea ขุ่น IOP 35 mmHg เมื่อตรวจภายใต้ยาสลบ",
+    "choices": [
+      "A: Megalocornea",
+      "B: Corneal scar",
+      "C: Primary congenital glaucoma",
+      "D: Anterior segment dysgenesis",
+      "E: Neonatal conjunctivitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Primary congenital glaucoma: buphthalmos + corneal clouding + photophobia + IOP สูง → goniotomy หรือ trabeculotomy ทันที",
+    "detailed_explanation": {
+      "summary": "Congenital glaucoma: buphthalmos + corneal clouding + IOP↑ → goniotomy/trabeculotomy",
+      "reason": "Primary congenital glaucoma (PCG): trabecular meshwork dysgenesis → IOP สูง Infantile eye ยืดหยุ่น → eye enlarged (buphthalmos) Haab's striae: horizontal corneal breaks จาก stretching Symptoms: photophobia, epiphora, blepharospasm, corneal clouding การวินิจฉัย: EUA (exam under anesthesia) → IOP, C/D ratio, corneal diameter (>11 mm = buphthalmos) การรักษา: Surgical เป็น first-line: Goniotomy หรือ Trabeculotomy ยา topical เป็น adjunct",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Megalocornea",
+          "is_correct": false,
+          "explanation": "Large cornea แต่ IOP ปกติ, clear cornea, X-linked"
+        },
+        {
+          "label": "B",
+          "text": "Corneal scar",
+          "is_correct": false,
+          "explanation": "IOP ปกติ, ไม่มี buphthalmos"
+        },
+        {
+          "label": "C",
+          "text": "Congenital glaucoma",
+          "is_correct": true,
+          "explanation": "Buphthalmos + corneal clouding + photophobia + IOP 35 = PCG → goniotomy ด่วน"
+        },
+        {
+          "label": "D",
+          "text": "Anterior segment dysgenesis",
+          "is_correct": false,
+          "explanation": "Aniridia/Peters anomaly แต่ IOP อาจสูงได้"
+        },
+        {
+          "label": "E",
+          "text": "Neonatal conjunctivitis",
+          "is_correct": false,
+          "explanation": "Discharge, ตาแดง, IOP ปกติ, ไม่มี buphthalmos"
+        }
+      ],
+      "key_takeaway": "Congenital glaucoma: surgical (goniotomy/trabeculotomy) เป็น first-line ไม่ใช่ topical; ยิ่งรักษาเร็วยิ่งดี prevent permanent vision loss"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 55 ปี DM ตรวจ fundus พบ neovascularization ที่ disc (NVD) และ preretinal hemorrhage ตาข้างขวา VA 20/40 ไม่มี macular edema",
+    "choices": [
+      "A: Moderate NPDR - ติดตาม",
+      "B: Severe NPDR - ติดตาม 3-4 เดือน",
+      "C: PDR high-risk - panretinal photocoagulation ทันที",
+      "D: PDR low-risk - ติดตาม 3 เดือน",
+      "E: PDR - anti-VEGF เพียงอย่างเดียว"
+    ],
+    "correct_answer": "C",
+    "explanation": "PDR high-risk: NVD ≥ 1/4-1/3 disc area หรือ vitreous/preretinal hemorrhage + any NVD → panretinal photocoagulation (PRP) ทันที",
+    "detailed_explanation": {
+      "summary": "PDR high-risk: NVD + hemorrhage → PRP ทันที",
+      "reason": "PDR high-risk characteristics (ETDRS): NVD ≥ 1/4-1/3 disc area NVE ≥ 1/2 disc area + vitreous/preretinal hemorrhage Vitreous or preretinal hemorrhage + NVD (any amount) = high-risk PDR ผู้ป่วยนี้: NVD + preretinal hemorrhage = high-risk PDR → PRP ทันที ลด severe visual loss 50% PRP = 1,200-1,600 burns ทั่ว peripheral retina PRP + anti-VEGF: anti-VEGF ใช้เป็น adjunct (ลด NVE เร็วขึ้น) หรือถ้า media หนักเกินไป",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Moderate NPDR",
+          "is_correct": false,
+          "explanation": "ไม่มี neovascularization"
+        },
+        {
+          "label": "B",
+          "text": "Severe NPDR",
+          "is_correct": false,
+          "explanation": "ไม่มี neovascularization; severe NPDR = 4-2-1 rule"
+        },
+        {
+          "label": "C",
+          "text": "PDR high-risk → PRP ทันที",
+          "is_correct": true,
+          "explanation": "NVD + preretinal hemorrhage = PDR high-risk → PRP ทันที ลด visual loss 50%"
+        },
+        {
+          "label": "D",
+          "text": "PDR low-risk - ติดตาม",
+          "is_correct": false,
+          "explanation": "มี NVD + hemorrhage = high-risk ไม่ใช่ low-risk"
+        },
+        {
+          "label": "E",
+          "text": "Anti-VEGF เท่านั้น",
+          "is_correct": false,
+          "explanation": "Anti-VEGF เป็น adjunct ไม่ใช่ standalone สำหรับ high-risk PDR"
+        }
+      ],
+      "key_takeaway": "PDR high-risk: PRP 1,200-1,600 burns ทันที; anti-VEGF เป็น adjunct; ถ้า vitreous hemorrhage/TRD → vitrectomy"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 30 ปี สายตาสั้น -8.00 D มา 10 ปี ตรวจพบ temporal half visual field ลดลงทั้ง 2 ข้าง (bitemporal hemianopia) ไม่มีปวดศีรษะ ไม่มี diplopia MRI brain พบ sellar mass 2 cm",
+    "choices": [
+      "A: Glaucoma bilateral",
+      "B: Optic neuritis bilateral",
+      "C: Pituitary adenoma → bitemporal hemianopia",
+      "D: Retinal detachment bilateral",
+      "E: Myopic macular degeneration"
+    ],
+    "correct_answer": "C",
+    "explanation": "Bitemporal hemianopia: pituitary adenoma กด optic chiasm (decussating fibers ที่ nasal retina) → neurosurgery",
+    "detailed_explanation": {
+      "summary": "Bitemporal hemianopia = optic chiasm lesion → pituitary adenoma → neurosurgery",
+      "reason": "Visual field defects: Monocular = optic nerve (ipsilateral) Bitemporal hemianopia = optic chiasm (pituitary adenoma, craniopharyngioma) Homonymous hemianopia = optic tract → occipital cortex (stroke) Pituitary adenoma: ขนาด > 10 mm (macroadenoma) กด optic chiasm → bitemporal superior > inferior (inferior fibers ข้าม chiasm สูงกว่า) MRI: sellar mass 2 cm = macroadenoma การรักษา: Transsphenoidal surgery; nonfunctioning adenoma เป็น first choice surgical",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Glaucoma bilateral",
+          "is_correct": false,
+          "explanation": "Glaucoma: arcuate defect, nasal step, central scotoma; ไม่ใช่ bitemporal pattern"
+        },
+        {
+          "label": "B",
+          "text": "Optic neuritis bilateral",
+          "is_correct": false,
+          "explanation": "Central scotoma, pain on eye movement, ไม่ใช่ bitemporal"
+        },
+        {
+          "label": "C",
+          "text": "Pituitary adenoma",
+          "is_correct": true,
+          "explanation": "Bitemporal hemianopia + sellar mass = pituitary adenoma กด chiasm → transsphenoidal surgery"
+        },
+        {
+          "label": "D",
+          "text": "Bilateral RD",
+          "is_correct": false,
+          "explanation": "ไม่ให้ bitemporal pattern ตาม field; ไม่มี fundus finding"
+        },
+        {
+          "label": "E",
+          "text": "Myopic macular degeneration",
+          "is_correct": false,
+          "explanation": "Central vision loss ไม่ใช่ bitemporal; ไม่มี sellar mass"
+        }
+      ],
+      "key_takeaway": "Bitemporal hemianopia = optic chiasm → pituitary adenoma first; MRI brain + pituitary → transsphenoidal surgery"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 68 ปี มา ตรวจ visual field มี arcuate scotoma superior และ inferior ทั้ง 2 ข้าง IOP OD 24 mmHg OS 22 mmHg Optic disc: cup-to-disc ratio OD 0.8 OS 0.7 notching ที่ inferior rim OD OCT RNFL: thinning inferotemporal OD",
+    "choices": [
+      "A: Normal variation",
+      "B: Primary open angle glaucoma",
+      "C: Normal tension glaucoma",
+      "D: Secondary glaucoma",
+      "E: Ocular hypertension"
+    ],
+    "correct_answer": "B",
+    "explanation": "POAG: IOP > 21 + optic disc cupping (C/D 0.8) + RNFL thinning + arcuate scotoma → topical prostaglandin analog (latanoprost)",
+    "detailed_explanation": {
+      "summary": "POAG: IOP↑ + C/D↑ + RNFL thinning + arcuate VF defect → latanoprost",
+      "reason": "Primary Open Angle Glaucoma (POAG): IOP > 21 + open angle + optic nerve damage + VF defect Optic disc: C/D > 0.6, notching, RNFL thinning (inferotemporal = first sign) VF: arcuate scotoma (nerve fiber layer defect), nasal step Goldmann criteria: IOP + disc + VF + OCT RNFL Target IOP: reduce 25-30% or to ≤18 mmHg การรักษา: Prostaglandin analogs (latanoprost, travoprost) = first-line; beta-blocker; CAI; alpha-agonist",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal",
+          "is_correct": false,
+          "explanation": "C/D 0.8 + notching + VF defect + RNFL thin = glaucomatous damage"
+        },
+        {
+          "label": "B",
+          "text": "POAG",
+          "is_correct": true,
+          "explanation": "IOP >21 + C/D 0.8 + RNFL thinning + arcuate scotoma = POAG → latanoprost"
+        },
+        {
+          "label": "C",
+          "text": "NTG",
+          "is_correct": false,
+          "explanation": "NTG: IOP ≤21 แต่มี disc damage; ผู้ป่วยนี้ IOP 24"
+        },
+        {
+          "label": "D",
+          "text": "Secondary glaucoma",
+          "is_correct": false,
+          "explanation": "มีสาเหตุ steroid/trauma/PXF; ไม่มีใน scenario"
+        },
+        {
+          "label": "E",
+          "text": "Ocular hypertension",
+          "is_correct": false,
+          "explanation": "OHT: IOP↑ แต่ disc/VF ปกติ; ผู้ป่วยนี้มี disc damage + VF defect"
+        }
+      ],
+      "key_takeaway": "POAG: latanoprost OD (once daily HS); target IOP reduction 25-30%; ติดตาม VF + OCT RNFL ทุก 6-12 เดือน"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 32 ปี เห็นแสงวาบ (photopsia) ตาซ้าย 2 วัน ไม่มี floaters ไม่มี curtain VA 20/20 slit lamp ปกติ fundus: normal disc macula ปกติ peripheral retina ปกติ vitreous clear",
+    "choices": [
+      "A: Posterior vitreous detachment early → reassure",
+      "B: Retinal tear → laser retinopexy ด่วน",
+      "C: Migraine with aura",
+      "D: Optic neuritis",
+      "E: Vitreous hemorrhage"
+    ],
+    "correct_answer": "A",
+    "explanation": "Posterior vitreous detachment (PVD) early: photopsia ไม่มี floaters ไม่มี curtain fundus ปกติ → reassure + เฝ้าระวัง floaters/curtain ซึ่งอาจบ่งบอก retinal tear",
+    "detailed_explanation": {
+      "summary": "PVD early: photopsia เดี่ยวๆ + fundus ปกติ → reassure + เฝ้าระวัง",
+      "reason": "Posterior vitreous detachment (PVD): vitreous แยกจาก retina (ปกติในวัยกลาง-สูงอายุ, myopia) Photopsia: แสงวาบขณะ vitreous ดึง retina ชั่วคราว Floaters: Weiss ring (vitreous detached from disc) การเฝ้าระวัง: ถ้ามี new floaters หรือ curtain → ต้องมาดูใหม่ด่วน (อาจมี retinal tear) PVD ที่ไม่มี retinal tear = benign ไม่ต้องรักษา ผู้ป่วยนี้: หนุ่มสาว, photopsia เดี่ยว, fundus ปกติ → PVD early/other → reassure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PVD early → reassure",
+          "is_correct": true,
+          "explanation": "Photopsia ไม่มี floaters ไม่มี curtain fundus ปกติ = early PVD → reassure + คำแนะนำ warning signs"
+        },
+        {
+          "label": "B",
+          "text": "Retinal tear → laser",
+          "is_correct": false,
+          "explanation": "Retinal tear: มักมี floaters + photopsia; ต้องเห็น tear ใน fundus exam"
+        },
+        {
+          "label": "C",
+          "text": "Migraine aura",
+          "is_correct": false,
+          "explanation": "Scintillating scotoma (zig-zag) bilaterally expanding, 20 นาที → headache; unilateral photopsia ต่างกัน"
+        },
+        {
+          "label": "D",
+          "text": "Optic neuritis",
+          "is_correct": false,
+          "explanation": "VA ลด + pain on eye movement; photopsia ไม่ใช่ primary symptom"
+        },
+        {
+          "label": "E",
+          "text": "Vitreous hemorrhage",
+          "is_correct": false,
+          "explanation": "Floaters จำนวนมาก (red rain/cobwebs), VA อาจลด; vitreous clear ในนี้"
+        }
+      ],
+      "key_takeaway": "PVD: photopsia + floaters (Weiss ring) = benign; ถ้ามี new floaters มากขึ้นหรือ curtain → มา URGENTLY (retinal tear)"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 25 ปี ตาขวาเจ็บปวด ตาแดง ตาขาวแดง photophobia ตามัวเล็กน้อย ตรวจ slit lamp: keratic precipitates (KPs) fine ที่ posterior cornea เล็กน้อย anterior chamber flare/cells 2+ ม่านตาหดช้า CBC ปกติ ประวัติ ankylosing spondylitis",
+    "choices": [
+      "A: Bacterial conjunctivitis",
+      "B: Acute anterior uveitis (iridocyclitis)",
+      "C: Scleritis",
+      "D: Corneal ulcer",
+      "E: Acute ACG"
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute anterior uveitis: HLA-B27 positive disease (AS) + KPs + AC flare/cells + photophobia + miosis → topical corticosteroid + cycloplegic",
+    "detailed_explanation": {
+      "summary": "Anterior uveitis HLA-B27: AS + KPs + AC cells/flare → topical steroid + cycloplegic",
+      "reason": "Acute anterior uveitis (AAU): most commonly HLA-B27 associated (AS, Reiter, IBD, psoriatic arthritis) ผู้ชายหนุ่ม + AS → HLA-B27+ AAU Slit lamp findings: KPs (inflammatory cells on corneal endothelium), AC flare (protein), cells Ciliary injection (perilimbal flush) Photophobia + miosis (iris spasm) การรักษา: Topical corticosteroid (prednisolone acetate 1% q1h) + Cycloplegic (atropine/cyclopentolate) ลด pain + ป้องกัน posterior synechia ห้าม: topical steroid โดยไม่ diagnose ก่อน (อาจทำให้ viral ulcer แย่)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bacterial conjunctivitis",
+          "is_correct": false,
+          "explanation": "Mucopurulent discharge, ไม่มี KPs ไม่มี AC reaction"
+        },
+        {
+          "label": "B",
+          "text": "Acute anterior uveitis",
+          "is_correct": true,
+          "explanation": "AS + KPs + AC flare/cells + photophobia = anterior uveitis → topical steroid + cycloplegic"
+        },
+        {
+          "label": "C",
+          "text": "Scleritis",
+          "is_correct": false,
+          "explanation": "Violaceous deep injection, tender globe, ไม่มี KPs/AC cells"
+        },
+        {
+          "label": "D",
+          "text": "Corneal ulcer",
+          "is_correct": false,
+          "explanation": "Fluorescein stain+, white corneal infiltrate, ไม่มี KPs"
+        },
+        {
+          "label": "E",
+          "text": "Acute ACG",
+          "is_correct": false,
+          "explanation": "IOP สูงมาก, corneal edema, mid-dilated fixed pupil, halos"
+        }
+      ],
+      "key_takeaway": "Anterior uveitis: topical prednisolone + cycloplegic; HLA-B27 workup; AS/IBD ควรรักษา systemic"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 52 ปี ตาขาวแดงข้างขวา เจ็บน้อยๆ ไม่มี discharge ไม่มี photophobia สังเกตเห็นเองหลังตื่นนอน VA ปกติ slit lamp: subconjunctival hemorrhage ขอบเขตชัด ไม่มีเลือดออกนอกบริเวณนั้น IOP ปกติ",
+    "choices": [
+      "A: Episcleritis",
+      "B: Scleritis",
+      "C: Subconjunctival hemorrhage",
+      "D: Bacterial conjunctivitis",
+      "E: Corneal ulcer"
+    ],
+    "correct_answer": "C",
+    "explanation": "Subconjunctival hemorrhage: เลือดออกใต้ conjunctiva ขอบชัด ไม่เจ็บ VA ปกติ → reassure หายเองใน 1-2 สัปดาห์",
+    "detailed_explanation": {
+      "summary": "Subconjunctival hemorrhage: ขอบชัด ไม่เจ็บ VA ปกติ → reassure",
+      "reason": "Subconjunctival hemorrhage: เลือดออกระหว่าง conjunctiva และ sclera อาการ: ไม่มี pain ไม่มี discharge ไม่มี photophobia ตามัวไม่ลด สาเหตุ: valsalva (ไอ จาม อาเจียน) ความดันสูง aspirin/anticoagulant trauma (minor) ส่วนใหญ่ idiopathic หายเองใน 1-2 สัปดาห์ การรักษา: Reassure; ตรวจ BP ถ้าเกิดซ้ำบ่อย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Episcleritis",
+          "is_correct": false,
+          "explanation": "Sectoral redness, เล็กน้อยเจ็บ, ไม่มี blood clot ขอบชัด"
+        },
+        {
+          "label": "B",
+          "text": "Scleritis",
+          "is_correct": false,
+          "explanation": "Deep pain severe, violaceous, tender"
+        },
+        {
+          "label": "C",
+          "text": "Subconjunctival hemorrhage",
+          "is_correct": true,
+          "explanation": "ขอบชัด + ไม่เจ็บ + VA ปกติ + ตื่นนอนสังเกตเห็น = subconjunctival hemorrhage → reassure"
+        },
+        {
+          "label": "D",
+          "text": "Bacterial conjunctivitis",
+          "is_correct": false,
+          "explanation": "Mucopurulent, diffuse redness ไม่มี sharp border"
+        },
+        {
+          "label": "E",
+          "text": "Corneal ulcer",
+          "is_correct": false,
+          "explanation": "ปวด photophobia VA ลด slit lamp ต้องดู cornea"
+        }
+      ],
+      "key_takeaway": "Subconjunctival hemorrhage: ขอบชัด ไม่เจ็บ → reassure 1-2 สัปดาห์; ถ้าเกิดซ้ำ → ตรวจ BP + coagulation"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 45 ปี ตาขวาตาพร่า 3 วัน เจ็บตาเล็กน้อยเมื่อกรอกตา (pain on eye movement) VA OD 20/200 ลาน color vision OD ลดลงชัดเจน (red desaturation) มี RAPD OD Fundus OD: optic disc ปกติ ไม่บวม",
+    "choices": [
+      "A: CRAO",
+      "B: Optic neuritis (retrobulbar)",
+      "C: Anterior ischemic optic neuropathy",
+      "D: Central serous chorioretinopathy",
+      "E: Papilledema"
+    ],
+    "correct_answer": "B",
+    "explanation": "Retrobulbar optic neuritis: VA ลด + color vision ลด + RAPD + pain on eye movement + disc ปกติ (retrobulbar) → high-dose IV methylprednisolone (ถ้า MRI brain abnormal)",
+    "detailed_explanation": {
+      "summary": "Retrobulbar optic neuritis: VA↓ + RAPD + pain EOM + color vision↓ + disc ปกติ → MRI + IV methylprednisolone",
+      "reason": "Optic neuritis: inflammation ของ optic nerve Anterior (papillitis): disc swollen, young adult Retrobulbar: disc ปกติ (ตามองไม่เห็น nerve inflammation อยู่ด้านหลัง) RAPD: relative afferent pupillary defect = unilateral optic nerve damage Central scotoma ใน VF สัมพันธ์กับ MS (50% develop MS ใน 15 ปี) การรักษา: IV methylprednisolone 1 g × 3 วัน → เร่งการฟื้นตัว แต่ไม่เปลี่ยน long-term outcome ถ้า MRI brain: demyelinating lesions → start DMT (disease-modifying therapy)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CRAO",
+          "is_correct": false,
+          "explanation": "Sudden painless VA loss + pale retina + cherry red spot + no RAPD เดี่ยว"
+        },
+        {
+          "label": "B",
+          "text": "Retrobulbar optic neuritis",
+          "is_correct": true,
+          "explanation": "VA↓ + RAPD + pain EOM + color vision↓ + disc ปกติ = retrobulbar ON → IV methylprednisolone + MRI"
+        },
+        {
+          "label": "C",
+          "text": "AION",
+          "is_correct": false,
+          "explanation": "Older, pale disc swelling, ไม่มี pain EOM, sudden VA loss"
+        },
+        {
+          "label": "D",
+          "text": "CSCR",
+          "is_correct": false,
+          "explanation": "Subretinal fluid ที่ macula, ไม่มี RAPD, OCT เห็น fluid"
+        },
+        {
+          "label": "E",
+          "text": "Papilledema",
+          "is_correct": false,
+          "explanation": "Bilateral disc swelling จาก ICP สูง, ปกติ VA ยังดี ในระยะแรก"
+        }
+      ],
+      "key_takeaway": "Optic neuritis: MRI brain (DWI/FLAIR) → assess MS risk; IV methylprednisolone เร่งฟื้น แต่ long-term outcome เหมือนกัน"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 58 ปี ความดันโลหิต 180/100 mmHg มานาน 5 ปี ตรวจ fundus: AV nicking (copper wiring), flame hemorrhages, cotton wool spots, hard exudates รอบ macula (macular star pattern) disc mild edema",
+    "choices": [
+      "A: Diabetic retinopathy",
+      "B: Hypertensive retinopathy grade III-IV",
+      "C: Branch retinal vein occlusion",
+      "D: Central retinal vein occlusion",
+      "E: AMD wet"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypertensive retinopathy grade III-IV: AV nicking + flame hemorrhages + cotton wool spots + hard exudates (macular star) + disc edema → ลด BP ด่วน",
+    "detailed_explanation": {
+      "summary": "Hypertensive retinopathy grade III-IV: ลด BP ด่วน + fundus findings",
+      "reason": "Keith-Wagener-Barker classification: Grade I: AV ratio ลด Grade II: AV nicking (copper/silver wiring) Grade III: Grade II + hemorrhages + exudates + cotton wool spots Grade IV: Grade III + disc edema Malignant hypertension: Grade III-IV + diastolic BP >120 Cotton wool spots = nerve fiber layer infarcts จาก arteriolar occlusion Macular star: hard exudates เรียงรอบ fovea การรักษา: ลด BP อย่างระวัง (avoid rapid drop → AION/watershed infarct)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Diabetic retinopathy",
+          "is_correct": false,
+          "explanation": "Dot-blot hemorrhages ไม่ใช่ flame; AV nicking ไม่ใช่ DR finding"
+        },
+        {
+          "label": "B",
+          "text": "Hypertensive retinopathy III-IV",
+          "is_correct": true,
+          "explanation": "BP 180 + AV nicking + flame + CWS + macular star + disc edema = HT retinopathy grade IV → ลด BP"
+        },
+        {
+          "label": "C",
+          "text": "BRVO",
+          "is_correct": false,
+          "explanation": "Sector hemorrhages ใน 1 quadrant"
+        },
+        {
+          "label": "D",
+          "text": "CRVO",
+          "is_correct": false,
+          "explanation": "Flame hemorrhages ทุก 4 quadrants + dilated tortuous veins + disc swelling; IOP อาจสูง"
+        },
+        {
+          "label": "E",
+          "text": "AMD wet",
+          "is_correct": false,
+          "explanation": "Submacular hemorrhage/fluid, ผู้สูงอายุ, ไม่มี AV changes"
+        }
+      ],
+      "key_takeaway": "HT retinopathy IV: ลด BP (labetalol IV) อย่างช้าๆ ไม่เร็วเกิน 25% ใน 1 ชั่วโมงแรก; rapid drop → AION, renal failure"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 70 ปี ตามัวข้างขวาฉับพลัน ไม่เจ็บ VA OD finger counting fundus: pale retina ทั้ง hemis ยกเว้น cherry red spot ที่ macula ประวัติ carotid artery stenosis",
+    "choices": [
+      "A: CRVO",
+      "B: CRAO",
+      "C: AION",
+      "D: Retinal detachment",
+      "E: Optic neuritis"
+    ],
+    "correct_answer": "B",
+    "explanation": "CRAO: ตามัวฉับพลัน painless + pale retina + cherry red spot (choroidal circulation ยังดีที่ fovea) + carotid stenosis → ลด IOP ด่วน + ส่ง stroke workup",
+    "detailed_explanation": {
+      "summary": "CRAO: pale retina + cherry red spot + painless sudden VA loss → emergency (stroke equivalent)",
+      "reason": "Central Retinal Artery Occlusion: มักจาก carotid atherosclerosis, cardiac embolism ตามัวฉับพลัน painless Fundus: milky white/pale retina (ischemia) + cherry red spot (fovea มีเฉพาะ choroidal supply ที่ยังดี) FFA: prolonged arteriovenous transit time ลด IOP: ocular massage, anterior chamber paracentesis (dislodge embolus) CRAO = stroke equivalent → Stroke workup (ECG, Holter, echocardiogram, carotid duplex) ไม่ใช่ ophthalmologic emergency เดี่ยว Window: visual recovery ต้องเริ่มใน 6-24 ชม. (ขึ้นกับ collateral)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CRVO",
+          "is_correct": false,
+          "explanation": "Dilated tortuous veins, flame hemorrhages ทุก quadrant, disc swelling"
+        },
+        {
+          "label": "B",
+          "text": "CRAO",
+          "is_correct": true,
+          "explanation": "Pale retina + cherry red spot + painless + carotid stenosis = CRAO → ลด IOP + stroke workup"
+        },
+        {
+          "label": "C",
+          "text": "AION",
+          "is_correct": false,
+          "explanation": "Pale disc swelling, altitudinal VF defect, ไม่ใช่ pale retina diffuse"
+        },
+        {
+          "label": "D",
+          "text": "RD",
+          "is_correct": false,
+          "explanation": "Curtain ก่อน, photopsia, fundus show detachment"
+        },
+        {
+          "label": "E",
+          "text": "Optic neuritis",
+          "is_correct": false,
+          "explanation": "Pain EOM, color vision ลด, disc อาจบวม ไม่มี pale retina"
+        }
+      ],
+      "key_takeaway": "CRAO: treat as TIA/stroke → cardiovascular workup; ลด IOP (ocular massage/paracentesis); visual prognosis ไม่ดี (ขาด visual recovery window)"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 55 ปี ตรวจพบ chalazion ขนาด 8 mm ที่ upper lid ขวา ตาบวมเล็กน้อย ไม่เจ็บมาก ไม่แดง ไม่ไข้ เป็นมา 3 สัปดาห์ ครั้งก่อนหายเองใน 4 สัปดาห์",
+    "choices": [
+      "A: Incision and drainage ทันที",
+      "B: Warm compress + antibiotic ointment + ติดตาม",
+      "C: Topical antibiotic drops เท่านั้น",
+      "D: Systemic antibiotics",
+      "E: Biopsy ทันที"
+    ],
+    "correct_answer": "B",
+    "explanation": "Chalazion: meibomian gland granuloma ไม่ใช่ infection → warm compress 10-15 นาที 4 ครั้ง/วัน; ถ้าไม่หายใน 4-6 สัปดาห์ → I&D",
+    "detailed_explanation": {
+      "summary": "Chalazion: warm compress ± antibiotic ointment → ถ้าไม่หาย → I&D",
+      "reason": "Chalazion: chronic granulomatous inflammation ของ meibomian gland ต่างจาก Hordeolum (stye): acute infection (S. aureus) - เจ็บ แดง Internal chalazion: meibomian gland External chalazion (stye): Zeis gland การรักษา: Conservative: warm compress (ละลาย meibomian secretion) ± tetracycline ointment ถ้าไม่หายใน 4-6 สัปดาห์ → Intralesional triamcinolone injection หรือ I&D ถ้าเกิดซ้ำบ่อย: biopsy แยก sebaceous gland carcinoma",
+      "choices": [
+        {
+          "label": "A",
+          "text": "I&D ทันที",
+          "is_correct": false,
+          "explanation": "Chalazion อาจหายเองหรือด้วย warm compress ก่อน; I&D ถ้าไม่หายใน 4-6 สัปดาห์"
+        },
+        {
+          "label": "B",
+          "text": "Warm compress + antibiotic ointment",
+          "is_correct": true,
+          "explanation": "Chalazion: warm compress 4×/วัน ± tetracycline oint; ติดตาม 4-6 สัปดาห์ → ถ้าไม่หาย → I&D"
+        },
+        {
+          "label": "C",
+          "text": "Antibiotic drops เท่านั้น",
+          "is_correct": false,
+          "explanation": "Chalazion ไม่ใช่ infection; antibiotic ไม่ใช่ primary treatment"
+        },
+        {
+          "label": "D",
+          "text": "Systemic antibiotics",
+          "is_correct": false,
+          "explanation": "ไม่มี infection; ไม่มีไข้; ไม่ต้อง systemic antibiotics"
+        },
+        {
+          "label": "E",
+          "text": "Biopsy ทันที",
+          "is_correct": false,
+          "explanation": "Biopsy ถ้าเกิดซ้ำบ่อย หรือ ไม่ตอบสนอง → แยก sebaceous carcinoma"
+        }
+      ],
+      "key_takeaway": "Chalazion: warm compress ก่อน; ไม่หายใน 4-6 สัปดาห์ → I&D; เกิดซ้ำบ่อย → biopsy (sebaceous carcinoma)"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 42 ปี ตรวจพบ VA OD 20/200, OS 20/20 ไม่ตอบสนองต่อแว่น slit lamp OD: cornea ปกติ lens ปกติ fundus OD ปกติ VEP: P100 latency ยาวนาน OD ปกติ OS ตรวจ MRI brain: periventricular white matter lesions multiple",
+    "choices": [
+      "A: Amblyopia OD",
+      "B: Functional visual loss",
+      "C: Retrobulbar optic neuritis เก่า (optic nerve demyelination)",
+      "D: CRAO เก่า",
+      "E: Cataract ดำ"
+    ],
+    "correct_answer": "C",
+    "explanation": "Previous optic neuritis: VA ลด + VEP P100 latency ยาวนาน (demyelination) + MRI periventricular lesions → MS workup; VA อาจดีขึ้นหลัง acute ON แต่ VEP latency ยังผิดปกติ",
+    "detailed_explanation": {
+      "summary": "Previous optic neuritis: VEP P100 latency ยาวนาน + MRI lesions → MS",
+      "reason": "Visual Evoked Potential (VEP): P100 = positive wave 100 ms หลัง checkerboard stimulus Demyelinated optic nerve: P100 latency ยาวนาน (> 105 ms) แม้ VA ฟื้นตัวแล้ว Previous optic neuritis ไม่รักษา หรือ undiagnosed: VA อาจ 20/200 หรือดีกว่า MRI periventricular lesions = MS plaques McDonald criteria: ≥2 attacks + ≥2 lesions → definitive MS การรักษา: Disease-modifying therapy (interferon-β, glatiramer, natalizumab) IV methylprednisolone ถ้า acute relapse",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amblyopia",
+          "is_correct": false,
+          "explanation": "Amblyopia เกิดใน critical period (<7-8 ปี); ไม่มี VEP latency ยาวนาน"
+        },
+        {
+          "label": "B",
+          "text": "Functional visual loss",
+          "is_correct": false,
+          "explanation": "VEP ปกติ; ไม่มี organic cause"
+        },
+        {
+          "label": "C",
+          "text": "Previous optic neuritis/MS",
+          "is_correct": true,
+          "explanation": "VEP P100 latency ยาวนาน + MRI periventricular lesions + VA ลด = previous ON → MS workup"
+        },
+        {
+          "label": "D",
+          "text": "CRAO เก่า",
+          "is_correct": false,
+          "explanation": "Pale disc atrophy + fundus abnormal; VEP amplitude ลด ไม่ใช่ latency ยาวนาน"
+        },
+        {
+          "label": "E",
+          "text": "Cataract ดำ",
+          "is_correct": false,
+          "explanation": "Lens ปกติ"
+        }
+      ],
+      "key_takeaway": "VEP P100 latency ยาวนาน = demyelination (optic neuritis/MS); MRI brain → McDonald criteria; start DMT ถ้า confirm MS"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 34 ปี ตั้งครรภ์ 30 สัปดาห์ ตรวจพบ VA ลดลงทั้ง 2 ข้าง 2 วัน ปวดศีรษะมาก BP 165/105 mmHg UA: proteinuria 3+ ตรวจ fundus: bilateral disc edema, flame hemorrhages, cotton wool spots",
+    "choices": [
+      "A: Central retinal vein occlusion",
+      "B: Hypertensive chorioretinopathy/retinopathy จาก preeclampsia",
+      "C: Idiopathic intracranial hypertension",
+      "D: Optic neuritis bilateral",
+      "E: AMD"
+    ],
+    "correct_answer": "B",
+    "explanation": "Preeclampsia severe: BP 165/105 + proteinuria + fundus hypertensive retinopathy → ลด BP ทันที (labetalol/hydralazine) + คลอด",
+    "detailed_explanation": {
+      "summary": "Preeclampsia + hypertensive retinopathy → ลด BP ทันที (labetalol) + ส่งคลอด",
+      "reason": "Preeclampsia: HTN + proteinuria ตอนตั้งครรภ์ ≥20 สัปดาห์ Visual changes = severe feature → urgent delivery after stabilize Hypertensive retinopathy: disc edema, flame hemorrhages, CWS, hard exudates Serous retinal detachment ในบางราย Eclampsia: preeclampsia + seizure → MgSO4 กัน seizure การรักษา: IV labetalol/hydralazine ลด BP, MgSO4 prophylaxis, คลอด (definitive treatment) VA มักฟื้นหลัง BP ลด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CRVO",
+          "is_correct": false,
+          "explanation": "ไม่สัมพันธ์กับ preeclampsia โดยตรง"
+        },
+        {
+          "label": "B",
+          "text": "Hypertensive retinopathy preeclampsia",
+          "is_correct": true,
+          "explanation": "ตั้งครรภ์ + BP 165/105 + proteinuria + disc edema + flame = preeclampsia severe → labetalol + คลอด"
+        },
+        {
+          "label": "C",
+          "text": "IIH",
+          "is_correct": false,
+          "explanation": "Bilateral papilledema + headache แต่ BP ปกติ, ไม่มี proteinuria"
+        },
+        {
+          "label": "D",
+          "text": "Bilateral optic neuritis",
+          "is_correct": false,
+          "explanation": "Pain EOM, color vision ลด, ไม่มี BP สูง/proteinuria"
+        },
+        {
+          "label": "E",
+          "text": "AMD",
+          "is_correct": false,
+          "explanation": "ผู้สูงอายุ ไม่ใช่ 34 ปีตั้งครรภ์"
+        }
+      ],
+      "key_takeaway": "Preeclampsia visual symptoms: severe feature → ลด BP (labetalol IV) + MgSO4 + คลอด; retinal findings reversible หลัง BP ลด"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 50 ปี Grave's disease ตาโปน (proptosis) ทั้ง 2 ข้าง คู่ตาดู double vision มองขึ้น VA 20/20 ทั้ง 2 ข้าง IOP 18 mmHg ตรวจ CT orbit: inferior recti มีขนาดใหญ่ขึ้นทั้ง 2 ข้าง",
+    "choices": [
+      "A: Orbital tumor bilateral",
+      "B: Thyroid eye disease (Graves ophthalmopathy)",
+      "C: Idiopathic orbital inflammatory disease",
+      "D: Cavernous sinus thrombosis",
+      "E: Orbital cellulitis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Thyroid eye disease: proptosis bilateral + double vision + inferior recti enlarged (CT) + Graves' disease → IV methylprednisolone ± orbital decompression",
+    "detailed_explanation": {
+      "summary": "Thyroid eye disease: proptosis + inferior recti enlarged ใน Graves' → steroids + decompression ถ้าจำเป็น",
+      "reason": "Thyroid eye disease (TED/Graves ophthalmopathy): autoimmune ต่อ orbital fibroblasts/adipocytes Clinical activity score (CAS) ≥3/7 = active TED Extraocular muscles: inferior > medial > superior recti ขนาดใหญ่ (tendon-sparing) ต่างจาก myositis (tendon ด้วย) Complications: corneal exposure (lagophthalmos), compressive optic neuropathy (DON) DON = decrease VA + RAPD + VF defect = emergency! การรักษา: Active: IV methylprednisolone, selenium, radiation Inactive: surgical (decompression → strabismus → lid) ลำดับสำคัญ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Orbital tumor",
+          "is_correct": false,
+          "explanation": "มักเป็น unilateral irregular mass ไม่ใช่ bilateral EOM enlargement"
+        },
+        {
+          "label": "B",
+          "text": "Thyroid eye disease",
+          "is_correct": true,
+          "explanation": "Bilateral proptosis + EOM enlargement + Graves' = TED → IV methylprednisolone"
+        },
+        {
+          "label": "C",
+          "text": "Idiopathic orbital inflammation",
+          "is_correct": false,
+          "explanation": "Myositis: painful, tendon involved; ไม่ bilateral symmetric"
+        },
+        {
+          "label": "D",
+          "text": "Cavernous sinus thrombosis",
+          "is_correct": false,
+          "explanation": "Severe headache, fever, proptosis, ophthalmoplegia complete"
+        },
+        {
+          "label": "E",
+          "text": "Orbital cellulitis",
+          "is_correct": false,
+          "explanation": "Proptosis + restricted EOM + fever + sinus infection"
+        }
+      ],
+      "key_takeaway": "Thyroid eye disease: CAS score; DON (optic neuropathy) = emergency → IV dexa + orbital decompression; No smoking (ลด severity)"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 25 ปี ผิวขาวผมสีทอง (fair complexion) ตรวจพบ VA ตาทั้ง 2 ข้างต่ำ 20/100-20/200 nystagmus จาก infancy iris transillumination ทั่ว fundus: foveal hypoplasia",
+    "choices": [
+      "A: Albinism (oculocutaneous)",
+      "B: Aniridia",
+      "C: Congenital cataract bilateral",
+      "D: Retinitis pigmentosa",
+      "E: Leber congenital amaurosis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Oculocutaneous albinism: fair skin/hair + iris transillumination + foveal hypoplasia + nystagmus → low vision aids",
+    "detailed_explanation": {
+      "summary": "Oculocutaneous albinism: fair skin/hair + iris transillumination + foveal hypoplasia + nystagmus",
+      "reason": "Albinism: deficiency of melanin biosynthesis Oculocutaneous (OCA): ผิว/ผม/ตา ผิดปกติ Ocular (OA): ตาเท่านั้น Iris transillumination: melanin ไม่พอ → light passes through iris Foveal hypoplasia: absent foveal avascular zone → poor central vision Nystagmus: ชดเชย poor fixation VA: มักไม่ดีกว่า 20/80-20/200 (foveal hypoplasia ถาวร) Sun protection สำคัญ (skin cancer risk) Low vision aids, tinted lenses ช่วย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oculocutaneous albinism",
+          "is_correct": true,
+          "explanation": "Fair skin/hair + iris transillumination + foveal hypoplasia + nystagmus = OCA → low vision aids + sun protection"
+        },
+        {
+          "label": "B",
+          "text": "Aniridia",
+          "is_correct": false,
+          "explanation": "Absent iris (ไม่มีม่านตา), glaucoma, cataracts; ไม่มี fair skin/hair"
+        },
+        {
+          "label": "C",
+          "text": "Bilateral cataract",
+          "is_correct": false,
+          "explanation": "Lens opacity, ไม่มี iris transillumination"
+        },
+        {
+          "label": "D",
+          "text": "Retinitis pigmentosa",
+          "is_correct": false,
+          "explanation": "Bone-spicule pigmentation, night blindness, tunnel vision"
+        },
+        {
+          "label": "E",
+          "text": "LCA",
+          "is_correct": false,
+          "explanation": "Severe VA loss ตั้งแต่เกิด, nystagmus แต่ ไม่มี iris transillumination หรือ fair skin"
+        }
+      ],
+      "key_takeaway": "Oculocutaneous albinism: foveal hypoplasia ถาวร → VA ต่ำตลอด; tinted lenses + low vision aids + sun protection (skin cancer risk)"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 38 ปี สายตายาว hyperopia +4.00 D ปวดศีรษะหน้าผากตอนบ่าย หลังใช้คอมพิวเตอร์นาน ตาไม่แดง VA 20/20 ทั้ง 2 ข้าง ไม่มี diplopia ไม่มีตาบวม IOP ปกติ",
+    "choices": [
+      "A: Tension headache",
+      "B: Asthenopia จาก uncorrected hyperopia",
+      "C: Migraine",
+      "D: Sinusitis",
+      "E: Glaucoma"
+    ],
+    "correct_answer": "B",
+    "explanation": "Asthenopia: สายตายาว uncorrected → ต้อง accommodate ตลอด → กล้ามเนื้อตาล้า → ปวดหัว brow ache หลังใช้ตานาน → แว่นตาสายตายาว",
+    "detailed_explanation": {
+      "summary": "Asthenopia จาก uncorrected hyperopia: ปวดหัว/ตาล้าหลังอ่านหนังสือ → แว่นสายตายาว",
+      "reason": "Hyperopia (farsighted): focal point อยู่หลัง retina ต้องใช้ accommodation เพิ่มเพื่อดูชัด ทั้ง near และ far Uncorrected hyperopia: ciliary muscle ต้องทำงานตลอด → accommodation spasm → asthenopia อาการ: ปวดหัว frontal/brow, ตาล้า, พร่า เมื่อใช้ตานาน Accommodative esotropia: เด็ก hyperopia ปรับสายตา → cross-eyed (related) การรักษา: Full optical correction แว่นสายตายาว → ลด accommodation demand",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Tension headache",
+          "is_correct": false,
+          "explanation": "Bilateral band-like headache ไม่สัมพันธ์กับ computer use หรือ hyperopia"
+        },
+        {
+          "label": "B",
+          "text": "Asthenopia จาก hyperopia",
+          "is_correct": true,
+          "explanation": "Hyperopia +4 + ปวดหัวหลัง computer = asthenopia → full hyperopia correction"
+        },
+        {
+          "label": "C",
+          "text": "Migraine",
+          "is_correct": false,
+          "explanation": "Throbbing unilateral + nausea/vomiting + photophobia; ไม่ใช่ brow ache หลัง computer"
+        },
+        {
+          "label": "D",
+          "text": "Sinusitis",
+          "is_correct": false,
+          "explanation": "ปวดหน้าผาก แต่ post-nasal drip, nasal congestion"
+        },
+        {
+          "label": "E",
+          "text": "Glaucoma",
+          "is_correct": false,
+          "explanation": "IOP ปกติ; glaucoma ไม่ทำให้ปวดหัวแบบนี้"
+        }
+      ],
+      "key_takeaway": "Asthenopia จาก hyperopia: full correction hyperopia → ลด accommodation → ปวดหัวหาย; progressive lenses สำหรับ presbyopia"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 60 ปี ตรวจ fundus ปกติ ยกเว้น drusen กระจาย และ pigment mottling ที่ macula ทั้ง 2 ข้าง ไม่มี subretinal fluid/hemorrhage VA 20/25 Amsler grid ปกติ",
+    "choices": [
+      "A: ปกติ ไม่ต้องทำอะไร",
+      "B: Dry AMD (early-intermediate) → AREDS2 supplement",
+      "C: Wet AMD → anti-VEGF ทันที",
+      "D: CSCR → ติดตาม",
+      "E: ส่ง vitreoretinal surgeon ด่วน"
+    ],
+    "correct_answer": "B",
+    "explanation": "Dry AMD early-intermediate: drusen + pigment mottling ไม่มี CNV/fluid → AREDS2 supplement ลด progression to advanced AMD",
+    "detailed_explanation": {
+      "summary": "Dry AMD early/intermediate: AREDS2 supplement + ติดตาม Amsler grid",
+      "reason": "AMD staging (AREDS): Early: small drusen (<63 μm) Intermediate: medium drusen (63-124 μm) OR large drusen (≥125 μm) Late/Advanced: geographic atrophy OR neovascular AREDS2 formula: Vit C 500 mg + Vit E 400 IU + Lutein 10 mg + Zeaxanthin 2 mg + Zinc 80 mg + Copper 2 mg ลด progression intermediate → advanced AMD 25% ไม่มีประโยชน์สำหรับ early AMD ตรวจ Amsler grid ที่บ้านทุกวัน → ถ้า distortion ใหม่ → มาด่วน (อาจกลายเป็น wet AMD)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ไม่ทำอะไร",
+          "is_correct": false,
+          "explanation": "Intermediate AMD ควรให้ AREDS2 ลด progression"
+        },
+        {
+          "label": "B",
+          "text": "AREDS2 supplement",
+          "is_correct": true,
+          "explanation": "Drusen + pigment mottling = dry AMD intermediate → AREDS2 + Amsler grid ที่บ้าน"
+        },
+        {
+          "label": "C",
+          "text": "Anti-VEGF ทันที",
+          "is_correct": false,
+          "explanation": "Anti-VEGF สำหรับ wet AMD (CNV); ไม่มี subretinal fluid/hemorrhage ในนี้"
+        },
+        {
+          "label": "D",
+          "text": "CSCR",
+          "is_correct": false,
+          "explanation": "CSCR: young male, serous RD ที่ macula, drusen ไม่ใช่"
+        },
+        {
+          "label": "E",
+          "text": "ส่ง VR surgeon ด่วน",
+          "is_correct": false,
+          "explanation": "ไม่ urgent; ติดตาม + AREDS2"
+        }
+      ],
+      "key_takeaway": "Dry AMD intermediate: AREDS2 (ไม่ใช้ beta-carotene ในคนสูบบุหรี่); ติดตาม Amsler grid; ถ้าเปลี่ยนเป็น wet AMD → anti-VEGF injection"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 29 ปี ต้องการ prescription สำหรับ contact lens ตรวจพบ VA ใส่แว่น 20/20 ทั้ง 2 ข้าง myopia -4.00 D OD -3.50 D OS corneal diameter ปกติ ประวัติ: ไม่เคยใส่ contact lens มาก่อน แพทย์ต้องแนะนำเรื่องใดก่อน",
+    "choices": [
+      "A: ใส่ extended wear (ไม่ถอด) ตลอดคืน ปลอดภัย",
+      "B: ใส่ daily disposable ปลอดภัยที่สุด ถ้าปฏิบัติถูกต้อง",
+      "C: Contact lens ไม่มีความเสี่ยง",
+      "D: ใส่ PMMA lens เป็น first-line",
+      "E: ไม่ต้องมาตรวจตาอีก ถ้าไม่มีอาการ"
+    ],
+    "correct_answer": "B",
+    "explanation": "Daily disposable contact lens: ปลอดภัยที่สุด ลด microbial contamination; ต้องแนะนำ hygiene, ไม่ใส่ขณะนอน, มาตรวจตาทุกปี",
+    "detailed_explanation": {
+      "summary": "Contact lens: daily disposable ปลอดภัยสุด; ห้ามใส่นอน; hygiene สำคัญ",
+      "reason": "Contact lens complications: Microbial keratitis (Acanthamoeba, Pseudomonas): severe, sight-threatening Contact lens-related papillary conjunctivitis Extended wear (overnight) risk สูงกว่า daily wear 10x Daily disposable ปลอดภัยที่สุด (ไม่มีสารสะสม, ไม่ต้องทำความสะอาด) คำแนะนำ: มือสะอาดก่อนใส่ ไม่ใส่ขณะว่ายน้ำ ไม่ใส่นอน มาตรวจตาทุกปี ถ้าตาแดง เจ็บ ปวด → ถอดทันทีมาพบแพทย์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Extended wear ปลอดภัย",
+          "is_correct": false,
+          "explanation": "Extended wear risk สูง microbial keratitis; ไม่แนะนำ"
+        },
+        {
+          "label": "B",
+          "text": "Daily disposable ปลอดภัยสุด",
+          "is_correct": true,
+          "explanation": "Daily disposable = ลด contamination สูงสุด; แต่ต้องสอน hygiene + ไม่ใส่นอน"
+        },
+        {
+          "label": "C",
+          "text": "ไม่มีความเสี่ยง",
+          "is_correct": false,
+          "explanation": "Contact lens มีความเสี่ยง microbial keratitis ถ้าใช้ไม่ถูกต้อง"
+        },
+        {
+          "label": "D",
+          "text": "PMMA lens",
+          "is_correct": false,
+          "explanation": "PMMA เป็น rigid gas-impermeable (เก่า); ไม่ใช่ first-line สำหรับคนทั่วไป"
+        },
+        {
+          "label": "E",
+          "text": "ไม่ต้องตรวจอีก",
+          "is_correct": false,
+          "explanation": "ต้องตรวจตาทุกปีและ corneal fit"
+        }
+      ],
+      "key_takeaway": "Contact lens: daily disposable ปลอดภัยสุด; ห้ามใส่นอน/ว่ายน้ำ; ตาแดง/เจ็บ → ถอดทันที + มาพบแพทย์"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 65 ปี ตรวจพบ optic disc atrophy ทั้ง 2 ข้าง ไม่มีอาการ VA ลดช้าๆ 5 ปี ปวดศีรษะ น้ำหนักเพิ่ม BMI 35 ปัสสาวะบ่อยกลางคืน MRI brain: empty sella Visual field: concentric constriction ทั้ง 2 ข้าง ไม่ใช่ bitemporal",
+    "choices": [
+      "A: Glaucoma bilateral",
+      "B: Pituitary tumor",
+      "C: Idiopathic intracranial hypertension (IIH)",
+      "D: Optic neuritis bilateral",
+      "E: Normal aging"
+    ],
+    "correct_answer": "C",
+    "explanation": "IIH: obese woman + optic disc atrophy/papilledema chronic + headache + empty sella (MRI) → weight loss + acetazolamide",
+    "detailed_explanation": {
+      "summary": "IIH: obese + papilledema + headache + empty sella → weight loss + acetazolamide",
+      "reason": "Idiopathic Intracranial Hypertension (IIH/Pseudotumor cerebri): CSF pressure สูง > 25 cmH2O ไม่มี tumor/obstruction Risk: obese female reproductive age, tetracycline, vitamin A excess Papilledema → chronic → optic atrophy → VF constriction MRI: empty sella (CSF กดต่อ sella), flattened posterior sclera, enlarged optic nerve sheaths การรักษา: Weight loss (ลด ICP 50%); Acetazolamide (ลด CSF production); VPS/optic nerve sheath fenestration ถ้าสูญเสียการมองเห็นมาก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bilateral glaucoma",
+          "is_correct": false,
+          "explanation": "Glaucoma: IOP สูง, C/D ratio สูง, ไม่มี papilledema, ไม่มี empty sella"
+        },
+        {
+          "label": "B",
+          "text": "Pituitary tumor",
+          "is_correct": false,
+          "explanation": "Bitemporal hemianopia, MRI sellar mass ไม่ใช่ empty sella"
+        },
+        {
+          "label": "C",
+          "text": "IIH",
+          "is_correct": true,
+          "explanation": "Obese + chronic papilledema → atrophy + headache + empty sella = IIH → weight loss + acetazolamide"
+        },
+        {
+          "label": "D",
+          "text": "Bilateral optic neuritis",
+          "is_correct": false,
+          "explanation": "Pain EOM, MS ที่อายุน้อย, ไม่มี papilledema"
+        },
+        {
+          "label": "E",
+          "text": "Normal aging",
+          "is_correct": false,
+          "explanation": "Disc atrophy + VF constriction ไม่ใช่ aging normal"
+        }
+      ],
+      "key_takeaway": "IIH: LP เพื่อ confirm elevated CSF pressure + exclude infection/blood; acetazolamide + weight loss; serial VF ติดตาม"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 4 ปี ตรวจพบตาเข (esotropia) ตาซ้ายเข้าด้านใน ตาขวาตรง ตรวจ cover test: uncover OD → OS เข้า ปิด OS → OD ตรง Prism-reflex test: esotropia 30 prism diopters VA OD 20/20 OS 20/200 refraction: OD +1.00 OS +1.00",
+    "choices": [
+      "A: Accommodative esotropia",
+      "B: Non-accommodative esotropia → surgery ทันที",
+      "C: Intermittent exotropia",
+      "D: Amblyopia จาก strabismus → patching",
+      "E: Normal variation เด็กเล็ก"
+    ],
+    "correct_answer": "D",
+    "explanation": "Strabismic amblyopia OS: esotropia + VA OS 20/200 ในขณะที่ OD 20/20 → patching OD เพื่อบังคับใช้ OS + แว่น + อาจผ่าตัด",
+    "detailed_explanation": {
+      "summary": "Strabismic amblyopia: esotropia + VA ต่างกัน → patching ตาดี + แว่น",
+      "reason": "Strabismic amblyopia: ตาเข → brain suppress image จากตาเข → VA ลด ต้องแก้ก่อนอายุ 7-8 ปี (critical period) การรักษา: 1) Full optical correction ก่อน 3 เดือน 2) Patching OD (ตาดี) 2-6 ชั่วโมง/วัน 3) Atropine penalization alternative 4) Surgical: ถ้า residual deviation หลัง amblyopia รักษา Accommodative esotropia: hyperopia → overcorrect → esotropia → แว่น hyperopia → esotropia ลด Non-accommodative: surgery เป็น treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accommodative esotropia",
+          "is_correct": false,
+          "explanation": "Refraction OD OS +1.00 (ต่ำ) → accommodative น้อย; esotropia 30 PD ไม่ลดด้วยแว่น"
+        },
+        {
+          "label": "B",
+          "text": "Non-accommodative surgery ทันที",
+          "is_correct": false,
+          "explanation": "ต้องรักษา amblyopia ก่อนผ่าตัด เพื่อ binocular vision ดีขึ้น"
+        },
+        {
+          "label": "C",
+          "text": "Intermittent exotropia",
+          "is_correct": false,
+          "explanation": "ตาถ่างออก ไม่ใช่เข้า"
+        },
+        {
+          "label": "D",
+          "text": "Strabismic amblyopia → patching",
+          "is_correct": true,
+          "explanation": "VA OS 20/200 + esotropia = strabismic amblyopia → patching OD + แว่น ก่อน surgery"
+        },
+        {
+          "label": "E",
+          "text": "Normal variation",
+          "is_correct": false,
+          "explanation": "Esotropia 30 PD + VA 20/200 ไม่ใช่ normal; pseudostrabismus มี normal VA/cover test"
+        }
+      ],
+      "key_takeaway": "Strabismic amblyopia: patching ตาดี ก่อนอายุ 7-8 ปี; VA ต้องดีขึ้นก่อนพิจารณา surgery เพื่อ alignment"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 55 ปี หลังผ่าตัด cataract OD 2 วัน ตาขวาแดง เจ็บมาก เห็นพร่า VA OD finger counting (ก่อนผ่าตัด 20/200) ตรวจ slit lamp: cornea edema, anterior chamber: hypopyon 2 mm, fibrin, vitreous haze ไม่ชัดเจน",
+    "choices": [
+      "A: Corneal edema ปกติหลังผ่าตัด",
+      "B: Anterior uveitis post-op",
+      "C: Endophthalmitis post-cataract",
+      "D: Toxic anterior segment syndrome (TASS)",
+      "E: Wound leak"
+    ],
+    "correct_answer": "C",
+    "explanation": "Endophthalmitis: post-cataract 2 วัน + VA ลดฮวบ + hypopyon + vitreous haze → emergency → aqueous/vitreous tap + intravitreal antibiotics (vancomycin + ceftazidime)",
+    "detailed_explanation": {
+      "summary": "Post-cataract endophthalmitis: hypopyon + VA ลดฮวบ + vitreous haze → intravitreal antibiotics ด่วน",
+      "reason": "Post-cataract endophthalmitis: most serious complication อุบัติการณ์ 0.1% Most common organism: Staphylococcus epidermidis (coagulase negative) Onset: ปกติ 4-7 วัน (early) หรือ หลายสัปดาห์ (delayed, P. acnes) Clinical: ปวดตา, VA ลดฮวบ, hypopyon, vitreous haze การรักษา: Vitreous biopsy/tap → intravitreal vancomycin (1 mg/0.1 mL) + ceftazidime (2.25 mg/0.1 mL) หรือ amikacin TASS: ไม่มี vitreous involvement, ไม่มี pain, วันแรกหลัง ผ่าตัด, sterile",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Corneal edema ปกติ",
+          "is_correct": false,
+          "explanation": "Mild edema ปกติ แต่ hypopyon + vitreous haze ไม่ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Anterior uveitis post-op",
+          "is_correct": false,
+          "explanation": "Uveitis ไม่มี hypopyon ปริมาณมาก/vitreous haze"
+        },
+        {
+          "label": "C",
+          "text": "Endophthalmitis",
+          "is_correct": true,
+          "explanation": "Post-cataract 2 วัน + VA ลด + hypopyon + vitreous haze = endophthalmitis → intravitreal antibiotics ด่วน"
+        },
+        {
+          "label": "D",
+          "text": "TASS",
+          "is_correct": false,
+          "explanation": "TASS: วันแรก, ไม่มี pain, ไม่มี vitreous involvement, ตอบสนองต่อ steroid"
+        },
+        {
+          "label": "E",
+          "text": "Wound leak",
+          "is_correct": false,
+          "explanation": "Seidel test positive, shallow AC, IOP ต่ำ; ไม่มี hypopyon"
+        }
+      ],
+      "key_takeaway": "Endophthalmitis: intravitreal vancomycin + ceftazidime ทันที; vitrectomy ถ้า VA LP หรือแย่กว่า (EVS criteria)"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 22 ปี ตรวจสายตาพบ VA ทั้ง 2 ข้าง 20/20 ด้วยแว่น myopia -2.00 D ทั้ง 2 ข้าง ต้องการ refractive surgery พบว่า corneal topography: irregular astigmatism OS, steepening inferior (Amsler-Krumeich grade 1), pachymetry ปกติ",
+    "choices": [
+      "A: LASIK bilateral ได้เลย",
+      "B: PRK OD ได้ ห้าม OS (keratoconus suspect)",
+      "C: ทำ LASIK ทั้ง 2 ข้าง ปลอดภัย",
+      "D: ส่ง corneal cross-linking OS ก่อน",
+      "E: แว่นตาหรือ contact lens เท่านั้น"
+    ],
+    "correct_answer": "B",
+    "explanation": "Keratoconus suspect OS (inferior steepening + irregular astigmatism) → contraindication to LASIK OS (เพราะ LASIK จะทำให้ keratoconus แย่ลง/progress) → PRK OD ได้ถ้า cornea ปกติ; OS ต้องประเมิน cross-linking",
+    "detailed_explanation": {
+      "summary": "Keratoconus suspect: ห้าม LASIK → ectasia; cross-linking ถ้า progressive; PRK ตาปกติได้",
+      "reason": "Keratoconus: corneal ectasia → irregular astigmatism → poor BCVA Corneal topography: inferior steepening (Amsler-Krumeich criteria) LASIK contraindicated in keratoconus: flap + ablation ทำให้ biomechanical strength ลด → ectasia post-LASIK PRK ปลอดภัยกว่า LASIK ใน cornea ที่มีความเสี่ยง แต่ก็ต้องระวัง Corneal cross-linking (CXL): ยับยั้ง keratoconus progression; riboflavin + UV-A Rigid gas-permeable lens: ปรับ irregular astigmatism ได้ดีที่สุด ถ้า keratoconus advanced",
+      "choices": [
+        {
+          "label": "A",
+          "text": "LASIK bilateral",
+          "is_correct": false,
+          "explanation": "OS keratoconus suspect → LASIK contraindicated"
+        },
+        {
+          "label": "B",
+          "text": "PRK OD; ห้าม LASIK OS",
+          "is_correct": true,
+          "explanation": "OD cornea ปกติ → PRK ได้; OS keratoconus suspect → ห้าม LASIK; ประเมิน CXL OS"
+        },
+        {
+          "label": "C",
+          "text": "LASIK ทั้ง 2 ข้าง",
+          "is_correct": false,
+          "explanation": "OS keratoconus suspect = contraindication LASIK"
+        },
+        {
+          "label": "D",
+          "text": "Cross-linking OS ก่อน",
+          "is_correct": false,
+          "explanation": "CXL ถ้า keratoconus progressive; grade 1 อาจ stable → ติดตามก่อน"
+        },
+        {
+          "label": "E",
+          "text": "แว่นเท่านั้น",
+          "is_correct": false,
+          "explanation": "OD cornea ปกติ อาจทำ PRK ได้"
+        }
+      ],
+      "key_takeaway": "Keratoconus: ห้าม LASIK; PRK ในตาปกติ; CXL ถ้า progressive; RGP lens ช่วย visual rehabilitation"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 33 ปี ปวดตาขวาเฉียบพลัน เห็นพร่า ตรวจ: cornea ขุ่นที่กลาง (central ulcer) เส้นผ่าศูนย์กลาง 3 mm fluorescein stain positive ประวัติ: ใส่ contact lens overnight มาหลายปี",
+    "choices": [
+      "A: Herpes simplex keratitis",
+      "B: Bacterial corneal ulcer (contact lens-related)",
+      "C: Fungal keratitis",
+      "D: Acanthamoeba keratitis",
+      "E: Neurotrophic keratopathy"
+    ],
+    "correct_answer": "B",
+    "explanation": "Contact lens-related bacterial corneal ulcer: overnight contact lens + central ulcer + pain → gram stain/culture + topical fluoroquinolone (ciprofloxacin/moxifloxacin)",
+    "detailed_explanation": {
+      "summary": "Contact lens bacterial ulcer: ถอด CL + topical fluoroquinolone intensive",
+      "reason": "Contact lens overnight → hypoxia + contamination → most common organism: Pseudomonas aeruginosa Clinical: acute onset, pain, corneal infiltrate/ulcer, anterior chamber reaction Emergency: ถ้าลาม → perforation Scraping: corneal culture + gram stain ก่อนให้ยา การรักษา: ถอด contact lens ทันที Topical ciprofloxacin/moxifloxacin q1h (intensive) × 2-3 วัน แล้วลด Acanthamoeba: ว่ายน้ำ/น้ำประปา + รุนแรง HSV keratitis: dendritic ulcer, corneal anesthesia",
+      "choices": [
+        {
+          "label": "A",
+          "text": "HSV keratitis",
+          "is_correct": false,
+          "explanation": "Dendritic/geographic ulcer, corneal hypesthesia, recurrent; ไม่สัมพันธ์กับ contact lens"
+        },
+        {
+          "label": "B",
+          "text": "Bacterial ulcer (CL)",
+          "is_correct": true,
+          "explanation": "Overnight CL + central ulcer + pain = bacterial corneal ulcer → culture + topical fluoroquinolone intensive"
+        },
+        {
+          "label": "C",
+          "text": "Fungal keratitis",
+          "is_correct": false,
+          "explanation": "Trauma จากพืช, feathery margins, satellite lesions; ไม่ใช่ CL"
+        },
+        {
+          "label": "D",
+          "text": "Acanthamoeba",
+          "is_correct": false,
+          "explanation": "น้ำปนเปื้อน, ring infiltrate, severe pain disproportionate"
+        },
+        {
+          "label": "E",
+          "text": "Neurotrophic keratopathy",
+          "is_correct": false,
+          "explanation": "Corneal anesthesia, no pain; HSV/zoster history"
+        }
+      ],
+      "key_takeaway": "CL bacterial ulcer: ถอด CL ทันที + topical ciprofloxacin q1h; Pseudomonas = aggressive rapid necrosis; culture ก่อนให้ยา"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 48 ปี ตรวจสุขภาพตา ไม่มีอาการ VA 20/20 ทั้ง 2 ข้าง IOP OD 18, OS 16 mmHg Disc OD: vertical C/D 0.7, small rim inferotemporal OCT RNFL OD: thinning 75 μm inferotemporal (ปกติ >100 μm) Visual field OD: superior arcuate scotoma Gonioscopy: open angle ทั้ง 2 ข้าง",
+    "choices": [
+      "A: Ocular hypertension",
+      "B: Normal tension glaucoma (OD)",
+      "C: Primary open angle glaucoma (OD)",
+      "D: Suspicious optic disc - ติดตาม",
+      "E: Normal finding"
+    ],
+    "correct_answer": "B",
+    "explanation": "Normal tension glaucoma: IOP ปกติ (18 mmHg) + optic disc damage (C/D 0.7 + notching) + RNFL thinning + arcuate VF defect → ลด IOP 30% จาก baseline",
+    "detailed_explanation": {
+      "summary": "NTG: IOP ปกติ + disc damage + RNFL thinning + VF defect → ลด IOP 30%",
+      "reason": "Normal Tension Glaucoma (NTG): IOP ≤21 mmHg แต่มี glaucomatous damage พยาธิกำเนิด: vascular insufficiency ของ optic nerve (เพิ่มเติมจาก IOP) สัมพันธ์กับ: Raynaud's phenomenon, migraine, hypotension nocturnal, sleep apnea DISC: C/D ≥0.6, vertical elongation, notching, pallor OCT RNFL: thinning VF: arcuate scotoma การรักษา: ลด IOP 30% จาก baseline แม้ IOP ปกติ (Collaborative NTG study) Prostaglandin analog, timolol, selective laser trabeculoplasty",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ocular hypertension",
+          "is_correct": false,
+          "explanation": "OHT: IOP สูง ไม่มี disc/VF damage"
+        },
+        {
+          "label": "B",
+          "text": "Normal tension glaucoma",
+          "is_correct": true,
+          "explanation": "IOP 18 (ปกติ) + disc notching + RNFL thin + arcuate VF = NTG → ลด IOP 30%"
+        },
+        {
+          "label": "C",
+          "text": "POAG",
+          "is_correct": false,
+          "explanation": "POAG: IOP > 21 mmHg; IOP ปกติ → NTG"
+        },
+        {
+          "label": "D",
+          "text": "Suspicious disc - ติดตาม",
+          "is_correct": false,
+          "explanation": "มี RNFL thinning + VF defect = damage confirmed ไม่ใช่แค่ suspicious"
+        },
+        {
+          "label": "E",
+          "text": "Normal finding",
+          "is_correct": false,
+          "explanation": "RNFL 75 μm + arcuate VF = abnormal"
+        }
+      ],
+      "key_takeaway": "NTG: ลด IOP 30% จาก baseline (CNTGS); ตรวจหา vascular causes (BP monitoring, sleep study); prostaglandin analog first-line"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 60 ปี มาด้วยตรวจพบ fundus: flame hemorrhages ทุก 4 quadrants disc swelling ทั้ง 2 ข้าง dilated tortuous veins ทั้ง 2 ข้าง VA OD 20/40 OS 20/30 ตรวจ BP: 170/100 mmHg CBC: WBC 15,000, Hct 28%",
+    "choices": [
+      "A: CRVO bilateral",
+      "B: Papilledema bilateral",
+      "C: Leukemic retinopathy",
+      "D: Hypertensive retinopathy grade IV",
+      "E: Central retinal vein occlusion bilateral"
+    ],
+    "correct_answer": "C",
+    "explanation": "Leukemic retinopathy: flame hemorrhages + disc swelling ทั้ง 2 ข้าง + WBC สูง + anemia → ส่ง CBC/bone marrow biopsy + hematology",
+    "detailed_explanation": {
+      "summary": "Leukemic retinopathy: bilateral fundus changes + leukocytosis + anemia → hematologic workup",
+      "reason": "Leukemic retinopathy: เกิดจาก hyperviscosity (WBC สูง), anemia, thrombocytopenia ทำให้ดีขึ้นจะเห็น retinal changes หลายอย่าง: flame hemorrhages ทุก quadrant, Roth spots (hemorrhage + white center), cotton wool spots, disc swelling (hyperviscosity) ต่างจาก CRVO: bilateral + systemic findings WBC 15,000 ในผู้ใหญ่ที่ไม่มีอาการ infection → suspicious leukemia การรักษา: Systemic (chemotherapy) → retinal findings ดีขึ้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CRVO bilateral",
+          "is_correct": false,
+          "explanation": "CRVO bilateral พร้อมกันน้อยมาก; WBC/Hct ผิดปกติไม่สัมพันธ์ CRVO"
+        },
+        {
+          "label": "B",
+          "text": "Papilledema bilateral",
+          "is_correct": false,
+          "explanation": "Papilledema: disc swelling จาก ICP สูง; VA ปกติ ในระยะแรก; ไม่มี hemorrhages ทุก quadrant"
+        },
+        {
+          "label": "C",
+          "text": "Leukemic retinopathy",
+          "is_correct": true,
+          "explanation": "Bilateral fundus + WBC 15k + anemia + ไม่มี infection = leukemia → bone marrow biopsy"
+        },
+        {
+          "label": "D",
+          "text": "HT retinopathy IV",
+          "is_correct": false,
+          "explanation": "BP 170 คงทำได้ แต่ WBC/anemia ชี้ไปที่ leukemia มากกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Bilateral CRVO",
+          "is_correct": false,
+          "explanation": "เหมือน A; ไม่ค่อยเกิดพร้อมกัน; WBC สูงชี้ไปที่ systemic cause"
+        }
+      ],
+      "key_takeaway": "Leukemic retinopathy: bilateral hemorrhage + Roth spots + WBC↑/anemia → CBC/BM biopsy; systemic treatment → fundus ดีขึ้น"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 18 ปี ตรวจสายตาพบ VA ต้องใส่แว่น -5.00 D ทั้ง 2 ข้าง สอบถามเรื่องสายตาสั้น กังวลว่าจะยิ่งสั้นขึ้นเรื่อยๆ อายุเท่านี้ ตรวจ axial length OD 26.0 mm OS 25.8 mm",
+    "choices": [
+      "A: Myopia progression หยุดแล้ว ไม่ต้องทำอะไร",
+      "B: Myopia control: atropine 0.05% + orthokeratology ± multifocal lens",
+      "C: ให้แว่นยูนิโฟกัส ติดตามทุกปี",
+      "D: LASIK ทันที เพื่อหยุด progression",
+      "E: ลดเวลาใช้ computer จะหยุดเอง"
+    ],
+    "correct_answer": "B",
+    "explanation": "Myopia control ในวัยรุ่น: low-dose atropine (0.025-0.05%) + orthokeratology (OK lens) หรือ soft MF contact lens ลด axial elongation ได้ 50-60%",
+    "detailed_explanation": {
+      "summary": "Myopia control: atropine 0.025-0.05% ± orthokeratology ลด axial elongation",
+      "reason": "Myopia progression: active ช่วง 8-18 ปี axial elongation ทำให้ retina stretch → เสี่ยง retinal detachment, myopic maculopathy (> -6D) Myopia control evidence-based: Low-dose atropine 0.025-0.05%: ลด progression 50-77% Orthokeratology (OK lens): ใส่กลางคืน reshape cornea + ลด axial elongation Soft multifocal CL/spectacles (DIMS, DIMS lens) Outdoor activity ≥90 min/วัน ลด incidence myopia LASIK ไม่ได้หยุด progression (แก้ refraction ไม่แก้ axial length)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "หยุดแล้ว ไม่ทำอะไร",
+          "is_correct": false,
+          "explanation": "18 ปียังอาจ progress; axial length 26 mm ยังสั้นกว่า pathological myopia"
+        },
+        {
+          "label": "B",
+          "text": "Myopia control: atropine + orthokeratology",
+          "is_correct": true,
+          "explanation": "วัยรุ่น myopia progression → atropine 0.025-0.05% + OK lens ลด axial elongation 50-60%"
+        },
+        {
+          "label": "C",
+          "text": "แว่นยูนิโฟกัส ติดตาม",
+          "is_correct": false,
+          "explanation": "แว่น single vision ไม่ได้ช่วย myopia control"
+        },
+        {
+          "label": "D",
+          "text": "LASIK ทันที",
+          "is_correct": false,
+          "explanation": "LASIK แก้ refraction ไม่หยุด axial elongation; ยังอายุน้อยเกินไปถ้า progression ยังมี"
+        },
+        {
+          "label": "E",
+          "text": "ลด screen time",
+          "is_correct": false,
+          "explanation": "Outdoor time มีผล แต่ near work สัมพันธ์น้อยกว่า outdoor time"
+        }
+      ],
+      "key_takeaway": "Myopia control: atropine 0.025% low-dose + outdoor ≥90 min + orthokeratology/MF lens; ลด axial elongation = ลด long-term complications"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 75 ปี ตาขวาบวมและเจ็บ proptosis เฉียบพลัน ตรวจ: chemosis, periorbital edema, restricted extraocular movement ทุก direction, เจ็บมาก ไข้ 38.8°C WBC 18,000 ประวัติ sinusitis เรื้อรัง CT orbit/sinus: right orbital abscess subperiosteal",
+    "choices": [
+      "A: Preseptal cellulitis → oral antibiotics",
+      "B: Orbital cellulitis → IV antibiotics ± drainage",
+      "C: Thyroid eye disease",
+      "D: Orbital tumor",
+      "E: Cavernous sinus thrombosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Orbital cellulitis + subperiosteal abscess: proptosis + restricted EOM + ไข้ + sinusitis + CT abscess → IV antibiotics + surgical drainage",
+    "detailed_explanation": {
+      "summary": "Orbital cellulitis: restricted EOM + proptosis + fever + sinusitis → IV antibiotics + drain",
+      "reason": "Orbital cellulitis (post-septal): ลาม infection จาก sinusitis (ethmoid ที่ common) ผ่าน thin orbital wall Clinical: proptosis, restricted + painful EOM, chemosis, periorbital swelling, fever ต่างจาก preseptal cellulitis: EOM ปกติ ไม่มี proptosis CT: orbital/subperiosteal abscess การรักษา: IV antibiotics (piperacillin-tazobactam, ceftriaxone + metronidazole) + surgical drainage ถ้า abscess ≥10 mm, ไม่ตอบสนอง 48 ชม., VA ลด, ICP สูง ภาวะแทรกซ้อน: cavernous sinus thrombosis, meningitis, optic neuropathy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Preseptal cellulitis → oral",
+          "is_correct": false,
+          "explanation": "Preseptal: ไม่มี restricted EOM ไม่มี proptosis; ผู้ป่วยนี้มี → orbital"
+        },
+        {
+          "label": "B",
+          "text": "Orbital cellulitis → IV + drain",
+          "is_correct": true,
+          "explanation": "Restricted EOM + proptosis + fever + subperiosteal abscess (CT) = orbital cellulitis → IV antibiotics + drainage"
+        },
+        {
+          "label": "C",
+          "text": "Thyroid eye disease",
+          "is_correct": false,
+          "explanation": "Bilateral, painless (ส่วนใหญ่), ไม่มีไข้, EOM enlarged ไม่ใช่ abscess"
+        },
+        {
+          "label": "D",
+          "text": "Orbital tumor",
+          "is_correct": false,
+          "explanation": "ค่อยๆ เพิ่ม ไม่เฉียบพลัน ไม่มีไข้"
+        },
+        {
+          "label": "E",
+          "text": "Cavernous sinus thrombosis",
+          "is_correct": false,
+          "explanation": "Bilateral, severe, cranial nerve palsy (CN III, IV, VI, V), septic; ยังไม่ถึง stage นั้น"
+        }
+      ],
+      "key_takeaway": "Orbital cellulitis: IV antibiotics ทันที; CT orbit; drainage ถ้า abscess ≥10 mm หรือไม่ดีขึ้น; ophthalmology + ENT ร่วม"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 3 ปี ตรวจพบ leukocoria (white pupil reflex) ตาขวา โดย pediatrician เมื่อถ่ายรูปด้วย flash ตาดูเป็นขาว ไม่มีประวัติครอบครัว ไม่มี strabismus VA ยากประเมิน",
+    "choices": [
+      "A: Congenital cataract → elective cataract surgery",
+      "B: Retinoblastoma → ส่งด่วน ophthalmologist",
+      "C: Persistent fetal vasculature",
+      "D: Toxocara endophthalmitis",
+      "E: Vitreous hemorrhage"
+    ],
+    "correct_answer": "B",
+    "explanation": "Leukocoria ในเด็ก → Retinoblastoma ต้องแยกก่อน → ส่ง ophthalmologist ด่วน; delay → life-threatening",
+    "detailed_explanation": {
+      "summary": "Leukocoria เด็ก → Retinoblastoma ก่อนจนกว่าจะแยกได้ → ส่ง ophthalmologist ด่วน",
+      "reason": "Leukocoria (white reflex): differential diagnosis Retinoblastoma, Congenital cataract, Persistent fetal vasculature (PFV), Toxocara, ROP, Coat's disease, PHPV, RD Retinoblastoma: most important to exclude ก่อน เพราะ life-threatening Leukocoria ที่ไม่ได้รับการ evaluate → RB แพร่กระจาย → mortality Exam under anesthesia (EUA) + MRI orbit/brain → staging การรักษา RB: intraarterial chemo, systemic chemo, laser, radiotherapy, enucleation ขึ้นกับ stage",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Congenital cataract → elective",
+          "is_correct": false,
+          "explanation": "ต้องแยก RB ก่อน; cataract สามารถรอได้ถ้าไม่ทราบ RB status"
+        },
+        {
+          "label": "B",
+          "text": "Retinoblastoma → ส่งด่วน",
+          "is_correct": true,
+          "explanation": "Leukocoria เด็ก → RB ก่อนจนกว่าจะ prove otherwise → ส่ง ophthalmologist ด่วน"
+        },
+        {
+          "label": "C",
+          "text": "PFV",
+          "is_correct": false,
+          "explanation": "ต้องวินิจฉัยโดย EUA; ไม่ควร assume PFV โดยไม่แยก RB"
+        },
+        {
+          "label": "D",
+          "text": "Toxocara",
+          "is_correct": false,
+          "explanation": "ประวัติสุนัข/แมว; serology; แต่ต้องแยก RB ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Vitreous hemorrhage",
+          "is_correct": false,
+          "explanation": "Trauma history; ต้องแยก RB ก่อน"
+        }
+      ],
+      "key_takeaway": "Leukocoria = Retinoblastoma จนกว่าจะแยกได้ → ส่ง ophthalmologist ด่วน; EUA + MRI; delay ทำให้ prognosis แย่ลง"
+    },
+    "subject": "Ophthalmology",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  }
+]

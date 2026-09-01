@@ -1,0 +1,454 @@
+[
+  {
+    "scenario": "ผู้ตายถูกยิงด้วยปืนที่ใบหน้า 3 นัด ลาคอ 1 นัด ชันสูตรพบ severe brain laceration, fracture base of skull มีกระสุนฝังใน และ rupture trachea จะเขียนใบชันสูตรสาเหตการตายอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Severe brain laceration with gunshot wound, fracture base of skull"
+      },
+      {
+        "label": "B",
+        "text": "ถูกยิง 4 นัด ที่ใบหน้าและลาคอ"
+      },
+      {
+        "label": "C",
+        "text": "Severe brain laceration with gunshot wound, fracture base of skull with tracheal rupture"
+      },
+      {
+        "label": "D",
+        "text": "Gunshot wounds to head and neck with massive head trauma and airway compromise"
+      },
+      {
+        "label": "E",
+        "text": "Multiple gunshot wounds with hemorrhagic shock"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Forensic exam (source not specified)",
+    "status": "complete",
+    "ai_notes": "ใบชันสูตรควรระบุสาเหตุการตายที่สำคัญที่สุด ในกรณีนี้คือ severe brain laceration และต้องรวมการ rupture trachea ที่อาจเป็นสาเหตุการตายด้วย ตัวเลือก C เป็นคำตอบที่สมบูรณ์ที่สุด"
+  },
+  {
+    "scenario": "ข้อใดต่อไปนี้ช่วยยืนยันว่าผู้ป่วยถูกกระทาชาเรา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "พบ sperm ในช่องคลอด"
+      },
+      {
+        "label": "B",
+        "text": "พบ sperm & acid phosphatase"
+      },
+      {
+        "label": "C",
+        "text": "พบบาดแผลฟกช้าตามร่างกาย แผลที่ vagina และพบ sperm"
+      },
+      {
+        "label": "D",
+        "text": "พบ sperm ในช่องปาก"
+      },
+      {
+        "label": "E",
+        "text": "พบ sperm พร้อมกับรอย kiss mark และแผลฉีกขาดใหม่"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Forensic exam (source not specified)",
+    "status": "complete",
+    "ai_notes": "เพื่อยืนยันว่าถูกกระทาชาเรา ต้องมี combination evidence ของ sperm (หลักฐานการมีเพศสัมพันธ์) พร้อมกับ physical injuries (บาดแผลฟกช้า แผลที่ vagina) ที่แสดงการใช้กำลัง ตัวเลือก C รวมหลักฐานทั้งสองประเภทนี้ไว้"
+  },
+  {
+    "scenario": "สามารถทาการขีดเขียนบนกระสุนที่พบเป็นของกลางเพื่อบอกว่าเป็นวัตถุพยานได้หรือไม่",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ได้เลย"
+      },
+      {
+        "label": "B",
+        "text": "ได้ ที่ปลอกกระสุน"
+      },
+      {
+        "label": "C",
+        "text": "ได้ ที่ฐานกระสุน"
+      },
+      {
+        "label": "D",
+        "text": "ได้ที่ปลอกกระสุนและฐานกระสุน"
+      },
+      {
+        "label": "E",
+        "text": "ได้ที่ตัวกระสุนเท่านั้น"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Forensic exam (source not specified)",
+    "status": "complete",
+    "ai_notes": "ปลอกกระสุน (shell casing) เป็นวัตถุที่สามารถขีดเขียน ทำเครื่องหมาย เพื่อระบุเป็นของกลางได้ เพราะว่าไม่ส่งผลต่อการสอบ ballistic ในภายหลัง แต่ตัวกระสุน (bullet) ห้ามขีดเขียนเพราะจะทำให้ได้รับผลการสอบ ballistic ที่ไม่ถูกต้อง"
+  },
+  {
+    "scenario": "ผู้หญิงท้องอายุ 32 ปี GA 20 wk ประสบอุบัติเหตุ ต่อมาพบ vaginal bleeding และแท้ง นอนโรงพยาบาลนาน 7 วัน กลับบ้านพักฟื้น 20 วัน ลงความเห็นว่าอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "บาดเจ็บจนแท้ง"
+      },
+      {
+        "label": "B",
+        "text": "อันตรายสาหัสจนแท้ง"
+      },
+      {
+        "label": "C",
+        "text": "นอนโรงพยาบาลนานมากกว่า 20 วัน"
+      },
+      {
+        "label": "D",
+        "text": "อันตรายต่อชีวิตที่เกี่ยวข้องกับการสูญเสียบุตร"
+      },
+      {
+        "label": "E",
+        "text": "บาดเจ็บที่ก่อให้เกิดอันตรายต่อสุขภาพ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Forensic exam (source not specified)",
+    "status": "complete",
+    "ai_notes": "ตามประมวลกฎหมายอาญา มาตรา 276 'อันตรายสาหัส' นั้น ต้องนอนโรงพยาบาลตั้งแต่ 20 วันขึ้นไป ในกรณีนี้ผู้ป่วยนอน 7 วัน พักฟื้น 20 วัน รวมแล้ว 27 วัน (นอนและพักฟื้นนับรวมกัน) ซึ่งหนึ่งรายละเอียดที่สำคัญคือการแท้งลูกซึ่งถือเป็น injury that causes termination of pregnancy ควรจัดอยู่ในหมวดอันตรายสาหัส"
+  },
+  {
+    "scenario": "โครงกระดูก orbit กลมเป็นชนชาติใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Caucasian"
+      },
+      {
+        "label": "B",
+        "text": "Mongolian"
+      },
+      {
+        "label": "C",
+        "text": "Negroid"
+      },
+      {
+        "label": "D",
+        "text": "Australoid"
+      },
+      {
+        "label": "E",
+        "text": "Americanoid"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Orbit ที่กลม (round orbit) เป็นลักษณะเฉพาะของ Mongolian race ส่วน Caucasian จะมี orbit เป็นรูปไข่ (oval) และ Negroid จะมี orbit สี่เหลี่ยม"
+  },
+  {
+    "scenario": "หญิง 26 ปี มาให้ตรวจร่างกายว่าได้โดนข่มขืนกระทาชาเราหรือไม่ ตรวจร่างกายพบ love bite ที่คอด้านหน้า 3 แผล, Vaginal มีแผลที่ 5 และ 8 นาฬิกา, Sperm ไม่มีหางที่ posterior fornix เล็กน้อย ให้ความเห็นว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "มีหลักฐานว่าน่าจะผ่านการร่วมเพศมา"
+      },
+      {
+        "label": "B",
+        "text": "มีหลักฐานว่าถูกข่มขืนโดยยินยอม"
+      },
+      {
+        "label": "C",
+        "text": "มีหลักฐานว่าถูกข่มขืนโดยไม่ยินยอม"
+      },
+      {
+        "label": "D",
+        "text": "มีหลักฐานว่าถูกข่มขืนมามากกว่า 2 วัน"
+      },
+      {
+        "label": "E",
+        "text": "พบหลักฐานทั้งความยินยอมและความบังคับใจ"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "หลักฐาน: 1) Love bite 3 แผล แสดงการใช้กำลัง 2) Vaginal lacerations ที่ 5 และ 8 นาฬิกา แสดงการใช้กำลังหรือจังหวะรุนแรง 3) Sperm ไม่มีหาง แสดงการมีเพศสัมพันธ์เมื่อ 48-72 ชั่วโมงมาแล้ว combination นี้ชี้ไปยังการข่มขืนโดยไม่ยินยอม"
+  },
+  {
+    "scenario": "คนตายพบเขม่าควัน เนื้อข้างในสีชมพู ตายจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Burst injury"
+      },
+      {
+        "label": "B",
+        "text": "CO intoxicity"
+      },
+      {
+        "label": "C",
+        "text": "ขาดอากาศ (Asphyxia)"
+      },
+      {
+        "label": "D",
+        "text": "Cyanide poisoning"
+      },
+      {
+        "label": "E",
+        "text": "Hypothermia"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "เขม่าควัน (soot) ในช่องปาก + เนื้อข้างในสีชมพู (cherry red discoloration) เป็นลักษณะเฉพาะของการตายจาก CO intoxication สีชมพูเกิดจากการสะสมของ carboxyhemoglobin ในเลือด"
+  },
+  {
+    "scenario": "ผู้ชายตายข้างทาง กระดูกหักสูงจากพื้น 15 cm มีบาดแผลถลอกหลายแผล คนขับรถบอกว่าเบรกไม่ทัน เลยชนผู้ป่วย ไปดูตันชนบุบ 15 cm จากพื้น จะสรุปว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ชนแล้วทับตัวและขา"
+      },
+      {
+        "label": "B",
+        "text": "เบรกไม่ทัน"
+      },
+      {
+        "label": "C",
+        "text": "คนขับพูดจริง เพราะสอดคล้องกับเหตุการณ์"
+      },
+      {
+        "label": "D",
+        "text": "ล้มหรือถูกชนแล้วทับตัวกระแทกพื้น"
+      },
+      {
+        "label": "E",
+        "text": "เบรกทัน แต่ชนด้วยความเร็วสูง"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "ความสูงของการบุบรถ (15 cm) สอดคล้องกับความสูงของบาดแผลกระดูกหัก แบบแบนราบซึ่งแสดงว่ามีการทับตัว (run over) และการบาดแผลถลอกแสดงการลาก ทั้งหมดนี้สอดคล้องกับเรื่องราวของคนขับว่าเบรกไม่ทัน"
+  },
+  {
+    "scenario": "พบศพในที่เดเหตุเพลิงไหม้ ตรวจร่างกายพบ cherry red spot ในอวัยวะภายใน คิดว่าสาเหตุการตายมาจาก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CO poisoning"
+      },
+      {
+        "label": "B",
+        "text": "Carbon powder aspiration"
+      },
+      {
+        "label": "C",
+        "text": "Flame burn"
+      },
+      {
+        "label": "D",
+        "text": "Heat asphyxia"
+      },
+      {
+        "label": "E",
+        "text": "Smoke inhalation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Cherry red spot (หรือ pink discoloration) ในอวัยวะภายในของศพที่เพลิงไหม้เป็นลักษณะเฉพาะของ CO poisoning ไม่ใช่จากเพลิงไหม้โดยตรง ขาดอากาศในการเผาไหม้ จึงเกิด CO เข้าไปในร่างกาย"
+  },
+  {
+    "scenario": "การบาดเจ็บชนิดใดเจอได้เฉพาะคนเดินถนน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Striae tear"
+      },
+      {
+        "label": "B",
+        "text": "Patellar injury"
+      },
+      {
+        "label": "C",
+        "text": "Dicing injury"
+      },
+      {
+        "label": "D",
+        "text": "Bumper injury"
+      },
+      {
+        "label": "E",
+        "text": "Dashboard injury"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Bumper injury เป็นบาดแผลที่เกิดจากการชนกับ bumper ของรถ ซึ่งเจอได้เฉพาะในคนเดินถนนเท่านั้น Dashboard injury เกิดจากการชนใน dashboard ซึ่งเกิดแก่คนในรถ Dicing injury เกิดจากการตัดผ่านกระจก"
+  },
+  {
+    "scenario": "หญิง 26 ปี G2P1 มาด้วยปวดเมื่อยกล้ามเนื้อ ทำงานรับจ้าง มีรอยฟกช้าทั้งรอยเก่าและรอยใหม่ มีรอยที่เบ้าตาขวา หน้าอก ท้อง ขา ถามการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Domestic violence"
+      },
+      {
+        "label": "B",
+        "text": "Fall accident"
+      },
+      {
+        "label": "C",
+        "text": "Hepatic failure"
+      },
+      {
+        "label": "D",
+        "text": "ITP (Immune Thrombocytopenic Purpura)"
+      },
+      {
+        "label": "E",
+        "text": "Coagulopathy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "รอยฟกช้าทั้งรอยเก่าและรอยใหม่ (pattern of repeated injuries) + การกระจายตามร่างกายหลายส่วน (multiple body areas) + ประวัติทำงานรับจ้าง + อาการปวดเมื่อยเป็นลักษณะเฉพาะของ domestic violence การเกิดซ้ำแนวโน้มว่าได้รับการทำร้าย"
+  },
+  {
+    "scenario": "ตามมาตรา 276 ประมวลกฎหมายอาญา ข้อใดที่อาจมีความผิดฐานข่มขืนกระทาชาเรา (Rape)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผู้ชายใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากหญิงอื่น"
+      },
+      {
+        "label": "B",
+        "text": "ผู้ชายใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากชายอื่น"
+      },
+      {
+        "label": "C",
+        "text": "ผู้หญิงใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากชายอื่น"
+      },
+      {
+        "label": "D",
+        "text": "ผู้ชายใช้อวัยวะเพศของตนเองถูไถบริเวณทวารหนักของหญิงอื่น"
+      },
+      {
+        "label": "E",
+        "text": "ผู้หญิงใช้อวัยวะเพศชายเทียมสอดใส่เข้าช่องทวารหนักของหญิงอื่น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "status": "complete",
+    "ai_notes": "มาตรา 276 นิยมว่า 'ข่มขืนกระทาชาเรา' ต้องเป็นผู้ชายกระทำต่อผู้หญิง และต้องใช้อวัยวะเพศของตนเองหรือวัตถุแทนอวัยวะเพศ ตัวเลือก A เป็นเพศหญิง (ผู้ที่ถูกกระทา) ซึ่งเป็นจำเลยที่เหมาะสม"
+  },
+  {
+    "scenario": "หญิงปัญญาอ่อน ญาติพาแจ้งความถูกข่มขืนมา 3 วันก่อน มาโรงพยาบาลตรวจร่างกายพบว่า มีอสุจิในช่องคลอด acid phosphatase positive มี kissing bite มีแผลถลอกใหม่ที่ช่องคลอดและรอยฉีกขาดใหม่ทางด้านหลังของช่องคลอด ถามว่าอะไรที่ทาให้แพทย์ลงความเห็นว่าถูกกระทาชาเรามา 3 วัน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "พบอสุจิในช่องคลอด"
+      },
+      {
+        "label": "B",
+        "text": "Acid phosphatase positive"
+      },
+      {
+        "label": "C",
+        "text": "พบ kissing bite"
+      },
+      {
+        "label": "D",
+        "text": "มีรอยถลอกที่ช่องคลอด"
+      },
+      {
+        "label": "E",
+        "text": "มีรอยฉีกขาดใหม่ที่ทางด้านหลังของช่องคลอด"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2010",
+    "status": "complete",
+    "ai_notes": "สิ่งสำคัญที่แสดงว่าเป็นการข่มขืนโดยไม่ยินยอมคือ 'รอยฉีกขาด' (tear) ที่เกิดใหม่ (fresh) เพราะแสดงการใช้กำลังในการบังคับให้กระทาเพศสัมพันธ์ ส่วนอสุจิ acid phosphatase kissing bite แสดงการมีเพศสัมพันธ์ แต่ไม่ได้บ่งชี้การใช้กำลังโดยเฉพาะ"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงไทยอายุ 15 ปี เคยมีระดูมาแล้ว มีอาการขาดระดูมา 2 สัปดาห์ ประวัติถูกข่มขืนมา 5 ชั่วโมง ตรวจร่างกายพบรอย kiss mark ที่คอ มีรอยฟกช้าที่บริเวณท้องน้อย ตรวจภายในพบรอยฟกช้ารอบอวัยวะเพศและพบมูกสีขาวใสในช่องคลอด ลงความเห็นว่าน่าจะถูกกระทาชาเราภายในเวลา 3 วัน การจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ส่ง acid phosphatase"
+      },
+      {
+        "label": "B",
+        "text": "Urine pregnancy test"
+      },
+      {
+        "label": "C",
+        "text": "ให้ Norfloxacin"
+      },
+      {
+        "label": "D",
+        "text": "ให้ Levonorgestrel (emergency contraception)"
+      },
+      {
+        "label": "E",
+        "text": "แนะนำให้กลับมารักษาหากยังขาดระดูอยู่"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยเป็นสาวอายุ 15 ปี เคยมีระดูมา ขาดระดูมา 2 สัปดาห์ ถูกข่มขืนมา 5 ชั่วโมง ต้องให้ emergency contraception (Levonorgestrel) ภายในเวลา 72 ชั่วโมง เพื่อป้องกันการตั้งท้อง นี่เป็นการจัดการที่สำคัญ acid phosphatase ใช้สำหรับ forensic evidence ไม่ใช่สำหรับการรักษา"
+  },
+  {
+    "scenario": "ศพผู้ชายนอนเสียชีวิตอยู่ข้างบาทวิถี ตรวจพบแผลขอบไม่เรียบที่ท้ายทอย กะโหลกศีรษะด้านหลังแตกยาวประมาณ 5 cm มี brain contusion ด้านหน้ามากกว่าด้านหลัง ถามสาเหตุการเสียชีวิต",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ถูกตีด้วยของแข็งที่ท้ายทอย"
+      },
+      {
+        "label": "B",
+        "text": "ล้มท้ายทอยกระแทกขอบบาทวิถี"
+      },
+      {
+        "label": "C",
+        "text": "ถูกตีด้วยของแข็งที่หน้าผาก"
+      },
+      {
+        "label": "D",
+        "text": "ล้มหน้าผากกระแทกขอบบาทวิถี"
+      },
+      {
+        "label": "E",
+        "text": "ถูกตีที่ท้ายทอยแล้วบินข้ามไปตกหน้าผากกระแทกขอบบาทวิถี"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2010",
+    "status": "complete",
+    "ai_notes": "ความหนาแน่นของ brain contusion (bruising) มากกว่าด้านหน้า (contra-coup injury) หมายความว่าอาการบาดเจ็บด้านหน้าเกิดจากการกระแทกจากจุดอื่น แผลขอบไม่เรียบ (laceration) ที่ท้ายทอยอาจเป็นจุดกระแทกแรก แต่ brain contusion ที่หน้ามากกว่าบ่งชี้ว่ามีการกระแทกชนด้านหน้า หรือการกระแทกที่ท้ายทอยแล้วเกิด contre-coup ที่หน้า การตรวจสอบบ้านและสถานที่เป็นสิ่งสำคัญ"
+  },
+  {
+    "scenario": "ศาลยกฟ้องโจทก์คดี จำเลยโดนยิงด้วยปืนลูกโดด ถามว่าบาดแผลเป็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "กลมมีรอยไหม้"
+      },
+      {
+        "label": "B",
+        "text": "รี-ถลอกมีรอยไหม้"
+      },
+      {
+        "label": "C",
+        "text": "Star shape (รูปดาวหลายแฉก)"
+      },
+      {
+        "label": "D",
+        "text": "กลมไม่มีรอยไห

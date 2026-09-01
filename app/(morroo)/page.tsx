@@ -1,0 +1,250 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import ExamCard from "@/components/ExamCard";
+import PricingCard from "@/components/PricingCard";
+import PricingFaq from "@/components/PricingFaq";
+import AllExamsCountdown from "@/components/AllExamsCountdown";
+import NlExamCountdown from "@/components/NlExamCountdown";
+import HeroAB from "@/components/HeroAB";
+import PricingViewTracker from "@/components/PricingViewTracker";
+import SocialProofSection from "@/components/SocialProofSection";
+import FeatureShowcase from "@/components/FeatureShowcase";
+import CaseGamePromo from "@/components/CaseGamePromo";
+import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
+import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
+import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
+import { getQuestionBankStats } from "@/lib/supabase/queries-mcq";
+import { getLongCaseCount } from "@/lib/supabase/queries-longcase";
+import { getCasegameCount } from "@/lib/supabase/queries-sim";
+import { getNewsItems } from "@/lib/news";
+import { getJiaAedNewsItems } from "@/lib/jiaaed-news";
+import NewsCard from "@/components/NewsCard";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { getHeroForcedVariant } from "@/lib/site-config";
+import { ArrowRight } from "lucide-react";
+
+export const revalidate = 60; // revalidate every 60 seconds
+
+export default async function HomePage() {
+  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero, bankStats, longCaseCount, casegameCount] = await Promise.all([
+    getExams(),
+    getExamPartCounts(),
+    getNewsItems({ limit: 6 }),
+    getJiaAedNewsItems(2),
+    getHeroForcedVariant(createAdminClient()),
+    getQuestionBankStats(),
+    getLongCaseCount(),
+    getCasegameCount(),
+  ]);
+  const homeNewsItems = [...newsItems.slice(0, 4), ...aedNewsItems];
+  const exams = sortExamsAvailableFirst(allExams, partCounts);
+  const latestExams = exams.slice(0, 6);
+
+  // Real MEQ counts from published exams (getExams returns published only).
+  // Each MEQ exam is a Progressive Case made of several "parts" (ตอน).
+  const meqExamCount = allExams.length;
+  const meqPartCount = allExams.reduce((sum, e) => sum + (partCounts[e.id] || 0), 0);
+
+  const examStats = {
+    ...bankStats,
+    meqExamCount,
+    meqPartCount,
+    longCaseCount,
+    casegameCount,
+  };
+
+  return (
+    <>
+      <HeroAB forced={forcedHero} stats={examStats} />
+
+      {/* ช่องใต้ hero = ที่ที่คนเห็นเยอะที่สุดรองจากหัวเรื่อง เดิมเป็นแถบชวนแอด
+          LINE ซึ่งเป็นการ "ขอ" ตั้งแต่ยังไม่ได้โชว์อะไรเลย เปลี่ยนเป็นทางลองของ
+          จริงทันที (2026-07-25 เจ้าของสั่งว่าอยากโชว์ของก่อน ค่อยให้ลงทะเบียน
+          ทีหลัง) แถบ LINE ย้ายลงไปอยู่กับส่วน "ติดตามหมอรู้" ด้านล่างแทน */}
+      <section className="border-b border-brand/20 bg-brand/5">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-4 py-4 text-center sm:flex-row sm:gap-5 sm:text-left">
+          <p className="text-sm font-medium text-foreground sm:text-base">
+            อยากลองก่อนไหม? ทำข้อสอบจริงได้เลย — ไม่ต้องสมัคร ไม่ต้องใส่บัตร
+          </p>
+          <div className="flex shrink-0 flex-wrap items-center justify-center gap-2">
+            <Link href="/nl/practice">
+              <Button className="bg-brand hover:bg-brand-light text-white gap-2">
+                ลองทำข้อสอบฟรี <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="/casegame">
+              <Button variant="outline" className="gap-2">
+                เล่นเกมเคส
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* เกมเคส — new flagship game, promoted prominently right below the fold */}
+      <CaseGamePromo count={casegameCount} />
+
+      {/* Feature Showcase — overview of every tool customers can use, up top */}
+      <FeatureShowcase />
+
+      {/* All Exams Countdown */}
+      <section className="py-8 bg-white border-b">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <NlExamCountdown />
+          <AllExamsCountdown />
+        </div>
+      </section>
+
+      {/* Categories */}
+      <section className="py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold">หมวดหมู่สาขาวิชา</h2>
+            <p className="mt-2 text-muted-foreground">ครอบคลุม 6 สาขาหลักที่ออกสอบ</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {CATEGORIES.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/exams?category=${encodeURIComponent(cat.name)}`}
+                className="group flex flex-col items-center gap-3 rounded-xl border p-6 transition-all hover:shadow-md hover:border-brand/30"
+              >
+                <span className="text-4xl group-hover:scale-110 transition-transform">
+                  {cat.icon}
+                </span>
+                <span className="text-sm font-medium text-center">{cat.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Exams */}
+      <section className="py-16 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl font-bold">ข้อสอบล่าสุด</h2>
+              <p className="mt-1 text-muted-foreground">อัปเดตใหม่ทุกสัปดาห์</p>
+            </div>
+            <Link href="/exams">
+              <Button variant="outline" className="gap-2">
+                ดูทั้งหมด <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {latestExams.length > 0 ? (
+              latestExams.map((exam) => (
+                <ExamCard key={exam.id} exam={exam} partCount={partCounts[exam.id] || 0} />
+              ))
+            ) : (
+              <p className="col-span-full text-center text-muted-foreground py-8">
+                กำลังเตรียมข้อสอบ... กลับมาเร็วๆ นี้
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof — testimonials + stats above pricing decision */}
+      <SocialProofSection stats={examStats} />
+
+      {/* Pricing */}
+      <section className="py-16 bg-muted/30" id="pricing">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold">แพ็กเกจราคา</h2>
+            <p className="mt-2 text-muted-foreground">เลือกแพ็กเกจที่เหมาะกับคุณ</p>
+          </div>
+          <PricingViewTracker surface="home" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+            {PRICING_PLANS.map((plan) => (
+              <PricingCard key={plan.name} {...plan} />
+            ))}
+          </div>
+          <div className="mt-16">
+            <PricingFaq surface="home_pricing" />
+          </div>
+        </div>
+      </section>
+
+      {/* News & Updates */}
+      {homeNewsItems.length > 0 && (
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-3xl font-bold">ข่าวและอัปเดตล่าสุด</h2>
+                <p className="mt-1 text-muted-foreground">ฟีเจอร์ใหม่ บทความ ข่าวสอบ และข่าวกู้ชีพล่าสุด</p>
+              </div>
+              <Link href="/news">
+                <Button variant="outline" className="gap-2">
+                  ดูข่าวทั้งหมด <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+            <div className="space-y-4">
+              {homeNewsItems.map((item) => (
+                <NewsCard key={item.id} item={item} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Social */}
+      <section className="py-12 bg-white border-b">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold">ติดตามหมอรู้</h2>
+          <p className="mt-2 text-muted-foreground">
+            📩 แอด LINE รับข้อสอบฟรีทุกเช้า 7 โมง + เทคนิคเตรียมสอบ · ติดตาม Facebook, Instagram
+            เพื่อรับข่าวสารใหม่ๆ
+          </p>
+          <div className="mt-6 flex justify-center">
+            <LineCtaButton surface="home_social" label="แอด LINE ฟรี" />
+          </div>
+          <SocialButtonsRow className="mt-4" />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-brand-dark text-white">
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold">
+            ลองก่อนได้ ไม่ต้องสมัคร
+          </h2>
+          <p className="mt-4 text-white/70 text-lg">
+            ทำข้อสอบจริง เล่นเกมเคส และลองข้อสอบ MEQ ได้เลยโดยไม่ต้องมีบัญชี —
+            ถูกใจแล้วค่อยสมัครเพื่อเก็บความคืบหน้าและปลดล็อกเฉลยละเอียด
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/nl/practice">
+              <Button
+                size="lg"
+                className="bg-brand hover:bg-brand-light text-white px-8 text-base"
+              >
+                ลองทำข้อสอบฟรี
+              </Button>
+            </Link>
+            <Link href="/exams">
+              <Button
+                size="lg"
+                className="bg-transparent border border-white/30 text-white hover:bg-white/10 px-8 text-base"
+              >
+                ดูข้อสอบ MEQ
+              </Button>
+            </Link>
+          </div>
+          <p className="mt-6 text-sm text-white/60">
+            มีบัญชีแล้ว?{" "}
+            <Link href="/login" className="underline hover:text-white">เข้าสู่ระบบ</Link>
+            {" · "}
+            ยังไม่มี?{" "}
+            <Link href="/register" className="underline hover:text-white">สมัครฟรี</Link>
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}

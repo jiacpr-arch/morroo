@@ -1,0 +1,2439 @@
+{
+  "filename": "ORTHO",
+  "subject": "ortho",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 133,
+    "no_choices": 97,
+    "few_choices": 7,
+    "good": 29,
+    "no_scenario": 0,
+    "short_scenario": 48
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Which is appropriate physical exam in dashboard injury\nMcMurray’s test\nPivot shi",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "MRI",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "X-ray",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "back exercise",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 44,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ญ อายุ 50 มาด้วยอาการ SHOULDER PAIN\nNo history of trauma /after pain subside she",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Exercise range of motion",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Anti inflammatory drug",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Intra articular steroid injection",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Rest and Immobilize",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "....",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 70,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Female 22 yrs Pt. U/D SLE on prolong steroid predenting pelvic pain during walki",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "MRI\n72 ชายโดนรถชน ขาบวม pain on passive motion xray non displac tibia FX คลำ dor",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 65 ปี ปวดเข่า มีเสียง crepitation Dx อะไร",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "OA",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "RA",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "gout",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "pseudogout",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กชาย 10 ปี MCA มีอาการปวดข้อศอกบวมข้างขวา ขยับข้อศอกไม่ได้ PE:swelling at elb",
+      "choices_count": 0
+    },
+    {
+      "index": 20,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Dislocation elbow",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Displaced olecranon Fx",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Displaced supracondylar Fx",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Displaced lateral condylar Fx",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Displaced medial epicondyla Fx",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 5,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชาย 25 ปี มาด้วย Motorcycle accident PE: Leg - internal rotation, adducti",
+      "choices_count": 1
+    },
+    {
+      "index": 26,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายอายุ 59 ปี ปวดคอ ตรวจพบ Biceps อ่อนแรง และ reflex ลด น่าจะมีพยาธิสภาพท",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "C5",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "C6",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "C7",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "C8",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "T1",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 7,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชายอายุ 20 ปี หกล้มขณะเล่นฟุตบอล ไหล่ขวาบวม ทา X-ray พบ fracture neck of humerus",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Deltoid",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Brachialis",
+      "choices_count": 0
+    },
+    {
+      "index": 35,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Biceps",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Triceps",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Coracobrachialis",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 8,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 52 yr ปวดมือขวาตอนกลางคืน ลุกมาสะบัดแล้วดีขึ้น PE: sensory intact, no thena",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Observation",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "NSAIDS",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Epidural steroid injection",
+      "choices_count": 0
+    },
+    {
+      "index": 42,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Long arm cast",
+      "choices_count": 0
+    },
+    {
+      "index": 43,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "A1 pulley release",
+      "choices_count": 0
+    },
+    {
+      "index": 44,
+      "question_number": 9,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Pt หญิง 69 yr อ้วน ,เป็น OA ปวดเข่าข้างขวา มี genu varum แนะนาอย่างไร",
+      "choices_count": 0
+    },
+    {
+      "index": 45,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ออกกาลังแบบ isotonic",
+      "choices_count": 0
+    },
+    {
+      "index": 46,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ใช้ไม่เท้าข้างซ้าย",
+      "choices_count": 0
+    },
+    {
+      "index": 47,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ออกกาลัง isometric เพิ่ม Hamstring strength",
+      "choices_count": 0
+    },
+    {
+      "index": 48,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เสริมรองเท้าด้าน medial",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 15,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Erb’s palsy ถามหาตาแหน่ง Lesion C8 – T1",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 16,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กชาย อุบัติเหตุล้ม งอศอกไม่ได้ มีfilm ให้ดู",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Elbow sprain",
+      "choices_count": 0
+    },
+    {
+      "index": 53,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Elbow dislocation",
+      "choices_count": 0
+    },
+    {
+      "index": 54,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Supracondylar Fx of humerus",
+      "choices_count": 0
+    },
+    {
+      "index": 55,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Lateral Condylar Fx of humerus",
+      "choices_count": 0
+    },
+    {
+      "index": 56,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Lateral epicondylar Fx of humerus",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 17,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "carpal tunnel syndrome ถาม tx :",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "observe ต่อ",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "tendon release",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "NSAIDs",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 23,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "เด็ก แขนหัก triangular landmark ปกติ จงวินิจฉัย",
+      "choices_count": 3
+    },
+    {
+      "index": 72,
+      "question_number": 11,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "แม่บ้านมีอาการปวดแขนขวา ข้อมือขวา อาการเป็นมากขึ้นตอนกลางคืนจนสะดุ้งตื่น มีอาการ",
+      "choices_count": 3
+    },
+    {
+      "index": 79,
+      "question_number": 40,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยมีประวัติ RA ทีhข้อมือและนิPว มา 10 ปี on ยาอยู่คุมอาการได้ดี ต่อมาปวดเข่",
+      "choices_count": 2
+    },
+    {
+      "index": 83,
+      "question_number": 188,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ผู้ชายประสบอุบัติเหตุ ได้ NSAIDs แล้วอาการดีขึPน แม่กังวลพามาพบแพทย์ PE: Loss of",
+      "choices_count": 1
+    },
+    {
+      "index": 85,
+      "question_number": 25,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยมีอาการปวดคอร้าวลงแขน มีกล้ามเนื้อมืออ่อนแรง จึงตัดสินใจทา cervical tract",
+      "choices_count": 0
+    },
+    {
+      "index": 86,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้ยาลดปวด",
+      "choices_count": 0
+    },
+    {
+      "index": 87,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เพิ่มน้าหนัก traction",
+      "choices_count": 0
+    },
+    {
+      "index": 88,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ทา MRI",
+      "choices_count": 0
+    },
+    {
+      "index": 89,
+      "question_number": 32,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 60 ปี ปวดหลังบริเวณแอวขวา แถว TL junction มีกล้ามเนื้อแข็งเกร็ง ตรวจร่างกายพ",
+      "choices_count": 0
+    },
+    {
+      "index": 90,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CBC",
+      "choices_count": 0
+    },
+    {
+      "index": 91,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ESR",
+      "choices_count": 0
+    },
+    {
+      "index": 92,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CPK",
+      "choices_count": 0
+    },
+    {
+      "index": 93,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Plain film TL spine",
+      "choices_count": 0
+    },
+    {
+      "index": 94,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CT",
+      "choices_count": 0
+    },
+    {
+      "index": 95,
+      "question_number": 44,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 70 ปี ลื่นล้มในห้องน้าเมื่อ 1 wks ก่อนเจ็บที่ขาหนีบขวา เจ็บมาก เดินไม่ได้ P",
+      "choices_count": 0
+    },
+    {
+      "index": 96,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Ischial bursitis",
+      "choices_count": 0
+    },
+    {
+      "index": 97,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Trochhanteric bursitis",
+      "choices_count": 0
+    },
+    {
+      "index": 98,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "OA",
+      "choices_count": 0
+    },
+    {
+      "index": 99,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "AVN",
+      "choices_count": 0
+    },
+    {
+      "index": 100,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Fx neck of femur",
+      "choices_count": 0
+    },
+    {
+      "index": 101,
+      "question_number": 100,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิง collapse L-S spineจึงไปผ่าตัด จากนั้น 12 hrมีอาการเหนื่อยหอบ spO2 88",
+      "choices_count": 0
+    },
+    {
+      "index": 102,
+      "question_number": 148,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็ก5ปี fx humerus ทาskin traction 2วันต่อมามีปวดแขนด้านล่างมากขึ้น ปวดมากตอนกาง",
+      "choices_count": 0
+    },
+    {
+      "index": 103,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เพิ่มน้าหนักtraction",
+      "choices_count": 0
+    },
+    {
+      "index": 104,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้ยาแก้ปวด+observe",
+      "choices_count": 0
+    },
+    {
+      "index": 105,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Fasiotomy",
+      "choices_count": 0
+    },
+    {
+      "index": 106,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "close reduction",
+      "choices_count": 0
+    },
+    {
+      "index": 107,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ORIF",
+      "choices_count": 0
+    },
+    {
+      "index": 111,
+      "question_number": 57,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ชายยกของหนัก ได้ยินเสียง pop sound ที่มือขวา ขยับแขนข้างขวาแล้วปวด มี pop eye",
+      "choices_count": 0
+    },
+    {
+      "index": 112,
+      "question_number": 80,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A 55-yr-old house wife has had right shoulder pain for 6 months. The pain is wor",
+      "choices_count": 0
+    },
+    {
+      "index": 113,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "frozen shoulder",
+      "choices_count": 0
+    },
+    {
+      "index": 114,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "rotator cuff arthritis",
+      "choices_count": 0
+    },
+    {
+      "index": 115,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "acromioclavicular arthritis",
+      "choices_count": 0
+    },
+    {
+      "index": 116,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "TB ที่ glenohumeral joint",
+      "choices_count": 0
+    },
+    {
+      "index": 117,
+      "question_number": 96,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ชายอายุ 75 ปี อาชีพก่สร้าง ขณะยกของหนัก เกิดเสียง pop sound and pain at right ar",
+      "choices_count": 1
+    },
+    {
+      "index": 118,
+      "question_number": 100,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Burst fracture of TL spine. What is incorrect?",
+      "choices_count": 0
+    },
+    {
+      "index": 119,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Late kyphosis is rarely occurred",
+      "choices_count": 0
+    },
+    {
+      "index": 120,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เป็น stable fracture",
+      "choices_count": 0
+    },
+    {
+      "index": 121,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "May be involve cauda equina",
+      "choices_count": 0
+    },
+    {
+      "index": 122,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Posterior ligamentous complex intact",
+      "choices_count": 0
+    },
+    {
+      "index": 124,
+      "question_number": 117,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Female 55 yr present with right shoulder pain 6 mo. Pain aggravated when hook he",
+      "choices_count": 0
+    },
+    {
+      "index": 125,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Frozen shoulder",
+      "choices_count": 0
+    },
+    {
+      "index": 126,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "milwau’s syndrome",
+      "choices_count": 0
+    },
+    {
+      "index": 127,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Rotator cuff tendenitis",
+      "choices_count": 0
+    },
+    {
+      "index": 128,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Acromioclavicularjoint arthritis",
+      "choices_count": 0
+    },
+    {
+      "index": 129,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "TB septic arthritis of glenohemoral joint",
+      "choices_count": 0
+    },
+    {
+      "index": 130,
+      "question_number": 120,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "A 55-year-old male patient presented with numbness and weakness. Physical examin",
+      "choices_count": 3
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "Which is appropriate physical exam in dashboard injury\nMcMurray’s test\nPivot shift test\nPatellar gliding test\nAnterior drawer test\nLook for tibial sagging\nA 75-year-old patient with chronic neck pain for 3 years. Pain radiates from neck to right index and middle finger. PE: decrease pinprick at 1,2nd fingers, decrease forearm and wrist extension power. Triceps areflexia, other WNL. What is the diagnosis\nUlnar nerve neuropathy\nRadial nerve neuropathy\nC7 radiculopathy\nMedian nerve neuropathy\nBrachial plexopathy\nAn 18-year-old man had motorcycle accident. PE: PR 80, BP 120/80, internal rotate of hip, flexion, neovascular intact. What is the diagnosis\nFracture neck of femur\nIntertrochanteric fracture\nAcetabular fracture\nAnterior hip dislocation\nPosterior hip dislocation\nA 30-year-old man has motorcycle accident 2 cm laceration and contaminated wound with muscle exposed left leg. X-ray left leg: segmental bilateral and fibular fracture. What is the most proper management\nIV cloxacillin\nExplore wound\nSaline irrigation with antibiotics\nPlate and screw fixation\nDelayed primary closure\nหญิง 65 ปี ปวดเท้าโดยเฉพาะตอน Push-off phase walking จึงไป film เท้าดู พบว่า มี first metatasophalangeal deformity ดังรูป\nbunionectomy only\nbunionectomy with soft tissue (chevron procedure)\narthrotomy first tarsometatarsal (มั้ง)\narthrotomy first metatarsophalangeal joint\nนักบัลเล่ต์หญิงอายุ 20 ปี ปวดหลังเท้าขวามา 7 เดือนหลังจากการแสดงท่า en-pointe, conservative treatment with medication and limit activity for 3 months but not improve. What is the next management\nOs trigonum excision\nAchilles tendon reconstruction\nDebridement and removal of calcification of Achilles tendon\nA 18-month-old boy diagnosis supracondylar fracture. After close reduction and casting 8 hours, he cried and pain at the casting arm. What is the appropriate management\nElevate limb\nSplitting cast and padding\nFasciotomy\nA 70-year-old woman has back and knee pain, joint stiffness and pain most occurring in the morning, better in 15 minutes and aggravated again in the evening. PE: swelling and mild tenderness at 2 to 5 distal interphalangeal joint, full range of motion, no pain, crepitation on right knee movement. What is the diagnosis\nOsteoarthritis\nPsoriasis arthritis\nRheumatoid arthritis\nAnkylosing spondylytis\nOsteoporosis\nA patient numbness index finger, decrease function of thumb. What is the diagnosis\nCarpal tunnel syndrome\nA patient pain wrist radial side. She has just delivery her child. What is the diagnosis(ไม่ได้ให้ sign อะไรมาเลย)\nWrist joint arthritis\nMedian nerve entrapment\nDeQuervain tenosynovitis\nWhich are the risk factors of developing osteoporosis\nAsian, overexercise, obesity\nEuropean, overexercise, obesity\nAfrican, under exercise, obesity\nAfrican, overexercise, underweight\nEuropean, under exercise, underweight\nA 2-year-old girl has delay primary walking ตอนคลอดมี skin defect at lower back และทำการผ่าออกแล้ว ตอน 11 เดือนยังนั่ง,คลานไม่ได้ Physical exam hip abduct and flexion contracture both side, clubbing foot both sides. What is the proper investigation\nMRI\nLS myelography\nLS spine film\nHip film\nFoot film\nผู้ป่วยมาด้วย comminuted fracture of right tibia and fibula ตรวจร่างกายพบขาขวาซีด และคลำไม่ได้ dorsalis pedis pulse. What is the management\nvenous angiography\nexplore anterior tibial artery\nexplore posterior tibial artery\nlongitudinal traction\nA 15-year-old boy อุบัติเหตุ laceration 15 cm, soil contamination, can’t palpate distal pulse, cold extremities. X-ray comminute fracture right distal femur. What is the score and antibiotics\nIIIAcephalosporin\nIIIBcephalosporin, aminoglycoside\nIIIAcephalosporin, aminoglycoside\nIIICcephalosporin, aminoglycoside, penicillin\nIIIBcephalosporin, aminoglycoside, penicillin\nA patient numbness at lateral malleolus. What should exam to determine the nerve root\nKnee jerk\nAnkle jerk\nAnkle dorsiflexion\nGreat toe dorsiflexion\nเด็กหกล้มเอามือหิ้วแขนมาตรวจข้อศอกได้ lateral stepping dislocate>2mm. What is the diagnosis and management\nsupracondylar, close reduction\nlateral epicondylar, close reduction\nlateral epicondylar, open reduction with pin nail\nlateral epicondylar, open reduction with plate and screw\nsupracondylar, open reduction with plate and screw\nให้รูปนิ้ว ถามว่าเป็นอะไร\nSwan neck deformity\nBoutonniere deformity\nCarpal tunnel syndrome\nRadial tunnel syndrome\nCubital tunnel syndrome\nFilm หัว humerus หลุด Which is the least traumatic procedure\nMilch\nStimson\nHippocrate\nKocher\nFracture distal 1/3 humerus test อะไร\nFinger flexion\nFinger extension\nThumb extension\n54 Low back pain radiate pain to buttock thigh foot ทา SLRT +ve pain Mx?",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 1,
+      "scenario": "MRI",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "X-ray",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "back exercise",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 44,
+      "scenario": "ญ อายุ 50 มาด้วยอาการ SHOULDER PAIN\nNo history of trauma /after pain subside she complaint that her shoulder is stiffness she can't move her hand over the head. What is proper management?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Exercise range of motion",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Anti inflammatory drug",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Intra articular steroid injection",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Rest and Immobilize",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "....",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 70,
+      "scenario": "Female 22 yrs Pt. U/D SLE on prolong steroid predenting pelvic pain during walking Ix? 1. Film pelvic AP",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "MRI\n72 ชายโดนรถชน ขาบวม pain on passive motion xray non displac tibia FX คลำ dorsalis pedis ได้ ทำไรต่อ\n1 dopler u/s\n2 moniter compartment oressure\n3 cast\n4 emer ORIF\n5 angiogram\n132 ญ50ปี cc: plantar heal pain 5 mo PTA . pain after couple walk in the morning. pain aggravated by longstand walking and standing. PE: tenderness at medial calcaneal tubercle\n1 plantar fasciitis\n2 achelles tendinitis\n3 tarsal tunnel syndrome",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยชายอายุ 22 ปี อุบัติเหตุ มีอาการปวดข้อสะโพกขวา ตรวจพบ flexion, abduction, internal rotation ถาม diagnosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fx pelvic"
+        },
+        {
+          "label": "B",
+          "text": "Fx acetabulum"
+        },
+        {
+          "label": "C",
+          "text": "Fx neck of femur"
+        },
+        {
+          "label": "D",
+          "text": "Intertrochanteric Fx"
+        },
+        {
+          "label": "E",
+          "text": "Posterior hip dislocation"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยเด็กชายอายุ 10 ปี ประสบอุบัติเหตุรถจักรยานยนต์ มีอาการปวดข้อศอก บวมข้างขวา ขยับข้อศอกไม่ได้ PE: swelling at Rt elbow, triangle landmark at Rt elbow จงให้การวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dislocation elbow"
+        },
+        {
+          "label": "B",
+          "text": "Displaced olecranon fracture"
+        },
+        {
+          "label": "C",
+          "text": "Displaced supracondylar fracture"
+        },
+        {
+          "label": "D",
+          "text": "Displaced lateral condylar fracture"
+        },
+        {
+          "label": "E",
+          "text": "Displaced medial condylar fracture"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "หญิง 65 ปี ปวดเข่า มีเสียง crepitation Dx อะไร",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "OA",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "RA",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "gout",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "pseudogout",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "เด็กชาย 10 ปี MCA มีอาการปวดข้อศอกบวมข้างขวา ขยับข้อศอกไม่ได้ PE:swelling at elbow, triangle landmark at Rt. Elbow, Dx?",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Dislocation elbow",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Displaced olecranon Fx",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Displaced supracondylar Fx",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Displaced lateral condylar Fx",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Displaced medial epicondyla Fx",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ป่วยชาย 25 ปี มาด้วย Motorcycle accident PE: Leg - internal rotation, adduction, hip flexion จง Dx.",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Posterior hip dislocation"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยชายอายุ 59 ปี ปวดคอ ตรวจพบ Biceps อ่อนแรง และ reflex ลด น่าจะมีพยาธิสภาพที่รากประสาทใด",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "C5",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "C6",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "C7",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "C8",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 5,
+      "scenario": "T1",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ชายอายุ 20 ปี หกล้มขณะเล่นฟุตบอล ไหล่ขวาบวม ทา X-ray พบ fracture neck of humerus กล้ามเนื้อใดที่อาจเกิดอาการอ่อนแรงได้",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Deltoid",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Brachialis",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Biceps",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Triceps",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Coracobrachialis",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 8,
+      "scenario": "หญิง 52 yr ปวดมือขวาตอนกลางคืน ลุกมาสะบัดแล้วดีขึ้น PE: sensory intact, no thenar atrophy, Phalen test +ve Tx อะไร",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Observation",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "NSAIDS",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Epidural steroid injection",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Long arm cast",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 5,
+      "scenario": "A1 pulley release",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 9,
+      "scenario": "Pt หญิง 69 yr อ้วน ,เป็น OA ปวดเข่าข้างขวา มี genu varum แนะนาอย่างไร",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ออกกาลังแบบ isotonic",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ใช้ไม่เท้าข้างซ้าย",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ออกกาลัง isometric เพิ่ม Hamstring strength",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "เสริมรองเท้าด้าน medial",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ผู้ป่วยชายอายุ 25 ปี ตรวจร่างกายพบว่ามี Fracture neck of humerus ถามว่าจะมีผลต่อกล้ามเนื้อมัดใดมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Brachioradialis m."
+        },
+        {
+          "label": "B",
+          "text": "Deltoid m."
+        },
+        {
+          "label": "C",
+          "text": "Brachial m."
+        },
+        {
+          "label": "D",
+          "text": "Coracobrachialis m."
+        },
+        {
+          "label": "E",
+          "text": "Biceps m."
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 15,
+      "scenario": "Erb’s palsy ถามหาตาแหน่ง Lesion C8 – T1",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 16,
+      "scenario": "เด็กชาย อุบัติเหตุล้ม งอศอกไม่ได้ มีfilm ให้ดู",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Elbow sprain",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Elbow dislocation",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Supracondylar Fx of humerus",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Lateral Condylar Fx of humerus",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Lateral epicondylar Fx of humerus",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 17,
+      "scenario": "carpal tunnel syndrome ถาม tx :",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "observe ต่อ",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "tendon release",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "NSAIDs",
+      "choices": [],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 23,
+      "scenario": "เด็ก แขนหัก triangular landmark ปกติ จงวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "supracondylar fracture"
+        },
+        {
+          "label": "B",
+          "text": "lateral condylar fracture"
+        },
+        {
+          "label": "C",
+          "text": "olecranon fracture"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยชายอายุ 25 ปี ขับรถจักรยานยนต์มา 1 ชั่วโมง ตรวจร่างกายพบ 10 cm. laceration wound at right leg with tibial fracment exposure ทาการล้างแผลและ debridement หลังจากนั้นจะทาการรักษาอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "casting"
+        },
+        {
+          "label": "B",
+          "text": "external fixation"
+        },
+        {
+          "label": "C",
+          "text": "internal fixation"
+        },
+        {
+          "label": "D",
+          "text": "suture wound"
+        },
+        {
+          "label": "E",
+          "text": "skeletal traction"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ชายอาชีพช่างไม้ complain เรื่องปวดศอกขวา ตรวจร่างกาย tender at Rt. lateral epicondyle of humerus ควรทา test ใดเพื่อการวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Tinel test at forarm"
+        },
+        {
+          "label": "B",
+          "text": "Phalan test"
+        },
+        {
+          "label": "C",
+          "text": "resist wrist extensor test"
+        },
+        {
+          "label": "D",
+          "text": "resist pronation"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยหญิงอายุ 50 ปี ตกจากที่สูง มีแขนผิดรูป มีอาการปวดแขน บวมกระดกข้อมือไม่ได้\nPE: deformity of arms with crepitus , dorsiflex grade: 0 , finger extension grade : 0 ,\ndecrease sensation at dorsum at 1st web space of hand ,\nFilm : oblique middle 1/3 fracture of right Humerus\nจง management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ใส่เฝือกแขนท่อนบนและท่อนล่าง"
+        },
+        {
+          "label": "B",
+          "text": "ทา EMG และใส่เฝือกแขนท่อนบนและ ท่อนล่าง"
+        },
+        {
+          "label": "C",
+          "text": "ผ่าตัดดามกระดูกและต่อเส้นประสาท"
+        },
+        {
+          "label": "D",
+          "text": "ผ่าตัดดามกระดูกและใส่เฝือกท่อนบน และท่อนล่าง"
+        },
+        {
+          "label": "E",
+          "text": "ผ่าตัดต่อเส้นประสาทและใส่เฝือกแขนท่อนบน"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ชายปวดข้อศอกขวาด้าน lateral epicondyle of humerus จะตรวจร่างกายอะไรเพื่อยืนยันการDx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yegason’s test"
+        },
+        {
+          "label": "B",
+          "text": "Valgus testของข้อศอกขวา"
+        },
+        {
+          "label": "C",
+          "text": "Tinel testของทั้งแขนขวา"
+        },
+        {
+          "label": "D",
+          "text": "ทา hyperextension of Rt.wrist"
+        },
+        {
+          "label": "E",
+          "text": "ตรวจ sensory ที่ first web space"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ชาย เล่นฟุตบอล ล้ม เจ็บหัวไหล่ พบ neck of humerus fx กล้ามเนื้อใดจะเสีย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Triceps"
+        },
+        {
+          "label": "B",
+          "text": "Biceps"
+        },
+        {
+          "label": "C",
+          "text": "Deltoid"
+        },
+        {
+          "label": "D",
+          "text": "Coracobrachialis"
+        },
+        {
+          "label": "E",
+          "text": "Brachilis"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ชาย อายุ 63ปี มีอาการปวดสะโพกร้าวลงขา ปวดมากขึ้นเมื่อเดินได้ระยะ 300 m. ต้องพักประมาณ 5 นาที อาการดีขึ้นจึงเดินต่อได้มา 6 เดือน 1 เดือนต่ออาการเป็นมากขึ้น เดินได้ 100 m. PE : Loss lumbar lordotic มี tender at lumbar จากการ Dx คิดถึงโรคใดมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spinal instability"
+        },
+        {
+          "label": "B",
+          "text": "Spinal stenosis"
+        },
+        {
+          "label": "C",
+          "text": "Spondylosis"
+        },
+        {
+          "label": "D",
+          "text": "Chronic arterial occlusion"
+        },
+        {
+          "label": "E",
+          "text": "Protuse nucleus proposus"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ชายอายุ 17 ปี ให้ประวัติว่า 1 สัปดาห์ได้รับอุบัติเหตุที่เข่าขวาจากการเล่นฟุตบอล 4 วันก่อนมารพ. มีไข้และเข่าบวม เมื่อวานปวดเข่ามากจนเดินกระเผลก จะส่ง investigation อะไรที่เหมาะสมที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASO titer"
+        },
+        {
+          "label": "B",
+          "text": "hemoculture"
+        },
+        {
+          "label": "C",
+          "text": "X-rays"
+        },
+        {
+          "label": "D",
+          "text": "arthrocentesis"
+        },
+        {
+          "label": "E",
+          "text": "uric acid analysis"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 8,
+      "scenario": "หญิงอายุ 80 ปี หกล้มในห้องน้า film พบ intertrochanteric fracture จะทาอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "surgery"
+        },
+        {
+          "label": "B",
+          "text": "long leg cast"
+        },
+        {
+          "label": "C",
+          "text": "ให้นั่งรถเข็น"
+        },
+        {
+          "label": "D",
+          "text": "traction"
+        },
+        {
+          "label": "E",
+          "text": "ประเมินสภาพผู้ป่วยก่อนเลือกวิธีการรักษา"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ผู้ป่วยชาย ปวดแขนและข้อมือขวา ตรวจร่างกาย มี weak abductor pollics brevis มีอาการชาที่ 3 นิ้วครึ่งด้าน radial side ทา Tinel test negative at wrist ควรทา test อะไรต่อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "resist wrist extension test"
+        },
+        {
+          "label": "B",
+          "text": "resist wrist flexion test"
+        },
+        {
+          "label": "C",
+          "text": "resist pronation test"
+        },
+        {
+          "label": "D",
+          "text": "resist supination test"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 10,
+      "scenario": "What is the most common of low back pain?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "spondylosis"
+        },
+        {
+          "label": "B",
+          "text": "spondylolysis"
+        },
+        {
+          "label": "C",
+          "text": "loss of lumbar lordosis"
+        },
+        {
+          "label": "D",
+          "text": "spinal instability"
+        },
+        {
+          "label": "E",
+          "text": "weak back muscle"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 11,
+      "scenario": "แม่บ้านมีอาการปวดแขนขวา ข้อมือขวา อาการเป็นมากขึ้นตอนกลางคืนจนสะดุ้งตื่น มีอาการชา ที่นิ้วโป้ง นิ้วชี้ นิ้วกลาง การรักษาที่เหมาะสมคืออะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "cervical traction"
+        },
+        {
+          "label": "B",
+          "text": "steroid injection"
+        },
+        {
+          "label": "C",
+          "text": "warm pack"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้หญิง 63 ปี ปวดหลังร้าวลงขา 2 ข้างมา 6 เดือน เดินได้ประมาณ 300 เมตรจะเริ่มมีอาการ ต้องนั่ง ยองๆพัก อาการจะดีขึ้น อาการแย่ลงเรื่อยๆ เดิน ได้เหลือ 100 เมตรก็ต้องหยุดพัก ตรวจร่างกาย : loss of lumbar lordosis, otherwise normal จง ให้การวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "lumbar spine instability"
+        },
+        {
+          "label": "B",
+          "text": "lumbar stenosis"
+        },
+        {
+          "label": "C",
+          "text": "spondylolisthesis"
+        },
+        {
+          "label": "D",
+          "text": "arterial insufficiency"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 13,
+      "scenario": "ผู้ป่วยชาย ถูกรถชนที่หน้าแข้ง ตรวจร่างกายมี แผลขนาด 1cm คลา dorsalis pedis และposterior tibial pulse ไม่ได้ Doppler study ไม่ พบ flow X-ray พบ comminuted fracture and posterior displacement of tibia ถามว่าเป็น open fracture classใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "class I"
+        },
+        {
+          "label": "B",
+          "text": "class II"
+        },
+        {
+          "label": "C",
+          "text": "class IIIa"
+        },
+        {
+          "label": "D",
+          "text": "class IIIb"
+        },
+        {
+          "label": "E",
+          "text": "class IIIc"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 116,
+      "scenario": "ผู้ป่ วยหญิงอายุ 55 ปี ได้รับอุบัติเหตุที่สะโพกหลังการรักษาด้วยวิธีดึงข้อ อาการปกติดี ต่อมามีอาการปวดทีMสะโพกและเดินลาบาก ข้อใดจะช่วยในการวินิจฉัยและวางแผนการรักษามากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Arthocentesis"
+        },
+        {
+          "label": "B",
+          "text": "Film boht hip"
+        },
+        {
+          "label": "C",
+          "text": "CT"
+        },
+        {
+          "label": "D",
+          "text": "MRI"
+        },
+        {
+          "label": "E",
+          "text": "Bone scan"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 36,
+      "scenario": "ครูพละวัย 28 ปี มีอาการท้องเสียพร้อมนักเรียนหลังงานเลี้ยงปีใหม่ทีjโรงเรียน 3 อาทิตย์ต่อมามีอาการปวดเมืjอยตามตัว โดยเฉพาะทีhเข่าซ้าย คอ และหลัง ตรวจร่างกายพบ เข่าซ้ายบวมแดงเจ็บเมืjอขยับ คอและหลังขยับได้น้อย ก้มตึง dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Salmonellosis"
+        },
+        {
+          "label": "B",
+          "text": "Septic arthritis"
+        },
+        {
+          "label": "C",
+          "text": "Crystal induced arthritis"
+        },
+        {
+          "label": "D",
+          "text": "Reactive arthritis"
+        },
+        {
+          "label": "E",
+          "text": "Rheumatoid arthritis"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 38,
+      "scenario": "ผู้ป่ วยหญิงปวดข้อ 2-3 วัน Joint aspirate : Cloudy, WBC30,000 cells มี Rhomboid shape crystal ให้ยาอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allopurinal"
+        },
+        {
+          "label": "B",
+          "text": "Colchicine"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriazone"
+        },
+        {
+          "label": "D",
+          "text": "Diclofenac"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 39,
+      "scenario": "ผู้ป่ วยหญิง 40 ปี มีอาการปวดข้อเท้า มักเป็นตอนเช้า ต้องรอจนฟ้าสางแดดส่องจึงหาย PE symmetrical DIP joint…. Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "SLE"
+        },
+        {
+          "label": "B",
+          "text": "Rheumatoid"
+        },
+        {
+          "label": "C",
+          "text": "OA"
+        },
+        {
+          "label": "D",
+          "text": "Tuberculosis"
+        },
+        {
+          "label": "E",
+          "text": "Reactive asthritis"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 40,
+      "scenario": "ผู้ป่วยมีประวัติ RA ทีhข้อมือและนิPว มา 10 ปี on ยาอยู่คุมอาการได้ดี ต่อมาปวดเข่าซ้ายมาก ขยับแล้วปวด มีบวม แดง ร้อน PE : Lt. knee tender on motion, swelling, redness, no fever v/s อืhนปกติ ปวดบวมทีh DIP, rt wrist; Lt Wrist swelling; not tender, no inflammation ที่ข้อนิ้ว Ix?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Joint aspiration"
+        },
+        {
+          "label": "B",
+          "text": "X-ray"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 41,
+      "scenario": "ผู้ป่ วยหญิงอายุ 24 ปี on prednisolone 20 mg OD เพืhอรักษาอาการปวดข้อนาน 1 ปี จะพบความผิดปกติใด ในผู้ป่ วยรายนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "hypertension"
+        },
+        {
+          "label": "B",
+          "text": "Hypothyroid"
+        },
+        {
+          "label": "C",
+          "text": "increased bone mass"
+        },
+        {
+          "label": "D",
+          "text": "diabetes inspidus"
+        },
+        {
+          "label": "E",
+          "text": "adipose tissue wasting"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 186,
+      "scenario": "ผู้ป่ วยชายอายุ 65 ปี U/D OA ต่อมามีอาการกดเจ็บบริเวณเข่าซ้ายมีปุ่มขPืึนมาบริเวณด้านหลังข้อพับ มีอาการตึงเข่าหลังตืhนนอน ตรวจร่างกายพบ mild swelling no redness no tender at medial aspect below patella 2 cm dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "RA"
+        },
+        {
+          "label": "B",
+          "text": "Arsenic bursitis"
+        },
+        {
+          "label": "C",
+          "text": "Prepatellar bursitis"
+        },
+        {
+          "label": "D",
+          "text": "Patella tendinitis"
+        },
+        {
+          "label": "E",
+          "text": "Flare of OA"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 187,
+      "scenario": "ผู้ป่ วยหญิงปวดแขนและไหล่ขวา 3 วัน เป็นมากเวลายกมือหวีผม ตรวจร่างกายพบจุดกดเจ็บทีh Tip of rt shoulder เจ็บมากขPืึนเวลา abduction Dx อะไร?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supraspinatus tendinitis"
+        },
+        {
+          "label": "B",
+          "text": "Bicipital tendinitis"
+        },
+        {
+          "label": "C",
+          "text": "Infraspinatus tendinitis"
+        },
+        {
+          "label": "D",
+          "text": "Subscapularis tendonitis"
+        },
+        {
+          "label": "E",
+          "text": "Subcacromial bursitis"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 188,
+      "scenario": "ผู้ชายประสบอุบัติเหตุ ได้ NSAIDs แล้วอาการดีขึPน แม่กังวลพามาพบแพทย์ PE: Loss of lumbar lordosis management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ NSAIDs ต่อ b. ให้ NSAIDs เฉพาะตอนปวด c. Rehab exercise ทีhบ้าน"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 189,
+      "scenario": "ผู้ป่ วยหญิงไทย 50 ปี ล้มศอกยันพื้น PE: ข้อมือขวาบวมผิดรูป จงให้การวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colles’ fracture"
+        },
+        {
+          "label": "B",
+          "text": "Greenstick fracture"
+        },
+        {
+          "label": "C",
+          "text": "Fracture both bone"
+        },
+        {
+          "label": "D",
+          "text": "Wrist dislocation"
+        },
+        {
+          "label": "E",
+          "text": "Supracondylar Fracture"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 25,
+      "scenario": "ผู้ป่วยมีอาการปวดคอร้าวลงแขน มีกล้ามเนื้อมืออ่อนแรง จึงตัดสินใจทา cervical traction 30 นาที/วัน ต่อมาอาการไม่ดีขึ้น จะทาอย่างไร (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ให้ยาลดปวด",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "เพิ่มน้าหนัก traction",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ทา MRI",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 32,
+      "scenario": "ชาย 60 ปี ปวดหลังบริเวณแอวขวา แถว TL junction มีกล้ามเนื้อแข็งเกร็ง ตรวจร่างกายพบ muscle strain ที่เอวขวา จะส่ง ตรวจอะไรเพิ่มเติม (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "CBC",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ESR",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "CPK",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Plain film TL spine",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "CT",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 44,
+      "scenario": "หญิง 70 ปี ลื่นล้มในห้องน้าเมื่อ 1 wks ก่อนเจ็บที่ขาหนีบขวา เจ็บมาก เดินไม่ได้ PE : External rotation and shortening ของขาขวา ให้ Dx (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Ischial bursitis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Trochhanteric bursitis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "OA",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "AVN",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Fx neck of femur",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 100,
+      "scenario": "ผู้ป่วยหญิง collapse L-S spineจึงไปผ่าตัด จากนั้น 12 hrมีอาการเหนื่อยหอบ spO2 88% cxr: clear , ECG: sinus tachycardia จง Dx (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 148,
+      "scenario": "เด็ก5ปี fx humerus ทาskin traction 2วันต่อมามีปวดแขนด้านล่างมากขึ้น ปวดมากตอนกางนิ้วและกระดกขึ้น ถามmanagement (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "เพิ่มน้าหนักtraction",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ให้ยาแก้ปวด+observe",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Fasiotomy",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "close reduction",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ORIF",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 15,
+      "scenario": "After the motorcycle accident, a young male, aged 35 years, patient presented with right groin pain. His film reveals 1 mm dislocation above right acetabulum. What is the proper management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Walk with crutch"
+        },
+        {
+          "label": "C",
+          "text": "Retraction 6 hr"
+        },
+        {
+          "label": "D",
+          "text": "Open reduction with plate fixation"
+        },
+        {
+          "label": "E",
+          "text": "Close reduction with percutaneous screw"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 44,
+      "scenario": "Which one is not a clinical sign of acute compartment syndrome?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Paresthesia of distal part"
+        },
+        {
+          "label": "B",
+          "text": "……. or Absence of distal pulse"
+        },
+        {
+          "label": "C",
+          "text": "Swelling of fractured limb"
+        },
+        {
+          "label": "D",
+          "text": "decrease temperature of distal part"
+        },
+        {
+          "label": "E",
+          "text": "Pain on active motion of distal joint"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 56,
+      "scenario": "ตารวจชายอายุ 30 ปี fall on his Lt. shoulder พบไหล่ซ้ายปวดและบวม Radiograph พบ distal clavicle displace 1 mm above acromion process ถามว่า ligament ใดขาด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "coracoacromial and coracohumeral lig."
+        },
+        {
+          "label": "B",
+          "text": "coracohumeral and coracoclavicular lig."
+        },
+        {
+          "label": "D",
+          "text": "coracoclavicular and coracohumeral lig."
+        },
+        {
+          "label": "E",
+          "text": "coracoclavicular and acromioclavicular lig."
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 57,
+      "scenario": "ผู้ชายยกของหนัก ได้ยินเสียง pop sound ที่มือขวา ขยับแขนข้างขวาแล้วปวด มี pop eye deformityที่ forearm\nWhich is not the cause of neurological dysfunction in acute thoracolumbar injury?\nA Hematoma\nB Bony fragment\nC arterial occlusion\nD Disc ruptured fragments\nE Displaced fracture of vertebrae",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 80,
+      "scenario": "A 55-yr-old house wife has had right shoulder pain for 6 months. The pain is worsen when she hook her bras and raise her hand above her head. PE : trigger ที่ upper part of shoulder limit internal rotation and abduction น่าจะเกิดจาก",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "frozen shoulder",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "rotator cuff arthritis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "acromioclavicular arthritis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "TB ที่ glenohumeral joint",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 96,
+      "scenario": "ชายอายุ 75 ปี อาชีพก่สร้าง ขณะยกของหนัก เกิดเสียง pop sound and pain at right arm. There is swelling, ecchymosis and palpable deformity on the antecubital fossa. There is pop-eye deformity. What is correct ??",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supination ไม่ได้"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 100,
+      "scenario": "Burst fracture of TL spine. What is incorrect?",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Late kyphosis is rarely occurred",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "เป็น stable fracture",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "May be involve cauda equina",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Posterior ligamentous complex intact",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 104,
+      "scenario": "ผู้ป่วยหญิงอายุ 50 ปี มาด้วยปวดบวมนิ้วเท้าซ้าย มีไข้ X-ray พบ cortical erosion, periostitis. Tissue swelling น่าจะเป็นโรคอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bone tumor"
+        },
+        {
+          "label": "B",
+          "text": "Septic arthritis"
+        },
+        {
+          "label": "C",
+          "text": "Rheumatic …"
+        },
+        {
+          "label": "D",
+          "text": "Osteomyelitis and cellulitis"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 117,
+      "scenario": "Female 55 yr present with right shoulder pain 6 mo. Pain aggravated when hook her bra or abduct arm. Physical examination reveals tenderness at right upper shoulder, limit ROM when internal rotation and abduction. What is the most likely diagnosis?",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Frozen shoulder",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "milwau’s syndrome",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Rotator cuff tendenitis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Acromioclavicularjoint arthritis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "TB septic arthritis of glenohemoral joint",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 120,
+      "scenario": "A 55-year-old male patient presented with numbness and weakness. Physical examination revealed straight leg raising test: negative; motor and sensory: WNL. X-ray found osteophyte at lumbar spine. What is the diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "spinal stenosis"
+        },
+        {
+          "label": "B",
+          "text": "vascular claudication"
+        },
+        {
+          "label": "C",
+          "text": "asymptomatic spondylosis"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 124,
+      "scenario": "A 70 year olds patient had left hip pain after fall for past 3 days. Examination reveals external rotation and abduction of left hip. The left buttock and upper thigh is ecchimosis What is the most likely diagnosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fracure neck of femur"
+        },
+        {
+          "label": "B",
+          "text": "Anterior hip dislocati"
+        },
+        {
+          "label": "C",
+          "text": "Posterior hip dislocation"
+        },
+        {
+          "label": "D",
+          "text": "intertrochanteric fracture"
+        },
+        {
+          "label": "E",
+          "text": "Fracture and dislocation of head of femur"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 147,
+      "scenario": "Which is the most common contracture of AKA?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hip flexion and abduction"
+        },
+        {
+          "label": "B",
+          "text": "Hip flexion and adduction"
+        },
+        {
+          "label": "C",
+          "text": "Hip extension and abduct"
+        },
+        {
+          "label": "D",
+          "text": "Hip abduction and external roation IM"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    }
+  ]
+}

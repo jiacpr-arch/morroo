@@ -1,0 +1,1663 @@
+[
+  {
+    "scenario": "ผู้ป่วยที่วางแผนรับการรักษา I131 เพื่อรักษา hyperthyroidism ต้องเตรียมตัวต่อไปนี้ยกเว้น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Screening pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Screening breastfeeding"
+      },
+      {
+        "label": "C",
+        "text": "Low iodine diet 1-2 wk ก่อนรักษา"
+      },
+      {
+        "label": "D",
+        "text": "Withhold B-blocker 1-2 wk ก่อนรักษา"
+      },
+      {
+        "label": "E",
+        "text": "Stop anti-thyroid drug 7-8 วัน ก่อนรักษา"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Not specified (Endocrine)",
+    "status": "complete",
+    "ai_notes": "เหตุผล: ก่อนรับ I131 ควรหยุด B-blocker เพียง 1-2 วัน ก่อน (ไม่ใช่ 1-2 สัปดาห์) เนื่องจาก B-blocker ใช้เพื่อควบคุมอาการของ hyperthyroidism เท่านั้น ส่วนการเตรียมตัวที่ถูกต้อง ได้แก่: (A) Screening pregnancy เพราะ I131 เป็น teratogen (B) Screening breastfeeding เพราะ I131 สามารถผ่าน breast milk (C) Low iodine diet 1-2 สัปดาห์ เพื่อให้ thyroid ดูดซึม I131 ได้ดีขึ้น (E) Stop anti-thyroid drug 7-8 วันก่อนเพื่อเพิ่ม thyroidal uptake ของ I131",
+    "subject": "endocrine",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี BP 120/80 mmHg น้ำหนัก 65 กก. ส่วนสูง 170 ซม. FPG 96 mg/dL มาตรวจสุขภาพประจำปี ไม่มีอาการเบื่ออาหาร น้ำหนักเสถียร ไม่มีโรคประจำตัว ควรให้คำแนะนำการดูแลสุขภาพอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เริ่มยา metformin เพื่อป้องกัน diabetes"
+      },
+      {
+        "label": "B",
+        "text": "ให้คำแนะนำเรื่องอาหาร การออกกำลังกาย และติดตามเชื้อหาลำดับต่อไป"
+      },
+      {
+        "label": "C",
+        "text": "ตรวจ OGTT เพื่อประเมิน glucose tolerance"
+      },
+      {
+        "label": "D",
+        "text": "เริ่มยา antihypertensive เพื่อควบคุมความดัน"
+      },
+      {
+        "label": "E",
+        "text": "ให้ statin เพื่อลดความเสี่ยง cardiovascular disease"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วยอายุ 60 ปี มี FPG 96 mg/dL (normal: <100) BMI 22.5 (normal: 18.5-24.9) และ BP 120/80 (normal) จึงเป็นบุคคลสุขภาพดี ไม่มีการวินิจฉัยโรค ส่วน FPG ที่ 96 ถึงแม้จะใกล้เกณฑ์บน แต่ยังอยู่ในช่วง normal fasting glucose ดังนั้นการให้ยาป้องกันไม่มีข้อบ่งชี้ และไม่ต้องตรวจ OGTT ที่จำเป็น การดูแลที่เหมาะสมคือให้คำแนะนำการใช้ชีวิตสุขภาพดี (lifestyle modification) และติดตามอย่างสม่ำเสมอ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "โรคไตเสื่อม 2 ปี , DM , HT 4 ปี BW 50kg , bsa 1.26 , pitting edema both leg ให้โปรตีนเท่าไหร่",
+    "choices": [
+      {
+        "label": "A",
+        "text": "10g"
+      },
+      {
+        "label": "B",
+        "text": "20g"
+      },
+      {
+        "label": "C",
+        "text": "30g"
+      },
+      {
+        "label": "D",
+        "text": "40g"
+      },
+      {
+        "label": "E",
+        "text": "50g"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 70 ปี เป็นเบาหวานมา 10 ปี มีไข้ 38°C ปัสสาวะขุ่น ซึมลง เจ็บสีข้างซ้ายมา 4 วัน ญาติให้หยุดยาเบาหวาน PE: T 38°C, BP 80/50, PR 110, RR 28 Tenderness left CVA(+) Lab: BS 900 mg/dL, BUN 40 mg/dL, Cr 2.0 mg/dL, Electrolyte ปกติ, Urinalysis: ขุ่น ถ่ายแบ่งกระบาดนิยมหลีกเลี่ยง ถาม management อันแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เริ่มให้ Insulin IV + Normal Saline IV เพื่อ rehydration และควบคุม hyperglycemia"
+      },
+      {
+        "label": "B",
+        "text": "ให้ Broad-spectrum antibiotics IV (เช่น ceftriaxone) + fluid resuscitation"
+      },
+      {
+        "label": "C",
+        "text": "ให้ Metformin ต่อเนื่อง + Oral rehydration"
+      },
+      {
+        "label": "D",
+        "text": "ให้ Diuretics เพื่อลดของเหลวและลดความดันโลหิต"
+      },
+      {
+        "label": "E",
+        "text": "ฝึกหายใจลึกและให้เบาหวาน juice เพื่อหลีกเลี่ยงอาหารจำพวก carbohydrate"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วยมี septic shock จากการติดเชื้อระบบปัสสาวะ (pyelonephritis) โดยมีสัญญาณ: CVA tenderness, ไข้, ปัสสาวะขุ่น, hypotension (80/50), tachycardia, tachypnea และ AKI (Cr 2.0, BUN 40)। การจัดการแรกสำคัญที่สุดคือ fluid resuscitation + empirical broad-spectrum antibiotics ตามหลัก Sepsis Bundle เพื่อรักษา shock ก่อนจะจัดการ hyperglycemia หลังมี hemodynamic stability",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 35 ปี วินิจฉัยโรค Grave disease ได้รับ PTU 150 mg/วัน มาเพราะอาการไข้ เจ็บคอ หลังจากใช้ยาประมาณ 2 สัปดาห์ CBC พบ WBC 400 cells/cmm ถาม management ที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุด PTU ทันที และให้ propranolol + สารประกอบไอโอดีน (Lugol's solution)"
+      },
+      {
+        "label": "B",
+        "text": "ลดขนาด PTU เป็น 75 mg/วัน และส่งต่อ endocrinologist"
+      },
+      {
+        "label": "C",
+        "text": "ให้ antibiotics และ corticosteroids เพื่อรักษา agranulocytosis แต่ยังใช้ PTUต่อ"
+      },
+      {
+        "label": "D",
+        "text": "เปลี่ยนเป็น methimazole 10 mg/วัน ทันที"
+      },
+      {
+        "label": "E",
+        "text": "ให้ G-CSF และ hospitalize แต่สามารถใช้ PTU ต่อได้ในขนาด 50 mg/วัน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วยมี agranulocytosis (WBC 400 cells/cmm) ซึ่งเป็น side effect ร้ายแรงของ PTU ต้องหยุดยาทันที การใช้ propranolol ช่วยควบคุมอาการ hyperthyroidism ส่วน Lugol's solution ช่วยลด thyroid hormone release และเตรียมสำหรับ thyroidectomy หากจำเป็น การเปลี่ยนเป็น methimazole หรือลดขนาด PTU มีความเสี่ยงต่อการเกิด cross-sensitivity และ agranulocytosis ซ้ำ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี ได้รับการรักษาด้วย PTU (Propylthiouracil) สำหรับภาวะไทรอยด์ฟังก์ชั่น亢進มาแล้ว 3 เดือน มาพบแพทย์ด้วย painful mouth ulcer, ไข้ 38.5°C และ sore throat ควรทำการประเมินและจัดการอย่างไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุด PTU ทันทีและส่งตรวจ CBC พร้อม blood culture แล้วให้ IV broad spectrum antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Discharge นัด follow up ในสัปดาห์หน้าและให้ยาครีมแก้ mouth ulcer ที่บ้าน"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนจาก PTU เป็น Methimazole โดยไม่ต้องหยุดยาก่อน"
+      },
+      {
+        "label": "D",
+        "text": "ให้ยาพาราเซตามอล และ throat lozenge แล้วให้กลับบ้านสังเกต"
+      },
+      {
+        "label": "E",
+        "text": "หยุด PTU ให้ iodine solution เตรียมผ่าตัด thyroidectomy เนื่องจากล้มเหลว drug therapy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "อาการ mouth ulcer, ไข้ และ sore throat ในผู้ป่วยที่ใช้ PTU เป็นอาการของ agranulocytosis ซึ่งเป็นภาวะแทรกซ้อนที่หนักและเสี่ยงต่อชีวิต ต้องหยุด PTU ทันที ตรวจ CBC เพื่อยืนยันการลดลงของ WBC และให้ IV broad spectrum antibiotic เพื่อรักษาการติดเชื้อ ไม่ควรปล่อยให้ผู้ป่วยกลับบ้านหรือเปลี่ยนยาเพียงอย่างเดียว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาตรวจสุขภาพ พบ ความดันโลหิต 140/90 mmHg, เอวรอบ 102 เซนติเมตร, glucose หลังอาหาร 180 mg/dL, triglyceride 200 mg/dL, HDL 35 mg/dL ข้อใดสอดคล้องกับการวินิจฉัย Metabolic Syndrome มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hypertension, Increased abdominal circumference, Insulin resistance"
+      },
+      {
+        "label": "B",
+        "text": "Impaired fasting glucose, hypercholesterolemia, low HDL cholesterol"
+      },
+      {
+        "label": "C",
+        "text": "Hypertension, Insulin resistance, low HDL cholesterol, hypertriglyceridemia"
+      },
+      {
+        "label": "D",
+        "text": "Increased abdominal circumference, high LDL cholesterol, hyperglycemia, low blood pressure"
+      },
+      {
+        "label": "E",
+        "text": "High total cholesterol, low triglyceride, normal blood pressure, normal fasting glucose"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Metabolic Syndrome ตามเกณฑ์ IDF/WHO ประกอบด้วย: 1) Central obesity (เอวรอบเพิ่มขึ้น) บวกกับ 2) อย่างน้อย 2 ประการจาก 4 ประการ คือ ความดันโลหิตสูง, glucose ผิดปกติ, triglyceride สูง, HDL ต่ำ ตัวเลือก C มีทั้งความดันสูง, insulin resistance, HDL ต่ำ, และสามารถรวมกับ hypertriglyceridemia ซึ่งครบเกณฑ์วินิจฉัย Metabolic Syndrome มากที่สุด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 45 ปี มาด้วย Cushing appearance (moon facies, buffalo hump, central obesity) ความดันโลหิตสูง และเหนื่อยง่าย ตรวจ Lab พบ cortisol ระดับสูง ต้องการยืนยันการวินิจฉัย Cushing syndrome โดยการตรวจเพิ่มเติม ควรพบผลลัพธ์ใดต่อไปนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "24-hour urine free cortisol ระดับสูง และ ACTH ระดับต่ำ"
+      },
+      {
+        "label": "B",
+        "text": "24-hour urine free cortisol ระดับสูง และ ACTH ระดับสูง"
+      },
+      {
+        "label": "C",
+        "text": "24-hour urine free cortisol ระดับต่ำ และ ACTH ระดับสูง"
+      },
+      {
+        "label": "D",
+        "text": "Cortisol ลดลงหลังจาก dexamethasone suppression test 1 mg"
+      },
+      {
+        "label": "E",
+        "text": "24-hour urine free cortisol ระดับสูง แต่ ACTH ตรวจไม่ได้"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในผู้ป่วย Cushing syndrome ที่มี Cushing appearance และ cortisol ระดับสูง การยืนยันต้องตรวจ 24-hour urine free cortisol ซึ่งจะสูง ร่วมกับการวัด ACTH เพื่อหาสาเหตุ ถ้า ACTH ต่ำ แสดงว่าเป็น ACTH-independent (adrenal tumor) ซึ่งเป็นกรณีทั่วไปในผู้หญิง ข้อ A คือการตรวจที่ถูกต้องและให้ข้อมูลทั้งการยืนยันและการหาสาเหตุพร้อมกัน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 35 ปี มาด้วย subacute thyroiditis กับอาการปวดคอ ไข้ และ palpitations ควรให้ยาใดในการรักษาเบื้องต้นเพื่อลดอาการและควบคุมอาการเกี่ยวกับหัวใจ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin + Propranolol"
+      },
+      {
+        "label": "B",
+        "text": "Ibuprofen + Methimazole"
+      },
+      {
+        "label": "C",
+        "text": "Prednisolone + Levothyroxine"
+      },
+      {
+        "label": "D",
+        "text": "Paracetamol + PTU"
+      },
+      {
+        "label": "E",
+        "text": "Colchicine + Liothyronine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Subacute thyroiditis มักรักษาด้วย NSAIDs (เช่น Aspirin หรือ Ibuprofen) เพื่อลดการอักเสบและปวดคอ ส่วน Propranolol ใช้เพื่อควบคุมอาการ adrenergic symptoms เช่น palpitations และ tremor ที่เกิดจากการปล่อย thyroid hormones ออกมา ชุมชนแพทย์ไทยนิยมใช้ ASA + Propranolol เป็นการรักษาเบื้องต้นมาตรฐาน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "T4ปกติ TSH ปกติ Dx? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Simple Goiter"
+      },
+      {
+        "label": "B",
+        "text": "Iodine def"
+      },
+      {
+        "label": "C",
+        "text": "Thyroid CA"
+      },
+      {
+        "label": "D",
+        "text": "Subacute thyroiditis"
+      },
+      {
+        "label": "E",
+        "text": "Hashimoto Thyroiditis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 40 ปี หนัก 80 kg สูง 160 cm. เพิ่ง Dx. DM, FBG 180 Tx ที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ควบคุมอาหาร"
+      },
+      {
+        "label": "B",
+        "text": "Metformin"
+      },
+      {
+        "label": "C",
+        "text": "Acarbose"
+      },
+      {
+        "label": "D",
+        "text": "Glibenclamide"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 25 ปี ใจสั่น กินจุ นน.ลด มา 1 ปี, PE: mild exophthalmos, generalized enlarged thyroid both lobe, (Graves’), T4..,T3 400, TSH <0.001 Tx? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Propanolol"
+      },
+      {
+        "label": "B",
+        "text": "Lugol solution"
+      },
+      {
+        "label": "C",
+        "text": "PTU"
+      },
+      {
+        "label": "D",
+        "text": "Radioactive iodine"
+      },
+      {
+        "label": "E",
+        "text": "Subtotal thyroidectomy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 32 ปี ใจสั่น น้าหนักลด BP150/100 PR 120 PE: sensory normal, muscle weak gr.1/5 both upper and lower, reflex 2+ all Na 136 K 2.5 Cl 102 CO2 22 ต้องส่งตรวจอะไรเพื่อหาสาเหตุของอ่อนแรง (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Free T4"
+      },
+      {
+        "label": "B",
+        "text": "Plasma glucose"
+      },
+      {
+        "label": "C",
+        "text": "CT brain"
+      },
+      {
+        "label": "D",
+        "text": "CSF exam"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ตรวจร่างกายประจาปี TG 210 LDL 200 HDL 30 Rx? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gemfibrozil"
+      },
+      {
+        "label": "B",
+        "text": "Simvastatin"
+      },
+      {
+        "label": "C",
+        "text": "Fibric acid"
+      },
+      {
+        "label": "D",
+        "text": "Niacin"
+      },
+      {
+        "label": "E",
+        "text": "Cholestyramine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการปวดหัวเป็นๆ หายๆ ซ้ำๆ มีประวัติความดันโลหิตสูง พบ BP 160/100 mmHg ผลตรวจ Na 140 mEq/L (normal 135-145) K 3.0 mEq/L (ต่ำ) จงหาสาเหตุของความดันโลหิตสูง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pheochromocytoma"
+      },
+      {
+        "label": "B",
+        "text": "Primary hyperaldosteronism"
+      },
+      {
+        "label": "C",
+        "text": "Renal artery stenosis"
+      },
+      {
+        "label": "D",
+        "text": "Cushing's syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Essential hypertension"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Primary hyperaldosteronism (Conn's syndrome) มี clinical features ของ hypertension + hypokalemia (K 3.0) + normonatremia (Na 140) ซึ่งตรงกับผู้ป่วยมาก ความดันสูงมาจากการ Na retention ทำให้ hypokalemia จาก kaliuresis เพิ่มมากขึ้น Pheochromocytoma มักมี episodic symptoms ที่รุนแรง (+sympathomimetic signs) แต่ไม่มี characteristic hypokalemia เช่นนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 28 ปี มาด้วยอาการปวดท้อง คลื่นไส้ อ่อนเพลีย หายใจเร็วและลึก (Kussmaul breathing) ตรวจร่างกายพบกลิ่นอะซิโตนในลมหายใจ ค่าแลบ: pH 7.25, HCO3- 12 mEq/L, glucose 450 mg/dL, positive serum ketone และ urine ketone บวก วินิจฉัยเป็น Diabetic Ketoacidosis (DKA) ขั้นรุนแรง การรักษาที่เหมาะสมที่สุดในช่วงแรกคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้น้ำเกลือ (i.v. normal saline) 15-20 mL/kg ในชั่วโมงแรก แล้วติดตามสัญญาณชีพและ electrolyte"
+      },
+      {
+        "label": "B",
+        "text": "ให้ insulin i.v. bolus 0.1 unit/kg แล้วติดตาม glucose ทุก 1 ชั่วโมง"
+      },
+      {
+        "label": "C",
+        "text": "ให้ sodium bicarbonate i.v. เพื่อแก้ไข acidosis ก่อน"
+      },
+      {
+        "label": "D",
+        "text": "ให้ potassium supplement ทันทีเพราะผู้ป่วยมี hypokalemia"
+      },
+      {
+        "label": "E",
+        "text": "ให้ antibiotics เพื่อรักษาการติดเชื้อที่อาจเป็นสาเหตุ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การรักษา DKA ขั้นแรกต้องให้ fluid replacement (normal saline) 15-20 mL/kg ในชั่วโมงแรกเพื่อแก้ไข hypovolemia และปรับ glucose ลงค่อยเป็นค่อยไป ตามด้วย insulin infusion หลังจาก K+ > 3.5 mEq/L เพื่อหลีกเลี่ยง hypokalemia อันตราย หาม bicarbonate ในผู้ป่วย DKA เว้นแต่ pH < 6.9 มาก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย อายุ 40ปี ส่วนสูง 160 cm. นน. 90 kg. FBS 140 mg%---repeat 145 mg% ไม่มีอาการของDM ท่านจะทาอย่างไร (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "สังเกตอาการ"
+      },
+      {
+        "label": "B",
+        "text": "ควบคุมอาหารและออกกาลังกาย"
+      },
+      {
+        "label": "C",
+        "text": "Insulin injection"
+      },
+      {
+        "label": "D",
+        "text": "กินยากลุ่ม incretin"
+      },
+      {
+        "label": "E",
+        "text": "กินยาเพิ่มการหลั่ง insulin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 33ปี ปวดหัว มาหลายเดือน ใจสั่น เหนื่อยง่าย flushing BP 180/110 PR 110 investigation? (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "urine VMA"
+      },
+      {
+        "label": "B",
+        "text": "CT brain"
+      },
+      {
+        "label": "C",
+        "text": "Thyroid function"
+      },
+      {
+        "label": "D",
+        "text": "pyelogram"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 18 ปี ดื่มน้ามาก ปัสสาวะมาก 2เดือน ปวดหัวตามัว 1เดือน MRI brain: Suprasellar mass E’lyte : Na 145K 3.8 Cl 110 CO2 21 fluid input/output =5100:5800manage (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Restrict fluid"
+      },
+      {
+        "label": "B",
+        "text": "Restrict Na"
+      },
+      {
+        "label": "C",
+        "text": "Hydrocortisone"
+      },
+      {
+        "label": "D",
+        "text": "HCTZ"
+      },
+      {
+        "label": "E",
+        "text": "DDAVP"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 30 ปี เหนื่อย อ่อนเพลีย BP 160/110 PR 70อื่นๆปกติ Na 154 K 2.2 HCO3 32 การวินิจฉัยที่เหมาะสมคือ (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Essential HT"
+      },
+      {
+        "label": "B",
+        "text": "Hyperthyroid"
+      },
+      {
+        "label": "C",
+        "text": "Pheochromocytoma"
+      },
+      {
+        "label": "D",
+        "text": "1st hyperaldosterone"
+      },
+      {
+        "label": "E",
+        "text": "Cushing syndrome"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "DM ได้ MFM 1500,Glipizide 15 BMI เยอะ FBS 180 HbA1C 8.1 (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิMม Glipizide"
+      },
+      {
+        "label": "B",
+        "text": "MFM 2000"
+      },
+      {
+        "label": "C",
+        "text": "add acarbose"
+      },
+      {
+        "label": "D",
+        "text": "ให้ RI"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 70 ปี U/D DM, HT, DLP CC: ผล Lab ผิดปกติ ทานวิตามินเสริมเป็นประจา 10 ปีก่อนเคยปัสสาวะปนทราย PTH สูง, Ca2+11,PO4 2- 3.5, Cr 1.1, การวินิจฉัยที่เหมาะสมคือ (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "HyperCa2+ of Malignancgy"
+      },
+      {
+        "label": "B",
+        "text": "CA with bone Met."
+      },
+      {
+        "label": "C",
+        "text": "1OHyperparathyroid"
+      },
+      {
+        "label": "D",
+        "text": "2OHyperparathyroid"
+      },
+      {
+        "label": "E",
+        "text": "3OHyperparathyroid"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 70 ปี ไม่มีโรคประจาตัว lipid profile TG 500 Choles 210 HDL 40 Lab อะไรผิดปกติด้วย (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Uric acid"
+      },
+      {
+        "label": "B",
+        "text": "FBS"
+      },
+      {
+        "label": "C",
+        "text": "Cortisol"
+      },
+      {
+        "label": "D",
+        "text": "Thyroid function test"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 24 ปี on prednisolone 20 mg OD เพื่อรักษาปวดข้อนาน 1 ปี จะพบความผิดปกติใด ในผู้ป่วยรายนี้ (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "hypertension"
+      },
+      {
+        "label": "B",
+        "text": "Hypothyroid"
+      },
+      {
+        "label": "C",
+        "text": "increased bone mass"
+      },
+      {
+        "label": "D",
+        "text": "diabetes inspidus"
+      },
+      {
+        "label": "E",
+        "text": "adipose tissue wasting"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 30 ปี นักกีฬามาราธอน แต่งงานแล้ว ยังไม่เคยตั้งครรภ์ มาด้วยอาการปวดหัวตามัว ไม่มีประจำเดือนมา 1 ปี มีน้ำนมสีขาวไหลออกมาจากเต้านมทั้งสองข้าง อาการตามัวเพิ่มขึ้นเรื่อยๆ การตรวจร่างกาย: bitemporal hemianopia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตั้งครรภ์"
+      },
+      {
+        "label": "B",
+        "text": "Hypogonadism"
+      },
+      {
+        "label": "C",
+        "text": "Prolactinoma"
+      },
+      {
+        "label": "D",
+        "text": "Craniopharyngioma"
+      },
+      {
+        "label": "E",
+        "text": "Non-functioning pituitary adenoma"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Prolactinoma เป็นต่อมใต้สมองที่บริหารฮอร์โมน prolactin มากเกินไป ทำให้เกิด galactorrhea (น้ำนมไหล) amenorrhea (ไม่มีประจำเดือน) infertility และเจ็บหัว เมื่อขยายตัวบีบเส้นประสาทสายตาจึงเกิด bitemporal hemianopia ซึ่งตรงกับอาการ PE ทั้งหมดของผู้ป่วย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 18 ปี เป็น Grave's disease มา 1ปี กาลังรักษา วันนี้มีปวดข้อนิ้วมือทุกนิ้ว ร่วมกับปวดข้อมือ ข้อมูลใดสนับสนุนการวินิจฉัยมากที่สุด? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "กิน NSAIDs แล้วอาการดีขึ้น พอไม่กินก็จะปวด"
+      },
+      {
+        "label": "B",
+        "text": "ปวดมากหลังตื่นนอน"
+      },
+      {
+        "label": "C",
+        "text": "มีประวัติปวดข้อในครอบครัว"
+      },
+      {
+        "label": "D",
+        "text": "อาการปวดสัมพันธ์กับอาหาร"
+      },
+      {
+        "label": "E",
+        "text": "อาการปวดสัมพันธ์กับ PTU"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 18 ปี มาด้วยอาการคอโตมา 3 เดือน TSH สูง FT3 ปกติ dx? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Simple goiter"
+      },
+      {
+        "label": "B",
+        "text": "Hashimoto thyroiditis"
+      },
+      {
+        "label": "C",
+        "text": "Grave’s disease"
+      },
+      {
+        "label": "D",
+        "text": "Iodine deficiency"
+      },
+      {
+        "label": "E",
+        "text": "Subacute thyroiditis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ 20 wk ใจสั่น ตรวจพบ T4 สูงเล็กน้อย T3สูงเล็กน้อย TSHปกติ จงDx (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Grave’s disease"
+      },
+      {
+        "label": "B",
+        "text": "Molar pregnancy"
+      },
+      {
+        "label": "C",
+        "text": "Gestational goiter"
+      },
+      {
+        "label": "D",
+        "text": "Gestational thyrotoxicosis"
+      },
+      {
+        "label": "E",
+        "text": "Toxic multinodular goiter"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 72 ปี เป็นเบาหวานชนิดที่ 2 ได้รับ Glipizide 2 mg วันละ 2 ครั้ง มาด้วยอาการ Hypoglycemia ซ้ำๆ พร้อมกับ Serum creatinine เพิ่มขึ้นจาก 1.0 เป็น 2.8 mg/dL ควรจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เปลี่ยนไป Metformin เพื่อควบคุมน้ำตาลโลหิต"
+      },
+      {
+        "label": "B",
+        "text": "ลด Glipizide หรือหยุดใช้ และเปลี่ยนไป Insulin"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่มขนาด Glipizide เพื่อลดอาการ Hypoglycemia"
+      },
+      {
+        "label": "D",
+        "text": "เพิ่ม Acarbose เพื่อลดการดูดซึมกลูโคส"
+      },
+      {
+        "label": "E",
+        "text": "เพิ่ม Glibenclamide ร่วมกับ Glipizide"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีอาการ Hypoglycemia ซ้ำๆ พร้อมกับ Renal impairment (Cr 2.8) ที่บ่งชี้ว่า Glipizide ไม่ถูกขับออกและสะสมตัวในร่างกาย ทำให้เกิด Hypoglycemia Sulfonylureas (เช่น Glipizide) ห้ามใช้ในผู้ป่วยที่มี eGFR <30 และควรหยุด คำตอบที่ถูกคือการลด/หยุด Glipizide และเปลี่ยนไป Insulin ซึ่งควบคุมได้ดีกว่าในผู้ป่วย Renal failure ส่วน Metformin ห้ามใช้เมื่อ Cr >1.5 ในผู้ชาย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 60ปี มาด้วยปวดหลังปวดกระดูกเป็นๆหายๆ มา6 เดือน หิวน้าบ่อย ปัสสาวะมาก ท้องผูก PE: tender at lumbosacral spine Lab : Ca 14 Phosphorous 14 BUN 35 Cr2.5 investigateอะไรดีทีสุดเพื่อให้ได้ผลการวินิจฉัย (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Parathyroid hormone"
+      },
+      {
+        "label": "B",
+        "text": "PSA"
+      },
+      {
+        "label": "C",
+        "text": "U/S KUB"
+      },
+      {
+        "label": "D",
+        "text": "MRI spine"
+      },
+      {
+        "label": "E",
+        "text": "Bone marrow aspiratiom"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 70 ปี U/D : HTN, DLP, DM on HCTZ, Thiazide, Enalapril, ASA, Simvastatin, Fenofobrate นาน 1 ปี ช่วง 6 เดือนที่ผ่านมาปวดขา 2 ข้างเป็นๆ หายๆ นวดหรือนอนพักแล้วอาการไม่ดีขึ้น มีข้อเข่าเสื่อม เดินไม่ค่อยไหว ไม่ได้รักษา PE : normal อาการดังกล่าวน่าจะมีสาเหตุมาจาก ยาใด? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ASA"
+      },
+      {
+        "label": "B",
+        "text": "Thiazide"
+      },
+      {
+        "label": "C",
+        "text": "Enalapril"
+      },
+      {
+        "label": "D",
+        "text": "Fenofibrate"
+      },
+      {
+        "label": "E",
+        "text": "Simvastatin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 22 ปี N/V อ่อนเพลียมากมา 2 วัน PE : RR 32 BP80/60 PR140 drowsiness sunken eye ball dry lip ที่ ER ได้ NSS 1000 mL at ward BS 850 Na 129 K 2.8 Cl 90 HCO3 10 PO 4.2 BUN 42 Cr 1.2 ควรให้สารใดเป็นอย่างแรก (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "RI"
+      },
+      {
+        "label": "B",
+        "text": "NSS continue"
+      },
+      {
+        "label": "C",
+        "text": "Add KCl"
+      },
+      {
+        "label": "D",
+        "text": "Add KPO4"
+      },
+      {
+        "label": "E",
+        "text": "ให้ NaHCO"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "male 75 yr U/D DM, HT, DLP มา ER ด้วยซึมไม่รู้ตัว 1 hr. PTA เช้ามีไข้ปวดเมือยตามตัว กินอาหารได้น้อยลง ตอนเทียงญาติพบไม่รู้สึกตัว PEBT37.8 BP110/70 PR100 RR24 lung clear aqual BS other normal, oxygen sat 95% , DTX 40 mg% Tx? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NSS load"
+      },
+      {
+        "label": "B",
+        "text": "Empirical ATB"
+      },
+      {
+        "label": "C",
+        "text": "Iv glucose push"
+      },
+      {
+        "label": "D",
+        "text": "ET tube"
+      },
+      {
+        "label": "E",
+        "text": "CT brain emergancy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 70 ปี สูง 170 cm หนัก 70 kg แข็งแรงดี ไม่มีโรคประจำตัว มาตรวจสุขภาพประจำปี ผลการตรวจ: BP 130/85 mmHg, FPG 130 mg/dl, ผลตรวจอื่นปกติ นอกจากแนะนำการควบคุมอาหารและออกกำลังกาย ควรทำอะไรเพิ่มเติม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ต้องมีการรักษาเพิ่มเติม เฝ้าระวังและติดตามอาการต่อไป"
+      },
+      {
+        "label": "B",
+        "text": "เริ่มยา ACE inhibitor หรือ ARB เพื่อควบคุมความดันโลหิต"
+      },
+      {
+        "label": "C",
+        "text": "เริ่มยา Metformin เพื่อควบคุมระดับน้ำตาลและลดความเสี่ยงเป็นเบาหวาน"
+      },
+      {
+        "label": "D",
+        "text": "ให้คำแนะนำเกี่ยวกับความเสี่ยงต่อหัวใจและสมองตาบอด รวมทั้งบอกให้ติดตามเบาหวาน"
+      },
+      {
+        "label": "E",
+        "text": "เริ่มยา Statin และยาลดความดันเลย"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยนี้เป็น Pre-diabetes (FPG 100-125 mg/dl) และ Pre-hypertension Stage 1 (BP 130-139/85-89 mmHg) ซึ่งเป็นเพียงระยะแรกของโรค การรักษาระยะแรกควรเป็น Lifestyle modification (อาหาร ออกกำลังกาย) พร้อมให้ความรู้เกี่ยวกับความเสี่ยง ไม่ต้องเริ่มยาเพราะยังไม่ถึงเกณฑ์การรักษาด้วยยาโดยตรง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 55 ปี โรคเบาหวาน type 2 มี 10 ปี รับประทานอาหารเที่ยงตรงเวลา ไม่มีอาการใจสั่น แต่มีอาการหิวบ่อยโดยเฉพาะตอนบ่าย เมื่อทานน้าหวานแล้วอาการดีขึ้น ใช้ยา biphasic human insulin เช้า 30 หน่วย เย็น 15 หน่วย มาตรวจตามนัด ผลแล็บ: FBS 200 mg/dL HbA1c 8.5% น้าหนัก 75 kg ควรปรับการรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่ม biphasic insulin ตอนเช้าจาก 30 เป็น 36 หน่วย"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่ม biphasic insulin ตอนเย็นจาก 15 เป็น 20 หน่วย"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่ม insulin ตอนเย็น และเพิ่ม basal insulin ตอนกลางคืน เพื่อลดอาการหิวตอนบ่าย"
+      },
+      {
+        "label": "D",
+        "text": "เปลี่ยนเป็น multiple daily injection (MDI) ด้วย long-acting insulin + rapid-acting insulin"
+      },
+      {
+        "label": "E",
+        "text": "เพิ่ม oral antidiabetic agent ร่วมกับ insulin ในปริมาณเดิม"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีอาการหิวบ่อยตอนบ่าย ซึ่งบ่งชี้ถึง hyperglycemia ในช่วงบ่าย โดย FBS สูง 200 mg/dL ชี้ให้เห็นว่าการควบคุมน้าตาลเวลากลางวันถึงเย็นไม่ดี การเพิ่ม biphasic insulin ตอนเย็นจาก 15 เป็น 20 หน่วย จะช่วยลดไกลเซมีย์ในช่วงบ่ายและเย็น รวมถึงลดการเกิด fasting hyperglycemia ในเช้าวันรุ่งขึ้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยเบาหวานชนิดที่ 1 อายุ 35 ปี ได้รับ insulin ฉีดเช้า 20 U และบ่าย 15 U มาแล้ว 3 เดือน รายงานว่าเวลาประมาณ 10:00 น. (2 ชั่วโมงหลังฉีด insulin เช้า) มักมีอาการหนาวสั่น เหงื่อออก และหัวใจเต้นเร็ว ตรวจวัดน้ำตาลเลือด ณ เวลานั้นได้ 65 mg/dL ต่อมาตรวจ HbA1c เท่ากับ 7.2% คุณจึงตัดสินใจลด insulin ตอนเช้าลง 5 U เพราะเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผู้ป่วยมีอาการ hypoglycemia ในช่วงเช้า ซึ่งบ่งชี้ว่า insulin ตอนเช้ามากเกินไป"
+      },
+      {
+        "label": "B",
+        "text": "ค่า HbA1c ต่ำกว่าเป้าหมาย (7.5%) ซึ่งหมายความว่า glycemic control ดีเกินไป"
+      },
+      {
+        "label": "C",
+        "text": "เพื่อลดความเสี่ยงของ hypoglycemic unawareness ที่อาจเกิดขึ้นในอนาคต"
+      },
+      {
+        "label": "D",
+        "text": "ผู้ป่วยมีการติดเชื้อ จึงจำเป็นต้องลด insulin เพื่อให้ immunity สูงขึ้น"
+      },
+      {
+        "label": "E",
+        "text": "ค่า HbA1c สูงกว่า 7% ดังนั้นต้องลด insulin เพื่อให้ HbA1c ลดลงมากขึ้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยแสดงอาการ hypoglycemia (หนาวสั่น เหงื่อออก หัวใจเต้นเร็ว) พร้อมค่าน้ำตาลเลือด 65 mg/dL ในช่วงเวลาที่ insulin ตอนเช้ามีฤทธิ์สูงสุด ซึ่งแสดงว่า insulin ตอนเช้า 20 U มากเกินไปสำหรับผู้ป่วยรายนี้ การลด 5 U ช่วยลดความเสี่ยงของ hypoglycemia ขณะยังคงรักษา glycemic control ให้ดี (HbA1c 7.2%) ตามเป้าหมาย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 45 ปี มาด้วยอาการหน้ามืด มึนงง หนาวสั่น ใจสั่น เหงื่อออก กำลังไม่สามารถสื่อสารได้อย่างชัดเจน แพทย์สงสัยว่าเป็นภาวะ hypoglycemia เกิดจากการฉีดอินซูลินมากเกินไป ควรเจาะ capillary glucose เพื่อยืนยันการวินิจฉัยโดยด่วน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตรวจวัดค่า capillary glucose ทันทีก่อนการรักษา เพื่อยืนยันว่าเป็น hypoglycemia"
+      },
+      {
+        "label": "B",
+        "text": "บอกให้ผู้ป่วยดื่มน้ำหวานหรือกินน้ำตาลก่อน แล้วจึงเจาะวัด capillary glucose"
+      },
+      {
+        "label": "C",
+        "text": "เจาะเลือดมาวิเคราะห์ที่ห้องแล็บเพื่อให้ได้ผลที่แม่นยำ ไม่ต้องวัด capillary glucose"
+      },
+      {
+        "label": "D",
+        "text": "ให้ IM glucagon ทันทีโดยไม่ต้องวัด capillary glucose เนื่องจากมีอาการสมควรกับ hypoglycemia"
+      },
+      {
+        "label": "E",
+        "text": "สังเกตการณ์ผู้ป่วยต่อเนื่องเป็นเวลา 30 นาที ก่อนตัดสินใจวัดค่าน้ำตาลในเลือด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในภาวะผู้ป่วยที่มีอาการ acute symptomatic hypoglycemia ต้องวัด capillary glucose ทันทีก่อนการรักษา (do not delay) เพื่อยืนยันการวินิจฉัยและเริ่มรักษาโดยเร็ว ตัวเลือก B ผิดเพราะให้กินน้ำตาลก่อนวัดจะทำให้ผลไม่สะท้อนสภาวะที่แท้จริง ตัวเลือก C ช้าเกินไป ตัวเลือก D และ E ไม่เหมาะสมเพราะไม่มีการยืนยันการวินิจฉัย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี โรคเบาหวานชนิดที่ 2 ควบคุมด้วย metformin และ sulfonylurea แต่ HbA1c ยังสูง 9.5% แพทย์จึงพิจารณาเพิ่มอินซูลิน ให้ผู้ป่วยใช้ biphasic insulin (NPH + regular insulin หรือ aspart) ฉีดก่อนอาหารเช้าและเย็น ในการปรับเปลี่ยนจาก biphasic insulin เป็นอินซูลินประเภทอื่น ควรพิจารณาเปลี่ยนไปยังประเภทใด เพื่อให้ผู้ป่วยสะดวกและติดตามปฏิบัติได้ดีขึ้น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ยังคงใช้ biphasic insulin ต่อไป เนื่องจากให้ผลดีและง่ายต่อการปฏิบัติ"
+      },
+      {
+        "label": "B",
+        "text": "เปลี่ยนเป็น basal-bolus regimen (long-acting insulin + rapid-acting insulin) ให้ความยืดหยุ่นมากขึ้นและควบคุมน้ำตาลได้ดีกว่า"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนเป็น long-acting insulin (glargine หรือ detemir) ฉีดวันละครั้ง เพื่อลดจำนวนครั้งการฉีด"
+      },
+      {
+        "label": "D",
+        "text": "เปลี่ยนเป็น rapid-acting insulin เพียงอย่างเดียวก่อนอาหารทุกมื้อ เพื่อควบคุมน้ำตาลหลังอาหาร"
+      },
+      {
+        "label": "E",
+        "text": "เลิกใช้อินซูลินและเปลี่ยนเป็น GLP-1 agonist เพื่อลดความเสี่ยงต่อภาวะน้ำตาลต่ำ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การเปลี่ยนจาก biphasic insulin เป็น basal-bolus regimen ให้ความยืดหยุ่นมากขึ้นในการปรับปรุงการควบคุมระดับน้ำตาลโลหิต โดยเฉพาะในผู้ป่วยที่มี HbA1c สูง เนื่องจาก basal-bolus ช่วยให้ปรับปรุงโดสอินซูลินตามความเหมาะสมของแต่ละมื้ออาหารได้ดีขึ้น และลดความผันผวนของระดับน้ำตาล",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี มาซึมเพื่อ 1 วัน มีประวัติ 3 เดือนที่ผ่านมา: กินอาหารน้อยลง ท้องผูก เคยผ่าตัดที่คอแต่ไม่ทราบว่าผ่าอะไร ตรวจร่างกาย: BP 156/70, PR 50, BS 68 mg/dL, ค่าเคมีในเลือด: Na 120, K 3.8, Cl 88, Cr 2.0, T3 60, FT4 0.6, TSH 1.3, Cortisol 1 μg/dL พบ transverse surgical scar ที่คอ ควรเริ่มต้นการรักษาด้วยอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hydrocortisone IV แล้วให้ IV fluid และ thyroid hormone replacement"
+      },
+      {
+        "label": "B",
+        "text": "IV fluid เพื่อแก้ hyponatremia แล้วให้ levothyroxine"
+      },
+      {
+        "label": "C",
+        "text": "ให้ levothyroxine และ propranolol เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "ให้ normal saline hypertonic เพื่อแก้ hyponatremia อย่างรวดเร็ว"
+      },
+      {
+        "label": "E",
+        "text": "Observe และ supportive care เพียงอย่างเดียว"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีลักษณะ secondary hypothyroidism (FT4 ต่ำ TSH ปกติ) และ adrenal insufficiency (cortisol ต่ำมาก) จากการผ่าตัดที่คอ (สการ์ transverse) บ่งชี้การผ่าตัดต่อมไทรอยด์หรือต่อมจำหน่ายท้ายศีรษะ ในกรณี secondary hypothyroidism + adrenal insufficiency ต้อง GIVE HYDROCORTISONE FIRST ก่อนให้ thyroid hormone เพื่อหลีกเลี่ยง thyroid storm และแก้ hyponatremia ด้วยการให้ fluid รองับด้วยการแก้กรดด่างแล้วค่อยเติม thyroid replacement",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 16 ปี มาด้วยอาการคอโตเพิ่มขึ้นเป็นเวลา 3 เดือน มีอาการเหนื่อยง่าย ใจสั่น บางครั้ง โดยไม่มีไข้ ร่างกายอื่นๆ ปกติ ตรวจสัญญาณชีพ: HR 84 ครั้ง/นาที BP 110/70 mmHg ตรวจร่างกาย: Goiter grade 2+ ไม่มี exophthalmos ไม่มี pretibial myxedema ตรวจ TFT: T3, T4, TSH ปกติ anti-TPO (anti-thyroxin peroxidase) negative ข้ออื่นๆ ปกติ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Graves' disease"
+      },
+      {
+        "label": "B",
+        "text": "Hashimoto's thyroiditis"
+      },
+      {
+        "label": "C",
+        "text": "Simple goiter (Euthyroid goiter)"
+      },
+      {
+        "label": "D",
+        "text": "Thyroid nodule with hyperthyroidism"
+      },
+      {
+        "label": "E",
+        "text": "Subacute thyroiditis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมี goiter แต่ TFT ปกติ (euthyroid) และ anti-TPO negative ซึ่งบ่งชี้ว่าไม่ใช่โรคภูมิคุ้มกันของต่อมไทรอยด์ อาการเหนื่อยง่ายและใจสั่นอาจเกิดจากความกังวลในวัยรุ่น หรือภาวะพัฒนาการของต่อมไทรอยด์ ไม่ใช่ความผิดปกติของหนึ่งที่ทำงาน Simple goiter มักเกิดจากขาดไอโอดีน หรือการกระตุ้นของแรงกดจิตใจในวัยรุ่น โดยตัวต่อมขยายขึ้นแต่หนึ่งที่ยังทำงานปกติ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงวัย 45 ปี มาด้วยอาการเหนื่อยง่าย ร้อนจัด และมีอาการคล้ายเป็นหวัดติดต่อกัน ผลตรวจร่างกายพบต่อม甲状腺บวม ไม่เจ็บ ผลตรวจ TSH สูง 8.5 mIU/L (ปกติ 0.5-5) และ free T4 ต่ำกว่าปกติ ข้อใดคือการวินิจฉัยที่สมควร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hashimoto's thyroiditis (Chronic autoimmune thyroiditis)"
+      },
+      {
+        "label": "B",
+        "text": "Graves' disease"
+      },
+      {
+        "label": "C",
+        "text": "Subacute thyroiditis (De Quervain's thyroiditis)"
+      },
+      {
+        "label": "D",
+        "text": "Iodine deficiency goiter"
+      },
+      {
+        "label": "E",
+        "text": "Thyroid carcinoma with hypothyroidism"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Hashimoto's thyroiditis เป็นโรคอักเสบของต่อมไทรอยด์แบบเรื้อรัง (chronic autoimmune thyroiditis) ที่พบได้บ่อยที่สุด มีลักษณะคือต่อมไทรอยด์บวมอ่อน ๆ ไม่เจ็บ มีอาการ hypothyroidism (TSH สูง, free T4 ต่ำ) และมี anti-TPO antibodies และ anti-thyroglobulin antibodies เชื้อที่บ่งบอก ซึ่งตรงกับการนำเสนอทางคลินิกของผู้ป่วยรายนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 25 ปี น้ำหนัก 65 กิโลกรัม สูง 1.65 เมตร (BMI = 23.9 kg/m²) มาตรวจร่างกายประจำปี พบว่า Triglyceride สูง (ให้สมมติ >150 mg/dL) ส่วนค่า Lab อื่นๆ ปกติ รวมถึง glucose, cholesterol, LDL, HDL, ฟังก์ชันตับและไต ปกติดี ไม่มีประวัติโรคประจำตัว ไม่สูบบุหรี่ ไม่ดื่มแอลกอฮอล์ คำถาม: ต้องจัดการ Hypertriglyceridemia นี้อย่างไรเป็นอันดับแรก?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ยาสตาติน (Statin) ตั้งแต่เริ่มแรก"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยาฟิเบรต (Fibrate) ทันทีเพื่อลด Triglyceride"
+      },
+      {
+        "label": "C",
+        "text": "แนะนำการเปลี่ยนแปลงวิถีชีวิต (Lifestyle modification) รวมทั้งลดน้ำหนัก ลดอาหารไขมัน คาร์โบไฮเดรต และออกกำลังกาย"
+      },
+      {
+        "label": "D",
+        "text": "ให้ยา Omega-3 fatty acid และ Niacin ร่วมกัน"
+      },
+      {
+        "label": "E",
+        "text": "ส่งเรียนแพทย์ Endocrinology เพื่อประเมินหารือการรักษาเพิ่มเติม"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในผู้หญิงสูง 25 ปี ที่ BMI ปกติ ไม่มี metabolic syndrome อื่นๆ ไม่มีประวัติโรค การจัดการอันดับแรกคือ Lifestyle modification (ลดการบริโภคอาหารหวาน คาร์โบไฮเดรต ลดน้ำหนัก ออกกำลังกาย) ซึ่งมีประสิทธิผลสูงในการลด Triglyceride โดยยามีตัวบ่งชี้ให้ใช้เมื่อ triglyceride >200 mg/dL หรือมีเหตุผลอื่นสนับสนุน หากจัดการวิถีชีวิตแล้วยังไม่ดีขึ้นจึงพิจารณาใช้ยา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยโรคเบาหวานชนิดที่ 2 ติดตามดูแลมา 1 เดือน เพื่อประเมินการควบคุมระดับน้ำตาลโลหิตในระยะสั้น การตรวจสอบที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fasting blood glucose"
+      },
+      {
+        "label": "B",
+        "text": "HbA1c (Glycated hemoglobin)"
+      },
+      {
+        "label": "C",
+        "text": "Random blood glucose"
+      },
+      {
+        "label": "D",
+        "text": "Oral glucose tolerance test (OGTT)"
+      },
+      {
+        "label": "E",
+        "text": "Fructosamine"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Fructosamine สะท้อนการควบคุมน้ำตาลโลหิตในระยะ 2-3 สัปดาห์ที่ผ่านมา จึงเหมาะสำหรับติดตามระยะ 1 เดือน ในขณะที่ HbA1c ใช้สำหรับระยะยาว 3-4 เดือน และ Fasting/Random glucose เป็นการวัดเพียงจุดหนึ่ง ไม่ได้สะท้อนแนวโน้มการควบคุม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยนำเสนอด้วย palpitation, sweating, และการลดน้ำหนัก 5 กิโลกรัมในระยะ 5 เดือน พบการขยายต่อมไทรอยด์ด้านซ้ายแบบ generalized ด้านขวาปกติ lymph node cervical ขนาด 0.5 ซม. ผลแลบ: TSH ต่ำ, FT4 สูง จะส่ง investigation อะไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Thyroid ultrasound และ Fine Needle Aspiration Cytology (FNAC)"
+      },
+      {
+        "label": "B",
+        "text": "Thyroid peroxidase (TPO) antibody และ TSI (Thyroid Stimulating Immunoglobulin)"
+      },
+      {
+        "label": "C",
+        "text": "Thyroid scan (Tc-99m pertechnetate)"
+      },
+      {
+        "label": "D",
+        "text": "Thyroid biopsy ทันที"
+      },
+      {
+        "label": "E",
+        "text": "CT neck และ PET scan"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "โจทย์นี้ชี้ไปยัง thyroid nodule ด้านซ้ายที่มี hyperthyroidism (TSH ต่ำ, FT4 สูง) พร้อม lymph node ขยาย ทำให้ต้องแยกว่าเป็น toxic nodule, thyroiditis, หรือ malignancy ดังนั้น ultrasound เป็นสำคัญเพื่อประเมินลักษณะนอดูล และหาก nodule มี suspicious feature ต้อง FNAC เพื่อยกเว้น malignancy",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงมาด้วย weight gain, irregular menstruation, back pain มีประวัติกินยาแก้ปวดหลังเป็นประจาแต่หยุดยามา 1 สัปดาห์ PE: moon face, buffalo hump, hypertension, proximal muscle weakness, etc. ส่งตรวจอะไรดี",
+    "choices": [
+      {
+        "label": "A",
+        "text": "serum morning cortisol"
+      },
+      {
+        "label": "B",
+        "text": "urine 24 hr cortisol"
+      },
+      {
+        "label": "C",
+        "text": "ACTH stimulation test"
+      },
+      {
+        "label": "D",
+        "text": "low-dose dexamethasone suppression test"
+      },
+      {
+        "label": "E",
+        "text": "high-dose dexamethasone suppression test"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "เกณฑ์การวินิจฉัย central obesity ในเพศชายไทยโดยใช้ waist circumference",
+    "choices": [
+      {
+        "label": "A",
+        "text": "70 cm"
+      },
+      {
+        "label": "B",
+        "text": "75 cm"
+      },
+      {
+        "label": "C",
+        "text": "80 cm"
+      },
+      {
+        "label": "D",
+        "text": "85 cm"
+      },
+      {
+        "label": "E",
+        "text": "90 cm"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 35 ปี ประวัติภาวะไทรอยด์เป็นพิษ ได้รับยา Methimazole (MMI) ขนาด 7.5 mg/day มาแล้ว 2 สัปดาห์ หลังจากนั้นเกิดอาการผื่นแพ้ยา จะจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Thyroidectomy (ผ่าตัดออกต่อมไทรอยด์)"
+      },
+      {
+        "label": "B",
+        "text": "I-131 (Radioactive iodine therapy)"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนยาเป็น PTU (Propylthiouracil)"
+      },
+      {
+        "label": "D",
+        "text": "ให้ยาขนาดเท่าเดิมพร้อมแอนติฮิสตามีน"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยา MMI เดิมลดขนาดเป็น 5 mg/day"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "เมื่อเกิดผื่นแพ้ต่อ Methimazole ควรสลับไปใช้ PTU ซึ่งเป็น Thionamide อีกตัวหนึ่งที่มีความสำคัญเนื่องจากมีโอกาส cross-reactivity ต่ำกว่า แม้ว่า PTU มีข้อเสีย (เพ่อม hepatotoxicity) แต่ยังคงเป็นตัวเลือกแรกในกรณีผื่นแพ้จากแมทิมาโซล การทำ thyroidectomy หรือ I-131 เหมาะสำหรับผู้ป่วยที่ไม่สามารถยับยั้งการทำงานของต่อมได้ด้วยยา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยมาด้วยอาการซึมลง ตรวจหาค่า Glucose 43 mg/dL, serum cortisol ปกติ, C-peptide ปกติ-สูงปกติ, insulin ปกติ น่าจะเกิดจากสาเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hepatoma"
+      },
+      {
+        "label": "B",
+        "text": "Insulinoma"
+      },
+      {
+        "label": "C",
+        "text": "Non-islet cell tumor hypoglycemia (NICTH)"
+      },
+      {
+        "label": "D",
+        "text": "Factitious hypoglycemia (insulin injection)"
+      },
+      {
+        "label": "E",
+        "text": "Adrenal insufficiency"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในกรณีนี้ glucose ต่ำแต่ C-peptide และ insulin ปกติ-สูงปกติ บ่งชี้ว่าไม่ใช่การสร้าง insulin จากตัวเองอย่างมากเกินไป และ serum cortisol ปกติ ตัดออกภาวะต่อมหนึ่งนิ่วไม่เพียงพอ ลักษณะนี้สอดคล้องกับ NICTH (종양สร้าง IGF-II) มากกว่า insulinoma ซึ่งจะมี C-peptide และ insulin สูง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี เป็นเบาหวานชนิดที่ 2 มาด้วยอาการหน้ามืด หกล้ม สเหร่ والconfusion หลังจากกินยา sulfonylurea เกินขนาด ตรวจวัดน้ำตาลในเลือด 28 mg/dL ควรจัดการอย่างไรเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้กลูโคส IV 25-50 mL ของ dextrose 50% ทันที"
+      },
+      {
+        "label": "B",
+        "text": "ให้น้ำตาลป่นละลายในน้ำให้กินหากผู้ป่วยมีสติ"
+      },
+      {
+        "label": "C",
+        "text": "ให้อาหารปกติแล้วรอดูอาการ"
+      },
+      {
+        "label": "D",
+        "text": "ให้ glucagon 1 mg IV/IM เพื่อกระตุ้นการหลั่งน้ำตาล"
+      },
+      {
+        "label": "E",
+        "text": "สังเกตการณ์และรับปรึษณ์แพทย์เท่านั้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในกรณี severe hypoglycemia (น้ำตาลเลือด <40 mg/dL) ที่มีอาการประสาทส่วนกลาง (altered consciousness, seizure) ต้องให้ IV dextrose 50% จำนวน 25-50 mL ทันที เพื่อแก้ไขน้ำตาลโลหิตอย่างรวดเร็ว การให้ glucagon เป็นทางเลือกแต่รองลงมา ถ้าผู้ป่วยไม่มีเส้น IV และไม่สามารถกลืนอาหารได้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี มาด้วยอาการเหนื่อยง่าย ปวดศีรษะ และหน้ามืด เมื่อลุกขึ้นยืน ตรวจร่างกายพบผิวหนังสีน้ำตาลดำ ความดันโลหิต 90/60 mmHg ผลตรวจแล้บพบ Hyponatremia (Na 125 mEq/L) และ Hyperkalemia (K 6.2 mEq/L) วินิจฉัยว่าเป็น Primary Adrenal Insufficiency (Addison's disease) การรักษาเบื้องต้นควรเริ่มด้วยยาใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hydrocortisone IV และ Normal saline IV"
+      },
+      {
+        "label": "B",
+        "text": "Spironolactone และ Low-sodium diet"
+      },
+      {
+        "label": "C",
+        "text": "Dexamethasone IV เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "Fludrocortisone oral และ Potassium supplement"
+      },
+      {
+        "label": "E",
+        "text": "Prednisone oral ร่วมกับ Licorice supplement"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยแสดงอาการ Acute Adrenal Crisis (orthostatic hypotension, hyponatremia, hyperkalemia) ต้องรักษาเร่งด่วนด้วย Hydrocortisone IV (glucocorticoid ทำงานเร็ว) เพื่อแทนที่ cortisol ที่ขาดและ Normal saline IV เพื่อแก้ไข hypovolemia, hyponatremia และ hyperkalemia ได้พร้อมกัน การรักษาระยะยาวจะเพิ่มยา Mineralocorticoid (fludrocortisone) ทีหลัง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 35 ปี ป่วยเป็น Graves' disease วางแผน I-131 therapy เพื่อรักษา hyperthyroidism ต้องเตรียมตัวก่อนการรักษาข้อใดต่อไปนี้ยกเว้น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตรวจคัดกรองความเป็นไปได้ของการตั้งครรภ์ (Screening pregnancy test)"
+      },
+      {
+        "label": "B",
+        "text": "ถามประวัติการให้นมลูกด้วยนม (Screening breastfeeding status)"
+      },
+      {
+        "label": "C",
+        "text": "รับประทานอาหารต่ำไอโอดีนเป็นเวลา 1-2 สัปดาห์ก่อนรักษา (Low iodine diet)"
+      },
+      {
+        "label": "D",
+        "text": "หยุดการใช้ยา Beta-blocker เป็นเวลา 1-2 สัปดาห์ก่อนรักษา"
+      },
+      {
+        "label": "E",
+        "text": "หยุดยาต้านไทรอยด์ (Anti-thyroid drug) เป็นเวลา 7-10 วันก่อนรักษา"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ก่อน I-131 therapy ต้องหยุด anti-thyroid drugs เพื่อให้ต่อมไทรอยด์สามารถ uptake I-131 ได้ดี และต้องให้ low iodine diet เพื่อลดการแข่งขันของไอโอดีนธรรมชาติ ต้องตรวจ pregnancy และประวัติ breastfeeding เนื่องจาก I-131 contraindicated ในการตั้งครรภ์และให้นมลูก แต่ Beta-blocker ไม่จำเป็นต้องหยุด เพราะใช้เพื่อจัดการอาการ symptomatic และไม่ส่งผลต่อ I-131 uptake",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "endocrine",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

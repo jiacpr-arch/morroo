@@ -1,0 +1,493 @@
+// Code Blue Sim — data access (server components)
+//
+// เคสมี 2 แหล่ง: built-in ในโค้ด (lib/sim/scenarios.ts) + ตาราง sim_scenarios
+// (แอดมิน/AI สร้าง, เฉพาะ status='published') — รวมกันโดย built-in ชนะเมื่อ slug ซ้ำ
+
+import { createClient } from "@/lib/supabase/server";
+import { SIM_SCENARIOS, getBuiltinScenario } from "@/lib/sim/scenarios";
+import type { SimDbCharacter } from "@/lib/sim/characters";
+import { isValidScenario, type SimScenario } from "@/lib/sim/types";
+import { caseIdFromSlug, longCaseToScenario, slugForCase } from "@/lib/sim/longcase-to-scenario";
+import { summarizeExpertise, type SpecialtyExpertise } from "@/lib/sim/expertise";
+import { normalizeSpecialty, OTHER_SPECIALTY } from "@/lib/casegame/normalize";
+import { getLongCaseFull } from "./queries-longcase";
+
+interface SimScenarioRow {
+  slug: string;
+  title: string;
+  subtitle: string | null;
+  difficulty_tag: string | null;
+  category: string | null;
+  source_case_id: string | null;
+  bg: string | null;
+  story: unknown;
+}
+
+const SCENARIO_COLS = "slug, title, subtitle, difficulty_tag, category, source_case_id, bg, story";
+
+function rowToScenario(row: SimScenarioRow): SimScenario | null {
+  const scenario = {
+    slug: row.slug,
+    title: row.title,
+    subtitle: row.subtitle ?? "",
+    difficultyTag: row.difficulty_tag ?? undefined,
+    category: row.category ?? "acls",
+    sourceCaseId: row.source_case_id ?? undefined,
+    bg: row.bg ?? undefined,
+    story: row.story,
+  };
+  return isValidScenario(scenario) ? scenario : null;
+}
+
+export async function getSimScenarios(): Promise<SimScenario[]> {
+  const out = [...SIM_SCENARIOS];
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select(SCENARIO_COLS)
+      .eq("status", "published")
+      .order("created_at", { ascending: true });
+    for (const row of (data as SimScenarioRow[] | null) ?? []) {
+      if (out.some((s) => s.slug === row.slug)) continue;
+      const scenario = rowToScenario(row);
+      if (scenario) out.push(scenario);
+    }
+  } catch {
+    // DB ล่ม/ยังไม่ migrate → เล่น built-in ได้เสมอ
+  }
+  return out;
+}
+
+export async function getSimScenario(slug: string): Promise<SimScenario | null> {
+  const builtin = getBuiltinScenario(slug);
+  if (builtin) return builtin;
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select(SCENARIO_COLS)
+      .eq("slug", slug)
+      .eq("status", "published")
+      .maybeSingle();
+    if (data) return rowToScenario(data as SimScenarioRow);
+  } catch {
+    // ตกไปลองเส้นทางสังเคราะห์ด้านล่าง
+  }
+  // เกมสังเคราะห์จาก long_cases (deterministic): slug = lc-<caseId>
+  const caseId = caseIdFromSlug(slug);
+  if (caseId) {
+    try {
+      const lc = await getLongCaseFull(caseId);
+      if (lc) return longCaseToScenario(lc);
+    } catch {
+      // เงียบ — คืน null ด้านล่าง
+    }
+  }
+  return null;
+}
+
+/**
+ * สาขาของเคสหนึ่ง ๆ — ส่งเข้าเกมเพื่อ denormalize ลง `sim_runs.specialty`
+ * ตอนบันทึกผล (ใช้คิดความเชี่ยวชาญรายสาขา ดู lib/sim/expertise.ts)
+ *
+ * ต้นทางต่างกันตามชนิดเคส: long case อยู่ที่ `long_cases.specialty`,
+ * MEQ อยู่ที่ `exams.category` และเกมสังเคราะห์ไม่มีแถวใน sim_scenarios เลย
+ * คืน null เมื่อหาไม่เจอ — เคส ACLS ไม่มีสาขาอยู่แล้ว
+ */
+export async function getScenarioSpecialty(slug: string): Promise<string | null> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select("source_case_id, source_exam_id")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .maybeSingle();
+    const row = data as { source_case_id: string | null; source_exam_id: string | null } | null;
+
+    if (row?.source_case_id) {
+      const { data: lc } = await supabase
+        .from("long_cases")
+        .select("specialty")
+        .eq("id", row.source_case_id)
+        .maybeSingle();
+      if (lc?.specialty) return lc.specialty as string;
+    }
+    if (row?.source_exam_id) {
+      const { data: exam } = await supabase
+        .from("exams")
+        .select("category")
+        .eq("id", row.source_exam_id)
+        .maybeSingle();
+      if (exam?.category) return exam.category as string;
+    }
+
+    // เกมสังเคราะห์ slug = lc-<caseId> ที่ยังไม่มีแถวใน sim_scenarios
+    const caseId = caseIdFromSlug(slug);
+    if (caseId) {
+      const { data: lc } = await supabase
+        .from("long_cases")
+        .select("specialty")
+        .eq("id", caseId)
+        .maybeSingle();
+      if (lc?.specialty) return lc.specialty as string;
+    }
+  } catch {
+    // สาขาเป็นข้อมูลเสริม — หาไม่ได้ก็ให้เล่นต่อได้ตามปกติ
+  }
+  return null;
+}
+
+export interface LongcaseGameCard {
+  slug: string;
+  caseId: string;
+  title: string;
+  specialty: string;
+  audience: string;
+  difficulty: string;
+  isWeekly: boolean;
+}
+
+/**
+ * การ์ดเกมเคสสำหรับหน้า /casegame — ทุกเคส published (student + board)
+ * สังเคราะห์ slug = lc-<id>. ตัดเคสที่มีเกม polished (built-in/DB) ครอบแล้ว
+ * โดยดูจาก sourceCaseId เพื่อให้เวอร์ชันที่คัดมือชนะ
+ */
+export async function getLongcaseGameCards(): Promise<LongcaseGameCard[]> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("long_cases")
+      .select("id, title, specialty, difficulty, audience, is_weekly")
+      .eq("is_published", true)
+      .order("is_weekly", { ascending: false })
+      .order("created_at", { ascending: false });
+    type Row = {
+      id: string;
+      title: string;
+      specialty: string | null;
+      difficulty: string | null;
+      audience: string | null;
+      is_weekly: boolean;
+    };
+    const rows = (data as Row[] | null) ?? [];
+    if (rows.length === 0) return [];
+    const covered = new Set<string>();
+    for (const s of await getSimScenariosByCategory("longcase")) {
+      if (s.sourceCaseId) covered.add(s.sourceCaseId);
+    }
+    return rows
+      .filter((r) => !covered.has(r.id))
+      .map((r) => ({
+        slug: slugForCase(r.id),
+        caseId: r.id,
+        title: r.title,
+        specialty: r.specialty ?? "",
+        audience: r.audience ?? "student",
+        difficulty: r.difficulty ?? "medium",
+        isWeekly: !!r.is_weekly,
+      }));
+  } catch {
+    return [];
+  }
+}
+
+export interface PolishedLongcaseCard {
+  slug: string;
+  title: string;
+  subtitle: string;
+  specialty: string;
+  difficulty: string;
+  audience: string;
+}
+
+/**
+ * เกมเคส longcase ที่ AI แปลงไว้แล้ว (sim_scenarios category='longcase') พร้อม
+ * สาขา/ความยากที่ join กลับ long_cases ผ่าน source_case_id
+ *
+ * เดิมหน้า /casegame เอาชุดนี้ไปแสดงเป็น "เคสแนะนำ" ทั้งก้อน — พอมีเป็นร้อยเคส
+ * หน้าเลยยาวมากและกรองตามสาขาไม่ได้ (ตัว scenario ไม่เก็บสาขา) จึงต้องดึงสาขา
+ * มาให้ครบเพื่อให้เข้าลิสต์หลักที่จัดกลุ่ม/กรองได้เหมือนเคสอื่น
+ */
+export async function getPolishedLongcaseCards(): Promise<PolishedLongcaseCard[]> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select("slug, title, subtitle, source_case_id")
+      .eq("category", "longcase")
+      .eq("status", "published")
+      .not("source_case_id", "is", null)
+      .order("created_at", { ascending: false });
+    type Row = {
+      slug: string;
+      title: string;
+      subtitle: string | null;
+      source_case_id: string | null;
+    };
+    const rows = (data as Row[] | null) ?? [];
+    if (rows.length === 0) return [];
+
+    const caseIds = [...new Set(rows.map((r) => r.source_case_id).filter(Boolean))] as string[];
+    const caseMap = new Map<
+      string,
+      { specialty: string | null; difficulty: string | null; audience: string | null }
+    >();
+    if (caseIds.length > 0) {
+      const { data: cases } = await supabase
+        .from("long_cases")
+        .select("id, specialty, difficulty, audience")
+        .in("id", caseIds);
+      type CaseRow = {
+        id: string;
+        specialty: string | null;
+        difficulty: string | null;
+        audience: string | null;
+      };
+      for (const c of (cases as CaseRow[] | null) ?? []) {
+        caseMap.set(c.id, {
+          specialty: c.specialty,
+          difficulty: c.difficulty,
+          audience: c.audience,
+        });
+      }
+    }
+
+    return rows.map((r) => {
+      const c = r.source_case_id ? caseMap.get(r.source_case_id) : undefined;
+      return {
+        slug: r.slug,
+        title: r.title,
+        subtitle: r.subtitle ?? "",
+        specialty: c?.specialty ?? "",
+        difficulty: c?.difficulty ?? "medium",
+        audience: c?.audience ?? "student",
+      };
+    });
+  } catch {
+    return [];
+  }
+}
+
+export interface MeqGameCard {
+  slug: string;
+  title: string;
+  subtitle: string;
+  specialty: string; // exams.category (สาขาไทย)
+  difficulty: string; // exams.difficulty (easy|medium|hard)
+}
+
+/**
+ * การ์ดเกมเคสที่แปลงจากข้อสอบ MEQ (sim_scenarios category='meq') — join กลับ
+ * exams ผ่าน source_exam_id เพื่อดึงสาขา (exams.category) + ความยาก ที่ตัว
+ * sim_scenarios ไม่มีเก็บไว้ ใช้ทำตัวกรอง/จัดกลุ่มในหน้า /casegame
+ */
+export async function getMeqGameCards(): Promise<MeqGameCard[]> {
+  try {
+    const supabase = await createClient();
+    const { data: scen } = await supabase
+      .from("sim_scenarios")
+      .select("slug, title, subtitle, source_exam_id")
+      .eq("category", "meq")
+      .eq("status", "published")
+      .order("created_at", { ascending: false });
+    type ScenRow = {
+      slug: string;
+      title: string;
+      subtitle: string | null;
+      source_exam_id: string | null;
+    };
+    const rows = (scen as ScenRow[] | null) ?? [];
+    if (rows.length === 0) return [];
+
+    // ดึงสาขา (exams.category) + ความยากของข้อสอบต้นฉบับแบบ batch
+    const examIds = [...new Set(rows.map((r) => r.source_exam_id).filter(Boolean))] as string[];
+    const examMap = new Map<string, { category: string | null; difficulty: string | null }>();
+    if (examIds.length > 0) {
+      const { data: exams } = await supabase
+        .from("exams")
+        .select("id, category, difficulty")
+        .in("id", examIds);
+      for (const e of (exams as { id: string; category: string | null; difficulty: string | null }[] | null) ?? []) {
+        examMap.set(e.id, { category: e.category, difficulty: e.difficulty });
+      }
+    }
+
+    return rows.map((r) => {
+      const ex = r.source_exam_id ? examMap.get(r.source_exam_id) : undefined;
+      return {
+        slug: r.slug,
+        title: r.title,
+        subtitle: r.subtitle ?? "",
+        specialty: ex?.category ?? "",
+        difficulty: ex?.difficulty ?? "medium",
+      };
+    });
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * จำนวนเกมเคสทั้งหมด (เคสขัดเงา + สังเคราะห์จาก long_cases) — ตัวเลขเดียวกับ
+ * ที่โชว์บนหน้า /casegame ใช้โปรโมตบนหน้าแรก
+ */
+export async function getCasegameCount(): Promise<number> {
+  const [polished, cards] = await Promise.all([
+    getSimScenariosByCategory("longcase"),
+    getLongcaseGameCards(),
+  ]);
+  return polished.length + cards.length;
+}
+
+/** เคสตามหมวด: 'acls' (Code Blue) หรือ 'longcase' (เกมเคส) — built-in ที่ไม่ระบุถือเป็น acls */
+export async function getSimScenariosByCategory(category: string): Promise<SimScenario[]> {
+  const all = await getSimScenarios();
+  return all.filter((s) => (s.category ?? "acls") === category);
+}
+
+/** map: long_case id → slug ของเกมเคสที่ published (ใช้ทำลิงก์ "เล่นเป็นเกม" ในหน้า /longcase) */
+export async function getLongcaseGameMap(): Promise<Record<string, string>> {
+  const map: Record<string, string> = {};
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select("slug, source_case_id")
+      .eq("status", "published")
+      .eq("category", "longcase")
+      .not("source_case_id", "is", null);
+    for (const row of (data as { slug: string; source_case_id: string | null }[] | null) ?? []) {
+      if (row.source_case_id) map[row.source_case_id] = row.slug;
+    }
+  } catch {
+    // DB ล่ม/ยังไม่ migrate → ไม่มีลิงก์รายเคส (banner ยังทำงาน)
+  }
+  return map;
+}
+
+interface SimCharacterRow {
+  slug: string;
+  name: string;
+  role: string | null;
+  plate_top: string;
+  plate_bottom: string;
+  images: Record<string, string> | null;
+  motion: string | null;
+}
+
+/** ตัวละคร active จากตาราง sim_characters (ตัวที่แอดมินเพิ่ม) */
+export async function getSimCharacters(): Promise<SimDbCharacter[]> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_characters")
+      .select("slug, name, role, plate_top, plate_bottom, images, motion")
+      .eq("status", "active")
+      .order("created_at", { ascending: true });
+    return ((data as SimCharacterRow[] | null) ?? []).map((row) => ({
+      slug: row.slug,
+      name: row.name,
+      role: row.role,
+      plate: [row.plate_top, row.plate_bottom] as [string, string],
+      images: row.images ?? {},
+      motion: (row.motion ?? "none") as SimDbCharacter["motion"],
+    }));
+  } catch {
+    return [];
+  }
+}
+
+export interface SimBest {
+  grade: string;
+  score: number;
+  won: boolean;
+  runs: number;
+}
+
+/** ผลดีที่สุดของผู้ใช้ต่อเคส (สำหรับหน้ารวมเคส) — key = scenario_slug */
+export async function getMySimBests(): Promise<Record<string, SimBest>> {
+  const bests: Record<string, SimBest> = {};
+  try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return bests;
+    const { data } = await supabase
+      .from("sim_runs")
+      .select("scenario_slug, grade, score, won")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false })
+      .limit(500);
+    type Run = { scenario_slug: string; grade: string; score: number; won: boolean };
+    for (const run of (data as Run[] | null) ?? []) {
+      const cur = bests[run.scenario_slug];
+      if (!cur) {
+        bests[run.scenario_slug] = { grade: run.grade, score: run.score, won: run.won, runs: 1 };
+        continue;
+      }
+      cur.runs += 1;
+      if (run.score > cur.score || (run.won && !cur.won)) {
+        cur.grade = run.grade;
+        cur.score = run.score;
+        cur.won = cur.won || run.won;
+      }
+    }
+  } catch {
+    // Non-blocking
+  }
+  return bests;
+}
+
+export interface MyDoctorProfile {
+  /** XP สะสมทั้งเว็บ (profiles.school_xp) — ใช้คิดยศ */
+  xp: number;
+  /** ความเชี่ยวชาญทุกสาขา เรียงจากเก่งสุด */
+  specialties: SpecialtyExpertise[];
+  /** จำนวนเคสที่ชนะทั้งหมด */
+  totalWins: number;
+}
+
+/**
+ * "ตัวละคร" ของผู้ใช้ปัจจุบันสำหรับหน้ารวมเกมเคส — คืน null เมื่อไม่ได้ล็อกอิน
+ *
+ * สาขาถูก normalize อีกชั้นตอนอ่าน เพราะแถวที่ backfill จาก migration เก็บค่า
+ * ดิบไว้ (ไทย/อังกฤษปนกัน) ถ้าไม่ยุบจะกลายเป็นคนละสาขาแล้วไต่ขั้นไม่ถึง
+ */
+export async function getMyDoctorProfile(): Promise<MyDoctorProfile | null> {
+  try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return null;
+
+    const [{ data: profile }, { data: runs }] = await Promise.all([
+      supabase.from("profiles").select("school_xp").eq("id", user.id).maybeSingle(),
+      supabase
+        .from("sim_runs")
+        .select("specialty, won")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false })
+        .limit(500),
+    ]);
+
+    type Row = { specialty: string | null; won: boolean };
+    const rows = (runs as Row[] | null) ?? [];
+    const specialties = summarizeExpertise(
+      rows.map((r) => {
+        const canonical = r.specialty ? normalizeSpecialty(r.specialty) : null;
+        return {
+          specialty: canonical === OTHER_SPECIALTY ? null : canonical,
+          won: r.won,
+        };
+      }),
+    );
+
+    return {
+      xp: profile?.school_xp ?? 0,
+      specialties,
+      totalWins: rows.filter((r) => r.won).length,
+    };
+  } catch {
+    return null;
+  }
+}

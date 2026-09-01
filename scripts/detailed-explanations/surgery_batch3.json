@@ -1,0 +1,842 @@
+[
+  {
+    "id": "5c3588ba-61e6-4d04-b07f-9845caac2cc1",
+    "correct_answer": "B",
+    "explanation": "Thrombosed external hemorrhoid รักษาด้วย excisional hemorrhoidectomy ภายใน 72 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Excisional hemorrhoidectomy) เพราะ thrombosed external hemorrhoid ที่ยังเจ็บอยู่ (<72 ชั่วโมง) รักษาด้วยการผ่าตัด",
+      "reason": "Hemorrhoid treatment: Internal hemorrhoid: Grade I-II: conservative/sclerotherapy/rubber banding; Grade III-IV: surgery Thrombosed external hemorrhoid: Acute (<72 hr): excisional hemorrhoidectomy (remove entire hemorrhoid) ให้ relief ทันที Conservative (>72 hr หรือ resolving): sitz bath, stool softener, analgesics Conservative management (stool softener): สำหรับ mild internal hemorrhoid ไม่ใช่ thrombosed external Rubber banding: สำหรับ internal hemorrhoid grade I-III ไม่ใช่ external",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rubber banding",
+          "is_correct": false,
+          "explanation": "Rubber banding ใช้สำหรับ internal hemorrhoid ไม่ใช่ external thrombosed"
+        },
+        {
+          "label": "B",
+          "text": "Excisional hemorrhoidectomy",
+          "is_correct": true,
+          "explanation": "Thrombosed external hemorrhoid acute (<72 hr): excisional หรือ incision + drainage"
+        },
+        {
+          "label": "C",
+          "text": "Sclerosing agent",
+          "is_correct": false,
+          "explanation": "Sclerotherapy ใช้สำหรับ internal hemorrhoid grade I-II"
+        },
+        {
+          "label": "D",
+          "text": "Stapler hemorrhoidectomy",
+          "is_correct": false,
+          "explanation": "Stapler hemorrhoidopexy ใช้สำหรับ internal prolapsed hemorrhoid"
+        },
+        {
+          "label": "E",
+          "text": "Conservative + stool softener",
+          "is_correct": false,
+          "explanation": "Conservative ใช้เมื่อ >72 hr ที่กำลัง resolve; acute (<72 hr) = surgery"
+        }
+      ],
+      "key_takeaway": "Thrombosed external hemorrhoid acute (<72 hr): Excisional hemorrhoidectomy; Chronic (>72 hr): Conservative"
+    }
+  },
+  {
+    "id": "6330e862-aec2-43c2-9af5-4b25228ecb14",
+    "correct_answer": "E",
+    "explanation": "Septic shock หลัง cholecystectomy → first step คือ IV fluid resuscitation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (IV fluid resuscitation) เพราะ Surviving Sepsis Campaign: fluid resuscitation เป็น first step ใน septic shock",
+      "reason": "Septic shock management (Surviving Sepsis Campaign Bundle): 1) IV fluid resuscitation: 30 mL/kg crystalloid ภายใน 3 ชั่วโมง (เป็น first step ก่อน vasopressor) 2) Blood culture ก่อน antibiotics 3) Broad-spectrum antibiotics ภายใน 1 ชั่วโมง 4) Vasopressor (Norepinephrine) ถ้า MAP <65 ต่อจาก fluid 5) Lactate measurement เปรียบกับ Q16 (Q16 ถามหลังให้ fluid แล้ว BP ยังต่ำ = vasopressor); Q42 นี้ถามถึง initial management = fluid",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dopamine IV",
+          "is_correct": false,
+          "explanation": "Vasopressor ใช้หลัง adequate fluid resuscitation แล้ว MAP ยังต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Norepinephrine IV",
+          "is_correct": false,
+          "explanation": "NE ใช้หลัง fluid; ไม่ใช่ first step"
+        },
+        {
+          "label": "C",
+          "text": "Antibiotics IV",
+          "is_correct": false,
+          "explanation": "Antibiotics สำคัญแต่ fluid resuscitation เป็น first priority"
+        },
+        {
+          "label": "D",
+          "text": "Intubation + ventilation",
+          "is_correct": false,
+          "explanation": "Intubation ถ้า respiratory failure; ไม่ใช่ first step สำหรับ septic shock"
+        },
+        {
+          "label": "E",
+          "text": "IV fluid resuscitation",
+          "is_correct": true,
+          "explanation": "Septic shock first step = 30 mL/kg crystalloid IV (Surviving Sepsis Campaign)"
+        }
+      ],
+      "key_takeaway": "Septic shock initial management: IV fluid resuscitation 30 mL/kg ก่อน → ถ้ายังต่ำ → Vasopressor (NE)"
+    }
+  },
+  {
+    "id": "6380d471-3449-4c4f-8b7a-2cef2de6e73f",
+    "correct_answer": "B",
+    "explanation": "ชาย 60 ปี acute gastroenteritis admitted แล้วเกิด urinary retention → Urinary catheterization เพื่อ relieve retention",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Urinary catheterization) เพราะ acute urinary retention ต้องการ immediate drainage",
+      "reason": "Acute urinary retention (AUR) ใน hospitalized patient: ภาวะแทรกซ้อนจาก: dehydration, anticholinergic medications (antiemetics), opioids, prostatic disease Immediate treatment: Urinary catheterization (Foley catheter) เพื่อ relieve distension + ป้องกัน renal damage Post-void residual (PVR) ใน hospitalized patient: ถ้า >300 mL = treat Morphine infusion จะทำให้ AUR worse (opioid effect on urethral sphincter) Surgeon consult ไม่จำเป็นสำหรับ simple AUR",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Consult surgeon",
+          "is_correct": false,
+          "explanation": "Surgeon ไม่จำเป็นสำหรับ simple AUR; catheterization ทำได้ทันที"
+        },
+        {
+          "label": "B",
+          "text": "Urinary catheterization",
+          "is_correct": true,
+          "explanation": "AUR → Foley catheter ทันทีเพื่อ relieve bladder distension"
+        },
+        {
+          "label": "C",
+          "text": "Morphine infusion",
+          "is_correct": false,
+          "explanation": "Morphine ทำให้ AUR worse เพราะ opioids ลด detrusor contractility"
+        },
+        {
+          "label": "D",
+          "text": "Emergency abdominal US",
+          "is_correct": false,
+          "explanation": "US ช่วย confirm แต่ catheterization ทำก่อน immediate treatment"
+        },
+        {
+          "label": "E",
+          "text": "CT abdomen with contrast",
+          "is_correct": false,
+          "explanation": "CT ไม่จำเป็นสำหรับ simple urinary retention"
+        }
+      ],
+      "key_takeaway": "Acute urinary retention → Foley catheterization ทันทีเพื่อ relieve bladder distension"
+    }
+  },
+  {
+    "id": "697ce8dc-5bad-419a-8a54-8e6b03cb6cc1",
+    "correct_answer": "B",
+    "explanation": "ชาย 35 ปี ปวดกระเพาะเฉียบพลัน + free air ใต้ diaphragm + rigid abdomen = Peptic ulcer perforation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Peptic ulcer perforation) เพราะ sudden epigastric pain + board-like rigidity + pneumoperitoneum = perforated PUD",
+      "reason": "Perforated peptic ulcer: Sudden severe epigastric pain 'board-like' rigidity (peritonitis) Free air under diaphragm บน upright CXR History: NSAIDs use, H. pylori, smoking, alcohol Treatment: Emergency laparotomy + primary closure (Graham patch) ± H. pylori eradication Ruptured hepatoma: มักมีประวัติ HCC background + right side pain Ruptured appendicitis: RLQ pain ก่อน generalized peritonitis Acute pancreatitis: ไม่มี free air",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ruptured hepatoma",
+          "is_correct": false,
+          "explanation": "HCC rupture: RUQ pain + known liver disease + massive hemoperitoneum"
+        },
+        {
+          "label": "B",
+          "text": "Peptic ulcer perforation",
+          "is_correct": true,
+          "explanation": "Sudden epigastric + board-like rigidity + free air = perforated PUD คลาสสิก"
+        },
+        {
+          "label": "C",
+          "text": "Ruptured appendicitis",
+          "is_correct": false,
+          "explanation": "Ruptured appendix: RLQ pain ก่อน แล้ว generalized peritonitis; ไม่มี free air บ่อย"
+        },
+        {
+          "label": "D",
+          "text": "Ruptured sigmoid diverticulitis",
+          "is_correct": false,
+          "explanation": "Diverticulitis: LLQ pain + fever ไม่ใช่ sudden epigastric onset"
+        },
+        {
+          "label": "E",
+          "text": "Acute pancreatitis",
+          "is_correct": false,
+          "explanation": "Pancreatitis: amylase/lipase สูง ไม่มี free air ใต้ diaphragm"
+        }
+      ],
+      "key_takeaway": "Sudden epigastric pain + board-like rigidity + free air under diaphragm = Perforated PUD → Emergency laparotomy"
+    }
+  },
+  {
+    "id": "6ae06f87-9754-4731-88f3-e0123ad2e47c",
+    "correct_answer": "E",
+    "explanation": "ชาย 60 ปี DRE prostate 2+ PSA borderline → Follow up PSA 6 เดือน + DRE ซ้ำ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Follow PSA 6 เดือน + DRE ซ้ำ) เพราะ borderline PSA ใน BPH ต้องติดตามก่อน biopsy",
+      "reason": "PSA interpretation ใน BPH: PSA 4-10 ng/mL (borderline zone): อาจเกิดจาก BPH หรือ prostate cancer ต้องพิจารณา: PSA density, PSA velocity, free/total PSA ratio Immediate biopsy: ถ้า PSA >10 หรือ DRE suspicious (hard nodule) Follow up 6 เดือน: PSA borderline 4-10 + benign DRE = reasonable approach ก่อน biopsy Alpha-1 blocker: รักษา LUTS ไม่ใช่ PSA elevation ปล่อย observe: ไม่เหมาะ ต้องติดตาม",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe ไม่แทรกแซง",
+          "is_correct": false,
+          "explanation": "PSA borderline ต้องติดตาม ไม่ใช่ ignore อย่างเดียว"
+        },
+        {
+          "label": "B",
+          "text": "Prostate biopsy ทันที",
+          "is_correct": false,
+          "explanation": "Biopsy ทำทันทีถ้า PSA >10 หรือ DRE suspicious; borderline = follow up ก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Alpha-1 blocker",
+          "is_correct": false,
+          "explanation": "Alpha blocker รักษา LUTS ไม่ใช่ PSA elevation workup"
+        },
+        {
+          "label": "D",
+          "text": "ติดตาม PSA 1 สัปดาห์",
+          "is_correct": false,
+          "explanation": "1 สัปดาห์สั้นเกินไป PSA ไม่เปลี่ยนในเวลานั้น"
+        },
+        {
+          "label": "E",
+          "text": "Follow PSA 6 เดือน + DRE ซ้ำ",
+          "is_correct": true,
+          "explanation": "PSA borderline + benign DRE = follow up 6 เดือน ดู PSA velocity ก่อน biopsy"
+        }
+      ],
+      "key_takeaway": "PSA borderline (4-10) + benign DRE → Follow up PSA 6 เดือน; Biopsy ถ้า PSA >10 หรือ DRE suspicious"
+    }
+  },
+  {
+    "id": "6b803fef-59c9-4ac4-9da4-1c6e72c26478",
+    "correct_answer": "D",
+    "explanation": "ผู้ป่วยอุบัติเหตุ vital signs ผิดปกติ มีแผล scalp bleeding → Stop bleeding by direct pressure เป็น first priority",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Stop bleeding by direct pressure) เพราะ external hemorrhage control เป็น priority ใน trauma initial assessment",
+      "reason": "ATLS trauma management: A - Airway B - Breathing C - Circulation (รวมถึง hemorrhage control) D - Disability E - Exposure ใน C step: Hemorrhage control = stop external bleeding by direct pressure ก่อน IV access Scalp laceration สามารถ bleed อย่างมากเพราะ scalp highly vascular ทำให้ hypovolemia Direct pressure เป็น immediate, cost-effective, life-saving FAST scan ทำหลังจาก initial assessment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "FAST scan",
+          "is_correct": false,
+          "explanation": "FAST ทำใน secondary survey หรือหลัง stop external bleeding"
+        },
+        {
+          "label": "B",
+          "text": "Endotracheal intubation",
+          "is_correct": false,
+          "explanation": "Intubation ถ้า airway compromise; scalp bleeding ไม่ใช่ airway problem"
+        },
+        {
+          "label": "C",
+          "text": "Assess IV fluid",
+          "is_correct": false,
+          "explanation": "IV access สำคัญแต่ stop bleeding ก่อน เพื่อลด ongoing blood loss"
+        },
+        {
+          "label": "D",
+          "text": "Stop bleeding by direct pressure",
+          "is_correct": true,
+          "explanation": "External hemorrhage = direct pressure เป็น immediate action ใน ATLS C step"
+        },
+        {
+          "label": "E",
+          "text": "CT scan abdomen",
+          "is_correct": false,
+          "explanation": "CT ทำในผู้ป่วย stable หลังจัดการ immediate life threats แล้ว"
+        }
+      ],
+      "key_takeaway": "Trauma + external bleeding → Direct pressure เพื่อ stop hemorrhage = ATLS C step immediate action"
+    }
+  },
+  {
+    "id": "6e917b5c-40b3-4542-97b9-f4112b784ce4",
+    "correct_answer": "A",
+    "explanation": "หญิง 15 ปี strong family history breast cancer (แม่+ป้า+ยาย) = BRCA mutation risk → MRI เมื่ออายุ 40 ปี",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (MRI เมื่ออายุ 40 ปี) เพราะ BRCA carrier ที่มีประวัติครอบครัวสูง ต้องทำ screening MRI ตั้งแต่อายุ 40 ปี",
+      "reason": "BRCA1/2 mutation carriers breast cancer screening: Annual MRI: ตั้งแต่อายุ 25-30 ปี (หรือ 10 ปีก่อน youngest case ในครอบครัว) Annual mammography: ตั้งแต่ 30-35 ปี ในครอบครัวที่มี case ที่อายุน้อย สำหรับ high-risk ที่ไม่ได้ genetic test หรือ moderate risk: MRI ตั้งแต่ 40 ปี ตาม exam: MRI เมื่ออายุ 40 ปี สำหรับ high-risk family ที่ป้าเป็น cancer ตอน 40 ปี",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI เมื่ออายุ 40 ปี",
+          "is_correct": true,
+          "explanation": "High-risk family history → MRI ตั้งแต่ 40 ปี (ตาม exam); BRCA carrier = เริ่มเร็วกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Self-breast exam ทุกเดือน",
+          "is_correct": false,
+          "explanation": "Self-exam ไม่ถือว่าเป็น evidence-based screening สำหรับ high-risk"
+        },
+        {
+          "label": "C",
+          "text": "Clinical breast exam ทุกปี",
+          "is_correct": false,
+          "explanation": "Clinical exam ไม่เพียงพอสำหรับ high-risk carrier"
+        },
+        {
+          "label": "D",
+          "text": "Screening USG เมื่ออายุ 20 ปี",
+          "is_correct": false,
+          "explanation": "US ไม่ใช่ primary screening tool สำหรับ BRCA carrier"
+        },
+        {
+          "label": "E",
+          "text": "Mammography ทุกปีตั้งแต่ 40 ปี",
+          "is_correct": false,
+          "explanation": "Mammography ร่วมกับ MRI ใน high-risk; แต่ MRI เป็น preferred screening ใน BRCA"
+        }
+      ],
+      "key_takeaway": "High-risk breast cancer family (BRCA) → Annual MRI (เป็น primary screening; mammography ร่วมด้วย)"
+    }
+  },
+  {
+    "id": "7109758a-7680-4913-abcb-ceea43e1f77e",
+    "correct_answer": "D",
+    "explanation": "Thyroglossal duct cyst มีจุดเริ่มต้นที่ฐานลิ้น (proximal trunk at base of tongue)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (มีจุดเริ่มต้นที่ฐานลิ้น) เพราะ thyroglossal duct เริ่มจาก foramen cecum ที่ base of tongue",
+      "reason": "Thyroglossal duct cyst anatomy: Thyroid gland เจริญจาก foramen cecum (base of tongue) ลงมาตามคอ ผ่าน hyoid bone ไปยังตำแหน่งปกติ Thyroglossal duct cyst: midline cyst ที่เกิดจาก remnant ของ duct นี้ Location: midline คอ (ไม่ใช่ lateral) Moves with swallowing และ tongue protrusion Treatment: Sistrunk operation (เอา cyst + hyoid bone + tract ออก) ไม่ใช่ thyroidectomy Malignant transformation: พบได้แต่ rare (~1%) มักเป็น papillary thyroid cancer ไม่ใช่ที่อายุ 45 ปีเฉพาะ Origin: foregut ไม่ใช่ midgut",
+      "choices": [
+        {
+          "label": "A",
+          "text": "พบที่ lateral neck",
+          "is_correct": false,
+          "explanation": "Thyroglossal cyst อยู่ midline; lateral cyst = branchial cleft cyst"
+        },
+        {
+          "label": "B",
+          "text": "การรักษาคือ partial thyroidectomy",
+          "is_correct": false,
+          "explanation": "รักษาด้วย Sistrunk operation (cyst + hyoid body + tract) ไม่ใช่ thyroidectomy"
+        },
+        {
+          "label": "C",
+          "text": "เปลี่ยนเป็นมะเร็งที่อายุ 45 ปี",
+          "is_correct": false,
+          "explanation": "Malignant transformation พบได้ (~1%) แต่ไม่ specific ที่อายุ 45 ปี"
+        },
+        {
+          "label": "D",
+          "text": "มีจุดเริ่มต้นที่ฐานลิ้น (base of tongue)",
+          "is_correct": true,
+          "explanation": "Thyroglossal duct เริ่มจาก foramen cecum ที่ base of tongue = proximal origin"
+        },
+        {
+          "label": "E",
+          "text": "กำเนิดมาจาก midgut",
+          "is_correct": false,
+          "explanation": "Thyroid/thyroglossal duct มาจาก foregut (pharyngeal floor) ไม่ใช่ midgut"
+        }
+      ],
+      "key_takeaway": "Thyroglossal duct cyst: midline, moves with tongue protrusion, origin = base of tongue (foramen cecum); Sistrunk op"
+    }
+  },
+  {
+    "id": "76d218ea-9c9e-4de5-afbc-9758422d8ce3",
+    "correct_answer": "B",
+    "explanation": "หญิง 65 ปี colicky pain + change in bowel habits = Obstructed colonic cancer จนกว่าจะพิสูจน์ว่าไม่ใช่",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Obstructed colonic cancer) เพราะ change in bowel habits + colicky pain ในผู้สูงอายุ = colorectal cancer จนกว่าจะพิสูจน์ว่าไม่ใช่",
+      "reason": "Colorectal cancer alarm symptoms: Change in bowel habits (alternating constipation/diarrhea), rectal bleeding, weight loss, iron deficiency anemia ในผู้สูงอายุ Obstructed colonic cancer: colicky pain + distension + obstructions นำมาสู่ ER CT colonography หรือ colonoscopy = ยืนยัน diagnosis Sigmoid volvulus: coffee bean sign บน X-ray เกิดฉับพลัน Diverticulosis: อาจทำให้ obstruction แต่ cancer พบบ่อยกว่าในผู้สูงอายุ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sigmoid volvulus",
+          "is_correct": false,
+          "explanation": "Volvulus: X-ray coffee bean sign, massive distension, acute onset"
+        },
+        {
+          "label": "B",
+          "text": "Obstructed colonic cancer",
+          "is_correct": true,
+          "explanation": "Change in bowel habits + colicky pain + elderly = colorectal cancer with obstruction"
+        },
+        {
+          "label": "C",
+          "text": "Sigmoid diverticulosis",
+          "is_correct": false,
+          "explanation": "Diverticulosis มักไม่มี symptoms; diverticulitis มี LLQ pain + fever"
+        },
+        {
+          "label": "D",
+          "text": "Inguinal hernia",
+          "is_correct": false,
+          "explanation": "Inguinal hernia มี groin mass ไม่ใช่ change in bowel habit ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Inflammatory bowel disease",
+          "is_correct": false,
+          "explanation": "IBD: คนอายุน้อย, bloody diarrhea, recurrence; ไม่ใช่ elderly first presentation"
+        }
+      ],
+      "key_takeaway": "Change in bowel habits + colicky pain ผู้สูงอายุ = Obstructed colonic cancer จนกว่าจะพิสูจน์ → Colonoscopy/CT"
+    }
+  },
+  {
+    "id": "7942446e-40ff-45ef-ba9a-dd5051a7333e",
+    "correct_answer": "A",
+    "explanation": "หญิง 30 ปี ปวดบวมแดงเต้านม → ทำ USG เพื่อแยก mastitis จาก breast abscess",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (USG) เพราะ USG เป็น first-line ในการ differentiate mastitis (no abscess) จาก breast abscess ที่ต้องการ I&D",
+      "reason": "Breast infection evaluation: Mastitis: เซลลูไลติส ตอบสนองต่อ oral antibiotics Breast abscess: fluid collection ต้องการ drainage USG: ช่วย differentiate: mastitis (solid edematous tissue) vs abscess (fluid-filled cavity) ถ้า USG แสดง abscess → I&D หรือ aspiration ถ้า mastitis → oral antibiotics (flucloxacillin/dicloxacillin) Mammography ไม่เหมาะในคนอายุน้อยและในระยะ acute infection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "USG",
+          "is_correct": true,
+          "explanation": "First-line imaging เพื่อ differentiate mastitis vs breast abscess ก่อนตัดสินใจรักษา"
+        },
+        {
+          "label": "B",
+          "text": "I&D",
+          "is_correct": false,
+          "explanation": "I&D ทำหลังยืนยัน abscess ด้วย USG; ถ้า mastitis ไม่มี abscess = ไม่ต้อง I&D"
+        },
+        {
+          "label": "C",
+          "text": "IV antibiotic",
+          "is_correct": false,
+          "explanation": "IV antibiotics ถ้า severe infection/sepsis; ส่วนใหญ่ oral เพียงพอ"
+        },
+        {
+          "label": "D",
+          "text": "Oral antibiotic",
+          "is_correct": false,
+          "explanation": "Oral antibiotics หลัง confirm ว่าเป็น mastitis ไม่ใช่ abscess"
+        },
+        {
+          "label": "E",
+          "text": "Mammography",
+          "is_correct": false,
+          "explanation": "Mammography ไม่เหมาะในคนอายุน้อย + acute infection; US ดีกว่า"
+        }
+      ],
+      "key_takeaway": "Breast pain/swelling/redness → USG ก่อน เพื่อ differentiate mastitis vs abscess (ก่อนตัดสิน I&D vs antibiotics)"
+    }
+  },
+  {
+    "id": "7b3c93fc-c9f5-4795-adc8-4e67c94fcb74",
+    "correct_answer": "A",
+    "explanation": "ชาย 55 ปี progressive dysphagia 2 เดือน + localized esophageal cancer = Esophagectomy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Esophagectomy) เพราะ resectable esophageal cancer ที่ localized ต้องการ surgical resection",
+      "reason": "Esophageal cancer treatment (resectable): Squamous cell carcinoma: Neoadjuvant CRT + esophagectomy (standard ปัจจุบัน) Adenocarcinoma: Neoadjuvant CRT (CROSS protocol) + esophagectomy ตาม exam สำหรับ localized resectable = esophagectomy Esophageal stent: palliative สำหรับ unresectable หรือ recurrence Neoadjuvant + esophagectomy: อาจเป็น standard สำหรับ T3/T4a locally advanced แต่ exam ตอบ esophagectomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Esophagectomy",
+          "is_correct": true,
+          "explanation": "Resectable localized esophageal cancer: esophagectomy เป็น surgical option"
+        },
+        {
+          "label": "B",
+          "text": "Esophageal stent",
+          "is_correct": false,
+          "explanation": "Stent เป็น palliative สำหรับ unresectable disease"
+        },
+        {
+          "label": "C",
+          "text": "Radiation therapy",
+          "is_correct": false,
+          "explanation": "RT alone ไม่ curative สำหรับ esophageal cancer"
+        },
+        {
+          "label": "D",
+          "text": "Chemotherapy",
+          "is_correct": false,
+          "explanation": "Chemo alone ไม่ curative; neoadjuvant ก่อน surgery เป็นทางเลือก"
+        },
+        {
+          "label": "E",
+          "text": "Neoadjuvant chemo + esophagectomy",
+          "is_correct": false,
+          "explanation": "Neoadjuvant CRT ก่อน surgery เป็น modern standard แต่ exam ตอบ esophagectomy"
+        }
+      ],
+      "key_takeaway": "Resectable esophageal cancer → Esophagectomy ± neoadjuvant CRT (CROSS protocol); Stent = palliative"
+    }
+  },
+  {
+    "id": "7b791c3e-89df-41ca-abe1-2ea690596568",
+    "correct_answer": "C",
+    "explanation": "หญิง 25 ปี ปวดทวารหนักขณะถ่ายอุจจาระแข็ง + blood streak บน stool = Anal fissure",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Anal fissure) เพราะ acute sharp pain ขณะถ่ายอุจจาระ + blood streak บน hard stool = classic anal fissure",
+      "reason": "Anal fissure: Tear ใน anal canal (posterior midline ส่วนใหญ่) ทำให้ sharp cutting pain ขณะถ่าย + เลือดสด streak บน stool ไม่ใช่ เลือดปน อาการ: ปวดมากขณะและหลังถ่าย อาจเป็น sphincter spasm Treatment: acute (ไม่ใช่ chronic): stool softener + topical anesthetic ± nitroglycerin/calcium channel blocker Anal abscess: painful fluctuant mass ที่ perianal area Hemorrhoid: painless bleeding หรือ prolapse Fistula: chronic discharge ที่ perianal area",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Anal abscess",
+          "is_correct": false,
+          "explanation": "Abscess: perianal swelling + fluctuation + throbbing pain ไม่ใช่ cutting pain ขณะถ่าย"
+        },
+        {
+          "label": "B",
+          "text": "Hemorrhoid",
+          "is_correct": false,
+          "explanation": "Hemorrhoid: painless bleeding หรือ prolapse; sharp pain ขณะถ่าย = fissure"
+        },
+        {
+          "label": "C",
+          "text": "Anal fissure",
+          "is_correct": true,
+          "explanation": "Sharp cutting pain + blood streak on hard stool = anal fissure คลาสสิก"
+        },
+        {
+          "label": "D",
+          "text": "Fistula in ano",
+          "is_correct": false,
+          "explanation": "Fistula: chronic perianal discharge ไม่ใช่ acute pain ขณะถ่าย"
+        },
+        {
+          "label": "E",
+          "text": "Proctalgia fugax",
+          "is_correct": false,
+          "explanation": "Proctalgia: sudden severe rectal pain ไม่เกี่ยวกับ defecation หรือ blood"
+        }
+      ],
+      "key_takeaway": "Cutting pain + blood streak ขณะถ่ายอุจจาระแข็ง = Anal fissure; รักษา stool softener ± topical GTN"
+    }
+  },
+  {
+    "id": "7fa49b63-670e-4c25-ad5d-f39268d81fb5",
+    "correct_answer": "A",
+    "explanation": "ชายอุบัติเหตุชนด้านข้าง สติดี vital stable มี neck trauma → Observe + serial exam + NPO + prepare airway management",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Observe + serial exam + NPO + prepare airway) เพราะ penetrating/blunt neck trauma ใน stable patient ต้องการ close observation เพราะ delayed airway edema",
+      "reason": "Blunt neck trauma management: ใน hemodynamically stable patient: Conservative management + close observation Serial clinical examination Monitor สำหรับ delayed airway compromise จาก: edema, hematoma, laryngeal fracture Keep NPO (เพราะอาจต้อง intubate ฉุกเฉิน) Prepare for airway management (difficult airway kit, OR availability) CT ± laryngoscopy สำหรับ evaluate injury Immediate intubation: เฉพาะถ้า airway threatened ตอนนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe + serial exam + NPO + prepare airway",
+          "is_correct": true,
+          "explanation": "Stable neck trauma: conservative + observe สำหรับ delayed edema + NPO ใน case ต้อง intubate"
+        },
+        {
+          "label": "B",
+          "text": "Immediate intubation",
+          "is_correct": false,
+          "explanation": "Immediate intubation ถ้า airway compromised ตอนนี้; stable = observe ก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Emergency cricothyrotomy",
+          "is_correct": false,
+          "explanation": "Surgical airway เป็น last resort ถ้า cannot intubate-cannot oxygenate"
+        },
+        {
+          "label": "D",
+          "text": "Laryngoscopy + visualize vocal cords",
+          "is_correct": false,
+          "explanation": "Laryngoscopy ทำได้แต่ไม่ใช่ first priority; observe ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Discharge + outpatient CT",
+          "is_correct": false,
+          "explanation": "Neck trauma ต้อง admit observe; discharge ไม่ปลอดภัย"
+        }
+      ],
+      "key_takeaway": "Blunt neck trauma stable: Observe closely + NPO + serial exam + prepare airway สำหรับ delayed edema"
+    }
+  },
+  {
+    "id": "821a526f-6b52-4b4d-b0e2-38227aa2de26",
+    "correct_answer": "D",
+    "explanation": "ปวด flank ขวา + RBC ใน urine + IVP shows stone = small stone ที่ผ่านได้เอง → Conservative management",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Observation + hydration + analgesics) เพราะ small ureteral stone (<5mm) มี spontaneous passage rate สูง ไม่จำเป็นต้อง intervention",
+      "reason": "Ureteral stone management: <5mm: spontaneous passage rate ~68-98% → Conservative: hydration + analgesics (NSAIDs/opioids) ± alpha-blocker (tamsulosin) 5-10mm: ESWL หรือ ureteroscopy >10mm หรือ solitary kidney, infection, obstruction: urgent intervention ESWL: stone ≤2cm ที่ renal pelvis หรือ proximal ureter Ureteroscopy: stone ที่ distal ureter ไม่ตอบสนอง ESWL Immediate PCNL: staghorn calculus หรือ >2cm",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ESWL",
+          "is_correct": false,
+          "explanation": "ESWL ใช้เมื่อ stone 5-20mm หรือ failure of conservative; small stone ไม่จำเป็น"
+        },
+        {
+          "label": "B",
+          "text": "Ureteroscopy + laser lithotripsy",
+          "is_correct": false,
+          "explanation": "URS ใช้เมื่อ conservative ล้มเหลว หรือ stone ที่ distal ureter >5mm"
+        },
+        {
+          "label": "C",
+          "text": "Urine cytology",
+          "is_correct": false,
+          "explanation": "Urine cytology ตรวจสำหรับ urothelial carcinoma ไม่ใช่ stone"
+        },
+        {
+          "label": "D",
+          "text": "Observation + hydration + analgesics",
+          "is_correct": true,
+          "explanation": "Small ureteral stone: conservative = hydration + NSAIDs ± alpha-blocker (MET)"
+        },
+        {
+          "label": "E",
+          "text": "Immediate PCNL",
+          "is_correct": false,
+          "explanation": "PCNL ใช้สำหรับ staghorn/large renal calculus ไม่ใช่ small ureteral stone"
+        }
+      ],
+      "key_takeaway": "Small ureteral stone (<5mm): Conservative (hydration + analgesics + alpha-blocker); ESWL/URS ถ้าล้มเหลว"
+    }
+  },
+  {
+    "id": "8424104a-1a64-46dd-a2aa-7b1cda50cd80",
+    "correct_answer": "B",
+    "explanation": "หญิง 30 ปี ถูกสุนัขกัดขา เคยรับวัคซีน 1 ปีก่อน → Booster 2 doses (วันที่ 0 และ 3)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Booster 2 doses) เพราะผู้ที่เคยได้รับวัคซีน rabies ครบแล้วและถูกกัดอีก ให้ booster 2 doses เท่านั้น",
+      "reason": "Rabies post-exposure prophylaxis (PEP): Previously vaccinated (immune): Booster 2 doses (day 0 + day 3) ไม่ต้องการ RIG (Rabies Immunoglobulin) Not previously vaccinated: Complete course 5 doses (day 0, 3, 7, 14, 28) + RIG day 0 Previous vaccination ที่ถือว่า immune: ≥3 doses complete หรือ adequate titer ผู้ป่วยได้รับวัคซีน 1 ปีก่อน = previously vaccinated → booster 2 doses เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Booster 1 dose",
+          "is_correct": false,
+          "explanation": "1 dose ไม่เพียงพอ; booster = 2 doses (day 0 + day 3)"
+        },
+        {
+          "label": "B",
+          "text": "Booster 2 doses",
+          "is_correct": true,
+          "explanation": "Previously vaccinated + re-exposure = 2 dose booster (day 0, 3) ไม่ต้อง RIG"
+        },
+        {
+          "label": "C",
+          "text": "Complete 5 doses",
+          "is_correct": false,
+          "explanation": "5 doses สำหรับผู้ที่ไม่เคยวัคซีน; previously vaccinated = booster เท่านั้น"
+        },
+        {
+          "label": "D",
+          "text": "RIG เท่านั้น",
+          "is_correct": false,
+          "explanation": "RIG อย่างเดียวไม่เพียงพอ; ต้อง vaccine + RIG (ถ้า unvaccinated) หรือ booster (ถ้า vaccinated)"
+        },
+        {
+          "label": "E",
+          "text": "Complete course + RIG",
+          "is_correct": false,
+          "explanation": "Complete course + RIG สำหรับผู้ที่ไม่เคยวัคซีน ไม่ใช่ previously vaccinated"
+        }
+      ],
+      "key_takeaway": "Previously vaccinated rabies → Booster 2 doses (day 0+3) ไม่ต้อง RIG; Unvaccinated → 5 doses + RIG"
+    }
+  },
+  {
+    "id": "842a112e-51cd-4565-9d1c-22b294aa99ed",
+    "correct_answer": "C",
+    "explanation": "นิ้วขาดต้องห่อด้วยผ้าชุบน้ำเกลือ ใส่ถุงพลาสติก แล้วแช่ใน ice (ไม่แช่โดยตรงในน้ำแข็ง)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (ผ้าชุบน้ำเกลือ + plastic bag + แช่ใน ice) เพราะวิธีนี้ป้องกัน tissue damage จาก freezing และ desiccation",
+      "reason": "Amputated digit preservation: ห้ามวางโดยตรงบน ice หรือ dry ice (เกิด frostbite/tissue damage) ห้าม ฝัง หรือแช่ใน fluid ที่ทำให้เซลล์แตก (hypotonic solution) วิธีที่ถูกต้อง: 1) ห่อด้วย saline-moistened gauze (ป้องกัน desiccation) 2) ใส่ใน plastic bag (prevent direct contact with ice water) 3) แช่ถุงพลาสติกใน ice (ทำให้ cool ≈4°C ป้องกัน ischemia damage) Warm ischemia time: ~6 ชั่วโมง; cool ischemia time: ~24 ชั่วโมง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sterile gauze + ice (โดยตรง)",
+          "is_correct": false,
+          "explanation": "Direct contact กับ ice ทำให้ frostbite; ห้ามวางโดยตรงบน ice"
+        },
+        {
+          "label": "B",
+          "text": "Sterile gauze + water 4°C",
+          "is_correct": false,
+          "explanation": "Immersion ใน water ทำให้ cell lysis; ต้องใช้ moist gauze + plastic bag ก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Saline gauze + plastic bag + ice",
+          "is_correct": true,
+          "explanation": "วิธีที่ถูกต้อง: moist gauze ป้องกัน desiccation + bag ป้องกัน direct contact + ice ทำให้ cool"
+        },
+        {
+          "label": "D",
+          "text": "Saline gauze + plastic bag + water 4°C",
+          "is_correct": false,
+          "explanation": "Water ทำให้ bag แช่ไม่ถูกวิธี; ice ให้ temperature ที่เหมาะสมกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Suture กลับทันทีที่ ER",
+          "is_correct": false,
+          "explanation": "ER ไม่มี microsurgery team; ส่งต่อ plastic/hand surgeon พร้อม preserved digit"
+        }
+      ],
+      "key_takeaway": "นิ้วขาด: ห่อ saline gauze → ใส่ plastic bag → แช่ใน ice (ห้าม direct ice contact); cool ischemia time ~24 hr"
+    }
+  },
+  {
+    "id": "85ea5c23-80c3-417a-9eff-a535f1f569f8",
+    "correct_answer": "A",
+    "explanation": "กลั้นอาหารลำไส้เล็ก (small bowel content) ตรวจด้วย CT abdomen ที่มีประโยชน์มากที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (CT abdomen) เพราะ CT เป็น gold standard สำหรับ evaluate small bowel pathology ที่ครอบคลุมที่สุด",
+      "reason": "Small bowel evaluation: CT abdomen (with oral + IV contrast): ให้ภาพครบ ดู small bowel wall, mesentery, vessels, lymph nodes, transition point; ตรวจได้ทุก pathology Contrast study (SBFT): ดู mucosal pattern ดี แต่ invasive, slow, ไม่ดู extraluminal MRI: ดีสำหรับ IBD (Crohn's) แต่ expensive + time Ultrasound: ข้อจำกัดมากใน gas-filled small bowel Plain X-ray: ดี bowel obstruction แต่ไม่ช่วย diagnosis ของ bowel content pathology",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CT abdomen",
+          "is_correct": true,
+          "explanation": "CT เป็น gold standard สำหรับ small bowel evaluation ครอบคลุมทุก pathology"
+        },
+        {
+          "label": "B",
+          "text": "MRI abdomen",
+          "is_correct": false,
+          "explanation": "MRI ดีสำหรับ Crohn's MRE แต่ไม่ใช่ most useful สำหรับ general small bowel"
+        },
+        {
+          "label": "C",
+          "text": "Ultrasound",
+          "is_correct": false,
+          "explanation": "US มีข้อจำกัดใน gas-filled bowel"
+        },
+        {
+          "label": "D",
+          "text": "Contrast study (SBFT)",
+          "is_correct": false,
+          "explanation": "SBFT ดี mucosal detail แต่ extraluminal pathology ไม่เห็น"
+        },
+        {
+          "label": "E",
+          "text": "Plain X-ray",
+          "is_correct": false,
+          "explanation": "X-ray ดี obstruction pattern แต่ไม่ comprehensive สำหรับ small bowel pathology"
+        }
+      ],
+      "key_takeaway": "Small bowel pathology evaluation: CT abdomen เป็น gold standard (ครอบคลุมทั้ง intraluminal + extraluminal)"
+    }
+  },
+  {
+    "id": "86878bee-6575-4e91-b6d1-dba914786c67",
+    "correct_answer": "A",
+    "explanation": "Scrotal swelling + erythema + cremasteric reflex present = Epididymitis (cremasteric reflex absent ใน torsion)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Epididymitis) เพราะ cremasteric reflex present = ไม่ใช่ testicular torsion (torsion มักมี absent cremasteric reflex)",
+      "reason": "Testicular torsion vs Epididymitis: Testicular torsion: absent cremasteric reflex, sudden pain, young age, Prehn's sign negative Epididymitis: cremasteric reflex present, gradual onset, มีไข้ บ่อย, Prehn's sign positive (ยกแล้วดีขึ้น) Doppler US: torsion = absent blood flow; epididymitis = increased blood flow Treatment: Epididymitis = antibiotics + scrotal support; Torsion = emergency surgery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Epididymitis",
+          "is_correct": true,
+          "explanation": "Cremasteric reflex present = ไม่ใช่ torsion; swelling + erythema = epididymitis"
+        },
+        {
+          "label": "B",
+          "text": "Testicular torsion",
+          "is_correct": false,
+          "explanation": "Torsion: absent cremasteric reflex; ในกรณีนี้ cremasteric present = ไม่ใช่"
+        },
+        {
+          "label": "C",
+          "text": "Incarcerated hernia",
+          "is_correct": false,
+          "explanation": "Incarcerated hernia มี groin mass extending to scrotum ไม่ใช่ primary scrotal pathology"
+        },
+        {
+          "label": "D",
+          "text": "Orchitis",
+          "is_correct": false,
+          "explanation": "Orchitis: inflammation ของ testis; epididymitis ของ epididymis; overlapping แต่ exam ตอบ epididymitis"
+        },
+        {
+          "label": "E",
+          "text": "Trauma",
+          "is_correct": false,
+          "explanation": "ไม่มีประวัติ trauma ในโจทย์"
+        }
+      ],
+      "key_takeaway": "Cremasteric reflex present = ไม่ใช่ torsion → Epididymitis; Absent = suspect torsion → Emergency exploration"
+    }
+  },
+  {
+    "id": "8b8337e2-de80-447b-8c29-0162ecd53e34",
+    "correct_answer": "C",
+    "explanation": "ชาย 35 ปี abdominal pain + hypotension หลังอุบัติเหตุ = hemodynamically unstable → IV resuscitation + prepare emergency laparotomy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (IVF resuscitation + prepare emergency laparotomy) เพราะ hypotension + abdominal pain = unstable patient ต้องการ immediate resuscitation + surgery",
+      "reason": "Blunt abdominal trauma + hemodynamic instability: FAST positive + unstable = emergency exploratory laparotomy FAST negative + unstable = reevaluate (other cause of shock) IVF resuscitation ทำพร้อมกับ prepare OR ไม่ต้องรอ CT ใน unstable patient CT ใช้เฉพาะใน stable patient DPL ถูก replace ด้วย FAST ในปัจจุบัน Serial examination ใช้ใน stable patient เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "DPL เพื่อยืนยัน",
+          "is_correct": false,
+          "explanation": "DPL ถูก replace ด้วย FAST; unstable + FAST positive → laparotomy ทันที"
+        },
+        {
+          "label": "B",
+          "text": "KUB + CXR",
+          "is_correct": false,
+          "explanation": "Plain film ช้าเกินไปสำหรับ unstable patient"
+        },
+        {
+          "label": "C",
+          "text": "IVF resuscitation + prepare emergency laparotomy",
+          "is_correct": true,
+          "explanation": "Unstable abdominal trauma = immediate resuscitation + emergency exploratory laparotomy"
+        },
+        {
+          "label": "D",
+          "text": "CT angiography",
+          "is_correct": false,
+          "explanation": "CT ใช้ใน stable patient เท่านั้น; unstable = ผ่าตัดทันที"
+        },
+        {
+          "label": "E",
+          "text": "Observation + serial exam",
+          "is_correct": false,
+          "explanation": "Serial exam ใช้ใน stable patient; unstable = ผ่าตัดทันที"
+        }
+      ],
+      "key_takeaway": "Blunt abdominal trauma + hemodynamic instability → IVF resuscitation + Emergency exploratory laparotomy"
+    }
+  },
+  {
+    "id": "8f8db5d3-b52a-4b2e-a36b-624b64493d5d",
+    "correct_answer": "A",
+    "explanation": "ชาย 32 ปี ถูกรถชนด้านข้าง ปวดท้องซ้าย BP ต่ำ = Spleen rupture (most common solid organ injury ใน blunt abdominal trauma)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Spleen rupture) เพราะ left-sided abdominal trauma + hypotension = splenic injury จนกว่าจะพิสูจน์ว่าไม่ใช่",
+      "reason": "Solid organ injury ใน blunt abdominal trauma: Spleen: most common solid organ injury (40-55%); เลือดออกมาก ทำให้ hypotension ได้ง่าย Liver: second most common Left-sided injury + hypotension = ต้องสงสัย splenic laceration CT grade I-V: Grade I-III อาจทำ non-operative management Grade IV-V: surgical splenectomy หรือ splenic angioembolization FAST: ดู free fluid ใน LUQ (Morrison's pouch / perihepatic / pelvic)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spleen rupture",
+          "is_correct": true,
+          "explanation": "Left-sided trauma + hypotension = splenic laceration most likely"
+        },
+        {
+          "label": "B",
+          "text": "Kidney injury",
+          "is_correct": false,
+          "explanation": "Renal injury: flank pain + hematuria; less commonly causes hypotension"
+        },
+        {
+          "label": "C",
+          "text": "Liver laceration",
+          "is_correct": false,
+          "explanation": "Liver: right-sided trauma ไม่ใช่ left; liver เป็น 2nd most common"
+        },
+        {
+          "label": "D",
+          "text": "Abdominal aortic aneurysm",
+          "is_correct": false,
+          "explanation": "AAA rupture ในผู้สูงอายุ spontaneous ไม่ใช่ young trauma"
+        },
+        {
+          "label": "E",
+          "text": "Bladder rupture",
+          "is_correct": false,
+          "explanation": "Bladder rupture: pelvic fracture + hematuria; ไม่ทำให้ hypotension มากแบบนี้"
+        }
+      ],
+      "key_takeaway": "Blunt left abdominal trauma + hypotension = Splenic injury (most common); FAST LUQ + CT grade injury"
+    }
+  }
+]

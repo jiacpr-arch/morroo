@@ -1,0 +1,299 @@
+{
+  "filename": "epidemio",
+  "subject": "epidemio",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 14,
+    "no_choices": 7,
+    "few_choices": 0,
+    "good": 7,
+    "no_scenario": 0,
+    "short_scenario": 4
+  },
+  "issues": [
+    {
+      "index": 2,
+      "question_number": 182,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "การบันทึกข้อมูลโดยแยกตัวตอบเป็นไม่ทราบ (don’t know) ไม่ตอบ (no response) และไม่เ",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 197,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "In 2011, there were 1000 cases and 20 deaths from DHF in community A with a popu",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 105,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "นักวิจัย เปลี่ยนฐานข้อมูล เพื่อให้ผลงานวิจัยออกมาสัมพันธ์กันอย่างมีนัยสาคัญทางสถ",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "plagiarism",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "fabrication",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "falcification",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "personal bias",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 33,
+      "scenario": "นักวิจัยทาการทดลองหาความสัมพันธ์ EKG กับ CHD โดยนาคนที่ EKG ผิดปกติและไม่ผิดปกติแบ่งเป็น 2 กลุ่ม ติดตามไป 20 ปี หาคนที่เกิด CHD เป็นการศึกษาแบบใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cross sectional study"
+        },
+        {
+          "label": "B",
+          "text": "Experimental study"
+        },
+        {
+          "label": "C",
+          "text": "Concurrent cohort study"
+        },
+        {
+          "label": "D",
+          "text": "Non concurrent cohort study"
+        },
+        {
+          "label": "E",
+          "text": "Case control study"
+        }
+      ],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 41,
+      "scenario": "Cross sectional Study ศึกษา relationship ระหว่าง smoking and anxiety ใช้อะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prevalence"
+        },
+        {
+          "label": "B",
+          "text": "Incidence"
+        },
+        {
+          "label": "C",
+          "text": "OR"
+        },
+        {
+          "label": "D",
+          "text": "RR"
+        }
+      ],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 182,
+      "scenario": "การบันทึกข้อมูลโดยแยกตัวตอบเป็นไม่ทราบ (don’t know) ไม่ตอบ (no response) และไม่เข้าข่าย (non applicable) ทาให้แยกข้อมูลได้ละเอียด ถามว่าข้อมูลไม่เข้าข่าย หมายถึงอะไร\nก ข้อมูลเก็บเป็นตัวเลขไม่ได้\nข ข้อมูลไม่อยู่ในกรอบการศึกษา\nค ข้อมูลตอบได้หลายคาตอบ\nง ข้อมูลไม่อยู่ในเงื่อนไขที่ต้องตอบคาถาม",
+      "choices": [],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 197,
+      "scenario": "In 2011, there were 1000 cases and 20 deaths from DHF in community A with a population of 100000 What is a case fatality rate?\nA 20/480\nB 20/1000\nC 20/100000\nD 980/100000\nE 1000/100000",
+      "choices": [],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 105,
+      "scenario": "นักวิจัย เปลี่ยนฐานข้อมูล เพื่อให้ผลงานวิจัยออกมาสัมพันธ์กันอย่างมีนัยสาคัญทางสถิติ ตรงกับข้อใด",
+      "choices": [],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 1,
+      "scenario": "plagiarism",
+      "choices": [],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 2,
+      "scenario": "fabrication",
+      "choices": [],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 3,
+      "scenario": "falcification",
+      "choices": [],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 4,
+      "scenario": "personal bias",
+      "choices": [],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 5,
+      "scenario": "conflict of interest\n72 ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endermic"
+        },
+        {
+          "label": "B",
+          "text": "Pandemic"
+        },
+        {
+          "label": "C",
+          "text": "Epidermic"
+        },
+        {
+          "label": "E",
+          "text": "Sporadic"
+        }
+      ],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 235,
+      "scenario": "ผู้ป่ วยชายอายุ 35 ปี ถูกส่งตัวมาจาก ร.พ. สังขละบุรี  จังหวัดกาญจนบุรี เพือมารับการรักษาต่อเนืองจากมะเร็ง\nผิวหนัง ผู้ป่ วยให้ประวัติว่าคนในหมู่บ้านบางคนมีอาการเดียวกัน แพทย์วินิจฉัยว่าเป็นมะเร็งผิวหนังไปหลายรายแล้ว\nท่านจะแนะนำแพทย์/สาธารณสุขประจำอำเภอ ให้ตรวจสารพิษอะไรทีเป็นสาเหตุของอาการของผู้ป่ วยและคนในหมู่บ้าน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lead"
+        },
+        {
+          "label": "B",
+          "text": "Mercury"
+        },
+        {
+          "label": "C",
+          "text": "Arsenic"
+        },
+        {
+          "label": "D",
+          "text": "Cyanic acid"
+        },
+        {
+          "label": "E",
+          "text": "Cadmium"
+        }
+      ],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 238,
+      "scenario": "พยาบาลกะดึก (00.00-8.00) มีโอกาสเสียงถูกเข็มตำเนืองจากเหตุใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "กล้ามเนือทำงานลดลง"
+        },
+        {
+          "label": "B",
+          "text": "แสงสว่างลดลง"
+        },
+        {
+          "label": "C",
+          "text": "รูม่านตาปรับตัวได้ลดลงไม่เหมือนตอนกลางวัน"
+        },
+        {
+          "label": "D",
+          "text": "ประสิทธิภาพการทำงานลดลงเนืองจากระบบในร่างกาย"
+        }
+      ],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 233,
+      "scenario": "ทำการศึกษาความสัมพันธ์การใช้ pill กับการเกิด DVT ใน\nญ. 25-45 ปี พบว่าเมือใช้ pill มีความเสียงมากกว่าคนไม่ใช้ 3\nเท่า ข้อใดถูก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ใช้จริงไม่ได้ เพราะ selective bias"
+        },
+        {
+          "label": "B",
+          "text": "ใช้จริงไม่ได้ เพราะมี surveillance bias"
+        },
+        {
+          "label": "C",
+          "text": "ใช้จริงไม่ได้ เพราะเลือกประชากรไม่เหมาะสม ไม่มีการสุ่ม"
+        },
+        {
+          "label": "D",
+          "text": "ใช้ได้เฉพาะในกลุ่มอายุนี้"
+        },
+        {
+          "label": "E",
+          "text": "ใช้ได้กับประชากรทั่วไป โดยเปรียบเทียบเพียงปัจจัยเดียว"
+        }
+      ],
+      "exam_source": "epidemio"
+    },
+    {
+      "question_number": 2,
+      "scenario": "00\nA diagnostic test Polymerase chain reaction was compared with gold standard culture in 2000 subjects.\nCulture positive\nCulture negative\nPCR positive\n800\n600\nPCR negative\n200\n400\nWhat is the sensitivity and specificity\nSensitivity\nSpecificity\n80\n40\n60\n40\n20\n60\n40\n80\n40\n60\nIf you are the doctor in the 30-bed community hospital, which intervention will you use to prevent TB infection in health-care workers\nAll suspected patients wear mask\nAll health care workers wear mask\nPPD test in all health-care workers\nIsolate TB-suspected patients to the corners of the ward\nInstall air conditioners to every OPD consult department\nA patient vomiting and diarrhea after consume a lot of food at party. What is the cause\nconsume\nDiarrhea in 20 people\nNot consume\nDiarrhea in 20 people\nRoast chicken\n12\n10\n18\n19\n10\n15\nFried rice\n15\n5\nPapaya salad\n5\n10\nRoast chicken\nFried rice\nPapaya salad\nการศึกษาในผู้หญิงที่เป็น adenocarcinoma vagina กับคนที่ไม่เป็นว่ามารดาตอนตั้งครรภ์ได้ diethylstilbestrol หรือไม่ เป็นการศึกษาชนิดใด\nCase-control\nConcurrent cohort study\nRetrospective cohort study\n72A ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endermic"
+        },
+        {
+          "label": "B",
+          "text": "Pandemic"
+        },
+        {
+          "label": "C",
+          "text": "Epidermic"
+        },
+        {
+          "label": "E",
+          "text": "Sporadic"
+        }
+      ],
+      "exam_source": "epidemio"
+    }
+  ]
+}

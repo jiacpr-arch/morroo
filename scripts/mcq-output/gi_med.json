@@ -1,0 +1,516 @@
+{
+  "filename": "gi med",
+  "subject": "gi_med",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 32,
+    "no_choices": 32,
+    "few_choices": 0,
+    "good": 0,
+    "no_scenario": 0,
+    "short_scenario": 19
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A 70-year-old man presents with new onset of epigastric pain and postprandial fu",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ช.45ปี ไข้ ปวดRUQ Hx of whiskey drinking 1 bot./day for15yr PE:mod.jaundice, mil",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "alcoholic hepatitis",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "acute pancreatitis",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 45 ปี ปวดบริเวณลิ้นปี่ ปวดตื้อๆ แน่นๆ ตลอดเวลา นาน 6 ชม ไม่เคยปวดมาก่อน ไม่ร",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "acute pancreatitis",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "acute cholangitis",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "acute cholecystitis",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "acute gastritis",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A 50 year-old thai male with alcoholic cirrhosis presents with abdominal distens",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": ") High salt intake",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": ") Hemoperitoneum",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": ") tuberculous peritonitis",
+      "choices_count": 0
+    },
+    {
+      "index": 13,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": ") Carcinomatosis peritonii",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": ") Spontaneous bactetial peritonitis\n2012",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 23,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย อายุ 50 ปี Alcoholic cirrhosis มีไข้ 4 วัน ไปซื้อยา paracetamol กินยา 500 mg",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 28,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชายอายุ 55 ปี ปวดจุกแน่นลิ้นปี่เป็นๆหายๆมา 1 เดือน มักเป็นหลังอาหารประมาณครึ่ง ช",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้ H2-blocker",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้ PPI",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ให้ PPI + amoxy + metro",
+      "choices_count": 0
+    },
+    {
+      "index": 20,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "double contrast upper GI",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "gastroscopy",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 154,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Chronic alcoholic alcoholic hepatitis ตรวจอะไรเพื่อตรวจสอบว่าเลิกทานเหล้าหรือยัง",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Albumin",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Gamma GT",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "AST",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ALT",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 169,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้หญิงอายุ 40 ปี มีไข้ปวด RUQ PE: BT 38.1 c BP 120/80 mmHg PR 80 bpm RR 16 / mi",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Ceftriaxone",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Metronidazole",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Clinda + Genta",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Open drainage",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "A 70-year-old man presents with new onset of epigastric pain and postprandial fullness for 4 weeks. No weight loss, no poor appetite. PE: unemarkable. What is the appropriate management\nlife style modification\nprokinetic agent\nPPI\nCTWA\nesophagogastroduodenoscopy\nA 55-year-old female presents with progressive dysphagia, fatigue, weight loss 10 kg in 2 months. What is the most appropriate investigation\nBarium swallow\nUpper GI study\nCT chest and abdomen\nEsophagomanometry\nEsophagogastroduodenoscopy\nA 46-year-old man complains of vomiting after dinner for 1 month. He has this symptom before and progressive epigastric pain for 3 years. Weight loss. PE: tender at epigastrium, hypertympanic percussion, normal bowel sound. What is the most likely diagnosis\nEsophageal stenosis\nPyloric stricture\nGastric cancer\nColon cancer\nAchalasia\nA 35-year-old man comes for check up. Stool occult blood negative. His father has colon cancer, diagnosis at 55 years old. What should you suggest\nPlan for colonoscopy now\nColonoscopy at 45 years old\nA 65-year-old man presents with hematochezia. BP 80/60 mmHg, P 110. NG lavage no bile, no blood. After resuscitate, what should be done\nAngiogram\nColonoscope\nCT abdomen\nEsophagogastroscopy\nA 20-year-old student no underlying disease, height 167 cm, weight 98 kg. HBsAg negative and Anti-HCV negative. Live function test: AST 34, ALT 123. What is the cause of transaminitis\nFatty liver\nHepatitis B\nHepatitis A\nHepatitis C\nDrug intoxication\nA 50-year-old woman presents for fever with chill, abdominal pain, nausea vomiting 1 day. PE: BT 39, not pale, mild jaundice, moderate tender at right costal margin. LFT- albumin 3.8, globulin 2.6, TB 5.5, DB 3.8, AST 350, ALT 300, ALP 180, amylase 240. What is the diagnosis\nAcute pancreatitis\nAcute cholangitis\nAcute cholecystitis\nAcute viral hepatitis\nPyogenic liver abscess\nA 30-year-old man presents with jaundice 1 week. He drinks whisky daily for 10 years. He had headache 3 days ago and take paracetamol 2 tab 500 mg every 4 hours. PE: BT 37, icteric sclera, spider nevi, palmar erythema, mild hepatomegaly, mild tenderness, no ascites. What is the diagnosis\nAcute hepatitis B\nParacetamol toxicity\nAscending cholangitis\nAcute cholecystitis\nAlcoholic hepatitis\nผู้หญิงอายุ 40 ปี ปวดท้องมาก 4 ชั่วโมง อาการเหลือง AST 300, ALT 230 ทำอะไร\nประเมิน drug overdose\nViral\nAlcohol\nPancreatitis What is the best in monitor patient\nAmylase\nCalcium\nHematocrit\nA patient has abdominal pain radiate to back. He drinks alcohol 10 years. After NPO, fluid resuscitation and analgesia, what is the most useful management\nNG decompress\nIV ceftriaxone\nIV omeprazole\nIV somatostatin analog\nERCP with sphincterectomy\n2014",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ช.45ปี ไข้ ปวดRUQ Hx of whiskey drinking 1 bot./day for15yr PE:mod.jaundice, mild hepatomegaly Lab: AST 800 ALT400Dx?",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "alcoholic hepatitis",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "acute pancreatitis",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ชาย 45 ปี ปวดบริเวณลิ้นปี่ ปวดตื้อๆ แน่นๆ ตลอดเวลา นาน 6 ชม ไม่เคยปวดมาก่อน ไม่ร้าวไปไหน เวลานั่งปวดมากกว่าเวลานอน ดื่มสุราประจา ล่าสุด ดื่มเมื่อ 2ชมก่อน มีประวัติซื้อยาชุดแก้ปวดมากินเองบ้างครั้ง PE: PR 100/min RR 20/min BT 38 BP 130/80 abd: tender and guarding at epigastrium , no jaundice จงบอกการวินิจฉัยที่เป็นไปได้มากที่สุด",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "acute pancreatitis",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "acute cholangitis",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "acute cholecystitis",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "acute gastritis",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "A 50 year-old thai male with alcoholic cirrhosis presents with abdominal distension for 1 month. PE : V/S stable, Tense ascites. Lab : Ascites clear fluid, RBC 15 cu./mm, WBC 200 cu./mm(PMN 40%, M. 60%) albumin 1.9(serum albumin 3.2), protein 2.1 Which is the most likely precipitate cause of ascites in this patient?",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 1,
+      "scenario": ") High salt intake",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 2,
+      "scenario": ") Hemoperitoneum",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 3,
+      "scenario": ") tuberculous peritonitis",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 4,
+      "scenario": ") Carcinomatosis peritonii",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 5,
+      "scenario": ") Spontaneous bactetial peritonitis\n2012",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 23,
+      "scenario": "ชาย อายุ 50 ปี Alcoholic cirrhosis มีไข้ 4 วัน ไปซื้อยา paracetamol กินยา 500 mg 2 เม็ด ทุก 6 hr หลังจากนั้นมีคลื่นไส้อาเจียน AST 8000 ALT 4000 ALP ปกติ ถามว่าสาเหตุอาการดังกล่าวเกิดจาก? (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 28,
+      "scenario": "ชายอายุ 55 ปี ปวดจุกแน่นลิ้นปี่เป็นๆหายๆมา 1 เดือน มักเป็นหลังอาหารประมาณครึ่ง ชั่วโมง กินไม่ได้ น้าหนักลดจาก 67 เหลือ 60 กิโลกรัม จะทาอย่างไร",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ให้ H2-blocker",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ให้ PPI",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ให้ PPI + amoxy + metro",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "double contrast upper GI",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 5,
+      "scenario": "gastroscopy",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 154,
+      "scenario": "Chronic alcoholic alcoholic hepatitis ตรวจอะไรเพื่อตรวจสอบว่าเลิกทานเหล้าหรือยัง",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Albumin",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Gamma GT",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "AST",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ALT",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 169,
+      "scenario": "ผู้หญิงอายุ 40 ปี มีไข้ปวด RUQ PE: BT 38.1 c BP 120/80 mmHg PR 80 bpm RR 16 / min no jaundice, ตับโตกดเจ็บ U/S พบ 4 cm hypoechoic mass at Rt lobe จงให้การรักษาที่เหมาะสมที่สุด",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Ceftriaxone",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Metronidazole",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Clinda + Genta",
+      "choices": [],
+      "exam_source": "gi med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Open drainage",
+      "choices": [],
+      "exam_source": "gi med"
+    }
+  ]
+}

@@ -1,0 +1,2674 @@
+{
+  "filename": "OB",
+  "subject": "ob_gyn",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 138,
+    "no_choices": 84,
+    "few_choices": 16,
+    "good": 38,
+    "no_scenario": 0,
+    "short_scenario": 47
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A 28-year-old woman, primigravidarum, GA 10 weeks, little bleeding per vagina wi",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ท้อง 42 ปี GA37 G3P2 ฝากครรภ์ดีมาตลอด วันนี้ BP 160/100 อาการปกติดี UA3+ dilate1",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 8,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เคสหญิงไทย G1 ปากมดลูกเปิดหมดมา 2 ชม. แล้วยังไม่คลอด uterine contraction 2 \" 45 ",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "C/S",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 12,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "แม่ท้องแรก ก่อนคลอด2เดือนVDRL+ve confirm FTA ก็positive ได้treat erythro2wk พอลู",
+      "choices_count": 0
+    },
+    {
+      "index": 13,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "reassure",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "penicillin iv",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "erythro po",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "cef3 iv",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "avoid breast feeding",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 14,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "G1P0 GA 32 wk chronioamnitits on IV ATB แล้ว จะทาอะไรต่อ?",
+      "choices_count": 3
+    },
+    {
+      "index": 20,
+      "question_number": 15,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิงG1P0 GA36wk BP140/90 ไม่มีปวดหัว ไม่มีตามัว urine Protein1+ FHR146 No contra",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "MgSO4+คลอดทันที",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "MgSO4+คลอดที่37wk",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "รอคลอดที่37wk",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "รอคลอดที่40wk",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Antihypertensive drug +คลอดทันที",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 16,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ท้องแฝด ทาคลอดเด็กไปคนหนึ่ง เจาะน้าคร่าแล้ว มีเลือดออก เจ็บ ถามdx",
+      "choices_count": 3
+    },
+    {
+      "index": 27,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 19ปี G1 GA 35wk มา follow up ตามนัด พบBP 160/100mmHg ตรวจร่างกาย pretibial ",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Sever preeclampsia",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Mild preeclampsia",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Transient hypertension",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Chronic hypertension",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Eclampsia",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิง อายุ 25 ปี ตั้งครรภ์แรก คลอดโดยใช้ forcep extraction หลังคลอดรกมีเลื",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Uterine atony",
+      "choices_count": 0
+    },
+    {
+      "index": 35,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Retain placenta",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Laceration",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Coagulopathy",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Rupture varicose vein of vagina",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 7,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิงตั้งครรภ์ G2P1 GA 42 wks มาตรวจตามนัดอาการทุกอย่างปกติ ไม่เจ็บครรภ์คลอด PE: ",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "นัดอีกสองอาทิตย์",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "นัดมา induction พรุ่งนี้",
+      "choices_count": 0
+    },
+    {
+      "index": 42,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Emergency C/S",
+      "choices_count": 0
+    },
+    {
+      "index": 43,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Elective C/S",
+      "choices_count": 0
+    },
+    {
+      "index": 44,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "progesterone",
+      "choices_count": 0
+    },
+    {
+      "index": 45,
+      "question_number": 15,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิงอายุ 30 ปี G1P0 GA 39 wk ประเมินน้าหนักทารกได้ประมาณ 3000 g อื่นๆดีหมด หลังจ",
+      "choices_count": 0
+    },
+    {
+      "index": 46,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "oxytocin",
+      "choices_count": 0
+    },
+    {
+      "index": 47,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "c/s",
+      "choices_count": 0
+    },
+    {
+      "index": 48,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "F/E",
+      "choices_count": 0
+    },
+    {
+      "index": 49,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "vacuum",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้คลอดเอง",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 16,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้หญิง G1 GA 30 wk ANC ปกติมาตลอด มาด้วยมีน้าใสไหลจากช่องคลอดมา 2 ชั่วโมง ไม่ปว",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "UA",
+      "choices_count": 0
+    },
+    {
+      "index": 53,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "fern test",
+      "choices_count": 0
+    },
+    {
+      "index": 54,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "pelvic exam",
+      "choices_count": 0
+    },
+    {
+      "index": 55,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "U/S",
+      "choices_count": 0
+    },
+    {
+      "index": 56,
+      "question_number": 23,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้หญิง 35 ปี ตั้งครรภ์ GA 15 wk ทาPND ด้วยวิธี amniocentasis ผล เป็น 45,XY tran",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ให้มารดาตั้งครรภ์ต่อตามปกติ",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ให้มารดายุติการตั้งครรภ์",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "แนะนาให้มารดาทา CVS เมื่ออายุครรภ์ 20 สัปดาห์",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ทาfetal therapy",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Couseling และตัดสินใจร่วมกับมารดา",
+      "choices_count": 0
+    },
+    {
+      "index": 62,
+      "question_number": 36,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 20 ปี G1 GA 10wk มาพบแพทย์ด้วยอาการอาเจียนมาก กินข้าวได้น้อย ปัสสาวะออกน้อย",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Urine ketone",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CBC",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Cr",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "FPG",
+      "choices_count": 0
+    },
+    {
+      "index": 67,
+      "question_number": 120,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กอายุ 1 วัน คลอดยากติดไหล่ มารดาสังเกตว่าแขนซ้ายเด็กไม่ขยับ PE: internal rota",
+      "choices_count": 0
+    },
+    {
+      "index": 68,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "fractured clavicle",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "fractured humerus",
+      "choices_count": 0
+    },
+    {
+      "index": 70,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Erb paralysis",
+      "choices_count": 0
+    },
+    {
+      "index": 71,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "klumpke paralysis",
+      "choices_count": 0
+    },
+    {
+      "index": 72,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "shoulder dislocation",
+      "choices_count": 0
+    },
+    {
+      "index": 73,
+      "question_number": 138,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ทารกคลอดทางช่องคลอด แพทย์ไม่สามารถคลอดได้ สงสัยภาวะคลอดติดไหล่ การกระทาข้อใดอันต",
+      "choices_count": 0
+    },
+    {
+      "index": 74,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ให้ผู้ช่วยกดหัวหน่าว",
+      "choices_count": 0
+    },
+    {
+      "index": 75,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ให้ผู้ช่วยกดยอดมดลูก",
+      "choices_count": 0
+    },
+    {
+      "index": 76,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ยกขาชิดอก",
+      "choices_count": 0
+    },
+    {
+      "index": 77,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เปิดแผลให้กว้าง, ตัดฝีเย็บยาวมากขึ้น",
+      "choices_count": 0
+    },
+    {
+      "index": 78,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ค่อย ๆ ติดศีรษะลงช้า ๆ",
+      "choices_count": 0
+    },
+    {
+      "index": 79,
+      "question_number": 139,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "แม่ตั้งครรภ์36wks. มี AFP level สูงขึ้น. นึกถึง? (ศรว. มี.ค. 2555)",
+      "choices_count": 0
+    },
+    {
+      "index": 80,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Myringomyelocele",
+      "choices_count": 0
+    },
+    {
+      "index": 81,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Holoprecencephaly",
+      "choices_count": 0
+    },
+    {
+      "index": 82,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Down's syndrome",
+      "choices_count": 0
+    },
+    {
+      "index": 83,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "turner's syndrome",
+      "choices_count": 0
+    },
+    {
+      "index": 84,
+      "question_number": 140,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงอายุ 20ปี มีระดูครั้งสุดท้าย2wk ก่อนมี sexual intercourse เมื่อคืนไม่",
+      "choices_count": 0
+    },
+    {
+      "index": 85,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "PGE2 original suppository",
+      "choices_count": 0
+    },
+    {
+      "index": 86,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "high dose levonorprogestryl orally",
+      "choices_count": 0
+    },
+    {
+      "index": 87,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "combine contraceptive pill",
+      "choices_count": 0
+    },
+    {
+      "index": 88,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "uterine curettage",
+      "choices_count": 0
+    },
+    {
+      "index": 89,
+      "question_number": 142,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "G1P0 FHR 148 /min ทาamniotomy ได้เลือดปน FHR เหลือ 80 /min (ศรว. มี.ค. 2555)",
+      "choices_count": 0
+    },
+    {
+      "index": 90,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "placenta previa",
+      "choices_count": 0
+    },
+    {
+      "index": 91,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "abruptio placenta",
+      "choices_count": 0
+    },
+    {
+      "index": 92,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "rupture uterus",
+      "choices_count": 0
+    },
+    {
+      "index": 93,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ruptured vasa previa\n2011",
+      "choices_count": 0
+    },
+    {
+      "index": 98,
+      "question_number": 5,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงไทยคู่อายุ 24 ปี G?P? GA 3rd trimesters เจาะถุงน้าคร้าได้เป็นน้าใส FH",
+      "choices_count": 3
+    },
+    {
+      "index": 101,
+      "question_number": 8,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงอายุ 65 ปีหมดประจาเดือนมา 15 ปีไม่ได้รับประทานฮอร์โมนทดแทนมารพ.ด้วย A",
+      "choices_count": 2
+    },
+    {
+      "index": 102,
+      "question_number": 9,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงอายุ 25 ปีRlQ pain 2 day PTA LMP 7 days ago,PE tender at RLQ no guard",
+      "choices_count": 2
+    },
+    {
+      "index": 106,
+      "question_number": 1,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่ยหญิง GA 38 wk Urine protein 1+, Pitting edema, BPสูงไม่ชัก Management?",
+      "choices_count": 3
+    },
+    {
+      "index": 108,
+      "question_number": 4,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิง GA 38 wkนอนหงายทา NST มี FHR140/min จากนั้นมี contraction นาน 20 sec",
+      "choices_count": 1
+    },
+    {
+      "index": 116,
+      "question_number": 13,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงอายุ 39 ปีขาดประจาเดือนมา 4 เดือน Fundalheight 2/3 below umbilicus Ma",
+      "choices_count": 2
+    },
+    {
+      "index": 119,
+      "question_number": 16,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เลือดออกทางช่องคลอด PE: Size > date, PV: os closedDiagnosis? (choice เหมือนข้อ 1",
+      "choices_count": 0
+    },
+    {
+      "index": 127,
+      "question_number": 24,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "เด็กอายุ 12 ปีมีประจาเดือนครั้งแรกเมื่อ 2 เดือนทีhแล้วเดือนนี้มีประจาเดือนนาน 14",
+      "choices_count": 1
+    },
+    {
+      "index": 129,
+      "question_number": 26,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "หญิงอายุ 40 ปีปฏิเสธประวัติรับประทานยาใดๆเป็นประจามีเลือดออกกะปริบกะปรอยระหว่างร",
+      "choices_count": 3
+    },
+    {
+      "index": 130,
+      "question_number": 27,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "หญิงอายุ 24 ปีมีแผลที่อวัยวะเพศเจ็บและคัน 2 วัน PEพบ group of small shallow eros",
+      "choices_count": 1
+    },
+    {
+      "index": 132,
+      "question_number": 29,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงแสบช่องคลอด PV พบ blood clot atvaginal canal & cervix, มีรอย bleed ที",
+      "choices_count": 2
+    },
+    {
+      "index": 133,
+      "question_number": 30,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "คนไข้หญิงมาด้วยตกขาวสีเหลืองเหม็นมีฟองตรวจเจอ yellowVg discharge, inflame cervix",
+      "choices_count": 1
+    },
+    {
+      "index": 134,
+      "question_number": 31,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยเด็กมี Curd-like lesion (เป็นรูปมาให้ดู) Tx?",
+      "choices_count": 2
+    },
+    {
+      "index": 136,
+      "question_number": 34,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ผู้หญิงพบเป็น H-SIL ให้ทาอะไรต่อ",
+      "choices_count": 1
+    },
+    {
+      "index": 137,
+      "question_number": 35,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "เด็กอายุ 14 ปีปวดท้อง PE: Agitated, PR 100 bpm ,suprapubic tenderness PV: Bluish",
+      "choices_count": 3
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "A 28-year-old woman, primigravidarum, GA 10 weeks, little bleeding per vagina with blight red blood. PV: os closed, old blood clot. Ultrasound presents gestational sac, 10 week-size, normal fetal heart activity. What is the appropriate management\nBed rest\nCervical cerclage\nEstradiol\nSedatic and narcotic drug\nInhibit with tocolytic\nA 28-year-old GA 10 weeks presents with veginal bleeding. PV: os close, uterus 10 weeks size. Present fetal cardiac activity. What is the management\nBed rest\nEstradiol supplement\nCervical cerclage\nA patient GA third trimester has vaginal bleeding. She has abdominal pain and contraction ถี่ๆ. Ultrasound reveals uterus at fundus, no retroplacental blood clot. What is the most likely diagnosis\nVasa previa\nPlacenta previa\nUterine rupture\nPlacenta accreta\nAbruption placenta\nA woman G2P1001 GA 38 weeks, previous low transverse cesarean section, presents with bleeding per vagina and abdominal pain. PR 120/min, BP 80/60 mmHg. Can palpable fetal part. What is the diagnosis\nPlacenta previa\nUterine rupture\nAbruption placenta\nA 40-year-old woman first ANC at GA 12 weeks. She has severe nausea, vomiting, dark urine. PE: fundal 2/3 above pubic symphysis. What is the most proper investigation\nSerum β-hCG\nUltrasound\nAmniocentesis\nProgesterone supplement\nA 35-year-old female patient primigravida GA 10 week by LMP presented with blood spotting.  PE: Uterus 20 week size. Ultrasonography revealed numerous cystic appearance. What is the most appropriate management?\nWaiting for spontaneous abortion\nMisoprostal vaginal suppository\nSuction curettage\nFractional curettage\nHysterectomy\nA 26-year-old woman primigravida GA 15 week comes for ANC.She concerns that her child might have Down syndrome since her cousin’s child has Down syndrome. What is your management\nReassure that there is no risk\nTriple quad screening\nNuchal translucency\nAmniocentesis\nChorionic villus sampling\nA 36-year-old primigravida GA 30 weeks come for ANC. PE: fundal height 1/4 above umbilicus, FHS 140/min. Ultrasound: single viable fetus, estimated fetal weight less than 10th percentile of normal average GA. Which is the best investigation for fetal surveillance\nFetal movement count\nNon stress test\nBiophysical profile\nContraction test\nUmbilical artery doppler\nA 19-year-old woman G1P0 GA 37 weeks, no ANC, fully dilate, station 0. Fetal monitoring as shown(ภาพนี้เลย). What is the management\nOxytocin\nObservation\nVacuum extraction\nForceps extraction\nEmergency cesarean section\n(variable deceleration)What is the management\nDrip oxytocin\nAmniotomy\nObserve\nEmergency c/s\nIntrauterine resuscitation\nA 28-year-old woman primigravida, GA 30 weeks. PE: fundal height of uterus 3/4 above umbilical. Palpable two large parts, and multiple small parts. What is the most likely cause\nWrong date\nPolyhydramnios\nFetal macrosomia\nMultiple pregnancy\nPregnancy with myoma uteri\nA woman preterm with contraction. Management to inhibit labor. Which is not tocolytic agent\nBeta-blocker\nMagnesium sulfate\nCalcium channel blocker\nOxytocin receptor antagonist\nProstaglandin synthetase inhibitor\nA 24-year-old woman twin pregnancy GA 34 weeks has watery discharge from vagina. PE: fundal height 4/4 above umbilicus, cephalic-breech, FHS normal. What is the proper management\nUrine analysis\nNitrazine paper at perineum\nSonography to evaluate amniotic fluid\nFinger examination to estimate cervical dilatation\nSpeculum for pooling of fluid\nWhat is the absolute contraindication for amniotomy to induce labor\nMacrosomia\nPolyhydramnios\nPrematurity\nTransverse lie\nBrow presentation\nA 25-year-old female primigravida GA 35 week, normal previous ANC, presents with persistent headache 3 days. PE: BP 170/110 mmHg, pitting edema, DTR 3+, FHR 140, uterine contraction interval 2 min, duration 50 sec, moderate intensity, Cx dilate...cm, effacement 50%, station 0, intact membrane, urine albumin 2+. After MgSO4 IV, BP 140/90 mmHg. What is the next proper management\nAmniotomy\nIV dexamethasone\nIV antihypertension\nEmergency C/S\nA 20-year-old woman primigravida GA 38 weeks presents with abdominal pain. PE: BP 150/90 mmHg, puffy eyelid, pretibial edema, no uterine contraction. PV: dilate 3 cm, effacement 20%, station 0, membrane intact. Lab: urine protein 2+. What is the management\nReassure and follow up twice a week\nInduction at GA 39 week\nAdmit and close observe\nAdmit and induction\nEmergency cesarean section\nA 20-year-old primigravida at 35 weeks of gestation had a blood pressure of 150/100 mmHg with edema of lower extremities and proteinuria 1+. She developed a generalized tonic-clonic convulsion for 2 minutes. Deep tendon reflex was 3+. Cervix os was closed. Which is the appropriate management\nCesarean section immediately\nOrder CT scan emergency and consult neurosurgery\nStart MgSO4 infusion then try induction with oxytocin\nStart MgSO4 infusion then cesarean section in 2-4 hour\nStart MgSO4 infusion then try induction with misoprostol\nA patient GA… PV: cephalic presentation, prolapsed cord, fully dilated cervix, station 0. Cannot do cesarean section within 30 minutes. What is the proper management\nKnee chest position\nForceps extraction\nVacuum extraction\nManual replacement the prolapsed cord above the presenting part\nไม่มีให้ใส่foley\nA woman G2P1 GA 40 week. PROM 12 hour, cervix dilates 3 cm, effacement 75%, irregular contraction, vertex position. What is the next management\nDischarge follow-up\nWait for spontaneous delivery\nOxytocin IV\nMisoprostol\nCeasarean section\nA woman G1P0 GA… in labor. Second stage for 1 hour. Contraction interval 2 minute, duration 45 sec, station 3+. What is the proper management\nObserve progression of labor\nVacuum extraction\nForceps extraction\nEmergency cesarean section\nA 35-year-old woman, P4004 had vaginal delivered a 4,000 g baby, and had complete placental delivery 1 hr. Postpartum she developed massive vaginal hemorrhage. BT 37 C, RR 20, PR 100, BP 80/50 mmHg. Uterine fundus is 1/4 above umbilicus, poor uterine contraction. No vaginal or cervical laceration. After fluid resuscitation and urine catheterization, what is the most appropriate management\nPGE2 IV\nDopamine infusion\nOxytocin and uterine massage\nBilateral hypogastric artery ligation\nHysterectomy\nA 30-year-old female after cord traction delivery 30 minutes, has postpartum bleed. Vital signs BP shock, uterine massage can’t palpable fundus, vaginal exam reveals reddish mass 7-8 cm. After resuscitation, what is the next initial management\nBimanual compression\nCompression and invert uterine\nIV oxytocin\nSuture cervical os\nEmergency laparotomy to myomectomy\nGA 37 weeks transverse position. What is next management\nInternal podalic\nExternal podalic\nWait\n2014",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้หญิงอายุ 30 ปี ตั้งครรภ์ มีประวัติปวดศีรษะบ่อยๆ เห็นแสงวูบวาบ แพทย์วินิจฉัยว่าเป็น Migrane จงเลือกวิธีการรักษาที่เหมาะสมในผู้ป่วยรายนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ibuprofen"
+        },
+        {
+          "label": "B",
+          "text": "Propanolol"
+        },
+        {
+          "label": "C",
+          "text": "Aspirin"
+        },
+        {
+          "label": "D",
+          "text": "Ergotamine"
+        },
+        {
+          "label": "E",
+          "text": "Sumatriptan"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "แม่VDRL , FTA-ABS reactive 2 เดือนก่อนคลอด ได้ยาerythromycin 2 Wk. ก่อนคลอด ถามmanagement",
+      "choices": [
+        {
+          "label": "A",
+          "text": "reassure"
+        },
+        {
+          "label": "B",
+          "text": "iv penicillin"
+        },
+        {
+          "label": "C",
+          "text": "iv ceftriaxone"
+        },
+        {
+          "label": "D",
+          "text": "cessation breast feeding"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ญ 22ปี G1P0 GA32wk มาด้วยอาการเจ็บท้องคลอดทุก5นาที PE: +UC 5'35\" PV: cervix 1FB , effacement80% , station 0 -> Mx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "iv syntocinon"
+        },
+        {
+          "label": "B",
+          "text": "iv terbutaline"
+        },
+        {
+          "label": "C",
+          "text": "iv dexamethasone"
+        },
+        {
+          "label": "D",
+          "text": "iv Prostaglandin"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Women 42 years old GA 37 weeks G4P3 ก่อนหน้านี้ BP ปกติมาตลอด มาวันนี้ BP160/100mmHg urine protein 3+ PV: cervix 1 cm soft mid position eff25% membrane intact ทา NST: HR baseline 140 bpm accerelation 2 ครั้งใน 10 นาที What is the most proper management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "amniotomy"
+        },
+        {
+          "label": "B",
+          "text": "IV oxytocin"
+        },
+        {
+          "label": "C",
+          "text": "PGE1 Vg suppo"
+        },
+        {
+          "label": "D",
+          "text": "10% MgSO4 IV"
+        },
+        {
+          "label": "E",
+          "text": "cesarean section"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Postpartum Day 2 after vaginal delivery has fever PE : T ..... C , breast engorged, mild tender at abdomen, uterus at umbillicus, mild tender at episiotomy wound, no foul smell discharge, loch is discharge. Fever from ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Breast engorgement"
+        },
+        {
+          "label": "B",
+          "text": "Episiotomy wound infection"
+        },
+        {
+          "label": "C",
+          "text": "Parametritis"
+        },
+        {
+          "label": "D",
+          "text": "Cystitis"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ท้อง 42 ปี GA37 G3P2 ฝากครรภ์ดีมาตลอด วันนี้ BP 160/100 อาการปกติดี UA3+ dilate1+ efface25 station-1 Mx.",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 7,
+      "scenario": "หญิงตั้งครรภ์อายุ 35 ปี primigravida คลอดบุตรแล้ว น้าหนัก ..... หลังจากคลอดทารกแล้วยังไม่คลอดรกมาเป็นเวลา 30 นาที estimate blood loss 700 cc PE :PR 70/min BP 110/70 mmHg พบ fundal height at umbilical level Abdomen soft ถามว่าหลังจากให้ NSS infusionแล้ว most appropiate management คืออะไร?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Watching closely?"
+        },
+        {
+          "label": "B",
+          "text": "IV methergin"
+        },
+        {
+          "label": "C",
+          "text": "IV nalador"
+        },
+        {
+          "label": "D",
+          "text": "Manaul remove placenta"
+        },
+        {
+          "label": "E",
+          "text": "Oxytocin intramuscular plus cord control traction"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 8,
+      "scenario": "เคสหญิงไทย G1 ปากมดลูกเปิดหมดมา 2 ชม. แล้วยังไม่คลอด uterine contraction 2 \" 45 sec effacement 80 station 1+ ถาม management\n1 V/E\n2 F/C",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "C/S",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 9,
+      "scenario": "บ่าย หญิง 25 ปี G2P1 GA 40 wk คนแรกคลอดVg 3000gm ท้องนี้EFW 3500 UC interval 2min duration 50sec Cx fully dilate มา 1 ชม. station1+ ถามfurther Mx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "cesearian section"
+        },
+        {
+          "label": "B",
+          "text": "V/E"
+        },
+        {
+          "label": "C",
+          "text": "F/E"
+        },
+        {
+          "label": "D",
+          "text": "oxytocin drip"
+        },
+        {
+          "label": "E",
+          "text": "observe progression 1 hr. after"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 10,
+      "scenario": "แม่หลังคลอด NL 2วัน mild tender lower abdominal breat engorge แผลดี โลเคียดี ไม่เหม็น ถาม Dx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "endometritis"
+        },
+        {
+          "label": "B",
+          "text": "breast engorgement"
+        },
+        {
+          "label": "C",
+          "text": "parametritis cystitis"
+        },
+        {
+          "label": "D",
+          "text": "infect wound"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 12,
+      "scenario": "แม่ท้องแรก ก่อนคลอด2เดือนVDRL+ve confirm FTA ก็positive ได้treat erythro2wk พอลูกคลอดจะทาไงกับลูก",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "reassure",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "penicillin iv",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "erythro po",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "cef3 iv",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "avoid breast feeding",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 13,
+      "scenario": "G1P0 GA40+4 decrease fetal movement no labor pain",
+      "choices": [
+        {
+          "label": "A",
+          "text": "reassure"
+        },
+        {
+          "label": "B",
+          "text": "continue fetal movement count"
+        },
+        {
+          "label": "C",
+          "text": "emergency c/s"
+        },
+        {
+          "label": "D",
+          "text": "induction"
+        },
+        {
+          "label": "E",
+          "text": "nst"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 14,
+      "scenario": "G1P0 GA 32 wk chronioamnitits on IV ATB แล้ว จะทาอะไรต่อ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV dexa"
+        },
+        {
+          "label": "B",
+          "text": "expectant"
+        },
+        {
+          "label": "C",
+          "text": "terminate"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 15,
+      "scenario": "หญิงG1P0 GA36wk BP140/90 ไม่มีปวดหัว ไม่มีตามัว urine Protein1+ FHR146 No contraction Mx?",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "MgSO4+คลอดทันที",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "MgSO4+คลอดที่37wk",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "รอคลอดที่37wk",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "รอคลอดที่40wk",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Antihypertensive drug +คลอดทันที",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 16,
+      "scenario": "ท้องแฝด ทาคลอดเด็กไปคนหนึ่ง เจาะน้าคร่าแล้ว มีเลือดออก เจ็บ ถามdx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "vasa previa"
+        },
+        {
+          "label": "B",
+          "text": "abruptio placenta"
+        },
+        {
+          "label": "C",
+          "text": "placenta previa"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "หญิง 19ปี G1 GA 35wk มา follow up ตามนัด พบBP 160/100mmHg ตรวจร่างกาย pretibial edema PV : os closed , urine protein 2+ แพทย์ให้ผู้ป่วยพักครึ่งชั่วโมง วัดBPซ้า ได้ 160/110 จงให้การวินิจฉัย (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Sever preeclampsia",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Mild preeclampsia",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Transient hypertension",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Chronic hypertension",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Eclampsia",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยหญิง อายุ 25 ปี ตั้งครรภ์แรก คลอดโดยใช้ forcep extraction หลังคลอดรกมีเลือดไหลออกจากช่องคลอด 800 cc ตรวจร่างกายพบ BP 90/60 mmHg, Pulse 110 bpm, คลามดลูกได้ ½ above suprapubic สาเหตุของเลือดออกคือข้อใด (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Uterine atony",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Retain placenta",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Laceration",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Coagulopathy",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Rupture varicose vein of vagina",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 7,
+      "scenario": "หญิงตั้งครรภ์ G2P1 GA 42 wks มาตรวจตามนัดอาการทุกอย่างปกติ ไม่เจ็บครรภ์คลอด PE: fundal height ¾ above umbilicus, uterine contraction 20 sec, cervical dilate 2 cm, 50% EF, cephalic presentation, station 0, MI จะทาอย่างไรต่อไป",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "นัดอีกสองอาทิตย์",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "นัดมา induction พรุ่งนี้",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Emergency C/S",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Elective C/S",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "progesterone",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 15,
+      "scenario": "หญิงอายุ 30 ปี G1P0 GA 39 wk ประเมินน้าหนักทารกได้ประมาณ 3000 g อื่นๆดีหมด หลังจากเบ่งคลอดนาน 2 ชั่วโมง PV ได้ station +3, fully dilate, FHS 148 ถาม Mx (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "oxytocin",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "c/s",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "F/E",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "vacuum",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ให้คลอดเอง",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 16,
+      "scenario": "ผู้หญิง G1 GA 30 wk ANC ปกติมาตลอด มาด้วยมีน้าใสไหลจากช่องคลอดมา 2 ชั่วโมง ไม่ปวดท้อง PE: vital sign stable, uterine height 3/4 above umbilicus, cephalic presentation, longitudinal line, FHR 148, จะตรวจอะไรเพิ่มเติมเพื่อการวินิจฉัย",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "UA",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "fern test",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "pelvic exam",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "U/S",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 23,
+      "scenario": "ผู้หญิง 35 ปี ตั้งครรภ์ GA 15 wk ทาPND ด้วยวิธี amniocentasis ผล เป็น 45,XY translocation 14q,15q ท่านเป็นแพทย์จะทาอย่างไร",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ให้มารดาตั้งครรภ์ต่อตามปกติ",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ให้มารดายุติการตั้งครรภ์",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "แนะนาให้มารดาทา CVS เมื่ออายุครรภ์ 20 สัปดาห์",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ทาfetal therapy",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Couseling และตัดสินใจร่วมกับมารดา",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 36,
+      "scenario": "หญิง 20 ปี G1 GA 10wk มาพบแพทย์ด้วยอาการอาเจียนมาก กินข้าวได้น้อย ปัสสาวะออกน้อยสีเข้ม จะส่ง Investigation อะไรให้ได้การวินิจฉัยที่ต้องการ (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Urine ketone",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "CBC",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Cr",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "FPG",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 120,
+      "scenario": "เด็กอายุ 1 วัน คลอดยากติดไหล่ มารดาสังเกตว่าแขนซ้ายเด็กไม่ขยับ PE: internal rotate rt. Arm, extend&pronate forearm dx? (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "fractured clavicle",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "fractured humerus",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Erb paralysis",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "klumpke paralysis",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "shoulder dislocation",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 138,
+      "scenario": "ทารกคลอดทางช่องคลอด แพทย์ไม่สามารถคลอดได้ สงสัยภาวะคลอดติดไหล่ การกระทาข้อใดอันตรายมากที่สุด (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ให้ผู้ช่วยกดหัวหน่าว",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ให้ผู้ช่วยกดยอดมดลูก",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ยกขาชิดอก",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "เปิดแผลให้กว้าง, ตัดฝีเย็บยาวมากขึ้น",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ค่อย ๆ ติดศีรษะลงช้า ๆ",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 139,
+      "scenario": "แม่ตั้งครรภ์36wks. มี AFP level สูงขึ้น. นึกถึง? (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Myringomyelocele",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Holoprecencephaly",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Down's syndrome",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "turner's syndrome",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 140,
+      "scenario": "ผู้ป่วยหญิงอายุ 20ปี มีระดูครั้งสุดท้าย2wk ก่อนมี sexual intercourse เมื่อคืนไม่ได้ป้องกันมาปรึกษาแพทย์เนื่องจากไม่พร้อมตั้งครรภ์",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "PGE2 original suppository",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "high dose levonorprogestryl orally",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "combine contraceptive pill",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "uterine curettage",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 142,
+      "scenario": "G1P0 FHR 148 /min ทาamniotomy ได้เลือดปน FHR เหลือ 80 /min (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "placenta previa",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "abruptio placenta",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "rupture uterus",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ruptured vasa previa\n2011",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยหญิงอายุ 28 ปี GA10 WK HBsAG +veตัวเดียวเท่านั้นต้องแนะนาอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "termination"
+        },
+        {
+          "label": "B",
+          "text": "C/S at term"
+        },
+        {
+          "label": "C",
+          "text": "avoid breast feeding"
+        },
+        {
+          "label": "D",
+          "text": "vaccine at birth"
+        },
+        {
+          "label": "E",
+          "text": "immunoglobulin at birth"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยหญิงอายุ 25 ปี G1 GA 20 wk. U/S พบ anencephalyการปฏิบัติใดเหมาะสมที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ตรวจเลือดแม่ดู AFP"
+        },
+        {
+          "label": "B",
+          "text": "ตรวจเลือดแม่ดู triple test"
+        },
+        {
+          "label": "C",
+          "text": "ตรวจ MRI เพื่อยืนยันการวินิจฉัย"
+        },
+        {
+          "label": "D",
+          "text": "ตรวจติดตาม U/S อย่างใกล้ชิด"
+        },
+        {
+          "label": "E",
+          "text": "แนะนายุติการตั้งครรภ์"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 3,
+      "scenario": "แม่อายุ 40 yrแต่งงานมา 10 yrไม่ได้คุมกาเนิด GA 22wkchromosome study 47+xy trisomy 21 จะแนะนาอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "บอกแม่ว่าเป็นทารกเพศชายและมีความเสี่ยงในการเกิด"
+        },
+        {
+          "label": "B",
+          "text": "ความผิดปกติ"
+        },
+        {
+          "label": "C",
+          "text": "บอกแม่ว่าผิดปกติและวางแผนร่วมกันรักษา"
+        },
+        {
+          "label": "D",
+          "text": "U/S หาความผิดปกติ"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "หญิงไทยคู่อายุ 24 ปี GA 32 wksมีน้าไหลออกจากช่องคลอด3 hrก่อนมาโรงพยาบาลไม่เจ็บท้อง speculum exam พบน้า 5ml, nitrazine test positive ต้องทาอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "oxytocin iv"
+        },
+        {
+          "label": "B",
+          "text": "terbutaline iv"
+        },
+        {
+          "label": "C",
+          "text": "C/S"
+        },
+        {
+          "label": "D",
+          "text": "dexamethasone im"
+        },
+        {
+          "label": "E",
+          "text": "prostaglandin"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ป่วยหญิงไทยคู่อายุ 24 ปี G?P? GA 3rd trimesters เจาะถุงน้าคร้าได้เป็นน้าใส FHR 80-90 bpm PV ซ้าพบ pulsatilemass การวินิจฉัยที่เหมาะสมคือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Vasa previa"
+        },
+        {
+          "label": "B",
+          "text": "Prolapsed cord"
+        },
+        {
+          "label": "C",
+          "text": "Placenta previa"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยหญิงอายุ 23 ปี GA 39 Wkพบว่าลูกไม่ดิ้น 24 Hr. PE:Fundal Height .> Umbilicus, FHR 140/min ข้อใดเป็นแนวทางการรักษาที่เหมาะที่สุดในผู้ป่วยรายนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure and F/U next day"
+        },
+        {
+          "label": "B",
+          "text": "Biophysical profile"
+        },
+        {
+          "label": "C",
+          "text": "Oxytocin stress test"
+        },
+        {
+          "label": "D",
+          "text": "Induction of labor"
+        },
+        {
+          "label": "E",
+          "text": "C/S"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ผู้ป่วยหญิงอายุ 30 ปียังไม่มีบุตรมาตรวจร่างกายไม่มีเลือดออกผิดปกติคลาUetrus 12 wksizeU/S Uterus โต11cm, Globularshape,Multiplemyomaก้อนใหญ่สุด 2.2anterior,2.3 posterior management อย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "สังเกตอาการและ F/U 3 mo"
+        },
+        {
+          "label": "B",
+          "text": "GnRH releasing hormone"
+        },
+        {
+          "label": "C",
+          "text": "Uterine artery embolization"
+        },
+        {
+          "label": "D",
+          "text": "Myomectomy"
+        },
+        {
+          "label": "E",
+          "text": "Hysterectomy"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้ป่วยหญิงอายุ 65 ปีหมดประจาเดือนมา 15 ปีไม่ได้รับประทานฮอร์โมนทดแทนมารพ.ด้วย AUB 5 วันจะInvestigate อะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fractional curragetage"
+        },
+        {
+          "label": "B",
+          "text": "Endomethrial biopsy"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ผู้ป่วยหญิงอายุ 25 ปีRlQ pain 2 day PTA LMP 7 days ago,PE tender at RLQ no guarding , PV tender at uterusbuldging at anexaการวินิจฉัยที่ถูกต้องคือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PID"
+        },
+        {
+          "label": "B",
+          "text": "appendiditis"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 10,
+      "scenario": "หญิงอายุ 30 ปีแต่งงานมาแล้ว 6 ปีไม่เคยคุมกาเนิดปัจจุบันไม่เคยตั้งครรภ์และมีลูกมีอาการปวดประจาเดือนพอทนได้ไม่ต้องหยุดงานตรวจร่างกายพบ normal uterine , mass cystic content at Rt. adnexa 3x4 cm. tender , cul-du-sacroughlyการวินิจฉัยที่เหมาะสมคือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endrometriosis Cyst"
+        },
+        {
+          "label": "B",
+          "text": "Functional Ovarian cyst"
+        },
+        {
+          "label": "C",
+          "text": "TOA"
+        },
+        {
+          "label": "D",
+          "text": "Appendiceal abscess"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ผู้ป่วยหญิงอายุ 25 ปีคันตกขาวให้รูปมาKOH น่าจะเป็นพวกyeast รักษายังไง?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "metronidazole oral"
+        },
+        {
+          "label": "B",
+          "text": "norfloxacin oral"
+        },
+        {
+          "label": "C",
+          "text": "metronidazole suppo"
+        },
+        {
+          "label": "D",
+          "text": "clotrimazole"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้ป่วยหญิง 20 ปี มีเลือดออกทางช่องคลอด BP 90/70 PR 120 PE : pale ให้ fluid ใดดี (OB/GYN) (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSS"
+        },
+        {
+          "label": "B",
+          "text": "NSS/2 + NaCO3"
+        },
+        {
+          "label": "C",
+          "text": "5%DNSS"
+        },
+        {
+          "label": "D",
+          "text": "5%DNSS/2"
+        },
+        {
+          "label": "E",
+          "text": "HESsteril"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่ยหญิง GA 38 wk Urine protein 1+, Pitting edema, BPสูงไม่ชัก Management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ antihypertensive drug"
+        },
+        {
+          "label": "B",
+          "text": "Expectant"
+        },
+        {
+          "label": "C",
+          "text": "Induction of labor"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยหญิง G2P1 GA 33 wk BP 150/100 mmHg, Urineprotein 2+, Pitting edema 1+ Management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure and expectant management"
+        },
+        {
+          "label": "B",
+          "text": "Antihypertensive drug"
+        },
+        {
+          "label": "C",
+          "text": "Try vaginal delivery"
+        },
+        {
+          "label": "D",
+          "text": "Cesarean section"
+        },
+        {
+          "label": "E",
+          "text": "diuretics"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยหญิง GA 38 wkนอนหงายทา NST มี FHR140/min จากนั้นมี contraction นาน 20 sec FHR 100/minManagement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้นอนตะแคง"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 5,
+      "scenario": "หญิงตั้งครรภ์ GA 36 weeks มาตรวจครรภ์ขณะนอนตรวจมีอาการหน้ามืดถาม management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "นอนตะแคงซ้าย"
+        },
+        {
+          "label": "B",
+          "text": "ให้ O2"
+        },
+        {
+          "label": "C",
+          "text": "ให้กินน้าหวาน"
+        },
+        {
+          "label": "D",
+          "text": "ให้ IV"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยหญิงอายุ 25 ปี GA 25 wkปวดท้องด้านขวาและรอบๆ Umbilicus 2-3 วันวันทีh 3 ปวดท้องทางด้านขวาของUmbilicus มากขึ้นPE : Abdomen – Soft, tender at rightparaumbilicusจะ investigate อะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CBC"
+        },
+        {
+          "label": "B",
+          "text": "Ultrasound"
+        },
+        {
+          "label": "C",
+          "text": "Acute abdominal series"
+        },
+        {
+          "label": "D",
+          "text": "CT scan"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ผู้หญิงอายุ 25 ปีมีครรภ์แรก GA 38 wkมารพ.ด้วยมีมูกเลือดออกทางช่องคลอด 1 วันก่อนมารพ. มีมดลูกบีบตัวทุกๆ10นาที PV: os 2 cm, effacement 25 % drip Syntocynonไป 6 ชมต่อมาOs 10 cm LOA position, station 0,Caput2+,molding 2+ เบ่งคลอดมา2ชม.เด็กยังไม่ออกจะทาอย่างไรต่อไป",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Close labor progression monitoring"
+        },
+        {
+          "label": "B",
+          "text": "Close electronic fetal monitoring"
+        },
+        {
+          "label": "C",
+          "text": "Vacuum extraction"
+        },
+        {
+          "label": "D",
+          "text": "Forceps extraction"
+        },
+        {
+          "label": "E",
+          "text": "Cesarean section"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้ป่วยหญิง GA 38 wk G2P1 Cervix: Fully dilate, Station+1, Molding 2+, Contraction 2+ Management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe progress of labor"
+        },
+        {
+          "label": "B",
+          "text": "Drip Syntocinon"
+        },
+        {
+          "label": "C",
+          "text": "Vacuum extraction"
+        },
+        {
+          "label": "D",
+          "text": "Forceps extraction"
+        },
+        {
+          "label": "E",
+          "text": "C/S"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ผู้ป่วยหญิง G2P1 GA37week ปวดท้องคลอดนาน 14 ชม.PE: cervical full dilatation, cephalic, station 0, FHR 140หลังมดลูกคลายตัว 20 วินาทีมี FHR 100 นาน 20 วินาทีถามmanagement",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cesarean section"
+        },
+        {
+          "label": "B",
+          "text": "นอนตะแคงและสังเกตอาการณ์"
+        },
+        {
+          "label": "C",
+          "text": "Vacuum Extraction"
+        },
+        {
+          "label": "D",
+          "text": "PV ดันกลับเข้าไป"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ผู้ป่วยหญิงท้อง GA 39 มารพ.ด้วยเจ็บท้องมา4ชมก่อนมารพ.แรกรับCx 2 cm ต่อมาอีก4ชม PV ได้Cx 3 cm Dx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal labor"
+        },
+        {
+          "label": "B",
+          "text": "prolonged latent phase"
+        },
+        {
+          "label": "C",
+          "text": "protracted active phase"
+        },
+        {
+          "label": "D",
+          "text": "arrest of descent"
+        },
+        {
+          "label": "E",
+          "text": "arrest …"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้ป่วยหญิงตั้งครรภ์อายุ 20 ปีท้องแรกครบกาหนดเจ็บท้องคลอด 10 ชัhวโมงก่อนมาโรงพยาบาลต่อมารู้สึกเจ็บท้องมากขึ้น PE: BP 70/40 PR 110 FHS 180 PV: cervix fully dilated, uterine soft consistency จงบอกการวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "uterine rupture"
+        },
+        {
+          "label": "B",
+          "text": "placenta previa"
+        },
+        {
+          "label": "C",
+          "text": "ruptured vasa previa"
+        },
+        {
+          "label": "D",
+          "text": "abruptio placenta"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 13,
+      "scenario": "ผู้ป่วยหญิงอายุ 39 ปีขาดประจาเดือนมา 4 เดือน Fundalheight 2/3 below umbilicus Management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Thyroid function test"
+        },
+        {
+          "label": "B",
+          "text": "Fetal karyotype"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 14,
+      "scenario": "ผู้หญิงอายุ35ปี G5P4 ครรภ์นี้มาด้วยมีเลือดออกทางช่องคลอด 2ชม PTA มีประวัติครรภ์ทีh 2 C/S ส่วนครรภ์ที่ 3คลอดทางช่องคลอด PE: ปกติไม่มีมดลูกบีบตัวไม่เจ็บท้อง พบทารกอยู่transverse line, FHRปกติคิดว่าเกิดจากอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Placenta previa"
+        },
+        {
+          "label": "B",
+          "text": "Ruptured Uterus"
+        },
+        {
+          "label": "C",
+          "text": "Ruptured Vasa previa"
+        },
+        {
+          "label": "D",
+          "text": "Apruptio placenta"
+        },
+        {
+          "label": "E",
+          "text": "Latent phase of labor"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 15,
+      "scenario": "GA 8 wkมาด้วย bleeding per vagina 1 day PTA PE:Uterus 8 wk size, os close, cervical motion tendernessnegative, no adnexal mass Diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Threatened abortion"
+        },
+        {
+          "label": "B",
+          "text": "Complete abortion"
+        },
+        {
+          "label": "C",
+          "text": "Incomplete abortion"
+        },
+        {
+          "label": "D",
+          "text": "Inevitable abortion"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 16,
+      "scenario": "เลือดออกทางช่องคลอด PE: Size > date, PV: os closedDiagnosis? (choice เหมือนข้อ 15)",
+      "choices": [],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 17,
+      "scenario": "หญิงอายุ 35 ปี BMI 35 ตั้งครรภ์ GA 36 wkน้าหนักขึ้นรวม25 kg ทาให้ทารกมี risk ขอใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Macrosomia"
+        },
+        {
+          "label": "B",
+          "text": "Hypertension"
+        },
+        {
+          "label": "C",
+          "text": "Cleft lip & Cleft palate"
+        },
+        {
+          "label": "D",
+          "text": "Spontaneous abortion"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 18,
+      "scenario": "ผู้ป่วยหญิงหลังคลอดมีไข้ปวดเต้านมซ้ายบวมแดงมีInduration ตอนนี้ให้นมบุตรอยู่จะ Manage?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "หยุดให้นมบุตรชั่วคราวและสังเกตอาการณ์"
+        },
+        {
+          "label": "B",
+          "text": "warm compression"
+        },
+        {
+          "label": "C",
+          "text": "Oral ATB"
+        },
+        {
+          "label": "D",
+          "text": "IV ATB"
+        },
+        {
+          "label": "E",
+          "text": "I&D"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 19,
+      "scenario": "ผู้ป่วยหญิง 30 ปีระดูขาดมา 6 สัปดาห์ปวดท้องน้อย 1 วันPE : V/S stable, Abd : mild tenderness LLQ , no reboundtenderness PV : normal external genitalia , no definite oncervical motiom , no adnexal mass TVS : no intrauterinegestational sac , no mass ควรปฏิบัติกับผู้ป่วยรายนี้อย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Serial Hct"
+        },
+        {
+          "label": "B",
+          "text": "Serum Beta HCG and repeat at 24 hr"
+        },
+        {
+          "label": "C",
+          "text": "Admit and Close observe"
+        },
+        {
+          "label": "D",
+          "text": "Methotrexate"
+        },
+        {
+          "label": "E",
+          "text": "Explore lap"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 20,
+      "scenario": "ผู้ป่วยหญิงจิตเวชกินยาHadol, Benhexolอยู่ต่อมาผู้ป่วยอยากตั้งครรภ์จึงหยุดกินยาเองขณะนี้ตั้งครรภ์ 2 เดือนต่อมาผู้ป่วยมีอาการทางจิตเวชขึ้นอีกได้ยินเสียงแว่วว่าลูกในท้อง ไม่ใช่ลูกของตนเองและสามีมาหาแพทย์เพื่อจะทาแท้งท่านจะทาอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "admit แล้วทา ECT"
+        },
+        {
+          "label": "B",
+          "text": "ทาแท้งให้เนืhองจากเป็นสิทธิของผู้ป่วย"
+        },
+        {
+          "label": "C",
+          "text": "ทาแท้งให้เนื่องจากแม่ไม่มีความสามารถในการเลี้ยงดู"
+        },
+        {
+          "label": "D",
+          "text": "ปรึกษากับสามีหาทางแก้ไข"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 21,
+      "scenario": "หญิงครรภ์แรก GA 10 wksมาด้วยเลือดออกกระปริดกระปรอย PE: normal ควรทาอะไรต่อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urine preg test"
+        },
+        {
+          "label": "B",
+          "text": "Ultrasound"
+        },
+        {
+          "label": "C",
+          "text": "Pelvic examination"
+        },
+        {
+          "label": "D",
+          "text": "Serum B-HCG"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 22,
+      "scenario": "ผู้หญิงอายุ 20 ปี LMP 2 wkมี SI คืนเมื่อวานไม่ได้ป้องกันไม่อยากตั้งครรภ์มาพบท่านจะ manage อย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "High dose estrogen pills"
+        },
+        {
+          "label": "B",
+          "text": "High dose progesterone pills"
+        },
+        {
+          "label": "C",
+          "text": "OCP"
+        },
+        {
+          "label": "D",
+          "text": "DMPA injection"
+        },
+        {
+          "label": "E",
+          "text": "curette"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 23,
+      "scenario": "ผู้ที่ได้รับประโยชน์จากการฉีดวัคซีนHPVมากที่สุดคือข้อใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ด.ญ. 7 ปีแม่มีประวัติเป็น HPV"
+        },
+        {
+          "label": "B",
+          "text": "หญิง 16 ปีไม่เคยมีเพศสัมพันธ์มาก่อน"
+        },
+        {
+          "label": "C",
+          "text": "หญิง 28 ปีมาขอคาปรึกษาว่าจะแต่งงาน"
+        },
+        {
+          "label": "D",
+          "text": "ชาย 30 ปีมาขอคาปรึกษาว่าจะแต่งงาน"
+        },
+        {
+          "label": "E",
+          "text": "หญิง 32 ปีมารักษามะเร็งปากมดลูก"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 24,
+      "scenario": "เด็กอายุ 12 ปีมีประจาเดือนครั้งแรกเมื่อ 2 เดือนทีhแล้วเดือนนี้มีประจาเดือนนาน 14 วัน Management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 25,
+      "scenario": "หญิงอายุ42ปีตัดมดลูกเมืhอหนึ่งสัปดาห์ก่อนจากmyomaวันนี้มีไข้ปวดท้องแผลผ่าตัดบวมแดงกดเจ็บจะทาอะไรต่อ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe"
+        },
+        {
+          "label": "B",
+          "text": "warm compression"
+        },
+        {
+          "label": "C",
+          "text": "Topical ATB"
+        },
+        {
+          "label": "D",
+          "text": "Oral ATB"
+        },
+        {
+          "label": "E",
+          "text": "Open wound and drain"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 26,
+      "scenario": "หญิงอายุ 40 ปีปฏิเสธประวัติรับประทานยาใดๆเป็นประจามีเลือดออกกะปริบกะปรอยระหว่างรอบเดือน Management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Combined pills"
+        },
+        {
+          "label": "B",
+          "text": "Progestin pills"
+        },
+        {
+          "label": "C",
+          "text": "Fractional Curettage"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 27,
+      "scenario": "หญิงอายุ 24 ปีมีแผลที่อวัยวะเพศเจ็บและคัน 2 วัน PEพบ group of small shallow erosions on erythematous baseat right labia minora Investigation ใดช่วยวินิจฉัยมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gram stain b) KOH c) Wright’s stain d) MAF e) Dark field"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 28,
+      "scenario": "ผู้ป่วยอายุ 18 ปีโดนน้าชายข่มขืน PE พบ ecchymosis และrecent hymen tear ทา cervical – vaginal discharge ส่งอะไรเพื่อยืนยัน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pap smear"
+        },
+        {
+          "label": "B",
+          "text": "KOH"
+        },
+        {
+          "label": "C",
+          "text": "Tzank’s smear"
+        },
+        {
+          "label": "D",
+          "text": "Acid phosphatase"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 29,
+      "scenario": "ผู้ป่วยหญิงแสบช่องคลอด PV พบ blood clot atvaginal canal & cervix, มีรอย bleed ทีh cervix + purulentdischarge จงวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cervicitis"
+        },
+        {
+          "label": "B",
+          "text": "Vaginitis"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 30,
+      "scenario": "คนไข้หญิงมาด้วยตกขาวสีเหลืองเหม็นมีฟองตรวจเจอ yellowVg discharge, inflame cervix abdomen normal",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cervicitis"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 31,
+      "scenario": "ผู้ป่วยเด็กมี Curd-like lesion (เป็นรูปมาให้ดู) Tx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ketoconalzole"
+        },
+        {
+          "label": "B",
+          "text": "Clotrimazole"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 33,
+      "scenario": "ผู้ป่วยหญิงอายุ 70 ปีปัสสาวะเล็ดเวลาไอ,จามมา 2 ปีมีลูกมา 5 คน PV : small uterus คลาได้ bulging 2/3 anteriorvaginal wall and cervix at vaginal entry ถาม dx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urethroceolel w/ grade 2 uterine prolapse"
+        },
+        {
+          "label": "B",
+          "text": "Urethroceolel w/ grade 3 uterine prolapse"
+        },
+        {
+          "label": "C",
+          "text": "Cystocoele w/ grade 2 uterine prolapse"
+        },
+        {
+          "label": "D",
+          "text": "Cystocoele w/ grade 3 uterine prolapse"
+        },
+        {
+          "label": "E",
+          "text": "Urethrorectoceolel w/ grade 2 uterine prolapse"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 34,
+      "scenario": "ผู้หญิงพบเป็น H-SIL ให้ทาอะไรต่อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colposcope b) Conization"
+        }
+      ],
+      "exam_source": "OB"
+    },
+    {
+      "question_number": 35,
+      "scenario": "เด็กอายุ 14 ปีปวดท้อง PE: Agitated, PR 100 bpm ,suprapubic tenderness PV: Bluish external genitalia,bulging cystic mass between labia majora (อาการแบบimperforated hymen) Mx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cruciate incision"
+        },
+        {
+          "label": "B",
+          "text": "Mass excision"
+        },
+        {
+          "label": "C",
+          "text": "Kegel exercis"
+        }
+      ],
+      "exam_source": "OB"
+    }
+  ]
+}

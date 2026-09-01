@@ -1,0 +1,1561 @@
+{
+  "filename": "Forensic",
+  "subject": "forensic",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 75,
+    "no_choices": 40,
+    "few_choices": 11,
+    "good": 24,
+    "no_scenario": 0,
+    "short_scenario": 12
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ตรวจสถานที่เกิดเหตุ ต้องการเก็บเลือดที่ติดเศษผ้าไปตรวจ DNA เทียบกับศพและผู้ต้องส",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 147,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "พนักงาน กทม? 5 คน ลงไปทางารกาจัดมูลสัตว์ในอุโมงค์ จากนั้นเสียชีวิตทั้ง 5 คน ถามส",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "environment suffocation(entrapment)",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "gas suffocation( Carbondioxide)",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "gas suffocation ( มีเทน )",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "gas suffocation ( CO )\n9 ข้อใดแพทย์อนุยาดให้ปลูกถ่ายอวัยวะได้",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "พี่ชายขาพิการเซนยอมปลูกถ่ายไตให้น้อง",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "พี่อายุ25ปีจะบริจาคดวงตาให้น้องข้างนึง",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "แม่จูงเดกพิการมาจะให้ไตแก่พ่อ",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "คนที่ถูกdiagว่าเปนเจ้าชายนิทรา(vegitative stage) ได้เซนยอมทาบัตรdonor cardไว้แล้",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "คนจรจัดประสบอุบัติเหตุไม่มีญาติ...",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 78,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ท่านได้รับเชิญให้ไปชันสูตรพลิกศพที่โรงแรมแห่งหนึ่ง พบศพอยู่ภายในห้องพัก สภาพห้อง",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "4-6 ชม.",
+      "choices_count": 0
+    },
+    {
+      "index": 13,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "6-8 ชม.",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "8-12 ชม.",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "12-24 ชม.",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "1-2 วัน\n79C. หญิง 30 ปี ถูกสามีทารุณกรรมเป็นประจา ครั้งนี้ถูกทาร้ายด้วยมีด น่าจะ",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Abrasion",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Contusion",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Incised",
+      "choices_count": 0
+    },
+    {
+      "index": 20,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Lacerated",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Punctured\n78A. ชายโดนทาร้ายที่บริเวณศีรษะและท้อง มีแผลที่ศีรษะ 3x3 cm + มีแผลอื่",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ตายเพราะเลือดออกในสมอง",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ตายเพราะเลือดออกในสมองจากภยันอันตรายที่กระทาที่ศีรษะ",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ตายเพราะเลือดออกในสมองจากการถูกทาร้ายที่ศีรษะ",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ตายเพราะเลือดออกในสมองและม้ามฉีก จากภยันอันตรายที่กระทาที่ศีรษะและท้อง",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ตายเพราะเลือดออกในสมองและม้ามฉีก จากการถูกทาร้ายที่ศีรษะและท้อง",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 78,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เจอนศ. ช่างกล เสียชีวิต พบแผลทะลุจากชายโครงซ้ายทะลุสะบักขวา เขียนใบชันสูตรอย่างไ",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "แผลจากกระสุนปืนทะลุจากชายโครงซ้าย วิถี หน้าไปหลัง ซ้ายไปขวา ล่างไปบน",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เป็นบาดแผลจากกระสุนจากชายโครงซ้ายทะลุสะบักขวา เสียเลือดมาก\n144A ไปชันสูติศพชาย40",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "head injury",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ethanol toxic",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Amphetamine toxic",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "mutisubstance toxic",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "unknown cause of death",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "รพ.อาเภอขาดเครื่องมือที่ทันสมัย",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "รพ.อาเภอมีประสบการณ์น้อย",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "รพ.อาเภอวินิฉัยถูกแล้วแต่เกิดไส้ติ่งอักเสบภายหลัง",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ไส้ติ่งอักเสบระยะแรกจะมีอาการคล้ายกับลาไส้อักเสบ",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "รพ.อาเภอน่าจะใช้ ultrasound จะได้วินิฉัยได้รวดเร็วขึ้น",
+      "choices_count": 0
+    },
+    {
+      "index": 48,
+      "question_number": 8,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "สามารถทาการขีดเขียนบนกระสุนที่พบเป็นของกลาง เพื่อบอกว่าเป็นวัตถุพยานได้หรือไม่",
+      "choices_count": 3
+    },
+    {
+      "index": 50,
+      "question_number": 10,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "โครงกระดูก orbit กลมเป็นชนชาติใด",
+      "choices_count": 3
+    },
+    {
+      "index": 52,
+      "question_number": 2,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "คนตายพบเขม่าควัน เนื้อข้างในสีชมพู ตายจากอะไร",
+      "choices_count": 3
+    },
+    {
+      "index": 54,
+      "question_number": 4,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "พบศพในที่เดเหตุเพลิงไหม้ ตรวจร่างายปติ พบ cherry red spot ในอวัยวะภายใน คิดว่าสา",
+      "choices_count": 3
+    },
+    {
+      "index": 61,
+      "question_number": 5,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ศาลยกฟ้องโจทก์คดีจาเลยโดนยิงด้วยปืนลูกโดดถามว่าบาดแผลเป็นอย่างไร",
+      "choices_count": 3
+    },
+    {
+      "index": 63,
+      "question_number": 8,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "หญิงวัยรุ่นมาตรวจเรื่องโดนข่มขืน ตรวจร่างกาย พบ old tear ที่ 6 นาฬิกา มี sperm ไ",
+      "choices_count": 3
+    },
+    {
+      "index": 65,
+      "question_number": 2,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "เด็กหญิงอายุ 5 ปีแม่พามา ERเพราะตกบันได 3 hr PTAPE: เด็กตัวเล็ก (กว่าอายุ) มีรอย",
+      "choices_count": 1
+    },
+    {
+      "index": 71,
+      "question_number": 8,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "พบศพชายนอนเสียชีวิตริมถนนมีแผลเต็มไปหมด scalplaceration wound at temporal area, ",
+      "choices_count": 3
+    },
+    {
+      "index": 72,
+      "question_number": 9,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "สงสัย base of skull fracture ต้องทา Ix อะไรเพือชันสูตร",
+      "choices_count": 1
+    },
+    {
+      "index": 73,
+      "question_number": 10,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ชายอาละวาดหวาดระแวงคลุ้มคลั่งไม่ยอมให้รักษาท่านเป็นแพทย์จะทาอย่างไร",
+      "choices_count": 3
+    },
+    {
+      "index": 74,
+      "question_number": 11,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยจิตเวชชายผูกคอตนเองด้วยเชือกแล้วกระโดดลงจากสะพานแขวน เสียชีวิตจากสาเหตุใด",
+      "choices_count": 2
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "ตรวจสถานที่เกิดเหตุ ต้องการเก็บเลือดที่ติดเศษผ้าไปตรวจ DNA เทียบกับศพและผู้ต้องสงสัย ต้องเก็บหลักฐานอย่างไร\nเอาแช่ตู้เย็น\nเอาผ้าไปผึ่งให้แห้งแล้วเก็บใส่ซองพลาสติก\nใช้ไดร์เป่าผมเป่าให้แห้ง\nเอาผ้าไปตากแดด\nพบศพนอนอยู่ข้างทาง ตรวจพบบาดแผลที่ท้ายทอยมีรอยช้ำรอบแผล 3x3 cm ผลตรวจ serum alcohol 400 mg% และพบ methylamphetamine ปริมาณมาก ท่านจะลงสาเหตุการตายของศพว่าอะไร\nAccident\nHead trauma\nMethylamphetamine intoxication\nAlcohol intoxication\nMultiple substance intoxication\nตามประมวลกฎหมายอาญา กรณีใดที่จำเป็นต้องมีพยานซึ่งได้แก่ แพทย์ พนักงานสอบสวน พนักงานอัยการ และพนักงานฝ่ายปกครองเข้าร่วมในการชันสูตร\nคนร้ายโดนตำรวจยิงตาย\nญาติผู้ต้องขังเสียชีวิตที่โรงพัก\nคนถูกรถตำรวจชนเสียชีวิต\nพบศพชายไม่ทราบชื่อข้างเรือนจำ\nพัศดีถูกนักโทษฆ่าเสียชีวิตในเรือนจำ\nชายไทยอายุ 30 ปี นอนหลับแล้วตาย ไม่มีโรคประจำตัว ท่านคิดว่าน่าจะเกิดจากไหลตาย ต้องผ่าชันสูตร แต่ญาติและพนักงานสอบสวนไม่ชันสูตร จะลงสาเหตุการตายว่าอย่างไร\nไหลตาย\nหัวใจล้มเหลวเฉียบพลัน\nไม่ทราบสาเหตุการตาย\nwomen death, subconjuntival hemorrhage both eyes, irregular abrasion and mark muscle contusion at neck. What is the manner of death\nSuicidal\nHomicide\nAccident\nAnimal injury\nUndetermined\nเด็กชายชาวอิสลามเสียชีวิต คุณถูกตามให้ไปชันสูตร แต่ยังไม่ได้ข้อสรุปแน่ชัด อยากเอาไปผ่า จะทำอย่างไร\nนำไปผ่าชันสูตรได้ตามกฎหมาย\nให้ผู้ปกครองยินยอม ถ้าไม่ยินยอมก็ไม่ผ่า\nขออำนาจศาล\nไม่ผ่าเพราะผิดหลักศาสนาอิสลาม\nเจอศพผู้หญิงผูกคอตาย ลักษณะใดเป็นหลักฐานตัวยืนยันว่าศพผูกคอตายจริง\nไม่มีลักษณะใบหน้าคั่งเลือด\nไม่มีเลือดออกในเยื่อบุตา\nรอยรัดอยู่ตรงกับลูกกระเดือก\nลักษณะรอยเชือกที่คอตรงกับเชือกในที่เกิดเหตุ\nพบรอยตัววีคว่ำอยู่ที่หลังคอ\nA 75-year-old woman with chronic illness is found death in bed. The external examination found multiple small bruises on the inside of upper lip, conjunctival hemorrhage both eyes. Rigor is fully and Livor mortis at the posterior part of back. Which of the following is the suggestive cause of her death\nSmothering\nManual strangulation\nUnexplained sudden death syndrome\nDegenerative disease\nLigature strangulation\nA 2-year-old boy dead on the bed. Autopsy: generalized cerebral edema, acute subdural hematoma at right temporoparietal region, retinal hemorrhage. What is the mechanism of death\nDirect force at orbit\nContralateral brain trauma\nIpsilateral rotational accerelate\nImpact contusion from falling\nAccerelation-decerelarion from shaking\nA 30-year-old bus driver has car accident fracture femur. At ER BP 90/60 become normal after resuscitate. Set OR for ORIF discharge home at 14 days. His boss asks for medical certificate. What is the most appropriate to write down\nDetail of car accident\nDate and duration of sick leave\nDate return to work\nInitial abnormal vital sign\nDetail of operation\nA 17-year-old boy was persuaded to join the research for normal optic nerve function. Who has authority to sign a consent form for this research\nHimself\nHis parent\nHis 20-year-old brother\nHis advisor\nHospital director\nถ้าท่านพบประชาชนล้มต่อหน้า มีคนจำได้ว่าท่านเป็นแพทย์ประจำโรงพยาบาล แต่ท่านไม่เข้าช่วยเพราะกำลังรีบ คนนั้นจึงเสียชีวิตเนื่องจากได้รับการรักษาช้าไป ท่านทำผิดหรือไม่อย่างไร\nไม่ผิด เพราะเป็นสิทธิ\nผิดหลักจริยธรรม ละเลยจนถึงแก่ชีวิต\nผิดกฎหมายอาญา ข้อหาฆ่าคนโดยเจตนา\nผิดกฎหมายอาญา ข้อหาฆ่าคนโดยไม่เจตนา\nผิดกฎหมายอาญา ข้อหากระทำการโดยประมาท\nท่านไปพบลุงที่เป็นแพทย์เพื่อขอใบรับรองแพทย์ให้ท่านใช้สอบใบขับขี่ ลุงของท่านเขียนใบรับรองให้ตัวท่านและเขียนอีกหลายใบเผื่อให้เพื่อนๆโดยที่ไม่ได้ตรวจร่างกาย และเขียนว่าสุขภาพแข็งแรงปกติดี กรณีเช่นนี้ใครมีความผิดบ้าง\nลุงหมอ\nลุงหมอ ท่าน\nลุงหมอ เพื่อน\nลุงหมอ ท่าน เพื่อน\nไม่มีใครผิดเพราะเป็นเรื่องที่ทำๆกันเป็นปกติ\nYou are a first year intern at province hospital. Your patient has an undiagnosed facial lesion that you want to take a photo and consult dermatologist via LINE application. What is the appropriate management\nInform patient about the necessary of correct diagnosis\nInform patient by ask for consent verbally\nInform patient to sign consent formally and conceal name, HN\nAsk the hospital director permission before the patient\nAsk the hospital director and patient sign consent formally and conceal name, HN\nชายอายุ 20 ปี มาขอให้แพทย์ออกใบรับรองเพื่อเปลี่ยนคำนำหน้าเป็นนางสาวเพราะเป็น Klinefelter syndrome ท่านจะทำอย่างไร\nไม่ออกให้เพราะปัจจุบันประเทศไทยยังไม่มีการเปลี่ยนคำนำหน้าจากนายเป็นนางสาว\nออกใบรับรองให้โดยเขียนว่าผู้ป่วยมีโครโมโซม XXY จึงสามารถใช้คำนำหน้าได้ทั้งนายและนางสาว\nขอความเห็นชอบจากผู้ปกครองและค้นหาสาเหตุที่แท้จริง\nไม่ออกให้ เพราะคำนำหน้านามกำหนดจากการแสดงออกและผู้ป่วยสามารถแสดงออกทางเพศได้อย่างอิสระ\nA 25-year-old woman comes to see a male practitioner. She exaggerately complains about her physical symptom, her feelings, and her personal life. She is flirting and seductive toward the doctor. She tries to have a social relation. Today she asks you out for lunch. What is the most appropriate management\nGo out with her and share the bill\nRefer her to a female doctor\nRefuse but don't explain the reason\nGive her your number and have dinner after finish work\nTell her that it's inappropiate the patient-doctor relationship\nหญิงอายุ 38 ปีตั้งครรภ์(ไม่บอกอายุครรภ์)ตรวจน้ำคร่ำพบว่าลูกเป็นดาวน์ซินโดรม มารดาบอกว่าปรึกษาสามีและครอบครัวแล้ว อยากทำแท้งเพราะไม่อยากให้คนอื่นต้องมาดูแลลูกที่พิการไปตลอดชีวิต ท่านเป็นสูติแพทย์จะทำอย่างไร\nทำได้ แต่ต้องส่งไปพบจิตแพทย์เพื่อประเมินผลกระทบต่อจิตใจ\nทำได้เลย เข้าเกณฑ์หลักการยุติการตั้งครรภ์ทางการแพทย์\nทำได้เลย เนื่องจากจะส่งผลดีต่อพ่อแม่และสังคมมากกว่าผลเสีย\nแนะนำเรื่องของเด็กดาวน์ก็มีชีวิตอยู่ได้ เหมือนเด็กดาวน์คนอื่น\nไม่ทำเนื่องจากไม่มีข้อบ่งชี้ทางการแพทย์\nA man has had car accident. Now he is good conscious. The police ask you to check blood alcohol level. When will you do it\nAfter ask for the patient permission\nIf the accident has an injury or death\nพิสูจน์ได้ว่าผู้ชายคนนี้เป็นคนขับรถ\nIf the police have the formal permission from court\nจะเอาไปเคลมประกัน\nคุณเป็นแพทย์ประจำรพ.รัฐประจำอำเภอ ทำการ admit case cirrhosis with HCC ภรรยามาขอสำเนาเวชระเบียนผู้ป่วยในของสามีไปทำธุรกรรม คุณจะ\nให้เลยตามที่ขอ\nบอกให้ไปขออนุญาตศาล\nบอกให้ไปขออนุญาตผอ.รพ.\nบอกให้ไปขออนุญาตนพ.สสจ.\nบอกให้ไปขออนุญาตรมต.สาธารณสุข\nAn 80-year-old man diagnosed prostate cancer 2 years ago. Now he has bone and lung metastasis. His daughter don’t want to tell him because his wife was diagnosed hepatocellular carcinoma 3 years ago and die soon after she knew. What is the management\nสัญญากับลูกสาวว่าจะบอกผู้ป่วยเมื่อพร้อม\nบอกลูกสาวว่าเป็นสิทธิของผู้ป่วยที่จะรู้ผล\nเรียก family conference หาวิธีบอกผู้ป่วย\nต่อรองลูกสาวว่าผู้ป่วยอาจจะรู้แล้วจากการที่เป็นโรคมานาน\nบอกลูกสาวว่าถ้ารักษาโดยไม่บอกความจริงจะทำให้ผู้ป่วยไม่เชื่อ\nชาย 70 ปี เป็น end stage liver/renal? disease มารพ.แล้ว arrest หลังจาก resuscitate CPR BP 70/40 EKG: VF (จำไม่ผิดครับ) ลูกชายบอกให้ resuscitate ต่อ แต่ลูกสาวนำ living will มาแสดงและบอกว่า พ่อเขียนไว้ว่าไม่รับการ resuscitate คุณจะ?\nStop resuscitate as patient will\nresuscitate ต่อระหว่างรอให้ลูกสาวเคลียร์กับลูกชายให้จบ\nresuscitate ต่อ รอถาม ผอ.รพ.\nresuscitate ต่อ รอถามฝ่ายกฎหมายของรพ.",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 147,
+      "scenario": "พนักงาน กทม? 5 คน ลงไปทางารกาจัดมูลสัตว์ในอุโมงค์ จากนั้นเสียชีวิตทั้ง 5 คน ถามสาเหตุที่ทาให้เสียชีวิต",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "environment suffocation(entrapment)",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "gas suffocation( Carbondioxide)",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "gas suffocation ( มีเทน )",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "gas suffocation ( CO )\n9 ข้อใดแพทย์อนุยาดให้ปลูกถ่ายอวัยวะได้",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "พี่ชายขาพิการเซนยอมปลูกถ่ายไตให้น้อง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "พี่อายุ25ปีจะบริจาคดวงตาให้น้องข้างนึง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "แม่จูงเดกพิการมาจะให้ไตแก่พ่อ",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "คนที่ถูกdiagว่าเปนเจ้าชายนิทรา(vegitative stage) ได้เซนยอมทาบัตรdonor cardไว้แล้ว",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "คนจรจัดประสบอุบัติเหตุไม่มีญาติ...",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 78,
+      "scenario": "ท่านได้รับเชิญให้ไปชันสูตรพลิกศพที่โรงแรมแห่งหนึ่ง พบศพอยู่ภายในห้องพัก สภาพห้องล็อกจากด้านใน เปิดแอร์ไว้เย็นมาก PE พบ Rigor พบที่เข่าและสะโพก แต่ไม่พบที่ข้อศอก, Livor พบที่แผ่นหลัง กดไม่จาง\nถามการประมาณเวลาตาย",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "4-6 ชม.",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "6-8 ชม.",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "8-12 ชม.",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "12-24 ชม.",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "1-2 วัน\n79C. หญิง 30 ปี ถูกสามีทารุณกรรมเป็นประจา ครั้งนี้ถูกทาร้ายด้วยมีด น่าจะพบลักษณะแผลเป็นแบบใด",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Abrasion",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Contusion",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Incised",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Lacerated",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Punctured\n78A. ชายโดนทาร้ายที่บริเวณศีรษะและท้อง มีแผลที่ศีรษะ 3x3 cm + มีแผลอื่นๆกระจายทั่วศีรษะ ในท้องพบว่ามีม้ามปริ แต่ยังไม่แตก ไม่มีเลือดออกในช่องท้อง ต่อมาเสียชีวิต จงเขียนใบชันสูตร",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ตายเพราะเลือดออกในสมอง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ตายเพราะเลือดออกในสมองจากภยันอันตรายที่กระทาที่ศีรษะ",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ตายเพราะเลือดออกในสมองจากการถูกทาร้ายที่ศีรษะ",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ตายเพราะเลือดออกในสมองและม้ามฉีก จากภยันอันตรายที่กระทาที่ศีรษะและท้อง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ตายเพราะเลือดออกในสมองและม้ามฉีก จากการถูกทาร้ายที่ศีรษะและท้อง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 78,
+      "scenario": "เจอนศ. ช่างกล เสียชีวิต พบแผลทะลุจากชายโครงซ้ายทะลุสะบักขวา เขียนใบชันสูตรอย่างไร",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "แผลจากกระสุนปืนทะลุจากชายโครงซ้าย วิถี หน้าไปหลัง ซ้ายไปขวา ล่างไปบน",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "เป็นบาดแผลจากกระสุนจากชายโครงซ้ายทะลุสะบักขวา เสียเลือดมาก\n144A ไปชันสูติศพชาย40ปีที่ป้ายรถเมย์ ตัวยังอุ่นอยู่ ไม่มีรอยแผลตามตัวเลย ยกเว้นแผลที่ท้ายทอยแผล3*3cm ตรวจเลือดเจอ ethanol400mg% ตรวจฉี่เจอ amphet positive ถามว่าน่าจะตายจากอะไร?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "head injury",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ethanol toxic",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Amphetamine toxic",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "mutisubstance toxic",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "unknown cause of death",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 144,
+      "scenario": "(A) ศพชายไทยถูกพบ ตรวจเจอบาดแผลฟกช้าที่ท้ายทอยขนาด 3x3 cm ตรวจ alcohol level ในเลือดได้ 400, urine metamphetamine positive ให้สรุปสาเหตุการตายของศพรายนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Trauma"
+        },
+        {
+          "label": "B",
+          "text": "Alcohol"
+        },
+        {
+          "label": "C",
+          "text": "Methamphetamine"
+        },
+        {
+          "label": "D",
+          "text": "Multiple intoxication"
+        },
+        {
+          "label": "E",
+          "text": "Unknown"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "รพ.อาเภอขาดเครื่องมือที่ทันสมัย",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "รพ.อาเภอมีประสบการณ์น้อย",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "รพ.อาเภอวินิฉัยถูกแล้วแต่เกิดไส้ติ่งอักเสบภายหลัง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ไส้ติ่งอักเสบระยะแรกจะมีอาการคล้ายกับลาไส้อักเสบ",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "รพ.อาเภอน่าจะใช้ ultrasound จะได้วินิฉัยได้รวดเร็วขึ้น",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 120,
+      "scenario": "เด็ก 6 mo พ่อแม่พามาบอกว่าตกบันได 2 hr PTA มีรอยฟกช้าที่แขนและขา เป็นทั้งรอยใหม่และรอยเก่า (ขอบแผลมีสีเหลือง) แล้วก็มีรอยฟกช้าเป็นเส้นตรงขนานกัน\nถามว่าควรทาอะไรเป็นอันดับแรก\nก. ซักประวัติจากพ่อแม่อย่างละเอียดอีกครั้ง\nข. รับเข้ารักษาตัวในโรงพยาบาล เพื่อสังเกตอาการ\nค. ส่งวินิจฉัยทางรังสี เพื่อยืนยันการวินิจฉัย\nง. แยกเด็กออกจากผู้ปกครอง เพื่อซักประวัติและตรวจร่างกายอย่างละเอียด\nจ. แจ้งเจ้าหน้าที่ที่เกี่ยวข้องด้าน abuse เด็ก\n72A ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endermic"
+        },
+        {
+          "label": "B",
+          "text": "Pandemic"
+        },
+        {
+          "label": "C",
+          "text": "Epidermic"
+        },
+        {
+          "label": "D",
+          "text": "… (ไม่รู้จัก)"
+        },
+        {
+          "label": "E",
+          "text": "Sporadic"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "พบศพบนรถทัวร์ เลือดตกลงที่ปลายเท้า กดจาง มือแข็ง ขาไม่แข็ง จงประมารระยะเวลาการตาย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "2 hr"
+        },
+        {
+          "label": "B",
+          "text": "2-4 hr"
+        },
+        {
+          "label": "C",
+          "text": "4-6 hr"
+        },
+        {
+          "label": "D",
+          "text": "6-8 hr"
+        },
+        {
+          "label": "E",
+          "text": "8-10 hr"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ตรวจศพพบรอยรัดที่คอ ฟกช้าและมีรอยครูดสั้น ๆ ยาวๆ ผ่าศพพบรอยช้าที่หลอดเลือดแดง และมีเลือดออกในชั้นกล้ามเนื้อ กระดูก Hyoid bone แตกทางมุมซ้าย ท่านคิดว่าตายจากสาเหตุใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Mothering"
+        },
+        {
+          "label": "B",
+          "text": "Complete hanging"
+        },
+        {
+          "label": "C",
+          "text": "Incomplete hanging"
+        },
+        {
+          "label": "D",
+          "text": "Ligature strangulation"
+        },
+        {
+          "label": "E",
+          "text": "Manual strangulation"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยชายนักธุรกิจอายุ 57 ปี ไปทานอาหารเย็นที่ห้างสรรพสินค้า มีอาการแน่นหน้าอก หายใจไม่ออก ได้โทรไปปรึกษาแพทย์บอกว่าให้รีบมารพ.ทันที ผู้ป่วยมาถึงที่ ER ทาEKG ไม่มีความผิดปกติ ต่อมาผู้ป่วยเสียชีวิตใน 20 นาทีหลังนาส่ง ผู้ป่วยไม่ฟื้นหลังจากการช่วยชีวิตกู้ชีพเต็มที่แล้ว แพทย์ต้องการชันสูตรศพ แต่เนื่องจากผู้ป่วยนับถือศาสนาอิสลามและญาติไม่ติดใจในสาเหตุการตาย จะขอนาศพไปทาพิธีเลยท่าจะให้การสันนิษฐานเรื่องสาเหตุการตายว่าอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute poisoning"
+        },
+        {
+          "label": "B",
+          "text": "Rupture aneurysm"
+        },
+        {
+          "label": "C",
+          "text": "Acute heart failure"
+        },
+        {
+          "label": "D",
+          "text": "Cardiopulmonary failure"
+        },
+        {
+          "label": "E",
+          "text": "Coronary heart disease"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 4,
+      "scenario": "หากท่านเป็นผู้อานวยการโรงพยาบาลชุมชน พบว่ามีผู้ป่วยโรคจิตเวชจากยาเสพติดจานวนมาก ท่าจะมีแนวทางจัดการเพื่อลดปัญหาอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "สร้างเงื่อนไข เช่น ไม่รักษาคนที่เสพยา"
+        },
+        {
+          "label": "B",
+          "text": "ขออานาจรัฐ เพื่อจับกุมคนที่มีสารเสพติดในเลือด"
+        },
+        {
+          "label": "C",
+          "text": "พัฒนาให้ รพ.สามารถรักษาโรคทางจิตเวชได้ดีขึ้น"
+        },
+        {
+          "label": "D",
+          "text": "ให้ความรู้และข่าวสารเกี่ยวกับปัญหาให้ประชากรกลุ่มเสี่ยง"
+        },
+        {
+          "label": "E",
+          "text": "ร่วมมือกับคนในชุมชน ผลักดันกฏหมายให้ครอบคลุม"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ตายถูกยิงด้วยปืนที่ใบหน้า 3 นัด ลาคอ 1 นัด ชันสูตรพบ severe brain laceration, fracture base of skull มีกระสุนฝังใน และ rupture trachea จะเขียนใบชันสูตรสาเหตการตายอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "severe brain laceration with gun short wound ,fracture base of skull"
+        },
+        {
+          "label": "B",
+          "text": "ถูกยิง …..(เป็นภาษาไทยสั้นๆ)"
+        },
+        {
+          "label": "C",
+          "text": "ถูกยิง และ…..(สาเหตุยาว ๆ)"
+        },
+        {
+          "label": "D",
+          "text": "severe brain laceration with fracture base of skull with tracheal rupture"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ข้อใดต่อไปนี้ ช่วยยืนยันว่าผู้ป่วยถูกกระทาชาเรา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "พบ sperm ในช่องคลอด"
+        },
+        {
+          "label": "B",
+          "text": "พบ sperm & acid phosphatase"
+        },
+        {
+          "label": "C",
+          "text": "พบบาดแผลฟกช้าตามร่างกาย แผลที่ vagina และพบ sperm"
+        },
+        {
+          "label": "D",
+          "text": "พบ sperm ในช่องปาก"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 8,
+      "scenario": "สามารถทาการขีดเขียนบนกระสุนที่พบเป็นของกลาง เพื่อบอกว่าเป็นวัตถุพยานได้หรือไม่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ไม่ได้เลย"
+        },
+        {
+          "label": "B",
+          "text": "ได้ ที่ปลอกกระสุน"
+        },
+        {
+          "label": "C",
+          "text": "ได้ ที่ฐานกระสุน"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ผู้หญิงท้องอายุ 32 ปี GA 20 wkประสบอุบัติเหตุ ต่อมาพบ vaginal bleeding และแท้ง นอนโรงพยาบาลนาน 7 วัน กลับบ้านพักฟื้น 20 วัน ลงความเห็นว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "บาดเจ็บจนแท้ง"
+        },
+        {
+          "label": "B",
+          "text": "อันตรายสาหัสจนแท้ง"
+        },
+        {
+          "label": "C",
+          "text": "นอนโรงพยาบาลนานมากกว่า 20 วัน"
+        },
+        {
+          "label": "D",
+          "text": "นอนโรงพยาบาล 7 วัน พักฟื้น 20 วัน"
+        },
+        {
+          "label": "E",
+          "text": "อันตรายจนมีเลือดออก ถ้าไม่รักษาเป็นอันตรายถึงชีวิต"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 10,
+      "scenario": "โครงกระดูก orbit กลมเป็นชนชาติใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Caucasian"
+        },
+        {
+          "label": "B",
+          "text": "Mongolian"
+        },
+        {
+          "label": "C",
+          "text": "Nigro"
+        }
+      ],
+      "exam_source": "NLE 2008"
+    },
+    {
+      "question_number": 1,
+      "scenario": "หญิง 26 ปี มาให้ตรวจร่างกายว่าได้โดนข่มขืนกระทาชาเราหรือไม่ ตรวจร่างกายพบ love bite ที่คอด้านหน้า 3แผล , Vaginal มีแผลที่ 5และ8 นาฬิกา , Sperm ไม่มีหางที่ posterior fornix เล็กน้อย ให้ความเห็นอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "มีหลักฐานว่าน่าจะผ่านการร่วมเพศมา"
+        },
+        {
+          "label": "B",
+          "text": "มีหลักฐานว่าถูกข่มขืนโดยยินยอม"
+        },
+        {
+          "label": "C",
+          "text": "มีหลักฐานว่าถูกข่มขืนโดยไม่ยินยอม"
+        },
+        {
+          "label": "D",
+          "text": "มีหลักฐานว่าถูกข่มขืนมามากกว่า 2 วัน"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 2,
+      "scenario": "คนตายพบเขม่าควัน เนื้อข้างในสีชมพู ตายจากอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Burst injury"
+        },
+        {
+          "label": "B",
+          "text": "CO intoxicity"
+        },
+        {
+          "label": "C",
+          "text": "ขาดอากาศ"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ชายตายข้าวทาง กระดูกหักสูงจากพื้น 15cm.มีบาดแผลถลอกหลายแผล คนขับรถบอกว่าเบรกไม่ทัน เลยชนผู้ป่วย ไปดูทั่นชนบุบ 15cm.จากพื้นจะสรุปว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ชนแล้วทับตัวและขา"
+        },
+        {
+          "label": "B",
+          "text": "เบรกไม่ทัน"
+        },
+        {
+          "label": "A",
+          "text": "คนขับพูดจริง เพราะสอดคล้องกับเหตุการณ์"
+        },
+        {
+          "label": "C",
+          "text": "เบรกทัน???"
+        },
+        {
+          "label": "D",
+          "text": "ชนแรงจนบินข้ามไปตกข้างทาง"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 4,
+      "scenario": "พบศพในที่เดเหตุเพลิงไหม้ ตรวจร่างายปติ พบ cherry red spot ในอวัยวะภายใน คิดว่าสาเหตุการตายมาจาก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CO poisoning"
+        },
+        {
+          "label": "B",
+          "text": "carbon power aspiration"
+        },
+        {
+          "label": "C",
+          "text": "Flame burn"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 5,
+      "scenario": "การบาดเจ็บชนิดใดเจอได้เฉพาะคนเดินถนน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "striae tear"
+        },
+        {
+          "label": "B",
+          "text": "Patellar injury"
+        },
+        {
+          "label": "C",
+          "text": "Dicing injury"
+        },
+        {
+          "label": "D",
+          "text": "Bumper injury"
+        },
+        {
+          "label": "E",
+          "text": "Dash board injury"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 6,
+      "scenario": "หญิง 26 ปี G2P1 มาด้วยปวดเมื่อยกล้ามเนื้อ ทางานรับจ้าง มีรอยฟกช้าทั้งรอยเก่าและรอยใหม่ มีรอยที่เบ้าตาขวา หน้าอก ท้อง ขา ถามการวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Domesmotic violence"
+        },
+        {
+          "label": "B",
+          "text": "Fall accident"
+        },
+        {
+          "label": "C",
+          "text": "Hepatic failure"
+        },
+        {
+          "label": "D",
+          "text": "ITP"
+        }
+      ],
+      "exam_source": "NLE 2009"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ตามมาตรา 276 ประมวลกฎหมายอาญาข้อใดที่อาจมีความผิด ฐานข่มขืนกระทาชาเรา(Rape)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ผู้ชายใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากหญิงอืjน"
+        },
+        {
+          "label": "B",
+          "text": "ผู้ชายใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากชายอื่น"
+        },
+        {
+          "label": "C",
+          "text": "ผู้หญิงใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากชายอื่น"
+        },
+        {
+          "label": "D",
+          "text": "ผู้ชายใช้อวัยวะเพศของตนเองถูไถบริเวณทวารหนักของหญิงอื่น"
+        },
+        {
+          "label": "E",
+          "text": "ผู้หญิงใช้อวัยวะเพศชายเทียมสอดใส่เข้าช่องทวารหนักของหญิงอื่น"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 2,
+      "scenario": "หญิงปัญญาอ่อนญาติพาแจ้งความถูกข่มขืนมา3วันก่อนมาโรงพยาบาลตรวจร่างกายพบว่ามีอสุจิในช่องคลอดacidphosphatase positive มีkissing bite มีแผลถลอกใหม่ที่ช่องคลอดและรอยฉีกขาดใหม่ทางด้านหลังของช่องคลอดถามว่าอะไรที่ทาให้แพทย์ลงความเห็นว่าถูกกระทาชาเรามา 3วัน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "พบอสุจิในช่องคลอด"
+        },
+        {
+          "label": "B",
+          "text": "Acid phosphatase positive"
+        },
+        {
+          "label": "C",
+          "text": "พบkissing bite"
+        },
+        {
+          "label": "D",
+          "text": "มีรอยถลอกทีMช่องคลอด"
+        },
+        {
+          "label": "E",
+          "text": "มีรอยฉีกขาดทีMทางด้านหลังของช่องคลอด"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยหญิงไทยอายุ 15 ปีเคยมีระดูมาแล้วมีอาการขาดระดูมา2 สัปดาห์ประวัติถูกข่มขืนมา 5 ชั่วโมงตรวจร่างกายพบรอยkiss mark ทีMคอมีรอยฟกช้าที่บริเวณท้องน้อยตรวจภายในพบรอยฟกช้ารอบอวัยวะเพศและพบมูกสีขาวใสในช่องคลอดลงความเห็นว่าน่าจะถูกกระทาชาเราภายในเวลา 3 วันจะManagement อย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ส่ง acid phosphatase"
+        },
+        {
+          "label": "B",
+          "text": "Urine pregnancy test"
+        },
+        {
+          "label": "C",
+          "text": "ให้Norfloxacin"
+        },
+        {
+          "label": "D",
+          "text": "ให้Levonorgestrel"
+        },
+        {
+          "label": "E",
+          "text": "แนะนาให้กลับมารักษาหากยังขาดระดูอยู่"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ศพผู้ชายนอนเสียชีวิตอยู่ข้างบาทวิถีตรวจพบแผลขอบไม่เรียบที่ท้ายทอย, กะโหลกศีรษะด้านหลังแตกยาวประมาณ 5 cm. มีbrain contusion ด้านหน้ามากกว่าด้านหลังถามสาเหตุการเสียชีวิต",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ถูกตีด้วยของแข็งทีMท้ายทอย"
+        },
+        {
+          "label": "B",
+          "text": "ล้มท้ายทอยกระแทกขอบบาทวิถี"
+        },
+        {
+          "label": "C",
+          "text": "ถูกตีด้วยของแข็งทีMหน้าผาก"
+        },
+        {
+          "label": "D",
+          "text": "ล้มหน้าผากกระแทกขอบบาทวิถี"
+        },
+        {
+          "label": "E",
+          "text": "ถูกตีทีMท้ายทอยและหน้าผาก"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ศาลยกฟ้องโจทก์คดีจาเลยโดนยิงด้วยปืนลูกโดดถามว่าบาดแผลเป็นอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "กลมมีรอยไหม้"
+        },
+        {
+          "label": "B",
+          "text": "รีถลอกมีรอยไหม้"
+        },
+        {
+          "label": "C",
+          "text": "Star shape"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 6,
+      "scenario": "การตรวจร่างกายหญิงรายหนึ่งทีถูกทาร้ายร่างกายโดยฝ่ายชายตรวจร่างกายพบว่าตาขวามองไม่เห็นเนื่องจากลืมตาไม่ขึ้นมีรอยฟกช้าที่เบ้าตามีบาดแผลขอบเรียบบริเวณใบหน้าข้างขวาขนาด10 cm. มีแผลฟกช้าบริเวณท้องน้อยตรวจพบเลือดออกทางช่องคลอดและมีก้อนเลือดหลุดออกมาด้วยผลตรวจทางพยาธิวิทยาพบเป็น chorionic villi ผู้ป่วยรักษาตัวอยู่ 15 วันสามารถกลับมาทางานได้ตามปกติตารวจตั้งข้อหาและศาลสั่งฟ้องฝ่ายชายว่าทาร้ายร่างกายจนสาหัสโดยใช้เหตุผลข้อใดตามประมวลกฎหมายอาญามาตรา 276",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ตามองไม่เห็น"
+        },
+        {
+          "label": "B",
+          "text": "แผลบริเวณใบหน้า"
+        },
+        {
+          "label": "C",
+          "text": "แผลฟกชา&ื ทีMท้องน้อย"
+        },
+        {
+          "label": "D",
+          "text": "เลือดออกทางช่องคลอด"
+        },
+        {
+          "label": "E",
+          "text": "รอยชา&ื ทีMเบ้าตา"
+        },
+        {
+          "label": "A",
+          "text": "ทาตามที่ผู้ป่วยต้องการและให้เซ็นปฏิเสธการรักษา"
+        },
+        {
+          "label": "B",
+          "text": "แจ้งญาติเกี่ยวกับความต้องการของผู้ป่วยและเซ็นรับรองความต้องการ"
+        },
+        {
+          "label": "C",
+          "text": "แจ้งลูกให้รับรู้ความต้องการของผู้ป่วยและตัดสินใจ"
+        },
+        {
+          "label": "D",
+          "text": "แจ้งภรรยาเกี่ยวกับความต้องการและตัดสินใจ"
+        },
+        {
+          "label": "E",
+          "text": "พูดคุยกับผู้ป่วยและรักษาอาการซึม"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 8,
+      "scenario": "หญิงวัยรุ่นมาตรวจเรื่องโดนข่มขืน ตรวจร่างกาย พบ old tear ที่ 6 นาฬิกา มี sperm ไม่มีหาง ปริมาณเล็กน้อยที่ posterior fornix มีรอย kiss bite ที่ลาคอ จงให้ความเห็น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ตรวจพบหลักฐานว่าโดนข่มขืน"
+        },
+        {
+          "label": "B",
+          "text": "ตรวจพบหลักฐานว่าผ่านการมีเพศสัมพันธ์"
+        },
+        {
+          "label": "C",
+          "text": "ตรวจพบหลักฐานว่าผู้ป่วยถูกกระทาชาเรา"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 1,
+      "scenario": "พ่อแม่กลับบ้านเจอลูกสาว 3 เดือนไม่หายใจพี่เลียงมีนิสัยขี้โมโหหลักฐานใดทีhแสดงว่าน่าจะมี child abuse",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pulmonary edema"
+        },
+        {
+          "label": "B",
+          "text": "Retinal hemorrhage"
+        },
+        {
+          "label": "C",
+          "text": "Healed fx clavicle"
+        },
+        {
+          "label": "D",
+          "text": "Purpura and petichiae"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 2,
+      "scenario": "เด็กหญิงอายุ 5 ปีแม่พามา ERเพราะตกบันได 3 hr PTAPE: เด็กตัวเล็ก (กว่าอายุ) มีรอยฟกช้าเก่าและใหม่หลายรอยพบ 6th healed rib fracture Diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Child abuse"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 3,
+      "scenario": "นักท่องเทีhยวอยู่บนดอยอินทนนท์กางเต็นท์นอนจุดตะเกียงข้างในวันรุ่งขึPนมีคนพบว่าเสียชีวิตแล้วสาเหตุของการเสียชีวิตคืออะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Carbon monoxide"
+        },
+        {
+          "label": "B",
+          "text": "Ozone"
+        },
+        {
+          "label": "C",
+          "text": "Sulfur dioxide"
+        },
+        {
+          "label": "D",
+          "text": "Carbon dioxide"
+        },
+        {
+          "label": "E",
+          "text": "Nitrogen dioxide"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ชายอายุ 20 ปีติดอยู่ในบ้านทีhมีเพลิงไหม้มี 30%TBSAburn ที่แขนท้องสองข้างนาส่งและรับไว้ในโรงพยาบาลต่อมาผู้ป่วยแย่ลงเรื่อยๆแล้วเสียชีวิตใน 2 ชั่วโมงจงลงสาเหตุการตายในใบรับรอง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Inhalation injury"
+        },
+        {
+          "label": "B",
+          "text": "Acute renal failure"
+        },
+        {
+          "label": "C",
+          "text": "Severe electrolyte disturbance"
+        },
+        {
+          "label": "D",
+          "text": "Congestive heart failure"
+        },
+        {
+          "label": "E",
+          "text": "Full thickness skin burn"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ศพมีบาดแผลกระสุนปืนขนาด 6 mm. ทีhหน้าผากซ้ายมีจุดดากระจายเป็นวงรอบรอยแผลขนาดประมาณ 6 cm. ถามว่าเกิดจาก?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intermediate range gun shot"
+        },
+        {
+          "label": "B",
+          "text": "Long range gun shot"
+        },
+        {
+          "label": "C",
+          "text": "Contact gun shot"
+        },
+        {
+          "label": "D",
+          "text": "Stab wound"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยอายุมากมี Underlying เป็นArtherosclerosisและCHF โดนโจรเข้าบ้านทาร้ายร่างกายตีท้ายทอยแล้วสลบมาadmit ต่อมา 2 wkมี Bronchopneumonia, Sepsis, Acuterenal failure จากนั้นจึงเสียชีวิตข้อใดเป็นสาเหตุของการตายที่ควรลงในใบรับรอง?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute renal failure"
+        },
+        {
+          "label": "B",
+          "text": "CHF"
+        },
+        {
+          "label": "C",
+          "text": "Blunt trauma"
+        },
+        {
+          "label": "D",
+          "text": "Bronchopneumonia"
+        },
+        {
+          "label": "E",
+          "text": "Atherosclerosis"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ท่านเป็นแพทย์เวรได้รับการเรียกไปชันสูตรพลิกศพหญิงอายุ 70 ปีเสียชีวิตในห้องนาPื มา 1 ชั่วโมงลูกสาวบอกว่ามารดามีโรคประจาตัวเป็นโรคความดันโลหิตสูงและเบาหวานเพิ่งคุยกันเมื่อ 6 ชั่วโมงก่อนไปอาบน้าณสถานทีhเกิดเหตุพบศพหญิงเสียชีวิตในห้องน้ามีเครื่องทาน้าอุ่นเปิดทิ้งอยู่ไม่มีร่องรอยการบุกรุกตรวจศพเพิ่มเติมพบ subarachnoid hemorrhage และbilateral inferior frontal lobes contusion ท่านจะคิดว่าผู้ตายเสียชีวิตจากสาเหตุใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fall"
+        },
+        {
+          "label": "B",
+          "text": "Electrocution"
+        },
+        {
+          "label": "C",
+          "text": "MI"
+        },
+        {
+          "label": "D",
+          "text": "Drowning"
+        },
+        {
+          "label": "E",
+          "text": "Cerebrovascular accident"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 8,
+      "scenario": "พบศพชายนอนเสียชีวิตริมถนนมีแผลเต็มไปหมด scalplaceration wound at temporal area, เลือดออกปากและจมูก,open fracture Rt tibia, มี brushing ทีhท้อง, abrasion ทีhลาตัว,rigor mortis ทีhขากรรไกร, livorกดจางข้อใดถูก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เสียชีวิตนาน 6-8 hr."
+        },
+        {
+          "label": "B",
+          "text": "ความสูงของtibial fracture มีความสาคัญในการชันสูตร"
+        },
+        {
+          "label": "A",
+          "text": "ผู้ป่วยสงสัย fracture base of skull แต่ไม่น่าจะเป็นสาเหตุการตายเพราะ base of skull ไม่ทาให้ตายได้"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 9,
+      "scenario": "สงสัย base of skull fracture ต้องทา Ix อะไรเพือชันสูตร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "AP,Lat. Film of skull"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ผู้ชายอาละวาดหวาดระแวงคลุ้มคลั่งไม่ยอมให้รักษาท่านเป็นแพทย์จะทาอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ตารวจจับ"
+        },
+        {
+          "label": "B",
+          "text": "รักษาแล้วรับไว้ในโรงพยาบาล"
+        },
+        {
+          "label": "C",
+          "text": "ให้ผู้ใหญ่บ้านเซ็นยินยอม"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ผู้ป่วยจิตเวชชายผูกคอตนเองด้วยเชือกแล้วกระโดดลงจากสะพานแขวน เสียชีวิตจากสาเหตุใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "โรคทางจิตเวชเดิม"
+        },
+        {
+          "label": "B",
+          "text": "C-spine subluxation"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    }
+  ]
+}

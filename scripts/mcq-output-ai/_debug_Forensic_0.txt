@@ -1,0 +1,496 @@
+[
+  {
+    "scenario": "ตรวจสถานที่เกิดเหตุ ต้องการเก็บเลือดที่ติดเศษผ้าไปตรวจ DNA เทียบกับศพและผู้ต้องสงสัย ต้องเก็บหลักฐานอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เอาแช่ตู้เย็น"
+      },
+      {
+        "label": "B",
+        "text": "เอาผ้าไปผึ่งให้แห้งแล้วเก็บใส่ซองพลาสติก"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ไดร์เป่าผมเป่าให้แห้ง"
+      },
+      {
+        "label": "D",
+        "text": "เอาผ้าไปตากแดด"
+      },
+      {
+        "label": "E",
+        "text": "เก็บหลักฐานในซองกระดาษและเก็บไว้ในที่ห้อมเย็น"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "เมื่อเก็บหลักฐานประเภทเลือด DNA ต้องผึ่งให้แห้งก่อน เพราะหากเก็บแช่ตู้เย็นโดยยังชื้น DNA อาจสลายตัว ใช้ซองพลาสติกเพื่อหลีกเลี่ยงการเชื้อแบบข้ามเข่าขวาง"
+  },
+  {
+    "scenario": "พบศพนอนอยู่ข้างทาง ตรวจพบบาดแผลที่ท้ายทอยมีรอยช้ำรอบแผล 3x3 cm ผลตรวจ serum alcohol 400 mg% และพบ methylamphetamine ปริมาณมาก ท่านจะลงสาเหตุการตายของศพว่าอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Accident"
+      },
+      {
+        "label": "B",
+        "text": "Head trauma"
+      },
+      {
+        "label": "C",
+        "text": "Methylamphetamine intoxication"
+      },
+      {
+        "label": "D",
+        "text": "Alcohol intoxication"
+      },
+      {
+        "label": "E",
+        "text": "Multiple substance intoxication"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "สาเหตุการตายต้องระบุหลากหลายสาร: มี alcohol ระดับสูง (400 mg%) methylamphetamine มาก และบาดแผลที่หัว ส่วนรูปแบบการตายคือ Accident หรือ Homicide ขึ้นอยู่กับการสืบสวน"
+  },
+  {
+    "scenario": "ตามประมวลกฎหมายอาญา กรณีใดที่จำเป็นต้องมีพยานซึ่งได้แก่ แพทย์ พนักงานสอบสวน พนักงานอัยการ และพนักงานฝ่ายปกครองเข้าร่วมในการชันสูตร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "คนร้ายโดนตำรวจยิงตาย"
+      },
+      {
+        "label": "B",
+        "text": "ญาติผู้ต้องขังเสียชีวิตที่โรงพัก"
+      },
+      {
+        "label": "C",
+        "text": "คนถูกรถตำรวจชนเสียชีวิต"
+      },
+      {
+        "label": "D",
+        "text": "พบศพชายไม่ทราบชื่อข้างเรือนจำ"
+      },
+      {
+        "label": "E",
+        "text": "พัศดีถูกนักโทษฆ่าเสียชีวิตในเรือนจำ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "การชันสูตรต้องมีพยานจำเป็นเมื่อเป็นเรื่องเกี่ยวกับการกระทำของเจ้าหน้าที่รัฐ เช่น ตำรวจยิงคน กรณี A เป็นการกระทำของเจ้าหน้าที่ จึงต้องมีพยานครบถ้วน"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี นอนหลับแล้วตาย ไม่มีโรคประจำตัว ท่านคิดว่าน่าจะเกิดจากไหลตาย ต้องผ่าชันสูตร แต่ญาติและพนักงานสอบสวนไม่ชันสูตร จะลงสาเหตุการตายว่าอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไหลตาย"
+      },
+      {
+        "label": "B",
+        "text": "หัวใจล้มเหลวเฉียบพลัน"
+      },
+      {
+        "label": "C",
+        "text": "ไม่ทราบสาเหตุการตาย"
+      },
+      {
+        "label": "D",
+        "text": "หยุดหายใจโดยไม่ทราบสาเหตุ"
+      },
+      {
+        "label": "E",
+        "text": "ความเสียชีวิตที่ไม่สามารถตรวจสอบได้"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "เมื่อไม่ได้ผ่าชันสูตร ไม่สามารถยืนยันสาเหตุการตายได้ ต้องลงว่า 'ไม่ทราบสาเหตุการตาย' แม้ว่าสงสัยว่าเป็นไหลตาย"
+  },
+  {
+    "scenario": "Women death, subconjunctival hemorrhage both eyes, irregular abrasion and mark muscle contusion at neck. What is the manner of death",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Suicidal"
+      },
+      {
+        "label": "B",
+        "text": "Homicide"
+      },
+      {
+        "label": "C",
+        "text": "Accident"
+      },
+      {
+        "label": "D",
+        "text": "Animal injury"
+      },
+      {
+        "label": "E",
+        "text": "Undetermined"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Subconjunctival hemorrhage ที่ทั้งสองตา และรอยเขี้ยว/ช้ำไม่สม่ำเสมอที่คอ บ่งชี้ถูกสำนัก (strangulation) จากการทำร้ายกรรรมการ ซึ่งเป็น Homicide"
+  },
+  {
+    "scenario": "เด็กชายชาวอิสลามเสียชีวิต คุณถูกตามให้ไปชันสูตร แต่ยังไม่ได้ข้อสรุปแน่ชัด อยากเอาไปผ่า จะทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "นำไปผ่าชันสูตรได้ตามกฎหมาย"
+      },
+      {
+        "label": "B",
+        "text": "ให้ผู้ปกครองยินยอม ถ้าไม่ยินยอมก็ไม่ผ่า"
+      },
+      {
+        "label": "C",
+        "text": "ขออำนาจศาล"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ผ่าเพราะผิดหลักศาสนาอิสลาม"
+      },
+      {
+        "label": "E",
+        "text": "ปรึกษาอิมามเพื่อขออนุญาติ"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "เมื่อเป็นเด็กชาวอิสลาม การชันสูตรขัดต่อศรัทธา ต้องขออำนาจศาลเพื่อลงสาเหตุการตายแทนการผ่าชันสูตร"
+  },
+  {
+    "scenario": "เจอศพผู้หญิงผูกคอตาย ลักษณะใดเป็นหลักฐานตัวยืนยันว่าศพผูกคอตายจริง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่มีลักษณะใบหน้าคั่งเลือด"
+      },
+      {
+        "label": "B",
+        "text": "ไม่มีเลือดออกในเยื่อบุตา"
+      },
+      {
+        "label": "C",
+        "text": "รอยรัดอยู่ตรงกับลูกกระเดือก"
+      },
+      {
+        "label": "D",
+        "text": "ลักษณะรอยเชือกที่คอตรงกับเชือกในที่เกิดเหตุ"
+      },
+      {
+        "label": "E",
+        "text": "รอยตัววีคว่ำอยู่ที่หลังคอ"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "รอยตัววี (inverted V mark) ที่หลังคอ เป็นหลักฐานชี้ให้เห็นว่าเชือกรัดผูกคอจริง (ligature mark) เป็นลักษณะเฉพาะของ ligature strangulation"
+  },
+  {
+    "scenario": "A 75-year-old woman with chronic illness is found death in bed. The external examination found multiple small bruises on the inside of upper lip, conjunctival hemorrhage both eyes. Rigor is fully and Livor mortis at the posterior part of back. Which of the following is the suggestive cause of her death",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Smothering"
+      },
+      {
+        "label": "B",
+        "text": "Manual strangulation"
+      },
+      {
+        "label": "C",
+        "text": "Unexplained sudden death syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Degenerative disease"
+      },
+      {
+        "label": "E",
+        "text": "Ligature strangulation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Bruises ที่ฟันตัดล่างของริมฝีปากบน conjunctival hemorrhage และการหายใจหยุด บ่งชี้ว่าปัดปิดปากจมูกเพื่อไม่ให้หายใจ = Smothering"
+  },
+  {
+    "scenario": "A 2-year-old boy dead on the bed. Autopsy: generalized cerebral edema, acute subdural hematoma at right temporoparietal region, retinal hemorrhage. What is the mechanism of death",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Direct force at orbit"
+      },
+      {
+        "label": "B",
+        "text": "Contralateral brain trauma"
+      },
+      {
+        "label": "C",
+        "text": "Ipsilateral rotational acceleration"
+      },
+      {
+        "label": "D",
+        "text": "Impact contusion from falling"
+      },
+      {
+        "label": "E",
+        "text": "Acceleration-deceleration from shaking"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "เด็ก 2 ปี พบ subdural hematoma + retinal hemorrhage + cerebral edema = Shaken baby syndrome หรือ acceleration-deceleration injury จากการสั่นไหว"
+  },
+  {
+    "scenario": "A 30-year-old bus driver has car accident fracture femur. At ER BP 90/60 become normal after resuscitate. Set OR for ORIF discharge home at 14 days. His boss asks for medical certificate. What is the most appropriate to write down",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Detail of car accident"
+      },
+      {
+        "label": "B",
+        "text": "Date and duration of sick leave"
+      },
+      {
+        "label": "C",
+        "text": "Date return to work"
+      },
+      {
+        "label": "D",
+        "text": "Initial abnormal vital sign"
+      },
+      {
+        "label": "E",
+        "text": "Detail of operation"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "ใบรับรองแพทย์สำหรับการลาหยุดงานต้องระบุ วันที่เริ่มลา และระยะเวลาการลา รวมถึงวันที่ควรกลับมาทำงาน ไม่จำเป็นต้องระบุรายละเอียดอุบัติเหตุหรือการผ่าตัด"
+  },
+  {
+    "scenario": "A 17-year-old boy was persuaded to join the research for normal optic nerve function. Who has authority to sign a consent form for this research",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Himself"
+      },
+      {
+        "label": "B",
+        "text": "His parent"
+      },
+      {
+        "label": "C",
+        "text": "His 20-year-old brother"
+      },
+      {
+        "label": "D",
+        "text": "His advisor"
+      },
+      {
+        "label": "E",
+        "text": "Hospital director"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "อายุ 17 ปี ถือว่าเป็นผู้เยาว์ ต้องให้ผู้ปกครอง (Parent) ลงนามในแบบฟอร์มความยินยอมในการทำวิจัย"
+  },
+  {
+    "scenario": "ถ้าท่านพบประชาชนล้มต่อหน้า มีคนจำได้ว่าท่านเป็นแพทย์ประจำโรงพยาบาล แต่ท่านไม่เข้าช่วยเพราะกำลังรีบ คนนั้นจึงเสียชีวิตเนื่องจากได้รับการรักษาช้าไป ท่านทำผิดหรือไม่อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ผิด เพราะเป็นสิทธิ"
+      },
+      {
+        "label": "B",
+        "text": "ผิดหลักจริยธรรม ละเลยจนถึงแก่ชีวิต"
+      },
+      {
+        "label": "C",
+        "text": "ผิดกฎหมายอาญา ข้อหาฆ่าคนโดยเจตนา"
+      },
+      {
+        "label": "D",
+        "text": "ผิดกฎหมายอาญา ข้อหาฆ่าคนโดยไม่เจตนา"
+      },
+      {
+        "label": "E",
+        "text": "ผิดกฎหมายอาญา ข้อหากระทำการโดยประมาท"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "แพทย์ที่ยืนหนึ่งไม่เข้าช่วยเหลือคนที่จำเป็นต้องด้วยการประมาท (negligence) ส่งผลให้คนเสียชีวิต เป็น 'ฆ่าคนโดยประมาท' ตามกฎหมายอาญา"
+  },
+  {
+    "scenario": "ท่านไปพบลุงที่เป็นแพทย์เพื่อขอใบรับรองแพทย์ให้ท่านใช้สอบใบขับขี่ ลุงของท่านเขียนใบรับรองให้ตัวท่านและเขียนอีกหลายใบเผื่อให้เพื่อนๆโดยที่ไม่ได้ตรวจร่างกาย และเขียนว่าสุขภาพแข็งแรงปกติดี กรณีเช่นนี้ใครมีความผิดบ้าง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ลุงหมอ"
+      },
+      {
+        "label": "B",
+        "text": "ลุงหมอ ท่าน"
+      },
+      {
+        "label": "C",
+        "text": "ลุงหมอ เพื่อน"
+      },
+      {
+        "label": "D",
+        "text": "ลุงหมอ ท่าน เพื่อน"
+      },
+      {
+        "label": "E",
+        "text": "ไม่มีใครผิดเพราะเป็นเรื่องที่ทำๆกันเป็นปกติ"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "ลุงหมอผิดเพราะออกใบรับรองเท็จโดยไม่ตรวจร่างกาย ท่านผิดเพราะยื่นใบรับรองเท็จ เพื่อนผิดเพราะขอใบรับรองโดยรู้ว่าเท็จและไม่ได้ตรวจร่างกาย"
+  },
+  {
+    "scenario": "You are a first year intern at province hospital. Your patient has an undiagnosed facial lesion that you want to take a photo and consult dermatologist via LINE application. What is the appropriate management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Inform patient about the necessary of correct diagnosis"
+      },
+      {
+        "label": "B",
+        "text": "Inform patient by ask for consent verbally"
+      },
+      {
+        "label": "C",
+        "text": "Inform patient to sign consent formally and conceal name, HN"
+      },
+      {
+        "label": "D",
+        "text": "Ask the hospital director permission before the patient"
+      },
+      {
+        "label": "E",
+        "text": "Ask the hospital director and patient sign consent formally and conceal name, HN"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "การส่งรูปภาพผู้ป่วยผ่าออนไลน์ต้องได้รับความยินยอมจากผู้ป่วยอย่างเป็นทางการ ขออนุญาติจากสถาบัน และต้องปกปิดข้อมูลประจำตัวผู้ป่วย"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี มาขอให้แพทย์ออกใบรับรองเพื่อเปลี่ยนคำนำหน้าเป็นนางสาวเพราะเป็น Klinefelter syndrome ท่านจะทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ออกให้เพราะปัจจุบันประเทศไทยยังไม่มีการเปลี่ยนคำนำหน้าจากนายเป็นนางสาว"
+      },
+      {
+        "label": "B",
+        "text": "ออกใบรับรองให้โดยเขียนว่าผู้ป่วยมีโครโมโซม XXY จึงสามารถใช้คำนำหน้าได้ทั้งนายและนางสาว"
+      },
+      {
+        "label": "C",
+        "text": "ขอความเห็นชอบจากผู้ปกครองและค้นหาสาเหตุที่แท้จริง"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ออกให้ เพราะคำนำหน้านามกำหนดจากการแสดงออกและผู้ป่วยสามารถแสดงออกทางเพศได้อย่างอิสระ"
+      },
+      {
+        "label": "E",
+        "text": "ให้ผู้ป่วยปรึกษาจิตแพทย์ก่อนมีการตัดสินใจ"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Klinefelter syndrome ไม่ได้เป็นข้อบ่งชี้ทางการแพทย์เพื่อเปลี่ยนคำนำหน้า คำนำหน้าถูกกำหนดโดยการแสดงออกทางเพศ (gender expression) ที่ผู้บุคคลเลือก แพทย์ไม่ควรให้ใบรับรองสำหรับการเปลี่ยนคำนำหน้า"
+  },
+  {
+    "scenario": "A 25-year-old woman comes to see a male practitioner. She exaggerately complains about her physical symptom, her feelings, and her personal life. She is flirting and seductive toward the doctor. She tries to have a social relation. Today she asks you out for lunch. What is the most appropriate management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Go out with her and share the bill"
+      },
+      {
+        "label": "B",
+        "text": "Refer her to a female doctor"
+      },
+      {
+        "label": "C",
+        "text": "Refuse but don't explain the reason"
+      },
+      {
+        "label": "D",
+        "text": "Give her your number and have dinner after finish work"
+      },
+      {
+        "label": "E",
+        "text": "Tell her that it's inappropriate the patient-doctor relationship"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "การรักษาชั้นดีต้องตั้งขอบเขตที่ชัดเจน ควรปฏิเสธการลิงในลักษณะสุภาพ บอกให้ผู้ป่วยเข้าใจว่าสัมพันธ์แพทย์-ผู้ป่วยต้องมีขอบเขต หากมีปัญหาจิตใจ ควรส่งไปพบจิตแพทย์"
+  },
+  {
+    "scenario": "หญิงอายุ 38 ปีตั้งครรภ์(ไม่บอกอายุครรภ์)ตรวจน้ำคร่ำพบว่าลูกเป็นดาวน์ซินโดรม มารดาบอกว่าปรึกษาสามีและครอบครัวแล้ว อยากทำแท้งเพราะไม่อยากให้คนอื่นต้องมาดูแลลูกที่พิการไปตลอดชีวิต ท่านเป็นสูติแพทย์จะทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทำได้ แต่ต้องส่งไปพบจิตแพทย์เพื่อประเมินผลกระทบต่อจิตใจ"
+      },
+      {
+        "label": "B",
+        "text": "ทำได้เลย เข้าเกณฑ์หลักการยุติการตั้งครรภ์ทางการแพทย์"
+      },
+      {
+        "label": "C",
+        "text": "ทำได้เลย เนื่องจากจะส่งผลดีต่อพ่อแม่และสังคมมากกว่าผลเสีย"
+      },
+      {
+        "label": "D",
+        "text": "แนะนำเรื่องของเด็กดาวน์ก็มีชีวิตอยู่ได้ เหมือนเด็กดาวน์คนอื่น"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ทำเนื่องจากไม่มีข้อบ่งชี้ทางการแพทย์"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Down syndrome (Trisomy 21) ไม่ถือว่าเป็นข้อบ่งชี้ทางการแพทย์สำหรับการยุติการตั้งครรภ์ตามหลักการทางกฎหมายไทย การตัดสินใจขึ้นอยู่กับความประสงค์ของมารดา แต่แพทย์ควรให้คำปรึกษาครบถ้วน"
+  },
+  {
+    "scenario": "A man has had car accident. Now he is good conscious. The police ask you to check blood alcohol level. When

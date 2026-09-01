@@ -1,0 +1,164 @@
+// Resend email sender
+// Requires: RESEND_API_KEY in .env.local
+// Requires: npm install resend
+
+import {
+  welcomeEmail,
+  receiptEmail,
+  weeklyNewsletterEmail,
+  weeklyDigestEmail,
+  redeemCodeEmail,
+  leadFollowupEmail,
+  trialExpiryEmail,
+} from "./templates";
+import type {
+  WelcomeEmailProps,
+  ReceiptEmailProps,
+  NewsletterPost,
+  WeeklyDigestProps,
+  RedeemCodeEmailProps,
+  LeadFollowupEmailProps,
+  TrialExpiryEmailProps,
+} from "./templates";
+
+const FROM_ADDRESS = "หมอรู้ <noreply@morroo.com>";
+
+async function sendEmail({
+  to,
+  subject,
+  html,
+}: {
+  to: string;
+  subject: string;
+  html: string;
+}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("[email] RESEND_API_KEY not set — skipping email");
+    return { id: null };
+  }
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ from: FROM_ADDRESS, to, subject, html }),
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    console.error("[email] Resend error:", err);
+    throw new Error(`Failed to send email: ${err}`);
+  }
+
+  return res.json() as Promise<{ id: string }>;
+}
+
+export async function sendWelcomeEmail(props: WelcomeEmailProps) {
+  return sendEmail({
+    to: props.email,
+    subject: "ยินดีต้อนรับสู่หมอรู้! 🩺 เริ่มฝึกสอบได้เลย",
+    html: welcomeEmail(props),
+  });
+}
+
+export async function sendReceiptEmail(props: ReceiptEmailProps) {
+  return sendEmail({
+    to: props.email,
+    subject: `ใบเสร็จหมอรู้ — ${props.packageType === "bundle" ? "Bundle Pack" : props.packageType === "monthly" ? "Full รายเดือน" : "Full รายปี"}`,
+    html: receiptEmail(props),
+  });
+}
+
+export async function sendWeeklyNewsletter({
+  subscribers,
+  newExamCount,
+  tipTitle,
+  tipContent,
+  latestPosts = [],
+}: {
+  subscribers: Array<{ name: string; email: string; unsubscribeUrl?: string }>;
+  newExamCount: number;
+  tipTitle: string;
+  tipContent: string;
+  latestPosts?: NewsletterPost[];
+}) {
+  const results = await Promise.allSettled(
+    subscribers.map((s) =>
+      sendEmail({
+        to: s.email,
+        subject: `📚 อัปเดตหมอรู้ประจำสัปดาห์ — ข้อสอบใหม่ ${newExamCount} เคส`,
+        html: weeklyNewsletterEmail({
+          name: s.name,
+          newExamCount,
+          tipTitle,
+          tipContent,
+          latestPosts,
+          unsubscribeUrl: s.unsubscribeUrl,
+        }),
+      })
+    )
+  );
+
+  const failed = results.filter((r) => r.status === "rejected");
+  if (failed.length > 0) {
+    console.error(`[email] ${failed.length}/${subscribers.length} emails failed`);
+  }
+  return { sent: results.length - failed.length, failed: failed.length };
+}
+
+export async function sendWeeklyDigest(
+  props: WeeklyDigestProps & { email: string }
+) {
+  const subject =
+    props.totalAttempts > 0
+      ? `📊 สรุปสัปดาห์นี้ของคุณ — ${props.correctCount}/${props.totalAttempts} ข้อ (${props.accuracy}%)`
+      : `📚 กลับมาฝึกกันเถอะ — หมอรู้คิดถึงคุณ`;
+  return sendEmail({
+    to: props.email,
+    subject,
+    html: weeklyDigestEmail(props),
+  });
+}
+
+export async function sendRedeemCodeEmail(
+  props: RedeemCodeEmailProps & { email: string }
+) {
+  return sendEmail({
+    to: props.email,
+    subject: `🎁 โค้ดของคุณพร้อมแล้ว — ${props.code}`,
+    html: redeemCodeEmail(props),
+  });
+}
+
+export async function sendLeadFollowupEmail(
+  props: LeadFollowupEmailProps & { email: string }
+) {
+  const subject =
+    props.day === 1
+      ? `อย่าลืม! โค้ด ${props.code} ของคุณยังพร้อมใช้งาน`
+      : props.day === 3
+        ? `⏳ เหลืออีก ${props.daysRemaining} วัน — โค้ด ${props.code} กำลังจะหมดอายุ`
+        : `🚨 วันสุดท้าย — โค้ด ${props.code} หมดอายุพรุ่งนี้`;
+  return sendEmail({
+    to: props.email,
+    subject,
+    html: leadFollowupEmail(props),
+  });
+}
+
+export async function sendTrialExpiryEmail(
+  props: TrialExpiryEmailProps & { email: string }
+) {
+  const subject =
+    props.daysBeforeExpiry === 3
+      ? "⏳ เหลือ 3 วัน — สมาชิกหมอรู้ของคุณกำลังจะหมดอายุ"
+      : "🚨 พรุ่งนี้หมดอายุ — ต่ออายุสมาชิกหมอรู้";
+  return sendEmail({
+    to: props.email,
+    subject,
+    html: trialExpiryEmail(props),
+  });
+}

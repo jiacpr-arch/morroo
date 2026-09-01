@@ -1,0 +1,265 @@
+import { NextRequest } from "next/server";
+import { createClient } from "@/lib/supabase/server";
+import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
+import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
+import { getBoardReference } from "@/lib/board-references";
+import { matchResult } from "@/lib/longcase-match";
+import { createAnthropic, CHAT_MODELS, SCORE_MODELS, createWithFallback, streamTextWithFallback } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
+
+export const runtime = "nodejs";
+export const maxDuration = 60;
+
+export async function POST(request: NextRequest) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
+
+  const rl = await checkRateLimit(supabase, user.id, "ai:longcase-examiner", RATE_LIMITS.aiChat);
+  const rlResp = rateLimitResponse(rl, RATE_LIMITS.aiChat);
+  if (rlResp) return rlResp;
+
+  const { sessionId, messages = [], action = "chat" }: {
+    sessionId: string;
+    messages: { role: "user" | "assistant"; content: string }[];
+    action: "start" | "chat" | "score";
+  } = await request.json();
+
+  const session = await getLongCaseSession(sessionId);
+  if (!session || session.user_id !== user.id) {
+    return new Response(JSON.stringify({ error: "Session not found" }), { status: 404 });
+  }
+
+  const lc = session.long_case;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) return new Response(JSON.stringify({ error: "API key not configured" }), { status: 500 });
+
+  const client = createAnthropic();
+
+  // Parse case data. Imaging lives in a separate map from labs; merge them so
+  // imaging orders resolve too.
+  const peFindings = lc.pe_findings as Record<string, string>;
+  const labResults = {
+    ...(lc.lab_results as Record<string, { value: string; isAbnormal: boolean }>),
+    ...((lc.imaging_results as Record<string, { value: string; isAbnormal: boolean }> | null) || {}),
+  };
+  const examinerQs = lc.examiner_questions as { question: string; modelAnswer: string; points: number }[];
+  const rubric = lc.scoring_rubric as Record<string, number>;
+  const historyChat = Array.isArray(session.history_chat) ? session.history_chat : [];
+  const examinerChat = Array.isArray(session.examiner_chat) ? session.examiner_chat : [];
+
+  // PE selected by student
+  const peSelected = Array.isArray(session.pe_selected) ? session.pe_selected : [];
+  const peRevealedText = peSelected.map((sys: string) =>
+    `${sys}: ${matchResult(sys, peFindings) || "ปกติ"}`
+  ).join("\n");
+
+  // Labs ordered by student
+  const labOrdered = Array.isArray(session.lab_ordered) ? session.lab_ordered : [];
+  const labRevealedText = labOrdered.map((name: string) => {
+    const res = matchResult(name, labResults);
+    return res ? `${name}: ${res.value}${res.isAbnormal ? " [ผิดปกติ]" : ""}` : `${name}: ไม่มีผล`;
+  }).join("\n");
+
+  const caseContext = `
+**เคส:** ${lc.title} (${lc.specialty}, ${lc.difficulty})
+**การวินิจฉัยที่ถูกต้อง:** ${lc.correct_diagnosis}
+**การรักษาที่ถูก:** ${lc.management_plan}
+
+**ประวัติที่นักศึกษาซัก:**
+${historyChat.filter(m => m.role === "user").map(m => `ถาม: ${m.content}`).join("\n")}
+
+**PE ที่ตรวจ:**
+${peRevealedText || "ไม่ได้ตรวจ"}
+
+**Lab/Imaging ที่สั่ง:**
+${labRevealedText || "ไม่ได้สั่ง"}
+
+**DDx ของนักศึกษา:**
+${session.student_ddx || "ไม่ได้เขียน"}
+
+**การรักษาที่นักศึกษาเสนอ:**
+${session.student_mgmt || "ไม่ได้เขียน"}
+
+**เกณฑ์คะแนน:**
+${Object.entries(rubric).map(([k, v]) => `- ${k}: ${v} คะแนน`).join("\n")}
+`;
+
+  if (action === "score") {
+    // Opus scores the student/candidate
+    const isBoardCase = (lc as { audience?: string }).audience === "board";
+    const role = isBoardCase ? "candidate (แพทย์ที่กำลังจะจบเฉพาะทาง)" : "นักศึกษาแพทย์";
+    const standard = isBoardCase
+      ? "ใช้มาตรฐานสอบบอร์ดราชวิทยาลัยฯ — ผ่านคือ defend management decision ด้วย evidence ได้, จับ edge case ได้, รู้ contraindication"
+      : "ใช้มาตรฐานนักศึกษาแพทย์ปี extern/intern";
+    const scorePrompt = `${caseContext}
+
+**ผู้ถูกประเมิน:** ${role}
+**มาตรฐานการให้คะแนน:** ${standard}
+
+**คำถามที่ถามและคำตอบต้นฉบับ:**
+${examinerQs.map((q, i) => `Q${i + 1}: ${q.question}\nModel Answer: ${q.modelAnswer}`).join("\n\n")}
+
+**การสัมภาษณ์ที่เกิดขึ้น:**
+${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "นักศึกษา") : "Examiner"}: ${m.content}`).join("\n")}
+
+ให้คะแนน${isBoardCase ? "candidate" : "นักศึกษา"}และตอบเป็น JSON เท่านั้น:
+{
+  "score_history": <0-${rubric.history || 25}>,
+  "score_pe": <0-${rubric.pe || 20}>,
+  "score_lab": <0-${rubric.lab || 15}>,
+  "score_ddx": <0-${rubric.ddx || 20}>,
+  "score_management": <0-${rubric.management || 20}>,
+  "score_examiner": <0-10>,
+  "feedback": "<คำติชมโดยรวม 3-4 ประโยค>",
+  "teaching_points": ["<สิ่งที่ทำดี>", "<สิ่งที่ต้องปรับปรุง>", "<pearl ที่ควรจำ>"]
+}`;
+
+    try {
+      // Score with Opus, falling back to Sonnet if Opus fails (it's more
+      // capacity-constrained) — the student finished a whole case and must not
+      // lose their score to a transient upstream blip. If every model fails the
+      // outer catch returns a friendly error.
+      const response = await createWithFallback(
+        client,
+        SCORE_MODELS,
+        { max_tokens: 1024, messages: [{ role: "user", content: scorePrompt }] },
+        "longcase-examiner:score",
+      );
+      const rawText = response.content[0].type === "text" ? response.content[0].text : "";
+      const jsonMatch = rawText.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) throw new Error("No JSON in response");
+
+      const scores = JSON.parse(jsonMatch[0]);
+      const total = (scores.score_history || 0) + (scores.score_pe || 0) +
+        (scores.score_lab || 0) + (scores.score_ddx || 0) +
+        (scores.score_management || 0) + (scores.score_examiner || 0);
+      const maxTotal = (rubric.history || 25) + (rubric.pe || 20) + (rubric.lab || 15) +
+        (rubric.ddx || 20) + (rubric.management || 20) + 10;
+      const pct = Math.round((total / maxTotal) * 100);
+
+      await updateLongCaseSession(sessionId, {
+        score_history: scores.score_history,
+        score_pe: scores.score_pe,
+        score_lab: scores.score_lab,
+        score_ddx: scores.score_ddx,
+        score_management: scores.score_management,
+        score_examiner: scores.score_examiner,
+        score_total_pct: pct,
+        feedback: scores.feedback,
+        phase: "done",
+        completed_at: new Date().toISOString(),
+      });
+
+      // Coins awarded by DB trigger — surface the breakdown to the UI
+      const coin_base = 20;
+      const coin_bonus = pct >= 70 ? 10 : 0;
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("meq_coins")
+        .eq("id", user.id)
+        .single();
+
+      return new Response(JSON.stringify({
+        ...scores,
+        score_total_pct: pct,
+        teaching_points: scores.teaching_points,
+        coins: {
+          base: coin_base,
+          bonus: coin_bonus,
+          total_awarded: coin_base + coin_bonus,
+          balance: profile?.meq_coins ?? null,
+        },
+      }), {
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (err) {
+      logAIError("longcase-examiner:score", err);
+      return new Response(JSON.stringify({ error: friendlyAIError(err) }), { status: 500 });
+    }
+  }
+
+  // Chat mode (start or continue) — persona depends on audience
+  const lcRow = lc as { audience?: string; board_specialty?: string | null };
+  const isBoard = lcRow.audience === "board";
+  const boardRef = isBoard ? getBoardReference(lcRow.board_specialty ?? null) : "";
+
+  const examinerPersona = isBoard
+    ? `คุณเป็น "อ.บอร์ด" (อาจารย์ผู้สอบบอร์ดราชวิทยาลัยฯ) ที่เข้มงวด สอบประเมินแพทย์ที่กำลังจะจบเฉพาะทาง
+- พูดด้วยน้ำเสียง academic เป็นทางการ ใช้ศัพท์แพทย์เต็มที่
+- อ้างอิงตำราหลัก: ${boardRef}
+- เมื่อ candidate ตอบ ต้อง challenge เสมอ เช่น "แน่ใจหรือ?", "evidence ที่ใช้คืออะไร?", "ถ้าเคสเปลี่ยน X จะเป็นอย่างไร?"
+- ถาม follow-up เชิงลึก: pathophysiology, evidence-based management, edge cases, contraindications
+- ไม่บอกเฉลย/feedback ระหว่างสอบ — เก็บไว้ตอนคิดคะแนน
+- ผู้สอบที่ดีต้องสามารถ defend management decision ด้วย rationale + reference ได้`
+    : `คุณเป็น Examiner (อาจารย์ผู้ตรวจข้อสอบ Long Case) ที่มีประสบการณ์ — โทนเป็นมิตรแต่ professional`;
+
+  const systemPrompt = action === "start"
+    ? `${examinerPersona}
+${caseContext}
+
+เริ่มต้นด้วยการให้${isBoard ? "candidate" : "นักศึกษา"} Present Case และถามคำถามตาม examiner_questions ทีละข้อ
+${isBoard
+  ? "ทักทายแบบ formal สั้นๆ แล้วขอให้ candidate present case โดยย่อ (HPI + impression)"
+  : "ทักทายสั้นๆ และขอให้นักศึกษา Present the case"}
+
+คำถามที่ต้องถาม:
+${examinerQs.map((q, i) => `${i + 1}. ${q.question}`).join("\n")}`
+    : `${examinerPersona}
+${caseContext}
+
+คำถามที่ต้องถาม:
+${examinerQs.map((q, i) => `${i + 1}. ${q.question}`).join("\n")}
+
+${isBoard
+  ? "Challenge คำตอบของ candidate ด้วย follow-up เชิงลึก (evidence/edge case/contraindication) ก่อนไปคำถามถัดไป"
+  : "ตอบสนองต่อคำตอบของนักศึกษาอย่างมืออาชีพ และถามคำถามถัดไป"}`;
+
+  const allMessages = [
+    ...examinerChat,
+    ...messages,
+  ];
+
+  const examMessages = allMessages.length > 0 ? allMessages : [{ role: "user" as const, content: "เริ่มต้นการสัมภาษณ์" }];
+
+  const encoder = new TextEncoder();
+  let fullResponse = "";
+
+  const readable = new ReadableStream({
+    async start(controller) {
+      try {
+        // Sonnet → Haiku fallback keeps the interview going if the primary
+        // model is overloaded.
+        for await (const text of streamTextWithFallback(
+          client,
+          CHAT_MODELS,
+          { max_tokens: 1024, system: systemPrompt, messages: examMessages },
+          "longcase-examiner",
+        )) {
+          fullResponse += text;
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`));
+        }
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`));
+        controller.close();
+
+        // Save examiner chat
+        const updatedChat = [
+          ...allMessages,
+          { role: "assistant" as const, content: fullResponse },
+        ];
+        await updateLongCaseSession(sessionId, {
+          examiner_chat: updatedChat,
+          phase: "examiner",
+        });
+      } catch (err) {
+        logAIError("longcase-examiner:stream", err);
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: friendlyAIError(err) })}\n\n`));
+        controller.close();
+      }
+    },
+  });
+
+  return new Response(readable, {
+    headers: { "Content-Type": "text/event-stream", "Cache-Control": "no-cache", Connection: "keep-alive" },
+  });
+}

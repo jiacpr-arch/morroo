@@ -1,0 +1,752 @@
+[
+  {
+    "id": "d61cf03e-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ชาย 45 ปี ท้องผูกเรื้อรัง แม่เป็น CRC → ต้องทำ Colonoscopy ทันที + Genetic testing สำหรับ Lynch syndrome",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A เพราะ family history CRC ใน first-degree relative + ท้องผูกเรื้อรังในผู้ชาย 45 ปี = indication สำหรับ colonoscopy + Lynch syndrome screening",
+      "reason": "Lynch syndrome (HNPCC): autosomal dominant mutation ใน MMR genes (MLH1, MSH2, MSH6, PMS2) เพิ่มความเสี่ยง CRC, endometrial, ovarian cancer family history CRC ใน first-degree relative → เริ่ม colonoscopy ที่อายุ 40 ปี หรือ 10 ปีก่อน index case ผู้ชาย 45 ปีนี้ควรทำ colonoscopy ทันที และ genetic testing สำหรับ Lynch syndrome",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colonoscopy ทันที + Genetic testing สำหรับ Lynch syndrome",
+          "is_correct": true,
+          "explanation": "Standard of care สำหรับ patient ที่มี FHx CRC + ท้องผูก ≥45 ปี"
+        },
+        {
+          "label": "B",
+          "text": "ให้ยาระบายและสังเกตการณ์",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอ มี alarm features (FHx CRC)"
+        },
+        {
+          "label": "C",
+          "text": "CT abdomen → พิจารณา colonoscopy",
+          "is_correct": false,
+          "explanation": "Colonoscopy เป็น preferred first-line ไม่ใช่ CT"
+        },
+        {
+          "label": "D",
+          "text": "ปรึกษาศัลยแพทย์เพื่อผ่าตัดป้องกัน",
+          "is_correct": false,
+          "explanation": "ยังไม่มี diagnosis ต้อง colonoscopy ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "ตรวจ CEA และ CA 19-9 เท่านั้น",
+          "is_correct": false,
+          "explanation": "Tumor markers ไม่ใช่ screening tool สำหรับ CRC"
+        }
+      ],
+      "key_takeaway": "FHx CRC (first-degree) + ท้องผูก ≥45 ปี → Colonoscopy + Lynch syndrome genetic testing"
+    }
+  },
+  {
+    "id": "d706ab5c-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "Suspected ureteral stone ต้องการ CT non-contrast (CT KUB) เป็น gold standard สำหรับวินิจฉัย",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (CT non-contrast / CT KUB) เพราะ CT non-contrast เป็น gold standard สำหรับ renal/ureteral stones",
+      "reason": "ชาย 38 ปี ปวดสีข้างขวาเฉียบพลัน 1 ชม. + physical exam ต้องสงสัย ureteral colic CT KUB (non-contrast helical CT): sensitivity 97%, specificity 97% สำหรับ urinary tract stones Plain KUB: sensitivity ต่ำ (<60%) เพราะ radiolucent stones หรือ overlying gas IVP: ใช้ contrast, ข้อมูลน้อยกว่า CT Ultrasound: ดี radiolucent stones แต่ sensitivity ต่ำกว่า CT MRI: ราคาแพง ใช้เวลานาน ไม่ใช่ first-line",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Plain KUB",
+          "is_correct": false,
+          "explanation": "Sensitivity ต่ำ (~60%) เพราะ radiolucent stones"
+        },
+        {
+          "label": "B",
+          "text": "IVP",
+          "is_correct": false,
+          "explanation": "ใช้ contrast ข้อมูลน้อยกว่า CT ใช้เวลานาน"
+        },
+        {
+          "label": "C",
+          "text": "Ultrasound KUB",
+          "is_correct": false,
+          "explanation": "ดีสำหรับ hydronephrosis แต่ sensitivity ต่ำกว่า CT สำหรับ stones"
+        },
+        {
+          "label": "D",
+          "text": "CT non-contrast (CT KUB)",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ urinary tract stones: sensitivity 97%, specificity 97%"
+        },
+        {
+          "label": "E",
+          "text": "MRI",
+          "is_correct": false,
+          "explanation": "ราคาแพง เวลานาน ไม่ใช่ first-line สำหรับ stones"
+        }
+      ],
+      "key_takeaway": "Suspected ureteral stone → CT non-contrast (CT KUB) เป็น gold standard"
+    }
+  },
+  {
+    "id": "ddcdda01-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "Gunshot wound ขาขวา + ischemia signs (6 P's) → ต้องการ emergent revascularization/thrombectomy ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (emergent revascularization/thrombectomy) เพราะ acute limb ischemia จาก vascular injury ต้องการ restore blood flow ภายใน 6 ชั่วโมง",
+      "reason": "Acute limb ischemia จาก gunshot wound: 6 P's = Pain, Pallor, Pulselessness, Paresthesia, Paralysis, Poikilothermia Window of viability: ≤6 ชั่วโมง ก่อน irreversible ischemia Management: emergency revascularization (thrombectomy/embolectomy/bypass) + angiography ถ้าต้องการ Antibiotics + observe ไม่เพียงพอสำหรับ vascular injury Primary amputation ทำเฉพาะถ้า limb non-salvageable แล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ antibiotic และ observe ที่ ward",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ acute vascular injury + ischemia"
+        },
+        {
+          "label": "B",
+          "text": "Emergent revascularization/thrombectomy",
+          "is_correct": true,
+          "explanation": "Restore blood flow ทันทีเพื่อ salvage limb ภายใน 6 ชั่วโมง"
+        },
+        {
+          "label": "C",
+          "text": "Primary amputation ทันที",
+          "is_correct": false,
+          "explanation": "ทำเฉพาะถ้า limb clearly non-salvageable ต้องลอง revascularization ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "IV heparin + ultrasound doppler เท่านั้น",
+          "is_correct": false,
+          "explanation": "Heparin เป็น adjunct แต่ต้องการ surgical intervention หลัก"
+        },
+        {
+          "label": "E",
+          "text": "ยกขาสูง รอดูอาการ 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "อันตรายมาก — limb จะ necrosis ถ้าไม่ revascularize ภายใน 6 ชั่วโมง"
+        }
+      ],
+      "key_takeaway": "Acute limb ischemia จาก vascular injury → Emergent revascularization ภายใน 6 ชั่วโมง"
+    }
+  },
+  {
+    "id": "df25032f-0000-0000-0000-000000000000",
+    "correct_answer": "E",
+    "explanation": "Chylothorax หลัง esophagectomy: ตรวจ triglyceride และ WBC ใน pleural fluid ช่วยวินิจฉัยได้",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (ส่งตรวจ TG และ WBC ใน fluid) เพราะ chylothorax วินิจฉัยได้จาก pleural fluid TG >110 mg/dL + lymphocyte predominant",
+      "reason": "Chylothorax diagnosis: pleural fluid TG >110 mg/dL → ยืนยัน chylothorax TG <50 mg/dL → แยก chylothorax WBC ใน chyle เป็น lymphocyte predominant Milky white appearance ไม่จำเป็นต้องมีเสมอ Management: NPO + TPN (bowel rest ลด chyle flow) + octreotide ผ่าตัด ligature thoracic duct ถ้า conservative ล้มเหลวใน 2-4 สัปดาห์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ถ้าเป็นข้างขวามักเกิดจาก trauma",
+          "is_correct": false,
+          "explanation": "ข้อนี้อาจถูก แต่ไม่ใช่คำตอบที่ดีที่สุดสำหรับคำถามนี้"
+        },
+        {
+          "label": "B",
+          "text": "ห้ามให้ TPN จนกว่าโรคจะดีขึ้น",
+          "is_correct": false,
+          "explanation": "ผิด — TPN ช่วยลด chyle production โดย bowel rest ควรให้"
+        },
+        {
+          "label": "C",
+          "text": "ต้องผ่าตัดแก้ไขทันที",
+          "is_correct": false,
+          "explanation": "Conservative treatment (NPO + TPN) ก่อน 2-4 สัปดาห์"
+        },
+        {
+          "label": "D",
+          "text": "ถอด chest tube เพราะอาจเป็น iatrogenic infection",
+          "is_correct": false,
+          "explanation": "ต้องระบาย chyle ต่อเนื่อง ไม่ควรถอด"
+        },
+        {
+          "label": "E",
+          "text": "ส่งตรวจ TG และ WBC ใน fluid ช่วย diagnose",
+          "is_correct": true,
+          "explanation": "TG >110 mg/dL + lymphocyte predominant = diagnostic criteria สำหรับ chylothorax"
+        }
+      ],
+      "key_takeaway": "Chylothorax diagnosis: pleural fluid TG >110 mg/dL + lymphocyte WBC"
+    }
+  },
+  {
+    "id": "dfaff2f4-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ชาย 35 ปี ปัสสาวะลำบาก ฉี่ไม่พุ่ง + enlarged prostate → Benign Prostatic Hyperplasia (BPH) with acute urinary retention",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (BPH with acute urinary retention) เพราะ LUTS + enlarged prostate ในชายวัยกลางคนคือ BPH",
+      "reason": "BPH: ชายอายุ >40 ปี LUTS (hesitancy, weak stream, frequency, nocturia) enlarged prostate in DRE Acute urinary retention: ไม่สามารถปัสสาวะได้ + bladder distension + discomfort Management: catheterization ทันที จากนั้น alpha-blocker ± 5-ARI ในระยะยาว Prostate cancer: PSA สูง + hard/nodular prostate ใน DRE Bladder cancer: hematuria prominent Neurogenic bladder: neurological symptoms/history",
+      "choices": [
+        {
+          "label": "A",
+          "text": "BPH with acute urinary retention",
+          "is_correct": true,
+          "explanation": "LUTS + enlarged prostate ที่ไม่แข็งผิดปกติ = BPH คือ diagnosis ที่น่าจะเป็นมากที่สุด"
+        },
+        {
+          "label": "B",
+          "text": "Prostate cancer with bladder dysfunction",
+          "is_correct": false,
+          "explanation": "ต้องการ PSA สูง + hard/nodular prostate"
+        },
+        {
+          "label": "C",
+          "text": "Bladder cancer with outlet obstruction",
+          "is_correct": false,
+          "explanation": "Bladder cancer มักมี hematuria เป็น presenting symptom หลัก"
+        },
+        {
+          "label": "D",
+          "text": "Urethral stricture with secondary bladder hypertrophy",
+          "is_correct": false,
+          "explanation": "มักมีประวัติ STI หรือ urethral trauma มาก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Neurogenic bladder from spinal cord pathology",
+          "is_correct": false,
+          "explanation": "ต้องการ neurological deficits ร่วมด้วย"
+        }
+      ],
+      "key_takeaway": "LUTS + enlarged prostate ในชาย >40 ปี = BPH จนกว่าจะพิสูจน์เป็นอย่างอื่น"
+    }
+  },
+  {
+    "id": "e25f221c-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "Upper GI bleeding ที่ stable หลัง resuscitation → Urgent upper GI endoscopy เพื่อ diagnose และ treat",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Urgent upper GI endoscopy) เพราะ endoscopy เป็น both diagnostic and therapeutic สำหรับ upper GI bleeding",
+      "reason": "Upper GI bleeding management: Resuscitation ก่อน (IV fluid + blood transfusion) จากนั้น urgent endoscopy ภายใน 24 ชั่วโมง (หรือ <12 ชั่วโมงถ้า high-risk) Endoscopy: ระบุ source, ทำ hemostasis (injection, thermocoagulation, clips) Surgical exploration เฉพาะถ้า endoscopy ล้มเหลว CTA/angiography ใช้ถ้า endoscopy ไม่สามารถ localize source",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urgent upper GI endoscopy",
+          "is_correct": true,
+          "explanation": "Diagnostic + therapeutic — identify source และทำ hemostasis ได้ในขั้นตอนเดียว"
+        },
+        {
+          "label": "B",
+          "text": "Continue fluid resuscitation + observe vital signs เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอ ต้องทำ endoscopy เพื่อ hemostasis"
+        },
+        {
+          "label": "C",
+          "text": "Immediate surgical exploration โดยไม่รอ",
+          "is_correct": false,
+          "explanation": "ทำเฉพาะถ้า endoscopy ล้มเหลวหรือ massive uncontrolled bleeding"
+        },
+        {
+          "label": "D",
+          "text": "CT angiography abdomen",
+          "is_correct": false,
+          "explanation": "ทำถ้า endoscopy ไม่สามารถหา source ได้"
+        },
+        {
+          "label": "E",
+          "text": "Blood transfusion + ICU observation เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอ ต้องทำ endoscopy"
+        }
+      ],
+      "key_takeaway": "Upper GI bleeding + stable → Urgent endoscopy ภายใน 24 ชั่วโมง (diagnostic + therapeutic)"
+    }
+  },
+  {
+    "id": "e314444e-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "ชายอายุ 20 ปี ผอมสูง acute dyspnea → Primary spontaneous pneumothorax (PSP) ใน Marfanoid habitus",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Primary spontaneous pneumothorax) เพราะ tall thin young man + acute dyspnea = classic PSP presentation",
+      "reason": "Primary spontaneous pneumothorax: ชาย 20 ปี ผอมสูง (Marfanoid habitus) ไม่มีโรคปอดอื่น เกิดจาก rupture ของ subpleural blebs Tension pneumothorax: hemodynamic instability + tracheal deviation + absent breath sounds Pneumonia: fever + cough + consolidation on CXR Myocardial infarction: ไม่น่าเป็นในคนอายุ 20 ปี Hemothorax: trauma history",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Tension pneumothorax",
+          "is_correct": false,
+          "explanation": "Tension มี hemodynamic compromise + tracheal deviation — ไม่ใช่ถ้า vital stable"
+        },
+        {
+          "label": "B",
+          "text": "Acute left lung pneumonia",
+          "is_correct": false,
+          "explanation": "ต้องมี fever + cough + consolidation"
+        },
+        {
+          "label": "C",
+          "text": "Acute myocardial infarction",
+          "is_correct": false,
+          "explanation": "Rare ในคนอายุ 20 ปีที่ไม่มี risk factors"
+        },
+        {
+          "label": "D",
+          "text": "Primary spontaneous pneumothorax",
+          "is_correct": true,
+          "explanation": "Classic presentation: tall thin young man + acute dyspnea/pleuritic chest pain = PSP"
+        },
+        {
+          "label": "E",
+          "text": "Hemothorax",
+          "is_correct": false,
+          "explanation": "ต้องมี trauma history"
+        }
+      ],
+      "key_takeaway": "Tall thin young man + acute dyspnea = Primary spontaneous pneumothorax"
+    }
+  },
+  {
+    "id": "e77128b7-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "อุบัติเหตุ + suspected urethral injury (blood at meatus/perineal hematoma) → Retrograde urethrography (RUG) ก่อน catheterization",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Retrograde urethrography) เพราะ suspected urethral injury ต้องตรวจ RUG ก่อนใส่ Foley catheter",
+      "reason": "Urethral injury signs: blood at urethral meatus, perineal/scrotal hematoma, high-riding prostate, inability to void RUG: inject contrast retrograde เข้าไปในท่อปัสสาวะ ดู extravasation สำคัญมาก: ห้ามใส่ Foley catheter ก่อนทำ RUG ถ้าสงสัย urethral injury เพราะอาจทำให้ partial tear กลายเป็น complete tear IVP ใช้สำหรับ ureteral injury VCUG ใช้หลังจาก urethral injury healed แล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intravenous pyelography (IVP)",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ ureteral injury ไม่ใช่ urethral injury"
+        },
+        {
+          "label": "B",
+          "text": "Retrograde urethrography (RUG)",
+          "is_correct": true,
+          "explanation": "Standard test สำหรับ suspected urethral injury ก่อนใส่ Foley catheter"
+        },
+        {
+          "label": "C",
+          "text": "VCUG",
+          "is_correct": false,
+          "explanation": "ใช้หลังจาก urethral injury repair แล้วเพื่อ assess healing"
+        },
+        {
+          "label": "D",
+          "text": "KUB ultrasound",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสำหรับ urethral injury assessment"
+        },
+        {
+          "label": "E",
+          "text": "CT scan abdomen and pelvis",
+          "is_correct": false,
+          "explanation": "ให้ข้อมูล urethral anatomy ได้น้อย RUG ดีกว่า"
+        }
+      ],
+      "key_takeaway": "Suspected urethral injury → RUG ก่อนใส่ Foley (ห้าม blind catheterization)"
+    }
+  },
+  {
+    "id": "ea37e0cd-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "หญิง 20 ปี ถูกรถชน hemodynamically unstable หลัง 2L LRS → Exploratory laparotomy ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Exploratory laparotomy) เพราะ hemodynamic instability ที่ไม่ตอบสนองต่อ resuscitation 2L = indication สำหรับ emergency surgery",
+      "reason": "Trauma protocol: ผู้ป่วย hemodynamically unstable หลัง adequate resuscitation (2L LRS) → immediate surgical intervention ห้ามส่ง CT ในผู้ป่วยที่ unstable เพราะเสียเวลาและเสี่ยงต่อ decompensation Exploratory laparotomy เพื่อหาและหยุด source of bleeding ภายใน abdominal cavity Pelvic angiography ใช้สำหรับ pelvic fracture bleeding หลังจาก stabilize",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pelvic angiography",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ pelvic fracture bleeding ที่ stable พอจะ transport"
+        },
+        {
+          "label": "B",
+          "text": "Blood transfusion",
+          "is_correct": false,
+          "explanation": "ให้แล้วยังไม่ stable → ต้องผ่าตัด"
+        },
+        {
+          "label": "C",
+          "text": "LRS 2 ลิตรเพิ่มเติม",
+          "is_correct": false,
+          "explanation": "ไม่มีประโยชน์ถ้า 2L แรกไม่ได้ผล — เสียเวลา"
+        },
+        {
+          "label": "D",
+          "text": "Exploratory laparotomy",
+          "is_correct": true,
+          "explanation": "Hemodynamic instability ไม่ตอบสนองต่อ resuscitation = emergency laparotomy ทันที"
+        },
+        {
+          "label": "E",
+          "text": "CT angiography",
+          "is_correct": false,
+          "explanation": "ห้ามส่ง unstable patient ไป CT — อันตราย"
+        }
+      ],
+      "key_takeaway": "Trauma + hemodynamic instability ไม่ตอบสนองต่อ 2L resuscitation → Emergency laparotomy"
+    }
+  },
+  {
+    "id": "ed69787a-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ชาย 80 ปี obstructive urinary symptoms + enlarged prostate → Watchful waiting เป็น appropriate สำหรับ mild BPH ในผู้สูงอายุ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Watchful waiting) เพราะ mild/moderate BPH ในผู้สูงอายุที่ไม่มี complication อาจเฝ้าระวังโดยไม่ต้องรักษาทันที",
+      "reason": "BPH treatment: Watchful waiting (active surveillance): mild symptoms (IPSS <8), no complications Indications for treatment: severe symptoms (IPSS ≥20), recurrent UTI, renal insufficiency, bladder stones, AUR ชาย 80 ปี ถ้า mild symptoms → watchful waiting เหมาะสม Medical therapy (alpha-blocker, 5-ARI): moderate-severe symptoms Surgical (TURP): ไม่ตอบสนองต่อ medical therapy หรือ complications Brachytherapy/Radiation/Prostatectomy: สำหรับ prostate cancer",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Watchful Waiting",
+          "is_correct": true,
+          "explanation": "Appropriate สำหรับ mild BPH ในผู้สูงอายุที่ไม่มี complication"
+        },
+        {
+          "label": "B",
+          "text": "Brachytherapy",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ prostate cancer ไม่ใช่ BPH"
+        },
+        {
+          "label": "C",
+          "text": "External Radiation",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ prostate cancer ไม่ใช่ BPH"
+        },
+        {
+          "label": "D",
+          "text": "Hormonal Therapy",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ metastatic prostate cancer ไม่ใช่ BPH"
+        },
+        {
+          "label": "E",
+          "text": "Prostatectomy",
+          "is_correct": false,
+          "explanation": "Radical prostatectomy สำหรับ prostate cancer; TURP สำหรับ BPH ที่ fail medical therapy"
+        }
+      ],
+      "key_takeaway": "Mild BPH ในผู้สูงอายุ → Watchful waiting; ถ้า severe symptoms/complications → ตรวจรักษาเพิ่มเติม"
+    }
+  },
+  {
+    "id": "eee2fe5a-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "ผู้ที่ไม่เคยได้รับ tetanus toxoid เลย + wound → ต้องให้ tetanus immunoglobulin + เริ่ม primary vaccination series",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (ชาย 25 ปี knee scratch ไม่เคยได้รับ tetanus toxoid) เพราะ ไม่มี prior immunization + wound = indication ที่ชัดเจน",
+      "reason": "Tetanus immunization guidelines: Prior complete vaccination (3+ doses) <5 ปี → ไม่ต้องให้ tetanus toxoid สำหรับ clean minor wound Prior vaccination >10 ปี → tetanus toxoid booster ไม่เคยได้รับ/ไม่ทราบ + clean minor wound → tetanus toxoid series ไม่เคยได้รับ + dirty/contaminated wound → TIG (tetanus immunoglobulin) + tetanus toxoid series B: ชาย 25 ปี ไม่เคยได้รับ tetanus toxoid + knee scratch → ต้องให้ TIG + เริ่ม vaccination series",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ชาย 20 ปี dog bite ได้รับ TT 7 ปีก่อน",
+          "is_correct": false,
+          "explanation": "ได้รับ TT 7 ปีก่อน + contaminated wound → ให้ booster แต่ไม่ต้องให้ TIG"
+        },
+        {
+          "label": "B",
+          "text": "ชาย 25 ปี knee scratch ไม่เคยได้รับ TT",
+          "is_correct": true,
+          "explanation": "ไม่มี prior immunization + wound = ต้องให้ TIG + เริ่ม primary vaccination series"
+        },
+        {
+          "label": "C",
+          "text": "หญิง 30 ปี wound + รับ TT ระหว่าง ANC",
+          "is_correct": false,
+          "explanation": "รับ TT ระหว่าง ANC = recent vaccination ไม่ต้องให้เพิ่ม"
+        },
+        {
+          "label": "D",
+          "text": "ชาย 35 ปี contaminated wound รับ vaccine 6 เดือนก่อน",
+          "is_correct": false,
+          "explanation": "รับ vaccine ≤5 ปี ไม่ต้องให้ booster สำหรับ clean wound"
+        },
+        {
+          "label": "E",
+          "text": "Puncture wound ไม่ได้รับ primary vaccination series ครบ",
+          "is_correct": false,
+          "explanation": "Option นี้ก็ต้องการ TIG เช่นกัน แต่ B ชัดเจนกว่าเพราะ no prior vaccination เลย"
+        }
+      ],
+      "key_takeaway": "ไม่เคยรับ tetanus toxoid + wound → TIG + เริ่ม primary tetanus vaccination series"
+    }
+  },
+  {
+    "id": "f18292a5-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "Massive GI bleed หลัง resuscitation ที่ localize ที่ right colon → Emergency explore with right colectomy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Emergency explore + right colectomy) เพราะ massive lower GI bleeding ที่ localized ที่ right colon ต้องการ surgical resection",
+      "reason": "Massive lower GI bleeding: หลัง resuscitation → colonoscopy/angiography เพื่อ localize source ถ้า localized ที่ right colon และ hemodynamically unstable → Emergency right colectomy Subtotal colectomy ทำถ้าไม่สามารถ localize source หรือ bleeding ทั้ง colon Angiography embolization ทำถ้า patient stable พอ Colonoscopy ทำได้ถ้า stable แต่ถ้า massive bleeding อาจมองไม่เห็น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colonoscopy",
+          "is_correct": false,
+          "explanation": "ทำได้ถ้า stable และ bleeding ลดลง ใช้เป็น diagnostic และ therapeutic"
+        },
+        {
+          "label": "B",
+          "text": "Red blood cell scan",
+          "is_correct": false,
+          "explanation": "ใช้ localize slow bleeding ไม่ใช่ massive active bleeding"
+        },
+        {
+          "label": "C",
+          "text": "Angiography embolization",
+          "is_correct": false,
+          "explanation": "ใช้ถ้า stable และ source identified แต่ massive bleeding ต้องการ surgery"
+        },
+        {
+          "label": "D",
+          "text": "Emergency explore with right colectomy",
+          "is_correct": true,
+          "explanation": "Massive GI bleed + localized ที่ right colon = emergency right colectomy"
+        },
+        {
+          "label": "E",
+          "text": "Emergency explore with subtotal colectomy",
+          "is_correct": false,
+          "explanation": "ทำถ้าไม่สามารถ localize source ถ้า localized ที่ right colon → right colectomy เพียงพอ"
+        }
+      ],
+      "key_takeaway": "Massive GI bleed + localized ที่ right colon → Emergency right colectomy"
+    }
+  },
+  {
+    "id": "f1e156ea-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "ชาย 45 ปี ปวดท้อง RUQ + เบื่ออาหาร มีไข้ + gallstones → Cholecystectomy เป็น definitive treatment",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Cholecystectomy) เพราะ symptomatic cholelithiasis ต้องการ definitive surgical treatment",
+      "reason": "Symptomatic cholelithiasis (biliary colic/cholecystitis): cholecystectomy เป็น definitive treatment NSAID/analgesics เป็น temporizing measure เท่านั้น Antibiotics + ursodeoxycholic acid ไม่ใช่ standard treatment สำหรับ symptomatic gallstones ERCP ใช้สำหรับ CBD stones ไม่ใช่ gallbladder stones CT scan ทำถ้าสงสัย complications (empyema, perforation)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSAID + สังเกตการณ์ หลีกเลี่ยงอาหารมัน",
+          "is_correct": false,
+          "explanation": "Temporizing เท่านั้น ไม่ใช่ definitive treatment"
+        },
+        {
+          "label": "B",
+          "text": "ยาแก้ปวด + observation 1 สัปดาห์ → ERCP",
+          "is_correct": false,
+          "explanation": "ERCP ใช้สำหรับ CBD stones ไม่ใช่ gallbladder stones"
+        },
+        {
+          "label": "C",
+          "text": "Cholecystectomy (laparoscopic หรือ open)",
+          "is_correct": true,
+          "explanation": "Definitive treatment สำหรับ symptomatic cholelithiasis"
+        },
+        {
+          "label": "D",
+          "text": "Antibiotics + ursodeoxycholic acid",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard treatment สำหรับ symptomatic gallstones"
+        },
+        {
+          "label": "E",
+          "text": "CT scan ก่อนตัดสินใจ",
+          "is_correct": false,
+          "explanation": "Ultrasound เพียงพอสำหรับ diagnosis ไม่จำเป็นต้อง CT ก่อนผ่าตัดทุกราย"
+        }
+      ],
+      "key_takeaway": "Symptomatic cholelithiasis → Cholecystectomy เป็น definitive treatment"
+    }
+  },
+  {
+    "id": "f21cf42d-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ทารก 4 สัปดาห์ jaundice + mild anemia → Ultrasound เป็น first-line imaging เพื่อแยก biliary atresia จาก neonatal hepatitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Ultrasound) เพราะ neonatal jaundice workup เริ่มต้นด้วย ultrasound เพื่อดู gallbladder และ bile ducts",
+      "reason": "Neonatal jaundice ที่ 4 สัปดาห์: ต้องแยก biliary atresia (surgical) จาก neonatal hepatitis (medical) Ultrasound: ดู gallbladder size/absent, bile duct dilatation, liver texture Biliary atresia: gallbladder absent/small, no CBD Triangular cord sign บน ultrasound Hepatobiliary scan (HIDA): ถ้า ultrasound ไม่ชัดเจน Liver biopsy: ถ้ายังไม่สามารถแยกได้ LFT: ช่วย characterize แต่ไม่ specific",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ultrasound",
+          "is_correct": true,
+          "explanation": "First-line imaging สำหรับ neonatal jaundice — ดู gallbladder, bile ducts, triangular cord sign"
+        },
+        {
+          "label": "B",
+          "text": "Liver biopsy",
+          "is_correct": false,
+          "explanation": "ทำหลัง non-invasive tests อื่นๆ ไม่ใช่ first-line"
+        },
+        {
+          "label": "C",
+          "text": "Liver function test",
+          "is_correct": false,
+          "explanation": "ช่วย characterize cholestasis แต่ไม่ specific สำหรับ biliary atresia"
+        },
+        {
+          "label": "D",
+          "text": "Hepatobiliary scan (HIDA)",
+          "is_correct": false,
+          "explanation": "Second-line หลัง ultrasound ไม่ specific ถ้าทำ ultrasound ได้ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Abdominal CT",
+          "is_correct": false,
+          "explanation": "Radiation exposure ในทารก ไม่ใช่ first-line"
+        }
+      ],
+      "key_takeaway": "Neonatal jaundice workup → Ultrasound ก่อน (ดู biliary atresia vs neonatal hepatitis)"
+    }
+  },
+  {
+    "id": "f650fd90-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ชาย 25 ปี testicular mass → Seminoma เป็น most common testicular tumor ในชายหนุ่ม",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Seminoma) เพราะ seminoma เป็น most common testicular germ cell tumor ในชายอายุ 25-35 ปี",
+      "reason": "Testicular tumors: 95% เป็น germ cell tumors แบ่งเป็น seminoma (50%) และ non-seminoma Seminoma: อายุ 25-35 ปี, well-differentiated, radiosensitive, AFP ปกติ, hCG อาจสูงเล็กน้อย Non-seminoma (embryonal, teratocarcinoma): อายุน้อยกว่า, AFP สูง หรือ hCG สูง Treatment: orchidectomy → radiation/chemo ตาม stage Ependymoma: CNS tumor Androblastoma: sex cord tumor",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Seminoma",
+          "is_correct": true,
+          "explanation": "Most common testicular tumor ในชาย 25-35 ปี radiosensitive, AFP ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Ependymoma",
+          "is_correct": false,
+          "explanation": "เป็น CNS tumor ไม่ใช่ testicular tumor"
+        },
+        {
+          "label": "C",
+          "text": "Androblastoma",
+          "is_correct": false,
+          "explanation": "Sex cord stromal tumor พบน้อย"
+        },
+        {
+          "label": "D",
+          "text": "Benign fibroma",
+          "is_correct": false,
+          "explanation": "Testicular fibroma พบน้อยมาก"
+        },
+        {
+          "label": "E",
+          "text": "Teratocarcinoma",
+          "is_correct": false,
+          "explanation": "Non-seminoma germ cell tumor พบน้อยกว่า seminoma"
+        }
+      ],
+      "key_takeaway": "Testicular mass ในชาย 25-35 ปี → Seminoma เป็น most common diagnosis"
+    }
+  },
+  {
+    "id": "f72b2618-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "อุบัติเหตุรถยนต์ + hematuria → CT abdomen with contrast เป็น best imaging สำหรับ renal trauma",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (CT abdomen with contrast) เพราะ CT with IV contrast เป็น gold standard สำหรับ renal trauma evaluation",
+      "reason": "Renal trauma evaluation: CT abdomen + pelvis with IV contrast เป็น gold standard: ดู renal parenchyma, collecting system, vascular injury, grading (AAST Grade I-V) IVP (one-shot IVP): ใช้ pre-op ถ้า unstable และต้องการ confirm functioning contralateral kidney Retrograde cystography: สำหรับ bladder injury RUG: สำหรับ urethral injury Angiography: สำหรับ vascular injuries ที่ต้องการ embolization",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Angiography",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ vascular injuries ที่ต้องการ embolization ไม่ใช่ first diagnostic"
+        },
+        {
+          "label": "B",
+          "text": "CT abdomen with contrast",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ renal trauma: grading, vascular, collecting system injury"
+        },
+        {
+          "label": "C",
+          "text": "Intravenous pyelogram",
+          "is_correct": false,
+          "explanation": "ใช้ pre-op ในบางกรณี แต่ CT ดีกว่า"
+        },
+        {
+          "label": "D",
+          "text": "Retrograde cystography",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ bladder injury ไม่ใช่ renal"
+        },
+        {
+          "label": "E",
+          "text": "Ultrasound",
+          "is_correct": false,
+          "explanation": "ใช้ screen เบื้องต้น แต่ sensitivity ต่ำกว่า CT สำหรับ renal trauma grading"
+        }
+      ],
+      "key_takeaway": "Renal trauma + hematuria → CT abdomen with contrast เป็น gold standard"
+    }
+  },
+  {
+    "id": "fac9d5fe-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "หญิง 60 ปี แผลฝ่าเท้าเรื้อรังไม่ปวด อยู่บุรีรัมย์ → สงสัย Melioidosis หรือ atypical infection → Biopsy เพื่อวินิจฉัย",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Biopsy) เพราะ chronic non-healing wound ที่ไม่ปวด ในผู้สูงอายุจากภาคอีสาน → ต้องการ tissue diagnosis",
+      "reason": "Chronic non-healing wound ที่ไม่ปวด: ต้องสงสัย malignancy (Marjolin's ulcer), tropical infection (melioidosis, mycetoma), leprosy Biopsy จำเป็นเพื่อได้ histological diagnosis ก่อนรักษา ไม่ควร excise/chemotherapy/radiation โดยไม่มี diagnosis Melioidosis (Burkholderia pseudomallei): พบบ่อยในภาคอีสาน, อาจเป็น chronic form ที่ไม่ปวด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Biopsy",
+          "is_correct": true,
+          "explanation": "ต้องการ tissue diagnosis ก่อนรักษา chronic non-healing wound"
+        },
+        {
+          "label": "B",
+          "text": "Excision",
+          "is_correct": false,
+          "explanation": "ทำหลังจากได้ diagnosis แล้ว ไม่ใช่ขั้นตอนแรก"
+        },
+        {
+          "label": "C",
+          "text": "Chemotherapy",
+          "is_correct": false,
+          "explanation": "ต้องรู้ diagnosis ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "Radiation",
+          "is_correct": false,
+          "explanation": "ต้องรู้ diagnosis ก่อน"
+        }
+      ],
+      "key_takeaway": "Chronic non-healing wound → Biopsy ก่อนเสมอเพื่อ histological diagnosis"
+    }
+  },
+  {
+    "id": "fb2d12dd-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "ชาย 30 ปี ถูกชนที่คอ ขยับแขนขาไม่ได้ → Neurogenic shock จาก spinal cord injury",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Neurogenic shock) เพราะ neck trauma + tetraplegia/paraplegia = spinal cord injury → neurogenic shock",
+      "reason": "Neurogenic shock: เกิดจาก disruption ของ sympathetic pathways ใน spinal cord (T1-L2) ทำให้: vasodilation → hypotension, bradycardia (ไม่มี tachycardia แตกต่างจาก hypovolemic shock) Spinal shock: สูญเสีย reflex ทั้งหมดชั่วคราวหลัง SCI (ไม่ใช่ hemodynamic shock) Hypovolemic shock: tachycardia + cold clammy skin Cardiogenic shock: pump failure Septic shock: infection source",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spinal shock",
+          "is_correct": false,
+          "explanation": "Spinal shock = areflexia ชั่วคราวหลัง SCI ไม่ใช่ hemodynamic instability"
+        },
+        {
+          "label": "B",
+          "text": "Cardiogenic shock",
+          "is_correct": false,
+          "explanation": "ต้องมี cardiac dysfunction/failure"
+        },
+        {
+          "label": "C",
+          "text": "Neurogenic shock",
+          "is_correct": true,
+          "explanation": "SCI (cervical) → loss of sympathetic tone → hypotension + bradycardia = neurogenic shock"
+        },
+        {
+          "label": "D",
+          "text": "Hypovolemic shock",
+          "is_correct": false,
+          "explanation": "Hypovolemic มี tachycardia + cold extremities ไม่มี bradycardia"
+        },
+        {
+          "label": "E",
+          "text": "Septic shock",
+          "is_correct": false,
+          "explanation": "ต้องมี infection source ไม่ใช่ acute trauma"
+        }
+      ],
+      "key_takeaway": "Cervical spine injury + hypotension + bradycardia = Neurogenic shock (ไม่มี tachycardia)"
+    }
+  }
+]

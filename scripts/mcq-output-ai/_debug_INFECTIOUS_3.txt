@@ -1,0 +1,280 @@
+[
+  {
+    "scenario": "ผู้ป่วยได้ penicillin มานาน ต่อมา diarrhea ตรวจ proctoscope พบลักษณะเข้าได้กับ AAC (antibiotic-associated colitis) การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Metronidazole"},
+      {"label": "B", "text": "Vancomycin"},
+      {"label": "C", "text": "Fidaxomicin"},
+      {"label": "D", "text": "Fluconazole"},
+      {"label": "E", "text": "Ciprofloxacin"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "AAC (antibiotic-associated colitis) มักเกิดจาก Clostridioides difficile โดยเฉพาะจากการใช้ penicillin ยาเลือกคือ metronidazole สำหรับ mild-moderate disease หรือ vancomycin สำหรับ severe disease เพิ่มตัวเลือก B, C, D, E เนื่องจากโจทย์มีเพียง 1 ตัวเลือก"
+  },
+  {
+    "scenario": "รูปไข่พยาธิ Opisthorchis viverrini ควรรักษาด้วยยาใด",
+    "choices": [
+      {"label": "A", "text": "Albendazole"},
+      {"label": "B", "text": "Mebendazole"},
+      {"label": "C", "text": "Praziquantel"},
+      {"label": "D", "text": "Niclosamide"},
+      {"label": "E", "text": "Ivermectin"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Opisthorchis viverrini เป็น trematode (พยาธิใบไม้) ยาที่ใช้รักษาคือ praziquantel ซึ่งเป็นตัวเลือกที่เหมาะสมที่สุด albendazole และ mebendazole ใช้สำหรับ roundworm เพิ่มตัวเลือก C, D, E จากโจทย์เดิมที่มี A, B เท่านั้น"
+  },
+  {
+    "scenario": "นางสาว ก. ต้องการสมัครเป็นพยาบาลจึงมาตรวจสุขภาพ ผลปรากฎว่า HBsAg +, HBsAb – ผล liver function test ปกติ ควรทำอย่างไรมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "รักษาด้วย interferon"},
+      {"label": "B", "text": "ให้ HBV vaccine"},
+      {"label": "C", "text": "ตรวจ US abdomen"},
+      {"label": "D", "text": "ตรวจ AFP"},
+      {"label": "E", "text": "ตรวจ HBsAg ซ้ำในอีก 6 เดือน"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "HBsAg + แต่ HBsAb – และ LFT ปกติ แสดงว่าอาจเป็น acute HBV infection หรือ carrier state ควรติดตามตรวจ HBsAg ซ้ำในอีก 6 เดือนเพื่อแยกแยะ acute vs chronic infection อย่างไรก็ตาม หากเป็นผู้ที่มีความเสี่ยง อาจพิจารณาตรวจ HBeAg และ HBV DNA ก่อน"
+  },
+  {
+    "scenario": "ผู้ป่วย HBsAg + HBcIgM + Anti HBe + LFT normal การจัดการที่เหมาะสมคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Follow-up ในอีก 6 เดือน"},
+      {"label": "B", "text": "เริ่มต้นการรักษาด้วย lamivudine"},
+      {"label": "C", "text": "ตรวจ Viral load"},
+      {"label": "D", "text": "ให้คำปลอบใจ (reassure) โรค inactive"},
+      {"label": "E", "text": "ตรวจ HBeAg ตามหลัง"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "HBsAg + HBcIgM + Anti HBe + LFT normal แสดงว่าเป็น acute hepatitis B infection ที่มีขณะนี้ recovery phase (anti-HBe+) ควรติดตามให้ข้อมูล (follow-up) ในอีก 6 เดือนเพื่อดูการตัดสินใจในการรักษา ปัจจุบัน LFT ยังปกติ ยังไม่ต้องเริ่มรักษาด้วยยา"
+  },
+  {
+    "scenario": "ชาย 50 ปี ได้รับการผ่าตัดช่องท้องเนื่องจากถูกแทงลำไส้ทะลุ และได้รับการรักษาต่อด้วย meropenem และ TPN ทางสายสับคลาเวียน 10 วัน ต่อมามีไข้สูงขึ้น CT abdomen ไม่พบ collection UA ไม่พบ WBC ไม่พบ RBC หลังจากตรวจหาสาเหตุแล้ว ท่านจะให้ยาปฏิชีวนะเชิงประจักษ์เป็นอะไร",
+    "choices": [
+      {"label": "A", "text": "Cefepime"},
+      {"label": "B", "text": "Clindamycin"},
+      {"label": "C", "text": "Fluconazole"},
+      {"label": "D", "text": "Metronidazole"},
+      {"label": "E", "text": "Tetracycline"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย ICU ได้รับ meropenem แล้ว ไข้ขึ้นใหม่ ไม่พบ collection ในท้อง ไม่พบ UTI อาจเป็นfungal infection โดยเฉพาะ Candida จากการได้รับ TPN ทางสายสับคลาเวียน ควรเริ่มต้นด้วย fluconazole เป็น empirical therapy สำหรับ candidiasis"
+  },
+  {
+    "scenario": "ผู้ป่วยไม่มีประวัติโรคตับ ผลตรวจเลือด: HBsAg –ve HBeAg –ve antiHBcIgM +ve antiHBcIgG +ve antiHBsIgG +ve การวินิจฉัยคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Acute hepatitis B infection"},
+      {"label": "B", "text": "Asymptomatic HBV carrier"},
+      {"label": "C", "text": "Post immunization"},
+      {"label": "D", "text": "Post infection (recovery)"},
+      {"label": "E", "text": "Chronic hepatitis B infection"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "HBsAg –ve antiHBc IgM +ve antiHBc IgG +ve antiHBs IgG +ve แสดงถึง post-infection phase (ผู้ที่หายจาก HBV infection แล้ว) IgM บ่งชี้การติดเชื้อในอดีตที่ไม่ห่างไกลเกินไป antiHBc IgG + antiHBs IgG + บ่งชี้ความเสียหายและการหายจากเชื้อแล้ว ต่างจาก post-immunization ที่จะมี anti-HBs เท่านั้น"
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี ดูแลสามีที่เป็น hepatitis B มาปรึกษาท่านว่าจะฉีดวัคซีนป้องกัน ถ้าท่านเป็นแพทย์ท่านจะแนะนำให้ฉีดอะไร",
+    "choices": [
+      {"label": "A", "text": "Pneumococcal vaccine"},
+      {"label": "B", "text": "Influenza vaccine"},
+      {"label": "C", "text": "Hepatitis B vaccine"},
+      {"label": "D", "text": "Hepatitis A vaccine"},
+      {"label": "E", "text": "Varicella vaccine"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ที่มีสัมผัสใกล้ชิดกับผู้ป่วย hepatitis B (คู่ครอบครัว) และยังไม่มีภูมิคุ้มกัน ควรได้รับวัคซีน hepatitis B เพื่อป้องกันการติดเชื้อ เพิ่มตัวเลือก D และ E เนื่องจากโจทย์เดิมมีแค่ 3 ตัวเลือก"
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัยกลางคน ชักแบบ generalized tonic-clonic ปฏิเสธประวัติอุบัติเหตุหรือการใช้สารเสพย์ติด ไม่เคยมีอาการชักแบบนี้มาก่อน ไม่มีไข้ การตรวจร่างกายไม่พบ neurological deficit แต่พบว่ามี papilledema ผล CT scan: multiple calcified cystic lesions เชื้อก่อโรคคือ",
+    "choices": [
+      {"label": "A", "text": "Taenia solium"},
+      {"label": "B", "text": "Taenia saginata"},
+      {"label": "C", "text": "Toxocara"},
+      {"label": "D", "text": "Toxoplasma"},
+      {"label": "E", "text": "Gnathostoma"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ภาพ multiple calcified cystic lesions ในสมองพร้อมกับ papilledema และชักนั้น classic สำหรับ neurocysticercosis ซึ่งเกิดจาก Taenia solium larva stage"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี ไปเยี่ยมสถานรับเลี้ยงเด็กมาเมื่อ 2 สัปดาห์ก่อนมาโรงพยาบาล ต่อมามีอาการอ่อนแรงของแขนขา เพิ่มขึ้นเรื่อยๆ แพทย์ทำการตรวจร่างกายพบว่ามี upper motor power 4/5, lower 1/5, absent DTR การวินิจฉัยคือ",
+    "choices": [
+      {"label": "A", "text": "Transverse myelitis"},
+      {"label": "B", "text": "Guillain-Barré syndrome"},
+      {"label": "C", "text": "Myasthenia gravis"},
+      {"label": "D", "text": "Neurosyphilis"},
+      {"label": "E", "text": "Poliomyelitis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ประวัติการติดเชื้อ (การไปเยี่ยมศูนย์เลี้ยง) 2 สัปดาห์ก่อน พร้อมอาการผ่อนแรงแขนขาแบบ ascending paralysis และ absent DTR นั้น classic สำหรับ GBS (Guillain-Barré syndrome) ซึ่งมักเกิดหลังจากติดเชื้อ"
+  },
+  {
+    "scenario": "ชาย 20 ปี ไข้สูง ปวดหัว การตรวจร่างกาย: subconjunctival hemorrhage BT 39°C, stiff neck positive, petechiae and purpura ทั้งสองขา จงบอก organism",
+    "choices": [
+      {"label": "A", "text": "Neisseria meningitidis"},
+      {"label": "B", "text": "Klebsiella influenzae"},
+      {"label": "C", "text": "Streptococcus pneumoniae"},
+      {"label": "D", "text": "Staphylococcus aureus"},
+      {"label": "E", "text": "Mycoplasma pneumoniae"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ลักษณะของ petechiae และ purpura ทั่วตัว พร้อมกับ meningitis (stiff neck, fever) นั้น highly suggestive ของ meningococcal meningitis ซึ่งเกิดจาก Neisseria meningitidis"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี ทำอาชีพปลูกผัก ไข้มา 5 วัน ปวดศีรษะมาก มี lymph node cervical โต 2 ข้าง conjunctival injection ไม่มี jaundice stiff neck negative CBC: WBC 10,000 PMN 50% Lymph 50% จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Melioidosis"},
+      {"label": "B", "text": "Scrub typhus"},
+      {"label": "C", "text": "Dengue infection"},
+      {"label": "D", "text": "Viral meningitis"},
+      {"label": "E", "text": "Leptospirosis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ปลูกผัก (exposure to mites) มีไข้ ปวดศีรษะ cervical lymphadenopathy conjunctival injection นั้น classic สำหรับ scrub typhus (Orientia tsutsugamushi) ซึ่งมักมี eschar ที่จุดกัด mite"
+  },
+  {
+    "scenario": "ชายอายุ 25 ปี มาด้วยไข้ ปวดศีรษะ ชักเกร็งที่หน้าและแขนด้านซ้าย LP: WBC 12 (Lymph 95%) protein 65 glucose 45 RBC 10-20 gram stain and india ink negative จงให้การรักษา",
+    "choices": [
+      {"label": "A", "text": "Acyclovir"},
+      {"label": "B", "text": "Antifungal"},
+      {"label": "C", "text": "Antibiotics"},
+      {"label": "D", "text": "Anti-TB"},
+      {"label": "E", "text": "Supportive care only"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "CSF lymphocytic pleocytosis (95% lymph) protein normal-slightly elevated glucose normal ปกติ กรั่ม stain negative india ink negative รวมกับ focal seizure และ fever นั้น suggestive ของ herpes simplex encephalitis ซึ่งควรรักษาด้วย acyclovir"
+  },
+  {
+    "scenario": "CSF ผล: open pressure 30 cmH2O protein 550 sugar 20 ผู้ป่วยมาด้วยอาการไข้ ปวดศีรษะ การวินิจฉัยคือ",
+    "choices": [
+      {"label": "A", "text": "Toxoplasmosis meningitis"},
+      {"label": "B", "text": "CMV meningitis"},
+      {"label": "C", "text": "Tuberculous meningitis"},
+      {"label": "D", "text": "Bacterial meningitis"},
+      {"label": "E", "text": "Fungal meningitis"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "CSF protein สูงมาก (550) sugar ต่ำมาก (20) นั้น classic pattern สำหรับ tuberculous meningitis ซึ่งมักมี lymphocytic pleocytosis protein elevation และ glucose lowering ลักษณะนี้แตกต่างจาก fungal/toxoplasma meningitis"
+  },
+  {
+    "scenario": "ผู้ป่วย 40 ปี มีไข้ 1 สัปดาห์ถึง 1 เดือน ปวดศีรษะ กินยาแล้วไม่ดีขึ้น ซึมไม่รู้สึกตัวมา 2 วัน BT 38.5°C PR 100 bpm BP 110/70 mmHg RR 20/min unconscious stiff neck (+) LP: open pressure 40 mmHg close pressure 30 mmHg CSF: WBC 450 cell/cu.mm N 15% L 85% protein 400 sugar 25 (BS 120 mg/dl) ให้ยาอะไร",
+    "choices": [
+      {"label": "A", "text": "Acyclovir"},
+      {"label": "B", "text": "Amphotericin B"},
+      {"label": "C", "text": "Anti-TB drugs"},
+      {"label": "D", "text": "Ceftriaxone"},
+      {"label": "E", "text": "Co-trimoxazole"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "CSF pattern: protein สูง 400 glucose ต่ำ 25 lymphocytic pleocytosis 450 cells ไข้ยาวนาน (1 wk-1 mo) ซึมลง high intracranial pressure นั้น classic ของ tuberculous meningitis ควรเริ่มต้น anti-TB drugs ด่วน"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 18 ปี มาด้วยไข้ปวดเมื่อยตามตัว คลื่นไส้ อาเจียนนาน 4 วัน วันนี้ซึมลง V/S: BT 36.5°C BP 80/50 PR 120 CBC: Hct 58% WBC 2600 N 12% L 80% M 6% E 2% B 0% plt 35,000 การรักษาคือ",
+    "choices": [
+      {"label": "A", "text": "Dopamine"},
+      {"label": "B", "text": "Ceftriaxone"},
+      {"label": "C", "text": "NSS loading (normal saline solution)"},
+      {"label": "D", "text": "Dexamethasone"},
+      {"label": "E", "text": "Platelet concentrate"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีอาการไข้ myalgia ลดลง บวมเบื่อ และมี shock state (BP 80/50 HR 120) รวมกับ hemoconcentration (Hct 58%) thrombocytopenia (plt 35,000) leukopenia นี้ consistent with dengue hemorrhagic fever/dengue shock syndrome ควรเริ่มต้นด้วย fluid resuscitation NSS ทันที"
+  },
+  {
+    "scenario": "ผู้ป่วยสูงอายุมีโรคประจำตัวเป็น DM with HT แพทย์ทำการตรวจร่างกายเบื้องต้น พบ costovertebral angle tenderness การรักษาคือ",
+    "choices": [
+      {"label": "A", "text": "Ceftriaxone IV"},
+      {"label": "B", "text": "Ceftriaxone p.o."},
+      {"label": "C", "text": "Ofloxacin p.o."},
+      {"label": "D", "text": "Trimethoprim-sulfamethoxazole p.o."},
+      {"label": "E", "text": "Amoxicillin-clavulanic acid p.o."}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Costovertebral angle tenderness ในผู้ป่วย DM พบ acute pyelonephritis ผู้ป่วยสูงอายุและมีโรคประจำตัว ควรรักษาด้วยปฏิชีวนะ IV ยาเลือกคือ ceftriaxone หรือ fluoroquinolone"
+  },
+  {
+    "scenario": "ผู้ป่วยใน ICU เป็น subarachnoid hemorrhage ใส่ endotracheal tube และ Foley's catheter 1 สัปดาห์ต่อมาปัสสาวะมีสีขุ่นย้อมเป็น Candida albicans การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือ",
+    "choices": [
+      {"label": "A", "text": "Itraconazole"},
+      {"label": "B", "text": "Clotrimazole"},
+      {"label": "C", "text": "Fluconazole"},
+      {"label": "D", "text": "Amphotericin B"},
+      {"label": "E", "text": "ถอด Foley's catheter"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Candida albicans ในปัสสาวะ (candiduria) ของผู้ป่วย ICU ที่มี Foley's catheter นั้น มักเกิดจากการติดเชื้อบนสาย การจัดการที่สำคัญที่สุดคือ ถอด Foley's catheter เพื่อลบแหล่งติดเชื้อ และหลายรายไม่จำเป็นต้องให้ยา antifungal"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี มาด้วยปัสสาวะสีเข้มมา 2 วัน BP 140/100 UA: RBC >100/hpf WBC 10/hpf with red cell cast protein 1+ ควรรักษาด้วยยาใด",
+    "choices": [
+      {"label": "A", "text": "Norfloxacin"},
+      {"label": "B", "text": "Furosemide"},
+      {"label": "C", "text": "Prednisolone"},
+      {"label": "D", "text": "Ceftriaxone"},
+      {"label": "E", "text": "Sodium nitroprusside"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยหนุ่มมี hematuria red cell cast protein อักเสบ BP สูง pattern นี้ suggest post-infectious glomerulonephritis (PIGN) ซึ่งมักเกิดจากเชื้อหลังการติดเชื้อ การจัดการคือ supportive care ให้ corticosteroid (prednisolone) และปรับ BP ด้วย antihypertensive"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 35 ปี มีไข้ต่ำๆ ปวดข้อเข่าและข้อมือมา 4 วันก่อนมาโรงพยาบาล แพทย์เจาะน้ำข้อเข่า ตรวจพบ WBC = 89,000 PMN = 90% G/S: gram negative diplococci intracellular การรักษาที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Cloxacillin"},
+      {"label": "B", "text": "Gentamicin"},
+      {"label": "C", "text": "Ceftriaxone"},
+      {"label": "D", "text": "Doxycycline"},
+      {"label": "E", "text": "Metronidazole"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Gram negative diplococci intracellular ในน้ำข้อ (synovial fluid) พบมากที่สุดคือ Neisseria gonorrhoeae ซึ่งเกิดจาก septic arthritis โดย gonococci ยาเลือกคือ ceftriaxone"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 40 ปี มีอาการปวดบวมต้นขาซ้ายและมีไข้ แพทย์ทำการตรวจร่างกายพบ BT = 39°C erythema and tender at left upper thigh เจาะแล้วได้หนอง เชื้อก่อโรคในข้อใดต่อไปนี้น่าจะทำให้เกิดอาการในผู้ป่วยรายนี้มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Staphylococcus aureus"},
+      {"label": "B", "text": "Streptococcus pyogenes"},
+      {"label": "C", "text": "Haemophilus influenzae"},
+      {"label": "D", "text": "Pseudomonas aeruginosa"},
+      {"label": "E", "text": "Clostridium perfringens"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes

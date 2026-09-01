@@ -1,0 +1,255 @@
+[
+  {
+    "scenario": "ชาย 20 ปี ไข้สูง 5 วัน ปวดหัว คลื่นไส้แต่ไม่อาเจียน PE: mild conjunctival injection ไม่มีไขมัน V/S: BT 39.5°C, PR 90, RR 14, BP 120/90 ตับโต 1 นิ้ว RBCM span 11 cm petechiae บริเวณแขนขา CBC: Hct 45% WBC 4,300 N50% L40% M3% atypL 7% plt 60,000 จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "leptospirosis"},
+      {"label": "B", "text": "DHF (Dengue Hemorrhagic Fever)"},
+      {"label": "C", "text": "scrub typhus"},
+      {"label": "D", "text": "malaria"},
+      {"label": "E", "text": "enteric fever"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ข้อมูล clinical findings ชี้ไป scrub typhus: ไข้ 5 วัน ปวดหัว conjunctival injection ตับโต mild thrombocytopenia atypical lymphocytes โดย DHF จะมีอาการหนักกว่า (มี warning signs) leptospirosis จะมี renal involvement มากกว่า malaria จะมี P. falciparum gametocytes ใน blood smear"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี บ้านอยู่จังหวัดนราธิวาส มีไข้ 4 วัน ต่อมามีผื่น 2 วันต่อมาเริ่มมีอาการปวดเข่า 2 ข้าง วันนี้มีอาการปวดข้อเท้าและข้อศอกทั้ง 2 ข้าง ตรวจร่างกาย BT 40°C BP 100/80 maculopapular rash at trunk and extremities swelling warm and tenderness with limitation of movement both knees ankles and elbows Hct 40% WBC 3,500 (N45% L50% atypL5%) plt 45,000 โรคใดที่ผู้ป่วยมีโอกาสเป็นมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "ricketsial infection"},
+      {"label": "B", "text": "Chikungunya infection"},
+      {"label": "C", "text": "acute gouty arthritis"},
+      {"label": "D", "text": "acute rheumatoid arthritis"},
+      {"label": "E", "text": "disseminated gonococcal arthritis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ลักษณะ clinical presentation ชี้ไป Chikungunya: fever → rash → polyarthralgia (เอกลักษณ์ของ Chikungunya) ที่เกิดขึ้นต่อเนื่องแบบขั้นตอน โดยมี rash at trunk and extremities thrombocytopenia ที่ไม่รุนแรง ผู้ป่วยอาศัยอยู่ที่ Narathiwat (endemic area) Rickettsial infection จะมี eschar"
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี บ้านอยู่จังหวัดกาฬสินธุ์ มีไข้ ไอ เรื้อรังมา 1 เดือน เหนื่อยง่ายขึ้นมา 2 สัปดาห์ BT 39°C RR 28 PR 100 BP 140/80 pale conjunctiva ไม่มีไขมัน ตับโตเพียงเล็กน้อย positive splenic dullness LAB: glucose 260 BUN 50 Cr 4.0 CXR: patchy infiltration both lower lung field US abdomen: splenomegaly with multiple hypoechoic lesions ผู้ป่วยน่าจะเป็นโรคใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Leptospirosis"},
+      {"label": "B", "text": "Melioidosis"},
+      {"label": "C", "text": "Salmonellosis"},
+      {"label": "D", "text": "disseminated TB"},
+      {"label": "E", "text": "amoebic liver abscess"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ข้อมูล clinical findings ชี้ไป Melioidosis: chronic fever with cough from Northeast Thailand (endemic area) splenomegaly with multiple hypoechoic lesions (characteristic of melioidosis) hyperglycemia (blood glucose 260) renal involvement (elevated Cr BUN) CXR with patchy infiltration Disseminated TB อาจมี hypoechoic lesions แต่ splenomegaly with multiple lesions มากกว่าใน melioidosis"
+  },
+  {
+    "scenario": "นักศึกษามาปรึกษาท่านเรื่องจะไปเดินป่าที่กาญจนบุรี 3 วัน 2 คืน ต้องการป้องกันโรคมาลาเรีย จะแนะนำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "ไม่ต้องทำอะไร เป็นแล้วค่อยรักษา"},
+      {"label": "B", "text": "ทาหลบยุงตลอดโดยเฉพาะตอนกลางคืน"},
+      {"label": "C", "text": "กิน Fansidar 3 วันก่อนเดินป่า"},
+      {"label": "D", "text": "กิน Doxycycline 7 วันก่อน และหลังเข้าป่า 4 สัปดาห์"},
+      {"label": "E", "text": "กิน Quinine 3 วันก่อนเข้าป่า และกินทุกวันขณะอยู่ในป่า"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "สำหรับการป้องกัน malaria โดยเฉพาะใน endemic area เช่น Kanchanaburi ควรให้ Doxycycline (ปกติ 100 mg/day) เริ่ม 1-2 วันก่อน เข้า และกินต่อจนครบ 4 สัปดาห์หลังออกจากพื้นที่ Fansidar ใช้น้อยลงแล้วเนื่องจาก resistance Quinine เป็นยาสำหรับรักษา ไม่ใช่ prophylaxis"
+  },
+  {
+    "scenario": "ให้รูป blood smear มาร่วมกับอาการของ malaria โดย blood smear มีลักษณะของ double chromatin and multiple ring forms บ่งบอกถึง P. falciparum จงระบุการรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Quinine + Doxycycline"},
+      {"label": "B", "text": "Chloroquine"},
+      {"label": "C", "text": "Mefloquine monotherapy"},
+      {"label": "D", "text": "Artesunate + Mefloquine"},
+      {"label": "E", "text": "Proguanil + Chloroquine"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "สำหรับ P. falciparum malaria ปัจจุบัน first-line treatment คือ Artemisinin derivatives (artesunate) combined with mefloquine เนื่องจากความแพร่หลายของ drug resistance ต่อ chloroquine"
+  },
+  {
+    "scenario": "ผู้ป่วย SLE with progressive GN on cyclophosphamide แล้วมีไข้ ตุ่มแดงต่อมามีสีดำตรงกลาง คล้ายลักษณ์ eschar จงระบุการรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Chloroquine"},
+      {"label": "B", "text": "Azathioprine"},
+      {"label": "C", "text": "Corticosteroid"},
+      {"label": "D", "text": "Doxycycline"},
+      {"label": "E", "text": "Trimethoprim-Sulfamethoxazole"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ลักษณะ lesion with eschar และ fever ในผู้ป่วย SLE on immunosuppression ชี้ไป scrub typhus (rickettsial infection) ซึ่งรักษาด้วย Doxycycline Eschar เป็น pathognomonic sign ของ scrub typhus"
+  },
+  {
+    "scenario": "ชาย 20 ปี มีไข้ ตัวเหลือง ตาเหลือง แน่นท้อง คลื่นไส้อาเจียน อาการเป็นอยู่นาน 2 สัปดาห์ แล้วดีขึ้นเอง ช่วงนั้นมีน้ำท่วมหอพัก เพื่อนที่อยู่หอพักมีอาการแบบเดียวกัน น่าจะเป็นโรคใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "viral hepatitis A"},
+      {"label": "B", "text": "viral hepatitis B"},
+      {"label": "C", "text": "alcoholic hepatitis"},
+      {"label": "D", "text": "leptospirosis"},
+      {"label": "E", "text": "scrub typhus"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Key findings: ไข้ ไอมนุษ์ (jaundice) ท้องอืด อาเจียน 2 สัปดาห์ หลังน้ำท่วม เพื่อนเพื่อนเป็นด้วย → leptospirosis (waterborne transmission) ทั้ง HAV และ leptospirosis เป็น waterborne แต่ leptospirosis มี GI symptoms มากกว่า และเรื้อรังได้ถึง 2 สัปดาห์"
+  },
+  {
+    "scenario": "ผู้ป่วย ALL ได้เคมีบำบัด 2 ครั้ง 1 สัปดาห์ที่แล้ว แล้ววันนี้ไข้สูงมา 2 วัน มีอาการ thrombophlebitis และรอยแผลคล้ายดำเดิมบริเวณข้อพับแขน (eschar) มี nodule ลงไปด้วย ตรวจ: BT 39°C BP 90/70 WBC 1,000 (N10% L90%) Hct 25% plt 50,000 คาดว่าเชื้อใดทำให้เกิดโรค",
+    "choices": [
+      {"label": "A", "text": "Staphylococcus aureus"},
+      {"label": "B", "text": "Streptococcus pyogenes"},
+      {"label": "C", "text": "Pseudomonas aeruginosa"},
+      {"label": "D", "text": "Escherichia coli"},
+      {"label": "E", "text": "Vibrio cholerae"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี severe immunosuppression (WBC 1,000) หลังเคมีบำบัด thrombophlebitis eschar-like lesion → ecthyma gangrenosum (characteristic of P. aeruginosa) ซึ่งเกิดได้ในผู้ป่วย immunocompromised P. aeruginosa เป็นเชื้อ gram-negative rod ที่ทำให้เกิด opportunistic infection ในผู้ป่วย neutropenic"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 68 ปี แพทย์ทำการตรวจร่างกายเบื้องต้นทั้งหมด และพบว่าปกติดี ไม่มีประวัติเจ็บป่วยใหญ่ จะให้วัคซีนใด",
+    "choices": [
+      {"label": "A", "text": "Rabies vaccine"},
+      {"label": "B", "text": "Tetanus vaccine"},
+      {"label": "C", "text": "HBV vaccine"},
+      {"label": "D", "text": "Influenza vaccine"},
+      {"label": "E", "text": "HPV vaccine"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "สำหรับผู้สูงอายุ (age ≥65 years) ควรให้ influenza vaccine ทุกปี เพราะ elderly มี risk สูงต่อ complications HPV vaccine ไม่เหมาะสำหรับ age 68 ปี Rabies ให้แต่เมื่อสัมผัสเชื้อ Tetanus vaccine ให้ booster ทุก 10 ปี HBV vaccine ให้เมื่อมี risk factor"
+  },
+  {
+    "scenario": "ในการป้องกันการแพร่ระบาดของวัณโรคปอดในบุคลากรทางสาธารณสุขที่โรงพยาบาล ข้อใดมีประสิทธิภาพที่สุด",
+    "choices": [
+      {"label": "A", "text": "ให้ผู้ป่วยวัณโรคทั้งหมดกินยาป้องกัน"},
+      {"label": "B", "text": "ให้ผู้ป่วยที่สงสัยวัณโรคสวมหนากาก"},
+      {"label": "C", "text": "ให้บุคลากรทางการแพทย์สวมหนากากป้องกัน"},
+      {"label": "D", "text": "ติดเครื่องปรับอากาศในหอผู้ป่วย"},
+      {"label": "E", "text": "ย้ายเตียงผู้ป่วยวัณโรคไปอยู่ท้ายวอร์ด"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Source control (ให้ผู้ป่วยสวมหนากาก) มีประสิทธิภาพมากกว่า PPE ของ healthcare workers เนื่องจาก TB droplet transmission มาจากผู้ป่วย การทำให้ผู้ป่วยสวมหนากากลดการส่องทำให้ผู้ป่วยลดการปล่อย droplets ลง 95%"
+  },
+  {
+    "scenario": "ท่านเป็นเจ้าหน้าที่สาธารณสุขในพื้นที่ที่มีน้ำท่วม จะเตรียมยาใดในการออกพื้นที่ชุมชน",
+    "choices": [
+      {"label": "A", "text": "Loperamide"},
+      {"label": "B", "text": "Amoxicillin"},
+      {"label": "C", "text": "Ciprofloxacin"},
+      {"label": "D", "text": "Topical antifungal"},
+      {"label": "E", "text": "Cotrimoxazole"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ในสถานการณ์น้ำท่วม มีความเสี่ยงต่อ waterborne infections เช่น cholera typhoid shigellosis leptospirosis ยาที่เตรียมไว้ควรเป็น broad-spectrum antibiotic เช่น Ciprofloxacin (fluoroquinolone) ที่มีประสิทธิต่อ gram-negative organisms ที่มักเกี่ยวข้องกับ waterborne infections Loperamide ไม่ควรให้ (อาจแ악化) Amoxicillin มี narrow spectrum"
+  },
+  {
+    "scenario": "รพ.ชุมชน ได้รับรายงานผู้ป่วย Pertussis จะทำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "ตรวจวิจัย ยืนยันการเป็นโรค"},
+      {"label": "B", "text": "ตรวจการระบาด โดยดูจำนวนคนที่ได้รับวัคซีน pertussis"},
+      {"label": "C", "text": "ให้ยาอากีโซไซลินแก่ผู้ป่วยและผู้ที่ติดต่อใกล้ชิด"},
+      {"label": "D", "text": "ตรวจผู้ที่ติดต่อใกล้ชิดทั้งหมด"},
+      {"label": "E", "text": "ส่งรายงานไปยังสำนักงานสาธารณสุขจังหวัด"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Step แรกในการรักษา pertussis case คือ ตรวจวิจัยและยืนยันการเป็นโรค (confirm diagnosis) ขั้นตอนนี้จำเป็นก่อนการดำเนินการอื่น ๆ เช่น contact tracing treatment"
+  },
+  {
+    "scenario": "หญิง 27 ปี เจ็บคอมา 2 สัปดาห์ PE: white patch เต็มคออาจเข้าไปยังลิ้นและเนื้อเยื่ออื่น ๆ จงระบุการตรวจที่ส่งเพื่อให้ได้เหตุผลของโรคที่ดีที่สุด",
+    "choices": [
+      {"label": "A", "text": "KOH prep and culture for Candida"},
+      {"label": "B", "text": "HIV antibody test"},
+      {"label": "C", "text": "CD4 count"},
+      {"label": "D", "text": "Throat culture for Streptococcus"},
+      {"label": "E", "text": "Rapid test for EBV"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "White patch ที่ครอบคลุมในปากและลิ้น (extensive oral candidiasis) ในหญิง 27 ปี ชี้ไป immunocompromised state (HIV) มากกว่าโรคธรรมชาติ ขั้นแรกควร test HIV ก่อน ถ้า HIV (+) ก็ตรวจ CD4 count และปล่อย candidiasis ให้ใช้ antifungal"
+  },
+  {
+    "scenario": "ผู้ช่วยพยาบาลประจำห้องฉุกเฉินโดนเข็มตาจากการเจาะเลือดผู้ป่วยเมาสุรา มีเลือดออกเล็กน้อย ได้ทำแผลและใส่ Betadine แล้ว การปฏิบัติตัวที่เหมาะสมสำหรับผู้ช่วยพยาบาลรายนี้คือข้อใด",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการ ไม่ต้องทำอะไร"},
+      {"label": "B", "text": "ขอผู้ป่วยตรวจเลือดหา Antigen HIV"},
+      {"label": "C", "text": "เริ่มกินยา Antiviral ได้ทันที"},
+      {"label": "D", "text": "รอตรวจเลือดซ้ำอีก 6 สัปดาห์"},
+      {"label": "E", "text": "ส่งเลือดผู้ป่วยตรวจหา Antigen HIV"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Post-exposure prophylaxis (PEP) สำหรับ needlestick injury: (1) ส่งเลือดผู้ป่วยทดสอบหา HIV immediately (2) เก็บ baseline serum จาก healthcare worker (3) ถ้าผู้ป่วย HIV+ ให้ antiviral ทันที (ต้องเริ่มใน 2 ชั่วโมง) (4) follow-up test ที่ 6 สัปดาห์ 3 เดือน และ 6 เดือน"
+  },
+  {
+    "scenario": "ผู้ป่วย HIV เป็น Meningitis โดย CSF: glucose ลด protein เพิ่ม CD4 >250 Indian ink negative การวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Cryptococcal meningitis"},
+      {"label": "B", "text": "TB meningitis"},
+      {"label": "C", "text": "Viral meningitis"},
+      {"label": "D", "text": "Bacterial meningitis"},
+      {"label": "E", "text": "Toxoplasma meningitis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "CSF: ↓glucose ↑protein Indian ink negative ใน HIV meningitis สามารถเป็น TB หรือ Cryptococcal แต่ Cryptococcal จะ Indian ink positive ในส่วนใหญ่ TB meningitis CSF findings: ↓glucose (มาก) ↑protein (มาก) lymphocytic pleocytosis Indian ink negative → TB meningitis ถูก"
+  },
+  {
+    "scenario": "ผู้ป่วย HIV มีอาการท้องเสีย ให้ slide stool exam ด้วย modified AFB stain พบเป็น oocyst ขนาด 3-6 micrometer จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Cyclospora cayetanensis"},
+      {"label": "B", "text": "Cryptosporidium species"},
+      {"label": "C", "text": "Entamoeba histolytica"},
+      {"label": "D", "text": "Isospora belli"},
+      {"label": "E", "text": "Histoplasma capsulatum"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Oocyst ขนาด 3-6 micrometer ที่ stain ด้วย modified AFB → Isospora belli (Cystoisospora belli) Cyclospora มี 8-10 micrometer Cryptosporidium มี 4-6 micrometer แต่มี thin wall ที่ AFB stain ได้อ่อนกว่า Isospora จำนวน 20-30 micrometer"
+  },
+  {
+    "scenario": "ชาย 35 ปี มี white patch ที่ลิ้นมาหลายเดือน ไม่มีอาการ ไม่มีไข้ HIV: positive CD4 250 การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Oral antifungal + Oral antiretroviral"},
+      {"label": "B", "text": "Topical antifungal + Oral antiretroviral"},
+      {"label": "C", "text": "Oral antifungal monotherapy"},
+      {"label": "D", "text": "Topical antifungal monotherapy"},
+      {"label": "E", "text": "Oral antiretroviral monotherapy"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Oral candidiasis (white patch) ในผู้ป่วย HIV+ CD4 250 ต่ำกว่า 250 cells/μL จำเป็นต้อง: (1) Oral antifungal (เช่น fluconazole) สำหรับ treatment (2) Oral antiretroviral (ART) เพื่อ restore immunity และ prevent relapse Topical antifungal อพอเพียงต่อ CD4 ต่ำ"
+  },
+  {
+    "scenario": "ผู้ป่วย HIV+ TB ได้กินยา TB 1 เดือนแล้ว จึงทำน GPOvir (Thai generic ART regimen) ต่อ 2 เดือน พบ lymph node โตหลายก้อน เกิดจากอะไร",
+    "choices": [
+      {"label": "A", "text": "toxoplasma"},
+      {"label": "B", "text": "histoplasma"},
+      {"label": "C", "text": "Adverse effect จาก GPOvir"},
+      {"label": "D", "text": "relapse TB LN"},
+      {"label": "E", "text": "IRIS (Immune Reconstitution Inflammatory Syndrome)"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Lymph node enlargement หลัง 2 เดือน ART initiation ใน HIV+ TB patient → IRIS (Immune Reconstitution Inflammatory Syndrome) ตามลำดับเหตุการณ์: TB medications → immune recovery → paradoxical worsening of TB manifestations IRIS TB-associated IRIS คือ deterioration clinical status ของ TB after ART start"
+  },
+  {
+    "scenario": "ผู้ป่วย HIV+ IVDU (intravenous drug user) มีไข้ systolic murmur at left upper parasternal border ปวดข้อ เกิดจากเชื

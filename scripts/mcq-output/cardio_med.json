@@ -1,0 +1,1284 @@
+{
+  "filename": "Cardio med",
+  "subject": "cardio_med",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 70,
+    "no_choices": 53,
+    "few_choices": 5,
+    "good": 12,
+    "no_scenario": 0,
+    "short_scenario": 32
+  },
+  "issues": [
+    {
+      "index": 1,
+      "question_number": 2,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงอายุ 65 yr U/D HTN ,glaucoma ซื้อยากินเอง ญาติพบหมดสติ ไม่รู้สึกตัว P",
+      "choices_count": 3
+    },
+    {
+      "index": 10,
+      "question_number": 4,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ให้EKG มาเป็นลักษณะ tall peak T จะ managementอะไร",
+      "choices_count": 3
+    },
+    {
+      "index": 11,
+      "question_number": 5,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายอายุ 73 ปี มาด้วยอาการเหนื่อยแน่นหน้าอก ตรวจร่างกาย BP 200/110 PR110 R",
+      "choices_count": 3
+    },
+    {
+      "index": 12,
+      "question_number": 6,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ยาที่ควรใช้ลดความดันโลหิตในผู้ป่วยเบาหวานและ COPD คือยาใด",
+      "choices_count": 3
+    },
+    {
+      "index": 13,
+      "question_number": 30,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิงอายุ 60 ปี เป็นเบาหวานมา 3 ปี FBS ประมาณ 140-160 HbA1C 7.8% มี hypertension ",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "HCTZ",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Amlodipine",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Atenolol",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Enalapril",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Lifestyle modification",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 41,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 55 ปี ไอแห้ง ๆ มานาน 2 สัปดาห์ ไม่มีไข้ ไม่เคยสูบบุหรี่ ได้ยา enalapril และ ",
+      "choices_count": 0
+    },
+    {
+      "index": 20,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "chest x-ray",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "dextromethorphan",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "inhaled corticosteroids",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "reduced amlodipine dosage",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "หยุด enalapril",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 47,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย อายุ 60 ปี เป็น MI มา 6 เดือน 1 wks มีเหนื่อยหอบ BP 80/60 mmHg Puffy eye lid",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Lanoxin",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Morphine",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Furosemide",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 167,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้หญิงอายุ 64 ปี มี BT 37 c BP 160/110 mmHg PR 60 bpm ยาลดความดันข้อใดเหมาะสมที",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Thiazide",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Atenolol",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Enalapril",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Doxasozin",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Ditiazem",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 60ปี long standing HT and CAD ,present ด้วย pulmonary edema PE : BP : Lt arm",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Renal artery stenosis",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "aortic dissection",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "coronary artery dissection",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "pheochromocytoma",
+      "choices_count": 0
+    },
+    {
+      "index": 42,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 25ปี มาด้วย progressive shortness of breath PE RR25 PR120 BP150/80 O2sat91%",
+      "choices_count": 0
+    },
+    {
+      "index": 43,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CXR",
+      "choices_count": 0
+    },
+    {
+      "index": 44,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CKMB Trop-T",
+      "choices_count": 0
+    },
+    {
+      "index": 45,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "CT angiogram of chest",
+      "choices_count": 0
+    },
+    {
+      "index": 46,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Coronary artery angiography",
+      "choices_count": 0
+    },
+    {
+      "index": 47,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Doppler U/s both leg",
+      "choices_count": 0
+    },
+    {
+      "index": 49,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "บ่าย หญิง เป็น HT on enarapril 20mg/dกับ amlodipine10mg/d อยู่ มาด้วย บวม ตรวจร่",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "24hr urine protein",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "echocardiogram",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CXR",
+      "choices_count": 0
+    },
+    {
+      "index": 53,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "furosemide",
+      "choices_count": 0
+    },
+    {
+      "index": 54,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "discontinue amlodipine",
+      "choices_count": 0
+    },
+    {
+      "index": 55,
+      "question_number": 8,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ชาย dm ht Na 140 k 7 ekg tall peak T",
+      "choices_count": 2
+    },
+    {
+      "index": 56,
+      "question_number": 9,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 65 ปี on asa/simvas/enalapril/amlodipine มาตลอด เมื่อ2เดือนก่อนไปหาหมอออโถ ",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "simvas",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "enalapril",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "amlodipine\n4neprexon",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "tramadol",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 10,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ญ มาด้วย intermittent palpitation hr 122/min irregular ให้ ekg มาเปนแบบ AF ให้ยา",
+      "choices_count": 0
+    },
+    {
+      "index": 62,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "digoxin",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "atenolol",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "amlodipine",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "amiodalone",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 11,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "60ปี U/D DM HT มาด้วย TIA พบ idiopathic atrial fibrillation ควรทาอย่างไรเพื่อป้อ",
+      "choices_count": 0
+    },
+    {
+      "index": 67,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "warfarin",
+      "choices_count": 0
+    },
+    {
+      "index": 68,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "aspirin",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "clopidogrel\nA 50-year-old man has acute chest discomfort 3 days. His father deat",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "ชายอายุ 77 ปี หมดสติ คลา carotid pulse ไม่ได้ ทา chest compression ไป ekg : asystole ทำอะไรต่อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Adrenaline"
+        },
+        {
+          "label": "B",
+          "text": "Amiodarone"
+        },
+        {
+          "label": "C",
+          "text": "Defrib 200 J"
+        },
+        {
+          "label": "D",
+          "text": "Cardioverse 100 J"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยหญิงอายุ 65 yr U/D HTN ,glaucoma ซื้อยากินเอง ญาติพบหมดสติ ไม่รู้สึกตัว PE: ซึม, BP 140/90 ,disorentated to time-place-person, Lab : hypoNa ,hypoK, hypoCl, CO2 35 BUN 40 Cr 1.6 ถามว่าอาการดังกล่าวเกิดจากยาตัวใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "acetazolamide"
+        },
+        {
+          "label": "B",
+          "text": "HCTZ"
+        },
+        {
+          "label": "C",
+          "text": "spinorolactone"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยชายอายุ 30 ปี เหนื่อย อ่อนเพลีย BP 160/110 PR 70 อื่นๆปกติ Na 154 K 2.2 HCO3 32 การวินิจฉัยที่เหมาะสมคือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Essential HT"
+        },
+        {
+          "label": "B",
+          "text": "Hyperthyroid"
+        },
+        {
+          "label": "C",
+          "text": "Pheochromocytoma"
+        },
+        {
+          "label": "D",
+          "text": "1st hyperaldosterone"
+        },
+        {
+          "label": "E",
+          "text": "Cushing syndrome"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยหญิงอายุ 68 yr U/D HT กินยาไม่สม่าเสมอ มาด้วยหอบเหนื่อย PE: BP200/110 PR 100 neck vein engorge S3 gallop fine crep both lung Ext: pitting edema lower leg Eye:exudates c wire ring Mx??",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Digoxin"
+        },
+        {
+          "label": "B",
+          "text": "Propanolol"
+        },
+        {
+          "label": "C",
+          "text": "Nifedipine"
+        },
+        {
+          "label": "D",
+          "text": "Nitroglycerine"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ผู้ป่วยชายอายุ 37 yr เจ็บกลางอกร้าวไปไหล่ซ้าย เหงื่อแตก ใจสั่น มีประวัติเป็นโรคหืด ใช้ยาขยายหลอดลมนานๆครั้ง ไม่มีบุคคลในครอบครัวเป็นโรคหัวใจ PE: BP 170/85 PR 110 EKG ST elevation V2-6 การดูแลขั้นต้นในผู้ป่วย รายนี้?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASA + beta-block"
+        },
+        {
+          "label": "B",
+          "text": "ASA + nitrate"
+        },
+        {
+          "label": "C",
+          "text": "ASA + CCB"
+        },
+        {
+          "label": "D",
+          "text": "ASA + BZD"
+        },
+        {
+          "label": "E",
+          "text": "beta-block + heparin"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้ป่วยหญิงอายุ 20 ปี มีไข้มาสามวัน ต่อมามีเจ็บแน่นหน้าอกเหนื่อยง่ายขึ้น นอนราบไม่ได้ ตรวจร่างกาย V/S : BT 39, BP 90/70,PR110 ,RR22 neck vein engorge, decrease heart sound w/ scattering, lung clear ,other WNL",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CHF"
+        },
+        {
+          "label": "B",
+          "text": "Severs MS"
+        },
+        {
+          "label": "C",
+          "text": "Pericarditis"
+        },
+        {
+          "label": "D",
+          "text": "Myocarditis"
+        },
+        {
+          "label": "E",
+          "text": "PE"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ผู้ป่วยหญิงอายุ 23 ปี อาชีพครูโรงเรียนเด็กอนุบาล เคยป่วยเป็นRheumatic fever ตอนอายุ 15 ปีปัจจุบันทางานทั่วไปได้ปกติ ไม่มีอาการหอบเหนื่อย ตรวจร่างกายพบ pansystolic murmur\ngrade II/VI at apex ได้รับการรักษาด้วย Penicillin V มาตลอดควรให้การรักษาผู้ป่วยรายนี้ต่อไปอย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "หยุดยา penicillin"
+        },
+        {
+          "label": "B",
+          "text": "ให้กินยาเฉพาะตอนทาฟัน"
+        },
+        {
+          "label": "C",
+          "text": "กินยาไปจนกระทั่ง อายุ 30 ปี จึงหยุด"
+        },
+        {
+          "label": "D",
+          "text": "กินยาไปจนกระทัง่ อายุ 50 ปีจึงหยุด"
+        },
+        {
+          "label": "E",
+          "text": "ให้กินยาไปตลอดชีวิต"
+        }
+      ],
+      "exam_source": "ศรว 2010"
+    },
+    {
+      "question_number": 1,
+      "scenario": "หญิง 70 ปี U/D: HTN, DLP, DM on HCTZ, Thiazide, Enalapril, ASA, Simvastatin, Fenofobrate นาน 1 ปี ช่วง 6 เดือนที่ผ่านมาปวดขา 2 ข้างเป็นๆ หายๆ นวดหรือนอนพักแล้วอาการไม่ดีขึ้น มีข้อเข่าเสื่อม เดินไม่ค่อยไหวไม่ได้รักษา PE: normal อาการดังกล่าวน่าจะมีสาเหตุมาจากยาใด?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASA"
+        },
+        {
+          "label": "B",
+          "text": "Thiazide"
+        },
+        {
+          "label": "C",
+          "text": "Enalapril"
+        },
+        {
+          "label": "D",
+          "text": "Fenofibrate"
+        },
+        {
+          "label": "E",
+          "text": "Simvastatin"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 2,
+      "scenario": "หญิงอายุ 82 ปี ขณะลุกไปฉี่มีอาการหน้ามืดวูบหนึ่งตรวจร่างกายพบ orthostatic hypotension เกิดจากสาเหตุใดมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypovolemia"
+        },
+        {
+          "label": "B",
+          "text": "AS"
+        },
+        {
+          "label": "C",
+          "text": "Coronary disease"
+        },
+        {
+          "label": "D",
+          "text": "Cardiovascular disease"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยชายอายุ 40 ปี แข็งแรงดี วิ่งมาราธอนได้ 5-10km(30นาที) แล้วเริ่มเหนื่อย วิ่งห่างจากคนอื่น อาเจียน ล้มลงบนพื้น เกร็งกระตุก 2 ครั้ง หมดสติ BT40 PR120 BP160/100 RR30 หายใจดัง อื่นๆปกติดี no focal neurological deficit ปวดหัวมาก Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Heat stroke"
+        },
+        {
+          "label": "B",
+          "text": "TIA"
+        },
+        {
+          "label": "C",
+          "text": "Acute MI"
+        },
+        {
+          "label": "D",
+          "text": "Pulmonary embolism"
+        },
+        {
+          "label": "E",
+          "text": "Intracerebral hemorrhage"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ให้EKG มาเป็นลักษณะ tall peak T จะ managementอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Calcium gluconate"
+        },
+        {
+          "label": "B",
+          "text": "insulin+glucose"
+        },
+        {
+          "label": "C",
+          "text": "kalexalate"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ป่วยชายอายุ 73 ปี มาด้วยอาการเหนื่อยแน่นหน้าอก ตรวจร่างกาย BP 200/110 PR110 RR28 Heart : normal s2 s2 with s3 gallop Ext: pitting edema both leg ให้ยาอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Captopril"
+        },
+        {
+          "label": "B",
+          "text": "Digoxin iv"
+        },
+        {
+          "label": "C",
+          "text": "Nitroglycerine iv"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ยาที่ควรใช้ลดความดันโลหิตในผู้ป่วยเบาหวานและ COPD คือยาใด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Enalapril"
+        },
+        {
+          "label": "B",
+          "text": "Amlodipine"
+        },
+        {
+          "label": "C",
+          "text": "Atenolol"
+        }
+      ],
+      "exam_source": "ศรว 2011"
+    },
+    {
+      "question_number": 30,
+      "scenario": "หญิงอายุ 60 ปี เป็นเบาหวานมา 3 ปี FBS ประมาณ 140-160 HbA1C 7.8% มี hypertension + dyslipidemia วัด BP ครั้งก่อนได้ 140/90 mmHg ครั้งนี้วัดได้ 150/90 mmHg Ht 150 Wt 65 จะ manage อย่างไร (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "HCTZ",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Amlodipine",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Atenolol",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Enalapril",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Lifestyle modification",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 41,
+      "scenario": "ชาย 55 ปี ไอแห้ง ๆ มานาน 2 สัปดาห์ ไม่มีไข้ ไม่เคยสูบบุหรี่ ได้ยา enalapril และ amlodipine มากินเพื่อรักษาความดันโลหิตสูงนาน 2 เดือน PE: lungs are clear ควรทาอย่างไร (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "chest x-ray",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "dextromethorphan",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "inhaled corticosteroids",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "reduced amlodipine dosage",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "หยุด enalapril",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 47,
+      "scenario": "ชาย อายุ 60 ปี เป็น MI มา 6 เดือน 1 wks มีเหนื่อยหอบ BP 80/60 mmHg Puffy eye lid, Pansystolic murmur s3 gallop",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Lanoxin",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Morphine",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Furosemide",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 167,
+      "scenario": "ผู้หญิงอายุ 64 ปี มี BT 37 c BP 160/110 mmHg PR 60 bpm ยาลดความดันข้อใดเหมาะสมที่สุด",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Thiazide",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Atenolol",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Enalapril",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Doxasozin",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Ditiazem",
+      "choices": [],
+      "exam_source": "ศรว 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Thai man 20 yo low grade fever, myalgia, chest pain 1 day , chest pain improve when lean forward PE: normal s1s2 no murmur, no cardiomegaly, friction rub at apex what is the most proper treatment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acyclovir"
+        },
+        {
+          "label": "B",
+          "text": "Nsaid"
+        },
+        {
+          "label": "C",
+          "text": "Prednisolone"
+        },
+        {
+          "label": "D",
+          "text": "ceftriaxone"
+        }
+      ],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Pt no pulse first CPR after CPR next step? ((ให้ EKGมา))",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Epinephrine"
+        },
+        {
+          "label": "B",
+          "text": "Amiodarome"
+        },
+        {
+          "label": "C",
+          "text": "Adenosine"
+        },
+        {
+          "label": "D",
+          "text": "Cardioversion"
+        },
+        {
+          "label": "E",
+          "text": "Defib"
+        }
+      ],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ชาย 60ปี long standing HT and CAD ,present ด้วย pulmonary edema PE : BP : Lt arm 190/105 Rt arm 185/100(หรือ95จาไม่ได้อ่ะะ TT) Heart : no murmur S4 gallop Lung: crakle both lower lobe abdominal bruit ถาม most likely dx",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Renal artery stenosis",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "aortic dissection",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "coronary artery dissection",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "pheochromocytoma",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "หญิง 25ปี มาด้วย progressive shortness of breath PE RR25 PR120 BP150/80 O2sat91% Rt leg swelling ตรวจร่างกายอื่นปกติ EKG: sinus tachycardia ,inverted T wave lead V1-4 จะส่งinvestigationอะไรเพื่อDx",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "CXR",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "CKMB Trop-T",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "CT angiogram of chest",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Coronary artery angiography",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Doppler U/s both leg",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "หญิง 60 ปี heavy smoking PE: superficial vein dilate อารมว่าsign ของ svc syndrome cxr: widening mediastinum mx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bronchoscope"
+        },
+        {
+          "label": "B",
+          "text": "CT"
+        },
+        {
+          "label": "C",
+          "text": "Urgency RT"
+        },
+        {
+          "label": "D",
+          "text": "Urgency CMT"
+        }
+      ],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 6,
+      "scenario": "บ่าย หญิง เป็น HT on enarapril 20mg/dกับ amlodipine10mg/d อยู่ มาด้วย บวม ตรวจร่างกาย BP 120/80 bilateral pedal edema จะทาอะไร",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "24hr urine protein",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "echocardiogram",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "CXR",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "furosemide",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "discontinue amlodipine",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ชาย dm ht Na 140 k 7 ekg tall peak T",
+      "choices": [
+        {
+          "label": "A",
+          "text": "furosemide"
+        },
+        {
+          "label": "B",
+          "text": "calcium gluconte"
+        }
+      ],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 9,
+      "scenario": "หญิง 65 ปี on asa/simvas/enalapril/amlodipine มาตลอด เมื่อ2เดือนก่อนไปหาหมอออโถ เพราะปวดเข่าทั้ง2ข้าง ได้ยาnaprexon&tamolมาอีก วันนี้มาหาหมอpe:heaving LV ,S4 gallop ไม่มีreanl bruit dxเป็นaki cr1.2>>2.4ใน1เดือน ถามว่าaki จากยาไร?",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "simvas",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "enalapril",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "amlodipine\n4neprexon",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "tramadol",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ญ มาด้วย intermittent palpitation hr 122/min irregular ให้ ekg มาเปนแบบ AF ให้ยาอะไร",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "digoxin",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "atenolol",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "amlodipine",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "amiodalone",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 11,
+      "scenario": "60ปี U/D DM HT มาด้วย TIA พบ idiopathic atrial fibrillation ควรทาอย่างไรเพื่อป้องกัน stroke",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "warfarin",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "aspirin",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "clopidogrel\nA 50-year-old man has acute chest discomfort 3 days. His father death from myocardial infarction at 45 years old. PE: normal S1 S2, S3 gallop. EKG: ST depression at lead II, III, aVF. TroponinT0.12ng/mL(ไม่ได้บอกค่าปกติมาให้). What is the diagnosis\nAcute unstable angina\nNon ST elevate myocardial infarction\nAcute myocarditis\nRecent transmural infarction\nPrinzmetal angina\nชายมีอาการเจ็บหน้าอก เหนื่อยเวลาขึ้นบันไดประมาณ 3 ชั้นทุกครั้ง มาโรงพยาบาลทำ EKG normal. What is the next investigation\nTreadmill EKG\nA 60-year-old man presents with chest pain, substernal pain 60 minutes PTA. His BP was 80/50 mmHg, EKG reveals as following(ST elevate II, III, aVF). What is the management\nDobutamine IV\nIV fluid\nNitrate sublingual\nไม่มีช้อยส์ PCI\nA 70 year-old patient presented with progressive dyspnea 2 month PTA. Physical examination revealed regular HR 80/min. Carotid pulse small and delay upstroke, decrease S2, and paradoxical split S2. Cardiac auscultation showed SEM grade 3/5 on aortic valve area. What is the most proper treatment for this patient\nDiuretics\nACE inhibitor\nDigitalis\nExercise stress test\nAortic valve replacement\nA 60-year-old mancomes with acute chest pain radiated to back. He had DM, Hypertension, dyslipidemia. PE: agitation, PR 110, RR 30,BP 160/100(left), BP 90/60(right). EKG: tachycardia. What is the diagnosis\nAortic dissection\nTakayasu arteritis\nCoarctation of aorta\nAcute coronary syndrome\nA 55-year-old man underlying disease hypertension, dyslipidemia, coronary artery disease. He takes medication regularly. EKG reveals QT 0.55 sec. Which is the cause of this abnormality\nAtenolol\nVerapamil\nAmiodarone\nGemfibrozil\nSimvastatin\nA 60-year-old male had syncope while taking a shower. He has had well controlled HT, DLP for 5 year. PE: delayed carotid upstroke, SEM grade III right and left UPSB, neurological exam: normal, others: unremarkable. What is the most likely diagnosis\nTransient ischemic attack\nMitral valve prolapse\nAortic stenosis\nSick sinus syndrome\nVasovagal attack\nA 20-year-old woman underlying rheumatic heart disease has low grade fever for 1 month. BT 38C, P 100, BP 110/70. PE: petichiae at conjunctiva and finger, diastolic rumbling and pansystolic murmur at apex. What is the diagnosis\nAcute leukemia\nExacerbate rheumatic carditis\nMeningococcemia\nInfective endocarditis\nA 3-year-old boy presents with fatigue (หรือ ไข้ต่ำ นี่แล) He had dental carried last…. PE: pansystolic murmur 3/6, no pericardial rub, mild hepatomegaly (อื่นๆจำไม่ได้). What is the diagnosis\nviral carditis\npericarditis\ninfective endocarditis\ncardiomyopathy",
+      "choices": [],
+      "exam_source": "ศรว 2014"
+    }
+  ]
+}

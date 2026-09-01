@@ -1,0 +1,196 @@
+[
+  {
+    "scenario": "เลือดไหลทางจมูกไม่หยุด BP 70/50 ผู้ป่วยชายวัย 70 ปี มาด้วยเลือดไหลจมูกด้านซ้ายมากมาย BP 180/110 mmHg เลือดไหลลงคอ ไม่สามารถทำการวัดแพคกิงด้านหน้าและด้านหลังได้เนื่องจากมีการบิดเบี่ยงของผนังจมูกด้านซ้ายอย่างรุนแรง เมื่อใช้กล้องส่องกล้องไม่สามารถมองเห็นแหล่งเลือดไหลได้ หลังจากทำให้ผู้ป่วยมีปริมาณของเหลวกลับมาปกติแล้ว การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ให้ของเหลว (Fluid resuscitation)"},
+      {"label": "B", "text": "วัดแพคกิงด้านหน้าและด้านหลัง (Anterior and Posterior Packing)"},
+      {"label": "C", "text": "การอุดตัน (Embolization)"},
+      {"label": "D", "text": "ผูกหลอดเลือด sphenopalatine (Sphenopalatine artery ligation)"},
+      {"label": "E", "text": "ผูกหลอดเลือด internal maxillary (Internal maxillary artery ligation)"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีภาวะผิดปกติของจมูกรุนแรงทำให้ไม่สามารถทำการวัดแพคกิงได้ และไม่สามารถมองเห็นแหล่งเลือดไหล ดังนั้น Embolization จึงเป็นตัวเลือกที่เหมาะสมที่สุดสำหรับกรณีนี้"
+  },
+  {
+    "scenario": "ผู้หญิงเป็นโรคเบาหวานมาด้วย rhinorrhea เป็นเวลาช่วงหนึ่ง การตรวจร่างกาย: เห็นการไหลของเลือดออกจากช่องระหว่างกะบังจมูกกลาง (middle meatus) การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ใช้ Rhinoscope ส่องดู"},
+      {"label": "B", "text": "Nasal saline irrigation"},
+      {"label": "C", "text": "ให้ยาต้านแบคทีเรีย"},
+      {"label": "D", "text": "ตรวจภาพเอกซเรย์กระโหลก"},
+      {"label": "E", "text": "ส่งตัวอย่างสำหรับการเพาะเชื้อ"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "การตรวจด้วย Rhinoscope เป็นขั้นตอนแรกสำหรับระบุต้นเหตุของ rhinorrhea จาก middle meatus โดยเฉพาะในผู้ป่วยเบาหวาน"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี มีอาการไหลน้ำมูกหลายครั้งติดต่อกันเป็นเวลา 2 เดือน ได้รับยาต้านแบคทีเรียทางปากรักษาแล้ว 3 รอบ ระยะ 7 วันต่อรอบ อาการดีขึ้นชั่วคราวหลังจากทานยา แต่กลับมาเกิดซ้ำเมื่อหยุดยา การตรวจร่างกาย: จมูกขวา มีหนองเหนียวสีเหลืองแดง (mucopurulent discharge) จมูกซ้าย บริเวณเยื่อหุ้มปกติ การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ส่องกล้องดูจมูก (Nasoscopy)"},
+      {"label": "B", "text": "เก็บตัวอย่างการไหลของเลือดสำหรับ Gram stain/culture"},
+      {"label": "C", "text": "ถ่ายภาพเอกซเรย์กระโหลกส่วนสินัส (Paranasal sinus film)"},
+      {"label": "D", "text": "ตรวจเลือด immunoglobulin"},
+      {"label": "E", "text": "ให้ยา Ceftriaxone ทางหลอดเลือดดำ"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "อาการเรื้อรังที่ไม่ตอบสนองต่อยาต้านแบคทีเรีย + เลือดอักเสบจากจมูกข้างเดียว สงสัยภาวะติดเชื้อที่เหลือในไซนัส ภาพเอกซเรย์กระโหลกเป็นขั้นตอนแรกที่เหมาะสม"
+  },
+  {
+    "scenario": "ผู้หญิงมาด้วยอาการไอ, น้ำมูกไหลเป็นเวลา 2 ปี อาการลุกเลิกขึ้นกว่าเดิม การตรวจร่างกาย: เห็นการไหลของเลือดสีขาวที่บริเวณ Rosenmüller's fossa กะบังจมูกบวมถึง 4+ มีการไหลของเลือดที่มีความหนืด อาการวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Allergic rhinitis (โรคจมูกอักษรกำเริบจากภูมิแพ้)"},
+      {"label": "B", "text": "Vasomotor rhinitis (โรคจมูกจากการหดตัวของหลอดเลือด)"},
+      {"label": "C", "text": "Acute rhinosinusitis (โรคจมูกและไซนัสเฉียบพลัน)"},
+      {"label": "D", "text": "Chronic rhinosinusitis (โรคจมูกและไซนัสเรื้อรัง)"},
+      {"label": "E", "text": "Allergic fungal rhinitis (โรคจมูกอักษรกำเริบจากความเป็นแพ้ต่อราจากฟัง)"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "อาการเรื้อรัง 2 ปี + การกำเริบของอาการ + การไหลของเลือดหนืด + การบวมของกะบังจมูก 4+ + การไหลของเลือดจาก Rosenmüller's fossa บ่งชี้ว่า Chronic rhinosinusitis"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี มี rhinorrhea โดยเฉพาะในเวลากลางคืน มีอาการคัดจมูกที่ตา, allergic shiner (สีเข้มใต้ตา) การตรวจร่างกาย: กะบังจมูกมีสีอ่อนจัง การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ล้างจมูกด้วยน้ำเกลือธรรมชาติ (NSS irrigation)"},
+      {"label": "B", "text": "ให้ยาปฏิปักษ์ฮิสตามิน (Antihistamine)"},
+      {"label": "C", "text": "ให้ยา leukotriene modifier ทางปาก (Oral leukotriene)"},
+      {"label": "D", "text": "ให้ยาสเตียรอยด์ทางจมูก (Nasal steroid)"},
+      {"label": "E", "text": "ให้ยา decongestant เชื้อที่จมูก (Topical decongestant)"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "อาการโรคจมูกอักษรกำเริบจากภูมิแพ้แบบคลาสสิก (allergic rhinitis) กะบังจมูกอ่อนจัง + ночные หลังจาก allergic shiner ยาสเตียรอยด์ทางจมูกเป็นการรักษาระดับแรก"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 ปี มาด้วยอาการเจ็บหูด้านขวา เริ่มต้นหลังจากแคะหูด้านขวา 1 วันที่ผ่านมา การตรวจร่างกายเห็นไปที่รูปภาพ การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ทำความสะอาดห้องหู (Ear toilet)"},
+      {"label": "B", "text": "ใช้ยาต้านแบคทีเรียหยดหู (ATB eardrop)"},
+      {"label": "C", "text": "วางแผ่นกระดาษปะแก้ว (Paper patch)"},
+      {"label": "D", "text": "ผ่าตัดซ่อมแต่มเยื่อแก้ว (Tympanoplasty)"},
+      {"label": "E", "text": "ผ่าตัดซ่อมแต่มเยื่อแก้ว (Myringoplasty)"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "โรคหูจากการแคะหูเพียงอาการเจ็บแต่ไม่มีการเสียหายรุนแรง ขั้นตอนแรกคือทำความสะอาดห้องหูและตรวจสอบสภาพเยื่อแก้ว"
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัยกลางคนมีประวัติเบาหวาน มาด้วยอาการเจ็บหูและการบวมของหูชั้นนอก (pinna & auricle) พร้อมความแดงและอาการเจ็บแรง โดยเมื่อดึงหูจะเจ็บมากขึ้น การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ยาต้านแบคทีเรียทาภายนอก (Topical ATB)"},
+      {"label": "B", "text": "ยาต้านแบคทีเรียทางปาก (Oral ATB)"},
+      {"label": "C", "text": "ยาต้านแบคทีเรียทางปากและสเตียรอยด์ทาภายนอก (Oral ATB and Topical steroid)"},
+      {"label": "D", "text": "ยาต้านแบคทีเรียทางปากและยาต้านแบคทีเรียทาภายนอก (Oral ATB and Topical ATB)"},
+      {"label": "E", "text": "ยาต้านแบคทีเรียทางหลอดเลือดดำ (IV ATB)"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "อาการระบุถึง acute external otitis ที่มีอาการรุนแรง (severe pain, tenderness) ผู้ป่วยเบาหวาน อาจเป็น malignant external otitis ต้องใช้ยาต้านแบคทีเรียทางปากเป็นขั้นตอนแรก"
+  },
+  {
+    "scenario": "เด็กชายเจ็บหูทั้งสองข้าง มีไข้ได้รับยาต้านแบคทีเรีย หนึ่งสัปดาห์ต่อมาอาการดีขึ้น เป็นโรคหูตรงกลาง (otitis media) เกือบหายแล้ว หูซ้ายไม่เจ็บ หูขวาเหลือเยื่อแก้วแตกเล็กน้อย (mild tympanic membrane perforation) มีหนองเข้มข้นน้อยมาก (minimal purulent discharge) การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ยาต้านแบคทีเรียหยดหู (Topical ATB)"},
+      {"label": "B", "text": "ยาปฏิปักษ์ฮิสตามิน (Antihistamine)"},
+      {"label": "C", "text": "ผ่าตัดกระดูกหลังหู (Mastoidectomy)"},
+      {"label": "D", "text": "เฝ้าติดตามอาการและตรวจสอบต่างๆ (Watchful waiting with follow-up)"},
+      {"label": "E", "text": "ให้ยาต้านแบคทีเรียทางปาก (Oral ATB)"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "กรณีที่หายเกือบหมดแล้วเหลือเยื่อแก้วแตกเล็กน้อยกับหนองเข้มข้นน้อยมาก ยาต้านแบคทีเรียหยดหูเป็นการรักษาแบบรักษารักษาต่อก่อจากการติดเชื้อ"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 40 ปี มาด้วยอาการการไม่ได้ยินเป็นไปด้านหูขวาอย่างค่อยๆ ลุกเลิก พ่อน้อยของเธอมีอาการการไม่ได้ยินเหมือนกัน การตรวจร่างกาย: ช่องหูชั้นนอกและเยื่อแก้วปกติทั้งสองข้าง Weber test โดยเกาะที่หูขวา Rinne test หูซ้ายการนำสำเสียงในอากาศดีกว่าการนำสำเสียงผ่านกระดูก แต่หูขวาการนำสำเสียงผ่านกระดูกดีกว่าการนำสำเสียงในอากาศ Tympanogram type A ทั้งสองข้าง (ไม่มีรูปภาพมาด้วย) การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ให้ยา diuretics"},
+      {"label": "B", "text": "ให้ยา sodium fluoride"},
+      {"label": "C", "text": "ผ่าตัด stapedectomy พร้อมการสร้างซ่อม"},
+      {"label": "D", "text": "ใช้อุปกรณ์ช่วยการได้ยินแบบนำสำเสียงผ่านกระดูก (Bone conduction hearing aid)"},
+      {"label": "E", "text": "ผ่าตัดเปิดเยื่อแก้วและวางท่อ (Myringotomy with tube)"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "อาการ conductive hearing loss แบบ bilateral progressive + ประวัติครอบครัว + Rinne แบบ bone conduction > air conduction ขวา + Tympanogram type A บ่งชี้ว่า otosclerosis สามารถรักษาได้ด้วย stapedectomy"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 เดือน ไม่มีหูโดยแม่บอกว่าเขาไม่ได้ยิน แต่ระดับพัฒนาของเขาด้านอื่นๆปกติ การตรวจร่างกาย: ไม่มี pinna และมีภาวะปิดช่องหูชั้นในทั้งสองข้าง เยื่อแก้วไม่สามารถตรวจได้ทั้งสองข้าง ABR (Auditory Brainstem Response) พบคลื่น V ที่ 50 dB ทั้งสองข้าง การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ติดตั้งหูเทียม (Ear prosthesis) และอุปกรณ์ช่วยการได้ยิน"},
+      {"label": "B", "text": "ใช้อุปกรณ์ช่วยการได้ยินแบบนำสำเสียงในอากาศ (Air conduction hearing aid)"},
+      {"label": "C", "text": "ใช้อุปกรณ์ช่วยการได้ยินแบบนำสำเสียงผ่านกระดูก (Bone conduction hearing aid)"},
+      {"label": "D", "text": "ผ่าตัดติดตั้ง cochlear implant เมื่ออายุได้ 1 ปี"},
+      {"label": "E", "text": "ผ่าตัดสร้างซ่อมหูชั้นนอกและช่องหูชั้นในที่อายุที่เหมาะสม"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "กรณี bilateral microtia with canal atresia ABR แสดงว่า cochlea ทำงาน conductive hearing loss เท่านั้น bone conduction hearing aid เป็นตัวเลือกแรก ยังเด็กเกินไปสำหรับ cochlear implant"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 ปี ไปซ้อมยิงปืนเมื่อ 2 วันที่แล้ว กลับมาได้ยินเสียงหวือหวา (tinnitus) Otoscope: เยื่อแก้วปกติ Tuning fork 512 Hz: Weber ไม่โดยเกาะไปด้านใด Rinne ทั้งสองข้างเป็นแบบ air conduction > bone conduction การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Otosclerosis"},
+      {"label": "B", "text": "Osteochondroma"},
+      {"label": "C", "text": "Acoustic trauma"},
+      {"label": "D", "text": "Meniere disease"},
+      {"label": "E", "text": "Ossicular chain dislocation"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "ประวัติสัมผัสเสียงดังจากปืน + tinnitus + Weber ไม่โดยเกาะ + Rinne air > bone conduction ทั้งสองข้าง บ่งชี้ว่า sensorineural hearing loss ทั้งสองข้างจากการสัมผัสเสียงดังเฉียบพลัน (acoustic trauma)"
+  },
+  {
+    "scenario": "ผู้หญิงมาด้วยอาการหวือหวาในหูทั้งสองข้าง บางครั้งมีอาการหมุนศีรษะ (dizziness) เป็นเวลา 1-2 วัน การตรวจร่างกาย: การได้ยินปกติทั้งสองข้าง ลักษณะอื่นๆปกติ การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Psychotic (ความเป็นจิตแปรปรวน)"},
+      {"label": "B", "text": "Meniere disease (โรคมีเนียร์)"},
+      {"label": "C", "text": "Benign paroxysmal positional vertigo (เวอร์ติโก้อย่างไม่เป็นอันตรายเฉียบพลัน)"},
+      {"label": "D", "text": "Vestibular neuritis (การอักษรกำเริบของเส้นประสาทไปยังระบบจงหวัด)"},
+      {"label": "E", "text": "Central vertigo (เวอร์ติโก้ส่วนกลาง)"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "หวือหวาทั้งสองข้าง + dizziness บางครั้ง + การได้ยินปกติ แต่ Meniere disease โดยปกติเกิดเพียงข้างเดียวและมีการไม่ได้ยิน ข้อมูลนี้ไม่สมบูรณ์ แต่ Meniere disease เป็นตัวเลือกที่เข้าหนึ่งที่สุด"
+  },
+  {
+    "scenario": "ผู้หญิงมาด้วยอาการหมุนศีรษะ (vertigo) เริ่มต้นหลังจากบาดเจอะหัว 1 สัปดาห์ที่แล้ว อาการมี spinning sensation เมื่อนอนลง, มองขึ้น, มองลง ไม่มีอาการหวือหวา การตรวจระบบประสาท: ปกติ ช่องหูชั้นนอกและเยื่อแก้วปกติทั้งสองข้าง การตรวจวินิจฉัยที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Audiogram (ตรวจวัดการได้ยิน)"},
+      {"label": "B", "text": "Dix-Hallpike maneuver (การทดสอบ Dix-Hallpike)"},
+      {"label": "C", "text": "CT head (ถ่ายภาพ CT กล้องหัว)"},
+      {"label": "D", "text": "MRI (ตรวจด้วยสนามแม่เหล็กไฟฟ้า)"},
+      {"label": "E", "text": "Skull x-ray (ถ่ายภาพเอกซเรย์กะโหลก)"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "ประวัติบาดเจอะหัว + vertigo กับการเปลี่ยนตำแหน่งศีรษะ + ไม่มี tinnitus + CNS ปกติ บ่งชี้ว่า BPPV (Benign Paroxysmal Positional Vertigo) Dix-Hallpike test เป็นการตรวจวินิจฉัยที่เหมาะสม"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี มาด้วยไข้ เจ็บคอ และกลืนลำบาก (dysphagia) เป็นเวลา 2 วัน การตรวจร่างกาย: อุณหภูมิกาย 39°C ชีพจรต่อนาที 112 เห็นการบวมของผนัง咽ท้ายหลังด้านหลัง (bulging posterior pharyngeal wall) ต่อมน้ำเหลืองคอด้านหน้าบวม (anterior cervical lymphadenopathy) มีความแข็งของคอ (stiffness of neck) ไม่มีการบวมของตับและม้าม (no hepatosplenomegaly) การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Acute epiglottitis (การอักษรกำเริบของเสาหลังคอเฉียบพลัน)"},
+      {"label": "B", "text": "Peritonsillar abscess (เนื้องอกบริเวณติดของเหงือกอักษรกำเริบ)"},
+      {"label": "C", "text": "Retropharyngeal abscess (เนื้องอกบริเวณหลังคอ)"},
+      {"label": "D", "text": "Infectious mononucleosis (โรคตับที่เกิดจากการติดเชื้อ)"},
+      {"label": "E", "text": "Ludwig angina (การอักษรกำเริบบริเวณใต้ลิ้น)"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "อาการ: ไข้ + เจ็บคอ + dysphagia + bulging posterior pharyngeal wall

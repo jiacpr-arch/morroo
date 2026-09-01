@@ -1,0 +1,599 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { createClient } from "@/lib/supabase/client";
+import { createMcqQuestion } from "@/lib/supabase/mutations-mcq-admin";
+import {
+  validateMcqRows,
+  type AdminStudentSubject,
+  type ParsedMcqRow,
+  type RawMcqRow,
+} from "@/lib/mcq-import";
+import {
+  NL_BROAD_SUBJECTS,
+  cleanPdfText,
+  chunkText,
+} from "@/lib/nl-subjects";
+import {
+  ChevronLeft, Shield, Loader2, Upload, Sparkles,
+  CheckCircle2, AlertCircle, FileText,
+} from "lucide-react";
+
+// Minimal shapes for the bits of pdfjs / the API we use (keeps eslint happy
+// without pulling pdfjs types into the bundle).
+interface PdfTextItem { str?: string }
+interface AiChoice { label?: string; text?: string }
+interface AiQuestion {
+  subject?: string;
+  scenario?: string;
+  choices?: AiChoice[];
+  correct?: string | null;
+}
+
+type Phase = "idle" | "reading" | "extracting" | "answering" | "done";
+
+interface AiAnswer {
+  index: number;
+  correct?: string;
+  detailed_explanation?: {
+    summary: string;
+    reason: string;
+    choices: { label: string; text: string; is_correct: boolean; explanation: string }[];
+    key_takeaway: string;
+  };
+}
+
+export default function ImportPdfPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [subjects, setSubjects] = useState<AdminStudentSubject[]>([]);
+
+  const [examType, setExamType] = useState<"NL1" | "NL2">("NL2");
+  const [examSource, setExamSource] = useState("");
+  const [files, setFiles] = useState<File[]>([]);
+  // Fallback when a PDF can't be read: paste the exam text directly.
+  const [pastedText, setPastedText] = useState("");
+  // After extraction, also have AI answer + write a draft เฉลย for each question.
+  const [withAnswers, setWithAnswers] = useState(true);
+  const [answerModel, setAnswerModel] = useState<"haiku" | "sonnet">("haiku");
+  // Full auto-pilot: after AI answers, immediately import and flip status to
+  // "active" for any row that got a verified A–E answer + detailed_explanation.
+  // Rows the AI couldn't answer stay as "review" so nothing wrong reaches นศพ.
+  const [autoActivate, setAutoActivate] = useState(true);
+
+  const [phase, setPhase] = useState<Phase>("idle");
+  const [progress, setProgress] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [parsed, setParsed] = useState<ParsedMcqRow[]>([]);
+  const [importing, setImporting] = useState(false);
+  const [result, setResult] = useState<{ inserted: number; failed: number } | null>(null);
+
+  // Load: admin check → auto-create broad subjects → fetch student subjects.
+  useEffect(() => {
+    async function load() {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) { router.push("/login"); return; }
+      const { data: profile } = await supabase
+        .from("profiles").select("role").eq("id", user.id).single();
+      if (profile?.role !== "admin") { setLoading(false); return; }
+      setIsAdmin(true);
+
+      // Ensure the broad subjects exist (no manual SQL needed). Ignore conflicts
+      // on the unique `name`. RLS allows admins to insert into mcq_subjects.
+      await supabase
+        .from("mcq_subjects")
+        .upsert(
+          NL_BROAD_SUBJECTS.map((s) => ({ ...s, audience: "student" as const })),
+          { onConflict: "name", ignoreDuplicates: true }
+        );
+
+      const sRes = await supabase
+        .from("mcq_subjects")
+        .select("id, name, name_th")
+        .eq("audience", "student")
+        .order("name_th");
+      setSubjects((sRes.data as AdminStudentSubject[]) ?? []);
+      setLoading(false);
+    }
+    load();
+  }, [router]);
+
+  function onFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const fs = Array.from(e.target.files ?? []);
+    setFiles(fs);
+    setParsed([]);
+    setResult(null);
+    setError(null);
+    if (fs.length === 1 && !examSource) {
+      setExamSource(fs[0].name.replace(/\.(pdf|txt|md)$/i, ""));
+    }
+  }
+
+  async function extractPdfText(f: File, prefix: string): Promise<string> {
+    // 1) In-browser pdf.js (fast; works for most files e.g. NL2)
+    try {
+      const pdfjs = await import("pdfjs-dist");
+      pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+      const buf = new Uint8Array(await f.arrayBuffer());
+      const doc = await pdfjs.getDocument({
+        data: buf,
+        cMapUrl: "/pdfjs/cmaps/",
+        cMapPacked: true,
+        standardFontDataUrl: "/pdfjs/standard_fonts/",
+      }).promise;
+      const parts: string[] = [];
+      for (let p = 1; p <= doc.numPages; p++) {
+        setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
+        try {
+          const page = await doc.getPage(p);
+          const content = await page.getTextContent();
+          const items = (content?.items as PdfTextItem[]) ?? [];
+          parts.push(items.map((it) => it.str ?? "").join(" "));
+        } catch {
+          /* skip a page pdf.js can't parse */
+        }
+      }
+      const text = cleanPdfText(parts.join("\n"));
+      if (text.trim().length >= 30) return text;
+    } catch {
+      /* pdf.js failed entirely — fall through to the server reader */
+    }
+
+    // 2) Server fallback (pdf-parse / pdf.js v5) for PDFs the browser can't read
+    setProgress(`${prefix}เบราว์เซอร์อ่านไม่ได้ — กำลังอ่านด้วยตัวสำรอง (server)…`);
+    const fd = new FormData();
+    fd.append("file", f);
+    const res = await fetch("/api/admin/mcq/pdf-text", { method: "POST", body: fd });
+    const data = await res.json().catch(() => ({}));
+    const text = cleanPdfText((data.text as string) ?? "");
+    if (!res.ok || text.trim().length < 30) {
+      throw new Error(
+        `อ่าน PDF ไม่ได้ทั้งสองวิธี — ${data.error || "ไฟล์อาจเป็นไฟล์สแกน (ไม่มี text layer)"}`
+      );
+    }
+    return text;
+  }
+
+  // Phase 2 (optional): Sonnet answers each valid question + drafts a detailed
+  // เฉลย. Mutates rows in place; status stays "review" for admin verification.
+  async function answerRows(rows: ParsedMcqRow[]) {
+    const valid = rows.filter((r) => r.insert);
+    if (valid.length === 0) return;
+    setPhase("answering");
+    const BATCH = 5;
+    for (let start = 0; start < valid.length; start += BATCH) {
+      const batch = valid.slice(start, start + BATCH);
+      setProgress(
+        `AI กำลังเฉลย (Sonnet)… ${Math.min(start + batch.length, valid.length)}/${valid.length} ข้อ`
+      );
+      const questions = batch.map((r) => ({
+        scenario: r.insert?.scenario ?? "",
+        choices: r.insert?.choices ?? [],
+      }));
+      try {
+        const res = await fetch("/api/admin/mcq/answer-questions", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ questions, exam_type: examType, model: answerModel }),
+        });
+        const data = await res.json();
+        if (!res.ok) continue;
+        for (const a of (data.answers as AiAnswer[]) ?? []) {
+          const row = batch[a.index];
+          if (!row || !row.insert) continue;
+          const labels = row.insert.choices.map((c) => c.label);
+          const correct = String(a.correct ?? "").trim().toUpperCase();
+          if (labels.includes(correct)) {
+            row.insert.correct_answer = correct;
+            row.raw.correct = correct;
+          }
+          if (a.detailed_explanation) {
+            row.insert.detailed_explanation = a.detailed_explanation;
+            row.insert.is_ai_enhanced = true;
+          }
+        }
+        setParsed([...rows]);
+      } catch {
+        // leave this batch with placeholder answers — admin fills during review
+      }
+    }
+  }
+
+  async function handleProcess() {
+    const hasText = pastedText.trim().length >= 30;
+    if (files.length === 0 && !hasText) {
+      setError("กรุณาเลือกไฟล์ PDF หรือวางข้อความข้อสอบ");
+      return;
+    }
+    setError(null);
+    setResult(null);
+    setParsed([]);
+
+    // dedupe + accumulate across ALL inputs → one preview/import
+    const seen = new Set<string>();
+    const raws: RawMcqRow[] = [];
+    let failedChunks = 0;
+
+    // A "doc" is either pasted text or a PDF file to extract.
+    const docs: { src: string; text: string | null; file: File | null }[] =
+      hasText
+        ? [{ src: examSource || "วางข้อความ", text: pastedText, file: null }]
+        : files.map((f) => ({
+            src:
+              files.length === 1 && examSource
+                ? examSource
+                : f.name.replace(/\.(pdf|txt|md)$/i, ""),
+            text: null,
+            file: f,
+          }));
+
+    try {
+      for (let fi = 0; fi < docs.length; fi++) {
+        const doc = docs[fi];
+        const prefix = docs.length > 1 ? `ไฟล์ ${fi + 1}/${docs.length} · ` : "";
+        const src = doc.src;
+
+        setPhase("reading");
+        setProgress(`${prefix}กำลังเตรียมข้อความ…`);
+        let text: string;
+        if (doc.text != null) {
+          text = doc.text;
+        } else if (doc.file && /\.(txt|md)$/i.test(doc.file.name)) {
+          text = cleanPdfText(await doc.file.text()); // plain-text upload
+        } else if (doc.file) {
+          text = await extractPdfText(doc.file, prefix);
+        } else {
+          text = "";
+        }
+        const chunks = chunkText(text);
+
+        setPhase("extracting");
+        for (let i = 0; i < chunks.length; i++) {
+          setProgress(`${prefix}AI กำลังแกะ… ส่วน ${i + 1}/${chunks.length} (รวมได้แล้ว ${raws.length} ข้อ)`);
+          let questions: AiQuestion[] = [];
+          try {
+            const res = await fetch("/api/admin/mcq/extract-pdf", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({ text: chunks[i], exam_type: examType }),
+            });
+            const data = await res.json();
+            if (!res.ok) { failedChunks++; continue; }
+            questions = (data.questions as AiQuestion[]) ?? [];
+          } catch {
+            failedChunks++;
+            continue;
+          }
+
+          for (const q of questions) {
+            const scenario = (q.scenario ?? "").trim();
+            const choices = Array.isArray(q.choices) ? q.choices : [];
+            if (scenario.length < 5 || choices.length < 2) continue;
+            const key = scenario.toLowerCase().replace(/\s+/g, " ").slice(0, 80);
+            if (seen.has(key)) continue;
+            seen.add(key);
+
+            const byLabel: Record<string, string> = {};
+            for (const c of choices) {
+              const lab = String(c.label ?? "").trim().toUpperCase();
+              if ("ABCDE".includes(lab) && lab) byLabel[lab] = (c.text ?? "").trim();
+            }
+            const correct = String(q.correct ?? "").trim().toUpperCase();
+            raws.push({
+              subject: (q.subject ?? "").trim(),
+              exam_type: examType,
+              exam_source: src,
+              question_number: String(raws.length + 1),
+              scenario,
+              choice_a: byLabel.A ?? "",
+              choice_b: byLabel.B ?? "",
+              choice_c: byLabel.C ?? "",
+              choice_d: byLabel.D ?? "",
+              choice_e: byLabel.E ?? "",
+              correct: "ABCDE".includes(correct) ? correct : "",
+              difficulty: "medium",
+              status: "review",
+            });
+          }
+        }
+      }
+
+      const rows = validateMcqRows(raws, subjects);
+      setParsed(rows);
+      setProgress(
+        `แกะเสร็จ: ${rows.length} ข้อ` +
+        (failedChunks ? ` (มี ${failedChunks} ส่วนที่ AI อ่านไม่สำเร็จ ข้ามไป)` : "")
+      );
+
+      if (withAnswers) {
+        await answerRows(rows);
+        setParsed([...rows]);
+      }
+      setPhase("done");
+
+      if (autoActivate && withAnswers) {
+        // Promote AI-answered rows to "active" so they appear to นศพ. without
+        // a manual review pass. Rows missing an AI answer/explanation are left
+        // as "review" — admin still sees them in the queue.
+        for (const r of rows) {
+          if (r.insert?.detailed_explanation && r.insert.correct_answer) {
+            r.insert.status = "active";
+          }
+        }
+        await runImport(rows.filter((r) => r.insert));
+      }
+    } catch (e) {
+      setError(`อ่าน/แกะ PDF ไม่สำเร็จ: ${String(e)}`);
+      setPhase("idle");
+    }
+  }
+
+  const validRows = useMemo(() => parsed.filter((p) => p.insert), [parsed]);
+  const invalidRows = useMemo(() => parsed.filter((p) => p.errors.length > 0), [parsed]);
+
+  async function runImport(rows: ParsedMcqRow[]) {
+    if (rows.length === 0) return;
+    setImporting(true);
+    let inserted = 0;
+    let failed = 0;
+    for (const row of rows) {
+      if (!row.insert) continue;
+      const res = await createMcqQuestion(row.insert);
+      if (res) inserted++;
+      else failed++;
+    }
+    setImporting(false);
+    setResult({ inserted, failed });
+  }
+
+  async function onImport() {
+    await runImport(validRows);
+  }
+
+  const busy = phase === "reading" || phase === "extracting" || phase === "answering";
+  const answeredCount = useMemo(
+    () => parsed.filter((p) => p.insert?.detailed_explanation).length,
+    [parsed]
+  );
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader2 className="h-8 w-8 animate-spin text-brand" />
+      </div>
+    );
+  }
+  if (!isAdmin) {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-16 text-center">
+        <Shield className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+        <h1 className="text-2xl font-bold">ไม่มีสิทธิ์เข้าถึง</h1>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="flex items-center gap-2 mb-6">
+        <Link href="/admin/mcq" className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1">
+          <ChevronLeft className="h-4 w-4" /> กลับไป MCQ admin
+        </Link>
+      </div>
+
+      <h1 className="text-2xl font-bold mb-2">🤖 Import จาก PDF (AI)</h1>
+      <p className="text-sm text-muted-foreground mb-6">
+        อัปโหลด PDF → AI แกะข้อสอบ + เฉลย + เหตุผล → นำเข้าเป็น <strong>active</strong> ให้อัตโนมัติ ·
+        ข้อที่ AI เฉลยไม่ได้จะตกเป็น <strong>review</strong> ให้ admin ตรวจต่อ
+      </p>
+
+      <Card className="mb-6">
+        <CardContent className="p-6 space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="text-sm font-medium mb-1.5 block">ประเภทสอบ</label>
+              <select
+                value={examType}
+                onChange={(e) => setExamType(e.target.value as "NL1" | "NL2")}
+                disabled={busy}
+                className="w-full border rounded-md px-3 py-2 text-sm bg-white"
+              >
+                <option value="NL2">NL2 (คลินิก)</option>
+                <option value="NL1">NL1 (พรีคลินิก)</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-sm font-medium mb-1.5 block">แหล่งที่มา (ปี/ชุด)</label>
+              <Input
+                value={examSource}
+                onChange={(e) => setExamSource(e.target.value)}
+                placeholder="เช่น NL2 2024"
+                disabled={busy}
+              />
+            </div>
+          </div>
+
+          <label className="flex items-start gap-2 text-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={withAnswers}
+              onChange={(e) => setWithAnswers(e.target.checked)}
+              disabled={busy}
+              className="h-4 w-4 mt-0.5"
+            />
+            <span>
+              ให้ AI เฉลย + เขียนเหตุผลด้วย
+              <span className="text-muted-foreground">
+                {" "}— ได้เฉลยฉบับร่างมาเลย · ยังต้องตรวจก่อนกด Active
+              </span>
+            </span>
+          </label>
+
+          {withAnswers && (
+            <div className="flex items-center gap-2 text-sm pl-6">
+              <span className="text-muted-foreground">โมเดลเฉลย:</span>
+              <select
+                value={answerModel}
+                onChange={(e) => setAnswerModel(e.target.value as "haiku" | "sonnet")}
+                disabled={busy}
+                className="border rounded-md px-2 py-1 text-sm bg-white"
+              >
+                <option value="haiku">Haiku — ถูก/เร็ว (แนะนำสำหรับชุดใหญ่)</option>
+                <option value="sonnet">Sonnet — แม่นกว่า/แพงกว่า</option>
+              </select>
+            </div>
+          )}
+
+          <label className="flex items-start gap-2 text-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={autoActivate}
+              onChange={(e) => setAutoActivate(e.target.checked)}
+              disabled={busy || !withAnswers}
+              className="h-4 w-4 mt-0.5"
+            />
+            <span>
+              นำเข้า + Active ทันที (ข้ามขั้น preview)
+              <span className="text-muted-foreground">
+                {" "}— ข้อที่ AI เฉลยครบถูกเผยแพร่ทันที · ข้อที่เฉลยไม่ได้ตกเป็น review
+              </span>
+            </span>
+          </label>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <label className="inline-flex">
+              <input type="file" accept="application/pdf,.pdf,text/plain,.txt,.md" multiple className="hidden" onChange={onFile} disabled={busy} />
+              <span className="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md border bg-background hover:bg-muted cursor-pointer">
+                <Upload className="h-4 w-4" /> เลือกไฟล์ PDF / .txt (เลือกหลายไฟล์ได้)
+              </span>
+            </label>
+            {files.length === 1 && <span className="text-sm text-muted-foreground">{files[0].name}</span>}
+            {files.length > 1 && <span className="text-sm text-muted-foreground">{files.length} ไฟล์</span>}
+          </div>
+
+          <div>
+            <label className="text-sm font-medium mb-1 block">
+              …หรือวางข้อความข้อสอบ (กรณีอัปโหลด PDF ไม่ได้)
+            </label>
+            <textarea
+              value={pastedText}
+              onChange={(e) => setPastedText(e.target.value)}
+              disabled={busy}
+              rows={5}
+              placeholder="เปิด PDF ในเครื่อง → เลือกทั้งหมด (Cmd+A) → ก็อป (Cmd+C) → วางที่นี่ แล้วกดแกะ"
+              className="w-full border rounded-md px-3 py-2 text-sm resize-y"
+            />
+            {pastedText.trim().length >= 30 && (
+              <p className="text-xs text-muted-foreground mt-1">
+                จะใช้ข้อความที่วาง (ข้าม PDF) · ตั้ง &quot;แหล่งที่มา&quot; ให้ตรงปีด้วย
+              </p>
+            )}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Button onClick={handleProcess} disabled={(files.length === 0 && pastedText.trim().length < 30) || busy || importing} className="gap-2">
+              {busy || importing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
+              {autoActivate && withAnswers ? "แกะ + เฉลย + นำเข้า (Active)" : "แกะข้อสอบด้วย AI"}
+            </Button>
+            {progress && <span className="text-sm text-muted-foreground">{progress}</span>}
+          </div>
+
+          {error && (
+            <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700 flex items-start gap-2">
+              <AlertCircle className="h-4 w-4 mt-0.5" />
+              <span>{error}</span>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {parsed.length > 0 && (
+        <>
+          <div className="flex items-center gap-2 mb-2">
+            <h2 className="text-lg font-semibold">Preview</h2>
+            <Badge className="bg-green-100 text-green-700">✓ {validRows.length} ใช้ได้</Badge>
+            {invalidRows.length > 0 && (
+              <Badge className="bg-red-100 text-red-700">✗ {invalidRows.length} ต้องแก้</Badge>
+            )}
+            {answeredCount > 0 && (
+              <Badge className="bg-emerald-100 text-emerald-700">🤖 เฉลยแล้ว {answeredCount}</Badge>
+            )}
+          </div>
+          <div className="rounded-lg border overflow-hidden mb-4">
+            <div className="overflow-x-auto max-h-[480px]">
+              <table className="w-full text-sm">
+                <thead className="bg-muted/50 sticky top-0">
+                  <tr>
+                    <th className="text-left p-2 w-12">#</th>
+                    <th className="text-left p-2 w-16">สถานะ</th>
+                    <th className="text-left p-2">สาขา/ตอบ</th>
+                    <th className="text-left p-2">scenario (snippet)</th>
+                    <th className="text-left p-2">errors</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {parsed.map((p) => (
+                    <tr key={p.rowNum} className="border-t">
+                      <td className="p-2 text-muted-foreground">{p.rowNum}</td>
+                      <td className="p-2">
+                        {p.errors.length === 0
+                          ? <CheckCircle2 className="h-4 w-4 text-green-600" />
+                          : <AlertCircle className="h-4 w-4 text-red-600" />}
+                      </td>
+                      <td className="p-2 font-mono text-xs">
+                        {p.raw.subject || "—"}/{p.raw.correct || "?"}
+                      </td>
+                      <td className="p-2 text-xs text-muted-foreground max-w-md truncate">
+                        {p.raw.scenario}
+                      </td>
+                      <td className="p-2 text-xs text-red-600">{p.errors.join("; ")}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 mb-6">
+            <Button onClick={onImport} disabled={validRows.length === 0 || importing} size="lg">
+              {importing
+                ? <><Loader2 className="h-4 w-4 mr-1 animate-spin" /> กำลังนำเข้า…</>
+                : <>นำเข้า {validRows.length} ข้อ</>}
+            </Button>
+            {invalidRows.length > 0 && (
+              <span className="text-xs text-muted-foreground">
+                * {invalidRows.length} ข้อที่ error จะถูกข้าม
+              </span>
+            )}
+          </div>
+
+          {result && (
+            <Card>
+              <CardContent className="p-4">
+                <div className="font-semibold mb-1 flex items-center gap-1">
+                  <FileText className="h-4 w-4" /> ผลการนำเข้า
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  สำเร็จ {result.inserted} ข้อ
+                  {result.failed > 0 && ` · ล้มเหลว ${result.failed} ข้อ (ดู console)`}
+                </div>
+                <div className="mt-3">
+                  <Link href="/admin/mcq" className="text-sm text-brand hover:underline">
+                    → ไป MCQ admin
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+        </>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,1718 @@
+{
+  "filename": "HEMATO",
+  "subject": "hemato_med",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 82,
+    "no_choices": 41,
+    "few_choices": 4,
+    "good": 37,
+    "no_scenario": 0,
+    "short_scenario": 15
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A patient underlying rheumatoid arthritis with pale conjunctiva. MCV 78, ferriti",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ช อายุกลางคน มาด้วยปวดท้อง มีเหลืองเล็กน้อย ซีด ตรวจร่างกายพบ pale conjunctiva i",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Alcoholic hepatitis",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Autoimmune hepatitis",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Acute pancreatitis",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Viral hepatitis",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "25 yr famale present with progressive dyspnea for 7 days and purpura and bleedin",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชายไทยอายุ 25 ปี มีไข้ 1 สัปดาห์ก่อน กินยาลดไข้แล้วไข้ลงดี 3 วันก่อนมาโรงพยาบาล ",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": ") G6PD defeciency",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": ") Paroxysmal nocturnal hemoglobinuria",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": ") Autoimmune hemolytic anemia",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": ") Thalassemia",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": ") Hereditary spherocytosis",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "60 ปี ซีด PE ซีด mcv 70 ทา guaice ได้ neg ทำไรต่อ\n1 sig&colono\n2 guaiec 3 วัน\n3 ",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A 25 yr famale present with progressive dyspnea for 7 days and purpura and bleed",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 7,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ไข้ ซีด เหลือง PE: pale, icteric sclera, no hepatosplenomegaly, PBS normochromic",
+      "choices_count": 2
+    },
+    {
+      "index": 18,
+      "question_number": 2,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ชาย 65 ปี U/D AAA มีจ้าเลือดตามตัว PE: multiple ecchymoses, อื่นๆปกติ, CBC: Hb 1",
+      "choices_count": 3
+    },
+    {
+      "index": 19,
+      "question_number": 3,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ลูกคนแรกเป็น HbH จงหา Typing ของแม่และพ่อ (ศรว 2008)\nHb      MCV\nพ่อ           1",
+      "choices_count": 2
+    },
+    {
+      "index": 24,
+      "question_number": 8,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย clinical DIC การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+      "choices_count": 3
+    },
+    {
+      "index": 49,
+      "question_number": 19,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงมีอาการซีด อ่อนเพลีย PBS มี 12 deficiency 20.ชายอายุ 18 ปี ไข้มา 5 วั",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Thalassemia HbH Disease",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Leptospirosis",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Acute Leukemia",
+      "choices_count": 0
+    },
+    {
+      "index": 53,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "G6PD Deficiency",
+      "choices_count": 0
+    },
+    {
+      "index": 54,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Hereditary Spherocytosis",
+      "choices_count": 0
+    },
+    {
+      "index": 55,
+      "question_number": 160,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิง 60ปี Dx acute pyelonephritis ได้ IV ATB ทาง heparin lockมา7วัน อาการ",
+      "choices_count": 0
+    },
+    {
+      "index": 56,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "factor VIII inhibitor",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "vitamin K deficiency",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "chronic renal disease",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "heparin contamination",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "DIC",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 60,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิงไทยอายุ 30 ปี ซีดเพลีย มา1เดือน มีเลือดออกตามไรฟันเล็กน้อย Hb 7 Wbc 2600 Plt",
+      "choices_count": 0
+    },
+    {
+      "index": 62,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "spleenic sequestration",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "antibody blood cells",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "DNA synthetics ผิดปกติ",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ขาดstem cells",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 172,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยตับแข็ง อาเจียนเป็นเลือด Hct 32%, WBC count 10000,Plt count 145000, PT 20",
+      "choices_count": 0
+    },
+    {
+      "index": 67,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "vitamin K",
+      "choices_count": 0
+    },
+    {
+      "index": 68,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "cryoprecipitate",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "FFP",
+      "choices_count": 0
+    },
+    {
+      "index": 70,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "PRC",
+      "choices_count": 0
+    },
+    {
+      "index": 71,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Plt conc.",
+      "choices_count": 0
+    },
+    {
+      "index": 72,
+      "question_number": 87,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Pt เป็น acute leukemia ได้ CMT (tumor lysis syndrome) ถาม lab?",
+      "choices_count": 0
+    },
+    {
+      "index": 73,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Hyperuricemia\nCOMPRE",
+      "choices_count": 0
+    },
+    {
+      "index": 77,
+      "question_number": 24,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "35 years female presented with dyspnea for 4 months, no fever, no anorexia, no d",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "A patient underlying rheumatoid arthritis with pale conjunctiva. MCV 78, ferritin 150 ng/ml (normal 180-270 ng/ml), serum iron binding capacity 100 mcg/dL (normal 240-450 mcg/dL). What is the most likely cause\nAplastic anemia\nPure red cell aplasia\nIron deficiency anemia\nAutoimmune hemolytic anemia\nAnemia of chronic inflammation/disease\nA 3-year-old boy presents with dark urine 1 day. He has had fever 2 days ago. No medication. He has history of neonatal jaundice. BT 38 C, P 120. PE: mild jaundice, icteric sclera, no hepatosplenomegaly. PBS:  Hct 28%, normochromic, normocytic anemia with Hb leakage from RBC. What is the diagnosis\nAutoimmune hemolytic anemia\nG6PD deficiency\nHemoglobin H disease\nIron deficiency anemia\nA 25-year-old female complains of being easily fatigued for 2 months. PE: moderately pale, no jaundice, no lymphadenopathy, no hepatosplenomegaly. CBC: Hb 19%, WBC 5,500 (N 60, L 35, M5) platelet 650,000 hypochromic microcytic red cells. What is the most likely diagnosis\nAIHA\nG6PD deficiency\nHbH disease\nIron deficiency anemia\nAplastic anemia\nA 19-year-old boy came to hospital with mild fever and fatigue 3 days. PE: mild pale conjunctiva, mild icteric sclera, other WNL. CBC: Hb 8, WBC 4200 (N40%, L60%). PBS: hemoglobin contracted cell, ghost cell, polychromasia 2+. What is the diagnosis\nHb H disease\nG6PD deficiency\nAIHA\nAplastic anemia\nA 17-year-old man presents with fever, sore throat, and cough. He has history of anemia 2 times in the last 2 years. PE: BT 38.5, PR 80, BP 123/75, RR 16, moderate pale conjunctivae, moderate icteric sclera, injected pharynx and tonsil swelling. Liver and spleen can't be palpitated. Hb 7, Hct 20, WBC 8800(N80% L12% M5%) platelet normal. What should be the finding of peripheral blood smear in this patient\nHypochromic, microcytic RBC with target cell\nNormochromic, normocytic RBC with microspherocyte\nHypochromic, microcytic RBC with ovalocyte and elliptocyte\nNormochromic, normocytic RBC with spherocyte and fragmented RBC\nNormochromic, normocytic RBC with ghost cell and hemoglobin leakage cell\nA 10-year-old girl comes with fatigue for 1 week. PE: BT38c, moderate pallor, spleen 1 cm BLCM. CBC: Hct 21%, WBC 4000(N60,L40) platelet 250,000. PBS: normochromic normocytic RBC, polychromasia2+, spherocyte 3+. Direct antiglobulinpositive.Reticulocyte count 10%. What is the most appropriate management\nSplenectomy\nFeSO4\nPrednisolone\nPRC transfusion\nIVIG\nA 65-year-old man has progressive fatigue for 3 months. PE: marked pale, mild jaundice, no hepatosplenomegaly, no superficial lymphadenopathy, Hb 14, MCV 120, platelet 65,000. What is the diagnosis\nLymphoma\nAutoimmune hemolytic anemia\nMegaloblastic anemia\nChronic myelogenous leukemia\nAplastic anemia\nA child whose father is Hb H disease and mother α-thal 1 trait. What is the risk the child will have a disease\n0%\n25%\n50%\n75%\n100%\nA 30-year-old fever for 3 weeks. Physical exam spleen just palpable, cervical lymphadenopathy. Hb 7.5 g/dL, MCV 102, WBC 1.2 g/dL(เขียนงี้จริงๆ) (N 7%, L 72%), platelet 30 x 109. What is the cause\nHypersplenism\nAplastic anemia\nAcute leukemia\nAutoimmune hemolytic anemia\nChronic lymphoblastic leukemia\nA 20-year-old boy, previously healthy, has hemarthrosis left knee after playing football. He never has this symptom before. Hct WBC platelet 150,000, PTT 50, INR 1.1. What is the most likely diagnosis\nCirrhosis\nHemophilia\nvon Willebrand factor\nvitamin K deficiency\nDisseminated intravascular coagulopathy\nผู้ป่วยหญิงมาด้วยอาการ Hypermenorrheaตรวจร่างกายพบ petechiaeตามตัว Platelet 10,000 Labอื่นๆปกติถาม most appropriate management?\nPrednisolone\nAzathiopine\nCyclosporin\nIVIG\nPlatelet transfusion\nA 6-year-old boy bleeding after tooth-extraction yesterday. PE: blood oozing from tooth-extracted wound and ecchymosis at buttock and lower extremities. CBC: Hct 30%, WBC 8500, platelet 250,000 with pale stain, PTT 30, PT 11.5. What is the best management\nDexamethasone\nCryoprecipitate\nPlatelet transfusion\nIV vitamin K\nA patient with hypertension and hyperthyroid on medication regularly, presents with fever, sore throat, WBC low. What is the cause of this symptom\nAntihypertensive drug\nAntihyperthyroid drug\nA 45-year-old female presents with bruise 3 months. Physical examination reveals ecchymosis at fore arm and leg. Lab: Hb 12, MCV 82 fL, RDW 12, WBC 6,500, platelet 24,000. Blood smear normal except low platelet. HIV and Anti-HCV negative. What is the management\nPrednisolone\nIVIG\nPlatelet transfusion\nObserve\nAldosterone\nA 50-year-old woman with alcoholic cirrhosis. BP 100/60 mmHg, P 102, moderate pale, mild jaundice, minimal ascites. Hct 24%, platelet 80,000, INR 1.7, PTT 43 sec. What blood component should be given first\nFresh whole blood\nPRC\nCryoprecipitate\nFresh frozen plasma\nPlatelet concentration\nA 34-year-old patient with underlying thalassemia underwent a blood transfusion.  He developed back pain, fever, chill and dark urine 15 minutes after receiving transfusion. V/S BT 37 c, BP 110/70, PR 90, RR 20.  What is the most likely diagnosis?\nAllergic reaction\nAnaphylactic reaction\nAcute hemolytic reaction\nFebrile reaction\nSepsis\nA 70-year-old มาผ่าตัดสะโพก หลังผ่าเดินได้ดี หลังจากนั้นมี DVT ที่ขา ถามว่า ต้องให้ anticoagulant นานเท่าไหร่\n1 เดือน\n3 เดือน\n6 เดือน\n12 เดือน\nIndefinite\nA man underlying heart disease CABG 3 years ago presents with ecchymosis, left hemiparesis. CT: right parietal intracerebral hemorrhage. His medication is warfarin. INR 5. What is the immediate management\nTranexamic acid\nProtamine sulfate\nVitamin K\nCryoprecipitate\nFFP\nA woman diagnosed deep vein thrombosis 3 months ago. She takes coumadin 3 mg daily. She has an accidentally fracture femur and has to operate within 24 hours. INR 3.0. What is the management\nPlatelet\nFFP\nCryoprecipitate\nIV vitamin K\nTranexamic acid\nA patient on warfarin จะทำผ่าตัด emergency laparotomy. What is the antidote for warfarin\nVitamin K\nFFP\nCryoprecipitate\nPlatelet concentrate",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ช อายุกลางคน มาด้วยปวดท้อง มีเหลืองเล็กน้อย ซีด ตรวจร่างกายพบ pale conjunctiva icteric sclera hepatomegaly lab AST 800 ALT 420 amylase 240 TB 5 DB 3.5 ถาม diagnosis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Alcoholic hepatitis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Autoimmune hepatitis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Acute pancreatitis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Viral hepatitis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "25 yr famale present with progressive dyspnea for 7 days and purpura and bleeding per gum for 2 days PE: mod pale, mild icteric sclerae, petechiae both legs CBC: Hb6.5 Hct19 WBC5200 (N67,L35,M6,E2) plt40000 NCNC aniso3+ polychrome1+ microspherocyte1+ What's the most appropriate mx?\n1 IVIG\n2 PRC transfusion\n3 Plt transfusion\n4 Dexa\n5 Plasmapheresis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ชายไทยอายุ 25 ปี มีไข้ 1 สัปดาห์ก่อน กินยาลดไข้แล้วไข้ลงดี 3 วันก่อนมาโรงพยาบาล มีอาการเหนื่อยง่าย อ่อนเพลีย PE : V/S stable, pale conjunctivae, icteric sclerae, otherwise normal Lab : Hct 25%, WBC 5,000(N40%, L60%), plt. 400,000 , Microspherocyte 1+, Schistocyte 1+ Most proper Dx?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": ") G6PD defeciency",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": ") Paroxysmal nocturnal hemoglobinuria",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": ") Autoimmune hemolytic anemia",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": ") Thalassemia",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": ") Hereditary spherocytosis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยหญิง 3 day PTA ทาแท้งเถื่อน จากนั้น 1 day PTA มีไข้ ปวดท้อง ซึม ตรวจร่างกาย: abdominal tenderness + guarding, purulent discharge at Vagina, slightly enlarged tender uterusLAB: Hct 30 WBC 12,500 (N90 L10) Plt 50,000 BUN 40 Cr 1.2 สาเหตุที่ทาให้ Plt ต่าในผู้ป่วยรายนี้คือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TTP"
+        },
+        {
+          "label": "B",
+          "text": "HUS"
+        },
+        {
+          "label": "C",
+          "text": "DIC"
+        },
+        {
+          "label": "D",
+          "text": "ITP"
+        },
+        {
+          "label": "E",
+          "text": "Massive bleeding"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "60 ปี ซีด PE ซีด mcv 70 ทา guaice ได้ neg ทำไรต่อ\n1 sig&colono\n2 guaiec 3 วัน\n3 cbc ferritin",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 6,
+      "scenario": "A 25 yr famale present with progressive dyspnea for 7 days and purpura and bleeding per gum for 2 days PE: mod pale, mild icteric sclerae, petechiae both legs CBC: Hb6.5 Hct19 WBC5200 (N67,L35,M6,E2) plt40000 NCNC aniso3+ polychrome1+ microspherocyte1+What's the most appropriate mx?\n1 IVIG\n2 PRC transfusion\n3 Plt transfusion\n4 Dexa\n5 Plasmapheresis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ไข้ ซีด เหลือง PE: pale, icteric sclera, no hepatosplenomegaly, PBS normochromic microcytic,bite cell",
+      "choices": [
+        {
+          "label": "A",
+          "text": "G6PD"
+        },
+        {
+          "label": "B",
+          "text": "Thalassemia"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยชายอายุ 16 ปี เป็น homozygous Beta-thalต้องรับเลือดเป็นประจา มีอาการอ่อนเพลียและบวมมา 1 เดือน แพทย์ทาการตรวจร่างกายเบื้องต้น BP drop, irregular heart rate & rhythm, hepatosplenomegalyถามว่า ผู้ป่วยมี heart complication จากอะไร (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "cardiac siderosis"
+        },
+        {
+          "label": "B",
+          "text": "Cardiac hypertrophy"
+        },
+        {
+          "label": "C",
+          "text": "Immune cardiomyositis"
+        },
+        {
+          "label": "D",
+          "text": "Extramedullary hematopoiesis at heart"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ชาย 65 ปี U/D AAA มีจ้าเลือดตามตัว PE: multiple ecchymoses, อื่นๆปกติ, CBC: Hb 10, WBC 7,200 (N 75, L 25), Plt 30,000, PT,PTT,TT : prolong, fibrinogen ↓, จะตรวจอะไรเป็นประโยชน์ที่สุดในการบอกสาเหตุ ? (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "D-dimer"
+        },
+        {
+          "label": "B",
+          "text": "Euglobulinlysis time"
+        },
+        {
+          "label": "C",
+          "text": "Blood smear"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ลูกคนแรกเป็น HbH จงหา Typing ของแม่และพ่อ (ศรว 2008)\nHb      MCV\nพ่อ           13        76\nแม่            13       87",
+      "choices": [
+        {
+          "label": "A",
+          "text": "พ่อเป็น alpha alpha, - -"
+        },
+        {
+          "label": "B",
+          "text": "แม่เป็น alpha -, alpha –"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยชาย 75 ปี อัมพาต bed sore ไข้ ซึม ฉี่ไม่ออก 2 วัน Stupor , mild pale , no Jx , no hepatosplenomegaly , Hb 9 , MCV 98 , WBC 14000 , N90 , L10 , Plt 20000 , PT18 , aPTT 36 , มี PBS เป็น MAHA Blood picture ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "primary fibrinolysis"
+        },
+        {
+          "label": "B",
+          "text": "Vit K def"
+        },
+        {
+          "label": "C",
+          "text": "Thalassemia with sepsis"
+        },
+        {
+          "label": "D",
+          "text": "DIC"
+        },
+        {
+          "label": "E",
+          "text": "TTP"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 5,
+      "scenario": "เด็กหญิง 6 ขวบ มีจ้าเลือดตามตัวเป็น ๆ หายๆ มา 1 เดือน PE: generalized ecchymosis CBC:Hb 12,Hct 36,WBC=8,500,PMN=55%,Lym=30%,Eo=15%,Plt=154,000 with pale stain ตรวจ LAB อะไรผิดปกติ (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PT"
+        },
+        {
+          "label": "B",
+          "text": "aPTT"
+        },
+        {
+          "label": "C",
+          "text": "Bleeding time"
+        },
+        {
+          "label": "D",
+          "text": "VCT"
+        },
+        {
+          "label": "E",
+          "text": "TT"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ชายอายุ 18 ปี ไข้สูง เจ็บคอ 3 day ซีด เหลือง moderate pale, mild Jaundice, liver 2 cm below costal margin, spleen 3 cm below costal margin, Hb 7.9, Hct 28, MCV 65, WBC 9500, N 80%, L 20%, Plt 450000 ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "AIHA"
+        },
+        {
+          "label": "B",
+          "text": "HbH with crisis"
+        },
+        {
+          "label": "C",
+          "text": "PNH"
+        },
+        {
+          "label": "D",
+          "text": "G6PD"
+        },
+        {
+          "label": "E",
+          "text": "DIC"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 7,
+      "scenario": "pt pale + jxตับม้ามไม่โต จะส่งตรวจอะไร: (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hb typing"
+        },
+        {
+          "label": "B",
+          "text": "inclusion body"
+        },
+        {
+          "label": "C",
+          "text": "BMA"
+        },
+        {
+          "label": "D",
+          "text": "G-6 PD screening"
+        },
+        {
+          "label": "E",
+          "text": "Coomb’s test"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้ป่วย clinical DIC การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ATB"
+        },
+        {
+          "label": "B",
+          "text": "Plt"
+        },
+        {
+          "label": "C",
+          "text": "FFP"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ผู้ป่วยชายอายุ 65 ปี U/D AAA มีจ้าเลือดแขนขา PE: ecchymosis ที่ขาและแขน CBC Hb: 10, Hct: 30, WBC 8600 (N 75, L 25), PT 15, PTT 33, fibrinogen 150 ส่ง lab ใดเหมาะสมที่สุดในผู้ป่วยรายนี้ (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "D-dimer"
+        },
+        {
+          "label": "B",
+          "text": "Bleeding time"
+        },
+        {
+          "label": "C",
+          "text": "Platelet function test"
+        },
+        {
+          "label": "D",
+          "text": "Protein C, Protein S"
+        },
+        {
+          "label": "E",
+          "text": "Fibrinogen level"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ผู้ป่วยชาย underlying cirrhosis มาด้วยอาเจียนเป็นเลือด ตรวจร่างกายพบ marked ascites, crepitation both lungs Hct 35% plt. 60000 APTT,PT prolonged ควรให้ blood product ตัวใด (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PRC"
+        },
+        {
+          "label": "B",
+          "text": "plt. conc."
+        },
+        {
+          "label": "C",
+          "text": "FFP"
+        },
+        {
+          "label": "D",
+          "text": "cryoprecipitate"
+        },
+        {
+          "label": "E",
+          "text": "cryo-removed plasma"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 11,
+      "scenario": "หญิง 30 ปี มีจุดเลือดออกตามตัวมา 3 สัปดาห์ บางครั้งมีเลือดออกตามไรฟันร่วมด้วย PE: not pale, no jaundice, petechiaepurpura at trunk and extremities CBC :Hb 12 Hct 36 MCV 80 WBC 4,600 N65 L30 M5 Plt 36,000 จงหาการรักษา ที่เหมาะสม (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "prednisolone"
+        },
+        {
+          "label": "B",
+          "text": "cyclophosphamide"
+        },
+        {
+          "label": "C",
+          "text": "IVIG"
+        },
+        {
+          "label": "D",
+          "text": "splenectomy"
+        },
+        {
+          "label": "E",
+          "text": "plt transfusion"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้ป่วยชายอายุ 40 ปี กินเหล้ามากเพลีย เป็นมา 2 เดือน CBC : WBC 12,000 มี WBC granulocyte ทุก series , plt 650,000 splenomegaly จงให้การวินิจฉัย (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "acute myelofibrosis"
+        },
+        {
+          "label": "B",
+          "text": "acute myeloid leukemia"
+        },
+        {
+          "label": "C",
+          "text": "chronic myeloid leukemia"
+        },
+        {
+          "label": "D",
+          "text": "malignant lymphoma"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 13,
+      "scenario": "ผู้ป่วยหญิง ซีดมา 2 วัน reticulocyte count 8% MCV 65 Hct 20% จงให้การวินิจฉัย (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "thalassemia disease"
+        },
+        {
+          "label": "B",
+          "text": "AIHA"
+        },
+        {
+          "label": "C",
+          "text": "G 6 PD deficiency"
+        },
+        {
+          "label": "D",
+          "text": "HS"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 14,
+      "scenario": "ผู้ป่วยมะเร็งได้รับเคมีบาบัด ต่อมาพบว่าเม็ดเลือดขาวต่ามีประวัติรับประทานยาสมุนไพร ควรทาอย่างไร (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "แนะนางดยาสมุนไพร"
+        },
+        {
+          "label": "B",
+          "text": "ให้เคมีบาบัดต่อ"
+        },
+        {
+          "label": "C",
+          "text": "อธิบายข้อเสียของยาสมุนไพร"
+        },
+        {
+          "label": "D",
+          "text": "แจ้ง อย"
+        },
+        {
+          "label": "E",
+          "text": "ให้เคมีบาบัดร่วมกับยาสมุนไพร"
+        }
+      ],
+      "exam_source": "NLE 2008-2009"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยอายุ 16 ปีจ้าเลือดเป็นๆหายๆครั้งนี้มาด้วยมีเข่าบวม 1วัน PE: warm+swelling right knee Lab: CBC,Pltไม่ต่า PT ปกติ PTT 68 manage เบื้องต้น???",
+      "choices": [
+        {
+          "label": "A",
+          "text": "DDAVP"
+        },
+        {
+          "label": "B",
+          "text": "Cryo"
+        },
+        {
+          "label": "C",
+          "text": "FFP"
+        },
+        {
+          "label": "D",
+          "text": "Cryo-removed plasma"
+        },
+        {
+          "label": "E",
+          "text": "Factor VII"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยหญิงอายุ 18 ปีมีเลือดออกตามไรฟันประจาเดือนมานานกว่าปกติมีจุดเลือดออกทีMขาไม่ซีดตับม้ามไม่โต CBC Hb12.2 WBC5000 Plt50000 PTT40 PT30 (บางคนจดมาว่า Lab: Hb,Hct,WBC normal มีEo 5% plt 15000 APTT 35,PT 12) ถาม Dx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MDS"
+        },
+        {
+          "label": "B",
+          "text": "DIC"
+        },
+        {
+          "label": "C",
+          "text": "TTP"
+        },
+        {
+          "label": "D",
+          "text": "ITP"
+        },
+        {
+          "label": "E",
+          "text": "APDE"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ชายอายุ 75 ปี no underlying. ไม่ได้รับประทานยาใดรับประทานอาหารได้ไม่มีน้าหนักลดท้องผูกเป็นประจาตรวจร่างกายพบ V/S BP 140/80 PR 84 RR 18 (mild)pale, total dental loss, glossitis, koilonychiae Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "hypothyroid"
+        },
+        {
+          "label": "B",
+          "text": "normal aging change"
+        },
+        {
+          "label": "C",
+          "text": "iron deficiency anemia"
+        },
+        {
+          "label": "D",
+          "text": "anemia of chronic disease"
+        },
+        {
+          "label": "E",
+          "text": "autoimmune hemolytic anemia"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยหญิงซีดอ่อนเพลีย CBC เป็น iron defได้รับการรักษาด้วยยาเม็ดสีน้าตาลดาถามว่าหลังได้รับยาจะติดตามการรักษาด้วยวิธีใดได้เร็วที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hb"
+        },
+        {
+          "label": "B",
+          "text": "MCV"
+        },
+        {
+          "label": "C",
+          "text": "Recticulocyte count"
+        },
+        {
+          "label": "D",
+          "text": "Serum ferritin"
+        },
+        {
+          "label": "E",
+          "text": "Serum haptoglobin"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ป่วยชายไทยมีไข้และเจ็บคอมา 1 wkซื้อยามากินเอง อาการไข้ดีขึ้นแต่มีอาการอ่อนเพลียมากขึ้นมา 3 d PE: v/s ปกติ , pale conjunctiva, icteric sclera , spleen 2 FB BLCM Hct 25% MCV 65 plt 400000 WBC 9600 N 60% L 40% Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hb H disrase"
+        },
+        {
+          "label": "B",
+          "text": "G6PD"
+        },
+        {
+          "label": "C",
+          "text": "HS"
+        },
+        {
+          "label": "D",
+          "text": "AIHA"
+        },
+        {
+          "label": "E",
+          "text": "PNH"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยหญิงอายุ 30 ปีมาด้วยอ่อนเพลียซีด 3 สัปดาห์ตรวจร่างกายพบ moderate pale, mild icteric sclera, other within normal CBC : Hct 25%, WBC 5000 cell/mm3 N68 L32, plt. 200000 cell/mm3, RBC morphology : normochromic, anisocytosis 2+, microspherocyte 2+, polychromasia 1+ การตรวจใดช่วยยืนยันการวินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hb typing"
+        },
+        {
+          "label": "B",
+          "text": "Coomb’s test"
+        },
+        {
+          "label": "C",
+          "text": "G6PD"
+        },
+        {
+          "label": "D",
+          "text": "Osmotic fragility"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ผู้ป่วยหญิงอายุ 70 ปีมีอาการอ่อนเพลียเหนื่อยมา 4-5 เดือนตรวจร่างกายพบglossitis, moderate pale, CBC :Hct 22%, WBC 3400, N 65%, L 30%, Plt 80000, ให้รูป blood smear มาเหมือนมีhypersegmented neutrophil การวินิจฉัยที่หมาะสมคือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aplastic anemia"
+        },
+        {
+          "label": "B",
+          "text": "Megaloblastic anemia"
+        },
+        {
+          "label": "C",
+          "text": "Iron deficiency anemia"
+        },
+        {
+          "label": "D",
+          "text": "Myelodysplasia"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้ป่วยชายอายุ 58 ปีมีไข้สูง 3 วันต่อมามีหอบและซึมลง 1 วันมีจุดจ้าเลือดตามตัว Lab: Hb9.8, Hct 30% WBC 28000-38000 N 83% band 10% L7% plt 15000, PT 16 PTT 60 fibrinogen 105 นึกถึงภาวะใดมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ITP"
+        },
+        {
+          "label": "B",
+          "text": "TTP"
+        },
+        {
+          "label": "C",
+          "text": "acquired factor VIII deficiency"
+        },
+        {
+          "label": "D",
+          "text": "DIC"
+        },
+        {
+          "label": "E",
+          "text": "vWD"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ชาย 38 ปีไข้สูง 3 d PTA ต่อมาซีมลงตรวจร่างกายพบมี mild pale, no Jaundice, no hepatosplenomegaly, Petechiae&Purpura all extremities ผล CBC พบมีHct 28,WBC 28,000, N 95%, L 5%, Band 10%, Plt 40,000 ตรวจ PBS พบมีSchistocytosis, ตรวจCoaguloGramพบมี PT, aPTT Prolong, Fibrinogen ต่า ,Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Vit K def"
+        },
+        {
+          "label": "B",
+          "text": "primary fibrinolysis"
+        },
+        {
+          "label": "C",
+          "text": "DIC"
+        },
+        {
+          "label": "D",
+          "text": "TTP"
+        },
+        {
+          "label": "E",
+          "text": "Thalassemia with sepsis"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ผู้ป่ วยอายุ 5 ปีมีจุดเลือดออกตามตัว ไม่มีไข้ PE: Generalizedmultiple supreficial ecchymosis, otherwhise is normal ,CBC: Hct 34-37%,WBC 6000,N 60-65%,L20-27%,E 12-15%,plt 200000,Bleeding time >15 min ให้management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ส่ง ANA"
+        },
+        {
+          "label": "B",
+          "text": "stool occult blood"
+        },
+        {
+          "label": "C",
+          "text": "Pednisolone"
+        },
+        {
+          "label": "D",
+          "text": "Platelet transfusion"
+        },
+        {
+          "label": "E",
+          "text": "Cryoprecipitate"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ผู้ป่ วยชายอายุ 58 ปี มีไข้สูง 3 วัน ต่อมามีหอบและซึมลง 1 วันมีจุดจ้าเลือดตามตัว Lab: Hb9.8, Hct 30% WBC 28000-\n38000 N 83% band 10% L7% plt 15000, PT 16 PTT 60 fibrinogen 105 นึกถึงภาวะใดมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ITP"
+        },
+        {
+          "label": "B",
+          "text": "TTP"
+        },
+        {
+          "label": "C",
+          "text": "acquired factor VIII deficiency"
+        },
+        {
+          "label": "D",
+          "text": "DIC"
+        },
+        {
+          "label": "E",
+          "text": "vWD"
+        }
+      ],
+      "exam_source": "NLE 2010"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ชายไทยอายุ30ปี มาด้วย ซีด PE: mild pale, moderate jaundice LAB : Hct 25 Hb 8 WBC 8500 plt 250000 รูปเลือดมี polychromasia, microspherocyteจงmanage",
+      "choices": [
+        {
+          "label": "A",
+          "text": "splenectomy"
+        },
+        {
+          "label": "B",
+          "text": "IVIg"
+        },
+        {
+          "label": "C",
+          "text": "corticosteroid"
+        },
+        {
+          "label": "D",
+          "text": "blood transfusion"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยหญิง อายุ 60 ปี วินิจฉัย sepsis พบจาPํ เลือดเลือดออกในกระเพาะอาหาร Mildly pale ,Jaundice ,petechiae แขนขา CBC : Hct 30% Plt 30,000 PT 30 APTT 60สาเหตุทีhเป็นไปได้มากทีhสุดทีhทาให้เลือดออกในผู้ป่วยรายนี้คือ อะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Liver failure"
+        },
+        {
+          "label": "B",
+          "text": "Factor inhibitor"
+        },
+        {
+          "label": "C",
+          "text": "ITP"
+        },
+        {
+          "label": "D",
+          "text": "DIC"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยชายอายุ 25 ปี อ่อนเพลียมา 6 เดือน มีเลือดกาเดาออกบ่อยใน 1 เดือนทีhผ่านมา ไม่ได้ใช้ยาใดประจา PE:Moderately pale, no jaundice, petechiae both legs\nCBC:Hb 8.5, MCV 90, Reti. Count 0.1%nnWBC 2,500 N10L88 M2 plt 18,000 Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute leukemia"
+        },
+        {
+          "label": "B",
+          "text": "Aplastic anemia"
+        },
+        {
+          "label": "C",
+          "text": "AIHA"
+        },
+        {
+          "label": "D",
+          "text": "ITP"
+        },
+        {
+          "label": "E",
+          "text": "MDS"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 5,
+      "scenario": "หญิงอายุ 60 ปี ขาด mens 2 เดือน มีเลือดออกทางกระปริบประปรอย 2 wkมีจ้าเลือดตามตัว PE พบ multiple\npetechiae and ecchymoses Ix Hb 12 Hct 35%,WBC 9000Plt 200,000, aPTT 76, PT 12 จะทาอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "สั่ง Mix coagulogram"
+        },
+        {
+          "label": "B",
+          "text": "ส่ง anticardiolipin A6"
+        },
+        {
+          "label": "C",
+          "text": "Corticosteroid"
+        },
+        {
+          "label": "D",
+          "text": "IV vit K1"
+        },
+        {
+          "label": "E",
+          "text": "FFP infusion"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ผู้ป่วยหญิง มีจุดเลือดออกตามแขนและขา ตรวจร่างกายพบ ecchymosis both legs no sign of chronic liver disease Lab Hbปกติ WBC ปกติ plt 50000 มี U/D เคยตัวเหลืองตาเหลือง เมื่อ 40 ปีก่อน ถาม Dx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Factor VIII inh"
+        },
+        {
+          "label": "B",
+          "text": "Vit K def"
+        },
+        {
+          "label": "C",
+          "text": "Consumptive coagulopathy"
+        },
+        {
+          "label": "D",
+          "text": "vWB disease"
+        },
+        {
+          "label": "E",
+          "text": "Chronic liver disease"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 7,
+      "scenario": "หญิง 30 ปีมีเลือดออกตามไรฟัน ตรวจร่างกายPURPURA, ecchymosis CBC: Hb/Hctปกติ WBC ปกติ ,Pltt30,000 Ixอะไรเพิ่มเติม?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dengue titer"
+        },
+        {
+          "label": "B",
+          "text": "Coomb's test"
+        },
+        {
+          "label": "C",
+          "text": "bleeding time"
+        },
+        {
+          "label": "D",
+          "text": "Anti-HIV"
+        },
+        {
+          "label": "E",
+          "text": "Bone marrow aspiration"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้ป่วยมีอาการซีด อ่อนเพลีย มีปัสสาวะสีดาตอนเช้า PE :moderate pale anicteric sclera no hepatosplenomagaly CBC: Hb12 WBC N40 L50 E5 plt 250000 คิดว่าอาการซีดเกิดจากอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "RBC enzyme defect"
+        },
+        {
+          "label": "B",
+          "text": "Antibody to RBC"
+        },
+        {
+          "label": "C",
+          "text": "Defect of RBC skeleton"
+        },
+        {
+          "label": "D",
+          "text": "RBC sensitivity to complemen"
+        }
+      ],
+      "exam_source": "NLE 2011"
+    },
+    {
+      "question_number": 19,
+      "scenario": "ผู้ป่วยหญิงมีอาการซีด อ่อนเพลีย PBS มี 12 deficiency 20.ชายอายุ 18 ปี ไข้มา 5 วัน มีอาการอ่อนเพลียมา 3 วัน ตรวจร่างกายพบว่ามี Pallor, mild jaundice, spleen is just palpable อย่างอื่นปรกติ CBC : Hb = 7.2 g/dL, MCV = 90 fL, WBC = 4,200/cumm, N = 60% L = 40%, Plt = 140,000/cumm จงให้การวินิจฉัย (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Thalassemia HbH Disease",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Leptospirosis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Acute Leukemia",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "G6PD Deficiency",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Hereditary Spherocytosis",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 160,
+      "scenario": "ผู้ป่วยหญิง 60ปี Dx acute pyelonephritis ได้ IV ATB ทาง heparin lockมา7วัน อาการทั่วไปดีขึ้น มีจ้าเลือดที่ผิวหนังมา2วัน ไม่มีเลือดออกที่อื่น CBC:Hb12.0, WBC count 9900, N75%, L25%, Plt count 160000, aPTT35, PT20 สาเหตุของความผิดปกติของการแข็งตัวของเลือดคือ (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "factor VIII inhibitor",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "vitamin K deficiency",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "chronic renal disease",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "heparin contamination",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "DIC",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 60,
+      "scenario": "หญิงไทยอายุ 30 ปี ซีดเพลีย มา1เดือน มีเลือดออกตามไรฟันเล็กน้อย Hb 7 Wbc 2600 Plt decrease พยาธิกาเนิดคือ",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "spleenic sequestration",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "antibody blood cells",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "DNA synthetics ผิดปกติ",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ขาดstem cells",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 172,
+      "scenario": "ผู้ป่วยตับแข็ง อาเจียนเป็นเลือด Hct 32%, WBC count 10000,Plt count 145000, PT 20, aPTT 80 ให้อะไรเหมาะสมที่สุด",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "vitamin K",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "cryoprecipitate",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "FFP",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "PRC",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Plt conc.",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 87,
+      "scenario": "Pt เป็น acute leukemia ได้ CMT (tumor lysis syndrome) ถาม lab?",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Hyperuricemia\nCOMPRE",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 17,
+      "scenario": "A30-year-old woman present with fatigue for 2 months. She has no other symptoms. CBC Hb=7.5 g/dL, MCV=70 fL, RDW=18% WBC=5,500 (N=75, L=20, M=5) Platelet 500,000 What is the appropriate investigation at this point?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ferritin"
+        },
+        {
+          "label": "B",
+          "text": "Colonoscopy"
+        },
+        {
+          "label": "C",
+          "text": "Bone marrow biopsy"
+        },
+        {
+          "label": "D",
+          "text": "directed comb test"
+        },
+        {
+          "label": "E",
+          "text": "Hb electrophoresis"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 22,
+      "scenario": "ผู้ป่วยชายเป็น pneumonia นอน รพ. 7 วัน 2 วันก่อนพบ skin bruise วันนี้เจอ source of pneumonia ไม่มี active bleeding มี lab PT and PTT prolong Tx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe"
+        },
+        {
+          "label": "B",
+          "text": "Vit K"
+        },
+        {
+          "label": "C",
+          "text": "Cryoprecipitate"
+        },
+        {
+          "label": "D",
+          "text": "Cryo removed plasma"
+        },
+        {
+          "label": "E",
+          "text": "FFP"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 23,
+      "scenario": "ผู้ป่วยหญิงไทยอายุ 70 ปี มาด้วยเหนื่อย อ่อนเพลีย ปัสสาวะอุจจาระปกติ CBC: Hb 8.5, MCV 89, WBC 1500, N15 L 75 M 10 E 7, Plt 30000 จง วินิจฉัย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aplastic anemia"
+        },
+        {
+          "label": "B",
+          "text": "Megaloblastic anemia"
+        },
+        {
+          "label": "C",
+          "text": "Myelopthisis"
+        },
+        {
+          "label": "D",
+          "text": "MDS"
+        },
+        {
+          "label": "E",
+          "text": "ALL"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 24,
+      "scenario": "35 years female presented with dyspnea for 4 months, no fever, no anorexia, no diarrhea, no vomiting Hb 8.5 WBC1,500(N15%, L75%) Platelets 30,000 What is your diagnosis?\nA aplastic anemia\nB myelopthisis\nC myelodysplastic syndrome\nD megaloblastic anemia\nE acute lymphoblastic anemia",
+      "choices": [],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 81,
+      "scenario": "ผู้ป่วยมาด้วยmoderate anemia ตรวจร่างกายอย่างอื่นปกติดี Hb 7.6 MCV 67 ส่งตรวจอะไรเพื่อ confirm Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Heinz body"
+        },
+        {
+          "label": "B",
+          "text": "G6PD"
+        },
+        {
+          "label": "C",
+          "text": "Hb typing"
+        },
+        {
+          "label": "D",
+          "text": "Ferritin"
+        },
+        {
+          "label": "E",
+          "text": "Coomb’s test"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 82,
+      "scenario": "ผู้ป่วยหญิงอายุ 70 ปี ญาติพามา รพ.ด้วยการซึม 1 สัปดาห์ มีประวัติมะเร็งรังไข่ 1 ปี ตรวจร่างกาย BP drop 100/70 PR 100 Lab Plasma glucose 77 Cr 2.8 Calcium 18.2 Phosphate 66 What is the initial management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hemodialysis"
+        },
+        {
+          "label": "B",
+          "text": "Prednisolone"
+        },
+        {
+          "label": "C",
+          "text": "NSS iv Urine output 100-200 ml"
+        },
+        {
+          "label": "D",
+          "text": "Pamidronate"
+        },
+        {
+          "label": "E",
+          "text": "Calcitronin"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 121,
+      "scenario": "ผู้ป่วยชายเป็น aplastic anemia ต้องได้รับเลือดบ่อยๆ หลังจากได้รับเลือดไป 10 นาที มีอาการเจ็บที่มือ บริเวณที่ได้รับเลือด ปวดหลัง BP80/60 normal breath sound ปกติได้รับเลือด 1 ครั้ง/2 wkอยู่แล้ว What is the diagnosis ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Serum sickness"
+        },
+        {
+          "label": "B",
+          "text": "Bacterial sepsis"
+        },
+        {
+          "label": "C",
+          "text": "Acute febrile transfusion syndrome"
+        },
+        {
+          "label": "D",
+          "text": "Afebrile transfusion reaction"
+        },
+        {
+          "label": "E",
+          "text": "Acute hemolytic transfusion reaction"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    },
+    {
+      "question_number": 138,
+      "scenario": "2 cm cervical lymphadenopathy เป็นมา 2 weeks no other symptoms ได้ ATB 10 วัน อาการไม่ดีขึ้น investigaton ควรทาคืออะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CBC"
+        },
+        {
+          "label": "B",
+          "text": "BM study"
+        },
+        {
+          "label": "C",
+          "text": "lymph node biopsy"
+        },
+        {
+          "label": "D",
+          "text": "lymph node aspiration"
+        },
+        {
+          "label": "E",
+          "text": "tuberculin test"
+        }
+      ],
+      "exam_source": "NLE 2012"
+    }
+  ]
+}

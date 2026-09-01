@@ -1,0 +1,393 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { createClient } from "@/lib/supabase/client";
+import { ActivityHeatmap } from "@/components/ActivityHeatmap";
+import {
+  Shield,
+  Loader2,
+  BookOpen,
+  CreditCard,
+  Users,
+  Stethoscope,
+  BarChart3,
+  ClipboardList,
+  Sparkles,
+  MessageCircle,
+  Camera,
+  GraduationCap,
+  Newspaper,
+  Flag,
+  HeartPulse,
+} from "lucide-react";
+
+interface HeatmapCell {
+  day_of_week: number;
+  hour_of_day: number;
+  attempt_count: number;
+}
+
+export default function AdminDashboard() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [stats, setStats] = useState({
+    totalExams: 0,
+    totalUsers: 0,
+    pendingPayments: 0,
+    totalLongCases: 0,
+  });
+  const [heatmap, setHeatmap] = useState<HeatmapCell[]>([]);
+
+  useEffect(() => {
+    async function load() {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) { router.push("/login"); return; }
+
+      const { data: profile } = await supabase
+        .from("profiles").select("role").eq("id", user.id).single();
+      if (profile?.role !== "admin") { setLoading(false); return; }
+
+      setIsAdmin(true);
+
+      const [examsRes, usersRes, paymentsRes, longcasesRes, heatmapRes] =
+        await Promise.all([
+          supabase.from("exams").select("id", { count: "exact", head: true }),
+          supabase.from("profiles").select("id", { count: "exact", head: true }),
+          supabase.from("payment_orders").select("id", { count: "exact", head: true }).eq("status", "pending"),
+          supabase.from("long_cases").select("id", { count: "exact", head: true }),
+          supabase.rpc("get_admin_activity_heatmap"),
+        ]);
+
+      setStats({
+        totalExams: examsRes.count || 0,
+        totalUsers: usersRes.count || 0,
+        pendingPayments: paymentsRes.count || 0,
+        totalLongCases: longcasesRes.count || 0,
+      });
+      setHeatmap((heatmapRes.data as HeatmapCell[]) || []);
+      setLoading(false);
+    }
+    load();
+  }, [router]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader2 className="h-8 w-8 animate-spin text-brand" />
+      </div>
+    );
+  }
+
+  if (!isAdmin) {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-16 text-center">
+        <Shield className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+        <h1 className="text-2xl font-bold">ไม่มีสิทธิ์เข้าถึง</h1>
+        <p className="text-muted-foreground mt-2">หน้านี้สำหรับผู้ดูแลระบบเท่านั้น</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+        <p className="text-muted-foreground mt-1">จัดการระบบหมอรู้</p>
+      </div>
+
+      {/* Stats */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center">
+                <BookOpen className="h-6 w-6 text-brand" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold">{stats.totalExams}</p>
+                <p className="text-sm text-muted-foreground">ข้อสอบ</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
+                <Users className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold">{stats.totalUsers}</p>
+                <p className="text-sm text-muted-foreground">สมาชิก</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className={stats.pendingPayments > 0 ? "border-yellow-300" : ""}>
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center">
+                <CreditCard className="h-6 w-6 text-yellow-600" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold">{stats.pendingPayments}</p>
+                <p className="text-sm text-muted-foreground">รอตรวจสลิป</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <Stethoscope className="h-6 w-6 text-amber-600" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold">{stats.totalLongCases}</p>
+                <p className="text-sm text-muted-foreground">Long Cases</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Activity Heatmap */}
+      {heatmap.length > 0 && (
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="text-base">Activity Heatmap (90 วันล่าสุด)</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ActivityHeatmap data={heatmap} />
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Quick actions */}
+      <h2 className="text-lg font-bold mb-4">จัดการ</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Link href="/admin/exams">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">จัดการข้อสอบ</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข ลบข้อสอบ MEQ และตอนย่อย</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/mcq">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-brand/30">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <ClipboardList className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">จัดการข้อสอบ MCQ/NL</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข ลบ และจัดการสถานะข้อสอบ MCQ</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/mcq/reports">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Flag className="h-5 w-5 text-amber-600" />
+                <h3 className="font-bold">รายงานข้อสอบ (Bug Hunter)</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ตรวจรายงานจากนักเรียน ยืนยันเพื่อให้ +10 คะแนน และดูอันดับ</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/payments">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <CreditCard className="h-5 w-5 text-brand" />
+                  <h3 className="font-bold">ตรวจสลิปการชำระเงิน</h3>
+                </div>
+                {stats.pendingPayments > 0 && (
+                  <Badge className="bg-yellow-100 text-yellow-700">
+                    {stats.pendingPayments} รอตรวจ
+                  </Badge>
+                )}
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ตรวจสอบสลิปและอนุมัติสมาชิก</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/users">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Users className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">จัดการสมาชิก</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูข้อมูลสมาชิก แก้ไขสมาชิกภาพ และกำหนดสิทธิ์</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/leads">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-teal-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-teal-600" />
+                <h3 className="font-bold">Lead Pipeline</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดู leads จาก FB / landing / organic, สถานะโค้ด และ conversion funnel</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/students">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="h-5 w-5 text-purple-600" />
+                <h3 className="font-bold">ติดตามนักเรียน</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูสถิติ ผลการเรียน และจุดอ่อนของนักเรียนแต่ละคน</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/analytics">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="h-5 w-5 text-purple-600" />
+                <h3 className="font-bold">Web Analytics</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Funnel & conversion จาก Vercel Analytics (mirror)</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/ads-diagnostics">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-red-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-red-600" />
+                <h3 className="font-bold">Ads Autofix</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Auto-diagnose landing pages + Meta ads · auto-pause underperformers</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/longcases">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-amber-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Stethoscope className="h-5 w-5 text-amber-600" />
+                <h3 className="font-bold">จัดการ Long Case</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข และจัดการ Long Case Exam</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/board">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <GraduationCap className="h-5 w-5 text-purple-700" />
+                <h3 className="font-bold">Board content</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Stats MCQ + Oral ต่อสาขา + ปุ่ม publish</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/recommendation-stats">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-brand/30">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">Recommendation Stats</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">เปรียบเทียบ accuracy ของชุดแนะนำ vs เลือกเอง</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/chatbot">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-teal-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5 text-teal-600" />
+                <h3 className="font-bold">Chatbot Analytics</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">สถิติพี่หมอรู้ — ข้อความ ผู้ใช้ และ trend แต่ละ channel</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/news">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-violet-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Newspaper className="h-5 w-5 text-violet-600" />
+                <h3 className="font-bold">จัดการข่าว / อัปเดต</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">โพสต์ product update และข่าวสอบให้แสดงที่ /news</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/sim">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-rose-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <HeartPulse className="h-5 w-5 text-rose-600" />
+                <h3 className="font-bold">Code Blue Sim</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">แต่ง/สร้างเคสเกมกู้ชีพด้วย AI ดูสถิติผู้เล่น และเผยแพร่ที่ /sim</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/autopost">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-pink-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Camera className="h-5 w-5 text-pink-600" />
+                <h3 className="font-bold">IG Autopost</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูสถานะการโพสต์ Instagram และกด retry บทความที่ failed</p>
+            </CardContent>
+          </Card>
+        </Link>
+      </div>
+    </div>
+  );
+}

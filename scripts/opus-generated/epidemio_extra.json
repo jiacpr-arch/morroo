@@ -1,0 +1,898 @@
+[
+  {
+    "scenario": "ในการศึกษาหาความสัมพันธ์ระหว่างการสูบบุหรี่กับมะเร็งปอด โดยเริ่มจากกลุ่มผู้ป่วยมะเร็งปอด 200 ราย และกลุ่มควบคุม 200 ราย พบว่ากลุ่มผู้ป่วยมะเร็งปอดสูบบุหรี่ 150 ราย กลุ่มควบคุมสูบบุหรี่ 50 ราย การศึกษานี้เป็นรูปแบบใด",
+    "choices": [
+      {"label": "A", "text": "Case-control study"},
+      {"label": "B", "text": "Cohort study"},
+      {"label": "C", "text": "Cross-sectional study"},
+      {"label": "D", "text": "Randomized controlled trial"},
+      {"label": "E", "text": "Ecological study"}
+    ],
+    "correct_answer": "A",
+    "explanation": "การศึกษาที่เริ่มจากกลุ่มผู้ป่วย (case) และกลุ่มควบคุม (control) แล้วมองย้อนกลับไปหาปัจจัยเสี่ยง เป็น case-control study",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Case-control study",
+      "reason": "การศึกษานี้เริ่มต้นจากการคัดเลือกกลุ่มผู้ป่วยมะเร็งปอด (cases) จำนวน 200 ราย และกลุ่มควบคุมที่ไม่เป็นมะเร็งปอด (controls) จำนวน 200 ราย จากนั้นมองย้อนกลับไป (retrospective) เพื่อดูว่าแต่ละกลุ่มมีประวัติการสูบบุหรี่หรือไม่ ซึ่งเป็นลักษณะเฉพาะของ case-control study\n\nCase-control study เป็นการศึกษาเชิงสังเกต (observational study) ที่เหมาะสำหรับการศึกษาโรคที่พบได้น้อย (rare diseases) เพราะสามารถรวบรวมผู้ป่วยได้จำนวนมากในเวลาอันสั้น ค่าวัดความสัมพันธ์ที่ใช้คือ odds ratio (OR)\n\nในกรณีนี้ OR = (150 × 150) / (50 × 50) = 22,500 / 2,500 = 9.0 หมายความว่าผู้ที่สูบบุหรี่มีโอกาสเป็นมะเร็งปอดมากกว่าผู้ไม่สูบบุหรี่ 9 เท่า",
+      "choices": [
+        {"label": "A", "text": "Case-control study", "is_correct": true, "explanation": "เริ่มจากกลุ่มผู้ป่วย (case) และกลุ่มไม่ป่วย (control) แล้วมองย้อนกลับไปดูปัจจัยเสี่ยง เป็น case-control study ที่เหมาะกับการศึกษาโรคที่มี latent period ยาว เช่น มะเร็ง"},
+        {"label": "B", "text": "Cohort study", "is_correct": false, "explanation": "Cohort study เริ่มจากกลุ่มที่มีและไม่มีปัจจัยเสี่ยง (exposure) แล้วติดตามไปข้างหน้าเพื่อดูการเกิดโรค (outcome) ซึ่งไม่ตรงกับการศึกษานี้ที่เริ่มจากกลุ่มผู้ป่วย"},
+        {"label": "C", "text": "Cross-sectional study", "is_correct": false, "explanation": "Cross-sectional study เก็บข้อมูลทั้ง exposure และ outcome ในจุดเวลาเดียวกัน ไม่สามารถระบุลำดับเวลาได้ ใช้วัด prevalence ไม่ใช่การเปรียบเทียบระหว่างกลุ่มป่วยและไม่ป่วย"},
+        {"label": "D", "text": "Randomized controlled trial", "is_correct": false, "explanation": "RCT เป็นการศึกษาเชิงทดลองที่มีการสุ่มจัดกลุ่ม (randomization) ให้ได้รับ intervention ซึ่งไม่สามารถทำได้ในกรณีที่ exposure เป็นสิ่งที่เป็นอันตราย เช่น การสูบบุหรี่"},
+        {"label": "E", "text": "Ecological study", "is_correct": false, "explanation": "Ecological study ศึกษาในระดับกลุ่มประชากร (population level) ไม่ใช่ระดับบุคคล เช่น เปรียบเทียบอัตราการสูบบุหรี่กับอัตรามะเร็งปอดระหว่างประเทศ"}
+      ],
+      "key_takeaway": "Case-control study เริ่มจาก outcome แล้วมองย้อนหา exposure ใช้ odds ratio เป็นค่าวัดความสัมพันธ์ เหมาะสำหรับโรคหายากหรือมี latent period ยาว"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษาติดตามกลุ่มคนงานโรงงานทอผ้า 5,000 คน เป็นเวลา 10 ปี เพื่อดูอัตราการเกิดโรคปอดอุดกั้นเรื้อรัง เปรียบเทียบกับประชากรทั่วไป 5,000 คน พบว่ากลุ่มคนงานมี incidence rate 15 ต่อ 1,000 person-years ส่วนกลุ่มควบคุมมี 3 ต่อ 1,000 person-years ค่า relative risk เท่ากับเท่าใด",
+    "choices": [
+      {"label": "A", "text": "3"},
+      {"label": "B", "text": "5"},
+      {"label": "C", "text": "12"},
+      {"label": "D", "text": "0.2"},
+      {"label": "E", "text": "18"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Relative risk = incidence rate ในกลุ่ม exposed / incidence rate ในกลุ่ม unexposed = 15/3 = 5",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. 5",
+      "reason": "Relative risk (RR) หรือ risk ratio คำนวณจากอัตราส่วนของ incidence ในกลุ่มที่สัมผัสปัจจัยเสี่ยง (exposed) ต่อ incidence ในกลุ่มที่ไม่ได้สัมผัสปัจจัยเสี่ยง (unexposed)\n\nRR = Incidence ในกลุ่ม exposed / Incidence ในกลุ่ม unexposed = 15 / 3 = 5\n\nหมายความว่าคนงานโรงงานทอผ้ามีความเสี่ยงในการเกิด COPD มากกว่าประชากรทั่วไป 5 เท่า RR > 1 แสดงว่า exposure เพิ่มความเสี่ยงในการเกิดโรค RR = 1 แสดงว่าไม่มีความสัมพันธ์ RR < 1 แสดงว่า exposure มีผลป้องกัน\n\nAttributable risk (AR) = 15 - 3 = 12 ต่อ 1,000 person-years หมายถึงส่วนเกินของอัตราการเกิดโรคที่เกิดจาก exposure",
+      "choices": [
+        {"label": "A", "text": "3", "is_correct": false, "explanation": "3 เป็น incidence rate ของกลุ่มควบคุม ไม่ใช่ relative risk การคำนวณ RR ต้องนำ incidence ของกลุ่ม exposed หารด้วยกลุ่ม unexposed"},
+        {"label": "B", "text": "5", "is_correct": true, "explanation": "RR = 15/3 = 5 หมายความว่าคนงานโรงงานทอผ้ามีความเสี่ยงเกิด COPD สูงกว่าประชากรทั่วไป 5 เท่า ค่านี้ใช้ได้ใน cohort study และ RCT"},
+        {"label": "C", "text": "12", "is_correct": false, "explanation": "12 คือ attributable risk (AR) = 15 - 3 = 12 ต่อ 1,000 person-years ซึ่งเป็นผลต่างของ incidence ไม่ใช่ relative risk ที่เป็นอัตราส่วน"},
+        {"label": "D", "text": "0.2", "is_correct": false, "explanation": "0.2 = 3/15 ซึ่งเป็นการคำนวณกลับด้าน (unexposed/exposed) ไม่ถูกต้อง RR ต้องนำ incidence ของกลุ่ม exposed เป็นตัวตั้ง"},
+        {"label": "E", "text": "18", "is_correct": false, "explanation": "18 = 15 + 3 ซึ่งเป็นการบวก incidence ทั้งสองกลุ่มเข้าด้วยกัน ไม่มีความหมายทางระบาดวิทยา"}
+      ],
+      "key_takeaway": "Relative risk (RR) = Incidence ในกลุ่ม exposed / Incidence ในกลุ่ม unexposed ใช้ใน cohort study เพื่อวัดความแรงของความสัมพันธ์ระหว่างปัจจัยเสี่ยงและโรค"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การตรวจคัดกรองมะเร็งเต้านมด้วย mammography ในสตรีอายุ 50-69 ปี จำนวน 10,000 คน พบว่ามีผู้ป่วยมะเร็งเต้านมจริง 100 คน ผล mammography เป็นบวกในผู้ป่วยจริง 90 คน และเป็นบวกในผู้ไม่ป่วย 495 คน ค่า positive predictive value (PPV) ของการตรวจนี้เท่ากับเท่าใด",
+    "choices": [
+      {"label": "A", "text": "90%"},
+      {"label": "B", "text": "15.4%"},
+      {"label": "C", "text": "95%"},
+      {"label": "D", "text": "10%"},
+      {"label": "E", "text": "50%"}
+    ],
+    "correct_answer": "B",
+    "explanation": "PPV = True positive / (True positive + False positive) = 90 / (90 + 495) = 90/585 = 15.4%",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. 15.4%",
+      "reason": "Positive predictive value (PPV) คือความน่าจะเป็นที่ผู้ที่ได้ผลตรวจเป็นบวกจะเป็นโรคจริง คำนวณจาก True positive / (True positive + False positive)\n\nจากโจทย์: ผู้ป่วยจริง 100 คน ตรวจพบ (TP) = 90 คน ตรวจไม่พบ (FN) = 10 คน ผู้ไม่ป่วย 9,900 คน ตรวจพบผิด (FP) = 495 คน ตรวจถูก (TN) = 9,405 คน\n\nPPV = TP / (TP + FP) = 90 / (90 + 495) = 90 / 585 = 0.154 = 15.4%\n\nPPV ขึ้นกับ prevalence ของโรค ถ้า prevalence ต่ำ PPV จะต่ำแม้ว่าการตรวจจะมี sensitivity และ specificity สูงก็ตาม ในกรณีนี้ prevalence = 100/10,000 = 1% ซึ่งค่อนข้างต่ำ ทำให้ PPV ต่ำ",
+      "choices": [
+        {"label": "A", "text": "90%", "is_correct": false, "explanation": "90% คือค่า sensitivity = TP/(TP+FN) = 90/100 = 90% ไม่ใช่ PPV ซึ่ง sensitivity วัดความสามารถในการตรวจพบผู้ป่วยจริง"},
+        {"label": "B", "text": "15.4%", "is_correct": true, "explanation": "PPV = 90/(90+495) = 90/585 = 15.4% หมายความว่าในผู้ที่ตรวจได้ผลบวก มีเพียง 15.4% ที่เป็นมะเร็งเต้านมจริง เนื่องจาก prevalence ต่ำ"},
+        {"label": "C", "text": "95%", "is_correct": false, "explanation": "95% คือค่า specificity = TN/(TN+FP) = 9,405/9,900 = 95% ซึ่งวัดความสามารถในการตรวจแยกผู้ไม่ป่วยออกไปได้ถูกต้อง"},
+        {"label": "D", "text": "10%", "is_correct": false, "explanation": "ค่านี้ไม่ตรงกับการคำนวณใด ๆ ใน 2x2 table อาจสับสนกับ FN/(TP+FN) = 10/100 = 10%"},
+        {"label": "E", "text": "50%", "is_correct": false, "explanation": "ค่านี้ไม่ตรงกับการคำนวณจาก 2x2 table ในกรณีนี้ PPV จะเป็น 50% ก็ต่อเมื่อ TP = FP เท่ากัน"}
+      ],
+      "key_takeaway": "PPV = TP/(TP+FP) ขึ้นกับ prevalence ของโรคอย่างมาก ถ้า prevalence ต่ำ PPV จะต่ำแม้การตรวจมี sensitivity และ specificity สูง"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "มีการระบาดของโรคอาหารเป็นพิษในงานเลี้ยงที่มีผู้เข้าร่วม 200 คน พบผู้ป่วย 80 คน ทุกคนมีอาการคลื่นไส้ อาเจียน ถ่ายเหลว ภายใน 6-12 ชั่วโมงหลังรับประทานอาหาร การสอบสวนโรคพบว่าอาหารที่มี attack rate สูงที่สุดคือข้าวผัดที่ทิ้งไว้ที่อุณหภูมิห้องนาน 8 ชั่วโมง เชื้อที่น่าจะเป็นสาเหตุมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Bacillus cereus (emetic type)"},
+      {"label": "B", "text": "Clostridium botulinum"},
+      {"label": "C", "text": "Salmonella enteritidis"},
+      {"label": "D", "text": "Vibrio cholerae"},
+      {"label": "E", "text": "Shigella sonnei"}
+    ],
+    "correct_answer": "A",
+    "explanation": "ข้าวผัดที่ทิ้งไว้ที่อุณหภูมิห้อง + อาการอาเจียนเป็นหลักภายใน 6-12 ชม. บ่งชี้ Bacillus cereus emetic type ซึ่งสร้าง preformed toxin (cereulide)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Bacillus cereus (emetic type)",
+      "reason": "Bacillus cereus เป็นสาเหตุที่พบบ่อยของ food poisoning ที่เกี่ยวข้องกับข้าวผัดหรืออาหารประเภทข้าว แบ่งเป็น 2 types:\n\n1. Emetic type: สร้าง preformed toxin ชื่อ cereulide ในอาหาร โดยเฉพาะข้าวที่หุงแล้วทิ้งไว้ที่อุณหภูมิห้อง สปอร์ที่ทนความร้อนจะ germinate และสร้าง toxin อาการหลักคือคลื่นไส้ อาเจียน ภายใน 1-6 ชั่วโมง (อาจนานถึง 12 ชม.) หายเองใน 24 ชม.\n\n2. Diarrheal type: สร้าง enterotoxin ในลำไส้ มีอาการถ่ายเหลวเป็นหลัก ภายใน 8-16 ชม.\n\nในกรณีนี้ ข้าวผัดที่ทิ้งไว้อุณหภูมิห้อง 8 ชม. เป็น classic setting ของ B. cereus emetic type อาการคลื่นไส้ อาเจียน ถ่ายเหลว ภายใน 6-12 ชม. สอดคล้องกับเชื้อนี้",
+      "choices": [
+        {"label": "A", "text": "Bacillus cereus (emetic type)", "is_correct": true, "explanation": "B. cereus emetic type เป็น classic cause ของ fried rice syndrome สปอร์ทนความร้อนจาก cooking จะ germinate เมื่อข้าวถูกทิ้งไว้ที่อุณหภูมิห้อง แล้วสร้าง preformed toxin (cereulide) ที่ทนต่อความร้อน"},
+        {"label": "B", "text": "Clostridium botulinum", "is_correct": false, "explanation": "C. botulinum ทำให้เกิด botulism ซึ่งมีอาการทางระบบประสาท (descending flaccid paralysis) ไม่ใช่อาการทางระบบทางเดินอาหารเป็นหลัก มักเกี่ยวข้องกับอาหารกระป๋อง"},
+        {"label": "C", "text": "Salmonella enteritidis", "is_correct": false, "explanation": "Salmonella มักเกี่ยวข้องกับอาหารที่ปรุงไม่สุก โดยเฉพาะไข่และเนื้อสัตว์ มี incubation period 12-72 ชม. และมักมีไข้ร่วมด้วย ไม่เกี่ยวกับข้าวผัดโดยเฉพาะ"},
+        {"label": "D", "text": "Vibrio cholerae", "is_correct": false, "explanation": "V. cholerae ทำให้เกิดอาการถ่ายเหลวเป็นน้ำปริมาณมาก (rice-water stool) มักเกี่ยวกับน้ำหรืออาหารทะเลปนเปื้อน ไม่ใช่ข้าวผัด และมักมี incubation period 1-5 วัน"},
+        {"label": "E", "text": "Shigella sonnei", "is_correct": false, "explanation": "Shigella ทำให้เกิด dysentery มีอาการถ่ายเหลวมีมูกเลือด ไข้สูง ปวดท้องบีบ มักติดต่อ person-to-person มากกว่าผ่านอาหารที่ทิ้งไว้"}
+      ],
+      "key_takeaway": "'Fried rice syndrome' เกิดจาก Bacillus cereus emetic type ที่สร้าง preformed toxin (cereulide) ในข้าวที่หุงแล้วทิ้งไว้ที่อุณหภูมิห้อง"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการศึกษาประสิทธิผลของวัคซีนป้องกันไข้หวัดใหญ่ในผู้สูงอายุ กลุ่มที่ได้รับวัคซีน 10,000 คน เกิดไข้หวัดใหญ่ 200 คน กลุ่มที่ไม่ได้รับวัคซีน 10,000 คน เกิดไข้หวัดใหญ่ 800 คน Vaccine efficacy เท่ากับเท่าใด",
+    "choices": [
+      {"label": "A", "text": "25%"},
+      {"label": "B", "text": "50%"},
+      {"label": "C", "text": "60%"},
+      {"label": "D", "text": "75%"},
+      {"label": "E", "text": "80%"}
+    ],
+    "correct_answer": "D",
+    "explanation": "Vaccine efficacy = (1 - RR) × 100 = (1 - 200/800) × 100 = (1 - 0.25) × 100 = 75%",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: D. 75%",
+      "reason": "Vaccine efficacy (VE) คำนวณจากสูตร VE = (1 - RR) × 100% โดย RR = Risk ratio = อัตราป่วยในกลุ่มได้วัคซีน / อัตราป่วยในกลุ่มไม่ได้วัคซีน\n\nอัตราป่วยในกลุ่มได้วัคซีน = 200/10,000 = 0.02\nอัตราป่วยในกลุ่มไม่ได้วัคซีน = 800/10,000 = 0.08\nRR = 0.02/0.08 = 0.25\nVE = (1 - 0.25) × 100% = 75%\n\nหมายความว่าวัคซีนนี้สามารถลดอัตราการเกิดไข้หวัดใหญ่ได้ 75% เมื่อเทียบกับกลุ่มที่ไม่ได้รับวัคซีน\n\nVaccine efficacy วัดจากการศึกษาแบบ controlled trial ส่วน vaccine effectiveness วัดจากสถานการณ์จริง (real-world setting) ซึ่งมักจะต่ำกว่า efficacy",
+      "choices": [
+        {"label": "A", "text": "25%", "is_correct": false, "explanation": "25% คือค่า RR ไม่ใช่ VE ผู้ตอบอาจสับสนระหว่าง RR และ (1-RR) ค่า VE = (1-0.25) × 100 = 75%"},
+        {"label": "B", "text": "50%", "is_correct": false, "explanation": "ค่านี้ไม่ตรงกับการคำนวณ VE อาจสับสนจากการคำนวณผิดขั้นตอน"},
+        {"label": "C", "text": "60%", "is_correct": false, "explanation": "ค่านี้ไม่ตรงกับการคำนวณ VE = (1-RR) × 100% อาจเกิดจากการใช้ตัวเลขผิด"},
+        {"label": "D", "text": "75%", "is_correct": true, "explanation": "VE = (1 - RR) × 100 = (1 - 0.25) × 100 = 75% วัคซีนลดอัตราป่วยจาก 8% เหลือ 2% ถือว่ามีประสิทธิผลสูง"},
+        {"label": "E", "text": "80%", "is_correct": false, "explanation": "ค่านี้ไม่ตรงกับการคำนวณ อาจสับสนกับ attributable risk percent = (800-200)/800 × 100 = 75% ซึ่งให้ค่าเท่ากันในกรณีนี้"}
+      ],
+      "key_takeaway": "Vaccine efficacy = (1 - RR) × 100% วัดว่าวัคซีนลดอัตราป่วยได้กี่เปอร์เซ็นต์เมื่อเทียบกับกลุ่มไม่ได้วัคซีน"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษา cohort study ติดตามผู้ป่วยเบาหวานชนิดที่ 2 จำนวน 2,000 คน เป็นเวลา 5 ปี พบว่ามีผู้ป่วย 300 คน ย้ายไปอยู่ต่างจังหวัดระหว่างการศึกษา และมีผู้ป่วย 100 คน เสียชีวิตจากสาเหตุอื่นก่อนสิ้นสุดการศึกษา ปัญหาเหล่านี้จะส่งผลกระทบต่อ validity ของการศึกษาในข้อใด",
+    "choices": [
+      {"label": "A", "text": "Selection bias"},
+      {"label": "B", "text": "Information bias"},
+      {"label": "C", "text": "Confounding"},
+      {"label": "D", "text": "Loss to follow-up bias"},
+      {"label": "E", "text": "Lead-time bias"}
+    ],
+    "correct_answer": "D",
+    "explanation": "การสูญเสียผู้เข้าร่วมการศึกษาระหว่างการติดตาม (loss to follow-up) ทำให้เกิด attrition bias ซึ่งส่งผลต่อ internal validity ของ cohort study",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: D. Loss to follow-up bias",
+      "reason": "Loss to follow-up bias (attrition bias) เกิดขึ้นเมื่อผู้เข้าร่วมการศึกษาหายไปจากการติดตาม ทำให้ไม่ทราบ outcome ของกลุ่มนั้น ถ้าการหายไปมีความสัมพันธ์กับทั้ง exposure และ outcome จะทำให้ผลการศึกษาเบี่ยงเบน (biased)\n\nในกรณีนี้ ผู้ป่วยเบาหวาน 300 คนย้ายไปต่างจังหวัด (lost to follow-up) และ 100 คนเสียชีวิตจากสาเหตุอื่น (competing risk) ทำให้สูญเสียข้อมูล 400/2,000 = 20% ของกลุ่มตัวอย่าง\n\nถ้าผู้ที่หายไปมีลักษณะแตกต่างจากผู้ที่ยังอยู่ในการศึกษา เช่น ผู้ที่ย้ายไปต่างจังหวัดอาจมีสถานะเศรษฐกิจต่ำกว่า หรือผู้ที่เสียชีวิตอาจมีโรคร่วมมากกว่า จะทำให้ผลการศึกษาไม่สามารถเป็นตัวแทนของกลุ่มเดิมได้",
+      "choices": [
+        {"label": "A", "text": "Selection bias", "is_correct": false, "explanation": "Selection bias เกิดจากวิธีการคัดเลือกผู้เข้าร่วมการศึกษาตั้งแต่ต้น ไม่ใช่การสูญเสียระหว่างการติดตาม แม้ว่า loss to follow-up จะเป็น subtype ของ selection bias แต่คำตอบที่จำเพาะกว่าคือ loss to follow-up bias"},
+        {"label": "B", "text": "Information bias", "is_correct": false, "explanation": "Information bias เกิดจากความผิดพลาดในการวัดหรือจำแนก exposure หรือ outcome เช่น recall bias, misclassification bias ไม่เกี่ยวกับการสูญเสียผู้เข้าร่วมการศึกษา"},
+        {"label": "C", "text": "Confounding", "is_correct": false, "explanation": "Confounding เกิดจากตัวแปรที่สามที่สัมพันธ์กับทั้ง exposure และ outcome ทำให้เกิดความสัมพันธ์เทียม ไม่ใช่ปัญหาที่เกิดจากการสูญเสียผู้เข้าร่วม"},
+        {"label": "D", "text": "Loss to follow-up bias", "is_correct": true, "explanation": "การที่ผู้เข้าร่วมหายไป 20% จากการย้ายถิ่นฐานและเสียชีวิต ทำให้เกิด loss to follow-up bias โดยเฉพาะถ้าการหายไปมีความสัมพันธ์กับ outcome ที่ศึกษา ถือเป็นปัญหาสำคัญของ cohort study"},
+        {"label": "E", "text": "Lead-time bias", "is_correct": false, "explanation": "Lead-time bias เกิดจากการตรวจคัดกรองที่ทำให้วินิจฉัยโรคได้เร็วขึ้น ทำให้ดูเหมือนว่า survival time ยาวขึ้น ไม่เกี่ยวกับการสูญเสียผู้เข้าร่วมการศึกษา"}
+      ],
+      "key_takeaway": "Loss to follow-up bias เป็นปัญหาสำคัญของ cohort study เกิดเมื่อผู้เข้าร่วมหายไปจากการติดตาม โดยเฉพาะถ้า > 20% หรือการหายไปสัมพันธ์กับ outcome"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในหมู่บ้านแห่งหนึ่ง ประชากร 5,000 คน เมื่อวันที่ 1 มกราคม มีผู้ป่วยเบาหวานเดิม 200 คน ระหว่างปีพบผู้ป่วยเบาหวานรายใหม่ 50 คน และมีผู้ป่วยเบาหวานเสียชีวิต 10 คน (เป็นผู้ป่วยเดิม 8 คน รายใหม่ 2 คน) จงคำนวณ prevalence ณ วันที่ 31 ธันวาคม",
+    "choices": [
+      {"label": "A", "text": "200/5,000 = 4.0%"},
+      {"label": "B", "text": "240/4,990 = 4.8%"},
+      {"label": "C", "text": "250/5,000 = 5.0%"},
+      {"label": "D", "text": "50/4,800 = 1.0%"},
+      {"label": "E", "text": "50/5,000 = 1.0%"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Point prevalence ณ 31 ธ.ค. = ผู้ป่วยที่มีชีวิตอยู่ ณ จุดนั้น / ประชากรทั้งหมด ณ จุดนั้น = (200 + 50 - 10) / (5,000 - 10) = 240/4,990 = 4.8%",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. 240/4,990 = 4.8%",
+      "reason": "Point prevalence คือสัดส่วนของผู้ป่วยที่มีโรคอยู่ ณ จุดเวลาหนึ่ง หารด้วยจำนวนประชากรทั้งหมด ณ จุดเวลานั้น\n\nการคำนวณ:\n- ผู้ป่วยเดิม 1 ม.ค. = 200 คน\n- ผู้ป่วยรายใหม่ระหว่างปี = 50 คน\n- ผู้ป่วยเสียชีวิตระหว่างปี = 10 คน (เดิม 8 + ใหม่ 2)\n- ผู้ป่วยที่มีชีวิตอยู่ ณ 31 ธ.ค. = 200 + 50 - 10 = 240 คน\n- ประชากรทั้งหมด ณ 31 ธ.ค. = 5,000 - 10 = 4,990 คน\n\nPoint prevalence ณ 31 ธ.ค. = 240/4,990 = 4.81% ≈ 4.8%\n\nPrevalence ≠ Incidence กล่าวคือ prevalence วัดจำนวนผู้ป่วยทั้งหมดที่มีอยู่ ณ จุดเวลาหนึ่ง ขณะที่ incidence วัดจำนวนผู้ป่วยรายใหม่ในช่วงเวลาหนึ่ง",
+      "choices": [
+        {"label": "A", "text": "200/5,000 = 4.0%", "is_correct": false, "explanation": "นี่คือ prevalence ณ 1 ม.ค. ไม่ใช่ 31 ธ.ค. ยังไม่ได้รวมผู้ป่วยรายใหม่และหักผู้เสียชีวิตออก"},
+        {"label": "B", "text": "240/4,990 = 4.8%", "is_correct": true, "explanation": "ตัวเศษ = 200 + 50 - 10 = 240 (ผู้ป่วยเดิม + รายใหม่ - เสียชีวิต) ตัวส่วน = 5,000 - 10 = 4,990 (ประชากรเดิม - เสียชีวิต) เป็น point prevalence ณ 31 ธ.ค. ที่ถูกต้อง"},
+        {"label": "C", "text": "250/5,000 = 5.0%", "is_correct": false, "explanation": "ผิดเพราะไม่หักผู้เสียชีวิตออกจากทั้งตัวเศษ (250 ควรเป็น 240) และตัวส่วน (5,000 ควรเป็น 4,990)"},
+        {"label": "D", "text": "50/4,800 = 1.0%", "is_correct": false, "explanation": "50 คือ incidence (ผู้ป่วยรายใหม่) ไม่ใช่ prevalence ที่ต้องรวมผู้ป่วยเดิมด้วย และตัวส่วน 4,800 ก็คำนวณผิด"},
+        {"label": "E", "text": "50/5,000 = 1.0%", "is_correct": false, "explanation": "นี่คือ incidence rate (ผู้ป่วยรายใหม่/ประชากร at risk) ไม่ใช่ prevalence ที่ต้องรวมผู้ป่วยเดิมที่ยังมีชีวิตอยู่"}
+      ],
+      "key_takeaway": "Point prevalence ณ จุดเวลาหนึ่ง = จำนวนผู้ป่วยทั้งเก่าและใหม่ที่ยังมีชีวิตอยู่ ณ จุดนั้น หารด้วยจำนวนประชากรทั้งหมด ณ จุดเวลาเดียวกัน"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการศึกษาความสัมพันธ์ระหว่างการดื่มกาแฟกับมะเร็งกระเพาะปัสสาวะ พบว่า crude odds ratio = 2.5 แต่เมื่อ stratified analysis ตามสถานะการสูบบุหรี่ พบว่า OR ในกลุ่มสูบบุหรี่ = 1.1 และ OR ในกลุ่มไม่สูบบุหรี่ = 1.0 ปรากฏการณ์นี้เรียกว่า",
+    "choices": [
+      {"label": "A", "text": "Effect modification"},
+      {"label": "B", "text": "Confounding"},
+      {"label": "C", "text": "Information bias"},
+      {"label": "D", "text": "Selection bias"},
+      {"label": "E", "text": "Interaction"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Crude OR สูง แต่ stratified OR ใกล้เคียง 1 ทั้งสอง strata แสดงว่าการสูบบุหรี่เป็น confounder ที่ทำให้เกิดความสัมพันธ์เทียมระหว่างกาแฟและมะเร็งกระเพาะปัสสาวะ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Confounding",
+      "reason": "Confounding เกิดขึ้นเมื่อตัวแปรที่สาม (confounder) มีความสัมพันธ์กับทั้ง exposure (กาแฟ) และ outcome (มะเร็งกระเพาะปัสสาวะ) โดยไม่ได้อยู่ใน causal pathway ทำให้ crude association เบี่ยงเบนไปจากค่าที่แท้จริง\n\nในกรณีนี้ การสูบบุหรี่เป็น confounder เพราะ: 1) ผู้ดื่มกาแฟมักสูบบุหรี่ด้วย (associated with exposure) 2) การสูบบุหรี่เป็นปัจจัยเสี่ยงของมะเร็งกระเพาะปัสสาวะ (associated with outcome) 3) ไม่ได้อยู่ใน causal pathway ระหว่างกาแฟกับมะเร็ง\n\nเมื่อ stratify ตามสถานะการสูบบุหรี่ OR ลดลงจาก 2.5 เป็น 1.0-1.1 ซึ่งใกล้เคียง null value (OR = 1) แสดงว่าความสัมพันธ์เทียมหายไปเมื่อควบคุม confounder",
+      "choices": [
+        {"label": "A", "text": "Effect modification", "is_correct": false, "explanation": "Effect modification เกิดเมื่อ stratum-specific ORs แตกต่างกันอย่างมีนัยสำคัญ เช่น OR ใน subgroup หนึ่งสูง อีก subgroup ต่ำ ในกรณีนี้ OR ใกล้เคียงกัน (1.1 vs 1.0) จึงไม่ใช่ effect modification"},
+        {"label": "B", "text": "Confounding", "is_correct": true, "explanation": "Crude OR (2.5) สูงกว่า stratified ORs (1.0-1.1) อย่างมาก แสดงว่าการสูบบุหรี่ confound ความสัมพันธ์ระหว่างกาแฟและมะเร็ง เมื่อควบคุม confounder แล้วไม่พบความสัมพันธ์จริง"},
+        {"label": "C", "text": "Information bias", "is_correct": false, "explanation": "Information bias เกิดจากความผิดพลาดในการวัด exposure หรือ outcome เช่น recall bias ไม่ใช่ปัญหาที่แก้ไขได้ด้วย stratified analysis"},
+        {"label": "D", "text": "Selection bias", "is_correct": false, "explanation": "Selection bias เกิดจากวิธีการคัดเลือกผู้เข้าร่วมการศึกษา ไม่ใช่ปัญหาที่ crude OR เปลี่ยนแปลงเมื่อ stratify ตามตัวแปรที่สาม"},
+        {"label": "E", "text": "Interaction", "is_correct": false, "explanation": "Interaction (effect modification) จะพบว่า stratum-specific measures of association แตกต่างกันอย่างมีนัยสำคัญ ในที่นี้ OR ใกล้เคียงกัน (1.1 vs 1.0) จึงไม่ใช่ interaction"}
+      ],
+      "key_takeaway": "Confounding ทำให้ crude association เบี่ยงเบนจากค่าจริง สังเกตได้เมื่อ crude OR แตกต่างจาก adjusted/stratified OR อย่างมาก ขณะที่ stratum-specific ORs ใกล้เคียงกัน"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "สถานีอนามัยแห่งหนึ่งมีประชากรในพื้นที่รับผิดชอบ 10,000 คน ต้องการประเมินสถานการณ์โรคเบาหวานในชุมชน จึงสุ่มตัวอย่างประชากร 500 คน เจาะเลือดตรวจ FBS พบว่ามี FBS ≥ 126 mg/dL จำนวน 40 คน ค่าที่ได้จากการศึกษานี้คือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Incidence rate"},
+      {"label": "B", "text": "Period prevalence"},
+      {"label": "C", "text": "Point prevalence"},
+      {"label": "D", "text": "Cumulative incidence"},
+      {"label": "E", "text": "Attack rate"}
+    ],
+    "correct_answer": "C",
+    "explanation": "การสำรวจ ณ จุดเวลาเดียวเพื่อวัดสัดส่วนผู้ที่เป็นโรคในประชากร เป็น point prevalence = 40/500 = 8%",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Point prevalence",
+      "reason": "Point prevalence คือสัดส่วนของผู้ที่มีโรค ณ จุดเวลาหนึ่ง ในกรณีนี้คือการเจาะเลือดตรวจ FBS ในช่วงเวลาเดียวกัน (cross-sectional) ทำให้ได้ snapshot ของจำนวนผู้ป่วยเบาหวาน ณ จุดเวลานั้น\n\nPoint prevalence = จำนวนผู้ป่วย ณ จุดเวลา / ประชากรทั้งหมด ณ จุดเวลาเดียวกัน = 40/500 = 8%\n\nสามารถประมาณ prevalence ในชุมชน = 8% ของ 10,000 = ประมาณ 800 คน\n\nPoint prevalence แตกต่างจาก period prevalence ที่รวมทั้งผู้ป่วยเดิมและรายใหม่ในช่วงเวลาหนึ่ง และแตกต่างจาก incidence ที่นับเฉพาะผู้ป่วยรายใหม่",
+      "choices": [
+        {"label": "A", "text": "Incidence rate", "is_correct": false, "explanation": "Incidence rate วัดอัตราการเกิดโรคใหม่ต่อ person-time ต้องมีการติดตามผู้ที่ไม่มีโรคไปข้างหน้าเพื่อดูว่าเกิดโรคใหม่เท่าใด ไม่ใช่การตรวจ ณ จุดเวลาเดียว"},
+        {"label": "B", "text": "Period prevalence", "is_correct": false, "explanation": "Period prevalence วัดสัดส่วนผู้ป่วยในช่วงเวลาหนึ่ง (เช่น 1 ปี) รวมทั้งรายเก่าและรายใหม่ ในกรณีนี้เจาะเลือด ณ จุดเวลาเดียว จึงเป็น point prevalence"},
+        {"label": "C", "text": "Point prevalence", "is_correct": true, "explanation": "การเจาะเลือดตรวจ FBS ในช่วงเวลาเดียวกัน (cross-sectional) ทำให้ได้ point prevalence = 40/500 = 8% ซึ่งเป็นสัดส่วนผู้ป่วยเบาหวาน ณ จุดเวลาที่สำรวจ"},
+        {"label": "D", "text": "Cumulative incidence", "is_correct": false, "explanation": "Cumulative incidence คือสัดส่วนของผู้ที่เกิดโรคใหม่ในช่วงเวลาที่กำหนด ต้องเริ่มจากกลุ่มที่ไม่มีโรคแล้วติดตามไปข้างหน้า ไม่ใช่การตรวจ ณ จุดเวลาเดียว"},
+        {"label": "E", "text": "Attack rate", "is_correct": false, "explanation": "Attack rate ใช้ในบริบทของการระบาด (outbreak) หมายถึงสัดส่วนผู้ป่วยในกลุ่มที่สัมผัสปัจจัย ไม่ใช่การสำรวจโรคเรื้อรังในชุมชน"}
+      ],
+      "key_takeaway": "การตรวจ ณ จุดเวลาเดียว (cross-sectional survey) ให้ค่า point prevalence ซึ่งวัดสัดส่วนผู้ป่วยที่มีอยู่ ณ ขณะนั้น"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษาความสัมพันธ์ระหว่างการออกกำลังกายกับโรคหัวใจในกลุ่มข้าราชการ 5,000 คน โดยให้ตอบแบบสอบถามเกี่ยวกับการออกกำลังกายและตรวจหาโรคหัวใจ ณ จุดเวลาเดียวกัน พบว่ากลุ่มที่ออกกำลังกายมี OR ของโรคหัวใจ = 0.4 (95% CI: 0.2-0.8) ข้อจำกัดที่สำคัญที่สุดของการศึกษานี้คือ",
+    "choices": [
+      {"label": "A", "text": "ไม่สามารถสรุปความสัมพันธ์เชิงสาเหตุได้เนื่องจากไม่ทราบลำดับเวลา"},
+      {"label": "B", "text": "กลุ่มตัวอย่างน้อยเกินไป"},
+      {"label": "C", "text": "ไม่สามารถคำนวณ relative risk ได้"},
+      {"label": "D", "text": "ไม่มีกลุ่มควบคุม"},
+      {"label": "E", "text": "ผลลัพธ์ไม่มีนัยสำคัญทางสถิติ"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Cross-sectional study วัด exposure และ outcome พร้อมกัน จึงไม่สามารถระบุ temporal relationship ได้ ซึ่งเป็นข้อจำกัดสำคัญที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. ไม่สามารถสรุปความสัมพันธ์เชิงสาเหตุได้เนื่องจากไม่ทราบลำดับเวลา",
+      "reason": "การศึกษานี้เป็น cross-sectional study เพราะเก็บข้อมูล exposure (การออกกำลังกาย) และ outcome (โรคหัวใจ) ณ จุดเวลาเดียวกัน ข้อจำกัดที่สำคัญที่สุดคือไม่สามารถระบุ temporal relationship (ลำดับเวลา) ได้\n\nตาม Hill's criteria of causation ข้อที่สำคัญที่สุดคือ temporality ซึ่ง exposure ต้องเกิดก่อน outcome ใน cross-sectional study เราไม่ทราบว่าคนออกกำลังกายก่อนแล้วจึงไม่เป็นโรคหัวใจ หรือคนที่ไม่เป็นโรคหัวใจจึงสามารถออกกำลังกายได้ (reverse causation)\n\nOR = 0.4 (95% CI: 0.2-0.8) แสดงว่ามี statistical significance (CI ไม่คร่อม 1) แต่ไม่สามารถสรุปว่าการออกกำลังกายเป็นสาเหตุของการลดโรคหัวใจได้",
+      "choices": [
+        {"label": "A", "text": "ไม่สามารถสรุปความสัมพันธ์เชิงสาเหตุได้", "is_correct": true, "explanation": "Cross-sectional study วัด exposure และ outcome พร้อมกัน ทำให้ไม่ทราบว่าอะไรเกิดก่อน อาจเป็น reverse causation คือคนที่เป็นโรคหัวใจจึงออกกำลังกายไม่ได้"},
+        {"label": "B", "text": "กลุ่มตัวอย่างน้อยเกินไป", "is_correct": false, "explanation": "กลุ่มตัวอย่าง 5,000 คนถือว่าเพียงพอสำหรับ cross-sectional study และ 95% CI ไม่กว้างมาก (0.2-0.8) แสดงว่ามี statistical power เพียงพอ"},
+        {"label": "C", "text": "ไม่สามารถคำนวณ relative risk ได้", "is_correct": false, "explanation": "แม้ว่า cross-sectional study มักใช้ OR แทน RR แต่ถ้า prevalence ต่ำ OR ≈ RR และนี่ไม่ใช่ข้อจำกัดสำคัญที่สุด ข้อจำกัดหลักคือเรื่อง temporality"},
+        {"label": "D", "text": "ไม่มีกลุ่มควบคุม", "is_correct": false, "explanation": "Cross-sectional study ไม่จำเป็นต้องมีกลุ่มควบคุมเหมือน case-control study มีการเปรียบเทียบระหว่างกลุ่มที่ออกกำลังกายและไม่ออกกำลังกายอยู่แล้ว"},
+        {"label": "E", "text": "ผลลัพธ์ไม่มีนัยสำคัญทางสถิติ", "is_correct": false, "explanation": "95% CI (0.2-0.8) ไม่คร่อมค่า 1 แสดงว่าผลลัพธ์มีนัยสำคัญทางสถิติ (p < 0.05) จึงไม่ใช่ข้อจำกัด"}
+      ],
+      "key_takeaway": "ข้อจำกัดสำคัญที่สุดของ cross-sectional study คือไม่สามารถระบุ temporal relationship ได้ ทำให้ไม่สามารถสรุปความสัมพันธ์เชิงสาเหตุ (causation) ได้"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "โรงพยาบาลแห่งหนึ่งต้องการทดสอบว่ายาลดความดันชนิดใหม่ดีกว่ายาเดิมหรือไม่ จึงทำการศึกษาแบบ double-blind RCT ในผู้ป่วยความดันโลหิตสูง 200 คน สุ่มแบ่ง 2 กลุ่ม กลุ่มละ 100 คน หลัง 6 เดือน พบว่ากลุ่มยาใหม่ลดความดันได้เฉลี่ย 15 mmHg กลุ่มยาเดิมลดได้ 10 mmHg (p = 0.03) แต่มีผู้ป่วยในกลุ่มยาใหม่ 20 คนหยุดยาเนื่องจากอาการข้างเคียง การวิเคราะห์ผลแบบ intention-to-treat (ITT) จะรวมผู้ป่วย 20 คนนี้ไว้ในกลุ่มใด",
+    "choices": [
+      {"label": "A", "text": "ตัดออกจากการวิเคราะห์"},
+      {"label": "B", "text": "ย้ายไปกลุ่มยาเดิม"},
+      {"label": "C", "text": "คงไว้ในกลุ่มยาใหม่ตามที่สุ่มไว้"},
+      {"label": "D", "text": "วิเคราะห์แยกเป็นกลุ่มที่ 3"},
+      {"label": "E", "text": "รวมเข้ากับทั้งสองกลุ่ม"}
+    ],
+    "correct_answer": "C",
+    "explanation": "ITT analysis วิเคราะห์ผู้เข้าร่วมทุกคนตามกลุ่มที่ได้รับการสุ่ม (randomization) โดยไม่คำนึงถึงว่าจะได้รับ intervention จริงหรือไม่",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. คงไว้ในกลุ่มยาใหม่ตามที่สุ่มไว้",
+      "reason": "Intention-to-treat (ITT) analysis เป็นหลักการวิเคราะห์ผลใน RCT ที่รวมผู้เข้าร่วมทุกคนตามกลุ่มที่ได้รับการสุ่ม (as randomized) โดยไม่คำนึงว่าจะปฏิบัติตามแผนการรักษาหรือไม่\n\nข้อดีของ ITT:\n1. รักษาประโยชน์ของ randomization ทำให้กลุ่มเปรียบเทียบมี baseline characteristics คล้ายคลึงกัน\n2. ลด selection bias ที่อาจเกิดจากการตัดผู้เข้าร่วมออก\n3. สะท้อนผลลัพธ์ในสถานการณ์จริง (pragmatic approach) เพราะในทางปฏิบัติผู้ป่วยบางคนอาจหยุดยา\n\nข้อเสียคืออาจประมาณ treatment effect ต่ำกว่าความเป็นจริง (diluted) เพราะรวมคนที่ไม่ได้รับยาจริง\n\nPer-protocol analysis จะวิเคราะห์เฉพาะผู้ที่ปฏิบัติตามแผนจนครบ ซึ่งอาจทำให้เกิด bias ได้",
+      "choices": [
+        {"label": "A", "text": "ตัดออกจากการวิเคราะห์", "is_correct": false, "explanation": "การตัดผู้เข้าร่วมออกจะทำลายประโยชน์ของ randomization และอาจเกิด selection bias ผู้ที่หยุดยาอาจมีลักษณะแตกต่างจากผู้ที่ใช้ต่อ นี่เป็นวิธี per-protocol ไม่ใช่ ITT"},
+        {"label": "B", "text": "ย้ายไปกลุ่มยาเดิม", "is_correct": false, "explanation": "การย้ายกลุ่มจะทำลายหลักการของ randomization ทำให้กลุ่มไม่ comparable ITT ต้องคงผู้เข้าร่วมไว้ในกลุ่มเดิมเสมอ"},
+        {"label": "C", "text": "คงไว้ในกลุ่มยาใหม่ตามที่สุ่มไว้", "is_correct": true, "explanation": "ITT analysis ยึดหลัก 'once randomized, always analyzed' ผู้ป่วย 20 คนที่หยุดยาใหม่ยังคงถูกวิเคราะห์ในกลุ่มยาใหม่ เพื่อรักษา randomization และลด bias"},
+        {"label": "D", "text": "วิเคราะห์แยกเป็นกลุ่มที่ 3", "is_correct": false, "explanation": "การแยกเป็นกลุ่มที่ 3 ไม่ใช่หลักการของ ITT analysis และทำให้เกิดปัญหา multiple comparisons ITT ต้องคงไว้ในกลุ่มเดิม"},
+        {"label": "E", "text": "รวมเข้ากับทั้งสองกลุ่ม", "is_correct": false, "explanation": "การรวมเข้ากับทั้งสองกลุ่มไม่มีเหตุผลทางสถิติ ผู้เข้าร่วมแต่ละคนต้องอยู่ในกลุ่มเดียวตามที่สุ่มไว้"}
+      ],
+      "key_takeaway": "ITT analysis วิเคราะห์ผู้เข้าร่วมทุกคนตามกลุ่มที่ได้รับการสุ่ม (as randomized) หลัก 'once randomized, always analyzed' เพื่อรักษาประโยชน์ของ randomization"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการสอบสวนโรคอาหารเป็นพิษจากงานเลี้ยง ข้อมูลแสดงดังนี้: ผู้ที่กินส้มตำ 60 คน ป่วย 30 คน (AR = 50%) ผู้ที่ไม่ได้กินส้มตำ 40 คน ป่วย 10 คน (AR = 25%) ผู้ที่กินลาบ 50 คน ป่วย 15 คน (AR = 30%) ผู้ที่ไม่ได้กินลาบ 50 คน ป่วย 25 คน (AR = 50%) อาหารที่น่าจะเป็นสาเหตุมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "ส้มตำ เพราะ attack rate สูงที่สุดในกลุ่มที่กิน"},
+      {"label": "B", "text": "ส้มตำ เพราะ attack rate ในกลุ่มกินสูงกว่ากลุ่มไม่กิน"},
+      {"label": "C", "text": "ลาบ เพราะ attack rate สูง"},
+      {"label": "D", "text": "ทั้งส้มตำและลาบ"},
+      {"label": "E", "text": "ไม่สามารถระบุได้จากข้อมูลนี้"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ส้มตำมี attack rate ในกลุ่มกิน (50%) สูงกว่ากลุ่มไม่กิน (25%) อย่างชัดเจน ขณะที่ลาบมี attack rate ในกลุ่มกิน (30%) ต่ำกว่ากลุ่มไม่กิน (50%) จึงไม่น่าเป็นสาเหตุ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ส้มตำ เพราะ attack rate ในกลุ่มกินสูงกว่ากลุ่มไม่กิน",
+      "reason": "ในการสอบสวนโรคอาหารเป็นพิษ หลักการสำคัญคือต้องเปรียบเทียบ attack rate ระหว่างกลุ่มที่กินกับกลุ่มที่ไม่ได้กินอาหารแต่ละชนิด\n\nส้มตำ: AR กลุ่มกิน = 50%, AR กลุ่มไม่กิน = 25% ผลต่าง = 25% RR = 50/25 = 2.0\nลาบ: AR กลุ่มกิน = 30%, AR กลุ่มไม่กิน = 50% ผลต่าง = -20% RR = 30/50 = 0.6\n\nส้มตำมี attack rate ในกลุ่มที่กินสูงกว่ากลุ่มที่ไม่ได้กินอย่างชัดเจน (RR = 2.0) แสดงว่าการกินส้มตำเพิ่มความเสี่ยงในการป่วย\n\nขณะที่ลาบมี attack rate ในกลุ่มที่กินต่ำกว่ากลุ่มที่ไม่กิน (RR = 0.6) ซึ่งแสดงว่าลาบไม่ใช่สาเหตุ (protective effect) อาจเป็นเพราะคนที่กินลาบไม่ได้กินส้มตำ",
+      "choices": [
+        {"label": "A", "text": "ส้มตำ เพราะ attack rate สูงที่สุด", "is_correct": false, "explanation": "การดูเฉพาะ attack rate ในกลุ่มที่กินอย่างเดียวไม่เพียงพอ ต้องเปรียบเทียบกับกลุ่มที่ไม่ได้กินด้วย เพราะอาจมี background rate สูงอยู่แล้ว"},
+        {"label": "B", "text": "ส้มตำ เพราะ AR กินสูงกว่า AR ไม่กิน", "is_correct": true, "explanation": "การเปรียบเทียบ AR ระหว่างกลุ่มกินและไม่กิน เป็นหลักการสำคัญ ส้มตำมี AR กลุ่มกิน (50%) สูงกว่ากลุ่มไม่กิน (25%) อย่างมีนัยสำคัญ (RR = 2.0)"},
+        {"label": "C", "text": "ลาบ เพราะ attack rate สูง", "is_correct": false, "explanation": "ลาบมี AR กลุ่มกิน (30%) ต่ำกว่า กลุ่มไม่กิน (50%) ซึ่ง RR = 0.6 < 1 แสดงว่าลาบไม่ใช่สาเหตุ กลับมีลักษณะ protective"},
+        {"label": "D", "text": "ทั้งส้มตำและลาบ", "is_correct": false, "explanation": "ลาบมี RR < 1 แสดงว่าไม่ใช่สาเหตุ มีเพียงส้มตำเท่านั้นที่มี attack rate ในกลุ่มกินสูงกว่ากลุ่มไม่กิน"},
+        {"label": "E", "text": "ไม่สามารถระบุได้", "is_correct": false, "explanation": "จากข้อมูลสามารถเปรียบเทียบ attack rate ระหว่างกลุ่มที่กินและไม่ได้กินได้ ซึ่งชี้ชัดว่าส้มตำเป็นสาเหตุที่น่าจะเป็นมากที่สุด"}
+      ],
+      "key_takeaway": "ในการสอบสวนโรคอาหารเป็นพิษ ต้องเปรียบเทียบ attack rate ระหว่างกลุ่มที่กินและไม่ได้กินอาหารแต่ละชนิด อาหารที่น่าจะเป็นสาเหตุคืออาหารที่มี AR กลุ่มกิน > AR กลุ่มไม่กิน อย่างชัดเจน"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษาวิจัยรูปแบบหนึ่งคัดเลือกเด็กที่เกิดในปี 2020 จำนวน 5,000 คน แล้วติดตามทุกปีจนถึงอายุ 18 ปี เพื่อศึกษาปัจจัยที่มีผลต่อพัฒนาการและสุขภาพ การศึกษานี้เป็นรูปแบบใด",
+    "choices": [
+      {"label": "A", "text": "Case-control study"},
+      {"label": "B", "text": "Prospective cohort study"},
+      {"label": "C", "text": "Retrospective cohort study"},
+      {"label": "D", "text": "Cross-sectional study"},
+      {"label": "E", "text": "Case series"}
+    ],
+    "correct_answer": "B",
+    "explanation": "การคัดเลือกกลุ่มตัวอย่างแล้วติดตามไปข้างหน้า (follow-up) เพื่อดู outcome ที่เกิดขึ้นในอนาคต เป็น prospective cohort study",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Prospective cohort study",
+      "reason": "Prospective cohort study เป็นการศึกษาเชิงสังเกตที่คัดเลือกกลุ่มตัวอย่างตาม exposure status แล้วติดตามไปข้างหน้า (forward in time) เพื่อดูการเกิด outcome\n\nลักษณะของการศึกษานี้ที่บ่งชี้ว่าเป็น prospective cohort:\n1. คัดเลือกกลุ่มตัวอย่าง ณ จุดเริ่มต้น (เด็กเกิดปี 2020)\n2. ติดตามไปข้างหน้า (follow-up 18 ปี)\n3. เก็บข้อมูล exposure และ outcome ตามเวลาจริง\n4. สามารถระบุ temporal relationship ได้\n\nBirth cohort study เป็น subtype ของ prospective cohort study ที่คัดเลือกจากวันเกิด มีข้อดีคือติดตามได้ตั้งแต่แรกเกิด ลด recall bias และสามารถวัด exposure ได้หลายครั้ง",
+      "choices": [
+        {"label": "A", "text": "Case-control study", "is_correct": false, "explanation": "Case-control study เริ่มจากกลุ่มป่วย (case) และไม่ป่วย (control) แล้วมองย้อนกลับหา exposure ไม่ใช่การติดตามไปข้างหน้าตั้งแต่เกิด"},
+        {"label": "B", "text": "Prospective cohort study", "is_correct": true, "explanation": "การคัดเลือกเด็กเกิดปี 2020 แล้วติดตามไปข้างหน้า 18 ปี เป็น birth cohort study ซึ่งเป็น prospective cohort study ที่สามารถวัด exposure ก่อน outcome เกิดขึ้น"},
+        {"label": "C", "text": "Retrospective cohort study", "is_correct": false, "explanation": "Retrospective cohort study ใช้ข้อมูลในอดีตที่มีอยู่แล้ว (เช่น medical records) มาวิเคราะห์ ไม่ใช่การวางแผนติดตามไปข้างหน้าตั้งแต่เริ่มต้น"},
+        {"label": "D", "text": "Cross-sectional study", "is_correct": false, "explanation": "Cross-sectional study เก็บข้อมูล ณ จุดเวลาเดียว ไม่มีการติดตามระยะยาว ซึ่งแตกต่างจากการศึกษานี้ที่ติดตาม 18 ปี"},
+        {"label": "E", "text": "Case series", "is_correct": false, "explanation": "Case series เป็นการรายงานผู้ป่วยหลายรายที่มีลักษณะคล้ายกัน ไม่มีกลุ่มเปรียบเทียบและไม่ได้ออกแบบเพื่อทดสอบ hypothesis"}
+      ],
+      "key_takeaway": "Prospective cohort study (birth cohort) คัดเลือกกลุ่มตัวอย่างแล้วติดตามไปข้างหน้า สามารถระบุ temporal relationship และวัด incidence ได้ เหมาะสำหรับการศึกษาระยะยาว"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการวิเคราะห์ meta-analysis ของ 10 การศึกษาเกี่ยวกับประสิทธิภาพของยาลดไขมันชนิดใหม่ พบว่า I² = 85% และ Cochran's Q test มีค่า p < 0.001 แพทย์ควรแปลผลอย่างไร",
+    "choices": [
+      {"label": "A", "text": "ผลการศึกษามีความเป็นเอกภาพสูง สามารถรวมผลได้"},
+      {"label": "B", "text": "มี heterogeneity สูง ควรใช้ random-effects model และหา source of heterogeneity"},
+      {"label": "C", "text": "ผลการศึกษาไม่มีนัยสำคัญทางสถิติ"},
+      {"label": "D", "text": "มี publication bias ควรทำ funnel plot"},
+      {"label": "E", "text": "ข้อมูลไม่เพียงพอต่อการวิเคราะห์"}
+    ],
+    "correct_answer": "B",
+    "explanation": "I² = 85% แสดง substantial heterogeneity ร่วมกับ Cochran's Q p < 0.001 ยืนยันว่ามี heterogeneity สูง ควรใช้ random-effects model และสำรวจแหล่งที่มาของ heterogeneity",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. มี heterogeneity สูง ควรใช้ random-effects model และหา source of heterogeneity",
+      "reason": "I² (I-squared) เป็นค่าที่ใช้วัดระดับ heterogeneity ใน meta-analysis แบ่งเป็น:\n- 0-25%: low heterogeneity\n- 25-50%: moderate heterogeneity\n- 50-75%: substantial heterogeneity\n- > 75%: considerable heterogeneity\n\nในกรณีนี้ I² = 85% แสดงว่ามี considerable heterogeneity หมายความว่า 85% ของ variability ระหว่างการศึกษาเกิดจากความแตกต่างจริง (true heterogeneity) ไม่ใช่จาก chance\n\nCochran's Q test p < 0.001 ยืนยันว่ามี statistically significant heterogeneity\n\nเมื่อมี heterogeneity สูง ควร:\n1. ใช้ random-effects model แทน fixed-effects model\n2. หา source of heterogeneity ด้วย subgroup analysis หรือ meta-regression\n3. พิจารณาว่าการรวมผลมีความหมายหรือไม่",
+      "choices": [
+        {"label": "A", "text": "มีความเป็นเอกภาพสูง", "is_correct": false, "explanation": "ตรงกันข้าม I² = 85% แสดงว่ามี heterogeneity สูงมาก (considerable) ไม่ใช่ homogeneity ถ้าผลมี homogeneity I² ควรต่ำ (< 25%)"},
+        {"label": "B", "text": "มี heterogeneity สูง ใช้ random-effects model", "is_correct": true, "explanation": "I² = 85% + Cochran's Q p < 0.001 ยืนยันว่ามี heterogeneity สูง ควรใช้ random-effects model ที่คำนึงถึง between-study variance และหา source of heterogeneity"},
+        {"label": "C", "text": "ไม่มีนัยสำคัญทางสถิติ", "is_correct": false, "explanation": "I² และ Cochran's Q ใช้ทดสอบ heterogeneity ไม่ใช่ statistical significance ของ treatment effect p < 0.001 ของ Q test หมายถึงมี heterogeneity อย่างมีนัยสำคัญ"},
+        {"label": "D", "text": "มี publication bias", "is_correct": false, "explanation": "I² วัด heterogeneity ไม่ใช่ publication bias การตรวจ publication bias ใช้ funnel plot, Egger's test หรือ Begg's test ซึ่งเป็นคนละเรื่องกัน"},
+        {"label": "E", "text": "ข้อมูลไม่เพียงพอ", "is_correct": false, "explanation": "มี 10 การศึกษาซึ่งเพียงพอต่อการทำ meta-analysis heterogeneity ไม่ได้หมายความว่าข้อมูลไม่เพียงพอ แต่แสดงว่าการศึกษามีความแตกต่างกัน"}
+      ],
+      "key_takeaway": "I² > 75% แสดง considerable heterogeneity ใน meta-analysis ควรใช้ random-effects model และสำรวจแหล่งที่มาของ heterogeneity ด้วย subgroup analysis หรือ meta-regression"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษาหนึ่งต้องการทดสอบว่า intervention ใหม่ไม่ด้อยกว่ามาตรฐานเดิม (non-inferiority trial) กำหนด non-inferiority margin = 5% ผลการศึกษาพบว่า difference ระหว่าง intervention ใหม่กับมาตรฐาน = -3% (95% CI: -7% ถึง +1%) การแปลผลที่ถูกต้องคือ",
+    "choices": [
+      {"label": "A", "text": "Intervention ใหม่ non-inferior ต่อมาตรฐาน"},
+      {"label": "B", "text": "ไม่สามารถสรุป non-inferiority ได้"},
+      {"label": "C", "text": "Intervention ใหม่ดีกว่ามาตรฐาน (superior)"},
+      {"label": "D", "text": "Intervention ใหม่ด้อยกว่ามาตรฐาน (inferior)"},
+      {"label": "E", "text": "ไม่มีความแตกต่างทางสถิติ"}
+    ],
+    "correct_answer": "B",
+    "explanation": "95% CI ของ difference (-7% ถึง +1%) ข้ามเส้น non-inferiority margin (-5%) จึงไม่สามารถสรุป non-inferiority ได้",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ไม่สามารถสรุป non-inferiority ได้",
+      "reason": "ในการวิเคราะห์ non-inferiority trial การแปลผลดูจาก 95% CI ของ treatment difference เทียบกับ non-inferiority margin ที่กำหนดไว้\n\nหลักการ: ถ้า lower bound ของ 95% CI อยู่เหนือ non-inferiority margin (ไม่ข้าม margin) จึงจะสรุปว่า non-inferior ได้\n\nในกรณีนี้:\n- Non-inferiority margin = -5%\n- 95% CI = -7% ถึง +1%\n- Lower bound (-7%) ต่ำกว่า non-inferiority margin (-5%)\n\nเนื่องจาก CI คร่อม non-inferiority margin (-7% < -5%) จึงไม่สามารถสรุปว่า intervention ใหม่ไม่ด้อยกว่ามาตรฐานได้ อาจเป็นไปได้ว่า true difference อาจเลวกว่า margin ที่ยอมรับได้\n\nถ้า 95% CI อยู่ที่ -4% ถึง +1% (lower bound = -4% > -5%) จึงจะสรุป non-inferiority ได้",
+      "choices": [
+        {"label": "A", "text": "Non-inferior ต่อมาตรฐาน", "is_correct": false, "explanation": "ไม่สามารถสรุป non-inferiority ได้เพราะ lower bound ของ CI (-7%) ต่ำกว่า non-inferiority margin (-5%) ต้อง entire CI อยู่เหนือ margin จึงจะสรุปได้"},
+        {"label": "B", "text": "ไม่สามารถสรุป non-inferiority ได้", "is_correct": true, "explanation": "95% CI (-7% ถึง +1%) คร่อม non-inferiority margin (-5%) lower bound -7% ต่ำกว่า -5% จึงยังมีโอกาสที่ true difference จะเลวกว่า margin ที่ยอมรับได้"},
+        {"label": "C", "text": "ดีกว่ามาตรฐาน (superior)", "is_correct": false, "explanation": "การสรุป superiority ต้อง entire CI อยู่เหนือ 0 (ฝั่งบวก) ในกรณีนี้ CI = -7% ถึง +1% ยังคร่อม 0 อยู่จึงไม่สามารถสรุป superiority ได้"},
+        {"label": "D", "text": "ด้อยกว่ามาตรฐาน (inferior)", "is_correct": false, "explanation": "การสรุป inferiority ต้อง entire CI อยู่ต่ำกว่า non-inferiority margin ในกรณีนี้ upper bound (+1%) ยังสูงกว่า 0 จึงไม่สามารถสรุป inferiority ได้เช่นกัน"},
+        {"label": "E", "text": "ไม่มีความแตกต่างทางสถิติ", "is_correct": false, "explanation": "แม้ CI คร่อม 0 (ไม่มี statistical significance ในแง่ superiority) แต่ non-inferiority trial ไม่ได้ดู statistical significance แบบ conventional แต่เปรียบเทียบกับ non-inferiority margin"}
+      ],
+      "key_takeaway": "ใน non-inferiority trial จะสรุป non-inferior ได้ก็ต่อเมื่อ lower bound ของ 95% CI อยู่เหนือ non-inferiority margin ถ้า CI คร่อม margin = inconclusive"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในตำบลแห่งหนึ่ง ประชากร 20,000 คน มีโครงการตรวจคัดกรองมะเร็งปากมดลูกด้วย Pap smear ในสตรีอายุ 30-60 ปี จำนวน 3,000 คน พบผู้ที่มี abnormal Pap smear 150 คน ส่งตรวจ colposcopy ทุกราย ยืนยัน CIN II-III 30 คน สตรีที่ Pap smear ปกติ 2,850 คน ไม่ได้ตรวจ colposcopy จากข้อมูลนี้สามารถคำนวณค่าใดได้",
+    "choices": [
+      {"label": "A", "text": "Sensitivity และ specificity"},
+      {"label": "B", "text": "Positive predictive value เท่านั้น"},
+      {"label": "C", "text": "Negative predictive value เท่านั้น"},
+      {"label": "D", "text": "Sensitivity เท่านั้น"},
+      {"label": "E", "text": "Prevalence เท่านั้น"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ทราบเฉพาะ TP (30) และ FP (120) ในกลุ่ม positive จึงคำนวณได้เฉพาะ PPV = 30/150 = 20% ไม่ทราบ FN เพราะกลุ่ม negative ไม่ได้ตรวจยืนยัน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Positive predictive value เท่านั้น",
+      "reason": "จากข้อมูลที่มี:\n- Positive Pap smear = 150 คน → ส่ง colposcopy → ยืนยัน CIN II-III = 30 คน (True positive)\n- False positive = 150 - 30 = 120 คน\n- Negative Pap smear = 2,850 คน → ไม่ได้ตรวจ colposcopy\n\nPPV = TP/(TP+FP) = 30/(30+120) = 30/150 = 20%\n\nไม่สามารถคำนวณ sensitivity, specificity, NPV ได้ เพราะ:\n- ไม่ทราบจำนวน False negative (FN) = คนที่ Pap smear ปกติแต่เป็น CIN II-III จริง เพราะไม่ได้ส่ง colposcopy\n- ไม่ทราบจำนวน True negative (TN) ที่แท้จริง\n\nนี่เป็นปัญหา verification bias (workup bias) ที่พบบ่อยในการศึกษา diagnostic test ที่ส่งตรวจยืนยันเฉพาะ positive cases",
+      "choices": [
+        {"label": "A", "text": "Sensitivity และ specificity", "is_correct": false, "explanation": "Sensitivity = TP/(TP+FN) ต้องทราบ FN ซึ่งต้องตรวจ colposcopy ในกลุ่ม Pap smear ปกติด้วย Specificity = TN/(TN+FP) ต้องทราบ TN ที่แท้จริง ไม่สามารถคำนวณทั้งสองค่าได้"},
+        {"label": "B", "text": "Positive predictive value เท่านั้น", "is_correct": true, "explanation": "PPV = TP/(TP+FP) = 30/150 = 20% เป็นค่าเดียวที่คำนวณได้ เพราะทราบทั้ง TP และ FP จากการที่ส่ง colposcopy ทุกรายที่ Pap smear ผิดปกติ"},
+        {"label": "C", "text": "Negative predictive value เท่านั้น", "is_correct": false, "explanation": "NPV = TN/(TN+FN) ต้องทราบ FN (false negative) ซึ่งไม่มีข้อมูลเพราะกลุ่ม negative ไม่ได้ตรวจ colposcopy จึงคำนวณไม่ได้"},
+        {"label": "D", "text": "Sensitivity เท่านั้น", "is_correct": false, "explanation": "Sensitivity = TP/(TP+FN) ต้องทราบ FN ที่จะได้จากการตรวจ colposcopy ในกลุ่ม Pap smear ปกติ ซึ่งไม่ได้ทำ จึงคำนวณไม่ได้"},
+        {"label": "E", "text": "Prevalence เท่านั้น", "is_correct": false, "explanation": "ไม่สามารถคำนวณ true prevalence ได้เพราะไม่ทราบจำนวนผู้ป่วยทั้งหมด (TP+FN) เนื่องจากอาจมี FN ที่ไม่ถูกตรวจพบ"}
+      ],
+      "key_takeaway": "เมื่อส่งตรวจยืนยัน (gold standard) เฉพาะกลุ่ม positive จะคำนวณได้เฉพาะ PPV ถ้าต้องการ sensitivity, specificity, NPV ต้องตรวจยืนยันทุกคนรวมถึง negative cases ปัญหานี้เรียก verification bias"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "แพทย์ทำการศึกษาเพื่อประเมินว่ามลพิษทางอากาศ (PM2.5) มีความสัมพันธ์กับอัตราการเข้ารับการรักษาด้วยโรคหอบหืดในเด็กหรือไม่ โดยเปรียบเทียบระดับ PM2.5 เฉลี่ยรายจังหวัดกับอัตราการนอนโรงพยาบาลด้วยโรคหอบหืดในเด็กรายจังหวัด การศึกษานี้เป็นรูปแบบใด",
+    "choices": [
+      {"label": "A", "text": "Case-control study"},
+      {"label": "B", "text": "Ecological study"},
+      {"label": "C", "text": "Cross-sectional study"},
+      {"label": "D", "text": "Cohort study"},
+      {"label": "E", "text": "Case series"}
+    ],
+    "correct_answer": "B",
+    "explanation": "การศึกษาที่วิเคราะห์ข้อมูลในระดับกลุ่ม (จังหวัด) ไม่ใช่ระดับบุคคล เป็น ecological study",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Ecological study",
+      "reason": "Ecological study (correlational study) เป็นการศึกษาที่หน่วยวิเคราะห์ (unit of analysis) เป็นกลุ่มประชากรหรือพื้นที่ ไม่ใช่บุคคล ในกรณีนี้เปรียบเทียบข้อมูลระดับจังหวัด (ระดับ PM2.5 เฉลี่ยของจังหวัดกับอัตราการนอนโรงพยาบาลของจังหวัด)\n\nข้อจำกัดสำคัญที่สุดคือ ecological fallacy คือการสรุปว่าความสัมพันธ์ที่พบในระดับกลุ่มเป็นจริงในระดับบุคคลด้วย ตัวอย่างเช่น จังหวัดที่มี PM2.5 สูงอาจมีอัตราโรคหอบหืดสูง แต่ไม่ได้หมายความว่าเด็กที่สัมผัส PM2.5 สูงจะเป็นเด็กคนเดียวกับที่เข้ารักษา\n\nข้อดีของ ecological study คือทำได้ง่าย ใช้ข้อมูลทุติยภูมิ (secondary data) ประหยัด เหมาะเป็น hypothesis-generating study",
+      "choices": [
+        {"label": "A", "text": "Case-control study", "is_correct": false, "explanation": "Case-control study ศึกษาในระดับบุคคล เปรียบเทียบ cases (ผู้ป่วย) กับ controls (ผู้ไม่ป่วย) ไม่ใช่การเปรียบเทียบข้อมูลระดับจังหวัด"},
+        {"label": "B", "text": "Ecological study", "is_correct": true, "explanation": "Unit of analysis เป็นจังหวัด (population-level) ไม่ใช่บุคคล การเปรียบเทียบ aggregate data ระหว่างพื้นที่เป็นลักษณะเฉพาะของ ecological study ต้องระวัง ecological fallacy"},
+        {"label": "C", "text": "Cross-sectional study", "is_correct": false, "explanation": "Cross-sectional study วัด exposure และ outcome ในระดับบุคคล ณ จุดเวลาเดียว ไม่ใช่การเปรียบเทียบข้อมูลระดับกลุ่มหรือพื้นที่"},
+        {"label": "D", "text": "Cohort study", "is_correct": false, "explanation": "Cohort study ติดตามกลุ่มบุคคลไปข้างหน้าเพื่อดู outcome ไม่ใช่การเปรียบเทียบข้อมูล aggregate ระหว่างจังหวัด"},
+        {"label": "E", "text": "Case series", "is_correct": false, "explanation": "Case series รายงานผู้ป่วยหลายรายที่มีลักษณะคล้ายกัน ไม่มีกลุ่มเปรียบเทียบ ไม่ใช่การวิเคราะห์ข้อมูลระดับประชากร"}
+      ],
+      "key_takeaway": "Ecological study วิเคราะห์ข้อมูลระดับกลุ่ม/พื้นที่ ไม่ใช่ระดับบุคคล ข้อจำกัดสำคัญคือ ecological fallacy ที่ไม่สามารถสรุปไปสู่ระดับบุคคลได้"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในโรงพยาบาลแห่งหนึ่ง มีการเฝ้าระวังการติดเชื้อในโรงพยาบาล (hospital-acquired infection) พบว่าในเดือนมกราคม มีผู้ป่วยที่นอนรักษาตัว 500 คน เกิดการติดเชื้อในโรงพยาบาล 25 คน ในจำนวนนี้ 15 คนเป็น catheter-associated UTI ค่า incidence ของ hospital-acquired infection ในเดือนนี้คือ",
+    "choices": [
+      {"label": "A", "text": "25/500 × 100 = 5%"},
+      {"label": "B", "text": "15/500 × 100 = 3%"},
+      {"label": "C", "text": "25/475 × 100 = 5.3%"},
+      {"label": "D", "text": "15/25 × 100 = 60%"},
+      {"label": "E", "text": "25/1000 × 100 = 2.5%"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Incidence ของ hospital-acquired infection = จำนวนผู้ป่วยที่เกิดการติดเชื้อรายใหม่ / จำนวนผู้ป่วยที่นอนรักษาตัว = 25/500 = 5%",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. 25/500 × 100 = 5%",
+      "reason": "Incidence rate ของ hospital-acquired infection (HAI) = จำนวนผู้ป่วยที่เกิดการติดเชื้อรายใหม่ในช่วงเวลาที่กำหนด / จำนวนผู้ป่วยที่ at risk ในช่วงเวลาเดียวกัน\n\nในกรณีนี้:\n- ผู้ป่วยที่เกิด HAI รายใหม่ = 25 คน\n- ผู้ป่วยที่นอนรักษาตัว (at risk) = 500 คน\n- Incidence = 25/500 × 100 = 5%\n\nการเฝ้าระวัง HAI เป็นส่วนสำคัญของ infection control ในโรงพยาบาล ใช้ติดตามแนวโน้ม เปรียบเทียบระหว่างโรงพยาบาล และประเมินประสิทธิภาพของมาตรการป้องกัน\n\nในทางปฏิบัติ อาจใช้ device-days เป็นตัวส่วน เช่น catheter-associated UTI rate = จำนวน CAUTI / catheter-days × 1,000",
+      "choices": [
+        {"label": "A", "text": "25/500 × 100 = 5%", "is_correct": true, "explanation": "เป็น incidence ที่ถูกต้อง คิดจากจำนวนผู้ป่วยที่เกิด HAI ทั้งหมด (25 คน) หารด้วยจำนวนผู้ป่วยที่นอนรักษาตัว (500 คน)"},
+        {"label": "B", "text": "15/500 × 100 = 3%", "is_correct": false, "explanation": "15 คือจำนวน CAUTI เท่านั้น ไม่ใช่ HAI ทั้งหมด ถ้าต้องการ incidence ของ CAUTI โดยเฉพาะ ต้องหารด้วยจำนวนผู้ป่วยที่มี catheter ไม่ใช่ผู้ป่วยทั้งหมด"},
+        {"label": "C", "text": "25/475 × 100 = 5.3%", "is_correct": false, "explanation": "475 = 500-25 ซึ่งเป็นการหัก HAI cases ออก ไม่จำเป็น เพราะ denominator ควรเป็นจำนวนผู้ป่วยที่ at risk ทั้งหมด (500)"},
+        {"label": "D", "text": "15/25 × 100 = 60%", "is_correct": false, "explanation": "15/25 คือสัดส่วนของ CAUTI ในบรรดา HAI ทั้งหมด ไม่ใช่ incidence ของ HAI"},
+        {"label": "E", "text": "25/1000 × 100 = 2.5%", "is_correct": false, "explanation": "ตัวส่วน 1000 ไม่ตรงกับจำนวนผู้ป่วยที่นอนรักษาตัว (500) อาจเข้าใจผิดว่าต้อง × 1,000 ก่อน"}
+      ],
+      "key_takeaway": "Incidence ของ HAI = จำนวนผู้ป่วยที่เกิดการติดเชื้อรายใหม่ / จำนวนผู้ป่วยที่นอนรักษาตัว เป็นตัวชี้วัดสำคัญของ infection control"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการศึกษาผลของการดื่มแอลกอฮอล์ต่อมะเร็งตับ นักวิจัยใช้ข้อมูลจากเวชระเบียนย้อนหลัง 20 ปี ของพนักงานโรงงานแห่งหนึ่ง จำแนกกลุ่มตามปริมาณการดื่มที่บันทึกไว้ในเวชระเบียน แล้วติดตามดูการเกิดมะเร็งตับ การศึกษานี้เป็นรูปแบบใด",
+    "choices": [
+      {"label": "A", "text": "Prospective cohort study"},
+      {"label": "B", "text": "Retrospective cohort study"},
+      {"label": "C", "text": "Case-control study"},
+      {"label": "D", "text": "Cross-sectional study"},
+      {"label": "E", "text": "Historical control trial"}
+    ],
+    "correct_answer": "B",
+    "explanation": "การใช้ข้อมูลเวชระเบียนย้อนหลังเพื่อจำแนก exposure แล้วดู outcome ที่เกิดขึ้นในอดีต เป็น retrospective cohort study",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Retrospective cohort study",
+      "reason": "Retrospective cohort study (historical cohort study) เป็นการศึกษาที่ใช้ข้อมูลในอดีตที่ถูกบันทึกไว้แล้ว มาจำแนกกลุ่มตาม exposure แล้วดู outcome ที่เกิดขึ้นตามลำดับเวลา\n\nในกรณีนี้:\n- ใช้ข้อมูลจากเวชระเบียนย้อนหลัง 20 ปี (retrospective data)\n- จำแนก exposure (ปริมาณการดื่มแอลกอฮอล์) จากเวชระเบียน\n- ติดตาม outcome (มะเร็งตับ) ตามลำดับเวลาในอดีต\n- Direction of inquiry: exposure → outcome (cohort design)\n\nRetro cohort study ยังคงเป็น cohort study เพราะ direction of inquiry ไปจาก exposure สู่ outcome สามารถคำนวณ incidence rate และ relative risk ได้ เช่นเดียวกับ prospective cohort แต่ใช้เวลาน้อยกว่าและประหยัดกว่า",
+      "choices": [
+        {"label": "A", "text": "Prospective cohort study", "is_correct": false, "explanation": "Prospective cohort study เก็บข้อมูลไปข้างหน้าจากปัจจุบัน ไม่ได้ใช้ข้อมูลย้อนหลัง ในกรณีนี้ข้อมูลถูกบันทึกไว้แล้วในเวชระเบียน 20 ปีก่อน จึงเป็น retrospective"},
+        {"label": "B", "text": "Retrospective cohort study", "is_correct": true, "explanation": "ใช้ข้อมูลเวชระเบียนย้อนหลัง 20 ปี จำแนก exposure (แอลกอฮอล์) แล้วดู outcome (มะเร็งตับ) ตามลำดับเวลา เป็น retrospective cohort study ที่สามารถคำนวณ RR ได้"},
+        {"label": "C", "text": "Case-control study", "is_correct": false, "explanation": "Case-control study เริ่มจากคัดเลือก cases (ผู้ป่วยมะเร็งตับ) และ controls ก่อน แล้วมองย้อนหา exposure แต่การศึกษานี้เริ่มจากจำแนกตาม exposure ก่อน"},
+        {"label": "D", "text": "Cross-sectional study", "is_correct": false, "explanation": "Cross-sectional study วัด exposure และ outcome ณ จุดเวลาเดียว ไม่มีการติดตามย้อนหลัง 20 ปี"},
+        {"label": "E", "text": "Historical control trial", "is_correct": false, "explanation": "Historical control trial เป็นการศึกษาเชิงทดลองที่ใช้กลุ่มควบคุมจากข้อมูลในอดีต ไม่ใช่การศึกษาเชิงสังเกตแบบ cohort"}
+      ],
+      "key_takeaway": "Retrospective cohort study ใช้ข้อมูลที่บันทึกไว้แล้วในอดีต จำแนก exposure แล้วดู outcome ตามลำดับเวลา สามารถคำนวณ RR ได้เหมือน prospective cohort แต่ใช้เวลาน้อยกว่า"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "โรงพยาบาลแห่งหนึ่งทำการศึกษา diagnostic test accuracy ของ rapid antigen test สำหรับ COVID-19 โดยเปรียบเทียบกับ RT-PCR (gold standard) ผลดังนี้: TP = 180, FP = 20, FN = 20, TN = 780 ค่า likelihood ratio positive (LR+) เท่ากับเท่าใด",
+    "choices": [
+      {"label": "A", "text": "4.5"},
+      {"label": "B", "text": "9.0"},
+      {"label": "C", "text": "18.0"},
+      {"label": "D", "text": "36.0"},
+      {"label": "E", "text": "45.0"}
+    ],
+    "correct_answer": "D",
+    "explanation": "LR+ = Sensitivity / (1 - Specificity) = [180/(180+20)] / [20/(20+780)] = (180/200) / (20/800) = 0.9 / 0.025 = 36.0",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: D. 36.0",
+      "reason": "Likelihood ratio positive (LR+) บอกว่าผู้ที่ตรวจพบ (positive result) มีโอกาสเป็นผู้ป่วยจริงมากกว่าผู้ไม่ป่วยกี่เท่า\n\nLR+ = Sensitivity / (1 - Specificity)\n= [TP/(TP+FN)] / [FP/(FP+TN)]\n= (180/200) / (20/800)\n= 0.9 / 0.025\n= 36.0\n\nSensitivity = 180/(180+20) = 180/200 = 0.9 (90%)\nSpecificity = 780/(780+20) = 780/800 = 0.975 (97.5%)\n1 - Specificity = 0.025\n\nLR+ = 36 หมายความว่าผลบวกมีโอกาสเกิดในผู้ป่วยจริงมากกว่าผู้ไม่ป่วย 36 เท่า ถือว่ามีค่าสูงมาก (LR+ > 10 ถือว่า strong evidence for ruling in disease)\n\nLR+ มีข้อดีกว่า PPV ตรงที่ไม่ขึ้นกับ prevalence ของโรค",
+      "choices": [
+        {"label": "A", "text": "4.5", "is_correct": false, "explanation": "ค่านี้อาจเกิดจากการคำนวณผิด เช่น คิด sensitivity/specificity โดยไม่ได้ใช้ (1-specificity) เป็นตัวส่วน"},
+        {"label": "B", "text": "9.0", "is_correct": false, "explanation": "ค่านี้ไม่ตรงกับการคำนวณ อาจเกิดจากการใช้สูตรผิด เช่น sensitivity × specificity"},
+        {"label": "C", "text": "18.0", "is_correct": false, "explanation": "ค่านี้เท่ากับครึ่งหนึ่งของคำตอบที่ถูก อาจเกิดจากการคิด (1-specificity) = 0.05 แทนที่จะเป็น 0.025"},
+        {"label": "D", "text": "36.0", "is_correct": true, "explanation": "LR+ = 0.9/0.025 = 36.0 ค่า LR+ > 10 ถือว่ามี strong evidence ในการ rule in diagnosis ผลบวกจากการตรวจนี้มีความหมายทางคลินิกสูง"},
+        {"label": "E", "text": "45.0", "is_correct": false, "explanation": "ค่านี้อาจเกิดจากการใช้ sensitivity = 0.9 / (1-specificity) = 0.02 ซึ่งคิด FP/TN (20/780) แทนที่จะเป็น FP/(FP+TN) (20/800)"}
+      ],
+      "key_takeaway": "LR+ = Sensitivity / (1-Specificity) วัดว่าผล positive มีโอกาสเกิดในผู้ป่วยจริงมากกว่าผู้ไม่ป่วยกี่เท่า LR+ > 10 ถือว่า strong evidence สำหรับ ruling in disease"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "สำนักระบาดวิทยาจะประเมินประสิทธิผลของวัคซีน COVID-19 ในประเทศไทย โดยเปรียบเทียบอัตราการเกิดโรคในกลุ่มที่ได้รับวัคซีนกับกลุ่มที่ไม่ได้รับวัคซีน จากฐานข้อมูลประชากรที่มีอยู่ แต่พบว่ากลุ่มที่ได้รับวัคซีนมีอายุเฉลี่ยสูงกว่า มีโรคร่วมมากกว่า เนื่องจากนโยบายฉีดให้กลุ่มเสี่ยงก่อน วิธีทางสถิติที่เหมาะสมที่สุดในการจัดการปัญหานี้คือ",
+    "choices": [
+      {"label": "A", "text": "Randomization"},
+      {"label": "B", "text": "Restriction"},
+      {"label": "C", "text": "Propensity score matching"},
+      {"label": "D", "text": "Blinding"},
+      {"label": "E", "text": "Standardization"}
+    ],
+    "correct_answer": "C",
+    "explanation": "เมื่อมี confounding by indication ในข้อมูล observational ที่มีอยู่แล้ว propensity score matching เป็นวิธีที่ดีที่สุดในการสร้างกลุ่มเปรียบเทียบที่มี baseline characteristics คล้ายคลึงกัน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Propensity score matching",
+      "reason": "ปัญหานี้เรียกว่า confounding by indication คือกลุ่มที่ได้รับวัคซีนก่อน (exposure) มีลักษณะแตกต่างจากกลุ่มที่ไม่ได้รับ (อายุสูงกว่า มีโรคร่วมมากกว่า) เนื่องจากนโยบายการฉีดวัคซีน\n\nPropensity score matching เป็นวิธีทางสถิติที่ใช้ในการจัดการ confounding ใน observational studies โดย:\n1. สร้าง propensity score = probability ของการได้รับ exposure (วัคซีน) จาก covariates ต่าง ๆ (อายุ โรคร่วม ฯลฯ)\n2. จับคู่ (match) ผู้ที่ได้วัคซีนกับผู้ที่ไม่ได้วัคซีนที่มี propensity score ใกล้เคียงกัน\n3. เปรียบเทียบ outcome ระหว่างกลุ่มที่จับคู่แล้ว\n\nวิธีนี้เหมาะสมกว่า randomization เพราะข้อมูลเป็น observational data ที่เก็บไว้แล้ว ไม่สามารถทำ randomization ย้อนหลังได้",
+      "choices": [
+        {"label": "A", "text": "Randomization", "is_correct": false, "explanation": "Randomization ใช้ได้เฉพาะในการศึกษาเชิงทดลอง (experimental study) ที่ออกแบบตั้งแต่ต้น ไม่สามารถทำ randomization ย้อนหลังในข้อมูลที่มีอยู่แล้วได้"},
+        {"label": "B", "text": "Restriction", "is_correct": false, "explanation": "Restriction จำกัดการศึกษาเฉพาะกลุ่มย่อย (เช่น เฉพาะอายุ 60+) ช่วยลด confounding ได้แต่ลด sample size และ generalizability ไม่ได้ควบคุมหลาย confounders พร้อมกัน"},
+        {"label": "C", "text": "Propensity score matching", "is_correct": true, "explanation": "เหมาะสมที่สุดสำหรับ observational data ที่มี confounding by indication สามารถจับคู่หลาย covariates พร้อมกันผ่าน propensity score ทำให้กลุ่มเปรียบเทียบมี baseline คล้ายกัน"},
+        {"label": "D", "text": "Blinding", "is_correct": false, "explanation": "Blinding ช่วยลด information bias ไม่ได้แก้ confounding ใน observational study ที่มีข้อมูลอยู่แล้ว ไม่สามารถ blind การได้รับวัคซีนย้อนหลังได้"},
+        {"label": "E", "text": "Standardization", "is_correct": false, "explanation": "Standardization (direct/indirect) ใช้ปรับ rate ตามโครงสร้างอายุ ช่วยเปรียบเทียบระหว่างประชากร แต่ไม่ได้สร้างกลุ่มเปรียบเทียบที่ balanced เหมือน propensity score matching"}
+      ],
+      "key_takeaway": "Propensity score matching เป็นเครื่องมือสำคัญในการจัดการ confounding by indication ใน observational studies โดยจับคู่ผู้ที่มีความน่าจะเป็นในการได้รับ exposure ใกล้เคียงกัน"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษาเกี่ยวกับผลของการใช้ยาเม็ดคุมกำเนิดกับมะเร็งเต้านม พบว่า RR = 1.3 (95% CI: 1.1-1.5, p = 0.003) Number needed to harm (NNH) = 1,000 ตลอด 10 ปี ข้อสรุปที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "ห้ามใช้ยาเม็ดคุมกำเนิดเพราะเพิ่มความเสี่ยงมะเร็งเต้านม"},
+      {"label": "B", "text": "ความสัมพันธ์มีนัยสำคัญทางสถิติแต่ผลกระทบทางคลินิกน้อย"},
+      {"label": "C", "text": "ไม่มีความสัมพันธ์เพราะ RR ใกล้เคียง 1"},
+      {"label": "D", "text": "ผลลัพธ์ไม่น่าเชื่อถือเพราะ CI แคบเกินไป"},
+      {"label": "E", "text": "ต้องทำ RCT เพื่อยืนยัน"}
+    ],
+    "correct_answer": "B",
+    "explanation": "RR = 1.3 มีนัยสำคัญทางสถิติ (p = 0.003) แต่ NNH = 1,000 หมายความว่าต้องใช้ยา 1,000 คนใน 10 ปีจึงจะเกิดมะเร็งเพิ่ม 1 ราย ถือว่า clinical significance น้อย",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ความสัมพันธ์มีนัยสำคัญทางสถิติแต่ผลกระทบทางคลินิกน้อย",
+      "reason": "การแปลผลการวิจัยต้องพิจารณาทั้ง statistical significance และ clinical significance\n\nStatistical significance: RR = 1.3, 95% CI 1.1-1.5, p = 0.003 ผ่านเกณฑ์ทางสถิติ (CI ไม่คร่อม 1, p < 0.05)\n\nClinical significance: NNH = 1,000 ตลอด 10 ปี หมายความว่าต้องมีสตรี 1,000 คนใช้ยาเม็ดคุมกำเนิดเป็นเวลา 10 ปีจึงจะเกิดมะเร็งเต้านมเพิ่มขึ้น 1 ราย ถือว่าผลกระทบทางคลินิกน้อยมาก (absolute risk increase น้อย)\n\nRR = 1.3 หมายถึงเพิ่มความเสี่ยง 30% ในเชิง relative แต่ในเชิง absolute risk increase น้อยมาก (1 ใน 1,000 ใน 10 ปี) ต้องชั่งน้ำหนักกับประโยชน์ของการคุมกำเนิด",
+      "choices": [
+        {"label": "A", "text": "ห้ามใช้ยาเม็ดคุมกำเนิด", "is_correct": false, "explanation": "การห้ามใช้ทันทีเป็นการสรุปที่รุนแรงเกินไป NNH = 1,000 แสดงว่า absolute risk น้อยมาก ต้องชั่งน้ำหนักกับประโยชน์ของการคุมกำเนิดด้วย"},
+        {"label": "B", "text": "นัยสำคัญทางสถิติแต่ผลกระทบทางคลินิกน้อย", "is_correct": true, "explanation": "RR = 1.3 (p = 0.003) มี statistical significance แต่ NNH = 1,000 ใน 10 ปีแสดงว่า absolute risk increase น้อยมาก เป็นตัวอย่างที่ดีของความแตกต่างระหว่าง statistical vs clinical significance"},
+        {"label": "C", "text": "ไม่มีความสัมพันธ์", "is_correct": false, "explanation": "RR = 1.3 กับ 95% CI 1.1-1.5 ไม่คร่อม 1 แสดงว่ามีความสัมพันธ์ทางสถิติอย่างชัดเจน เพียงแต่ผลกระทบทางคลินิกน้อย"},
+        {"label": "D", "text": "CI แคบเกินไป", "is_correct": false, "explanation": "CI ที่แคบ (1.1-1.5) แสดงว่ามี precision สูง ซึ่งเป็นข้อดี ไม่ใช่ข้อเสียของการศึกษา อาจเกิดจาก sample size ใหญ่"},
+        {"label": "E", "text": "ต้องทำ RCT ยืนยัน", "is_correct": false, "explanation": "การทำ RCT เพื่อทดสอบว่ายาคุมกำเนิดเพิ่มมะเร็งหรือไม่ เป็นเรื่องที่ไม่เหมาะสมทางจริยธรรม ข้อมูลจาก observational study ขนาดใหญ่เพียงพอ"}
+      ],
+      "key_takeaway": "Statistical significance ≠ Clinical significance ต้องพิจารณาทั้ง p-value/CI (statistical) และ NNT/NNH หรือ absolute risk difference (clinical) ในการแปลผลและตัดสินใจทางคลินิก"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษา randomized controlled trial เปรียบเทียบยาใหม่กับ placebo ในผู้ป่วยโรคหัวใจ 2,000 คน กลุ่มละ 1,000 คน ติดตาม 5 ปี กลุ่มยาใหม่เสียชีวิต 50 คน กลุ่ม placebo เสียชีวิต 100 คน ค่า NNT (Number Needed to Treat) เท่ากับเท่าใด",
+    "choices": [
+      {"label": "A", "text": "5"},
+      {"label": "B", "text": "10"},
+      {"label": "C", "text": "20"},
+      {"label": "D", "text": "50"},
+      {"label": "E", "text": "100"}
+    ],
+    "correct_answer": "C",
+    "explanation": "NNT = 1/ARR = 1/(10%-5%) = 1/5% = 1/0.05 = 20",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. 20",
+      "reason": "Number Needed to Treat (NNT) คือจำนวนผู้ป่วยที่ต้องรักษาเพื่อป้องกันเหตุการณ์ไม่พึงประสงค์ 1 ราย คำนวณจาก NNT = 1/ARR (Absolute Risk Reduction)\n\nCER (Control Event Rate) = 100/1,000 = 10% = 0.10\nEER (Experimental Event Rate) = 50/1,000 = 5% = 0.05\nARR = CER - EER = 10% - 5% = 5% = 0.05\nNNT = 1/ARR = 1/0.05 = 20\n\nหมายความว่าต้องรักษาผู้ป่วย 20 คนด้วยยาใหม่เป็นเวลา 5 ปี เพื่อป้องกันการเสียชีวิต 1 ราย\n\nNNT เป็นตัวชี้วัดที่สื่อสารได้ง่ายและมีประโยชน์ทางคลินิก ค่า NNT ต่ำหมายถึง treatment มีประสิทธิภาพสูง NNT ควรระบุช่วงเวลาด้วยเสมอ",
+      "choices": [
+        {"label": "A", "text": "5", "is_correct": false, "explanation": "อาจเกิดจากการคิด 1/RRR (relative risk reduction) = 1/(50%) = 2 หรือคำนวณผิดขั้นตอน NNT ต้องใช้ ARR (absolute) ไม่ใช่ RRR (relative)"},
+        {"label": "B", "text": "10", "is_correct": false, "explanation": "อาจเกิดจากการใช้ CER เป็นตัวส่วน (1/0.10 = 10) แทนที่จะใช้ ARR NNT = 1/ARR ไม่ใช่ 1/CER"},
+        {"label": "C", "text": "20", "is_correct": true, "explanation": "NNT = 1/ARR = 1/(0.10-0.05) = 1/0.05 = 20 ต้องรักษา 20 คนเป็นเวลา 5 ปีเพื่อป้องกันการเสียชีวิต 1 ราย ถือว่ามีประสิทธิภาพดี"},
+        {"label": "D", "text": "50", "is_correct": false, "explanation": "อาจเกิดจากการใช้ EER เป็นตัวส่วน (1/0.05 = 20) ผิดเพราะเป็น 1/EER ไม่ใช่ 1/ARR หรือคำนวณ ARR ผิด"},
+        {"label": "E", "text": "100", "is_correct": false, "explanation": "ค่านี้ไม่ตรงกับการคำนวณ NNT อาจสับสนกับจำนวนผู้เสียชีวิตในกลุ่ม placebo"}
+      ],
+      "key_takeaway": "NNT = 1/ARR = 1/(CER-EER) บอกจำนวนผู้ป่วยที่ต้องรักษาเพื่อป้องกันเหตุการณ์ 1 ราย ค่า NNT ต่ำ = treatment มีประสิทธิภาพสูง ต้องระบุช่วงเวลาเสมอ"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการศึกษาโรคมะเร็งชนิดหนึ่งที่พบได้น้อย (rare disease) ที่มี prevalence 1 ต่อ 100,000 ประชากร ต้องการศึกษาปัจจัยเสี่ยง การศึกษาเชิงระบาดวิทยาที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Prospective cohort study"},
+      {"label": "B", "text": "Case-control study"},
+      {"label": "C", "text": "Cross-sectional study"},
+      {"label": "D", "text": "Randomized controlled trial"},
+      {"label": "E", "text": "Ecological study"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Case-control study เหมาะที่สุดสำหรับโรคหายาก (rare disease) เพราะเริ่มจากผู้ป่วยที่มีอยู่แล้ว ไม่ต้องติดตามประชากรจำนวนมากเพื่อรอให้เกิดโรค",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Case-control study",
+      "reason": "Case-control study เป็นรูปแบบการศึกษาที่เหมาะสมที่สุดสำหรับโรคหายาก (rare diseases) ด้วยเหตุผลดังนี้:\n\n1. สามารถรวบรวม cases ที่เป็นโรคได้โดยไม่ต้องติดตามประชากรจำนวนมาก (ในกรณี cohort study ที่มี prevalence 1/100,000 ต้องติดตามประชากรหลายล้านคนจึงจะพบ cases เพียงพอ)\n\n2. ประหยัดเวลาและทรัพยากร เพราะเก็บข้อมูล retrospective\n\n3. สามารถศึกษาปัจจัยเสี่ยงหลายตัวพร้อมกันได้\n\n4. เหมาะกับโรคที่มี long latent period เช่น มะเร็ง\n\nข้อจำกัดคือใช้ OR แทน RR, มี recall bias, ไม่สามารถคำนวณ incidence ได้ แต่สำหรับโรคหายาก OR ≈ RR (rare disease assumption)",
+      "choices": [
+        {"label": "A", "text": "Prospective cohort study", "is_correct": false, "explanation": "สำหรับโรคที่มี prevalence 1/100,000 การทำ cohort study ต้องติดตามประชากรหลายแสนถึงล้านคนเป็นเวลานาน ซึ่งไม่เป็นไปได้ในทางปฏิบัติ ใช้เวลาและทรัพยากรมหาศาล"},
+        {"label": "B", "text": "Case-control study", "is_correct": true, "explanation": "เริ่มจากรวบรวม cases ที่เป็นโรคหายากจากหลายแหล่ง (multicenter) แล้วจับคู่กับ controls ศึกษาปัจจัยเสี่ยงย้อนหลัง ประหยัดเวลาและทรัพยากร เป็นรูปแบบที่เหมาะสมที่สุด"},
+        {"label": "C", "text": "Cross-sectional study", "is_correct": false, "explanation": "Cross-sectional study จะพบ cases น้อยมากเนื่องจาก prevalence ต่ำ (1/100,000) ต้องใช้ sample size มหาศาลจึงจะพบ cases เพียงพอ"},
+        {"label": "D", "text": "Randomized controlled trial", "is_correct": false, "explanation": "RCT ใช้ทดสอบ treatment ไม่ใช่หาปัจจัยเสี่ยง และไม่สามารถ randomize ให้สัมผัสปัจจัยเสี่ยงที่เป็นอันตรายได้ รวมถึงต้องใช้ sample size มากสำหรับโรคหายาก"},
+        {"label": "E", "text": "Ecological study", "is_correct": false, "explanation": "Ecological study วิเคราะห์ระดับกลุ่ม ไม่ใช่ระดับบุคคล มี ecological fallacy ไม่เหมาะสำหรับการศึกษาปัจจัยเสี่ยงในระดับบุคคล"}
+      ],
+      "key_takeaway": "Case-control study เป็นรูปแบบที่เหมาะสมที่สุดสำหรับการศึกษาปัจจัยเสี่ยงของโรคหายาก เพราะเริ่มจาก cases ที่มีอยู่แล้ว ไม่ต้องติดตามประชากรจำนวนมาก"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "นักวิจัยทำการศึกษาผลของ screening program สำหรับมะเร็งลำไส้ใหญ่ด้วยการส่องกล้อง colonoscopy เปรียบเทียบกับไม่ส่องกล้อง พบว่ากลุ่มที่ได้รับการ screen มี 5-year survival rate 80% ส่วนกลุ่มที่ไม่ได้ screen มี 5-year survival rate 40% แต่อัตราตายรวม (overall mortality rate) ไม่แตกต่างกันอย่างมีนัยสำคัญ สาเหตุที่น่าจะเป็นไปได้มากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Selection bias"},
+      {"label": "B", "text": "Lead-time bias"},
+      {"label": "C", "text": "Confounding"},
+      {"label": "D", "text": "Information bias"},
+      {"label": "E", "text": "Length-time bias"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Lead-time bias เกิดเมื่อ screening ทำให้วินิจฉัยเร็วขึ้น ทำให้ survival time ดูยาวขึ้น โดยไม่ได้เปลี่ยนแปลง natural history ของโรค อัตราตายรวมจึงไม่เปลี่ยน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Lead-time bias",
+      "reason": "Lead-time bias เกิดจากการที่ screening program ตรวจพบโรคเร็วกว่าการรอให้มีอาการ (earlier diagnosis) ทำให้ survival time นับจากการวินิจฉัยยาวขึ้น โดยที่จุดเสียชีวิต (time of death) ไม่เปลี่ยนแปลง\n\nตัวอย่าง: ผู้ป่วยที่ไม่ได้ screen อาจมีอาการปี 2020 เสียชีวิตปี 2023 (survival = 3 ปี) แต่ถ้าได้ screen จะตรวจพบปี 2018 แต่เสียชีวิตปี 2023 เหมือนกัน (survival = 5 ปี) ดูเหมือน survival ดีขึ้น แต่จริง ๆ แล้วเวลาเสียชีวิตไม่เปลี่ยน\n\nนี่คือเหตุผลที่ 5-year survival rate ดีขึ้น (80% vs 40%) แต่ overall mortality rate ไม่ต่างกัน เพราะ screening ไม่ได้เปลี่ยนแปลง natural history ของโรค แค่วินิจฉัยเร็วขึ้น",
+      "choices": [
+        {"label": "A", "text": "Selection bias", "is_correct": false, "explanation": "Selection bias อาจเกิดจาก healthy volunteer effect (คนสุขภาพดีเข้าร่วม screening มากกว่า) แต่ไม่ใช่สาเหตุหลักที่ survival rate ดีขึ้นขณะที่ mortality ไม่เปลี่ยน"},
+        {"label": "B", "text": "Lead-time bias", "is_correct": true, "explanation": "Screening ทำให้วินิจฉัยเร็วขึ้น (lead time) survival time นับจากการวินิจฉัยจึงยาวขึ้น โดยที่จุดเสียชีวิตไม่เปลี่ยน อธิบายว่าทำไม survival rate ดีขึ้นแต่ mortality ไม่ต่าง"},
+        {"label": "C", "text": "Confounding", "is_correct": false, "explanation": "Confounding จะทำให้ทั้ง survival rate และ mortality rate เปลี่ยนไปในทิศทางเดียวกัน ไม่ใช่เปลี่ยนเฉพาะ survival rate"},
+        {"label": "D", "text": "Information bias", "is_correct": false, "explanation": "Information bias เกิดจากความผิดพลาดในการวัด exposure หรือ outcome ไม่ได้ทำให้ survival rate ดีขึ้นขณะที่ mortality ไม่เปลี่ยน"},
+        {"label": "E", "text": "Length-time bias", "is_correct": false, "explanation": "Length-time bias เกิดจาก screening ตรวจพบ slow-growing tumors มากกว่า aggressive tumors ทำให้ survival ดูดี แต่ไม่ได้อธิบาย pattern ที่ overall mortality ไม่ต่างกันได้ดีเท่า lead-time bias"}
+      ],
+      "key_takeaway": "Lead-time bias ทำให้ survival time ดูยาวขึ้นจาก screening โดยไม่ได้เปลี่ยนแปลง natural history ของโรค ดังนั้น mortality rate จึงเป็น outcome ที่ดีกว่า survival rate ในการประเมิน screening program"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการศึกษาแบบ systematic review เกี่ยวกับผลของ statin ต่อการลดอัตราตายจากโรคหัวใจ ผู้วิจัยพบว่า funnel plot มีลักษณะ asymmetric โดยมีการศึกษาขนาดเล็กที่ให้ผลบวกมากกว่าที่คาดไว้ ปรากฏการณ์นี้บ่งชี้ถึงอะไร",
+    "choices": [
+      {"label": "A", "text": "Heterogeneity สูง"},
+      {"label": "B", "text": "Publication bias"},
+      {"label": "C", "text": "Confounding"},
+      {"label": "D", "text": "Selection bias ในการเลือกผู้ป่วย"},
+      {"label": "E", "text": "Type I error"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Asymmetric funnel plot โดยเฉพาะเมื่อมีการศึกษาขนาดเล็กที่ให้ผลบวกมากเกินไป บ่งชี้ publication bias ที่การศึกษาขนาดเล็กที่ให้ผลลบไม่ได้รับการตีพิมพ์",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Publication bias",
+      "reason": "Funnel plot เป็นเครื่องมือที่ใช้ตรวจสอบ publication bias ใน meta-analysis โดย:\n- แกน X = effect size (เช่น OR, RR)\n- แกน Y = precision หรือ sample size\n\nถ้าไม่มี publication bias funnel plot ควรมีรูปทรงสมมาตร (symmetric inverted funnel) เนื่องจากการศึกษาขนาดเล็กมี variance สูง จึงกระจายตัวรอบ ๆ true effect อย่างสมมาตร\n\nเมื่อ funnel plot asymmetric โดยมีการศึกษาขนาดเล็กที่ให้ผลบวกมากเกินไป บ่งชี้ว่า:\n1. การศึกษาขนาดเล็กที่ให้ผลลบ (negative results) ไม่ได้รับการตีพิมพ์ (publication bias)\n2. อาจมี reporting bias อื่น ๆ เช่น language bias, citation bias\n\nสามารถทดสอบเพิ่มเติมด้วย Egger's test หรือ Begg's test",
+      "choices": [
+        {"label": "A", "text": "Heterogeneity สูง", "is_correct": false, "explanation": "Heterogeneity วัดด้วย I² และ Cochran's Q test ไม่ใช่จาก funnel plot asymmetry แม้ heterogeneity อาจทำให้ funnel plot กว้างขึ้น แต่ไม่ใช่ asymmetry"},
+        {"label": "B", "text": "Publication bias", "is_correct": true, "explanation": "Asymmetric funnel plot ที่ขาดการศึกษาขนาดเล็กที่ให้ผลลบ เป็นลักษณะ classic ของ publication bias การศึกษาที่ให้ผลลบมีโอกาสถูกตีพิมพ์น้อยกว่า"},
+        {"label": "C", "text": "Confounding", "is_correct": false, "explanation": "Confounding เกิดในระดับ individual study ไม่ได้ทำให้ funnel plot asymmetric Funnel plot ใช้ตรวจ publication bias โดยเฉพาะ"},
+        {"label": "D", "text": "Selection bias ในการเลือกผู้ป่วย", "is_correct": false, "explanation": "Selection bias ในแต่ละ study อาจทำให้ effect size เปลี่ยน แต่ไม่ได้ทำให้ funnel plot asymmetric ในลักษณะที่ขาดการศึกษาขนาดเล็กที่ให้ผลลบ"},
+        {"label": "E", "text": "Type I error", "is_correct": false, "explanation": "Type I error คือ false positive เกิดในแต่ละ study ไม่ได้ทำให้เกิด systematic asymmetry ใน funnel plot"}
+      ],
+      "key_takeaway": "Asymmetric funnel plot ที่ขาดการศึกษาขนาดเล็กที่ให้ผลลบ เป็นลักษณะ classic ของ publication bias ใน meta-analysis ยืนยันด้วย Egger's test หรือ Begg's test"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในพื้นที่หนึ่ง มีการระบาดของโรคไข้เลือดออก พบผู้ป่วยยืนยัน 200 ราย จากประชากร 50,000 คน ในช่วงเดือนมิถุนายน-สิงหาคม สำนักระบาดวิทยาต้องการเปรียบเทียบอัตราป่วยกับค่ามัธยฐานของ 5 ปีย้อนหลัง ข้อมูลนี้ใช้ประเมินเรื่องใด",
+    "choices": [
+      {"label": "A", "text": "ว่ามีการระบาด (epidemic) หรือไม่"},
+      {"label": "B", "text": "ประสิทธิภาพของวัคซีน"},
+      {"label": "C", "text": "ค่า case fatality rate"},
+      {"label": "D", "text": "ค่า secondary attack rate"},
+      {"label": "E", "text": "ค่า reproductive number (R0)"}
+    ],
+    "correct_answer": "A",
+    "explanation": "การเปรียบเทียบอัตราป่วยปัจจุบันกับค่ามัธยฐาน 5 ปีย้อนหลัง (endemic level) ใช้ประเมินว่ามีการระบาด (epidemic) หรือไม่ ถ้าสูงกว่าค่ามัธยฐานอย่างมีนัยสำคัญ ถือว่าเป็นการระบาด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. ว่ามีการระบาด (epidemic) หรือไม่",
+      "reason": "การเฝ้าระวังทางระบาดวิทยา (epidemiological surveillance) ใช้การเปรียบเทียบจำนวนผู้ป่วยปัจจุบันกับค่าที่คาดหวัง (expected number) ซึ่งมักใช้ค่ามัธยฐาน (median) ของ 5 ปีย้อนหลังเป็น baseline\n\nEpidemic หมายถึง การเกิดโรคที่มากกว่าค่าที่คาดหวังอย่างมีนัยสำคัญ ใช้เกณฑ์ต่าง ๆ เช่น:\n- มากกว่า median + 2 SD ของ 5 ปีย้อนหลัง\n- มากกว่า upper control limit ใน control chart\n\nEndemic หมายถึง การเกิดโรคในระดับปกติที่คาดหวัง\n\nPandemic หมายถึง epidemic ที่แพร่กระจายข้ามประเทศ/ทวีป\n\nข้อมูลนี้ใช้ในการตัดสินใจเปิดศูนย์ปฏิบัติการฉุกเฉิน (EOC) และเพิ่มมาตรการควบคุมโรค",
+      "choices": [
+        {"label": "A", "text": "ว่ามีการระบาด (epidemic) หรือไม่", "is_correct": true, "explanation": "การเปรียบเทียบอัตราป่วยปัจจุบันกับค่ามัธยฐาน 5 ปี เป็นวิธีมาตรฐานในการประเมินว่าจำนวนผู้ป่วยสูงกว่า endemic level หรือไม่ ถ้าสูงกว่า ถือว่ามี epidemic"},
+        {"label": "B", "text": "ประสิทธิภาพของวัคซีน", "is_correct": false, "explanation": "การประเมินประสิทธิภาพของวัคซีนต้องเปรียบเทียบอัตราป่วยระหว่างกลุ่มที่ได้วัคซีนกับไม่ได้ ไม่ใช่เปรียบเทียบกับค่ามัธยฐานย้อนหลัง"},
+        {"label": "C", "text": "Case fatality rate", "is_correct": false, "explanation": "Case fatality rate = จำนวนผู้เสียชีวิต/จำนวนผู้ป่วย × 100 ต้องมีข้อมูลผู้เสียชีวิต ไม่ใช่การเปรียบเทียบกับค่ามัธยฐานย้อนหลัง"},
+        {"label": "D", "text": "Secondary attack rate", "is_correct": false, "explanation": "Secondary attack rate = จำนวนผู้ป่วยรายใหม่ในกลุ่มสัมผัส/จำนวนผู้สัมผัสทั้งหมด ต้องมีข้อมูลการสัมผัสรายบุคคล ไม่ใช่การเปรียบเทียบ population-level data"},
+        {"label": "E", "text": "Reproductive number (R0)", "is_correct": false, "explanation": "R0 = จำนวนผู้ป่วยรายใหม่โดยเฉลี่ยที่เกิดจากผู้ป่วย 1 ราย ต้องใช้แบบจำลองทางคณิตศาสตร์ (mathematical modeling) ไม่ใช่การเปรียบเทียบอัตราป่วยกับค่ามัธยฐาน"}
+      ],
+      "key_takeaway": "Epidemic = จำนวนผู้ป่วยมากกว่าค่าที่คาดหวัง (expected level/endemic level) อย่างมีนัยสำคัญ ประเมินได้โดยเปรียบเทียบกับค่ามัธยฐานของ 5 ปีย้อนหลัง"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษาในผู้ป่วยเบาหวานชนิดที่ 2 จำนวน 1,000 คน ที่ได้รับยา metformin ติดตาม 5 ปี เปรียบเทียบกับกลุ่มควบคุม 1,000 คน ที่ได้ยาหลอก ผลลัพธ์แสดงว่ายา metformin ลดอุบัติการณ์ cardiovascular event ได้ Hazard ratio = 0.70 (95% CI: 0.55-0.89, p = 0.003) ข้อใดแปลผล hazard ratio ถูกต้อง",
+    "choices": [
+      {"label": "A", "text": "Metformin ลด cardiovascular event ได้ 70%"},
+      {"label": "B", "text": "Metformin ลด cardiovascular event ได้ 30%"},
+      {"label": "C", "text": "กลุ่ม metformin มี event มากกว่ากลุ่มควบคุม 0.7 เท่า"},
+      {"label": "D", "text": "กลุ่ม metformin มีความเสี่ยงเพิ่มขึ้น 30%"},
+      {"label": "E", "text": "ไม่มีความแตกต่างทางสถิติ"}
+    ],
+    "correct_answer": "B",
+    "explanation": "HR = 0.70 หมายความว่ากลุ่ม metformin มี hazard ของ cardiovascular event เป็น 0.7 เท่าของกลุ่มควบคุม คือลดลง 30% (1-0.70 = 0.30 = 30%)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Metformin ลด cardiovascular event ได้ 30%",
+      "reason": "Hazard ratio (HR) เป็นค่าที่ใช้วัดความสัมพันธ์ระหว่าง treatment กับ time-to-event outcome จาก Cox proportional hazards model\n\nHR = 0.70 หมายความว่า ณ ทุกจุดเวลาในช่วงการศึกษา กลุ่ม metformin มีอัตราเสี่ยง (hazard) ของการเกิด cardiovascular event เป็น 0.70 เท่า (70%) ของกลุ่ม placebo\n\nRelative risk reduction = 1 - HR = 1 - 0.70 = 0.30 = 30%\n\n95% CI (0.55-0.89) ไม่คร่อม 1.0 และ p = 0.003 < 0.05 แสดงว่ามีนัยสำคัญทางสถิติ\n\nHR คล้ายกับ RR แต่คำนึงถึงมิติของเวลา (time-to-event) ใช้ใน survival analysis ซึ่ง HR < 1 หมายถึง treatment ลดความเสี่ยง HR > 1 หมายถึงเพิ่มความเสี่ยง HR = 1 หมายถึงไม่มีผล",
+      "choices": [
+        {"label": "A", "text": "ลด cardiovascular event ได้ 70%", "is_correct": false, "explanation": "HR = 0.70 ไม่ได้หมายความว่าลด 70% แต่หมายความว่า hazard เป็น 70% ของกลุ่มควบคุม คือลด 30% (1-0.70 = 0.30) ผู้ตอบสับสนระหว่าง HR กับ relative risk reduction"},
+        {"label": "B", "text": "ลด cardiovascular event ได้ 30%", "is_correct": true, "explanation": "Relative risk reduction = 1 - HR = 1 - 0.70 = 0.30 = 30% กลุ่ม metformin มี hazard ลดลง 30% เมื่อเทียบกับ placebo ผลมีนัยสำคัญทางสถิติ (p = 0.003)"},
+        {"label": "C", "text": "มี event มากกว่า 0.7 เท่า", "is_correct": false, "explanation": "HR = 0.70 หมายถึง hazard rate เป็น 0.7 เท่า ไม่ใช่ 'มากกว่า 0.7 เท่า' ข้อนี้ใช้ภาษาที่ทำให้สับสน จริง ๆ หมายถึงมีน้อยกว่า (ลดลง 30%)"},
+        {"label": "D", "text": "เพิ่มความเสี่ยง 30%", "is_correct": false, "explanation": "HR < 1 (0.70) แสดงว่าลดความเสี่ยง ไม่ใช่เพิ่มความเสี่ยง ถ้า HR > 1 ถึงจะหมายถึงเพิ่มความเสี่ยง"},
+        {"label": "E", "text": "ไม่มีความแตกต่างทางสถิติ", "is_correct": false, "explanation": "95% CI (0.55-0.89) ไม่คร่อม 1.0 และ p = 0.003 < 0.05 แสดงว่ามีนัยสำคัญทางสถิติอย่างชัดเจน"}
+      ],
+      "key_takeaway": "HR < 1 หมายถึง treatment ลดความเสี่ยง Relative risk reduction = 1 - HR เช่น HR = 0.70 คือลดความเสี่ยง 30% HR ใช้ใน survival analysis ที่คำนึงถึง time-to-event"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการศึกษา case-control study เกี่ยวกับปัจจัยเสี่ยงของมะเร็งกระเพาะอาหาร ผู้วิจัยสอบถามประวัติการรับประทานอาหารย้อนหลัง 10 ปี พบว่ากลุ่ม cases มักจำรายละเอียดเกี่ยวกับอาหารที่รับประทานได้ดีกว่ากลุ่ม controls อคติที่เกิดขึ้นนี้เรียกว่า",
+    "choices": [
+      {"label": "A", "text": "Selection bias"},
+      {"label": "B", "text": "Recall bias"},
+      {"label": "C", "text": "Interviewer bias"},
+      {"label": "D", "text": "Confounding"},
+      {"label": "E", "text": "Berkson's bias"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Recall bias เกิดเมื่อผู้ป่วย (cases) จดจำ exposure ได้ดีกว่ากลุ่มควบคุม เนื่องจากมีแรงจูงใจในการคิดทบทวนสาเหตุของโรคมากกว่า",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Recall bias",
+      "reason": "Recall bias เป็น subtype ของ information bias ที่พบบ่อยใน case-control study เกิดจากความแตกต่างในการระลึก (recall) ข้อมูลในอดีตระหว่าง cases และ controls\n\nในกรณีนี้ ผู้ป่วยมะเร็งกระเพาะอาหาร (cases) มักจะพยายามนึกย้อนหาสาเหตุของโรค จึงจดจำรายละเอียดเกี่ยวกับอาหารได้ดีกว่าคนปกติ (controls) ที่ไม่มีแรงจูงใจในการทบทวนอดีต\n\nRecall bias ทำให้:\n- Cases รายงาน exposure มากเกินจริง (over-reporting)\n- Controls รายงาน exposure น้อยเกินจริง (under-reporting)\n- ส่งผลให้ OR สูงเกินจริง (overestimate)\n\nวิธีลด recall bias: ใช้ข้อมูลจากเวชระเบียนหรือฐานข้อมูลที่บันทึกไว้ก่อนเกิดโรค, ใช้ structured questionnaire",
+      "choices": [
+        {"label": "A", "text": "Selection bias", "is_correct": false, "explanation": "Selection bias เกิดจากวิธีการคัดเลือกผู้เข้าร่วมที่ไม่เหมาะสม ทำให้ cases และ controls ไม่เป็นตัวแทนที่ดี ไม่เกี่ยวกับความแตกต่างในการจำข้อมูล"},
+        {"label": "B", "text": "Recall bias", "is_correct": true, "explanation": "Cases จดจำ exposure ได้ดีกว่า controls เพราะมีแรงจูงใจในการคิดทบทวนสาเหตุ เป็น recall bias ที่พบบ่อยใน case-control study ที่ถามข้อมูลย้อนหลัง"},
+        {"label": "C", "text": "Interviewer bias", "is_correct": false, "explanation": "Interviewer bias เกิดเมื่อผู้สัมภาษณ์ถามคำถามแตกต่างกันระหว่าง cases และ controls เช่น ถาม cases ละเอียดกว่า ในกรณีนี้ปัญหาเกิดจากผู้ตอบ ไม่ใช่ผู้ถาม"},
+        {"label": "D", "text": "Confounding", "is_correct": false, "explanation": "Confounding เกิดจากตัวแปรที่สามที่สัมพันธ์กับทั้ง exposure และ outcome ไม่เกี่ยวกับความสามารถในการจดจำข้อมูลย้อนหลัง"},
+        {"label": "E", "text": "Berkson's bias", "is_correct": false, "explanation": "Berkson's bias เป็น selection bias ที่เกิดใน hospital-based case-control study เมื่อ admission rates แตกต่างกันตาม exposure ไม่เกี่ยวกับ recall"}
+      ],
+      "key_takeaway": "Recall bias เป็นปัญหาสำคัญใน case-control study ที่ถามข้อมูลย้อนหลัง ผู้ป่วยมักจดจำ exposure ได้ดีกว่าคนปกติ ทำให้ OR สูงเกินจริง"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "การศึกษา RCT เปรียบเทียบยาใหม่กับ standard treatment ในผู้ป่วยมะเร็ง กำหนด primary endpoint คือ overall survival ใช้ α = 0.05 และ power (1-β) = 80% คำนวณ sample size ได้ 500 คน ระหว่างการวิจัย ผู้วิจัยวิเคราะห์ข้อมูลระหว่างทาง (interim analysis) 3 ครั้ง โดยไม่ปรับ significance level ปัญหาที่เกิดขึ้นคือ",
+    "choices": [
+      {"label": "A", "text": "เพิ่มโอกาสเกิด type II error"},
+      {"label": "B", "text": "เพิ่มโอกาสเกิด type I error (inflated α)"},
+      {"label": "C", "text": "ลด statistical power"},
+      {"label": "D", "text": "เพิ่ม confounding"},
+      {"label": "E", "text": "เกิด selection bias"}
+    ],
+    "correct_answer": "B",
+    "explanation": "การทำ multiple interim analyses โดยไม่ปรับ α level ทำให้ overall type I error rate สูงกว่า 0.05 (inflated α) เพราะมีโอกาสพบ significant result by chance มากขึ้น",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. เพิ่มโอกาสเกิด type I error (inflated α)",
+      "reason": "Interim analysis คือการวิเคราะห์ข้อมูลระหว่างทางก่อนการศึกษาจะเสร็จสิ้น ใช้เพื่อ:\n1. หยุดการศึกษาเร็วขึ้นถ้าพบ overwhelming efficacy หรือ harm\n2. ประเมิน futility\n\nปัญหาของ multiple testing: ทุกครั้งที่ทำ statistical test ที่ α = 0.05 มีโอกาส 5% ที่จะเกิด false positive ถ้าทดสอบหลายครั้ง overall type I error จะสูงขึ้นตาม\n\nถ้าวิเคราะห์ 3 ครั้ง + final analysis (รวม 4 ครั้ง) ที่ α = 0.05 ทุกครั้ง:\nOverall α ≈ 1-(1-0.05)⁴ ≈ 18.5% ซึ่งสูงกว่า 5% ที่ตั้งไว้มาก\n\nวิธีแก้ไข: ใช้ group sequential methods เช่น O'Brien-Fleming boundaries, Pocock boundaries, Lan-DeMets alpha spending function เพื่อปรับ α ในแต่ละ interim analysis ให้ overall α = 0.05",
+      "choices": [
+        {"label": "A", "text": "เพิ่มโอกาส type II error", "is_correct": false, "explanation": "Interim analysis ไม่ได้เพิ่ม type II error (false negative) โดยตรง ปัญหาหลักคือ inflated type I error จากการ test ซ้ำหลายครั้ง"},
+        {"label": "B", "text": "เพิ่มโอกาส type I error (inflated α)", "is_correct": true, "explanation": "การทำ interim analysis 3 ครั้ง + final analysis = 4 tests ที่ α = 0.05 ทำให้ overall α สูงถึง ~18.5% เพิ่มโอกาส false positive อย่างมาก ต้องใช้ alpha spending function เพื่อควบคุม"},
+        {"label": "C", "text": "ลด statistical power", "is_correct": false, "explanation": "Interim analysis ที่ออกแบบดี (ปรับ α) จะลด power เล็กน้อย แต่ปัญหาหลักในกรณีนี้คือ inflated α ไม่ใช่ power reduction"},
+        {"label": "D", "text": "เพิ่ม confounding", "is_correct": false, "explanation": "Confounding ไม่เกี่ยวกับ interim analysis เกิดจากตัวแปรที่สามที่ไม่ได้ถูกควบคุม ซึ่ง randomization ใน RCT ช่วยลดปัญหานี้แล้ว"},
+        {"label": "E", "text": "เกิด selection bias", "is_correct": false, "explanation": "Selection bias ไม่เกี่ยวกับ interim analysis โดยตรง แม้ว่าการหยุดการศึกษาเร็วเกินไปอาจทำให้เกิด overestimate of treatment effect แต่ไม่ใช่ selection bias"}
+      ],
+      "key_takeaway": "Multiple interim analyses โดยไม่ปรับ α level ทำให้ overall type I error สูงขึ้น ต้องใช้ group sequential methods เช่น O'Brien-Fleming หรือ alpha spending function เพื่อควบคุม overall α = 0.05"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในการศึกษาเปรียบเทียบ 2 วิธีรักษา พบว่า treatment A มี success rate 95% (190/200) ส่วน treatment B มี success rate 90% (180/200) p-value = 0.08 ข้อสรุปที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Treatment A ดีกว่า treatment B อย่างมีนัยสำคัญ"},
+      {"label": "B", "text": "ไม่มีความแตกต่างระหว่าง treatment A และ B"},
+      {"label": "C", "text": "ไม่พบความแตกต่างอย่างมีนัยสำคัญทางสถิติ แต่อาจมี clinical significance"},
+      {"label": "D", "text": "ควรสรุปว่า treatment เท่ากัน"},
+      {"label": "E", "text": "ผลการศึกษาไม่น่าเชื่อถือ"}
+    ],
+    "correct_answer": "C",
+    "explanation": "p = 0.08 > 0.05 ไม่ถึง statistical significance แต่ผลต่าง 5% (95% vs 90%) อาจมีความหมายทางคลินิก absence of evidence is not evidence of absence",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. ไม่พบความแตกต่างอย่างมีนัยสำคัญทางสถิติ แต่อาจมี clinical significance",
+      "reason": "p-value = 0.08 > 0.05 หมายความว่าผลต่างที่สังเกตได้อาจเกิดจาก chance ที่ระดับ α = 0.05 จึงไม่ปฏิเสธ null hypothesis\n\nอย่างไรก็ตาม 'Absence of evidence is not evidence of absence' การไม่พบ statistical significance ไม่ได้หมายความว่าไม่มีความแตกต่างจริง อาจเกิดจาก:\n1. Sample size ไม่เพียงพอ (underpowered study)\n2. ผลต่าง 5% (95% vs 90%) อาจมีความหมายทางคลินิก\n\nClinical significance ต้องพิจารณาจาก:\n- ขนาดของ treatment effect (5% difference)\n- ความรุนแรงของโรค\n- ผลข้างเคียงของยา\n- ต้นทุนการรักษา\n\np-value เป็นเพียงส่วนหนึ่งของการตัดสินใจทางคลินิก ไม่ควรใช้ p-value เพียงอย่างเดียวในการตัดสินใจ",
+      "choices": [
+        {"label": "A", "text": "A ดีกว่า B อย่างมีนัยสำคัญ", "is_correct": false, "explanation": "p = 0.08 > 0.05 ไม่ถึงเกณฑ์ statistical significance ที่ α = 0.05 จึงไม่สามารถสรุปว่ามีนัยสำคัญทางสถิติ"},
+        {"label": "B", "text": "ไม่มีความแตกต่าง", "is_correct": false, "explanation": "การไม่พบ statistical significance ไม่ได้พิสูจน์ว่าไม่มีความแตกต่าง (absence of evidence ≠ evidence of absence) อาจเป็น underpowered study"},
+        {"label": "C", "text": "ไม่มี statistical significance แต่อาจมี clinical significance", "is_correct": true, "explanation": "p = 0.08 ไม่ถึง statistical significance แต่ผลต่าง 5% อาจมีความสำคัญทางคลินิก ต้องพิจารณาบริบทของโรคและ treatment ร่วมด้วย"},
+        {"label": "D", "text": "ควรสรุปว่า treatment เท่ากัน", "is_correct": false, "explanation": "ไม่สามารถสรุปว่าเท่ากันได้จาก p > 0.05 ถ้าต้องการสรุปว่าเท่ากัน ต้องทำ equivalence study หรือ non-inferiority study โดยเฉพาะ"},
+        {"label": "E", "text": "ไม่น่าเชื่อถือ", "is_correct": false, "explanation": "p = 0.08 ไม่ได้หมายความว่าการศึกษาไม่น่าเชื่อถือ การศึกษาอาจ well-designed แต่ sample size ไม่เพียงพอที่จะ detect small difference"}
+      ],
+      "key_takeaway": "p > 0.05 หมายถึงไม่พบ statistical significance ไม่ได้พิสูจน์ว่าไม่มีความแตกต่าง (absence of evidence ≠ evidence of absence) ต้องพิจารณา clinical significance ร่วมด้วย"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ในจังหวัดหนึ่ง มีการระบาดของโรคหัด พบว่าเด็กที่ไม่ได้รับวัคซีนหัด 100 คน เกิดโรค 80 คน เด็กที่ได้รับวัคซีน 1 เข็ม 200 คน เกิดโรค 20 คน เด็กที่ได้รับวัคซีน 2 เข็ม 300 คน เกิดโรค 6 คน ลักษณะที่เห็นนี้ตรงกับ Hill's criteria ข้อใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Strength of association"},
+      {"label": "B", "text": "Biological gradient (dose-response)"},
+      {"label": "C", "text": "Consistency"},
+      {"label": "D", "text": "Specificity"},
+      {"label": "E", "text": "Plausibility"}
+    ],
+    "correct_answer": "B",
+    "explanation": "การที่ได้รับวัคซีนมากขึ้น (0 เข็ม → 1 เข็ม → 2 เข็ม) ทำให้อัตราป่วยลดลงตามลำดับ (80% → 10% → 2%) แสดง dose-response relationship",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Biological gradient (dose-response)",
+      "reason": "Hill's criteria for causation ประกอบด้วย 9 ข้อ ใช้ประเมินว่าความสัมพันธ์ที่พบเป็น causal relationship หรือไม่\n\nในกรณีนี้:\n- ไม่ได้วัคซีน: attack rate = 80/100 = 80%\n- วัคซีน 1 เข็ม: attack rate = 20/200 = 10%\n- วัคซีน 2 เข็ม: attack rate = 6/300 = 2%\n\nเมื่อจำนวนเข็มวัคซีนเพิ่มขึ้น อัตราป่วยลดลงอย่างชัดเจน (80% → 10% → 2%) แสดง dose-response relationship หรือ biological gradient ซึ่งเป็นหลักฐานที่สนับสนุน causation อย่างมาก\n\nBiological gradient เป็นหนึ่งใน Hill's criteria ที่สำคัญมาก เพราะยากที่จะอธิบายด้วย bias หรือ confounding เพียงอย่างเดียว",
+      "choices": [
+        {"label": "A", "text": "Strength of association", "is_correct": false, "explanation": "Strength of association ดูจากขนาดของ measure of association (เช่น RR หรือ OR ที่สูง) แม้ว่าในที่นี้ RR สูง แต่ลักษณะเด่นคือ dose-response ที่เห็นชัดเจนกว่า"},
+        {"label": "B", "text": "Biological gradient (dose-response)", "is_correct": true, "explanation": "การที่ attack rate ลดลงตามจำนวนเข็มวัคซีนที่เพิ่มขึ้น (80% → 10% → 2%) เป็น dose-response relationship ที่ชัดเจน สนับสนุน causal relationship"},
+        {"label": "C", "text": "Consistency", "is_correct": false, "explanation": "Consistency หมายถึงผลลัพธ์ที่คล้ายกันพบในการศึกษาหลายแห่ง หลายกลุ่มประชากร ในกรณีนี้เป็นข้อมูลจากจังหวัดเดียว ไม่ได้แสดง consistency"},
+        {"label": "D", "text": "Specificity", "is_correct": false, "explanation": "Specificity หมายถึง exposure เฉพาะทำให้เกิด outcome เฉพาะ ข้อนี้เป็น criterion ที่อ่อนที่สุดใน Hill's criteria เพราะหลายโรคมีหลายสาเหตุ"},
+        {"label": "E", "text": "Plausibility", "is_correct": false, "explanation": "Plausibility หมายถึงมีกลไกทาง biological ที่อธิบายได้ แม้ว่าวัคซีนมี plausibility (สร้างภูมิคุ้มกัน) แต่ลักษณะ dose-response ที่เห็นในข้อมูลตรงกับ biological gradient มากกว่า"}
+      ],
+      "key_takeaway": "Biological gradient (dose-response) เป็นหนึ่งใน Hill's criteria ที่สำคัญ การที่ exposure เพิ่มขึ้นทำให้ outcome เปลี่ยนตามลำดับ เป็นหลักฐานสนับสนุน causation อย่างมาก"
+    },
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  }
+]

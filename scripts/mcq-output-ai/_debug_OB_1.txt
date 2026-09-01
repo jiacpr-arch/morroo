@@ -1,0 +1,327 @@
+[
+  {
+    "scenario": "A 35-year-old woman, P4004 had vaginal delivery of a 4,000 g baby with complete placental delivery 1 hour after delivery. Postpartum she developed massive vaginal hemorrhage. Vital signs: BT 37°C, RR 20, PR 100, BP 80/50 mmHg. Uterine fundus is 1/4 above umbilicus with poor uterine contraction. No vaginal or cervical laceration noted. After fluid resuscitation and urine catheterization, what is the most appropriate management?",
+    "choices": [
+      {"label": "A", "text": "PGE2 IV"},
+      {"label": "B", "text": "Dopamine infusion"},
+      {"label": "C", "text": "Oxytocin and uterine massage"},
+      {"label": "D", "text": "Bilateral hypogastric artery ligation"},
+      {"label": "E", "text": "Hysterectomy"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "OB",
+    "status": "complete",
+    "ai_notes": "Classic presentation of uterine atony with PPH in immediate postpartum period. Poor uterine contraction with fundus not well contracted is the key finding. First-line management is oxytocin and uterine massage. BP is low but patient is still in compensated shock phase, making C-section and hysterectomy premature."
+  },
+  {
+    "scenario": "A 30-year-old female, 30 minutes after cord traction delivery, presents with postpartum bleed and shock. Uterine massage cannot palpate fundus. Vaginal exam reveals a reddish mass 7-8 cm. After resuscitation, what is the next initial management?",
+    "choices": [
+      {"label": "A", "text": "Bimanual compression"},
+      {"label": "B", "text": "Compression and invert uterus"},
+      {"label": "C", "text": "IV oxytocin"},
+      {"label": "D", "text": "Suture cervical os"},
+      {"label": "E", "text": "Emergency laparotomy to myomectomy"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "status": "complete",
+    "ai_notes": "The reddish mass 7-8 cm with inability to palpate fundus suggests uterine inversion. This is a medical emergency. Immediate management is bimanual compression and uterine inversion correction. IV oxytocin should be avoided as it can worsen inversion. Emergency laparotomy may be needed if conservative management fails."
+  },
+  {
+    "scenario": "Gravida at 37 weeks with transverse position. What is the next management?",
+    "choices": [
+      {"label": "A", "text": "Internal podalic version"},
+      {"label": "B", "text": "External cephalic version"},
+      {"label": "C", "text": "Expectant management"},
+      {"label": "D", "text": "Planned cesarean section"},
+      {"label": "E", "text": "Oxytocin induction"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "OB 2014",
+    "status": "complete",
+    "ai_notes": "At 37 weeks with transverse lie, if external cephalic version fails or is contraindicated, planned cesarean section is the standard management. Internal podalic version is rarely used in modern obstetrics due to high maternal and fetal morbidity."
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 30 ปี ตั้งครรภ์ มีประวัติปวดศีรษะบ่อยๆ เห็นแสงวูบวาบ แพทย์วินิจฉัยว่าเป็น Migraine จงเลือกวิธีการรักษาที่เหมาะสมในการตั้งครรภ์",
+    "choices": [
+      {"label": "A", "text": "Ibuprofen"},
+      {"label": "B", "text": "Propranolol"},
+      {"label": "C", "text": "Aspirin"},
+      {"label": "D", "text": "Ergotamine"},
+      {"label": "E", "text": "Sumatriptan"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Propranolol (beta-blocker) is the safest prophylactic agent for migraine in pregnancy. Ergotamine and NSAIDs are contraindicated in pregnancy. Sumatriptan can be used acutely but not for prophylaxis."
+  },
+  {
+    "scenario": "แม่ VDRL และ FTA-ABS reactive 2 เดือนก่อนคลอด ได้รับ Erythromycin 2 สัปดาห์ก่อนคลอด จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Reassure"},
+      {"label": "B", "text": "IV Penicillin"},
+      {"label": "C", "text": "IV Ceftriaxone"},
+      {"label": "D", "text": "Cessation of breast feeding"},
+      {"label": "E", "text": "Observation only"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Positive serology for syphilis (VDRL and FTA-ABS) indicates maternal infection. While erythromycin was given, penicillin is the gold standard for syphilis treatment in pregnancy. Erythromycin has lower transplacental penetration and may not treat fetal infection adequately. IV penicillin should be administered for adequate maternal and fetal treatment."
+  },
+  {
+    "scenario": "หญิง 22 ปี G1P0 GA 32 สัปดาห์ มาด้วยอาการเจ็บท้องคลอดทุก 5 นาที Physical exam: positive uterine contraction 5'35 นาที Pelvic exam: cervix 1 finger breadth (1FB), effacement 80%, station 0. จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "IV Syntocinon"},
+      {"label": "B", "text": "IV Terbutaline"},
+      {"label": "C", "text": "IV Dexamethasone"},
+      {"label": "D", "text": "IV Prostaglandin"},
+      {"label": "E", "text": "IV Nifedipine"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "This is preterm labor at 32 weeks. The goal is to suppress contractions (tocolysis) to prolong pregnancy. IV Terbutaline is a beta-2 agonist used for acute tocolysis. Additionally, dexamethasone should be given for fetal lung maturity. IV Syntocinon is contraindicated as it augments labor."
+  },
+  {
+    "scenario": "หญิง 42 ปี G4P3 GA 37 สัปดาห์ ประวัติความดันเลือดปกติมาตลอด วันนี้มา BP 160/100 mmHg Urine protein 3+ Pelvic exam: cervix 1 cm soft mid position, effacement 25%, membrane intact NST: FHR baseline 140 bpm with 2 accelerations in 10 minutes. จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Amniotomy"},
+      {"label": "B", "text": "IV Oxytocin"},
+      {"label": "C", "text": "PGE1 Vaginal suppository"},
+      {"label": "D", "text": "10% MgSO4 IV"},
+      {"label": "E", "text": "Cesarean section"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Severe preeclampsia at term (BP 160/100 with proteinuria 3+). NST is reactive but cervix is unfavorable (1 cm, 25% effaced). At 37 weeks with severe preeclampsia and unfavorable cervix, cesarean section is the most appropriate management to avoid the risks of induction and potential eclampsia."
+  },
+  {
+    "scenario": "Postpartum Day 2 after vaginal delivery, patient presents with fever. Physical exam: temperature elevated, breast engorged and mildly tender at abdomen, uterus at umbilicus with mild tenderness, episiotomy wound has no foul smell with normal lochia discharge. The fever is most likely from?",
+    "choices": [
+      {"label": "A", "text": "Breast engorgement"},
+      {"label": "B", "text": "Episiotomy wound infection"},
+      {"label": "C", "text": "Parametritis"},
+      {"label": "D", "text": "Cystitis"},
+      {"label": "E", "text": "Endometritis"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Breast engorgement typically occurs on postpartum Day 2-3 and can cause mild fever (usually <38.5°C). Episiotomy wound looks clean without foul smell, uterus is involuting normally, and there's no specific sign of infection. Breast engorgement is the most likely cause of fever in this context."
+  },
+  {
+    "scenario": "หญิง 42 ปี GA 37 สัปดาห์ G3P2 ฝากครรภ์ดีมาตลอด วันนี้ BP 160/100 mmHg อาการปกติดี Urine protein 3+ Cervical dilation 1 cm, effacement 25%, station -1. จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Watchful waiting"},
+      {"label": "B", "text": "IV Oxytocin induction"},
+      {"label": "C", "text": "Antihypertensive and vaginal delivery"},
+      {"label": "D", "text": "Cesarean section"},
+      {"label": "E", "text": "Transfer for higher level care"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Severe preeclampsia (BP 160/100 with proteinuria 3+) at 37 weeks with unfavorable cervix (1 cm dilation, 25% effaced). Cesarean section is indicated for delivery in severe preeclampsia with unfavorable cervix at term."
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี primigravida คลอดบุตรแล้ว น้าหนัก [weight not specified]. หลังจากคลอดทารกแล้วยังไม่คลอดรกมาเป็นเวลา 30 นาที Estimated blood loss 700 cc Physical exam: PR 70/min, BP 110/70 mmHg, fundal height at umbilical level, abdomen soft. หลังจากให้ NSS infusion แล้ว most appropriate management คือ?",
+    "choices": [
+      {"label": "A", "text": "Watchful observation"},
+      {"label": "B", "text": "IV Methergin"},
+      {"label": "C", "text": "IV Nalador"},
+      {"label": "D", "text": "Manual removal of placenta"},
+      {"label": "E", "text": "Oxytocin IM plus controlled cord traction"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Delayed placental delivery at 30 minutes. Vital signs are stable. The patient has not yet received oxytocin or cord traction. First-line management should be oxytocin IM plus controlled cord traction before attempting manual removal of placenta. Manual removal is reserved for retained placenta or heavy bleeding."
+  },
+  {
+    "scenario": "เคส: หญิงไทย G1 ปากมดลูกเปิดหมดมา 2 ชั่วโมง แล้วยังไม่คลอด Uterine contraction 2 contractions ใน 10 นาที duration 45 seconds, effacement 80%, station +1. จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Vaginal examination"},
+      {"label": "B", "text": "Forceps/Vacuum extraction"},
+      {"label": "C", "text": "Cesarean section"},
+      {"label": "D", "text": "IV Oxytocin augmentation"},
+      {"label": "E", "text": "Expectant management 2 hours"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Second stage of labor with fully dilated cervix for 2 hours but weak contractions (2 in 10 min). Station is +1 (not yet engaged fully). Uterine contractions are inadequate. IV Oxytocin augmentation is appropriate to strengthen contractions and progress labor before considering operative delivery."
+  },
+  {
+    "scenario": "หญิง 25 ปี G2P1 GA 40 สัปดาห์ คนแรกคลอดโดยคลอดตามธรรมชาติ น้าหนัก 3000 gm ท้องนี้ Estimated fetal weight 3500 gm Uterine contraction interval 2 นาที duration 50 วินาที Cervix fully dilate มา 1 ชั่วโมง Station +1. จงเลือกการจัดการต่อไป",
+    "choices": [
+      {"label": "A", "text": "Cesarean section"},
+      {"label": "B", "text": "Vaginal examination"},
+      {"label": "C", "text": "Forceps extraction"},
+      {"label": "D", "text": "IV Oxytocin"},
+      {"label": "E", "text": "Observe progression 1 hour more"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "G2P1 at term with good uterine contractions (2 min interval, 50 sec duration), fully dilated for 1 hour, station +1. Patient is multiparous with previous vaginal delivery. Adequate time has not yet elapsed for second stage (usually allow up to 2 hours in multiparous). Observe for 1 more hour before considering operative intervention."
+  },
+  {
+    "scenario": "แม่หลังคลอด Normal Lochia วันที่ 2 มี mild tender ที่ lower abdomen, breast engorge, แผลดี lochia ดี ไม่เหม็น จงวินิจฉัยสาเหตุของ mild tender ที่ท้อง",
+    "choices": [
+      {"label": "A", "text": "Endometritis"},
+      {"label": "B", "text": "Breast engorgement"},
+      {"label": "C", "text": "Parametritis"},
+      {"label": "D", "text": "Cystitis"},
+      {"label": "E", "text": "Uterine involution"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Postpartum Day 2 with normal lochia, no fever, episiotomy wound looks good, mild tenderness at lower abdomen is consistent with normal uterine involution process. The uterus typically causes mild discomfort during involution especially with breastfeeding (oxytocin release from nursing stimulates uterine contractions)."
+  },
+  {
+    "scenario": "แม่ตั้งครรภ์แรก ก่อนคลอด 2 เดือน VDRL positive confirm FTA positive ได้รับ Erythromycin 2 สัปดาห์ พอลูกคลอดจะทาไงกับลูก",
+    "choices": [
+      {"label": "A", "text": "Reassure"},
+      {"label": "B", "text": "Penicillin IV"},
+      {"label": "C", "text": "Erythromycin PO"},
+      {"label": "D", "text": "Ceftriaxone IV"},
+      {"label": "E", "text": "Avoid breast feeding"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Maternal syphilis with positive VDRL and FTA. Despite maternal erythromycin treatment, the neonate should receive IV Penicillin to ensure adequate treatment of potential congenital syphilis. Penicillin has better transplacental penetration and is the drug of choice for fetal/neonatal syphilis treatment."
+  },
+  {
+    "scenario": "G1P0 GA 40+4 weeks presents with decreased fetal movement and no labor pain. What should be done?",
+    "choices": [
+      {"label": "A", "text": "Reassure and send home"},
+      {"label": "B", "text": "Continue fetal movement count"},
+      {"label": "C", "text": "Emergency cesarean section"},
+      {"label": "D", "text": "Induction of labor"},
+      {"label": "E", "text": "NST and fetal assessment"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Decreased fetal movement at post-term (40+4 weeks) is concerning for fetal compromise. Reassurance without assessment is not appropriate. Emergency C/S without fetal assessment is premature. NST should be performed urgently to assess fetal well-being, followed by induction if NST is reactive and no contraindications exist."
+  },
+  {
+    "scenario": "G1P0 GA 32 สัปดาห์ diagnosed with chorioamnionitis on IV antibiotics already. จะทาอะไรต่อ",
+    "choices": [
+      {"label": "A", "text": "IV Dexamethasone"},
+      {"label": "B", "text": "Expectant management"},
+      {"label": "C", "text": "Immediate termination of pregnancy"},
+      {"label": "D", "text": "Continue antibiotics and monitor"},
+      {"label": "E", "text": "Delivery at 37 weeks"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Chorioamnionitis at 32 weeks is a serious infection of amniotic membranes. Standard management is to deliver the baby (terminate pregnancy) as soon as possible after maternal stabilization and corticosteroid administration to reduce neonatal morbidity. Expectant management risks maternal sepsis and fetal infection."
+  },
+  {
+    "scenario": "หญิง G1P0 GA 36 สัปดาห์ BP 140/90 mmHg ไม่มีปวดหัว ไม่มีตามัว Urine protein 1+ FHR 146 No contraction. จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "MgSO4 + ทำให้คลอดทันที"},
+      {"label": "B", "text": "MgSO4 + คลอดที่ 37 สัปดาห์"},
+      {"label": "C", "text": "รอคลอดที่ 37 สัปดาห์"},
+      {"label": "D", "text": "รอคลอดที่ 40 สัปดาห์"},
+      {"label": "E", "text": "Antihypertensive drug + คลอดทันที"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Mild preeclampsia at 36 weeks (BP 140/90 with proteinuria 1+ but no severe features like headache, visual disturbance). Management is to administer MgSO4 for seizure prophylaxis and plan delivery at 37 weeks to balance fetal maturity against maternal risks. Immediate delivery is not indicated unless severe features develop."
+  },
+  {
+    "scenario": "ท้องแฝด during delivery ได้คลอดเด็กไปคนหนึ่งแล้ว เจาะน้าคร่าแล้วมีเลือดออก มีอาการเจ็บ จงวินิจฉัยสาเหตุ",
+    "choices": [
+      {"label": "A", "text": "Vasa previa"},
+      {"label": "B", "text": "Abruptio placentae"},
+      {"label": "C", "text": "Placenta previa"},
+      {"label": "D", "text": "Velamentous insertion of cord"},
+      {"label": "E", "text": "Uterine rupture"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว. 2014",
+    "status": "complete",
+    "ai_notes": "Twin delivery with blood from amnion after rupturing membranes suggests vasa previa - abnormal insertion of fetal blood vessels across the membrane. This is more common in twins due to placental vascular anastomosis. Vasa previa can lead to rapid fetal blood loss if membranes rupture."
+  },
+  {
+    "scenario": "หญิง 19 ปี G1 GA 35 สัปดาห์ มา follow up ตามนัด พบ BP 160/100 mmHg ตรวจร่างกาย pretibial edema Physical exam: os closed, urine protein 2+ แพทย์ให้ผู้ป่วยพักครึ่งชั่วโมง วัด BP ซ้ำ ได้ 160/110 mmHg จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Severe preeclampsia"},
+      {"label": "B", "text": "Mild preeclampsia"},
+      {"label": "C", "text": "Transient hypertension"},
+      {"label": "D", "text": "Chronic hypertension"},
+      {"label": "E", "text": "Eclampsia"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "BP 160/110 (≥160/110 is severe range) with proteinuria 2+ and pretibial edema. This meets criteria for severe preeclampsia. No seizures mentioned, so not eclampsia. The persistent elevation after rest confirms it's not transient. Age 19 with new hypertension rules out chronic hypertension."
+  },
+  {
+    "scenario": "ผู้หญิง 25 ปี primigravida คลอดโดยใช้ forceps extraction หลังคลอดรกมีเลือดไหลออกจากช่องคลอด 800 cc ตรวจร่างกายพบ BP 90/60 mmHg, Pulse 110 bpm, คลามดลูกได้ 1/2 above suprapubic. สาเหตุของเลือดออกคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Uterine atony"},
+      {"label": "B", "text": "Retained placenta"},
+      {"label": "C", "text": "Laceration"},
+      {"label": "D", "text": "Coagulopathy"},
+      {"label": "E", "text": "Ruptured varicose vein of vagina"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Forceps delivery with PPH 800 cc and significant vital signs changes (BP 90/60, PR 110). Uterus is well-contracted (palpable at 1/2 above suprapubic) which rules out atony. The well-contracted uterus with continued bleeding despite good contraction suggests laceration from traumatic forceps delivery. Laceration must be identified and repaired."
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G2P1 GA 42 สัปดาห์ มาตรวจตามนัดอาการทุกอย่างปกติ ไม่เจ็บครรภ์คลอด Physical exam: fundal height 3/4 above umbilicus, uterine contraction 20 sec, cervical dilation 2 cm, 50% effacement, cephalic presentation, station 0, MI good. จะทาอย่างไรต่อไป",
+    "choices": [
+      {"label": "A", "text": "นัดอีกสองอาทิตย์"},
+      {"label": "B", "text": "นัดมา induction พรุ่งนี้"},
+      {"label": "C", "text": "Emergency cesarean section"},
+      {"label": "D", "text": "Elective cesarean section"},
+      {"label": "E", "text": "Progesterone supplementation"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Post-term pregnancy at 42 weeks. Standard recommendation is induction at 42 weeks for post-term pregnancy due to increased risk of stillbirth and meconium aspiration. Waiting longer is not appropriate. Cesarean section would be needed only if induction fails or contraindications exist."
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี G1P0 GA 39 สัปดาห์ ประเมินน้าหนักทารกได้ประมาณ 3000 gm อื่นๆดีหมด หลังจากเบ่งคลอดนาน 2 ชั่วโมง Pelvic exam: station +3, fully dilate, FHS 148 bpm. จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Oxytocin augmentation"},
+      {"label": "B", "text": "Cesarean section"},
+      {"label": "C", "text": "Forceps extraction"},
+      {"label": "D", "text": "Vacuum extraction"},
+      {"label": "E", "text": "Allow spontaneous delivery"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Primigravida at 39 weeks, fully dilated for 2 hours, station +3 (low station, near -2 to 0 conversion), FHR normal. Second stage progressing well. Station +3 is low enough to expect spontaneous vaginal delivery without operative assistance. Allow continuation of labor with pushing effort."
+  },
+  {
+    "scenario": "ผู้หญิง G1 GA 30 สัปดาห์ ANC ปกติมาตลอด มาด้วยมีน้าใสไหลจากช่องคลอดมา 2 ชั่วโมง ไม่ปวดท้อง Physical exam: vital sign stable, uterine height 3/4 above umbilicus, cephalic presentation, longitudinal lie, FHR 148 bpm. จะตรวจอะไรเพิ่มเติมเพื่อการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Urinalysis"},
+      {"label": "B", "text": "Fern test"},
+      {"label": "C", "text": "Pelvic examination"},
+      {"label": "D", "text": "Ultrasound"},
+      {"label": "E", "text": "Complete blood count"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Suspected preterm premature rupture of membranes (PPROM) at 30 weeks with clear fluid per vagina. Fern test (ferning of amniotic fluid) is a simple, non-invasive, first-line test to confirm rupture of membranes. Pelvic examination should be avoided until ROM is confirmed due to risk of ascending infection."
+  },
+  {
+    "scenario": "ผู้หญิง 35 ปี ตั้งครรภ์ GA 15 สัปดาห์ ทำ PND ด้วยวิธี amniocentesis ผล: 45,XY translocation 14q,15q ท่านเป็นแพทย์จะทำอย่างไร",
+    "choices": [
+      {"label": "

@@ -1,0 +1,1814 @@
+{
+  "filename": "Endocrine",
+  "subject": "endocrine",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 94,
+    "no_choices": 63,
+    "few_choices": 7,
+    "good": 24,
+    "no_scenario": 0,
+    "short_scenario": 40
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A 30-year-old man with thalassemia presents to clinic with polyuria and polydips",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 60 BP120/80 wt 65 ht 170 FPG 96 ทาอะไร",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Reassure",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "คุมอาหาร",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "FPG อีกครั้ง",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ทา OGTT",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้ยาเบาหวาน",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 70 ปี เป็นเบาหวานมา 10 ปี มีไข้ ปัสสาวะขุ่น ซึมลง เจ็บสีข้างซ้ายมา 4 วัน PE",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "0.9%NaCl",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Gentamicin IV",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "NPH subcutaneous",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "RI subcutaneous",
+      "choices_count": 0
+    },
+    {
+      "index": 13,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "RI IV",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เคสผุ้ป่วย Grave disease ออนยาPTU 150 mg/d เมื่อ(กี่วันจาไม่ได้) มีอาการไข้ เจ็บ",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ลด dose PTU",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "off PTU",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "เปลี่ยนมาใช้ MMI",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 1,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย on PTU มี painful mouth ulcer, มีไข้ นอกจากจะหยุดยาแล้ว ควรทาอะไรอีก (คอ",
+      "choices_count": 3
+    },
+    {
+      "index": 19,
+      "question_number": 2,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ข้อใดเป็น metabolic syndrome (คอมพรี จุฬาฯ 2007)",
+      "choices_count": 3
+    },
+    {
+      "index": 20,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง HT + Cushing appearance Lab เจออะไร (ศรว 2008)\nIncrease cortisol level",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้หญิง subacute thyroiditis ให้ยาใดเพื่อลดอาการ (ศรว 2008)\nASA+propanplol",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 11,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ปวดหัวเป็นๆหายๆ+HT Na 140 K 3.0 สาเหตุของ HT (ศรว 2008)",
+      "choices_count": 3
+    },
+    {
+      "index": 28,
+      "question_number": 12,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย Clinical DKA การรักษาที่เหมาะสมที่สุด (ศรว 2008)",
+      "choices_count": 2
+    },
+    {
+      "index": 37,
+      "question_number": 22,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "หญิง 30 ปี นักกีฬามาราธอนแต่งงานแล้ว ยังไม่เคย ตั้งครรภ์ ปวดหัวตามัว ไม่มีประจาเ",
+      "choices_count": 3
+    },
+    {
+      "index": 41,
+      "question_number": 26,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยอายุมาก on Glipizide 2 mg มี Hypoglycemia, Creatinine rising Mx? (ศรว 201",
+      "choices_count": 3
+    },
+    {
+      "index": 47,
+      "question_number": 32,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 70 ปี สูง 170 cm หนัก 70 kgs แข็งแรงดี No U/D มาตรวจสุขภาพประจาปี BP 130/85 ",
+      "choices_count": 0
+    },
+    {
+      "index": 48,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ตรวจซ้าอีก 1 ปี",
+      "choices_count": 0
+    },
+    {
+      "index": 49,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ส่ง HbA1c",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ตรวจ FPG ซ้าอีก",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ตรวจ OGTT",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้ยาเบาหวาน",
+      "choices_count": 0
+    },
+    {
+      "index": 53,
+      "question_number": 33,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย DM กินอาหารเที่ยงตรงเวลา ไม่มีใจสั่น หิวบ่อยตอนบ่าย กินน้าหวานแล้วดีขึ้น",
+      "choices_count": 0
+    },
+    {
+      "index": 54,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "กินข้าวเที่ยงมากขึ้น",
+      "choices_count": 0
+    },
+    {
+      "index": 55,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ให้กิน snack",
+      "choices_count": 0
+    },
+    {
+      "index": 56,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ลด insulin ตอนเช้าลง 5 U",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เจาะcapillary glucose ตอนมีอาการ",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เปลี่ยน biphasic insulin",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 34,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย อายุ 70 ปี ซึมมา 1 วัน ก่อนหน้านี้ 3 เดือน กินน้อยลง ท้องผูก เคยผ่าตัดที",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "thyroxine",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "HCTZ",
+      "choices_count": 0
+    },
+    {
+      "index": 62,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "hydrocortisone",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "50%Glucose",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "3%NaCl",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 35,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 16 ปี คอโต 3 เดือน เหนื่อยง่าย ใจสั่น บางครั้ง PR84 BP110/70 Goiter2+ other",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "simple goiter",
+      "choices_count": 0
+    },
+    {
+      "index": 67,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Grave",
+      "choices_count": 0
+    },
+    {
+      "index": 68,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Hashimoto’s hyroiditis",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Subacute thyroiditis",
+      "choices_count": 0
+    },
+    {
+      "index": 70,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "iodine def",
+      "choices_count": 0
+    },
+    {
+      "index": 71,
+      "question_number": 36,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้หญิงอายุ 25 ปี น้าหนัก 65 กิโลกรัม สูง 1.65 เมตร มี Triglyceride สูง มาตรวจร่",
+      "choices_count": 0
+    },
+    {
+      "index": 72,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Reassure",
+      "choices_count": 0
+    },
+    {
+      "index": 73,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Weight reduction",
+      "choices_count": 0
+    },
+    {
+      "index": 74,
+      "question_number": 32,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ดูเบาหวานระยะยาว 1 เดือน best investigation is ?",
+      "choices_count": 0
+    },
+    {
+      "index": 75,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Fructosamine",
+      "choices_count": 0
+    },
+    {
+      "index": 76,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "HbA1C",
+      "choices_count": 0
+    },
+    {
+      "index": 77,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "FPG",
+      "choices_count": 0
+    },
+    {
+      "index": 78,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "OGTT",
+      "choices_count": 0
+    },
+    {
+      "index": 79,
+      "question_number": 33,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Palpitation, sweating, wt.loss 5 kg in 5 mo. Thyroid gland enlargement, left thy",
+      "choices_count": 0
+    },
+    {
+      "index": 80,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Thyroid scan",
+      "choices_count": 0
+    },
+    {
+      "index": 81,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "PET scan",
+      "choices_count": 0
+    },
+    {
+      "index": 82,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "U/S",
+      "choices_count": 0
+    },
+    {
+      "index": 83,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "FNA thyroid",
+      "choices_count": 0
+    },
+    {
+      "index": 84,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "FNA จาก cervical LN",
+      "choices_count": 0
+    },
+    {
+      "index": 87,
+      "question_number": 36,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Pt. เป็นภาวะไทรอยด์เป็นพิษ ได้ยา MMI 7.5 mg/d หลังได้รับยามีอาการผื่นขึ้น จะรักษ",
+      "choices_count": 0
+    },
+    {
+      "index": 88,
+      "question_number": 37,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยซึมลง Gluxose 43 serum cortisol–normal C-peptide–high normal insulin-norm",
+      "choices_count": 0
+    },
+    {
+      "index": 89,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "bacterial sepsis",
+      "choices_count": 0
+    },
+    {
+      "index": 90,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "sulfonylurea overdose",
+      "choices_count": 0
+    },
+    {
+      "index": 91,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "insulin overdose",
+      "choices_count": 0
+    },
+    {
+      "index": 92,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "adrenal insufficiency",
+      "choices_count": 0
+    },
+    {
+      "index": 93,
+      "question_number": 38,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย plan ทา I131 เพื่อรักษาhyperthyroidism ต้องเตรียมตัวต่อไปนี้ยกเว้น",
+      "choices_count": 1
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "A 30-year-old man with thalassemia presents to clinic with polyuria and polydipsia. Which lab is LEAST accurate in this patient\nHbA1c\nFructosamine\nFasting blood sugar test\nRandom blood sugar test\nOral glucose tolerance test\nA 65-year-old DM patient male was given glibenclamide for 1 year. He developed rash then he decided to stop all medication. After 6 months, he was fatigue and dyspnea. FBS 312, BUN 62, Cr 5.6. What is the most appropriate management\nDiet control\nMetformin\nGlibenclamide\nPioglitazone\nInsulin injection\nA patient underlying diabetes, hypertension, triple vessel disease, chronic heart failure on enalapril 10 mg, metformin. Fasting blood sugar 150, HbA1c 9. ไม่ควรทำอะไร\nAdd glipizide\nChange to sitagliptin\nAdd pioglitazone\nA 30-year-old female comes to you to consult her abnormal values in laboratory investigation. She has no underlying disease, no family history of CAD. Her lab result is: TC 250 Triglyceride 800 HDL 20. What is the most appropriate medication\nFish oil\nEzetimibe\nSimvastatin\nFenofibrate\nCholecystyramine\nA woman hyperthyroid. T3, T4, TSH 0.01. What is the appropriate investigation\nFine needle aspiration\nThyroid scan and uptake\nA 32-year-old woman comes with palpitation. PE: PR 120 bpm, diffuse thyroid enlargement with tenderness. T3 5, T4 4, TSH 0.001. What is the appropriate management\nI131\nCeftriaxone\nPTU\nMethimazole\nA 55-year-old woman with hyperthyroid, on methimazole for 1 year. She was admitted with congestive heart failure. PR 110 irregular, no exophthalmos, thyroid gland 60 g, diffused enlargement. Free T3 3.2 pg/mL, free T4 2.0 ng/dL, TSH 0.05 mIU/L. What is the most appropriate long term management\nPTU\nMethimazole high dose\nMethimazole, lithium\nThyroidectomy\nRadioiodine treatment\nA 60-year-old man gain weight 3 kg in 6 months. PE: P 50, cold extremities, puffy eyelid and face, BMI 30. What is the most appropriate investigation\nAlbumin\nBUN Cr\nBlood sugar\nUrinalysis\nThyroid function\nA 65-year-old woman presents with fatigue, anorexia and weight loss 5 kg in 3 months. She has underlying chronic knee pain takes herbal medication. PE: obese, moon face, acanthosis nigricans at axilla. FBS 60 mg/dl, BUN 10, Cr 0.8, Na 122, K 5.1, Cl 91, HCO3 22. What is the most useful investigation\nThyroid function test\nSerum morning cortisol\nDexamethasone suppression test\nAldosterone level\nFraction extraction Na\nA 20-year-old woman has polyuria, fatigue. Her weight gain 10 kg in 3 weeks. BP 120/80 mmHg. PE: weight 100 kg, height 150 cm, acanthosis nigrican. UA: sugar 2+, WBC 0-1, RBC 0-1. What is the most useful investigation\nRepeat UA\nCapillary blood sugar\nFasting blood sugar\nOral glucose tolerance test\nDexamethasone suppression test",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ชาย 60 BP120/80 wt 65 ht 170 FPG 96 ทาอะไร",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Reassure",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "คุมอาหาร",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "FPG อีกครั้ง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ทา OGTT",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ให้ยาเบาหวาน",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "โรคไตเสื่อม 2 ปี , DM , HT 4 ปี BW 50kg , bsa 1.26 , pitting edema both leg ให้โปรตีนเท่าไหร่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "10g"
+        },
+        {
+          "label": "B",
+          "text": "20g"
+        },
+        {
+          "label": "C",
+          "text": "30g"
+        },
+        {
+          "label": "D",
+          "text": "40g"
+        },
+        {
+          "label": "E",
+          "text": "50g"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "หญิง 70 ปี เป็นเบาหวานมา 10 ปี มีไข้ ปัสสาวะขุ่น ซึมลง เจ็บสีข้างซ้ายมา 4 วัน PE T 38, BP 80/50, PR 110, RR 28 ญาติเห็นว่าป่วยจึงให้หยุดยาเบาหวาน BS 900, tenderness left CVA, BUN 40, Cr 2, Electrolyte ปกติ ถาม management อันแรก",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "0.9%NaCl",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Gentamicin IV",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "NPH subcutaneous",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "RI subcutaneous",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "RI IV",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "เคสผุ้ป่วย Grave disease ออนยาPTU 150 mg/d เมื่อ(กี่วันจาไม่ได้) มีอาการไข้ เจ็บคอ มาพบแพทย์CbC พบ wbc 400 cell/cmm ถาม management",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ลด dose PTU",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "off PTU",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "เปลี่ยนมาใช้ MMI",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วย on PTU มี painful mouth ulcer, มีไข้ นอกจากจะหยุดยาแล้ว ควรทาอะไรอีก (คอมพรี จุฬาฯ 2007)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dischage นัด Follow up"
+        },
+        {
+          "label": "B",
+          "text": "Broad spectrum antibiotic IV"
+        },
+        {
+          "label": "C",
+          "text": "เปลี่ยนเป็น Methimazole"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ข้อใดเป็น metabolic syndrome (คอมพรี จุฬาฯ 2007)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypertension, Increased abdominal circumference, Insulin resistance"
+        },
+        {
+          "label": "B",
+          "text": "Impaired fasting glucose, hypercholesterolemia, low HDL"
+        },
+        {
+          "label": "C",
+          "text": "Hypertension, Insulin resistance, low HDL"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "หญิง HT + Cushing appearance Lab เจออะไร (ศรว 2008)\nIncrease cortisol level",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้หญิง subacute thyroiditis ให้ยาใดเพื่อลดอาการ (ศรว 2008)\nASA+propanplol",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "T4ปกติ TSH ปกติ Dx? (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Simple Goiter"
+        },
+        {
+          "label": "B",
+          "text": "Iodine def"
+        },
+        {
+          "label": "C",
+          "text": "Thyroid CA"
+        },
+        {
+          "label": "D",
+          "text": "Subacute thyroiditis"
+        },
+        {
+          "label": "E",
+          "text": "Hashimoto Thyroiditis"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 6,
+      "scenario": "หญิง 40 ปี หนัก 80 kg สูง 160 cm. เพิ่ง Dx. DM, FBG 180 Tx ที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ควบคุมอาหาร"
+        },
+        {
+          "label": "B",
+          "text": "Metformin"
+        },
+        {
+          "label": "C",
+          "text": "Acarbose"
+        },
+        {
+          "label": "D",
+          "text": "Glibenclamide"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 7,
+      "scenario": "หญิง 25 ปี ใจสั่น กินจุ นน.ลด มา 1 ปี, PE: mild exophthalmos, generalized enlarged thyroid both lobe, (Graves’), T4..,T3 400, TSH <0.001 Tx? (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Propanolol"
+        },
+        {
+          "label": "B",
+          "text": "Lugol solution"
+        },
+        {
+          "label": "C",
+          "text": "PTU"
+        },
+        {
+          "label": "D",
+          "text": "Radioactive iodine"
+        },
+        {
+          "label": "E",
+          "text": "Subtotal thyroidectomy"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ชาย 32 ปี ใจสั่น น้าหนักลด BP150/100 PR 120 PE: sensory normal, muscle weak gr.1/5 both upper and lower, reflex 2+ all Na 136 K 2.5 Cl 102 CO2 22 ต้องส่งตรวจอะไรเพื่อหาสาเหตุของอ่อนแรง (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Free T4"
+        },
+        {
+          "label": "B",
+          "text": "Plasma glucose"
+        },
+        {
+          "label": "C",
+          "text": "CT brain"
+        },
+        {
+          "label": "D",
+          "text": "CSF exam"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ตรวจร่างกายประจาปี TG 210 LDL 200 HDL 30 Rx? (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gemfibrozil"
+        },
+        {
+          "label": "B",
+          "text": "Simvastatin"
+        },
+        {
+          "label": "C",
+          "text": "Fibric acid"
+        },
+        {
+          "label": "D",
+          "text": "Niacin"
+        },
+        {
+          "label": "E",
+          "text": "Cholestyramine"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ปวดหัวเป็นๆหายๆ+HT Na 140 K 3.0 สาเหตุของ HT (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pheochromocytoma"
+        },
+        {
+          "label": "B",
+          "text": "Primary hyperaldosteronism"
+        },
+        {
+          "label": "C",
+          "text": "Renal a. stenosis"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้ป่วย Clinical DKA การรักษาที่เหมาะสมที่สุด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "i.v. insulin"
+        },
+        {
+          "label": "B",
+          "text": "i.v. fluid"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 13,
+      "scenario": "ชาย อายุ 40ปี ส่วนสูง 160 cm. นน. 90 kg. FBS 140 mg%---repeat 145 mg% ไม่มีอาการของDM ท่านจะทาอย่างไร (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "สังเกตอาการ"
+        },
+        {
+          "label": "B",
+          "text": "ควบคุมอาหารและออกกาลังกาย"
+        },
+        {
+          "label": "C",
+          "text": "Insulin injection"
+        },
+        {
+          "label": "D",
+          "text": "กินยากลุ่ม incretin"
+        },
+        {
+          "label": "E",
+          "text": "กินยาเพิ่มการหลั่ง insulin"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 14,
+      "scenario": "ชาย 33ปี ปวดหัว มาหลายเดือน ใจสั่น เหนื่อยง่าย flushing BP 180/110 PR 110 investigation? (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "urine VMA"
+        },
+        {
+          "label": "B",
+          "text": "CT brain"
+        },
+        {
+          "label": "C",
+          "text": "Thyroid function"
+        },
+        {
+          "label": "D",
+          "text": "pyelogram"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 15,
+      "scenario": "ผู้ป่ วยชายอายุ 18 ปี ดื่มน้ามาก ปัสสาวะมาก 2เดือน ปวดหัวตามัว 1เดือน MRI brain: Suprasellar mass E’lyte : Na 145K 3.8 Cl 110 CO2 21 fluid input/output =5100:5800manage (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Restrict fluid"
+        },
+        {
+          "label": "B",
+          "text": "Restrict Na"
+        },
+        {
+          "label": "C",
+          "text": "Hydrocortisone"
+        },
+        {
+          "label": "D",
+          "text": "HCTZ"
+        },
+        {
+          "label": "E",
+          "text": "DDAVP"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 16,
+      "scenario": "ผู้ป่ วยชายอายุ 30 ปี เหนื่อย อ่อนเพลีย BP 160/110 PR 70อื่นๆปกติ Na 154 K 2.2 HCO3 32 การวินิจฉัยที่เหมาะสมคือ (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Essential HT"
+        },
+        {
+          "label": "B",
+          "text": "Hyperthyroid"
+        },
+        {
+          "label": "C",
+          "text": "Pheochromocytoma"
+        },
+        {
+          "label": "D",
+          "text": "1st hyperaldosterone"
+        },
+        {
+          "label": "E",
+          "text": "Cushing syndrome"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 17,
+      "scenario": "DM ได้ MFM 1500,Glipizide 15 BMI เยอะ FBS 180 HbA1C 8.1 (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เพิMม Glipizide"
+        },
+        {
+          "label": "B",
+          "text": "MFM 2000"
+        },
+        {
+          "label": "C",
+          "text": "add acarbose"
+        },
+        {
+          "label": "D",
+          "text": "ให้ RI"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 18,
+      "scenario": "ผู้ป่ วยชายอายุ 70 ปี U/D DM, HT, DLP CC: ผล Lab ผิดปกติ ทานวิตามินเสริมเป็นประจา 10 ปีก่อนเคยปัสสาวะปนทราย PTH สูง, Ca2+11,PO4 2- 3.5, Cr 1.1, การวินิจฉัยที่เหมาะสมคือ (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "HyperCa2+ of Malignancgy"
+        },
+        {
+          "label": "B",
+          "text": "CA with bone Met."
+        },
+        {
+          "label": "C",
+          "text": "1OHyperparathyroid"
+        },
+        {
+          "label": "D",
+          "text": "2OHyperparathyroid"
+        },
+        {
+          "label": "E",
+          "text": "3OHyperparathyroid"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 20,
+      "scenario": "ผู้ป่ วยชายอายุ 70 ปี ไม่มีโรคประจาตัว lipid profile TG 500 Choles 210 HDL 40 Lab อะไรผิดปกติด้วย (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Uric acid"
+        },
+        {
+          "label": "B",
+          "text": "FBS"
+        },
+        {
+          "label": "C",
+          "text": "Cortisol"
+        },
+        {
+          "label": "D",
+          "text": "Thyroid function test"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 21,
+      "scenario": "หญิง 24 ปี on prednisolone 20 mg OD เพื่อรักษาปวดข้อนาน 1 ปี จะพบความผิดปกติใด ในผู้ป่วยรายนี้ (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "hypertension"
+        },
+        {
+          "label": "B",
+          "text": "Hypothyroid"
+        },
+        {
+          "label": "C",
+          "text": "increased bone mass"
+        },
+        {
+          "label": "D",
+          "text": "diabetes inspidus"
+        },
+        {
+          "label": "E",
+          "text": "adipose tissue wasting"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 22,
+      "scenario": "หญิง 30 ปี นักกีฬามาราธอนแต่งงานแล้ว ยังไม่เคย ตั้งครรภ์ ปวดหัวตามัว ไม่มีประจาเดือนมา 1 ปี มีนาสีขาวไหล มาจากเต้านมทังสองข้าง มีอาการตามัวมากขึ้น PE: bitemporal hemianopia (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pregnancy"
+        },
+        {
+          "label": "B",
+          "text": "Hypogonadism"
+        },
+        {
+          "label": "C",
+          "text": "Prolactinoma"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 23,
+      "scenario": "หญิง 18 ปี เป็น Grave's disease มา 1ปี กาลังรักษา วันนี้มีปวดข้อนิ้วมือทุกนิ้ว ร่วมกับปวดข้อมือ ข้อมูลใดสนับสนุนการวินิจฉัยมากที่สุด? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "กิน NSAIDs แล้วอาการดีขึ้น พอไม่กินก็จะปวด"
+        },
+        {
+          "label": "B",
+          "text": "ปวดมากหลังตื่นนอน"
+        },
+        {
+          "label": "C",
+          "text": "มีประวัติปวดข้อในครอบครัว"
+        },
+        {
+          "label": "D",
+          "text": "อาการปวดสัมพันธ์กับอาหาร"
+        },
+        {
+          "label": "E",
+          "text": "อาการปวดสัมพันธ์กับ PTU"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 24,
+      "scenario": "หญิง 18 ปี มาด้วยอาการคอโตมา 3 เดือน TSH สูง FT3 ปกติ dx? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Simple goiter"
+        },
+        {
+          "label": "B",
+          "text": "Hashimoto thyroiditis"
+        },
+        {
+          "label": "C",
+          "text": "Grave’s disease"
+        },
+        {
+          "label": "D",
+          "text": "Iodine deficiency"
+        },
+        {
+          "label": "E",
+          "text": "Subacute thyroiditis"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 25,
+      "scenario": "หญิงตั้งครรภ์ 20 wk ใจสั่น ตรวจพบ T4 สูงเล็กน้อย T3สูงเล็กน้อย TSHปกติ จงDx (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Grave’s disease"
+        },
+        {
+          "label": "B",
+          "text": "Molar pregnancy"
+        },
+        {
+          "label": "C",
+          "text": "Gestational goiter"
+        },
+        {
+          "label": "D",
+          "text": "Gestational thyrotoxicosis"
+        },
+        {
+          "label": "E",
+          "text": "Toxic multinodular goiter"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 26,
+      "scenario": "ผู้ป่วยอายุมาก on Glipizide 2 mg มี Hypoglycemia, Creatinine rising Mx? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Metformin"
+        },
+        {
+          "label": "B",
+          "text": "ลดglipizide"
+        },
+        {
+          "label": "C",
+          "text": "เปลี่ยนไปให้insulin"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 27,
+      "scenario": "ชาย 60ปี มาด้วยปวดหลังปวดกระดูกเป็นๆหายๆ มา6 เดือน หิวน้าบ่อย ปัสสาวะมาก ท้องผูก PE: tender at lumbosacral spine Lab : Ca 14 Phosphorous 14 BUN 35 Cr2.5 investigateอะไรดีทีสุดเพื่อให้ได้ผลการวินิจฉัย (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Parathyroid hormone"
+        },
+        {
+          "label": "B",
+          "text": "PSA"
+        },
+        {
+          "label": "C",
+          "text": "U/S KUB"
+        },
+        {
+          "label": "D",
+          "text": "MRI spine"
+        },
+        {
+          "label": "E",
+          "text": "Bone marrow aspiratiom"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 28,
+      "scenario": "หญิง 70 ปี U/D : HTN, DLP, DM on HCTZ, Thiazide, Enalapril, ASA, Simvastatin, Fenofobrate นาน 1 ปี ช่วง 6 เดือนที่ผ่านมาปวดขา 2 ข้างเป็นๆ หายๆ นวดหรือนอนพักแล้วอาการไม่ดีขึ้น มีข้อเข่าเสื่อม เดินไม่ค่อยไหว ไม่ได้รักษา PE : normal อาการดังกล่าวน่าจะมีสาเหตุมาจาก ยาใด? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASA"
+        },
+        {
+          "label": "B",
+          "text": "Thiazide"
+        },
+        {
+          "label": "C",
+          "text": "Enalapril"
+        },
+        {
+          "label": "D",
+          "text": "Fenofibrate"
+        },
+        {
+          "label": "E",
+          "text": "Simvastatin"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 29,
+      "scenario": "ผู้ป่วยชายอายุ 22 ปี N/V อ่อนเพลียมากมา 2 วัน PE : RR 32 BP80/60 PR140 drowsiness sunken eye ball dry lip ที่ ER ได้ NSS 1000 mL at ward BS 850 Na 129 K 2.8 Cl 90 HCO3 10 PO 4.2 BUN 42 Cr 1.2 ควรให้สารใดเป็นอย่างแรก (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "RI"
+        },
+        {
+          "label": "B",
+          "text": "NSS continue"
+        },
+        {
+          "label": "C",
+          "text": "Add KCl"
+        },
+        {
+          "label": "D",
+          "text": "Add KPO4"
+        },
+        {
+          "label": "E",
+          "text": "ให้ NaHCO"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 30,
+      "scenario": "ผู้ป่วยชายอายุ 30 ปี เป็น DI ยาหมดมา 3 วัน มาด้วย เหนือยอ่อนเพลีย PE: PR100 BP80/60 marked dry lips+tongue poor skin turgor dry skin Na160 K 3.3 Cl… HCO3….. ควรให้สารนาใดจึงเหมาะสม (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSS"
+        },
+        {
+          "label": "B",
+          "text": "NSS/2"
+        },
+        {
+          "label": "C",
+          "text": "NSS/3"
+        },
+        {
+          "label": "D",
+          "text": "5%DW"
+        },
+        {
+          "label": "E",
+          "text": "5%DNSS"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 31,
+      "scenario": "male 75 yr U/D DM, HT, DLP มา ER ด้วยซึมไม่รู้ตัว 1 hr. PTA เช้ามีไข้ปวดเมือยตามตัว กินอาหารได้น้อยลง ตอนเทียงญาติพบไม่รู้สึกตัว PEBT37.8 BP110/70 PR100 RR24 lung clear aqual BS other normal, oxygen sat 95% , DTX 40 mg% Tx? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSS load"
+        },
+        {
+          "label": "B",
+          "text": "Empirical ATB"
+        },
+        {
+          "label": "C",
+          "text": "Iv glucose push"
+        },
+        {
+          "label": "D",
+          "text": "ET tube"
+        },
+        {
+          "label": "E",
+          "text": "CT brain emergancy"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 32,
+      "scenario": "ชาย 70 ปี สูง 170 cm หนัก 70 kgs แข็งแรงดี No U/D มาตรวจสุขภาพประจาปี BP 130/85 mmHg FPG 130 mg/dl อย่างอื่นปกติ นอกจากแนะนาควบคุมอาหาร ออกกาลังกาย ควรทาอะไรอีก (50/ศรว 2012)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ตรวจซ้าอีก 1 ปี",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ส่ง HbA1c",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ตรวจ FPG ซ้าอีก",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ตรวจ OGTT",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ให้ยาเบาหวาน",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 33,
+      "scenario": "ผู้ป่วย DM กินอาหารเที่ยงตรงเวลา ไม่มีใจสั่น หิวบ่อยตอนบ่าย กินน้าหวานแล้วดีขึ้น on biphasic human insulin เช้า 30U เย็น 15 U มาตรวจตามนัด FBS 200 HbA1c 8.5 Mx? (62/ศรว 2012)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "กินข้าวเที่ยงมากขึ้น",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ให้กิน snack",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ลด insulin ตอนเช้าลง 5 U",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "เจาะcapillary glucose ตอนมีอาการ",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "เปลี่ยน biphasic insulin",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 34,
+      "scenario": "ผู้ป่วย อายุ 70 ปี ซึมมา 1 วัน ก่อนหน้านี้ 3 เดือน กินน้อยลง ท้องผูก เคยผ่าตัดที่คอแต่ญาติไม่รู้ว่าผ่าอะไร BP156/70, PR50, BS68, Na 120, K3.8, Cl 88, Cr 2, T3 60, FT4 0.6, TSH 1.3, cortisol level 1,transverse surgical scarที่คอ Mx? (72/ศรว 2012)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "thyroxine",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "HCTZ",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "hydrocortisone",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "50%Glucose",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "3%NaCl",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 35,
+      "scenario": "หญิง 16 ปี คอโต 3 เดือน เหนื่อยง่าย ใจสั่น บางครั้ง PR84 BP110/70 Goiter2+ other WNL TFT: WNL anti-thyroxin peptidase negative Dx? (90/ศรว 2012)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "simple goiter",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Grave",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Hashimoto’s hyroiditis",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Subacute thyroiditis",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "iodine def",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 36,
+      "scenario": "ผู้หญิงอายุ 25 ปี น้าหนัก 65 กิโลกรัม สูง 1.65 เมตร มี Triglyceride สูง มาตรวจร่างกายประจาปี )ที่เหลือให้ค่า Lab ต่างๆ มาก็ปกติดี ถามทาอย่างไร (152/ศรว 2012)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Reassure",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Weight reduction",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 32,
+      "scenario": "ดูเบาหวานระยะยาว 1 เดือน best investigation is ?",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Fructosamine",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "HbA1C",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "FPG",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "OGTT",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 33,
+      "scenario": "Palpitation, sweating, wt.loss 5 kg in 5 mo. Thyroid gland enlargement, left thyroid gland generalized enlarge, right normal, cervival LN 0.5 cm, TSH:low, FT4:high ส่ง investigation ใด",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Thyroid scan",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "PET scan",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "U/S",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "FNA thyroid",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "FNA จาก cervical LN",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 34,
+      "scenario": "ผู้ป่วยหญิงมาด้วย weight gain, irregular menstruation, back pain มีประวัติกินยาแก้ปวดหลังเป็นประจาแต่หยุดยามา 1 สัปดาห์ PE: moon face, buffalo hump, hypertension, proximal muscle weakness, etc. ส่งตรวจอะไรดี",
+      "choices": [
+        {
+          "label": "A",
+          "text": "serum morning cortisol"
+        },
+        {
+          "label": "B",
+          "text": "urine 24 hr cortisol"
+        },
+        {
+          "label": "C",
+          "text": "ACTH stimulation test"
+        },
+        {
+          "label": "D",
+          "text": "low-dose dexamethasone suppression test"
+        },
+        {
+          "label": "E",
+          "text": "high-dose dexamethasone suppression test"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 35,
+      "scenario": "เกณฑ์การวินิจฉัย central obesity ในเพศชายไทยโดยใช้ waist circumference",
+      "choices": [
+        {
+          "label": "A",
+          "text": "70 cm"
+        },
+        {
+          "label": "B",
+          "text": "75 cm"
+        },
+        {
+          "label": "C",
+          "text": "80 cm"
+        },
+        {
+          "label": "D",
+          "text": "85 cm"
+        },
+        {
+          "label": "E",
+          "text": "90 cm"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 36,
+      "scenario": "Pt. เป็นภาวะไทรอยด์เป็นพิษ ได้ยา MMI 7.5 mg/d หลังได้รับยามีอาการผื่นขึ้น จะรักษาอย่างไร\nA Thyroidectomy\nB I-131\nC เปลี่ยนยาเป็น PTU\nD ให้ยาขนาดเท่าเดิม\nE ให้ยาเดิมลด dose เป็น 5mg/d",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 37,
+      "scenario": "ผู้ป่วยซึมลง Gluxose 43 serum cortisol–normal C-peptide–high normal insulin-normal น่าจะเกิดจากสาเหตุใด 1) hepatoma",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "bacterial sepsis",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "sulfonylurea overdose",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "insulin overdose",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "adrenal insufficiency",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 38,
+      "scenario": "ผู้ป่วย plan ทา I131 เพื่อรักษาhyperthyroidism ต้องเตรียมตัวต่อไปนี้ยกเว้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Screening pregnancy B. Screening breastfeeding C. Low iodine diet 1-2 wk ก่อนรักษา D. Withhold B-blocker 1-2 wk ก่อนรักษา E. Stop anti-thyroid drug 7-8วัน ก่อนรักษา"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    }
+  ]
+}

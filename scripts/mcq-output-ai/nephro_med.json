@@ -1,0 +1,746 @@
+[
+  {
+    "scenario": "หญิงอายุ 60 ปี สูบบุหรี่มา 30 ปี ไอมาก X-ray พบ Right upper lung mass และมี Na ในเลือดต่า (urine osm 50) เกิดจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "SIADH"
+      },
+      {
+        "label": "B",
+        "text": "Polydipsia"
+      },
+      {
+        "label": "C",
+        "text": "Nephrotic syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Adrenal insufficiency"
+      },
+      {
+        "label": "E",
+        "text": "Hypothyroidism"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Right upper lung mass + low Na + low urine osmolarity = SIADH from lung malignancy (small cell carcinoma). เพิ่มตัวเลือก C, D, E เพื่อให้มีครบ 5 ข้อ",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ในการรับน้องที่มหาวิทยาลัยแห่งหนึ่ง รุ่นพี่ได้ให้รุ่นน้องให้กินน้าเปล่าปริมาณมาก หลังจากนั้นผู้ป่วยมีอาการซึม ปวดศีรษะและ คลื่นไส้อาเจียน ข้อใดต่อไปนี้น่าจะทาให้เกิดอาการในผู้ป่วยรายนี้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hypokalemia"
+      },
+      {
+        "label": "B",
+        "text": "Hyponatremia"
+      },
+      {
+        "label": "C",
+        "text": "Hypernatremia"
+      },
+      {
+        "label": "D",
+        "text": "Hypocalcemia"
+      },
+      {
+        "label": "E",
+        "text": "SIADH"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "การดื่มน้าปริมาณมากทำให้เกิด water intoxication → hyponatremia ซึ่งก่อให้เกิด cerebral edema และอาการ lethargy, headache, nausea, vomiting",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วย CKD มี K = 7 EKG change จงบอกการรักษาที่สำคัญที่สุดในผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Calcium gluconate IV"
+      },
+      {
+        "label": "B",
+        "text": "Insulin with glucose"
+      },
+      {
+        "label": "C",
+        "text": "Sodium bicarbonate"
+      },
+      {
+        "label": "D",
+        "text": "Kayexalate"
+      },
+      {
+        "label": "E",
+        "text": "Furosemide"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Hyperkalemia with EKG changes = emergency. Calcium gluconate ให้ได้ก่อนเพื่อ stabilize cardiac membrane, ตามด้วย insulin+glucose และ other measures",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยสูงอายุมีโรคประจำตัวเป็น DM with HT มีแพทย์ทำการตรวจร่างกายเบื้องต้น Costovertebral angle tenderness การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone IV"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone oral"
+      },
+      {
+        "label": "C",
+        "text": "Ofloxacin oral"
+      },
+      {
+        "label": "D",
+        "text": "Trimethoprim-sulfamethoxazole"
+      },
+      {
+        "label": "E",
+        "text": "Nitrofurantoin oral"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "CVA tenderness = acute pyelonephritis. ผู้ป่วยสูงอายุ DM+HT = high risk → ต้องให้ IV antibiotics เลย Ceftriaxone IV เหมาะสมที่สุด เพิ่มตัวเลือก D, E",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วย CKD มี K = 7 EKG change จงบอกการรักษาที่สำคัญที่สุดในผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Calcium gluconate IV"
+      },
+      {
+        "label": "B",
+        "text": "Insulin with glucose"
+      },
+      {
+        "label": "C",
+        "text": "Sodium bicarbonate"
+      },
+      {
+        "label": "D",
+        "text": "Kayexalate"
+      },
+      {
+        "label": "E",
+        "text": "Emergency dialysis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ข้อซ้ำกับข้อ 3 แต่เป็นปี 2009 การรักษา: Calcium gluconate ให้ก่อน (cardiac membrane stabilization) ตามด้วย insulin+glucose, NaHCO3, Kayexalate",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 43 ปี มีอาการอ่อนเพลียง่าย กล้ามเนื้อแขนขาอ่อนแรง เคยมีอาการบวมที่ขา กินHCTZ 50 mg มาตลอด อาการในผู้ป่วยรายนี้น่าจะเกิดจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hyponatremia"
+      },
+      {
+        "label": "B",
+        "text": "Hypokalemia"
+      },
+      {
+        "label": "C",
+        "text": "Hypomagnesemia"
+      },
+      {
+        "label": "D",
+        "text": "Hypocalcemia"
+      },
+      {
+        "label": "E",
+        "text": "Hypoproteinemia"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "HCTZ ทำให้ hypokalemia → proximal muscle weakness, fatigue. HCTZ also causes hypomagnesemia แต่ hypokalemia เป็นหลัก เพิ่มตัวเลือก E",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี มาด้วยปัสสาวะสีเข้มมา 2 วัน BP 140/100 UA RBC>100/hpf WBC 10/hpf with red cell cast protein 1+ ควรรักษาด้วยยาใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Norfloxacin"
+      },
+      {
+        "label": "B",
+        "text": "Furosemide"
+      },
+      {
+        "label": "C",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "D",
+        "text": "Cef-3"
+      },
+      {
+        "label": "E",
+        "text": "Sodium nitroprusside"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Acute glomerulonephritis: red cell cast + hematuria + HTN + proteinuria ใน young male → likely post-infectious GN or IgA nephropathy. ไม่ใช่ UTI (WBC ต่า) ไม่ใช่ infection ให้ Prednisolone",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี ดื่มน้ามาก ปัสสาวะมาก 2 เดือน ปวดหัว ตามัว 1 เดือน MRI brain: Suprasellar mass E'lyte: Na 145, K 3.8, Cl 110, CO2 21 fluid input/output = 5100:5800 ถามการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Restrict fluid"
+      },
+      {
+        "label": "B",
+        "text": "Restrict Na"
+      },
+      {
+        "label": "C",
+        "text": "Hydrocortisone"
+      },
+      {
+        "label": "D",
+        "text": "HCTZ"
+      },
+      {
+        "label": "E",
+        "text": "DDAVP"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Suprasellar mass (craniopharyngioma) + polyuria + high Na (145) + low urine osmolarity (from 5100:5800 input/output ratio) = Central diabetes insipidus. Treatment: fluid restriction ก่อน (especially hypotonic fluid restriction), ตามด้วย DDAVP ถ้าจำเป็น",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี U/D HTN, glaucoma ซื้อยากินเอง ญาติพบหมดสติ ไม่รู้สึกตัว PE: ซึม, BP 140/90 disorientated to time-place-person, Lab: hypoNa, hypoK, hypoCl, CO2 35 BUN 40 Cr 1.6 ถามว่าอาการดังกล่าวเกิดจากยาตัวใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acetazolamide"
+      },
+      {
+        "label": "B",
+        "text": "HCTZ"
+      },
+      {
+        "label": "C",
+        "text": "Spironolactone"
+      },
+      {
+        "label": "D",
+        "text": "Timolol"
+      },
+      {
+        "label": "E",
+        "text": "Dorzolamide"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Self-medication for glaucoma + hypoNa, hypoK, hypoCl, high CO2 = acetazolamide (carbonic anhydrase inhibitor). Acetazolamide causes metabolic alkalosis, hypokalemia, hyponatremia. HCTZ would cause hypernatremia, not hyponatremia. เพิ่มตัวเลือก D, E",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 55 ปี มี U/D CRF ฟอกไต 2 ครั้ง/สัปดาห์ มาด้วยหอบเหนื่อย Electrolyte: Na 138, K 6.8, BUN 60, Cr 7 รักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NaHCO3"
+      },
+      {
+        "label": "B",
+        "text": "Insulin + น้ำตาล"
+      },
+      {
+        "label": "C",
+        "text": "Dialysis"
+      },
+      {
+        "label": "D",
+        "text": "Beradual"
+      },
+      {
+        "label": "E",
+        "text": "Kayexalate"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "CRF with K 6.8 (hyperkalemia) + high BUN/Cr (uremia) + dyspnea (likely pulmonary edema) + already on dialysis 2x/week = needs emergency dialysis for removal of K+ and fluid",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 50 ปี มีไข้ ปวดบั้นเอวขวาร้าวไปหลังและขาหนีบ ปัสสาวะแสบขัด เป็นๆหายๆ 2 ครั้ง ไม่เคยถ่ายปัสสาวะเป็นเลือด ตรวจร่างกายปกติ UA: WBC 0-1, RBC 10-20 Investigation ที่ช่วยในการวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Urine calcium"
+      },
+      {
+        "label": "B",
+        "text": "IVP"
+      },
+      {
+        "label": "C",
+        "text": "Cystoscope"
+      },
+      {
+        "label": "D",
+        "text": "U/S KUB"
+      },
+      {
+        "label": "E",
+        "text": "Plain KUB"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Classic renal colic: flank pain radiating to groin, dysuria, hematuria (RBC 10-20), no fever. U/S KUB is first-line imaging (no radiation, good sensitivity). IVP is contraindicated if allergy risk. เพื่อหา stone",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 75 ปี U/D HT on ยา HCTZ (25) 1x1 ควบคุมความดันได้ปกติ ตอนเช้าลุกจากที่นอนไม่ขึ้น ญาตินำส่งรพ. PE: Alert, BP 130/80 mmHg, PR 72, RR 18, BT 37 Proximal m. weakness, normal sensation and reflex อาการของผู้ป่วยน่าจะเกิดจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "HypoNa+"
+      },
+      {
+        "label": "B",
+        "text": "HypoK+"
+      },
+      {
+        "label": "C",
+        "text": "HypoMg2+"
+      },
+      {
+        "label": "D",
+        "text": "HyperCa2+"
+      },
+      {
+        "label": "E",
+        "text": "Rhabdomyolysis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "HCTZ-induced hypokalemia: proximal muscle weakness, inability to stand → ลักษณะของ hypokalemic myopathy. HCTZ causes K+ wasting.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 25 ปี 1 week ก่อนมี S.aureus abscess ที่ต้นขาขวา ได้รับการรักษาในโรงพยาบาล แพทย์ระบายหนอง ให้ methicillin และ paracetamol นาน 7 วัน อาการดีขึ้น กลับบ้านได้เมื่อ 2 วันก่อน วันนี้มาด้วยไข้ 1 วัน PTA PE: BT 38.1°C, Diffuse erythematous skin rash at trunk and extremities, UA: sp.gr 1.020, pH 6.5, Blood 1+, Protein 1+, Glucose –ve, Ketone –ve, WBC 10-20, RBC 1-5 Diagnosis คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "UTI"
+      },
+      {
+        "label": "B",
+        "text": "ATN"
+      },
+      {
+        "label": "C",
+        "text": "Analgesic abuse nephropathy"
+      },
+      {
+        "label": "D",
+        "text": "Drug induced interstitial nephritis"
+      },
+      {
+        "label": "E",
+        "text": "Post-infectious glomerulonephritis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Timeline: Methicillin 7 days → 2 days after stopping → fever + rash (classic drug hypersensitivity) + UA with pyuria (WBC 10-20), mild hematuria, proteinuria = Drug-induced interstitial nephritis from beta-lactam antibiotic. Not post-infectious GN (too soon, would expect RBC casts)",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 30 ปี เป็น DI ยาหมดมา 3 วัน มาด้วย เหนื่อยอ่อนเพลีย PE: PR 100 BP 80/60 marked dry lips+tongue poor skin turgor dry skin Na 160 K 3.3 Cl... HCO3-... ควรให้สารน้าใดจึงเหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NSS"
+      },
+      {
+        "label": "B",
+        "text": "NSS/2"
+      },
+      {
+        "label": "C",
+        "text": "NSS/3"
+      },
+      {
+        "label": "D",
+        "text": "5% Dextrose Water"
+      },
+      {
+        "label": "E",
+        "text": "5% Dextrose in NSS"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "DI off medication × 3 days: severe dehydration + hypernatremia (Na 160) + hypovolemia (BP 80/60). Need hypotonic fluid (5% DW or 0.45% NSS) to replace free water deficit and bring down Na gradually. NSS would worsen hypernatremia.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old female presents with oliguria and edema. Physical exam normal except extremities pitting edema 4+, BP 160/110 mmHg, PR 80/min, BT 37°C, RR 20/min. Lab Na 130, K 4.8, HCO3 22, Cl 100. Urine Sp.gr 1.025, pH 5.5, WBC 10-20/hpf, RBC 30-50/hpf, protein 3+. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Prerenal azotemia"
+      },
+      {
+        "label": "B",
+        "text": "Renal artery stenosis"
+      },
+      {
+        "label": "C",
+        "text": "Acute tubular necrosis"
+      },
+      {
+        "label": "D",
+        "text": "Acute interstitial nephritis"
+      },
+      {
+        "label": "E",
+        "text": "Acute glomerulonephritis"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "Oliguria + severe edema + HTN (160/110) + hyponatremia + RBC casts + heavy proteinuria (3+) + normal kidney size on exam = Acute glomerulonephritis. High urine osmolarity suggests intrinsic renal disease, not prerenal.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50-year-old man presents with generalized edema and weight gain for 2 weeks. He has no underlying disease. He took over the counter medication for knee pain 2 months ago. PE: BP 130/80 mmHg. Cr 3.0. UA: Sp.gr 1.010, protein 2+, WBC 10-20, RBC 2-3/HPF. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nephrotic syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Acute tubular necrosis"
+      },
+      {
+        "label": "C",
+        "text": "Acute interstitial nephritis"
+      },
+      {
+        "label": "D",
+        "text": "Acute papillary necrosis"
+      },
+      {
+        "label": "E",
+        "text": "Glomerulonephritis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "OTC medication for pain (likely NSAID) 2 months ago → edema + elevated Cr + UA with pyuria (WBC 10-20) + mild proteinuria (2+) but no nephrotic range = Acute interstitial nephritis. Timing fits with drug exposure.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 16-year-old patient after radiation nasopharynx develops polyuria. Urine 8 L/day. Urine osmolarity 200, serum osmolarity 300. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Adrenal insufficiency"
+      },
+      {
+        "label": "B",
+        "text": "Cerebral salt wasting"
+      },
+      {
+        "label": "C",
+        "text": "Central diabetes insipidus"
+      },
+      {
+        "label": "D",
+        "text": "Syndrome of inappropriate antidiuretic hormone secretion"
+      },
+      {
+        "label": "E",
+        "text": "Nephrogenic diabetes insipidus"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "Post-radiation damage to hypothalamus/pituitary → Central DI: polyuria (8 L/day) + low urine osmolarity (200) + high serum osmolarity (300). SIADH would show high urine osmolarity. เพิ่มตัวเลือก E",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old man presents with bilateral intermittent limb weakness for 2 days. He has history of alcohol drinking this week. PE: BP 120/80 mmHg, proximal muscle weakness, normal sensory and cranial nerve. Lab: Na 135, K 2, Cl 108, HCO3 15, BUN 15, Cr 0.6. Urine: pH 7.0, Na 40, K 40, Cl 40. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Alcoholic ketoacidosis"
+      },
+      {
+        "label": "B",
+        "text": "Renal tubular acidosis"
+      },
+      {
+        "label": "C",
+        "text": "Methanol intoxication"
+      },
+      {
+        "label": "D",
+        "text": "Primary hyperaldosteronism"
+      },
+      {
+        "label": "E",
+        "text": "Hypokalemic periodic paralysis"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "Alcohol binge + acute proximal muscle weakness + severe hypokalemia (K 2) + normal renal function (Cr 0.6) + non-acidemia (HCO3 15 but context of DKA would be more severe) = hypokalemic periodic paralysis triggered by alcohol. Low urine K (40) suggests total body K depletion.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50-year-old man underlying hypertension on amlodipine 10 mg/day, enalapril 40 mg/day. He had oliguria for 2 days. Today, family takes him to the hospital, unconscious. PE: RR 14, PR 70, BP 130/80 mmHg, normal S1 S2, no gallop, JVP 3 cm, no crepitation, edema 2+ both legs. EKG shows peaked T waves and prolonged PR interval. What is the initial appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hemodialysis"
+      },
+      {
+        "label": "B",
+        "text": "IV furosemide"
+      },
+      {
+        "label": "C",
+        "text": "Calcium gluconate"
+      },
+      {
+        "label": "D",
+        "text": "Hydralazine"
+      },
+      {
+        "label": "E",
+        "text": "Insulin with glucose"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "Oliguria (2 days) + unconscious + peaked T waves + prolonged PR (EKG changes of hyperkalemia) = emergency hyperkalemia. Calcium gluconate is the FIRST step to stabilize cardiac membrane. Then insulin+glucose, dialysis if needed. ACE inhibitor + oliguria = severe hyperkalemia risk.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A man presents with oliguria for 2 days. Lab BUN 40, Cr 3.0, Na 132, K 6.0, Cl 100, HCO3 14. What is the next management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "EKG"
+      },
+      {
+        "label": "B",
+        "text": "Furosemide"
+      },
+      {
+        "label": "C",
+        "text": "Emergency dialysis"
+      },
+      {
+        "label": "D",
+        "text": "IV fluids"
+      },
+      {
+        "label": "E",
+        "text": "Sodium bicarbonate"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "Oliguria + elevated K (6.0) + metabolic acidosis (HCO3 14) = must do EKG first to assess for hyperkalemia-related cardiac changes before treatment. This guides urgency of management. เพิ่มตัวเลือก D, E",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old man has gross hematuria with clot, no fever but has right flank pain. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cystoscope"
+      },
+      {
+        "label": "B",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "C",
+        "text": "KUB ultrasound"
+      },
+      {
+        "label": "D",
+        "text": "Repeat UA"
+      },
+      {
+        "label": "E",
+        "text": "Intravenous pyelogram"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "Gross hematuria + flank pain + clots = likely nephrolithiasis. U/S KUB is first-line (safe, no radiation, good sensitivity for stones >5mm). CT is gold standard but U/S is appropriate initial workup. Cystoscope for lower tract bleeding.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 60-year-old woman with painless gross hematuria, amorphous shape blood clot, no flank pain, no fever. What is the most useful investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Film KUB"
+      },
+      {
+        "label": "B",
+        "text": "U/S KUB"
+      },
+      {
+        "label": "C",
+        "text": "Intravenous pyelogram"
+      },
+      {
+        "label": "D",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "E",
+        "text": "Cystoscope"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2558",
+    "status": "complete",
+    "ai_notes": "Painless gross hematuria (especially with amorphous clots) in elderly → suspect bladder/urethral source (NOT stone which causes pain). Cystoscope is best investigation for visualizing bladder mucosa, detecting tumors. This warrants urologic evaluation for malignancy.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old woman admitted to the hospital due to fever with chill for 3 days and left flank pain. Physical exam BT 39°C. Urinalysis WBC 100-200/hpf, RBC 10-20/hpf. After administrated ceftriaxone for 3 days patient is not improved. Ultrasound reveals moderate left hydronephrosis with turbid collection left kidney. What is the next step management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intravenous pyelogram"
+      },
+      {
+        "label": "B",
+        "text": "Percutaneous nephrostomy"
+      },
+      {
+        "label": "C",
+        "text": "Retrograde pyelogram with ureteric stent"
+      },
+      {
+        "label": "D",
+        "text": "Switch to broad spectrum antibiotics"
+      },
+      {
+        "label": "E",
+        "text": "Wait for culture result and change to sensitive antibiotics"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/NEPHRO",
+    "status": "complete",
+    "ai_notes": "Patient has fever unresponsive to antibiotics with hydronephrosis and turbid renal collection (abscess/infected urine). This indicates infected obstructed kidney requiring urgent decompression. Percutaneous nephrostomy is the appropriate management for obstructed infected kidney (pyonephrosis) to relieve obstruction and drain purulent material. IVP is contraindicated in infected system. Culture-directed antibiotics alone are insufficient without drainage.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old woman was admitted under diagnosis of acute pyelonephritis. Ceftriaxone was administered for 3 days, but she still has fever. Urine culture shows E. coli sensitive to cephalosporin. Abdominal ultrasonography shows left hydronephrosis with left upper ureteric stone. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue ceftriaxone"
+      },
+      {
+        "label": "B",
+        "text": "Switch from Ceftriaxone to Clindamycin"
+      },
+      {
+        "label": "C",
+        "text": "Cystoscopy with ureteric stent insertion"
+      },
+      {
+        "label": "D",
+        "text": "Extracorporeal shock wave lithotripsy"
+      },
+      {
+        "label": "E",
+        "text": "Percutaneous urolithotomy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/NEPHRO",
+    "status": "complete",
+    "ai_notes": "Patient has acute pyelonephritis with obstructing ureteric stone causing hydronephrosis. Despite appropriate antibiotic (cephalosporin-sensitive E. coli), fever persists due to obstruction. Infected obstructed ureter requires urgent drainage. Retrograde ureteric stent insertion via cystoscopy is the first-line intervention for upper ureteric stones with obstruction. ESWL and percutaneous urolithotomy are alternatives but cystoscopic stenting is preferred for acute infected obstruction. Continuing or switching antibiotics without relieving obstruction will fail.",
+    "subject": "nephro_med",
+    "exam_type": "NL2"
+  }
+]

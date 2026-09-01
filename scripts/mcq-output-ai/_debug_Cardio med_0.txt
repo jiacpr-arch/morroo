@@ -1,0 +1,322 @@
+[
+  {
+    "scenario": "ชายอายุ 77 ปี หมดสติ คลา carotid pulse ไม่ได้ ทา chest compression ไป EKG: asystole ทำอะไรต่อ",
+    "choices": [
+      {"label": "A", "text": "Adrenaline"},
+      {"label": "B", "text": "Amiodarone"},
+      {"label": "C", "text": "Defibrillation 200 J"},
+      {"label": "D", "text": "Cardioversion 100 J"},
+      {"label": "E", "text": "Atropine"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Asystole คือ no shockable rhythm ต้องให้ Epinephrine (Adrenaline) ทันที ตามกลไก ACLS"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี U/D HTN, glaucoma ซื้อยากินเอง ญาติพบหมดสติ ไม่รู้สึกตัว PE: ซึม BP 140/90 disoriented to time-place-person Lab: hypoNa, hypoK, hypoCl, CO2 35, BUN 40, Cr 1.6 ถามว่าอาการดังกล่าวเกิดจากยาตัวใด",
+    "choices": [
+      {"label": "A", "text": "Acetazolamide"},
+      {"label": "B", "text": "HCTZ (Hydrochlorothiazide)"},
+      {"label": "C", "text": "Spironolactone"},
+      {"label": "D", "text": "Amlodipine"},
+      {"label": "E", "text": "Enalapril"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Acetazolamide ทำให้เกิด metabolic acidosis (CO2 35), hypokalemia, hyponatremia, และ confusion ซึ่งสอดคล้องกับรูปโรค"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 30 ปี เหนื่อย อ่อนเพลีย BP 160/110 PR 70 อื่นๆปกติ Na 154, K 2.2, HCO3 32 การวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Essential hypertension"},
+      {"label": "B", "text": "Hyperthyroidism"},
+      {"label": "C", "text": "Pheochromocytoma"},
+      {"label": "D", "text": "Primary hyperaldosteronism"},
+      {"label": "E", "text": "Cushing syndrome"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Primary hyperaldosteronism มี classic triad: hypertension, hypokalemia (K 2.2), metabolic alkalosis (HCO3 32) และ hypernatremia (Na 154) ซึ่งเป็นไปตาม Conn syndrome"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 68 ปี U/D HT กินยาไม่สม่าเสมอ มาด้วยหอบเหนื่อย PE: BP 200/110, PR 100, neck vein engorged, S3 gallop, fine crackles both lungs, Ext: pitting edema lower legs Eye: exudates with wire loop pattern. Management ที่เหมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Digoxin"},
+      {"label": "B", "text": "Propranolol"},
+      {"label": "C", "text": "Nifedipine"},
+      {"label": "D", "text": "Intravenous Nitroglycerine"},
+      {"label": "E", "text": "Furosemide"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "โรคจากความดันโลหิตสูงที่ไม่ควบคุม (hypertensive emergency) พร้อม acute pulmonary edema ต้องได้ IV Nitroglycerine เพื่อลดความดันอย่างรวดเร็ว"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 37 ปี เจ็บกลางอกร้าวไปไหล่ซ้าย เหงื่อแตก ใจสั่น มีประวัติเป็นโรคหืด ใช้ยาขยายหลอดลมนานๆครั้ง ไม่มีบุคคลในครอบครัวเป็นโรคหัวใจ PE: BP 170/85, PR 110, EKG ST elevation V2-6 การดูแลขั้นต้นในผู้ป่วยรายนี้คือ",
+    "choices": [
+      {"label": "A", "text": "ASA + beta-blocker"},
+      {"label": "B", "text": "ASA + nitrate"},
+      {"label": "C", "text": "ASA + calcium channel blocker"},
+      {"label": "D", "text": "ASA + benzodiazepine"},
+      {"label": "E", "text": "Beta-blocker + heparin"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีประวัติหืด ห้ามใช้ beta-blocker เพราะทำให้หลอดลมอดตัน ต้องใช้ CCB (nifedipine) ร่วมกับ ASA ส่วน nitrate อาจทำให้เหนื่อยเพิ่มขึ้น"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 20 ปี มีไข้มาสามวัน ต่อมามีเจ็บแน่นหน้าอกเหนื่อยง่ายขึ้น นอนราบไม่ได้ ตรวจร่างกาย V/S: BT 39°C, BP 90/70, PR 110, RR 22, neck vein engorged, decreased heart sound with scattered sound, lung clear, other WNL",
+    "choices": [
+      {"label": "A", "text": "Congestive heart failure"},
+      {"label": "B", "text": "Severe mitral stenosis"},
+      {"label": "C", "text": "Acute pericarditis"},
+      {"label": "D", "text": "Acute myocarditis"},
+      {"label": "E", "text": "Pulmonary embolism"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ไข้ + chest pain + dyspnea + muffled heart sound (decreased heart sound) + neck vein engorged แสดง pericardial effusion/myocarditis ไม่มี pericardial friction rub ลักษณะเป็น myocarditis มากกว่า"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 23 ปี อาชีพครูโรงเรียนเด็กอนุบาล เคยป่วยเป็น Rheumatic fever ตอนอายุ 15 ปี ปัจจุบันทำงานทั่วไปได้ปกติ ไม่มีอาการหอบเหนื่อย ตรวจร่างกายพบ pansystolic murmur grade II/VI at apex ได้รับการรักษาด้วย Penicillin V มาตลอด ควรให้การรักษาผู้ป่วยรายนี้ต่อไปอย่างไร",
+    "choices": [
+      {"label": "A", "text": "หยุดยา penicillin"},
+      {"label": "B", "text": "ให้กินยาเฉพาะตอนทำสิ่งที่มีอันตราย (เช่น ทำฟัน)"},
+      {"label": "C", "text": "กินยาไปจนกระทั่งอายุ 30 ปีจึงหยุด"},
+      {"label": "D", "text": "กินยาไปจนกระทั่งอายุ 50 ปีจึงหยุด"},
+      {"label": "E", "text": "ให้กินยาไปตลอดชีวิต"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "มี RHD with mitral regurgitation (pansystolic murmur at apex) ต้องให้ penicillin prophylaxis ตลอดชีวิต เพื่อป้องกัน recurrent streptococcal infection"
+  },
+  {
+    "scenario": "หญิงอายุ 70 ปี U/D: HTN, DLP, DM on HCTZ, Enalapril, ASA, Simvastatin, Fenofibrate นาน 1 ปี ช่วง 6 เดือนที่ผ่านมาปวดขา 2 ข้างเป็นๆ หายๆ นวดหรือนอนพักแล้วอาการไม่ดีขึ้น มีข้อเข่าเสื่อม เดินไม่ค่อยไหว ไม่ได้รักษา PE: normal อาการดังกล่าวน่าจะมีสาเหตุมาจากยาใด",
+    "choices": [
+      {"label": "A", "text": "ASA (Acetylsalicylic acid)"},
+      {"label": "B", "text": "HCTZ (Hydrochlorothiazide)"},
+      {"label": "C", "text": "Enalapril"},
+      {"label": "D", "text": "Fenofibrate"},
+      {"label": "E", "text": "Simvastatin"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Fenofibrate + Simvastatin เพิ่มความเสี่ยงของ statin-induced myopathy และ rhabdomyolysis อาจทำให้เกิด muscle pain, weakness ซึ่งอาจเข้าข่าย pseudoclaudication"
+  },
+  {
+    "scenario": "หญิงอายุ 82 ปี ขณะลุกไปฉี่มีอาการหน้ามืดวูบหนึ่ง ตรวจร่างกายพบ orthostatic hypotension เกิดจากสาเหตุใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Hypovolemia"},
+      {"label": "B", "text": "Aortic stenosis"},
+      {"label": "C", "text": "Coronary artery disease"},
+      {"label": "D", "text": "Heart failure"},
+      {"label": "E", "text": "Autonomic neuropathy"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้สูงอายุที่มี orthostatic hypotension มักเกี่ยวข้องกับ AS เนื่องจากลดความสามารถในการเพิ่ม cardiac output ขณะเปลี่ยนท่า"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 40 ปี แข็งแรงดี วิ่งมาราธอนได้ 5-10 km (30 นาที) แล้วเริ่มเหนื่อย วิ่งห่างจากคนอื่น อาเจียน ล้มลงบนพื้น เกร็งกระตุก 2 ครั้ง หมดสติ BT 40°C, PR 120, BP 160/100, RR 30 หายใจดัง อื่นๆปกติดี no focal neurological deficit ปวดหัวมาก การวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Heat stroke"},
+      {"label": "B", "text": "Transient ischemic attack"},
+      {"label": "C", "text": "Acute myocardial infarction"},
+      {"label": "D", "text": "Pulmonary embolism"},
+      {"label": "E", "text": "Intracerebral hemorrhage"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Heat stroke: core temp >40°C, altered mental status, seizure, hyperpnea, tachycardia หลังจากออกกำลังแรงในสภาพอากาศร้อน"
+  },
+  {
+    "scenario": "ผู้ป่วยได้รับ EKG ที่แสดงลักษณะ tall peaked T wave จะให้ management อะไร",
+    "choices": [
+      {"label": "A", "text": "Calcium gluconate"},
+      {"label": "B", "text": "Insulin + glucose"},
+      {"label": "C", "text": "Kayexalate (sodium polystyrene sulfonate)"},
+      {"label": "D", "text": "Sodium bicarbonate"},
+      {"label": "E", "text": "Diuretics"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Tall peaked T wave เป็นสัญญาณของ hyperkalemia ต้องให้ calcium gluconate เป็นสิ่งแรกเพื่อ stabilize cardiac membrane"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 73 ปี มาด้วยอาการเหนื่อยแน่นหน้าอก ตรวจร่างกาย BP 200/110, PR 110, RR 28 Heart: normal s1, s2 with s3 gallop Ext: pitting edema both legs ให้ยาอะไร",
+    "choices": [
+      {"label": "A", "text": "Captopril"},
+      {"label": "B", "text": "Intravenous digoxin"},
+      {"label": "C", "text": "Intravenous nitroglycerine"},
+      {"label": "D", "text": "Furosemide"},
+      {"label": "E", "text": "Metoprolol"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Acute decompensated heart failure with hypertensive emergency: IV nitroglycerine เป็นตัวเลือกแรกเพื่อลดความดันและ afterload"
+  },
+  {
+    "scenario": "ยาที่ควรใช้ลดความดันโลหิตในผู้ป่วยเบาหวาน (DM) และ COPD คือยาใด",
+    "choices": [
+      {"label": "A", "text": "Enalapril"},
+      {"label": "B", "text": "Amlodipine"},
+      {"label": "C", "text": "Atenolol"},
+      {"label": "D", "text": "Thiazide"},
+      {"label": "E", "text": "Minoxidil"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ใน DM + COPD ต้องหลีกเลี่ยง beta-blocker (ทำให้ bronchospasm) Enalapril (ACE inhibitor) เป็นตัวเลือกที่ดีที่สุดเพราะช่วย renal protection และไม่ส่งผลกระทบต่อ COPD"
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี เป็นเบาหวานมา 3 ปี FBS ประมาณ 140-160, HbA1C 7.8% มี hypertension + dyslipidemia วัด BP ครั้งก่อนได้ 140/90 mmHg ครั้งนี้วัดได้ 150/90 mmHg Ht 150 cm, Wt 65 kg จะ manage อย่างไร",
+    "choices": [
+      {"label": "A", "text": "HCTZ (Hydrochlorothiazide)"},
+      {"label": "B", "text": "Amlodipine"},
+      {"label": "C", "text": "Atenolol"},
+      {"label": "D", "text": "Enalapril"},
+      {"label": "E", "text": "Lifestyle modification"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "BP ยังไม่ถึง stage II HTN (160/100) จึงควรเริ่มจาก lifestyle modification ลดน้ำหนัก ลด sodium intake ก่อนยา โดยเฉพาะในผู้ป่วย DM ที่ควบคุมได้ดี"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี ไอแห้งๆ มานาน 2 สัปดาห์ ไม่มีไข้ ไม่เคยสูบบุหรี่ ได้ยา enalapril และ amlodipine มากินเพื่อรักษาความดันโลหิตสูงนาน 2 เดือน PE: lungs are clear ควรทำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "Chest X-ray"},
+      {"label": "B", "text": "Dextromethorphan"},
+      {"label": "C", "text": "Inhaled corticosteroids"},
+      {"label": "D", "text": "Reduce amlodipine dosage"},
+      {"label": "E", "text": "Discontinue enalapril"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "ACE inhibitor (enalapril) เป็นสาเหตุทั่วไปของ dry cough (10-20% ของผู้ใช้) ควรหยุด enalapril และเปลี่ยนเป็น ARB หรือ other antihypertensive"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี เป็น MI มา 6 เดือน 1 สัปดาห์มีอาการเหนื่อยหอบ BP 80/60 mmHg, puffy eyelids, pansystolic murmur, S3 gallop ทำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "Digoxin (Lanoxin)"},
+      {"label": "B", "text": "Morphine"},
+      {"label": "C", "text": "Furosemide"},
+      {"label": "D", "text": "Dobutamine"},
+      {"label": "E", "text": "Norepinephrine"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Post-MI cardiogenic shock with pulmonary edema (puffiness, S3, pansystolic murmur = MR) ต้อง diuretics (furosemide) เป็นอันดับแรก เพื่อลดปริมาณน้ำ แม้ BP ต่ำต้องใช้พร้อมกับ vasopressor"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 64 ปี มี BT 37°C, BP 160/110 mmHg, PR 60 bpm ยาลดความดันข้อใดเหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "Thiazide"},
+      {"label": "B", "text": "Atenolol"},
+      {"label": "C", "text": "Enalapril"},
+      {"label": "D", "text": "Doxazosin"},
+      {"label": "E", "text": "Diltiazem"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี bradycardia (PR 60) ไม่ควรใช้ beta-blocker (atenolol) ที่ลด HR เพิ่มเติม Diltiazem (non-dihydropyridine CCB) เหมาะสม เพราะลดความดันและ HR ได้พอดี"
+  },
+  {
+    "scenario": "Thai man 20 years old with low grade fever, myalgia, chest pain for 1 day. Chest pain improves when leaning forward. PE: normal S1S2, no murmur, no cardiomegaly, friction rub at apex. What is the most proper treatment?",
+    "choices": [
+      {"label": "A", "text": "Acyclovir"},
+      {"label": "B", "text": "NSAID (e.g., Ibuprofen, Indomethacin)"},
+      {"label": "C", "text": "Prednisolone"},
+      {"label": "D", "text": "Ceftriaxone"},
+      {"label": "E", "text": "Colchicine"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Acute pericarditis: chest pain improves with leaning forward, pericardial friction rub present. Treatment: NSAID (first-line) ± colchicine"
+  },
+  {
+    "scenario": "Patient with no pulse presenting to CPR. After CPR, EKG shows asystole. What is the next step?",
+    "choices": [
+      {"label": "A", "text": "Epinephrine"},
+      {"label": "B", "text": "Amiodarone"},
+      {"label": "C", "text": "Adenosine"},
+      {"label": "D", "text": "Cardioversion"},
+      {"label": "E", "text": "Defibrillation"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Asystole is a non-shockable rhythm. First medication in ACLS for asystole or bradycardic arrest is Epinephrine IV/IO every 3-5 minutes"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี long standing hypertension and CAD ปัจจุบันมี pulmonary edema PE: Lt arm BP 190/105, Rt arm BP 185/95 Heart: no murmur, S4 gallop Lung: crackles both lower lobes Abdominal: bruit present Most likely diagnosis คือ",
+    "choices": [
+      {"label": "A", "text": "Renal artery stenosis"},
+      {"label": "B", "text": "Aortic dissection"},
+      {"label": "C", "text": "Coronary artery dissection"},
+      {"label": "D", "text": "Pheochromocytoma"},
+      {"label": "E", "text": "Essential hypertension"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Renal artery stenosis: systolic BP difference between arms >20 mmHg (190 vs 185), abdominal bruit, long-standing HTN, pulmonary edema (heart failure from HTN)"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี มาด้วย progressive shortness of breath PE: RR 25, PR 120, BP 150/80, O2 sat 91% Right leg swelling ตรวจร่างกายอื่นปกติ EKG: sinus tachycardia, inverted T wave lead V1-4 จะส่ง investigation อะไรเพื่อ diagnose",
+    "choices": [
+      {"label": "A", "text": "Chest X-ray"},
+      {"label": "B", "text": "CKMB, Troponin-T"},
+      {"label": "C", "text": "CT angiogram of chest"},
+      {"label": "D", "text": "Coronary artery angiography"},
+      {"label": "E", "text": "Doppler ultrasound both legs"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggestive of pulmonary embolism: SOB, tachycardia, tachypnea, hypoxia, leg swelling, EKG with T wave inversion V1-4 (classic S1Q3T3 pattern or RV strain). CT pulmonary angiography (CTPA) is diagnostic"
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี heavy smoking PE: superficial vein dilated คิดว่าเป็นสัญญาณของ SVC syndrome CXR: widening mediastinum Management ที่เหมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Bronchoscope"},
+      {"label": "B", "text": "CT thorax"},
+      {"label": "C", "text": "Urgent radiotherapy"},
+      {"label": "D", "text": "Urgent chemotherapy"},
+      {"label": "E", "text": "Surgical intervention"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "SVC syndrome with widening mediastinum ต้อง CT thorax เพื่อ visualize underlying pathology (likely lung cancer) ก่อนจะสามารถ plan radiotherapy/chemotherapy"
+  },
+  {
+    "scenario": "หญิงเป็น HTN on enalapril 20 mg/day และ amlodipine 10 mg/day มาด้วย bilateral pedal edema BP 120/80 mmHg จะทำอะไร",
+    "choices": [
+      {"label": "A", "text": "24-hour urine protein"},
+      {"label": "B", "text": "Echocardiogram"},
+      {"label": "C", "text": "Chest X-ray"},
+      {"label": "D", "text": "Furosemide"},
+      {"label": "E", "text": "Discontinue amlodipine"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Bilateral pedal edema เป็นผลข้างเคียงทั่วไปของ calcium channel blocker (amlodipine) เพราะความล้มเหลวในการหลีกเลี่ยง reflex vasoconstriction ในเส้นเลือด splanchnic (afferent arteriole more than efferent)"

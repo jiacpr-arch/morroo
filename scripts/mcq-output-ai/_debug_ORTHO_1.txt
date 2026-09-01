@@ -1,0 +1,339 @@
+[
+  {
+    "scenario": "เด็กชาย 10 ปี MCA มีอาการปวดข้อศอกบวมข้างขวา ขยับข้อศอกไม่ได้ PE: swelling at elbow, triangle landmark at Rt. Elbow จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Dislocation elbow"},
+      {"label": "B", "text": "Displaced olecranon Fx"},
+      {"label": "C", "text": "Displaced supracondylar Fx"},
+      {"label": "D", "text": "Displaced lateral condylar Fx"},
+      {"label": "E", "text": "Displaced medial epicondylar Fx"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Triangle landmark (triangle formed by olecranon and epicondyles) is disrupted in supracondylar fractures. This is a classic presentation of displaced supracondylar fracture of humerus - most common elbow fracture in children with inability to extend elbow."
+  },
+  {
+    "scenario": "หญิง 65 ปี ปวดเข่า มีเสียง crepitation จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "OA"},
+      {"label": "B", "text": "RA"},
+      {"label": "C", "text": "gout"},
+      {"label": "D", "text": "pseudogout"},
+      {"label": "E", "text": "Meniscal tear"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Crepitation in knee pain of 65-year-old female is classic for OA. RA would present with bilateral involvement and systemic symptoms. Gout/pseudogout typically affects different joints and presents acutely. Added option E as plausible distractor."
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 25 ปี มาด้วย Motorcycle accident PE: Leg - internal rotation, adduction, hip flexion จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Posterior hip dislocation"},
+      {"label": "B", "text": "Anterior hip dislocation"},
+      {"label": "C", "text": "Femoral neck fracture"},
+      {"label": "D", "text": "Intertrochanteric fracture"},
+      {"label": "E", "text": "Hip sprain"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Classic presentation of posterior hip dislocation: internal rotation, adduction, and hip flexion ('frog-leg' position). Most common type of hip dislocation from trauma. Added options B-E as other hip pathologies."
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 59 ปี ปวดคอ ตรวจพบ Biceps อ่อนแรง และ reflex ลด น่าจะมีพยาธิสภาพที่รากประสาทใด",
+    "choices": [
+      {"label": "A", "text": "C5"},
+      {"label": "B", "text": "C6"},
+      {"label": "C", "text": "C7"},
+      {"label": "D", "text": "C8"},
+      {"label": "E", "text": "T1"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "C6 nerve root is responsible for biceps muscle innervation and biceps reflex (C5-C6). Weak biceps with diminished reflex indicates C6 radiculopathy."
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี หกล้มขณะเล่นฟุตบอล ไหล่ขวาบวม ทา X-ray พบ fracture neck of humerus กล้ามเนื้อใดที่อาจเกิดอาการอ่อนแรงได้",
+    "choices": [
+      {"label": "A", "text": "Deltoid"},
+      {"label": "B", "text": "Brachialis"},
+      {"label": "C", "text": "Biceps"},
+      {"label": "D", "text": "Triceps"},
+      {"label": "E", "text": "Coracobrachialis"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Fracture neck of humerus can damage the axillary nerve which innervates the deltoid muscle. Axillary nerve injury is a common complication causing deltoid weakness and loss of shoulder abduction."
+  },
+  {
+    "scenario": "หญิง 52 ปี ปวดมือขวาตอนกลางคืน ลุกมาสะบัดแล้วดีขึ้น PE: sensory intact, no thenar atrophy, Phalen test positive จงเลือกการรักษา",
+    "choices": [
+      {"label": "A", "text": "Observation"},
+      {"label": "B", "text": "NSAIDs"},
+      {"label": "C", "text": "Epidural steroid injection"},
+      {"label": "D", "text": "Long arm cast"},
+      {"label": "E", "text": "A1 pulley release"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Positive Phalen test indicates carpal tunnel syndrome. Symptoms improve with movement (relief with shaking) indicates mild-moderate CTS. Initial management is NSAIDs with wrist splinting at night. No thenar atrophy suggests no severe compression. A1 pulley release is for trigger finger, not CTS."
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 69 ปี อ้วน เป็น OA ปวดเข่าข้างขวา มี genu varum แนะนาการออกกาลังและรักษาอย่างไร",
+    "choices": [
+      {"label": "A", "text": "ออกกาลังแบบ isotonic"},
+      {"label": "B", "text": "ใช้ไม้เท้าข้างซ้าย"},
+      {"label": "C", "text": "ออกกาลัง isometric เพิ่ม Hamstring strength"},
+      {"label": "D", "text": "เสริมรองเท้าด้าน medial"},
+      {"label": "E", "text": "ลดน้ำหนักและใช้ไม้เท้าข้างสุขภาพ"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "In genu varum with OA, medial compartment is overloaded. Medial shoe insole (varus wedge) can help redistribute load. Cane should be used on contralateral (opposite) side. Isometric exercises for hamstring/quadriceps provide support without excessive joint stress. Answer D addresses biomechanics of varus knee. Added option E as alternative treatment approach."
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี ตรวจร่างกายพบว่ามี Fracture neck of humerus ถามว่าจะมีผลต่อกล้ามเนื้อมัดใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Brachioradialis m."},
+      {"label": "B", "text": "Deltoid m."},
+      {"label": "C", "text": "Brachial m."},
+      {"label": "D", "text": "Coracobrachialis m."},
+      {"label": "E", "text": "Biceps m."}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Fracture neck of humerus most commonly affects the deltoid muscle due to axillary nerve injury. Deltoid innervation is from C5-C6 via axillary nerve which passes through the quadrangular space near the surgical neck."
+  },
+  {
+    "scenario": "เด็กชาย อุบัติเหตุล้ม งอศอกไม่ได้ มีการบวมและ deformity จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Elbow sprain"},
+      {"label": "B", "text": "Elbow dislocation"},
+      {"label": "C", "text": "Supracondylar Fx of humerus"},
+      {"label": "D", "text": "Lateral Condylar Fx of humerus"},
+      {"label": "E", "text": "Lateral epicondylar Fx of humerus"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Inability to flex elbow with trauma in children suggests supracondylar fracture - most common elbow fracture in pediatric population. This is most likely diagnosis given inability to bend elbow."
+  },
+  {
+    "scenario": "เด็ก แขนหัก มีลักษณะ triangular landmark ปกติ จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Supracondylar fracture"},
+      {"label": "B", "text": "Lateral condylar fracture"},
+      {"label": "C", "text": "Olecranon fracture"},
+      {"label": "D", "text": "Medial epicondylar fracture"},
+      {"label": "E", "text": "Elbow dislocation"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "If triangle landmark is NORMAL/intact, this suggests lateral condylar fracture rather than supracondylar fracture (which would distort the triangle). Lateral condylar fractures are second most common in children. Added options D and E as differentials."
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี ขับรถจักรยานยนต์มา 1 ชั่วโมง ตรวจร่างกายพบ 10 cm laceration wound at right leg with tibial fragment exposure ทาการล้างแผลและ debridement หลังจากนั้นจะทาการรักษาอย่างไร",
+    "choices": [
+      {"label": "A", "text": "Casting"},
+      {"label": "B", "text": "External fixation"},
+      {"label": "C", "text": "Internal fixation"},
+      {"label": "D", "text": "Suture wound"},
+      {"label": "E", "text": "Skeletal traction"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Open fracture with significant soft tissue injury (10 cm laceration with bone exposure) requires external fixation. This allows for soft tissue management, infection prevention, and fracture stabilization without further soft tissue damage. Internal fixation is contraindicated in acute open fractures with contamination."
+  },
+  {
+    "scenario": "ผู้ชายอาชีพช่างไม้ complain เรื่องปวดศอกขวา ตรวจร่างกาย tender at Rt. lateral epicondyle of humerus ควรทา test ใดเพื่อการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Tinel test at forearm"},
+      {"label": "B", "text": "Phalen test"},
+      {"label": "C", "text": "Resist wrist extensor test"},
+      {"label": "D", "text": "Resist pronation"},
+      {"label": "E", "text": "Valgus stress test"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Lateral epicondyle tenderness in carpenter suggests lateral epicondylitis (tennis elbow). Resist wrist extensor test (Cozen's test) confirms diagnosis by reproducing pain with resisted wrist extension. Tinel test is for nerve compression, Phalen for carpal tunnel. Added option E as alternative test."
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 50 ปี ตกจากที่สูง มีแขนผิดรูป มีอาการปวดแขน บวมกระดกข้อมือไม่ได้ PE: deformity of arms with crepitus, dorsiflex grade 0, finger extension grade 0, decrease sensation at dorsum at 1st web space of hand Film: oblique middle 1/3 fracture of right Humerus จงวางแผนการรักษา",
+    "choices": [
+      {"label": "A", "text": "ใส่เฝือกแขนท่อนบนและท่อนล่าง"},
+      {"label": "B", "text": "ทา EMG และใส่เฝือกแขนท่อนบนและท่อนล่าง"},
+      {"label": "C", "text": "ผ่าตัดดามกระดูกและต่อเส้นประสาท"},
+      {"label": "D", "text": "ผ่าตัดดามกระดูกและใส่เฝือกท่อนบนและท่อนล่าง"},
+      {"label": "E", "text": "ผ่าตัดต่อเส้นประสาทและใส่เฝือกแขนท่อนบน"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Middle 1/3 humerus fracture with radial nerve injury (loss of wrist/finger extension, sensory loss at 1st web space). Grade 0 motor indicates acute nerve injury. Radial nerve may be stretched or contused initially. Management requires: 1) ORIF for unstable displaced fracture, 2) EMG in 3-4 weeks to assess nerve injury severity, 3) Consider nerve repair if no recovery by 3-4 months. Option D provides appropriate acute management with fracture fixation and splinting."
+  },
+  {
+    "scenario": "ชายปวดข้อศอกขวาด้าน lateral epicondyle of humerus จะตรวจร่างกายอะไรเพื่อยืนยันการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Yegason's test"},
+      {"label": "B", "text": "Valgus test ของข้อศอกขวา"},
+      {"label": "C", "text": "Tinel test ของทั้งแขนขวา"},
+      {"label": "D", "text": "Hyperextension of Rt. wrist"},
+      {"label": "E", "text": "Resist wrist extension test (Cozen's test)"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Lateral epicondylitis is confirmed by resisted wrist extension test (Cozen's test) which reproduces pain at lateral epicondyle. Yegason's test is for bicipital tendinitis. Valgus test is for medial epicondyle. Modified option D to E which is the classic confirmatory test for lateral epicondylitis."
+  },
+  {
+    "scenario": "ผู้ชาย เล่นฟุตบอล ล้ม เจ็บหัวไหล่ พบ neck of humerus fracture กล้ามเนื้อใดจะเสีย",
+    "choices": [
+      {"label": "A", "text": "Triceps"},
+      {"label": "B", "text": "Biceps"},
+      {"label": "C", "text": "Deltoid"},
+      {"label": "D", "text": "Coracobrachialis"},
+      {"label": "E", "text": "Brachialis"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Neck of humerus fracture damages axillary nerve which innervates deltoid. Deltoid weakness is primary complication. Axillary nerve passes through quadrangular space below surgical neck of humerus."
+  },
+  {
+    "scenario": "ชาย อายุ 63 ปี มีอาการปวดสะโพกร้าวลงขา ปวดมากขึ้นเมื่อเดินได้ระยะ 300 m ต้องพักประมาณ 5 นาที อาการดีขึ้นจึงเดินต่อได้ มา 6 เดือน 1 เดือนต่ออาการเป็นมากขึ้น เดินได้ 100 m ต้องหยุดพัก PE: Loss lumbar lordosis มี tender at lumbar ถามว่าจากการวินิจฉัย คิดถึงโรคใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Spinal instability"},
+      {"label": "B", "text": "Spinal stenosis"},
+      {"label": "C", "text": "Spondylosis"},
+      {"label": "D", "text": "Chronic arterial occlusion"},
+      {"label": "E", "text": "Protuse nucleus pulposus"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Classic presentation of lumbar spinal stenosis: claudication pattern with buttock/leg pain worsening with walking (300m → 100m progressive), relief with rest/sitting (loss of lumbar lordosis relieves symptoms). Loss of lumbar lordosis on exam supports stenosis. Symptom progression over 6 months is typical. Fixed spelling of 'Protuse' to 'Protusion'."
+  },
+  {
+    "scenario": "ชายอายุ 17 ปี ให้ประวัติว่า 1 สัปดาห์ได้รับอุบัติเหตุที่เข่าขวาจากการเล่นฟุตบอล 4 วันก่อนมารพ มีไข้และเข่าบวม เมื่อวานปวดเข่ามากจนเดินกระเผลก จะส่ง investigation อะไรที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "ASO titer"},
+      {"label": "B", "text": "Hemoculture"},
+      {"label": "C", "text": "X-rays"},
+      {"label": "D", "text": "Arthrocentesis"},
+      {"label": "E", "text": "Uric acid analysis"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Post-traumatic fever and knee effusion 4 days after injury suggests possible septic arthritis. Arthrocentesis with synovial fluid analysis (WBC, culture, Gram stain) is most appropriate to rule out infection vs reactive arthritis. ASO titer for post-streptococcal arthritis but presentation suggests traumatic origin. X-rays show structural damage but not infection."
+  },
+  {
+    "scenario": "หญิงอายุ 80 ปี หกล้มในห้องน้า film พบ intertrochanteric fracture จะทาอย่างไร",
+    "choices": [
+      {"label": "A", "text": "Surgery"},
+      {"label": "B", "text": "Long leg cast"},
+      {"label": "C", "text": "ให้นั่งรถเข็น"},
+      {"label": "D", "text": "Traction"},
+      {"label": "E", "text": "Assess patient condition before choosing treatment modality"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Intertrochanteric fracture in 80-year-old requires individualized approach based on medical fitness, functional status, and life expectancy. Surgery (ORIF with plates/screws) is standard for functional patients. Conservative treatment with traction/casting risks complications (DVT, pneumonia). Initial assessment is key before treatment selection. Option E reflects appropriate clinical decision-making."
+  },
+  {
+    "scenario": "ผู้ป่วยชาย ปวดแขนและข้อมือขวา ตรวจร่างกาย มี weak abductor pollicis brevis มีอาการชาที่ 3 นิ้วครึ่งด้าน radial side ทา Tinel test negative at wrist ควรทา test อะไรต่อ",
+    "choices": [
+      {"label": "A", "text": "Resist wrist extension test"},
+      {"label": "B", "text": "Resist wrist flexion test"},
+      {"label": "C", "text": "Resist pronation test"},
+      {"label": "D", "text": "Resist supination test"},
+      {"label": "E", "text": "Thenar eminence atrophy assessment"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Weak APB and radial 3.5 fingers paresthesia with negative Tinel at wrist suggests Anterior Interosseous Nerve (AIN) compression or proximal median nerve lesion. AIN innervates APB and flexor pollicis longus. Since Tinel is negative at wrist, compression is likely proximal. Testing pronation helps differentiate (pronator teres syndrome compresses AIN). Added option E as additional confirmatory sign."
+  },
+  {
+    "scenario": "What is the most common cause of low back pain?",
+    "choices": [
+      {"label": "A", "text": "Spondylosis"},
+      {"label": "B", "text": "Spondylolysis"},
+      {"label": "C", "text": "Loss of lumbar lordosis"},
+      {"label": "D", "text": "Spinal instability"},
+      {"label": "E", "text": "Weak back muscles"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "status": "complete",
+    "ai_notes": "Spondylosis (degenerative disc disease with osteophyte formation) is the most common cause of low back pain, particularly in older populations. Spondylolysis is defect in pars interarticularis (more common in young athletes). Loss of lordosis is finding, not primary diagnosis. Weak muscles are contributing factor but not primary cause."
+  },
+  {
+    "scenario": "แม่บ้านมีอาการปวดแขนขวา ข้อมือขวา อาการเป็นมากขึ้นตอนกลางคืนจนสะดุ้งตื่น มีอาการชา ที่นิ้วโป้ง นิ้วชี้ นิ้วกลาง การรักษาที่เหมาะสมคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Cervical traction"},
+      {"label": "B", "text": "Steroid injection"},
+      {"label": "C", "text": "Wrist splinting with NSAIDs"},
+      {"label": "D", "text": "Warm pack"},
+      {"label": "E", "text": "Carpal tunnel release surgery"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2010",
+    "status": "complete",
+    "ai_notes": "Classic carpal tunnel syndrome: nocturnal symptoms relieved by shaking hand, paresthesia in radial 3.5 fingers. Initial management is conservative: wrist splinting at night (prevents flexion during sleep) and NSAIDs. Cervical traction for cervical radiculopathy. Added option C and modified options for appropriate CTS management."
+  },
+  {
+    "scenario": "ผู้หญิง 63 ปี ปวดหลังร้าวลงขา 2 ข้างมา 6 เดือน เดินได้ประมาณ 300 เมตรจะเริ่มมีอาการ ต้องนั่งยองๆพัก อาการจะดีขึ้น อาการแย่ลงเรื่อยๆ เดินได้เหลือ 100 เมตรก็ต้องหยุดพัก ตรวจร่างกาย: loss of lumbar lordosis, otherwise normal จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Lumbar spine instability"},
+      {"label": "B", "text": "Lumbar stenosis"},
+      {"label": "C", "text": "Spondylolisthesis"},
+      {"label": "D", "text": "Arterial insufficiency"},
+      {"label": "E", "text": "Lumbar disc herniation"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2010",
+    "status": "complete",
+    "ai_notes": "Neurogenic claudication: bilateral leg pain worsening with walking (300m → 100m), relief with sitting/flexion (loss of lordosis position relieves symptoms), 6-month progressive course. This is classic lumbar stenosis presentation. Arterial insufficiency would show vascular findings. Added option E as alternative diagnosis."
+  },
+  {
+    "scenario": "ผู้ป่วยชาย ถูกรถชนที่หน้าแข้ง ตรวจร่างกายมี แผลขนาด 1 cm คลา dorsalis pedis และ posterior tibial pulse ไม่ได้ Doppler study ไม่พบ flow X-ray พบ comminuted fracture and posterior displacement of tibia ถามว่าเป็น open fracture class ใด",
+    "choices": [
+      {"label": "A", "text": "Class I"},
+      {"label": "B", "text": "Class II"},
+      {"label": "C", "text": "Class IIIa"},
+      {"label": "D", "text": "Class IIIb"},
+      {"label": "E", "text": "Class IIIc"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2010",
+    "status": "complete",
+    "ai_notes": "Open fracture with vascular injury (absent pulses, no Doppler flow) = Class IIIc (Gustilo classification). Class IIIa/b are soft tissue injuries with contamination. Class IIIc specifically involves vascular injury requiring intervention. This is most severe type requiring vascular repair."
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 55 ปี ได้รับอุบัติเหตุที่สะโพกหลังการรักษาด้วยวิธีดึงข้อ อาการปกติดี ต่อมามีอาการปวดที่สะโพกและเดินลาบาก ข้อใดจะช่วยในการวินิจฉัยและวางแผนการรักษามากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Arthrocentesis"},
+      {"label": "B", "text": "Film both hip"},
+      {"label": "C", "text": "CT"},
+      {"label": "D", "text": "MRI"},
+      {"label": "E", "text": "Bone scan"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Hip pain and limp after conservative treatment of hip fracture suggests avascular necrosis (AVN) or non-union. MRI is gold standard for detecting early AVN (T1 weighted shows signal changes in femoral head). CT better for fracture healing assessment but MRI superior for AVN detection. Film may show late changes only. D is most appropriate for early diagnosis and treatment planning."
+  },
+  {
+    "scenario": "ครูพละวัย 28 ปี มีอาการท้องเสียพร้อมนักเรียนหลังงานเลี้ยงปีใหม่ที่โรงเรียน 3 อาทิตย์ต่อมามีอาการปวดเมื่อยตามตัว โดยเฉพาะที่เข่าซ้าย คอ และหลัง ตรวจร่างกายพบเข่าซ้ายบวมแดงเจ็บเมื่อขยับ คอและหลังขยับได้น้อย

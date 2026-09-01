@@ -1,0 +1,1605 @@
+-- ===============================================================
+-- หมอรู้ — Board seed: จิตเวชศาสตร์ (psychiatry) — part 3/4 (50 MCQs)
+-- Safe to paste into Supabase SQL Editor. Re-runnable.
+-- ===============================================================
+
+begin;
+
+-- mcq_subjects for this specialty (idempotent)
+insert into public.mcq_subjects
+  (name, name_th, icon, audience, board_specialty, exam_type, question_count)
+values
+  ('psych_clinical_decision', 'จิตเวชศาสตร์ · การตัดสินใจทางเวชกรรม', '🩺', 'board', 'psychiatry', NULL, 0),
+  ('psych_basic_science', 'จิตเวชศาสตร์ · วิทยาศาสตร์การแพทย์พื้นฐาน', '🧬', 'board', 'psychiatry', NULL, 0),
+  ('psych_ems_mgmt', 'จิตเวชศาสตร์ · การจัดการระบบบริการการแพทย์ฉุกเฉิน', '🚨', 'board', 'psychiatry', NULL, 0),
+  ('psych_integrative', 'จิตเวชศาสตร์ · ข้อสอบบูรณาการ', '🧩', 'board', 'psychiatry', NULL, 0)
+on conflict (name) do nothing;
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'เด็กชายอายุ 7 ปี — nocturnal bedwetting ≥ 2×/wk × 6 เดือน, no daytime symptoms (primary nocturnal enuresis — never been dry for 6 mo); developing self-esteem impact + missing sleepovers
+
+No UTI, no DM, no structural anomaly
+Neurologic exam normal, no constipation
+Family hx: father had bedwetting until age 9', '[{"label":"A","text":"Punishment"},{"label":"B","text":"Desmopressin (DDAVP)"},{"label":"C","text":"Long-term TCA only"},{"label":"D","text":"Surgery"},{"label":"E","text":"Diaper indefinitely"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Primary Nocturnal Enuresis (DSM-5: repeated voiding into bed or clothes ≥ 2×/wk × 3 mo + chronologic age ≥ 5 yo + functional impairment + not due to medical condition): (1) Education + reassurance — common (15% age 5, 5% age 10), often familial, usually outgrown; reduce blame + shame; (2) Behavioral first-line: - **Enuresis alarm** = most effective long-term (cure rate 60-70%); requires motivation + consistency × 8-16 weeks; relapse rate low; - Fluid restriction evening; - Scheduled bathroom; - Reward system (star chart); - Constipation treatment (often comorbid); (3) **Medication** if alarm fails or short-term need (sleepovers, camp): - **Desmopressin (DDAVP)** — oral or sublingual; mimics ADH; effective acutely but high relapse on discontinuation; risk hyponatremia (limit fluids); - **Imipramine (TCA)** — historical; cardiotoxicity in overdose; less preferred; (4) Address comorbidity: constipation, ADHD (high comorbid), psychological/family stress; (5) Distinguish: - Primary (never dry) vs secondary (regression after 6 mo dryness) — secondary suggests stressor, abuse, medical (DM, UTI, OSA, neurologic); - Monosymptomatic (nocturnal only) vs polysymptomatic (urgency, frequency, daytime); (6) Workup: UA + culture, evaluate for constipation, OSA screening; further if secondary or atypical; (7) Family support + education; (8) Long-term: spontaneous resolution common; treatment hastens; (9) Multidisciplinary if complex: pediatrics, pediatric urology, child psychiatry if behavioral/family
+
+---
+
+Primary Nocturnal Enuresis: common, often familial, usually outgrown. Education + reassurance. Enuresis alarm = most effective long-term. Desmopressin for short-term/refractory. Address constipation + ADHD comorbidity. Distinguish primary vs secondary.', NULL,
+  'easy', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'peds',
+  'AAP Enuresis; ICCS', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'เด็กชายอายุ 7 ปี — nocturnal bedwetting ≥ 2×/wk × 6 เดือน, no daytime symptoms (primary nocturnal enuresis — never been dry for 6 mo); developing self-esteem impact + missing sleepovers
+
+No UTI, no DM, no structural anomaly
+Neurologic exam normal, no constipation
+Family hx: father had bedwetting until age 9'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'เด็กชายอายุ 6 ปี × 8 เดือน — repeated involuntary passage of feces into clothing ≥ 1×/mo, often hard stools followed by leakage of looser stool (overflow incontinence); history of constipation + painful BM × 1 ปี; stool withholding behavior; social distress
+
+Physical exam: palpable fecal mass abdomen, normal anus + neuro
+No medical disease', '[{"label":"A","text":"Punishment"},{"label":"B","text":"Functional Encopresis with Constipation + Overflow Incontinence (DSM-5: repeated passage of feces in inappropriate places ≥ 1×/mo × 3 mo + age ≥ 4 yo + not due to medical or substance)"},{"label":"C","text":"Single dose laxative only"},{"label":"D","text":"Surgery"},{"label":"E","text":"No treatment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Functional Encopresis with Constipation + Overflow Incontinence (DSM-5: repeated passage of feces in inappropriate places ≥ 1×/mo × 3 mo + age ≥ 4 yo + not due to medical or substance): (1) **Medical disimpaction first** — clear stool retention before maintenance; options: - Oral PEG (polyethylene glycol — Miralax) — high-dose × 3-5 days; well-tolerated; - Enema (saline, mineral oil) if oral fails; - Manual disimpaction rarely; (2) **Maintenance laxative** for 6 mo+ (often 1-2 yr): - PEG daily (titrate to soft daily BM); - Lactulose alternative; - Continue until pattern stable + child''s confidence restored; (3) **Behavioral interventions**: - Scheduled toilet sitting after meals (gastrocolic reflex); - Reward system (star chart); - Education about anatomy + reassurance (it''s not their fault); - Reduce shame + blame; (4) Dietary: fiber, fluids; not primary intervention but supportive; (5) Address psychological component: anxiety, school avoidance, family stress, abuse if suggested by secondary onset; (6) Distinguish: - Primary (never trained) vs secondary (regression — consider stressor); - With/without constipation; - Behavioral retention (toilet phobia, withholding); (7) Education key — sustained treatment often needed; relapse common if treatment stopped early; (8) Multidisciplinary: pediatrics, pediatric GI if refractory, child psychiatry if behavioral, OT/behavioral specialist; (9) Long-term: most resolve with sustained treatment; gradual normalization; (10) Family support + education
+
+---
+
+Functional Encopresis: usually with constipation + overflow. Medical disimpaction → maintenance laxative (months-years) + behavioral (scheduled toileting, reward, education). Address shame + blame. Relapse common if stopped early. Distinguish primary vs secondary.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'peds',
+  'NASPGHAN; DSM-5-TR', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'เด็กชายอายุ 6 ปี × 8 เดือน — repeated involuntary passage of feces into clothing ≥ 1×/mo, often hard stools followed by leakage of looser stool (overflow incontinence); history of constipation + painful BM × 1 ปี; stool withholding behavior; social distress
+
+Physical exam: palpable fecal mass abdomen, normal anus + neuro
+No medical disease'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'เด็กชายอายุ 4 ปี — adopted at age 2 จาก orphanage (institutionalized 0-2 yo, neglected) — pattern of inhibited + emotionally withdrawn behavior toward caregivers, minimal seeking of comfort when distressed, minimal response to comfort, minimal positive affect, episodes of unexplained irritability, sadness; insufficient care history confirmed
+
+Not meeting autism criteria
+Developmental milestones delayed but improving
+Adoptive family loving + committed', '[{"label":"A","text":"Punishment"},{"label":"B","text":"Stable, sensitive, responsive caregiving = primary ''treatment''"},{"label":"C","text":"Coercive attachment therapy (rebirthing)"},{"label":"D","text":"Surgery"},{"label":"E","text":"Return to institution"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Reactive Attachment Disorder (DSM-5: pattern of inhibited + emotionally withdrawn behavior toward caregivers + minimal social-emotional responsiveness + insufficient care history; before age 5; developmental age ≥ 9 mo): (1) **Stable, sensitive, responsive caregiving = primary ''treatment''** — child needs sustained, predictable, attuned caregiver; (2) **Attachment-based therapies** — evidence-based: - **Attachment + Biobehavioral Catch-up (ABC)** — coaches caregivers in following child''s lead, nurturance; - **Child-Parent Psychotherapy (CPP)** — dyadic; - **Parent-Child Interaction Therapy (PCIT) adapted**; - AVOID coercive ''attachment therapies'' (rebirthing, holding therapy — harmful, not evidence-based, deaths reported); (3) Trauma-focused CBT if old enough + indicated; (4) Address developmental delays — early intervention services, speech, OT, PT; (5) Address caregiver capacity + support — caregiver education, mental health support for adoptive parents, respite care; (6) Distinguish: - Autism (social communication deficits across all settings vs RAD specific to attachment + improves with caregiver); - Depression; - Disinhibited Social Engagement Disorder (DSED — overly familiar with strangers — different presentation of similar history of insufficient care); (7) Long-term: improvement with stable caregiving but may have residual attachment difficulties + risk of psychiatric disorders; (8) Educational + social support; (9) Multidisciplinary: child psychiatry, child psychologist, pediatrics, social work, school, family
+
+---
+
+Reactive Attachment Disorder: inhibited + withdrawn + insufficient care history. Stable responsive caregiving = primary. Attachment-based therapies (ABC, CPP). AVOID coercive ''attachment therapies'' (harmful). Distinguish from autism (across all settings). Long-term improvement possible.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'peds',
+  'DSM-5-TR; Zeanah Attachment', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'เด็กชายอายุ 4 ปี — adopted at age 2 จาก orphanage (institutionalized 0-2 yo, neglected) — pattern of inhibited + emotionally withdrawn behavior toward caregivers, minimal seeking of comfort when distressed, minimal response to comfort, minimal positive affect, episodes of unexplained irritability, sadness; insufficient care history confirmed
+
+Not meeting autism criteria
+Developmental milestones delayed but improving
+Adoptive family loving + committed'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'เด็กหญิงอายุ 5 ปี — adopted at 3 จาก orphanage (institutionalized 0-3 yo) — overly familiar with unfamiliar adults (will go with strangers without hesitation, hugs strangers, lacks normal stranger anxiety) + reduced reticence; persists 2 ปี post-adoption
+
+Not meeting autism criteria
+Developmentally appropriate other areas', '[{"label":"A","text":"Reinforce indiscriminate friendliness"},{"label":"B","text":"Disinhibited Social Engagement Disorder (DSED"},{"label":"C","text":"No intervention"},{"label":"D","text":"Surgery"},{"label":"E","text":"Punishment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Disinhibited Social Engagement Disorder (DSED — DSM-5: pattern of overly familiar behavior with unfamiliar adults + insufficient care history; developmental age ≥ 9 mo): (1) Stable + consistent caregiving — same as RAD; (2) Safety priority — child at risk going with strangers, abduction risk — caregiver vigilance, education on safety boundaries; (3) Behavioral interventions teaching appropriate social boundaries — physical proximity, who is family/friend, stranger awareness; (4) Attachment-based interventions: ABC, CPP, PCIT adapted; (5) Address comorbid developmental delays, ADHD (high comorbidity); (6) AVOID coercive attachment therapies; (7) Distinguish from: - RAD (inhibited/withdrawn — both reflect insufficient care, different presentations); - ADHD impulsivity (treat both if present); - Autism (social communication deficits broader, restricted interests); - Williams syndrome (excessive friendliness — genetic); (8) Long-term: may persist into adolescence + adulthood with continued indiscriminate friendliness, attention-seeking, difficulty with intimate relationships; ongoing intervention helpful; (9) Educational + social skills training; (10) Multidisciplinary: child psychiatry, child psychologist, pediatrics, special education, social work, family
+
+---
+
+Disinhibited Social Engagement Disorder: overly familiar with strangers + insufficient care history. Safety priority (stranger danger). Stable caregiving + behavioral teaching boundaries. Attachment-based. Distinguish RAD (inhibited) vs DSED (disinhibited) vs autism vs ADHD vs Williams.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'peds',
+  'DSM-5-TR; Zeanah', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'เด็กหญิงอายุ 5 ปี — adopted at 3 จาก orphanage (institutionalized 0-3 yo) — overly familiar with unfamiliar adults (will go with strangers without hesitation, hugs strangers, lacks normal stranger anxiety) + reduced reticence; persists 2 ปี post-adoption
+
+Not meeting autism criteria
+Developmentally appropriate other areas'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 72 ปี × 18 เดือน — progressive cognitive decline with fluctuating attention/alertness, prominent visual hallucinations (small animals, children — well-formed), parkinsonism (bradykinesia, rest tremor, rigidity), REM sleep behavior disorder (acting out dreams), severe sensitivity to antipsychotics tried for hallucinations (developed severe parkinsonism with risperidone)
+
+MMSE 22
+DAT scan abnormal (low striatal uptake)
+No stroke, no major depression', '[{"label":"A","text":"Haloperidol for hallucinations"},{"label":"B","text":"AVOID typical antipsychotics + most atypicals"},{"label":"C","text":"Typical antipsychotic"},{"label":"D","text":"Surgery"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Dementia with Lewy Bodies (DLB) — DSM-5 Major Neurocognitive Disorder due to Lewy body disease (core features: fluctuating cognition, visual hallucinations, parkinsonism, REM sleep behavior disorder; supportive: severe neuroleptic sensitivity, DAT scan abnormality, autonomic dysfunction): (1) **Cholinesterase inhibitor** — rivastigmine (best evidence) or donepezil — may improve cognition + reduce hallucinations + behavior; (2) **AVOID typical antipsychotics + most atypicals** (severe neuroleptic sensitivity → worsen parkinsonism, NMS, sudden death): - If absolutely needed for severe psychosis — **quetiapine** lowest dose or **pimavanserin** (5-HT2A inverse agonist — FDA approved Parkinson''s psychosis, used off-label DLB); - Clozapine low-dose alternative; (3) **REM sleep behavior disorder**: melatonin 3-12 mg HS first-line; clonazepam alternative; (4) **Parkinsonism**: carbidopa-levodopa cautious (may worsen psychosis); lower dose than PD; (5) Non-pharmacologic for behaviors: structured environment, address triggers; (6) Autonomic dysfunction: orthostasis (compression stockings, fluid, salt, midodrine, droxidopa), constipation, urinary; (7) Caregiver education + support — DLB different from AD; (8) Distinguish: - Parkinson''s disease dementia (PDD — same pathology, dementia > 1 yr after motor sx; DLB — cognitive onset before or within 1 yr of motor); - Alzheimer''s (less hallucinations, less parkinsonism, less fluctuation); - Vascular dementia; - FTD; (9) Multidisciplinary: neurology, psychiatry, sleep medicine, primary care, family; (10) Long-term: progressive; survival often 5-8 yr
+
+---
+
+Dementia with Lewy Bodies: fluctuating cognition + visual hallucinations + parkinsonism + RBD. Cholinesterase inhibitor (rivastigmine). AVOID typical/most atypical antipsychotics (severe neuroleptic sensitivity). Quetiapine/pimavanserin if essential. Melatonin for RBD. Levodopa cautious.', NULL,
+  'hard', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'McKeith DLB Consortium 2017', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 72 ปี × 18 เดือน — progressive cognitive decline with fluctuating attention/alertness, prominent visual hallucinations (small animals, children — well-formed), parkinsonism (bradykinesia, rest tremor, rigidity), REM sleep behavior disorder (acting out dreams), severe sensitivity to antipsychotics tried for hallucinations (developed severe parkinsonism with risperidone)
+
+MMSE 22
+DAT scan abnormal (low striatal uptake)
+No stroke, no major depression'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 68 ปี — stepwise cognitive decline × 2 ปี (sudden worsening then plateaus, repeated 3 ครั้ง) — executive dysfunction prominent (planning, organization), gait disturbance (small-stepped, magnetic), urinary incontinence; history of multiple TIAs, HTN, DM, hyperlipidemia, smoker
+
+MMSE 21 (frontal-subcortical pattern: poor word generation, set-shifting)
+MRI: multiple lacunar infarcts + extensive periventricular white matter disease', '[{"label":"A","text":"Ignore vascular risk factors"},{"label":"B","text":"Vascular Dementia / Vascular Cognitive Impairment (DSM-5 Major Neurocognitive Disorder due to vascular disease)"},{"label":"C","text":"Discharge no treatment"},{"label":"D","text":"Surgery"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Vascular Dementia / Vascular Cognitive Impairment (DSM-5 Major Neurocognitive Disorder due to vascular disease): (1) **Vascular risk factor modification = mainstay** (prevents progression): - **BP control** (target < 130/80 generally; individualize elderly); - **Glycemic control** in DM; - **Lipid management** (statin); - **Antiplatelet** (aspirin) for secondary prevention if applicable; - **Anticoagulation** if AFib (CHA2DS2-VASc); - **Smoking cessation**; - **Exercise + diet + weight + sleep**; (2) Cholinesterase inhibitor — modest benefit (less evidence than AD); donepezil, galantamine; memantine modest; (3) Treat depression (vascular depression common — frontal subcortical pattern); SSRI; (4) Non-pharmacologic: cognitive stimulation, structured routine, physical activity; (5) Address comorbid AD pathology (mixed dementia very common — most ''pure'' vascular has AD component); (6) Fall prevention (gait, urinary urgency); (7) Caregiver education + support; (8) Advance planning + safety + driving assessment; (9) Long-term: progressive — stepwise (vascular events) or gradual (small vessel disease); (10) Multidisciplinary: neurology, primary care, geriatric, PT/OT, social work, caregiver; (11) Distinguish: Alzheimer''s (insidious, episodic memory prominent); DLB (hallucinations, parkinsonism, fluctuations); FTD (behavioral/language)
+
+---
+
+Vascular Dementia: stepwise + risk factors. Vascular risk factor modification mainstay. Cholinesterase inhibitor modest. Treat vascular depression. Mixed dementia (AD + vascular) very common. Distinguish from AD/DLB/FTD.', NULL,
+  'medium', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'AHA/ASA Vascular Cognitive Impairment', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 68 ปี — stepwise cognitive decline × 2 ปี (sudden worsening then plateaus, repeated 3 ครั้ง) — executive dysfunction prominent (planning, organization), gait disturbance (small-stepped, magnetic), urinary incontinence; history of multiple TIAs, HTN, DM, hyperlipidemia, smoker
+
+MMSE 21 (frontal-subcortical pattern: poor word generation, set-shifting)
+MRI: multiple lacunar infarcts + extensive periventricular white matter disease'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 60 ปี × 2 ปี — early behavioral changes (disinhibition, socially inappropriate behavior, loss of empathy, apathy, perseveration, hyperorality — overeating sweets + new dietary preferences); memory + visuospatial relatively preserved early; family describes ''personality change''
+
+MMSE 25 (memory preserved early)
+MRI: frontotemporal atrophy
+No stroke, no major depression', '[{"label":"A","text":"Cholinesterase inhibitor (donepezil)"},{"label":"B","text":"NO disease-modifying treatment"},{"label":"C","text":"Memantine"},{"label":"D","text":"Surgery"},{"label":"E","text":"No treatment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Frontotemporal Dementia (FTD) — DSM-5 Major Neurocognitive Disorder due to FTD (behavioral variant — bvFTD: disinhibition, apathy, loss of empathy, perseveration/compulsions, dietary changes, executive dysfunction; primary progressive aphasia variants — semantic + non-fluent): (1) Confirm diagnosis: clinical + MRI/PET (frontotemporal atrophy/hypometabolism) + neuropsych testing + rule out psychiatric disorders (often misdiagnosed as depression, BP, OCD initially); (2) **NO disease-modifying treatment** — symptomatic only; (3) Symptomatic medication: - **SSRI** for behavioral symptoms (disinhibition, compulsive behaviors, irritability) — first-line; - **Trazodone** for behavior + sleep; - **Atypical antipsychotic** for severe behavioral (last-line — black box mortality elderly dementia); - **AVOID cholinesterase inhibitors** (not effective, may worsen) and **memantine** (not effective for FTD — unlike AD); (4) Non-pharmacologic: behavioral + environmental management (structure, routine, addressing triggers, redirecting), caregiver coaching; (5) Caregiver support essential — behavioral changes very challenging; FTD caregivers high burnout; FTD Association resources; (6) Safety: driving cessation (often impulsive), financial protection (impaired judgment), supervision, wandering; (7) Speech-language therapy for PPA variants; (8) Advance planning urgent — younger onset, rapid progression; capacity assessment; (9) Genetic counseling (30-50% familial — C9orf72, GRN, MAPT genes); (10) Multidisciplinary: behavioral neurology, psychiatry, speech-language, social work, caregiver support; (11) Long-term: progressive 5-10 yr; some forms shorter (ALS-FTD)
+
+---
+
+Frontotemporal Dementia: behavioral variant (disinhibition, apathy, perseveration, hyperorality) or PPA. NO disease-modifying. SSRI/trazodone for behavior. AVOID cholinesterase inhibitor + memantine (not effective). Caregiver support critical. Genetic counseling (30-50% familial).', NULL,
+  'hard', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'Rascovsky bvFTD criteria; Mesulam PPA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 60 ปี × 2 ปี — early behavioral changes (disinhibition, socially inappropriate behavior, loss of empathy, apathy, perseveration, hyperorality — overeating sweets + new dietary preferences); memory + visuospatial relatively preserved early; family describes ''personality change''
+
+MMSE 25 (memory preserved early)
+MRI: frontotemporal atrophy
+No stroke, no major depression'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 75 ปี Parkinson''s disease × 8 ปี on carbidopa-levodopa + pramipexole — ขณะนี้มี visual hallucinations (sees people in house at night, recognizes them not real — minor hallucinations initially, progressing) + paranoid ideation (someone stealing things)
+
+MMSE 24 (mild cognitive impairment)
+No delirium, no infection, no recent medication changes
+No depression', '[{"label":"A","text":"Haloperidol IM"},{"label":"B","text":"Parkinson''s Disease Psychosis (PDP — common in PD with cognitive impairment + dopaminergic therapy)"},{"label":"C","text":"Stop carbidopa-levodopa"},{"label":"D","text":"Surgery"},{"label":"E","text":"Risperidone"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Parkinson''s Disease Psychosis (PDP — common in PD with cognitive impairment + dopaminergic therapy): (1) **Rule out delirium first** — infection, electrolytes, urinary retention, dehydration, polypharmacy; (2) **Medication review** — reduce or stop most likely offenders in this order: anticholinergics → amantadine → dopamine agonists (pramipexole, ropinirole) → MAO-B inhibitors → COMT inhibitors → minimize levodopa last (essential for motor); (3) **Optimize cognition**: cholinesterase inhibitor (rivastigmine — FDA approved PDD; reduces hallucinations + improves cognition); (4) **Antipsychotic only if essential**: - **Pimavanserin** (5-HT2A inverse agonist) — FDA approved for PDP — does NOT worsen motor — first-line; - **Quetiapine** low-dose alternative; - **Clozapine** low-dose effective but monitoring requirements; - **AVOID** typical antipsychotics + risperidone + olanzapine + most atypicals (worsen parkinsonism); (5) Non-pharmacologic: lighting (reduce shadows), simple environment, reassurance, caregiver education; (6) Comorbid: PDD (Parkinson''s disease dementia — overlap with DLB pathology); depression (40-50% PD); anxiety; RBD; (7) Multidisciplinary: neurology (movement disorders), psychiatry, primary care; (8) Caregiver support; (9) Long-term: progressive; psychosis predicts nursing home placement
+
+---
+
+Parkinson''s Disease Psychosis: rule out delirium → reduce offending medications in order → optimize cognition (rivastigmine) → antipsychotic only if essential (pimavanserin first-line, quetiapine/clozapine; AVOID typical/most atypical — worsen motor).', NULL,
+  'hard', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'MDS PD Psychosis; Pimavanserin FDA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 75 ปี Parkinson''s disease × 8 ปี on carbidopa-levodopa + pramipexole — ขณะนี้มี visual hallucinations (sees people in house at night, recognizes them not real — minor hallucinations initially, progressing) + paranoid ideation (someone stealing things)
+
+MMSE 24 (mild cognitive impairment)
+No delirium, no infection, no recent medication changes
+No depression'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 78 ปี recently widowed (6 mo ago) — depressed mood, anhedonia, fatigue, sleep disturbance, decreased appetite + weight loss 5kg, somatic complaints (pain, GI), social withdrawal, complaints of memory + concentration; passive SI
+
+No prior psychiatric history
+Medical: HTN, DM (on metformin), mild CKD
+MMSE 26 (mild cognitive concerns)
+No psychotic features
+GDS 12 (severe)', '[{"label":"A","text":"No treatment — natural grief"},{"label":"B","text":"SSRI first-line"},{"label":"C","text":"TCA monotherapy"},{"label":"D","text":"Surgery"},{"label":"E","text":"Long-term benzodiazepine"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Late-Life Depression (MDD in elderly — often presents with somatic complaints, cognitive complaints — ''pseudodementia'', anhedonia more than sadness): (1) Comprehensive workup: - Medical (TSH, B12, folate, electrolytes, CBC, renal/hepatic, vitamin D, medication review — many cause depression); - Cognitive assessment (depression can cause pseudodementia — reversible — but also coexist with dementia); - Distinguish from grief; (2) **SSRI first-line** — sertraline, escitalopram, mirtazapine (insomnia + weight loss bonus elderly); avoid paroxetine (anticholinergic) + citalopram > 20mg (QT, hyponatremia, elderly cap); SNRI also; bupropion alternative; **Start LOW, GO SLOW**; full effect 6-12 wk in elderly (longer than adult); (3) Psychotherapy — IPT (especially for late-life grief + role transition), CBT, problem-solving therapy, behavioral activation; effective for elderly (despite stereotypes); (4) ECT highly effective + safe in elderly + first-line for severe + suicidal + psychotic + medical instability; (5) Address comorbid medical conditions; treat pain; (6) Suicide risk **HIGH in elderly** (especially older men) — assess; (7) Social interventions: connection, peer support, senior centers; (8) Hyponatremia risk with SSRI in elderly (SIADH) — monitor Na; (9) Fall risk monitoring (SSRI, sedating meds); (10) Multidisciplinary: geriatric psychiatry, primary care, social work; (11) Long-term: maintenance often longer than younger adults; relapse high
+
+---
+
+Late-Life Depression: often somatic + cognitive complaints + anhedonia. Comprehensive workup. SSRI first-line — start LOW, go SLOW. Watch hyponatremia, fall risk, anticholinergic. ECT very effective elderly. Suicide risk HIGH. Psychotherapy effective. Distinguish from dementia (can coexist).', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'APA Geriatric Depression', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 78 ปี recently widowed (6 mo ago) — depressed mood, anhedonia, fatigue, sleep disturbance, decreased appetite + weight loss 5kg, somatic complaints (pain, GI), social withdrawal, complaints of memory + concentration; passive SI
+
+No prior psychiatric history
+Medical: HTN, DM (on metformin), mild CKD
+MMSE 26 (mild cognitive concerns)
+No psychotic features
+GDS 12 (severe)'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 75 ปี recently retired, wife died 1 ปี ago, social isolation, chronic pain (osteoarthritis), declining health (recent CHF diagnosis), beginning cognitive concerns — มา OPD ตามที่ลูกพา; ผู้ป่วยกล่าว ''I''m a burden, family would be better off without me''; firearm in home
+
+PHQ-9: 18, GDS-15: 12
+No specific plan but passive SI present', '[{"label":"A","text":"Discharge home without intervention"},{"label":"B","text":"Elderly Suicide Risk — Multiple Risk Factors (older men HIGHEST suicide rate of any demographic; firearms predominant method)"},{"label":"C","text":"Allow firearm in home"},{"label":"D","text":"No follow-up"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Elderly Suicide Risk — Multiple Risk Factors (older men HIGHEST suicide rate of any demographic; firearms predominant method): (1) **Comprehensive risk assessment** — protective + risk factors: - **Risk**: prior attempts, depression, chronic illness, pain, cognitive decline, social isolation, recent loss, hopelessness, burden perception, access to means (firearm here); - **Protective**: family connections (engage), purpose, religious beliefs, treatment engagement; (2) **Means restriction** = most evidence-based — **remove firearm from home** immediately (have family member temporarily store, gun safe with combination by other person, voluntary surrender to law enforcement); medication storage; (3) **Treat depression aggressively**: SSRI first-line + psychotherapy (IPT, CBT); ECT for severe; (4) **Address chronic pain**: integrative pain management, physical therapy, non-opioid medications, psychological strategies; (5) **Address social isolation**: senior community programs, family engagement, peer support, meaningful activities, volunteer; (6) **Address medical decline**: optimize care, palliative care if appropriate, advance care planning; (7) **Reduce burden perception**: family communication, find meaningful role, life review; (8) **Caregiver involvement**: education on warning signs, communication, removal of means; (9) **Safety planning** (Stanley-Brown): warning signs, internal coping, social distractions, contacts, professionals, means restriction; (10) **Frequent follow-up**; (11) Hospitalize if active ideation + plan + access; (12) **Address pain + dignity + autonomy** — palliative + hospice if terminal; (13) **Multidisciplinary**: geriatric psychiatry, primary care, social work, family, palliative care, pain medicine
+
+---
+
+Elderly Suicide: older men HIGHEST rate. Firearms predominant. Means restriction (remove firearm) most evidence-based. Treat depression aggressively (SSRI, ECT). Address pain, isolation, burden perception. Safety planning. Multidisciplinary. Caregiver involvement.', NULL,
+  'hard', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'USPSTF Suicide; CDC Suicide Elderly', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 75 ปี recently retired, wife died 1 ปี ago, social isolation, chronic pain (osteoarthritis), declining health (recent CHF diagnosis), beginning cognitive concerns — มา OPD ตามที่ลูกพา; ผู้ป่วยกล่าว ''I''m a burden, family would be better off without me''; firearm in home
+
+PHQ-9: 18, GDS-15: 12
+No specific plan but passive SI present'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 75 ปี — chronic generalized anxiety × 2 ปี — excessive worry about health, family, finances; somatic sx (palpitations, GI, headache); poor sleep; PCP started alprazolam 0.5 mg TID 6 เดือนก่อน — ขณะนี้มี fall × 2, fracture wrist, cognitive complaints, family concerned
+
+GAD-7: 14
+MMSE 26 (mild)
+No MDD criteria met
+Beers criteria flag benzodiazepine in elderly', '[{"label":"A","text":"Continue alprazolam at higher dose"},{"label":"B","text":"Generalized Anxiety + Inappropriate Benzodiazepine in Elderly (Beers Criteria — avoid BZD in elderly: falls, cognitive impairment, dependence)"},{"label":"C","text":"Long-term Z-drug"},{"label":"D","text":"Surgery"},{"label":"E","text":"No treatment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Generalized Anxiety + Inappropriate Benzodiazepine in Elderly (Beers Criteria — avoid BZD in elderly: falls, cognitive impairment, dependence): (1) **Taper benzodiazepine gradually** — long-term BZD in elderly increases falls, fractures, cognitive impairment, motor vehicle accidents, dependence; gradual taper 10-25% reduction every 2 weeks (longer if longer use); (2) **CBT for anxiety** in elderly — modified for cognitive + sensory needs; effective; (3) **SSRI/SNRI** as alternative — escitalopram, sertraline (lower fall risk, no dependence); start LOW go SLOW; (4) Buspirone alternative — no dependence, no sedation; slower onset; (5) Pregabalin alternative; (6) Address sleep — CBT-I; melatonin agonist; trazodone low-dose; AVOID Z-drugs (zolpidem — same risks as BZD in elderly); (7) Address underlying contributors: pain, medical conditions, medications causing anxiety (steroids, decongestants, caffeine), social isolation; (8) Lifestyle: exercise (gentle — tai chi, yoga, walking), relaxation, social engagement; (9) Comorbidity: depression (40%), cognitive impairment (anxiety can mimic + coexist), other anxiety disorders; (10) Family education + support; (11) Multidisciplinary: geriatric psychiatry, primary care, physical therapy (fall prevention), social work; (12) Long-term: chronic but treatable; avoid lifelong BZD
+
+---
+
+Geriatric Anxiety + inappropriate BZD: Beers criteria avoid BZD elderly (falls, cognition, dependence). Taper gradually. CBT + SSRI/SNRI/buspirone alternatives. CBT-I for sleep (AVOID Z-drugs same risks). Multidisciplinary including fall prevention.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'AGS Beers 2023; Cochrane', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 75 ปี — chronic generalized anxiety × 2 ปี — excessive worry about health, family, finances; somatic sx (palpitations, GI, headache); poor sleep; PCP started alprazolam 0.5 mg TID 6 เดือนก่อน — ขณะนี้มี fall × 2, fracture wrist, cognitive complaints, family concerned
+
+GAD-7: 14
+MMSE 26 (mild)
+No MDD criteria met
+Beers criteria flag benzodiazepine in elderly'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 82 ปี Alzheimer''s dementia (MMSE 14) ใน nursing home — recent escalation in agitation: yelling, hitting staff during care (bathing, dressing), wandering at night, pacing; family + staff requesting management
+
+No acute medical change (UA negative, no constipation, no pain identified, no medication change recent)
+No psychosis acutely', '[{"label":"A","text":"First-line haloperidol IM"},{"label":"B","text":"Behavioral + Psychological Symptoms of Dementia (BPSD) — Non-Pharmacologic First-Line"},{"label":"C","text":"Long-term benzodiazepine"},{"label":"D","text":"Surgery"},{"label":"E","text":"Restraints"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Behavioral + Psychological Symptoms of Dementia (BPSD) — Non-Pharmacologic First-Line: (1) **Comprehensive assessment**: - **Medical**: rule out delirium (infection, electrolytes, urinary retention, pain, constipation, medication side effects, dehydration); - **Functional**: triggers (care procedures, time of day — sundowning, environment, sensory); - **Psychiatric**: depression (often presents as agitation in dementia), psychosis, anxiety; - **DICE algorithm**: Describe, Investigate, Create, Evaluate; (2) **Non-pharmacologic = first-line** (essential; reduces medication use): - **Address triggers** — care procedures gentle, predictable, explain, choice when possible; - **Environmental**: lighting (day/night cycle), noise reduction, familiar objects, structure; - **Music therapy** (personalized — strong evidence); - **Reminiscence**, art, pet therapy; - **Exercise**, walking, gardening; - **Caregiver training** — communication, validation, redirection; - **Sleep hygiene** (sundowning); (3) Address pain (often missed in dementia — assess + treat scheduled if suspected); (4) Address depression (SSRI — citalopram CitAD trial); (5) **Pharmacologic only if severe + non-pharmacologic insufficient + danger** (NEVER first-line): - **SSRI** (citalopram — modest evidence); - **Trazodone** for sleep + agitation; - **Atypical antipsychotic** (risperidone, olanzapine, quetiapine) for severe — **BLACK BOX warning increased mortality elderly with dementia** — risk-benefit + family discussion + lowest dose + shortest time + reassess; - **Brexpiprazole** FDA approved 2023 specifically for AD agitation; - **AVOID benzodiazepines** (worsen cognition, falls, paradoxical agitation); - **AVOID anticholinergics**; (6) Caregiver support + education + respite; (7) Multidisciplinary: geriatric psychiatry, primary care, nursing, OT, social work, family
+
+---
+
+BPSD: non-pharmacologic FIRST (rule out delirium, address triggers, environment, music therapy, caregiver training, treat pain). Pharmacologic only if essential — atypical antipsychotic black box mortality. Brexpiprazole FDA approved 2023 AD agitation. AVOID BZD + anticholinergic.', NULL,
+  'medium', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'CitAD trial; APA BPSD; DICE', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 82 ปี Alzheimer''s dementia (MMSE 14) ใน nursing home — recent escalation in agitation: yelling, hitting staff during care (bathing, dressing), wandering at night, pacing; family + staff requesting management
+
+No acute medical change (UA negative, no constipation, no pain identified, no medication change recent)
+No psychosis acutely'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 22 ปี — subacute onset (3 wk) ของ psychiatric symptoms (psychosis, agitation, mood changes, catatonia) + neurological symptoms (seizures, dyskinesias, autonomic instability — BP fluctuations, hyperthermia, dysautonomia) + cognitive decline; admitted with diagnosis of ''first episode psychosis''
+
+MRI brain: mild abnormalities or normal
+LP: mild lymphocytic pleocytosis; CSF anti-NMDA receptor antibodies POSITIVE
+Pelvic US: ovarian teratoma identified', '[{"label":"A","text":"Antipsychotic monotherapy without immunotherapy"},{"label":"B","text":"Anti-NMDA Receptor Encephalitis — Autoimmune Encephalitis Mimicking Psychiatric Disorder (young women predominantly, often paraneoplastic — ovarian teratoma; treatable)"},{"label":"C","text":"Discharge with first episode psychosis dx"},{"label":"D","text":"Surgery only without immunotherapy"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Anti-NMDA Receptor Encephalitis — Autoimmune Encephalitis Mimicking Psychiatric Disorder (young women predominantly, often paraneoplastic — ovarian teratoma; treatable): (1) **Tumor removal** — ovarian teratoma resection is curative + diagnostic confirmation in paraneoplastic cases; full search (transvaginal US, CT/MRI pelvis); (2) **Immunotherapy first-line**: - **IV methylprednisolone** 1g × 5 days; - **IVIG** 2g/kg over 5 days; - **Plasmapheresis** alternative; - first-line usually combined with steroid; (3) **Second-line if first-line fails (50%)**: rituximab, cyclophosphamide; (4) Long-term: mycophenolate, azathioprine; (5) **Symptomatic management**: - Antipsychotic for psychosis (BUT severe sensitivity to neuroleptics + NMS risk — careful, lowest dose, often quetiapine); - Benzodiazepine for catatonia + seizures; - Anti-epileptic for seizures; - Supportive ICU for autonomic instability; (6) **Diagnostic workup** all young patients with new-onset psychosis + neurological features: - Anti-NMDA antibodies (CSF more sensitive than serum); - Other autoimmune encephalitis antibodies; - LP, MRI, EEG; - Tumor workup (pelvic in women); (7) Recovery: prolonged (months-years); ~ 75% substantial recovery with treatment; (8) Multidisciplinary: neurology, psychiatry, ICU, gynecology, oncology; (9) Education: psychiatric sx can be initial presentation of organic disease
+
+---
+
+Anti-NMDA Receptor Encephalitis: autoimmune; young women, often paraneoplastic (ovarian teratoma). Tumor removal + immunotherapy (steroid + IVIG/plasmapheresis). Second-line rituximab. Neuroleptic sensitivity. Workup young psychosis with neuro features. 75% recover.', NULL,
+  'hard', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'Graus Anti-NMDA criteria', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 22 ปี — subacute onset (3 wk) ของ psychiatric symptoms (psychosis, agitation, mood changes, catatonia) + neurological symptoms (seizures, dyskinesias, autonomic instability — BP fluctuations, hyperthermia, dysautonomia) + cognitive decline; admitted with diagnosis of ''first episode psychosis''
+
+MRI brain: mild abnormalities or normal
+LP: mild lymphocytic pleocytosis; CSF anti-NMDA receptor antibodies POSITIVE
+Pelvic US: ovarian teratoma identified'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 42 ปี — father had Huntington''s disease (died age 55); patient genetic test confirmed HD (CAG 45) — มาด้วย early psychiatric symptoms (depression, irritability, impulsivity, executive dysfunction) + early motor (subtle chorea) + cognitive complaints; family history of suicide (father attempted)
+
+No current SI
+MMSE 27 (early)', '[{"label":"A","text":"No psychiatric treatment"},{"label":"B","text":"Huntington''s Disease — Early Psychiatric + Motor Presentation (autosomal dominant CAG repeat HTT gene; psychiatric sx often precede motor; high suicide rate)"},{"label":"C","text":"Discharge no follow-up"},{"label":"D","text":"Surgery"},{"label":"E","text":"Punishment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Huntington''s Disease — Early Psychiatric + Motor Presentation (autosomal dominant CAG repeat HTT gene; psychiatric sx often precede motor; high suicide rate): (1) **Comprehensive multidisciplinary care**: - **Neurology** (HD specialist); - **Psychiatry** (psychiatric sx mainstay of QoL impact); - Primary care, social work, OT/PT/SLP, genetic counseling, palliative; (2) **Psychiatric management**: - **Depression**: SSRI (sertraline, escitalopram); - **Anxiety**: SSRI; - **Irritability + aggression**: SSRI, mood stabilizer (valproate), atypical antipsychotic (risperidone, olanzapine — also helps chorea); - **Psychosis**: atypical antipsychotic (also chorea benefit); - **OCD**: SSRI (high dose); - **Sleep**: trazodone, melatonin; - **Suicide risk EXTREMELY HIGH** (× 5-10 general — particularly at diagnosis + early disease + just before disability) — assess frequently + safety planning + means restriction + family education + protective hospitalization if needed; (3) **Chorea**: tetrabenazine + deutetrabenazine + valbenazine (VMAT2 — FDA approved); also benefit some psychiatric sx; SE: depression, sedation, parkinsonism; (4) **Cognitive decline**: no specific treatment; supportive; (5) **Genetic counseling**: family planning (50% offspring risk autosomal dominant); pre-symptomatic testing protocols; (6) **Family support**: HDSA resources; sibling at risk; (7) **Advance planning**: while capacity preserved — POA, advance directives, financial; (8) **Palliative care** integration; (9) **Long-term**: progressive 15-20 yr; supportive care + symptom-focused; (10) **Address comorbid alcohol use**, common; (11) Patient + family education
+
+---
+
+Huntington''s Disease: AD CAG repeat HTT; psychiatric sx precede motor often. Multidisciplinary. SSRI for depression/anxiety, atypical antipsychotic for psychosis/aggression + chorea, tetrabenazine for chorea. SUICIDE RISK × 5-10. Genetic counseling. Advance planning.', NULL,
+  'hard', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'HSG; Walker Huntington''s', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 42 ปี — father had Huntington''s disease (died age 55); patient genetic test confirmed HD (CAG 45) — มาด้วย early psychiatric symptoms (depression, irritability, impulsivity, executive dysfunction) + early motor (subtle chorea) + cognitive complaints; family history of suicide (father attempted)
+
+No current SI
+MMSE 27 (early)'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 60 ปี post-stroke (left hemisphere) 8 เดือนก่อน — sudden episodes of laughing or crying disproportionate to mood, triggered by minimal stimuli, distressing socially, not voluntary, mood between episodes essentially normal (not persistent depression)
+
+MRI: old left MCA infarct
+Not meeting MDD criteria
+Distinguish from depression (mood persistent vs episodic emotional outburst)', '[{"label":"A","text":"SSRI for depression dose long course"},{"label":"B","text":"Pseudobulbar Affect (PBA — involuntary emotional expression disorder; underlying neurologic injury — stroke, MS, ALS, TBI, dementia, PD)"},{"label":"C","text":"No treatment"},{"label":"D","text":"Surgery"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Pseudobulbar Affect (PBA — involuntary emotional expression disorder; underlying neurologic injury — stroke, MS, ALS, TBI, dementia, PD): (1) **Dextromethorphan + quinidine (Nuedexta)** — FDA approved 2010 for PBA; quinidine inhibits CYP2D6 → increases dextromethorphan levels; reduces episodes 50%; monitor QT; (2) **SSRI/SNRI alternative** — sertraline, citalopram, fluoxetine; venlafaxine; lower doses than depression often effective; works rapidly (days-weeks unlike depression); (3) **TCA** (nortriptyline, amitriptyline) historical alternative; (4) Patient + family education: distinguishing PBA from depression — important for treatment + reducing stigma + social embarrassment; (5) Distinguish from: - Depression (persistent mood vs episodic outbursts); - Mania; - Anxiety; - Personality change; - Delirium; (6) Address underlying neurologic condition (stroke prevention, MS management, etc.); (7) Counseling for social impact + relationship effects; (8) Workplace/social accommodations if functional impact; (9) Multidisciplinary: neurology, psychiatry, primary care, speech-language (associated dysarthria), social work; (10) Long-term: chronic if underlying condition persists; treatment continues; spontaneous improvement variable
+
+---
+
+Pseudobulbar Affect (PBA): involuntary episodic emotional expression disproportionate to mood, neurologic injury. Dextromethorphan + quinidine (Nuedexta) FDA approved. SSRI/SNRI alternative — rapid effect lower dose. Distinguish from depression (persistent vs episodic). Education + family.', NULL,
+  'medium', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'FDA Nuedexta; PRISM trial', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 60 ปี post-stroke (left hemisphere) 8 เดือนก่อน — sudden episodes of laughing or crying disproportionate to mood, triggered by minimal stimuli, distressing socially, not voluntary, mood between episodes essentially normal (not persistent depression)
+
+MRI: old left MCA infarct
+Not meeting MDD criteria
+Distinguish from depression (mood persistent vs episodic emotional outburst)'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 70 ปี dementia (MMSE 20) admitted for sepsis from pneumonia — family wants ฟ ER tube + ICU; ผู้ป่วยปฏิเสธ medical care, says ''leave me alone, I want to go home''; medical team questioning capacity to refuse treatment
+
+MSE: oriented x1 (person), some confusion, can verbalize basic wishes but cannot recall information about treatment, cannot weigh risks/benefits', '[{"label":"A","text":"Accept patient refusal without assessment"},{"label":"B","text":"Decision-Making Capacity Assessment (capacity = specific decision, not global; can lack capacity for some decisions + retain for others; capacity may fluctuate)"},{"label":"C","text":"Override patient against family"},{"label":"D","text":"Surgery"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Decision-Making Capacity Assessment (capacity = specific decision, not global; can lack capacity for some decisions + retain for others; capacity may fluctuate): (1) **Four standards** (Appelbaum + Grisso): - **Understanding** — comprehends information about condition + treatment (this patient impaired); - **Appreciation** — recognizes how applies to own situation; - **Reasoning** — weighs risks + benefits + alternatives (impaired here); - **Express a choice** — communicates a stable preference; (2) **Capacity is decision-specific + situation-specific**: this patient may lack capacity to refuse life-saving treatment now but may have capacity for simpler decisions; (3) **Address modifiable factors**: - Treat delirium (sepsis here — patient delirious from medical illness); - Pain management; - Hearing/vision aids; - Family presence; - Simplify language; - Cultural + linguistic adaptation; - Reassess after these; (4) **Surrogate decision-making** if persistently lacks capacity: - **Advance directive** (if exists); - **Healthcare proxy / POA** if designated; - **Substituted judgment** — what would patient choose if able? (preferred standard if known); - **Best interest** standard if unknown; - Family hierarchy varies by jurisdiction; - Ethics consultation if conflict; (5) **Beneficence + autonomy balance**: respect patient values + best interest; (6) **Document carefully**: capacity assessment process, conclusions, surrogate decision-maker; (7) **Multidisciplinary**: psychiatry consultation typical, ethics, palliative care if appropriate; (8) **Court involvement** rare — for guardianship if family conflict, no surrogate, contested
+
+---
+
+Capacity Assessment: decision-specific + situation-specific. Four standards (understanding, appreciation, reasoning, express choice). Address modifiable (delirium, pain, sensory). Surrogate if lacks capacity (advance directive > POA > substituted judgment > best interest). Document. Multidisciplinary.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'Appelbaum NEJM; APA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 70 ปี dementia (MMSE 20) admitted for sepsis from pneumonia — family wants ฟ ER tube + ICU; ผู้ป่วยปฏิเสธ medical care, says ''leave me alone, I want to go home''; medical team questioning capacity to refuse treatment
+
+MSE: oriented x1 (person), some confusion, can verbalize basic wishes but cannot recall information about treatment, cannot weigh risks/benefits'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 70 ปี — subjective + objective cognitive complaints × 1 ปี — mild memory difficulties, minor word-finding, no functional impairment in ADL/IADL (still drives, manages finances, takes medications correctly); seeking opinion + intervention
+
+MMSE 27 (mild)
+MoCA 24 (mild impairment)
+Neuropsychological testing: mild memory below age expected, other domains intact
+MRI: mild bilateral hippocampal atrophy, no stroke', '[{"label":"A","text":"Diagnose dementia + start anti-amyloid without workup"},{"label":"B","text":"Workup for reversible/treatable causes"},{"label":"C","text":"No intervention"},{"label":"D","text":"Surgery"},{"label":"E","text":"Discharge without follow-up"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Mild Cognitive Impairment (Mild Neurocognitive Disorder — DSM-5: modest cognitive decline + preserved functional independence + not delirium or other psychiatric — distinct from dementia which has functional impairment): (1) **Workup for reversible/treatable causes**: - **Medical**: TSH, B12, folate, vitamin D, syphilis/HIV if risk, metabolic, depression screen, medication review (anticholinergic burden!); - **Imaging**: MRI brain; - **Biomarkers** if appropriate: amyloid PET, CSF tau/Aβ, blood-based emerging — important for AD vs other; - Genetic testing (APOE) — controversial, mostly research; (2) **Treat reversible**: depression, thyroid, B12, sleep apnea, medications; (3) **Disease-specific treatment if AD biomarker positive**: - **Anti-amyloid mAb** (lecanemab, donanemab — FDA approved early AD with amyloid; slow progression modestly + ARIA risk — careful patient selection); - Cholinesterase inhibitors NOT generally recommended in MCI (not approved, not effective at MCI stage); (4) **Non-pharmacologic**: - **Exercise** (aerobic) — best evidence for cognition; - **Cognitive engagement** + stimulation; - **Mediterranean/MIND diet**; - **Social engagement**; - **Sleep optimization**; - **Manage cardiovascular risk factors** (BP, lipids, glucose, smoking); - **Hearing aids if hearing loss** (modifiable risk per Lancet Commission); - **Limit alcohol**; (5) **Follow longitudinally** — ~ 10-15%/yr progress to dementia; some remain stable or revert; (6) **Advance planning** while capacity preserved: POA, advance directive, financial planning, driving assessment plan; (7) **Family education**; (8) **Multidisciplinary**: primary care, neurology, geriatrics; (9) **Avoid medications worsening cognition**: anticholinergics (TCA, oxybutynin, diphenhydramine, benztropine), benzodiazepines, opioids high-dose
+
+---
+
+Mild Cognitive Impairment: cognitive decline + preserved function. Workup reversible. Biomarkers for AD vs other. Anti-amyloid mAb selected early AD with amyloid+. NO cholinesterase at MCI. Lifestyle (exercise, diet, sleep, social, CV risk). Follow longitudinally. Avoid anticholinergics.', NULL,
+  'medium', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'Lancet Commission 2024; FDA Lecanemab', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 70 ปี — subjective + objective cognitive complaints × 1 ปี — mild memory difficulties, minor word-finding, no functional impairment in ADL/IADL (still drives, manages finances, takes medications correctly); seeking opinion + intervention
+
+MMSE 27 (mild)
+MoCA 24 (mild impairment)
+Neuropsychological testing: mild memory below age expected, other domains intact
+MRI: mild bilateral hippocampal atrophy, no stroke'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 50 ปี TRD × 2 ปี — fatigue prominent, daytime sleepiness, morning headache, partner reports loud snoring + observed apneas; BMI 32, neck circumference 17 inch, HTN; depression failed 3 antidepressants
+
+Epworth Sleepiness Scale 18 (severe)
+STOP-BANG: 6 (high risk OSA)
+Polysomnography: severe OSA, AHI 45', '[{"label":"A","text":"Continue antidepressant alone — ignore OSA"},{"label":"B","text":"Treatment-Resistant Depression with Underlying Severe Obstructive Sleep Apnea — Address Comorbidity (OSA contributes to depression, treatment resistance, cognition, CV risk)"},{"label":"C","text":"Benzodiazepine for sleep"},{"label":"D","text":"Surgery (UPPP) first-line"},{"label":"E","text":"No treatment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Treatment-Resistant Depression with Underlying Severe Obstructive Sleep Apnea — Address Comorbidity (OSA contributes to depression, treatment resistance, cognition, CV risk): (1) **CPAP therapy** — first-line for severe OSA; titrate; improves depression (effect size moderate), cognition, daytime function, BP, CV outcomes; (2) **Address sleep apnea before/during depression treatment** — TRD may resolve or respond better to antidepressant with OSA treated; (3) **Weight loss** — multimodal (diet, exercise, behavioral) — modest OSA improvement; bariatric surgery for severe obesity; GLP-1 agonists (semaglutide) — emerging evidence improves OSA + weight; (4) **Alternative OSA treatments if CPAP-intolerant**: - Oral appliance (mild-moderate); - Hypoglossal nerve stimulation (Inspire); - Positional therapy (positional OSA); - Surgical (uvulopalatopharyngoplasty — limited efficacy; maxillomandibular advancement effective); (5) **Avoid CNS depressants**: benzodiazepines, opioids, alcohol — worsen OSA + respiratory drive; (6) **Continue antidepressant** — once OSA treated may respond better; consider activating antidepressant (bupropion); (7) **Address comorbid**: HTN, T2DM, CV — high overlap; (8) **Screen all TRD + chronic fatigue patients for OSA** — common + reversible contributor; (9) **Multidisciplinary**: sleep medicine, psychiatry, primary care, ENT/oral surgery if surgical option; (10) Lifestyle: sleep hygiene, exercise, weight
+
+---
+
+OSA + TRD: address OSA — CPAP first-line. Improves depression + cognition + CV. Weight loss adjunct. Alternatives (oral appliance, Inspire). AVOID CNS depressants. Screen TRD/chronic fatigue for OSA. Multidisciplinary.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'AASM CPAP; Edwards Sleep', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 50 ปี TRD × 2 ปี — fatigue prominent, daytime sleepiness, morning headache, partner reports loud snoring + observed apneas; BMI 32, neck circumference 17 inch, HTN; depression failed 3 antidepressants
+
+Epworth Sleepiness Scale 18 (severe)
+STOP-BANG: 6 (high risk OSA)
+Polysomnography: severe OSA, AHI 45'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 25 ปี × 3 ปี — excessive daytime sleepiness despite adequate night sleep, sudden sleep attacks, episodes of bilateral muscle weakness triggered by laughter/strong emotion (cataplexy — knees buckle, jaw drops, falls), occasional sleep paralysis on waking + hypnagogic hallucinations
+
+Epworth Sleepiness Scale 18
+PSG + MSLT: sleep onset REM periods × 3, mean sleep latency 6 min (< 8) — diagnostic
+CSF hypocretin-1 low — confirms type 1', '[{"label":"A","text":"No treatment — naps only"},{"label":"B","text":"Narcolepsy Type 1 (with cataplexy; hypocretin/orexin deficiency — autoimmune destruction of hypothalamic orexin neurons)"},{"label":"C","text":"Long-term benzodiazepine"},{"label":"D","text":"Surgery"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Narcolepsy Type 1 (with cataplexy; hypocretin/orexin deficiency — autoimmune destruction of hypothalamic orexin neurons): (1) **Stimulants for daytime sleepiness**: - **Modafinil/armodafinil** — first-line; less abuse potential than amphetamine; - **Stimulants** (methylphenidate, amphetamine — Vyvanse, Adderall) — effective, controlled substance; - **Solriamfetol** — newer DAT/NET inhibitor; - **Pitolisant** — histamine H3 inverse agonist (also helps cataplexy); (2) **Cataplexy treatment**: - **Sodium oxybate (Xyrem) / oxybate** — GHB derivative; FDA approved for cataplexy + EDS; nocturnal dosing; controlled substance, abuse potential; expensive; - **SNRI** (venlafaxine, atomoxetine), **SSRI** (fluoxetine) — REM-suppressing, reduce cataplexy + sleep paralysis + hallucinations; - **TCA** alternative; - **Pitolisant** also; (3) **Scheduled naps** (15-20 min, 1-2×/d) — non-pharmacologic adjunct; (4) **Sleep hygiene** + adequate night sleep; (5) **Driving safety counseling** — sleep attacks + cataplexy risk; legal implications; (6) **Address comorbidity**: depression (common — chronic illness + neurobiology), obesity (high — orexin role in metabolism), CV risk; (7) **Education + support**: Narcolepsy Network; school/workplace accommodations (504/ADA); (8) **Distinguish**: idiopathic hypersomnia, OSA, REM sleep disorders, insufficient sleep, mood disorders; (9) **Multidisciplinary**: sleep medicine, psychiatry, primary care; (10) **Long-term**: chronic; treatment improves QoL substantially; (11) **Pregnancy planning** — medication adjustments needed
+
+---
+
+Narcolepsy Type 1: cataplexy + EDS + hypocretin deficiency. Stimulants/modafinil/pitolisant/solriamfetol for EDS. Oxybate or SNRI/SSRI/TCA for cataplexy. Scheduled naps. Driving safety. Multidisciplinary. Chronic.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'AASM Narcolepsy', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 25 ปี × 3 ปี — excessive daytime sleepiness despite adequate night sleep, sudden sleep attacks, episodes of bilateral muscle weakness triggered by laughter/strong emotion (cataplexy — knees buckle, jaw drops, falls), occasional sleep paralysis on waking + hypnagogic hallucinations
+
+Epworth Sleepiness Scale 18
+PSG + MSLT: sleep onset REM periods × 3, mean sleep latency 6 min (< 8) — diagnostic
+CSF hypocretin-1 low — confirms type 1'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 65 ปี × 2 ปี — bed partner reports patient acting out dreams during sleep (punching, kicking, yelling, falling out of bed) — injuries to self + partner; complex motor behaviors during REM
+
+PSG: REM sleep without atonia + dream enactment behaviors — diagnostic
+No recent medication changes
+Family noting subtle motor slowing recently
+DAT scan abnormal', '[{"label":"A","text":"No treatment — let dream out"},{"label":"B","text":"REM Sleep Behavior Disorder (RBD — DSM-5; loss of REM atonia → dream enactment; major prodrome of synucleinopathy — Parkinson''s, DLB, MSA)"},{"label":"C","text":"Long-term high-dose benzodiazepine ignoring elderly risk"},{"label":"D","text":"Surgery"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** REM Sleep Behavior Disorder (RBD — DSM-5; loss of REM atonia → dream enactment; major prodrome of synucleinopathy — Parkinson''s, DLB, MSA): (1) **Safety measures essential** — partner injury risk + falls + injuries: - **Bedroom safety** — soft objects around bed, padded floor, mattress on floor, remove sharp objects + weapons from room; - **Separate beds/rooms** if injuries; - Bed rails (carefully — can cause more injury); (2) **Medication**: - **Melatonin 3-12 mg HS** — first-line in many guidelines now; safer profile; effective; - **Clonazepam 0.25-2 mg HS** — historically first-line; effective; risks elderly (falls, sedation, cognition); - **Other**: pramipexole limited; rivastigmine (especially with synucleinopathy); (3) **Discontinue contributors**: SSRI, SNRI, MAOI, beta-blockers (worsen RBD); discuss risk-benefit if psychiatric indication strong; (4) **Disclose synucleinopathy risk** — RBD precedes Parkinson''s/DLB/MSA in ≥ 80% of idiopathic RBD over 10-15 yr; sensitive conversation + counseling + lifestyle modifications + monitoring; (5) **Monitor for parkinsonism + cognitive decline** — annual neurologic + cognitive exam; (6) **Address comorbidity**: anxiety/depression, OSA (frequent), sleep hygiene; (7) **Distinguish**: NREM parasomnia (sleepwalking — first half of night, no dream recall), nocturnal seizure, sleep terror, psychogenic; PSG diagnostic; (8) **Multidisciplinary**: sleep medicine, neurology, psychiatry; (9) **Patient + family education**; (10) **Long-term**: chronic; management of behaviors + monitoring for evolving neurodegenerative disease
+
+---
+
+REM Sleep Behavior Disorder: dream enactment, loss of REM atonia, PSG diagnostic. Safety measures essential. Melatonin (now often first-line) or clonazepam. Discontinue SSRI/SNRI contributors. Major synucleinopathy prodrome (Parkinson''s, DLB, MSA — 80% in 10-15 yr). Monitor.', NULL,
+  'medium', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'AASM RBD; Schenck RBD', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 65 ปี × 2 ปี — bed partner reports patient acting out dreams during sleep (punching, kicking, yelling, falling out of bed) — injuries to self + partner; complex motor behaviors during REM
+
+PSG: REM sleep without atonia + dream enactment behaviors — diagnostic
+No recent medication changes
+Family noting subtle motor slowing recently
+DAT scan abnormal'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 55 ปี newly diagnosed breast cancer stage III on chemo — มาด้วย depressed mood, anhedonia, fatigue, sleep disturbance, weight loss, hopelessness, suicidal ideation × 6 wk
+
+PHQ-9: 18
+No prior psychiatric hx
+Family supportive
+Distinguishing depression from cancer/chemo fatigue: anhedonia + hopelessness + guilt distinguish depression', '[{"label":"A","text":"Wait — depression normal"},{"label":"B","text":"Antidepressant choice considering"},{"label":"C","text":"Avoid antidepressant in cancer"},{"label":"D","text":"Surgery"},{"label":"E","text":"No psychiatric input"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Major Depressive Disorder in Cancer Patient (C-L psychiatry — common, undertreated, affects outcomes): (1) Distinguish from: - Adjustment disorder; - Demoralization; - Cancer-related fatigue (no anhedonia, no hopelessness); - Chemotherapy side effects; - Hypothyroidism (chemo-induced); - Anemia; - Hypercalcemia; - CNS metastases; - Steroid-induced mood disorder; (2) Treat aggressively — depression worsens outcomes, adherence, QoL: (3) **Antidepressant choice considering**: - **Sertraline, escitalopram, mirtazapine** (mirtazapine — appetite + sleep + nausea bonus); - **Avoid drug interactions**: fluoxetine + paroxetine + bupropion = CYP2D6 inhibitors → may reduce tamoxifen → endoxifen conversion (avoid in tamoxifen patients); - **QT prolongation considerations** with chemo (avoid high-dose citalopram); - **Bupropion** — activating, no weight gain, no sexual SE; lower seizure threshold consideration; (4) Psychotherapy: CBT, mindfulness-based, supportive, meaning-centered (Breitbart — specifically advanced cancer); (5) Behavioral: exercise even mild (evidence base); (6) Address symptoms: pain (treat aggressively — methadone overlaps), insomnia, fatigue (psychostimulants methylphenidate adjunct for fatigue + depression in palliative settings); (7) Suicide assessment + safety; cancer + depression increases suicide risk; (8) Family + caregiver support; (9) Multidisciplinary: psycho-oncology, oncology, primary care, palliative care, social work, chaplaincy; (10) Long-term — adjust treatment through cancer journey + survivorship
+
+---
+
+Depression in cancer: undertreated, worsens outcomes. Distinguish from adjustment, demoralization, fatigue, medical causes. Sertraline, mirtazapine common. AVOID fluoxetine/paroxetine/bupropion in tamoxifen patients (CYP2D6 inhibitors reduce endoxifen). Psychotherapy + exercise. Methylphenidate for palliative fatigue. Multidisciplinary.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'NCCN Distress; ASCO Depression', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 55 ปี newly diagnosed breast cancer stage III on chemo — มาด้วย depressed mood, anhedonia, fatigue, sleep disturbance, weight loss, hopelessness, suicidal ideation × 6 wk
+
+PHQ-9: 18
+No prior psychiatric hx
+Family supportive
+Distinguishing depression from cancer/chemo fatigue: anhedonia + hopelessness + guilt distinguish depression'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 60 ปี post-STEMI 2 เดือนก่อน + PCI; ขณะนี้ developed MDD — sad, anhedonic, sleep disturbance, decreased exercise tolerance (deconditioning + avoidance), fearful of activity (fear another MI), PHQ-9: 16
+
+Medications: aspirin, clopidogrel, statin, BB, ACE-I
+EF 45%, cardiac rehab attendance poor due to depression', '[{"label":"A","text":"TCA for depression + nighttime sedation"},{"label":"B","text":"Post-MI Depression (depression × 2-3 increased risk after MI; increases mortality 2-3 fold; affects adherence, rehab participation, CV outcomes)"},{"label":"C","text":"No antidepressant"},{"label":"D","text":"Surgery"},{"label":"E","text":"Punishment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Post-MI Depression (depression × 2-3 increased risk after MI; increases mortality 2-3 fold; affects adherence, rehab participation, CV outcomes): (1) **Treat depression aggressively** — improves CV outcomes + adherence + cardiac rehab participation; (2) **Antidepressant choice — cardiac safety**: - **Sertraline** = first-line (SADHART trial — safe + effective post-MI); - **Escitalopram, citalopram** (citalopram avoid > 20mg elderly QT); - **AVOID**: TCA (anticholinergic, cardiac, conduction — historical concern; not recommended post-MI); high-dose citalopram (QT); MAOI; (3) **CBT** for cardiac patients — first-line; addresses fear, avoidance, deconditioning; CBT specifically adapted for cardiac patients (ENRICHD trial); (4) **Cardiac rehabilitation** — physical + psychological benefit; exercise = antidepressant + cardiac benefit; address fear of activity; (5) **Address fear/anxiety** — common post-MI; PTSD-like sx in some patients; (6) **Couples/family** — adjustment for both patient + family; sexual concerns (medication, fear of activity); (7) **Lifestyle**: smoking cessation aggressively, diet, exercise, weight; (8) **Monitor for medication interactions**: SSRI + antiplatelet bleeding risk modest; SSRI + diuretic hyponatremia; (9) **Sleep apnea screening** common post-MI; (10) **Multidisciplinary**: cardiology, psychiatry, cardiac rehab, primary care, psychology, dietitian, smoking cessation; (11) **Education**: depression is medical illness, treatable, improves CV; (12) **Suicide assessment** — depression + chronic illness elevated
+
+---
+
+Post-MI Depression: depression × 2-3 risk after MI; ↑ mortality. SADHART trial — sertraline safe + effective. AVOID TCA + high-dose citalopram. CBT (ENRICHD) for cardiac patients. Cardiac rehab + exercise = antidepressant + cardiac benefit. Multidisciplinary.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'SADHART; ENRICHD; AHA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 60 ปี post-STEMI 2 เดือนก่อน + PCI; ขณะนี้ developed MDD — sad, anhedonic, sleep disturbance, decreased exercise tolerance (deconditioning + avoidance), fearful of activity (fear another MI), PHQ-9: 16
+
+Medications: aspirin, clopidogrel, statin, BB, ACE-I
+EF 45%, cardiac rehab attendance poor due to depression'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 35 ปี HIV+ on ART × 3 ปี (viral suppression) — มาด้วย new-onset depression, mild cognitive concerns, insomnia, sexual identity stress, substance use history (methamphetamine), social stigma; CD4 count 380, undetectable viral load
+
+PHQ-9: 16
+No psychotic features', '[{"label":"A","text":"Ignore HIV — treat psych only"},{"label":"B","text":"HIV + Depression + Substance Use + Cognitive Concerns — Comprehensive Care"},{"label":"C","text":"St John''s wort"},{"label":"D","text":"Surgery"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** HIV + Depression + Substance Use + Cognitive Concerns — Comprehensive Care: (1) **Antidepressant choice** — drug interactions critical: - **Sertraline, escitalopram, mirtazapine** generally safe with most ART; - **Drug interactions**: protease inhibitors (ritonavir) + most antidepressants; efavirenz can interact; check Liverpool HIV interactions checker; - **AVOID**: St John''s wort (induces P450, reduces ART efficacy); methylphenidate caution with stimulant use disorder; (2) **CBT, IPT** psychotherapy; (3) **Address substance use** — integrated treatment; stimulant use disorder (no FDA medication; contingency management); HIV transmission + adherence issues; (4) **Cognitive assessment** — HIV-Associated Neurocognitive Disorder (HAND) spectrum: asymptomatic, mild neurocognitive, HIV-associated dementia (severe rare in modern ART era); workup other causes (syphilis, B12, depression — pseudodementia); neuropsych testing; CNS penetration of ART; (5) **Address comorbidities**: HCV (treat regardless of ART), STIs, mental health screening; cardiovascular, metabolic (some ART), bone density; (6) **Psychosocial**: peer support (HIV+ community), housing, employment, legal, identity-affirming (LGBTQ+ if applicable), stigma reduction, social work; (7) **Adherence support** — depression worsens, treatment improves; pill organizers, reminders, simplification regimen; (8) **Suicide assessment** — HIV+ elevated risk; (9) **Multidisciplinary**: infectious disease, psychiatry, addiction medicine, primary care, social work, peer support; (10) **PrEP discussion for partners**
+
+---
+
+HIV Psychiatric: SSRI choice (sertraline, escitalopram) — check ART interactions. CBT/IPT. Address stimulant use (no FDA med; contingency mgmt). HAND assessment. Comorbidities. Peer support + adherence. Suicide risk. Multidisciplinary.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'HIVMA Mental Health; CDC HIV', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 35 ปี HIV+ on ART × 3 ปี (viral suppression) — มาด้วย new-onset depression, mild cognitive concerns, insomnia, sexual identity stress, substance use history (methamphetamine), social stigma; CD4 count 380, undetectable viral load
+
+PHQ-9: 16
+No psychotic features'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 50 ปี AUD-related ESLD seeking liver transplant evaluation; sober × 9 เดือน + AA attendance + family support — psychiatry consultation for transplant evaluation
+
+PHQ-9: 8 (mild); GAD-7: 6
+Cognitive assessment normal
+No other substance use; smoking cessation 1 yr ago', '[{"label":"A","text":"Auto-decline AUD patient"},{"label":"B","text":"Transplant Psychiatry Evaluation — Multidimensional Assessment"},{"label":"C","text":"Ignore substance use history"},{"label":"D","text":"Surgery without evaluation"},{"label":"E","text":"No assessment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Transplant Psychiatry Evaluation — Multidimensional Assessment: (1) **Psychosocial evaluation domains**: - **Mental health**: current + past psychiatric, treatment, stability; - **Substance use**: type, duration, severity, recovery, current sobriety, support — most centers require 6-12 mo sobriety for liver/kidney; assess relapse risk; - **Adherence history**: medication, appointments, dietary restrictions; - **Cognitive capacity**: understand transplant process + lifelong adherence requirements; - **Social support**: caregiver(s), housing, finances; - **Coping**: stress management, prior medical adjustment; - **Health behaviors**: smoking, diet, exercise; (2) **Standardized tools**: SIPAT (Stanford Integrated Psychosocial Assessment for Transplantation) — validated; PACT; TERS; (3) **AUD-specific**: - Duration of sobriety (some centers shortened from 6 mo with case-by-case); - Active relapse prevention plan (AA, therapy, MAT — naltrexone post-transplant possible); - PEth blood marker (alcohol biomarker); - Family/caregiver assessment; (4) **Recommendations to transplant team** — list, conditional, defer, decline; (5) **Pre-transplant interventions**: optimize mental health treatment, addiction treatment, social work support; (6) **Post-transplant follow-up**: high adherence stakes (rejection); ongoing psychiatry; depression common post-transplant; (7) **Immunosuppression psychiatric effects**: tacrolimus, steroids — neuropsychiatric SE; (8) **Multidisciplinary transplant committee** — psychiatry recommendation one input; (9) **Equity considerations** — avoid bias; SES, race, addiction stigma; (10) **Education + informed consent**
+
+---
+
+Transplant Psychiatry: multidimensional psychosocial eval (SIPAT). AUD requires sobriety + relapse prevention + support. Adherence capacity. Recommendations to team. Pre-transplant optimization + post-transplant follow-up. Equity considerations.', NULL,
+  'hard', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'SIPAT; AASLD Transplant', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 50 ปี AUD-related ESLD seeking liver transplant evaluation; sober × 9 เดือน + AA attendance + family support — psychiatry consultation for transplant evaluation
+
+PHQ-9: 8 (mild); GAD-7: 6
+Cognitive assessment normal
+No other substance use; smoking cessation 1 yr ago'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 28 ปี acute onset (2 wk) ของ unilateral leg weakness (cannot walk) — no medical explanation; Hoover''s sign positive (contralateral hip extension elicits weakness on testing affected leg), give-way weakness, normal reflexes, no atrophy; recently major life stress (job loss, breakup) and history of childhood trauma
+
+MRI, EMG, NCS: normal
+No malingering evident (not consciously feigning)', '[{"label":"A","text":"Diagnosis of exclusion alone"},{"label":"B","text":"Diagnosis based on POSITIVE clinical signs"},{"label":"C","text":"Dismissive: ''all in your head''"},{"label":"D","text":"Surgery"},{"label":"E","text":"No treatment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Functional Neurological Symptom Disorder (FND — DSM-5; replaced ''conversion disorder''; positive clinical signs of inconsistency now central — internal inconsistency or incompatibility with neurological disease): (1) **Diagnosis based on POSITIVE clinical signs**: - Hoover''s sign (motor); - Tremor entrainment test; - Hip abductor sign; - Tubular vision; - Drift without pronation; - Inconsistency, distractibility; - NOT diagnosis of exclusion alone — neurologic mimics ruled out + positive signs present; (2) **Communication of diagnosis essential** — confidently explain: ''real condition, not faking, brain function (not structure) problem, treatable''; analogy ''software vs hardware''; show positive signs; avoid dismissive language (''nothing wrong''); (3) **Treatment**: - **Physical therapy** specifically adapted for FND (graded exposure + retraining + motor learning + distraction techniques) — first-line for motor sx; - **CBT** for FND — first-line; understanding symptoms + coping; - **OT, speech therapy** depending on sx; - **Address triggers + stressors**; - **Trauma-focused** if PTSD comorbid (often); (4) **Address comorbid psychiatric**: depression, anxiety, PTSD common — treat; (5) **Avoid iatrogenic harm**: unnecessary testing, immobilization, opioids; (6) **Multidisciplinary**: neurology, psychiatry, PT/OT, speech, primary care; (7) **Long-term**: outcomes vary — early intervention + acceptance of diagnosis improve; chronic in many; (8) **Distinguish from**: - Factitious disorder (intentional sx production for sick role); - Malingering (intentional for external gain); - Both involve intent vs FND which is involuntary; (9) **Modern**: FND is neuropsychiatric disorder, not ''psychogenic''; brain network dysfunction; reduce stigma + dualism
+
+---
+
+Functional Neurological Disorder (DSM-5): positive clinical signs (Hoover''s, tremor entrainment, inconsistency) — NOT exclusion alone. Communication of dx essential. PT for FND + CBT first-line. Address comorbidity. Modern: neuropsychiatric not ''psychogenic''.', NULL,
+  'medium', 'neurology', 'review',
+  'psychiatry', 'clinical_decision', 'neurology', 'adult',
+  'Stone FND; FND Society', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 28 ปี acute onset (2 wk) ของ unilateral leg weakness (cannot walk) — no medical explanation; Hoover''s sign positive (contralateral hip extension elicits weakness on testing affected leg), give-way weakness, normal reflexes, no atrophy; recently major life stress (job loss, breakup) and history of childhood trauma
+
+MRI, EMG, NCS: normal
+No malingering evident (not consciously feigning)'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 45 ปี × 5 ปี — multiple persistent somatic symptoms (pain, fatigue, GI, neurological complaints) + excessive thoughts/feelings/behaviors about them (high anxiety about health, persistent worry, time/energy excessively devoted) + medical workup repeatedly negative; functional impairment
+
+MSE: somatic preoccupation + anxiety
+No identifiable single medical disease explaining all sx', '[{"label":"A","text":"Repeat diagnostic workup at every visit"},{"label":"B","text":"Somatic Symptom Disorder (DSM-5: somatic symptoms distressing or disruptive + excessive thoughts/feelings/behaviors about sx + ≥ 6 mo; replaces somatization, undifferentiated somatoform)"},{"label":"C","text":"Long-term opioid for chronic pain"},{"label":"D","text":"Surgery"},{"label":"E","text":"Dismiss complaints"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Somatic Symptom Disorder (DSM-5: somatic symptoms distressing or disruptive + excessive thoughts/feelings/behaviors about sx + ≥ 6 mo; replaces somatization, undifferentiated somatoform): (1) **Validate symptoms** — patients suffer real distress; avoid dismissive language; (2) **Establish therapeutic alliance** with **single primary care provider** — regular scheduled visits (not symptom-driven); limit doctor shopping + repeat testing; (3) **CBT for somatic symptoms** — first-line; address catastrophic thinking, fear avoidance, attention to symptoms; behavioral activation; (4) **Antidepressants** can help — SSRI (especially with comorbid depression/anxiety), SNRI (duloxetine for chronic pain component); modest evidence; (5) **Avoid**: unnecessary procedures + diagnostic tests + medications + surgery; iatrogenic harm common (especially opioids); (6) **Address comorbidity**: depression (60%), anxiety, PTSD, panic, personality features; (7) **Mindfulness-based therapies + acceptance**; (8) **Function-focused** rather than cure-focused goals; (9) **Family education + support**; (10) **Distinguish**: - Illness anxiety disorder (preoccupation with having illness, minimal somatic sx); - Conversion/FND (neurological); - Factitious (intentional sx for sick role); - Malingering (external gain); - Medical illness — comorbid + may have actual medical issues; (11) **Long-term**: chronic; care coordination critical; gradual improvement; (12) **Multidisciplinary**: primary care (key), psychiatry, mental health, social work
+
+---
+
+Somatic Symptom Disorder: real symptoms + excessive thoughts/feelings/behaviors. Validate. Single PCP + limit repeat testing. CBT first-line. SSRI/SNRI for comorbid + chronic pain. AVOID iatrogenic harm (opioids, procedures). Function-focused. Distinguish from IAD/FND/factitious/malingering.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'DSM-5-TR', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 45 ปี × 5 ปี — multiple persistent somatic symptoms (pain, fatigue, GI, neurological complaints) + excessive thoughts/feelings/behaviors about them (high anxiety about health, persistent worry, time/energy excessively devoted) + medical workup repeatedly negative; functional impairment
+
+MSE: somatic preoccupation + anxiety
+No identifiable single medical disease explaining all sx'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 32 ปี nurse — recurrent hospitalizations × 5 ปี กับ varied symptoms (fever, abdominal pain, hematuria) ที่หา cause ไม่พบ + investigators discover she has been injecting saline + small amounts of bacteria into IV ทำให้เกิด fever + intentionally causing UTI by self-catheterization; ผู้ป่วยปฏิเสธ; ไม่มี external incentive (no insurance fraud, no disability claim, no legal motivation)
+
+MSE: cooperative initially; becomes hostile when confronted with evidence', '[{"label":"A","text":"Continue invasive testing"},{"label":"B","text":"Limited treatment outcomes"},{"label":"C","text":"Discharge with judgment"},{"label":"D","text":"Surgery"},{"label":"E","text":"Confront aggressively"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Factitious Disorder Imposed on Self (Munchausen syndrome — DSM-5: falsification of physical/psychological signs OR induction of injury/disease + deceptive behavior + presents self as ill/impaired/injured + absence of obvious external rewards): (1) **Confirmation** challenging — direct observation, video surveillance (ethical considerations), inconsistent labs, identifying injected substances; (2) **Sensitive confrontation** — collaborative approach with mental health professional; avoid hostile or punitive; offer ''face-saving'' alternative framing; many deny + leave; (3) **Treatment**: - **Psychotherapy** if patient accepts — psychodynamic, CBT; addresses underlying needs (sick role, attention, identity); - **Address comorbidity**: depression, personality disorder (especially borderline), trauma history common; - **Limited treatment outcomes** typically — chronic, recurrent; (4) **Avoid invasive procedures + medications when possible** — risk of iatrogenic harm + reinforcement; (5) **Document carefully** — across institutions if possible; coordinate care; (6) **Distinguish**: - Malingering (external gain — financial, legal, evasion); - Somatic symptom disorder (real symptoms, no fabrication); - Conversion disorder (involuntary); - Factitious imposed on another (Munchausen by proxy — child abuse — separate); (7) **Mandatory reporting if factitious imposed on another** (child) = child abuse; (8) **Ethical considerations**: hospital surveillance, confidentiality, informed consent; (9) **Multidisciplinary**: psychiatry, hospital ethics, primary care, social work; (10) **Healthcare provider burnout** — challenging cases; team support
+
+---
+
+Factitious Disorder: intentional production/feigning of sx without external reward (vs malingering). Sensitive confrontation + offer face-saving. Limited treatment outcomes. Avoid further invasive procedures. Address comorbid (BPD, trauma). Distinguish from malingering, somatic sx, conversion. Factitious imposed on another = abuse.', NULL,
+  'hard', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'DSM-5-TR; Eisendrath', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 32 ปี nurse — recurrent hospitalizations × 5 ปี กับ varied symptoms (fever, abdominal pain, hematuria) ที่หา cause ไม่พบ + investigators discover she has been injecting saline + small amounts of bacteria into IV ทำให้เกิด fever + intentionally causing UTI by self-catheterization; ผู้ป่วยปฏิเสธ; ไม่มี external incentive (no insurance fraud, no disability claim, no legal motivation)
+
+MSE: cooperative initially; becomes hostile when confronted with evidence'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 30 ปี facing criminal charges — presents with claimed PTSD + cognitive impairment + ''voices'' affecting competency to stand trial; symptoms inconsistent on testing (improbable symptoms, exaggeration on validity testing, inconsistent across exams), atypical presentation, external incentive obvious (legal)
+
+MMSE inconsistent (passes some hard items, fails easy)
+Validity testing: TOMM fails (suggests poor effort)
+SIRS: positive for feigning', '[{"label":"A","text":"Accept all reported symptoms without assessment"},{"label":"B","text":"Recognition through standardized assessment"},{"label":"C","text":"Provide requested diagnosis"},{"label":"D","text":"Surgery"},{"label":"E","text":"Refuse to engage"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Malingering — Intentional Production or Exaggeration of Symptoms for Identifiable External Reward (legal, financial, drug, military, disability) — NOT a psychiatric diagnosis in DSM but clinically relevant: (1) **Recognition through standardized assessment**: - **Validity testing** — TOMM (Test of Memory Malingering), MFAST, SIRS (Structured Interview of Reported Symptoms); - **Inconsistencies** across exams + time + collateral; - **Improbable or atypical symptoms**; - **External incentive** identified; (2) **High prevalence in forensic settings** — ~ 15-20% in some studies; (3) **Documentation careful**: objective findings, validity testing, inconsistencies — avoid ''diagnosing'' malingering definitively unless evidence robust; descriptive ''invalid presentation'' + ''symptom exaggeration'' acceptable; (4) **Coexistence** with real disorder possible — malingering + true PTSD; assess both; (5) **Differential**: - Factitious (no external reward — internal sick role); - Conversion/FND (involuntary); - True psychiatric disorder; (6) **Approach**: confront sensitively, offer alternative explanation, focus on functional capacity assessment for forensic question (competency, NGRI); (7) **Forensic implications**: court testimony, opinion stated as expert; (8) **Avoid moralizing** — clinical detachment; (9) **Provider safety + boundaries**; (10) **Modern**: complexity recognized — partial malingering, secondary gain spectrum, primary vs secondary
+
+---
+
+Malingering: intentional feigning for external reward (NOT DSM diagnosis). Validity testing (TOMM, SIRS). Documentation: objective findings + inconsistencies. May coexist with real disorder. Distinguish from factitious (no external) + conversion (involuntary). Forensic implications.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'Rogers SIRS; Slick criteria', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 30 ปี facing criminal charges — presents with claimed PTSD + cognitive impairment + ''voices'' affecting competency to stand trial; symptoms inconsistent on testing (improbable symptoms, exaggeration on validity testing, inconsistent across exams), atypical presentation, external incentive obvious (legal)
+
+MMSE inconsistent (passes some hard items, fails easy)
+Validity testing: TOMM fails (suggests poor effort)
+SIRS: positive for feigning'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 38 ปี on sertraline 100mg × 1 ปี for MDD (in remission) — new complaint: anorgasmia + decreased libido + marital strain; mood stable, otherwise functioning well
+
+No other medications, no medical illness, healthy relationship pre-medication', '[{"label":"A","text":"Ignore complaint"},{"label":"B","text":"SSRI-Induced Sexual Dysfunction (50-70% on SSRI experience; decreased libido, anorgasmia, delayed ejaculation, ED)"},{"label":"C","text":"Stop antidepressant abruptly"},{"label":"D","text":"Surgery"},{"label":"E","text":"No discussion"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** SSRI-Induced Sexual Dysfunction (50-70% on SSRI experience; decreased libido, anorgasmia, delayed ejaculation, ED): (1) **Risk-benefit discussion** — depression remission essential, sexual SE common; (2) **Strategies (in order of preference)**: - **Wait** — some tolerance develops (limited); - **Dose reduction** if possible; - **Switch antidepressant** to lower sexual SE: - **Bupropion** (no sexual SE; can replace SSRI if depression history without anxiety); - **Mirtazapine** (less sexual SE); - **Vortioxetine** (less than other SSRI); - **Vilazodone** (less); - **Augmentation/Antidote**: - **Bupropion 150 mg add to SSRI** — moderate evidence reduces sexual SE; - **Sildenafil/PDE5 inhibitor** — effective for ED + female sexual response (limited evidence women); - Buspirone — limited evidence; - Cyproheptadine, mirtazapine — historical; (3) **Drug holiday**: weekend off for short half-life SSRI (sertraline, paroxetine) — controversial, relapse risk; (4) **For women**: flibanserin (FDA approved HSDD — limited efficacy, side effects, alcohol interaction); bremelanotide (subcutaneous PRN); (5) **Behavioral**: couples therapy, sex therapy, communication, alternative intimate behaviors; (6) **Address relationship strain**: couples counseling; (7) **Address other contributors**: relationship dynamics, body image, hormonal (perimenopause), other medical, alcohol, fatigue from depression itself; (8) **Sertraline dose reduction** also reasonable strategy (lowest effective); (9) **Patient priorities** — shared decision; (10) **Multidisciplinary**: psychiatry, primary care, gynecology, urology, sex therapy
+
+---
+
+SSRI Sexual Dysfunction: common (50-70%). Strategies: wait, dose reduce, switch (bupropion, mirtazapine, vortioxetine, vilazodone), augment (bupropion adjunct, PDE5i), drug holiday (controversial). Women: flibanserin/bremelanotide. Address relationship + other contributors. Shared decision.', NULL,
+  'easy', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'APA MDD; Sexual Medicine', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 38 ปี on sertraline 100mg × 1 ปี for MDD (in remission) — new complaint: anorgasmia + decreased libido + marital strain; mood stable, otherwise functioning well
+
+No other medications, no medical illness, healthy relationship pre-medication'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'วัยรุ่นทรานส์อายุ 14 ปี assigned female at birth — long-standing dysphoria with assigned sex, identifies as male × 5 ปี consistently, marked distress + functional impairment, supportive family seeking gender-affirming care evaluation
+
+DSM-5 GD criteria met
+No psychotic features
+Consistent identity over time + across settings', '[{"label":"A","text":"Conversion therapy"},{"label":"B","text":"Gender Dysphoria in Adolescent (DSM-5: marked incongruence between expressed/experienced gender + assigned gender + distress/impairment + ≥ 6 mo; adolescent criteria)"},{"label":"C","text":"Force assigned sex roles"},{"label":"D","text":"Surgery in childhood"},{"label":"E","text":"Ignore identity"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Gender Dysphoria in Adolescent (DSM-5: marked incongruence between expressed/experienced gender + assigned gender + distress/impairment + ≥ 6 mo; adolescent criteria): (1) **Gender-affirming care evidence-based** (WPATH SOC 8th, AAP, Endocrine Society): - **Psychosocial assessment** by experienced clinician — gender identity development, mental health (high comorbidity from minority stress), family support, school environment, persistent + consistent + insistent gender identity; - **NOT ''conversion therapy''** (illegal in many jurisdictions, harmful); (2) **Stepwise**: - **Social transition** (name, pronouns, clothing, presentation) — reversible; - **Puberty suppression** (GnRH agonists — leuprolide, histrelin) at Tanner 2-3 — pauses puberty to allow exploration; reversible; - **Gender-affirming hormones** (testosterone for transmen, estrogen + antiandrogen for transwomen) — partial reversibility; usually 16+; - **Gender-affirming surgery** — typically adult (top surgery may be considered earlier in some); (3) **Mental health**: address minority stress, depression, anxiety, suicide risk (very elevated — × 4-9 cisgender peers; reduced with affirming care); (4) **Family therapy + support**: PFLAG, gender-affirming family support; (5) **School/legal**: name change, school accommodations, sports policies, ID documents; (6) **Long-term follow-up**: bone health (puberty suppression), CV risk (estrogen), fertility preservation discussion, cancer screening; (7) **Multidisciplinary**: pediatric endocrinology, child psychiatry/psychology, primary care, surgery (later), social work, family; (8) **Modern**: depathologize identity itself (DSM-5-TR softened language); gender dysphoria — distress, NOT gender identity itself, is what is treated; (9) **Address minority stress** + societal stigma + advocacy
+
+---
+
+Gender Dysphoria adolescent: evidence-based gender-affirming care (WPATH SOC 8). Stepwise: social → puberty suppression → hormones → surgery (adult). Address minority stress + suicide risk. Family + school support. AVOID conversion therapy. Long-term follow-up. Multidisciplinary.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'peds',
+  'WPATH SOC 8; AAP; Endocrine Society', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'วัยรุ่นทรานส์อายุ 14 ปี assigned female at birth — long-standing dysphoria with assigned sex, identifies as male × 5 ปี consistently, marked distress + functional impairment, supportive family seeking gender-affirming care evaluation
+
+DSM-5 GD criteria met
+No psychotic features
+Consistent identity over time + across settings'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 25 ปี — recurrent isolated sleep paralysis (cannot move at sleep onset/offset) + vivid hypnagogic hallucinations + family hx of sleepwalking + sleep-related eating in adolescence (no longer); functional but anxious about episodes
+
+PSG normal sleep architecture
+No narcolepsy (MSLT normal, no cataplexy)
+No OSA', '[{"label":"A","text":"High-dose benzodiazepine long-term"},{"label":"B","text":"Isolated Sleep Paralysis + History of NREM Parasomnia (sleep paralysis = REM atonia persisting into wake briefly; common — 30% lifetime; benign usually)"},{"label":"C","text":"No discussion"},{"label":"D","text":"Surgery"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Isolated Sleep Paralysis + History of NREM Parasomnia (sleep paralysis = REM atonia persisting into wake briefly; common — 30% lifetime; benign usually): (1) **Education + reassurance** — sleep paralysis common, brief, harmless; episodes self-limited; (2) **Sleep hygiene**: adequate sleep duration, regular schedule, avoid sleep deprivation (triggers), avoid supine sleep (triggers), reduce stress + alcohol + caffeine; (3) **Medication if severe + frequent**: REM-suppressing agents — SSRI (fluoxetine), TCA (clomipramine) — moderate evidence; (4) **NREM parasomnia** (sleepwalking, night terrors, sleep eating, sexsomnia) — different syndrome (first half of night, no recall, no atonia loss): - Sleep hygiene + adequate sleep (reduces); - Safety measures (lock doors, alarms, removing weapons, ground floor); - Address triggers (sleep deprivation, alcohol, fever, stress, medications — zolpidem famous trigger); - Medication if severe + injury risk: clonazepam HS, antidepressant; (5) **Distinguish**: REM parasomnia (RBD — late life, synucleinopathy prodrome) vs NREM parasomnia (childhood + young adult, benign usually); (6) **Sleep study (PSG)** if atypical features, injury, suspected RBD or OSA, possible nocturnal seizure (video EEG); (7) **Comorbidity assessment**: anxiety, depression (high comorbid sleep paralysis), narcolepsy (sleep paralysis component); (8) **Long-term**: usually benign + decreases with age; (9) **Multidisciplinary**: sleep medicine, psychiatry if comorbid anxiety
+
+---
+
+Isolated Sleep Paralysis: common, benign. Education + sleep hygiene first. REM-suppressant (SSRI/TCA) if severe. NREM parasomnia: safety measures + sleep hygiene + clonazepam if injury risk. Distinguish RBD (synucleinopathy prodrome) vs NREM (childhood/young, benign).', NULL,
+  'easy', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'AASM Parasomnia', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 25 ปี — recurrent isolated sleep paralysis (cannot move at sleep onset/offset) + vivid hypnagogic hallucinations + family hx of sleepwalking + sleep-related eating in adolescence (no longer); functional but anxious about episodes
+
+PSG normal sleep architecture
+No narcolepsy (MSLT normal, no cataplexy)
+No OSA'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 32 ปี facing criminal charges (assault) — defense requests competency to stand trial evaluation; patient has schizophrenia, paranoid sx, partially treated; can describe basic court procedure but cannot identify roles of defense vs prosecution + believes attorney working against him + cannot rationally consult with attorney
+
+MSE: alert, oriented x3, but paranoid + delusional content interfering with reality testing', '[{"label":"A","text":"Proceed with trial regardless"},{"label":"B","text":"Two Dusky prongs"},{"label":"C","text":"Auto-NGRI defense"},{"label":"D","text":"Surgery"},{"label":"E","text":"Ignore mental illness"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Competency to Stand Trial Evaluation (Dusky standard — sufficient present ability to consult with attorney with reasonable degree of rational understanding + rational + factual understanding of proceedings against him): (1) **Two Dusky prongs**: - **Factual understanding** of court (charges, roles, plea options, possible outcomes); - **Rational understanding** + ability to consult attorney; (2) **This patient**: factual understanding partial; rational understanding + attorney consultation impaired by paranoid delusions → likely INCOMPETENT; (3) **Recommendation to court**: incompetent to stand trial → restoration treatment; (4) **Restoration**: - Inpatient or outpatient depending on jurisdiction + severity; - Treat underlying disorder (antipsychotic for psychosis); - Education about legal proceedings; - Reassess periodically; - **Sell v United States** ruling — involuntary medication for restoration possible under specific criteria (important government interest, treatment medically appropriate, less intrusive alternatives considered, substantially likely to render competent); (5) **If unrestorable** — civil commitment, charges may be dropped (Jackson v Indiana — cannot indefinitely commit for restoration); (6) **Distinguish competency from**: - **NGRI** (insanity at time of offense — different question); - **Mens rea** (specific intent); - **General psychiatric assessment**; (7) **Forensic evaluator** — specially trained psychiatrist/psychologist; not the treating clinician (boundary); (8) **Report to court** — clear, specific, opinion; (9) **Documentation careful**; (10) **Multidisciplinary**: forensic psychiatry, treating team, attorneys, court
+
+---
+
+Competency to Stand Trial (Dusky): factual + rational understanding + consult attorney. Distinguished from NGRI (time of offense). Restoration treatment (antipsychotic). Sell ruling — involuntary medication for restoration possible. Jackson — cannot indefinitely commit for restoration. Forensic evaluator separate from treating.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'Dusky v US; Sell v US; Jackson v Indiana', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 32 ปี facing criminal charges (assault) — defense requests competency to stand trial evaluation; patient has schizophrenia, paranoid sx, partially treated; can describe basic court procedure but cannot identify roles of defense vs prosecution + believes attorney working against him + cannot rationally consult with attorney
+
+MSE: alert, oriented x3, but paranoid + delusional content interfering with reality testing'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 28 ปี severe schizophrenia + active command auditory hallucinations to harm family + recent threat with knife; refuses voluntary admission + refuses medication; family + ED team requesting involuntary hospitalization
+
+MSE: paranoid, delusional, hallucinations, threatening
+Lacks insight, refuses treatment
+In Thailand: Mental Health Act 2008 applies', '[{"label":"A","text":"Discharge without admission"},{"label":"B","text":"Civil Commitment / Involuntary Hospitalization (criteria vary by jurisdiction; in Thailand — Mental Health Act 2008; general principles)"},{"label":"C","text":"Indefinite commitment without review"},{"label":"D","text":"Surgery"},{"label":"E","text":"Refuse evaluation"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Civil Commitment / Involuntary Hospitalization (criteria vary by jurisdiction; in Thailand — Mental Health Act 2008; general principles): (1) **Standard criteria** (vary by state/country): - **Mental illness** (severe); - **Imminent danger to self or others** OR **grave disability** (unable to care for basic needs); - **Treatment available** that would benefit; - **Least restrictive alternative** considered; (2) **This patient meets criteria** — danger to others, mental illness, treatment available; (3) **Procedure**: - Initial emergency hold (typically 72h US; varies); - Court hearing for extended commitment; - Patient rights: notice, hearing, attorney, appeal; - Due process protections; (4) **Treatment during commitment**: - Antipsychotic + supportive care; - Right to refuse treatment varies: many jurisdictions require additional court order for involuntary medication; - **Less restrictive alternatives** — assertive community treatment, outpatient commitment, partial hospitalization; (5) **Outpatient commitment** (Kendra''s Law in NY, Laura''s Law in CA, AOT — assisted outpatient treatment): involuntary outpatient treatment as alternative or post-discharge; (6) **Discharge planning**: medication adherence, follow-up, family + community supports; (7) **Documentation** — court testimony, certification; (8) **Ethics**: paternalism vs autonomy balance; (9) **Cultural considerations**: stigma, family involvement varies; (10) **Modern**: emphasis on least restrictive + recovery-oriented + supported decision-making; **multidisciplinary**: psychiatry, social work, legal, family
+
+---
+
+Civil Commitment: mental illness + imminent danger or grave disability + treatment available + least restrictive. Emergency hold → court hearing. Due process. Right to refuse medication (may require separate order). Outpatient commitment alternative. Modern: recovery-oriented + least restrictive.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'Mental Health Act Thailand 2008; APA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 28 ปี severe schizophrenia + active command auditory hallucinations to harm family + recent threat with knife; refuses voluntary admission + refuses medication; family + ED team requesting involuntary hospitalization
+
+MSE: paranoid, delusional, hallucinations, threatening
+Lacks insight, refuses treatment
+In Thailand: Mental Health Act 2008 applies'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 40 ปี acute psychiatric ED — severe agitation + threatening; patient hx unknown (no records); refuses cooperation; staff + patient safety at risk; verbal de-escalation attempted but failed
+
+No IV access
+Unknown medical history
+No intoxication confirmed but possible', '[{"label":"A","text":"Restraints first-line without verbal de-escalation"},{"label":"B","text":"Acute Agitation Management — Stepwise"},{"label":"C","text":"High-dose multiple agents combination immediately"},{"label":"D","text":"Surgery"},{"label":"E","text":"Discharge without intervention"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Acute Agitation Management — Stepwise: (1) **Verbal de-escalation first** — Project BETA (Best practices in Evaluation + Treatment of Agitation): - Respect personal space; - Calm, low voice, non-threatening; - Active listening; - Brief, simple language; - Offer choices; - Identify needs + wants; (2) **Environmental**: reduce stimuli, remove weapons/objects, escape route preserved, others'' safety, calm setting if possible; (3) **Show of force** — security presence; (4) **Voluntary medication offered first**: - Oral options: lorazepam, haloperidol, olanzapine, risperidone; - Oral disintegrating tablets (asenapine, olanzapine ODT); - Inhaled loxapine (rapid); (5) **IM medication if necessary** + patient cannot accept oral: - **Lorazepam 1-2 mg IM** (no IV needed); - **Haloperidol 5 mg IM** (extrapyramidal risk; QTc); - **Combined Haldol + Ativan + Benadryl (''B-52'')** historical; - **Olanzapine 10 mg IM** (caution with concurrent BZD — hypotension); - **Ziprasidone 20 mg IM** (QTc); - **Droperidol** (faster, more sedating, QTc warning historically); (6) **AVOID IM in known causes when oral possible**; (7) **Restraint last resort** — least restrictive principle; if needed: appropriate technique, time-limited, frequent reassessment, debriefing afterwards; (8) **After acute**: investigate cause (delirium, intoxication, psychiatric, medical); cannot give appropriate treatment until cause known; (9) **Documentation**: behaviors, interventions, response; (10) **Trauma-informed**: many patients have trauma history — restraint can retraumatize; debrief afterward; (11) **Special populations**: pregnancy (lorazepam, haloperidol relatively safer; avoid valproate), pediatrics (lower doses, oral), elderly (avoid BZD if possible — lower antipsychotic dose, watch QTc, falls), known long QTc
+
+---
+
+Agitation Management (Project BETA): verbal de-escalation first → voluntary medication → IM if needed → restraint last resort. Lorazepam, haloperidol, olanzapine, ziprasidone IM options. Cause-specific treatment after acute control. Trauma-informed. Special populations (pregnancy, peds, elderly).', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'Project BETA; Allen ED Consensus', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 40 ปี acute psychiatric ED — severe agitation + threatening; patient hx unknown (no records); refuses cooperation; staff + patient safety at risk; verbal de-escalation attempted but failed
+
+No IV access
+Unknown medical history
+No intoxication confirmed but possible'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 35 ปี on fluoxetine 40mg + recent addition of tramadol for pain — มาด้วย acute confusion, agitation, hyperreflexia, clonus (inducible + spontaneous, lower extremities), diaphoresis, hyperthermia 39.5°C, tachycardia 130, hypertension, dilated pupils, GI sx (nausea, diarrhea)
+
+No recent muscle rigidity (no lead-pipe), no encephalopathy beyond confusion
+CK mildly elevated
+Hunter criteria met', '[{"label":"A","text":"Continue medications"},{"label":"B","text":"Discontinue serotonergic agents immediately"},{"label":"C","text":"Antipsychotic for agitation"},{"label":"D","text":"Bromocriptine"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Serotonin Syndrome (excess serotonergic activity; combinations of SSRIs + MAOI, tramadol, linezolid, methylene blue, triptans, dextromethorphan, lithium, St John''s wort, MDMA — high risk) — Hunter Criteria: serotonergic agent + clonus (spontaneous, inducible, ocular) ± agitation, sweating, tremor, hyperreflexia, hyperthermia; (1) **Discontinue serotonergic agents immediately** (fluoxetine + tramadol here); (2) **Supportive care**: - IV fluid resuscitation; - **Cooling** for hyperthermia (active cooling, intubation + paralysis if T > 41°C — neuromuscular blockade with non-depolarizing); - Cardiac monitoring; - Monitor for rhabdomyolysis, DIC, renal failure; (3) **Benzodiazepine** (lorazepam, diazepam) — sedation + reduce muscle activity + reduce CV sx + first-line agent; (4) **Cyproheptadine** (oral 5-HT2A antagonist) — antidote; initial 12 mg then 2 mg q2h until response; max 32 mg/d; (5) **AVOID**: physical restraint without paralysis (worsens hyperthermia + rhabdo); bromocriptine (worsens — dopamine, not serotonin); dantrolene controversial; antipyretics (centrally mediated, not effective); (6) **Distinguish from NMS** (similar features but: rigidity lead-pipe, hyporeflexia, slow onset, antipsychotic context vs serotonin syndrome: clonus, hyperreflexia, GI, rapid onset, serotonergic context); (7) **Most cases resolve 24h** with cessation + supportive; severe can be fatal; (8) **Education + medical alert** + careful future medication; (9) **Multidisciplinary**: emergency, ICU, psychiatry, pharmacy; (10) **Especially watch combinations**: SSRI + tramadol, SSRI + linezolid, SSRI + MAOI (washout period 14 d for irreversible MAOI; 5 wk fluoxetine)
+
+---
+
+Serotonin Syndrome: serotonergic agents + Hunter criteria (clonus, hyperreflexia, autonomic, GI). Discontinue → supportive + cooling + benzodiazepine + cyproheptadine antidote. Distinguish from NMS (rigidity, hyporeflexia, antipsychotic). SSRI + tramadol classic. Washout MAOI 14d (5wk fluoxetine).', NULL,
+  'hard', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'Boyer NEJM Serotonin Syndrome; Hunter Criteria', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 35 ปี on fluoxetine 40mg + recent addition of tramadol for pain — มาด้วย acute confusion, agitation, hyperreflexia, clonus (inducible + spontaneous, lower extremities), diaphoresis, hyperthermia 39.5°C, tachycardia 130, hypertension, dilated pupils, GI sx (nausea, diarrhea)
+
+No recent muscle rigidity (no lead-pipe), no encephalopathy beyond confusion
+CK mildly elevated
+Hunter criteria met'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'วัยรุ่นชายอายุ 16 ปี — recreational ingestion ของ diphenhydramine 30 tablets — มา ED ด้วย delirium + visual hallucinations + flushed dry skin + dilated pupils + dry mucous membranes + urinary retention + tachycardia 130 + hyperthermia 38.5°C + bowel sounds absent
+
+ECG: sinus tachycardia, QRS narrow
+''Hot as a hare, dry as a bone, red as a beet, mad as a hatter, blind as a bat, full as a flask''', '[{"label":"A","text":"Haloperidol IM for agitation"},{"label":"B","text":"Anticholinergic Toxicity (diphenhydramine, antipsychotic, TCA, scopolamine, jimson weed, oxybutynin, benztropine, atropine — additive)"},{"label":"C","text":"Discharge home"},{"label":"D","text":"Surgery"},{"label":"E","text":"TCA-style sodium bicarbonate without TCA"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Anticholinergic Toxicity (diphenhydramine, antipsychotic, TCA, scopolamine, jimson weed, oxybutynin, benztropine, atropine — additive): (1) **Decontamination**: - Activated charcoal if within 1-2h ingestion + intact airway; - Gastric lavage rarely; - Cardiac monitoring; (2) **Supportive care**: - IV fluids; - **Cooling** for hyperthermia; - Foley if urinary retention; - Treat agitation with **benzodiazepine** (not haloperidol — anticholinergic + lowers seizure threshold); (3) **Physostigmine** (centrally acting acetylcholinesterase inhibitor) — antidote for severe anticholinergic delirium + agitation; - **Indications**: severe agitation + delirium + hallucinations + tachycardia not responsive to BZD; - **Dose**: 0.5-2 mg slow IV with cardiac monitoring; can repeat; - **Contraindications**: TCA overdose (wide QRS — risk asystole, seizure; sodium bicarbonate for TCA), bradycardia, conduction blocks, asthma/COPD, bowel obstruction; - **Side effects**: bradycardia, bronchospasm, seizures, cholinergic crisis (atropine antidote available); (4) **Watch for cardiac**: anticholinergic-induced arrhythmia, especially with TCA component; (5) **TCA overdose specifically** — wide QRS (Na channel blockade) — **sodium bicarbonate** to widen Na gradient, narrow QRS; serum alkalinization; (6) **Distinguish from**: sympathomimetic (sweating + bowel sounds + mydriasis — but moist not dry), sedative-hypnotic, serotonin syndrome, NMS, opioid withdrawal; (7) **Monitor**: cardiac, hyperthermia, rhabdomyolysis, mental status; (8) **Psychiatric eval after medical stabilization** — intentional overdose suicide risk vs accidental vs recreational; (9) **Multidisciplinary**: emergency, toxicology (poison control), psychiatry, ICU if severe; (10) **Disposition**: medical stabilization + psychiatric admission if suicidal + addiction if recreational pattern
+
+---
+
+Anticholinergic Toxicity: mad/hot/dry/red/blind/full. Supportive + benzodiazepine. Physostigmine for severe delirium + agitation (NOT in TCA overdose — wide QRS asystole risk). TCA overdose: sodium bicarbonate. Distinguish from sympathomimetic, serotonin syndrome. Psychiatric eval after stabilization.', NULL,
+  'hard', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'ACMT; Boyer Toxicology', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'วัยรุ่นชายอายุ 16 ปี — recreational ingestion ของ diphenhydramine 30 tablets — มา ED ด้วย delirium + visual hallucinations + flushed dry skin + dilated pupils + dry mucous membranes + urinary retention + tachycardia 130 + hyperthermia 38.5°C + bowel sounds absent
+
+ECG: sinus tachycardia, QRS narrow
+''Hot as a hare, dry as a bone, red as a beet, mad as a hatter, blind as a bat, full as a flask'''
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 40 ปี on paroxetine 40 mg × 2 ปี (depression in remission), self-discontinued 5 วันก่อนเพราะลืมยา — มาด้วย dizziness, electric shock sensations (brain zaps), nausea, vivid dreams, irritability, flu-like symptoms, anxiety; not depression relapse
+
+No other medical cause', '[{"label":"A","text":"Diagnose as depression relapse + increase dose"},{"label":"B","text":"FINISH mnemonic"},{"label":"C","text":"Continue cold-turkey"},{"label":"D","text":"Surgery"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** SSRI/SNRI Discontinuation Syndrome (esp short half-life agents — paroxetine, venlafaxine, fluvoxamine, duloxetine, sertraline — not fluoxetine due to long half-life; not addictive — physiologic adaptation): (1) **FINISH mnemonic**: **F**lu-like symptoms, **I**nsomnia/vivid dreams, **N**ausea, **I**mbalance/dizziness, **S**ensory disturbance (brain zaps, paresthesias), **H**yperarousal/anxiety; (2) **Onset**: 1-7 days after discontinuation; typically resolves 1-3 weeks; (3) **Treatment**: - **Restart at previous dose** then **taper gradually**; - Switch to long half-life agent (fluoxetine) then taper from there; - For severe — symptom-targeted (anti-nausea, dimenhydrinate for vertigo, short-term sleep aid); (4) **Prevention**: - Slow taper over weeks-months (especially long-term use, high dose, prior discontinuation issues); - Patient education at prescribing; - Hyperbolic tapering — smaller proportional reductions at lower doses (1mg + 0.5mg increments for paroxetine at end); - Avoid abrupt cessation; (5) **Distinguish from depression relapse**: - Discontinuation: physical sx (flu-like, dizziness, brain zaps), rapid onset days after stopping, resolves with restart; - Relapse: gradual reemergence of original depression sx, longer; (6) **Education**: not addiction, physiologic; importance of adherence + planned discontinuation; (7) **Risk factors**: short half-life agent, longer duration of treatment, higher dose, anxious sensitivity; (8) **Multidisciplinary**: prescriber + patient communication; (9) **Long-term discontinuation strategies** — increasing evidence base for very slow tapers (months-years) for some patients
+
+---
+
+SSRI Discontinuation Syndrome: FINISH (flu-like, insomnia, nausea, imbalance, sensory zaps, hyperarousal). Short half-life > long. Restart + taper gradually OR switch to fluoxetine. Hyperbolic tapering. Distinguish from relapse. NOT addiction.', NULL,
+  'easy', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'FINISH mnemonic; Horowitz Hyperbolic tapering', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 40 ปี on paroxetine 40 mg × 2 ปี (depression in remission), self-discontinued 5 วันก่อนเพราะลืมยา — มาด้วย dizziness, electric shock sensations (brain zaps), nausea, vivid dreams, irritability, flu-like symptoms, anxiety; not depression relapse
+
+No other medical cause'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 28 ปี intentional overdose amitriptyline 50 tablets 2 ชั่วโมงก่อน — มาด้วย CNS depression, seizure × 1, anticholinergic features, hypotension, tachycardia
+
+ECG: sinus tachycardia, QRS 160 ms (wide), R wave in aVR > 3 mm
+3 R''s: Rightward R wave aVR, Right axis deviation', '[{"label":"A","text":"Phenytoin for seizure"},{"label":"B","text":"Tricyclic Antidepressant Overdose — High Mortality (cardiac toxicity Na channel blockade, anticholinergic, alpha-blockade, serotonin/norepinephrine, GABA-A)"},{"label":"C","text":"Procainamide for arrhythmia"},{"label":"D","text":"Physostigmine"},{"label":"E","text":"Discharge home"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Tricyclic Antidepressant Overdose — High Mortality (cardiac toxicity Na channel blockade, anticholinergic, alpha-blockade, serotonin/norepinephrine, GABA-A): (1) **ABC + Cardiac monitoring** — intubation if obtunded; (2) **IV access, fluids**; (3) **Sodium bicarbonate** — backbone of treatment: - For QRS > 100 ms, ventricular arrhythmia, hypotension; - 1-2 mEq/kg bolus → infusion to maintain pH 7.45-7.55; - Mechanism: Na load + alkalosis displaces TCA from Na channels; - Monitor serum bicarbonate, K, Na, pH; (4) **Activated charcoal** if within 1-2h + intact airway (controversial benefit but consider); (5) **Seizure** — benzodiazepine; AVOID phenytoin (Na channel blocker — worsens); (6) **Hypotension** — IV fluid first, then norepinephrine (preferred — vs dopamine which is partially indirect — less effective when norepinephrine depleted); (7) **Arrhythmia**: - Wide QRS + ventricular arrhythmia → sodium bicarbonate; - AVOID class IA antiarrhythmics (procainamide, quinidine — Na channel — worsen); - **Lidocaine** acceptable for refractory; - Magnesium for torsades; - Lipid emulsion therapy considered for refractory; - **Intralipid** (lipid sink — moves TCA out of cardiac tissue); - ECMO last resort; (8) **Avoid**: physostigmine (asystole risk), flumazenil (seizure), class IA antiarrhythmic; (9) **Disposition**: ICU; minimum 6h observation if asymptomatic with normal QRS; longer if any signs; (10) **Psychiatric evaluation after stabilization** — suicide attempt; (11) **Long-term**: rethink TCA prescribing for suicidal patients (lethal overdose vs SSRI safer); limit dispensing; (12) **Multidisciplinary**: emergency, ICU, toxicology, psychiatry
+
+---
+
+TCA Overdose: cardiac toxicity (wide QRS, R in aVR). Sodium bicarbonate backbone. Benzodiazepine for seizure (NOT phenytoin — Na blocker). Norepinephrine for hypotension. AVOID class IA antiarrhythmic + physostigmine + flumazenil. Lipid emulsion for refractory. ICU. Psych eval after stabilization.', NULL,
+  'hard', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'ACMT; Levine TCA Toxicology', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 28 ปี intentional overdose amitriptyline 50 tablets 2 ชั่วโมงก่อน — มาด้วย CNS depression, seizure × 1, anticholinergic features, hypotension, tachycardia
+
+ECG: sinus tachycardia, QRS 160 ms (wide), R wave in aVR > 3 mm
+3 R''s: Rightward R wave aVR, Right axis deviation'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'หญิงไทยอายุ 30 ปี × longstanding (childhood) — distinct identity states (alters) recurrently take control of behavior, amnesia for events when alter present, severe childhood physical + sexual abuse documented; functional impairment + distress; comorbid PTSD, depression, self-harm
+
+MSE: cooperative, dissociative episodes during sessions, alter introductions occur
+Not due to substance/medical/cultural/religious practice (specific exclusions DSM-5)', '[{"label":"A","text":"Confront alters directly"},{"label":"B","text":"Dissociative Identity Disorder (DID — DSM-5: ≥ 2 distinct personality states + recurrent gaps in recall + symptoms cause distress; not cultural/religious)"},{"label":"C","text":"Single-session treatment"},{"label":"D","text":"Surgery"},{"label":"E","text":"No treatment"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Dissociative Identity Disorder (DID — DSM-5: ≥ 2 distinct personality states + recurrent gaps in recall + symptoms cause distress; not cultural/religious): (1) **Trauma-focused phase-based treatment** (ISSTD Guidelines): - **Phase 1 — Safety + Stabilization**: skills (grounding, distress tolerance, emotion regulation), safety planning, address self-harm, build alliance, psychoeducation; - **Phase 2 — Trauma processing**: gradual exposure to trauma memories + integration; - **Phase 3 — Integration + Rehabilitation**: integration of identity states OR functional cooperation; reduce dissociation; daily life; (2) **Psychotherapy primary** — long-term (years); specialized training in DID; (3) **Address comorbidity**: PTSD (always present essentially), depression, self-harm, substance use, eating disorders; (4) **Medication symptomatic**: SSRI for depression/PTSD/anxiety; prazosin for nightmares; sleep agents; AVOID benzodiazepines long-term (worsen dissociation + dependence in trauma population); (5) **Safety planning** + self-harm + suicide risk (high); hospitalization for crisis (brief); (6) **AVOID**: - Iatrogenic creation of alters (controversial — high suggestibility); - Confronting alters; - Hypnosis without specialized training; (7) **Family/relationship**: education, support, sometimes couples therapy; (8) **DID controversial historically** — increasing acceptance + validity; under-diagnosis common (vs over-diagnosis controversy in 1990s); (9) **Distinguish from**: - Borderline PD (overlap exists but DID has distinct identity states + amnesia); - Schizophrenia (psychotic, no distinct identities); - Malingering (validity assessment); - Iatrogenic (avoid through careful technique); - Cultural possession states (different); (10) **Multidisciplinary**: trauma-specialized psychiatry + therapy
+
+---
+
+Dissociative Identity Disorder: trauma-focused phase-based treatment (ISSTD): safety/stabilization → trauma processing → integration. Long-term specialized therapy. SSRI for comorbidity. AVOID BZD + iatrogenic alter creation. Distinguish from BPD, psychosis, malingering. Trauma history universal.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'ISSTD DID Guidelines', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'หญิงไทยอายุ 30 ปี × longstanding (childhood) — distinct identity states (alters) recurrently take control of behavior, amnesia for events when alter present, severe childhood physical + sexual abuse documented; functional impairment + distress; comorbid PTSD, depression, self-harm
+
+MSE: cooperative, dissociative episodes during sessions, alter introductions occur
+Not due to substance/medical/cultural/religious practice (specific exclusions DSM-5)'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ชายไทยอายุ 22 ปี × 18 เดือน — persistent depersonalization (detached from own body, observing self from outside, emotional numbing, feeling unreal) + derealization (world feels foggy, dreamlike) — intact reality testing throughout; distress + functional impairment
+
+No psychotic features, no substance use
+No significant trauma history identified
+PHQ-9: 12 (moderate depression — secondary)', '[{"label":"A","text":"High-dose benzodiazepine long-term"},{"label":"B","text":"Depersonalization/Derealization Disorder (DSM-5: persistent or recurrent depersonalization + derealization + intact reality testing + distress/impairment + not substance/medical/other psychiatric)"},{"label":"C","text":"Cannabis to cope"},{"label":"D","text":"Surgery"},{"label":"E","text":"Antibiotic"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Depersonalization/Derealization Disorder (DSM-5: persistent or recurrent depersonalization + derealization + intact reality testing + distress/impairment + not substance/medical/other psychiatric): (1) **Limited evidence base** + chronic condition: (2) **Psychotherapy first-line**: - **CBT** — grounding techniques, cognitive restructuring, addressing catastrophic interpretation of sx, behavioral activation; - **Psychodynamic** for trauma history; - **Mindfulness-based** approaches; - Specialized DPD programs limited but emerging; (3) **Medication**: - **SSRI** (especially with comorbid depression/anxiety/OCD) — modest evidence; fluoxetine, fluvoxamine; - **Lamotrigine** (off-label, modest evidence — small trials); - **Naltrexone** (off-label, mechanism unclear, some evidence); - **AVOID**: benzodiazepines (worsen depersonalization); cannabis (often triggers/worsens — patient education); (4) **Address triggers/precipitants**: panic attacks, substance use (cannabis especially), trauma, stress, sleep deprivation; (5) **Address comorbidity**: depression (60%), anxiety, OCD, PTSD; (6) **Education**: depersonalization is a recognized condition; symptoms can wax + wane; reduce catastrophic interpretation; not psychosis; not ''going crazy''; (7) **Avoid**: substance use, cannabis, hyperventilation; (8) **Self-help groups + online resources**; (9) **Distinguish from**: - Panic attack (DPD episodes brief); - Psychosis (reality testing intact in DPD); - PTSD (dissociation in trauma context); - Schizophrenia (no hallucinations/delusions); - Substance-induced (especially cannabis); (10) **Long-term**: chronic but partial improvement common with treatment; (11) **Multidisciplinary**: psychiatry + psychotherapy
+
+---
+
+Depersonalization/Derealization Disorder: persistent + intact reality testing. CBT + grounding first-line. SSRI for comorbid. Lamotrigine modest evidence. AVOID benzodiazepines + cannabis (worsen). Address triggers. Education. Distinguish from psychosis, panic, PTSD, substance.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'clinical_decision', 'psych_behavior', 'adult',
+  'DSM-5-TR; Simeon DPD', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'ชายไทยอายุ 22 ปี × 18 เดือน — persistent depersonalization (detached from own body, observing self from outside, emotional numbing, feeling unreal) + derealization (world feels foggy, dreamlike) — intact reality testing throughout; distress + functional impairment
+
+No psychotic features, no substance use
+No significant trauma history identified
+PHQ-9: 12 (moderate depression — secondary)'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง dopamine pathways + clinical relevance ใน schizophrenia treatment', '[{"label":"A","text":"Single pathway"},{"label":"B","text":"Four Major Dopamine Pathways + Clinical Implications"},{"label":"C","text":"No clinical relevance"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Four Major Dopamine Pathways + Clinical Implications: (1) **Mesolimbic** (VTA → nucleus accumbens, limbic): - Positive symptoms of schizophrenia (hyperdopaminergic — hallucinations, delusions); - D2 blockade by antipsychotic → therapeutic effect on positive sx; - Reward circuit — addiction pathophysiology; substance use → DA release; (2) **Mesocortical** (VTA → prefrontal cortex): - Hypodopaminergic in schizophrenia → negative + cognitive sx (alogia, avolition, executive dysfunction); - Typical antipsychotics worsen mesocortical further (D2 blockade) → worsen negative + cognitive; - Atypical antipsychotics (5-HT2A antagonism) increase DA release in mesocortical → less worsening of negative; (3) **Nigrostriatal** (substantia nigra → striatum/basal ganglia): - Motor control; - D2 blockade → EPS (acute dystonia, akathisia, parkinsonism, tardive dyskinesia); - Parkinson''s disease — neurodegeneration → motor sx; - Typical antipsychotics > atypical for EPS risk; (4) **Tuberoinfundibular** (hypothalamus → pituitary): - Tonic dopamine inhibits prolactin release; - D2 blockade → hyperprolactinemia (amenorrhea, galactorrhea, sexual dysfunction, gynecomastia, bone loss); - Risperidone, paliperidone, haloperidol highest prolactin elevation; - Aripiprazole partial agonist often LOWERS prolactin; (5) **Clinical**: balance therapeutic mesolimbic D2 blockade with side effects in other pathways = challenge of antipsychotic treatment; atypicals + partial agonists (aripiprazole, brexpiprazole, cariprazine) try to selectively modulate
+
+---
+
+Dopamine pathways: mesolimbic (positive sx, D2 blockade therapeutic), mesocortical (negative/cognitive sx, hypodopaminergic), nigrostriatal (EPS), tuberoinfundibular (prolactin). Atypicals + partial agonists try selective modulation.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'Stahl Essential Psychopharmacology; Nestler Mol Neurosci', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง dopamine pathways + clinical relevance ใน schizophrenia treatment'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง serotonin receptors + therapeutic relevance', '[{"label":"A","text":"Single receptor"},{"label":"B","text":"Serotonin (5-HT) Receptors + Clinical Implications"},{"label":"C","text":"No relevance"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Serotonin (5-HT) Receptors + Clinical Implications: (1) **5-HT1A**: - Partial agonist anxiolytic (buspirone), antidepressant adjunct (aripiprazole, brexpiprazole partial agonist, vilazodone, vortioxetine partial agonist component); - Autoreceptor (somatodendritic) initially decreases serotonin → adaptation explains 4-6 wk delay of SSRI; (2) **5-HT1B/1D**: triptans for migraine (vasoconstriction, neuromodulation); (3) **5-HT2A**: - Antagonism → antipsychotic atypical effect (clozapine, risperidone, olanzapine, quetiapine etc.) — reduces EPS + improves negative sx (by increasing dopamine mesocortical); - Inverse agonist pimavanserin for PD psychosis (no D2 effect); - Hallucinogens (LSD, psilocybin, DMT) = 5-HT2A agonists → therapeutic potential research (depression, PTSD, addiction, end-of-life distress); - Sleep architecture (5-HT2A antagonist increases slow-wave sleep — trazodone, mirtazapine); (4) **5-HT2C**: - Antagonism → weight gain (olanzapine, clozapine, mirtazapine — significant metabolic SE); - Agonist lorcaserin (withdrawn — cancer signal) for weight loss historical; (5) **5-HT3**: - Antagonist antiemetic (ondansetron) — also mirtazapine 5-HT3 antagonist (anti-nausea + appetite increase); (6) **5-HT6**: cognition research target; (7) **5-HT7**: vortioxetine partial; circadian rhythms, mood; (8) **SSRI mechanism**: increased synaptic 5-HT → downstream effects on multiple receptors → adaptation over weeks → BDNF + neuroplasticity hypothesis of clinical effect; (9) **Serotonin syndrome**: excess from MULTIPLE serotonergic agents; (10) **Modern psychedelic research**: psilocybin (5-HT2A agonist) FDA breakthrough for TRD
+
+---
+
+Serotonin receptors: 5-HT1A (anxiolytic, autoreceptor SSRI delay), 5-HT2A (atypical antipsychotic, hallucinogen, sleep), 5-HT2C (weight), 5-HT3 (antiemetic), 5-HT6/7 (research). SSRI mechanism: increased 5-HT → BDNF + neuroplasticity. Psychedelic research expanding.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'Stahl; Nichols 5-HT2A Psychedelics', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง serotonin receptors + therapeutic relevance'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง HPA axis + stress + psychiatric disorders', '[{"label":"A","text":"No HPA relevance"},{"label":"B","text":"HPA Axis Stress Response + Psychiatric Disorders"},{"label":"C","text":"Single hormone"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** HPA Axis Stress Response + Psychiatric Disorders: (1) **HPA axis**: hypothalamus → CRH → pituitary → ACTH → adrenal cortex → cortisol; negative feedback on hypothalamus + pituitary; circadian rhythm (peak AM, trough PM); (2) **Depression**: - HPA dysregulation common — elevated cortisol, blunted DST suppression, blunted CRH stimulation response; - Dexamethasone Suppression Test (DST) — historical research tool; not clinical diagnostic; - Chronic elevation contributes to hippocampal atrophy + neurodegenerative changes; - Mechanism partial — antidepressants normalize HPA over weeks (correlates with response); (3) **Anxiety disorders**: dysregulated HPA — both hyper- + hypo-cortisol patterns described; (4) **PTSD**: paradoxically LOW cortisol + enhanced feedback sensitivity (Yehuda); abnormal stress response; cortisol low pre-trauma may predispose to PTSD; (5) **Childhood trauma**: alters HPA axis development → lifelong dysregulation; epigenetic effects; (6) **Cushing''s syndrome** (hypercortisolism): - 50-80% develop psychiatric sx — depression most common, also mania/hypomania, psychosis, anxiety, cognitive; - Treat underlying Cushing''s; - Steroid-induced psychiatric sx — common with exogenous steroids (prednisone) — depression, mania, psychosis, especially > 40mg prednisone equivalent; (7) **Addison''s** (hypocortisolism): apathy, depression, fatigue, irritability; (8) **Premenstrual + postpartum hormonal**: estrogen + progesterone fluctuations affect mood (PMDD, postpartum mood disorders); (9) **Thyroid**: hyperthyroid — anxiety, mania; hypothyroid — depression, cognitive; (10) **Modern**: glucocorticoid receptor antagonism research (mifepristone for psychotic depression — limited evidence); (11) **Inflammation hypothesis**: HPA + inflammation interactions — cytokines, depression-inflammation link
+
+---
+
+HPA Axis: depression → hyper-cortisol, PTSD → low cortisol, childhood trauma → lifelong dysregulation. Cushing''s → 50-80% psychiatric sx. Steroid-induced. Hormonal psychiatry (PMDD, postpartum, thyroid). Inflammation hypothesis.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'Yehuda HPA PTSD; Sapolsky', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง HPA axis + stress + psychiatric disorders'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง CYP450 + psychiatric pharmacology + drug interactions', '[{"label":"A","text":"No relevance"},{"label":"B","text":"Cytochrome P450 in Psychiatric Pharmacology"},{"label":"C","text":"Single enzyme"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Cytochrome P450 in Psychiatric Pharmacology: (1) **Key CYPs**: - **CYP2D6**: most psychotropic — TCA, many SSRI, antipsychotic (haloperidol, risperidone), opioids (codeine, tramadol activation); polymorphism — poor → ultra-rapid metabolizers; - **CYP3A4**: most drugs metabolized; many psychotropic; - **CYP1A2**: clozapine, olanzapine, fluvoxamine, caffeine; induced by smoking — clozapine levels drop when smoking, increase if quit; - **CYP2C19**: citalopram, escitalopram, sertraline, diazepam, omeprazole; - **CYP2B6**: bupropion, methadone; (2) **Strong inhibitors** (raise levels of substrates): - **Fluoxetine, paroxetine, bupropion** = strong CYP2D6 inhibitors — can elevate TCAs, antipsychotics; reduce tamoxifen activation (consider in breast cancer); - **Fluvoxamine** = strong CYP1A2 inhibitor — clozapine level increases; CYP2C19 inhibitor; - **Nefazodone** = CYP3A4 inhibitor; - **Grapefruit juice** = CYP3A4 inhibitor; (3) **Inducers** (reduce levels): - **Carbamazepine, phenytoin, phenobarbital, rifampin, St John''s wort, smoking (CYP1A2)** — induce; - Reduce OCP, antidepressants, antipsychotics; (4) **Clinical examples**: - **Fluoxetine + tamoxifen** → reduced endoxifen → reduced efficacy in breast cancer (avoid); - **Clozapine + smoking change** → unpredictable levels; - **Methadone + induce** → withdrawal; - **SSRI + tramadol** → serotonin syndrome + reduced analgesia (tramadol activation via 2D6); - **Carbamazepine OCP** → contraception failure; (5) **Pharmacogenomics**: - **CYP2D6 + CYP2C19** genotyping commercially available; - Useful in TRD, polypharmacy, treatment-resistant; - **GeneSight, others**; - Evidence mixed for clinical outcomes; (6) **Drug-drug interaction databases**: Liverpool HIV interactions; Lexi-Interact; Epocrates
+
+---
+
+P450 in psychiatry: 2D6 (many psychotropic, fluoxetine/paroxetine/bupropion inhibit), 3A4 (most drugs), 1A2 (clozapine, smoking induces), 2C19 (citalopram). Inducers (carbamazepine, smoking) → reduce levels. Pharmacogenomics emerging. Drug interactions critical.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'Stahl; Flockhart P450', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง CYP450 + psychiatric pharmacology + drug interactions'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง genetics of psychiatric disorders', '[{"label":"A","text":"No genetic basis"},{"label":"B","text":"Genetics of Psychiatric Disorders"},{"label":"C","text":"Single gene model"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Genetics of Psychiatric Disorders: (1) **Heritability** (twin studies): - Schizophrenia ~ 80%; - Bipolar ~ 70-80%; - Autism ~ 80%; - ADHD ~ 75%; - MDD ~ 35-40%; - Anxiety ~ 30-40%; - Substance use ~ 50%; - Pierce psychiatric disorders have substantial heritability; (2) **Polygenic architecture**: - Most psychiatric disorders polygenic — many genes of small effect; - No single ''depression gene'' or ''schizophrenia gene''; - Polygenic Risk Scores (PRS) — research utility; clinical utility limited; (3) **Rare highly penetrant variants**: - **22q11.2 deletion** (DiGeorge) — schizophrenia + intellectual disability + cardiac + immune; - **Fragile X** (FMR1 CGG repeats) — ID + autism features; - **CNVs** (copy number variants) — schizophrenia + autism + ID; (4) **Single gene Mendelian — neuropsychiatric**: - **Huntington''s** (HTT CAG repeats, AD); - **Wilson''s** (ATP7B, AR — copper, psychiatric sx); - **Inborn errors metabolism**; - **Alpha-synuclein, parkin, LRRK2** (familial PD); - **PSEN1/2, APP** (familial AD); - **C9orf72, GRN, MAPT** (FTD); (5) **Gene-environment interaction**: - Diathesis-stress model; - Examples: 5-HTTLPR + life stress + depression (Caspi — controversial); MAOA + childhood maltreatment + antisocial; - Epigenetic mechanisms — methylation, histone modification; childhood trauma → lasting epigenetic changes; (6) **GWAS findings**: - Schizophrenia >> 100 loci identified — including MHC region; - Cross-disorder shared genetics (schizophrenia + BP + depression overlap substantial); (7) **Clinical genetics**: - **Family history** essential; - **Genetic counseling** for: hereditary disorders (HD, AD familial), 22q11, family planning, pregnancy decisions; - Pharmacogenomic testing — CYP variants; - Whole exome sequencing — research + selected clinical (ID, autism + features); (8) **Modern**: precision psychiatry — individualized treatment based on genetics + biomarkers + clinical features — aspiration, evolving
+
+---
+
+Psychiatric genetics: high heritability (schizophrenia 80%, bipolar 70-80%). Polygenic — many genes small effect. Rare highly penetrant variants (22q11, Fragile X, CNVs). GxE + epigenetics (trauma). GWAS findings. Cross-disorder shared genetics. Pharmacogenomics + precision psychiatry emerging.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'PGC GWAS; Caspi GxE', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง genetics of psychiatric disorders'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง neuroplasticity + BDNF + relevance to psychiatric treatment', '[{"label":"A","text":"No plasticity adults"},{"label":"B","text":"Neuroplasticity + BDNF + Psychiatric Treatment"},{"label":"C","text":"Single mechanism"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Neuroplasticity + BDNF + Psychiatric Treatment: (1) **BDNF (Brain-Derived Neurotrophic Factor)**: - Promotes neuronal survival, synaptogenesis, dendritic growth, neurogenesis (limited adult — hippocampus, olfactory); - Hippocampal levels reduced in depression; - Stress + corticosteroids reduce BDNF; - Antidepressants (chronic) increase BDNF — partial mechanism + correlates with response; (2) **Ketamine + rapid antidepressants**: - NMDA receptor antagonism → glutamate burst → BDNF release → rapid synaptogenesis; - Hours-to-days antidepressant effect (vs weeks for SSRI); - Sustained effect 1-2 weeks; - Mechanism = rapid synaptic remodeling; (3) **Psychedelics + plasticity**: - Psilocybin, DMT, LSD = 5-HT2A agonists → rapid + lasting synaptogenesis + dendritic growth; - ''Psychoplastogens'' — Olson; - Single or few doses sustained effect (months); - Combine with psychotherapy critical for clinical benefit; (4) **ECT**: - Mechanism not fully understood; - Increases BDNF + neurogenesis; - Most effective antidepressant; (5) **Exercise**: - Aerobic exercise increases BDNF; - Antidepressant effect; (6) **Stress + depression**: - Chronic stress → hippocampal atrophy + dendritic retraction; - Reversible with treatment + recovery; (7) **Cognitive behavioral therapy**: - Functional brain changes — neuroplasticity in service of new learning; - Equivalent to medication for many disorders; (8) **CNS regeneration limited** vs PNS — most therapeutic neuroplasticity = synaptic remodeling not neurogenesis; (9) **Critical periods**: - Childhood + adolescence — neurodevelopment vulnerable; - Adolescent mental health crucial timing; (10) **Implications**: - Combine medication + psychotherapy + exercise + lifestyle for synergistic plasticity; - Sustained recovery requires sustained engagement with healthy patterns
+
+---
+
+Neuroplasticity + BDNF: depression ↓ BDNF; antidepressants ↑ BDNF (slow). Ketamine + psychedelics = rapid synaptogenesis (''psychoplastogens''). ECT + exercise + CBT also neuroplasticity. Adolescent critical period. Combine modalities for synergistic plasticity.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'Duman; Olson Psychoplastogens', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง neuroplasticity + BDNF + relevance to psychiatric treatment'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง sleep architecture + medication effects + psychiatric', '[{"label":"A","text":"No relevance"},{"label":"B","text":"Sleep Architecture + Psychiatric Disorders + Medication Effects"},{"label":"C","text":"Single stage"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Sleep Architecture + Psychiatric Disorders + Medication Effects: (1) **Normal sleep stages**: - **NREM 1** (light, sleep onset, 5%); - **NREM 2** (50%, K-complexes, sleep spindles, memory consolidation); - **NREM 3** (slow-wave sleep, 20%, growth hormone, restorative); - **REM** (25%, dreaming, atonia, memory consolidation emotional); - Cycles ~ 90 min; REM increases through night; (2) **Depression sleep**: - Decreased SWS (slow-wave sleep); - Decreased REM latency (REM onset earlier in night); - Increased REM density + duration; - REM rebound after SSRI discontinuation; - Early morning awakening (classic); - **REM suppression** — antidepressants suppress REM (SSRI, SNRI, TCA, MAOI) — therapeutic mechanism theory; (3) **Sleep deprivation** — paradoxical antidepressant effect (mostly relapses with sleep); REM deprivation specifically; (4) **Bipolar**: - Mania — decreased sleep need (not insomnia distress); - Depression — variable; - Sleep deprivation can trigger mania (sleep regulation IPSRT — Interpersonal + Social Rhythm Therapy); (5) **PTSD**: - Nightmares (REM-related); - Increased REM activity; - Prazosin reduces nightmares (alpha-1 antagonist, reduces noradrenergic in REM); (6) **Antipsychotic effects**: - Atypicals (quetiapine, olanzapine) increase SWS — sedation + sleep architecture changes; - Trazodone increases SWS; (7) **Substances**: - Alcohol — reduces REM + SWS rebound on withdrawal → vivid dreams + nightmares; - Cannabis withdrawal — vivid dreams (REM rebound); - Benzodiazepines — reduce SWS + REM (lighter sleep quality despite duration); - SSRI — reduce REM + may suppress dreams; (8) **Aging**: less SWS, more fragmentation, earlier sleep schedule; (9) **Sleep + cognition**: SWS critical for declarative memory consolidation; REM for emotional + procedural memory; sleep deprivation impairs both; (10) **Clinical implications**: assess sleep in all psychiatric presentations; primary sleep disorders mimic + worsen psychiatric
+
+---
+
+Sleep architecture: NREM stages + REM. Depression — decreased REM latency, ↓ SWS, REM rebound. Antidepressants suppress REM. Mania — decreased sleep need. PTSD — nightmares + prazosin. Alcohol + cannabis withdrawal — REM rebound. Aging — less SWS. Assess sleep in all psychiatric.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'AASM; Kupfer Depression Sleep', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง sleep architecture + medication effects + psychiatric'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง antipsychotic classes + mechanisms + side effect profiles', '[{"label":"A","text":"All antipsychotics same"},{"label":"B","text":"Antipsychotic Classes + Mechanisms + Side Effects"},{"label":"C","text":"Only typical effective"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Antipsychotic Classes + Mechanisms + Side Effects: (1) **Typical (1st gen)**: - **High potency**: haloperidol, fluphenazine — strong D2 blockade; high EPS; less metabolic; less anticholinergic; less sedation; - **Low potency**: chlorpromazine, thioridazine — weaker D2; more anticholinergic, antihistaminic, alpha-1 — sedation + hypotension + weight gain; cardiac (QTc thioridazine); (2) **Atypical (2nd gen)**: D2 + 5-HT2A antagonism — lower EPS, may improve negative sx: - **Clozapine** — gold standard TRS, only with mortality + suicide reduction; mandatory monitoring (agranulocytosis); metabolic worst; sedation; sialorrhea; myocarditis; seizure; constipation/ileus; - **Olanzapine** — effective; severe metabolic (weight gain, lipids, glucose); sedation; IM short-acting + LAI; - **Risperidone** — effective; higher EPS than other atypicals at higher dose (more typical-like); hyperprolactinemia (highest); LAI; - **Paliperidone** — risperidone metabolite; primarily renal; LAI (Sustenna monthly, Trinza q3mo, Hafyera q6mo); only FDA approved for schizoaffective; - **Quetiapine** — sedating; less EPS + prolactin; metabolic moderate; FDA approved BP depression; - **Ziprasidone** — QTc warning (take with food for absorption); less metabolic; activating; - **Lurasidone** — less metabolic; FDA approved BP depression + schizophrenia; take with food (350 cal); - **Asenapine** — sublingual + transdermal; (3) **3rd generation — partial D2 agonists**: - **Aripiprazole** — partial agonist; less EPS + less prolactin (often lowers); akathisia common; minimal metabolic; LAI options; - **Brexpiprazole** — similar; FDA approved AD agitation 2023; - **Cariprazine** — partial D2 + D3; FDA approved mixed features + BP; (4) **LAI options**: - Risperidone, paliperidone, aripiprazole, olanzapine, haloperidol, fluphenazine; - Improve adherence; reduce relapse; consider early in schizophrenia; (5) **Side effect monitoring**: weight, lipids, glucose, BP, EPS, prolactin, QTc, cardiac, hematologic (clozapine); (6) **Black box**: increased mortality elderly with dementia + behavioral disturbance; (7) **Choice considerations**: prior response, comorbidity (metabolic, cardiac, cognitive), adherence, formulation needed, cost, side effect profile, patient preference
+
+---
+
+Antipsychotic classes: typical (high D2), atypical (D2 + 5-HT2A — less EPS), 3rd gen (partial D2 agonist — least metabolic). Clozapine TRS + mortality + suicide reduction. LAI for adherence. Metabolic monitoring + EPS + prolactin + QTc. Black box elderly with dementia.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'Stahl; CATIE; APA Schizophrenia 2020', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง antipsychotic classes + mechanisms + side effect profiles'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง mood stabilizers + mechanisms + clinical use', '[{"label":"A","text":"Only lithium effective"},{"label":"B","text":"Mood Stabilizers — Mechanisms + Clinical Use"},{"label":"C","text":"All same"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Mood Stabilizers — Mechanisms + Clinical Use: (1) **Lithium**: - Gold standard mood stabilizer; - Unique mortality + suicide reduction (BP + unipolar depression); - Mechanism complex — GSK-3 inhibition, IP3/PKC, neurotrophic (BDNF), neuroprotective; - Narrow therapeutic index — 0.6-1.2 mEq/L; monitor levels, renal, thyroid, parathyroid; - Side effects: tremor, polyuria/polydipsia (nephrogenic DI), hypothyroidism, hyperparathyroidism, cognitive blunting, weight gain, acne, EKG (T-wave flattening), Ebstein anomaly (small absolute risk pregnancy); - Drug interactions: NSAID, ACE-I, ARB, thiazide (↑ level — toxicity); - Toxicity emergency — hemodialysis if level > 4 or severe sx; - Acute mania, maintenance BP, BP depression (adjunct), unipolar augmentation, suicide reduction; (2) **Valproate (Divalproex)**: - GABA + sodium channel + Ca channel; - Acute mania (rapid loading); mixed features; - Side effects: weight gain, hair loss, liver, pancreatitis, thrombocytopenia, hyperammonemia, sedation, tremor; - **AVOID pregnancy** — NTD risk 1-2% + cognitive deficits in exposed (Major Congenital Malformations + IQ reduction — FDA black box); polycystic ovary syndrome; - Drug interactions: lamotrigine (doubles level — slow titration), warfarin; (3) **Lamotrigine**: - Voltage-gated sodium channel + glutamate; - BP depression + maintenance; - NOT effective acute mania; - **Stevens-Johnson syndrome / TEN** — slow titration essential (25 mg weeks); valproate doubles level (start lower); - Generally well-tolerated; (4) **Carbamazepine, Oxcarbazepine**: - Sodium channel; - Acute mania; - SJS/TEN especially HLA-B*1502 (Asian populations) — genetic testing; - Hyponatremia (oxcarbazepine especially); - Aplastic anemia, agranulocytosis (CBZ); - Strong CYP3A4 inducer — multiple drug interactions; - Acute mania; (5) **Atypical antipsychotics for BP**: olanzapine, risperidone, quetiapine (depression + mania), aripiprazole, asenapine, cariprazine, lurasidone (depression) — often used as mood stabilizers; (6) **Selection**: - Acute mania — lithium, valproate, atypical antipsychotic; - BP depression — lamotrigine, quetiapine, lurasidone, cariprazine, lithium adjunct; - Maintenance — lithium gold standard, lamotrigine (depression-prone), atypical LAI; - Mixed features — atypical (lurasidone, cariprazine); - Rapid cycling — avoid antidepressants, lithium less effective; valproate, lamotrigine, atypical
+
+---
+
+Mood stabilizers: lithium (gold standard, suicide reduction, narrow TI), valproate (acute mania, AVOID pregnancy NTD), lamotrigine (depression, SJS slow titration), carbamazepine (HLA-B*1502 SJS, CYP3A4 inducer). Atypicals for BP. Selection by phase + features.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'CANMAT 2018; APA Bipolar', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง mood stabilizers + mechanisms + clinical use'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง neuroimaging in psychiatry + clinical use', '[{"label":"A","text":"Routine MRI all psychiatric"},{"label":"B","text":"Neuroimaging in Psychiatry"},{"label":"C","text":"No imaging useful"},{"label":"D","text":"Random"},{"label":"E","text":"Surgery"}]'::jsonb,
+  'B', '<!-- choice-detail --> **ตัวเลือก B (รายละเอียด):** Neuroimaging in Psychiatry: (1) **Clinical indications for imaging** in psychiatric presentation: - **Atypical features**: late onset, sudden onset, focal neurologic signs, altered mental status, head trauma, suspected stroke, suspected mass, suspected NPH, suspected dementia (workup), suspected encephalitis; - **First episode psychosis** — many guidelines recommend MRI to rule out organic; (2) **Structural imaging**: - **CT** — acute, blood, mass, hydrocephalus; - **MRI** — preferred; better tissue contrast, posterior fossa, white matter; (3) **Functional imaging**: - **fMRI** — research; - **PET** — clinical: amyloid PET (AD), tau PET, FDG-PET (FTD, AD differentiation), DAT scan (DLB, parkinsonism), 18F-DOPA, oncology; research: receptor occupancy, neurotransmitter; - **SPECT** — DAT scan; perfusion (limited clinical use); - **MEG, EEG** — seizure, sleep, functional; (4) **Specific applications**: - **Dementia workup**: MRI structural (atrophy, hippocampal volume, ischemic, NPH), FDG-PET (AD posterior, FTD frontal/temporal, DLB), amyloid PET (early AD), tau PET (research evolving), DAT scan (DLB vs AD); - **Pre-ECT**: not routine but if clinical concern; - **Stroke psychiatric sx**: CT/MRI; - **Anti-NMDA encephalitis**: MRI (often normal or mild), CSF, antibodies, FDG-PET sometimes; - **Suspected mass**: MRI with contrast; (5) **AD biomarkers** integrated diagnosis (NIA-AA): - Amyloid (CSF Aβ, amyloid PET, blood emerging); - Tau (CSF p-tau, tau PET, blood emerging); - Neurodegeneration (MRI atrophy, FDG-PET, blood NfL); (6) **Research applications**: - Polygenic + imaging genetics; - Treatment response prediction; - Network analyses; - Connectivity (default mode network, salience network); (7) **Limitations**: - **No imaging diagnostic for major psychiatric disorders** (depression, schizophrenia, BP) — research findings averaged across groups, not individual diagnostic; - Caution with claims of ''brain scan diagnosis''; (8) **Modern**: blood-based biomarkers emerging (plasma p-tau217, NfL, Aβ42/40) — may revolutionize AD diagnosis without need for PET/LP
+
+---
+
+Neuroimaging in psychiatry: clinical indications (atypical, focal neuro, FEP some, dementia workup). Structural MRI > CT. Functional: amyloid + tau PET (AD), DAT scan (DLB). NO imaging diagnostic for major psychiatric. Blood-based biomarkers emerging (p-tau217, NfL).', NULL,
+  'medium', 'psych_behavior', 'review',
+  'psychiatry', 'basic_science', 'psych_behavior', 'adult',
+  'NIA-AA AD biomarkers; AAN guideline', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'psych_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'psychiatry'
+      and q.scenario = 'Resident ถามเรื่อง neuroimaging in psychiatry + clinical use'
+  );
+
+commit;
+

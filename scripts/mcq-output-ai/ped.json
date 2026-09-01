@@ -1,0 +1,1862 @@
+[
+  {
+    "scenario": "An 8-year-old boy with asthma on inhaled steroid for 2 years. Growth chart shows delayed growth. His father height 160 cm, mother 150 cm. What is the cause of delayed growth?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chronic asthma"
+      },
+      {
+        "label": "B",
+        "text": "Constitutional growth delay"
+      },
+      {
+        "label": "C",
+        "text": "Familial short stature"
+      },
+      {
+        "label": "D",
+        "text": "Growth hormone deficiency"
+      },
+      {
+        "label": "E",
+        "text": "Chronic use of steroid"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Chronic inhaled corticosteroid use can cause systemic absorption leading to growth suppression. Despite family history suggesting familial short stature, the temporal relationship with steroid use for 2 years is the most likely cause of delayed growth.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 9-month-old girl whose mother is planning to return to work. The child's behavior has changed from being cheerful to becoming fearful of strangers and also fearful of the babysitter. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Poor nourishing"
+      },
+      {
+        "label": "B",
+        "text": "Normal development"
+      },
+      {
+        "label": "C",
+        "text": "Anxiety avoidant"
+      },
+      {
+        "label": "D",
+        "text": "Resistant avoidant"
+      },
+      {
+        "label": "E",
+        "text": "Stranger anxiety with separation anxiety"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Stranger anxiety and separation anxiety are normal developmental milestones appearing at 6-9 months of age. The child's fear of strangers and babysitter at 9 months is developmentally appropriate, not a pathological condition.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 9-year-old boy has acute dyspnea. He has underlying Tetralogy of Fallot and presents with dyspnea and cyanosis. Physical examination: central cyanosis with pansystolic murmur grade 3/6 at apex. What is the appropriate management during acute cyanotic spell?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Morphine"
+      },
+      {
+        "label": "B",
+        "text": "Digitalis"
+      },
+      {
+        "label": "C",
+        "text": "Enalapril"
+      },
+      {
+        "label": "D",
+        "text": "Oxygen therapy"
+      },
+      {
+        "label": "E",
+        "text": "Knee-chest position"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Morphine is the appropriate acute management for Tetralogy of Fallot cyanotic spells as it reduces right-to-left shunt by decreasing systemic vascular resistance and right ventricular contractility. Added options D and E are also supportive measures but morphine is the primary pharmacological intervention.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 3-year-old boy has respiratory distress for 2 days. He has history of nonspecific respiratory tract infection 2 weeks ago. Physical examination: BT 37°C, RR 40/min, PR 130/min, BP 90/50 mmHg, normal S1 S2, gallop rhythm, no friction rub, lung crepitation present, no splenomegaly, hepatomegaly 4 cm below right costal margin, liver span 10 cm. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pericarditis"
+      },
+      {
+        "label": "B",
+        "text": "Viral myocarditis"
+      },
+      {
+        "label": "C",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Acute rheumatic fever"
+      },
+      {
+        "label": "E",
+        "text": "Dilated cardiomyopathy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of viral myocarditis: respiratory distress, tachycardia, hypotension, gallop rhythm, pulmonary edema (crepitations), and hepatomegaly. History of recent viral infection 2 weeks prior supports viral myocarditis diagnosis.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-year-old girl presented with hoarseness and noisy breathing on inspiration for 2 days which happened after an episode of fever with cough and rhinorrhea. Physical examination: rhonchi both lungs, no crepitation. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lateral neck x-ray"
+      },
+      {
+        "label": "B",
+        "text": "Chest x-ray with neck"
+      },
+      {
+        "label": "C",
+        "text": "Inhaled corticosteroid"
+      },
+      {
+        "label": "D",
+        "text": "Salbutamol"
+      },
+      {
+        "label": "E",
+        "text": "Guaifenesin"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests croup (laryngotracheitis). Inhaled corticosteroid is the most appropriate management for reducing laryngeal edema and improving symptoms. Lateral neck x-ray may show 'steeple sign' but is not the primary management.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-month-old infant has loud breathing when sucking. The symptom improved when the infant is in prone position. Physical examination: BW 5 kg, RR 44, HR 144, inspiratory stridor, harsh breath sound, no wheezing bilaterally. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure"
+      },
+      {
+        "label": "B",
+        "text": "Epinephrine nebulized"
+      },
+      {
+        "label": "C",
+        "text": "Salbutamol nebulized"
+      },
+      {
+        "label": "D",
+        "text": "Laryngoscopy"
+      },
+      {
+        "label": "E",
+        "text": "Tracheoscopy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of laryngomalacia: inspiratory stridor in infants, improves with prone position, no acute distress. This is the most common cause of stridor in infants and is self-limiting. Reassurance is appropriate; invasive procedures are unnecessary unless severe respiratory distress develops.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 6-year-old presents with dyspnea, hoarseness, cough, chest tightness. History of rhinorrhea in the morning. Physical examination: BT 37°C, RR 30, HR 100, bilateral expiratory wheezing on lungs, rhonchi. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Asthma"
+      },
+      {
+        "label": "B",
+        "text": "Bacterial tracheitis"
+      },
+      {
+        "label": "C",
+        "text": "Acute bronchitis"
+      },
+      {
+        "label": "D",
+        "text": "Acute bronchiolitis"
+      },
+      {
+        "label": "E",
+        "text": "Pneumonia"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Bilateral expiratory wheezing is the hallmark of asthma. The presentation with dyspnea, cough, and morning rhinorrhea (possible allergen exposure during sleep) in a 6-year-old is most consistent with asthma.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 8-year-old boy with underlying asthma presents with severe dyspnea. He took salbutamol MDI 2 puffs but showed no improvement. Physical examination: suprasternal and subcostal retraction, inspiratory and expiratory wheezing. What is the next management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV dexamethasone"
+      },
+      {
+        "label": "B",
+        "text": "Albuterol nebulized"
+      },
+      {
+        "label": "C",
+        "text": "Subcutaneous adrenaline"
+      },
+      {
+        "label": "D",
+        "text": "Subcutaneous terbutaline"
+      },
+      {
+        "label": "E",
+        "text": "IV aminophylline"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Patient has severe asthma exacerbation with inadequate response to initial MDI therapy. IV dexamethasone (systemic corticosteroid) is the next appropriate step to reduce airway inflammation. Nebulized albuterol would be concurrent, but dexamethasone is critical in severe exacerbation.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child ate something and developed anaphylaxis with wheezing. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IM epinephrine"
+      },
+      {
+        "label": "B",
+        "text": "IV chlorpheniramine"
+      },
+      {
+        "label": "C",
+        "text": "IV antihistamine only"
+      },
+      {
+        "label": "D",
+        "text": "Oxygen therapy only"
+      },
+      {
+        "label": "E",
+        "text": "Methylprednisolone IV"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "IM epinephrine is the first-line treatment for anaphylaxis. The wheezing indicates bronchospasm/respiratory involvement which is a medical emergency requiring immediate epinephrine administration.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 3-month-old boy with a history of delayed passing meconium. He has intermittent abdominal distension and has not passed stool for 5 days. Physical examination: distended abdomen, not tender. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Laxative"
+      },
+      {
+        "label": "B",
+        "text": "Soap irrigation"
+      },
+      {
+        "label": "C",
+        "text": "Unison enema"
+      },
+      {
+        "label": "D",
+        "text": "Saline irrigate rectum"
+      },
+      {
+        "label": "E",
+        "text": "Rectal stool evacuation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "History of delayed meconium passage with current obstruction suggests possible Hirschsprung disease. Saline irrigation is both diagnostic and therapeutic. If obstruction persists, contrast enema or rectal biopsy would be indicated.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 4-week-old infant presents with non-bilious vomiting. The infant vomits after every feeding. What is the most likely laboratory value?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hct 30%"
+      },
+      {
+        "label": "B",
+        "text": "Serum Na 140"
+      },
+      {
+        "label": "C",
+        "text": "Serum Cl 110"
+      },
+      {
+        "label": "D",
+        "text": "Serum K 4"
+      },
+      {
+        "label": "E",
+        "text": "Serum HCO3 35"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Non-bilious vomiting in a 4-week-old after every feeding suggests pyloric stenosis. This causes loss of gastric acid (HCl), leading to hypochloremic, hypokalemic metabolic alkalosis. Elevated HCO3 (35) indicates metabolic alkalosis from loss of gastric acid.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 1-year-old boy had watery diarrhea for 2 days. Today he has periodic screaming, crying and mucous-bloody diarrhea. Physical examination: abdomen with ill-defined mass palpable at right upper quadrant. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intussusception"
+      },
+      {
+        "label": "B",
+        "text": "Meckel's diverticulum"
+      },
+      {
+        "label": "C",
+        "text": "Acute gastroenteritis"
+      },
+      {
+        "label": "D",
+        "text": "Midgut volvulus"
+      },
+      {
+        "label": "E",
+        "text": "Pyloric stenosis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of intussusception: sudden severe colicky pain (screaming), bloody stools (currant jelly), and palpable abdominal mass. Peak incidence is 6-36 months. RUQ location suggests ileocolic intussusception.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-year-old presents with hematemesis 4 hours prior to admission. Physical examination shows jaundice, hepatomegaly, BP 90/50 mmHg, PR 140/min. What is the next initial management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "LPRC 20 cc/kg/hr in 1 hour"
+      },
+      {
+        "label": "B",
+        "text": "0.9% NSS 20 cc/kg/hr in 30 minutes"
+      },
+      {
+        "label": "C",
+        "text": "Omeprazole"
+      },
+      {
+        "label": "D",
+        "text": "Consult surgery"
+      },
+      {
+        "label": "E",
+        "text": "Octreotide IV 5 mg/kg"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Patient has shock (hypotension, tachycardia) from upper GI bleeding. First priority is rapid fluid resuscitation with 0.9% NSS 20 cc/kg/hr in 30 minutes to restore circulating volume. LPRC is more appropriate after initial crystalloid resuscitation.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 7-year-old patient with hereditary spherocytosis and history of splenectomy comes to the clinic for regular PRBC transfusion. Patient develops severe back pain and severe irritation 2 hours into the transfusion. What is the best initial management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Give NSAID"
+      },
+      {
+        "label": "B",
+        "text": "Stop transfusion"
+      },
+      {
+        "label": "C",
+        "text": "Start high dose steroid IV"
+      },
+      {
+        "label": "D",
+        "text": "Increase hydration to 250 ml/m2/hr"
+      },
+      {
+        "label": "E",
+        "text": "Rapid infusion to complete transfusion"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Acute hemolytic transfusion reaction (AHTR) presents with back pain, fever, and hemoglobinuria. Immediate action is to STOP the transfusion. Then confirm via direct antiglobulin test (Coombs), maintain urine output, and manage complications.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 10-year-old girl presents with drowsiness and hyperpnea 2 hours prior to admission. She has polyuria and polydipsia for 1 month. Physical examination: BT 37°C, PR 70, RR 30, BP 90/70 mmHg, capillary refill 3 sec. Laboratory: BS 600 mg/dl, Na 125, K 5.5, HCO3 8, Cl 98, urine ketone positive. After fluid resuscitation, what is the proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "3% NaCl"
+      },
+      {
+        "label": "B",
+        "text": "Kayexalate"
+      },
+      {
+        "label": "C",
+        "text": "7.5% NaHCO3"
+      },
+      {
+        "label": "D",
+        "text": "NPH insulin"
+      },
+      {
+        "label": "E",
+        "text": "Regular insulin"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Diabetic ketoacidosis (DKA) with severe metabolic acidosis (HCO3 8), hyperkalemia (K 5.5), and positive ketones. After fluid resuscitation, regular insulin is indicated to stop ketone production and lower glucose. Kayexalate can be used for hyperkalemia management. 7.5% NaHCO3 only if severe acidosis (HCO3 <5).",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 12-year-old female presents with vaginal moniliasis. Physical examination shows weight 60 kg, height 158 cm, BP 140/90 mmHg, PR 80/min, positive acanthosis nigricans. Laboratory: BS 394 mg/dL, LDL 290, HDL 40, triglyceride 301. Urine glucose 4+, ketone negative. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Biguanide"
+      },
+      {
+        "label": "B",
+        "text": "Insulin"
+      },
+      {
+        "label": "C",
+        "text": "Biguanide and insulin"
+      },
+      {
+        "label": "D",
+        "text": "Life style modification"
+      },
+      {
+        "label": "E",
+        "text": "Fluid replacement for dehydration 5%"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Presentation suggests Type 2 diabetes in adolescent (acanthosis nigricans, obesity, hypertension, dyslipidemia). Initial management of Type 2 diabetes in children typically starts with biguanide (metformin) combined with lifestyle modification. Insulin is reserved for cases inadequately controlled by metformin or with DKA.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 10-year-old boy with positive acanthosis nigricans. Father and grandmother have diabetes type 2. What is the appropriate investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chromosome study"
+      },
+      {
+        "label": "B",
+        "text": "Glucose tolerance test"
+      },
+      {
+        "label": "C",
+        "text": "Growth hormone test"
+      },
+      {
+        "label": "D",
+        "text": "Dexamethasone suppression test"
+      },
+      {
+        "label": "E",
+        "text": "24-hour free cortisol test"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Acanthosis nigricans and strong family history of Type 2 diabetes warrant screening for impaired glucose tolerance or diabetes. Oral glucose tolerance test (OGTT) is the appropriate screening investigation to evaluate for glucose intolerance.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child patient (age and gender not specified) with history of generalized tonic-clonic seizure lasting 30 minutes. Mother denies history of head injury, infection, or trauma. This is the first seizure episode. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diazepam IV"
+      },
+      {
+        "label": "B",
+        "text": "Phenytoin IV"
+      },
+      {
+        "label": "C",
+        "text": "Phenobarbital IV"
+      },
+      {
+        "label": "D",
+        "text": "Sodium valproate oral"
+      },
+      {
+        "label": "E",
+        "text": "Endotracheal intubation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Generalized tonic-clonic seizure lasting 30 minutes is status epilepticus - a medical emergency. First-line treatment is Diazepam IV (or Lorazepam IV) to terminate the seizure immediately. Other agents are for chronic prophylaxis, not acute management.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child has had otitis media. Today he develops dyspnea. What is the appropriate antibiotic?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "B",
+        "text": "Augmentin"
+      },
+      {
+        "label": "C",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "E",
+        "text": "Cefixime"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Otitis media with new onset dyspnea suggests possible complication (mastoiditis, meningitis, or intracranial abscess). This requires broad-spectrum coverage. Ceftriaxone is superior to Augmentin as it penetrates CNS and covers more gram-negative organisms. Added options C, D, E are other antibiotics used for standard otitis media.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 4-year-old boy presents with fever for 5 days. Physical examination: BT 39°C, trunk maculopapular rash with vesicles and pustules. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chickenpox"
+      },
+      {
+        "label": "B",
+        "text": "Roseola infantum"
+      },
+      {
+        "label": "C",
+        "text": "Rubeola"
+      },
+      {
+        "label": "D",
+        "text": "Rubella"
+      },
+      {
+        "label": "E",
+        "text": "Erythema infectiosum"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of varicella (chickenpox): fever, trunk-predominant maculopapular rash progressing to vesicles and pustules. The polymorphic rash (lesions at different stages) is characteristic. Added options are other viral exanthems with different presentations.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "In a kindergarten classroom of 20 students, one child was diagnosed with chickenpox. What is the appropriate management to prevent an outbreak?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Close school for 7 days"
+      },
+      {
+        "label": "B",
+        "text": "Close the classroom for 7 days"
+      },
+      {
+        "label": "C",
+        "text": "Oral acyclovir for all students in the classroom"
+      },
+      {
+        "label": "D",
+        "text": "Oral acyclovir for students who never received varicella vaccine"
+      },
+      {
+        "label": "E",
+        "text": "Give varicella vaccine for students who never received varicella vaccine"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Post-exposure prophylaxis for varicella: vaccination within 3-5 days of exposure can prevent or significantly modify the disease. This is the most appropriate preventive measure. Acyclovir prophylaxis is less preferred than vaccination for post-exposure prophylaxis in the school setting.",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 3-year-old child presents with fever and sore throat, multiple vesicles on palm and sole. What is the etiology?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "RSV"
+      },
+      {
+        "label": "B",
+        "text": "Streptococcus group A"
+      },
+      {
+        "label": "C",
+        "text": "Coxsackie A"
+      },
+      {
+        "label": "D",
+        "text": "Influenza virus"
+      },
+      {
+        "label": "E",
+        "text": "Herpes virus"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Coxsackie A causes hand, foot and mouth disease (HFMD) with characteristic vesicles on palms, soles, and pharyngitis",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child has multiple shallow ulcers at posterior palate and posterior pharynx vesicles at hands and feet. What is the most appropriate to prevent infection?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wear mask"
+      },
+      {
+        "label": "B",
+        "text": "Wear glove"
+      },
+      {
+        "label": "C",
+        "text": "Wash hands"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotics"
+      },
+      {
+        "label": "E",
+        "text": "Immunization"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Hand, foot and mouth disease is spread via fecal-oral route. Proper hand hygiene (handwashing) is the most effective prevention method",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-year-old boy presents with mucous bloody diarrhea 2 days prior to admission. He had generalized tonic-clonic seizure on admission, body temperature 40°C. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Shigella"
+      },
+      {
+        "label": "B",
+        "text": "Rotavirus"
+      },
+      {
+        "label": "C",
+        "text": "Salmonella spp."
+      },
+      {
+        "label": "D",
+        "text": "Vibrio cholera"
+      },
+      {
+        "label": "E",
+        "text": "Salmonella typhi"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Shigella causes bloody diarrhea and can lead to febrile seizures in children due to high fever and toxemia",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 5-year-old boy presents with fever for 2 days. Today afebrile with abrupt appearance of maculopapular rash at trunk. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Measles"
+      },
+      {
+        "label": "B",
+        "text": "Rubella"
+      },
+      {
+        "label": "C",
+        "text": "Roseola infantum"
+      },
+      {
+        "label": "D",
+        "text": "Enterovirus"
+      },
+      {
+        "label": "E",
+        "text": "Varicella"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Roseola infantum (exanthem subitum) classically presents with fever followed by abrupt defervescence and then maculopapular rash. Added E: Varicella as plausible distractor",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old man has chronic intermittent well-defined erythematous greasy scaly plaque at nasolabial fold, glabella, eyebrow, external ear canal. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rosacea"
+      },
+      {
+        "label": "B",
+        "text": "Tinea faciae"
+      },
+      {
+        "label": "C",
+        "text": "Acne vulgaris"
+      },
+      {
+        "label": "D",
+        "text": "Psoriasis vulgaris"
+      },
+      {
+        "label": "E",
+        "text": "Seborrheic dermatitis"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Seborrheic dermatitis presents with greasy scaly plaques in seborrheic areas (nasolabial fold, glabella, eyebrows, ear canal)",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-year-old boy has fever, rash, edematous hands and feet. ESR 60. What is the diagnosis? (No strawberry tongue or lymphadenopathy mentioned)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Scarlet fever"
+      },
+      {
+        "label": "B",
+        "text": "Kawasaki disease"
+      },
+      {
+        "label": "C",
+        "text": "Meningococcal infection"
+      },
+      {
+        "label": "D",
+        "text": "Acute rheumatic fever"
+      },
+      {
+        "label": "E",
+        "text": "Drug hypersensitivity reaction"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Kawasaki disease presents with fever, rash, and edema of hands and feet. Elevated ESR is consistent. Age 2 is typical. Added D and E as plausible distractors",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 7-year-old boy presents with abdominal pain for 1 day. He has had rash and arthralgia for 1 week. Body temperature 37°C, Hematocrit 38%, stool RBC positive. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotics"
+      },
+      {
+        "label": "B",
+        "text": "Steroid"
+      },
+      {
+        "label": "C",
+        "text": "Antihistamine"
+      },
+      {
+        "label": "D",
+        "text": "NSAIDs for symptomatic relief"
+      },
+      {
+        "label": "E",
+        "text": "Supportive care with fluid management"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests IgA vasculitis (Henoch-Schönlein Purpura) with rash, arthralgia, abdominal pain, and GI bleeding. Steroid is appropriate for severe cases. Added D and E as plausible distractors",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child has rash and arthralgia. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Still disease"
+      },
+      {
+        "label": "B",
+        "text": "Lyme disease"
+      },
+      {
+        "label": "C",
+        "text": "Systemic lupus erythematosus"
+      },
+      {
+        "label": "D",
+        "text": "Acute rheumatic fever"
+      },
+      {
+        "label": "E",
+        "text": "IgA vasculitis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE/Medical exam",
+    "status": "needs_review",
+    "ai_notes": "Incomplete scenario. Assuming acute rheumatic fever as most likely in pediatric context with rash and arthralgia. Added C and E as more complete differential diagnosis",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 9-year-old girl has fever and productive cough for 2 weeks. During that period she has swelling and tenderness at her right knee which relieved in 1 week. After, she has a red and tender left ankle. Physical examination: Body temperature 38°C, RR 20, normal S1S2, left ankle red and tender with limited motion. What is the most appropriate investigation for diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chest X ray"
+      },
+      {
+        "label": "B",
+        "text": "Echocardiography"
+      },
+      {
+        "label": "C",
+        "text": "Electrocardiography"
+      },
+      {
+        "label": "D",
+        "text": "Antistreptolysin-O"
+      },
+      {
+        "label": "E",
+        "text": "ESR"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests acute rheumatic fever with migratory arthritis and possible carditis. Elevated ASO titer confirms preceding streptococcal infection",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 18-year-old woman presents with edema and fever for 2 days. She has had this symptom 2 years ago. Physical examination: pustule at leg. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lupus nephritis"
+      },
+      {
+        "label": "B",
+        "text": "IgA nephropathy"
+      },
+      {
+        "label": "C",
+        "text": "Poststreptococcal glomerulonephritis"
+      },
+      {
+        "label": "D",
+        "text": "IgA vasculitis with renal involvement"
+      },
+      {
+        "label": "E",
+        "text": "Membranoproliferative glomerulonephritis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/Medical exam",
+    "status": "needs_review",
+    "ai_notes": "Incomplete scenario. Edema and fever suggest glomerulonephritis. History of recurrence 2 years apart and skin pustules suggest poststreptococcal GN. Added D and E as differential",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 6-year-old girl with rash at inside of her elbow and knee. She was treated with 0.02% triamcinolone cream. The rashes subsided, but recur with discontinuation. On physical examination, vesicles on brown hyperpigmented, erythematous skin with excoriation marks at cubital and popliteal fossa. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Psoriasis"
+      },
+      {
+        "label": "B",
+        "text": "Atopic dermatitis"
+      },
+      {
+        "label": "C",
+        "text": "Impetigo contagiosum"
+      },
+      {
+        "label": "D",
+        "text": "Contact dermatitis"
+      },
+      {
+        "label": "E",
+        "text": "Seborrheic dermatitis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Atopic dermatitis presents with itchy lesions in flexural areas (cubital and popliteal fossae), excoriation marks, and responds well to topical steroids but recurs when stopped",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child has fever and takes medication. After that he develops skin desquamation at face and genitalia. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stevens-Johnson syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Staphylococcal scalded skin syndrome"
+      },
+      {
+        "label": "C",
+        "text": "Toxic epidermal necrolysis"
+      },
+      {
+        "label": "D",
+        "text": "Erythema multiforme"
+      },
+      {
+        "label": "E",
+        "text": "Drug reaction with eosinophilia and systemic symptoms (DRESS)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Staphylococcal scalded skin syndrome presents with widespread erythema and flaccid blistering with desquamation, often in flexural areas. SSSS is more common in young children",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child has history of carbamazepine for 2 weeks. He develops fever. Physical examination: Body temperature 38.5°C, bilateral conjunctivitis, target lesion at head trunk extremities. Nicolsky sign positive. Skin detachment 35% body surface area. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Erythema multiforme"
+      },
+      {
+        "label": "B",
+        "text": "Stevens-Johnson syndrome"
+      },
+      {
+        "label": "C",
+        "text": "Toxic epidermal necrolysis"
+      },
+      {
+        "label": "D",
+        "text": "Staphylococcal scalded skin syndrome"
+      },
+      {
+        "label": "E",
+        "text": "DRESS syndrome"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Toxic epidermal necrolysis presents with >30% skin detachment, positive Nicolsky sign, target lesions, fever, and mucosal involvement. Carbamazepine is a known trigger",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-month-old child with rash on both cheeks and scalp for 1 month on and off. Mother has allergic rhinitis. Physical examination: dry itchy erythematous plaque with scale and yellow crust. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Atopic dermatitis"
+      },
+      {
+        "label": "B",
+        "text": "Seborrheic dermatitis"
+      },
+      {
+        "label": "C",
+        "text": "Tinea faciei"
+      },
+      {
+        "label": "D",
+        "text": "Contact dermatitis"
+      },
+      {
+        "label": "E",
+        "text": "Impetigo contagiosa"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Seborrheic dermatitis in infants presents with greasy scales on scalp and face, often in cradle cap pattern. Yellow crust suggests secondary infection",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 7-year-old boy came to the ER because of Malayan pit viper bite 1 hour prior to admission. Physical examination: fang marks, swelling. He has no dyspnea, no ptosis. Venous blood clotting at 25 minutes. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home"
+      },
+      {
+        "label": "B",
+        "text": "Repeat venous clotting time in 6 hours"
+      },
+      {
+        "label": "C",
+        "text": "Admit, repeat venous clotting time in 2 hours"
+      },
+      {
+        "label": "D",
+        "text": "Admit, bed rest, observe neurological signs"
+      },
+      {
+        "label": "E",
+        "text": "Admit, emergency antivenom and repeat venous clotting time"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Malayan pit viper is a hemotoxic snake. Prolonged clotting time (normal <15 min) indicates coagulopathy. Antivenom should be given urgently despite lack of neurological signs",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 10-year-old boy comes to clinic. His teacher reports that he has multiple episodes of staring and not answering the teacher for 10 seconds daily. He has no memory of what happened. Physical examination: no neurological deficit. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Absence seizure"
+      },
+      {
+        "label": "B",
+        "text": "Confusional states"
+      },
+      {
+        "label": "C",
+        "text": "Complex partial seizures"
+      },
+      {
+        "label": "D",
+        "text": "Generalized tonic-clonic seizures"
+      },
+      {
+        "label": "E",
+        "text": "Atonic seizures"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Absence seizures present with brief episodes of staring (5-10 seconds), unresponsiveness, no postictal confusion, and no memory of event. Most common in this age group",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 1-year-old boy on waiting list for tetralogy of Fallot operation. He has had fever treated with antibiotics but not improve for 2 weeks. Today he presents with right hemiplegia. Neck stiffness is positive. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Meningitis"
+      },
+      {
+        "label": "B",
+        "text": "Encephalitis"
+      },
+      {
+        "label": "C",
+        "text": "Brain abscess"
+      },
+      {
+        "label": "D",
+        "text": "Subdural hematoma"
+      },
+      {
+        "label": "E",
+        "text": "Stroke from cardioembolism"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Brain abscess in cyanotic heart disease (TOF) patient with fever, focal neurological signs (hemiplegia), neck stiffness, and antibiotic failure. Right-to-left shunt allows septic emboli to bypass lungs",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A boy has fever for 12 days, elbow swelling and redness for 5 days. Physical examination: systolic murmur grade 2/6 at left parasternal border. Elevated antistreptolysin-O titer. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rheumatic fever"
+      },
+      {
+        "label": "B",
+        "text": "Rheumatoid arthritis"
+      },
+      {
+        "label": "C",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "E",
+        "text": "Systemic lupus erythematosus"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Acute rheumatic fever presents with fever, arthritis, carditis (murmur), and elevated ASO titer indicating preceding streptococcal infection",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child with myalgia, headache and high fever. Physical examination reveals mild hepatomegaly. Laboratory: WBC 2,000 (Neutrophil 40%, Lymphocyte 30%, Monocyte 20%, Atypical lymphocyte 10%), platelet 70,000. What is the next investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NS-1 antigen"
+      },
+      {
+        "label": "B",
+        "text": "Rapid malaria test"
+      },
+      {
+        "label": "C",
+        "text": "Leptospira serology"
+      },
+      {
+        "label": "D",
+        "text": "Dengue serology"
+      },
+      {
+        "label": "E",
+        "text": "Epstein-Barr virus serology"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Clinical presentation (fever, myalgia, headache, hepatomegaly) with leukopenia and thrombocytopenia suggests dengue fever. NS-1 antigen is appropriate early diagnostic test",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child ingested some substance with a bottle found nearby. Physical examination: pupil 1 mm (pinpoint), hypersalivation, fasciculation. What is the substance?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbamate"
+      },
+      {
+        "label": "B",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "C",
+        "text": "Chlorpheniramine"
+      },
+      {
+        "label": "D",
+        "text": "Carbamazepine"
+      },
+      {
+        "label": "E",
+        "text": "Organophosphate"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Carbamate and organophosphate cause cholinergic crisis with pinpoint pupils, hypersalivation, fasciculation, but carbamate is more likely in pediatric poisoning case. Both cause cholinergic symptoms. Organophosphate typically more severe. Added E as primary differential",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which of the following mechanism is most likely to underlie patient's abnormality? (Context: Child with developmental delay and dysmorphic features)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trisomy"
+      },
+      {
+        "label": "B",
+        "text": "Monosomy"
+      },
+      {
+        "label": "C",
+        "text": "Abnormal imprinting"
+      },
+      {
+        "label": "D",
+        "text": "Chromosome deletion"
+      },
+      {
+        "label": "E",
+        "text": "Single gene mutation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE/Medical exam",
+    "status": "needs_review",
+    "ai_notes": "Incomplete scenario - patient details not fully provided. Trisomy is most common chromosomal abnormality causing developmental delay in children",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 6-year-old boy is brought by his mother for a certificate of disability. Intelligence quotient is 60. What is the cause of disability?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Idiopathic"
+      },
+      {
+        "label": "B",
+        "text": "Birth asphyxia"
+      },
+      {
+        "label": "C",
+        "text": "Chromosomal abnormalities"
+      },
+      {
+        "label": "D",
+        "text": "Cerebral palsy"
+      },
+      {
+        "label": "E",
+        "text": "Environmental factors"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE/Medical exam",
+    "status": "needs_review",
+    "ai_notes": "Incomplete scenario. Moderate intellectual disability (IQ 35-49 is mild, 50-69 is moderate). Without specific history, idiopathic is most common cause in moderate ID",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old woman, primigravida, delivered her first child with a visible congenital abnormality (picture not provided). Which of the following supplement should be given to her to prevent the same problem in her second child?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Zinc"
+      },
+      {
+        "label": "B",
+        "text": "Folic acid"
+      },
+      {
+        "label": "C",
+        "text": "Pyridoxine"
+      },
+      {
+        "label": "D",
+        "text": "Ascorbic acid"
+      },
+      {
+        "label": "E",
+        "text": "Ferrous sulfate"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/Medical exam",
+    "status": "needs_review",
+    "ai_notes": "Incomplete scenario - picture of congenital abnormality not provided. Assuming neural tube defect (most common preventable congenital anomaly). Folic acid supplementation (4-5 mg daily) before conception and first trimester prevents NTD recurrence",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An infant weighing 1,400 g, gestational age 31 weeks, presents with dyspnea, cyanosis under FiO2 0.3. Physical examination: Body temperature 36.4°C, Heart rate 142/min, Respiratory rate 68/min, occasional grunting, nasal flaring, coarse crepitations both lungs. What is your management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase FiO2, obtain ABG"
+      },
+      {
+        "label": "B",
+        "text": "Give exogenous surfactant"
+      },
+      {
+        "label": "C",
+        "text": "Radiant warmer, assisted ventilation"
+      },
+      {
+        "label": "D",
+        "text": "Radiant warmer, chest X-ray, blood glucose monitoring"
+      },
+      {
+        "label": "E",
+        "text": "Septic work-up, ABG"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Clinical presentation of respiratory distress syndrome (RDS) in preterm infant: low birth weight, gestational age <34 weeks, grunting, nasal flaring, tachypnea, crepitations. Exogenous surfactant is primary treatment for RDS",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A term male newborn delivered by cesarean section has respiratory distress. Body temperature 37°C, Respiratory rate 38/min, Blood pressure 90/60, Heart rate 140/min, Oxygen saturation 94% on room air. Physical examination: no adventitious sounds, alar nasi flaring, mild supraclavicular retraction. Chest X-ray: mild hyperaeration, infiltrate bilateral, mild effusion both lungs. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute respiratory distress"
+      },
+      {
+        "label": "B",
+        "text": "Tetralogy of Fallot"
+      },
+      {
+        "label": "C",
+        "text": "Transient tachypnea of the newborn (TTN)"
+      },
+      {
+        "label": "D",
+        "text": "Meconium aspiration syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Pneumonia"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE/Medical exam",
+    "status": "complete",
+    "ai_notes": "Term infant delivered by cesarean section (no labor-induced thoracic compression) with mild respiratory distress, tachypnea. CXR shows hyperaeration and bilateral infiltrates consistent with retained fetal lung fluid. TTN is self-limited in term infants",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กคลอดออกมาโดยใช้ vacuum เนื่องจากแม่แรงเบ่งน้อย เด็กออกมาน้ำหนัก 3200g BP 60/35 ตรวจพบว่ามีก้อนที่ RT. PARIETAL LOBE ขนาด 3×3 cm ข้ามเส้น midline อย่างอื่นปกติ การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Meningocele"
+      },
+      {
+        "label": "B",
+        "text": "Cephalohematoma"
+      },
+      {
+        "label": "C",
+        "text": "Caput succedaneum"
+      },
+      {
+        "label": "D",
+        "text": "Subgaleal hemorrhage"
+      },
+      {
+        "label": "E",
+        "text": "Subdural hematoma"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีลักษณะ: ก้อน 3x3 cm ที่ parietal lobe ข้ามเส้น midline + คลอดด้วย vacuum extraction + BP ต่ำ (60/35) บ่งชี้ว่า subgaleal hemorrhage (เลือดอยู่ใต้ galea aponeurotica สามารถข้ามเส้น midline ได้ + อาจมีการสูญเสียเลือดมากและ shock) Cephalohematoma จะไม่ข้าม midline เพราะถูกจำกัดด้วย periosteal attachment",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "newborn cesarean section GA 38 weeks BW 2500g Temp 36.2°C หายใจมี air entry ดีมีอกบุ๋มเล็กน้อย O2sat 92% อะไรคือการจัดการที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Keep warm"
+      },
+      {
+        "label": "B",
+        "text": "Oxygen box"
+      },
+      {
+        "label": "C",
+        "text": "Nasal CPAP"
+      },
+      {
+        "label": "D",
+        "text": "Observe closely with supplemental oxygen"
+      },
+      {
+        "label": "E",
+        "text": "Intubation and mechanical ventilation"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "เด็กมี mild respiratory distress (rib retraction เล็กน้อย) O2sat 92% ใน room air ควรจัดการด้วย oxygen box ก่อน เนื่องจากอาการไม่รุนแรง CPAP อาจจำเป็นหากอาการไม่ดีขึ้น",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ทารก GA 35 weeks น้ำหนักแรกคลอด 2500 คลอดโดย cesarean section หลังคลอด O2sat 90% น้ำตาล 50 หายใจได้มีอกบุ๋มเล็กน้อย ควรทำอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV glucose"
+      },
+      {
+        "label": "B",
+        "text": "Oxygen box"
+      },
+      {
+        "label": "C",
+        "text": "Nasal CPAP"
+      },
+      {
+        "label": "D",
+        "text": "Both A and B"
+      },
+      {
+        "label": "E",
+        "text": "Both B and C"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีปัญหา 2 เรื่อง: 1) respiratory distress (O2sat 90% rib retraction) ต้อง oxygen box และ CPAP, 2) hypoglycemia (blood glucose 50) ต้อง IV glucose อย่างไรก็ตาม ต้องจัดการทางหายใจก่อน จึงเลือก E (oxygen box + CPAP) ก่อน ตามด้วย IV glucose",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กแรกเกิดครบกำหนด หายใจเร็วตั้งแต่อายุ 1 ชั่วโมง มี RR 70 HR 140 BP 80/60 ตรวจหาลิ้นหัวใจ: left air loop ท่านจะทำอย่างไรที่เหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pulmonary function test"
+      },
+      {
+        "label": "B",
+        "text": "Observe"
+      },
+      {
+        "label": "C",
+        "text": "Bronchoscopy"
+      },
+      {
+        "label": "D",
+        "text": "Oxygen mask with bag"
+      },
+      {
+        "label": "E",
+        "text": "Endotracheal tube placement"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี persistent tachypnea (RR 70) + left air loop บน CXR บ่งชี้ congenital diaphragmatic hernia (CDH) ขนาดใหญ่ต้องการ urgent surgical intervention แต่ก่อนการผ่าตัด ต้อง endotracheal intubation เพื่อควบคุมการหายใจ และหลีกเลี่ยงการสูดอากาศเข้าท้องท่อหลอดอาหาร (avoid bag-mask ventilation)",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กแรกเกิด term day 3 มีอาการเหลือง กินนมแม่ ตรวจพบ cephalohematoma 3x4 cm ที่ parietal lobe Hb 14.3 g/dL WBC ดี PLT ดี แม่ blood group A ลูก blood group B จงวินิจฉัยสาเหตุของเหลือง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ABO incompatibility"
+      },
+      {
+        "label": "B",
+        "text": "Extravasated hemolysis from cephalohematoma"
+      },
+      {
+        "label": "C",
+        "text": "Breast milk jaundice"
+      },
+      {
+        "label": "D",
+        "text": "Hemolytic disease due to Rh incompatibility"
+      },
+      {
+        "label": "E",
+        "text": "Physiologic jaundice"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Blood group incompatibility ไม่มี (แม่ A ลูก B ไม่มีปัญหา) Hb ปกติ หมี่รวม เจอเลือดออกมาจาก cephalohematoma จึง extravasated hemolysis เป็นสาเหตุหลัก",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ทารก 2 ชั่วโมงอายุ มี lip smacking cycling movement Hct 65% WBC 20,000 blood glucose 50 mg/dL จงบอกการจัดการที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV glucose"
+      },
+      {
+        "label": "B",
+        "text": "IV atropine"
+      },
+      {
+        "label": "C",
+        "text": "IV diazepam"
+      },
+      {
+        "label": "D",
+        "text": "IV phenobarbital"
+      },
+      {
+        "label": "E",
+        "text": "IV ampicillin + gentamicin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี lip smacking + cycling movement + blood glucose 50 = symptoms of neonatal hypoglycemia seizure ต้อง IV glucose อย่างเร่งด่วน ส่วน cycling movement อาจจากการสั่นตัวเนื่องจาก hypoglycemia ไม่ใช่ seizure แท้ๆที่ต้อง antiepileptic",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กอายุ 5.5 ปี ขี้แตก (diarrhea) เป็นน้ำ 10 ครั้งต่อวัน ริมฝีปาก แห้ง ตา หมอบ BP 80/60 HR 150 ตรวจร่างกายอื่นๆปกติ Na 132 K 6.5 Cl ต่ำ HCO3 12 ขั้นตอนแรกของการจัดการคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral rehydration therapy (ORT)"
+      },
+      {
+        "label": "B",
+        "text": "IV isotonic saline rapidly"
+      },
+      {
+        "label": "C",
+        "text": "IV hypotonic solution"
+      },
+      {
+        "label": "D",
+        "text": "Check urine output first"
+      },
+      {
+        "label": "E",
+        "text": "Treat hyperkalemia with calcium gluconate"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี severe dehydration (sunken eyes, dry lips, low BP, tachycardia) + hyponatremia (Na 132) + hyperkalemia (K 6.5) + metabolic acidosis (HCO3 12) = severe cholera-like diarrhea ต้อง IV isotonic saline (0.9% NaCl) rapid expansion ของปริมาณเลือด ก่อน และจัดการ electrolyte imbalance ตามมา",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กอายุ 10 เดือน มา ด้วยไข้ ซึม อ้วก มา 5 วัน T 39°C ตรวจสัญญาณชีพ: anterior fontanelle bulging Brudzinski sign positive ข้อใดเป็นการตรวจที่ควรทำเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Urine examination"
+      },
+      {
+        "label": "B",
+        "text": "Blood culture"
+      },
+      {
+        "label": "C",
+        "text": "CT brain"
+      },
+      {
+        "label": "D",
+        "text": "Cerebrospinal fluid examination"
+      },
+      {
+        "label": "E",
+        "text": "Ultrasound brain"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี signs ของ meningitis (fever, lethargy, vomiting, bulging fontanelle, positive Brudzinski sign) CSF examination (lumbar puncture) เป็นการตรวจ gold standard และต้องทำด้วยความเร่งด่วน หากไม่มี contraindication (CT brain เหมาะเมื่อมี signs ของ increased intracranial pressure เดียว)",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงสาว 8 ปี มาด้วย ปวดหูขวา 1 วัน มี history ว่ายน้าทุกเช้า ตรวจร่างกาย: หูขวาบวมแดง หากขยับใบหูหรือกดต่างหูขวา ปวดมาก การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Mastoiditis"
+      },
+      {
+        "label": "B",
+        "text": "Acute otitis media"
+      },
+      {
+        "label": "C",
+        "text": "Chronic otitis media"
+      },
+      {
+        "label": "D",
+        "text": "Bullous myringitis"
+      },
+      {
+        "label": "E",
+        "text": "Otitis externa"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี history ว่ายน้าบ่อย + ปวดหูขาดกำหนด + โดยเฉพาะ otoscopic findings คือ ear canal swelling (edema + erythema) + tragal tenderness/pain on ear pinna manipulation = Classic otitis externa (swimmer's ear) ไม่ใช่ otitis media (เพราะไม่มี bulging TM)",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กชาย 2 ปี มา ด้วย drooling และไข้ 2 วัน ตรวจร่างกายพบ: multiple shallow erosion ที่ posterior pharynx และ multiple vesicles ที่ฝ่ามือและฝ่าเท้าทั้งสองข้าง วิธีที่มีประสิทธิภาพที่สุดในการป้องกันการแพร่กระจายของโรคนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hand washing"
+      },
+      {
+        "label": "B",
+        "text": "Wearing face mask"
+      },
+      {
+        "label": "C",
+        "text": "Wearing gloves"
+      },
+      {
+        "label": "D",
+        "text": "Immunization"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic prophylaxis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี hand-foot-mouth disease (HFMD) โรคนี้แพร่เชื้อทางอุจจาระ (fecal-oral route) หลัก และทางนาที่มี vesicular fluid ดังนั้น proper hand hygiene (hand washing) เป็นวิธีป้องกันที่มีประสิทธิภาพสูงสุด",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กมี ตื่นตกใจและหวาดกลัว ส่งตรวจอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stool examination for parasites"
+      },
+      {
+        "label": "B",
+        "text": "Stool culture"
+      },
+      {
+        "label": "C",
+        "text": "Scotch tape technique (Cellophane tape test)"
+      },
+      {
+        "label": "D",
+        "text": "Perianal swab culture"
+      },
+      {
+        "label": "E",
+        "text": "Complete blood count"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "เด็กมี itching ที่ก้น (anal pruritus) ซึ่งเป็น classic symptom ของ pinworm (Enterobius vermicularis) infection การตรวจ scotch tape technique (cellophane tape test) เป็น gold standard ทำให้เช้าตรู่ก่อนอาบน้ำ",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กชาย 8 ปี มาด้วย ไข้ ไอ น้ำมูกไหล มาแล้ว 3 วัน ต่อมามีอาการปวดหู ตรวจร่างกาย tympanum: abnormal light reflex ไม่มี bulging of TM การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotics"
+      },
+      {
+        "label": "B",
+        "text": "Topical antibiotics"
+      },
+      {
+        "label": "C",
+        "text": "Oral decongestant"
+      },
+      {
+        "label": "D",
+        "text": "Oral antihistamine"
+      },
+      {
+        "label": "E",
+        "text": "Topical steroid"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี acute otitis media (AOM) โดยไม่มี TM bulging แต่มี abnormal light reflex + ear pain history หลัง URI ควรให้ oral antibiotics (amoxicillin หรือ amoxicillin-clavulanate) + analgesics ทั้งนี้ไม่จำเป็นต้องใช้ topical antibiotic หรือ decongestant ในโรคนี้",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็ก 9 ปี มาด้วย อาทิตย์ก่อนเป็นหวัด ตอนนี้มา ด้วย hearing loss ทางซ้าย + เดินเซ ล้มไปทางซ้าย nausea/vomiting ตรวจ neuro: ปกติทุกประการ การวินิจฉัยที่เป็นไปได้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Mastoiditis"
+      },
+      {
+        "label": "B",
+        "text": "Labyrinthitis"
+      },
+      {
+        "label": "C",
+        "text": "Chronic otitis media"
+      },
+      {
+        "label": "D",
+        "text": "Neurological disorder"
+      },
+      {
+        "label": "E",
+        "text": "Sensorineural hearing loss from noise exposure"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี URI history + unilateral sensorineural hearing loss + vertigo (เดินเซ) + ataxia (ล้มไปทางซ้าย) + nausea/vomiting = viral labyrinthitis (inner ear inflammation) ส่วน neuro exam ปกติ แยกออกจาก central nervous system pathology",
+    "subject": "ped",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็ก 6 ปี เดิมสุขภาพแข็งแรงดี มา ด้วย ไข้ ไอ น้ำมูกไหล เป็นมา 2 วัน ตรวจ Nasal swab H1N1 positive การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cetirizine"
+      },
+      {
+        "label": "B",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "C",
+        "text": "Ribavirin"
+      },
+      {
+        "label": "D",
+        "text": "Oseltamivir"
+      },
+      {
+        "label": "E",
+        "text": "Azithromycin"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี confirmed H1N1 influenza (pandemic strain) ควรให้ Oseltamivir (Tamiflu) ภายใน 48 ชั่วโมงจากเริ่มต้นอาการเพื่อลด symptom duration และหลีกเลี่ยง severe complications cetirizine เป็น antihistamine ไม่มีผล, amoxicillin เป็น antibiotic ที่ไม่มีผลต่อ influenza, ribavirin ไม่ใช่ first-line สำหรับ H1N1",
+    "subject": "ped",
+    "exam_type": "NL2"
+  }
+]

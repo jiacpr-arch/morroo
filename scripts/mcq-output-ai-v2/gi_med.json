@@ -1,0 +1,859 @@
+[
+  {
+    "scenario": "A 70-year-old man presents with new onset of epigastric pain and postprandial fullness for 4 weeks. No weight loss, no poor appetite. PE: unremarkable. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Life style modification"
+      },
+      {
+        "label": "B",
+        "text": "Prokinetic agent"
+      },
+      {
+        "label": "C",
+        "text": "PPI"
+      },
+      {
+        "label": "D",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "E",
+        "text": "Esophagogastroduodenoscopy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Symptoms suggest functional dyspepsia (epigastric pain + postprandial fullness, no red flags). Prokinetic agents (metoclopramide, domperidone) are first-line treatment for postprandial fullness. Changed 'CTWA' to 'CT abdomen' for clarity.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old female presents with progressive dysphagia, fatigue, weight loss 10 kg in 2 months. What is the most appropriate investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Barium swallow"
+      },
+      {
+        "label": "B",
+        "text": "Upper GI study"
+      },
+      {
+        "label": "C",
+        "text": "CT chest and abdomen"
+      },
+      {
+        "label": "D",
+        "text": "Esophagomanometry"
+      },
+      {
+        "label": "E",
+        "text": "Esophagogastroduodenoscopy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Progressive dysphagia with significant weight loss is a red flag for malignancy or organic obstruction. Esophagogastroduodenoscopy allows both visualization and biopsy, making it the most appropriate first investigation.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 46-year-old man complains of vomiting after dinner for 1 month. He has this symptom before and progressive epigastric pain for 3 years. Weight loss. PE: tender at epigastrium, hypertympanic percussion, normal bowel sound. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Esophageal stenosis"
+      },
+      {
+        "label": "B",
+        "text": "Pyloric stricture"
+      },
+      {
+        "label": "C",
+        "text": "Gastric cancer"
+      },
+      {
+        "label": "D",
+        "text": "Colon cancer"
+      },
+      {
+        "label": "E",
+        "text": "Achalasia"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Clinical presentation: vomiting after dinner (gastric outlet obstruction), 3-year history of epigastric pain, hypertympanic percussion (gastric distension), normal bowel sounds. Classic for pyloric stricture (often from chronic peptic ulcer disease).",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old man comes for check up. Stool occult blood negative. His father has colon cancer, diagnosis at 55 years old. What should you suggest?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Plan for colonoscopy now"
+      },
+      {
+        "label": "B",
+        "text": "Colonoscopy at 45 years old"
+      },
+      {
+        "label": "C",
+        "text": "Colonoscopy at 40 years old"
+      },
+      {
+        "label": "D",
+        "text": "Colonoscopy at 50 years old"
+      },
+      {
+        "label": "E",
+        "text": "No screening needed until age 50"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "For patients with first-degree relative diagnosed with colorectal cancer before age 60, screening should begin 10 years before the relative's diagnosis age. Father diagnosed at 55, so screening should start at age 45.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 65-year-old man presents with hematochezia. BP 80/60 mmHg, P 110. NG lavage no bile, no blood. After resuscitate, what should be done?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Angiogram"
+      },
+      {
+        "label": "B",
+        "text": "Colonoscope"
+      },
+      {
+        "label": "C",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "D",
+        "text": "Esophagogastroscopy"
+      },
+      {
+        "label": "E",
+        "text": "Bleeding scan"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "NG lavage negative for bile/blood suggests lower GI source (hematochezia with stable hemodynamics after resuscitation). Colonoscopy is the gold standard to identify and treat lower GI bleeding sources.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old student with no underlying disease, height 167 cm, weight 98 kg. HBsAg negative and Anti-HCV negative. Liver function test: AST 34, ALT 123. What is the cause of transaminitis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fatty liver"
+      },
+      {
+        "label": "B",
+        "text": "Hepatitis B"
+      },
+      {
+        "label": "C",
+        "text": "Hepatitis A"
+      },
+      {
+        "label": "D",
+        "text": "Hepatitis C"
+      },
+      {
+        "label": "E",
+        "text": "Drug intoxication"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "BMI approximately 35 (obese), elevated ALT > AST (ALT 123, AST 34), viral hepatitis serologies negative. Classic for non-alcoholic fatty liver disease (NAFLD).",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50-year-old woman presents with fever with chill, abdominal pain, nausea vomiting for 1 day. PE: BT 39°C, not pale, mild jaundice, moderate tenderness at right costal margin. LFT: albumin 3.8, globulin 2.6, TB 5.5, DB 3.8, AST 350, ALT 300, ALP 180, amylase 240. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute pancreatitis"
+      },
+      {
+        "label": "B",
+        "text": "Acute cholangitis"
+      },
+      {
+        "label": "C",
+        "text": "Acute cholecystitis"
+      },
+      {
+        "label": "D",
+        "text": "Acute viral hepatitis"
+      },
+      {
+        "label": "E",
+        "text": "Pyogenic liver abscess"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Charcot's triad: fever, jaundice, RUQ pain. Labs show cholestatic pattern (ALP 180, DB 3.8) with elevated transaminases, mild elevated amylase. Acute cholangitis (bile duct infection) is most consistent diagnosis.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old man presents with jaundice for 1 week. He drinks whisky daily for 10 years. He had headache 3 days ago and took paracetamol 2 tablets of 500 mg every 4 hours. PE: BT 37°C, icteric sclera, spider nevi, palmar erythema, mild hepatomegaly, mild tenderness, no ascites. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute hepatitis B"
+      },
+      {
+        "label": "B",
+        "text": "Paracetamol toxicity"
+      },
+      {
+        "label": "C",
+        "text": "Ascending cholangitis"
+      },
+      {
+        "label": "D",
+        "text": "Acute cholecystitis"
+      },
+      {
+        "label": "E",
+        "text": "Alcoholic hepatitis"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "10-year daily whisky drinking with spider nevi and palmar erythema (signs of chronic liver disease). Recent jaundice. Paracetamol dose (total 4g/day) is therapeutic, not toxic. Alcoholic hepatitis is most likely diagnosis.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 40 ปี ปวดท้องมาก 4 ชั่วโมง มีอาการเหลือง AST 300, ALT 230 จากอาการดังกล่าว ตัวบ่งชี้ที่ดีที่สุดในการตรวจสอบผู้ป่วยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amylase"
+      },
+      {
+        "label": "B",
+        "text": "Calcium"
+      },
+      {
+        "label": "C",
+        "text": "Hematocrit"
+      },
+      {
+        "label": "D",
+        "text": "Bilirubin"
+      },
+      {
+        "label": "E",
+        "text": "Prothrombin time"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Severe abdominal pain with jaundice and elevated transaminases suggests acute pancreatitis. Elevated amylase is most specific marker for acute pancreatitis. Amylase and lipase are diagnostic; calcium monitoring is prognostic but not diagnostic. Original text was fragmented; reconstructed based on clinical context.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient has abdominal pain radiating to the back. He drinks alcohol for 10 years. After NPO, fluid resuscitation and analgesia, what is the most useful management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NG decompression"
+      },
+      {
+        "label": "B",
+        "text": "IV ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "IV omeprazole"
+      },
+      {
+        "label": "D",
+        "text": "IV somatostatin analog"
+      },
+      {
+        "label": "E",
+        "text": "ERCP with sphincterectomy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Back-radiating abdominal pain with alcohol history suggests acute pancreatitis, likely from biliary obstruction. After initial supportive care (NPO, fluids, analgesia), ERCP with sphincterectomy is indicated for biliary obstruction management in acute pancreatitis.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี มีไข้ ปวด RUQ โดยมีประวัติดื่ม威士忌ประมาณ 1 ขวด/วัน เป็นเวลา 15 ปี PE: เหลืองกลาง ตับโตเล็กน้อย Lab: AST 800 ALT 400 การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Alcoholic hepatitis"
+      },
+      {
+        "label": "B",
+        "text": "Acute pancreatitis"
+      },
+      {
+        "label": "C",
+        "text": "Acute cholecystitis"
+      },
+      {
+        "label": "D",
+        "text": "Autoimmune hepatitis"
+      },
+      {
+        "label": "E",
+        "text": "Viral hepatitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "15-year history of heavy daily alcohol consumption with fever, RUQ pain, jaundice, hepatomegaly, and markedly elevated transaminases (AST > ALT, ratio 2:1) is classic for alcoholic hepatitis.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี ปวดบริเวณลิ้นปี่ ปวดตื้อๆ แน่นๆ ตลอดเวลา นาน 6 ชั่วโมง ไม่เคยปวดมากมาก่อน ไม่ร้าวไปไหน เวลานั่งปวดมากกว่าเวลานอน ดื่มสุราประจำ ล่าสุดดื่มเมื่อ 2 ชั่วโมงก่อน มีประวัติซื้อยาชุดแก้ปวดมากินเองบ้างครั้ง PE: PR 100/min RR 20/min BT 38°C BP 130/80 Abd: tender and guarding at epigastrium, no jaundice จงบอกการวินิจฉัยที่เป็นไปได้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute pancreatitis"
+      },
+      {
+        "label": "B",
+        "text": "Acute cholangitis"
+      },
+      {
+        "label": "C",
+        "text": "Acute cholecystitis"
+      },
+      {
+        "label": "D",
+        "text": "Acute gastritis"
+      },
+      {
+        "label": "E",
+        "text": "Peptic ulcer disease with perforation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Epigastric pain radiating to back, 6-hour duration, recent alcohol intake, fever 38°C, mild tachycardia (PR 100), tachypnea (RR 20), guarding at epigastrium - classic presentation of acute pancreatitis.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50 year-old Thai male with alcoholic cirrhosis presents with abdominal distension for 1 month. PE: V/S stable, tense ascites. Lab: Ascites analysis shows clear fluid, RBC 15 cu./mm, WBC 200 cu./mm (PMN 40%, macrophages 60%), albumin 1.9 (serum albumin 3.2), protein 2.1. Which is the most likely precipitating cause of ascites in this patient?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "High salt intake"
+      },
+      {
+        "label": "B",
+        "text": "Hemoperitoneum"
+      },
+      {
+        "label": "C",
+        "text": "Tuberculous peritonitis"
+      },
+      {
+        "label": "D",
+        "text": "Carcinomatosis peritonei"
+      },
+      {
+        "label": "E",
+        "text": "Spontaneous bacterial peritonitis"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "SAAG positive (albumin gradient 3.2-1.9 = 1.3, suggesting portal hypertension). WBC 200 cu./mm with PMN 40% suggests elevated neutrophils. Low protein ascites (<2.5 g/dL) is risk factor for SBP. However, PMN should be >250 for SBP diagnosis. WBC profile with high macrophage ratio (60%) suggests possible TB peritonitis, but SBP more common in cirrhosis. Answer E is more likely in this cirrhotic patient.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี ป่วยด้วยตับแข็ง (alcoholic cirrhosis) มีไข้เป็นระยะ 4 วัน ไปซื้อยาแก้ไข้ paracetamol กินยา 500 mg 2 เม็ด ทุก 6 ชั่วโมง หลังจากนั้นมีคลื่นไส้อาเจียน AST 8000 ALT 4000 ALP ปกติ สาเหตุของอาการดังกล่าวเกิดจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Paracetamol toxicity"
+      },
+      {
+        "label": "B",
+        "text": "Acute viral hepatitis"
+      },
+      {
+        "label": "C",
+        "text": "Alcoholic hepatitis"
+      },
+      {
+        "label": "D",
+        "text": "Acute cholangitis"
+      },
+      {
+        "label": "E",
+        "text": "Drug-induced liver injury from paracetamol in cirrhotic patient"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Paracetamol 500 mg × 2 tablets × 4 times/day = 4 g/day (at therapeutic limit). In cirrhotic patients with reduced glutathione stores, even therapeutic doses can cause hepatotoxicity. Markedly elevated transaminases (AST 8000, ALT 4000) with normal ALP suggests acute hepatocellular injury consistent with paracetamol toxicity.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี ปวดจุกแน่นลิ้นปี่เป็นๆหายๆมา 1 เดือน มักเป็นหลังอาหารประมาณครึ่งชั่วโมง กินไม่ได้ น้ำหนักลดจาก 67 เหลือ 60 กิโลกรัม การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ H2-blocker"
+      },
+      {
+        "label": "B",
+        "text": "ให้ PPI"
+      },
+      {
+        "label": "C",
+        "text": "ให้ PPI + amoxicillin + metronidazole"
+      },
+      {
+        "label": "D",
+        "text": "Double contrast upper GI study"
+      },
+      {
+        "label": "E",
+        "text": "Gastroscopy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Intermittent epigastric pain after meals with dysphagia and 7 kg weight loss over 1 month are red flag symptoms. This is NOT simple GERD - weight loss and dysphagia suggest malignancy or organic obstruction. Gastroscopy is mandatory to rule out gastric cancer or other serious pathology.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี ป่วยด้วยตับแข็งจากการดื่มแล้ว (chronic alcoholic alcoholic hepatitis) ตรวจตัวบ่งชี้ใดเพื่อประเมินว่าผู้ป่วยเลิกทานเหล้าแล้วหรือยัง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Albumin"
+      },
+      {
+        "label": "B",
+        "text": "Gamma-glutamyl transferase (Gamma GT)"
+      },
+      {
+        "label": "C",
+        "text": "AST"
+      },
+      {
+        "label": "D",
+        "text": "ALT"
+      },
+      {
+        "label": "E",
+        "text": "AST/ALT ratio"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Gamma GT (GGT) is an enzyme induced by alcohol consumption and is most sensitive marker for monitoring ongoing alcohol use. It normalizes after alcohol cessation. AST/ALT ratio remains elevated in cirrhosis. Albumin reflects synthetic function but doesn't indicate active alcohol consumption.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 40 ปี มีไข้ ปวด RUQ PE: BT 38.1°C, BP 120/80 mmHg, PR 80 bpm, RR 16/min, ไม่มีเหลือง ตับโตกดเจ็บ Ultrasound พบมวลสี่เซนติเมตร (hypoechoic mass) ที่ leaf ขวา การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "B",
+        "text": "Metronidazole"
+      },
+      {
+        "label": "C",
+        "text": "Clindamycin + Gentamicin"
+      },
+      {
+        "label": "D",
+        "text": "Open drainage"
+      },
+      {
+        "label": "E",
+        "text": "Percutaneous drainage + antibiotics"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Fever, RUQ pain, hepatomegaly, and 4 cm hypoechoic mass suggest liver abscess. Current standard of care is percutaneous drainage (US or CT-guided) combined with broad-spectrum antibiotics (covering both aerobic and anaerobic organisms). Open drainage reserved for failed percutaneous drainage or multiple loculations.",
+    "subject": "gi_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาด้วยไข้ ปวดบริเวณเหนือขวา (RUQ) และมีประวัติดื่ม威สกี้ 1 ขวดต่อวัน เป็นเวลา 15 ปี ตรวจร่างกายพบ: ไข้ 38.5°C ทำให้เหลือง (moderate jaundice) ตับโต เล็กน้อย ผลวินิจฉัยห้องปฏิบัติการ: AST 800 IU/L, ALT 400 IU/L, Total bilirubin 6.8 mg/dL, ALP 120 IU/L",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute alcoholic hepatitis"
+      },
+      {
+        "label": "B",
+        "text": "Acute viral hepatitis"
+      },
+      {
+        "label": "C",
+        "text": "Alcoholic cirrhosis with decompensation"
+      },
+      {
+        "label": "D",
+        "text": "Acute cholecystitis"
+      },
+      {
+        "label": "E",
+        "text": "Hepatocellular carcinoma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "gi med",
+    "explanation": "ผู้ป่วยมีปัจจัยเสี่ยง (15 ปีดื่มแอลกอฮอล์) และอาการ/ลักษณ์ที่เหมาะสมกับ acute alcoholic hepatitis: ไข้ ปวด RUQ ตับโต jaundice และ pattern ของ transaminase ที่ AST > ALT (AST 800:ALT 400) ซึ่งเป็นลักษณะเฉพาะของ alcoholic liver disease โดยต่างจาก viral hepatitis ที่มัก ALT > AST และ acute cholecystitis ที่มัก ALP สูงกว่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 45 ปี มาด้วยอาการปวดบริเวณลิ้นปี่ (epigastrium) แบบปวดตื้อๆ แน่นๆ ตลอดเวลา นาน 6 ชั่วโมง เป็นครั้งแรก ไม่มีอาการแผ่นไปที่อื่น อาการปวดรุนแรงขึ้นเวลานั่ง คลายตอนนอน ผู้ป่วยดื่มสุราประจำวัน ดื่มล่าสุด 2 ชั่วโมงก่อนมา มีประวัติซื้อยาแก้ปวด (NSAID) มากินเองบ้างครั้ง Physical examination: PR 100/min, RR 20/min, BT 38°C, BP 130/80 mmHg, Abdomen: มีความอ่อนไหว (tenderness) และการป้องกันเหล้าสัญญา (guarding) ที่บริเวณ epigastrium ไม่มีสัญญาณบวมของตับ (jaundice)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute peptic ulcer disease with possible perforation"
+      },
+      {
+        "label": "B",
+        "text": "Acute gastritis secondary to alcohol and NSAID use"
+      },
+      {
+        "label": "C",
+        "text": "Acute pancreatitis"
+      },
+      {
+        "label": "D",
+        "text": "Acute cholecystitis"
+      },
+      {
+        "label": "E",
+        "text": "Acute myocardial infarction with epigastric pain"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "gi med",
+    "explanation": "โรค Acute gastritis เป็นการวินิจฉัยที่เป็นไปได้มากที่สุด เนื่องจากผู้ป่วยมีปัจจัยเสี่ยง 2 ประการ คือ การดื่มสุราประจำวัน และการใช้ยา NSAID ร่วมกัน ลักษณะอาการปวดแบบตื้อแน่นที่ epigastrium เวลานั่งมากกว่านอน ร่วมกับคุณสมบัติทางกายภาพที่แสดงอาการเบา (tenderness เพียงอย่างเดียว ไม่มี rebound tenderness ชัดเจน) และไม่มีสัญญาณของ perforation หรือ pancreatitis (lipase ไม่ได้ตรวจ) จึงตรงกับการเฟอร์เมนเตชันของหลอด gastritis มากกว่า acute peptic ulcer perforation",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มีประวัติวক্ษणโรค 3 ปีที่ผ่านมา เข้ามารพ.ด้วยอาการปวดท้องพอสมควร บวมท้อง มีไข้ต่ำ ๆ มานาน และอ่อนเพลีย เมื่อตรวจทางคลินิก พบสัญญาณท้องอืด ปวดท้องทั่ว และเสียงลำไส้ลดลง ส่วนสูตรเลือดพบนิวโทรฟิลเพิ่มขึ้น การตรวจน้ำเยื่อหุ้มท้องแสดง Lymphocytic predominance, high protein, low glucose ข้อใดเป็นการตรวจที่มีคุณค่าสูงสุดในการวินิจฉัยวัณโรคเยื่อหุ้มท้อง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การเพาะเชื้อน้ำเยื่อหุ้มท้อง และ AFB stain"
+      },
+      {
+        "label": "B",
+        "text": "การตรวจ CT abdomen ด้วยสารทึบแสง"
+      },
+      {
+        "label": "C",
+        "text": "การตรวจ Adenosine deaminase (ADA) ในน้ำเยื่อหุ้มท้อง"
+      },
+      {
+        "label": "D",
+        "text": "การตรวจ Carcinoembryonic antigen (CEA) ในน้ำเยื่อหุ้มท้อง"
+      },
+      {
+        "label": "E",
+        "text": "การตรวจเลือมูลาดด้วย GeneXpert MTB/RIF"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "gi med",
+    "explanation": "ในผู้ป่วยวัณโรคเยื่อหุ้มท้อง การตรวจ Adenosine deaminase (ADA) มีความไว > 90% และความจำเพาะ > 95% โดยค่า ADA > 10 U/L ถือว่าสูงสุดสำหรับการวินิจฉัย เนื่องจากค่อนข้างรวดเร็วและมีความถูกต้องสูง แม้ว่าการเพาะเชื้อจะเป็น gold standard แต่มีความไว เพียง 50-60% และใช้เวลานาน ส่วน CT abdomen เป็นการตรวจเสริม แต่ไม่ได้วินิจฉัยเฉพาะ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 58 ปี มาด้วยอาการท้องอืดและปวดท้องเรื้อรัง ตรวจร่างกายพบมีน้ำในช่องท้อง (ascites) มาก และ nodular liver surface ได้รับการวินิจฉัยว่า carcinomatosis peritonii จากการตรวจ CT abdomen และยืนยันด้วย peritoneal fluid analysis ข้อใดต่อไปนี้ไม่ใช่สาเหตุทั่วไปของ carcinomatosis peritonii",
+    "choices": [
+      {
+        "label": "A",
+        "text": "มะเร็งกระเพาะอาหาร (Gastric cancer)"
+      },
+      {
+        "label": "B",
+        "text": "มะเร็งตับอักเสบ (Hepatocellular carcinoma)"
+      },
+      {
+        "label": "C",
+        "text": "มะเร็งรังไข่ (Ovarian cancer)"
+      },
+      {
+        "label": "D",
+        "text": "มะเร็งลำไส้ใหญ่ (Colorectal cancer)"
+      },
+      {
+        "label": "E",
+        "text": "โรคหัวใจวาล์วหลั่น (Valve regurgitation)"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "gi med",
+    "explanation": "Carcinomatosis peritonii เป็นภาวะที่มะเร็งแพร่ลงไปบุผนังช่องท้อง ซึ่งเกิดจากมะเร็งใจกลาง เช่น มะเร็งกระเพาะอาหาร รังไข่ ลำไส้ใหญ่ และตับ ส่วน valve regurgitation เป็นภาวะหัวใจหลั่นไม่สมบูรณ์ซึ่งเป็นสาเหตุของ ascites แต่ไม่ใช่สาเหตุของ carcinomatosis peritonii",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มีประวัติตับแข็ง Child-Pugh class C มาด้วยอาการ ปวดท้อง มีไข้ 38.5°C และอาเจียน เมื่อทำการ paracentesis พบ ascitic fluid ที่มีสีขุ่น ค่า WBC 600 cells/μL (PMN 80%) protein 1.2 g/dL glucose 40 mg/dL culture เพาะไม่พบจุลินทรีย์ ควรจัดการเบื้องต้นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ยาปฏิชีววิทยาแบบกว้าง (Cefotaxime หรือ Ceftriaxone) ตั้งแต่ก่อนผลเพาะเชื้อ พร้อมสนับสนุนการไหลเวียนโลหิต"
+      },
+      {
+        "label": "B",
+        "text": "เฝ้าติดตามผลเพาะเชื้อ ไม่จำเป็นต้องใช้ยาปฏิชีววิทยาเพราะ culture เพาะไม่พบเชื้อ"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ยาปฏิชีววิทยารูป narrow spectrum เช่น Penicillin G เพื่อปรับเปลี่ยนตามผล culture"
+      },
+      {
+        "label": "D",
+        "text": "ให้เพิ่ม albumin IV เฉพาะในกรณีที่มี Acute Kidney Injury พร้อมหยุดยาปฏิชีววิทยา"
+      },
+      {
+        "label": "E",
+        "text": "ส่งตัวอย่าง ascitic fluid ทำการ Gram stain เท่านั้น ไม่จำเป็นต้องเพาะเชื้อ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "gi med",
+    "explanation": "Spontaneous Bacterial Peritonitis (SBP) ถูกกำหนดโดย ascitic PMN ≥250 cells/μL หรือในกรณีนี้ 480 cells/μL (80% × 600) ซึ่งตรงตามเกณฑ์ SBP แม้ว่า culture เพาะไม่พบเชื้อ การรักษาต้องเริ่มยาปฏิชีววิทยาแบบกว้างทันทีเพื่อลดอัตราการเสียชีวิต ควรให้ Cefotaxime หรือ Ceftriaxone พร้อม albumin IV เพื่อป้องกันการเสื่อมสภาพของไต",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย อายุ 50 ปี มีประวัติ Alcoholic cirrhosis มาพร้อมไข้สูง 4 วัน ไปซื้อยา paracetamol กินเอง ขนาด 500 mg 2 เม็ด ทุก 6 ชั่วโมง (รวม 2,000 mg/วัน) เป็นเวลา 3-4 วัน หลังจากนั้นเกิดคลื่นไส้อาเจียน ปวดท้องขวาบน และปัสสาวะเข้ม ตรวจวิทยาศาสตร์: AST 8,000 U/L ALT 4,000 U/L ALP ปกติ (30-120) บิลิรูบิน 3.5 mg/dL INR 2.8 คำถาม: สาเหตุอาการตับอักเสบเฉียบพลันดังกล่าวเกิดจากอะไร?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Paracetamol-induced acute hepatotoxicity ในผู้มี underlying cirrhosis"
+      },
+      {
+        "label": "B",
+        "text": "Acute viral hepatitis (Hepatitis A หรือ E) ทับซ้อนกับ cirrhosis"
+      },
+      {
+        "label": "C",
+        "text": "Alcoholic hepatitis จากการดื่มเหล้า"
+      },
+      {
+        "label": "D",
+        "text": "Acute cholecystitis ที่ทำให้เกิด cholestasis"
+      },
+      {
+        "label": "E",
+        "text": "Drug-induced liver injury จาก NSAIDs ที่ซื้อมาด้วย"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "gi med",
+    "explanation": "ผู้ป่วยกินยา paracetamol ในปริมาณสูง (2,000 mg/วัน) เป็นเวลา 3-4 วัน ซึ่งเกินขนาดที่ปลอดภัยและเป็นอันตรายต่ออับเสบ โดยเฉพาะอย่างยิ่งในผู้มี underlying alcoholic cirrhosis ที่มีความเสี่ยงสูงต่อ hepatotoxicity รูปแบบ transaminitis ที่สูงมาก (AST > ALT) กับ ALP ปกติ และการมีอาการบนอันตรายตับเฉียบพลัน (acute hepatotoxicity) ชี้ให้เห็นการทำลายเซลล์ตับเฉียบพลันจากยาแก่ไข้ที่แพทย์ไม่สั่ง ซึ่งเป็นการใช้ยาอย่างไม่เหมาะสมในผู้มีโรคตับเรื้อรัง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาด้วยอาการเจ็บท้องตรงกลาง เร昚้อ และอาเจียน เป็นเวลา 2 สัปดาห์ การตรวจร่างกายพบ epigastric tenderness ส่วนผลตรวจ Endoscopy พบแผลในกระเพาะอาหารที่มีเลือดออก ผลการตรวจ H. pylori urease breath test เป็นบวก การรักษาแรกเบื้องต้นให้ยา PPI + amoxicillin + metronidazole เป็นระยะเวลากี่สัปดาห์",
+    "choices": [
+      {
+        "label": "A",
+        "text": "1 สัปดาห์"
+      },
+      {
+        "label": "B",
+        "text": "2 สัปดาห์"
+      },
+      {
+        "label": "C",
+        "text": "4 สัปดาห์"
+      },
+      {
+        "label": "D",
+        "text": "6 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "8 สัปดาห์"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "gi med",
+    "explanation": "การรักษา H. pylori infection โดย triple therapy (PPI + amoxicillin + metronidazole) ต้องใช้ระยะเวลา 2 สัปดาห์ตามแนวทาง Thai guideline และ standard international recommendation ซึ่งมีประสิทธิภาพในการกำจัดเชื้อ 80-90% เมื่อให้ยาครบตามระยะเวลา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 58 ปี มาด้วยอาการเบื่ออาหาร น้ำหนักลด และอาการเจ็บท้องตรงกลางเรื้อยๆ เป็นเวลา 3 เดือน ทำการตรวจ Double contrast upper GI พบการเปลี่ยนแปลงของผนังกระเพาะอาหารในส่วนของ antrum ที่มีลักษณะขรุขระและเล็บตื้น (shallow ulcer) ผนังด้านข้างแข็งตึง ข้อใดคือการวินิจฉัยที่น่าจะเป็นไปได้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gastric adenocarcinoma"
+      },
+      {
+        "label": "B",
+        "text": "Peptic ulcer disease"
+      },
+      {
+        "label": "C",
+        "text": "Gastric lymphoma"
+      },
+      {
+        "label": "D",
+        "text": "Benign gastric ulcer with healing"
+      },
+      {
+        "label": "E",
+        "text": "Hypertrophic gastritis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "gi med",
+    "explanation": "ลักษณะของ double contrast upper GI ที่แสดงการเปลี่ยนแปลงในลักษณะขรุขระ ผนังแข็งตึง เล็บตื้น และการเปลี่ยนแปลงที่มีลักษณะไม่สม่ำเสมอ รวมกับอาการคลินิกส์ (เบื่ออาหาร ลดน้ำหนัก อาการเจ็บท้องเรื้อย) เป็นลักษณะเด่นของ gastric adenocarcinoma ส่วน peptic ulcer มักแสดงลักษณะเล็บลึก (deep ulcer) ที่มีลักษณะสม่ำเสมอมากกว่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 55 ปี มี chronic alcoholic hepatitis มาตรวจความรุนแรง และประเมินว่าผู้ป่วยเลิกทานเหล้าหรือยัง ควรตรวจตัวชี้วัด (marker) อะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AST/ALT ratio"
+      },
+      {
+        "label": "B",
+        "text": "Carbohydrate deficient transferrin (CDT)"
+      },
+      {
+        "label": "C",
+        "text": "Gamma glutamyl transferase (GGT)"
+      },
+      {
+        "label": "D",
+        "text": "Mean corpuscular volume (MCV)"
+      },
+      {
+        "label": "E",
+        "text": "Bilirubin and INR"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "gi med",
+    "explanation": "Carbohydrate deficient transferrin (CDT) เป็นตัวชี้วัดที่ไว (sensitive) และจำเพาะ (specific) สำหรับการตรวจสอบการบริโภคแอลกอฮอล์ในปัจจุบัน มีครึ่งชีวิตประมาณ 2-3 สัปดาห์ ทำให้สามารถแสดงว่าผู้ป่วยเลิกทานเหล้าแล้วหรือยัง ตรงกันข้ามกับตัวชี้วัดอื่นที่สะท้อนความเสียหายของตับโดยทั่วไป",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 40 ปี มีประวัติไข้ 3 วัน ปวด RUQ ตรวจร่างกาย: BT 38.1°C BP 120/80 mmHg PR 80 bpm RR 16/min ไม่มีตัวแหนน ตับโตกดเจ็บ Murphy sign ไม่ชัดเจน Ultrasound พบมวลใน葉ขวาของตับ hypoechoic ขนาด 4 cm เนื้อสม่ำเสมอ ไม่มีลักษณะของนิ่ว ไม่เห็น duct dilatation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้เอนทีบิโอติกส์ที่เหมาะสมและ close observation โดยไม่ต้องรักษาเพิ่มเติม"
+      },
+      {
+        "label": "B",
+        "text": "Ultrasound-guided needle aspiration/biopsy เพื่อ diagnosis และพิจารณา TACE หรือ surgical resection"
+      },
+      {
+        "label": "C",
+        "text": "CT abdomen with contrast เพื่อ characterize lesion และประเมิน staging ก่อนตัดสินใจรักษา"
+      },
+      {
+        "label": "D",
+        "text": "Cholecystectomy แล้วส่ง specimen ไป pathology"
+      },
+      {
+        "label": "E",
+        "text": "MRI abdomen เพื่อ characterize mass และติดตาม โดยไม่ต้องรักษาเพิ่มเติมหากไม่มี signs ของ malignancy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "gi med",
+    "explanation": "ผู้ป่วยนี้มีเส้นอาการคล้อย (fever, RUQ pain) และ hepatomegaly กับ hypoechoic mass 4 cm ซึ่งต้องต้องแยกวินิจฉัยระหว่าง liver abscess, hepatic cyst, malignancy หรือ metastasis CT abdomen with IV contrast เป็นวิธี first-line ที่ดีที่สุดเพื่อ characterize lesion ประเมิน enhancement pattern, surrounding findings, ฯลฯ หลังจากนั้นจึงตัดสินใจรักษาต่อไป (drainage, biopsy, TACE, resection) CT ให้ข้อมูลมากกว่า ultrasound และมี prognostic value ต่อการวางแผน management",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "gi_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

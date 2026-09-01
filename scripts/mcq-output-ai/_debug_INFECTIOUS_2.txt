@@ -1,0 +1,271 @@
+[
+  {
+    "scenario": "ผู้ป่วยหญิงมาด้วยเหนื่อยหอบ CXR: patchy infiltration, Sputum exam: pleomorphic gram positive cocci ได้ Augmentin มา 3 วันอาการไม่ดีขึ้น CXR ซ้ำพบ pleural fluid ผลการวิเคราะห์ fluid: WBC 2500, N 90%, LDH 900 จงให้การรักษา",
+    "choices": [
+      {"label": "A", "text": "เพิ่ม aminoglycosides"},
+      {"label": "B", "text": "เปลี่ยนเป็น carbapenem"},
+      {"label": "C", "text": "ใส่ ICD และให้ ATB เดิม"},
+      {"label": "D", "text": "Observe"},
+      {"label": "E", "text": "เปลี่ยนเป็น fluoroquinolone และ macrolide"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Pleomorphic gram positive cocci = Streptococcus species (likely S. pneumoniae). การพบ pleural fluid ที่มี cellularity สูง แม้ LDH สูง แต่ WBC ไม่สูงมากบ่งชี้ empyema ที่พึ่งเริ่ม ต้องใส่ ICD เพื่อ drainage และให้ ATB ที่เหมาะสมต่อ (Augmentin เหมาะ) โดยควรปล่อยให้พาราเมตอร์ fluid ลดลง ตัวเลือก E เพิ่มเติม"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี กินเหล้า มีไข้และเจ็บอก 1 สัปดาห์ ตรวจร่างกายพบ pleural effusion จึงเจาะปอดได้น้ำสีเหลืองขาวขุ่น ย้อมแกรมได้: Gram negative bacilli, Gram positive cocci in chain, positive bacilli จะให้ยาตัวใด",
+    "choices": [
+      {"label": "A", "text": "Penicillin"},
+      {"label": "B", "text": "Ceftriaxone"},
+      {"label": "C", "text": "Cotrimoxazole"},
+      {"label": "D", "text": "Clarithromycin"},
+      {"label": "E", "text": "Amoxycillin-clavulanate"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Gram negative bacilli + Gram positive cocci in chain + positive bacilli = mixed flora หรือ Anaerobes + Gram negative + Streptococcus. ประวัติกินเหล้าและ pleural effusion บ่งชี้ aspiration pneumonia. Ceftriaxone ให้ coverage ดีสำหรับ gram negative bacilli และ gram positive cocci ได้ดี"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี เป็นปอดบวมมา 5 วัน มี Underlying COPD ให้ O2 5 LPM ได้ Cefotaxime + Azithromycin อยู่ ๆ ก็เหนื่อยมากขึ้น และซึมลง ควรทำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "Intubation"},
+      {"label": "B", "text": "เพิ่ม oxygen เป็น 10 LPM"},
+      {"label": "C", "text": "เปลี่ยนเป็น carbapenem และ respiratory support"},
+      {"label": "D", "text": "เพิ่ม vasopressor"},
+      {"label": "E", "text": "ใส่ BiPAP แรกก่อน และประเมินความจำเป็นของ intubation"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีสัญญาณ respiratory distress ที่ลุกลาม (worsening dyspnea, hypotensive) แม้ได้ ATB แล้ว บ่งชี้ severe pneumonia/sepsis ต้อง intubation เพื่อ airway protection และ mechanical ventilation"
+  },
+  {
+    "scenario": "ชาย 60 ปี อยู่ ICU ตั้งแต่ diagnose pneumococcal pneumonia มา 10 วัน อาการดีขึ้น เมื่อวานสาลักอาหาร วันนี้มีไข้สูง มีเสมหะและไอ BT 39.5°C, BP 90/60 mmHg, PR 100/min, RR 30/min Imaging: crepitation at Lt. lower lung, Sputum G/S: Gram negative bipolar stain ให้ ATB อะไร",
+    "choices": [
+      {"label": "A", "text": "Amikacin"},
+      {"label": "B", "text": "Amoxicillin-clavulanate"},
+      {"label": "C", "text": "Ciprofloxacin"},
+      {"label": "D", "text": "Imipenem"},
+      {"label": "E", "text": "Ceftriaxone"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Gram negative bipolar stain = Yersinia pestis, Haemophilus, หรือ Acinetobacter เป็นต้น ผู้ป่วยมีประวัติสาลักอาหาร ซึ่งเสี่ยงต่อ aspiration pneumonia ที่เกี่ยวข้องกับ gram negative anaerobes หรือ enterobacteria Imipenem ให้ coverage ที่ดีที่สุด"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี ไอเรื้อรัง AFB 3+, CXR: Cavity with surrounding granuloma Diagnose: Pulmonary TB ได้ IRZE 2 เดือน Follow up ได้ AFB 1+ ทำไรต่อ",
+    "choices": [
+      {"label": "A", "text": "ลดเหลือ IR"},
+      {"label": "B", "text": "ลดเหลือ IRE"},
+      {"label": "C", "text": "ให้ IRZE ต่อ 1 เดือน"},
+      {"label": "D", "text": "Add streptomycin"},
+      {"label": "E", "text": "Add ofloxacin"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "AFB ลดจาก 3+ เป็น 1+ แสดงการตอบสนองต่อยา แม้ยังมี AFB อยู่ แสดงว่าต้องให้ยาต่อ ควรให้ IRZE ต่ออีก 1 เดือน จึงจะหมดหลัก 4 เดือน intensive phase"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี ไข้ ไอ เหนื่อย 5 วัน ไอเสมหะเหลือง ไปซื้อ Amoxycillin 500 mg กินเอง 3 วัน ไม่ดีขึ้น PE: BT 36.5°C, PR 102/min, RR 26/min, BP 135/70 mmHg Lung: Dullness on percussion right lower lung and decrease breath sound and vocal resonance right lower lung Tx?",
+    "choices": [
+      {"label": "A", "text": "เพิ่ม Amoxycillin"},
+      {"label": "B", "text": "เพิ่ม Clarithromycin"},
+      {"label": "C", "text": "เปลี่ยนเป็น Levofloxacin"},
+      {"label": "D", "text": "Thoracentesis"},
+      {"label": "E", "text": "ICD"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Dullness + decreased breath sound + decreased vocal resonance ที่ right lower lung = pleural effusion ต้อง thoracentesis เพื่อวินิจฉัยชนิดของ effusion และให้การรักษาที่เหมาะสม ก่อนเจาะ ต้องแน่ใจว่า effusion amount มีความหมาย"
+  },
+  {
+    "scenario": "ชายแก่ เป็น DM ไอเรื้อรัง เสมหะเหลือง น้ำหนักลดมาหลายเดือน ตรวจ AFB 3 ครั้ง negative CXR: BUL infiltration แพทย์ให้ยา anti TB แต่อาการไม่ดีขึ้น CXR แย่ลงกว่าเดิม AFB อีกรอบ negative จงให้การรักษา",
+    "choices": [
+      {"label": "A", "text": "2nd line TB drug"},
+      {"label": "B", "text": "Melioidosis titer"},
+      {"label": "C", "text": "Bronchoscopy"},
+      {"label": "D", "text": "Mycobacterial Ag test"},
+      {"label": "E", "text": "Switch to empirical broad spectrum ATB"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "AFB negative 3 ครั้งต้อง rule out TB แม้ CXR ดูเหมือนทั่วไป ประวัติ DM + ไอเรื้อรัง + น้ำหนักลด + BUL infiltration กับ ATB ปกติไม่ตอบสนอง ต้องคิด Melioidosis (Burkholderia pseudomallei) ซึ่งเป็นปัญหาใหญ่ในภาค Thailand Melioidosis titer จำเป็น"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มีไข้ ไอเสมหะเขียวมีกลิ่นเหม็นเป็นมา 7 วัน กินยาแก้อักเสบทั้ง 7 วัน อาการไม่ดีขึ้น CXR: RLL infiltration with moderate pleural effusion, Sputum & pleural fluid G/S: numerous WBC + mixed organism ให้ Ceftriaxone + Clindamycin/Ciprofloxacin 3 วันแล้ว ไข้ไม่ลง Mx?",
+    "choices": [
+      {"label": "A", "text": "Postural drainage"},
+      {"label": "B", "text": "Bronchoscope"},
+      {"label": "C", "text": "Pleural tapping"},
+      {"label": "D", "text": "ICD"},
+      {"label": "E", "text": "Switch to 2nd line ATB"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Moderate pleural effusion + mixed organism + fever not improving หลังจากให้ ATB แล้ว บ่งชี้ empyema ต้อง ICD เพื่อ drainage และ monitoring ให้ ATB ต่อไป Clindamycin ปกติปิดกั้น anaerobes ได้ แต่ empyema ต้อง drainage"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 20 ปี มีอาการไอมีเสมหะเป็นมากตอนกลางคืน CXR: RUL infiltrate Sputum AFB: positive start anti TB แล้ว ควรแนะนำอะไรเพื่อป้องกันการแพร่เชื้อ",
+    "choices": [
+      {"label": "A", "text": "นอนห้องแอร์"},
+      {"label": "B", "text": "ใส่ mask 2 สัปดาห์"},
+      {"label": "C", "text": "หยุดเรียน 1 เทอม"},
+      {"label": "D", "text": "ออกจากบ้านไป isolate"},
+      {"label": "E", "text": "ให้ family ทำ CXR และ sputum AFB"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "AFB positive = infectious TB ต้อง respiratory isolation ใส่ mask 2 สัปดาห์ (จนกว่าจะ sputum conversion) หลังจากนั้นไม่เป็นอันตรายต่อคนอื่น ไม่จำเป็นต้องหยุดเรียนทั้งเทอม"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย อายุ 28 ปี มีไข้ ไอ หอบเหนื่อย นอนราบไม่ได้ มา 5 วัน PE: BT 39°C, PR 100/min, RR 24/min, BP 110/70 mmHg dyspnea Ext: multiple infection scars CXR: multiple patchy infiltration both lung เชื้อก่อโรคคือ",
+    "choices": [
+      {"label": "A", "text": "S. aureus"},
+      {"label": "B", "text": "S. pyogenes"},
+      {"label": "C", "text": "H. influenzae"},
+      {"label": "D", "text": "Viridans Streptococcus"},
+      {"label": "E", "text": "M. pneumoniae"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ประวัติ multiple infection scars = IVDU ผู้ป่วย multiple patchy infiltration both lung ลักษณะนี้บ่งชี้ septic emboli โดย S. aureus (รวมถึง MRSA) เป็นปัญหาใหญ่ใน IVDU ที่ได้ infective endocarditis"
+  },
+  {
+    "scenario": "ชาย 65 ปี ไข้ ไอ เสมหะเขียว 3 วัน สูบบุหรี่ 20 pack-year เสียงแหบมา 1 วัน Sputum gram negative pleomorphic coccobacilli ให้ยารักษาอะไร",
+    "choices": [
+      {"label": "A", "text": "Oseltamivir"},
+      {"label": "B", "text": "Cefuroxime"},
+      {"label": "C", "text": "Clarithromycin"},
+      {"label": "D", "text": "Clindamycin"},
+      {"label": "E", "text": "Doxycycline"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Gram negative pleomorphic coccobacilli = Haemophilus influenzae ประวัติสูบบุหรี่และเสียงแหบ บ่งชี้ respiratory tract infection (อาจมี laryngitis) Cefuroxime ให้ coverage สำหรับ H. influenzae ได้ดี"
+  },
+  {
+    "scenario": "ผู้ป่วยตั้งครรภ์ ตรวจพบว่าเป็น TB ให้ยาอะไร",
+    "choices": [
+      {"label": "A", "text": "I + R + Pyrazinamide + E"},
+      {"label": "B", "text": "I + R + E + Streptomycin"},
+      {"label": "C", "text": "I + R + E + Ofloxacin"},
+      {"label": "D", "text": "I + Streptomycin + Ethambutol + Ofloxacin"},
+      {"label": "E", "text": "I + R + E only"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ในตั้งครรภ์ Streptomycin contraindicated (8th cranial nerve toxicity) และ Ofloxacin contraindicated (teratogenic concern) ควรใช้ I + R + E + Pyrazinamide แทน Pyrazinamide ไม่ teratogenic ตามการศึกษาล่าสุด"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี หลอดเลือดในสมองแตก Admit ICU ใส่ ET tube 5 วัน วันนี้มีไข้ BT 39°C, P 100/min, BP 90/70 mmHg, R 22/min Lung: Crepitation at RLL, Other: normal, Sputum G/S: Numerous PMNs, Gram negative bacilli จะให้ ATB อะไรระหว่างรอ culture",
+    "choices": [
+      {"label": "A", "text": "Amikacin"},
+      {"label": "B", "text": "Ceftriaxone"},
+      {"label": "C", "text": "Levofloxacin"},
+      {"label": "D", "text": "Imipenem"},
+      {"label": "E", "text": "Vancomycin"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Ventilator-associated pneumonia (VAP) gram negative bacilli ต้องคิด Pseudomonas aeruginosa หรือ Acinetobacter baumanii Imipenem ให้ coverage ที่ดีสำหรับ gram negative bacilli รวมถึง resistant organisms ได้"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 20 ปี มีอาการไอมีเสมหะเป็นมากตอนกลางคืน CXR: RUL infiltrate Sputum AFB: positive start anti TB แล้ว ควรแนะนำอะไรเพื่อป้องกันการแพร่เชื้อ",
+    "choices": [
+      {"label": "A", "text": "นอนห้องแอร์"},
+      {"label": "B", "text": "ใส่ mask 2 สัปดาห์"},
+      {"label": "C", "text": "หยุดเรียน 1 เทอม"},
+      {"label": "D", "text": "ออกจากบ้านไป isolate"},
+      {"label": "E", "text": "ให้ family ทำ CXR และ sputum AFB"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ข้อนี้ซ้ำกับข้อ 20 AFB positive = infectious TB ต้อง respiratory isolation ใส่ mask 2 สัปดาห์ หลังจากให้ยา anti TB เริ่มแล้ว"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี มีไข้ ไอ มา 2 เดือน ภรรยา 55 ปี อาศัยอยู่ด้วย จะต้องทำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "CXR"},
+      {"label": "B", "text": "Sputum AFB"},
+      {"label": "C", "text": "INH prophylaxis"},
+      {"label": "D", "text": "Tuberculin skin test"},
+      {"label": "E", "text": "มีอาการให้มาพบแพทย์"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "ภรรยาเป็น contact ของผู้ป่วย TB (สงสัย) ควรได้รับ tuberculin skin test (TST) เพื่อคัด latent TB ถ้า TST positive อาจต้อง INH prophylaxis แม้ว่าจะยังไม่มีอาการ"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย อายุ 34 ปี มีไข้ มีเสมหะ 8 วัน 2 วันก่อนไอมากขึ้น BT 37.9°C, PR 110/min, BP 110/60 mmHg White patch on buccal mucosa and tongue, no adventitious sound, O2 sat 88%, CXR interstitial infiltration จง diagnosis",
+    "choices": [
+      {"label": "A", "text": "Pneumococcal pneumonia"},
+      {"label": "B", "text": "Mycoplasma pneumonia"},
+      {"label": "C", "text": "Melioidosis"},
+      {"label": "D", "text": "PCP (Pneumocystis jirovecii pneumonia)"},
+      {"label": "E", "text": "TB"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "White patch on buccal mucosa and tongue = oral candidiasis (thrush) ซึ่งเป็นสัญญาณของ immunosuppression (CD4 < 200) interstitial infiltration + hypoxia (O2 sat 88%) + oral thrush = classic picture ของ PCP ในผู้ป่วย HIV"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 3 สัปดาห์ มีไข้สูง ซื้อยามาทานเอง 3 วัน ก่อนมีเจ็บคอ PE: tonsil 2+ with exudate CBC: Hct 36%, WBC 1000 cell/μL, Plt 250,000 ควรปฏิบัติอย่างไรกับผู้ป่วย",
+    "choices": [
+      {"label": "A", "text": "Amoxiclav"},
+      {"label": "B", "text": "Ceftazidine"},
+      {"label": "C", "text": "G-CSF (Granulocyte-Colony Stimulating Factor)"},
+      {"label": "D", "text": "Corticosteroid"},
+      {"label": "E", "text": "Supportive care + avoid ATB"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "WBC 1000 cell/μL = severe leukopenia (agranulocytosis) อาจเกิดจากยาบางตัว (drug-induced) ต้องหยุดยาที่สงสัยและให้ G-CSF เพื่อ stimulate bone marrow recovery ให้ supportive care และมนิตรหนักเนื่องจาก WBC ต่ำ ไม่ควรให้ ATB จนกว่า WBC จะคืนตัว"
+  },
+  {
+    "scenario": "ชายอายุ 23 ปี มาด้วยเจ็บอก หอบเหนื่อย นอนราบไม่ได้ Dx: CHF ต่อมาเสียชีวิต ตรวจศพพบ Lymphocyte infiltrate ที่กล้ามเนื้อหัวใจ ถามหาเชื้อ",
+    "choices": [
+      {"label": "A", "text": "Influenza"},
+      {"label": "B", "text": "Adenovirus"},
+      {"label": "C", "text": "Coxsackie B"},
+      {"label": "D", "text": "EBV"},
+      {"label": "E", "text": "Enterovirus"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Lymphocyte infiltrate ที่กล้ามเนื้อหัวใจ + myocarditis + young male = viral myocarditis โดย Coxsackie B เป็นสาเหตุทั่วไปที่สุด ส่วนไฟล์แรกเพิ่ม E เป็นตัวเลือก"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 23 ปี อาชีพครูโรงเรียนอนุบาล เคยป่วยเป็น Rheumatic fever ตอนอายุ 15 ปี ปัจจุบันทำงานทั่วไปได้ปกติ ไม่มีอาการหอบเหนื่อย ตรวจร่างกายพบ pansystolic murmur grade II/VI at apex ได้รับการรักษาด้วย Penicillin V มาตลอด Tx?",
+    "choices": [
+      {"label": "A", "text": "หยุดยา penicillin"},
+      {"label": "B", "text": "ให้กินยาเฉพาะตอนทำฟัน"},
+      {"label": "C", "text": "ให้กินยาไปจนกระทั่งอายุ 30 ปี จึงหยุด"},
+      {"label": "D", "text": "ให้กินยาไปจนกระทั่งอายุ 50 ปี จึงหยุด"},
+      {"label": "E", "text": "ให้กินยาไปตลอดชีวิต"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Rheumatic heart disease (RHD) ที่มี pansystolic murmur at apex = mitral regurgitation มีความเสี่ยงต่อ infective endocarditis ผู้ป่วยอาชีพครูเด็กมี contact ใกล้ชิดกับเด็ก ต้อง continuous penicillin prophylaxis ตลอดชีวิต"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 35 ปี มีประวัติ IVDU หลายปี มีไข้มา 2 สัปดาห์ T 39.3°C, P 110/min, RR 20/min, BP 70/palpable systolic murmur at left lower sternal border, hemorrhagic spot at fingernail จงบอก Mx?",
+    "choices": [
+      {"label": "A", "text": "Pe

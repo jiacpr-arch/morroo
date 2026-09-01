@@ -1,0 +1,842 @@
+[
+  {
+    "id": "45158b4b-375a-46b2-8779-127ce82e76a3",
+    "correct_answer": "A",
+    "explanation": "การตรวจด้วย Ultrasound ไม่ก่อให้เกิดรังสี จึงปลอดภัยและไม่มีผลข้างเคียง เหมาะสำหรับผู้ป่วยทั่วไปรวมถึงหญิงตั้งครรภ์",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A เพราะ Ultrasound เป็น non-ionizing imaging ไม่ก่อให้เกิดอันตรายจากรังสี",
+      "reason": "Ultrasound ใช้คลื่นเสียงความถี่สูง ไม่ใช่รังสีไอออนไนซ์ จึงไม่เพิ่มความเสี่ยงมะเร็งหรือผลเสียต่อ DNA ไม่ต้องมีการเตรียมตัวพิเศษเหมือน CT/MRI และสามารถทำซ้ำได้โดยปลอดภัย จึงถือเป็นข้อดีที่สำคัญที่สุดในบริบทนิติเวช",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ไม่ก่อให้เกิดรังสี",
+          "is_correct": true,
+          "explanation": "ข้อดีหลักของ US — ปลอดภัยสำหรับทุกกลุ่ม"
+        },
+        {
+          "label": "B",
+          "text": "ความไวและจำเพาะสูงกว่า",
+          "is_correct": false,
+          "explanation": "CT มักมี sensitivity/specificity สูงกว่า US ในหลายกรณี"
+        },
+        {
+          "label": "C",
+          "text": "ให้ข้อมูลระยะขยาย",
+          "is_correct": false,
+          "explanation": "CT/MRI ให้ข้อมูลการกระจายโรคได้ดีกว่า"
+        },
+        {
+          "label": "D",
+          "text": "ใช้เวลาตรวจมากที่สุด",
+          "is_correct": false,
+          "explanation": "US ใช้เวลาน้อยกว่า MRI"
+        },
+        {
+          "label": "E",
+          "text": "เตรียมตัวนาน",
+          "is_correct": false,
+          "explanation": "US ไม่ต้องเตรียมตัวมาก"
+        }
+      ],
+      "key_takeaway": "Ultrasound = non-ionizing, ปลอดภัย, ไม่มีรังสี"
+    }
+  },
+  {
+    "id": "4572f238-1a6e-4795-9f4f-c1b2971f4bff",
+    "correct_answer": "C",
+    "explanation": "เมื่อมีบาดแผลสมองและตับแตก แต่เสียชีวิตหลังผ่าตัดจากภาวะ sepsis สาเหตุตายหลักคือการบาดเจ็บที่เป็นต้นเหตุ (injury as primary cause) ร่วมกับ complication",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C — Death due to injury complicated by infection (sepsis following trauma)",
+      "reason": "กรณีถูกทำร้ายที่หัวและท้อง มีเลือดออกในสมองและตับแตก แม้ผ่าตัดแล้วแต่เสียชีวิตด้วย sepsis ซึ่งเป็น complication โดยตรงของบาดแผล การระบุสาเหตุตายในใบมรณะบัตรจึงเป็น 'บาดแผลจากการถูกทำร้าย ร่วมกับภาวะแทรกซ้อนติดเชื้อ'",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Death due to cerebral hemorrhage",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม complication ทั้งหมด"
+        },
+        {
+          "label": "B",
+          "text": "Death due to hemorrhage",
+          "is_correct": false,
+          "explanation": "เลือดออกควบคุมได้แล้วหลังผ่าตัด"
+        },
+        {
+          "label": "C",
+          "text": "Death due to injury complicated by infection",
+          "is_correct": true,
+          "explanation": "สาเหตุหลักคือบาดแผล + sepsis เป็น complication"
+        },
+        {
+          "label": "D",
+          "text": "Death due to secondary infection",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้องตามหลักนิติเวช — ต้องระบุบาดแผลเป็น primary"
+        },
+        {
+          "label": "E",
+          "text": "Death due to shock",
+          "is_correct": false,
+          "explanation": "Shock ไม่ใช่สาเหตุสุดท้าย"
+        }
+      ],
+      "key_takeaway": "Trauma + sepsis = Death due to injury complicated by infection"
+    }
+  },
+  {
+    "id": "4af88c56-8aa3-4101-8f55-4ded2d9e5350",
+    "correct_answer": "A",
+    "explanation": "การบริจาคอวัยวะจากผู้มีชีวิตที่เป็นญาติสายตรง (พี่-น้อง) ถือเป็นเรื่องถูกกฎหมายตามพ.ร.บ.สุขภาพแห่งชาติ และเป็นการตัดสินใจโดยอิสระ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A — การบริจาคไตระหว่างพี่น้องถูกต้องตามกฎหมายไทย",
+      "reason": "ตามพ.ร.บ.การปลูกถ่ายอวัยวะ พ.ศ. 2543 ของไทย การบริจาคอวัยวะจากผู้มีชีวิตที่มีความสัมพันธ์ทางสายเลือด (เช่น พี่-น้อง พ่อแม่-ลูก) เป็นเรื่องถูกกฎหมาย โดยต้องได้รับการยินยอมโดยอิสระ ผ่านการตรวจสุขภาพ และได้รับอนุมัติจากคณะกรรมการ การที่พี่ขาพิการไม่ใช่ข้อห้ามตราบใดที่ไตที่เหลือทำงานได้ดี",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ถูกต้องตามกฎหมาย เนื่องจากเป็นญาติ",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — พี่น้องบริจาคอวัยวะให้กันได้ตามกฎหมาย"
+        },
+        {
+          "label": "B",
+          "text": "ผิดกฎหมาย ต้องเป็นผู้ที่มีสุขภาพสมบูรณ์",
+          "is_correct": false,
+          "explanation": "กฎหมายไม่ได้ห้ามผู้บริจาคที่พิการ ถ้าไตที่เหลือดีพอ"
+        },
+        {
+          "label": "C",
+          "text": "ถูกต้อง แต่ต้องรายงานต่อสำนักงาน",
+          "is_correct": false,
+          "explanation": "ต้องผ่านคณะกรรมการ ไม่ใช่แค่รายงาน"
+        },
+        {
+          "label": "D",
+          "text": "ผิดกฎหมาย เพราะขาพิการ",
+          "is_correct": false,
+          "explanation": "ความพิการแขนขาไม่ใช่ข้อห้ามการบริจาคไต"
+        },
+        {
+          "label": "E",
+          "text": "ถูกต้อง แต่ต้องตรวจเพิ่ม",
+          "is_correct": false,
+          "explanation": "ต้องผ่านกระบวนการสมบูรณ์กว่าแค่ตรวจเพิ่ม"
+        }
+      ],
+      "key_takeaway": "พี่-น้องบริจาคไตให้กันได้ถูกกฎหมาย แม้ผู้บริจาคจะพิการ"
+    }
+  },
+  {
+    "id": "50019a8d-5953-4b8d-896e-8954a2645e9a",
+    "correct_answer": "C",
+    "explanation": "แผลที่เกิดจากของมีคมกดลง (เช่น มีดกรีด) มีขอบเรียบ เรียกว่า Incised wound ซึ่งต่างจากแผลฉีกขาดที่ขอบขรุขระ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C — Incised wound เกิดจากวัตถุคมกด/กรีดผิวหนัง ขอบแผลเรียบ",
+      "reason": "ผู้ถูกทำร้ายด้วยความรุนแรงในครอบครัว มักพบแผลหลายแบบ แต่แผลจากวัตถุแข็ง/คม เช่น มีดกรีด จะมีลักษณะขอบเรียบ (clean-cut edges) ความยาวมากกว่าความลึก เรียกว่า Incised wound ต่างจาก Lacerated wound (ขอบขรุขระ) หรือ Contusion (ฟกช้ำ ไม่มีแผลเปิด)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Abrasion",
+          "is_correct": false,
+          "explanation": "แผลถลอก ผิวหนังลอก ไม่ใช่แผลเปิดลึก"
+        },
+        {
+          "label": "B",
+          "text": "Contusion",
+          "is_correct": false,
+          "explanation": "ฟกช้ำ เลือดออกใต้ผิวหนัง ไม่มีแผลเปิด"
+        },
+        {
+          "label": "C",
+          "text": "Incised wound",
+          "is_correct": true,
+          "explanation": "ขอบเรียบ เกิดจากของมีคมกรีด"
+        },
+        {
+          "label": "D",
+          "text": "Lacerated wound",
+          "is_correct": false,
+          "explanation": "ขอบขรุขระ เกิดจากแรงทื่อดึง/ฉีก"
+        },
+        {
+          "label": "E",
+          "text": "Punctured wound",
+          "is_correct": false,
+          "explanation": "แผลแทงลึก ปากแผลเล็ก"
+        }
+      ],
+      "key_takeaway": "Incised wound = ขอบเรียบ จากของมีคม ≠ Lacerated wound ขอบขรุขระ"
+    }
+  },
+  {
+    "id": "50b895d2-7ab9-4093-9244-40431ae15518",
+    "correct_answer": "C",
+    "explanation": "ผู้ป่วยถูกทำร้ายและพบเลือดออกในสมอง + ม้ามแตก แม้จะผ่าตัดแล้วแต่เสียชีวิตด้วย sepsis ซึ่งเป็นภาวะแทรกซ้อนของบาดแผล",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C — ตายเพราะบาดแผลร่วมกับภาวะแทรกซ้อนติดเชื้อ",
+      "reason": "ในนิติเวชศาสตร์ เมื่อผู้ป่วยถูกทำร้ายและเสียชีวิตจาก sepsis ที่เกิดจากบาดแผล ให้ระบุสาเหตุตายว่าเป็นบาดแผลที่มีภาวะแทรกซ้อน (complication) เพราะ sepsis เป็นผลโดยตรงของการถูกทำร้าย ไม่ใช่โรคแยก การระบุนี้มีความสำคัญทางกฎหมายเพราะเชื่อมผู้กระทำผิดกับการเสียชีวิต",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ตายเพราะบาดเจ็บ",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม complication"
+        },
+        {
+          "label": "B",
+          "text": "ตายเพราะเลือดออก",
+          "is_correct": false,
+          "explanation": "เลือดออกหยุดหลังผ่าตัด"
+        },
+        {
+          "label": "C",
+          "text": "ตายเพราะบาดแผลร่วมกับภาวะติดเชื้อ",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — sepsis เป็น complication ของ trauma"
+        },
+        {
+          "label": "D",
+          "text": "ตายเพราะติดเชื้อทุติยภูมิ",
+          "is_correct": false,
+          "explanation": "ต้องระบุ primary cause คือ trauma"
+        },
+        {
+          "label": "E",
+          "text": "ตายเพราะช็อก",
+          "is_correct": false,
+          "explanation": "ช็อกไม่ใช่สาเหตุสุดท้าย"
+        }
+      ],
+      "key_takeaway": "Trauma + sepsis = สาเหตุตายคือบาดแผลร่วมกับภาวะแทรกซ้อนติดเชื้อ"
+    }
+  },
+  {
+    "id": "51528c55-fbce-4c74-9515-f139539e0e02",
+    "correct_answer": "A",
+    "explanation": "กระสุนเข้าทางซ้ายและออกทางขวา แสดงวิถีกระสุนจากซ้ายไปขวา (left to right trajectory) ซึ่งต้องระบุในใบมรณะบัตร",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A — Gunshot wound trajectory from left to right",
+      "reason": "ในนิติเวชศาสตร์ การระบุวิถีกระสุน (trajectory) มีความสำคัญในการสืบสวน การตรวจพบบาดแผลทะลุจากซีกซ้ายออกซีกขวาของทรวงอก บ่งบอกว่ากระสุนเดินทางจาก left to right ข้อมูลนี้ช่วยระบุตำแหน่งของผู้ยิงและการเคลื่อนไหวของเหยื่อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gunshot wound trajectory from left to right",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — กระสุนเข้าซ้ายออกขวา"
+        },
+        {
+          "label": "B",
+          "text": "Gunshot wound from left ribs to right lung",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม trajectory ทั้งหมด"
+        },
+        {
+          "label": "C",
+          "text": "Penetrating wound",
+          "is_correct": false,
+          "explanation": "Penetrating = เข้าแต่ไม่ออก ซึ่งไม่ใช่กรณีนี้"
+        },
+        {
+          "label": "D",
+          "text": "High-velocity gunshot",
+          "is_correct": false,
+          "explanation": "ไม่มีข้อมูลความเร็วกระสุน"
+        },
+        {
+          "label": "E",
+          "text": "Fatal gunshot",
+          "is_correct": false,
+          "explanation": "ไม่ระบุ trajectory"
+        }
+      ],
+      "key_takeaway": "GSW trajectory ต้องระบุทิศทางเข้า-ออกของกระสุน"
+    }
+  },
+  {
+    "id": "5995f154-f05c-43da-bca0-e020c0e0ca07",
+    "correct_answer": "E",
+    "explanation": "หลักจริยธรรม ควรส่งเสริมให้ผู้ป่วย (ภรรยา) เปิดเผยข้อมูลด้วยตนเองก่อน เพราะเคารพ autonomy และรักษา confidentiality",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E — สนับสนุนให้ภรรยาเปิดเผยข้อมูลต่อสามีด้วยตนเอง",
+      "reason": "กรณีภรรยาติดเชื้อ HIV ก่อนแต่งงาน แพทย์มีหน้าที่รักษา confidentiality ของผู้ป่วย แต่ก็มีความกังวลเรื่อง duty to warn คู่สมรส แนวทางที่ถูกต้องตามจริยธรรมคือสนับสนุนให้ผู้ป่วยเปิดเผยเองก่อน หากปฏิเสธค่อยพิจารณาทางกฎหมาย การบอกสามีโดยตรงโดยไม่ได้รับอนุญาตจะละเมิด confidentiality",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ปฏิเสธบอกสามี เพราะ confidentiality",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ — มี duty to warn ที่ต้องพิจารณา"
+        },
+        {
+          "label": "B",
+          "text": "บอกสามีให้ถามภรรยาเอง",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม เพราะเปิดเผยโดยอ้อม"
+        },
+        {
+          "label": "C",
+          "text": "บอกสามีโดยตรง",
+          "is_correct": false,
+          "explanation": "ละเมิด confidentiality โดยไม่ผ่านผู้ป่วย"
+        },
+        {
+          "label": "D",
+          "text": "ไม่บอกแต่แนะนำให้ตรวจ",
+          "is_correct": false,
+          "explanation": "ดีกว่า C แต่ยังไม่ดีที่สุด"
+        },
+        {
+          "label": "E",
+          "text": "สนับสนุนให้ภรรยาเปิดเผยเอง",
+          "is_correct": true,
+          "explanation": "ดีที่สุด — เคารพ autonomy + รักษา confidentiality"
+        }
+      ],
+      "key_takeaway": "HIV disclosure: สนับสนุนให้ผู้ป่วยบอกคู่สมรสเองก่อนเสมอ"
+    }
+  },
+  {
+    "id": "660443b7-4b13-4275-b256-a6ccf1c3aaf4",
+    "correct_answer": "A",
+    "explanation": "ในกรณีคนไม่ทราบตัวตน ขั้นตอนแรกคือเก็บตัวอย่าง DNA และลายนิ้วมือเพื่อระบุตัวตนภายหลัง ก่อนดำเนินการใดๆ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A — เก็บตัวอย่างเพื่อระบุตัวตน (DNA, ลายนิ้วมือ) ก่อน",
+      "reason": "คนจรจัดไม่มีประจำที่อยู่ ไม่มีญาติ ไม่สามารถระบุตัวตนได้ทันที การเก็บ DNA และลายนิ้วมือเป็นขั้นตอนแรกที่สำคัญที่สุดทางนิติเวช เพื่อให้สามารถระบุตัวตนได้ในอนาคต และเป็นหลักฐานทางคดี ห้ามฝังหรือเผาศพก่อนระบุตัวตน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เก็บตัวอย่างเพื่อระบุตัวตน",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — DNA + ลายนิ้วมือก่อนเสมอ"
+        },
+        {
+          "label": "B",
+          "text": "ถ่ายภาพและลายนิ้วมือเท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่ครบ ต้องเก็บ DNA ด้วย"
+        },
+        {
+          "label": "C",
+          "text": "ฝังไว้รอญาติ",
+          "is_correct": false,
+          "explanation": "ไม่ควรฝังก่อนระบุตัวตน"
+        },
+        {
+          "label": "D",
+          "text": "ชำระและปลงศพทันที",
+          "is_correct": false,
+          "explanation": "ทำลายหลักฐาน — ผิดหลักนิติเวช"
+        },
+        {
+          "label": "E",
+          "text": "ปล่อยไว้ไม่ทำอะไร",
+          "is_correct": false,
+          "explanation": "ไม่เป็นมาตรฐาน"
+        }
+      ],
+      "key_takeaway": "Unknown corpse: เก็บ DNA + ลายนิ้วมือก่อนดำเนินการใดๆ"
+    }
+  },
+  {
+    "id": "67cdee36-0516-418f-a42d-847971c9da93",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยจิตเวชที่อาละวาดแต่ยังไม่ได้รับการประเมิน ขั้นแรกต้องประเมินสภาวะจิตใจก่อนตัดสินใจรักษาแบบ involuntary",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B — ประเมินสภาวะจิตใจก่อนพิจารณา involuntary admission",
+      "reason": "ตาม พ.ร.บ.สุขภาพจิต พ.ศ. 2551 แพทย์ต้องประเมินผู้ป่วยก่อนว่ามีเกณฑ์ที่จะรับไว้รักษาโดยไม่สมัครใจหรือไม่ ได้แก่ มีความเสี่ยงต่อตนเองหรือผู้อื่น หรือไม่สามารถดูแลตนเองได้ การบังคับรักษาทันทีโดยไม่ประเมินอาจละเมิดสิทธิผู้ป่วย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "บังคับรักษาทันที",
+          "is_correct": false,
+          "explanation": "ต้องประเมินก่อน ไม่ใช่บังคับทันที"
+        },
+        {
+          "label": "B",
+          "text": "ประเมินสภาวะจิตใจก่อน",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — ต้องประเมินก่อนตัดสินใจ"
+        },
+        {
+          "label": "C",
+          "text": "ให้ผู้ใหญ่บ้านลงนาม",
+          "is_correct": false,
+          "explanation": "ผู้ใหญ่บ้านไม่มีอำนาจทางกฎหมายในการยินยอมรักษา"
+        },
+        {
+          "label": "D",
+          "text": "แจ้งตำรวจและปล่อยกลับ",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยจิตเวชอาละวาดต้องได้รับการดูแล ไม่ควรปล่อยกลับ"
+        },
+        {
+          "label": "E",
+          "text": "รอให้ผู้ป่วยยินยอมเอง",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยอาละวาดอาจไม่สามารถตัดสินใจได้"
+        }
+      ],
+      "key_takeaway": "Involuntary admission: ต้องประเมิน mental state ก่อนเสมอ"
+    }
+  },
+  {
+    "id": "67ebab4e-7fd6-4ff2-9ff2-cd6f265f1809",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 15 ปี มาหลังถูกข่มขืน 5 ชั่วโมง การตรวจ acid phosphatase จาก vaginal swab เป็นหลักฐานยืนยันว่ามีการสอดใส่ ต้องทำก่อนให้ยา",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A — ส่ง acid phosphatase จาก vaginal swab ก่อน เพื่อเก็บหลักฐาน",
+      "reason": "กรณีข่มขืน 5 ชั่วโมง ยังอยู่ในช่วงที่ acid phosphatase (จากน้ำอสุจิ) ยังตรวจพบได้ในช่องคลอด ต้องเก็บหลักฐานก่อนเสมอ ก่อนให้ยาหรือทำหัตถการใดๆ ที่อาจลบล้างหลักฐาน Emergency contraception (Levonorgestrel) สำคัญ แต่ต้องหลังเก็บหลักฐาน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ส่ง acid phosphatase",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — เก็บหลักฐานก่อนให้ยา"
+        },
+        {
+          "label": "B",
+          "text": "Urine pregnancy test",
+          "is_correct": false,
+          "explanation": "ตั้งครรภ์ 2 สัปดาห์ แต่ UPT อาจยังลบได้ และไม่ใช่สิ่งสำคัญสุดตอนนี้"
+        },
+        {
+          "label": "C",
+          "text": "ให้ Norfloxacin",
+          "is_correct": false,
+          "explanation": "ยาป้องกันการติดเชื้อมาทีหลัง"
+        },
+        {
+          "label": "D",
+          "text": "ให้ Levonorgestrel",
+          "is_correct": false,
+          "explanation": "ECP สำคัญแต่ต้องหลังเก็บหลักฐาน"
+        },
+        {
+          "label": "E",
+          "text": "นัดกลับมา",
+          "is_correct": false,
+          "explanation": "ต้องดำเนินการทันที"
+        }
+      ],
+      "key_takeaway": "Rape case: เก็บหลักฐาน (acid phosphatase, swab) ก่อนให้ยาหรือ ECP เสมอ"
+    }
+  },
+  {
+    "id": "6fcc0f83-0cd6-4e2f-815c-a7e974e380a0",
+    "correct_answer": "B",
+    "explanation": "เด็กอายุ 12 ปีที่มีความพิการทางสติปัญญา ไม่สามารถให้ความยินยอมได้ และการบริจาคไตของเด็กพิการเพื่อประโยชน์ผู้อื่นเป็นสิ่งที่ขัดจริยธรรม ต้องปฏิเสธ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B — ปฏิเสธการบริจาคและรายงานต่อเจ้าหน้าที่",
+      "reason": "การบริจาคอวัยวะจากเด็กที่มีความพิการทางสติปัญญา (ซึ่งไม่สามารถให้ informed consent ได้) เป็นสิ่งที่ขัดต่อจริยธรรมการแพทย์ และอาจเป็นการละเมิดสิทธิเด็ก แม้แม่จะให้ความยินยอม แพทย์มีหน้าที่ปฏิเสธและรายงานต่อเจ้าหน้าที่คุ้มครองเด็กเพื่อสอบสวน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ยินยอมให้บริจาคได้ เพราะแม่ยินยอม",
+          "is_correct": false,
+          "explanation": "ความยินยอมแม่ไม่เพียงพอในกรณีนี้ เพราะขัดประโยชน์เด็ก"
+        },
+        {
+          "label": "B",
+          "text": "ปฏิเสธและรายงานต่อเจ้าหน้าที่",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — เด็กพิการไม่สามารถยินยอม + ขัดจริยธรรม"
+        },
+        {
+          "label": "C",
+          "text": "ให้เด็กลงนาม",
+          "is_correct": false,
+          "explanation": "เด็กพิการสติปัญญาไม่มีความสามารถทางกฎหมาย"
+        },
+        {
+          "label": "D",
+          "text": "ให้แม่ลงนามแล้วดำเนินการ",
+          "is_correct": false,
+          "explanation": "ขัดประโยชน์เด็ก — แม่มี conflict of interest"
+        },
+        {
+          "label": "E",
+          "text": "สอบถามแม่แล้วดำเนินการ",
+          "is_correct": false,
+          "explanation": "เช่นเดียวกับ D"
+        }
+      ],
+      "key_takeaway": "เด็กพิการสติปัญญาบริจาคอวัยวะไม่ได้ — ปฏิเสธและรายงาน"
+    }
+  },
+  {
+    "id": "715f9f32-1289-4509-9828-c652fe476123",
+    "correct_answer": "C",
+    "explanation": "ชายเพิ่งกลับจากตาก 1 สัปดาห์แล้วป่วยไข้สูง ถ้ามีคนป่วยหลายรายในพื้นที่นั้นในช่วงเวลาเดียวกัน เรียกว่า Epidemic",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C — Epidemic คือการระบาดในพื้นที่ที่มีผู้ป่วยมากกว่าปกติในช่วงเวลาหนึ่ง",
+      "reason": "Epidemic หมายถึงการเกิดโรคในอัตราที่สูงกว่าปกติในพื้นที่และเวลาที่กำหนด ซึ่งต่างจาก Endemic (โรคประจำถิ่น), Pandemic (ระบาดทั่วโลก), Sporadic (กระจายๆ ไม่เป็นกลุ่ม), Cluster (กลุ่มเล็กๆ ในพื้นที่เฉพาะ) กรณีนี้มีผู้ป่วยหลายรายในจังหวัดตากจากการสัมผัสร่วม = epidemic",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endemic",
+          "is_correct": false,
+          "explanation": "โรคประจำถิ่นที่มีอยู่เสมอในระดับคงที่"
+        },
+        {
+          "label": "B",
+          "text": "Pandemic",
+          "is_correct": false,
+          "explanation": "ระบาดหลายประเทศ/ทั่วโลก"
+        },
+        {
+          "label": "C",
+          "text": "Epidemic",
+          "is_correct": true,
+          "explanation": "ระบาดในพื้นที่เฉพาะ สูงกว่าปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Cluster outbreak",
+          "is_correct": false,
+          "explanation": "กลุ่มย่อยเล็กๆ"
+        },
+        {
+          "label": "E",
+          "text": "Sporadic",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยกระจาย ไม่เกี่ยวกัน"
+        }
+      ],
+      "key_takeaway": "Epidemic = อัตราโรคสูงกว่าปกติในพื้นที่และเวลาหนึ่ง"
+    }
+  },
+  {
+    "id": "725b508c-d3ea-4d85-988d-189ef086e6ed",
+    "correct_answer": "E",
+    "explanation": "ชาย 57 ปีแน่นหน้าอก หายใจลำบาก ระหว่างบินในเครื่องบิน สาเหตุที่น่าเป็นไปได้มากที่สุดคือ Coronary heart disease (CHD) ซึ่งพบบ่อยในชายสูงอายุ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E — Coronary heart disease เป็นสาเหตุที่น่าจะเป็นที่สุดของอาการแน่นหน้าอก",
+      "reason": "ชายอายุ 57 ปีมีอาการแน่นหน้าอกและหายใจลำบากขณะบินในเครื่องบิน ซึ่งอาจเกิดจากความเครียดและออกซิเจนต่ำในเครื่องบิน อาการนี้เป็น classic presentation ของ acute coronary syndrome ใน middle-aged male ที่มักเป็น risk factor สูง CHD เป็นสาเหตุตายอันดับ 1 ของชายวัยกลางคน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute poisoning",
+          "is_correct": false,
+          "explanation": "ไม่มีประวัติสัมผัสสาร"
+        },
+        {
+          "label": "B",
+          "text": "Ruptured aneurysm",
+          "is_correct": false,
+          "explanation": "มักมีอาการปวดรุนแรงฉับพลัน"
+        },
+        {
+          "label": "C",
+          "text": "Acute heart failure",
+          "is_correct": false,
+          "explanation": "อาจเป็นผลจาก CHD ไม่ใช่สาเหตุหลัก"
+        },
+        {
+          "label": "D",
+          "text": "Cardiopulmonary failure",
+          "is_correct": false,
+          "explanation": "เป็นผลลัพธ์ ไม่ใช่สาเหตุ"
+        },
+        {
+          "label": "E",
+          "text": "Coronary heart disease",
+          "is_correct": true,
+          "explanation": "น่าจะเป็นที่สุด — ชายวัยกลางคน แน่นหน้าอก"
+        }
+      ],
+      "key_takeaway": "ชายอายุ >50 แน่นหน้าอก = CHD จนกว่าจะพิสูจน์ว่าไม่ใช่"
+    }
+  },
+  {
+    "id": "745b9bd1-d45f-4628-9a18-cff3a152cd19",
+    "correct_answer": "B",
+    "explanation": "Orbit รูปกลม กระดูกมีขนาดเล็ก ความสูงน้อย เป็นลักษณะของกะโหลก Mongoloid (เชื้อสายเอเชีย)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B — Mongoloid มี orbit กลม กระดูกเล็ก",
+      "reason": "ในนิติเวชมานุษยวิทยา การระบุเชื้อชาติจากกะโหลก ใช้ลักษณะ orbit เป็นหนึ่งในตัวบ่งชี้: Mongoloid มี orbit รูปกลม, Caucasoid มี orbit รูปสี่เหลี่ยม/ชัน, Negroid มี orbit สี่เหลี่ยมกว้าง ลักษณะ orbit กลมชี้ไปที่ Mongoloid ซึ่งครอบคลุมชาวเอเชียตะวันออก รวมถึงคนไทย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Caucasian",
+          "is_correct": false,
+          "explanation": "Orbit สี่เหลี่ยม/ชัน ไม่กลม"
+        },
+        {
+          "label": "B",
+          "text": "Mongoloid",
+          "is_correct": true,
+          "explanation": "Orbit กลม — เป็นลักษณะเฉพาะ"
+        },
+        {
+          "label": "C",
+          "text": "Negroid",
+          "is_correct": false,
+          "explanation": "Orbit สี่เหลี่ยมกว้าง"
+        },
+        {
+          "label": "D",
+          "text": "Australoid",
+          "is_correct": false,
+          "explanation": "คล้าย Negroid แต่ต่างรายละเอียด"
+        },
+        {
+          "label": "E",
+          "text": "American Indian",
+          "is_correct": false,
+          "explanation": "คล้าย Mongoloid แต่มีความแตกต่างเฉพาะ"
+        }
+      ],
+      "key_takeaway": "Orbit กลม = Mongoloid; สี่เหลี่ยม = Caucasoid/Negroid"
+    }
+  },
+  {
+    "id": "747c8537-e495-4e04-aaf9-71fc3645284d",
+    "correct_answer": "B",
+    "explanation": "พนักงานลงไปในอุโมงค์ที่ระบายอากาศไม่ดีมีมูลสัตว์ → CH4 และ CO2 สูง ทำให้ O2 ลดต่ำ → Hypoxia จากการขาดออกซิเจน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B — Hypoxia จากการขาดออกซิเจนในพื้นที่ปิดที่มีก๊าซอื่นแทนที่",
+      "reason": "ในพื้นที่ปิดที่มีการสลายตัวของอินทรีย์วัตถุ (มูลสัตว์) จะเกิด CH4 (มีเทน), CO2, H2S สูง ทำให้ O2 ถูกแทนที่ลดต่ำกว่า 19.5% เกิด Hypoxia ฉับพลัน ผู้ที่สูดดมจะหมดสติและเสียชีวิตได้ในเวลาสั้น เป็น confined space hazard ที่พบบ่อย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "สำลักสิ่งแปลกปลอม",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐานว่าสำลัก"
+        },
+        {
+          "label": "B",
+          "text": "Hypoxia จากขาดออกซิเจน",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — O2 ถูกแทนที่ด้วย CH4/CO2"
+        },
+        {
+          "label": "C",
+          "text": "พิษจากสารเคมีในมูลสัตว์",
+          "is_correct": false,
+          "explanation": "H2S อาจมีส่วน แต่ mechanism หลักคือ hypoxia"
+        },
+        {
+          "label": "D",
+          "text": "ติดเชื้อแบคทีเรียรุนแรง",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ mechanism เฉียบพลัน"
+        },
+        {
+          "label": "E",
+          "text": "ถูกสัตว์โจมตี",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐาน"
+        }
+      ],
+      "key_takeaway": "Confined space + organic decomposition = O2 displacement → Hypoxia"
+    }
+  },
+  {
+    "id": "74855d32-6f32-412b-a055-0c7cbdb586c8",
+    "correct_answer": "D",
+    "explanation": "อาการที่เริ่มมา โรงพยาบาลอำเภอวินิจฉัยไม่ได้เพราะไส้ติ่งอักเสบระยะเริ่มต้นมักไม่มีอาการชัดเจน จึงให้ออกไปก่อน เป็นเรื่องปกติของธรรมชาติโรค",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D — อาการไส้ติ่งระยะต้นมักไม่ชัดเจน ทำให้วินิจฉัยยาก",
+      "reason": "Early appendicitis มักเริ่มด้วยอาการเล็กน้อย ปวดรอบสะดือ คลื่นไส้อาเจียน ไข้ต่ำ ซึ่งไม่จำเพาะ โรงพยาบาลอำเภอจึงให้กลับบ้านได้โดยไม่ถือว่าประมาท การวินิจฉัยในช่วงแรกนั้นยาก และอาการจะชัดขึ้นเมื่อโรคดำเนินต่อ นี่ไม่ใช่ความผิดพลาดของโรงพยาบาลอำเภอ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "โรงพยาบาลอำเภอขาดเครื่องมือ",
+          "is_correct": false,
+          "explanation": "ไม่ใช่สาเหตุหลัก"
+        },
+        {
+          "label": "B",
+          "text": "เจ้าหน้าที่ขาดทักษะ",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง ระยะต้นวินิจฉัยยากสำหรับทุกคน"
+        },
+        {
+          "label": "C",
+          "text": "โรงพยาบาลวินิจฉัยผิดพลาด",
+          "is_correct": false,
+          "explanation": "ไม่ยุติธรรมกับการวินิจฉัยระยะต้น"
+        },
+        {
+          "label": "D",
+          "text": "อาการระยะต้นไม่ชัดเจน",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — early appendicitis มักไม่จำเพาะ"
+        },
+        {
+          "label": "E",
+          "text": "ควรส่งต่อตั้งแต่แรก",
+          "is_correct": false,
+          "explanation": "ระยะต้นไม่มีข้อบ่งชี้ชัดเจนในการส่งต่อ"
+        }
+      ],
+      "key_takeaway": "Early appendicitis = อาการไม่จำเพาะ วินิจฉัยยาก ไม่ถือว่าโรงพยาบาลประมาท"
+    }
+  },
+  {
+    "id": "7d0e713c-9570-4ae9-ad1a-02977f9779de",
+    "correct_answer": "D",
+    "explanation": "ศพอุ่น ไม่มีหลักฐานชัดเจน ต้องรอผล toxicology สมบูรณ์ก่อน สาเหตุตายที่น่าจะเป็น = Multiple substance intoxication จนกว่าจะมีข้อมูลเพิ่ม",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D — Multiple substance intoxication เมื่อยังไม่มีหลักฐานชัดเจน",
+      "reason": "ชาย 40 ปีพบที่ป้ายรถเมล์ ศพยังอุ่น ไม่มี body injury ชัดเจน ต้องพิจารณา toxicology ก่อน ในกรณีที่ไม่มี external evidence ชัดเจน และมีความเป็นไปได้หลายสาเหตุ การรายงานว่า Multiple substance intoxication ร่วมกับรอผลพิสูจน์เพิ่มเติมเป็นแนวปฏิบัติที่ถูกต้อง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Head injury",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐานบาดแผลที่หัว"
+        },
+        {
+          "label": "B",
+          "text": "Ethanol toxicity",
+          "is_correct": false,
+          "explanation": "ไม่มี specific evidence เฉพาะ alcohol"
+        },
+        {
+          "label": "C",
+          "text": "Amphetamine toxicity",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐานเจาะจง"
+        },
+        {
+          "label": "D",
+          "text": "Multiple substance intoxication",
+          "is_correct": true,
+          "explanation": "เป็น provisional cause pending toxicology"
+        },
+        {
+          "label": "E",
+          "text": "Unknown cause",
+          "is_correct": false,
+          "explanation": "ควรระบุ probable cause แม้จะรอ tox"
+        }
+      ],
+      "key_takeaway": "ศพไม่มีบาดแผล รอ toxicology = Multiple substance intoxication as provisional cause"
+    }
+  },
+  {
+    "id": "7da7b8fc-bde0-4121-8a4d-4b5826e97a69",
+    "correct_answer": "D",
+    "explanation": "ตำรวจขอให้แพทย์เจาะเลือดโดยไม่ได้รับความยินยอม แพทย์ต้องยึดหลัก Autonomy ของผู้ป่วยก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D — Autonomy: ผู้ป่วยมีสิทธิปฏิเสธการตรวจ",
+      "reason": "แม้ตำรวจจะขอ แพทย์ไม่สามารถเจาะเลือดผู้ป่วยที่ไม่ยินยอมได้โดยไม่มีคำสั่งศาล เพราะผิดหลัก Autonomy (สิทธิในการตัดสินใจของผู้ป่วย) การบังคับเจาะเลือดเพื่อพิสูจน์ alcohol โดยไม่มี warrant เป็นการละเมิดสิทธิมนุษยชน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Beneficence",
+          "is_correct": false,
+          "explanation": "ทำเพื่อประโยชน์ผู้ป่วย — ไม่ใช่ประเด็นนี้"
+        },
+        {
+          "label": "B",
+          "text": "Non-maleficence",
+          "is_correct": false,
+          "explanation": "ไม่ทำอันตราย — ไม่ใช่ประเด็นหลัก"
+        },
+        {
+          "label": "C",
+          "text": "Confidentiality",
+          "is_correct": false,
+          "explanation": "ความลับทางการแพทย์ — ไม่ใช่ประเด็น"
+        },
+        {
+          "label": "D",
+          "text": "Autonomy",
+          "is_correct": true,
+          "explanation": "ผู้ป่วยมีสิทธิปฏิเสธการตรวจ"
+        },
+        {
+          "label": "E",
+          "text": "Justice",
+          "is_correct": false,
+          "explanation": "ความเป็นธรรม — ไม่ใช่ประเด็นหลักในกรณีนี้"
+        }
+      ],
+      "key_takeaway": "Autonomy = ผู้ป่วยปฏิเสธการตรวจเลือดได้ แม้ตำรวจขอ"
+    }
+  },
+  {
+    "id": "7ec61917-d734-4163-82c5-2df6b1168380",
+    "correct_answer": "B",
+    "explanation": "พบศพในรถทัวร์ มีเลือดออกที่หน้าอก (livor mortis) rigor mortis ยังไม่ fixed → เสียชีวิตประมาณ 2-4 ชั่วโมงที่ผ่านมา",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B — เสียชีวิต 2-4 ชั่วโมง จาก livor mortis ที่หน้าอก + rivor ยังไม่ fixed",
+      "reason": "Livor mortis (hypostasis/lividity) เริ่มปรากฏภายใน 1-2 ชั่วโมง และ fixed ใน 6-12 ชั่วโมง Rigor mortis เริ่มที่กราม 2-4 ชั่วโมง ถ้า livor เริ่มปรากฏแต่ยังไม่ fixed และ rigor ยังไม่ full → ประมาณ 2-4 ชั่วโมง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "2 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "อาจน้อยเกินไปสำหรับ livor ที่เห็นได้ชัด"
+        },
+        {
+          "label": "B",
+          "text": "2-4 ชั่วโมง",
+          "is_correct": true,
+          "explanation": "ถูกต้อง — livor เริ่ม + rigor ยังไม่สมบูรณ์"
+        },
+        {
+          "label": "C",
+          "text": "4-6 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "rigor น่าจะชัดกว่านี้"
+        },
+        {
+          "label": "D",
+          "text": "6-8 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "livor น่าจะ fixed แล้ว"
+        },
+        {
+          "label": "E",
+          "text": "8-10 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "นานเกินไป"
+        }
+      ],
+      "key_takeaway": "Livor เริ่ม + Rigor ไม่ full = เสียชีวิต 2-4 ชั่วโมง"
+    }
+  },
+  {
+    "id": "83aaa3f8-7c76-4bfa-acf9-2efcb3ffbd4c",
+    "correct_answer": "A",
+    "explanation": "แม้ 3 วันผ่านไปแล้ว การพบ sperm ในช่องคลอดยังเป็นหลักฐานที่มีน้ำหนักที่สุดในการยืนยันการมีเพศสัมพันธ์",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A — พบอสุจิในช่องคลอดเป็นหลักฐานสำคัญที่สุด",
+      "reason": "Sperm สามารถอยู่ในช่องคลอดได้นานถึง 3-5 วัน การพบ sperm ใน vaginal vault เป็น direct evidence ของการมีเพศสัมพันธ์ แม้ Acid phosphatase จะ positive ได้นาน แต่การพบ sperm โดยตรงมีความจำเพาะสูงกว่า Acid phosphatase อาจ positive ได้จากสาเหตุอื่น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "พบอสุจิในช่องคลอด",
+          "is_correct": true,
+          "explanation": "Direct evidence ที่จำเพาะที่สุด"
+        },
+        {
+          "label": "B",
+          "text": "Acid phosphatase positive",
+          "is_correct": false,
+          "explanation": "มีความไวสูงแต่จำเพาะน้อยกว่า sperm"
+        },
+        {
+          "label": "C",
+          "text": "พบ kissing bite",
+          "is_correct": false,
+          "explanation": "บ่งบอก sexual activity แต่ไม่จำเพาะ"
+        },
+        {
+          "label": "D",
+          "text": "รอยถลอกช่องคลอด",
+          "is_correct": false,
+          "explanation": "อาจเกิดจากสาเหตุอื่น"
+        },
+        {
+          "label": "E",
+          "text": "รอยฉีกขาดด้านหลัง hymen",
+          "is_correct": false,
+          "explanation": "อาจเกิดจากสาเหตุอื่น ไม่ specific"
+        }
+      ],
+      "key_takeaway": "Sperm in vagina = หลักฐานจำเพาะที่สุดของการมีเพศสัมพันธ์"
+    }
+  }
+]

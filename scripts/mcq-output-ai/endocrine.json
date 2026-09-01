@@ -1,0 +1,33 @@
+[
+  {
+    "scenario": "ผู้ป่วยที่วางแผนรับการรักษา I131 เพื่อรักษา hyperthyroidism ต้องเตรียมตัวต่อไปนี้ยกเว้น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Screening pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Screening breastfeeding"
+      },
+      {
+        "label": "C",
+        "text": "Low iodine diet 1-2 wk ก่อนรักษา"
+      },
+      {
+        "label": "D",
+        "text": "Withhold B-blocker 1-2 wk ก่อนรักษา"
+      },
+      {
+        "label": "E",
+        "text": "Stop anti-thyroid drug 7-8 วัน ก่อนรักษา"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Not specified (Endocrine)",
+    "status": "complete",
+    "ai_notes": "เหตุผล: ก่อนรับ I131 ควรหยุด B-blocker เพียง 1-2 วัน ก่อน (ไม่ใช่ 1-2 สัปดาห์) เนื่องจาก B-blocker ใช้เพื่อควบคุมอาการของ hyperthyroidism เท่านั้น ส่วนการเตรียมตัวที่ถูกต้อง ได้แก่: (A) Screening pregnancy เพราะ I131 เป็น teratogen (B) Screening breastfeeding เพราะ I131 สามารถผ่าน breast milk (C) Low iodine diet 1-2 สัปดาห์ เพื่อให้ thyroid ดูดซึม I131 ได้ดีขึ้น (E) Stop anti-thyroid drug 7-8 วันก่อนเพื่อเพิ่ม thyroidal uptake ของ I131",
+    "subject": "endocrine",
+    "exam_type": "NL2"
+  }
+]

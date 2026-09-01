@@ -1,0 +1,280 @@
+[
+  {
+    "scenario": "ชายอายุกลางคน มาด้วยปวดท้อง มีเหลืองเล็กน้อย ซีด ตรวจร่างกายพบ pale conjunctiva icteric sclera hepatomegaly ตรวจ lab: AST 800 ALT 420 amylase 240 TB 5 DB 3.5 ถามการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Alcoholic hepatitis"},
+      {"label": "B", "text": "Autoimmune hepatitis"},
+      {"label": "C", "text": "Acute pancreatitis"},
+      {"label": "D", "text": "Viral hepatitis"},
+      {"label": "E", "text": "Biliary obstruction"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ไม่ระบุแหล่งที่มา",
+    "status": "complete",
+    "ai_notes": "อาการและการตรวจพบตรงกับโรคตับอักเสบเชื้อไวรัส: ปวดท้อง เหลือง ซีด hepatomegaly ค่า transaminase สูง (AST>ALT) แต่ amylase ปกติ (ตัดโรค pancreatitis) ตัวเลือก E เพิ่มเติม"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี มาด้วยหายใจลำบาก 7 วัน ซีด เหลือง ซึมเลือดตามตัว (purpura) และเลือดออกจากเหงือก 2 วัน ตรวจร่างกาย: moderate pale, mild icteric sclerae, petechiae ทั้งสองขา ตรวจ CBC: Hb 6.5 Hct 19 WBC 5200 (N67% L35% M6% E2%) Plt 40000 NCNC aniso 3+ polychrome 1+ microspherocyte 1+ ถามการรักษาที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "IVIG"},
+      {"label": "B", "text": "PRC transfusion"},
+      {"label": "C", "text": "Plt transfusion"},
+      {"label": "D", "text": "Dexamethasone"},
+      {"label": "E", "text": "Plasmapheresis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ไม่ระบุแหล่งที่มา",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีลักษณะ microspherocyte polychrome ซีดรุนแรง (Hb 6.5) พร้อมเหลือง = AIHA (Autoimmune Hemolytic Anemia) การรักษาแรกคือ PRC transfusion เพื่อเพิ่ม oxygen carrying capacity ตามด้วย immunosuppression"
+  },
+  {
+    "scenario": "ชายไทยอายุ 25 ปี มีไข้ 1 สัปดาห์ก่อน กินยาลดไข้แล้วไข้ลงดี 3 วันก่อนมาโรงพยาบาล มีอาการเหนื่อยง่าย อ่อนเพลีย ตรวจร่างกาย: V/S stable pale conjunctivae icteric sclerae otherwise normal ตรวจ Lab: Hct 25% WBC 5000 (N40% L60%) Plt 400000 Microspherocyte 1+ Schistocyte 1+ ถามการวินิจฉัยที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "G6PD deficiency"},
+      {"label": "B", "text": "Paroxysmal nocturnal hemoglobinuria"},
+      {"label": "C", "text": "Autoimmune hemolytic anemia"},
+      {"label": "D", "text": "Thalassemia"},
+      {"label": "E", "text": "Hereditary spherocytosis"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ไม่ระบุแหล่งที่มา",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีประวัติไข้ 1 สัปดาห์ตามด้วยเหลือง ซีด microspherocyte schistocyte = AIHA (Autoimmune Hemolytic Anemia) ซึ่งเกิดได้หลังการติดเชื้อ การรักษาเริ่มต้นด้วย prednisolone"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงมีประวัติทาแท้งเถื่อน 3 วันที่ผ่านมา หลังจากนั้น 1 วันก่อนมาโรงพยาบาล มีไข้ ปวดท้อง ซึม ตรวจร่างกาย: abdominal tenderness + guarding purulent discharge at vagina slightly enlarged tender uterus ตรวจ Lab: Hct 30 WBC 12500 (N90 L10) Plt 50000 BUN 40 Cr 1.2 สาเหตุที่ทาให้ Plt ต่าในผู้ป่วยรายนี้คือ",
+    "choices": [
+      {"label": "A", "text": "TTP (Thrombotic thrombocytopenic purpura)"},
+      {"label": "B", "text": "HUS (Hemolytic uremic syndrome)"},
+      {"label": "C", "text": "DIC (Disseminated intravascular coagulation)"},
+      {"label": "D", "text": "ITP (Immune thrombocytopenia)"},
+      {"label": "E", "text": "Massive bleeding"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ไม่ระบุแหล่งที่มา",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี sepsis จากการทาแท้งไม่สะอาด (infection + DIC trigger) มีไข้ ปวดท้อง purulent discharge BUN Cr สูง Plt ต่า = DIC คลาสสิก"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 60 ปี ซีด ตรวจ MCV 70 ทดสอบ guaiac ได้ลบ ควรทาต่อไร",
+    "choices": [
+      {"label": "A", "text": "Sigmoidoscopy และ colonoscopy"},
+      {"label": "B", "text": "Repeat guaiac test 3 วัน"},
+      {"label": "C", "text": "CBC, ferritin level"},
+      {"label": "D", "text": "Iron supplement trial"},
+      {"label": "E", "text": "Upper GI endoscopy"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุแหล่งที่มา",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี microcytic anemia (MCV 70) ซึ่งบ่งชี้ iron deficiency anemia แม้ว่า guaiac ลบ ต้องตรวจหาแหล่งเลือดออก ตรวจ CBC ferritin ก่อน แล้วทา colonoscopy + sigmoidoscopy"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี มาด้วยหายใจลำบาก 7 วัน ซีด เหลือง ซึมเลือดตามตัว (purpura) และเลือดออกจากเหงือก 2 วัน ตรวจร่างกาย: moderate pale mild icteric sclerae petechiae ทั้งสองขา ตรวจ CBC: Hb 6.5 Hct 19 WBC 5200 (N67% L35% M6% E2%) Plt 40000 NCNC aniso 3+ polychrome 1+ microspherocyte 1+ ถามการรักษาที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "IVIG"},
+      {"label": "B", "text": "PRC transfusion"},
+      {"label": "C", "text": "Plt transfusion"},
+      {"label": "D", "text": "Dexamethasone"},
+      {"label": "E", "text": "Plasmapheresis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ไม่ระบุแหล่งที่มา",
+    "status": "complete",
+    "ai_notes": "ข้อนี้ซ้ำกับข้อ 2 ผู้ป่วยมี AIHA แรก ต้อง PRC transfusion"
+  },
+  {
+    "scenario": "ผู้ป่วยมีไข้ ซีด เหลือง ตรวจร่างกาย: pale icteric sclera ไม่มี hepatosplenomegaly ตรวจ PBS: normochromic microcytic นม bite cell ถามการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "G6PD deficiency"},
+      {"label": "B", "text": "Thalassemia"},
+      {"label": "C", "text": "Hereditary spherocytosis"},
+      {"label": "D", "text": "Autoimmune hemolytic anemia"},
+      {"label": "E", "text": "Paroxysmal nocturnal hemoglobinuria"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุแหล่งที่มา",
+    "status": "complete",
+    "ai_notes": "Bite cell = pathognomonic for G6PD deficiency ไข้เป็น trigger normochromic microcytic anemia ตัวเลือก C, D, E เพิ่มเติม"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 16 ปี เป็น homozygous beta-thalassemia ต้องรับเลือดเป็นประจา มีอาการอ่อนเพลียและบวมมา 1 เดือน ตรวจร่างกาย: BP ลดลง irregular heart rate and rhythm hepatosplenomegaly ถามว่าผู้ป่วยมี heart complication จากสาเหตุใด",
+    "choices": [
+      {"label": "A", "text": "Cardiac siderosis (iron overload)"},
+      {"label": "B", "text": "Cardiac hypertrophy"},
+      {"label": "C", "text": "Immune cardiomyositis"},
+      {"label": "D", "text": "Extramedullary hematopoiesis at heart"},
+      {"label": "E", "text": "Myocarditis from chronic hemolysis"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย thalassemia ที่รับเลือดเป็นประจา มี iron overload → cardiac siderosis (iron deposition in heart) → dysrhythmia heart failure ตัวเลือก E เพิ่มเติม"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 65 ปี มีประวัติ AAA (abdominal aortic aneurysm) มีจ้าเลือดตามตัว ตรวจร่างกาย: ecchymoses หลายจุด อื่นๆปกติ ตรวจ CBC: Hb 10 WBC 7200 (N75 L25) Plt 30000 PT prolonged PTT prolonged TT prolonged fibrinogen ลดลง จะตรวจอะไรเป็นประโยชน์ที่สุดในการบอกสาเหตุ",
+    "choices": [
+      {"label": "A", "text": "D-dimer"},
+      {"label": "B", "text": "Euglobulin lysis time"},
+      {"label": "C", "text": "Blood smear"},
+      {"label": "D", "text": "Antithrombin III level"},
+      {"label": "E", "text": "Fibrin degradation product (FDP)"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี coagulopathy PT PTT TT prolonged fibrinogen ลด → DIC vs primary fibrinolysis ตรวจ Euglobulin lysis time เพื่อแยกความแตกต่าง ตัวเลือก D, E เพิ่มเติม"
+  },
+  {
+    "scenario": "ลูกคนแรกเป็น HbH ให้หา Typing ของแม่และพ่อ โดยข้อมูล:\nพ่อ: Hb 13 MCV 76\nแม่: Hb 13 MCV 87",
+    "choices": [
+      {"label": "A", "text": "พ่อเป็น α α / - - (alpha thalassemia 1)"},
+      {"label": "B", "text": "พ่อเป็น α - / α - (alpha thalassemia 2)"},
+      {"label": "C", "text": "แม่เป็น α - / α - (alpha thalassemia 2)"},
+      {"label": "D", "text": "แม่เป็น α α / α - (carrier state)"},
+      {"label": "E", "text": "ทั้งพ่อและแม่เป็น normal genotype"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ลูกเป็น HbH (αα / - -) ต้องได้ 1 gene deletion จากพ่อและแม่ แม่มี MCV 87 (normal) = normal genotype, พ่อมี MCV 76 (microcytic) + Hb normal = α thalassemia 1 (α - / - -) พ่อส่ง - - ไปให้ลูก ตัวเลือก B, C, D, E เพิ่มเติม"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 75 ปี เป็นพลัง bed sore ไข้ ซึม ปัสสาวะ ไม่ออก 2 วัน มี stupor mild pale ไม่มี jaundice ไม่มี hepatosplenomegaly ตรวจ Lab: Hb 9 MCV 98 WBC 14000 (N90 L10) Plt 20000 PT 18 aPTT 36 มี MAHA (microangiopathic hemolytic anemia) ในผู้ป่วยรายนี้ Blood picture น่าจะคิดถึงโรคใด",
+    "choices": [
+      {"label": "A", "text": "Primary fibrinolysis"},
+      {"label": "B", "text": "Vitamin K deficiency"},
+      {"label": "C", "text": "Thalassemia with sepsis"},
+      {"label": "D", "text": "DIC (Disseminated intravascular coagulation)"},
+      {"label": "E", "text": "TTP (Thrombotic thrombocytopenic purpura)"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี sepsis (ไข้ ปัสสาวะ ไม่ออก stupor) Plt ต่า MAHA schistocyte PT aPTT prolonged = DIC classic presentation จากการติดเชื้อ"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 6 ปี มีจ้าเลือดตามตัวเป็นๆ หายๆ มา 1 เดือน ตรวจร่างกาย: ecchymosis ทั่วตัว ตรวจ CBC: Hb 12 Hct 36 WBC 8500 PMN 55% Lym 30% Eo 15% Plt 154000 มี pale stain ตรวจ lab ใดผิดปกติ",
+    "choices": [
+      {"label": "A", "text": "PT (Prothrombin time)"},
+      {"label": "B", "text": "aPTT (Activated partial thromboplastin time)"},
+      {"label": "C", "text": "Bleeding time"},
+      {"label": "D", "text": "VCT (Venous clotting time)"},
+      {"label": "E", "text": "TT (Thrombin time)"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "เด็กมีจ้าเลือด Plt normal (154000) pale stain → platelet dysfunction = Glanzmann's thrombasthenia ตรวจ bleeding time จะ prolonged ขณะ PT aPTT TT ปกติ"
+  },
+  {
+    "scenario": "ชายอายุ 18 ปี ไข้สูง เจ็บคอ 3 วัน ซีด เหลือง ตรวจร่างกาย: moderate pale mild jaundice ตับโต 2 ซม ใต้ส่วนโค้งซี่โครง ม้ามโต 3 ซม ใต้ส่วนโค้งซี่โครง ตรวจ Lab: Hb 7.9 Hct 28 MCV 65 WBC 9500 N80% L20% Plt 450000 ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใด",
+    "choices": [
+      {"label": "A", "text": "AIHA (Autoimmune hemolytic anemia)"},
+      {"label": "B", "text": "HbH disease with hemolytic crisis"},
+      {"label": "C", "text": "PNH (Paroxysmal nocturnal hemoglobinuria)"},
+      {"label": "D", "text": "G6PD deficiency"},
+      {"label": "E", "text": "DIC"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี ไข้สูง เจ็บคอ (trigger infection) ซีด เหลือง MCV 65 (microcytic) hepatosplenomegaly Plt สูง = HbH disease with hemolytic crisis triggered by infection"
+  },
+  {
+    "scenario": "ผู้ป่วยซีด มีเหลือง ไม่มี hepatosplenomegaly จะส่งตรวจอะไรเป็นประโยชน์ในการวินิจฉัยเบื้องต้น",
+    "choices": [
+      {"label": "A", "text": "Hemoglobin electrophoresis (Hb typing)"},
+      {"label": "B", "text": "RBC inclusion body"},
+      {"label": "C", "text": "Bone marrow aspiration (BMA)"},
+      {"label": "D", "text": "G6PD screening"},
+      {"label": "E", "text": "Coombs test (DAT)"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี hemolytic anemia (ซีด เหลือง ไม่มี splenomegaly) ตรวจ Coombs test ก่อนเพื่อแยก AIHA จาก intrinsic RBC defect ตัวเลือก A, B, C, D ต่างก็เป็น useful tests ที่เหมาะกับโรคอื่นๆ"
+  },
+  {
+    "scenario": "ผู้ป่วยมีการวินิจฉัยทางคลินิก DIC การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Antibiotics (ATB)"},
+      {"label": "B", "text": "Platelet concentrate"},
+      {"label": "C", "text": "Fresh frozen plasma (FFP)"},
+      {"label": "D", "text": "Platelet + FFP"},
+      {"label": "E", "text": "Heparin"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "การรักษา DIC ที่สำคัญที่สุด คือ treat underlying cause เช่น sepsis ให้ antibiotics เป็นอันดับแรก supportive transfusion (Plt, FFP) เป็นอันดับสอง"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 65 ปี มีประวัติ AAA มีจ้าเลือดแขนขา ตรวจร่างกาย: ecchymosis ที่ขาและแขน ตรวจ CBC: Hb 10 Hct 30 WBC 8600 (N75 L25) PT 15 PTT 33 fibrinogen 150 ส่ง lab ใดเหมาะสมที่สุดในผู้ป่วยรายนี้",
+    "choices": [
+      {"label": "A", "text": "D-dimer"},
+      {"label": "B", "text": "Bleeding time"},
+      {"label": "C", "text": "Platelet function test"},
+      {"label": "D", "text": "Protein C and Protein S"},
+      {"label": "E", "text": "Fibrinogen level"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี coagulopathy (PT prolonged slightly fibrinogen ลด) อาจ DIC จึงตรวจ D-dimer (elevated in DIC and thrombosis) fibrinogen ได้ระดับค่าแล้ว ตัวเลือก B, C, D, E เพิ่มเติม"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย underlying cirrhosis มาด้วยอาเจียนเป็นเลือด ตรวจร่างกายพบ marked ascites crepitation ทั้งสองปอด Hct 35% Plt 60000 APTT prolonged PT prolonged ควรให้ blood product ตัวใด",
+    "choices": [
+      {"label": "A", "text": "Packed red cells (PRC)"},
+      {"label": "B", "text": "Platelet concentrate"},
+      {"label": "C", "text": "Fresh frozen plasma (FFP)"},
+      {"label": "D", "text": "Cryoprecipitate"},
+      {"label": "E", "text": "Cryo-removed plasma"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย cirrhosis มี coagulopathy (APTT PT prolonged) fibrinogen อาจต่า → FFP ให้ clotting factors + fibrinogen Hct 35% ยังสูงพอ ไม่ต้อง PRC ทันที"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี มีจุดเลือดออกตามตัวมา 3 สัปดาห์ บางครั้งมีเลือดออกจากเหงือก ตรวจร่างกาย: not pale no jaundice petechiae and purpura ที่ลำตัวและแขนขา ตรวจ CBC: Hb 12 Hct 36 MCV 80 WBC 4600 (N65 L30 M5) Plt 36000 จงหาการรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Prednisolone"},
+      {"label": "B", "text": "Cyclophosphamide"},
+      {"label": "C", "text": "IVIG"},
+      {"label": "D", "text": "Splenectomy"},
+      {"label": "E", "text": "Platelet transfusion"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี ITP (immune thrombocytopenia) Plt 36000 bleeding manifestations Hb Hct normal ไม่ซีด → ปัญหาหลักคือ antibodies ต่อ platelets ให้ prednisolone ก่อน ขาด IVIG หรือ splenectomy ในกรณีที่ไม่ตอบสนอง"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 40 ปี กินเหล้ามากเพลีย เป็นมา 2 เดือน ตรวจ CBC: WBC 12000 มี WBC granulocyte ทุก series Plt 650000 splenomegaly จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Acute myelofibrosis"},
+      {"label": "B", "text": "Acute myeloid leukemia (AML)"},
+      {"label": "C", "text": "Chronic myeloid leukemia (CML)"},
+      {"label": "D", "text": "Malignant lymphoma"},
+      {"label": "E", "text": "Leukemoid reaction"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี WBC 12000 + granulocyte series ทั้งหมด Plt 650000 (thrombocytosis) splenomegaly = CML (chronic myeloid leukemia) chronic course นานกว่า acute leukemia ตัวเลือก E เพิ่มเติม"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง ซีดมา 2 วัน reticulocyte count 8% MCV 65 Hct 20% จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Thalassemia disease"},
+      {"label": "B", "text": "Autoimmune hemolytic anemia (AIHA)"},
+      {"label": "C", "text": "G6PD deficiency"},
+      {"label": "D", "text": "Hereditary spherocytosis (HS)"},
+      {"label": "E", "text": "Iron deficiency anemia"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี Hct 20% (ซีดรุนแรง) MCV 65 (microcytic) reticulocyte

@@ -1,0 +1,45 @@
+name: Insert Board Seed (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      only_specialty:
+        description: "Comma-separated slugs (e.g. ob_gyn) — empty = all files"
+        required: false
+        default: "ob_gyn"
+      min_skip_at:
+        description: "Skip specialty if existing count ≥ this"
+        required: false
+        default: "30"
+      dry_run:
+        description: "Dry run (1 = parse + report only, no insert)"
+        required: false
+        type: choice
+        options:
+          - "1"
+          - "0"
+        default: "1"
+
+jobs:
+  insert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Insert board seed
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ONLY_SPECIALTY: ${{ inputs.only_specialty }}
+          MIN_SKIP_AT: ${{ inputs.min_skip_at }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: npx tsx scripts/insert-board-seed.ts

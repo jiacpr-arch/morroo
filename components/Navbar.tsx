@@ -1,0 +1,272 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X, User, LogOut, Shield } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
+import type { User as SupabaseUser } from "@supabase/supabase-js";
+import BetaHeaderCounter from "@/components/beta/BetaHeaderCounter";
+import NavbarRankChip from "@/components/school/NavbarRankChip";
+
+const navLinks: { href: string; label: string; isNew?: boolean }[] = [
+  { href: "/", label: "หน้าแรก" },
+  { href: "/school", label: "School" },
+  { href: "/nl", label: "MCQ" },
+  { href: "/exams", label: "MEQ" },
+  { href: "/longcase", label: "Long Case" },
+  { href: "/casegame", label: "เกมเคส", isNew: true },
+  // middleware 301 ไป game.morroo.com บนโปรดักชัน (hub รวมเกมทุกเว็บ)
+  { href: "/games", label: "เกม" },
+  { href: "/acls-reader", label: "ACLS" },
+  { href: "/board", label: "Board" },
+  { href: "/blog", label: "บทความ" },
+  { href: "/pricing", label: "แพ็กเกจ" },
+  { href: "/guide", label: "คู่มือ" },
+];
+
+/** จุดสีส้มเน้นเมนูใหม่ — ping ครั้งเดียวตอนโหลดเพื่อไม่กวนสายตาตลอดเวลา */
+function NewDot() {
+  return (
+    <span className="absolute -right-2 -top-0.5 flex h-1.5 w-1.5" aria-label="ฟีเจอร์ใหม่">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75 [animation-iteration-count:3]" />
+      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500" />
+    </span>
+  );
+}
+
+const authNavLinks = [
+  { href: "/dashboard", label: "ผลการเรียน" },
+];
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [user, setUser] = useState<SupabaseUser | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const supabase = createClient();
+
+  useEffect(() => {
+    const auth = supabase.auth;
+    auth.getUser().then(({ data }: { data: { user: SupabaseUser | null } }) => setUser(data.user));
+    const {
+      data: { subscription },
+    } = auth.onAuthStateChange((_event: string, session: { user: SupabaseUser | null } | null) => {
+      setUser(session?.user ?? null);
+    }) as { data: { subscription: { unsubscribe: () => void } } };
+    return () => subscription.unsubscribe();
+  }, [supabase.auth]);
+
+  useEffect(() => {
+    if (!user) {
+      setIsAdmin(false);
+      return;
+    }
+    let cancelled = false;
+    supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .single()
+      .then(({ data }: { data: { role?: string } | null }) => {
+        if (!cancelled) setIsAdmin(data?.role === "admin");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [user, supabase]);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    window.location.href = "/";
+  };
+
+  return (
+    <nav className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+          <span className="text-2xl">🩺</span>
+          <span className="text-brand-dark">หมอรู้</span>
+        </Link>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`relative text-sm font-medium transition-colors hover:text-brand ${
+                pathname === link.href
+                  ? "text-brand"
+                  : "text-muted-foreground"
+              }`}
+            >
+              {link.label}
+              {link.isNew && <NewDot />}
+            </Link>
+          ))}
+        </div>
+
+        {/* Auth buttons */}
+        <div className="hidden md:flex items-center gap-3">
+          {user && <NavbarRankChip />}
+          {user && <BetaHeaderCounter />}
+          {user ? (
+            <>
+              {authNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-brand ${
+                    pathname === link.href
+                      ? "text-brand"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              {isAdmin && (
+                <Link href="/admin">
+                  <Button variant="ghost" size="sm" className="gap-2">
+                    <Shield className="h-4 w-4" />
+                    Admin
+                  </Button>
+                </Link>
+              )}
+              <Link href="/profile">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <User className="h-4 w-4" />
+                  โปรไฟล์
+                </Button>
+              </Link>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleLogout}
+                className="gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                ออกจากระบบ
+              </Button>
+            </>
+          ) : (
+            <>
+              <Link href="/login">
+                <Button variant="ghost" size="sm">
+                  เข้าสู่ระบบ
+                </Button>
+              </Link>
+              <Link href="/register">
+                <Button
+                  size="sm"
+                  className="bg-brand hover:bg-brand-light text-white"
+                >
+                  สมัครสมาชิก
+                </Button>
+              </Link>
+            </>
+          )}
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden flex items-center gap-2">
+          {user && <NavbarRankChip />}
+          {user && <BetaHeaderCounter />}
+          <button onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile nav */}
+      {mobileOpen && (
+        <div className="border-t bg-white md:hidden">
+          <div className="space-y-1 px-4 py-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className={`block rounded-md px-3 py-2 text-sm font-medium ${
+                  pathname === link.href
+                    ? "bg-brand/10 text-brand"
+                    : "text-muted-foreground hover:bg-muted"
+                }`}
+              >
+                {link.label}
+                {link.isNew && (
+                  <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700">
+                    ใหม่
+                  </span>
+                )}
+              </Link>
+            ))}
+            <div className="border-t pt-3 mt-3 space-y-2">
+              {user ? (
+                <>
+                  {authNavLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={`block rounded-md px-3 py-2 text-sm font-medium ${
+                        pathname === link.href
+                          ? "bg-brand/10 text-brand"
+                          : "text-muted-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                  {isAdmin && (
+                    <Link
+                      href="/admin"
+                      onClick={() => setMobileOpen(false)}
+                      className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
+                    >
+                      Admin
+                    </Link>
+                  )}
+                  <Link
+                    href="/profile"
+                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
+                  >
+                    โปรไฟล์
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full text-left rounded-md px-3 py-2 text-sm font-medium text-destructive hover:bg-muted"
+                  >
+                    ออกจากระบบ
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
+                  >
+                    เข้าสู่ระบบ
+                  </Link>
+                  <Link
+                    href="/register"
+                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-md bg-brand px-3 py-2 text-center text-sm font-medium text-white"
+                  >
+                    สมัครสมาชิก
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}

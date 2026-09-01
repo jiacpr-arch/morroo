@@ -1,0 +1,1122 @@
+[
+  {
+    "scenario": "ทารกชาย อายุ 8 เดือน มาด้วยอาการร้องไห้เป็นพักๆ ทุก 15-20 นาที ร้องแล้วหยุด แล้วร้องใหม่ อาเจียนสีเขียว 2 ครั้ง ตรวจร่างกายพบก้อนคลำได้บริเวณ right upper quadrant ลักษณะคล้ายไส้กรอก ถ่ายอุจจาระมีเลือดปนมูก การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Acute appendicitis"},
+      {"label": "B", "text": "Intussusception"},
+      {"label": "C", "text": "Meckel diverticulum"},
+      {"label": "D", "text": "Volvulus"},
+      {"label": "E", "text": "Hirschsprung disease"}
+    ],
+    "correct_answer": "B",
+    "explanation": "อาการปวดท้องเป็นพักๆ (colicky pain) ร่วมกับ currant jelly stool และก้อนลักษณะ sausage-shaped mass เป็นลักษณะเฉพาะของ intussusception",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Intussusception",
+      "reason": "Intussusception คือภาวะที่ลำไส้ส่วนต้นสอดเข้าไปในลำไส้ส่วนปลาย พบบ่อยที่สุดในเด็กอายุ 6-36 เดือน โดยเฉพาะเด็กชาย ตำแหน่งที่พบบ่อยที่สุดคือ ileocecal junction\n\nอาการคลาสสิกประกอบด้วย triad ได้แก่ 1) ปวดท้องเป็นพักๆ (intermittent colicky abdominal pain) เด็กจะร้องไห้จ้าแล้วหยุด แล้วร้องใหม่ 2) อาเจียน ซึ่งอาจเป็นสีเขียวถ้ามี bile 3) ถ่ายอุจจาระเป็นเลือดปนมูกลักษณะ currant jelly stool\n\nการตรวจร่างกายอาจคลำได้ก้อนลักษณะ sausage-shaped mass บริเวณ right upper quadrant หรือ epigastrium และอาจพบ Dance sign คือคลำบริเวณ right iliac fossa ได้ว่างเปล่า\n\nการวินิจฉัยยืนยันทำได้ด้วย ultrasound ซึ่งจะเห็น target sign หรือ donut sign ในภาพตัดขวาง และ pseudokidney sign ในภาพตัดยาว การรักษาเบื้องต้นคือ pneumatic หรือ hydrostatic reduction ภายใต้ fluoroscopy หรือ ultrasound guidance หากไม่สำเร็จหรือมี peritonitis ต้องทำผ่าตัด",
+      "choices": [
+        {"label": "A", "text": "Acute appendicitis", "is_correct": false, "explanation": "Acute appendicitis พบน้อยในเด็กอายุต่ำกว่า 2 ปี อาการมักเป็นปวดท้องต่อเนื่องไม่ใช่เป็นพักๆ และไม่มี sausage-shaped mass ตำแหน่งปวดมักอยู่ที่ right lower quadrant"},
+        {"label": "B", "text": "Intussusception", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง เพราะอาการปวดท้องเป็นพักๆ ก้อน sausage-shaped mass และ currant jelly stool เป็น classic triad ของ intussusception ซึ่งพบบ่อยในเด็กอายุ 6-36 เดือน"},
+        {"label": "C", "text": "Meckel diverticulum", "is_correct": false, "explanation": "Meckel diverticulum มักมาด้วยเลือดออกทางทวารหนักแบบไม่เจ็บ (painless rectal bleeding) เลือดมักเป็นสีแดงสดหรือ maroon ไม่มีก้อนคลำได้ และไม่มีอาการปวดท้องเป็นพักๆ"},
+        {"label": "D", "text": "Volvulus", "is_correct": false, "explanation": "Midgut volvulus มักเกิดในทารกแรกเกิดถึง 1 เดือน อาการคือ bilious vomiting อย่างเฉียบพลัน ท้องอืด และอาจมี bloody stool แต่ไม่มี sausage-shaped mass และอาการมักเป็นต่อเนื่องไม่ใช่เป็นพักๆ"},
+        {"label": "E", "text": "Hirschsprung disease", "is_correct": false, "explanation": "Hirschsprung disease มักมาด้วยอาการท้องผูกเรื้อรัง ท้องอืด delayed passage of meconium ไม่ใช่อาการปวดท้องเป็นพักๆ และไม่มี sausage-shaped mass"}
+      ],
+      "key_takeaway": "Classic triad ของ intussusception คือ intermittent colicky pain, vomiting, และ currant jelly stool ร่วมกับ sausage-shaped mass พบบ่อยในเด็ก 6-36 เดือน"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 7 เดือน มาด้วยอาการร้องไห้งอตัวเป็นพักๆ มา 6 ชั่วโมง อาเจียน 3 ครั้ง ผู้ปกครองบอกว่าถ่ายอุจจาระมีมูกเลือดปน ตรวจร่างกาย: ท้องอืดเล็กน้อย คลำได้ก้อนบริเวณ right hypochondrium ทำ ultrasound abdomen พบ target sign การรักษาเบื้องต้นที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Exploratory laparotomy"},
+      {"label": "B", "text": "Barium enema reduction"},
+      {"label": "C", "text": "Air enema reduction"},
+      {"label": "D", "text": "Observation and IV fluid"},
+      {"label": "E", "text": "Nasogastric decompression เพียงอย่างเดียว"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Air (pneumatic) enema reduction เป็นการรักษาเบื้องต้นที่เป็น first-line สำหรับ intussusception ที่ไม่มี peritonitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Air enema reduction",
+      "reason": "เมื่อวินิจฉัย intussusception ได้แล้ว การรักษาเบื้องต้นที่แนะนำคือ non-operative reduction โดยใช้ pneumatic (air) reduction หรือ hydrostatic reduction ภายใต้ fluoroscopy หรือ ultrasound guidance\n\nPneumatic reduction (air enema) เป็นวิธีที่นิยมมากที่สุดในปัจจุบัน เพราะมีอัตราความสำเร็จสูงประมาณ 80-95% ปลอดภัย ใช้เวลาน้อย และมี radiation exposure น้อยกว่า barium enema นอกจากนี้หากเกิด perforation air จะถูกดูดซึมได้ง่ายกว่า barium\n\nข้อบ่งชี้ในการทำผ่าตัดโดยตรง ได้แก่ มี peritonitis, hemodynamic instability, evidence of perforation (free air), หรือ non-operative reduction ไม่สำเร็จ ในผู้ป่วยรายนี้ไม่มีข้อบ่งชี้ดังกล่าว จึงควรเริ่มด้วย air enema reduction",
+      "choices": [
+        {"label": "A", "text": "Exploratory laparotomy", "is_correct": false, "explanation": "การผ่าตัดสำรวจช่องท้องเป็นทางเลือกเมื่อ non-operative reduction ไม่สำเร็จ หรือมี peritonitis, perforation, หรือ hemodynamic instability ในกรณีนี้ยังไม่มีข้อบ่งชี้ทำผ่าตัดโดยตรง"},
+        {"label": "B", "text": "Barium enema reduction", "is_correct": false, "explanation": "Barium enema reduction เป็นวิธีเก่าที่ใช้ได้ แต่ปัจจุบันนิยมน้อยลงเพราะหาก perforation เกิดขึ้น barium จะทำให้เกิด chemical peritonitis ที่รุนแรง air enema จึงเป็น first-line ที่ปลอดภัยกว่า"},
+        {"label": "C", "text": "Air enema reduction", "is_correct": true, "explanation": "Air (pneumatic) enema reduction เป็นการรักษาเบื้องต้นที่เป็นมาตรฐานสำหรับ intussusception ในเด็กที่ไม่มี peritonitis หรือ perforation มีอัตราสำเร็จสูง ปลอดภัย และหากเกิดภาวะแทรกซ้อนจะรุนแรงน้อยกว่า barium"},
+        {"label": "D", "text": "Observation and IV fluid", "is_correct": false, "explanation": "การสังเกตอาการอย่างเดียวไม่เหมาะสม เพราะ intussusception หากไม่ได้รับการรักษาอาจนำไปสู่ bowel ischemia, necrosis และ perforation ได้"},
+        {"label": "E", "text": "Nasogastric decompression เพียงอย่างเดียว", "is_correct": false, "explanation": "NG decompression เป็นส่วนหนึ่งของการ resuscitation แต่ไม่ใช่การรักษาหลัก ต้องทำ reduction ร่วมด้วย"}
+      ],
+      "key_takeaway": "Air enema reduction เป็น first-line treatment สำหรับ intussusception ที่ไม่มี peritonitis หรือ perforation"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 10 เดือน เคยได้รับการรักษา intussusception ด้วย air enema reduction สำเร็จเมื่อ 2 สัปดาห์ก่อน วันนี้มาด้วยอาการคล้ายเดิม คือร้องไห้เป็นพักๆ อาเจียน ถ่ายเป็นมูกเลือด ultrasound พบ target sign ที่ ileocecal region อีกครั้ง ข้อใดเป็นแนวทางการดูแลที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "ทำ air enema reduction ซ้ำ"},
+      {"label": "B", "text": "ส่งผ่าตัดทันที"},
+      {"label": "C", "text": "ทำ CT abdomen ก่อนตัดสินใจ"},
+      {"label": "D", "text": "ให้ยาแก้ปวดและสังเกตอาการ"},
+      {"label": "E", "text": "ทำ barium enema reduction แทน air"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Recurrent intussusception สามารถทำ non-operative reduction ซ้ำได้ หากไม่มีข้อบ่งชี้ผ่าตัด โดย recurrence rate อยู่ที่ประมาณ 5-10%",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. ทำ air enema reduction ซ้ำ",
+      "reason": "Intussusception มี recurrence rate ประมาณ 5-10% หลังจาก successful reduction โดยส่วนใหญ่ recurrence เกิดภายใน 72 ชั่วโมงแรก แต่ก็สามารถเกิดขึ้นได้ในภายหลัง\n\nสำหรับ recurrent intussusception แนวทางการรักษาคือสามารถทำ non-operative reduction ซ้ำได้อีก โดยมีอัตราสำเร็จใกล้เคียงกับครั้งแรก หากไม่มีข้อบ่งชี้ผ่าตัด เช่น peritonitis หรือ perforation\n\nอย่างไรก็ตาม หากเกิด recurrence มากกว่า 2-3 ครั้ง ควรพิจารณาทำผ่าตัดเพื่อหา pathologic lead point เช่น Meckel diverticulum, polyp, lymphoma หรือ duplication cyst โดยเฉพาะในเด็กที่อายุมากกว่า 2 ปี",
+      "choices": [
+        {"label": "A", "text": "ทำ air enema reduction ซ้ำ", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง recurrent intussusception ครั้งที่ 2 สามารถทำ air enema reduction ซ้ำได้ หากไม่มี peritonitis หรือ perforation โดยมีอัตราสำเร็จสูง"},
+        {"label": "B", "text": "ส่งผ่าตัดทันที", "is_correct": false, "explanation": "การผ่าตัดทันทีควรพิจารณาเมื่อ recurrence เกิดซ้ำหลายครั้ง (>2-3 ครั้ง) หรือมีข้อบ่งชี้ผ่าตัด ในกรณี second episode ยังสามารถทำ non-operative reduction ได้ก่อน"},
+        {"label": "C", "text": "ทำ CT abdomen ก่อนตัดสินใจ", "is_correct": false, "explanation": "CT abdomen ไม่จำเป็นในกรณีนี้ เพราะ ultrasound ยืนยัน intussusception แล้ว และไม่มีข้อบ่งชี้พิเศษที่ต้องทำ CT เพิ่มเติม การทำ CT จะทำให้เสียเวลาและเด็กได้รับรังสีโดยไม่จำเป็น"},
+        {"label": "D", "text": "ให้ยาแก้ปวดและสังเกตอาการ", "is_correct": false, "explanation": "การสังเกตอาการอย่างเดียวไม่เหมาะสม เพราะ intussusception ที่ยืนยันแล้วต้องได้รับการรักษาเพื่อป้องกัน bowel ischemia และ necrosis"},
+        {"label": "E", "text": "ทำ barium enema reduction แทน air", "is_correct": false, "explanation": "ไม่มีข้อบ่งชี้ที่ต้องเปลี่ยนจาก air เป็น barium enema ในกรณี recurrence เพราะ air enema ยังคงเป็น first-line และปลอดภัยกว่า"}
+      ],
+      "key_takeaway": "Recurrent intussusception สามารถทำ non-operative reduction ซ้ำได้ หากเกิดซ้ำมากกว่า 2-3 ครั้ง ควรพิจารณาผ่าตัดเพื่อหา pathologic lead point"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 5 ปี มาด้วยอาการปวดท้องรุนแรง อาเจียน ถ่ายเป็นเลือดปนมูก 2 ครั้ง ตรวจร่างกาย: ท้องอืด กดเจ็บทั่วท้อง มี guarding และ rebound tenderness ทำ ultrasound พบ intussusception ที่ ileocecal junction ข้อใดเป็นแนวทางการรักษาที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "Air enema reduction"},
+      {"label": "B", "text": "Hydrostatic reduction ด้วย normal saline"},
+      {"label": "C", "text": "Exploratory laparotomy"},
+      {"label": "D", "text": "ให้ IV antibiotics แล้วรอดูอาการ"},
+      {"label": "E", "text": "Barium enema reduction"}
+    ],
+    "correct_answer": "C",
+    "explanation": "ผู้ป่วยมีอาการ peritonitis (guarding, rebound tenderness) ซึ่งเป็นข้อห้ามของ non-operative reduction ต้องทำผ่าตัดทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Exploratory laparotomy",
+      "reason": "ในผู้ป่วย intussusception ที่มี peritonitis signs ได้แก่ guarding, rebound tenderness, rigidity หรือมี evidence of perforation, hemodynamic instability หรือ prolonged symptoms เป็นข้อห้ามของ non-operative reduction (ทั้ง air enema และ hydrostatic reduction)\n\nเหตุผลเพราะการทำ enema reduction ในผู้ป่วยที่มี peritonitis จะเพิ่มความเสี่ยงต่อ perforation และทำให้ภาวะ sepsis แย่ลง นอกจากนี้ bowel ที่ ischemic หรือ necrotic แล้วแม้จะ reduce ได้ก็อาจ perforate ในภายหลัง\n\nดังนั้นผู้ป่วยรายนี้ต้องได้รับการ resuscitation ด้วย IV fluid, antibiotics และส่งผ่าตัดทันที โดยศัลยแพทย์จะ manual reduction หรือ resection ส่วนของลำไส้ที่ necrotic",
+      "choices": [
+        {"label": "A", "text": "Air enema reduction", "is_correct": false, "explanation": "เป็นข้อห้ามเพราะผู้ป่วยมี peritonitis การทำ air enema อาจทำให้เกิด perforation ได้ง่าย และลำไส้ที่ necrotic แม้ reduce ได้ก็ยังอาจ perforate"},
+        {"label": "B", "text": "Hydrostatic reduction ด้วย normal saline", "is_correct": false, "explanation": "Hydrostatic reduction ก็เป็น non-operative reduction เช่นเดียวกับ air enema จึงมีข้อห้ามเหมือนกันเมื่อมี peritonitis"},
+        {"label": "C", "text": "Exploratory laparotomy", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง เมื่อมี peritonitis signs จำเป็นต้องทำผ่าตัด เพื่อ manual reduction หรือ bowel resection ร่วมกับ assess viability ของลำไส้"},
+        {"label": "D", "text": "ให้ IV antibiotics แล้วรอดูอาการ", "is_correct": false, "explanation": "การให้ antibiotics เพียงอย่างเดียวไม่เพียงพอ เพราะ intussusception ไม่หายเองและ peritonitis ต้องการ surgical intervention"},
+        {"label": "E", "text": "Barium enema reduction", "is_correct": false, "explanation": "Barium enema reduction เป็นข้อห้ามเมื่อมี peritonitis และหาก perforate จะทำให้เกิด barium peritonitis ซึ่งรุนแรงมาก"}
+      ],
+      "key_takeaway": "Peritonitis, perforation, และ hemodynamic instability เป็นข้อห้ามของ non-operative reduction ใน intussusception ต้องทำผ่าตัดทันที"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 4 เดือน มาด้วยอาการร้องไห้เป็นพักๆ ถ่ายเป็นมูกเลือด ทำ ultrasound พบ small bowel-small bowel intussusception ยาวประมาณ 2 cm ไม่มี lead point ข้อใดถูกต้องที่สุด",
+    "choices": [
+      {"label": "A", "text": "ต้องทำ air enema reduction ทุกราย"},
+      {"label": "B", "text": "ต้องผ่าตัดทุกราย"},
+      {"label": "C", "text": "ส่วนใหญ่หายเองได้ สามารถสังเกตอาการได้"},
+      {"label": "D", "text": "ต้องทำ CT scan เพิ่มเติมก่อนตัดสินใจ"},
+      {"label": "E", "text": "ต้องส่องกล้องลำไส้เล็กเพื่อหาสาเหตุ"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Small bowel-small bowel intussusception ที่สั้นและไม่มี lead point มักเป็น transient และ self-limiting สามารถสังเกตอาการได้",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. ส่วนใหญ่หายเองได้ สามารถสังเกตอาการได้",
+      "reason": "Small bowel-small bowel intussusception แตกต่างจาก ileocolic intussusception ที่พบบ่อยในเด็ก โดย small bowel intussusception ที่มีขนาดเล็ก (< 3-3.5 cm) ไม่มี lead point และไม่มี obstruction มักเป็น transient physiologic intussusception ที่สามารถ reduce เองได้\n\nภาวะนี้มักพบโดยบังเอิญจากการทำ ultrasound และมีความสำคัญทางคลินิกน้อย ต่างจาก ileocolic intussusception ที่มักต้องการ intervention\n\nอย่างไรก็ตาม หากมีอาการ obstruction, เลือดออกมาก, หรือ ultrasound แสดง lead point ควรพิจารณาการรักษาเพิ่มเติม และควร follow up ด้วย ultrasound ซ้ำเพื่อยืนยันว่า intussusception หายไป",
+      "choices": [
+        {"label": "A", "text": "ต้องทำ air enema reduction ทุกราย", "is_correct": false, "explanation": "Air enema reduction ใช้สำหรับ ileocolic intussusception ไม่ใช่ small bowel-small bowel intussusception เพราะ enema ไม่สามารถ reach ไปถึง small bowel ได้อย่างมีประสิทธิภาพ"},
+        {"label": "B", "text": "ต้องผ่าตัดทุกราย", "is_correct": false, "explanation": "การผ่าตัดสงวนไว้สำหรับกรณีที่มี lead point, obstruction ที่ไม่ดีขึ้น, หรือ ischemia ไม่จำเป็นต้องทำทุกราย"},
+        {"label": "C", "text": "ส่วนใหญ่หายเองได้ สามารถสังเกตอาการได้", "is_correct": true, "explanation": "Small bowel intussusception ที่สั้น ไม่มี lead point และไม่มี obstruction มักเป็น transient และ self-limiting สามารถสังเกตอาการและ follow up ultrasound ได้"},
+        {"label": "D", "text": "ต้องทำ CT scan เพิ่มเติมก่อนตัดสินใจ", "is_correct": false, "explanation": "CT scan ไม่จำเป็นในกรณีที่ ultrasound ให้ข้อมูลเพียงพอแล้ว และควรหลีกเลี่ยง radiation ในเด็กเล็ก"},
+        {"label": "E", "text": "ต้องส่องกล้องลำไส้เล็กเพื่อหาสาเหตุ", "is_correct": false, "explanation": "การส่องกล้องลำไส้เล็กเป็น invasive procedure ที่ไม่จำเป็นในกรณี transient small bowel intussusception ที่ไม่มี lead point"}
+      ],
+      "key_takeaway": "Small bowel-small bowel intussusception ที่สั้น ไม่มี lead point มักเป็น transient และ self-limiting ต่างจาก ileocolic intussusception ที่ต้องการ intervention"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 3 สัปดาห์ มาด้วยอาการอาเจียนพุ่งหลังดูดนมทุกมื้อมา 5 วัน อาเจียนเป็นนมไม่มีสีเขียวปน ทารกยังหิวหลังอาเจียน น้ำหนักลดจากแรกเกิด 3,200 g เหลือ 2,900 g ตรวจร่างกาย: dehydrated, คลำได้ก้อนแข็งขนาดเท่าเม็ดมะกอกบริเวณ right upper quadrant ผลตรวจเลือด: Na 130 mEq/L, K 2.8 mEq/L, Cl 85 mEq/L, HCO3 32 mEq/L การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Gastroesophageal reflux disease"},
+      {"label": "B", "text": "Pyloric stenosis"},
+      {"label": "C", "text": "Duodenal atresia"},
+      {"label": "D", "text": "Malrotation with volvulus"},
+      {"label": "E", "text": "Milk protein allergy"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Non-bilious projectile vomiting ในทารก 2-6 สัปดาห์ ร่วมกับ olive-shaped mass และ hypochloremic hypokalemic metabolic alkalosis เป็นลักษณะเฉพาะของ pyloric stenosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Pyloric stenosis",
+      "reason": "Hypertrophic pyloric stenosis (HPS) เกิดจากการหนาตัวของกล้ามเนื้อ pylorus ทำให้ gastric outlet obstruction พบบ่อยในทารกชายมากกว่าหญิง (4:1) โดยเฉพาะลูกคนแรก อาการมักเริ่มเมื่ออายุ 2-6 สัปดาห์\n\nอาการสำคัญคือ non-bilious projectile vomiting หลังดูดนม ทารกยังคงหิวหลังอาเจียน (hungry vomiter) น้ำหนักไม่ขึ้นหรือลดลง และมี dehydration\n\nการตรวจร่างกายอาจคลำได้ olive-shaped mass ที่ right upper quadrant ซึ่งเป็น hypertrophied pylorus และอาจเห็น visible peristalsis ที่หน้าท้อง\n\nผลตรวจเลือดจะพบ hypochloremic hypokalemic metabolic alkalosis เพราะการอาเจียนทำให้สูญเสีย HCl และ K+ ร่างกายจะ compensate โดยไตดูดกลับ H+ แทน K+ ทำให้ alkalosis แย่ลง (paradoxical aciduria)",
+      "choices": [
+        {"label": "A", "text": "Gastroesophageal reflux disease", "is_correct": false, "explanation": "GERD ในทารกมักอาเจียนไม่รุนแรง ไม่ใช่ projectile vomiting ไม่มี olive-shaped mass และมักไม่ทำให้เกิด metabolic alkalosis ที่รุนแรง"},
+        {"label": "B", "text": "Pyloric stenosis", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง อาการ non-bilious projectile vomiting ในทารก 3 สัปดาห์ olive-shaped mass และ hypochloremic hypokalemic metabolic alkalosis เป็น classic presentation"},
+        {"label": "C", "text": "Duodenal atresia", "is_correct": false, "explanation": "Duodenal atresia มักแสดงอาการตั้งแต่วันแรกหลังเกิด มี bilious vomiting (ถ้าอยู่ต่ำกว่า ampulla of Vater) X-ray จะเห็น double bubble sign มักสัมพันธ์กับ Down syndrome"},
+        {"label": "D", "text": "Malrotation with volvulus", "is_correct": false, "explanation": "Volvulus มักมี bilious vomiting เฉียบพลัน ท้องอืด และอาจมี bloody stool ไม่ใช่ non-bilious vomiting แบบค่อยๆ เป็นมากขึ้นเหมือนในโจทย์นี้"},
+        {"label": "E", "text": "Milk protein allergy", "is_correct": false, "explanation": "Milk protein allergy มักมาด้วยอาเจียน ท้องเสีย มีเลือดในอุจจาระ ผื่น ไม่มี olive-shaped mass และไม่ทำให้เกิด metabolic alkalosis ที่รุนแรง"}
+      ],
+      "key_takeaway": "Pyloric stenosis: non-bilious projectile vomiting ในทารก 2-6 สัปดาห์ + olive-shaped mass + hypochloremic hypokalemic metabolic alkalosis"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 4 สัปดาห์ สงสัย pyloric stenosis ทำ ultrasound abdomen ข้อใดเป็นเกณฑ์การวินิจฉัยที่สำคัญที่สุด",
+    "choices": [
+      {"label": "A", "text": "Pyloric muscle thickness ≥ 3 mm และ pyloric channel length ≥ 15 mm"},
+      {"label": "B", "text": "Pyloric muscle thickness ≥ 5 mm และ pyloric channel length ≥ 20 mm"},
+      {"label": "C", "text": "Pyloric diameter ≥ 10 mm"},
+      {"label": "D", "text": "Gastric wall thickness ≥ 5 mm"},
+      {"label": "E", "text": "Pyloric muscle thickness ≥ 2 mm และ pyloric channel length ≥ 10 mm"}
+    ],
+    "correct_answer": "A",
+    "explanation": "เกณฑ์ ultrasound ของ pyloric stenosis คือ pyloric muscle thickness ≥ 3 mm (single wall) และ pyloric channel length ≥ 15 mm",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Pyloric muscle thickness ≥ 3 mm และ pyloric channel length ≥ 15 mm",
+      "reason": "Ultrasound เป็นการตรวจมาตรฐานสำหรับการวินิจฉัย hypertrophic pyloric stenosis มี sensitivity และ specificity มากกว่า 95%\n\nเกณฑ์การวินิจฉัยที่สำคัญ ได้แก่ pyloric muscle thickness (single wall) ≥ 3 mm (บางตำราใช้ ≥ 4 mm) และ pyloric channel length ≥ 15 mm (บางตำราใช้ ≥ 17 mm) นอกจากนี้อาจดู pyloric diameter ≥ 14 mm\n\nนอกจากการวัดขนาดแล้ว ultrasound ยังสามารถเห็น target sign ในภาพตัดขวาง และ cervix sign ในภาพตัดยาว รวมถึงเห็นว่าไม่มี gastric content ผ่าน pylorus ขณะตรวจ (lack of passage)",
+      "choices": [
+        {"label": "A", "text": "Pyloric muscle thickness ≥ 3 mm และ pyloric channel length ≥ 15 mm", "is_correct": true, "explanation": "เป็นเกณฑ์มาตรฐานในการวินิจฉัย HPS ด้วย ultrasound โดย muscle thickness ≥ 3 mm (single wall) และ channel length ≥ 15 mm เป็นที่ยอมรับโดยทั่วไป"},
+        {"label": "B", "text": "Pyloric muscle thickness ≥ 5 mm และ pyloric channel length ≥ 20 mm", "is_correct": false, "explanation": "ค่าที่กำหนดสูงเกินไป จะทำให้พลาดการวินิจฉัยผู้ป่วยหลายราย เพราะส่วนใหญ่ muscle thickness อยู่ที่ 3-5 mm"},
+        {"label": "C", "text": "Pyloric diameter ≥ 10 mm", "is_correct": false, "explanation": "Pyloric diameter ≥ 14 mm เป็นเกณฑ์เสริม แต่ค่า 10 mm ไม่ถูกต้อง และ diameter เพียงอย่างเดียวไม่เพียงพอในการวินิจฉัย"},
+        {"label": "D", "text": "Gastric wall thickness ≥ 5 mm", "is_correct": false, "explanation": "ความหนาของผนังกระเพาะอาหารไม่ใช่เกณฑ์ในการวินิจฉัย HPS สิ่งที่ต้องวัดคือ pyloric muscle thickness"},
+        {"label": "E", "text": "Pyloric muscle thickness ≥ 2 mm และ pyloric channel length ≥ 10 mm", "is_correct": false, "explanation": "ค่าที่กำหนดต่ำเกินไป จะทำให้เกิด false positive เพราะทารกปกติอาจมี pyloric muscle thickness ถึง 2 mm ได้"}
+      ],
+      "key_takeaway": "เกณฑ์ ultrasound ของ HPS: muscle thickness ≥ 3 mm (single wall) และ channel length ≥ 15 mm"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 4 สัปดาห์ ได้รับการวินิจฉัย hypertrophic pyloric stenosis ผลตรวจเลือด: Na 128 mEq/L, K 2.5 mEq/L, Cl 80 mEq/L, HCO3 35 mEq/L, BUN 25 mg/dL สิ่งที่ต้องทำก่อนนำไปผ่าตัดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "ผ่าตัดทันทีเพราะเป็น surgical emergency"},
+      {"label": "B", "text": "แก้ไข electrolyte imbalance และ dehydration ก่อน"},
+      {"label": "C", "text": "ให้ erythromycin IV เพื่อลด pylorus hypertrophy"},
+      {"label": "D", "text": "ใส่ nasogastric tube แล้วผ่าตัดได้เลย"},
+      {"label": "E", "text": "ให้ omeprazole IV แล้วรอดูอาการ 48 ชั่วโมง"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Pyloric stenosis ไม่ใช่ surgical emergency ต้องแก้ไข dehydration และ electrolyte (โดยเฉพาะ hypokalemia และ alkalosis) ก่อนผ่าตัด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. แก้ไข electrolyte imbalance และ dehydration ก่อน",
+      "reason": "Hypertrophic pyloric stenosis ไม่ใช่ surgical emergency แม้จะต้องผ่าตัด แต่ต้องแก้ไข dehydration และ electrolyte imbalance ก่อนเสมอ เพราะ hypokalemia และ metabolic alkalosis ทำให้เกิดความเสี่ยงต่อ cardiac arrhythmia และปัญหาด้านการดมยาสลบ\n\nการ resuscitation ทำโดยให้ IV normal saline (0.9% NaCl) ร่วมกับ KCl supplement เป้าหมายคือ serum K > 3.5 mEq/L, Cl > 100 mEq/L, HCO3 < 30 mEq/L และ adequate urine output ก่อนนำผ่าตัด\n\nPyloromyotomy (Ramstedt procedure) เป็นผ่าตัดมาตรฐาน โดยตัดกล้ามเนื้อ pylorus ชั้น serosa และ muscularis ถึงชั้น submucosa โดยไม่ตัดถึง mucosa สามารถทำได้ทั้ง open และ laparoscopic",
+      "choices": [
+        {"label": "A", "text": "ผ่าตัดทันทีเพราะเป็น surgical emergency", "is_correct": false, "explanation": "Pyloric stenosis ไม่ใช่ surgical emergency ต่างจาก volvulus หรือ strangulated hernia การผ่าตัดโดยไม่แก้ electrolyte ก่อนจะเพิ่มความเสี่ยงต่อภาวะแทรกซ้อนจากการดมยาสลบ"},
+        {"label": "B", "text": "แก้ไข electrolyte imbalance และ dehydration ก่อน", "is_correct": true, "explanation": "ต้องแก้ hypokalemia, hypochloremia และ metabolic alkalosis รวมถึง dehydration ก่อนผ่าตัด เพื่อลดความเสี่ยงจากการดมยาสลบ เป้าหมาย K > 3.5, Cl > 100, HCO3 < 30"},
+        {"label": "C", "text": "ให้ erythromycin IV เพื่อลด pylorus hypertrophy", "is_correct": false, "explanation": "แม้ oral atropine หรือ IV atropine จะมีการศึกษาว่าอาจช่วยได้ในบางกรณี แต่ไม่ใช่มาตรฐาน และ erythromycin อาจทำให้ pyloric stenosis แย่ลง (erythromycin เป็น motilin agonist)"},
+        {"label": "D", "text": "ใส่ nasogastric tube แล้วผ่าตัดได้เลย", "is_correct": false, "explanation": "NG tube อาจช่วย decompress กระเพาะ แต่ไม่เพียงพอ ต้องแก้ electrolyte imbalance ก่อน เพราะ hypokalemia รุนแรง (K 2.5) เสี่ยงต่อ cardiac arrhythmia ขณะดมยาสลบ"},
+        {"label": "E", "text": "ให้ omeprazole IV แล้วรอดูอาการ 48 ชั่วโมง", "is_correct": false, "explanation": "PPI ไม่มีบทบาทในการรักษา pyloric stenosis เพราะปัญหาคือ mechanical obstruction จาก hypertrophied muscle ไม่ใช่ acid-related disease"}
+      ],
+      "key_takeaway": "Pyloric stenosis ต้องแก้ไข dehydration และ electrolyte imbalance (K > 3.5, Cl > 100, HCO3 < 30) ก่อนทำ pyloromyotomy"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 5 สัปดาห์ มีอาการอาเจียนพุ่งหลังดูดนม 1 สัปดาห์ แรกเกิดน้ำหนัก 3,000 g ปัจจุบัน 2,700 g ตรวจพบ olive mass ผลเลือด Na 132, K 3.0, Cl 88, HCO3 30 ได้รับ fluid resuscitation แล้ว electrolyte ปกติ การผ่าตัดที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Pyloromyotomy (Ramstedt procedure)"},
+      {"label": "B", "text": "Pyloroplasty (Heineke-Mikulicz)"},
+      {"label": "C", "text": "Gastrojejunostomy"},
+      {"label": "D", "text": "Partial gastrectomy"},
+      {"label": "E", "text": "Vagotomy with antrectomy"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Ramstedt pyloromyotomy เป็นผ่าตัดมาตรฐานสำหรับ hypertrophic pyloric stenosis โดยตัดกล้ามเนื้อ pylorus ถึงชั้น submucosa",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Pyloromyotomy (Ramstedt procedure)",
+      "reason": "Ramstedt pyloromyotomy เป็น definitive treatment สำหรับ hypertrophic pyloric stenosis ทำโดยการตัดกล้ามเนื้อ pylorus ผ่านชั้น serosa และ muscularis จนถึง submucosa โดยไม่ตัดผ่าน mucosa เพื่อให้ mucosa โป่งออกมาและ pyloric channel เปิดกว้างขึ้น\n\nสามารถทำได้ทั้ง open surgery (ผ่าน right upper quadrant transverse incision หรือ periumbilical incision) และ laparoscopic approach ซึ่งปัจจุบันนิยมมากขึ้น\n\nภาวะแทรกซ้อนที่สำคัญคือ mucosal perforation ซึ่งหากเกิดขึ้นต้อง repair และ incomplete myotomy ซึ่งอาจทำให้อาการไม่ดีขึ้น",
+      "choices": [
+        {"label": "A", "text": "Pyloromyotomy (Ramstedt procedure)", "is_correct": true, "explanation": "เป็นผ่าตัดมาตรฐานสำหรับ HPS ตัดกล้ามเนื้อ pylorus ถึง submucosa อัตราสำเร็จสูงมาก ภาวะแทรกซ้อนน้อย ทารกมักเริ่มกินนมได้ภายใน 4-6 ชั่วโมงหลังผ่าตัด"},
+        {"label": "B", "text": "Pyloroplasty (Heineke-Mikulicz)", "is_correct": false, "explanation": "Pyloroplasty เป็นการตัดเปิด pylorus แบบ full thickness แล้วเย็บปิดในทิศทางตั้งฉาก ใช้ในผู้ใหญ่ที่มี peptic ulcer disease ไม่ใช่สำหรับ HPS ในทารก"},
+        {"label": "C", "text": "Gastrojejunostomy", "is_correct": false, "explanation": "Gastrojejunostomy เป็น bypass procedure ที่ใช้ในผู้ใหญ่ที่มี gastric outlet obstruction จากสาเหตุอื่น ไม่เหมาะสมสำหรับทารกที่มี HPS"},
+        {"label": "D", "text": "Partial gastrectomy", "is_correct": false, "explanation": "การตัดกระเพาะบางส่วนเป็น overtreatment สำหรับ HPS ไม่มีข้อบ่งชี้ในทารก"},
+        {"label": "E", "text": "Vagotomy with antrectomy", "is_correct": false, "explanation": "เป็นผ่าตัดสำหรับ peptic ulcer disease ในผู้ใหญ่ ไม่มีบทบาทในการรักษา HPS"}
+      ],
+      "key_takeaway": "Ramstedt pyloromyotomy เป็น definitive treatment ของ HPS ตัดกล้ามเนื้อถึง submucosa โดยไม่ตัดถึง mucosa"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดชาย คลอดครบกำหนด น้ำหนัก 3,500 g ไม่ถ่ายขี้เทาภายใน 48 ชั่วโมงแรก ท้องอืดมากขึ้นเรื่อยๆ อาเจียนสีเขียว ตรวจทางทวารหนักพบว่า rectum ว่าง หลังถอดนิ้วออกมีขี้เทาและลมพุ่งออกมามาก (blast sign) อาการดีขึ้นชั่วคราวหลังตรวจทวาร การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Meconium plug syndrome"},
+      {"label": "B", "text": "Hirschsprung disease"},
+      {"label": "C", "text": "Anorectal malformation"},
+      {"label": "D", "text": "Small left colon syndrome"},
+      {"label": "E", "text": "Meconium ileus"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Delayed passage of meconium > 48 ชั่วโมง ร่วมกับท้องอืด bilious vomiting empty rectum และ blast sign เป็นลักษณะเฉพาะของ Hirschsprung disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Hirschsprung disease",
+      "reason": "Hirschsprung disease (congenital aganglionic megacolon) เกิดจากการไม่มี ganglion cells ใน myenteric (Auerbach) และ submucosal (Meissner) plexus ของลำไส้ส่วนปลาย ทำให้ลำไส้ส่วนนั้นไม่สามารถ relax ได้ เกิด functional obstruction\n\nอาการในทารกแรกเกิดที่สำคัญคือ delayed passage of meconium (> 24-48 ชั่วโมงหลังเกิด โดยปกติ 99% ของทารกปกติจะถ่ายขี้เทาภายใน 48 ชั่วโมง) ท้องอืด bilious vomiting\n\nBlast sign (explosive release of stool and gas after digital rectal examination) เป็นลักษณะสำคัญ เกิดจากนิ้วทำหน้าที่เหมือน dilator ทำให้ stool ที่คั่งอยู่เหนือ aganglionic segment ถูกปล่อยออกมา ทำให้อาการดีขึ้นชั่วคราว\n\nการวินิจฉัยยืนยันด้วย rectal suction biopsy ซึ่งจะพบ absence of ganglion cells และอาจพบ nerve fiber hypertrophy",
+      "choices": [
+        {"label": "A", "text": "Meconium plug syndrome", "is_correct": false, "explanation": "Meconium plug syndrome มักพบในทารกที่มารดาเป็น DM อาการมักดีขึ้นหลังถ่าย meconium plug ออก ไม่มี blast sign ที่ชัดเจนเหมือน Hirschsprung และมักไม่เป็นซ้ำ"},
+        {"label": "B", "text": "Hirschsprung disease", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง delayed meconium passage, abdominal distension, bilious vomiting, empty rectum และ blast sign เป็น classic presentation ของ Hirschsprung disease ในทารกแรกเกิด"},
+        {"label": "C", "text": "Anorectal malformation", "is_correct": false, "explanation": "Anorectal malformation มักตรวจพบจากลักษณะทางกายภาพของ anus ที่ผิดปกติ เช่น imperforate anus หรือ anus อยู่ผิดตำแหน่ง ในโจทย์นี้สามารถสอดนิ้วตรวจทวารได้ จึงไม่ใช่ anorectal malformation"},
+        {"label": "D", "text": "Small left colon syndrome", "is_correct": false, "explanation": "Small left colon syndrome มักพบในทารกที่มารดาเป็น DM มี meconium plug ที่ splenic flexure อาการมักหายเองภายใน 24-48 ชั่วโมง ไม่มี blast sign ที่ชัดเจน"},
+        {"label": "E", "text": "Meconium ileus", "is_correct": false, "explanation": "Meconium ileus สัมพันธ์กับ cystic fibrosis อาการคือ distal ileum obstruction จาก meconium ที่เหนียวข้น X-ray จะเห็น ground-glass appearance ที่ right lower quadrant"}
+      ],
+      "key_takeaway": "Hirschsprung disease: delayed meconium passage > 48 ชั่วโมง + abdominal distension + empty rectum + blast sign วินิจฉัยยืนยันด้วย rectal suction biopsy"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 2 ปี มีประวัติท้องผูกเรื้อรังตั้งแต่แรกเกิด ถ่ายอุจจาระ 1-2 ครั้งต่อสัปดาห์ ต้องใช้ glycerin suppository เป็นประจำ ท้องอืดเรื้อรัง น้ำหนักตัวต่ำกว่าเกณฑ์ ทำ barium enema พบ transition zone ที่ rectosigmoid junction การตรวจที่ให้การวินิจฉัยแน่นอนที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Barium enema"},
+      {"label": "B", "text": "Anorectal manometry"},
+      {"label": "C", "text": "Rectal suction biopsy"},
+      {"label": "D", "text": "Full-thickness rectal biopsy"},
+      {"label": "E", "text": "CT abdomen"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Rectal suction biopsy เป็น gold standard ในการวินิจฉัย Hirschsprung disease โดยจะพบ absence of ganglion cells",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Rectal suction biopsy",
+      "reason": "Rectal suction biopsy เป็นการตรวจ gold standard สำหรับการวินิจฉัย Hirschsprung disease เพราะให้การวินิจฉัยที่แน่นอนโดยการดูทางพยาธิวิทยา\n\nผลที่พบใน Hirschsprung disease คือ absence of ganglion cells ใน submucosal plexus ร่วมกับ hypertrophied nerve fibers การย้อมด้วย acetylcholinesterase (AChE) stain จะพบ increased activity ใน nerve fibers\n\nข้อดีของ suction biopsy คือทำได้ที่ bedside โดยไม่ต้องดมยาสลบ ปลอดภัย ภาวะแทรกซ้อนน้อย (bleeding, perforation น้อยมาก) และให้ผล definitive diagnosis\n\nBarium enema สามารถช่วยบอก transition zone ได้ แต่ไม่ใช่ definitive diagnosis เพราะ transition zone อาจไม่ชัดเจนในทารกแรกเกิดหรือ total colonic aganglionosis",
+      "choices": [
+        {"label": "A", "text": "Barium enema", "is_correct": false, "explanation": "Barium enema ช่วยบอก transition zone และ rectosigmoid ratio แต่ sensitivity ไม่ 100% โดยเฉพาะในทารกแรกเกิดและ total colonic aganglionosis จึงไม่ใช่ definitive diagnosis"},
+        {"label": "B", "text": "Anorectal manometry", "is_correct": false, "explanation": "Anorectal manometry สามารถแสดง absence of rectoanal inhibitory reflex (RAIR) ซึ่งเป็นลักษณะของ Hirschsprung แต่ sensitivity ไม่ 100% และยากทำในเด็กเล็ก จึงไม่ใช่ gold standard"},
+        {"label": "C", "text": "Rectal suction biopsy", "is_correct": true, "explanation": "เป็น gold standard เพราะให้ definitive histological diagnosis คือ absence of ganglion cells ทำได้ง่ายที่ bedside ปลอดภัย ภาวะแทรกซ้อนน้อย"},
+        {"label": "D", "text": "Full-thickness rectal biopsy", "is_correct": false, "explanation": "Full-thickness biopsy สามารถวินิจฉัยได้เช่นกัน แต่ต้องทำภายใต้การดมยาสลบ invasive กว่า suction biopsy จึงไม่ใช่ first choice ใช้เมื่อ suction biopsy ไม่สามารถให้การวินิจฉัยที่แน่ชัด"},
+        {"label": "E", "text": "CT abdomen", "is_correct": false, "explanation": "CT abdomen ไม่มีบทบาทในการวินิจฉัย Hirschsprung disease เพราะไม่สามารถแสดง ganglion cells ได้ และทำให้เด็กได้รับรังสีโดยไม่จำเป็น"}
+      ],
+      "key_takeaway": "Rectal suction biopsy เป็น gold standard ของ Hirschsprung disease แสดง absence of ganglion cells และ hypertrophied nerve fibers"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 3 สัปดาห์ ได้รับการวินิจฉัย Hirschsprung disease ชนิด rectosigmoid type ระหว่างรอผ่าตัด มาด้วยไข้สูง ท้องอืดมาก ถ่ายเหลว กลิ่นเหม็นมาก ตรวจร่างกาย: ท้องอืดตึง อุณหภูมิ 39°C หัวใจเต้นเร็ว ภาวะแทรกซ้อนที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Necrotizing enterocolitis"},
+      {"label": "B", "text": "Hirschsprung-associated enterocolitis (HAEC)"},
+      {"label": "C", "text": "Acute appendicitis"},
+      {"label": "D", "text": "Volvulus"},
+      {"label": "E", "text": "Intussusception"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Hirschsprung-associated enterocolitis (HAEC) เป็นภาวะแทรกซ้อนที่อันตรายที่สุดของ Hirschsprung disease มีอาการไข้ ท้องอืด ถ่ายเหลวกลิ่นเหม็น",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Hirschsprung-associated enterocolitis (HAEC)",
+      "reason": "HAEC เป็นภาวะแทรกซ้อนที่อันตรายที่สุดของ Hirschsprung disease พบได้ทั้งก่อนและหลังผ่าตัด มีอัตราเสียชีวิตสูงถ้าไม่ได้รับการรักษาทันท่วงที\n\nอาการประกอบด้วย ไข้ ท้องอืดรุนแรง ถ่ายเหลวกลิ่นเหม็นมาก (explosive foul-smelling diarrhea) อาจมี bloody stool, lethargy และ sepsis ได้\n\nพยาธิกำเนิดเชื่อว่าเกิดจาก stasis ของ fecal material ใน dilated colon ทำให้เกิด bacterial overgrowth และ mucosal inflammation จนนำไปสู่ enterocolitis\n\nการรักษาคือ rectal irrigations เพื่อ decompress ร่วมกับ IV antibiotics (broad-spectrum ครอบคลุม gram negative และ anaerobe) และ fluid resuscitation หากไม่ดีขึ้นอาจต้องทำ emergency surgery",
+      "choices": [
+        {"label": "A", "text": "Necrotizing enterocolitis", "is_correct": false, "explanation": "NEC พบบ่อยในทารกคลอดก่อนกำหนด อาการคือ feeding intolerance, abdominal distension, bloody stool X-ray เห็น pneumatosis intestinalis ในโจทย์นี้เป็นทารก full-term ที่มี Hirschsprung จึงเป็น HAEC มากกว่า"},
+        {"label": "B", "text": "Hirschsprung-associated enterocolitis (HAEC)", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง HAEC เป็นภาวะแทรกซ้อนที่พบบ่อยและอันตรายที่สุดของ Hirschsprung disease อาการ triad คือ fever, abdominal distension, explosive foul-smelling diarrhea"},
+        {"label": "C", "text": "Acute appendicitis", "is_correct": false, "explanation": "Appendicitis พบน้อยมากในทารกแรกเกิด อาการมักเป็นปวดท้องด้านขวาล่าง ไม่ใช่ท้องอืดทั้งท้องร่วมกับถ่ายเหลว"},
+        {"label": "D", "text": "Volvulus", "is_correct": false, "explanation": "Volvulus มักมาด้วย bilious vomiting เฉียบพลัน ท้องอืด ไม่ใช่ถ่ายเหลวกลิ่นเหม็น และไม่สัมพันธ์กับ Hirschsprung disease โดยตรง"},
+        {"label": "E", "text": "Intussusception", "is_correct": false, "explanation": "Intussusception มักเกิดในเด็ก 6-36 เดือน อาการเป็นปวดท้องเป็นพักๆ อาเจียน currant jelly stool ไม่ใช่ท้องอืดมากร่วมกับถ่ายเหลว"}
+      ],
+      "key_takeaway": "HAEC: ภาวะแทรกซ้อนที่อันตรายที่สุดของ Hirschsprung disease = fever + abdominal distension + explosive foul-smelling diarrhea รักษาด้วย rectal irrigations + IV antibiotics"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 3 ปี มีประวัติท้องผูกเรื้อรัง 1 ปี มี fecal soiling เลอะกางเกงเป็นประจำ เคยถ่ายขี้เทาปกติหลังเกิด กินนมแม่ตั้งแต่แรก เริ่มท้องผูกหลังหย่านม ตรวจร่างกาย: ท้องอืดเล็กน้อย PR พบอุจจาระแข็งจำนวนมากใน rectum การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Hirschsprung disease"},
+      {"label": "B", "text": "Functional constipation"},
+      {"label": "C", "text": "Hypothyroidism"},
+      {"label": "D", "text": "Celiac disease"},
+      {"label": "E", "text": "Lead poisoning"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Functional constipation พบบ่อยกว่า Hirschsprung มาก ลักษณะสำคัญที่ต่างคือถ่ายขี้เทาปกติ มี fecal soiling และ PR มีอุจจาระอยู่ใน rectum",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Functional constipation",
+      "reason": "Functional constipation เป็นสาเหตุที่พบบ่อยที่สุดของท้องผูกเรื้อรังในเด็ก มักเริ่มในช่วง toilet training หรือเปลี่ยนอาหาร\n\nลักษณะที่แยก functional constipation จาก Hirschsprung disease ได้แก่ 1) ถ่ายขี้เทาปกติหลังเกิด (Hirschsprung มักถ่ายช้า > 48 ชั่วโมง) 2) มี fecal soiling/encopresis (Hirschsprung มักไม่มี) 3) PR มีอุจจาระใน rectum (Hirschsprung rectum มักว่าง) 4) ไม่มี failure to thrive ที่รุนแรง\n\nFecal soiling เกิดจากอุจจาระแข็งก้อนใหญ่คั่งอยู่ใน rectum ทำให้ internal anal sphincter คลายตัว อุจจาระเหลวที่อยู่เหนือขึ้นไปจึงรั่วออกมาได้ เรียกว่า overflow incontinence",
+      "choices": [
+        {"label": "A", "text": "Hirschsprung disease", "is_correct": false, "explanation": "Hirschsprung disease มักมี delayed passage of meconium, rectum ว่างเมื่อตรวจ PR, ไม่มี fecal soiling และเริ่มมีอาการตั้งแต่แรกเกิด ในผู้ป่วยรายนี้ถ่ายขี้เทาปกติ มี soiling และ rectum มีอุจจาระ จึงไม่ใช่ Hirschsprung"},
+        {"label": "B", "text": "Functional constipation", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง ถ่ายขี้เทาปกติ เริ่มท้องผูกหลังเปลี่ยนอาหาร มี fecal soiling และ PR พบอุจจาระใน rectum เป็นลักษณะเฉพาะของ functional constipation"},
+        {"label": "C", "text": "Hypothyroidism", "is_correct": false, "explanation": "Hypothyroidism อาจทำให้ท้องผูกได้ แต่มักมีอาการอื่นร่วมด้วย เช่น growth retardation, developmental delay, dry skin, macroglossia ในโจทย์ไม่มีอาการเหล่านี้"},
+        {"label": "D", "text": "Celiac disease", "is_correct": false, "explanation": "Celiac disease มักมาด้วยท้องเสียเรื้อรัง ท้องอืด น้ำหนักไม่ขึ้น ไม่ใช่ท้องผูก แม้ว่าบางรายอาจมีท้องผูกได้ แต่ไม่ใช่อาการหลัก"},
+        {"label": "E", "text": "Lead poisoning", "is_correct": false, "explanation": "Lead poisoning อาจทำให้ท้องผูก ปวดท้อง ซีด พฤติกรรมเปลี่ยนแปลง แต่ต้องมีประวัติสัมผัสสารตะกั่ว และมักมีอาการอื่นร่วมด้วย"}
+      ],
+      "key_takeaway": "แยก functional constipation จาก Hirschsprung: ถ่ายขี้เทาปกติ, มี fecal soiling, rectum มีอุจจาระ = functional constipation"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 2 เดือน มาด้วยอาเจียนหลังดูดนมทุกมื้อ สำรอกนมออกมาง่าย ไม่มีสีเขียว น้ำหนักขึ้นดี ไม่มีอาการหายใจลำบาก ไม่มีไข้ ตรวจร่างกายปกติ การดูแลเบื้องต้นที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "ทำ upper GI series"},
+      {"label": "B", "text": "ทำ pH monitoring"},
+      {"label": "C", "text": "ให้ omeprazole"},
+      {"label": "D", "text": "ให้คำแนะนำเรื่อง positioning และ feeding modification"},
+      {"label": "E", "text": "ทำ ultrasound เพื่อดู pylorus"}
+    ],
+    "correct_answer": "D",
+    "explanation": "ทารกที่มี uncomplicated GER (happy spitter) น้ำหนักขึ้นดี ไม่มี warning signs ให้การดูแลด้วย conservative measures ได้แก่ positioning, thickened feeds, smaller frequent feeds",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: D. ให้คำแนะนำเรื่อง positioning และ feeding modification",
+      "reason": "Gastroesophageal reflux (GER) เป็นภาวะปกติในทารก (physiologic GER) เกิดจาก lower esophageal sphincter (LES) ยังทำงานไม่สมบูรณ์ พบได้ในทารก 50-70% โดยเฉพาะอายุ 1-4 เดือน มักหายเองเมื่ออายุ 12-18 เดือน\n\nUncomplicated GER หรือ happy spitter คือทารกที่สำรอกนม แต่น้ำหนักขึ้นดี ไม่มีอาการแทรกซ้อน (respiratory symptoms, feeding difficulties, poor weight gain) ไม่ต้องการการตรวจเพิ่มเติมหรือยา\n\nConservative measures ได้แก่ 1) ให้นมครั้งละน้อยแต่บ่อยขึ้น 2) อุ้มทารกตั้งตรงหลังกินนม 20-30 นาที 3) อาจใช้ thickened formula (ถ้าดูดนมขวด) 4) หลีกเลี่ยงการกดท้องหลังกิน",
+      "choices": [
+        {"label": "A", "text": "ทำ upper GI series", "is_correct": false, "explanation": "Upper GI series ไม่จำเป็นใน uncomplicated GER ใช้เมื่อสงสัย anatomical abnormality เช่น malrotation, stricture, hiatal hernia ในกรณีที่มี warning signs"},
+        {"label": "B", "text": "ทำ pH monitoring", "is_correct": false, "explanation": "24-hour pH monitoring หรือ impedance monitoring ไม่จำเป็นใน uncomplicated GER ใช้เมื่อต้องการ quantify reflux episodes ในกรณี GERD ที่ไม่ตอบสนองต่อการรักษา"},
+        {"label": "C", "text": "ให้ omeprazole", "is_correct": false, "explanation": "PPI ไม่มีข้อบ่งชี้ใน uncomplicated GER ที่ไม่มี esophagitis ให้เฉพาะกรณี GERD ที่มี complications เช่น erosive esophagitis, poor weight gain, respiratory complications"},
+        {"label": "D", "text": "ให้คำแนะนำเรื่อง positioning และ feeding modification", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง conservative measures เพียงพอสำหรับ uncomplicated GER ได้แก่ small frequent feeds, upright positioning after feeds, thickened feeds อาการมักดีขึ้นเมื่อทารกโตขึ้น"},
+        {"label": "E", "text": "ทำ ultrasound เพื่อดู pylorus", "is_correct": false, "explanation": "Ultrasound pylorus ทำเมื่อสงสัย pyloric stenosis ซึ่งมี non-bilious projectile vomiting ในโจทย์นี้ทารกสำรอกนมแต่ไม่ใช่ projectile vomiting และน้ำหนักขึ้นดี"}
+      ],
+      "key_takeaway": "Uncomplicated GER (happy spitter): น้ำหนักขึ้นดี ไม่มี warning signs รักษาด้วย conservative measures เท่านั้น ไม่ต้องการยาหรือการตรวจเพิ่ม"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิง อายุ 4 เดือน มาด้วยอาเจียนหลังดูดนม ไอเรื้อรัง หายใจมีเสียงวี้ด น้ำหนักไม่ขึ้นมา 2 เดือน น้ำหนักตกจาก percentile 50th เป็น 10th ได้ลอง positioning และ thickened feed แล้วไม่ดีขึ้น ข้อใดเป็นขั้นตอนต่อไปที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "ทำ Nissen fundoplication"},
+      {"label": "B", "text": "เริ่ม PPI (proton pump inhibitor)"},
+      {"label": "C", "text": "ให้ domperidone"},
+      {"label": "D", "text": "ให้คำแนะนำ feeding modification เพิ่มเติม"},
+      {"label": "E", "text": "ส่งตรวจ sweat chloride test"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ทารกที่มี GERD (ไม่ใช่แค่ GER) ที่มี poor weight gain, respiratory symptoms และ conservative measures ไม่ได้ผล ควรเริ่ม PPI",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. เริ่ม PPI (proton pump inhibitor)",
+      "reason": "ผู้ป่วยรายนี้มี GERD (gastroesophageal reflux disease) ไม่ใช่แค่ physiologic GER เพราะมี complications ได้แก่ poor weight gain (น้ำหนักตกจาก 50th เป็น 10th percentile) และ respiratory symptoms (chronic cough, wheezing)\n\nเมื่อ conservative measures ไม่ได้ผล ขั้นตอนต่อไปคือ empirical trial ของ PPI (เช่น omeprazole หรือ esomeprazole) เป็นเวลา 4-8 สัปดาห์ PPI เป็นยาที่มีประสิทธิภาพสูงสุดในการลด acid production\n\nหาก PPI ไม่ได้ผล ควรพิจารณาตรวจเพิ่มเติม เช่น upper GI endoscopy, pH-impedance monitoring เพื่อยืนยัน diagnosis และประเมินความรุนแรง ก่อนพิจารณา surgical intervention (Nissen fundoplication)",
+      "choices": [
+        {"label": "A", "text": "ทำ Nissen fundoplication", "is_correct": false, "explanation": "Nissen fundoplication สงวนไว้สำหรับ severe GERD ที่ไม่ตอบสนองต่อ medical treatment หรือมี life-threatening complications ควรลอง PPI ก่อน"},
+        {"label": "B", "text": "เริ่ม PPI (proton pump inhibitor)", "is_correct": true, "explanation": "เป็นขั้นตอนที่เหมาะสม เมื่อ conservative measures ไม่ได้ผลและมี complications ของ GERD ควรเริ่ม empirical PPI trial เป็นเวลา 4-8 สัปดาห์"},
+        {"label": "C", "text": "ให้ domperidone", "is_correct": false, "explanation": "Prokinetic agents เช่น domperidone มีหลักฐานสนับสนุนน้อยในการรักษา GERD ในเด็ก และมีผลข้างเคียง เช่น QT prolongation ไม่แนะนำเป็น first-line"},
+        {"label": "D", "text": "ให้คำแนะนำ feeding modification เพิ่มเติม", "is_correct": false, "explanation": "ผู้ป่วยได้ลอง conservative measures แล้วไม่ดีขึ้น และมี complications ต้องเริ่มยา ไม่ควรรอต่อไป"},
+        {"label": "E", "text": "ส่งตรวจ sweat chloride test", "is_correct": false, "explanation": "Sweat chloride test ใช้ตรวจ cystic fibrosis แม้อาจมี GER ร่วมด้วย แต่ไม่ใช่ first-line investigation ในกรณีนี้ หาก PPI ไม่ตอบสนองอาจพิจารณา"}
+      ],
+      "key_takeaway": "GERD ที่มี complications + conservative measures ไม่ได้ผล = เริ่ม PPI empirical trial 4-8 สัปดาห์"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 3 เดือน ได้รับการรักษา GERD ด้วย omeprazole 2 สัปดาห์ อาการไม่ดีขึ้น ยังอาเจียนทุกมื้อ น้ำหนักไม่ขึ้น ไม่มีไข้ ตรวจร่างกาย ท้อง soft ไม่อืด คลำไม่ได้ก้อน ข้อใดเป็นสิ่งที่ควรทำต่อไป",
+    "choices": [
+      {"label": "A", "text": "เพิ่มขนาด omeprazole"},
+      {"label": "B", "text": "เปลี่ยนเป็น H2 blocker"},
+      {"label": "C", "text": "ทำ upper GI series และ/หรือ endoscopy เพื่อหาสาเหตุอื่น"},
+      {"label": "D", "text": "ทำ Nissen fundoplication"},
+      {"label": "E", "text": "หยุดยาและสังเกตอาการ"}
+    ],
+    "correct_answer": "C",
+    "explanation": "เมื่อ PPI ไม่ได้ผลใน 2-4 สัปดาห์ ควรตรวจเพิ่มเติมเพื่อยืนยันหรือหาสาเหตุอื่น เช่น upper GI series (anatomical abnormality), endoscopy (eosinophilic esophagitis), pH-impedance monitoring",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. ทำ upper GI series และ/หรือ endoscopy เพื่อหาสาเหตุอื่น",
+      "reason": "เมื่อ empirical PPI trial ไม่ได้ผล ควรทบทวนการวินิจฉัยและหาสาเหตุอื่น เพราะอาการอาเจียนเรื้อรังในทารกมีหลายสาเหตุ\n\nUpper GI series ช่วยวินิจฉัย anatomical abnormality เช่น malrotation, esophageal stricture, hiatal hernia\n\nUpper endoscopy with biopsy ช่วยวินิจฉัย eosinophilic esophagitis (EoE), peptic esophagitis, cow's milk protein allergy\n\npH-impedance monitoring ช่วย quantify reflux episodes และ correlation กับอาการ\n\nSafetynet: ต้อง rule out สาเหตุอื่นของอาเจียนที่ไม่ใช่ GERD เช่น metabolic diseases, increased intracranial pressure, urinary tract infection ด้วย",
+      "choices": [
+        {"label": "A", "text": "เพิ่มขนาด omeprazole", "is_correct": false, "explanation": "การเพิ่มขนาดยาโดยไม่ตรวจเพิ่มเติมไม่เหมาะสม เพราะอาจไม่ใช่ acid-related disease หรืออาจมี structural abnormality ที่ต้องการ intervention อื่น"},
+        {"label": "B", "text": "เปลี่ยนเป็น H2 blocker", "is_correct": false, "explanation": "H2 blocker มีประสิทธิภาพน้อยกว่า PPI ในการลด acid production การเปลี่ยนไปใช้ยาที่อ่อนกว่าไม่น่าจะช่วย"},
+        {"label": "C", "text": "ทำ upper GI series และ/หรือ endoscopy เพื่อหาสาเหตุอื่น", "is_correct": true, "explanation": "เป็นคำตอบที่ถูกต้อง เมื่อ PPI ไม่ได้ผล ต้องตรวจเพิ่มเพื่อยืนยัน GERD หรือหาสาเหตุอื่น เช่น anatomical abnormality, EoE, allergy"},
+        {"label": "D", "text": "ทำ Nissen fundoplication", "is_correct": false, "explanation": "ยังไม่ควรทำผ่าตัดเพราะยังไม่ได้ยืนยัน diagnosis ต้องตรวจเพิ่มเติมก่อน การผ่าตัดสงวนไว้สำหรับ confirmed GERD ที่ไม่ตอบสนองต่อ maximal medical therapy"},
+        {"label": "E", "text": "หยุดยาและสังเกตอาการ", "is_correct": false, "explanation": "ไม่เหมาะสมเพราะทารกยังมี poor weight gain ต้องหาสาเหตุและรักษาต่อ การหยุดยาอาจทำให้อาการแย่ลงหากเป็น GERD จริง"}
+      ],
+      "key_takeaway": "เมื่อ empirical PPI ไม่ได้ผล ต้องตรวจเพิ่มเติม (upper GI series, endoscopy, pH-impedance) เพื่อยืนยัน diagnosis หรือหาสาเหตุอื่น"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง อายุ 3 ปี มาด้วยอาการถ่ายเหลวเรื้อรัง ท้องอืด น้ำหนักไม่ขึ้น 6 เดือน เริ่มมีอาการหลังเริ่มกินข้าวและขนมปัง ตรวจร่างกาย: ซีด ท้องอืด กล้ามเนื้อลีบ ก้นแฟบ ผล lab: Hb 9 g/dL, MCV 68 fL, serum iron ต่ำ, anti-tissue transglutaminase (tTG) IgA สูง การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Lactose intolerance"},
+      {"label": "B", "text": "Celiac disease"},
+      {"label": "C", "text": "Inflammatory bowel disease"},
+      {"label": "D", "text": "Cow's milk protein allergy"},
+      {"label": "E", "text": "Tropical sprue"}
+    ],
+    "correct_answer": "B",
+    "explanation": "อาการเริ่มหลังเริ่มกินอาหารที่มี gluten (ข้าวสาลี/ขนมปัง) ร่วมกับ malabsorption, iron deficiency anemia และ anti-tTG IgA สูง เป็นลักษณะของ celiac disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Celiac disease",
+      "reason": "Celiac disease เป็น immune-mediated enteropathy ที่เกิดจากการแพ้ gluten (พบใน wheat, barley, rye) ในคนที่มีพันธุกรรมเอื้อ (HLA-DQ2 หรือ DQ8)\n\nอาการ classic presentation ในเด็กเล็ก ได้แก่ ถ่ายเหลวเรื้อรัง ท้องอืด failure to thrive โดยอาการมักเริ่มหลังเริ่มกินอาหารที่มี gluten (อายุ 6-24 เดือน) ผู้ป่วยมักมี malabsorption ทำให้เกิด iron deficiency anemia, vitamin D deficiency, และ malnutrition\n\nSerologic screening ด้วย anti-tissue transglutaminase (tTG) IgA มี sensitivity และ specificity สูงมาก (>95%) ต้องตรวจ total IgA ร่วมด้วยเพื่อ rule out IgA deficiency\n\nGold standard diagnosis คือ upper endoscopy with duodenal biopsy ที่แสดง villous atrophy, crypt hyperplasia, intraepithelial lymphocytosis (Marsh classification)",
+      "choices": [
+        {"label": "A", "text": "Lactose intolerance", "is_correct": false, "explanation": "Lactose intolerance มักมาด้วยท้องเสีย ท้องอืด หลังดื่มนม ไม่สัมพันธ์กับการกินข้าวหรือขนมปัง anti-tTG ไม่สูง และมักไม่ทำให้เกิด iron deficiency anemia"},
+        {"label": "B", "text": "Celiac disease", "is_correct": true, "explanation": "อาการเริ่มหลังกิน gluten-containing food, chronic diarrhea, FTT, iron deficiency anemia, anti-tTG IgA สูง ทั้งหมดเข้ากับ celiac disease"},
+        {"label": "C", "text": "Inflammatory bowel disease", "is_correct": false, "explanation": "IBD พบน้อยในเด็กอายุ 3 ปี มักมี bloody diarrhea, abdominal pain, perianal disease anti-tTG ไม่เกี่ยวข้องกับ IBD"},
+        {"label": "D", "text": "Cow's milk protein allergy", "is_correct": false, "explanation": "CMPA มักเริ่มในทารก มีอาเจียน ท้องเสีย ผื่น อาจมีเลือดในอุจจาระ ไม่สัมพันธ์กับการกินข้าวหรือขนมปัง และ anti-tTG ไม่สูง"},
+        {"label": "E", "text": "Tropical sprue", "is_correct": false, "explanation": "Tropical sprue พบในเขตร้อน มี malabsorption คล้าย celiac แต่ไม่สัมพันธ์กับ gluten anti-tTG ไม่สูง และพบน้อยในเด็กเล็ก ตอบสนองต่อ antibiotics และ folate"}
+      ],
+      "key_takeaway": "Celiac disease: อาการ malabsorption หลังเริ่มกิน gluten + anti-tTG IgA สูง ยืนยันด้วย duodenal biopsy"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง อายุ 5 ปี ได้รับการวินิจฉัย celiac disease จาก duodenal biopsy ที่แสดง villous atrophy (Marsh 3c) การรักษาที่สำคัญที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Gluten-free diet ตลอดชีวิต"},
+      {"label": "B", "text": "Lactose-free diet 6 เดือน"},
+      {"label": "C", "text": "ให้ prednisolone"},
+      {"label": "D", "text": "ให้ azathioprine"},
+      {"label": "E", "text": "ให้ enzyme supplement"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Strict gluten-free diet ตลอดชีวิต เป็นการรักษาหลักและเดียวที่พิสูจน์แล้วว่ามีประสิทธิภาพสำหรับ celiac disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Gluten-free diet ตลอดชีวิต",
+      "reason": "การรักษา celiac disease ที่มีประสิทธิภาพและเป็นมาตรฐานเดียวคือ strict gluten-free diet ตลอดชีวิต ต้องหลีกเลี่ยงอาหารที่มี wheat, barley, rye อย่างเคร่งครัด\n\nGluten-free diet ทำให้ mucosal damage ค่อยๆ ฟื้นตัว อาการทางคลินิกมักดีขึ้นภายใน 1-2 สัปดาห์ serology กลับเป็นปกติใน 6-12 เดือน และ histology ฟื้นตัวใน 1-2 ปี\n\nOats อาจปลอดภัยในผู้ป่วยส่วนใหญ่แต่ต้องเป็น pure oats ที่ไม่ contaminated กับ wheat Rice, corn, quinoa, potato เป็นธัญพืชที่ปลอดภัย\n\nผู้ป่วยควรได้รับ vitamin และ mineral supplement (iron, calcium, vitamin D, folate) ในช่วงแรก และ follow up ด้วย serology (anti-tTG IgA) เป็นระยะ",
+      "choices": [
+        {"label": "A", "text": "Gluten-free diet ตลอดชีวิต", "is_correct": true, "explanation": "เป็นการรักษาหลักเดียวที่มีประสิทธิภาพ ต้องหลีกเลี่ยง gluten ตลอดชีวิตเพราะ mucosa จะกลับเสียหายเมื่อกิน gluten ใหม่"},
+        {"label": "B", "text": "Lactose-free diet 6 เดือน", "is_correct": false, "explanation": "Secondary lactose intolerance อาจเกิดร่วมจาก villous atrophy แต่จะดีขึ้นเมื่อ mucosa ฟื้นตัวหลังเริ่ม gluten-free diet ไม่ใช่การรักษาหลัก"},
+        {"label": "C", "text": "ให้ prednisolone", "is_correct": false, "explanation": "Corticosteroids ไม่ใช่การรักษามาตรฐานสำหรับ celiac disease อาจพิจารณาใน refractory celiac disease ที่ไม่ตอบสนองต่อ gluten-free diet เท่านั้น"},
+        {"label": "D", "text": "ให้ azathioprine", "is_correct": false, "explanation": "Immunosuppressive agents ไม่ใช่การรักษามาตรฐาน อาจพิจารณาเฉพาะใน refractory celiac disease type II ซึ่งพบน้อยมากในเด็ก"},
+        {"label": "E", "text": "ให้ enzyme supplement", "is_correct": false, "explanation": "ยังไม่มี enzyme supplement ที่สามารถย่อย gluten ได้อย่างมีประสิทธิภาพ กำลังอยู่ในระหว่างการวิจัย แต่ยังไม่เป็นมาตรฐาน"}
+      ],
+      "key_takeaway": "Celiac disease: strict gluten-free diet ตลอดชีวิต เป็นการรักษาหลักเดียว หลีกเลี่ยง wheat, barley, rye"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง อายุ 8 ปี ได้รับการวินิจฉัย celiac disease ข้อใดเป็นโรคที่สัมพันธ์กับ celiac disease มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Type 2 diabetes mellitus"},
+      {"label": "B", "text": "Type 1 diabetes mellitus"},
+      {"label": "C", "text": "Systemic lupus erythematosus"},
+      {"label": "D", "text": "Rheumatoid arthritis"},
+      {"label": "E", "text": "Asthma"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Type 1 DM มีความสัมพันธ์ที่ชัดเจนกับ celiac disease เพราะทั้งสองเป็น autoimmune disease ที่มี shared genetic susceptibility (HLA-DQ2/DQ8)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Type 1 diabetes mellitus",
+      "reason": "Celiac disease เป็น autoimmune disease ที่มีความสัมพันธ์กับ autoimmune diseases อื่นๆ หลายชนิด โดยเฉพาะ type 1 diabetes mellitus\n\nCeliac disease และ T1DM มี shared genetic susceptibility คือ HLA-DQ2 และ HLA-DQ8 ประมาณ 5-10% ของผู้ป่วย T1DM มี celiac disease ร่วมด้วย (เทียบกับ prevalence ในประชากรทั่วไปที่ประมาณ 1%)\n\nAutoimmune diseases อื่นที่สัมพันธ์กับ celiac disease ได้แก่ autoimmune thyroid disease (Hashimoto, Graves), IgA deficiency, autoimmune hepatitis, Addison disease, Down syndrome, Turner syndrome, Williams syndrome",
+      "choices": [
+        {"label": "A", "text": "Type 2 diabetes mellitus", "is_correct": false, "explanation": "T2DM เป็น metabolic disease ที่เกี่ยวกับ insulin resistance ไม่ใช่ autoimmune disease ไม่มีความสัมพันธ์ทาง genetic กับ celiac disease"},
+        {"label": "B", "text": "Type 1 diabetes mellitus", "is_correct": true, "explanation": "T1DM มีความสัมพันธ์ชัดเจนกับ celiac disease เพราะ shared HLA-DQ2/DQ8 susceptibility ประมาณ 5-10% ของผู้ป่วย T1DM มี celiac disease"},
+        {"label": "C", "text": "Systemic lupus erythematosus", "is_correct": false, "explanation": "SLE เป็น autoimmune disease แต่มี genetic susceptibility ต่างจาก celiac disease ความสัมพันธ์ไม่ชัดเจนเท่า T1DM"},
+        {"label": "D", "text": "Rheumatoid arthritis", "is_correct": false, "explanation": "RA มีความสัมพันธ์กับ HLA-DR4 ไม่ใช่ HLA-DQ2/DQ8 จึงไม่มีความสัมพันธ์ที่ชัดเจนกับ celiac disease"},
+        {"label": "E", "text": "Asthma", "is_correct": false, "explanation": "Asthma เป็น allergic/atopic disease ไม่ใช่ autoimmune disease ไม่มีความสัมพันธ์ที่ชัดเจนกับ celiac disease"}
+      ],
+      "key_takeaway": "Celiac disease สัมพันธ์กับ autoimmune diseases โดยเฉพาะ T1DM (shared HLA-DQ2/DQ8), autoimmune thyroid disease, IgA deficiency"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิง อายุ 6 สัปดาห์ มาด้วยตัวเหลืองตาเหลืองมากขึ้นเรื่อยๆ ถ่ายอุจจาระสีซีดขาว ปัสสาวะสีเข้ม ตรวจร่างกาย: ตัวเหลือง ตับโต 3 cm below costal margin ม้ามไม่โต ผล lab: TB 12 mg/dL, DB 9 mg/dL, AST 180 U/L, ALT 120 U/L, ALP 600 U/L, GGT 800 U/L การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Physiologic jaundice"},
+      {"label": "B", "text": "Breast milk jaundice"},
+      {"label": "C", "text": "Biliary atresia"},
+      {"label": "D", "text": "Neonatal hepatitis"},
+      {"label": "E", "text": "Choledochal cyst"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Conjugated hyperbilirubinemia (DB > 1 mg/dL หรือ > 20% ของ TB) ร่วมกับ acholic stool, dark urine, hepatomegaly และ markedly elevated GGT เป็นลักษณะของ biliary atresia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Biliary atresia",
+      "reason": "Biliary atresia เป็นภาวะที่ extrahepatic bile ducts ถูกทำลายจาก inflammatory process ทำให้เกิด obstruction ของ bile flow เป็นสาเหตุที่พบบ่อยที่สุดของ neonatal cholestasis ที่ต้องผ่าตัด\n\nอาการสำคัญ ได้แก่ jaundice ที่เกิดหรือคงอยู่หลังอายุ 2 สัปดาห์ acholic stool (อุจจาระสีซีดขาว) dark urine (ปัสสาวะสีเข้ม) hepatomegaly Lab จะพบ conjugated hyperbilirubinemia, elevated GGT (มักสูงมาก > 300 U/L), elevated ALP, moderate elevation ของ AST/ALT\n\nGGT ที่สูงมากช่วยแยกจาก neonatal hepatitis ซึ่ง GGT มักไม่สูงมาก (หรือปกติ)\n\nDiagnosis ยืนยันด้วย intraoperative cholangiogram การรักษาคือ Kasai portoenterostomy (hepatoportoenterostomy) ซึ่งควรทำก่อนอายุ 60 วัน เพื่อ outcome ที่ดีที่สุด",
+      "choices": [
+        {"label": "A", "text": "Physiologic jaundice", "is_correct": false, "explanation": "Physiologic jaundice เป็น unconjugated hyperbilirubinemia ที่หายภายใน 2 สัปดาห์ ไม่มี acholic stool, dark urine หรือ conjugated hyperbilirubinemia"},
+        {"label": "B", "text": "Breast milk jaundice", "is_correct": false, "explanation": "Breast milk jaundice เป็น prolonged unconjugated hyperbilirubinemia อุจจาระสีปกติ ไม่มี hepatomegaly หรือ elevated liver enzymes"},
+        {"label": "C", "text": "Biliary atresia", "is_correct": true, "explanation": "Conjugated hyperbilirubinemia + acholic stool + dark urine + hepatomegaly + markedly elevated GGT เป็น classic presentation ของ biliary atresia"},
+        {"label": "D", "text": "Neonatal hepatitis", "is_correct": false, "explanation": "Neonatal hepatitis อาจมี conjugated hyperbilirubinemia เช่นกัน แต่ GGT มักไม่สูงมาก อุจจาระอาจซีดแต่ไม่ acholic อย่างชัดเจน และบางครั้งอุจจาระยังมีสีอยู่บ้าง"},
+        {"label": "E", "text": "Choledochal cyst", "is_correct": false, "explanation": "Choledochal cyst อาจมี conjugated jaundice ได้ แต่พบน้อยกว่า biliary atresia มาก มักมี abdominal mass ร่วมด้วย ultrasound จะเห็น cystic dilatation ของ bile duct"}
+      ],
+      "key_takeaway": "Biliary atresia: conjugated jaundice + acholic stool + dark urine + hepatomegaly + very high GGT ต้องทำ Kasai ก่อน 60 วัน"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิง อายุ 5 สัปดาห์ สงสัย biliary atresia ข้อใดเป็นการตรวจที่สำคัญที่สุดในการวางแผนผ่าตัด",
+    "choices": [
+      {"label": "A", "text": "HIDA scan (hepatobiliary scintigraphy)"},
+      {"label": "B", "text": "MRCP (magnetic resonance cholangiopancreatography)"},
+      {"label": "C", "text": "Percutaneous liver biopsy"},
+      {"label": "D", "text": "Intraoperative cholangiogram"},
+      {"label": "E", "text": "Abdominal CT scan"}
+    ],
+    "correct_answer": "D",
+    "explanation": "Intraoperative cholangiogram เป็น gold standard ในการวินิจฉัย biliary atresia โดยแสดง non-patent extrahepatic bile ducts",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: D. Intraoperative cholangiogram",
+      "reason": "Intraoperative cholangiogram เป็น gold standard ในการวินิจฉัย biliary atresia เพราะแสดง anatomy ของ bile ducts ได้ชัดเจนที่สุด หากพบว่า extrahepatic bile ducts ไม่ patent จะทำ Kasai portoenterostomy ต่อเลยในครั้งเดียว\n\nPreoperative investigations ที่ช่วย สนับสนุนการวินิจฉัย ได้แก่ ultrasound (triangular cord sign, absent or small gallbladder, absent common bile duct), HIDA scan (non-excretion of radiotracer into intestine), liver biopsy (bile duct proliferation, portal fibrosis) แต่ไม่มีการตรวจใดที่ให้ definitive diagnosis ได้เท่า intraoperative cholangiogram\n\nสิ่งสำคัญคือ timing การทำ Kasai ก่อนอายุ 60 วัน มี success rate ในการ restore bile flow ประมาณ 60-80% หลัง 90 วัน success rate ลดลงมาก",
+      "choices": [
+        {"label": "A", "text": "HIDA scan", "is_correct": false, "explanation": "HIDA scan แสดงว่า radiotracer ไม่ถูกขับเข้า intestine ช่วยบ่งชี้ biliary obstruction แต่ไม่ specific สำหรับ biliary atresia (neonatal hepatitis ก็อาจ non-excretion ได้) จึงไม่ใช่ definitive"},
+        {"label": "B", "text": "MRCP", "is_correct": false, "explanation": "MRCP อาจช่วยดู anatomy ของ bile ducts ได้ แต่ในทารกเล็ก bile ducts มีขนาดเล็กมาก MRCP อาจไม่ชัดเจน และไม่ definitive เท่า intraoperative cholangiogram"},
+        {"label": "C", "text": "Percutaneous liver biopsy", "is_correct": false, "explanation": "Liver biopsy ช่วยแยก biliary atresia (bile duct proliferation, portal fibrosis) จาก neonatal hepatitis (giant cell transformation) แต่ sensitivity ไม่ 100% ไม่ definitive"},
+        {"label": "D", "text": "Intraoperative cholangiogram", "is_correct": true, "explanation": "เป็น gold standard เพราะแสดง anatomy ของ bile ducts ได้ชัดเจน หากพบ non-patent bile ducts สามารถทำ Kasai portoenterostomy ต่อเลย"},
+        {"label": "E", "text": "Abdominal CT scan", "is_correct": false, "explanation": "CT scan ไม่มีประโยชน์มากในการวินิจฉัย biliary atresia ให้ข้อมูลน้อยกว่า ultrasound และทำให้ทารกได้รับ radiation โดยไม่จำเป็น"}
+      ],
+      "key_takeaway": "Intraoperative cholangiogram เป็น gold standard ของ biliary atresia หากพบ non-patent ducts จะทำ Kasai ต่อทันที ควรทำก่อนอายุ 60 วัน"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิง อายุ 7 สัปดาห์ ได้รับการวินิจฉัย biliary atresia และทำ Kasai portoenterostomy แล้ว หลังผ่าตัด 1 สัปดาห์ เริ่มมีอุจจาระสีเหลือง ตัวเหลืองลดลง แต่มาด้วยไข้สูง 39.5°C หลังผ่าตัด 2 สัปดาห์ ผล lab: WBC 18,000, TB 8 (เดิม 15), DB 5 ภาวะแทรกซ้อนที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Ascending cholangitis"},
+      {"label": "B", "text": "Wound infection"},
+      {"label": "C", "text": "Bile leak"},
+      {"label": "D", "text": "Small bowel obstruction"},
+      {"label": "E", "text": "Portal hypertension"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Ascending cholangitis เป็นภาวะแทรกซ้อนที่พบบ่อยที่สุดหลัง Kasai operation เกิดจากการไม่มี sphincter of Oddi ทำให้ bacteria จากลำไส้ขึ้นไปใน bile ducts",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Ascending cholangitis",
+      "reason": "Ascending cholangitis เป็นภาวะแทรกซ้อนที่พบบ่อยที่สุดหลัง Kasai portoenterostomy พบได้ประมาณ 40-60% ของผู้ป่วย เกิดจากการที่ Roux-en-Y hepaticojejunostomy ทำให้ไม่มี sphincter of Oddi เป็น barrier จึงเกิด bacterial reflux จากลำไส้ขึ้นไปในทางเดินน้ำดี\n\nอาการ ได้แก่ ไข้สูง ตัวเหลืองเพิ่มขึ้น อุจจาระกลับมาซีด leukocytosis elevated liver enzymes\n\nการรักษาคือ IV broad-spectrum antibiotics เช่น ampicillin + gentamicin + metronidazole หรือ piperacillin-tazobactam\n\nCholangitis ที่เกิดซ้ำบ่อยจะเร่งให้เกิด progressive liver fibrosis และ cirrhosis ซึ่งจะนำไปสู่ความจำเป็นในการ liver transplantation",
+      "choices": [
+        {"label": "A", "text": "Ascending cholangitis", "is_correct": true, "explanation": "เป็นภาวะแทรกซ้อนที่พบบ่อยที่สุดหลัง Kasai จากการไม่มี sphincter of Oddi อาการคือ ไข้ ตัวเหลืองขึ้น leukocytosis รักษาด้วย IV antibiotics"},
+        {"label": "B", "text": "Wound infection", "is_correct": false, "explanation": "Wound infection จะมีอาการเฉพาะที่แผลผ่าตัด เช่น แดง บวม หนอง ไม่ทำให้ bilirubin เปลี่ยนแปลง"},
+        {"label": "C", "text": "Bile leak", "is_correct": false, "explanation": "Bile leak อาจเกิดหลังผ่าตัดแต่มักมี bile staining ที่ drain, peritonitis signs ไม่ใช่ recurrent jaundice เป็นหลัก"},
+        {"label": "D", "text": "Small bowel obstruction", "is_correct": false, "explanation": "SBO อาจเกิดจาก adhesion หลังผ่าตัดแต่อาการหลักคือ abdominal distension, vomiting, ไม่มี bile flow ไม่ใช่ ไข้สูงกับ jaundice เพิ่ม"},
+        {"label": "E", "text": "Portal hypertension", "is_correct": false, "explanation": "Portal hypertension เป็นภาวะแทรกซ้อนระยะยาวของ biliary atresia ไม่ใช่ 2 สัปดาห์หลังผ่าตัด อาการคือ splenomegaly, variceal bleeding, ascites"}
+      ],
+      "key_takeaway": "Ascending cholangitis เป็นภาวะแทรกซ้อนที่พบบ่อยที่สุดหลัง Kasai: ไข้ + jaundice เพิ่ม + acholic stool กลับมา รักษาด้วย IV antibiotics"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิง อายุ 4 สัปดาห์ ตัวเหลืองตาเหลือง ตรวจพบ conjugated hyperbilirubinemia ultrasound พบ cystic dilatation ของ common bile duct ข้อใดเป็นการวินิจฉัยที่เป็นไปได้มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Biliary atresia (cystic type)"},
+      {"label": "B", "text": "Choledochal cyst"},
+      {"label": "C", "text": "Gallbladder hydrops"},
+      {"label": "D", "text": "Hepatic cyst"},
+      {"label": "E", "text": "Pancreatic pseudocyst"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Cystic dilatation ของ common bile duct (CBD) ใน conjugated jaundice เข้าได้กับ choledochal cyst ซึ่งต้องแยกจาก biliary atresia cystic type",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Choledochal cyst",
+      "reason": "Choledochal cyst คือ cystic dilatation ของ bile ducts พบบ่อยในเพศหญิงและชาวเอเชีย มีหลาย type ตาม Todani classification โดย Type I (fusiform dilatation ของ CBD) พบบ่อยที่สุด (50-80%)\n\nอาการ classic triad (พบเพียง 20-40%) ได้แก่ jaundice, abdominal pain, right upper quadrant mass ในทารก มักมาด้วย conjugated jaundice เป็นหลัก\n\nUltrasound จะเห็น cystic dilatation ของ CBD ซึ่งต้องแยกจาก biliary atresia cystic type ที่อาจมี cyst เล็กๆ ที่ porta hepatis ได้เช่นกัน แต่ใน choledochal cyst จะเห็น intrahepatic bile ducts dilated ด้วย ในขณะที่ biliary atresia จะไม่มี\n\nการรักษาคือ complete excision ของ cyst ร่วมกับ Roux-en-Y hepaticojejunostomy เพราะ choledochal cyst มีความเสี่ยงต่อ cholangiocarcinoma ในระยะยาว",
+      "choices": [
+        {"label": "A", "text": "Biliary atresia (cystic type)", "is_correct": false, "explanation": "Biliary atresia cystic type มี small cyst ที่ porta hepatis แต่ไม่ใช่ true dilatation ของ CBD, gallbladder มักเล็กหรือ atretic ใน biliary atresia ต่างจาก choledochal cyst ที่มี significant dilatation"},
+        {"label": "B", "text": "Choledochal cyst", "is_correct": true, "explanation": "Cystic dilatation ของ CBD ที่ชัดเจนเข้าได้กับ choledochal cyst อาจมาด้วย conjugated jaundice ในทารก อาจมี abdominal mass ร่วมด้วย"},
+        {"label": "C", "text": "Gallbladder hydrops", "is_correct": false, "explanation": "Gallbladder hydrops คือ gallbladder ที่โตจาก distension ไม่ใช่ dilatation ของ CBD มักเกิดจาก Kawasaki disease หรือ prolonged fasting ไม่เข้ากับ presentation นี้"},
+        {"label": "D", "text": "Hepatic cyst", "is_correct": false, "explanation": "Hepatic cyst อยู่ใน liver parenchyma ไม่ใช่ bile duct มักไม่ทำให้เกิด conjugated jaundice ยกเว้น compress bile ducts ซึ่งพบน้อย"},
+        {"label": "E", "text": "Pancreatic pseudocyst", "is_correct": false, "explanation": "Pancreatic pseudocyst พบน้อยมากในทารกแรกเกิด มักเกิดหลัง pancreatitis ตำแหน่งอยู่ที่ pancreas ไม่ใช่ CBD"}
+      ],
+      "key_takeaway": "Choledochal cyst: cystic dilatation ของ CBD ในเด็กมี conjugated jaundice รักษาด้วย complete excision + Roux-en-Y เพราะเสี่ยง cholangiocarcinoma"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย คลอดก่อนกำหนด อายุครรภ์ 28 สัปดาห์ น้ำหนักแรกเกิด 1,100 g อายุ 10 วัน เริ่มมีอาการ feeding intolerance ท้องอืด ถ่ายเป็นเลือด อุณหภูมิร่างกายต่ำ หัวใจเต้นช้า X-ray abdomen พบ pneumatosis intestinalis การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Necrotizing enterocolitis (NEC)"},
+      {"label": "B", "text": "Spontaneous intestinal perforation"},
+      {"label": "C", "text": "Meconium ileus"},
+      {"label": "D", "text": "Hirschsprung-associated enterocolitis"},
+      {"label": "E", "text": "Milk protein allergy"}
+    ],
+    "correct_answer": "A",
+    "explanation": "ทารกคลอดก่อนกำหนดที่มี feeding intolerance, abdominal distension, bloody stool, temperature instability และ X-ray พบ pneumatosis intestinalis เป็น pathognomonic ของ NEC",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Necrotizing enterocolitis (NEC)",
+      "reason": "NEC เป็นภาวะฉุกเฉินทาง GI ที่พบบ่อยที่สุดในทารกคลอดก่อนกำหนด โดยเฉพาะที่น้ำหนักน้อยมาก (<1,500 g) เกิดจาก multifactorial causes ได้แก่ mucosal immaturity, bacterial colonization, formula feeding, hypoxic-ischemic injury\n\nอาการ ได้แก่ feeding intolerance (residual มาก, อาเจียน), abdominal distension, bloody stool, temperature instability (hypothermia), bradycardia, apnea, lethargy\n\nX-ray findings ที่สำคัญ ได้แก่ pneumatosis intestinalis (intramural air = pathognomonic), portal venous gas, pneumoperitoneum (perforation), dilated bowel loops, thickened bowel wall\n\nStaging ตาม Modified Bell criteria แบ่งเป็น Stage I (suspected), Stage II (definite - มี pneumatosis), Stage III (advanced - มี perforation หรือ peritonitis)",
+      "choices": [
+        {"label": "A", "text": "Necrotizing enterocolitis (NEC)", "is_correct": true, "explanation": "ทารกคลอดก่อนกำหนด + feeding intolerance + abdominal distension + bloody stool + pneumatosis intestinalis เป็น classic NEC (Bell stage IIA)"},
+        {"label": "B", "text": "Spontaneous intestinal perforation", "is_correct": false, "explanation": "SIP เกิดในทารกน้ำหนักน้อยมากเช่นกัน แต่มักเกิดเร็วกว่า NEC (3-7 วัน) มี focal perforation ที่ terminal ileum X-ray เห็น pneumoperitoneum โดยไม่มี pneumatosis"},
+        {"label": "C", "text": "Meconium ileus", "is_correct": false, "explanation": "Meconium ileus มักเกิดตั้งแต่วันแรก สัมพันธ์กับ cystic fibrosis มี distal ileal obstruction ไม่มี pneumatosis intestinalis"},
+        {"label": "D", "text": "Hirschsprung-associated enterocolitis", "is_correct": false, "explanation": "HAEC มักเกิดในทารก full-term ที่มี Hirschsprung disease มี explosive diarrhea ไม่ใช่ bloody stool แบบ NEC และไม่มี pneumatosis"},
+        {"label": "E", "text": "Milk protein allergy", "is_correct": false, "explanation": "Milk protein allergy อาจมี bloody stool ในทารก แต่ไม่มี pneumatosis intestinalis, temperature instability, หรือ systemic signs ของ sepsis"}
+      ],
+      "key_takeaway": "NEC ในทารกคลอดก่อนกำหนด: feeding intolerance + abdominal distension + bloody stool + pneumatosis intestinalis (pathognomonic)"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย คลอดก่อนกำหนด 30 สัปดาห์ ได้รับการวินิจฉัย NEC Bell stage IIA (pneumatosis intestinalis, ไม่มี perforation) การรักษาเบื้องต้นที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Exploratory laparotomy ทันที"},
+      {"label": "B", "text": "NPO, NG decompression, IV antibiotics, IV fluid"},
+      {"label": "C", "text": "ให้ oral antibiotics และลดปริมาณนม"},
+      {"label": "D", "text": "Peritoneal drainage เพียงอย่างเดียว"},
+      {"label": "E", "text": "Exchange transfusion"}
+    ],
+    "correct_answer": "B",
+    "explanation": "NEC Bell stage II ที่ไม่มี perforation รักษาด้วย medical management: NPO, NG decompression, IV broad-spectrum antibiotics, fluid resuscitation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. NPO, NG decompression, IV antibiotics, IV fluid",
+      "reason": "Medical management เป็นการรักษาหลักสำหรับ NEC Bell stage I-II ที่ไม่มี perforation ประกอบด้วย\n\n1) NPO (nil per os) - หยุดให้นมทาง oral/enteral อย่างน้อย 7-14 วัน\n2) NG (nasogastric) decompression - เพื่อลด abdominal distension\n3) IV broad-spectrum antibiotics - ครอบคลุม gram-positive, gram-negative และ anaerobe เช่น ampicillin + gentamicin + metronidazole หรือ piperacillin-tazobactam\n4) IV fluid resuscitation - เพื่อแก้ไข dehydration และ maintain perfusion\n5) Serial abdominal X-rays ทุก 6-8 ชั่วโมงเพื่อ monitor progression\n\nSurgical intervention จำเป็นเมื่อมี perforation (pneumoperitoneum), clinical deterioration ที่ไม่ตอบสนองต่อ medical treatment, หรือ fixed dilated loop on serial X-rays",
+      "choices": [
+        {"label": "A", "text": "Exploratory laparotomy ทันที", "is_correct": false, "explanation": "การผ่าตัดทันทีสงวนไว้สำหรับ NEC ที่มี perforation (pneumoperitoneum) หรือ clinical deterioration ที่ไม่ตอบสนองต่อ medical treatment ใน Bell stage IIA ยังไม่มีข้อบ่งชี้ผ่าตัด"},
+        {"label": "B", "text": "NPO, NG decompression, IV antibiotics, IV fluid", "is_correct": true, "explanation": "เป็นการรักษามาตรฐานสำหรับ NEC stage II ที่ไม่มี perforation ครอบคลุม bowel rest, decompression, infection control และ fluid resuscitation"},
+        {"label": "C", "text": "ให้ oral antibiotics และลดปริมาณนม", "is_correct": false, "explanation": "ไม่เพียงพอ NEC ต้อง NPO อย่างสมบูรณ์ ไม่ใช่แค่ลดปริมาณนม และต้องใช้ IV antibiotics ไม่ใช่ oral เพราะ gut integrity เสียหาย"},
+        {"label": "D", "text": "Peritoneal drainage เพียงอย่างเดียว", "is_correct": false, "explanation": "Peritoneal drainage เป็นทางเลือกสำหรับ NEC ที่มี perforation ในทารกที่มีสภาพร่างกายไม่ stable พอจะทำ laparotomy ไม่ใช่สำหรับ stage IIA"},
+        {"label": "E", "text": "Exchange transfusion", "is_correct": false, "explanation": "Exchange transfusion ไม่มีบทบาทในการรักษา NEC ใช้สำหรับ severe neonatal jaundice หรือ severe sepsis ที่ไม่ตอบสนองต่อการรักษาอื่น"}
+      ],
+      "key_takeaway": "NEC stage I-II ไม่มี perforation: NPO + NG decompression + IV antibiotics + IV fluid + serial abdominal X-rays"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย คลอดก่อนกำหนด 29 สัปดาห์ กำลังรักษา NEC มา 3 วัน X-ray abdomen ล่าสุดพบ pneumoperitoneum ข้อใดเป็นข้อบ่งชี้ที่ชัดเจนที่สุดในการผ่าตัด",
+    "choices": [
+      {"label": "A", "text": "Pneumatosis intestinalis"},
+      {"label": "B", "text": "Portal venous gas"},
+      {"label": "C", "text": "Pneumoperitoneum"},
+      {"label": "D", "text": "Dilated bowel loops"},
+      {"label": "E", "text": "Thickened bowel wall"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Pneumoperitoneum (free air ในช่องท้อง) บ่งบอก bowel perforation ซึ่งเป็น absolute indication สำหรับ surgical intervention",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Pneumoperitoneum",
+      "reason": "Pneumoperitoneum (free intraperitoneal air) เป็น absolute surgical indication ใน NEC เพราะบ่งบอกว่ามี bowel perforation เกิดขึ้น ซึ่งต้องการ surgical intervention ทันที\n\nPneumoperitoneum บน X-ray สามารถเห็นได้จาก supine film เป็น football sign หรือ Rigler sign (double-wall sign) หรือจาก left lateral decubitus film เห็น free air ระหว่าง liver กับ abdominal wall\n\nSurgical options ได้แก่ 1) Exploratory laparotomy with bowel resection and ostomy creation 2) Primary peritoneal drainage (ในทารกที่ too unstable สำหรับ laparotomy)\n\nRelative surgical indications อื่นๆ ได้แก่ clinical deterioration despite maximal medical therapy, fixed dilated loop on serial X-rays, abdominal wall erythema/crepitus",
+      "choices": [
+        {"label": "A", "text": "Pneumatosis intestinalis", "is_correct": false, "explanation": "Pneumatosis intestinalis เป็น radiologic hallmark ของ NEC แต่ไม่ใช่ absolute surgical indication เพราะหลายรายรักษาด้วย medical management หายได้"},
+        {"label": "B", "text": "Portal venous gas", "is_correct": false, "explanation": "Portal venous gas บ่งบอก severity ของ NEC และ poor prognosis แต่ไม่ใช่ absolute surgical indication เพียงอย่างเดียว บางรายอาจตอบสนองต่อ medical treatment"},
+        {"label": "C", "text": "Pneumoperitoneum", "is_correct": true, "explanation": "เป็น absolute surgical indication เพราะ free air ในช่องท้องบ่งบอก bowel perforation ต้องผ่าตัดทันที"},
+        {"label": "D", "text": "Dilated bowel loops", "is_correct": false, "explanation": "Dilated bowel loops พบได้ใน ileus ทั่วไป ไม่ specific สำหรับ perforation ไม่ใช่ absolute surgical indication แต่ fixed dilated loop ที่ไม่เปลี่ยนแปลงใน serial films อาจบ่งบอก necrotic bowel"},
+        {"label": "E", "text": "Thickened bowel wall", "is_correct": false, "explanation": "Bowel wall thickening บ่งบอก inflammation/edema ไม่ได้หมายความว่ามี perforation ไม่ใช่ absolute surgical indication"}
+      ],
+      "key_takeaway": "Pneumoperitoneum (free air) เป็น absolute surgical indication ใน NEC = bowel perforation ต้องผ่าตัดทันที"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 4 ปี มาด้วยอาการถ่ายเป็นเลือดสดทางทวารหนักจำนวนมาก ไม่เจ็บ ไม่มีปวดท้อง ไม่มีไข้ ไม่มีท้องเสีย ตรวจร่างกาย: ซีดเล็กน้อย ท้อง soft ไม่อืด ไม่กดเจ็บ PR: ไม่มี fissure, ไม่มี polyp, มีเลือดสดที่นิ้ว การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Juvenile polyp"},
+      {"label": "B", "text": "Meckel diverticulum"},
+      {"label": "C", "text": "Anal fissure"},
+      {"label": "D", "text": "Intussusception"},
+      {"label": "E", "text": "Henoch-Schonlein purpura"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Painless significant rectal bleeding ในเด็ก 2-5 ปี โดยไม่มีอาการอื่น เป็นลักษณะ classic ของ Meckel diverticulum ที่มี ectopic gastric mucosa",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Meckel diverticulum",
+      "reason": "Meckel diverticulum เป็น most common congenital anomaly ของ GI tract พบประมาณ 2% ของประชากร เป็น true diverticulum ที่ anti-mesenteric border ของ ileum\n\nRule of 2: พบ 2% ของประชากร อยู่ห่างจาก ileocecal valve 2 feet (60 cm) ยาวประมาณ 2 inches (5 cm) มี 2 types ของ ectopic tissue (gastric mucosa พบบ่อยที่สุด, pancreatic tissue) อาการมักเกิดก่อนอายุ 2 ปี (แต่สามารถเกิดได้ทุกอายุ)\n\nอาการที่พบบ่อยที่สุดคือ painless rectal bleeding ที่มากพอจะทำให้ซีด เลือดมักเป็นสี maroon หรือ brick-red เกิดจาก ectopic gastric mucosa ที่หลั่ง acid ทำให้เกิด ulceration ของ ileal mucosa ข้างเคียง\n\nDiagnosis ทำด้วย Meckel scan (Technetium-99m pertechnetate scan) ที่จะ uptake ใน ectopic gastric mucosa",
+      "choices": [
+        {"label": "A", "text": "Juvenile polyp", "is_correct": false, "explanation": "Juvenile polyp มักมี painless rectal bleeding เช่นกัน แต่ปริมาณเลือดมักไม่มากจนทำให้ซีด มักมี polyp ยื่นออกมาจาก rectum หรือคลำได้เวลา PR ในโจทย์นี้ PR ไม่พบ polyp"},
+        {"label": "B", "text": "Meckel diverticulum", "is_correct": true, "explanation": "Painless significant rectal bleeding ในเด็ก 2-5 ปี ที่ไม่มี fissure, polyp, หรืออาการปวดท้อง เป็น classic presentation ของ Meckel diverticulum ที่มี ectopic gastric mucosa"},
+        {"label": "C", "text": "Anal fissure", "is_correct": false, "explanation": "Anal fissure มักมีเลือดปนอุจจาระ เจ็บขณะถ่าย และตรวจพบ fissure ที่ anus ในโจทย์นี้ PR ไม่พบ fissure และเลือดออกมากกว่า fissure ทั่วไป"},
+        {"label": "D", "text": "Intussusception", "is_correct": false, "explanation": "Intussusception มีอาการปวดท้องเป็นพักๆ อาเจียน currant jelly stool ในโจทย์นี้ไม่มีปวดท้องหรืออาเจียน เลือดเป็นสีแดงสดไม่ใช่ currant jelly"},
+        {"label": "E", "text": "Henoch-Schonlein purpura", "is_correct": false, "explanation": "HSP อาจมี GI bleeding ได้ แต่มักมีอาการอื่นร่วม เช่น palpable purpura ที่ขา/ก้น, arthralgia, abdominal pain ในโจทย์นี้ไม่มีอาการเหล่านี้"}
+      ],
+      "key_takeaway": "Meckel diverticulum: painless significant rectal bleeding ในเด็กเล็ก วินิจฉัยด้วย Meckel scan (Tc-99m pertechnetate)"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 6 ปี สงสัย Meckel diverticulum จากอาการถ่ายเลือดสดไม่เจ็บ การตรวจที่เหมาะสมที่สุดเพื่อวินิจฉัยคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Barium enema"},
+      {"label": "B", "text": "Colonoscopy"},
+      {"label": "C", "text": "Technetium-99m pertechnetate scan (Meckel scan)"},
+      {"label": "D", "text": "CT abdomen"},
+      {"label": "E", "text": "Upper GI series"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Tc-99m pertechnetate scan (Meckel scan) เป็นการตรวจที่ specific สำหรับ Meckel diverticulum ที่มี ectopic gastric mucosa ซึ่งจะ uptake radiotracer",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Technetium-99m pertechnetate scan (Meckel scan)",
+      "reason": "Meckel scan ใช้ Technetium-99m pertechnetate ซึ่งจะถูก uptake โดย mucin-secreting cells ของ gastric mucosa ทั้ง orthotopic (ในกระเพาะ) และ ectopic (ใน Meckel diverticulum)\n\nSensitivity ในเด็กประมาณ 85-90% specificity ประมาณ 95% สามารถเพิ่ม sensitivity ได้โดยการให้ pentagastrin (กระตุ้น uptake) หรือ H2 blocker เช่น cimetidine (ยับยั้ง secretion แต่ไม่ยับยั้ง uptake ทำให้ tracer คงอยู่นานขึ้น) ก่อนทำ scan\n\nFalse negative อาจเกิดเมื่อ Meckel diverticulum ไม่มี ectopic gastric mucosa (ประมาณ 50% ของ Meckel ทั้งหมดมี ectopic mucosa) หรือมี gastric mucosa น้อยเกินไป",
+      "choices": [
+        {"label": "A", "text": "Barium enema", "is_correct": false, "explanation": "Barium enema ตรวจ colon ไม่ใช่ small bowel ไม่สามารถเห็น Meckel diverticulum ที่อยู่ใน ileum ได้"},
+        {"label": "B", "text": "Colonoscopy", "is_correct": false, "explanation": "Colonoscopy ตรวจได้ถึง terminal ileum แต่ไม่สามารถเห็น Meckel diverticulum ที่อยู่ที่ anti-mesenteric border ของ ileum ห่างจาก ileocecal valve ประมาณ 60 cm"},
+        {"label": "C", "text": "Tc-99m pertechnetate scan (Meckel scan)", "is_correct": true, "explanation": "เป็นการตรวจที่ดีที่สุดสำหรับ Meckel diverticulum ที่มี ectopic gastric mucosa sensitivity 85-90% specificity 95% non-invasive"},
+        {"label": "D", "text": "CT abdomen", "is_correct": false, "explanation": "CT abdomen อาจเห็น Meckel diverticulum ได้ในบางราย แต่ sensitivity ต่ำกว่า Meckel scan มากและทำให้เด็กได้รับ radiation ไม่ใช่ first-line investigation"},
+        {"label": "E", "text": "Upper GI series", "is_correct": false, "explanation": "Upper GI series ตรวจ esophagus, stomach, duodenum ไม่ครอบคลุมถึง distal ileum ที่ Meckel diverticulum อยู่"}
+      ],
+      "key_takeaway": "Meckel scan (Tc-99m pertechnetate): ตรวจ ectopic gastric mucosa ใน Meckel diverticulum sensitivity 85-90% ให้ cimetidine เพิ่ม sensitivity ได้"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 3 ปี มาด้วยอาการปวดท้อง ไข้ต่ำ อาเจียน 2 ครั้ง ถ่ายเป็นเลือดสดปริมาณมาก ทำ Meckel scan ผลเป็น positive ข้อใดเป็นการรักษาที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "ให้ PPI แล้วสังเกตอาการ"},
+      {"label": "B", "text": "Surgical resection ของ Meckel diverticulum"},
+      {"label": "C", "text": "Colonoscopy เพื่อ cauterize bleeding site"},
+      {"label": "D", "text": "Embolization ผ่าน interventional radiology"},
+      {"label": "E", "text": "ให้ tranexamic acid แล้วรอดูอาการ"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Symptomatic Meckel diverticulum ต้องรักษาด้วย surgical resection เป็น definitive treatment",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Surgical resection ของ Meckel diverticulum",
+      "reason": "Symptomatic Meckel diverticulum (ที่มีเลือดออก obstruction หรือ inflammation) ต้องรักษาด้วยการผ่าตัด ซึ่งเป็น definitive treatment\n\nSurgical options ได้แก่ 1) Diverticulectomy - ตัด diverticulum ออกโดย staple หรือ hand-sewn closure ใช้เมื่อ bleeding มาจาก diverticulum โดยตรง 2) Segmental ileal resection with anastomosis - ตัดส่วนของ ileum ที่มี diverticulum ออก ใช้เมื่อมี extensive ulceration ของ ileal mucosa ข้างเคียง หรือ broad-based diverticulum\n\nสามารถทำได้ทั้ง open surgery และ laparoscopic approach\n\nสำหรับ incidentally found Meckel diverticulum ที่ไม่มีอาการ ยังมีข้อถกเถียงว่าควรตัดหรือไม่ โดยทั่วไปแนะนำให้ตัดถ้าพบใน เด็กเล็ก ผู้ชาย diverticulum ยาว > 2 cm หรือมีลักษณะผิดปกติ",
+      "choices": [
+        {"label": "A", "text": "ให้ PPI แล้วสังเกตอาการ", "is_correct": false, "explanation": "PPI อาจลด acid production จาก ectopic gastric mucosa ชั่วคราว แต่ไม่ใช่ definitive treatment เลือดจะออกซ้ำได้ และอาจเกิดภาวะแทรกซ้อนอื่นเช่น obstruction"},
+        {"label": "B", "text": "Surgical resection ของ Meckel diverticulum", "is_correct": true, "explanation": "เป็น definitive treatment สำหรับ symptomatic Meckel diverticulum ทำได้ทั้ง diverticulectomy หรือ segmental resection ขึ้นกับ anatomy และ extent ของ disease"},
+        {"label": "C", "text": "Colonoscopy เพื่อ cauterize bleeding site", "is_correct": false, "explanation": "Colonoscopy ไม่สามารถ reach ถึง Meckel diverticulum ที่ ileum ได้ และ cauterization ไม่ใช่ definitive treatment"},
+        {"label": "D", "text": "Embolization ผ่าน interventional radiology", "is_correct": false, "explanation": "Embolization ไม่ใช่มาตรฐานสำหรับ Meckel bleeding ในเด็ก เพราะอาจเกิด bowel ischemia ได้ และไม่ได้ remove diverticulum"},
+        {"label": "E", "text": "ให้ tranexamic acid แล้วรอดูอาการ", "is_correct": false, "explanation": "Tranexamic acid อาจช่วยลดเลือดออกชั่วคราว แต่ไม่ใช่ definitive treatment Meckel diverticulum จะยังคงมีเลือดออกซ้ำได้"}
+      ],
+      "key_takeaway": "Symptomatic Meckel diverticulum = surgical resection (diverticulectomy หรือ segmental ileal resection)"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง อายุ 14 ปี มาด้วยอาการปวดท้องเรื้อรัง ถ่ายเป็นเลือดปนมูก 3 เดือน น้ำหนักลด 5 กก. ไข้ต่ำเป็นพักๆ ตรวจร่างกาย: ซีด perianal skin tag ผล lab: Hb 9.5 g/dL, ESR 55 mm/hr, CRP 35 mg/L, albumin 2.8 g/dL ทำ colonoscopy พบ skip lesions, cobblestone appearance, deep ulceration จาก ileum ถึง ascending colon การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Ulcerative colitis"},
+      {"label": "B", "text": "Crohn disease"},
+      {"label": "C", "text": "Intestinal tuberculosis"},
+      {"label": "D", "text": "Behcet disease"},
+      {"label": "E", "text": "Irritable bowel syndrome"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Skip lesions, cobblestone appearance, deep ulceration, perianal disease และ involvement ของ ileum ถึง colon เป็นลักษณะเฉพาะของ Crohn disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Crohn disease",
+      "reason": "Crohn disease เป็น inflammatory bowel disease ที่สามารถเกิดได้ทุกส่วนของ GI tract ตั้งแต่ปากถึงทวาร แต่พบบ่อยที่สุดที่ terminal ileum\n\nลักษณะเฉพาะของ Crohn disease ได้แก่ 1) Skip lesions (รอยโรคไม่ต่อเนื่อง) 2) Transmural inflammation 3) Cobblestone appearance 4) Deep ulceration (aphthous ulcers ถึง deep fissuring ulcers) 5) Non-caseating granulomas (histology) 6) Perianal disease (fissure, fistula, abscess, skin tags) 7) Stricture formation\n\nอาการในเด็กมักมี abdominal pain, diarrhea (อาจมีเลือดหรือไม่มี), weight loss, growth failure, perianal disease Lab พบ anemia, elevated ESR/CRP, hypoalbuminemia\n\nTreatment ได้แก่ exclusive enteral nutrition (first-line induction ในเด็ก), corticosteroids, immunomodulators (azathioprine, methotrexate), biologics (infliximab, adalimumab)",
+      "choices": [
+        {"label": "A", "text": "Ulcerative colitis", "is_correct": false, "explanation": "UC มี continuous inflammation เริ่มจาก rectum ขึ้นไป ไม่มี skip lesions ไม่มี ileal involvement (ยกเว้น backwash ileitis) ulceration เป็น superficial ไม่มี cobblestone perianal disease พบน้อย"},
+        {"label": "B", "text": "Crohn disease", "is_correct": true, "explanation": "Skip lesions, cobblestone appearance, deep ulceration, ileum involvement, perianal skin tag ทั้งหมดเป็นลักษณะ classic ของ Crohn disease"},
+        {"label": "C", "text": "Intestinal tuberculosis", "is_correct": false, "explanation": "Intestinal TB อาจมี ileocecal involvement และ ulceration ได้ แต่มักมี transverse ulcers, stricture, ต้องมี risk factors สำหรับ TB และ biopsy จะพบ caseating granulomas"},
+        {"label": "D", "text": "Behcet disease", "is_correct": false, "explanation": "Behcet disease อาจมี GI ulceration ได้ แต่มักมี oral ulcers, genital ulcers, uveitis ร่วมด้วย ไม่มี skip lesions แบบ Crohn"},
+        {"label": "E", "text": "Irritable bowel syndrome", "is_correct": false, "explanation": "IBS เป็น functional disorder ไม่มี structural abnormality ไม่มีเลือดในอุจจาระ ไม่มี weight loss ไม่มี elevated inflammatory markers"}
+      ],
+      "key_takeaway": "Crohn disease: skip lesions + cobblestone + deep ulcers + transmural + perianal disease + ileal involvement แยกจาก UC ที่ continuous + rectum-based"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 12 ปี ได้รับการวินิจฉัย Crohn disease ใหม่ มี mild-moderate disease activity การรักษาเบื้องต้นที่เป็น first-line induction therapy ในเด็กคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Oral prednisolone"},
+      {"label": "B", "text": "Exclusive enteral nutrition (EEN)"},
+      {"label": "C", "text": "Infliximab"},
+      {"label": "D", "text": "Azathioprine"},
+      {"label": "E", "text": "Mesalazine"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Exclusive enteral nutrition (EEN) เป็น first-line induction therapy สำหรับ Crohn disease ในเด็ก ตาม ECCO/ESPGHAN guidelines มีประสิทธิภาพเทียบเท่า corticosteroids โดยไม่มีผลข้างเคียงของ steroid",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Exclusive enteral nutrition (EEN)",
+      "reason": "Exclusive enteral nutrition (EEN) เป็น first-line induction therapy สำหรับ Crohn disease ในเด็ก ตามแนวทางของ ECCO/ESPGHAN ให้เป็นสูตรนม polymeric formula เป็นแหล่งอาหารเดียวเป็นเวลา 6-8 สัปดาห์\n\nEEN มีประสิทธิภาพในการ induce remission เทียบเท่า corticosteroids (remission rate ประมาณ 80%) และมีข้อดีคือ 1) ไม่มีผลข้างเคียงของ steroid (growth suppression, osteoporosis, cushingoid) 2) ส่งเสริม mucosal healing ดีกว่า steroid 3) ช่วยเรื่อง nutrition และ growth\n\nหลัง EEN จะค่อยๆ reintroduce อาหารปกติ และเริ่ม maintenance therapy ด้วย immunomodulator (azathioprine หรือ methotrexate)",
+      "choices": [
+        {"label": "A", "text": "Oral prednisolone", "is_correct": false, "explanation": "Corticosteroids เป็น second-line induction therapy ในเด็ก ใช้เมื่อ EEN ไม่สามารถทำได้หรือไม่ได้ผล เพราะ steroid มีผลข้างเคียงต่อ growth และ bone health ในเด็ก"},
+        {"label": "B", "text": "Exclusive enteral nutrition (EEN)", "is_correct": true, "explanation": "เป็น first-line induction therapy ตาม ECCO/ESPGHAN guidelines มีประสิทธิภาพเทียบเท่า steroid โดยไม่มีผลข้างเคียง ช่วย mucosal healing และ nutritional support"},
+        {"label": "C", "text": "Infliximab", "is_correct": false, "explanation": "Infliximab (anti-TNF) เป็น biologic therapy ใช้ใน moderate-severe disease ที่ไม่ตอบสนองต่อ conventional therapy หรือ fistulizing disease ไม่ใช่ first-line สำหรับ mild-moderate disease"},
+        {"label": "D", "text": "Azathioprine", "is_correct": false, "explanation": "Azathioprine เป็น maintenance therapy ไม่ใช่ induction therapy เพราะ onset of action ช้า (2-3 เดือน) ไม่เหมาะสำหรับ induce remission"},
+        {"label": "E", "text": "Mesalazine", "is_correct": false, "explanation": "Mesalazine (5-ASA) มีบทบาทจำกัดใน Crohn disease ใช้ได้ใน mild colonic Crohn แต่ไม่ใช่ standard induction therapy ไม่ effective สำหรับ small bowel disease"}
+      ],
+      "key_takeaway": "EEN เป็น first-line induction therapy สำหรับ Crohn disease ในเด็ก 6-8 สัปดาห์ ประสิทธิภาพเทียบเท่า steroid ไม่มีผลเสียต่อ growth"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 10 ปี มาด้วยอาการถ่ายเป็นเลือดปนมูกเรื้อรัง 2 เดือน ถ่าย 6-8 ครั้ง/วัน ปวดท้องก่อนถ่าย ไม่มี perianal disease ทำ colonoscopy พบ continuous inflammation เริ่มจาก rectum ขึ้นไปถึง splenic flexure ulceration เป็น superficial ไม่มี skip lesions biopsy พบ crypt abscess, goblet cell depletion ข้อใดเป็นการวินิจฉัยที่ถูกต้อง",
+    "choices": [
+      {"label": "A", "text": "Crohn colitis"},
+      {"label": "B", "text": "Ulcerative colitis (left-sided colitis)"},
+      {"label": "C", "text": "Infectious colitis"},
+      {"label": "D", "text": "Ischemic colitis"},
+      {"label": "E", "text": "Microscopic colitis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Continuous inflammation เริ่มจาก rectum ขึ้นไป superficial ulceration ไม่มี skip lesions biopsy พบ crypt abscess และ goblet cell depletion เป็นลักษณะของ ulcerative colitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Ulcerative colitis (left-sided colitis)",
+      "reason": "Ulcerative colitis เป็น inflammatory bowel disease ที่เกิดเฉพาะใน colon มีลักษณะ continuous inflammation เริ่มจาก rectum ลามขึ้นไปใน colon\n\nลักษณะสำคัญที่แยกจาก Crohn disease ได้แก่ 1) Continuous inflammation (ไม่มี skip lesions) 2) เริ่มจาก rectum เสมอ 3) Mucosal/superficial inflammation (ไม่ transmural) 4) ไม่มี granulomas 5) ไม่มี perianal disease\n\nHistology พบ crypt abscess (neutrophils ใน crypt lumen), goblet cell depletion, mucosal ulceration, chronic inflammatory infiltrate\n\nClassification ตามขอบเขต: proctitis (rectum), left-sided colitis (ถึง splenic flexure), pancolitis (ทั้ง colon) ในรายนี้ inflammation ถึง splenic flexure จึงเป็น left-sided colitis",
+      "choices": [
+        {"label": "A", "text": "Crohn colitis", "is_correct": false, "explanation": "Crohn colitis จะมี skip lesions, deep ulceration, transmural inflammation อาจมี granulomas ในโจทย์นี้เป็น continuous superficial inflammation จาก rectum ไม่เข้ากับ Crohn"},
+        {"label": "B", "text": "Ulcerative colitis (left-sided colitis)", "is_correct": true, "explanation": "Continuous inflammation จาก rectum ถึง splenic flexure, superficial ulceration, crypt abscess, goblet cell depletion เข้ากับ UC left-sided colitis อย่างชัดเจน"},
+        {"label": "C", "text": "Infectious colitis", "is_correct": false, "explanation": "Infectious colitis มักเป็นเฉียบพลัน ไม่ใช่เรื้อรัง 2 เดือน stool culture จะพบ pathogen biopsy ไม่มี chronic changes เช่น crypt distortion"},
+        {"label": "D", "text": "Ischemic colitis", "is_correct": false, "explanation": "Ischemic colitis พบน้อยมากในเด็ก มักเกิดในผู้สูงอายุที่มี cardiovascular disease ตำแหน่งมักเป็น watershed area (splenic flexure) ไม่ได้เริ่มจาก rectum"},
+        {"label": "E", "text": "Microscopic colitis", "is_correct": false, "explanation": "Microscopic colitis พบน้อยในเด็ก colonoscopy ดูปกติ วินิจฉัยจาก biopsy ที่พบ collagenous หรือ lymphocytic colitis อาการเป็น watery diarrhea ไม่มีเลือด"}
+      ],
+      "key_takeaway": "UC: continuous inflammation จาก rectum + superficial ulceration + crypt abscess + goblet cell depletion ไม่มี skip lesions/granulomas"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดชาย คลอดครบกำหนด ภาพ X-ray chest พบ bowel loops ใน left hemithorax หัวใจเลื่อนไปทางขวา ปอดซ้ายมีขนาดเล็ก ทารกมีอาการหายใจลำบากตั้งแต่แรกเกิด scaphoid abdomen การวินิจฉัยที่เป็นไปได้มากที่สุดคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Tension pneumothorax"},
+      {"label": "B", "text": "Congenital diaphragmatic hernia (CDH)"},
+      {"label": "C", "text": "Congenital cystic adenomatoid malformation (CCAM)"},
+      {"label": "D", "text": "Eventration of diaphragm"},
+      {"label": "E", "text": "Esophageal atresia"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Bowel loops ใน thorax, mediastinal shift, ipsilateral lung hypoplasia และ scaphoid abdomen ในทารกแรกเกิดที่หายใจลำบาก เป็นลักษณะของ congenital diaphragmatic hernia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Congenital diaphragmatic hernia (CDH)",
+      "reason": "Congenital diaphragmatic hernia เกิดจาก defect ของ diaphragm ทำให้อวัยวะในช่องท้องเคลื่อนเข้าไปใน thorax ส่วนใหญ่ (80-90%) เป็น left-sided posterolateral (Bochdalek) hernia\n\nอาการแสดงในทารกแรกเกิด ได้แก่ respiratory distress ตั้งแต่แรกเกิด, cyanosis, scaphoid abdomen (เพราะอวัยวะในท้องเคลื่อนขึ้นไปใน thorax), decreased breath sounds ข้างที่มี hernia, heart sounds shifted ไปฝั่งตรงข้าม\n\nX-ray พบ bowel loops ใน hemithorax, mediastinal shift ไปฝั่งตรงข้าม, ipsilateral lung hypoplasia ซึ่งเป็นปัจจัยหลักที่กำหนด prognosis\n\nPulmonary hypoplasia และ pulmonary hypertension เป็นปัญหาหลักที่ทำให้ mortality สูง การรักษาเริ่มด้วย stabilization (gentle ventilation, NO, ECMO ถ้าจำเป็น) แล้วจึงผ่าตัดซ่อม diaphragm",
+      "choices": [
+        {"label": "A", "text": "Tension pneumothorax", "is_correct": false, "explanation": "Tension pneumothorax มี absent lung markings ข้างที่เป็น ไม่มี bowel loops ใน thorax และไม่มี scaphoid abdomen ต้องเกิดหลังจากมีสาเหตุที่ทำให้ air leak"},
+        {"label": "B", "text": "Congenital diaphragmatic hernia (CDH)", "is_correct": true, "explanation": "Bowel loops ใน left hemithorax + mediastinal shift + lung hypoplasia + scaphoid abdomen + respiratory distress ตั้งแต่แรกเกิด เป็น classic CDH (Bochdalek type)"},
+        {"label": "C", "text": "CCAM", "is_correct": false, "explanation": "CCAM เป็น cystic lung lesion ที่จะเห็นเป็น multicystic mass ใน lung field ไม่ใช่ bowel loops และไม่มี scaphoid abdomen"},
+        {"label": "D", "text": "Eventration of diaphragm", "is_correct": false, "explanation": "Eventration คือ diaphragm ที่บางลงและยกสูงขึ้น อวัยวะในท้องยังอยู่ใต้ diaphragm ไม่มี bowel loops ใน thorax อาการมักไม่รุนแรงเท่า CDH"},
+        {"label": "E", "text": "Esophageal atresia", "is_correct": false, "explanation": "Esophageal atresia มาด้วย excessive drooling, choking เวลาให้นม, ใส่ NG tube ไม่ผ่าน X-ray จะเห็น coiled NG tube ไม่มี bowel loops ใน thorax"}
+      ],
+      "key_takeaway": "CDH: bowel in thorax + mediastinal shift + lung hypoplasia + scaphoid abdomen + respiratory distress ตั้งแต่แรกเกิด มักเป็น left Bochdalek hernia"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดที่ได้รับการวินิจฉัย left congenital diaphragmatic hernia หายใจลำบากมาก SpO2 85% ข้อใดเป็นการดูแลเบื้องต้นที่ถูกต้องที่สุด",
+    "choices": [
+      {"label": "A", "text": "ผ่าตัดซ่อม diaphragm ทันที"},
+      {"label": "B", "text": "Bag-mask ventilation ด้วย high pressure"},
+      {"label": "C", "text": "Intubation, gentle ventilation, NG decompression, stabilize ก่อนผ่าตัด"},
+      {"label": "D", "text": "ให้ CPAP ทาง nasal prong"},
+      {"label": "E", "text": "ใส่ chest tube ข้างซ้าย"}
+    ],
+    "correct_answer": "C",
+    "explanation": "CDH ต้อง stabilize ก่อนผ่าตัด ไม่ใช่ surgical emergency ประกอบด้วย intubation, gentle ventilation (ป้องกัน barotrauma), NG decompression (ลด bowel distension ใน thorax)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Intubation, gentle ventilation, NG decompression, stabilize ก่อนผ่าตัด",
+      "reason": "การดูแล CDH ในปัจจุบันเน้น stabilization ก่อนผ่าตัด ไม่ใช่ emergency surgery อีกต่อไป เพราะ outcome ขึ้นกับ degree of pulmonary hypoplasia และ pulmonary hypertension ไม่ใช่ timing ของ surgery\n\nPrinciples ของ initial management ได้แก่ 1) Immediate intubation - หลีกเลี่ยง bag-mask ventilation เพราะจะทำให้ air เข้าไปใน bowel ที่อยู่ใน thorax ทำให้ lung compression แย่ลง 2) Gentle ventilation - ใช้ low peak inspiratory pressure (< 25 cmH2O) เพื่อหลีกเลี่ยง barotrauma ต่อ hypoplastic lung 3) NG decompression - ลด gastric and intestinal distension 4) Pre-ductal SpO2 monitoring (right hand) 5) Management ของ pulmonary hypertension (inhaled nitric oxide, sildenafil) 6) ECMO ในรายที่รุนแรง\n\nSurgery ทำเมื่อ hemodynamically stable และ pulmonary hypertension ควบคุมได้ มักภายใน 24-72 ชั่วโมง",
+      "choices": [
+        {"label": "A", "text": "ผ่าตัดซ่อม diaphragm ทันที", "is_correct": false, "explanation": "CDH ไม่ใช่ surgical emergency อีกต่อไป ต้อง stabilize ก่อน เพราะ outcome ขึ้นกับ pulmonary status ไม่ใช่ timing ของ surgery การผ่าตัดเร็วเกินไปอาจทำให้ pulmonary hypertension แย่ลง"},
+        {"label": "B", "text": "Bag-mask ventilation ด้วย high pressure", "is_correct": false, "explanation": "Bag-mask ventilation เป็นข้อห้ามใน CDH เพราะ air จะเข้าไปใน bowel ที่อยู่ใน thorax ทำให้ lung compression แย่ลง และ high pressure ventilation จะทำให้ barotrauma ต่อ hypoplastic lung"},
+        {"label": "C", "text": "Intubation, gentle ventilation, NG decompression, stabilize ก่อนผ่าตัด", "is_correct": true, "explanation": "เป็นแนวทางที่ถูกต้อง ต้อง intubate ทันที (หลีกเลี่ยง bag-mask), gentle ventilation (PIP < 25), NG decompression, stabilize hemodynamics และ pulmonary hypertension ก่อนผ่าตัด"},
+        {"label": "D", "text": "ให้ CPAP ทาง nasal prong", "is_correct": false, "explanation": "CPAP ไม่เหมาะสมเพราะ positive pressure ผ่าน mask จะทำให้ bowel distension ใน thorax แย่ลง ต้อง intubation เพื่อ direct ventilation ไปที่ lung"},
+        {"label": "E", "text": "ใส่ chest tube ข้างซ้าย", "is_correct": false, "explanation": "Chest tube ไม่มีข้อบ่งชี้ ปัญหาไม่ใช่ pneumothorax แต่เป็น bowel ใน thorax การใส่ chest tube อาจทำให้ bowel injury ได้"}
+      ],
+      "key_takeaway": "CDH initial management: intubate (ห้าม bag-mask), gentle ventilation (PIP<25), NG decompression, stabilize ก่อนผ่าตัด"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดชาย ได้รับการวินิจฉัย left CDH ก่อนคลอดจาก prenatal ultrasound ข้อใดเป็นปัจจัยที่มีผลต่อ prognosis มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "ขนาดของ diaphragmatic defect"},
+      {"label": "B", "text": "ตำแหน่งของ hernia (ซ้ายหรือขวา)"},
+      {"label": "C", "text": "Degree of pulmonary hypoplasia"},
+      {"label": "D", "text": "ชนิดของอวัยวะที่อยู่ใน thorax"},
+      {"label": "E", "text": "อายุครรภ์ขณะวินิจฉัย"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Degree of pulmonary hypoplasia เป็นปัจจัยที่สำคัญที่สุดต่อ prognosis ของ CDH วัดได้จาก lung-to-head ratio (LHR) ใน prenatal ultrasound",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Degree of pulmonary hypoplasia",
+      "reason": "Pulmonary hypoplasia เป็นปัจจัยหลักที่กำหนด outcome ของ CDH เพราะปอดที่เจริญไม่สมบูรณ์จะทำให้เกิด 1) Inadequate gas exchange 2) Pulmonary hypertension จาก abnormal pulmonary vasculature (decreased number of vessels, increased muscularization) 3) Persistent fetal circulation\n\nLung-to-head ratio (LHR) เป็น prenatal predictor ที่ใช้กันมาก โดยวัดจาก ultrasound อัตราส่วนพื้นที่ปอดต่อ head circumference ค่า LHR < 1.0 มี poor prognosis (survival < 20%) LHR > 1.4 มี good prognosis (survival > 80%)\n\nอีก predictor คือ observed-to-expected LHR (o/e LHR) ซึ่ง adjust ตามอายุครรภ์ และ liver position (liver herniation เข้า thorax บ่งชี้ severe case)\n\nFetal MRI สามารถวัด total fetal lung volume ได้แม่นยำกว่า ultrasound",
+      "choices": [
+        {"label": "A", "text": "ขนาดของ diaphragmatic defect", "is_correct": false, "explanation": "ขนาดของ defect มีผลต่อ surgical repair (ต้องใช้ patch หรือไม่) แต่ไม่ใช่ปัจจัยหลักที่กำหนด prognosis ปัจจัยหลักคือ degree of lung hypoplasia"},
+        {"label": "B", "text": "ตำแหน่งของ hernia", "is_correct": false, "explanation": "Right-sided CDH อาจมี prognosis แย่กว่าเล็กน้อยเพราะ liver herniation แต่ตำแหน่งไม่ใช่ปัจจัยหลัก degree of pulmonary hypoplasia สำคัญกว่า"},
+        {"label": "C", "text": "Degree of pulmonary hypoplasia", "is_correct": true, "explanation": "เป็นปัจจัยสำคัญที่สุด ปอดที่เจริญไม่สมบูรณ์ทำให้ gas exchange ไม่เพียงพอและเกิด pulmonary hypertension ซึ่งเป็นสาเหตุหลักของ mortality"},
+        {"label": "D", "text": "ชนิดของอวัยวะที่อยู่ใน thorax", "is_correct": false, "explanation": "Liver herniation เข้า thorax เป็น poor prognostic factor เพราะบ่งบอก severe herniation แต่เป็นปัจจัยรอง ปัจจัยหลักยังคงเป็น degree of lung hypoplasia"},
+        {"label": "E", "text": "อายุครรภ์ขณะวินิจฉัย", "is_correct": false, "explanation": "การวินิจฉัยเร็วอาจสัมพันธ์กับ severe case แต่ timing ของ diagnosis ไม่ได้กำหนด prognosis โดยตรง"}
+      ],
+      "key_takeaway": "Pulmonary hypoplasia เป็นปัจจัย prognosis หลักของ CDH วัดด้วย LHR (lung-to-head ratio) จาก prenatal ultrasound"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 2 ปี มาห้องฉุกเฉินหลังกลืนเหรียญบาทไป 2 ชั่วโมง ไม่มีอาการไอ หายใจปกติ กินน้ำได้ ไม่อาเจียน ไม่น้ำลายไหล X-ray พบ coin-shaped foreign body ใน esophagus ระดับ thoracic inlet ข้อใดเป็นแนวทางการดูแลที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการ 24 ชั่วโมง รอให้ผ่านลงกระเพาะเอง"},
+      {"label": "B", "text": "ทำ rigid esophagoscopy นำออกภายใน 24 ชั่วโมง"},
+      {"label": "C", "text": "ให้กินขนมปังก้อนใหญ่ดันลงไป"},
+      {"label": "D", "text": "ทำ Foley catheter extraction"},
+      {"label": "E", "text": "ให้ glucagon IV เพื่อ relax esophagus"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Esophageal foreign body (coin) ที่ค้างใน esophagus ควรนำออกภายใน 24 ชั่วโมง ด้วย endoscopy โดยเฉพาะที่ thoracic inlet ซึ่งเป็น narrowest point",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ทำ rigid esophagoscopy นำออกภายใน 24 ชั่วโมง",
+      "reason": "เหรียญเป็น foreign body ที่พบบ่อยที่สุดที่กลืนในเด็ก ตำแหน่งที่ค้างบ่อย ได้แก่ upper esophageal sphincter (cricopharyngeus/thoracic inlet) > aortic arch > lower esophageal sphincter\n\nCoin ที่ค้างใน esophagus ควรนำออกภายใน 24 ชั่วโมง เพราะหากค้างนานจะเสี่ยงต่อ pressure necrosis, perforation, stricture formation โดยเฉพาะที่ upper esophagus (thoracic inlet) ซึ่งเป็น narrowest point\n\nวิธี removal ได้แก่ rigid esophagoscopy (ภายใต้ general anesthesia) หรือ flexible endoscopy ขึ้นกับ availability และ expertise ของแพทย์\n\nFoley catheter extraction อาจทำได้ในบาง institution สำหรับ coin ที่ค้างไม่นาน (<24 ชั่วโมง) และไม่มี history ของ esophageal disease แต่ไม่ใช่ standard practice ทุกที่",
+      "choices": [
+        {"label": "A", "text": "สังเกตอาการ 24 ชั่วโมง รอให้ผ่านลงกระเพาะเอง", "is_correct": false, "explanation": "ไม่เหมาะสมสำหรับ coin ที่ค้างที่ thoracic inlet เพราะเป็น narrowest point โอกาสผ่านเองต่ำ และเสี่ยงต่อ pressure necrosis ถ้าค้างนาน สังเกตอาการได้เฉพาะ coin ที่อยู่ในกระเพาะแล้ว"},
+        {"label": "B", "text": "ทำ rigid esophagoscopy นำออกภายใน 24 ชั่วโมง", "is_correct": true, "explanation": "เป็นมาตรฐานสำหรับ esophageal coin ที่ค้างอยู่ ควรนำออกภายใน 24 ชั่วโมง โดยเฉพาะที่ thoracic inlet เพื่อป้องกัน complications"},
+        {"label": "C", "text": "ให้กินขนมปังก้อนใหญ่ดันลงไป", "is_correct": false, "explanation": "ไม่ควรทำเพราะอาจทำให้ esophageal injury แย่ลง หรือ coin อาจค้างแน่นขึ้น เสี่ยงต่อ perforation"},
+        {"label": "D", "text": "ทำ Foley catheter extraction", "is_correct": false, "explanation": "Foley catheter extraction ทำได้ในบาง institution แต่ไม่ใช่ standard practice ทุกที่ มีข้อจำกัดและความเสี่ยง ไม่ใช่คำตอบที่เหมาะสมที่สุด"},
+        {"label": "E", "text": "ให้ glucagon IV เพื่อ relax esophagus", "is_correct": false, "explanation": "Glucagon IV อาจใช้ใน esophageal food impaction ในผู้ใหญ่ แต่ไม่มีหลักฐานสนับสนุนการใช้ในเด็กที่กลืน coin และ efficacy ไม่แน่นอน"}
+      ],
+      "key_takeaway": "Esophageal coin ที่ thoracic inlet: นำออกด้วย esophagoscopy ภายใน 24 ชั่วโมง ถ้าอยู่ใน stomach แล้วสามารถสังเกตอาการได้"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชาย อายุ 3 ปี กลืนแบตเตอรี่กระดุม (button battery) เมื่อ 1 ชั่วโมงก่อน X-ray พบ button battery ค้างใน esophagus ข้อใดเป็นแนวทางที่ถูกต้องที่สุด",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการ 24 ชั่วโมง"},
+      {"label": "B", "text": "ทำ endoscopy นำออกทันที (emergency)"},
+      {"label": "C", "text": "ให้ laxative เพื่อเร่งขับออก"},
+      {"label": "D", "text": "ให้ activated charcoal"},
+      {"label": "E", "text": "ให้กินน้ำมากๆ เพื่อดันลง stomach"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Button battery ใน esophagus เป็น TRUE EMERGENCY ต้องนำออกทันทีภายใน 2 ชั่วโมง เพราะสามารถทำให้เกิด esophageal burn, necrosis, perforation ได้อย่างรวดเร็ว",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ทำ endoscopy นำออกทันที (emergency)",
+      "reason": "Button battery ที่ค้างใน esophagus เป็น true surgical emergency เพราะสามารถทำให้เกิด tissue injury ได้ภายในเวลาเพียง 2 ชั่วโมง กลไกการบาดเจ็บมี 3 แบบ\n\n1) Electrical current - ทำให้เกิด electrolytic injury ที่ tissue โดยเฉพาะด้าน negative pole\n2) Alkaline leak - battery ที่รั่วจะปล่อย alkaline substance ทำให้เกิด liquefactive necrosis\n3) Pressure necrosis - จากการกดทับ mucosa\n\nCompications ที่รุนแรงมากคือ esophageal perforation, tracheoesophageal fistula, aortoesophageal fistula (ทำให้ fatal hemorrhage), mediastinitis, esophageal stricture\n\nจึงต้องนำออกทันทีด้วย endoscopy ภายใน 2 ชั่วโมง ไม่ว่าผู้ป่วยจะมีอาการหรือไม่ก็ตาม ระหว่างรอให้ honey หรือ sucralfate ทุก 10 นาทีเพื่อ neutralize alkali (ถ้าเด็กอายุ > 12 เดือน)",
+      "choices": [
+        {"label": "A", "text": "สังเกตอาการ 24 ชั่วโมง", "is_correct": false, "explanation": "อันตรายมาก button battery ใน esophagus สามารถทำให้เกิด perforation ภายใน 2 ชั่วโมง สังเกตอาการจะทำให้เกิดภาวะแทรกซ้อนรุนแรงหรือเสียชีวิตได้"},
+        {"label": "B", "text": "ทำ endoscopy นำออกทันที (emergency)", "is_correct": true, "explanation": "เป็น true emergency ต้องนำออกภายใน 2 ชั่วโมง เพราะ electrical current และ alkaline injury สามารถทำให้เกิด perforation, fistula, fatal hemorrhage ได้"},
+        {"label": "C", "text": "ให้ laxative เพื่อเร่งขับออก", "is_correct": false, "explanation": "Laxative ไม่สามารถช่วยเลื่อน battery ที่ค้างใน esophagus ลงได้ และจะทำให้เสียเวลาในการ removal"},
+        {"label": "D", "text": "ให้ activated charcoal", "is_correct": false, "explanation": "Activated charcoal ไม่มีประโยชน์ใน foreign body ingestion ใช้สำหรับ drug/toxin ingestion เท่านั้น และ charcoal ไม่ adsorb metals"},
+        {"label": "E", "text": "ให้กินน้ำมากๆ เพื่อดันลง stomach", "is_correct": false, "explanation": "ไม่ควรทำเพราะอาจทำให้ aspiration ได้ และ battery ที่ค้างแน่นจะไม่ถูกดันลงได้ง่าย ต้อง endoscopic removal"}
+      ],
+      "key_takeaway": "Button battery ใน esophagus = TRUE EMERGENCY นำออกภายใน 2 ชม. เสี่ยง esophageal perforation, aortoesophageal fistula, fatal hemorrhage"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง อายุ 4 ปี กลืนเหรียญบาท X-ray พบ coin อยู่ในกระเพาะอาหาร ไม่มีอาการใดๆ ข้อใดเป็นแนวทางการดูแลที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "ทำ endoscopy นำออกทันที"},
+      {"label": "B", "text": "สังเกตอาการ ถ่ายออกเองภายใน 4-6 สัปดาห์ ถ้าไม่ออกจึง endoscopy"},
+      {"label": "C", "text": "ให้ laxative เร่งขับออก"},
+      {"label": "D", "text": "ทำ whole bowel irrigation"},
+      {"label": "E", "text": "ผ่าตัดนำออก"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Coin ที่ผ่านลงไปในกระเพาะแล้วและไม่มีอาการ มักจะถ่ายออกเองได้ สังเกตอาการ 4-6 สัปดาห์ X-ray follow up ถ้าไม่ออกจึง endoscopy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. สังเกตอาการ ถ่ายออกเองภายใน 4-6 สัปดาห์ ถ้าไม่ออกจึง endoscopy",
+      "reason": "เมื่อ foreign body ผ่าน esophagus ลงไปในกระเพาะอาหารแล้ว ส่วนใหญ่ (80-90%) จะผ่าน GI tract และถ่ายออกเองได้ โดยเฉพาะ blunt objects เช่น coins\n\nตำแหน่งที่อาจค้างได้ ได้แก่ pylorus, duodenal C-loop, ileocecal valve แต่ coins ส่วนใหญ่จะผ่านจุดเหล่านี้ได้\n\nแนวทางคือ สังเกตอาการ (ปวดท้อง อาเจียน เลือดออก) อาจ X-ray follow up ใน 1-2 สัปดาห์ดูว่า coin มีการเคลื่อนที่หรือไม่ ถ้าค้างอยู่ที่เดิมนาน 3-4 สัปดาห์หรือยาวที่สุด 4-6 สัปดาห์ จึงพิจารณา endoscopic removal\n\nข้อบ่งชี้ในการนำออกจากกระเพาะทันที ได้แก่ sharp objects, button batteries ที่ค้างในกระเพาะ > 48 ชั่วโมง, magnets > 1 ชิ้น, objects > 6 cm หรือ > 2.5 cm diameter",
+      "choices": [
+        {"label": "A", "text": "ทำ endoscopy นำออกทันที", "is_correct": false, "explanation": "ไม่จำเป็นสำหรับ coin ในกระเพาะที่ไม่มีอาการ เพราะส่วนใหญ่ถ่ายออกเอง endoscopy มี risk ของ anesthesia โดยไม่จำเป็น"},
+        {"label": "B", "text": "สังเกตอาการ ถ่ายออกเองภายใน 4-6 สัปดาห์", "is_correct": true, "explanation": "เป็นแนวทางที่เหมาะสม coins ส่วนใหญ่ถ่ายออกเอง สังเกตอาการ X-ray follow up ถ้าไม่ถ่ายออกภายใน 4-6 สัปดาห์จึง endoscopy"},
+        {"label": "C", "text": "ให้ laxative เร่งขับออก", "is_correct": false, "explanation": "Laxative ไม่ได้ช่วยเร่ง transit ของ foreign body อย่างมีประสิทธิภาพ และอาจทำให้ท้องเสียโดยไม่จำเป็น"},
+        {"label": "D", "text": "ทำ whole bowel irrigation", "is_correct": false, "explanation": "Whole bowel irrigation ใช้สำหรับ drug packet ingestion ไม่ใช่สำหรับ coin ingestion"},
+        {"label": "E", "text": "ผ่าตัดนำออก", "is_correct": false, "explanation": "การผ่าตัดเป็น overtreatment สำหรับ coin ในกระเพาะ ใช้เฉพาะเมื่อ endoscopy ไม่สามารถ retrieve ได้ หรือมี complication เช่น perforation"}
+      ],
+      "key_takeaway": "Coin ในกระเพาะไม่มีอาการ: สังเกตอาการ 4-6 สัปดาห์ ถ้าไม่ถ่ายออกจึง endoscopy ต้อง endoscopy ทันทีถ้าเป็น sharp objects, button battery, magnets"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชาย อายุ 9 เดือน มาด้วยอาการถ่ายเหลวเป็นน้ำ 10 ครั้ง/วัน อาเจียน 5 ครั้ง มา 2 วัน ไม่มีไข้ ตรวจร่างกาย: ตาลึกโบ๋ ปากแห้ง ผิวหนังดึงกลับช้า capillary refill 3 วินาที น้ำหนัก 8 kg (น้ำหนักก่อนป่วย 9 kg) หัวใจเต้นเร็ว 160/min ระดับความรุนแรงของ dehydration เป็นเท่าใดและควรให้สารน้ำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "Mild dehydration (< 5%) ให้ ORS ทางปาก"},
+      {"label": "B", "text": "Moderate dehydration (5-10%) ให้ ORS ทางปาก ถ้าไม่ได้ให้ IV"},
+      {"label": "C", "text": "Severe dehydration (> 10%) ให้ IV fluid bolus NSS 20 mL/kg ทันที"},
+      {"label": "D", "text": "Moderate dehydration ให้ IV D5NSS maintenance rate"},
+      {"label": "E", "text": "Severe dehydration ให้ IV D5W bolus 30 mL/kg"}
+    ],
+    "correct_answer": "C",
+    "explanation": "น้ำหนักลด 11% (9→8 kg) ร่วมกับ sunken eyes, dry mucous membranes, poor skin turgor, prolonged capillary refill, tachycardia เป็น severe dehydration (>10%) ต้องให้ IV bolus NSS",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Severe dehydration (> 10%) ให้ IV fluid bolus NSS 20 mL/kg ทันที",
+      "reason": "การประเมิน dehydration ในเด็ก แบ่งเป็น 3 ระดับ: mild (<5%), moderate (5-10%), severe (>10%)\n\nผู้ป่วยรายนี้น้ำหนักลดจาก 9 เป็น 8 kg = ลด 1 kg = ลด 11% ซึ่งเป็น severe dehydration อาการที่สอดคล้อง ได้แก่ sunken eyes, dry mucous membranes, poor skin turgor, prolonged capillary refill (>3 sec), tachycardia (160/min)\n\nSevere dehydration ต้อง IV fluid resuscitation ทันที เริ่มด้วย isotonic crystalloid (NSS 0.9% หรือ Ringer lactate) bolus 20 mL/kg ให้เร็วภายใน 20-30 นาที แล้ว reassess ถ้ายังมี signs of shock ให้ bolus ซ้ำได้\n\nหลังจาก stabilize แล้ว คำนวณ fluid ที่ต้องให้ = deficit + maintenance + ongoing losses โดยให้ deficit replacement ภายใน 24-48 ชั่วโมง",
+      "choices": [
+        {"label": "A", "text": "Mild dehydration ให้ ORS ทางปาก", "is_correct": false, "explanation": "Mild dehydration มี signs เพียง slightly dry mucous membranes, slightly decreased urine output ผู้ป่วยรายนี้มี signs รุนแรงกว่ามาก ไม่ใช่ mild"},
+        {"label": "B", "text": "Moderate dehydration ให้ ORS ทางปาก", "is_correct": false, "explanation": "ผู้ป่วยมี severe dehydration (>10% weight loss, prolonged CRT, tachycardia) ไม่ใช่ moderate และ severe dehydration ต้องให้ IV fluid ไม่ใช่ ORS"},
+        {"label": "C", "text": "Severe dehydration ให้ IV fluid bolus NSS 20 mL/kg ทันที", "is_correct": true, "explanation": "น้ำหนักลด 11% ร่วมกับ signs of poor perfusion (prolonged CRT, tachycardia) เป็น severe dehydration ต้อง IV bolus isotonic fluid (NSS) 20 mL/kg ทันที"},
+        {"label": "D", "text": "Moderate dehydration ให้ IV D5NSS maintenance rate", "is_correct": false, "explanation": "Maintenance rate ไม่เพียงพอสำหรับ severe dehydration ต้อง bolus ก่อนเพื่อ restore intravascular volume และ D5 ไม่ควรใช้ใน initial bolus"},
+        {"label": "E", "text": "Severe dehydration ให้ IV D5W bolus 30 mL/kg", "is_correct": false, "explanation": "D5W เป็น hypotonic solution ไม่ควรใช้เป็น bolus เพราะจะกระจายออกนอก intravascular space เร็ว ไม่ effective ในการ restore circulating volume และอาจทำให้ hyponatremia"}
+      ],
+      "key_takeaway": "Severe dehydration (>10%): sunken eyes, poor turgor, prolonged CRT, tachycardia ให้ IV isotonic bolus (NSS/RL) 20 mL/kg ทันที"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิง อายุ 6 เดือน มาด้วยอาการถ่ายเหลวเป็นน้ำ 8 ครั้ง/วัน อาเจียน 3 ครั้ง มา 1 วัน ไม่มีไข้ ตรวจร่างกาย: ปากแห้งเล็กน้อย ตายังไม่ลึก ผิวหนังยังดึงกลับดี น้ำหนัก 7 kg (ก่อนป่วย 7.3 kg) ยังมีปัสสาวะ สิ่งที่ควรทำเป็นอย่างแรกคือข้อใด",
+    "choices": [
+      {"label": "A", "text": "Admit ให้ IV fluid"},
+      {"label": "B", "text": "ให้ ORS (oral rehydration solution) ทางปาก"},
+      {"label": "C", "text": "ส่งตรวจ stool culture ก่อนรักษา"},
+      {"label": "D", "text": "ให้ loperamide หยุดถ่าย"},
+      {"label": "E", "text": "ให้ IV antibiotics"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Mild dehydration (4% weight loss) ที่ยังกินได้ รักษาด้วย ORS ทางปากเป็น first-line โดย replace deficit ภายใน 4 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ให้ ORS (oral rehydration solution) ทางปาก",
+      "reason": "ผู้ป่วยมี mild dehydration (น้ำหนักลด 4% = 0.3/7.3 kg) มี signs เพียง slightly dry mucous membranes ยังมีปัสสาวะ vital signs ยังปกติ\n\nOral rehydration therapy (ORT) ด้วย ORS เป็น first-line treatment สำหรับ mild-moderate dehydration จาก acute gastroenteritis ตาม WHO recommendation ORS ประกอบด้วย sodium, potassium, glucose, citrate ในสัดส่วนที่เหมาะสม\n\nวิธีให้: คำนวณ deficit = % dehydration x body weight x 10 = 4% x 7 kg x 10 = 280 mL ให้ทดแทนภายใน 4 ชั่วโมง โดยให้ทีละน้อยบ่อยๆ (ช้อนชาทุก 1-2 นาที) นอกจากนี้ต้อง replace ongoing losses ด้วย\n\nGlucose ใน ORS สำคัญเพราะช่วย sodium-glucose co-transport ใน intestinal epithelium ทำให้ดูดซึม sodium และน้ำได้ดีขึ้น",
+      "choices": [
+        {"label": "A", "text": "Admit ให้ IV fluid", "is_correct": false, "explanation": "ไม่จำเป็นสำหรับ mild dehydration ที่ยังกินได้ IV fluid สงวนไว้สำหรับ severe dehydration, moderate ที่กินไม่ได้, หรือ ORT ไม่สำเร็จ"},
+        {"label": "B", "text": "ให้ ORS ทางปาก", "is_correct": true, "explanation": "ORS เป็น first-line สำหรับ mild-moderate dehydration จาก AGE มีประสิทธิภาพ ปลอดภัย ราคาถูก ให้ replace deficit ภายใน 4 ชั่วโมง ร่วมกับ continued feeding"},
+        {"label": "C", "text": "ส่งตรวจ stool culture ก่อนรักษา", "is_correct": false, "explanation": "Stool culture ไม่จำเป็นใน uncomplicated AGE ใน healthy child ส่งเมื่อมี bloody diarrhea, prolonged diarrhea >7 วัน, immunocompromised, หรือ travel history ไม่ต้องรอผลก่อนเริ่มรักษา"},
+        {"label": "D", "text": "ให้ loperamide หยุดถ่าย", "is_correct": false, "explanation": "Loperamide เป็นข้อห้ามในเด็กอายุ < 3 ปี เพราะเสี่ยงต่อ ileus, CNS depression ใน AGE ควร rehydrate ไม่ใช่หยุดถ่าย"},
+        {"label": "E", "text": "ให้ IV antibiotics", "is_correct": false, "explanation": "Antibiotics ไม่จำเป็นใน viral AGE (ซึ่งเป็นสาเหตุส่วนใหญ่ของ AGE ในเด็ก) ให้เมื่อสงสัย bacterial cause ที่มี indication เช่น Shigella, Cholera"}
+      ],
+      "key_takeaway": "Mild-moderate dehydration จาก AGE: ORS เป็น first-line ให้ทีละน้อยบ่อยๆ replace deficit ใน 4 ชม. ร่วมกับ continued feeding"
+    },
+    "subject": "gi_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  }
+]

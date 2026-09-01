@@ -1,0 +1,775 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import {
+  createMcqQuestion,
+  updateMcqQuestion,
+  type McqDetailedExplanation,
+} from "@/lib/supabase/mutations-mcq-admin";
+import { ChevronLeft, Save, Loader2, GraduationCap, Sparkles } from "lucide-react";
+import { BOARD_SECTIONS } from "@/lib/types-board";
+
+export interface AdminMcqSubject {
+  id: string;
+  name_th: string;
+  icon: string;
+  audience: "student" | "board";
+  board_specialty: string | null;
+  board_subspecialty: string | null;
+}
+
+export interface AdminBoardTopic {
+  specialty_slug: string;
+  section_code: string;
+  slug: string;
+  name_th: string;
+  peds_count: number;
+  adult_count: number;
+  other_count: number;
+}
+
+interface FormData {
+  id?: string;
+  subject_id: string;
+  // student-only
+  exam_type: "NL1" | "NL2";
+  // common
+  exam_source: string;
+  scenario: string;
+  choices: { label: string; text: string }[];
+  correct_answer: string;
+  explanation: string;
+  difficulty: "easy" | "medium" | "hard";
+  topic: string;
+  status: "active" | "review" | "disabled";
+  // board-only
+  board_section: string;
+  board_topic: string;
+  board_age_group: "peds" | "adult" | "mixed" | "";
+  board_level: "" | "1" | "2" | "3";
+  reference_source: string;
+}
+
+const EMPTY_FORM: FormData = {
+  subject_id: "",
+  exam_type: "NL2",
+  exam_source: "",
+  scenario: "",
+  choices: [
+    { label: "A", text: "" },
+    { label: "B", text: "" },
+    { label: "C", text: "" },
+    { label: "D", text: "" },
+    { label: "E", text: "" },
+  ],
+  correct_answer: "A",
+  explanation: "",
+  difficulty: "medium",
+  topic: "",
+  status: "active",
+  board_section: "",
+  board_topic: "",
+  board_age_group: "",
+  board_level: "",
+  reference_source: "",
+};
+
+export function McqForm({
+  initial,
+  initialDetailed,
+  subjects,
+  boardTopics = [],
+}: {
+  initial?: Partial<FormData> & { id?: string };
+  initialDetailed?: McqDetailedExplanation | null;
+  subjects: AdminMcqSubject[];
+  boardTopics?: AdminBoardTopic[];
+}) {
+  const router = useRouter();
+  const [form, setForm] = useState<FormData>({ ...EMPTY_FORM, ...initial });
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Detailed (per-choice) explanation — kept as flat state, recomposed into the
+  // detailed_explanation jsonb at save time. text + is_correct are derived from
+  // the main choices/correct_answer fields so they can't drift out of sync.
+  const [detailSummary, setDetailSummary] = useState(initialDetailed?.summary ?? "");
+  const [detailReason, setDetailReason] = useState(initialDetailed?.reason ?? "");
+  const [detailKeyTakeaway, setDetailKeyTakeaway] = useState(
+    initialDetailed?.key_takeaway ?? ""
+  );
+  const [choiceExpl, setChoiceExpl] = useState<Record<string, string>>(() => {
+    const map: Record<string, string> = {};
+    for (const c of initialDetailed?.choices ?? []) map[c.label] = c.explanation ?? "";
+    return map;
+  });
+  const [drafting, setDrafting] = useState(false);
+  // Tracks whether AI drafted the explanation in this editing session, so we can
+  // flag is_ai_enhanced. The human still reviews/edits before saving.
+  const [aiUsed, setAiUsed] = useState(false);
+
+  const selectedSubject = useMemo(
+    () => subjects.find((s) => s.id === form.subject_id) ?? null,
+    [subjects, form.subject_id]
+  );
+  const isBoard = selectedSubject?.audience === "board";
+
+  // Topic suggestions: filtered by selected specialty + section
+  const topicSuggestions = useMemo(() => {
+    if (!isBoard || !selectedSubject?.board_specialty || !form.board_section) {
+      return [];
+    }
+    return boardTopics.filter(
+      (t) =>
+        t.specialty_slug === selectedSubject.board_specialty &&
+        t.section_code === form.board_section
+    );
+  }, [isBoard, selectedSubject, form.board_section, boardTopics]);
+
+  const topicMatch = useMemo(
+    () => topicSuggestions.find((t) => t.slug === form.board_topic) ?? null,
+    [topicSuggestions, form.board_topic]
+  );
+
+  // Group subjects in dropdown: student first, then board grouped by specialty
+  const grouped = useMemo(() => {
+    const student = subjects.filter((s) => s.audience === "student");
+    const boardBySpecialty = new Map<string, AdminMcqSubject[]>();
+    for (const s of subjects) {
+      if (s.audience !== "board") continue;
+      const key = s.board_specialty ?? "_unknown";
+      const list = boardBySpecialty.get(key) ?? [];
+      list.push(s);
+      boardBySpecialty.set(key, list);
+    }
+    return { student, boardBySpecialty };
+  }, [subjects]);
+
+  function setField<K extends keyof FormData>(key: K, value: FormData[K]) {
+    setForm((prev) => ({ ...prev, [key]: value }));
+  }
+
+  function setChoice(index: number, text: string) {
+    const choices = [...form.choices];
+    choices[index] = { ...choices[index], text };
+    setForm((prev) => ({ ...prev, choices }));
+  }
+
+  // Recompose flat detail state → detailed_explanation jsonb. Returns null when
+  // nothing has been written (so we don't store an empty shell).
+  function buildDetailed(): McqDetailedExplanation | null {
+    const hasAny =
+      detailSummary.trim() ||
+      detailReason.trim() ||
+      detailKeyTakeaway.trim() ||
+      Object.values(choiceExpl).some((v) => v.trim());
+    if (!hasAny) return null;
+    return {
+      summary: detailSummary.trim(),
+      reason: detailReason.trim(),
+      key_takeaway: detailKeyTakeaway.trim(),
+      choices: form.choices.map((c) => ({
+        label: c.label,
+        text: c.text,
+        is_correct: c.label === form.correct_answer,
+        explanation: (choiceExpl[c.label] ?? "").trim(),
+      })),
+    };
+  }
+
+  async function handleDraftWithAi() {
+    if (!form.scenario.trim() || form.choices.some((c) => !c.text.trim())) {
+      setError("ใส่โจทย์และตัวเลือกให้ครบก่อนร่างเฉลยด้วย AI");
+      return;
+    }
+    setDrafting(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/admin/mcq/draft-explanation", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          scenario: form.scenario,
+          choices: form.choices,
+          correct_answer: form.correct_answer,
+          subject_th: selectedSubject?.name_th,
+          exam_type: isBoard ? "Board" : form.exam_type,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "ร่างเฉลยด้วย AI ไม่สำเร็จ");
+        return;
+      }
+      const d = data.detailed_explanation as McqDetailedExplanation | undefined;
+      if (!d) {
+        setError("AI ไม่ได้ส่งเฉลยกลับมา");
+        return;
+      }
+      setDetailSummary(d.summary ?? "");
+      setDetailReason(d.reason ?? "");
+      setDetailKeyTakeaway(d.key_takeaway ?? "");
+      const map: Record<string, string> = {};
+      for (const c of d.choices ?? []) map[c.label] = c.explanation ?? "";
+      setChoiceExpl(map);
+      // If AI is confident a different choice is correct, surface it by moving
+      // the selection — the admin can still override.
+      const aiCorrect = (d.choices ?? []).find((c) => c.is_correct)?.label;
+      if (aiCorrect && aiCorrect !== form.correct_answer) {
+        setField("correct_answer", aiCorrect);
+      }
+      setAiUsed(true);
+    } catch (e) {
+      setError(`ร่างเฉลยด้วย AI ไม่สำเร็จ: ${String(e)}`);
+    } finally {
+      setDrafting(false);
+    }
+  }
+
+  async function handleSave() {
+    if (!form.subject_id || !selectedSubject) {
+      setError("กรุณาเลือกสาขา");
+      return;
+    }
+    if (!form.scenario.trim()) {
+      setError("กรุณาใส่โจทย์");
+      return;
+    }
+    if (form.choices.some((c) => !c.text.trim())) {
+      setError("กรุณาใส่ตัวเลือกให้ครบ 5 ข้อ");
+      return;
+    }
+    if (isBoard && !form.board_section) {
+      setError("กรุณาเลือก Section ของ Board");
+      return;
+    }
+
+    setSaving(true);
+    setError(null);
+
+    const detailed = buildDetailed();
+    const commonPayload = {
+      subject_id: form.subject_id,
+      exam_source: form.exam_source || null,
+      scenario: form.scenario.trim(),
+      choices: form.choices,
+      correct_answer: form.correct_answer,
+      explanation: form.explanation || null,
+      detailed_explanation: detailed,
+      ...(aiUsed
+        ? { is_ai_enhanced: true, ai_notes: "AI-drafted detailed explanation" }
+        : {}),
+      difficulty: form.difficulty,
+      topic: form.topic || null,
+      status: form.status,
+    };
+
+    const payload = isBoard
+      ? {
+          ...commonPayload,
+          audience: "board" as const,
+          exam_type: null,
+          board_specialty: selectedSubject.board_specialty,
+          board_subspecialty: selectedSubject.board_subspecialty,
+          board_section: form.board_section,
+          board_topic: form.board_topic || null,
+          board_age_group: form.board_age_group || null,
+          board_level: form.board_level ? Number(form.board_level) : null,
+          reference_source: form.reference_source || null,
+        }
+      : {
+          ...commonPayload,
+          audience: "student" as const,
+          exam_type: form.exam_type,
+          board_specialty: null,
+          board_subspecialty: null,
+          board_section: null,
+          board_topic: null,
+          board_age_group: null,
+          board_level: null,
+          reference_source: null,
+        };
+
+    if (form.id) {
+      const ok = await updateMcqQuestion(form.id, payload);
+      if (!ok) {
+        setError("บันทึกไม่สำเร็จ กรุณาลองใหม่");
+        setSaving(false);
+        return;
+      }
+    } else {
+      const row = await createMcqQuestion(payload);
+      if (!row) {
+        setError("เพิ่มข้อสอบไม่สำเร็จ กรุณาลองใหม่");
+        setSaving(false);
+        return;
+      }
+    }
+
+    router.push("/admin/mcq");
+    router.refresh();
+  }
+
+  return (
+    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <div className="flex items-center gap-2 mb-6">
+        <Link href="/admin/mcq">
+          <Button variant="ghost" size="sm">
+            <ChevronLeft className="h-4 w-4 mr-1" />
+            รายการข้อสอบ
+          </Button>
+        </Link>
+      </div>
+
+      <h1 className="text-2xl font-bold mb-2">
+        {form.id ? "แก้ไขข้อสอบ" : "เพิ่มข้อสอบใหม่"}
+      </h1>
+      {isBoard && (
+        <Badge className="bg-purple-100 text-purple-700 gap-1 mb-4">
+          <GraduationCap className="h-3 w-3" />
+          Board Exam · {selectedSubject?.board_specialty}
+        </Badge>
+      )}
+
+      <div className="space-y-6">
+        {/* Subject + (exam_type or board section) */}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm font-medium mb-1.5 block">สาขา *</label>
+            <select
+              value={form.subject_id}
+              onChange={(e) => setField("subject_id", e.target.value)}
+              className="w-full border rounded-md px-3 py-2 text-sm bg-white"
+            >
+              <option value="">-- เลือกสาขา --</option>
+              {grouped.student.length > 0 && (
+                <optgroup label="นศพ. (NL)">
+                  {grouped.student.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.icon} {s.name_th}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
+              {Array.from(grouped.boardBySpecialty.entries()).map(
+                ([specialty, items]) => (
+                  <optgroup key={specialty} label={`Board · ${specialty}`}>
+                    {items.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.icon} {s.name_th}
+                      </option>
+                    ))}
+                  </optgroup>
+                )
+              )}
+            </select>
+          </div>
+
+          {isBoard ? (
+            <div>
+              <label className="text-sm font-medium mb-1.5 block">
+                Section (Board) *
+              </label>
+              <select
+                value={form.board_section}
+                onChange={(e) => setField("board_section", e.target.value)}
+                className="w-full border rounded-md px-3 py-2 text-sm bg-white"
+              >
+                <option value="">-- เลือก section --</option>
+                {BOARD_SECTIONS.map((s) => (
+                  <option key={s.code} value={s.code}>
+                    {s.label_th}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : (
+            <div>
+              <label className="text-sm font-medium mb-1.5 block">ประเภทสอบ</label>
+              <select
+                value={form.exam_type}
+                onChange={(e) =>
+                  setField("exam_type", e.target.value as "NL1" | "NL2")
+                }
+                className="w-full border rounded-md px-3 py-2 text-sm bg-white"
+              >
+                <option value="NL1">NL1</option>
+                <option value="NL2">NL2</option>
+              </select>
+            </div>
+          )}
+
+          <div>
+            <label className="text-sm font-medium mb-1.5 block">แหล่งที่มา</label>
+            <Input
+              value={form.exam_source}
+              onChange={(e) => setField("exam_source", e.target.value)}
+              placeholder={
+                isBoard ? "เช่น TCEP 2566, EM Board 2567" : "เช่น ศรว 2010, NL2-CU 2558"
+              }
+            />
+          </div>
+          <div>
+            <label className="text-sm font-medium mb-1.5 block">
+              Topic (ย่อย / free text)
+            </label>
+            <Input
+              value={form.topic}
+              onChange={(e) => setField("topic", e.target.value)}
+              placeholder={isBoard ? "เช่น STEMI, Pediatric trauma" : "เช่น HF, Sepsis, ACS"}
+            />
+          </div>
+        </div>
+
+        {/* Board-only fields */}
+        {isBoard && (
+          <div className="rounded-lg border border-purple-200 bg-purple-50/50 p-4">
+            <div className="flex items-center gap-2 mb-3">
+              <GraduationCap className="h-4 w-4 text-purple-700" />
+              <span className="text-sm font-medium text-purple-900">
+                ข้อมูล Board (ตาม Blueprint)
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  Topic Category (slug)
+                </label>
+                <Input
+                  list="board-topic-suggestions"
+                  value={form.board_topic}
+                  onChange={(e) => setField("board_topic", e.target.value)}
+                  placeholder={
+                    topicSuggestions.length > 0
+                      ? `เช่น ${topicSuggestions[0].slug}`
+                      : "เลือก section ก่อนเพื่อดูตัวเลือก"
+                  }
+                />
+                <datalist id="board-topic-suggestions">
+                  {topicSuggestions.map((t) => (
+                    <option key={t.slug} value={t.slug}>
+                      {t.name_th}
+                    </option>
+                  ))}
+                </datalist>
+                {topicMatch ? (
+                  <p className="text-xs text-emerald-700 mt-1">
+                    ✓ {topicMatch.name_th} (เด็ก {topicMatch.peds_count} / ผู้ใหญ่{" "}
+                    {topicMatch.adult_count} / อื่น {topicMatch.other_count})
+                  </p>
+                ) : (
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {topicSuggestions.length > 0
+                      ? `${topicSuggestions.length} หัวข้อใน blueprint — เลือกจาก dropdown หรือใส่ slug ใหม่`
+                      : "ยังไม่มี blueprint สำหรับ section นี้ — พิมพ์ slug ได้เลย"}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  อายุของเคส
+                </label>
+                <div className="flex gap-2">
+                  {([
+                    { value: "", label: "ไม่ระบุ" },
+                    { value: "peds", label: "เด็ก" },
+                    { value: "adult", label: "ผู้ใหญ่" },
+                    { value: "mixed", label: "ผสม" },
+                  ] as const).map((opt) => (
+                    <button
+                      key={opt.value || "none"}
+                      type="button"
+                      onClick={() =>
+                        setField(
+                          "board_age_group",
+                          opt.value as FormData["board_age_group"]
+                        )
+                      }
+                      className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
+                        form.board_age_group === opt.value
+                          ? "bg-purple-600 text-white border-purple-600"
+                          : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  ระดับ (Level 1-3)
+                </label>
+                <div className="flex gap-2">
+                  {(["", "1", "2", "3"] as const).map((lv) => (
+                    <button
+                      key={lv || "none"}
+                      type="button"
+                      onClick={() =>
+                        setField("board_level", lv as FormData["board_level"])
+                      }
+                      className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
+                        form.board_level === lv
+                          ? "bg-purple-600 text-white border-purple-600"
+                          : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
+                      }`}
+                    >
+                      {lv === "" ? "ไม่ระบุ" : `Level ${lv}`}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  อ้างอิง (Reference)
+                </label>
+                <Input
+                  value={form.reference_source}
+                  onChange={(e) => setField("reference_source", e.target.value)}
+                  placeholder="เช่น Tintinalli 8e Ch.34"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Scenario */}
+        <div>
+          <label className="text-sm font-medium mb-1.5 block">
+            โจทย์ (Scenario) *
+          </label>
+          <textarea
+            value={form.scenario}
+            onChange={(e) => setField("scenario", e.target.value)}
+            rows={5}
+            className="w-full border rounded-md px-3 py-2 text-sm resize-y"
+            placeholder="ผู้ป่วยชาย อายุ 50 ปี มาด้วยอาการ..."
+          />
+        </div>
+
+        {/* Choices */}
+        <div>
+          <label className="text-sm font-medium mb-2 block">ตัวเลือก *</label>
+          <div className="space-y-2">
+            {form.choices.map((c, i) => (
+              <div key={c.label} className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setField("correct_answer", c.label)}
+                  className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold shrink-0 transition-colors ${
+                    form.correct_answer === c.label
+                      ? "bg-green-500 border-green-500 text-white"
+                      : "border-gray-300 text-muted-foreground hover:border-green-400"
+                  }`}
+                  title="คลิกเพื่อเลือกเป็นคำตอบที่ถูก"
+                >
+                  {c.label}
+                </button>
+                <Input
+                  value={c.text}
+                  onChange={(e) => setChoice(i, e.target.value)}
+                  placeholder={`ตัวเลือก ${c.label}`}
+                  className="flex-1"
+                />
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            คลิกที่วงกลมตัวอักษรเพื่อเลือกเป็นคำตอบที่ถูกต้อง (ปัจจุบัน:{" "}
+            <strong>{form.correct_answer}</strong>)
+          </p>
+        </div>
+
+        {/* Explanation */}
+        <div>
+          <label className="text-sm font-medium mb-1.5 block">
+            เฉลยสั้น (Explanation)
+          </label>
+          <textarea
+            value={form.explanation}
+            onChange={(e) => setField("explanation", e.target.value)}
+            rows={3}
+            className="w-full border rounded-md px-3 py-2 text-sm resize-y"
+            placeholder="อธิบายเหตุผลที่ตอบ..."
+          />
+        </div>
+
+        {/* Detailed (per-choice) explanation */}
+        <div className="rounded-lg border border-emerald-200 bg-emerald-50/40 p-4 space-y-4">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-sm font-medium text-emerald-900">
+              เฉลยละเอียด (รายตัวเลือก) — แสดงในหน้าเฉลยของผู้เรียน
+            </span>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleDraftWithAi}
+              disabled={drafting}
+              className="gap-1.5 shrink-0"
+            >
+              {drafting ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              ) : (
+                <Sparkles className="h-3.5 w-3.5" />
+              )}
+              ร่างด้วย AI
+            </Button>
+          </div>
+
+          <div>
+            <label className="text-xs font-medium mb-1 block text-muted-foreground">
+              สรุปคำตอบ (summary)
+            </label>
+            <Input
+              value={detailSummary}
+              onChange={(e) => setDetailSummary(e.target.value)}
+              placeholder="เช่น คำตอบที่ถูกคือ A. Acute appendicitis"
+            />
+          </div>
+
+          <div>
+            <label className="text-xs font-medium mb-1 block text-muted-foreground">
+              เหตุผลหลัก (reason)
+            </label>
+            <textarea
+              value={detailReason}
+              onChange={(e) => setDetailReason(e.target.value)}
+              rows={3}
+              className="w-full border rounded-md px-3 py-2 text-sm resize-y bg-white"
+              placeholder="อธิบายเหตุผลทางการแพทย์อย่างละเอียด..."
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-xs font-medium block text-muted-foreground">
+              เหตุผลรายตัวเลือก (ทำไมถูก/ผิด)
+            </label>
+            {form.choices.map((c) => (
+              <div key={c.label} className="flex items-start gap-2">
+                <span
+                  className={`mt-1.5 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
+                    form.correct_answer === c.label
+                      ? "bg-green-500 text-white"
+                      : "bg-gray-200 text-muted-foreground"
+                  }`}
+                  title={form.correct_answer === c.label ? "ตัวเลือกที่ถูก" : undefined}
+                >
+                  {c.label}
+                </span>
+                <textarea
+                  value={choiceExpl[c.label] ?? ""}
+                  onChange={(e) =>
+                    setChoiceExpl((prev) => ({ ...prev, [c.label]: e.target.value }))
+                  }
+                  rows={2}
+                  className="flex-1 border rounded-md px-3 py-1.5 text-sm resize-y bg-white"
+                  placeholder={
+                    form.correct_answer === c.label
+                      ? "ถูกต้อง เพราะ..."
+                      : "ผิด เพราะ..."
+                  }
+                />
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <label className="text-xs font-medium mb-1 block text-muted-foreground">
+              ข้อควรจำ (key takeaway)
+            </label>
+            <Input
+              value={detailKeyTakeaway}
+              onChange={(e) => setDetailKeyTakeaway(e.target.value)}
+              placeholder="หลักสำคัญที่ควรนำไปใช้สอบ"
+            />
+          </div>
+
+          <p className="text-xs text-muted-foreground">
+            ปล่อยว่างทั้งหมดได้ถ้ายังไม่เฉลย — ระบบจะไม่บันทึกเฉลยละเอียดที่ว่างเปล่า
+            (text/ถูก-ผิด ของแต่ละตัวเลือกดึงจากช่องตัวเลือก + คำตอบที่เลือกด้านบนอัตโนมัติ)
+          </p>
+        </div>
+
+        {/* Difficulty + Status */}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm font-medium mb-1.5 block">ความยาก</label>
+            <div className="flex gap-2">
+              {(["easy", "medium", "hard"] as const).map((d) => (
+                <button
+                  key={d}
+                  type="button"
+                  onClick={() => setField("difficulty", d)}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
+                    form.difficulty === d
+                      ? d === "easy"
+                        ? "bg-blue-500 text-white border-blue-500"
+                        : d === "medium"
+                        ? "bg-orange-500 text-white border-orange-500"
+                        : "bg-red-500 text-white border-red-500"
+                      : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
+                  }`}
+                >
+                  {d === "easy" ? "Easy" : d === "medium" ? "Medium" : "Hard"}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label className="text-sm font-medium mb-1.5 block">สถานะ</label>
+            <div className="flex gap-2">
+              {(["active", "review", "disabled"] as const).map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => setField("status", s)}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
+                    form.status === s
+                      ? s === "active"
+                        ? "bg-green-500 text-white border-green-500"
+                        : s === "review"
+                        ? "bg-yellow-500 text-white border-yellow-500"
+                        : "bg-gray-400 text-white border-gray-400"
+                      : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
+                  }`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {error && (
+          <div className="rounded-md bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+            {error}
+          </div>
+        )}
+
+        <div className="flex items-center justify-between pt-2">
+          <Link href="/admin/mcq">
+            <Button variant="outline">ยกเลิก</Button>
+          </Link>
+          <Button
+            onClick={handleSave}
+            disabled={saving}
+            className="bg-brand hover:bg-brand-light text-white gap-2"
+          >
+            {saving ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Save className="h-4 w-4" />
+            )}
+            บันทึก
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}

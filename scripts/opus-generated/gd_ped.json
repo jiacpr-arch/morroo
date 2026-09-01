@@ -1,0 +1,2272 @@
+[
+  {
+    "scenario": "ทารกชายอายุ 4 สัปดาห์ มาด้วยอาเจียน projectile ไม่มีน้ำดี หลังดื่มนมทุกครั้ง น้ำหนักไม่ขึ้น ตรวจพบ olive-sized mass ที่ right upper quadrant electrolytes: Na 132 mEq/L K 3.0 mEq/L Cl 85 mEq/L HCO3 32 mEq/L การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intussusception"
+      },
+      {
+        "label": "B",
+        "text": "Pyloric stenosis"
+      },
+      {
+        "label": "C",
+        "text": "Malrotation with volvulus"
+      },
+      {
+        "label": "D",
+        "text": "GERD"
+      },
+      {
+        "label": "E",
+        "text": "Hirschsprung disease"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Projectile vomiting non-bilious ใน 2-8 สัปดาห์ + olive mass RUQ + hypochloremic metabolic alkalosis = Pyloric stenosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Pyloric stenosis",
+      "reason": "Pyloric stenosis เป็น hypertrophy ของ pyloric muscle ทำให้ gastric outlet obstruction\n\nLandmark features:\n- อายุ: 2-8 สัปดาห์ พบในเพศชายมากกว่า 4:1\n- Projectile non-bilious vomiting (bilious = obstruction below ampulla of Vater)\n- Olive-shaped mass RUQ (hypertrophied pylorus)\n- Hypochloremic hypokalemic metabolic alkalosis (loss of HCl จากการอาเจียน)\n\nDiagnosis: Ultrasound (pylorus length >17 mm, wall thickness >3 mm)\n\nรักษา: IV fluid correction ก่อน (correct alkalosis) แล้วค่อยผ่าตัด Ramstedt pyloromyotomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intussusception",
+          "is_correct": false,
+          "explanation": "Intussusception พบอายุ 6-36 เดือน ปวดท้องเป็นพักๆ currant jelly stool sausage-shaped mass ไม่ใช่ projectile vomiting"
+        },
+        {
+          "label": "B",
+          "text": "Pyloric stenosis",
+          "is_correct": true,
+          "explanation": "Projectile non-bilious vomiting ที่ 4 สัปดาห์ + olive mass + hypochloremic metabolic alkalosis = pyloric stenosis"
+        },
+        {
+          "label": "C",
+          "text": "Malrotation with volvulus",
+          "is_correct": false,
+          "explanation": "Malrotation มี bilious vomiting เฉียบพลัน มักใน 1 เดือนแรก เป็น surgical emergency"
+        },
+        {
+          "label": "D",
+          "text": "GERD",
+          "is_correct": false,
+          "explanation": "GERD ไม่มี projectile character ไม่มี olive mass ไม่มี electrolyte abnormalities"
+        },
+        {
+          "label": "E",
+          "text": "Hirschsprung disease",
+          "is_correct": false,
+          "explanation": "Hirschsprung มี delayed meconium ท้องผูกเรื้อรัง ท้องอืด ไม่ใช่ projectile vomiting"
+        }
+      ],
+      "key_takeaway": "Pyloric stenosis: 2-8 weeks + Projectile non-bilious vomiting + olive mass + Hypochloremic metabolic alkalosis -> Correct electrolytes -> Pyloromyotomy"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดชาย ไม่ถ่าย meconium ใน 48 ชั่วโมงแรก ท้องอืดมาก ให้นมแล้วอาเจียน rectal exam: กดแล้ว explosive stool ออกมา X-ray: dilated bowel loops ไม่มี air ใน rectum การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Meconium ileus"
+      },
+      {
+        "label": "B",
+        "text": "Hirschsprung disease"
+      },
+      {
+        "label": "C",
+        "text": "Imperforate anus"
+      },
+      {
+        "label": "D",
+        "text": "Necrotizing enterocolitis (NEC)"
+      },
+      {
+        "label": "E",
+        "text": "Anal stenosis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Delayed meconium passage + ท้องอืด + explosive stool after rectal exam = Hirschsprung disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Hirschsprung disease",
+      "reason": "Hirschsprung disease เกิดจาก absence of ganglion cells (aganglionosis) ใน distal colon และ rectum ทำให้ bowel ส่วนนั้น constrict ตลอดเวลา\n\nSigns: Delayed meconium >48 ชั่วโมง (ปกติ 98% ถ่ายใน 48h) ท้องอืด bilious vomiting\nRectal exam: พบ tight sphincter กด squirt explosive ของ stool ออก (squirt sign)\n\nDiagnosis: Rectal biopsy (gold standard): absence of ganglion cells + increased AChE staining Contrast enema: transition zone\n\nComplications: Hirschsprung enterocolitis (มี fever explosive diarrhea มีกลิ่น toxic - medical emergency)\n\nรักษา: Surgical pull-through procedure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Meconium ileus",
+          "is_correct": false,
+          "explanation": "Meconium ileus พบใน Cystic fibrosis เป็น small bowel obstruction ไม่มี explosive stool จาก rectal exam"
+        },
+        {
+          "label": "B",
+          "text": "Hirschsprung disease",
+          "is_correct": true,
+          "explanation": "Delayed meconium + distended abdomen + explosive stool after rectal exam + absence of rectal air = Hirschsprung"
+        },
+        {
+          "label": "C",
+          "text": "Imperforate anus",
+          "is_correct": false,
+          "explanation": "Imperforate anus เห็นได้จากการตรวจร่างกาย ไม่มี anal opening ที่ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Necrotizing enterocolitis (NEC)",
+          "is_correct": false,
+          "explanation": "NEC พบใน premature infants มี bloody stool pneumatosis intestinalis ใน X-ray ไม่มี explosive stool จาก rectal exam"
+        },
+        {
+          "label": "E",
+          "text": "Anal stenosis",
+          "is_correct": false,
+          "explanation": "Anal stenosis ก็ทำให้ constipation แต่ exam จะพบ stenotic anal opening"
+        }
+      ],
+      "key_takeaway": "Hirschsprung: Delayed meconium >48h + ท้องอืด + explosive stool after rectal exam -> Rectal biopsy -> Pull-through surgery"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี มาตรวจสุขภาพ พบว่าพัฒนาการล่าช้า ยังพูดไม่ได้ ไม่สบตา ไม่แสดงออกทางสีหน้า ชอบทำซ้ำๆ (repetitive behaviors) ไม่สนใจเพื่อน มีความสนใจเฉพาะสิ่งบางอย่างมาก การวินิจฉัยที่น่าจะเป็นมากที่สุดและขั้นตอนต่อไปคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intellectual disability -> IQ test"
+      },
+      {
+        "label": "B",
+        "text": "Autism spectrum disorder (ASD) -> Formal developmental evaluation"
+      },
+      {
+        "label": "C",
+        "text": "ADHD -> Methylphenidate"
+      },
+      {
+        "label": "D",
+        "text": "Selective mutism -> Psychotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Language delay only -> Speech therapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ไม่สบตา + repetitive behaviors + ไม่สนใจเพื่อน + language delay = ASD -> Formal developmental evaluation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Autism spectrum disorder (ASD) -> Formal developmental evaluation",
+      "reason": "ASD วินิจฉัยตาม DSM-5 criteria: ต้องมีทั้งสองหมวด:\n1. Persistent deficits in social communication and interaction: ไม่สบตา ไม่แสดงออกทางสีหน้า ไม่สนใจเพื่อน\n2. Restricted, repetitive patterns of behavior: repetitive behaviors ความสนใจเฉพาะบางอย่าง\n\nASD มีสเปกตรัมกว้าง บางคนมี intellectual disability บางคนไม่มี\n\nขั้นตอนต่อไป: Formal developmental evaluation โดย multidisciplinary team (pediatric developmental specialist, speech therapist, occupational therapist, psychologist) ตรวจ hearing test ก่อนเสมอ\n\nIntervention: Early intensive behavioral intervention (ABA therapy) speech therapy occupational therapy\n\nADHD: Inattention impulsivity hyperactivity ไม่มี social communication deficits ชัดเจน\n\nSelective mutism: พูดได้ในบางสถานการณ์แต่ไม่พูดในบางสถานการณ์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intellectual disability -> IQ test",
+          "is_correct": false,
+          "explanation": "ID มีปัญหา cognitive เด่น แต่ ASD มี specific social communication deficits และ restricted behaviors ที่ต่างกัน ทั้งคู่อาจ coexist"
+        },
+        {
+          "label": "B",
+          "text": "Autism spectrum disorder (ASD) -> Formal developmental evaluation",
+          "is_correct": true,
+          "explanation": "Social communication deficits + restricted repetitive behaviors = DSM-5 ASD criteria -> Formal evaluation by multidisciplinary team"
+        },
+        {
+          "label": "C",
+          "text": "ADHD -> Methylphenidate",
+          "is_correct": false,
+          "explanation": "ADHD มี inattention hyperactivity impulsivity ไม่มี social communication deficits เด่น ไม่มี repetitive behaviors"
+        },
+        {
+          "label": "D",
+          "text": "Selective mutism -> Psychotherapy",
+          "is_correct": false,
+          "explanation": "Selective mutism พูดได้ในสถานการณ์ที่สะดวกใจ ไม่มี repetitive behaviors social communication deficits แบบ ASD"
+        },
+        {
+          "label": "E",
+          "text": "Language delay only -> Speech therapy",
+          "is_correct": false,
+          "explanation": "Language delay เป็นส่วนหนึ่ง แต่มี social communication deficits และ restricted behaviors ด้วย = ASD ไม่ใช่ simple language delay"
+        }
+      ],
+      "key_takeaway": "ASD DSM-5: Social communication deficits + Restricted repetitive behaviors -> Formal developmental evaluation + Early ABA therapy"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 4 ปี มาด้วยท้องเสีย 8 ครั้ง/วัน มีเลือดและมูกในอุจจาระ มีไข้ 38 ปวดท้อง ตรวจ CBC: WBC 16,000 stool culture: Shigella dysenteriae การรักษาที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral rehydration เพียงอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Azithromycin + oral rehydration"
+      },
+      {
+        "label": "C",
+        "text": "Metronidazole"
+      },
+      {
+        "label": "D",
+        "text": "Loperamide"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ต้องการ antibiotic สำหรับ Shigella"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Shigella dysentery ต้องการ antibiotic -> Azithromycin เป็น first-line ในเด็ก",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Azithromycin + oral rehydration",
+      "reason": "Shigella เป็น invasive bacteria ที่ทำให้ bloody diarrhea + fever + WBC สูง\n\nShigella ต่างจาก Salmonella: Shigella ต้องให้ antibiotic เสมอ เพราะ\n- ลด duration of illness\n- ลด shedding ใน stool\n- ป้องกัน complications (HUS จาก S. dysenteriae type 1 Shiga toxin)\n\nAntibiotic choices:\n- Azithromycin: first-line ในเด็ก (10 mg/kg day 1, แล้ว 5 mg/kg day 2-5)\n- Ciprofloxacin: adults first-line ระวังใน children\n- Pivmecillinam หรือ ceftriaxone ถ้า resistant\n\nOral rehydration ร่วมกันเสมอ\n\nLoperamide ห้ามใช้ใน bloody diarrhea เพราะ delay clearance ของ bacteria",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral rehydration เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Shigella ต้องการ antibiotic ไม่ใช่แค่ ORS เหมือน Viral gastroenteritis"
+        },
+        {
+          "label": "B",
+          "text": "Azithromycin + oral rehydration",
+          "is_correct": true,
+          "explanation": "Shigella dysentery ต้องการ antibiotic Azithromycin เป็น first-line ในเด็กใน Thailand + ORS"
+        },
+        {
+          "label": "C",
+          "text": "Metronidazole",
+          "is_correct": false,
+          "explanation": "Metronidazole สำหรับ Giardia Entamoeba ไม่มีประสิทธิภาพต่อ Shigella"
+        },
+        {
+          "label": "D",
+          "text": "Loperamide",
+          "is_correct": false,
+          "explanation": "Loperamide ห้ามใช้ใน dysentery/bloody diarrhea เพราะ delay bacterial clearance อาจเพิ่ม complication"
+        },
+        {
+          "label": "E",
+          "text": "ไม่ต้องการ antibiotic สำหรับ Shigella",
+          "is_correct": false,
+          "explanation": "ผิด Shigella ต้องการ antibiotic เสมอต่างจาก Salmonella gastroenteritis ที่ antibiotic ไม่ช่วย uncomplicated case"
+        }
+      ],
+      "key_takeaway": "Shigella dysentery -> Azithromycin (first-line ในเด็ก) + ORS ห้ามใช้ Loperamide ใน bloody diarrhea"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี มาด้วยอาการเหนื่อยง่าย หยุดเล่น มีอาการปวดหัวเข่าและข้อเท้า สลับข้าง ไข้ต่ำ 2 สัปดาห์หลังเป็น strep throat ตรวจพบ migratory polyarthritis murmur ใหม่ที่ apex ตรวจ ASO titer สูง CRP ESR สูง ECG: prolonged PR interval การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Septic arthritis"
+      },
+      {
+        "label": "B",
+        "text": "Rheumatic fever"
+      },
+      {
+        "label": "C",
+        "text": "Juvenile idiopathic arthritis"
+      },
+      {
+        "label": "D",
+        "text": "Reactive arthritis"
+      },
+      {
+        "label": "E",
+        "text": "Lyme disease"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-strep (2 weeks) + migratory polyarthritis + new murmur + prolonged PR = Rheumatic fever (Jones criteria)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Rheumatic fever",
+      "reason": "Rheumatic fever (RF) เกิดหลัง Group A Streptococcal pharyngitis 2-4 สัปดาห์ เป็น autoimmune disease\n\nJones Criteria (2015 revision): ต้องมี evidence of GAS infection + (2 major or 1 major + 2 minor criteria)\n\nMajor criteria (JONES): Joints (migratory polyarthritis), cOrea (Sydenham's chorea), carditis (new murmur, PR prolongation in ECG), Nodules (subcutaneous), Erythema marginatum\n\nMinor criteria: Fever, Elevated ESR/CRP, Prolonged PR interval\n\nผู้ป่วยมี: migratory polyarthritis (major) + carditis/new murmur + PR prolonged (major/minor) + post-strep ASO สูง = meets criteria\n\nรักษา: Penicillin (eradicate GAS) + Aspirin/NSAIDs (ลด arthritis/inflammation) + Bed rest\nSecondary prophylaxis: Benzathine Penicillin IM ทุก 3-4 สัปดาห์ ป้องกัน recurrence",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Septic arthritis",
+          "is_correct": false,
+          "explanation": "Septic arthritis เป็น monoarthritis ปวด บวม แดง ร้อน มาก ไข้สูง ไม่ใช่ migratory polyarthritis"
+        },
+        {
+          "label": "B",
+          "text": "Rheumatic fever",
+          "is_correct": true,
+          "explanation": "Post-strep 2 สัปดาห์ + migratory polyarthritis (major) + carditis new murmur (major) + PR prolonged = Jones criteria RF"
+        },
+        {
+          "label": "C",
+          "text": "Juvenile idiopathic arthritis",
+          "is_correct": false,
+          "explanation": "JIA ไม่มี post-strep connection ไม่มี ASO สูง ไม่มี PR prolonged"
+        },
+        {
+          "label": "D",
+          "text": "Reactive arthritis",
+          "is_correct": false,
+          "explanation": "Reactive arthritis หลัง GI/GU infection ไม่มี carditis มักเป็น oligoarthritis ไม่ migratory"
+        },
+        {
+          "label": "E",
+          "text": "Lyme disease",
+          "is_correct": false,
+          "explanation": "Lyme arthritis เป็น monoarthritis knee เป็นหลัก มี Erythema migrans ไม่มี post-strep"
+        }
+      ],
+      "key_takeaway": "Rheumatic fever: Post-strep + Migratory polyarthritis + Carditis + (Jones criteria) -> Penicillin + Aspirin + Secondary prophylaxis"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 6 ปี มาด้วยผื่นแดงที่แก้ม butterfly rash ผื่น photosensitive ที่แขน ปวดข้อ ไข้ ตรวจพบ ANA positive 1:640 anti-dsDNA positive proteinuria 3+ CBC: WBC 3,000 Hb 9 platelet 80,000 การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Juvenile dermatomyositis"
+      },
+      {
+        "label": "B",
+        "text": "Systemic lupus erythematosus (SLE)"
+      },
+      {
+        "label": "C",
+        "text": "Juvenile idiopathic arthritis"
+      },
+      {
+        "label": "D",
+        "text": "Rosacea"
+      },
+      {
+        "label": "E",
+        "text": "Dermatomyositis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Butterfly rash + photosensitivity + arthritis + fever + ANA anti-dsDNA positive + pancytopenia + proteinuria = SLE",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Systemic lupus erythematosus (SLE)",
+      "reason": "SLE วินิจฉัยตาม SLICC 2012 criteria หรือ ACR/EULAR 2019 criteria: ต้องมี >= 4 criteria หรือ biopsy-proven lupus nephritis + ANA/anti-dsDNA\n\nผู้ป่วยมี: Butterfly rash (malar rash), photosensitivity, arthritis, fever, ANA positive 1:640, anti-dsDNA positive, pancytopenia (WBC ต่ำ anemia thrombocytopenia), proteinuria (nephritis)\n\nSLE ในเด็ก: มักรุนแรงกว่าผู้ใหญ่ nephritis พบบ่อยและรุนแรงกว่า\n\nการตรวจ: Complement C3 C4 (ต่ำใน active disease) anti-Smith (specific), lupus anticoagulant, 24h urine protein, renal biopsy ถ้ามี nephritis\n\nรักษา: Hydroxychloroquine (ทุกราย) + steroids + Mycophenolate mofetil/Azathioprine (nephritis)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Juvenile dermatomyositis",
+          "is_correct": false,
+          "explanation": "JDM มี Gottron papules heliotrope rash proximal muscle weakness ไม่มี butterfly rash anti-dsDNA"
+        },
+        {
+          "label": "B",
+          "text": "Systemic lupus erythematosus (SLE)",
+          "is_correct": true,
+          "explanation": "Butterfly rash + photosensitivity + arthritis + ANA anti-dsDNA positive + pancytopenia + nephritis = SLE"
+        },
+        {
+          "label": "C",
+          "text": "Juvenile idiopathic arthritis",
+          "is_correct": false,
+          "explanation": "JIA ไม่มี ANA anti-dsDNA positive ระดับสูง ไม่มี butterfly rash หรือ nephritis"
+        },
+        {
+          "label": "D",
+          "text": "Rosacea",
+          "is_correct": false,
+          "explanation": "Rosacea เป็น chronic skin condition ของผู้ใหญ่ ไม่มี systemic features"
+        },
+        {
+          "label": "E",
+          "text": "Dermatomyositis",
+          "is_correct": false,
+          "explanation": "Dermatomyositis มี Gottron papules heliotrope rash proximal myopathy ไม่มี anti-dsDNA nephritis"
+        }
+      ],
+      "key_takeaway": "SLE: Butterfly rash + photosensitivity + arthritis + ANA/anti-dsDNA positive + multi-organ involvement -> Hydroxychloroquine + Steroids"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี มาด้วยผื่นสีม่วงนูนขึ้น (purpuric papules) ที่ขาและก้น ปวดข้อ ปวดท้อง ปัสสาวะมีเลือด platelet ปกติ PT/APTT ปกติ การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ITP"
+      },
+      {
+        "label": "B",
+        "text": "Henoch-Schonlein purpura (IgA vasculitis)"
+      },
+      {
+        "label": "C",
+        "text": "Meningococcemia"
+      },
+      {
+        "label": "D",
+        "text": "Leukemia"
+      },
+      {
+        "label": "E",
+        "text": "Child abuse"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Palpable purpura ที่ขา/ก้น + arthritis + abdominal pain + hematuria + platelet ปกติ = HSP (IgA vasculitis)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Henoch-Schonlein purpura (IgA vasculitis)",
+      "reason": "HSP (IgA vasculitis) เป็น small vessel vasculitis จาก IgA immune complex deposition\n\nTetrad: 1) Palpable purpura (ขาและก้น ไม่ใช่ truncal) 2) Arthritis/arthralgia 3) Abdominal pain (colicky, +/- intussusception) 4) Renal involvement (hematuria/proteinuria)\n\nPlatelet และ coagulation ปกติ (ต่างจาก ITP ที่ platelet ต่ำ DIC ที่ PT/APTT ยาว)\n\nPurpura เป็น palpable (raised) เพราะเกิดจาก vasculitis ไม่ใช่ thrombocytopenia\n\nComplications: Intussusception 2-3% (abdominal pain รุนแรง) Nephritis (HSP nephritis ใน 30-50%)\n\nรักษา: Mostly self-limiting Supportive Steroids ถ้ามี severe abdominal pain, nephritis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ITP",
+          "is_correct": false,
+          "explanation": "ITP มี platelet ต่ำมาก purpura เป็น flat (non-palpable) ไม่มี arthritis หรือ abdominal pain"
+        },
+        {
+          "label": "B",
+          "text": "Henoch-Schonlein purpura (IgA vasculitis)",
+          "is_correct": true,
+          "explanation": "Palpable purpura ขา/ก้น + arthritis + abdominal pain + hematuria + platelet ปกติ = classic HSP"
+        },
+        {
+          "label": "C",
+          "text": "Meningococcemia",
+          "is_correct": false,
+          "explanation": "Meningococcemia มีไข้สูง septic shock petechiae/purpura ทั่วตัว meningitis signs เป็น medical emergency"
+        },
+        {
+          "label": "D",
+          "text": "Leukemia",
+          "is_correct": false,
+          "explanation": "Leukemia มี pancytopenia blast cells bone pain lymphadenopathy ไม่มีเฉพาะ palpable purpura ขา/ก้น"
+        },
+        {
+          "label": "E",
+          "text": "Child abuse",
+          "is_correct": false,
+          "explanation": "Bruises จาก abuse มีลักษณะ unusual location แต่ไม่มี systemic features arthritis hematuria"
+        }
+      ],
+      "key_takeaway": "HSP (IgA vasculitis): Palpable purpura (ขา/ก้น) + Arthritis + Abdominal pain + Hematuria + Platelet ปกติ -> Mostly self-limiting"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 9 ปี มาด้วยอาการปวดท้องรอบสะดือซ้ำๆ ท้องเสียสลับท้องผูก ปวดดีขึ้นหลังถ่าย อาการเป็นมานาน 3 เดือน ไม่มีไข้ ไม่มีเลือดในอุจจาระ น้ำหนักไม่ลด ตรวจร่างกายและ lab ปกติ การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Crohn's disease"
+      },
+      {
+        "label": "B",
+        "text": "Irritable bowel syndrome (IBS)"
+      },
+      {
+        "label": "C",
+        "text": "Celiac disease"
+      },
+      {
+        "label": "D",
+        "text": "Appendicitis เรื้อรัง"
+      },
+      {
+        "label": "E",
+        "text": "Lactose intolerance"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Recurrent abdominal pain + altered bowel habits + relieved by defecation + ไม่มี alarm signs + lab ปกติ = IBS",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Irritable bowel syndrome (IBS)",
+      "reason": "IBS วินิจฉัยตาม Rome IV criteria: Recurrent abdominal pain >=1 วัน/สัปดาห์ ใน 3 เดือน ร่วมกับ >=2 ของ: 1) Related to defecation 2) Associated with change in stool frequency 3) Associated with change in stool form\n\nผู้ป่วยมี: Recurrent periumbilical pain 3 เดือน + altered bowel habits (ท้องเสียสลับท้องผูก) + relieved by defecation + ไม่มี alarm signs (ไข้ เลือดในอุจจาระ น้ำหนักลด)\n\nAlarm signs ที่ต้องหา organic cause: เลือดในอุจจาระ น้ำหนักลด ไข้ growth failure anemia ESR สูง nocturnal symptoms\n\nIBS เป็น diagnosis of exclusion ในเด็ก ต้องตรวจ basic workup ก่อน\n\nรักษา: Reassurance dietary modification (low FODMAP) fiber soluble antispasmodics",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Crohn's disease",
+          "is_correct": false,
+          "explanation": "Crohn มี alarm signs: น้ำหนักลด growth failure perianal disease fever elevated ESR/CRP ไม่มีในรายนี้"
+        },
+        {
+          "label": "B",
+          "text": "Irritable bowel syndrome (IBS)",
+          "is_correct": true,
+          "explanation": "Recurrent abdominal pain + altered bowel habits + relieved by defecation + ไม่มี alarm signs = Rome IV criteria IBS"
+        },
+        {
+          "label": "C",
+          "text": "Celiac disease",
+          "is_correct": false,
+          "explanation": "Celiac มี malabsorption growth failure iron deficiency anemia anti-tTG สูง ไม่มีในรายนี้"
+        },
+        {
+          "label": "D",
+          "text": "Appendicitis เรื้อรัง",
+          "is_correct": false,
+          "explanation": "Chronic appendicitis ไม่ common ปวดมักที่ RLQ ไม่ใช่ periumbilical ไม่สลับท้องเสีย/ท้องผูก"
+        },
+        {
+          "label": "E",
+          "text": "Lactose intolerance",
+          "is_correct": false,
+          "explanation": "Lactose intolerance มักมี bloating flatulence ท้องเสียหลังดื่มนม ไม่ใช่ chronic relapsing pattern"
+        }
+      ],
+      "key_takeaway": "IBS ในเด็ก: Recurrent abdominal pain + altered bowel habits + relieved by defecation + ไม่มี alarm signs = Rome IV IBS"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี มาด้วยผื่นแบบ target lesion (erythema multiforme-like) ที่แขน ขา และผิวหนัง เยื่อบุช่องปากมีแผล ตาแดง เพิ่งได้รับ cotrimoxazole เมื่อ 2 สัปดาห์ก่อน ตรวจพบ skin detachment <10% body surface area ผื่นทั่วร่างกาย การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Erythema multiforme minor"
+      },
+      {
+        "label": "B",
+        "text": "Stevens-Johnson syndrome (SJS)"
+      },
+      {
+        "label": "C",
+        "text": "Toxic epidermal necrolysis (TEN)"
+      },
+      {
+        "label": "D",
+        "text": "Staphylococcal scalded skin syndrome (SSSS)"
+      },
+      {
+        "label": "E",
+        "text": "Kawasaki disease"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Target lesions + mucosal involvement + skin detachment <10% BSA + drug (cotrimoxazole) = SJS",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Stevens-Johnson syndrome (SJS)",
+      "reason": "SJS/TEN spectrum:\n- SJS: skin detachment <10% BSA + mucosal involvement\n- SJS/TEN overlap: 10-30% BSA\n- TEN: >30% BSA\n\nผู้ป่วยมี skin detachment <10% + mucosal involvement (oral + ocular) + target lesions = SJS\n\nCauses: Drugs (sulfonamides เช่น cotrimoxazole, anticonvulsants, NSAIDs) Infection (Mycoplasma)\n\nรักษา: หยุดยา offending ทันที! Supportive care (burn unit level) IV fluids wound care eye care ไม่ใช่ steroids (controversial)\n\nComplications: Ocular scarring infection sepsis mortality 10%",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Erythema multiforme minor",
+          "is_correct": false,
+          "explanation": "EM minor ไม่มี mucosal involvement นอกจาก oral minimal มี target lesions เฉพาะที่ ไม่มี skin detachment"
+        },
+        {
+          "label": "B",
+          "text": "Stevens-Johnson syndrome (SJS)",
+          "is_correct": true,
+          "explanation": "Drug + target lesions + mucosal involvement (oral + ocular) + skin detachment <10% = SJS"
+        },
+        {
+          "label": "C",
+          "text": "Toxic epidermal necrolysis (TEN)",
+          "is_correct": false,
+          "explanation": "TEN มี skin detachment >30% BSA ผู้ป่วยรายนี้ <10% = SJS"
+        },
+        {
+          "label": "D",
+          "text": "Staphylococcal scalded skin syndrome (SSSS)",
+          "is_correct": false,
+          "explanation": "SSSS เกิดจาก Staph exfoliative toxin มี skin detachment แบบ superficial ไม่มี mucosal involvement นอกช่องปาก ไม่มี target lesions"
+        },
+        {
+          "label": "E",
+          "text": "Kawasaki disease",
+          "is_correct": false,
+          "explanation": "Kawasaki มี fever >5 วัน conjunctivitis strawberry tongue lymphadenopathy ไม่มี target lesions skin detachment"
+        }
+      ],
+      "key_takeaway": "SJS: Drug-induced + Target lesions + Mucosal involvement + Skin detachment <10% -> หยุดยาทันที + Supportive care"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี มาด้วยอาการปัสสาวะออกมาก ดื่มน้ำมาก ปัสสาวะรดที่นอนตอนกลางคืน (enuresis) มา 2 เดือน ตรวจ blood glucose 380 mg/dL Hb A1c 11% ปัสสาวะ glucose 4+ ketone 1+ ABG: pH 7.35 HCO3 18 การวินิจฉัยและการรักษาที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Type 2 DM -> Metformin"
+      },
+      {
+        "label": "B",
+        "text": "Type 1 DM -> Subcutaneous insulin ± IV fluid"
+      },
+      {
+        "label": "C",
+        "text": "Type 1 DM + mild DKA -> DKA protocol"
+      },
+      {
+        "label": "D",
+        "text": "Diabetes insipidus -> DDAVP"
+      },
+      {
+        "label": "E",
+        "text": "Psychogenic polydipsia -> Fluid restriction"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "เด็ก + hyperglycemia + ketonuria ไม่รุนแรง + pH ปกติ = Type 1 DM without DKA -> SC insulin + IV fluid",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Type 1 DM -> Subcutaneous insulin ± IV fluid",
+      "reason": "ผู้ป่วยมี Type 1 DM (new-onset) มี hyperglycemia + ketonuria แต่ pH 7.35 (ปกติ) HCO3 18 = ไม่มี DKA (DKA ต้องการ pH <7.3 หรือ HCO3 <15)\n\nTherefore: เป็น hyperglycemia โดยไม่มี DKA -> SC insulin regimen\n\nNew-onset Type 1 DM without DKA:\n- Oral/IV rehydration\n- SC insulin: Basal-bolus regimen (long-acting + rapid-acting with meals)\n- Start 0.5-1 unit/kg/day ในเด็ก\n- Diabetes education (family)\n\nDKA (pH <7.3, HCO3 <15, ketosis) -> IV insulin infusion protocol\n\nType 2 DM ในเด็กเกิดในวัยรุ่น BMI สูง ไม่ใช่อายุ 8 ปี (แม้จะเกิดได้)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Type 2 DM -> Metformin",
+          "is_correct": false,
+          "explanation": "Type 2 DM ในเด็ก 8 ปีพบน้อย มักในวัยรุ่น+obese ketonemia บ่งชี้ Type 1 มากกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Type 1 DM -> Subcutaneous insulin ± IV fluid",
+          "is_correct": true,
+          "explanation": "New-onset T1DM + hyperglycemia + ketonuria ไม่รุนแรง + pH ปกติ = ไม่มี DKA -> SC basal-bolus insulin"
+        },
+        {
+          "label": "C",
+          "text": "Type 1 DM + mild DKA -> DKA protocol",
+          "is_correct": false,
+          "explanation": "DKA ต้องมี pH <7.3 หรือ HCO3 <15 ผู้ป่วยรายนี้ pH 7.35 HCO3 18 ไม่มี frank DKA"
+        },
+        {
+          "label": "D",
+          "text": "Diabetes insipidus -> DDAVP",
+          "is_correct": false,
+          "explanation": "DI มี blood glucose ปกติ urine dilute ไม่มี glucose ใน urine"
+        },
+        {
+          "label": "E",
+          "text": "Psychogenic polydipsia -> Fluid restriction",
+          "is_correct": false,
+          "explanation": "Psychogenic polydipsia มี blood glucose ปกติ ไม่มี glucosuria"
+        }
+      ],
+      "key_takeaway": "New-onset T1DM ไม่มี DKA (pH >=7.3) -> SC basal-bolus insulin ไม่ต้องทำ DKA protocol"
+    },
+    "subject": "gd_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง 4 ปี น้ำหนัก 22 kg (>97th percentile) สูง 104 cm (75th percentile) แม่กังวลว่าลูกอ้วนเกินไป ทานมากผิดปกติ ไม่ค่อยออกกำลังกาย CBC ปกติ TSH ปกติ FBS 82 mg/dL",
+    "choices": [
+      "A: Hypothyroidism",
+      "B: Cushing syndrome",
+      "C: Exogenous obesity (lifestyle)",
+      "D: Genetic obesity syndrome (Prader-Willi)",
+      "E: Insulinoma"
+    ],
+    "correct_answer": "C",
+    "explanation": "Exogenous obesity: พฤติกรรมการกิน+ขาดออกกำลังกาย + ตรวจไม่พบสาเหตุ secondary → lifestyle modification",
+    "detailed_explanation": {
+      "summary": "Exogenous obesity เด็ก: ปัจจัยพฤติกรรม → lifestyle modification",
+      "reason": "Exogenous obesity เป็น most common type ของ childhood obesity Secondary obesity ต้องแยก: hypothyroidism (TSH สูง, ผิวแห้ง), Cushing (striae, HTN, moon face), Prader-Willi (hypotonia, FTT ทารก, intellectual disability, hypogonadism) TSH/FBS ปกติ → ไม่ใช่ secondary cause การรักษา: Lifestyle modification (dietary counseling + physical activity) เป็น first-line",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "TSH ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Cushing",
+          "is_correct": false,
+          "explanation": "ไม่มี striae, moon face, HTN, cortisol ปกติ"
+        },
+        {
+          "label": "C",
+          "text": "Exogenous obesity",
+          "is_correct": true,
+          "explanation": "ตรวจไม่พบสาเหตุ secondary + พฤติกรรม = exogenous obesity → lifestyle"
+        },
+        {
+          "label": "D",
+          "text": "Prader-Willi",
+          "is_correct": false,
+          "explanation": "Hypotonia ทารก, almond eyes, hypogonadism, intellectual disability"
+        },
+        {
+          "label": "E",
+          "text": "Insulinoma",
+          "is_correct": false,
+          "explanation": "Hypoglycemia, FBS 82 ปกติ"
+        }
+      ],
+      "key_takeaway": "Childhood obesity: แยก secondary cause (TSH, cortisol, genetic) ก่อน; exogenous → lifestyle modification; BMI >95th percentile = obese"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 9 เดือน น้ำหนัก 6.5 kg (แรกเกิด 3.2 kg) พัฒนาการ: นั่งไม่ได้ ยังไม่คว่ำ ไม่เล่นกับวัตถุ ไม่ส่งเสียงโต้ตอบ CBC ปกติ TSH ปกติ ไม่มีการได้ยิน (ABR ผิดปกติ ทั้ง 2 ข้าง)",
+    "choices": [
+      "A: Autism spectrum disorder",
+      "B: Global developmental delay with hearing loss",
+      "C: Cerebral palsy",
+      "D: Intellectual disability",
+      "E: Hypothyroidism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Global developmental delay + hearing loss bilateral: ABR ผิดปกติ → hearing aids/cochlear implant + early intervention",
+    "detailed_explanation": {
+      "summary": "GDD + bilateral hearing loss → early intervention + hearing aids/cochlear implant",
+      "reason": "Global developmental delay (GDD): ล่าช้า ≥2 domains ก่อนอายุ 5 ปี Motor: ไม่คว่ำ ที่ 9 เดือน (ปกติ 4-5 เดือน), ไม่นั่ง (ปกติ 6-9 เดือน) Social/language: ไม่โต้ตอบ ABR (Auditory Brainstem Response) ผิดปกติ bilateral → hearing loss ทำให้ language ล่าช้า การรักษา: hearing aids (mild-moderate) หรือ cochlear implant (severe-profound) + early intervention ก่อนอายุ 6 เดือนถ้าเป็นไปได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Autism spectrum disorder",
+          "is_correct": false,
+          "explanation": "ASD ต้องแยก hearing loss ก่อน; ABR ผิดปกติ → hearing loss เป็น explanation หลัก"
+        },
+        {
+          "label": "B",
+          "text": "GDD + hearing loss",
+          "is_correct": true,
+          "explanation": "ABR ผิดปกติ bilateral + GDD + language delay = hearing loss causing GDD → cochlear implant/hearing aids"
+        },
+        {
+          "label": "C",
+          "text": "Cerebral palsy",
+          "is_correct": false,
+          "explanation": "Abnormal tone/movement ไม่ใช่ hearing loss"
+        },
+        {
+          "label": "D",
+          "text": "Intellectual disability",
+          "is_correct": false,
+          "explanation": "Hearing loss ต้องรักษาก่อน ค่อย evaluate ID"
+        },
+        {
+          "label": "E",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "TSH ปกติ; แต่ถ้า congenital hypothyroidism อาจมี hearing loss ได้"
+        }
+      ],
+      "key_takeaway": "GDD + language delay → ตรวจ ABR เสมอ; hearing loss bilateral → cochlear implant ก่อน 6-12 เดือน = optimal language outcome"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 2 ปี น้ำหนัก 7.5 kg (Z-score -3.5 SD) ผอมมาก ขาบวม กินน้ำได้แต่กินข้าวน้อย ผมบาง สีเปลี่ยนเป็นน้ำตาลอ่อน มือเย็น ไม่ร่าเริง Albumin 1.8 g/dL",
+    "choices": [
+      "A: Marasmus",
+      "B: Kwashiorkor",
+      "C: Marasmic-kwashiorkor",
+      "D: Iron deficiency anemia",
+      "E: Celiac disease"
+    ],
+    "correct_answer": "B",
+    "explanation": "Kwashiorkor: edema + hypoalbuminemia + hair changes + ไม่ซีดมาก (ต่างจาก marasmus ที่ขาดแคลอรี่รวม)",
+    "detailed_explanation": {
+      "summary": "Kwashiorkor: protein deficiency → edema + hypoalbuminemia + hair changes",
+      "reason": "Kwashiorkor: protein deficiency (adequate calories แต่ขาด protein) Edema (hypoalbuminemia → plasma oncotic pressure ต่ำ) Hair: depigmented, flag sign Skin: flaky paint dermatosis Albumin < 2.8 g/dL Marasmus: caloric deficiency → wasting ไม่มี edema Marasmic-kwashiorkor: ทั้ง wasting และ edema การรักษา: F-75 → F-100 → ready-to-use therapeutic food (RUTF) ตาม WHO protocol",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Marasmus",
+          "is_correct": false,
+          "explanation": "Wasting รุนแรง ไม่มี edema albumin ค่อนข้างปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Kwashiorkor",
+          "is_correct": true,
+          "explanation": "Edema + albumin 1.8 + hair depigmentation + ผอม = kwashiorkor"
+        },
+        {
+          "label": "C",
+          "text": "Marasmic-kwashiorkor",
+          "is_correct": false,
+          "explanation": "ทั้ง wasting รุนแรง + edema ร่วมกัน"
+        },
+        {
+          "label": "D",
+          "text": "IDA",
+          "is_correct": false,
+          "explanation": "ซีด, albumin ปกติ, ไม่มี edema"
+        },
+        {
+          "label": "E",
+          "text": "Celiac",
+          "is_correct": false,
+          "explanation": "Fatty diarrhea, anti-tTG positive"
+        }
+      ],
+      "key_takeaway": "Kwashiorkor: edema + hypoalbuminemia + hair changes → F-75 phase (stabilization) 7 วัน → F-100 (rehabilitation); ระวัง refeeding syndrome"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 3 ปี พัฒนาการล่าช้า ภาษาล่าช้า: พูดได้แค่ 5-6 คำ ไม่พูดเป็นประโยค 2 คำ สบตาน้อย ชอบเรียงของ หมุนของ ไม่สนใจผู้อื่น ไม่แสดงความรู้สึก ชอบ routine เดิมๆ การได้ยิน ABR ปกติ",
+    "choices": [
+      "A: Intellectual disability",
+      "B: Language delay isolated",
+      "C: Autism spectrum disorder",
+      "D: Sensory processing disorder",
+      "E: Selective mutism"
+    ],
+    "correct_answer": "C",
+    "explanation": "ASD: social communication deficit + restricted repetitive behaviors (เรียงของ, หมุนของ, routine) + ไม่สบตา → ส่ง multidisciplinary evaluation",
+    "detailed_explanation": {
+      "summary": "ASD: social-communication deficit + restricted repetitive behavior",
+      "reason": "DSM-5 ASD criteria: 1) Social communication/interaction deficit (ไม่สบตา, ไม่สนใจ, ไม่แสดงอารมณ์) 2) Restricted/repetitive behaviors ≥2 (เรียงของ, หมุนของ, rigid routine) Onset ก่อนอายุ 3 ปี ABR ปกติ → ไม่ใช่ hearing loss Language delay isolated: social skills ปกติ ส่ง: multidisciplinary (ped dev, SLP, OT, PT) + ABA therapy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intellectual disability",
+          "is_correct": false,
+          "explanation": "ID อาจมีร่วมกับ ASD ได้ แต่ core deficit ที่ social communication = ASD"
+        },
+        {
+          "label": "B",
+          "text": "Language delay isolated",
+          "is_correct": false,
+          "explanation": "มี social deficits + RRB ด้วย → ASD ไม่ใช่ isolated language delay"
+        },
+        {
+          "label": "C",
+          "text": "ASD",
+          "is_correct": true,
+          "explanation": "Social-communication deficit + RRB + ABR ปกติ = ASD → multidisciplinary evaluation"
+        },
+        {
+          "label": "D",
+          "text": "Sensory processing disorder",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ DSM-5 diagnosis; SPD อาจเป็น feature ของ ASD"
+        },
+        {
+          "label": "E",
+          "text": "Selective mutism",
+          "is_correct": false,
+          "explanation": "พูดได้ในบางสถานการณ์ anxiety-based ไม่มี social deficit core"
+        }
+      ],
+      "key_takeaway": "ASD: MCHAT-R/F ที่ 18-24 เดือน + ส่ง early intervention; ABA therapy ≥20 ชม./สัปดาห์ ดีที่สุดถ้าเริ่มก่อน 3 ปี"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 1 วัน ไม่กินนม อาเจียนสีเขียว (bile-stained) ท้องอืดรุนแรง ถ่ายขี้เทา (meconium) ไม่ออกใน 48 ชั่วโมง AXR: air-fluid levels ใน small bowel, colon ไม่มี gas",
+    "choices": [
+      "A: Pyloric stenosis",
+      "B: Hirschsprung disease",
+      "C: Midgut volvulus with malrotation",
+      "D: Meconium ileus",
+      "E: Necrotizing enterocolitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Midgut volvulus: bile-stained vomiting + abdominal distension ทารกแรกเกิด + double bubble ไม่ใช่ → AXR ดู pattern + UGI series → emergency surgery",
+    "detailed_explanation": {
+      "summary": "Midgut volvulus: bile-stained vomit + distension ทารกแรกเกิด → UGI series → surgery ด่วน",
+      "reason": "Malrotation with midgut volvulus: most common surgical emergency ใน newborn ที่มี bile-stained vomiting Pathophysiology: abnormal intestinal rotation → midgut hangs on narrow pedicle → volvulus → ischemia AXR: proximal bowel dilated, distal gasless UGI fluoroscopy: เป็น gold standard → corkscrew duodenum/jejunum การรักษา: Emergency laparotomy (Ladd's procedure) ทันที; ล่าช้า → bowel necrosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pyloric stenosis",
+          "is_correct": false,
+          "explanation": "อาการที่ 3-6 สัปดาห์, non-bilious projectile vomiting"
+        },
+        {
+          "label": "B",
+          "text": "Hirschsprung disease",
+          "is_correct": false,
+          "explanation": "ไม่ถ่าย meconium >48 ชม. + ท้องอืด แต่ bile vomiting น้อยกว่า"
+        },
+        {
+          "label": "C",
+          "text": "Midgut volvulus",
+          "is_correct": true,
+          "explanation": "Bile vomiting + distension ทารกแรกเกิด + proximal dilation + distal gasless → volvulus → emergency surgery"
+        },
+        {
+          "label": "D",
+          "text": "Meconium ileus",
+          "is_correct": false,
+          "explanation": "CF related, AXR: soap bubble appearance"
+        },
+        {
+          "label": "E",
+          "text": "NEC",
+          "is_correct": false,
+          "explanation": "Premature, pneumatosis intestinalis, ไม่ใช่ full-term ปกติ"
+        }
+      ],
+      "key_takeaway": "Bile-stained vomiting ทารกแรกเกิด = emergency → UGI series ทันที; volvulus → Ladd's procedure"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 5 ปี ไข้ 4 วัน ปวดท้องขวาล่าง ปวดมากขึ้นเรื่อยๆ ตรวจ: guarding ขวาล่าง rebound tenderness positive Rovsing sign positive CBC: WBC 18,500 (PMN 88%) CRP 145 อุณหภูมิ 38.8°C",
+    "choices": [
+      "A: Mesenteric lymphadenitis",
+      "B: Acute appendicitis",
+      "C: Intussusception",
+      "D: Meckel's diverticulum",
+      "E: Right lower lobe pneumonia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute appendicitis: RLQ pain + guarding + Rovsing sign + leukocytosis → Alvarado score สูง → ultrasound ยืนยัน → appendectomy",
+    "detailed_explanation": {
+      "summary": "Acute appendicitis: RLQ pain + guarding + Rovsing + WBC↑ → appendectomy",
+      "reason": "Appendicitis เด็ก: อาการเหมือนผู้ใหญ่แต่ perforation เร็วกว่า (อาการ atypical มากกว่า) Alvarado score: Migration + Anorexia + Nausea + RLQ tenderness + Rebound + Fever + WBC > 10k + PMN > 75% Rovsing sign: กด LLQ → ปวด RLQ Pediatric Appendicitis Score (PAS) Diagnosis: Ultrasound (non-radiation) > CT ในเด็ก การรักษา: Appendectomy (laparoscopic)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Mesenteric lymphadenitis",
+          "is_correct": false,
+          "explanation": "ไม่มี guarding/rebound, ไม่มี Rovsing, viral illness"
+        },
+        {
+          "label": "B",
+          "text": "Acute appendicitis",
+          "is_correct": true,
+          "explanation": "RLQ + guarding + rebound + Rovsing + WBC 18k + CRP 145 = appendicitis → appendectomy"
+        },
+        {
+          "label": "C",
+          "text": "Intussusception",
+          "is_correct": false,
+          "explanation": "Colicky pain, sausage-shaped mass, bloody mucoid stool (currant jelly)"
+        },
+        {
+          "label": "D",
+          "text": "Meckel's diverticulum",
+          "is_correct": false,
+          "explanation": "Painless rectal bleeding หรือ obstruction"
+        },
+        {
+          "label": "E",
+          "text": "RLL pneumonia",
+          "is_correct": false,
+          "explanation": "Respiratory symptoms, CXR infiltrate, ไม่มี Rovsing"
+        }
+      ],
+      "key_takeaway": "Appendicitis เด็ก: ultrasound ก่อน CT; Alvarado/PAS score; appendectomy ทันที ป้องกัน perforation"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารก 6 เดือน ร้องไห้แบบชักๆ (colicky) สลับซึม ถ่ายเป็นเลือดปนเมือกสีแดงเข้ม (currant jelly stool) คลำท้องพบ sausage-shaped mass ที่ RUQ AXR: paucity of gas ใน RLQ",
+    "choices": [
+      "A: Acute appendicitis",
+      "B: Intussusception",
+      "C: Volvulus",
+      "D: Hirschsprung disease",
+      "E: Anal fissure"
+    ],
+    "correct_answer": "B",
+    "explanation": "Intussusception: colicky pain + currant jelly stool + sausage-shaped mass → air enema reduction (diagnostic + therapeutic)",
+    "detailed_explanation": {
+      "summary": "Intussusception: colicky pain + currant jelly stool + sausage mass → air enema",
+      "reason": "Intussusception พบบ่อยสุดที่ 3 เดือน - 6 ปี (ileocolic type) Classic triad: colicky pain (สลับซึม) + sausage-shaped mass + currant jelly stool (late sign) Ultrasound: target sign/donut sign = diagnostic Air enema: ทั้ง diagnostic และ therapeutic (reduction สำเร็จ 80-95%) Contraindication enema: peritonitis, perforation → surgery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Appendicitis",
+          "is_correct": false,
+          "explanation": "RLQ pain constant ไม่ colicky, currant jelly ไม่มี"
+        },
+        {
+          "label": "B",
+          "text": "Intussusception",
+          "is_correct": true,
+          "explanation": "Colicky pain + currant jelly + sausage mass = intussusception → air enema"
+        },
+        {
+          "label": "C",
+          "text": "Volvulus",
+          "is_correct": false,
+          "explanation": "Bile vomiting + AXR different pattern"
+        },
+        {
+          "label": "D",
+          "text": "Hirschsprung",
+          "is_correct": false,
+          "explanation": "ไม่ถ่าย meconium ตั้งแต่แรกเกิด ไม่มีฉับพลัน"
+        },
+        {
+          "label": "E",
+          "text": "Anal fissure",
+          "is_correct": false,
+          "explanation": "เลือดสดที่ perianal ปวดตอนถ่าย ไม่มี mass"
+        }
+      ],
+      "key_takeaway": "Intussusception: ultrasound target sign → air enema reduction; ถ้าล้มเหลว/peritonitis → surgical reduction"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 3 สัปดาห์ ผิวเหลือง ตรวจ: total bilirubin 12 mg/dL direct 3.5 mg/dL (>20%) อุจจาระซีด (acholic stool) ปัสสาวะสีเข้ม ตับโต ultrasound: gallbladder ไม่พบ หรือเล็กมาก",
+    "choices": [
+      "A: Neonatal hepatitis",
+      "B: Biliary atresia",
+      "C: Choledochal cyst",
+      "D: ABO incompatibility",
+      "E: Hypothyroidism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Biliary atresia: conjugated hyperbilirubinemia + acholic stool + absent/small gallbladder → Kasai procedure ก่อนอายุ 60 วัน",
+    "detailed_explanation": {
+      "summary": "Biliary atresia: acholic stool + direct bili ↑ + no gallbladder → Kasai procedure ด่วน",
+      "reason": "Biliary atresia: obliteration of extrahepatic bile ducts → bile ไม่ออก → direct hyperbilirubinemia, acholic stool, dark urine Ultrasound: absent/small gallbladder, triangular cord sign Intraoperative cholangiogram: definitive diagnosis การรักษา: Kasai hepatoportoenterostomy ก่อน 60 วัน → ผลดีที่สุด (>60 วัน → poor outcome → liver transplant เร็ว) ถ้าไม่รักษา → cirrhosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Neonatal hepatitis",
+          "is_correct": false,
+          "explanation": "Direct bili สูงได้ แต่ gallbladder ปกติ หรือ acholic stool น้อยกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Biliary atresia",
+          "is_correct": true,
+          "explanation": "Direct bili + acholic stool + absent gallbladder = biliary atresia → Kasai ด่วน ก่อน 60 วัน"
+        },
+        {
+          "label": "C",
+          "text": "Choledochal cyst",
+          "is_correct": false,
+          "explanation": "Cystic dilation bile duct, US พบ cyst"
+        },
+        {
+          "label": "D",
+          "text": "ABO incompatibility",
+          "is_correct": false,
+          "explanation": "Unconjugated hyperbili ใน 24 ชม.แรก, DCT+"
+        },
+        {
+          "label": "E",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "Unconjugated jaundice prolonged, TSH สูง"
+        }
+      ],
+      "key_takeaway": "Biliary atresia: Kasai ก่อน 60 วัน → bile drainage สำเร็จ 80%; ช้า → liver transplant; acholic stool = emergency sign"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 6 สัปดาห์ อาเจียนพุ่ง (projectile vomiting) หลังกินนม ไม่มีสีเขียว ร้องไห้หิว แต่พอกิน → อาเจียนออกหมด น้ำหนักลด คลำพบ olive-shaped mass ที่ RUQ Ultrasound: pyloric muscle thickness 4.5 mm (>3 mm)",
+    "choices": [
+      "A: GERD",
+      "B: Pyloric stenosis",
+      "C: Malrotation",
+      "D: Formula intolerance",
+      "E: Achalasia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pyloric stenosis: projectile non-bilious vomiting 3-6 สัปดาห์ + olive mass + US muscle >3 mm → laparoscopic pyloromyotomy",
+    "detailed_explanation": {
+      "summary": "Pyloric stenosis: 3-6 สัปดาห์ + projectile non-bilious vomit + olive mass → pyloromyotomy",
+      "reason": "Hypertrophic pyloric stenosis: พบใน 3-6 สัปดาห์ เด็กชาย > หญิง (4:1) Pyloric muscle hypertrophy → gastric outlet obstruction Non-bilious (ก่อน ampulla of Vater) projectile vomiting สูตร: hypochloremic hypokalemic metabolic alkalosis (HCl และ K+ สูญเสียทาง vomiting) Ultrasound: pyloric muscle >3 mm หรือ channel >14 mm Pre-op: แก้ electrolyte และ dehydration ก่อน แล้ว laparoscopic pyloromyotomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GERD",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ projectile, เพิ่งกินแล้วพุ่ง, น้ำหนักลด"
+        },
+        {
+          "label": "B",
+          "text": "Pyloric stenosis",
+          "is_correct": true,
+          "explanation": "6 สัปดาห์ + projectile non-bilious + olive mass + US >3 mm = pyloric stenosis → pyloromyotomy"
+        },
+        {
+          "label": "C",
+          "text": "Malrotation",
+          "is_correct": false,
+          "explanation": "Bile vomiting, AXR ผิดปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Formula intolerance",
+          "is_correct": false,
+          "explanation": "ไม่มี structural cause, projectile ไม่บ่อย"
+        },
+        {
+          "label": "E",
+          "text": "Achalasia",
+          "is_correct": false,
+          "explanation": "ทารกน้อยมาก, regurgitation solid ด้วย"
+        }
+      ],
+      "key_takeaway": "Pyloric stenosis: แก้ electrolyte (hypokalemia, alkalosis) ก่อน anesthesia → laparoscopic pyloromyotomy"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 3 ปี ไม่ขึ้นน้ำหนักมา 6 เดือน น้ำหนัก -2 SD ท้องเสียเรื้อรัง อุจจาระมีไขมัน (steatorrhea) ท้องอืด อ่อนเพลีย ตรวจเลือด: anti-tTG IgA 350 U/mL (positive) ทานแป้งสาลีปกติ",
+    "choices": [
+      "A: Cow milk protein allergy",
+      "B: Celiac disease",
+      "C: Pancreatic insufficiency (CF)",
+      "D: Giardiasis",
+      "E: IBD"
+    ],
+    "correct_answer": "B",
+    "explanation": "Celiac disease: anti-tTG IgA positive + chronic diarrhea + steatorrhea + failure to thrive หลังกินแป้งสาลี → gluten-free diet",
+    "detailed_explanation": {
+      "summary": "Celiac disease: anti-tTG IgA ↑ + steatorrhea + FTT → gluten-free diet",
+      "reason": "Celiac disease: immune reaction ต่อ gluten (wheat, barley, rye) → villous atrophy → malabsorption Screening: anti-tTG IgA (>10x ULN = highly specific, ไม่ต้อง biopsy ใน pediatric guidelines ล่าสุด) Diagnosis: anti-tTG IgA positive + compatible symptoms หรือ duodenal biopsy (Marsh ≥2) Clinical: diarrhea, steatorrhea, FTT, iron deficiency anemia, osteopenia การรักษา: Gluten-free diet ตลอดชีวิต",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cow milk protein allergy",
+          "is_correct": false,
+          "explanation": "Reaction ต่อ cow milk protein ไม่ใช่ gluten, anti-tTG ลบ"
+        },
+        {
+          "label": "B",
+          "text": "Celiac disease",
+          "is_correct": true,
+          "explanation": "anti-tTG IgA สูง + steatorrhea + FTT + กินแป้งสาลี = celiac → gluten-free diet"
+        },
+        {
+          "label": "C",
+          "text": "CF",
+          "is_correct": false,
+          "explanation": "Sweat test chloride >60, pulmonary disease, ไม่มี anti-tTG"
+        },
+        {
+          "label": "D",
+          "text": "Giardiasis",
+          "is_correct": false,
+          "explanation": "Stool microscopy/PCR positive, antibiotics cure"
+        },
+        {
+          "label": "E",
+          "text": "IBD",
+          "is_correct": false,
+          "explanation": "Bloody diarrhea, calprotectin สูง, ไม่มี anti-tTG"
+        }
+      ],
+      "key_takeaway": "Celiac: anti-tTG IgA ≥10x ULN = diagnostic ไม่ต้อง biopsy (ESPGHAN 2020); Gluten-free diet ตลอดชีวิต"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 2 วัน ครรภ์ 35 สัปดาห์ หอบ afebrile หายใจเร็ว 72 ครั้ง/นาที กรุ๊น (grunting) อ่อนแรง O2 sat 88% CXR: ground-glass opacity ทั้ง 2 ข้าง air bronchogram",
+    "choices": [
+      "A: Meconium aspiration",
+      "B: Transient tachypnea of newborn",
+      "C: Respiratory distress syndrome (RDS)",
+      "D: Group B Streptococcus pneumonia",
+      "E: Congenital heart disease"
+    ],
+    "correct_answer": "C",
+    "explanation": "RDS: คลอดก่อนกำหนด 35 สัปดาห์ + หอบ + ground-glass + air bronchogram → surfactant deficiency → CPAP ± surfactant",
+    "detailed_explanation": {
+      "summary": "RDS: preterm + ground-glass CXR → surfactant deficiency → CPAP/surfactant",
+      "reason": "RDS (Hyaline membrane disease): surfactant deficiency ใน preterm lung Type II pneumocytes ยังไม่ mature → surfactant ไม่พอ → alveolar collapse CXR: diffuse ground-glass opacity + air bronchogram (bilateral) การรักษา: CPAP (เริ่มต้น) หรือ intubation + surfactant replacement ถ้า severe Prevention: antenatal corticosteroids (betamethasone) ถ้าคลอดก่อน 34 สัปดาห์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Meconium aspiration",
+          "is_correct": false,
+          "explanation": "Post-term หรือ term, asymmetric opacities, meconium-stained fluid"
+        },
+        {
+          "label": "B",
+          "text": "TTN",
+          "is_correct": false,
+          "explanation": "Mild, term/near-term CS, resolves 24-48 ชม., CXR: perihilar streaking"
+        },
+        {
+          "label": "C",
+          "text": "RDS",
+          "is_correct": true,
+          "explanation": "Preterm 35 สัปดาห์ + ground-glass + air bronchogram = RDS → CPAP + surfactant"
+        },
+        {
+          "label": "D",
+          "text": "GBS pneumonia",
+          "is_correct": false,
+          "explanation": "CXR คล้าย RDS แต่ CBC/culture, แม่ GBS positive"
+        },
+        {
+          "label": "E",
+          "text": "CHD",
+          "is_correct": false,
+          "explanation": "CXR cardiomegaly หรือ specific pattern, ไม่มี ground-glass bilateral"
+        }
+      ],
+      "key_takeaway": "RDS: CPAP เป็น first-line; surfactant ถ้าต้องการ FiO2 >40%; antenatal betamethasone ป้องกัน ถ้าคลอดก่อน 34 สัปดาห์"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 36 สัปดาห์ น้ำหนัก 1.8 kg ตรวจพบ O2 sat pre-ductal 98% post-ductal 82% หัวใจ murmur continuous machinery-like ความดัน pulse pressure กว้าง",
+    "choices": [
+      "A: VSD",
+      "B: ASD",
+      "C: Patent ductus arteriosus (PDA)",
+      "D: Tetralogy of Fallot",
+      "E: Coarctation of aorta"
+    ],
+    "correct_answer": "C",
+    "explanation": "PDA: preterm + continuous machinery murmur + wide pulse pressure + oxygen saturation differential (pre > post ductal) → indomethacin หรือ ibuprofen",
+    "detailed_explanation": {
+      "summary": "PDA: preterm + machinery murmur + pre/post-ductal SpO2 difference → indomethacin/ibuprofen",
+      "reason": "PDA: ductus arteriosus ไม่ปิดหลังเกิด → L→R shunt ปกติ: ปิดใน 2-3 วัน (prostaglandin ลด) Preterm: ดักตัสไม่ตอบสนองต่อ oxygen → ปิดช้า อาการ: continuous machinery murmur, bounding pulse (wide pulse pressure), pulmonary edema Pre-ductal sat > post-ductal = R→L shunt through PDA (หรือ CoA) การรักษา: Indomethacin (or ibuprofen) → ปิด PDA ด้วย COX inhibitor (ลด prostaglandin E2)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "VSD",
+          "is_correct": false,
+          "explanation": "Holosystolic murmur LLSB, ไม่มี pre/post ductal difference"
+        },
+        {
+          "label": "B",
+          "text": "ASD",
+          "is_correct": false,
+          "explanation": "Fixed split S2, เงียบ murmur, ไม่มี machinery"
+        },
+        {
+          "label": "C",
+          "text": "PDA",
+          "is_correct": true,
+          "explanation": "Preterm + continuous machinery + wide PP + pre/post ductal SpO2 diff = PDA → indomethacin"
+        },
+        {
+          "label": "D",
+          "text": "TOF",
+          "is_correct": false,
+          "explanation": "Cyanotic, ejection systolic murmur, boot-shaped heart"
+        },
+        {
+          "label": "E",
+          "text": "Coarctation",
+          "is_correct": false,
+          "explanation": "Upper limb BP > lower limb, radio-femoral delay"
+        }
+      ],
+      "key_takeaway": "PDA: indomethacin 0.2 mg/kg (contraindicated ถ้า renal failure, bleeding, IVH >grade 2); surgical ligation ถ้า medical fail"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 38 สัปดาห์ ตรวจพบ cyanosis ที่ปลายนิ้วและปาก (central cyanosis) O2 sat 72% murmur: ejection systolic grade 3/6 ที่ LUSB CXR: boot-shaped heart ปอดไม่มี pulmonary plethora",
+    "choices": [
+      "A: PDA",
+      "B: VSD large",
+      "C: Tetralogy of Fallot",
+      "D: Total anomalous pulmonary venous return",
+      "E: Transposition of great arteries"
+    ],
+    "correct_answer": "C",
+    "explanation": "Tetralogy of Fallot: cyanosis + ejection systolic LUSB + boot-shaped heart + decreased pulmonary vasculature → prostaglandin E1 + surgery (BT shunt/repair)",
+    "detailed_explanation": {
+      "summary": "TOF: cyanosis + boot-shaped heart + decreased pulmonary flow → PGE1 + surgery",
+      "reason": "TOF = 4 components: VSD + overriding aorta + RVOT obstruction + RVH CXR: boot-shaped heart (apex elevated, narrow waist) + decreased pulmonary vascular markings (oligemia) ไม่มี pulmonary plethora Central cyanosis: ชัดตั้งแต่แรกเกิดถ้า severe RVOT Cyanotic spell (tet spell): paroxysmal hypoxia → knee-chest position + morphine + beta-blocker Prostaglandin E1: ถ้า ductal-dependent (severe) → ให้เปิด PDA ชั่วคราว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PDA",
+          "is_correct": false,
+          "explanation": "Acyanotic ส่วนใหญ่, machinery murmur"
+        },
+        {
+          "label": "B",
+          "text": "VSD large",
+          "is_correct": false,
+          "explanation": "Pulmonary plethora, acyanotic"
+        },
+        {
+          "label": "C",
+          "text": "TOF",
+          "is_correct": true,
+          "explanation": "Cyanosis + boot-shaped heart + oligemic lung = TOF → PGE1 + surgical repair"
+        },
+        {
+          "label": "D",
+          "text": "TAPVR",
+          "is_correct": false,
+          "explanation": "Pulmonary plethora + specific CXR patterns (snowman/figure-8)"
+        },
+        {
+          "label": "E",
+          "text": "TGA",
+          "is_correct": false,
+          "explanation": "Cyanosis day 1-2, egg-on-string CXR, PGE1 + balloon atrial septostomy"
+        }
+      ],
+      "key_takeaway": "TOF: PGE1 ถ้า ductal-dependent; Tet spell → knee-chest + morphine + beta-blocker; corrective surgery 3-6 เดือน"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 2 ขวบ ได้ยินเสียง murmur holosystolic grade 3/6 ที่ LLSB ไม่มี cyanosis น้ำหนักขึ้นปกติ ECG ปกติ CXR: cardiomegaly เล็กน้อย pulmonary plethora Echo: VSD perimembranous 5 mm L→R shunt Qp/Qs 1.8",
+    "choices": [
+      "A: ปิดรูเองได้ ติดตาม",
+      "B: Diuretics ทันที",
+      "C: ผ่าตัดปิดรู VSD ทันที",
+      "D: Device closure catheter-based",
+      "E: ให้ digoxin"
+    ],
+    "correct_answer": "A",
+    "explanation": "Moderate VSD (5 mm) ไม่มีอาการ Qp/Qs < 2 ในเด็กเล็ก → ติดตาม; VSD perimembranous ปิดเองได้ 30-40% ใน 2-3 ปี",
+    "detailed_explanation": {
+      "summary": "Moderate VSD ไม่มีอาการ Qp/Qs <2 → ติดตาม; มักปิดเอง",
+      "reason": "VSD perimembranous/muscular: ปิดเองได้บ่อยใน เด็กเล็ก ข้อบ่งชี้ผ่าตัด VSD: Qp/Qs > 2, pulmonary hypertension, heart failure, endocarditis recurrent Qp/Qs 1.8 + ไม่มีอาการ + น้ำหนักขึ้น = ยังไม่ต้องผ่าตัด ติดตาม Echo ทุก 6 เดือน Prophylaxis endocarditis: SBE prophylaxis ก่อน dental procedures (ในบางกรณี)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ติดตาม",
+          "is_correct": true,
+          "explanation": "Qp/Qs 1.8 + ไม่มีอาการ + VSD perimembranous = ติดตาม; ปิดเองได้"
+        },
+        {
+          "label": "B",
+          "text": "Diuretics",
+          "is_correct": false,
+          "explanation": "ใช้เมื่อมี heart failure (tachypnea, poor feeding, FTT)"
+        },
+        {
+          "label": "C",
+          "text": "ผ่าตัด",
+          "is_correct": false,
+          "explanation": "Qp/Qs ยังไม่ถึง 2 + ไม่มีอาการ → ไม่ถึงเวลาผ่าตัด"
+        },
+        {
+          "label": "D",
+          "text": "Device closure",
+          "is_correct": false,
+          "explanation": "สำหรับ muscular VSD หรือ AVSD บางราย"
+        },
+        {
+          "label": "E",
+          "text": "Digoxin",
+          "is_correct": false,
+          "explanation": "ใช้เมื่อมี heart failure ไม่ใช่ routine"
+        }
+      ],
+      "key_takeaway": "VSD: ข้อบ่งชี้ผ่าตัด: Qp/Qs > 2, CHF, FTT, PAH; perimembranous ปิดเองได้ → ติดตาม Echo ทุก 6 เดือน"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 40 สัปดาห์ คลอดปกติ มาตรวจที่ 2 วัน ตรวจร่างกายปกติ ยกเว้น O2 sat 94% ที่มือขวา BP มือขวา 85/55 mmHg ขาซ้าย 65/40 mmHg (BP ต่างกัน >15 mmHg) ชีพจรขา weak",
+    "choices": [
+      "A: PDA",
+      "B: Aortic stenosis",
+      "C: Coarctation of aorta",
+      "D: Interrupted aortic arch",
+      "E: TOF"
+    ],
+    "correct_answer": "C",
+    "explanation": "Coarctation of aorta: BP มือ > ขา (>15 mmHg), radio-femoral delay, weak femoral pulse → prostaglandin E1 + surgery/balloon dilation",
+    "detailed_explanation": {
+      "summary": "CoA: BP arm > leg >15 mmHg + weak femoral pulse → PGE1 + intervention",
+      "reason": "Coarctation of aorta: narrowing ของ aorta มักที่ isthmus (ใกล้ ligamentum arteriosum) Critical CoA: duct-dependent lower body circulation ทารกแรกเกิด: เมื่อ PDA ปิด → lower body ischemia, shock Pre-ductal CoA: SpO2 ขาต่ำกว่ามือ (differential cyanosis) Upper limb BP สูงกว่า lower limb ≥15 mmHg Femoral pulse weak/absent การรักษา: PGE1 เปิด PDA ก่อน + surgical repair หรือ balloon dilation/stenting",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PDA",
+          "is_correct": false,
+          "explanation": "BP ขาต่ำไม่เด่น, machinery murmur"
+        },
+        {
+          "label": "B",
+          "text": "Aortic stenosis",
+          "is_correct": false,
+          "explanation": "เสียง murmur ejection systolic at right sternal border ไม่มี BP differential"
+        },
+        {
+          "label": "C",
+          "text": "Coarctation of aorta",
+          "is_correct": true,
+          "explanation": "BP arm > leg >15 mmHg + weak femoral + ทารกแรกเกิด = CoA → PGE1 + surgery"
+        },
+        {
+          "label": "D",
+          "text": "Interrupted aortic arch",
+          "is_correct": false,
+          "explanation": "คล้าย CoA แต่ critical, ไม่มี BP สูงมาก, shock เร็ว"
+        },
+        {
+          "label": "E",
+          "text": "TOF",
+          "is_correct": false,
+          "explanation": "Central cyanosis, boot-shaped heart, ไม่มี BP differential"
+        }
+      ],
+      "key_takeaway": "CoA: PGE1 เปิด PDA ก่อน → stabilize → balloon dilation (นิยมในทารก) หรือ surgical repair"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 3 ปี น้ำหนัก 14 kg พัฒนาการปกติ มาตรวจสุขภาพ ฉีดวัคซีนครบตามโปรแกรม มีน้องใหม่อายุ 2 เดือน ที่บ้าน ตรวจ: CBC ปกติ Lead level 18 μg/dL (> 10 ถือว่าสูง)",
+    "choices": [
+      "A: ให้ chelation therapy ทันที",
+      "B: ให้คำแนะนำลด lead exposure + ติดตาม blood lead ใน 3 เดือน",
+      "C: ให้ succimer oral chelation",
+      "D: EDTA IV chelation ทันที",
+      "E: ไม่ต้องทำอะไร ระดับต่ำเกินไป"
+    ],
+    "correct_answer": "B",
+    "explanation": "Blood lead 18 μg/dL: ระดับนี้ต้องแนะนำลด exposure (paint, soil, dust) + ติดตาม; chelation เริ่มที่ ≥45 μg/dL (symptomatic ≥70)",
+    "detailed_explanation": {
+      "summary": "Lead 18 μg/dL: แนะนำลด exposure + ติดตาม; chelation ที่ ≥45 μg/dL",
+      "reason": "Blood Lead Level (BLL) management (CDC 2021): ≥3.5 μg/dL = reference value (ต่ำกว่านี้ไม่มี safe level) 10-44 μg/dL: ลด exposure (environmental investigation), nutritional counseling (Ca, Fe, Vit C), ติดตาม 45-69 μg/dL: chelation with succimer (DMSA) + ลด exposure ≥70 μg/dL: IV EDTA + BAL (dimercaprol) ± succimer Lead sources: paint (บ้านเก่า), soil, water pipes, imported toys/ceramics",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chelation ทันที",
+          "is_correct": false,
+          "explanation": "Chelation ที่ BLL ≥45 μg/dL ไม่ใช่ 18"
+        },
+        {
+          "label": "B",
+          "text": "แนะนำลด exposure + ติดตาม",
+          "is_correct": true,
+          "explanation": "BLL 18 μg/dL → ลด exposure + nutritional + ติดตาม 3 เดือน"
+        },
+        {
+          "label": "C",
+          "text": "Succimer oral",
+          "is_correct": false,
+          "explanation": "Succimer ที่ BLL 45-69 μg/dL"
+        },
+        {
+          "label": "D",
+          "text": "EDTA IV",
+          "is_correct": false,
+          "explanation": "IV EDTA ± BAL ที่ BLL ≥70 μg/dL"
+        },
+        {
+          "label": "E",
+          "text": "ไม่ต้องทำอะไร",
+          "is_correct": false,
+          "explanation": "BLL 18 ยังต้องลด exposure; ไม่มี safe level for children"
+        }
+      ],
+      "key_takeaway": "Lead poisoning: <45 → ลด exposure + ติดตาม; 45-69 → succimer; ≥70 → EDTA+BAL; ไม่มี safe BLL ในเด็ก"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 7 ปี ไข้ 39°C ปวดข้อเข่าซ้ายบวมแดงร้อน 2 วัน ไม่มีอุบัติเหตุ WBC 22,000 CRP 180 mg/L ESR 78 mm/hr ตรวจข้อ: effusion เยอะ aspiration ได้น้ำข้อขุ่น WBC 85,000 PMN 95% Gram stain: gram-positive cocci in clusters",
+    "choices": [
+      "A: Reactive arthritis",
+      "B: JIA",
+      "C: Septic arthritis",
+      "D: Osteomyelitis",
+      "E: Rheumatic fever"
+    ],
+    "correct_answer": "C",
+    "explanation": "Septic arthritis: ข้อแดงบวมร้อนเฉียบพลัน + WBC สูง + synovial fluid WBC > 50,000 PMN + gram-positive cocci → S. aureus → IV antibiotics + surgical drainage",
+    "detailed_explanation": {
+      "summary": "Septic arthritis: synovial WBC >50k + gram+ cocci → S. aureus → IV antibiotics + drainage",
+      "reason": "Septic arthritis เป็น orthopedic emergency ถ้าไม่รักษา → joint destruction Kocher criteria: 4 ปัจจัย (fever >38.5, non-weight bearing, WBC >12k, ESR >40) ยิ่งมีมาก ยิ่งน่าเชื่อ septic arthritis Kocher 4/4 = 99.6% probability Synovial fluid WBC > 50,000 = septic arthritis (JIA: < 50,000, reactive < 25,000) Most common organism: S. aureus การรักษา: IV nafcillin/oxacillin หรือ vancomycin (ถ้า MRSA) + arthrotomy (surgical drainage)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reactive arthritis",
+          "is_correct": false,
+          "explanation": "Synovial WBC < 50k, หลัง infection, culture ลบ"
+        },
+        {
+          "label": "B",
+          "text": "JIA",
+          "is_correct": false,
+          "explanation": "Chronic, synovial WBC < 50k, ไม่มี gram stain positive"
+        },
+        {
+          "label": "C",
+          "text": "Septic arthritis",
+          "is_correct": true,
+          "explanation": "Synovial WBC 85k PMN95% + gram+ cocci = septic arthritis → IV antibiotics + drainage"
+        },
+        {
+          "label": "D",
+          "text": "Osteomyelitis",
+          "is_correct": false,
+          "explanation": "Bone pain, MRI bone marrow signal, synovial WBC ต่ำกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Rheumatic fever",
+          "is_correct": false,
+          "explanation": "Migratory arthritis, throat infection ก่อน, ASO positive"
+        }
+      ],
+      "key_takeaway": "Septic arthritis: Kocher criteria + synovial WBC >50k → IV antibiotics + surgical drainage ทันที; S. aureus most common"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 5 ปี ไข้ 38°C ปวดขาข้างขวา เดินกะเผลก 3 วัน ไม่มีอุบัติเหตุ ตรวจ: ปวดที่ proximal tibia เรียบๆ ไม่บวมชัด แต่ tenderness ชัดมาก WBC 16,000 CRP 95 ESR 55 MRI: bone marrow signal change ที่ proximal tibia metaphysis",
+    "choices": [
+      "A: Legg-Calvé-Perthes disease",
+      "B: Acute osteomyelitis",
+      "C: Ewing sarcoma",
+      "D: Transient synovitis",
+      "E: Stress fracture"
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute osteomyelitis: ไข้ + bone tenderness metaphysis + MRI bone marrow signal change + WBC/CRP สูง → IV antibiotics ± surgical drainage",
+    "detailed_explanation": {
+      "summary": "Acute osteomyelitis: metaphysis tenderness + MRI signal + fever → IV antibiotics",
+      "reason": "Osteomyelitis hematogenous: most common ใน เด็ก Location: metaphysis (long bone ที่มี blood flow ช้า) Organisms: S. aureus (most common), Kingella kingae (< 4 ปี) MRI: most sensitive imaging (bone marrow edema, abscess) Blood culture positive 50% IV antibiotics: nafcillin/oxacillin (MRSA: vancomycin) Surgical drainage ถ้า: subperiosteal/soft tissue abscess, no response 48 ชม.",
+      "choices": [
+        {
+          "label": "A",
+          "text": "LCP disease",
+          "is_correct": false,
+          "explanation": "Avascular necrosis femoral head, hip joint ไม่ใช่ tibia, ไม่มีไข้"
+        },
+        {
+          "label": "B",
+          "text": "Acute osteomyelitis",
+          "is_correct": true,
+          "explanation": "ไข้ + metaphysis tenderness + MRI change + WBC/CRP ↑ = osteomyelitis → IV antibiotics"
+        },
+        {
+          "label": "C",
+          "text": "Ewing sarcoma",
+          "is_correct": false,
+          "explanation": "เด็กโต 10-20 ปี, CXR onion-skin periosteal reaction, less acute"
+        },
+        {
+          "label": "D",
+          "text": "Transient synovitis",
+          "is_correct": false,
+          "explanation": "Hip, CRP/WBC ต่ำกว่า, self-limited 1-2 สัปดาห์"
+        },
+        {
+          "label": "E",
+          "text": "Stress fracture",
+          "is_correct": false,
+          "explanation": "ประวัติ repetitive activity, ไม่มีไข้"
+        }
+      ],
+      "key_takeaway": "Osteomyelitis: MRI gold standard; IV nafcillin (MRSA→vancomycin) 4-6 สัปดาห์; oral switch ถ้า improving >48-72 ชม."
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 3 ปี ชักเกร็งกระตุก 5 นาที หยุดเอง ระหว่างมีไข้ 39.5°C การชักเกิดครั้งแรก หลังชักหลับ ไม่มีอาการ focal neurologic deficit ตื่นมาปกติ ประวัติ: ไม่มีชักก่อน ครอบครัวไม่มีประวัติ",
+    "choices": [
+      "A: Epilepsy - ให้ AED ทันที",
+      "B: Meningitis - LP ทันที",
+      "C: Febrile seizure (simple) - ยาลดไข้และ reassure",
+      "D: Febrile seizure (complex) - EEG",
+      "E: ให้ diazepam prophylaxis ทุกครั้งที่มีไข้"
+    ],
+    "correct_answer": "C",
+    "explanation": "Simple febrile seizure: <15 นาที generalized ครั้งเดียวใน 24 ชม. ไม่มี focal neurologic signs → reassure + ยาลดไข้; ไม่ต้อง AED หรือ EEG",
+    "detailed_explanation": {
+      "summary": "Simple febrile seizure: short + generalized + once → reassure + paracetamol; ไม่ต้อง AED",
+      "reason": "Febrile seizure: ชักระหว่างไข้ ≥38°C อายุ 6 เดือน - 5 ปี Simple: generalized, < 15 นาที, 1 ครั้งใน 24 ชม., ไม่มี post-ictal focal deficit Complex: focal, >15 นาที, >1 ครั้งใน 24 ชม. Simple FS: benign, risk recurrence 30%, risk epilepsy <2% การรักษา: ยาลดไข้ + reassure parents; ไม่ต้อง AED, EEG, imaging, LP (ถ้าตรวจได้และไม่มี meningeal signs)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "AED ทันที",
+          "is_correct": false,
+          "explanation": "Simple FS ไม่ต้อง AED; recurrence risk ต่ำ epilepsy risk ต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "LP ทันที",
+          "is_correct": false,
+          "explanation": "LP ถ้ามี meningeal signs หรือ suspicious; simple FS ตรวจร่างกายปกติ ไม่จำเป็น"
+        },
+        {
+          "label": "C",
+          "text": "Simple FS - reassure + paracetamol",
+          "is_correct": true,
+          "explanation": "<15 นาที generalized ครั้งเดียว = simple FS → reassure + ยาลดไข้"
+        },
+        {
+          "label": "D",
+          "text": "Complex FS - EEG",
+          "is_correct": false,
+          "explanation": "ชักครั้งนี้เป็น simple FS ไม่ใช่ complex"
+        },
+        {
+          "label": "E",
+          "text": "Diazepam ทุกครั้งมีไข้",
+          "is_correct": false,
+          "explanation": "Prophylaxis rectal/oral diazepam ไม่แนะนำ routine สำหรับ simple FS"
+        }
+      ],
+      "key_takeaway": "Simple febrile seizure: reassure + ยาลดไข้; ไม่ต้อง AED/EEG/CT; LP ถ้า meningeal signs; ความเสี่ยง epilepsy <2%"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 38 สัปดาห์ ช่วงคลอดมี late decelerations ทารกออกมา limp, gasping, HR 60 bpm ตรวจ: ไม่มีการหายใจเอง ซีดมาก Apgar 1 นาที = 2",
+    "choices": [
+      "A: เริ่ม CPAP ทันที",
+      "B: เริ่ม bag-mask ventilation ทันที",
+      "C: ให้ epinephrine ทันที",
+      "D: ให้ surfactant ทันที",
+      "E: ประเมินอีก 30 วินาที"
+    ],
+    "correct_answer": "B",
+    "explanation": "Neonatal resuscitation: ไม่หายใจ/gasping + HR 60 bpm → เริ่ม positive pressure ventilation (PPV) ทันที เป็น most critical step",
+    "detailed_explanation": {
+      "summary": "Neonatal resuscitation: ไม่หายใจ → PPV ทันที (BVM 40-60 bpm)",
+      "reason": "Neonatal resuscitation (NRP): Initial steps (30 วินาที): warm, dry, stimulate, suction PRN ถ้า ไม่หายใจ/gasping หรือ HR <100 → Positive Pressure Ventilation (PPV) 40-60 bpm ทันที ถ้า HR < 60 หลัง PPV 30 วินาที → chest compressions + PPV (3:1) ถ้า HR < 60 หลัง compressions 60 วินาที → epinephrine IV/ET สำคัญ: Ventilation เป็น most important intervention ใน neonatal resuscitation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CPAP ทันที",
+          "is_correct": false,
+          "explanation": "CPAP สำหรับ breathing spontaneously แต่ grunting/retracting ไม่ใช่ gasping/apnea"
+        },
+        {
+          "label": "B",
+          "text": "PPV/BVM ทันที",
+          "is_correct": true,
+          "explanation": "Gasping + HR 60 → PPV ทันที (ไม่รอ); Ventilation = most critical NRP step"
+        },
+        {
+          "label": "C",
+          "text": "Epinephrine ทันที",
+          "is_correct": false,
+          "explanation": "Epi หลัง PPV + compressions ไม่ตอบสนอง"
+        },
+        {
+          "label": "D",
+          "text": "Surfactant",
+          "is_correct": false,
+          "explanation": "Surfactant สำหรับ RDS preterm ไม่ใช่ acute resuscitation"
+        },
+        {
+          "label": "E",
+          "text": "ประเมิน 30 วินาที",
+          "is_correct": false,
+          "explanation": "ทำ initial steps 30 วินาที แต่ถ้า HR <100 + ไม่หายใจ → PPV ทันที"
+        }
+      ],
+      "key_takeaway": "NRP: ไม่หายใจ/gasping หรือ HR <100 → PPV ทันที; HR <60 หลัง PPV → chest compressions; HR <60 หลัง compress → epinephrine"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 10 ปี เจ็บหน้าอก ปวดมากขึ้นเมื่อหายใจเข้าลึก นอนราบแล้วปวดมากขึ้น นั่งโน้มตัวไปข้างหน้าปวดน้อยลง ไข้ 38°C ได้ยิน friction rub CBC: WBC 14,000 CRP 95 ECG: ST elevation diffuse (saddle-shape), PR depression",
+    "choices": [
+      "A: ACS/STEMI",
+      "B: Pericarditis",
+      "C: Myocarditis",
+      "D: Pleuritis",
+      "E: Pneumonia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pericarditis: positional chest pain + friction rub + diffuse saddle-shape ST elevation + PR depression + ไข้ → NSAIDs + colchicine",
+    "detailed_explanation": {
+      "summary": "Pericarditis: friction rub + saddle ST elevation + PR depression → NSAIDs + colchicine",
+      "reason": "Pericarditis: inflammation ของ pericardium ส่วนใหญ่ viral (coxsackievirus, echovirus) Chest pain: pleuritic, positional (นั่งโน้มหน้า ดีขึ้น) ECG: diffuse ST elevation (saddle-shape) + PR depression (pathognomonic) Friction rub: best heard in expiration, sitting up-forward Troponin อาจสูงเล็กน้อย (myopericarditis) การรักษา: NSAIDs (ibuprofen/aspirin) + Colchicine 3 เดือน (ลด recurrence 50%)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "STEMI",
+          "is_correct": false,
+          "explanation": "Focal ST elevation (LBBB-like), troponin สูงมาก, ไม่มี friction rub"
+        },
+        {
+          "label": "B",
+          "text": "Pericarditis",
+          "is_correct": true,
+          "explanation": "Positional pain + friction rub + saddle ST + PR depression = pericarditis → NSAIDs + colchicine"
+        },
+        {
+          "label": "C",
+          "text": "Myocarditis",
+          "is_correct": false,
+          "explanation": "Troponin สูง + heart failure, ECG ต่างกัน"
+        },
+        {
+          "label": "D",
+          "text": "Pleuritis",
+          "is_correct": false,
+          "explanation": "Pleuritic pain แต่ ECG ปกติ ไม่มี friction rub pericardial"
+        },
+        {
+          "label": "E",
+          "text": "Pneumonia",
+          "is_correct": false,
+          "explanation": "CXR infiltrate, ไม่มี ECG change หรือ friction rub"
+        }
+      ],
+      "key_takeaway": "Pericarditis: NSAIDs + colchicine 3 เดือน; ห้าม exercise 3 เดือน; cardiac tamponade = pericardiocentesis"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 8 ปี ไข้ 38.5°C ปวดข้อเข่าซ้าย แล้วย้ายไปข้อเข้าขวา (migratory) แล้วไปที่ข้อเท้า แต่ละข้อเป็น 1-3 วัน ก่อนหน้ามีเจ็บคอ 3 สัปดาห์ ASO 850 IU/mL (สูง) CRP 95 ผล throat culture: GAS positive",
+    "choices": [
+      "A: Reactive arthritis (Reiter)",
+      "B: Acute rheumatic fever",
+      "C: Juvenile idiopathic arthritis",
+      "D: Septic arthritis",
+      "E: Viral arthritis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute rheumatic fever: migratory polyarthritis + ประวัติ GAS pharyngitis + ASO สูง + Jones criteria → penicillin + aspirin",
+    "detailed_explanation": {
+      "summary": "ARF: migratory arthritis + GAS pharyngitis + ASO↑ → penicillin + aspirin",
+      "reason": "Acute Rheumatic Fever (ARF): immune response ต่อ GAS pharyngitis Jones Criteria (Major): carditis, polyarthritis, chorea, erythema marginatum, subcutaneous nodules (Minor): fever, elevated ESR/CRP, prolonged PR, arthralgia (ถ้าไม่นับ arthritis เป็น major) ต้องการ: 2 major หรือ 1 major + 2 minor + evidence of GAS infection (culture/ASO) การรักษา: Penicillin (eradicate GAS) + Aspirin (arthritis/carditis) + prophylaxis penicillin นาน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reactive arthritis",
+          "is_correct": false,
+          "explanation": "GI/GU infection ไม่ใช่ pharyngitis; triad urethritis+conjunctivitis+arthritis"
+        },
+        {
+          "label": "B",
+          "text": "Acute rheumatic fever",
+          "is_correct": true,
+          "explanation": "Migratory polyarthritis + GAS pharyngitis + ASO↑ = ARF → penicillin + aspirin"
+        },
+        {
+          "label": "C",
+          "text": "JIA",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ migratory acute, ASO ไม่สูง"
+        },
+        {
+          "label": "D",
+          "text": "Septic arthritis",
+          "is_correct": false,
+          "explanation": "Single hot joint, WBC synovial >50k"
+        },
+        {
+          "label": "E",
+          "text": "Viral arthritis",
+          "is_correct": false,
+          "explanation": "ASO ต่ำ, self-limited, GAS negative"
+        }
+      ],
+      "key_takeaway": "ARF: penicillin benzathine IM ตัด GAS + aspirin; secondary prophylaxis penicillin V oral ทุกวัน นาน 5-10 ปี ขึ้นกับ carditis"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 5 ปี น้ำหนัก 18 kg มาตรวจสุขภาพ พัฒนาการปกติ วัคซีนครบตามเกณฑ์ แต่ยังไม่ได้รับ varicella vaccine วันนี้แพทย์จะให้ MMR booster ผู้ปกครองถาม: สามารถให้ varicella พร้อมกับ MMR ได้เพียงไร",
+    "choices": [
+      "A: ไม่ได้ ต้องเว้น 1 เดือน",
+      "B: ได้ ฉีดพร้อมกันได้คนละตำแหน่ง",
+      "C: ไม่ได้ ต้องเว้น 2 สัปดาห์",
+      "D: ได้ แต่ต้องฉีดแขนเดียวกัน",
+      "E: ไม่ได้ varicella ต้องฉีดก่อน MMR"
+    ],
+    "correct_answer": "B",
+    "explanation": "Live vaccines (MMR + Varicella) สามารถให้พร้อมกันได้ คนละตำแหน่ง หรือใช้ MMRV (combined) ถ้าไม่ได้พร้อมกัน ต้องเว้น ≥28 วัน",
+    "detailed_explanation": {
+      "summary": "Live vaccines พร้อมกัน: ได้ (คนละตำแหน่ง) หรือเว้น ≥28 วัน",
+      "reason": "Live attenuated vaccines (MMR, Varicella, Yellow fever): ถ้าให้พร้อมกัน = ได้ คนละตำแหน่ง ถ้าไม่พร้อมกัน = ต้องเว้น ≥28 วัน (ป้องกัน immune interference) Inactivated vaccines: สามารถให้พร้อมหรือไม่พร้อมกันก็ได้ MMRV (ProQuad): MMR + Varicella ใน single injection; ข้อควรระวัง: febrile seizure risk ใน 12-15 เดือน สูงกว่า MMR+V separate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เว้น 1 เดือน",
+          "is_correct": false,
+          "explanation": "เว้น 28 วัน ถ้าไม่ได้ให้พร้อมกัน แต่ถ้าพร้อมกัน ไม่ต้องเว้น"
+        },
+        {
+          "label": "B",
+          "text": "ได้ พร้อมกันคนละตำแหน่ง",
+          "is_correct": true,
+          "explanation": "Live vaccines 2 ชนิด: ให้พร้อมกันคนละตำแหน่ง ตัดปัญหา immune interference"
+        },
+        {
+          "label": "C",
+          "text": "เว้น 2 สัปดาห์",
+          "is_correct": false,
+          "explanation": "ถ้าไม่พร้อมกัน ต้องเว้น ≥28 วัน (4 สัปดาห์) ไม่ใช่ 2 สัปดาห์"
+        },
+        {
+          "label": "D",
+          "text": "ได้ แขนเดียวกัน",
+          "is_correct": false,
+          "explanation": "ต้องคนละตำแหน่ง (ระยะห่าง ≥1 นิ้ว)"
+        },
+        {
+          "label": "E",
+          "text": "Varicella ก่อน MMR",
+          "is_correct": false,
+          "explanation": "ไม่มีลำดับก่อนหลัง ถ้าพร้อมกันได้เลย"
+        }
+      ],
+      "key_takeaway": "Live vaccines (MMR + Varicella): พร้อมกันได้คนละตำแหน่ง; ถ้าไม่พร้อมกัน → เว้น ≥28 วัน"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารก 3 เดือน พ่อแม่กังวลว่าลูกไม่ยิ้ม ตอบสนองต่อเสียงปกติ ยิ้มตอบสนองแค่ 3-4 สัปดาห์นี้ สะดุ้งเมื่อได้ยินเสียงดัง ตาตาม object ได้ ตรวจ: ปกติ tone ปกติ",
+    "choices": [
+      "A: Autism spectrum disorder",
+      "B: Normal development",
+      "C: Visual impairment",
+      "D: Hearing loss",
+      "E: Cerebral palsy early"
+    ],
+    "correct_answer": "B",
+    "explanation": "Developmental milestone 3 เดือน: social smile เริ่ม 6-8 สัปดาห์ ที่ 3 เดือนควรมีแล้ว; ตาตาม object, สะดุ้งเสียง = ปกติ → reassure",
+    "detailed_explanation": {
+      "summary": "Normal development ที่ 3 เดือน: social smile + visual tracking + startle to sound",
+      "reason": "Developmental milestones (3 months): Social: social smile (6-8 สัปดาห์), coos Gross motor: head control, moro reflex เริ่มลด Fine motor: hand fisting ลด Visual: tracks through 180°, fixes on face Hearing: startle to loud noise, quiets to familiar voice Social smile เพิ่งเริ่ม 3-4 สัปดาห์ = เริ่มที่ 6-8 สัปดาห์ ปกติ ตาตาม + สะดุ้งเสียง ปกติ → reassure parents",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASD",
+          "is_correct": false,
+          "explanation": "ไม่วินิจฉัย ASD ที่ 3 เดือน; milestone ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Normal development",
+          "is_correct": true,
+          "explanation": "Social smile 6-8 สัปดาห์ ปกติ; visual tracking + startle = ปกติที่ 3 เดือน"
+        },
+        {
+          "label": "C",
+          "text": "Visual impairment",
+          "is_correct": false,
+          "explanation": "ตาตาม object ได้ → visual function ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Hearing loss",
+          "is_correct": false,
+          "explanation": "สะดุ้งเสียงดัง → hearing ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Cerebral palsy early",
+          "is_correct": false,
+          "explanation": "Tone ปกติ, milestone ปกติ"
+        }
+      ],
+      "key_takeaway": "Social smile เริ่ม 6-8 สัปดาห์ (ปกติ); ที่ 3 เดือน: social smile + visual tracking + coos = normal; ตรวจ at 6-9-12 เดือน"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกอายุ 6 เดือน น้ำหนัก 5.8 kg (แรกเกิด 3.5 kg) ความสูงตามเส้นปกติ แต่น้ำหนักลดลง 2 สัปดาห์ที่ผ่านมา กินนมแม่เพียงอย่างเดียว อุจจาระ 1-2 ครั้ง/วัน ตรวจ: lethargy เล็กน้อย ตาโหล (sunken eyes) CRT 3 วินาที",
+    "choices": [
+      "A: ปกติ น้ำหนักขึ้นน้อยเป็นเรื่องธรรมดา",
+      "B: Failure to thrive ส่ง lactation consultant + oral rehydration",
+      "C: ภาวะขาดน้ำ moderate → ORS + ติดตาม",
+      "D: ภาวะขาดน้ำ severe → IV fluid rehydration",
+      "E: Add solid food ทันที"
+    ],
+    "correct_answer": "D",
+    "explanation": "Severe dehydration: sunken eyes + lethargy + CRT >3 วินาที + น้ำหนักลด → IV fluid 20 mL/kg NSS bolus ทันที",
+    "detailed_explanation": {
+      "summary": "Severe dehydration: lethargy + sunken eyes + CRT >3 sec → IV fluid ทันที",
+      "reason": "Dehydration assessment WHO: Mild (<5%): thirsty, restless Moderate (5-10%): sunken eyes, decreased skin turgor, CRT 2-3 sec Severe (>10%): lethargic, very sunken eyes, no tears, CRT >3 sec, weak pulse การรักษา severe: IV NSS 20 mL/kg bolus ทันที (repeat PRN) แล้วประเมิน → ต่อด้วย maintenance + deficit หลังจาก stabilize → ค่อย investigate FTT",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ปกติ",
+          "is_correct": false,
+          "explanation": "Lethargy + sunken eyes + CRT 3 sec = dehydration ไม่ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "FTT + ORT",
+          "is_correct": false,
+          "explanation": "Severe dehydration ต้อง IV ไม่ใช่ ORS"
+        },
+        {
+          "label": "C",
+          "text": "Moderate dehydration + ORS",
+          "is_correct": false,
+          "explanation": "Lethargy = severe ไม่ใช่ moderate; severe → IV ไม่ใช่ ORS"
+        },
+        {
+          "label": "D",
+          "text": "Severe dehydration → IV fluid",
+          "is_correct": true,
+          "explanation": "Lethargy + sunken + CRT >3 sec = severe → IV NSS 20 mL/kg ทันที"
+        },
+        {
+          "label": "E",
+          "text": "Add solid food",
+          "is_correct": false,
+          "explanation": "Solid food เริ่ม 6 เดือน แต่ acute crisis ต้องแก้ dehydration ก่อน"
+        }
+      ],
+      "key_takeaway": "Severe dehydration: IV NSS 20 mL/kg bolus → reassess; ทำซ้ำถ้ายังไม่ดีขึ้น; ค่อยต่อด้วย maintenance"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 3 ปี ร้องไห้มาก เจ็บข้อมือขวา ไม่ยอมยกแขน งอเล็กน้อย (elbow slightly flexed) ประวัติ: ถูกผู้ใหญ่จับมือดึงเพื่อพาไป AXR: ปกติ",
+    "choices": [
+      "A: Supracondylar fracture",
+      "B: Radial head subluxation (Nursemaid's elbow)",
+      "C: Distal radius fracture",
+      "D: Shoulder dislocation",
+      "E: Osteomyelitis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nursemaid's elbow: ประวัติดึงมือ + ข้อศอกงอเล็กน้อย + X-ray ปกติ → hyperpronation หรือ supination-flexion maneuver",
+    "detailed_explanation": {
+      "summary": "Nursemaid's elbow: ดึงมือ + ศอกงอเล็กน้อย + X-ray ปกติ → reduction maneuver",
+      "reason": "Radial head subluxation (Nursemaid's elbow): พบในเด็ก 1-4 ปี Mechanism: axial pull ทำให้ annular ligament slip เข้าไปใน radial head fossa ข้อศอกงอเล็กน้อย + pronation, ไม่ยอมใช้แขน X-ray ปกติ (subluxation ไม่เห็นใน X-ray ปกติ) Reduction: Hyperpronation technique (success 90%+) หรือ Supination-flexion technique เสียง/feel ได้ยิน 'click' → เด็กใช้แขนได้ทันที",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supracondylar fracture",
+          "is_correct": false,
+          "explanation": "Fall on outstretched hand, ปวดมาก, AXR abnormal"
+        },
+        {
+          "label": "B",
+          "text": "Nursemaid's elbow",
+          "is_correct": true,
+          "explanation": "ดึงมือ + ศอกงอ + AXR ปกติ = radial head subluxation → hyperpronation maneuver"
+        },
+        {
+          "label": "C",
+          "text": "Distal radius fracture",
+          "is_correct": false,
+          "explanation": "ปวดที่ wrist ไม่ใช่ elbow, AXR fracture"
+        },
+        {
+          "label": "D",
+          "text": "Shoulder dislocation",
+          "is_correct": false,
+          "explanation": "ปวดที่ shoulder ไม่ใช่ elbow"
+        },
+        {
+          "label": "E",
+          "text": "Osteomyelitis",
+          "is_correct": false,
+          "explanation": "ไข้ ปวดกดที่ metaphysis WBC สูง"
+        }
+      ],
+      "key_takeaway": "Nursemaid's elbow: hyperpronation maneuver → click ได้ยิน/รู้สึก → เด็กใช้แขนได้ทันที; ไม่ต้อง immobilize"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 7 ปี ปัสสาวะบ่อนมาก ดื่มน้ำมาก 2 เดือน กระหายน้ำ กลางดึกลุกปัสสาวะ ไม่ได้เบาหวาน urine osmolality 90 mOsm/kg serum osmolality 302 mOsm/kg เมื่อทำ water deprivation test แล้วให้ DDAVP → urine osmolality เพิ่มเป็น 650 mOsm/kg",
+    "choices": [
+      "A: Primary polydipsia (psychogenic)",
+      "B: Central diabetes insipidus",
+      "C: Nephrogenic diabetes insipidus",
+      "D: Type 1 DM",
+      "E: Renal tubular acidosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Central DI: urine dilute + serum hyperosmolality + ตอบสนอง DDAVP (urine concentrate) → confirm central → DDAVP treatment",
+    "detailed_explanation": {
+      "summary": "Central DI: ตอบสนอง DDAVP (urine concentrate) → DDAVP treatment",
+      "reason": "Water deprivation test แล้วให้ DDAVP interpretation: Central DI: urine ไม่ concentrate หลัง dehydration แต่ concentrate หลัง DDAVP (>50% increase) Nephrogenic DI: urine ไม่ concentrate ทั้งหลัง dehydration และหลัง DDAVP Psychogenic polydipsia: urine concentrate หลัง dehydration แล้ว (serum Osm ไม่สูง) ผู้ป่วยนี้: serum Osm 302 (สูง) + urine dilute 90 → ไม่ใช่ psychogenic DDAVP ให้แล้ว Uosm 650 = ตอบสนอง → Central DI",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Primary polydipsia",
+          "is_correct": false,
+          "explanation": "Serum Osm ต่ำหรือปกติ (overdrinking dilutes serum), urine concentrate หลัง dehydration"
+        },
+        {
+          "label": "B",
+          "text": "Central DI",
+          "is_correct": true,
+          "explanation": "Serum Osm สูง + urine dilute + ตอบสนอง DDAVP = central DI → DDAVP maintenance"
+        },
+        {
+          "label": "C",
+          "text": "Nephrogenic DI",
+          "is_correct": false,
+          "explanation": "ไม่ตอบสนอง DDAVP"
+        },
+        {
+          "label": "D",
+          "text": "Type 1 DM",
+          "is_correct": false,
+          "explanation": "FBG สูง glycosuria ไม่ใช่"
+        },
+        {
+          "label": "E",
+          "text": "RTA",
+          "is_correct": false,
+          "explanation": "Metabolic acidosis, ไม่ใช่ DI"
+        }
+      ],
+      "key_takeaway": "Central DI: DDAVP (desmopressin) intranasal/oral; ค้นหาสาเหตุ (craniopharyngioma, LCH, trauma) ด้วย MRI brain"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 3 ปี ไม่พูด ไม่ชี้บอก ไม่เล่นสมมุติ (symbolic play) ไม่เดินตาม คนอื่น ไม่สบตา ตรวจ ABR ปกติ การได้ยินปกติ พ่อแม่กังวล",
+    "choices": [
+      "A: Normal development",
+      "B: Language delay isolated",
+      "C: Autism spectrum disorder",
+      "D: Intellectual disability",
+      "E: Selective mutism"
+    ],
+    "correct_answer": "C",
+    "explanation": "ASD: ที่ 3 ปี ต้องพูดเป็นประโยค 2-3 คำแล้ว + social play + joint attention; ไม่ชี้ ไม่เล่นสมมุติ ไม่สบตา → ASD ส่ง multidisciplinary",
+    "detailed_explanation": {
+      "summary": "ASD ที่ 3 ปี: ไม่ชี้ ไม่เล่นสมมุติ ไม่สบตา → multidisciplinary + early intervention",
+      "reason": "Red flags ASD ที่ 18 เดือน: ไม่ชี้ ไม่โบกมือ ไม่สบตา ไม่พูดคำเดี่ยว Red flags ที่ 24 เดือน: ไม่พูด 2 คำ ไม่เล่น symbolic Red flags ที่ 3 ปี: ที่กล่าวมาทั้งหมด ยังคงอยู่ ASD diagnosis: ≥2 RRB + social-communication deficit ABR ปกติ → hearing ปกติ; ไม่ใช่ isolated language delay เพราะมี social deficit ด้วย ส่ง: developmental pediatrician + SLP + OT + ABA therapy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal",
+          "is_correct": false,
+          "explanation": "3 ปีต้องพูดประโยค 3 คำ เล่นสมมุติ ชี้บอกได้แล้ว"
+        },
+        {
+          "label": "B",
+          "text": "Language delay isolated",
+          "is_correct": false,
+          "explanation": "มี social deficit ด้วย (ไม่ชี้ ไม่สบตา) = ASD ไม่ใช่ isolated"
+        },
+        {
+          "label": "C",
+          "text": "ASD",
+          "is_correct": true,
+          "explanation": "Social-communication deficit + restricted behavior + hearing ปกติ = ASD → early intervention"
+        },
+        {
+          "label": "D",
+          "text": "ID",
+          "is_correct": false,
+          "explanation": "Core deficit เป็น social communication → ASD; ID อาจมีร่วม"
+        },
+        {
+          "label": "E",
+          "text": "Selective mutism",
+          "is_correct": false,
+          "explanation": "Selective mutism = พูดได้บางสถานการณ์ anxiety-based; ที่นี่ไม่พูดเลย"
+        }
+      ],
+      "key_takeaway": "ASD red flags: ไม่ชี้ ไม่โบก ไม่สบตา ที่ 18 เดือน → ส่ง multidisciplinary ทันที; early intervention <3 ปี = ผลลัพธ์ดีที่สุด"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 3 เดือน ถูกแม่เลี้ยงเดี่ยวพามา ร้องไห้ไม่หยุด มีรอยฟกช้ำหลายแห่งที่หน้าอกและหลัง บริเวณต่างๆ มีอายุต่างกัน CXR: ซี่โครงหัก posterior rib fractures หลายซี่ หัวกระโหลก normal Skeletal survey: metaphyseal fractures",
+    "choices": [
+      "A: Osteogenesis imperfecta",
+      "B: Rickets",
+      "C: Non-accidental injury (child abuse)",
+      "D: VKDB",
+      "E: Leukemia"
+    ],
+    "correct_answer": "C",
+    "explanation": "Non-accidental injury: posterior rib fractures + metaphyseal fractures + bruises ต่างอายุ ในทารก + ประวัติไม่ชัด = classic child abuse → report + CT brain",
+    "detailed_explanation": {
+      "summary": "Non-accidental injury: posterior rib fractures + metaphyseal fractures ในทารก → child abuse",
+      "reason": "Child abuse (NAI) red flags: Posterior rib fractures (ต้องใช้ force บีบอก ไม่เกิดจาก CPR ปกติ) Metaphyseal corner fractures (Classic Metaphyseal Lesions = CML) = highly specific for NAI Bruises ต่างอายุ (multi-stage healing) = ถูกทำร้ายหลายครั้ง Shaken baby syndrome: SDH + retinal hemorrhage + metaphyseal fractures การรักษา: Report to child protective services ทันที + CT brain + ophthalmology consult",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Osteogenesis imperfecta",
+          "is_correct": false,
+          "explanation": "Blue sclera, multiple fractures แต่ ไม่มี bruises ต่างอายุ; genetic"
+        },
+        {
+          "label": "B",
+          "text": "Rickets",
+          "is_correct": false,
+          "explanation": "Metaphyseal widening แต่ไม่ใช่ fracture pattern แบบนี้"
+        },
+        {
+          "label": "C",
+          "text": "Non-accidental injury",
+          "is_correct": true,
+          "explanation": "Posterior ribs + metaphyseal fractures + bruises ต่างอายุ ในทารก = NAI → report + CT brain"
+        },
+        {
+          "label": "D",
+          "text": "VKDB",
+          "is_correct": false,
+          "explanation": "Bleeding disorder, PT ยาว, fractures ไม่ใช่ feature"
+        },
+        {
+          "label": "E",
+          "text": "Leukemia",
+          "is_correct": false,
+          "explanation": "Bone pain, CBC abnormal, pancytopenia"
+        }
+      ],
+      "key_takeaway": "NAI: posterior rib fractures + CML (metaphyseal) = pathognomonic; ส่ง CT brain (SDH) + ophthalmology (retinal hemorrhage); report child protective services ทันที"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 2 ปี ไข้ ไม่กินนม เหงือกบวมแดงมาก ปากเป็นแผลเยอะ ตุ่มน้ำใสที่ริมฝีปากและรอบปาก ร้องไห้ตลอด กลืนเจ็บ ตรวจ: lymphadenopathy ที่ submandibular ไข้ 40°C",
+    "choices": [
+      "A: Aphthous stomatitis",
+      "B: Herpangina",
+      "C: Primary herpetic gingivostomatitis",
+      "D: HFMD",
+      "E: Candidal stomatitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Primary HSV gingivostomatitis: ตุ่มน้ำรอบปาก + เหงือกอักเสบรุนแรง + submandibular LN + เด็กเล็กครั้งแรก → acyclovir 5 วัน ถ้า < 72 ชม.",
+    "detailed_explanation": {
+      "summary": "HSV gingivostomatitis: vesicles รอบปาก + gingival inflammation + submandibular LN → acyclovir",
+      "reason": "Primary HSV-1 gingivostomatitis: พบบ่อยในเด็ก 6 เดือน - 5 ปี ครั้งแรก ไม่มี antibody Vesicles/ulcers ที่ gingival, labial, perioral Cervical lymphadenopathy การรักษา: Acyclovir oral (ถ้า < 72 ชม.) ลด duration Supportive: ยาชาทาปาก (lidocaine), analgesic, hydration Recurrent HSV: herpes labialis (cold sores) เล็กกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aphthous stomatitis",
+          "is_correct": false,
+          "explanation": "Painful ulcers ใน mucosa ไม่มี vesicle ไม่มี gingival involvement"
+        },
+        {
+          "label": "B",
+          "text": "Herpangina",
+          "is_correct": false,
+          "explanation": "Ulcers เฉพาะ posterior pharynx, Enterovirus, ไม่มีที่ perioral"
+        },
+        {
+          "label": "C",
+          "text": "HSV gingivostomatitis",
+          "is_correct": true,
+          "explanation": "Perioral vesicles + severe gingival + LN + เด็กเล็ก primary = HSV → acyclovir < 72 ชม."
+        },
+        {
+          "label": "D",
+          "text": "HFMD",
+          "is_correct": false,
+          "explanation": "Oral + palm/sole/buttock; ไม่มี severe gingival"
+        },
+        {
+          "label": "E",
+          "text": "Candidal stomatitis",
+          "is_correct": false,
+          "explanation": "White plaques ไม่ใช่ vesicles, รูปแบบต่างกัน"
+        }
+      ],
+      "key_takeaway": "HSV gingivostomatitis: acyclovir 20 mg/kg 4 ครั้ง/วัน 5 วัน ถ้า < 72 ชม.; ระวัง dehydration จาก poor intake"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  }
+]

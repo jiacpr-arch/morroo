@@ -1,0 +1,267 @@
+import { createClient } from "./server";
+import { createAdminClient } from "./admin";
+import type { McqSubject, McqQuestion, McqAudience } from "../types-mcq";
+
+/**
+ * Live counts for the question bank, split by audience and readiness.
+ *
+ * `ready`    = status 'active'  → published, students can practise these now.
+ * `building` = status 'review'  → AI-generated, pending expert review (i.e.
+ *              "กำลังสร้าง/ตรวจเฉลย"), not yet served to students.
+ *
+ * Uses the service-role admin client so the `review` rows (hidden from anon by
+ * RLS) are counted too. Cheap: 4 HEAD count queries, no row payloads.
+ */
+export type QuestionBankStats = {
+  nlReady: number;
+  nlBuilding: number;
+  boardReady: number;
+  boardBuilding: number;
+  totalReady: number;
+  totalBuilding: number;
+};
+
+export async function getQuestionBankStats(): Promise<QuestionBankStats> {
+  const supabase = createAdminClient();
+
+  const countBy = async (
+    audience: McqAudience,
+    status: "active" | "review"
+  ): Promise<number> => {
+    const { count, error } = await supabase
+      .from("mcq_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("audience", audience)
+      .eq("status", status);
+    if (error) {
+      console.error(`Error counting ${audience}/${status} questions:`, error);
+      return 0;
+    }
+    return count ?? 0;
+  };
+
+  const [nlReady, nlBuilding, boardReady, boardBuilding] = await Promise.all([
+    countBy("student", "active"),
+    countBy("student", "review"),
+    countBy("board", "active"),
+    countBy("board", "review"),
+  ]);
+
+  return {
+    nlReady,
+    nlBuilding,
+    boardReady,
+    boardBuilding,
+    totalReady: nlReady + boardReady,
+    totalBuilding: nlBuilding + boardBuilding,
+  };
+}
+
+export async function getMcqSubjects(
+  examType?: "NL1" | "NL2",
+  opts?: { audience?: McqAudience; boardSpecialty?: string }
+): Promise<McqSubject[]> {
+  const supabase = await createClient();
+  // Default to student audience — board callers must opt in explicitly via
+  // queries-board.ts. This keeps existing /nl pages 100% backward-compatible.
+  const audience = opts?.audience ?? "student";
+  let query = supabase
+    .from("mcq_subjects")
+    .select("*")
+    .eq("audience", audience)
+    .order("name_th", { ascending: true });
+
+  if (audience === "student" && examType) {
+    // exam_type column allows 'NL1' | 'NL2' | 'both' — include 'both' when filtering
+    query = query.in("exam_type", [examType, "both"]);
+  }
+
+  if (audience === "board" && opts?.boardSpecialty) {
+    query = query.eq("board_specialty", opts.boardSpecialty);
+  }
+
+  const { data, error } = await query;
+
+  if (error) {
+    console.error("Error fetching MCQ subjects:", error);
+    return [];
+  }
+  return (data as McqSubject[]) || [];
+}
+
+export async function getMcqQuestions(options?: {
+  subjectId?: string;
+  subjectIds?: string[];
+  examType?: string;
+  limit?: number;
+  randomize?: boolean;
+  audience?: McqAudience;
+  boardSpecialty?: string;
+  boardSection?: string;
+  boardTopic?: string;
+  boardAgeGroup?: "peds" | "adult" | "mixed";
+}): Promise<McqQuestion[]> {
+  const supabase = await createClient();
+  // Default audience filter — guards /nl flows from picking up board rows
+  const audience = options?.audience ?? "student";
+  let query = supabase
+    .from("mcq_questions")
+    .select("*, mcq_subjects(name, name_th, icon)")
+    .eq("status", "active")
+    .eq("audience", audience);
+
+  if (options?.subjectId) {
+    query = query.eq("subject_id", options.subjectId);
+  } else if (options?.subjectIds && options.subjectIds.length > 0) {
+    query = query.in("subject_id", options.subjectIds);
+  }
+  if (audience === "student" && options?.examType) {
+    query = query.eq("exam_type", options.examType);
+  }
+  if (audience === "board") {
+    if (options?.boardSpecialty) query = query.eq("board_specialty", options.boardSpecialty);
+    if (options?.boardSection) query = query.eq("board_section", options.boardSection);
+    if (options?.boardTopic) query = query.eq("board_topic", options.boardTopic);
+    if (options?.boardAgeGroup) query = query.eq("board_age_group", options.boardAgeGroup);
+  }
+
+  const limit = options?.limit || 50;
+  query = query.limit(limit);
+
+  const { data, error } = await query;
+
+  if (error) {
+    console.error("Error fetching MCQ questions:", error);
+    return [];
+  }
+
+  let questions = (data as McqQuestion[]) || [];
+
+  // Shuffle if randomize
+  if (options?.randomize) {
+    questions = questions.sort(() => Math.random() - 0.5);
+  }
+
+  return questions;
+}
+
+export async function getMcqQuestion(
+  id: string,
+  opts?: { audience?: McqAudience }
+): Promise<McqQuestion | null> {
+  const supabase = await createClient();
+  const audience = opts?.audience ?? "student";
+  const { data, error } = await supabase
+    .from("mcq_questions")
+    .select("*, mcq_subjects(name, name_th, icon)")
+    .eq("id", id)
+    .eq("status", "active")
+    .eq("audience", audience)
+    .single();
+
+  if (error) {
+    console.error("Error fetching MCQ question:", error);
+    return null;
+  }
+  return data as McqQuestion;
+}
+
+export async function getFreeAttemptsCount(
+  userId: string,
+  subjectId?: string
+): Promise<number> {
+  const supabase = await createClient();
+  let query = supabase
+    .from("mcq_attempts")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", userId);
+
+  if (subjectId) {
+    // Join with mcq_questions to filter by subject
+    const { data: qids } = await supabase
+      .from("mcq_questions")
+      .select("id")
+      .eq("subject_id", subjectId)
+      .eq("status", "active");
+
+    const ids = (qids ?? []).map((q: { id: string }) => q.id);
+    if (ids.length === 0) return 0;
+    query = query.in("question_id", ids);
+  }
+
+  const { count } = await query;
+  return count ?? 0;
+}
+
+export async function getMcqSubjectCounts(
+  opts?: { audience?: McqAudience }
+): Promise<Record<string, number>> {
+  const supabase = await createClient();
+  const audience = opts?.audience ?? "student";
+  const counts: Record<string, number> = {};
+  const CHUNK = 1000;
+  for (let from = 0; ; from += CHUNK) {
+    const { data, error } = await supabase
+      .from("mcq_questions")
+      .select("subject_id")
+      .eq("status", "active")
+      .eq("audience", audience)
+      .range(from, from + CHUNK - 1);
+    if (error || !data || data.length === 0) break;
+    for (const row of data) {
+      counts[row.subject_id] = (counts[row.subject_id] || 0) + 1;
+    }
+    if (data.length < CHUNK) break;
+  }
+  return counts;
+}
+
+/** Get count + metadata + difficulty breakdown of AI-generated questions added today */
+export async function getTodayNewQuestions(): Promise<{
+  count: number;
+  difficulty: { easy: number; medium: number; hard: number };
+  subjectId: string | null;
+  subjectNameTh: string | null;
+  subjectIcon: string | null;
+}> {
+  const supabase = await createClient();
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+
+  const { data, error } = await supabase
+    .from("mcq_questions")
+    .select("subject_id, difficulty, mcq_subjects(name_th, icon)")
+    .eq("status", "active")
+    .eq("exam_source", "AI-generated-daily")
+    .gte("created_at", todayStart.toISOString());
+
+  if (error || !data || data.length === 0) {
+    return {
+      count: 0,
+      difficulty: { easy: 0, medium: 0, hard: 0 },
+      subjectId: null,
+      subjectNameTh: null,
+      subjectIcon: null,
+    };
+  }
+
+  // Count by difficulty
+  const difficulty = { easy: 0, medium: 0, hard: 0 };
+  for (const row of data) {
+    const d = (row as { difficulty: string }).difficulty;
+    if (d === "easy") difficulty.easy++;
+    else if (d === "hard") difficulty.hard++;
+    else difficulty.medium++;
+  }
+
+  const first = data[0] as McqQuestion;
+  const subject = first.mcq_subjects;
+
+  return {
+    count: data.length,
+    difficulty,
+    subjectId: first.subject_id,
+    subjectNameTh: subject?.name_th ?? null,
+    subjectIcon: subject?.icon ?? null,
+  };
+}
