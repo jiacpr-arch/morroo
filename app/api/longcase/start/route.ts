@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { getLongCaseFull, startLongCaseSession } from "@/lib/supabase/queries-longcase";
+import {
+  getLongCaseFull,
+  getLatestLongCaseAttempt,
+  startLongCaseSession,
+  retryLongCaseSession,
+} from "@/lib/supabase/queries-longcase";
+import type { LongCaseSession } from "@/lib/types";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -21,24 +27,7 @@ export async function POST(request: NextRequest) {
   const expires = profile?.membership_expires_at ? new Date(profile.membership_expires_at) : null;
   const hasActivePlan = profile?.membership_type !== "free" && expires && expires > now;
 
-  // Free users get 1 Long Case per month
-  if (!hasActivePlan) {
-    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
-    const { count } = await supabase
-      .from("long_case_sessions")
-      .select("id", { count: "exact", head: true })
-      .eq("user_id", user.id)
-      .gte("started_at", startOfMonth);
-
-    if ((count ?? 0) >= 1) {
-      return NextResponse.json(
-        { error: "ฟรี 1 เคส/เดือน — อัปเกรดเพื่อเล่นไม่จำกัด" },
-        { status: 403 }
-      );
-    }
-  }
-
-  const { caseId } = await request.json();
+  const { caseId, retry } = await request.json();
   if (!caseId) {
     return NextResponse.json({ error: "Missing caseId" }, { status: 400 });
   }
@@ -48,7 +37,61 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Case not found" }, { status: 404 });
   }
 
-  const session = await startLongCaseSession(caseId, user.id);
+  let session: LongCaseSession | null = null;
+  let resumed = false;
+
+  if (retry) {
+    // Retaking a case is a paid-member feature
+    if (!hasActivePlan) {
+      return NextResponse.json(
+        { error: "ทำซ้ำเคสเดิมได้เฉพาะสมาชิก — อัปเกรดเพื่อปลดล็อก" },
+        { status: 403 }
+      );
+    }
+
+    const result = await retryLongCaseSession(caseId, user.id);
+    if (!result.ok) {
+      if (result.reason === "no_prior_attempt") {
+        return NextResponse.json(
+          { error: "ยังไม่เคยทำเคสนี้ — กดเริ่มสอบแบบปกติได้เลย" },
+          { status: 400 }
+        );
+      }
+      return NextResponse.json({ error: "ไม่สามารถสร้าง session ได้" }, { status: 500 });
+    }
+    session = result.session;
+    resumed = result.resumed;
+  } else {
+    // Resuming your own existing session is always allowed, on any plan
+    try {
+      session = await getLatestLongCaseAttempt(caseId, user.id);
+    } catch {
+      session = null;
+    }
+    if (session) {
+      resumed = true;
+    } else {
+      if (!hasActivePlan) {
+        // Free users get 1 new Long Case per month (retry rows don't count)
+        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+        const { count } = await supabase
+          .from("long_case_sessions")
+          .select("id", { count: "exact", head: true })
+          .eq("user_id", user.id)
+          .eq("attempt_number", 1)
+          .gte("started_at", startOfMonth);
+
+        if ((count ?? 0) >= 1) {
+          return NextResponse.json(
+            { error: "ฟรี 1 เคส/เดือน — อัปเกรดเพื่อเล่นไม่จำกัด" },
+            { status: 403 }
+          );
+        }
+      }
+      session = await startLongCaseSession(caseId, user.id);
+    }
+  }
+
   if (!session) {
     return NextResponse.json({ error: "ไม่สามารถสร้าง session ได้" }, { status: 500 });
   }
@@ -58,6 +101,7 @@ export async function POST(request: NextRequest) {
     sessionId: session.id,
     patientInfo: longCase.patient_info,
     phase: session.phase,
-    alreadyStarted: !!session.started_at,
+    alreadyStarted: resumed,
+    attemptNumber: session.attempt_number,
   });
 }

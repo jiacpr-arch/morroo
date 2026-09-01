@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
   // Verify the session belongs to this user and is completed
   const { data: session, error: sessionErr } = await supabase
     .from("long_case_sessions")
-    .select("id, case_id, user_id, completed_at")
+    .select("id, case_id, user_id, completed_at, attempt_number")
     .eq("id", sessionId)
     .single();
 
@@ -152,7 +152,8 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Fetch updated coin balance so the UI can animate "+10 coins"
+  // Fetch updated coin balance so the UI can animate "+10 coins".
+  // The trigger only pays on the first attempt of a case.
   const { data: profile } = await admin
     .from("profiles")
     .select("meq_coins")
@@ -161,7 +162,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({
     success: true,
-    coins_awarded: 10,
+    coins_awarded: (session.attempt_number ?? 1) === 1 ? 10 : 0,
     meq_coins: profile?.meq_coins ?? null,
   });
 }

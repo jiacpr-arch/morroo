@@ -34,6 +34,11 @@ function LongCaseSessionInner() {
   const [phase, setPhase] = useState<Phase>("history");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [caseId, setCaseId] = useState<string | null>(null);
+  const [attemptNumber, setAttemptNumber] = useState(1);
+  const [retryLoading, setRetryLoading] = useState(false);
+  const [retryError, setRetryError] = useState("");
+  const [retryUpsell, setRetryUpsell] = useState(false);
 
   // History chat
   const [chatInput, setChatInput] = useState("");
@@ -88,6 +93,8 @@ function LongCaseSessionInner() {
         setSession(data);
         setLc(data.long_case);
         setPhase(data.phase || "history");
+        setCaseId(data.case_id || null);
+        setAttemptNumber(data.attempt_number || 1);
         if (data.history_chat?.length) setChatMessages(data.history_chat);
         if (data.pe_selected?.length) { setPeSelected(data.pe_selected); revealPe(data.pe_selected); }
         if (data.lab_ordered?.length) { setLabOrdered(data.lab_ordered); revealLabs(data.lab_ordered); }
@@ -731,7 +738,7 @@ function LongCaseSessionInner() {
         )}
 
         {/* === REWARDS BANNER === */}
-        {(phase === "done" || scores !== null) && scores && coinsInfo && (
+        {(phase === "done" || scores !== null) && scores && coinsInfo && coinsInfo.total_awarded > 0 && (
           <div className="rounded-xl border-2 border-amber-400 bg-gradient-to-r from-amber-50 to-yellow-50 p-5">
             <div className="flex items-center gap-4">
               <div className="shrink-0 rounded-full bg-amber-100 p-3">
@@ -763,6 +770,9 @@ function LongCaseSessionInner() {
         {(phase === "done" || scores !== null) && scores && (
           <div className="rounded-xl border-2 border-green-400 bg-white p-6 space-y-5">
             <div className="text-center">
+              {attemptNumber > 1 && (
+                <p className="text-xs text-gray-400 mb-1">ครั้งที่ {attemptNumber}</p>
+              )}
               <div className="text-5xl font-bold text-green-600">{scores.score_total_pct}%</div>
               <p className="text-gray-600 mt-1">คะแนนรวม</p>
               <div className={`inline-block mt-2 px-3 py-1 rounded-full text-sm font-semibold ${
@@ -810,9 +820,54 @@ function LongCaseSessionInner() {
               </div>
             )}
 
-            <Button onClick={() => router.push("/longcase")} className="w-full" variant="outline">
-              กลับไปเลือกเคสใหม่
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Button
+                onClick={async () => {
+                  if (!caseId) return;
+                  setRetryLoading(true);
+                  setRetryError("");
+                  setRetryUpsell(false);
+                  try {
+                    const res = await fetch("/api/longcase/start", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ caseId, retry: true }),
+                    });
+                    const data = await res.json();
+                    if (!res.ok) {
+                      setRetryError(data.error || "ไม่สามารถเริ่มใหม่ได้");
+                      setRetryUpsell(res.status === 403);
+                      setRetryLoading(false);
+                      return;
+                    }
+                    // Full reload so every phase state starts fresh
+                    window.location.href = `/longcase/session?id=${data.sessionId}`;
+                  } catch {
+                    setRetryError("เกิดข้อผิดพลาด กรุณาลองใหม่");
+                    setRetryLoading(false);
+                  }
+                }}
+                disabled={retryLoading || !caseId}
+                className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+              >
+                {retryLoading ? (
+                  <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> กำลังเตรียมเคส...</>
+                ) : (
+                  "ทำเคสนี้อีกครั้ง"
+                )}
+              </Button>
+              <Button onClick={() => router.push("/longcase")} className="w-full" variant="outline">
+                กลับไปเลือกเคสใหม่
+              </Button>
+            </div>
+            {retryError && (
+              <p className="text-xs text-red-500 text-center">
+                {retryError}
+                {retryUpsell && (
+                  <>{" "}<a href="/pricing" className="underline text-amber-600">ดูแพ็กเกจ</a></>
+                )}
+              </p>
+            )}
           </div>
         )}
 
@@ -820,6 +875,7 @@ function LongCaseSessionInner() {
         {(phase === "done" || scores !== null) && scores && sessionId && (
           <FeedbackCard
             sessionId={sessionId}
+            coinsEligible={attemptNumber === 1}
             initialSubmitted={feedbackSubmitted}
             onSubmitted={(_, balance) => {
               setFeedbackSubmitted(true);

@@ -15,6 +15,8 @@ const DIFFICULTY_OPTIONS: { value: DifficultyVote; label: string; emoji: string 
 
 interface FeedbackCardProps {
   sessionId: string;
+  // Coins are only awarded on the first attempt of a case
+  coinsEligible?: boolean;
   initialSubmitted?: boolean;
   onSubmitted?: (coinsAwarded: number, totalCoins: number | null) => void;
 }
@@ -57,6 +59,7 @@ function StarPicker({
 
 export default function FeedbackCard({
   sessionId,
+  coinsEligible = true,
   initialSubmitted = false,
   onSubmitted,
 }: FeedbackCardProps) {
@@ -103,7 +106,7 @@ export default function FeedbackCard({
         return;
       }
       setSubmitted(true);
-      onSubmitted?.(data.coins_awarded ?? 10, data.meq_coins ?? null);
+      onSubmitted?.(data.coins_awarded ?? 0, data.meq_coins ?? null);
     } catch {
       setError("เกิดข้อผิดพลาด กรุณาลองใหม่");
     } finally {
@@ -118,9 +121,11 @@ export default function FeedbackCard({
         <p className="font-semibold text-green-800">
           ขอบคุณสำหรับ feedback! 🙏
         </p>
-        <p className="text-sm text-green-700 inline-flex items-center gap-1.5">
-          <Coins className="h-4 w-4" /> ได้รับ +10 coins เข้ากระเป๋าแล้ว
-        </p>
+        {coinsEligible && (
+          <p className="text-sm text-green-700 inline-flex items-center gap-1.5">
+            <Coins className="h-4 w-4" /> ได้รับ +10 coins เข้ากระเป๋าแล้ว
+          </p>
+        )}
       </div>
     );
   }
@@ -130,7 +135,7 @@ export default function FeedbackCard({
       <div>
         <h3 className="font-bold text-amber-800 flex items-center gap-2">
           <Coins className="h-5 w-5 text-amber-600" />
-          ให้ feedback เคสนี้ — รับ +10 coins
+          {coinsEligible ? "ให้ feedback เคสนี้ — รับ +10 coins" : "ให้ feedback เคสนี้"}
         </h3>
         <p className="text-sm text-gray-500 mt-1">
           ช่วยเราปรับปรุงเคส ใช้เวลาแค่ 30 วินาที
@@ -213,7 +218,7 @@ export default function FeedbackCard({
         {submitting ? (
           <><Loader2 className="h-4 w-4 animate-spin" /> กำลังส่ง...</>
         ) : (
-          <><Coins className="h-4 w-4" /> ส่ง feedback + รับ 10 coins</>
+          <><Coins className="h-4 w-4" /> {coinsEligible ? "ส่ง feedback + รับ 10 coins" : "ส่ง feedback"}</>
         )}
       </Button>
     </div>

@@ -73,6 +73,7 @@ export interface LongCaseSession {
   id: string;
   case_id: string;
   user_id: string;
+  attempt_number: number;
   phase: "history" | "pe" | "lab" | "ddx" | "management" | "examiner" | "done";
   history_chat: { role: "user" | "assistant"; content: string }[];
   pe_selected: string[];

@@ -151,9 +151,11 @@ ${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "น
         completed_at: new Date().toISOString(),
       });
 
-      // Coins awarded by DB trigger — surface the breakdown to the UI
-      const coin_base = 20;
-      const coin_bonus = pct >= 70 ? 10 : 0;
+      // Coins awarded by DB trigger — surface the breakdown to the UI.
+      // The trigger only pays on the first attempt, so mirror that here.
+      const firstAttempt = (session.attempt_number ?? 1) === 1;
+      const coin_base = firstAttempt ? 20 : 0;
+      const coin_bonus = firstAttempt && pct >= 70 ? 10 : 0;
       const { data: profile } = await supabase
         .from("profiles")
         .select("meq_coins")
