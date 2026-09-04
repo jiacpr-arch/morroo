@@ -11,6 +11,9 @@ import { consumeSSE } from "@/lib/sse";
 import { matchResult } from "@/lib/longcase-match";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import FeedbackCard from "./FeedbackCard";
+import { DictationButton, ReadReplyButton, VoiceSettings, useLongCaseVoice } from "./LongCaseVoice";
+import { appendDictation } from "./device-speech";
+import { PatientConversation } from "./PatientConversation";
 
 type Phase = LongCaseSession["phase"];
 
@@ -32,6 +35,9 @@ function LongCaseSessionInner() {
   const [, setSession] = useState<LongCaseSession | null>(null);
   const [lc, setLc] = useState<Partial<LongCaseFull> | null>(null);
   const [phase, setPhase] = useState<Phase>("history");
+  const voice = useLongCaseVoice(`${sessionId}:${phase}`);
+  const [dictating, setDictating] = useState(false);
+  const [conversing, setConversing] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [caseId, setCaseId] = useState<string | null>(null);
@@ -44,6 +50,8 @@ function LongCaseSessionInner() {
   const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
   const [chatLoading, setChatLoading] = useState(false);
+  const chatRequest = useRef<AbortController | null>(null);
+  useEffect(() => () => { chatRequest.current?.abort(); }, [sessionId]);
   const chatScrollRef = useRef<HTMLDivElement>(null);
   const chatLastMsgRef = useRef<HTMLDivElement>(null);
 
@@ -162,6 +170,7 @@ function LongCaseSessionInner() {
   }, [phase, sessionId, labKeys.length]);
 
   async function savePhase(newPhase: Phase, extra?: Record<string, unknown>) {
+    voice.stop();
     await fetch("/api/longcase/session", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -170,9 +179,15 @@ function LongCaseSessionInner() {
     setPhase(newPhase);
   }
 
-  async function sendChat() {
-    if (!chatInput.trim() || chatLoading) return;
-    const userMsg = { role: "user" as const, content: chatInput.trim() };
+  async function sendChat(spokenText?: string, fromConversation = false): Promise<string | null> {
+    const text = (spokenText ?? chatInput).trim();
+    if (!text || chatRequest.current || chatLoading || dictating || (!fromConversation && conversing)) return null;
+    const controller = new AbortController();
+    chatRequest.current = controller;
+    const timeout = setTimeout(() => controller.abort(), 90_000);
+    voice.stop();
+    const readReply = voice.prepareReply();
+    const userMsg = { role: "user" as const, content: text };
     const newMessages = [...chatMessages, userMsg];
     setChatMessages(newMessages);
     setChatInput("");
@@ -190,22 +205,30 @@ function LongCaseSessionInner() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [userMsg] }),
+        signal: controller.signal,
       });
       const { error: streamErr } = await consumeSSE(res, render);
       if (streamErr) reportAiFailure();
-      else if (aiText) reportAiSuccess();
+      else if (aiText) {
+        reportAiSuccess();
+        if (!fromConversation) readReply(aiText, `history-${newMessages.length}`);
+      }
       if (!aiText) {
         setChatMessages(prev => [...prev.slice(0, -1), {
           role: "assistant",
           content: streamErr || "ขออภัย ระบบขัดข้องชั่วคราว ลองถามใหม่อีกครั้งนะคะ",
         }]);
       }
+      return streamErr ? null : aiText || null;
     } catch {
       setChatMessages(prev => [...prev.slice(0, -1), {
         role: "assistant",
         content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ",
       }]);
+      return null;
     } finally {
+      clearTimeout(timeout);
+      if (chatRequest.current === controller) chatRequest.current = null;
       setChatLoading(false);
     }
   }
@@ -246,6 +269,8 @@ function LongCaseSessionInner() {
   }
 
   async function startExaminer() {
+    voice.stop();
+    const readReply = voice.prepareReply();
     setExamLoading(true);
     setExaminerStarted(true);
     let aiText = "";
@@ -263,7 +288,7 @@ function LongCaseSessionInner() {
       });
       const { error: streamErr } = await consumeSSE(res, render);
       if (streamErr) reportAiFailure();
-      else if (aiText) reportAiSuccess();
+      else if (aiText) { reportAiSuccess(); readReply(aiText, "examiner-0"); }
       if (!aiText) {
         setExamMessages([{
           role: "assistant",
@@ -278,7 +303,9 @@ function LongCaseSessionInner() {
   }
 
   async function sendExamChat() {
-    if (!examInput.trim() || examLoading) return;
+    if (!examInput.trim() || examLoading || scoringLoading || dictating) return;
+    voice.stop();
+    const readReply = voice.prepareReply();
     const userMsg = { role: "user" as const, content: examInput.trim() };
     const newMessages = [...examMessages, userMsg];
     setExamMessages(newMessages);
@@ -300,7 +327,7 @@ function LongCaseSessionInner() {
       });
       const { error: streamErr } = await consumeSSE(res, render);
       if (streamErr) reportAiFailure();
-      else if (aiText) reportAiSuccess();
+      else if (aiText) { reportAiSuccess(); readReply(aiText, `examiner-${newMessages.length}`); }
       if (!aiText) {
         setExamMessages(prev => [...prev.slice(0, -1), {
           role: "assistant",
@@ -318,6 +345,7 @@ function LongCaseSessionInner() {
   }
 
   async function requestScore() {
+    voice.stop();
     setScoringLoading(true);
     setScoreError("");
     try {
@@ -435,6 +463,12 @@ function LongCaseSessionInner() {
           </div>
         )}
 
+        <VoiceSettings voice={voice} disabled={conversing || dictating || chatLoading || examLoading || scoringLoading} />
+        {voice.speakingId && !conversing && (
+          <Button type="button" variant="outline" size="sm" onClick={voice.stop}>หยุดเสียงทั้งหมด</Button>
+        )}
+        {voice.error && <p role="status" className="text-sm text-amber-800">{voice.error}</p>}
+
         {/* === HISTORY === */}
         {phase === "history" && (
           <div className="rounded-xl border border-amber-200 bg-white p-5 space-y-4">
@@ -442,6 +476,11 @@ function LongCaseSessionInner() {
               <MessageSquare className="h-5 w-5" /> ซักประวัติ
             </h2>
             <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด &ldquo;เสร็จแล้ว&rdquo;</p>
+            <PatientConversation key={`${sessionId}:conversation`} voice={voice}
+              disabled={dictating || chatLoading || !!chatInput.trim()}
+              onActiveChange={setConversing} onAsk={text => sendChat(text, true)}
+              onDraft={text => setChatInput(current => appendDictation(current, text))} />
+            {!!chatInput.trim() && !conversing && <p className="text-xs text-gray-500">ส่งหรือล้างข้อความในช่องพิมพ์ก่อนเริ่มโหมดสนทนา</p>}
             <div ref={chatScrollRef} className="space-y-3 max-h-80 overflow-y-auto">
               {chatMessages.map((m, i) => (
                 <div
@@ -455,7 +494,10 @@ function LongCaseSessionInner() {
                       : "bg-gray-100 text-gray-800"
                   }`}>
                     {m.role === "assistant" && <p className="text-xs font-semibold text-gray-500 mb-1">👤 ผู้ป่วย</p>}
-                    {m.content}
+                    <p className="whitespace-pre-wrap">{m.content}</p>
+                    {m.role === "assistant" && (
+                      <div><ReadReplyButton voice={voice} text={m.content} id={`history-${i}`} disabled={conversing || dictating || chatLoading} /></div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -464,17 +506,21 @@ function LongCaseSessionInner() {
             <div className="flex gap-2">
               <Textarea
                 rows={2}
+                aria-label="คำถามซักประวัติ"
                 value={chatInput}
+                disabled={conversing}
                 onChange={e => setChatInput(e.target.value)}
                 placeholder="ถามผู้ป่วย เช่น เจ็บที่ไหน เจ็บมากี่วัน..."
                 onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(); } }}
                 className="flex-1 resize-none"
               />
-              <Button onClick={sendChat} disabled={chatLoading} size="icon" className="bg-amber-500 hover:bg-amber-600 h-auto">
+              <Button onClick={() => void sendChat()} aria-label="ส่งคำถามซักประวัติ" disabled={conversing || chatLoading || dictating || !chatInput.trim()} size="icon" className="bg-amber-500 hover:bg-amber-600 h-auto">
                 <Send className="h-4 w-4" />
               </Button>
             </div>
-            <Button onClick={() => savePhase("pe")} disabled={chatMessages.length < 4} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
+            <DictationButton key={`${sessionId}:history`} disabled={conversing || chatLoading} onBeforeStart={voice.stop} onActiveChange={setDictating}
+              onTranscript={text => setChatInput(current => appendDictation(current, text))} />
+            <Button onClick={() => savePhase("pe")} disabled={conversing || chatMessages.length < 4 || dictating || chatLoading} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
               เสร็จซักประวัติ → ไปตรวจร่างกาย <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </div>
@@ -618,11 +664,14 @@ function LongCaseSessionInner() {
             <p className="text-sm text-gray-500">เขียน DDx ของคุณ (อย่างน้อย 3 ข้อ เรียงตามความน่าจะเป็น)</p>
             <Textarea
               rows={5}
+              aria-label="Differential Diagnosis"
               value={studentDdx}
               onChange={e => setStudentDdx(e.target.value)}
               placeholder="1. ... (โรคที่น่าจะเป็นมากที่สุด)&#10;2. ...&#10;3. ..."
               className="resize-none"
             />
+            <DictationButton key={`${sessionId}:ddx`} onBeforeStart={voice.stop} onActiveChange={setDictating}
+              onTranscript={text => setStudentDdx(current => appendDictation(current, text))} />
             <Button
               onClick={async () => {
                 await fetch("/api/longcase/session", {
@@ -632,7 +681,7 @@ function LongCaseSessionInner() {
                 });
                 setPhase("management");
               }}
-              disabled={!studentDdx.trim()}
+              disabled={!studentDdx.trim() || dictating}
               className="w-full bg-amber-500 hover:bg-amber-600 text-white"
             >
               บันทึก DDx → เขียนแผนการรักษา <ChevronRight className="h-4 w-4 ml-1" />
@@ -649,11 +698,14 @@ function LongCaseSessionInner() {
             <p className="text-sm text-gray-500">เขียนแผนการรักษา Immediate + Definitive + Follow-up</p>
             <Textarea
               rows={6}
+              aria-label="แผนการรักษา"
               value={studentMgmt}
               onChange={e => setStudentMgmt(e.target.value)}
               placeholder="Immediate management:&#10;...&#10;&#10;Definitive treatment:&#10;...&#10;&#10;Follow-up:&#10;..."
               className="resize-none"
             />
+            <DictationButton key={`${sessionId}:management`} onBeforeStart={voice.stop} onActiveChange={setDictating}
+              onTranscript={text => setStudentMgmt(current => appendDictation(current, text))} />
             <Button
               onClick={async () => {
                 await fetch("/api/longcase/session", {
@@ -663,7 +715,7 @@ function LongCaseSessionInner() {
                 });
                 setPhase("examiner");
               }}
-              disabled={!studentMgmt.trim()}
+              disabled={!studentMgmt.trim() || dictating}
               className="w-full bg-amber-500 hover:bg-amber-600 text-white"
             >
               เสร็จแล้ว → สัมภาษณ์ Examiner <ChevronRight className="h-4 w-4 ml-1" />
@@ -698,6 +750,9 @@ function LongCaseSessionInner() {
                       }`}>
                         {m.role === "assistant" && <p className="text-xs font-semibold text-gray-500 mb-1">👨‍⚕️ Examiner</p>}
                         <p className="whitespace-pre-wrap">{m.content}</p>
+                        {m.role === "assistant" && (
+                          <div><ReadReplyButton voice={voice} text={m.content} id={`examiner-${i}`} disabled={dictating || examLoading || scoringLoading} /></div>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -706,16 +761,19 @@ function LongCaseSessionInner() {
                 <div className="flex gap-2">
                   <Textarea
                     rows={2}
+                    aria-label="คำตอบ Examiner"
                     value={examInput}
                     onChange={e => setExamInput(e.target.value)}
                     placeholder="ตอบ Examiner..."
                     onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendExamChat(); } }}
                     className="flex-1 resize-none"
                   />
-                  <Button onClick={sendExamChat} disabled={examLoading} size="icon" className="bg-amber-500 hover:bg-amber-600 h-auto">
+                  <Button onClick={sendExamChat} aria-label="ส่งคำตอบ Examiner" disabled={examLoading || scoringLoading || dictating || !examInput.trim()} size="icon" className="bg-amber-500 hover:bg-amber-600 h-auto">
                     <Send className="h-4 w-4" />
                   </Button>
                 </div>
+                <DictationButton key={`${sessionId}:examiner`} disabled={examLoading || scoringLoading} onBeforeStart={voice.stop} onActiveChange={setDictating}
+                  onTranscript={text => setExamInput(current => appendDictation(current, text))} />
                 {examMessages.length >= 8 && (
                   <div className="space-y-2">
                     {scoreError && (
@@ -723,7 +781,7 @@ function LongCaseSessionInner() {
                     )}
                     <Button
                       onClick={requestScore}
-                      disabled={scoringLoading}
+                      disabled={scoringLoading || examLoading || dictating}
                       className="w-full bg-green-600 hover:bg-green-700 text-white"
                     >
                       {scoringLoading

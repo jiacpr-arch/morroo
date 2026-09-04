@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": { "incremental": false },
+  "include": [
+    "../next-env.d.ts",
+    "../app/(morroo)/longcase/session/page.tsx",
+    "../app/(morroo)/longcase/session/LongCaseVoice.tsx",
+    "../app/(morroo)/longcase/session/device-speech.ts",
+    "../app/(morroo)/longcase/session/device-speech.test.ts",
+    "./longcase-voice.config.ts",
+    "./longcase-voice.spec.ts"
+  ]
+}
