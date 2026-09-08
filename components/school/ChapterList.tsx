@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { lessonHref } from "@/lib/school/ids";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -80,6 +81,11 @@ export default function ChapterList({ chapters }: Props) {
   }
 
   const active = MODES.find((m) => m.key === mode)!;
+  // Skip any chapter without a real id so we never link to /school/lesson/null.
+  const rows = chapters.flatMap((c) => {
+    const href = lessonHref(c.id, `mode=${mode}`);
+    return href ? [{ ...c, href }] : [];
+  });
 
   return (
     <div className="space-y-4">
@@ -112,7 +118,7 @@ export default function ChapterList({ chapters }: Props) {
         <p className="text-xs text-muted-foreground mt-2">{active.hint}</p>
       </div>
 
-      {chapters.length === 0 ? (
+      {rows.length === 0 ? (
         <Card>
           <CardContent className="p-6 text-center text-sm text-muted-foreground">
             วิชานี้ยังไม่มีบทเรียน — รอเนื้อหาเร็วๆ นี้
@@ -120,10 +126,10 @@ export default function ChapterList({ chapters }: Props) {
         </Card>
       ) : (
         <ul className="space-y-2">
-          {chapters.map((c, i) => (
+          {rows.map((c, i) => (
             <li key={c.id}>
               <Link
-                href={`/school/lesson/${c.id}?mode=${mode}`}
+                href={c.href}
                 className="flex items-center gap-3 rounded-lg border p-4 hover:bg-muted/50 transition-colors"
               >
                 {c.read ? (

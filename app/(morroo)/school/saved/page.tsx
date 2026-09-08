@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Bookmark, StickyNote } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import { lessonHref } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -74,7 +75,7 @@ export default async function SavedPage() {
     return "(?)";
   }
   function linkOf(b: { unit_type: string; unit_id: string }) {
-    if (b.unit_type === "lesson") return `/school/lesson/${b.unit_id}`;
+    if (b.unit_type === "lesson") return lessonHref(b.unit_id) ?? "#";
     return "#"; // flashcards/quizzes have no detail page; user can re-encounter in deck
   }
 

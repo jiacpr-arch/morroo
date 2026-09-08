@@ -13,6 +13,7 @@ import {
 } from "@/lib/supabase/queries-school";
 import GuidedRunner from "@/components/school/GuidedRunner";
 import { hasSchoolAccess } from "@/lib/membership";
+import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +28,7 @@ export const metadata = {
 
 export default async function GuidedPage({ params }: PageProps) {
   const { id } = await params;
+  if (!isUuid(id)) notFound();
   const topic = await getSchoolTopic(id);
   if (!topic) notFound();
 

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, ArrowRight, Flame, BookOpen } from "lucide-react";
 import Link from "next/link";
+import { lessonHref } from "@/lib/school/ids";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { SchoolFlashcard, SchoolQuiz, SchoolLesson } from "@/lib/types-school";
@@ -192,12 +193,14 @@ export default function DailyLessonStepper({
                   {readingExcerpt(step.lesson.body_md)}
                 </ReactMarkdown>
               </article>
-              <Link
-                href={`/school/lesson/${step.lesson.id}`}
-                className="inline-block text-xs text-violet-700 underline underline-offset-2"
-              >
-                อ่านบทเต็ม →
-              </Link>
+              {lessonHref(step.lesson.id) && (
+                <Link
+                  href={lessonHref(step.lesson.id)!}
+                  className="inline-block text-xs text-violet-700 underline underline-offset-2"
+                >
+                  อ่านบทเต็ม →
+                </Link>
+              )}
             </CardContent>
           </Card>
           <Button onClick={finishReading} className="w-full gap-2">

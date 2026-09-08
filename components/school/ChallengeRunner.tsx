@@ -8,6 +8,7 @@ import { Trophy, ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
 import type { SchoolQuiz } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
+import { topicHref } from "@/lib/school/ids";
 import { nextSrsState } from "@/lib/school/srs";
 import { XP, awardXp, awardBadge } from "@/lib/school/xp";
 import RewardBadge from "./RewardBadge";
@@ -122,9 +123,11 @@ export default function ChallengeRunner({ quizzes, topicName, topicId }: Props) 
             </div>
           )}
           <div className="flex gap-3 justify-center pt-2">
-            <Link href={`/school/topic/${topicId}`}>
-              <Button variant="outline">กลับ Topic</Button>
-            </Link>
+            {topicHref(topicId) && (
+              <Link href={topicHref(topicId)!}>
+                <Button variant="outline">กลับ Topic</Button>
+              </Link>
+            )}
             <Link href="/school/leaderboard">
               <Button>ดู Leaderboard</Button>
             </Link>

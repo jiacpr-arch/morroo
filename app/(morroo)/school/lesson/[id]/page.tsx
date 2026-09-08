@@ -15,6 +15,7 @@ import LessonQuizRunner, {
 import AskMore from "@/components/school/AskMore";
 import { sortByDifficultyAsc } from "@/lib/school/difficulty";
 import { splitLessonParts } from "@/lib/school/lesson-parts";
+import { isUuid, lessonHref, topicHref as buildTopicHref } from "@/lib/school/ids";
 
 export const revalidate = 60;
 
@@ -31,6 +32,7 @@ function parseMode(raw: string | undefined): Mode {
 
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
+  if (!isUuid(id)) notFound();
   const lesson = await getSchoolLesson(id);
   return {
     title: lesson?.title
@@ -50,6 +52,8 @@ const MODE_TABS: { key: Mode; label: string; icon: typeof BookOpen }[] = [
 
 export default async function LessonPage({ params, searchParams }: PageProps) {
   const { id } = await params;
+  // Reject non-uuid params (e.g. a literal "null") before touching the DB.
+  if (!isUuid(id)) notFound();
   const mode = parseMode((await searchParams).mode);
   const lesson = await getSchoolLesson(id);
   if (!lesson) notFound();
@@ -100,21 +104,23 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
     mode === "read" ? "อ่านอย่างเดียว" : mode === "quiz" ? "ควิซอย่างเดียว" : "อ่าน + ควิซ";
 
   // เรียนจบแล้วต้องรู้ว่าไปไหนต่อ — หาบทถัดไปในวิชาเดียวกันตาม sort_order
-  const topicHref = `/school/topic/${lesson.topic_id}`;
+  const topicHref = buildTopicHref(lesson.topic_id);
   const siblings = await getSchoolLessons({ topicId: lesson.topic_id });
   const currentIdx = siblings.findIndex((l) => l.id === lesson.id);
   const next = currentIdx >= 0 ? siblings[currentIdx + 1] : undefined;
-  const nextLesson = next
-    ? { href: `/school/lesson/${next.id}?mode=${mode}`, title: next.title }
-    : null;
+  const nextHref = next ? lessonHref(next.id, `mode=${mode}`) : null;
+  const nextLesson =
+    next && nextHref ? { href: nextHref, title: next.title } : null;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <Link href={`/school/topic/${lesson.topic_id}`}>
-        <Button variant="ghost" size="sm" className="gap-2 -ml-2 mb-4">
-          <ArrowLeft className="h-4 w-4" /> กลับไปหน้าวิชา
-        </Button>
-      </Link>
+      {topicHref && (
+        <Link href={topicHref}>
+          <Button variant="ghost" size="sm" className="gap-2 -ml-2 mb-4">
+            <ArrowLeft className="h-4 w-4" /> กลับไปหน้าวิชา
+          </Button>
+        </Link>
+      )}
       <div className="mb-4 flex items-center gap-2 flex-wrap">
         <Badge className="bg-teal-100 text-teal-700">{modeLabel}</Badge>
         {mode !== "quiz" && (
@@ -162,7 +168,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
             lessonId={lesson.id}
             readHref={`/school/lesson/${id}?mode=read`}
             nextLesson={nextLesson}
-            topicHref={topicHref}
+            topicHref={topicHref ?? undefined}
           />
         )
       ) : (
@@ -172,7 +178,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           mode={mode}
           quizHref={`/school/lesson/${id}?mode=quiz`}
           nextLesson={nextLesson}
-          topicHref={topicHref}
+          topicHref={topicHref ?? undefined}
         />
       )}
 

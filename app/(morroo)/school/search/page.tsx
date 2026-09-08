@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Search } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
+import { lessonHref } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -89,6 +90,11 @@ export default async function SearchPage({ searchParams }: PageProps) {
   }
 
   const total = flashcards.length + quizzes.length + lessons.length + concepts.length;
+  // Only lessons with a real id get a link — never render /school/lesson/null.
+  const lessonRows = lessons.flatMap((l) => {
+    const href = lessonHref(l.id);
+    return href ? [{ ...l, href }] : [];
+  });
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -150,10 +156,10 @@ export default async function SearchPage({ searchParams }: PageProps) {
         <section className="mb-6">
           <h2 className="font-bold mb-2">Lessons ({lessons.length})</h2>
           <ul className="space-y-2">
-            {lessons.map((l) => (
+            {lessonRows.map((l) => (
               <li key={l.id}>
                 <Link
-                  href={`/school/lesson/${l.id}`}
+                  href={l.href}
                   className="flex items-center gap-2 p-3 rounded border hover:bg-muted/50 text-sm"
                 >
                   <Badge variant="outline" className="text-xs">

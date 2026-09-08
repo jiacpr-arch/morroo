@@ -14,6 +14,7 @@ import {
 } from "@/lib/supabase/queries-school";
 import ChapterList from "@/components/school/ChapterList";
 import { splitLessonParts } from "@/lib/school/lesson-parts";
+import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +26,7 @@ const MASTERY_THRESHOLD = 80;
 
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
+  if (!isUuid(id)) notFound();
   const topic = await getSchoolTopic(id);
   return {
     title: topic
@@ -36,6 +38,8 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function TopicPage({ params }: PageProps) {
   const { id } = await params;
+  // Reject non-uuid params (e.g. a literal "null") before touching the DB.
+  if (!isUuid(id)) notFound();
   const topic = await getSchoolTopic(id);
   if (!topic) notFound();
 

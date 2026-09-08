@@ -1,3 +1,4 @@
+import { isUuid } from "@/lib/school/ids";
 import { createClient } from "./server";
 import type {
   SchoolFlashcard,
@@ -140,6 +141,9 @@ export async function getSchoolLessons(opts: {
 }
 
 export async function getSchoolLesson(id: string): Promise<SchoolLesson | null> {
+  // Route params arrive as raw strings ("null", "undefined", ...); a non-uuid can
+  // never match and would only raise 22P02 on the uuid column.
+  if (!isUuid(id)) return null;
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("school_lessons")
@@ -229,6 +233,7 @@ export async function getSchoolBookMap(): Promise<Record<string, string>> {
 }
 
 export async function getSchoolTopic(id: string): Promise<SchoolTopic | null> {
+  if (!isUuid(id)) return null;
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("school_topics")

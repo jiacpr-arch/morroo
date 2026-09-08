@@ -21,6 +21,7 @@ import type {
   SchoolQuiz,
 } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
+import { topicHref } from "@/lib/school/ids";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
 import RewardBadge from "./RewardBadge";
@@ -343,9 +344,11 @@ export default function GuidedRunner({
           Mastery รวมเดิม {initialMastery.pct}% — ระบบจะอัปเดต Progress หน้า /school/progress
         </p>
         <div className="flex gap-3 justify-center pt-2">
-          <a href={`/school/topic/${topicId}`}>
-            <Button variant="outline">กลับ Topic</Button>
-          </a>
+          {topicHref(topicId) && (
+            <a href={topicHref(topicId)!}>
+              <Button variant="outline">กลับ Topic</Button>
+            </a>
+          )}
           <a href="/school/progress">
             <Button>ดู Progress</Button>
           </a>

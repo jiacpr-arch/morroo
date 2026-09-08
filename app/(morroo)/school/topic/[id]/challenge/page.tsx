@@ -6,6 +6,7 @@ import { ArrowLeft, Zap } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getSchoolTopic, getSchoolQuizzes } from "@/lib/supabase/queries-school";
 import ChallengeRunner from "@/components/school/ChallengeRunner";
+import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,7 @@ export const metadata = {
 
 export default async function ChallengePage({ params }: PageProps) {
   const { id } = await params;
+  if (!isUuid(id)) notFound();
   const topic = await getSchoolTopic(id);
   if (!topic) notFound();
 

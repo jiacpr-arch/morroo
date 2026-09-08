@@ -1,3 +1,4 @@
+import { lessonHref } from "@/lib/school/ids";
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAnthropic, CHAT_MODELS, createWithFallback } from "@/lib/anthropic";
@@ -95,12 +96,13 @@ Rules:
       }
     }
     for (const l of (lessonsRes.data as LessonRow[]) ?? []) {
-      if (haystack.includes(l.title.toLowerCase())) {
+      const href = lessonHref(l.id);
+      if (href && haystack.includes(l.title.toLowerCase())) {
         citations.push({
           type: "lesson",
           id: l.id,
           title: l.title,
-          href: `/school/lesson/${l.id}`,
+          href,
         });
       }
     }

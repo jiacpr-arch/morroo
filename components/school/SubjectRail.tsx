@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import { topicHref } from "@/lib/school/ids";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -130,12 +131,12 @@ export default function SubjectRail({ subjects }: Props) {
                     </Button>
                   </Link>
                 )}
-                {empty ? (
+                {empty || !topicHref(s.id) ? (
                   <Button size="sm" variant="outline" className="w-full" disabled>
                     เนื้อหาเร็วๆ นี้
                   </Button>
                 ) : (
-                  <Link href={`/school/topic/${s.id}`}>
+                  <Link href={topicHref(s.id)!}>
                     <Button
                       size="sm"
                       className="w-full bg-brand hover:bg-brand-light text-white"

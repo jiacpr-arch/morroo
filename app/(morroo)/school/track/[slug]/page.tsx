@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Route, Layers, BookOpen, Brain, Stethoscope, ArrowRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
+import { lessonHref } from "@/lib/school/ids";
 
 export const revalidate = 60;
 
@@ -94,7 +95,8 @@ export default async function TrackPage({ params }: PageProps) {
     return Stethoscope;
   }
   function hrefFor(i: ItemRow) {
-    if (i.unit_type === "lesson") return `/school/lesson/${i.unit_id}`;
+    // Polymorphic unit_id has no FK — never emit /school/lesson/null.
+    if (i.unit_type === "lesson") return lessonHref(i.unit_id) ?? "#";
     if (i.unit_type === "case") return `/school/case/${i.unit_id}`;
     return `#`;
   }

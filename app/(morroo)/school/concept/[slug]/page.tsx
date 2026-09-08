@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Layers, Brain, BookOpen, Network } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
+import { lessonHref } from "@/lib/school/ids";
 import {
   getSchoolConceptBySlug,
   getConceptLinkedUnits,
@@ -63,6 +64,11 @@ export default async function ConceptPage({ params }: PageProps) {
   const flashcards = (fcRes.data as FcRow[]) ?? [];
   const quizzes = (qzRes.data as QzRow[]) ?? [];
   const lessons = (lsRes.data as LsRow[]) ?? [];
+  // Only lessons with a real id get a link — never render /school/lesson/null.
+  const lessonRows = lessons.flatMap((l) => {
+    const href = lessonHref(l.id);
+    return href ? [{ ...l, href }] : [];
+  });
 
   // Group by year
   const yearGroups = new Map<number, { fc: number; qz: number; ls: number }>();
@@ -142,10 +148,10 @@ export default async function ConceptPage({ params }: PageProps) {
             <BookOpen className="h-4 w-4 text-teal-600" /> Lessons
           </h2>
           <ul className="space-y-1">
-            {lessons.map((l) => (
+            {lessonRows.map((l) => (
               <li key={l.id}>
                 <Link
-                  href={`/school/lesson/${l.id}`}
+                  href={l.href}
                   className="flex items-center gap-2 p-2 rounded hover:bg-muted/50 text-sm"
                 >
                   <Badge variant="outline" className="text-xs">
