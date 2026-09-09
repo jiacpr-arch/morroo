@@ -104,7 +104,7 @@ const organizationSchema = {
   "@type": "EducationalOrganization",
   name: "หมอรู้ (MorRoo)",
   url: "https://www.morroo.com",
-  logo: "https://www.morroo.com/logo.png",
+  logo: "https://www.morroo.com/images/logo-morroo.png",
   description:
     "แพลตฟอร์มข้อสอบ MEQ + MCQ + Long Case สำหรับเตรียมสอบแพทย์",
   sameAs: ["https://www.facebook.com/morroo"],

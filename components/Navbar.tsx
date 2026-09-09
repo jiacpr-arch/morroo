@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -87,13 +88,13 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          <span className="text-2xl">🩺</span>
+        <Link href="/" aria-label="MorRoo หมอรู้ — หน้าแรก" className="flex shrink-0 items-center gap-2 font-bold text-lg">
+          <Image src="/images/logo-morroo.png" alt="" width={56} height={56} className="h-14 w-14 object-contain" />
           <span className="text-brand-dark">หมอรู้</span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden xl:flex items-center gap-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -111,7 +112,7 @@ export default function Navbar() {
         </div>
 
         {/* Auth buttons */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           {user && <NavbarRankChip />}
           {user && <BetaHeaderCounter />}
           {user ? (
@@ -173,10 +174,10 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu button */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="xl:hidden flex items-center gap-2">
           {user && <NavbarRankChip />}
           {user && <BetaHeaderCounter />}
-          <button onClick={() => setMobileOpen(!mobileOpen)}>
+          <button aria-label={mobileOpen ? "ปิดเมนู" : "เปิดเมนู"} aria-expanded={mobileOpen} onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -184,7 +185,7 @@ export default function Navbar() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <div className="border-t bg-white md:hidden">
+        <div className="border-t bg-white xl:hidden">
           <div className="space-y-1 px-4 py-3">
             {navLinks.map((link) => (
               <Link

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SocialIconsRow } from "@/components/SocialLinks";
 import { NETWORK_SITES } from "@/lib/network-sites";
 
@@ -9,10 +10,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-lg font-bold">
-              <span className="text-2xl">🩺</span>
+            <Link href="/" aria-label="MorRoo หมอรู้ — หน้าแรก" className="flex items-center gap-2 text-lg font-bold">
+              <Image src="/images/logo-morroo.png" alt="" width={112} height={112} className="h-28 w-28 object-contain" />
               <span>หมอรู้</span>
-            </div>
+            </Link>
             <p className="text-sm text-white/70">
               แพลตฟอร์มข้อสอบ MEQ ออนไลน์
               <br />

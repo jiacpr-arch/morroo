@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowRight, BookOpen, Gamepad2, Shield, Sparkles, Stethoscope, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -84,10 +85,19 @@ export default function HeroAB({
   const copy = buildCopy(totalStr, nlStr)[variant ?? "A"];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-10 sm:py-14">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiLz48L3N2Zz4=')] opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
+          <Image
+            src="/images/logo-morroo.png"
+            alt="MorRoo.com หมอรู้ — ติวสอบแพทย์"
+            width={208}
+            height={208}
+            sizes="(max-width: 639px) 176px, 208px"
+            loading="eager"
+            className="mx-auto mb-6 h-44 w-44 object-contain sm:h-52 sm:w-52"
+          />
           <Badge className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
             <Sparkles className="h-3 w-3 mr-1" /> {copy.badge}
           </Badge>
