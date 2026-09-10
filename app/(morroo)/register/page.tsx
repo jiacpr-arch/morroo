@@ -31,7 +31,10 @@ function RegisterForm() {
   const [showEmailForm, setShowEmailForm] = useState(false);
   // Post-signup destination carried from a gated page (e.g. checkout) so a
   // buyer who signs up mid-purchase lands back on the payment page.
-  const nextPath = safeInternalPath(searchParams.get("redirect"), "");
+  const nextPath = safeInternalPath(
+    searchParams.get("redirect") ?? searchParams.get("next"),
+    ""
+  );
 
   useEffect(() => {
     const ref = searchParams.get("ref");

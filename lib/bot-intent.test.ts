@@ -91,7 +91,7 @@ describe("handleBotIntent — issue new code", () => {
 
     expect(msg).not.toBeNull();
     expect(msg).toContain("MORROO-ABCD-1234");
-    expect(msg).toContain("morroo.com/register");
+    expect(msg).toContain("/redeem/MORROO-ABCD-1234");
   });
 
   it("uses fb_messenger source for facebook channel", async () => {

@@ -9,10 +9,12 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 const sendLineMessageMock = vi.fn(async () => true);
 const sendFbMessageMock = vi.fn(async () => true);
 const sendEmailMock = vi.fn(async () => {});
+const redeemCodeMock = vi.fn(async () => ({ ok: true as const, rewardType: "monthly_1m" as const }));
 
 vi.mock("@/lib/line", () => ({ sendLineMessage: sendLineMessageMock }));
 vi.mock("@/lib/facebook-messenger", () => ({ sendFbMessage: sendFbMessageMock }));
 vi.mock("@/lib/email/send", () => ({ sendLeadFollowupEmail: sendEmailMock }));
+vi.mock("@/lib/redeem", () => ({ redeemCode: redeemCodeMock }));
 
 // ─── Supabase mock ────────────────────────────────────────────────────────────
 // Each supabase.from() call pops one result from the queue.
@@ -84,6 +86,7 @@ describe("lead-followup cron", () => {
   });
 
   it("returns ok:true with dm_sent=0 when there are no leads", async () => {
+    resultQueue.push({ data: [], error: null }); // auto-activate: no pending codes
     // Email loop: 3 days × 1 query → empty
     for (let i = 0; i < 3; i++) resultQueue.push({ data: [], error: null });
     // DM loop: 3 days × 1 codes query → empty
@@ -102,6 +105,7 @@ describe("lead-followup cron", () => {
     const LEAD_ID = "lead-line-d1";
     const LINE_UID = "U-line-abc";
 
+    resultQueue.push({ data: [], error: null }); // auto-activate: no pending codes
     // Email loop: 3 × empty
     for (let i = 0; i < 3; i++) resultQueue.push({ data: [], error: null });
 
@@ -138,7 +142,7 @@ describe("lead-followup cron", () => {
     const lineCall = sendLineMessageMock.mock.calls[0] as unknown as [string, Array<{ text: string }>];
     expect(lineCall[0]).toBe(LINE_UID);
     expect(lineCall[1][0].text).toContain(D1_CODE);
-    expect(lineCall[1][0].text).toContain("morroo.com/register");
+    expect(lineCall[1][0].text).toContain(`/redeem/${D1_CODE}`);
     expect(sendFbMessageMock).not.toHaveBeenCalled();
   });
 
@@ -146,6 +150,7 @@ describe("lead-followup cron", () => {
     const D1_CODE = "MORROO-TEST-FBBB";
     const PSID = "psid-fb-d1";
 
+    resultQueue.push({ data: [], error: null }); // auto-activate: no pending codes
     for (let i = 0; i < 3; i++) resultQueue.push({ data: [], error: null });
     resultQueue.push({
       data: [{
@@ -177,6 +182,7 @@ describe("lead-followup cron", () => {
   });
 
   it("skips a lead that already received a DM for this day", async () => {
+    resultQueue.push({ data: [], error: null }); // auto-activate: no pending codes
     for (let i = 0; i < 3; i++) resultQueue.push({ data: [], error: null });
     resultQueue.push({
       data: [{
@@ -203,5 +209,72 @@ describe("lead-followup cron", () => {
     expect(json.dm_sent).toBe(0);
     expect(json.dm_skipped).toBe(1);
     expect(sendLineMessageMock).not.toHaveBeenCalled();
+  });
+
+  it("auto-activates the trial when the lead already registered with the same LINE account", async () => {
+    const CODE = "MORROO-AUTO-0001";
+    // auto-activate: pending codes → one
+    resultQueue.push({ data: [{ code: CODE, lead_id: "lead-auto" }], error: null });
+    // leads with a LINE uid
+    resultQueue.push({ data: [{ id: "lead-auto", line_user_id: "U-auto" }], error: null });
+    // profiles matched by line_user_id — free tier
+    resultQueue.push({
+      data: [{ id: "user-auto", line_user_id: "U-auto", membership_type: null, membership_expires_at: null }],
+      error: null,
+    });
+    // everything after (email ×3, DM ×3, expired) drains to empty defaults
+
+    const { GET } = await import("./route");
+    const res = await GET(makeRequest());
+    const json = await res.json();
+
+    expect(json.activated).toBe(1);
+    expect(redeemCodeMock).toHaveBeenCalledWith(CODE, "user-auto");
+    expect(sendLineMessageMock).toHaveBeenCalledOnce();
+    const call = sendLineMessageMock.mock.calls[0] as unknown as [string, Array<{ text: string }>];
+    expect(call[0]).toBe("U-auto");
+    expect(call[1][0].text).toContain("เปิดสิทธิ์");
+  });
+
+  it("does not stack a free month on an active paying member", async () => {
+    resultQueue.push({ data: [{ code: "MORROO-PAID-0001", lead_id: "lead-paid" }], error: null });
+    resultQueue.push({ data: [{ id: "lead-paid", line_user_id: "U-paid" }], error: null });
+    resultQueue.push({
+      data: [{
+        id: "user-paid",
+        line_user_id: "U-paid",
+        membership_type: "monthly",
+        membership_expires_at: new Date(NOW_MS + 10 * 86400_000).toISOString(),
+      }],
+      error: null,
+    });
+
+    const { GET } = await import("./route");
+    const json = await (await GET(makeRequest())).json();
+
+    expect(json.activated).toBe(0);
+    expect(json.activate_skipped).toBe(1);
+    expect(redeemCodeMock).not.toHaveBeenCalled();
+  });
+
+  it("nudges a lead the day after their code expired", async () => {
+    resultQueue.push({ data: [], error: null }); // auto-activate: none
+    for (let i = 0; i < 3; i++) resultQueue.push({ data: [], error: null }); // email
+    for (let i = 0; i < 3; i++) resultQueue.push({ data: [], error: null }); // DM
+    // expired leg: codes → one, leads → one LINE lead, still-active → none, dedupe → none
+    resultQueue.push({ data: [{ code: "MORROO-EXPD-0001", lead_id: "lead-exp" }], error: null });
+    resultQueue.push({ data: [{ id: "lead-exp", fb_psid: null, line_user_id: "U-exp", name: null }], error: null });
+    resultQueue.push({ data: [], error: null });
+    resultQueue.push({ data: null, error: null });
+
+    const { GET } = await import("./route");
+    const json = await (await GET(makeRequest())).json();
+
+    expect(json.expired_sent).toBe(1);
+    expect(sendLineMessageMock).toHaveBeenCalledOnce();
+    const call = sendLineMessageMock.mock.calls[0] as unknown as [string, Array<{ text: string }>];
+    expect(call[0]).toBe("U-exp");
+    expect(call[1][0].text).toContain("หมดอายุ");
+    expect(call[1][0].text).toContain("ขอโค้ดทดลอง");
   });
 });

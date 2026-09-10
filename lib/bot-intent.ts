@@ -12,6 +12,13 @@ const MAX_CODES_PER_LEAD = 3;
 
 const TRIAL_CAMPAIGN = "bot_intent_trial";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+
+/** One-tap link: login with LINE → code applied. The register page has no code field. */
+function redeemUrl(code: string): string {
+  return `${SITE_URL}/redeem/${code}`;
+}
+
 /**
  * When the AI signals [INTENT:trial], either:
  * 1. Resend the lead's currently-active code (if any), so a forgetful user
@@ -117,7 +124,8 @@ function buildIssueMessage(code: string, isReissue: boolean): string {
     "",
     `โค้ด: ${code}`,
     "",
-    "นำโค้ดไปกรอกที่ morroo.com/register แล้วเริ่มเรียนได้เลยครับ 🩺",
+    "กดลิงก์นี้แล้ว login ด้วย LINE รับสิทธิ์ได้ทันทีครับ 🩺",
+    redeemUrl(code),
     "(โค้ดหมดอายุใน 7 วัน)",
   ].join("\n");
 }
@@ -132,7 +140,8 @@ function buildResendMessage(code: string, expiresAtIso: string): string {
     "",
     `โค้ด: ${code}`,
     "",
-    `กรอกที่ morroo.com/register ได้เลย (เหลือ ${daysLeft} วัน)`,
+    `กดลิงก์นี้รับสิทธิ์ได้เลย (เหลือ ${daysLeft} วัน)`,
+    redeemUrl(code),
   ].join("\n");
 }
 

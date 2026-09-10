@@ -39,7 +39,12 @@ function LoginForm() {
   // from a gated page (e.g. /payment/[plan] → /login?redirect=/payment/monthly).
   // Without honouring it, buyers who are forced to log in get dumped on /profile
   // and silently drop out of checkout.
-  const nextPath = safeInternalPath(searchParams.get("redirect"));
+  // `next` is the alias every gated page in the app actually sends
+  // (/redeem/[code], /school/*, …) — honouring only `redirect` dropped those
+  // users on /profile, which is why trial codes were almost never redeemed.
+  const nextPath = safeInternalPath(
+    searchParams.get("redirect") ?? searchParams.get("next")
+  );
   const initialError = queryError
     ? [
         LINE_ERROR_LABELS[queryError] ?? `เกิดข้อผิดพลาด (${queryError})`,
