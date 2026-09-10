@@ -145,6 +145,29 @@ export async function getMcqQuestions(options?: {
   return questions;
 }
 
+/**
+ * Fetch a fixed, hand-picked set of questions by id (order not guaranteed —
+ * caller should shuffle). Used by the public no-login "try the exam" link,
+ * which deliberately draws from a small curated pool instead of the full
+ * question bank so a shared marketing link can't be used to farm every
+ * question for free.
+ */
+export async function getMcqQuestionsByIds(ids: string[]): Promise<McqQuestion[]> {
+  if (ids.length === 0) return [];
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("mcq_questions")
+    .select("*, mcq_subjects(name, name_th, icon)")
+    .in("id", ids)
+    .eq("status", "active");
+
+  if (error) {
+    console.error("Error fetching MCQ questions by id:", error);
+    return [];
+  }
+  return (data as McqQuestion[]) || [];
+}
+
 export async function getMcqQuestion(
   id: string,
   opts?: { audience?: McqAudience }
