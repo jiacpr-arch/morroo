@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
-import { getMcqQuestionsByIds } from "@/lib/supabase/queries-mcq";
+import {
+  getMcqQuestionsByIds,
+  getQuestionBankStats,
+} from "@/lib/supabase/queries-mcq";
 import McqMock from "@/components/McqMock";
+import { createClient } from "@/lib/supabase/server";
+import type { Profile } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "ลองทำข้อสอบ NL ฟรี — MorRoo",
@@ -28,8 +33,38 @@ const TRY_QUESTION_IDS = [
   "018b8dbd-2f51-462b-8616-f2e02dac7974", // อายุรศาสตร์ทรวงอก
 ];
 
+async function getIsPremium(): Promise<boolean> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return false;
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("membership_type, membership_expires_at")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
+  if (!p) return false;
+  const isExpired = p.membership_expires_at
+    ? new Date(p.membership_expires_at) < new Date()
+    : false;
+  return (
+    (p.membership_type === "monthly" ||
+      p.membership_type === "yearly" ||
+      p.membership_type === "bundle") &&
+    !isExpired
+  );
+}
+
 export default async function TryExamPage() {
-  const questions = await getMcqQuestionsByIds(TRY_QUESTION_IDS);
+  const [questions, isPremium, bankStats] = await Promise.all([
+    getMcqQuestionsByIds(TRY_QUESTION_IDS),
+    getIsPremium(),
+    getQuestionBankStats(),
+  ]);
   const shuffled = [...questions].sort(() => Math.random() - 0.5);
 
   return (
@@ -55,7 +90,11 @@ export default async function TryExamPage() {
           </Link>
         </div>
       ) : (
-        <McqMock questions={shuffled} timeLimitMinutes={shuffled.length} />
+        <McqMock
+          questions={shuffled}
+          timeLimitMinutes={shuffled.length}
+          upsell={isPremium ? undefined : { totalQuestions: bankStats.nlReady }}
+        />
       )}
     </div>
   );

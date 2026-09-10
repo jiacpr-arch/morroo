@@ -16,12 +16,20 @@ import {
   Send,
   AlertTriangle,
 } from "lucide-react";
+import Link from "next/link";
 import type { McqQuestion } from "@/lib/types-mcq";
 import ReportErrorButton from "@/components/ReportErrorButton";
+import { track } from "@/lib/analytics";
 
 interface McqMockProps {
   questions: McqQuestion[];
   timeLimitMinutes: number;
+  /**
+   * Shown as a sales card on the results screen for visitors who haven't
+   * bought a plan yet (e.g. the public /nl/try demo). Omit to keep the
+   * plain results screen — used by the full /nl/mock exam.
+   */
+  upsell?: { totalQuestions?: number };
 }
 
 type MockPhase = "exam" | "results" | "review";
@@ -34,7 +42,11 @@ interface SubjectResult {
   total: number;
 }
 
-export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
+export default function McqMock({
+  questions,
+  timeLimitMinutes,
+  upsell,
+}: McqMockProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [phase, setPhase] = useState<MockPhase>("exam");
@@ -373,6 +385,48 @@ export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
             </p>
           </CardContent>
         </Card>
+
+        {/* Upsell — shown only to visitors who haven't bought a plan yet */}
+        {upsell && (
+          <Card className="border-2 border-brand bg-gradient-to-br from-brand/10 to-transparent">
+            <CardContent className="p-6 text-center space-y-3">
+              <h3 className="text-xl font-bold">
+                {results.percentage >= 80
+                  ? "เก่งมาก! พร้อมลุยข้อสอบจริงหรือยัง?"
+                  : results.percentage >= 60
+                    ? "เกือบผ่านแล้ว ฝึกต่ออีกนิดก็เป๊ะ"
+                    : "ยังมีจุดที่พลาดอยู่ ฝึกเพิ่มก่อนสอบจริงดีกว่า"}
+              </h3>
+              <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                นี่แค่ตัวอย่าง {results.total} ข้อ — สมัครสมาชิกฝึกได้ไม่จำกัด
+                ครบทุกสาขา
+                {upsell.totalQuestions
+                  ? ` จากคลังข้อสอบกว่า ${upsell.totalQuestions.toLocaleString("th-TH")} ข้อ`
+                  : ""}{" "}
+                พร้อมเฉลยละเอียดทุกข้อ
+              </p>
+              <p className="text-sm font-semibold text-brand">
+                เริ่มต้นเพียง 199 บาท/เดือน
+              </p>
+              <Link
+                href="/pricing"
+                onClick={() =>
+                  track("try_exam_upsell_cta_click", {
+                    score_percentage: results.percentage,
+                  })
+                }
+                className="inline-block"
+              >
+                <Button
+                  size="lg"
+                  className="bg-brand hover:bg-brand-light text-white gap-2"
+                >
+                  สมัครสมาชิกฝึกไม่จำกัด <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Subject Breakdown */}
         <Card>
