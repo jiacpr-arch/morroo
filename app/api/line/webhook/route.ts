@@ -13,6 +13,12 @@ import {
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 import { detectTrialIntent, handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
 import { handleAdsAutofixPostback } from "@/lib/ads-autofix-line";
+import {
+  buildFollowGreeting,
+  buildNonTextGreeting,
+  describeNonTextMessage,
+  isNonTextMessage,
+} from "@/lib/line-greeting";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -52,14 +58,22 @@ export async function POST(request: NextRequest) {
       continue;
     }
 
-    // User added the OA
+    // User added the OA — open the sales conversation right away.
     if (event.type === "follow") {
-      await sendLineMessage(lineUserId, [
-        {
-          type: "text",
-          text: "ยินดีต้อนรับสู่ MorRoo! 🎉\n\nเชื่อมต่อบัญชีเพื่อรับการแจ้งเตือน:\n1. เปิดแอป MorRoo → Profile\n2. กด \"เชื่อมต่อ LINE\"\n3. Copy รหัส แล้วส่งมาที่นี่",
-        },
-      ]);
+      await sendSalesGreeting(supabase, lineUserId, buildFollowGreeting(), "[เพิ่มเพื่อน]");
+      continue;
+    }
+
+    // Sticker / image / voice etc. — the model can't read these, so answer
+    // with the sales opener instead of staying silent.
+    if (event.type === "message" && isNonTextMessage(event.message?.type)) {
+      await sendSalesGreeting(
+        supabase,
+        lineUserId,
+        buildNonTextGreeting(),
+        describeNonTextMessage(event.message?.type)
+      );
+      continue;
     }
 
     // User sent a text message
@@ -169,6 +183,30 @@ export async function POST(request: NextRequest) {
   }
 
   return NextResponse.json({ ok: true });
+}
+
+/**
+ * Send a fixed sales opener + the "สมัครฟรี" card, and record both sides in
+ * chat history so the AI doesn't repeat the intro on the user's next message.
+ */
+async function sendSalesGreeting(
+  supabase: ReturnType<typeof createAdminClient>,
+  lineUserId: string,
+  greeting: string,
+  userPlaceholder: string
+): Promise<void> {
+  const leadId = await getOrCreateLeadFromChannel({
+    channel: "line",
+    channelUserId: lineUserId,
+  });
+  await sendLineMessage(lineUserId, [
+    { type: "text", text: greeting },
+    buildChatbotCard("register"),
+  ]);
+  await supabase.from("chat_messages").insert([
+    { channel: "line", channel_user_id: lineUserId, lead_id: leadId, role: "user", content: userPlaceholder },
+    { channel: "line", channel_user_id: lineUserId, lead_id: leadId, role: "assistant", content: greeting },
+  ]);
 }
 
 /** Cap user messages per LINE user per hour to keep AI cost predictable. */
