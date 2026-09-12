@@ -13,6 +13,7 @@ import {
 } from "@/lib/supabase/queries-school";
 import GuidedRunner from "@/components/school/GuidedRunner";
 import { hasSchoolAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
@@ -41,7 +42,7 @@ export default async function GuidedPage({ params }: PageProps) {
     .select("membership_type, membership_expires_at")
     .eq("id", user.id)
     .maybeSingle();
-  const isPremium = hasSchoolAccess(profile);
+  const isPremium = hasSchoolAccess(profile, await fetchEntitlements(supabase, user.id));
 
   const [lessons, cards, quizzes, masteryMap] = await Promise.all([
     getSchoolLessons({ topicId: id }),

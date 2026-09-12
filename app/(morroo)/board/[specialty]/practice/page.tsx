@@ -12,6 +12,7 @@ import { getMcqQuestions, getFreeAttemptsCount } from "@/lib/supabase/queries-mc
 import McqPractice from "@/components/McqPractice";
 import { computeBetaStatus } from "@/lib/beta";
 import { hasBoardAccess, hasFullStudentAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import { BOARD_SECTIONS } from "@/lib/types-board";
 import type { Profile } from "@/lib/types";
 import type { Metadata } from "next";
@@ -73,7 +74,8 @@ async function PracticeContent({
     // Board practice = unlocked by board tier OR full student tier (legacy
     // grandfathering — student-tier holders who used board before launch
     // keep access for the remainder of their subscription).
-    isPremium = hasBoardAccess(p) || hasFullStudentAccess(p);
+    const entitlements = await fetchEntitlements(supabase, user.id);
+    isPremium = hasBoardAccess(p, entitlements) || hasFullStudentAccess(p, entitlements);
     if (!isPremium) {
       const beta = computeBetaStatus(profile as Partial<Profile> as Profile | null);
       if (beta.isBeta) {

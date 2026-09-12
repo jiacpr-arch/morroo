@@ -6,6 +6,7 @@ import BiteQuiz from "@/components/school/BiteQuiz";
 import { getSchoolQuizzes, getSchoolTopicsByYear } from "@/lib/supabase/queries-school";
 import { createClient } from "@/lib/supabase/server";
 import { hasSchoolAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default async function QuizPage({ searchParams }: PageProps) {
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .maybeSingle();
-    isPremium = hasSchoolAccess(profile);
+    isPremium = hasSchoolAccess(profile, await fetchEntitlements(supabase, user.id));
   }
 
   const [quizzes, topics] = await Promise.all([

@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getLongCases } from "@/lib/supabase/queries-longcase";
 import { getLongcaseGameMap } from "@/lib/supabase/queries-sim";
 import { createClient } from "@/lib/supabase/server";
+import { fetchAccess } from "@/lib/entitlements";
 import { BookOpen, Stethoscope, Clock, Star, Gamepad2 } from "lucide-react";
 import type { Metadata } from "next";
 import LongCaseStartButton, { type LongCaseEntitlement } from "./LongCaseStartButton";
@@ -61,9 +62,9 @@ export default async function LongCasePage() {
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .single();
-    const expires = profile?.membership_expires_at ? new Date(profile.membership_expires_at) : null;
+    const access = await fetchAccess(supabase, user.id, profile);
 
-    if (profile?.membership_type !== "free" && !!expires && expires > now) {
+    if (access.longcase) {
       entitlement = "subscriber";
     } else {
       const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();

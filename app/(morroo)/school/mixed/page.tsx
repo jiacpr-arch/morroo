@@ -10,6 +10,7 @@ import {
 import FlashcardSwiper from "@/components/school/FlashcardSwiper";
 import SubjectFilter from "@/components/school/SubjectFilter";
 import { hasSchoolAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -35,7 +36,7 @@ export default async function MixedPage({ searchParams }: PageProps) {
     .eq("id", user.id)
     .maybeSingle();
   if (!profile?.current_year) redirect("/school/onboarding");
-  const isPremium = hasSchoolAccess(profile);
+  const isPremium = hasSchoolAccess(profile, await fetchEntitlements(supabase, user.id));
 
   // Optional subject (รายวิชา) filter — none = random mix across the year.
   const topics = await getSchoolTopicsByYear(profile.current_year);

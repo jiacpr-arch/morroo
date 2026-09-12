@@ -12,13 +12,7 @@ import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageS
 import { xpToRank } from "@/lib/school/rank";
 import type { Profile } from "@/lib/types";
 import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
-
-const membershipLabels: Record<string, string> = {
-  free: "ฟรี",
-  monthly: "รายเดือน",
-  yearly: "รายปี",
-  bundle: "ชุดข้อสอบ",
-};
+import { PRODUCTS, PRODUCT_INFO, planLabel, resolveAccess, type EntitlementLike } from "@/lib/membership";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -30,6 +24,7 @@ const membershipColors: Record<string, string> = {
 export default function ProfilePage() {
   const router = useRouter();
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [entitlements, setEntitlements] = useState<EntitlementLike[]>([]);
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState("");
   const [referralCode, setReferralCode] = useState<string | null>(null);
@@ -55,13 +50,16 @@ export default function ProfilePage() {
 
       setUserEmail(user.email || "");
 
-      const { data } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", user.id)
-        .single();
+      const [{ data }, { data: rows }] = await Promise.all([
+        supabase.from("profiles").select("*").eq("id", user.id).single(),
+        supabase
+          .from("membership_entitlements")
+          .select("product, expires_at")
+          .eq("user_id", user.id),
+      ]);
 
       setProfile(data);
+      setEntitlements((rows ?? []) as EntitlementLike[]);
       if (data?.line_user_id) setLineLinked(true);
       if (data?.referral_code) {
         setReferralCode(data.referral_code);
@@ -166,6 +164,8 @@ export default function ProfilePage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const access = resolveAccess(profile, entitlements);
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[calc(100vh-12rem)]">
@@ -210,10 +210,39 @@ export default function ProfilePage() {
             <div className="flex items-center justify-between">
               <span className="text-muted-foreground">แพ็กเกจ</span>
               <Badge
-                className={membershipColors[profile?.membership_type || "free"]}
+                className={membershipColors[profile?.membership_type || "free"] ?? "bg-brand/10 text-brand"}
               >
-                {membershipLabels[profile?.membership_type || "free"]}
+                {planLabel(profile?.membership_type)}
               </Badge>
+            </div>
+            {/* สิทธิ์รายระบบ — แต่ละระบบหมดอายุแยกกัน */}
+            <div>
+              <p className="text-xs text-muted-foreground mb-2">สิทธิ์รายระบบ</p>
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                {PRODUCTS.map((p) => {
+                  const row = entitlements.find((e) => e.product === p);
+                  const active = access[p];
+                  return (
+                    <div
+                      key={p}
+                      className={`rounded-lg border px-2 py-1.5 text-xs ${
+                        active ? "border-brand/40 bg-brand/5" : "border-dashed text-muted-foreground"
+                      }`}
+                    >
+                      <Badge className={`text-[10px] ${active ? PRODUCT_INFO[p].color : "bg-gray-100 text-gray-500"}`}>
+                        {PRODUCT_INFO[p].short}
+                      </Badge>
+                      <p className="mt-1">
+                        {active
+                          ? row?.expires_at
+                            ? `ถึง ${new Date(row.expires_at).toLocaleDateString("th-TH")}`
+                            : "ไม่มีวันหมดอายุ"
+                          : "ยังไม่มีสิทธิ์"}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             {profile?.membership_expires_at && (
               <div className="flex items-center justify-between">
@@ -229,7 +258,7 @@ export default function ProfilePage() {
                 </span>
               </div>
             )}
-            {(!profile || profile.membership_type === "free") && (
+            {!access.anyPaid && (
               <Link href="/pricing">
                 <Button className="w-full bg-brand hover:bg-brand-light text-white mt-2">
                   อัปเกรดแพ็กเกจ

@@ -241,7 +241,7 @@ export default function AdminDashboard() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">ดูข้อมูลสมาชิก แก้ไขสมาชิกภาพ และกำหนดสิทธิ์</p>
+              <p className="text-sm text-muted-foreground">สิทธิ์แยกรายระบบ School · MCQ · MEQ · Long Case · Board — ให้/ต่อ/ยกเลิกทีละระบบ และกำหนด role</p>
             </CardContent>
           </Card>
         </Link>

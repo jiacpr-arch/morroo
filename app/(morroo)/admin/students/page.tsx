@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/client";
+import { PLAN_LABELS } from "@/lib/membership";
 import {
   Shield,
   Loader2,
@@ -179,9 +180,7 @@ export default function AdminStudentsPage() {
     );
   }
 
-  const membershipLabel: Record<string, string> = {
-    free: "Free", monthly: "Monthly", yearly: "Yearly", bundle: "Bundle",
-  };
+  const membershipLabel: Record<string, string> = PLAN_LABELS;
   const membershipOptions: MembershipFilter[] = ["all", "free", "monthly", "yearly", "bundle"];
 
   return (

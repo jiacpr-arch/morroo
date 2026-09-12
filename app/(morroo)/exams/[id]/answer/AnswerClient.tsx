@@ -20,6 +20,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import type { Exam, ExamPart, Profile } from "@/lib/types";
+import { hasMeqAccess, type EntitlementLike } from "@/lib/membership";
 
 const SCORE_LABELS = [
   { score: 0, label: "ไม่ได้ตอบ", color: "bg-gray-200 text-gray-600" },
@@ -51,6 +52,7 @@ export default function AnswerClient({
 }) {
   const [openParts, setOpenParts] = useState<Set<number>>(new Set());
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [entitlements, setEntitlements] = useState<EntitlementLike[]>([]);
   const [loading, setLoading] = useState(true);
   const [studentNotes, setStudentNotes] = useState<Record<number, string>>({});
   const [scores, setScores] = useState<Record<number, number>>({});
@@ -86,30 +88,24 @@ export default function AnswerClient({
         data: { user },
       } = await supabase.auth.getUser();
       if (user) {
-        const { data } = await supabase
-          .from("profiles")
-          .select("*")
-          .eq("id", user.id)
-          .single();
+        const [{ data }, { data: rows }] = await Promise.all([
+          supabase.from("profiles").select("*").eq("id", user.id).single(),
+          supabase
+            .from("membership_entitlements")
+            .select("product, expires_at")
+            .eq("user_id", user.id),
+        ]);
         setProfile(data);
+        setEntitlements((rows ?? []) as EntitlementLike[]);
       }
       setLoading(false);
     }
     loadProfile();
   }, []);
 
-  const hasAccess =
-    exam.is_free ||
-    (profile &&
-      profile.membership_type !== "free" &&
-      (!profile.membership_expires_at ||
-        new Date(profile.membership_expires_at) > new Date()));
-
-  const isPaidMember =
-    !!profile &&
-    profile.membership_type !== "free" &&
-    (!profile.membership_expires_at ||
-      new Date(profile.membership_expires_at) > new Date());
+  // MEQ exams are their own product (student pack or meq_* plan).
+  const isPaidMember = hasMeqAccess(profile, entitlements);
+  const hasAccess = exam.is_free || isPaidMember;
 
   const togglePart = (partNumber: number) => {
     setOpenParts((prev) => {

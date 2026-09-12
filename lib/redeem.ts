@@ -5,6 +5,7 @@ import {
   couponRewardDays,
   isSelfServeCoupon,
 } from "@/lib/coupons";
+import { grantPlanDays } from "@/lib/entitlements";
 
 export type RewardType = "monthly_1m" | "bundle_10q";
 export type RedeemSource =
@@ -220,41 +221,15 @@ export async function bundleCreditBalance(userId: string): Promise<number> {
 }
 
 /**
- * Grant `days` of "monthly" membership, stacking on top of any unexpired
- * entitlement so a user who redeems mid-subscription doesn't lose time.
+ * Grant `days` of the student pack (mcq + meq + longcase + school), stacking
+ * on top of any unexpired entitlement so a user who redeems mid-subscription
+ * doesn't lose time. The legacy profile columns are re-derived afterwards.
  */
 export async function extendMembershipDays(
   userId: string,
   days: number
 ): Promise<boolean> {
-  const supabase = createAdminClient();
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("membership_expires_at")
-    .eq("id", userId)
-    .maybeSingle();
-
-  const now = new Date();
-  const base =
-    profile?.membership_expires_at &&
-    new Date(profile.membership_expires_at) > now
-      ? new Date(profile.membership_expires_at)
-      : now;
-  const newExpiry = new Date(base.getTime() + days * 24 * 60 * 60 * 1000);
-
-  const { error } = await supabase
-    .from("profiles")
-    .update({
-      membership_type: "monthly",
-      membership_expires_at: newExpiry.toISOString(),
-    })
-    .eq("id", userId);
-
-  if (error) {
-    console.error("extendMembershipDays failed:", error);
-    return false;
-  }
-  return true;
+  return grantPlanDays(userId, "monthly", days, { source: "redeem" });
 }
 
 const COUPON_RPC_ERRORS: ReadonlySet<RedeemError> = new Set([
@@ -314,7 +289,10 @@ export async function redeemCouponCode(
   }
 
   const days = couponRewardDays(row.coupon_type, row.value);
-  const applied = await extendMembershipDays(userId, days);
+  const applied = await grantPlanDays(userId, "monthly", days, {
+    source: "coupon",
+    reference: code,
+  });
   if (!applied) {
     await supabase.rpc("unredeem_coupon_code", {
       p_coupon_id: row.coupon_id,

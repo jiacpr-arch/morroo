@@ -8,8 +8,8 @@ import NlExamCountdown from "@/components/NlExamCountdown";
 import SocialProofSection from "@/components/SocialProofSection";
 import { PRICING_FAQ_ITEMS } from "@/lib/pricing-faq";
 import { LineCtaButton } from "@/components/SocialLinks";
-import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
-import { GraduationCap, Mic } from "lucide-react";
+import { PRICING_PLANS, BOARD_PRICING_PLANS, PRODUCT_PRICING_PLANS } from "@/lib/types";
+import { GraduationCap, Mic, Layers } from "lucide-react";
 import type { Metadata } from "next";
 
 const faqSchema = {
@@ -69,6 +69,28 @@ export default function PricingPage() {
             <PricingCard key={plan.name} {...plan} />
           ))}
         </div>
+      </section>
+
+      {/* Per-product plans — buy only the system you need */}
+      <section className="mb-16">
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+            <Layers className="h-3.5 w-3.5" />
+            แยกซื้อรายระบบ
+          </div>
+          <h2 className="text-2xl font-bold">เลือกเฉพาะระบบที่ต้องการ</h2>
+          <p className="text-sm text-muted-foreground mt-1 max-w-xl mx-auto">
+            สมัครแยกได้ทีละระบบ — MCQ NL, MEQ, Long Case หรือ School — ถือพร้อมกันได้ หมดอายุแยกกัน
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+          {PRODUCT_PRICING_PLANS.map((plan) => (
+            <PricingCard key={plan.name} {...plan} />
+          ))}
+        </div>
+        <p className="text-xs text-muted-foreground text-center mt-4">
+          * แพ็ก นศพ. รายเดือน/รายปี รวม MCQ + MEQ + Long Case + School ไว้แล้ว คุ้มกว่าเมื่อใช้มากกว่า 2 ระบบ
+        </p>
       </section>
 
       {/* Board exam plans */}

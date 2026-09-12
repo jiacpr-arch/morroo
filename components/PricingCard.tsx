@@ -16,6 +16,8 @@ interface PricingCardProps {
   cta: string;
   popular: boolean;
   type: string;
+  /** Optional yearly SKU for per-product plans — rendered as a secondary link. */
+  yearlyType?: string;
 }
 
 export default function PricingCard({
@@ -27,6 +29,7 @@ export default function PricingCard({
   cta,
   popular,
   type,
+  yearlyType,
 }: PricingCardProps) {
   const href = type === "free" ? "/register" : `/payment/${type}`;
   return (
@@ -62,7 +65,7 @@ export default function PricingCard({
           ))}
         </ul>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex-col gap-2">
         <Link
           href={href}
           className="w-full"
@@ -78,6 +81,15 @@ export default function PricingCard({
             {cta}
           </Button>
         </Link>
+        {yearlyType && (
+          <Link
+            href={`/payment/${yearlyType}`}
+            className="text-xs text-muted-foreground underline-offset-2 hover:underline hover:text-brand"
+            onClick={() => track("plan_selected", { plan: yearlyType, price })}
+          >
+            สมัครรายปีแทน
+          </Link>
+        )}
       </CardFooter>
     </Card>
   );

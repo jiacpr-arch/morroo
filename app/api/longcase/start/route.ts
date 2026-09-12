@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { fetchAccess } from "@/lib/entitlements";
 import {
   getLongCaseFull,
   getLatestLongCaseAttempt,
@@ -23,9 +24,8 @@ export async function POST(request: NextRequest) {
     .eq("id", user.id)
     .single();
 
+  const access = await fetchAccess(supabase, user.id, profile);
   const now = new Date();
-  const expires = profile?.membership_expires_at ? new Date(profile.membership_expires_at) : null;
-  const hasActivePlan = profile?.membership_type !== "free" && expires && expires > now;
 
   const { caseId, retry } = await request.json();
   if (!caseId) {
@@ -36,6 +36,11 @@ export async function POST(request: NextRequest) {
   if (!longCase) {
     return NextResponse.json({ error: "Case not found" }, { status: 404 });
   }
+
+  // Board oral cases are unlocked by the Board product; student long cases
+  // by the Long Case product (student pack includes it).
+  const hasActivePlan =
+    longCase.audience === "board" ? access.board : access.longcase;
 
   let session: LongCaseSession | null = null;
   let resumed = false;

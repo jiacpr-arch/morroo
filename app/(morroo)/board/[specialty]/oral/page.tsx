@@ -9,6 +9,7 @@ import {
 import { getBoardOralCases } from "@/lib/supabase/queries-longcase";
 import { createClient } from "@/lib/supabase/server";
 import { hasBoardAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import LongCaseStartButton from "@/app/(morroo)/longcase/LongCaseStartButton";
 import { BOARD_SPECIALTY_SLUGS } from "@/lib/types-board";
 import type { Metadata } from "next";
@@ -62,7 +63,7 @@ export default async function BoardOralPage({
         .select("membership_type, membership_expires_at")
         .eq("id", user.id)
         .single();
-      return { hasAccess: hasBoardAccess(profile) };
+      return { hasAccess: hasBoardAccess(profile, await fetchEntitlements(supabase, user.id)) };
     })(),
   ]);
 

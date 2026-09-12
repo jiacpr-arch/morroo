@@ -15,6 +15,8 @@ import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import { computeBetaStatus } from "@/lib/beta";
+import { hasMcqAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
 import type { McqQuestion, McqSubject } from "@/lib/types-mcq";
 
@@ -70,17 +72,8 @@ async function PracticeContent({
       .single();
 
     const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
-    if (p) {
-      const isExpired =
-        p.membership_expires_at
-          ? new Date(p.membership_expires_at) < new Date()
-          : false;
-      isPremium =
-        (p.membership_type === "monthly" ||
-          p.membership_type === "yearly" ||
-          p.membership_type === "bundle") &&
-        !isExpired;
-    }
+    // NL MCQ is its own product — student pack, bundle or mcq_* plan.
+    isPremium = hasMcqAccess(p, await fetchEntitlements(supabase, user.id));
 
     if (!isPremium) {
       // Beta testers get a 25-question quota tracked on the profile row

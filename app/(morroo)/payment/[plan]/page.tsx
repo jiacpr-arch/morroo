@@ -20,14 +20,27 @@ import {
   CreditCard,
 } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
+import { PLAN_CATALOG, PLAN_TYPES, type PlanDuration } from "@/lib/membership";
 
-const PLANS: Record<string, { name: string; price: number; period: string }> = {
-  monthly: { name: "รายเดือน", price: 199, period: "/ เดือน" },
-  yearly: { name: "รายปี", price: 1490, period: "/ ปี" },
-  bundle: { name: "ชุดข้อสอบ 10 ข้อ", price: 299, period: "" },
-  board_monthly: { name: "Board รายเดือน", price: 499, period: "/ เดือน" },
-  board_yearly: { name: "Board รายปี", price: 4990, period: "/ ปี" },
+const PLAN_PERIOD: Record<PlanDuration, string> = {
+  month: "/ เดือน",
+  year: "/ ปี",
+  lifetime: "",
 };
+
+// Derived from PLAN_CATALOG so every sellable plan (student pack, board and
+// the per-product mcq / meq / longcase / school SKUs) has a checkout page.
+const PLANS: Record<string, { name: string; price: number; period: string }> =
+  Object.fromEntries(
+    PLAN_TYPES.map((plan) => [
+      plan,
+      {
+        name: plan === "bundle" ? "ชุดข้อสอบ 10 ข้อ" : PLAN_CATALOG[plan].label,
+        price: PLAN_CATALOG[plan].amount,
+        period: PLAN_PERIOD[PLAN_CATALOG[plan].duration],
+      },
+    ])
+  );
 
 // Mirror of NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED used by the Stripe checkout
 // route. When on, the Stripe option also offers an instant PromptPay QR, so we
