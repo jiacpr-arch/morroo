@@ -23,6 +23,7 @@ import {
   Newspaper,
   Flag,
   HeartPulse,
+  Ticket,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -371,6 +372,32 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">แต่ง/สร้างเคสเกมกู้ชีพด้วย AI ดูสถิติผู้เล่น และเผยแพร่ที่ /sim</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/coupons">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-emerald-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Ticket className="h-5 w-5 text-emerald-600" />
+                <h3 className="font-bold">Voucher / คูปอง</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">สร้างโค้ดสมาชิกฟรี X วัน / X เดือน แจกแคมเปญ และดูว่าใครใช้แล้ว</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/firstaid/vouchers">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-emerald-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Ticket className="h-5 w-5 text-emerald-600" />
+                <h3 className="font-bold">Voucher ปฐมพยาบาล</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">สร้าง/ยกเลิกโค้ดปลดล็อกคอร์ส firstaid.morroo.com และดูว่าใครใช้แล้ว</p>
             </CardContent>
           </Card>
         </Link>
