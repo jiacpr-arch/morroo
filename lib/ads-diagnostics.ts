@@ -37,6 +37,14 @@ export const THRESHOLDS = {
   pageHighBounceRatePct: 80,             // 1-event-only sessions / sessions
   pageLineCtaMinSessions: 200,           // need this much traffic to call a dead LINE CTA
   pageLowCheckoutMinSessions: 150,       // signed up but nobody reaches checkout
+  // Paid-traffic landing check: sessions that arrive from an ad (utm_medium=paid /
+  // fbclid) and leave within `shortSessionSecs` without touching anything.
+  // Sep 2026: a Story ad pointed at "/" produced 778 sessions, 85% under 5s,
+  // 0 signups — while the same audience landing on the case game stayed a
+  // median 16s. That's an ad/landing mismatch (or mis-taps), not a page bug.
+  pageAdLandingMinSessions: 200,
+  pageAdLandingShortRatePct: 70,
+  shortSessionSecs: 5,
 
   // Ad-level, rolling window
   adWindowDays: 3,
@@ -56,6 +64,7 @@ export type Severity = "info" | "warn" | "critical";
 
 export type FindingCategory =
   | "page_no_conversion"
+  | "ad_landing_mismatch"
   | "page_low_signup"
   | "page_high_bounce"
   | "page_low_line_cta"
@@ -86,11 +95,33 @@ export interface AutoActionRequest {
   reason: string;
 }
 
+/**
+ * Per-landing-page funnel stats.
+ *
+ * Attribution is by LANDING SESSION: a session belongs to the bucket of the
+ * first page it viewed, and every conversion that session makes later — on
+ * /register, /pricing, anywhere — is credited to that landing page. Counting
+ * by the path the event fired on (the old behaviour) gave "/" a permanent 0
+ * because signup_submit always fires on /register, which sent the admin off
+ * to "fix the homepage CTA" when the homepage was fine.
+ *
+ * `pageViews` stays path-based (views of this path from any session).
+ */
 export interface PageStats {
   path: string;
+  /** Sessions that landed on this path. */
   sessions: number;
   pageViews: number;
+  /** Landing sessions with no further pageview and no engagement event. */
   singleEventSessions: number;
+  /** Landing sessions whose whole activity spans < THRESHOLDS.shortSessionSecs. */
+  shortSessions: number;
+  /** Landing sessions that arrived from a paid ad (utm_medium=paid / fbclid). */
+  adSessions: number;
+  /** Ad sessions that were also short — the mis-tap / mismatch signal. */
+  adShortSessions: number;
+  /** Top paid source tag for the ad sessions, e.g. "fb / 52588558588397". */
+  adTopSource: string | null;
   signups: number;
   examStarts: number;
   checkouts: number;
@@ -123,14 +154,27 @@ type RawEventRow = {
   session_id: string | null;
   path: string | null;
   properties: Record<string, unknown> | null;
+  created_at: string;
 };
 
-const FUNNEL_EVENTS = new Set([
-  "pageview",
+// Events that mean "the visitor did something" beyond auto-fired view pings.
+// Auto-fired events (hero_variant_view, *_show) must NOT count, or every
+// homepage session looks engaged.
+const ENGAGEMENT_EVENTS = new Set([
   "signup_submit",
   "exam_start_click",
   "stripe_checkout_click",
   "social_click",
+  "hero_variant_convert",
+  "first_visit_nudge_cta_click",
+  "exit_intent_cta_click",
+  "free_try_cta_click",
+  "casegame_start",
+  "casegame_first_tap",
+  "casegame_cta_click",
+  "mcq_answer_submit",
+  "pricing_view",
+  "login_attempt",
 ]);
 
 /** Top-level path bucket (`/lp/foo/bar` → `/lp/foo`). Keeps cardinality sane. */
@@ -142,89 +186,191 @@ function bucketPath(path: string): string {
   return `/${segments[0]}/${segments[1]}`;
 }
 
+/** Paid-source tag from a landing URL, or null for organic/direct. */
+export function paidSourceOf(path: string): string | null {
+  const qs = path.split("?")[1];
+  if (!qs) return null;
+  const params = new URLSearchParams(qs);
+  const medium = params.get("utm_medium");
+  const isPaid =
+    medium === "paid" ||
+    medium === "cpc" ||
+    medium === "paid_social" ||
+    params.has("fbclid") ||
+    params.has("gclid") ||
+    params.has("ttclid");
+  if (!isPaid) return null;
+  const source =
+    params.get("utm_source") ??
+    (params.has("fbclid") ? "fb" : params.has("gclid") ? "google" : "paid");
+  const campaign = params.get("utm_campaign");
+  return campaign ? `${source} / ${campaign}` : source;
+}
+
 export async function fetchPageStats(
   supabase: SupabaseClient,
   sinceIso: string
 ): Promise<PageStats[]> {
   const { data, error } = await supabase
     .from("analytics_events")
-    .select("event_name, session_id, path, properties")
+    .select("event_name, session_id, path, properties, created_at")
     .gte("created_at", sinceIso)
-    .in("event_name", Array.from(FUNNEL_EVENTS))
+    .order("created_at", { ascending: true })
     .limit(100000);
 
   if (error) throw new Error(`fetchPageStats: ${error.message}`);
 
-  type Bucket = {
-    path: string;
-    sessions: Set<string>;
-    pageViews: number;
+  return aggregatePageStats((data as RawEventRow[] | null) ?? []);
+}
+
+/** Pure aggregation, split out so the attribution rules are unit-testable. */
+export function aggregatePageStats(rows: RawEventRow[]): PageStats[] {
+  type Session = {
+    landing: string | null;
+    paidSource: string | null;
+    pageviews: number;
+    engaged: boolean;
+    firstAt: number;
+    lastAt: number;
     signups: number;
     examStarts: number;
     checkouts: number;
     lineClicks: number;
-    sessionEventCount: Map<string, number>;
   };
-  const buckets = new Map<string, Bucket>();
+  const sessions = new Map<string, Session>();
+  const pageViewsByPath = new Map<string, number>();
 
-  for (const row of (data as RawEventRow[] | null) ?? []) {
-    if (!row.path) continue;
-    const bucket = bucketPath(row.path);
-    let entry = buckets.get(bucket);
-    if (!entry) {
-      entry = {
-        path: bucket,
-        sessions: new Set(),
-        pageViews: 0,
+  // Rows arrive ordered by created_at, but guard against callers that don't.
+  const ordered = [...rows].sort(
+    (a, b) => Date.parse(a.created_at) - Date.parse(b.created_at)
+  );
+
+  for (const row of ordered) {
+    if (row.event_name === "pageview" && row.path) {
+      const b = bucketPath(row.path);
+      pageViewsByPath.set(b, (pageViewsByPath.get(b) ?? 0) + 1);
+    }
+    if (!row.session_id) continue;
+
+    const at = Date.parse(row.created_at) || 0;
+    let sess = sessions.get(row.session_id);
+    if (!sess) {
+      sess = {
+        landing: null,
+        paidSource: null,
+        pageviews: 0,
+        engaged: false,
+        firstAt: at,
+        lastAt: at,
         signups: 0,
         examStarts: 0,
         checkouts: 0,
         lineClicks: 0,
-        sessionEventCount: new Map(),
       };
-      buckets.set(bucket, entry);
+      sessions.set(row.session_id, sess);
     }
-    if (row.session_id) {
-      entry.sessions.add(row.session_id);
-      entry.sessionEventCount.set(
-        row.session_id,
-        (entry.sessionEventCount.get(row.session_id) ?? 0) + 1
-      );
+    if (at < sess.firstAt) sess.firstAt = at;
+    if (at > sess.lastAt) sess.lastAt = at;
+
+    if (row.event_name === "pageview" && row.path) {
+      sess.pageviews += 1;
+      if (sess.landing === null) {
+        sess.landing = bucketPath(row.path);
+        sess.paidSource = paidSourceOf(row.path);
+      }
+      continue;
     }
+
+    if (ENGAGEMENT_EVENTS.has(row.event_name)) sess.engaged = true;
     switch (row.event_name) {
-      case "pageview":
-        entry.pageViews += 1;
-        break;
       case "signup_submit":
-        entry.signups += 1;
+        sess.signups += 1;
         break;
       case "exam_start_click":
-        entry.examStarts += 1;
+        sess.examStarts += 1;
         break;
       case "stripe_checkout_click":
-        entry.checkouts += 1;
+        sess.checkouts += 1;
         break;
       case "social_click":
-        if (row.properties?.platform === "line") entry.lineClicks += 1;
+        if (row.properties?.platform === "line") sess.lineClicks += 1;
         break;
     }
   }
 
-  return Array.from(buckets.values()).map((b) => {
-    let singleEventSessions = 0;
-    for (const count of b.sessionEventCount.values()) {
-      if (count <= 1) singleEventSessions += 1;
+  type Bucket = Omit<PageStats, "adTopSource"> & { sources: Map<string, number> };
+  const buckets = new Map<string, Bucket>();
+  const shortMs = THRESHOLDS.shortSessionSecs * 1000;
+
+  for (const sess of sessions.values()) {
+    // A session with no pageview at all (e.g. only a keepalive event after
+    // the pageview row was lost) has no landing page to credit.
+    if (!sess.landing) continue;
+    let b = buckets.get(sess.landing);
+    if (!b) {
+      b = {
+        path: sess.landing,
+        sessions: 0,
+        pageViews: pageViewsByPath.get(sess.landing) ?? 0,
+        singleEventSessions: 0,
+        shortSessions: 0,
+        adSessions: 0,
+        adShortSessions: 0,
+        signups: 0,
+        examStarts: 0,
+        checkouts: 0,
+        lineClicks: 0,
+        sources: new Map(),
+      };
+      buckets.set(sess.landing, b);
     }
-    return {
-      path: b.path,
-      sessions: b.sessions.size,
-      pageViews: b.pageViews,
-      singleEventSessions,
-      signups: b.signups,
-      examStarts: b.examStarts,
-      checkouts: b.checkouts,
-      lineClicks: b.lineClicks,
-    };
+    const isShort = sess.lastAt - sess.firstAt < shortMs;
+    const isBounce = sess.pageviews <= 1 && !sess.engaged;
+    b.sessions += 1;
+    if (isBounce) b.singleEventSessions += 1;
+    if (isShort) b.shortSessions += 1;
+    if (sess.paidSource) {
+      b.adSessions += 1;
+      if (isShort) b.adShortSessions += 1;
+      b.sources.set(sess.paidSource, (b.sources.get(sess.paidSource) ?? 0) + 1);
+    }
+    b.signups += sess.signups;
+    b.examStarts += sess.examStarts;
+    b.checkouts += sess.checkouts;
+    b.lineClicks += sess.lineClicks;
+  }
+
+  // Paths that were viewed but never landed on still get a row so callers
+  // that look a page up by path (post-merge watch) find it.
+  for (const [path, views] of pageViewsByPath) {
+    if (!buckets.has(path)) {
+      buckets.set(path, {
+        path,
+        sessions: 0,
+        pageViews: views,
+        singleEventSessions: 0,
+        shortSessions: 0,
+        adSessions: 0,
+        adShortSessions: 0,
+        signups: 0,
+        examStarts: 0,
+        checkouts: 0,
+        lineClicks: 0,
+        sources: new Map(),
+      });
+    }
+  }
+
+  return Array.from(buckets.values()).map(({ sources, ...b }) => {
+    let top: string | null = null;
+    let topN = 0;
+    for (const [src, n] of sources) {
+      if (n > topN) {
+        top = src;
+        topN = n;
+      }
+    }
+    return { ...b, adTopSource: top };
   });
 }
 
@@ -377,6 +523,8 @@ export function diagnosePages(pages: PageStats[]): Finding[] {
     const signupRate = (p.signups / p.sessions) * 100;
     const bounceRate = (p.singleEventSessions / p.sessions) * 100;
     const hasAnyConversion = p.signups + p.checkouts > 0;
+    const adShortRate =
+      p.adSessions > 0 ? (p.adShortSessions / p.adSessions) * 100 : 0;
 
     const snapshot = {
       sessions: p.sessions,
@@ -386,7 +534,34 @@ export function diagnosePages(pages: PageStats[]): Finding[] {
       lineClicks: p.lineClicks,
       signupRatePct: Number(signupRate.toFixed(2)),
       bounceRatePct: Number(bounceRate.toFixed(2)),
+      adSessions: p.adSessions,
+      adShortRatePct: Number(adShortRate.toFixed(2)),
+      adTopSource: p.adTopSource,
     };
+
+    // ad_landing_mismatch — paid visitors arrive and leave within seconds.
+    // The page isn't the suspect here: the ad promised something the landing
+    // doesn't show, or the placement collects mis-taps (Story CTR ≫ 6%).
+    // Reported instead of page_no_conversion so nobody rewrites the page.
+    if (
+      p.adSessions >= THRESHOLDS.pageAdLandingMinSessions &&
+      adShortRate >= THRESHOLDS.pageAdLandingShortRatePct
+    ) {
+      findings.push({
+        severity: "critical",
+        category: "ad_landing_mismatch",
+        entityType: "page",
+        entityId: p.path,
+        entityLabel: p.adTopSource ?? undefined,
+        metricSnapshot: snapshot,
+        recommendation:
+          `โฆษณา${p.adTopSource ? ` (${p.adTopSource})` : ""} ส่งคนมาหน้า ${p.path} ${p.adSessions} sessions ` +
+          `แต่ ${adShortRate.toFixed(0)}% ออกภายใน ${THRESHOLDS.shortSessionSecs} วินาที — ` +
+          `เป็นปัญหาฝั่งโฆษณา ไม่ใช่หน้าเว็บ: เช็กว่า landing ตรงกับคำโฆษณาไหม, ` +
+          `placement Story/Reels แตะพลาดหรือเปล่า (CTR สูงผิดปกติ), ลอง optimize เป็น Landing Page Views`,
+      });
+      continue;
+    }
 
     if (
       p.sessions >= THRESHOLDS.pageNoConversionMinSessions &&
@@ -399,7 +574,8 @@ export function diagnosePages(pages: PageStats[]): Finding[] {
         entityId: p.path,
         metricSnapshot: snapshot,
         recommendation:
-          `หน้า ${p.path} มี ${p.sessions} sessions แต่ 0 conversion เลย — ` +
+          `คนที่เข้าเว็บผ่านหน้า ${p.path} ${p.sessions} sessions ไม่มีใครสมัครหรือ checkout เลย` +
+          `${p.adSessions > 0 ? ` (จากโฆษณา ${p.adSessions})` : ""} — ` +
           `เช็ก CTA, ฟอร์มสมัคร, และตัวพิกเซลของหน้านี้`,
       });
       continue;

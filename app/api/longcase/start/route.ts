@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { fetchAccess } from "@/lib/entitlements";
+import { fetchAccess, ownedScopes } from "@/lib/entitlements";
+import { LONGCASE_ITEM_MAX_ATTEMPTS } from "@/lib/items";
 import {
   getLongCaseFull,
   getLatestLongCaseAttempt,
@@ -37,10 +38,20 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Case not found" }, { status: 404 });
   }
 
-  // Board oral cases are unlocked by the Board product; student long cases
-  // by the Long Case product (student pack includes it).
-  const hasActivePlan =
-    longCase.audience === "board" ? access.board : access.longcase;
+  // Board oral cases are unlocked by the Board product (or that specialty
+  // bought alone); student long cases by the Long Case product, this case,
+  // or its specialty bought alone.
+  const isBoardCase = longCase.audience === "board";
+  const owned = ownedScopes(access, isBoardCase ? "board" : "longcase");
+  const productAccess = isBoardCase ? access.board : access.longcase;
+  const ownsItem = isBoardCase
+    ? owned.has(`specialty:${longCase.board_specialty ?? ""}`)
+    : owned.has(`case:${longCase.id}`) || owned.has(`specialty:${longCase.specialty}`);
+  const hasActivePlan = productAccess || ownsItem;
+  // A single purchased case is capped at LONGCASE_ITEM_MAX_ATTEMPTS sessions.
+  const singleCaseOnly =
+    !productAccess && !isBoardCase && owned.has(`case:${longCase.id}`) &&
+    !owned.has(`specialty:${longCase.specialty}`);
 
   let session: LongCaseSession | null = null;
   let resumed = false;
@@ -52,6 +63,20 @@ export async function POST(request: NextRequest) {
         { error: "ทำซ้ำเคสเดิมได้เฉพาะสมาชิก — อัปเกรดเพื่อปลดล็อก" },
         { status: 403 }
       );
+    }
+
+    if (singleCaseOnly) {
+      const { count } = await supabase
+        .from("long_case_sessions")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", user.id)
+        .eq("case_id", caseId);
+      if ((count ?? 0) >= LONGCASE_ITEM_MAX_ATTEMPTS) {
+        return NextResponse.json(
+          { error: `เคสที่ซื้อแยกทำได้ ${LONGCASE_ITEM_MAX_ATTEMPTS} ครั้ง — สมัครสมาชิก Long Case เพื่อทำไม่จำกัด` },
+          { status: 403 }
+        );
+      }
     }
 
     const result = await retryLongCaseSession(caseId, user.id);

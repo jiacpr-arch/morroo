@@ -414,6 +414,9 @@ export async function pickFindingsToSuggest(
     if (blockedFindingIds.has(f.id)) continue;
     if (blockedPaths.has(f.entity_id)) continue;
     if (snoozedKeys.has(`${f.entity_id}::${f.category}`)) continue;
+    // Ad-side diagnoses are attached to the landing path for context but the
+    // fix lives in Ads Manager — rewriting the page would be the wrong lever.
+    if (f.category.startsWith("ad_")) continue;
     if (!findPageFile(f.entity_id)) continue;
     picked.push({
       id: f.id,

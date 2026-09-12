@@ -94,8 +94,8 @@ export async function POST(
 
   // ส่ง email ใบเสร็จ (non-blocking)
   if (body.buyerEmail?.trim()) {
-    const { STRIPE_PLANS } = await import("@/lib/stripe");
-    const planName = STRIPE_PLANS[invoice.plan_type]?.name ?? invoice.plan_type;
+    const { purchasableName } = await import("@/lib/billing/plan-resolver");
+    const planName = await purchasableName(invoice.plan_type);
 
     emailReceipt({
       toEmail: body.buyerEmail.trim(),

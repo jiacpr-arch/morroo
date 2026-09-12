@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import FlashcardSwiper from "@/components/school/FlashcardSwiper";
 import { getSchoolFlashcards, getSchoolTopicsByYear } from "@/lib/supabase/queries-school";
 import { createClient } from "@/lib/supabase/server";
-import { hasSchoolAccess } from "@/lib/membership";
+import { hasSchoolAccess, hasScopedAccess } from "@/lib/membership";
 import { fetchEntitlements } from "@/lib/entitlements";
 import type { Metadata } from "next";
 
@@ -35,7 +35,14 @@ export default async function FlashcardsPage({ searchParams }: PageProps) {
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .maybeSingle();
-    isPremium = hasSchoolAccess(profile, await fetchEntitlements(supabase, user.id));
+    const entitlements = await fetchEntitlements(supabase, user.id);
+    const scopes = [
+      ...(topicId ? [`topic:${topicId}`] : []),
+      ...(year ? [`year:${year}`] : []),
+    ];
+    isPremium =
+      hasSchoolAccess(profile, entitlements) ||
+      hasScopedAccess("school", scopes, profile, entitlements);
   }
 
   const [cards, topics] = await Promise.all([

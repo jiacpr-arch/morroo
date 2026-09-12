@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { stripe, STRIPE_PLANS } from "@/lib/stripe";
+import { stripe } from "@/lib/stripe";
+import { resolvePurchasable } from "@/lib/billing/plan-resolver";
 
 export const runtime = "nodejs";
 
@@ -19,11 +20,21 @@ export async function POST(request: NextRequest) {
       invoiceData?: { name: string; taxId: string; address: string } | null;
     };
 
-    if (!planType || !STRIPE_PLANS[planType]) {
+    // A plan (PLAN_CATALOG) or an item — one subject / specialty / exam /
+    // case / topic (lib/items.ts). Both are priced server-side; the client
+    // only sends the plan string.
+    const purchasable =
+      typeof planType === "string" && planType.length <= 120
+        ? await resolvePurchasable(planType)
+        : null;
+    if (!purchasable) {
       return NextResponse.json({ error: "ประเภทแพ็กเกจไม่ถูกต้อง" }, { status: 400 });
     }
 
-    const plan = STRIPE_PLANS[planType];
+    const plan =
+      purchasable.kind === "plan"
+        ? { amount: purchasable.amount, name: purchasable.stripeName }
+        : { amount: purchasable.item.amount, name: purchasable.item.stripeName };
     const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com").trim();
 
     // PromptPay is the dominant consumer payment rail in Thailand and settles
@@ -57,7 +68,7 @@ export async function POST(request: NextRequest) {
         },
       ],
       success_url: `${siteUrl}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/payment/${planType}`,
+      cancel_url: `${siteUrl}/payment/${encodeURIComponent(planType)}`,
       metadata: {
         userId: user.id,
         planType,

@@ -65,3 +65,31 @@
 1. รัน `supabase/migrations/20260913_membership_entitlements.sql` ใน Supabase (มี backfill ในตัว, รันซ้ำได้)
 2. deploy โค้ด — ก่อน migration ถูกรัน โค้ดจะ fallback ไปคอลัมน์เก่าอัตโนมัติ (query ตารางล้มเหลว → `[]`)
 3. ตรวจราคาแพ็กรายระบบใน `PLAN_CATALOG` (`lib/membership.ts`) — ตอนนี้เป็นราคาตั้งต้น
+
+## ขายแยกรายการ (items) — วิชา / สาขา / ชุด / เคส / บท
+
+นอกจากแพ็ก (ทั้งระบบ) ยังขาย "รายการเดียว" ในระบบได้ ผ่านคอลัมน์ `scope`
+ของ `membership_entitlements` (`*` = ทั้งระบบ) — migration
+`supabase/migrations/20260914_entitlement_scopes.sql`
+
+| ระบบ | รายการที่ขาย | plan string | scope | ราคา (`lib/items.ts` ITEM_PRICES) |
+|---|---|---|---|---|
+| MCQ NL | รายวิชา | `item:mcq_subject:<mcq_subjects.id>` | `subject:<id>` | 79 / 59 / 39 ตามจำนวนข้อ (≥200 / 100–199 / <100) ซื้อขาด |
+| MCQ NL | หมวดอายุรกรรม | `item:mcq_category:internal_med` | `category:internal_med` | 99 ซื้อขาด |
+| MCQ NL | preclinic ทุกวิชา | `item:mcq_examtype:NL1` | `examtype:NL1` | 99 ซื้อขาด |
+| Board | รายสาขา | `item:board_specialty:<slug>:month\|year` | `specialty:<slug>` | 299/เดือน · 1,990/ปี |
+| MEQ | รายชุด | `item:meq_exam:<exams.id>` | `exam:<id>` | 29 ซื้อขาด |
+| MEQ | รายวิชา | `item:meq_category:<category>` | `category:<category>` | 149 ซื้อขาด |
+| Long Case | รายเคส (ทำได้ 3 ครั้ง) | `item:longcase_case:<long_cases.id>` | `case:<id>` | 49 ซื้อขาด |
+| Long Case | รายวิชา | `item:longcase_specialty:<specialty>` | `specialty:<specialty>` | 129 ซื้อขาด |
+| School | รายบท | `item:school_topic:<school_topics.id>` | `topic:<id>` | 39 ซื้อขาด |
+| School | ทั้งปี | `item:school_year:<1-6>` | `year:<n>` | 199 ซื้อขาด |
+
+- plan string วิ่งผ่าน checkout → Stripe metadata → fulfil เหมือนแพ็กปกติ
+  ราคา/ชื่อคำนวณฝั่ง server เท่านั้น (`lib/billing/plan-resolver.ts` `resolveItem`)
+- หน้าชำระเงิน `/payment/<plan string>` ดึงข้อมูลจาก `GET /api/billing/plan-info` และโชว์แพ็กใหญ่เป็น anchor
+- การ์ดขายในหน้าใช้งานจริง (`components/ItemUpsell.tsx`): NL practice รายวิชา, Board practice/oral รายสาขา,
+  MEQ answer รายชุด, Long Case card รายเคส, School guided รายบท — หน้า /pricing ไม่แสดงราคาย่อย
+- เช็คสิทธิ์: `hasScopedAccess(product, scopes, profile, entitlements)` = ทั้งระบบ **หรือ** มี scope ที่ตรง
+- Admin: `/admin/users` แสดงรายการที่ซื้อแยกและยกเลิกได้ (`POST /api/admin/membership` รับ `scope`)
+- Items ไม่แตะ `profiles.membership_type` (ไม่ใช่แพ็ก) — cron/analytics มองผู้ซื้อรายการเดียวเป็น free ต่อไป

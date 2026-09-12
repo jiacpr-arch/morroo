@@ -31,6 +31,8 @@ export const runtime = "nodejs";
  *         → overwrite one product's expiry (null = lifetime)
  *     { userId, action: "revoke", product, reference? }
  *         → expire one product now
+ *   Any of grant / set / revoke may carry `scope` (e.g. "subject:<id>") to
+ *   target one purchased item instead of the whole product.
  *   → { ok: true, entitlements: EntitlementRow[], profile: { membership_type, membership_expires_at } }
  *
  * Every write re-derives the legacy profiles.membership_type / expiry summary.
@@ -51,6 +53,7 @@ type Body = {
   days?: unknown;
   expiresAt?: unknown;
   reference?: unknown;
+  scope?: unknown;
 };
 
 export async function POST(request: Request) {
@@ -67,9 +70,14 @@ export async function POST(request: Request) {
   const userId = typeof body.userId === "string" ? body.userId : "";
   const action = typeof body.action === "string" ? body.action : "";
   const reference = typeof body.reference === "string" ? body.reference : null;
+  // Optional item scope (lib/items.ts) — omitted = the whole product.
+  const scope =
+    typeof body.scope === "string" && /^[A-Za-z0-9_\-:*.]{1,120}$/.test(body.scope)
+      ? body.scope
+      : undefined;
   if (!userId) return NextResponse.json({ error: "missing_user" }, { status: 400 });
 
-  const opts = { source: "admin" as const, reference, grantedBy: guard.userId };
+  const opts = { source: "admin" as const, reference, grantedBy: guard.userId, scope };
   let ok = false;
 
   switch (action) {

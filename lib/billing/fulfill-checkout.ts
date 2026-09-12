@@ -16,7 +16,9 @@ import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { enqueueBoardGenJobs } from "@/lib/board/enqueue";
 import { isPlanType, planLabel } from "@/lib/membership";
-import { extendActiveProducts, grantPlan } from "@/lib/entitlements";
+import { extendActiveProducts, grantItem, grantPlan } from "@/lib/entitlements";
+import { isItemPlan } from "@/lib/items";
+import { resolveItem } from "@/lib/billing/plan-resolver";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -75,21 +77,39 @@ export async function fulfillCheckoutSession(
     return { alreadyProcessed: true };
   }
 
-  if (!isPlanType(planType)) {
+  const now = new Date();
+  let expiresAt: Date;
+  let label: string;
+
+  if (isPlanType(planType)) {
+    // Grant the plan's products (per-product entitlements, stacking on any
+    // unexpired ones) and write the legacy profile summary.
+    const granted = await grantPlan(userId, planType, {
+      source: "stripe",
+      reference: session.id,
+    });
+    if (!granted.ok) {
+      console.error("[fulfill] failed to grant entitlements:", session.id);
+    }
+    expiresAt = granted.expiresAt;
+    label = planLabel(planType);
+  } else if (isItemPlan(planType)) {
+    // One subject / specialty / exam / case / topic → scoped entitlement.
+    // Items are not plans: the legacy profile summary is left untouched.
+    const item = await resolveItem(planType);
+    if (!item) {
+      console.error("[fulfill] unknown item on session:", session.id, planType);
+      return { alreadyProcessed: false };
+    }
+    const ok = await grantItem(userId, item, { source: "stripe", reference: session.id });
+    if (!ok) console.error("[fulfill] failed to grant item:", session.id);
+    expiresAt = new Date(now);
+    if (item.days) expiresAt.setDate(expiresAt.getDate() + item.days);
+    else expiresAt.setFullYear(expiresAt.getFullYear() + 99);
+    label = item.label;
+  } else {
     console.error("[fulfill] unknown planType on session:", session.id, planType);
     return { alreadyProcessed: false };
-  }
-
-  const now = new Date();
-
-  // Grant the plan's products (per-product entitlements, stacking on any
-  // unexpired ones) and write the legacy profile summary.
-  const { ok: granted, expiresAt } = await grantPlan(userId, planType, {
-    source: "stripe",
-    reference: session.id,
-  });
-  if (!granted) {
-    console.error("[fulfill] failed to grant entitlements:", session.id);
   }
 
   const totalAmount = (session.amount_total ?? 0) / 100;
@@ -228,7 +248,7 @@ export async function fulfillCheckoutSession(
       sessionId: session.id,
       userId,
       planType,
-      planLabel: planLabel(planType),
+      planLabel: label,
       totalAmount,
       amountBeforeVat,
       vatAmount,

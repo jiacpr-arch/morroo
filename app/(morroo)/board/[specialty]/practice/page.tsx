@@ -11,7 +11,9 @@ import {
 import { getMcqQuestions, getFreeAttemptsCount } from "@/lib/supabase/queries-mcq";
 import McqPractice from "@/components/McqPractice";
 import { computeBetaStatus } from "@/lib/beta";
-import { hasBoardAccess, hasFullStudentAccess } from "@/lib/membership";
+import { hasBoardAccess, hasFullStudentAccess, hasScopedAccess } from "@/lib/membership";
+import { ITEM_PRICES, itemPlanType } from "@/lib/items";
+import ItemUpsell from "@/components/ItemUpsell";
 import { fetchEntitlements } from "@/lib/entitlements";
 import { BOARD_SECTIONS } from "@/lib/types-board";
 import type { Profile } from "@/lib/types";
@@ -75,7 +77,10 @@ async function PracticeContent({
     // grandfathering — student-tier holders who used board before launch
     // keep access for the remainder of their subscription).
     const entitlements = await fetchEntitlements(supabase, user.id);
-    isPremium = hasBoardAccess(p, entitlements) || hasFullStudentAccess(p, entitlements);
+    isPremium =
+      hasBoardAccess(p, entitlements) ||
+      hasFullStudentAccess(p, entitlements) ||
+      hasScopedAccess("board", [`specialty:${specialty}`], p, entitlements);
     if (!isPremium) {
       const beta = computeBetaStatus(profile as Partial<Profile> as Profile | null);
       if (beta.isBeta) {
@@ -153,6 +158,19 @@ async function PracticeContent({
           </Link>
         ))}
       </div>
+
+      {!isPremium && (
+        <ItemUpsell
+          className="mb-6"
+          title={`ปลดล็อก Board ${s.short_name_th ?? s.name_th} ไม่จำกัด`}
+          itemPlan={itemPlanType("board_specialty", specialty, "month")}
+          itemLabel={`${s.icon} เฉพาะสาขา ${s.short_name_th ?? s.name_th} — MCQ + Oral`}
+          itemAmount={ITEM_PRICES.board_specialty_month}
+          itemPeriod="/ เดือน"
+          productPlan="board_monthly"
+          note={`สาขานี้รายปี ฿${ITEM_PRICES.board_specialty_year.toLocaleString()} · แพ็ก Board ทุกสาขา เหมาะกับสอบหลายสาขาหรืออาจารย์`}
+        />
+      )}
 
       {questions.length > 0 ? (
         <McqPractice

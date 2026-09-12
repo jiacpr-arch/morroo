@@ -68,7 +68,37 @@ export default function PaymentPage({
   // Stripe loading
   const [stripeLoading, setStripeLoading] = useState(false);
 
-  const planInfo = PLANS[plan];
+  // Items (item:…) are priced and named by the server — one subject /
+  // specialty / exam / case / topic — and come with bigger "anchor" plans.
+  type RemoteInfo = {
+    name: string;
+    price: number;
+    period: string;
+    anchors: { planType: string; label: string; amount: number; period: string }[];
+  };
+  const isItem = plan.startsWith("item:");
+  const [remoteInfo, setRemoteInfo] = useState<RemoteInfo | null>(null);
+  const [remoteLoading, setRemoteLoading] = useState(isItem);
+  useEffect(() => {
+    if (!isItem) return;
+    let cancelled = false;
+    fetch(`/api/billing/plan-info?planType=${encodeURIComponent(plan)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled) return;
+        if (j?.name) {
+          setRemoteInfo({ name: j.name, price: j.amount, period: j.period, anchors: j.anchors ?? [] });
+        }
+        setRemoteLoading(false);
+      })
+      .catch(() => !cancelled && setRemoteLoading(false));
+    return () => {
+      cancelled = true;
+    };
+  }, [plan, isItem]);
+
+  const planInfo: { name: string; price: number; period: string } | undefined =
+    PLANS[plan] ?? remoteInfo ?? undefined;
 
   useEffect(() => {
     async function checkAuth() {
@@ -86,11 +116,11 @@ export default function PaymentPage({
 
   // Canonical InitiateCheckout: fires once per payment-page visit so Meta/TikTok
   // get the signal before the user reaches Stripe checkout.
+  const trackedPrice = planInfo?.price;
   useEffect(() => {
-    const info = PLANS[plan];
-    if (!info) return;
-    trackInitiateCheckout({ plan, value: info.price, currency: "THB" });
-  }, [plan]);
+    if (trackedPrice === undefined) return;
+    trackInitiateCheckout({ plan, value: trackedPrice, currency: "THB" });
+  }, [plan, trackedPrice]);
 
   const handleStripeCheckout = async () => {
     if (!user) return;
@@ -120,6 +150,14 @@ export default function PaymentPage({
     }
     setStripeLoading(false);
   };
+
+  if (!planInfo && remoteLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader2 className="h-8 w-8 animate-spin text-brand" />
+      </div>
+    );
+  }
 
   if (!planInfo) {
     return (
@@ -166,7 +204,7 @@ export default function PaymentPage({
               <div>
                 <p className="font-medium">{planInfo.name}</p>
                 <p className="text-sm text-muted-foreground">
-                  แพ็กเกจ{planInfo.name}
+                  {isItem ? "ซื้อเฉพาะรายการนี้" : `แพ็กเกจ${planInfo.name}`}
                 </p>
               </div>
               <div className="text-right">
@@ -182,6 +220,24 @@ export default function PaymentPage({
             </div>
           </CardContent>
         </Card>
+
+        {/* Bigger plans next to a single item — the item is the entry point */}
+        {remoteInfo && remoteInfo.anchors.length > 0 && (
+          <div className="rounded-lg border border-dashed p-4 text-sm">
+            <p className="font-medium mb-2">ใช้บ่อย? แพ็กใหญ่คุ้มกว่า</p>
+            <div className="flex flex-wrap gap-2">
+              {remoteInfo.anchors.map((a) => (
+                <Link
+                  key={a.planType}
+                  href={`/payment/${a.planType}`}
+                  className="inline-flex items-center gap-1 rounded-full border bg-background px-3 py-1 text-xs hover:border-brand hover:text-brand"
+                >
+                  {a.label} ฿{a.amount.toLocaleString()} {a.period}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         <PaymentTrustSignals />
 

@@ -60,6 +60,7 @@ export default function AIGradeButton({
           correctAnswer,
           keyPoints,
           question,
+          examId,
         }),
       });
 

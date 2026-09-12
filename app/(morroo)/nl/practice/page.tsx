@@ -15,8 +15,10 @@ import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import { computeBetaStatus } from "@/lib/beta";
-import { hasMcqAccess } from "@/lib/membership";
+import { hasMcqAccess, hasScopedAccess, type EntitlementLike } from "@/lib/membership";
 import { fetchEntitlements } from "@/lib/entitlements";
+import { ITEM_PRICES, itemPlanType, mcqSubjectPrice } from "@/lib/items";
+import ItemUpsell from "@/components/ItemUpsell";
 import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
 import type { McqQuestion, McqSubject } from "@/lib/types-mcq";
 
@@ -61,6 +63,7 @@ async function PracticeContent({
   // Check premium status
   let isPremium = false;
   let freeUsedCount = 0;
+  let entitlements: EntitlementLike[] = [];
 
   if (user) {
     const { data: profile } = await supabase
@@ -73,7 +76,8 @@ async function PracticeContent({
 
     const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
     // NL MCQ is its own product — student pack, bundle or mcq_* plan.
-    isPremium = hasMcqAccess(p, await fetchEntitlements(supabase, user.id));
+    entitlements = await fetchEntitlements(supabase, user.id);
+    isPremium = hasMcqAccess(p, entitlements);
 
     if (!isPremium) {
       // Beta testers get a 25-question quota tracked on the profile row
@@ -110,6 +114,17 @@ async function PracticeContent({
       !(INTERNAL_MED_SUBJECT_NAMES as readonly string[]).includes(s.name)
   );
   const isInternalMed = category === INTERNAL_MED_CATEGORY;
+
+  // Single-subject / internal-med-bundle purchases unlock just this page.
+  if (user && !isPremium && (subjectId || isInternalMed)) {
+    const scopes = isInternalMed
+      ? ["category:internal_med"]
+      : [
+          `subject:${subjectId}`,
+          ...(internalMedIds.includes(subjectId as string) ? ["category:internal_med"] : []),
+        ];
+    isPremium = hasScopedAccess("mcq", scopes, null, entitlements);
+  }
   const otherSelected =
     !!subjectId && otherSubjects.some((s) => s.id === subjectId);
 
@@ -310,6 +325,32 @@ async function PracticeContent({
           <span>คละทุกสาขา — {questions.length} ข้อ</span>
         )}
       </div>
+
+      {/* Buy just this subject — shown in context, not on /pricing */}
+      {user && !isPremium && !useRecommended && (isInternalMed || currentSubject) && (
+        <ItemUpsell
+          className="mb-6"
+          title={isInternalMed ? "ปลดล็อกหมวดอายุรกรรมทั้งหมด" : "ปลดล็อกวิชานี้ไม่จำกัด"}
+          itemPlan={
+            isInternalMed
+              ? itemPlanType("mcq_category", "internal_med")
+              : itemPlanType("mcq_subject", currentSubject!.id)
+          }
+          itemLabel={
+            isInternalMed
+              ? "🩺 อายุรกรรม ทุก sub-specialty"
+              : `${currentSubject!.icon} ${currentSubject!.name_th}`
+          }
+          itemAmount={
+            isInternalMed
+              ? ITEM_PRICES.mcq_category_internal_med
+              : mcqSubjectPrice(currentSubject!.question_count ?? 0)
+          }
+          productPlan="mcq_monthly"
+          packPlan="monthly"
+          note="ซื้อขาด = ใช้ได้ตลอด เฉลยละเอียดทุกข้อ · แพ็ก นศพ. รวม MCQ + MEQ + Long Case + School"
+        />
+      )}
 
       {/* Practice Component */}
       {questions.length > 0 ? (

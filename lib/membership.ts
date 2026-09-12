@@ -283,6 +283,18 @@ export interface EntitlementLike {
   product: string;
   /** ISO timestamp; null = lifetime */
   expires_at: string | null;
+  /**
+   * `*` (or missing) = the whole product. Anything else is one item inside
+   * the product, e.g. `subject:<id>` / `specialty:<slug>` / `exam:<id>` —
+   * see lib/items.ts. Scoped rows never grant product-level access.
+   */
+  scope?: string | null;
+}
+
+export const WHOLE_PRODUCT_SCOPE = "*";
+
+export function isWholeProductRow(e: EntitlementLike): boolean {
+  return !e.scope || e.scope === WHOLE_PRODUCT_SCOPE;
 }
 
 export interface Access {
@@ -326,7 +338,7 @@ export function legacyProducts(
   return [...planProducts(profile.membership_type)];
 }
 
-/** Products the entitlement rows unlock right now. */
+/** Products the (whole-product) entitlement rows unlock right now. */
 export function entitledProducts(
   entitlements: readonly EntitlementLike[] | null | undefined,
   now: Date = new Date()
@@ -334,10 +346,44 @@ export function entitledProducts(
   const out: Product[] = [];
   for (const e of entitlements ?? []) {
     if (!isProduct(e.product)) continue;
+    if (!isWholeProductRow(e)) continue;
     if (isExpired(e.expires_at, now)) continue;
     if (!out.includes(e.product)) out.push(e.product);
   }
   return out;
+}
+
+/** Active item scopes the user holds inside one product (excludes `*`). */
+export function entitledScopes(
+  entitlements: readonly EntitlementLike[] | null | undefined,
+  product: Product,
+  now: Date = new Date()
+): Set<string> {
+  const out = new Set<string>();
+  for (const e of entitlements ?? []) {
+    if (e.product !== product) continue;
+    if (isWholeProductRow(e)) continue;
+    if (isExpired(e.expires_at, now)) continue;
+    out.add(e.scope as string);
+  }
+  return out;
+}
+
+/**
+ * Whole-product access OR any of `scopes` bought individually. Use this on
+ * pages that show one subject / specialty / exam / case / topic.
+ */
+export function hasScopedAccess(
+  product: Product,
+  scopes: readonly string[],
+  profile: MembershipLike | null | undefined,
+  entitlements?: readonly EntitlementLike[] | null,
+  now: Date = new Date()
+): boolean {
+  if (resolveAccess(profile, entitlements, now)[product]) return true;
+  if (!scopes.length) return false;
+  const owned = entitledScopes(entitlements, product, now);
+  return scopes.some((s) => owned.has(s));
 }
 
 /**
@@ -501,7 +547,7 @@ export function deriveLegacyMembership(
   let expires: string | null | undefined;
   for (const p of PLAN_CATALOG[plan].products) {
     const row = entitlements.find(
-      (e) => e.product === p && !isExpired(e.expires_at, now)
+      (e) => e.product === p && isWholeProductRow(e) && !isExpired(e.expires_at, now)
     );
     if (!row) continue;
     if (row.expires_at === null) {

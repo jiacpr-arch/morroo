@@ -22,7 +22,10 @@ import {
   type MembershipLike,
   type PlanType,
   type Product,
+  WHOLE_PRODUCT_SCOPE,
+  entitledScopes,
 } from "@/lib/membership";
+import type { ItemSpec } from "@/lib/items";
 
 export type EntitlementSource =
   | "stripe"
@@ -37,6 +40,7 @@ export type EntitlementSource =
 export interface EntitlementRow extends EntitlementLike {
   user_id: string;
   product: Product;
+  scope: string;
   expires_at: string | null;
   source: string | null;
   reference: string | null;
@@ -53,7 +57,7 @@ export async function fetchEntitlements(
 ): Promise<EntitlementRow[]> {
   const { data, error } = await supabase
     .from("membership_entitlements")
-    .select("user_id, product, expires_at, source, reference, updated_at")
+    .select("user_id, product, scope, expires_at, source, reference, updated_at")
     .eq("user_id", userId);
   if (error) {
     // Table missing (migration not applied yet) → fall back to legacy columns.
@@ -91,6 +95,8 @@ export interface GrantOptions {
   source: EntitlementSource;
   reference?: string | null;
   grantedBy?: string | null;
+  /** Item scope (lib/items.ts); omit for the whole product. */
+  scope?: string | null;
 }
 
 /**
@@ -111,6 +117,7 @@ export async function grantProduct(
     p_source: opts.source,
     p_reference: opts.reference ?? null,
     p_granted_by: opts.grantedBy ?? null,
+    p_scope: opts.scope ?? WHOLE_PRODUCT_SCOPE,
   });
   if (error) {
     console.error(`grantProduct ${product} failed:`, error.message);
@@ -134,6 +141,7 @@ export async function setProduct(
     p_source: opts.source,
     p_reference: opts.reference ?? null,
     p_granted_by: opts.grantedBy ?? null,
+    p_scope: opts.scope ?? WHOLE_PRODUCT_SCOPE,
   });
   if (error) {
     console.error(`setProduct ${product} failed:`, error.message);
@@ -253,6 +261,27 @@ export async function syncLegacyMembership(
   return true;
 }
 
+/**
+ * Grant one purchased item (subject / specialty / exam / case / topic).
+ * Stacks like a plan for subscription items (board specialty), lifetime
+ * otherwise. Legacy profile columns are untouched — items are not plans.
+ */
+export async function grantItem(
+  userId: string,
+  item: ItemSpec,
+  opts: Omit<GrantOptions, "scope">
+): Promise<boolean> {
+  return grantProduct(userId, item.product, item.days, { ...opts, scope: item.scope });
+}
+
+/** Item scopes the user currently holds for a product (from a fetchAccess result). */
+export function ownedScopes(
+  access: { entitlements: EntitlementRow[] },
+  product: Product
+): Set<string> {
+  return entitledScopes(access.entitlements, product);
+}
+
 /** Admin listing: every row, grouped by user. */
 export async function fetchAllEntitlements(): Promise<
   Record<string, EntitlementRow[]>
@@ -260,7 +289,7 @@ export async function fetchAllEntitlements(): Promise<
   const admin = createAdminClient();
   const { data, error } = await admin
     .from("membership_entitlements")
-    .select("user_id, product, expires_at, source, reference, updated_at")
+    .select("user_id, product, scope, expires_at, source, reference, updated_at")
     .order("updated_at", { ascending: false })
     .limit(20000);
   if (error) {

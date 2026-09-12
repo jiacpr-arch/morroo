@@ -54,7 +54,7 @@ export default function ProfilePage() {
         supabase.from("profiles").select("*").eq("id", user.id).single(),
         supabase
           .from("membership_entitlements")
-          .select("product, expires_at")
+          .select("product, scope, expires_at")
           .eq("user_id", user.id),
       ]);
 
@@ -220,7 +220,7 @@ export default function ProfilePage() {
               <p className="text-xs text-muted-foreground mb-2">สิทธิ์รายระบบ</p>
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
                 {PRODUCTS.map((p) => {
-                  const row = entitlements.find((e) => e.product === p);
+                  const row = entitlements.find((e) => e.product === p && (!e.scope || e.scope === "*"));
                   const active = access[p];
                   return (
                     <div
@@ -258,7 +258,38 @@ export default function ProfilePage() {
                 </span>
               </div>
             )}
-            {!access.anyPaid && (
+            {/* รายการที่ซื้อแยก (วิชา / สาขา / ชุด / เคส / บท) */}
+            {entitlements.some((e) => e.scope && e.scope !== "*") && (
+              <div>
+                <p className="text-xs text-muted-foreground mb-2">รายการที่ซื้อแยก</p>
+                <ul className="space-y-1 text-xs">
+                  {entitlements
+                    .filter((e) => e.scope && e.scope !== "*")
+                    .map((e) => {
+                      const active = !e.expires_at || new Date(e.expires_at) > new Date();
+                      const kind = (e.scope as string).split(":")[0];
+                      const kindLabel: Record<string, string> = {
+                        subject: "วิชา", category: "หมวด", examtype: "preclinic", specialty: "สาขา",
+                        exam: "ชุด MEQ", case: "เคส", topic: "บท", year: "ปี",
+                      };
+                      return (
+                        <li key={`${e.product}:${e.scope}`} className={`flex items-center justify-between rounded border px-2 py-1 ${active ? "" : "opacity-50"}`}>
+                          <span>
+                            <Badge className={`text-[10px] mr-1 ${PRODUCT_INFO[e.product as keyof typeof PRODUCT_INFO]?.color ?? ""}`}>
+                              {PRODUCT_INFO[e.product as keyof typeof PRODUCT_INFO]?.short ?? e.product}
+                            </Badge>
+                            {kindLabel[kind] ?? kind}
+                          </span>
+                          <span className="text-muted-foreground">
+                            {e.expires_at ? `ถึง ${new Date(e.expires_at).toLocaleDateString("th-TH")}` : "ไม่มีวันหมดอายุ"}
+                          </span>
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+            )}
+            {!access.anyPaid && !entitlements.some((e) => e.scope && e.scope !== "*" && (!e.expires_at || new Date(e.expires_at) > new Date())) && (
               <Link href="/pricing">
                 <Button className="w-full bg-brand hover:bg-brand-light text-white mt-2">
                   อัปเกรดแพ็กเกจ

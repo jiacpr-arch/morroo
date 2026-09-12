@@ -20,7 +20,9 @@ import {
   RotateCcw,
 } from "lucide-react";
 import type { Exam, ExamPart, Profile } from "@/lib/types";
-import { hasMeqAccess, type EntitlementLike } from "@/lib/membership";
+import { hasMeqAccess, hasScopedAccess, type EntitlementLike } from "@/lib/membership";
+import { ITEM_PRICES, itemPlanType } from "@/lib/items";
+import ItemUpsell from "@/components/ItemUpsell";
 
 const SCORE_LABELS = [
   { score: 0, label: "ไม่ได้ตอบ", color: "bg-gray-200 text-gray-600" },
@@ -103,8 +105,11 @@ export default function AnswerClient({
     loadProfile();
   }, []);
 
-  // MEQ exams are their own product (student pack or meq_* plan).
-  const isPaidMember = hasMeqAccess(profile, entitlements);
+  // MEQ exams are their own product (student pack or meq_* plan) — or this
+  // one exam / its category bought on its own.
+  const isPaidMember =
+    hasMeqAccess(profile, entitlements) ||
+    hasScopedAccess("meq", [`exam:${exam.id}`, `category:${exam.category}`], profile, entitlements);
   const hasAccess = exam.is_free || isPaidMember;
 
   const togglePart = (partNumber: number) => {
@@ -137,6 +142,18 @@ export default function AnswerClient({
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      {!loading && profile && !hasAccess && (
+        <ItemUpsell
+          className="mb-6"
+          title="ปลดล็อกเฉลย + AI ตรวจคำตอบของชุดนี้"
+          itemPlan={itemPlanType("meq_exam", exam.id)}
+          itemLabel={exam.title}
+          itemAmount={ITEM_PRICES.meq_exam}
+          productPlan="meq_monthly"
+          packPlan="monthly"
+          note={`ทั้งวิชา ${exam.category} ฿${ITEM_PRICES.meq_category} ซื้อขาด — เลือกได้ที่หน้าชำระเงิน`}
+        />
+      )}
       {/* Header */}
       <div className="mb-8">
         <Link

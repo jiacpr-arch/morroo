@@ -51,6 +51,7 @@ interface Profile {
 interface EntitlementRow extends EntitlementLike {
   user_id: string;
   product: string;
+  scope: string;
   expires_at: string | null;
   source: string | null;
   reference: string | null;
@@ -198,6 +199,11 @@ export default function AdminUsersPage() {
 
   const grantDays = (userId: string, product: Product, days: number) =>
     applyMembership(userId, `grant:${product}`, { action: "grant", product, days });
+
+  const revokeScoped = (userId: string, product: Product, scope: string) => {
+    if (!confirm(`ยกเลิกรายการ ${PRODUCT_INFO[product].label} · ${scope} ทันที?`)) return;
+    return applyMembership(userId, `revoke:${product}:${scope}`, { action: "revoke", product, scope });
+  };
 
   const revoke = (userId: string, product: Product) => {
     if (!confirm(`ยกเลิกสิทธิ์ ${PRODUCT_INFO[product].label} ของผู้ใช้นี้ทันที?`)) return;
@@ -394,7 +400,10 @@ export default function AdminUsersPage() {
         <div className="space-y-4">
           {filtered.map((user) => {
             const rows = entitlements[user.id] ?? [];
-            const byProduct = new Map(rows.map((r) => [r.product, r]));
+            const byProduct = new Map(
+              rows.filter((r) => !r.scope || r.scope === "*").map((r) => [r.product, r])
+            );
+            const itemRows = rows.filter((r) => r.scope && r.scope !== "*");
             const access = accessOf(user);
             const edit = productEdits[user.id] ?? { product: "mcq" as Product, expiresAt: "", planType: "monthly" };
             const roleChanged = (roleEdits[user.id] ?? "user") !== (user.role || "user");
@@ -497,6 +506,44 @@ export default function AdminUsersPage() {
                         );
                       })}
                     </div>
+
+                    {/* Item purchases — one subject / specialty / exam / case / topic */}
+                    {itemRows.length > 0 && (
+                      <div className="rounded-lg border border-dashed p-2 text-xs">
+                        <p className="text-muted-foreground mb-1">ซื้อแยกรายการ</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {itemRows.map((r) => {
+                            const active = isActive(r);
+                            const prod = r.product as Product;
+                            return (
+                              <span
+                                key={`${r.product}:${r.scope}`}
+                                className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 ${
+                                  active ? "" : "opacity-50 line-through"
+                                }`}
+                                title={r.scope}
+                              >
+                                <span className="font-medium">{PRODUCT_INFO[prod]?.short ?? r.product}</span>
+                                <span className="text-muted-foreground truncate max-w-[180px]">{r.scope}</span>
+                                <span className="text-muted-foreground">
+                                  {r.expires_at ? `ถึง ${fmtDate(r.expires_at)}` : "ไม่หมดอายุ"}
+                                </span>
+                                {active && (
+                                  <button
+                                    type="button"
+                                    className="text-red-600 hover:underline disabled:opacity-50"
+                                    disabled={!!busyKey}
+                                    onClick={() => revokeScoped(user.id, prod, r.scope)}
+                                  >
+                                    ยกเลิก
+                                  </button>
+                                )}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
 
                     {/* Edit controls row */}
                     <div className="flex items-end gap-3 flex-wrap">
