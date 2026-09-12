@@ -11,16 +11,10 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { sendLineMessage, type LineMessage } from "@/lib/line";
+import { planLabel as planLabelOf } from "@/lib/membership";
 
 export const runtime = "nodejs";
 
-const PLAN_LABELS: Record<string, string> = {
-  monthly: "รายเดือน",
-  yearly: "รายปี",
-  bundle: "ชุดข้อสอบ",
-  board_monthly: "Board รายเดือน",
-  board_yearly: "Board รายปี",
-};
 
 function infoRow(label: string, value: string) {
   return {
@@ -93,7 +87,7 @@ export async function POST(request: Request) {
     .single();
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
-  const planLabel = PLAN_LABELS[order.plan_type] ?? order.plan_type;
+  const planLabel = planLabelOf(order.plan_type);
   const customerName = profile?.name || profile?.email || user.email || "ลูกค้า";
   const amountThb = Number(order.amount).toLocaleString();
   const timeLabel = new Date(order.created_at).toLocaleString("th-TH", {
