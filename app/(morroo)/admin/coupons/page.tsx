@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
 import { COUPON_TYPE_LABELS, type CouponCode, type CouponPlatform, type CouponType } from "@/lib/types-standard";
 import { couponRewardLabel } from "@/lib/coupons";
+import { PLAN_CATALOG, PLAN_TYPES } from "@/lib/membership";
 import {
   Ban,
   Check,
@@ -101,6 +102,9 @@ export default function AdminCouponsPage() {
   const [expiresAt, setExpiresAt] = useState<string>(defaultExpiry);
   const [description, setDescription] = useState("");
   const [source, setSource] = useState("");
+  // free_*: what to grant (default = student pack monthly); discount_*: limit to a plan ("" = any)
+  const [planType, setPlanType] = useState<string>("");
+  const [customPlan, setCustomPlan] = useState<string>("");
   const [creating, setCreating] = useState(false);
   const [justCreated, setJustCreated] = useState<CouponCode[]>([]);
 
@@ -177,6 +181,7 @@ export default function AdminCouponsPage() {
           expires_at: expiresAt ? new Date(expiresAt).toISOString() : null,
           description,
           source,
+          plan_type: planType === "__item__" ? customPlan.trim() : planType || undefined,
         }),
       });
       const json = await res.json();
@@ -294,7 +299,7 @@ export default function AdminCouponsPage() {
           <CardTitle className="text-base">สร้างโค้ดใหม่</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-5">
             <div>
               <Label htmlFor="c-type">ประเภท</Label>
               <select id="c-type" value={couponType} onChange={(e) => onTypeChange(e.target.value as CouponType)} className={selectCls}>
@@ -306,6 +311,30 @@ export default function AdminCouponsPage() {
             <div>
               <Label htmlFor="c-value">{VALUE_LABEL[couponType]}</Label>
               <Input id="c-value" type="number" min={1} value={value} onChange={(e) => setValue(e.target.value)} className="mt-1" />
+            </div>
+            <div>
+              <Label htmlFor="c-plan">
+                {couponType.startsWith("free") ? "ให้แพ็ก / รายการ" : "ใช้กับแพ็ก (ว่าง = ทุกแพ็ก)"}
+              </Label>
+              <select id="c-plan" value={planType} onChange={(e) => setPlanType(e.target.value)} className={selectCls}>
+                <option value="">
+                  {couponType.startsWith("free") ? "แพ็ก นศพ. (ค่าเริ่มต้น)" : "ทุกแพ็ก"}
+                </option>
+                {PLAN_TYPES.map((pl) => (
+                  <option key={pl} value={pl}>
+                    {PLAN_CATALOG[pl].label} — ฿{PLAN_CATALOG[pl].amount.toLocaleString()}
+                  </option>
+                ))}
+                <option value="__item__">รายการเดี่ยว (ระบุ plan string)</option>
+              </select>
+              {planType === "__item__" && (
+                <Input
+                  className="mt-1 font-mono text-xs"
+                  placeholder="item:board_specialty:internal_medicine:month"
+                  value={customPlan}
+                  onChange={(e) => setCustomPlan(e.target.value)}
+                />
+              )}
             </div>
             <div>
               <Label htmlFor="c-platform">แพลตฟอร์ม</Label>
@@ -385,7 +414,7 @@ export default function AdminCouponsPage() {
             <div className="rounded-md border border-emerald-200 bg-emerald-50 p-3">
               <div className="mb-2 flex items-center justify-between">
                 <p className="text-sm font-semibold text-emerald-800">
-                  สร้างแล้ว {justCreated.length} โค้ด · {couponRewardLabel(justCreated[0].coupon_type, justCreated[0].value)}
+                  สร้างแล้ว {justCreated.length} โค้ด · {couponRewardLabel(justCreated[0].coupon_type, justCreated[0].value, justCreated[0].plan_type)}
                 </p>
                 <Button size="sm" variant="outline" onClick={() => copyText(justCreated.map((c) => `${siteUrl}/redeem/${c.code}`).join("\n"), "__all__")}>
                   {copied === "__all__" ? <Check className="mr-1 h-4 w-4" /> : <Copy className="mr-1 h-4 w-4" />}
@@ -456,7 +485,7 @@ export default function AdminCouponsPage() {
                           {c.description && <p className="mt-0.5 font-sans text-xs text-muted-foreground">{c.description}</p>}
                         </td>
                         <td className="px-4 py-2">
-                          {couponRewardLabel(c.coupon_type, c.value)}
+                          {couponRewardLabel(c.coupon_type, c.value, c.plan_type)}
                           {c.platform !== "all" && <Badge variant="outline" className="ml-1">{PLATFORM_LABEL[c.platform]}</Badge>}
                         </td>
                         <td className="px-4 py-2"><Badge className={DERIVED_COLOR[d]}>{DERIVED_LABEL[d]}</Badge></td>

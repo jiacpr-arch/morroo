@@ -19,6 +19,7 @@ import { isPlanType, planLabel } from "@/lib/membership";
 import { extendActiveProducts, grantItem, grantPlan } from "@/lib/entitlements";
 import { isItemPlan } from "@/lib/items";
 import { resolveItem } from "@/lib/billing/plan-resolver";
+import { recordDiscountRedemption } from "@/lib/billing/coupon-checkout";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -113,6 +114,11 @@ export async function fulfillCheckoutSession(
   }
 
   const totalAmount = (session.amount_total ?? 0) / 100;
+
+  // A discount coupon priced into this session → consume one use now.
+  if (metadata.couponCode) {
+    await recordDiscountRedemption(metadata.couponCode, userId, session.id);
+  }
 
   // Create payment order
   const { data: orderData, error: orderError } = await supabase

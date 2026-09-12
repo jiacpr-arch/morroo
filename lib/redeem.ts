@@ -2,10 +2,14 @@ import crypto from "crypto";
 import { createAdminClient } from "@/lib/supabase/admin";
 import {
   COUPON_PLATFORM,
+  couponGrantPlan,
   couponRewardDays,
   isSelfServeCoupon,
 } from "@/lib/coupons";
-import { grantPlanDays } from "@/lib/entitlements";
+import { grantPlanDays, grantProduct } from "@/lib/entitlements";
+import { isPlanType } from "@/lib/membership";
+import { isItemPlan } from "@/lib/items";
+import { resolveItem } from "@/lib/billing/plan-resolver";
 
 export type RewardType = "monthly_1m" | "bundle_10q";
 export type RedeemSource =
@@ -259,7 +263,7 @@ export async function redeemCouponCode(
 
   const { data: coupon, error: lookupError } = await supabase
     .from("coupon_codes")
-    .select("id, coupon_type, value")
+    .select("id, coupon_type, value, plan_type")
     .eq("code", code)
     .maybeSingle();
   if (lookupError) {
@@ -289,10 +293,7 @@ export async function redeemCouponCode(
   }
 
   const days = couponRewardDays(row.coupon_type, row.value);
-  const applied = await grantPlanDays(userId, "monthly", days, {
-    source: "coupon",
-    reference: code,
-  });
+  const applied = await grantCouponPlan(userId, couponGrantPlan(coupon.plan_type), days, code);
   if (!applied) {
     await supabase.rpc("unredeem_coupon_code", {
       p_coupon_id: row.coupon_id,
@@ -302,4 +303,34 @@ export async function redeemCouponCode(
   }
 
   return { ok: true, rewardType: row.coupon_type, days };
+}
+
+/**
+ * Apply `days` of whatever a free coupon points at: a PLAN_CATALOG plan
+ * (student pack by default, or Board / MCQ / … alone) or a single item
+ * (one specialty / subject / exam / case / topic).
+ */
+async function grantCouponPlan(
+  userId: string,
+  planType: string,
+  days: number,
+  code: string
+): Promise<boolean> {
+  if (isPlanType(planType)) {
+    return grantPlanDays(userId, planType, days, { source: "coupon", reference: code });
+  }
+  if (isItemPlan(planType)) {
+    const item = await resolveItem(planType);
+    if (!item) {
+      console.error("redeemCouponCode: unknown item plan", planType);
+      return false;
+    }
+    return grantProduct(userId, item.product, days, {
+      source: "coupon",
+      reference: code,
+      scope: item.scope,
+    });
+  }
+  console.error("redeemCouponCode: unknown plan", planType);
+  return false;
 }

@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { requireAdmin } from "@/lib/admin-auth";
-import { COUPON_CODE_RE, generateCouponCode } from "@/lib/coupons";
+import { COUPON_CODE_RE, generateCouponCode, isValidCouponPlan } from "@/lib/coupons";
+import { resolvePurchasable } from "@/lib/billing/plan-resolver";
 import type { CouponCode, CouponType, CouponPlatform } from "@/lib/types-standard";
 
 export const runtime = "nodejs";
@@ -24,6 +25,7 @@ export const runtime = "nodejs";
  *     expires_at?: string | null,
  *     starts_at?: string | null,
  *     description?: string, source?: string,
+ *     plan_type?: string,      // free_*: what to grant (default "monthly"); discount_*: limit to this plan
  *   }
  *   → { items: CouponCode[] }
  */
@@ -132,6 +134,17 @@ export async function POST(request: Request) {
   const startsAt = parseDate(body.starts_at, "starts_at");
   if (startsAt && typeof startsAt === "object") return NextResponse.json(startsAt, { status: 400 });
 
+  // What the coupon grants (free_*) or is limited to (discount_*): a
+  // PLAN_CATALOG plan or an item string, validated against the catalog / DB.
+  let planType: string | null = null;
+  if (typeof body.plan_type === "string" && body.plan_type.trim()) {
+    const candidate = body.plan_type.trim();
+    if (!isValidCouponPlan(candidate) || !(await resolvePurchasable(candidate))) {
+      return NextResponse.json({ error: "plan_type is not a known plan or item" }, { status: 400 });
+    }
+    planType = candidate;
+  }
+
   const description = typeof body.description === "string" ? body.description.trim() || null : null;
   const source = typeof body.source === "string" ? body.source.trim() || null : null;
 
@@ -166,6 +179,7 @@ export async function POST(request: Request) {
     starts_at: startsAt ?? new Date().toISOString(),
     expires_at: expiresAt,
     source,
+    plan_type: planType,
     is_active: true,
     created_by: guard.userId,
   }));

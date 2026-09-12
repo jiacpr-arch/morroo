@@ -93,3 +93,17 @@
 - เช็คสิทธิ์: `hasScopedAccess(product, scopes, profile, entitlements)` = ทั้งระบบ **หรือ** มี scope ที่ตรง
 - Admin: `/admin/users` แสดงรายการที่ซื้อแยกและยกเลิกได้ (`POST /api/admin/membership` รับ `scope`)
 - Items ไม่แตะ `profiles.membership_type` (ไม่ใช่แพ็ก) — cron/analytics มองผู้ซื้อรายการเดียวเป็น free ต่อไป
+
+## Voucher / คูปอง (coupon_codes)
+
+- `coupon_codes.plan_type` (migration `20260915_coupon_plan_type.sql`)
+  - `free_trial` / `free_month`: แพ็กหรือรายการที่ให้ — ว่าง = แพ็ก นศพ. (`monthly`) เหมือนเดิม
+    ใส่ได้ทั้ง plan ใน `PLAN_CATALOG` (เช่น `board_monthly`, `mcq_monthly`) และ item string
+    (เช่น `item:board_specialty:internal_medicine:month`) — แลกที่ `/redeem` แล้ว `lib/redeem.ts`
+    จะ `grantPlanDays` หรือ `grantProduct(scope)` ตามนั้น
+  - `discount_percent` / `discount_fixed`: จำกัดให้ใช้กับแพ็ก/รายการเดียว — ว่าง = ทุกแพ็ก
+- ส่วนลดใช้ที่หน้าชำระเงิน: ช่อง "มีโค้ดส่วนลด?" → `POST /api/billing/coupon-check` (preview)
+  → `POST /api/billing/checkout {couponCode}` ตรวจซ้ำ (`lib/billing/coupon-checkout.ts`) แล้วส่งราคาหลังหักไป Stripe
+  → ตอน fulfil บันทึกการใช้ผ่าน RPC `redeem_coupon_code` และเก็บ `coupon_redemptions.stripe_session_id`
+- ราคาหลังหักไม่ต่ำกว่า ฿10 (ขั้นต่ำของ Stripe สำหรับ THB)
+- สร้างคูปองที่ `/admin/coupons` มีช่อง "ให้แพ็ก / รายการ" (free) หรือ "ใช้กับแพ็ก" (discount)
