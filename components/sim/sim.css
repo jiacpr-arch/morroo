@@ -525,15 +525,29 @@
   color: var(--cbs-ink); background: rgba(26, 188, 156, .18);
   border: 2px solid var(--cbs-teal);
 }
-.cbs-local-note {
-  text-align: center; font-size: 11.5px; line-height: 1.6; color: var(--cbs-dim);
-  margin-top: -2px;
-}
 .cbs-upsell { text-align: center; font-size: 13px; color: var(--cbs-dim); margin-top: 14px; }
 .cbs-upsell a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
 .cbs-login-hint { text-align: center; font-size: 13px; color: var(--cbs-dim); }
 .cbs-login-hint a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
 
+
+/* "ผลของคุณ" — การ์ดผลลัพธ์ท้ายเกม (คะแนน/เกรด, จุดที่พลาด, เทียบผู้เล่นอื่น) */
+.cbs-result-card {
+  border: 2px solid #2a4d55; border-radius: 10px;
+  background: rgba(8, 20, 26, .55); padding: 14px; margin-top: 10px;
+}
+.cbs-result-title {
+  font-size: 12px; font-weight: 800; letter-spacing: .1em; color: #7fa3a8;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.cbs-result-weak {
+  font-size: 13px; line-height: 1.6; color: var(--cbs-dim); margin-top: 10px;
+}
+.cbs-result-weak-clean { color: var(--cbs-green); }
+.cbs-result-rank {
+  font-size: 14px; font-weight: 800; color: var(--cbs-gold); text-align: center;
+  margin-top: 10px; padding-top: 10px; border-top: 1px dashed #2a4d55;
+}
 
 .cbs-grade-row { display: flex; gap: 12px; align-items: stretch; margin-top: 8px; }
 .cbs-grade-box {
@@ -622,32 +636,37 @@
 }
 .cbs-line-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #04913e; }
 .cbs-line-btn:focus-visible { outline: 3px solid var(--cbs-gold); outline-offset: 2px; }
-/* ตัวที่สอง (แอด OA) เบากว่า เพื่อไม่ให้แข่งสายตากับปุ่มล็อกอิน */
-.cbs-line-btn-alt {
-  background: rgba(6, 199, 85, .14); color: #4fe39a;
-  border-color: #06c755; box-shadow: none; font-size: 15px; padding: 12px;
-}
-.cbs-line-btn-alt:active { transform: translateY(2px); box-shadow: none; }
 .cbs-line-glyph { width: 20px; height: 20px; flex: none; }
 .cbs-line-note {
   font-size: 11.5px; color: var(--cbs-dim); text-align: center; margin-top: -4px;
 }
 
-/* เส้นคั่น — บอกว่าลิงก์ด้านล่างเป็นทางเลือกรอง ไม่ใช่ขั้นตอนถัดไป */
-.cbs-browse-or {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 11.5px; color: #6f9198;
-}
-.cbs-browse-or::before, .cbs-browse-or::after {
-  content: ""; flex: 1; height: 1px; background: #2a4d55;
-}
 .cbs-browse-link {
-  display: block; text-align: center; text-decoration: none;
-  font-size: 14px; line-height: 1.45; color: var(--cbs-ink);
-  border: 2px solid #2a4d55; border-radius: 8px;
-  background: rgba(8, 20, 26, .6); padding: 11px 12px;
+  color: var(--cbs-teal); font-weight: 700; text-decoration: underline;
 }
-.cbs-browse-link:active { transform: translateY(2px); }
+
+/* เหตุผลใต้หัวข้อ CTA — บอกว่าสมัครแล้วได้อะไรทันที ไม่ใช่แค่ "สมัครสมาชิก" ลอยๆ */
+.cbs-cta-reason {
+  font-size: 13px; line-height: 1.6; color: var(--cbs-dim); text-align: center;
+}
+
+/* ทางเลือกรอง — รวมเป็นบรรทัดเดียวแทนที่จะเป็นปุ่มกล่องแยกหลายอัน (2026-09-15) */
+.cbs-cta-secondary {
+  font-size: 12.5px; line-height: 1.7; color: var(--cbs-dim); text-align: center;
+}
+.cbs-cta-secondary a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
+
+/* คำเตือน in-app browser (FB/IG/LINE) — LINE Login มักหลุด state cookie ในนี้ */
+.cbs-iab-hint {
+  font-size: 12px; line-height: 1.6; color: var(--cbs-dim); text-align: center;
+  background: rgba(242, 193, 78, .12); border: 1px solid rgba(242, 193, 78, .35);
+  border-radius: 8px; padding: 8px 10px; margin-top: -2px;
+}
+.cbs-iab-copy {
+  appearance: none; background: none; border: none; padding: 0; margin-left: 4px;
+  color: var(--cbs-gold); font-weight: 800; text-decoration: underline;
+  font-size: 12px; cursor: pointer;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .cbs-shake, .cbs-flash.cbs-go, .cbs-redflash.cbs-go,

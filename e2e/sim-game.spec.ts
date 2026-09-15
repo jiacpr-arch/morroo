@@ -79,6 +79,14 @@ test("playing a case through to debrief fires the funnel events and shows the le
     if (body?.event) capiEvents.push(body.event);
     await route.fulfill({ status: 200, body: JSON.stringify({ ok: true }) });
   });
+  // "เทียบกับผู้เล่นอื่น" (DebriefResultCard) — stub ตัวอย่างที่พอให้ percentile
+  // ขึ้นจริง เพราะสภาพแวดล้อมทดสอบไม่มี analytics_events ให้อ่าน (RPC จริงคุม
+  // ด้วย unit test ที่ lib/casegame/percentile.test.ts อยู่แล้ว)
+  await page.route("**/api/casegame/rank*", async (route) => {
+    await route.fulfill({
+      json: { scope: "slug", sample: 120, below: 90, tie: 10, percentile: 75 },
+    });
+  });
 
   await page.goto("/sim/vf-arrest-01");
   await expect(page.locator(".cbs-title")).toBeVisible();
@@ -113,27 +121,49 @@ test("playing a case through to debrief fires the funnel events and shows the le
   expect(trackedEvents).toContain("casegame_complete");
   expect(capiEvents).toContain("complete");
 
+  // "ผลของคุณ" ต้องขึ้นก่อน CTA เสมอ — เห็นผลลัพธ์ตัวเองก่อนถูกชวนสมัคร
+  const resultCard = page.locator(".cbs-result-card");
+  const cta = page.locator(".cbs-browse-cta");
+  await expect(resultCard).toBeVisible();
+  await expect(cta).toBeVisible();
+  const resultBox = await resultCard.boundingBox();
+  const ctaBox = await cta.boundingBox();
+  expect(resultBox && ctaBox && resultBox.y < ctaBox.y).toBe(true);
+
+  // percentile ที่ stub ไว้ต้องโชว์จริง (ไม่ใช่แค่ fetch เฉยๆ)
+  await expect(page.locator(".cbs-result-rank")).toContainText("%");
+
   // ผู้เล่นที่ยังไม่ล็อกอินต้องเจอทางเข้าไปดูเนื้อหาต่อในเว็บ ไม่ใช่แค่ลิงก์
   // "เข้าสู่ระบบ" — และต้องไม่มีฟอร์มขออีเมลหลงเหลืออยู่ (เลิกเก็บ lead แล้ว)
-  const cta = page.locator(".cbs-browse-cta");
-  await expect(cta).toBeVisible();
+  // CTA หลักต้องมีแค่หนึ่งเดียว (2026-09-15 ลดจาก 6-7 ลิงก์แข่งกันเหลือปุ่มเดียว)
+  await expect(cta.locator(".cbs-cta-primary")).toHaveCount(1);
   // LINE เป็นตัวเลือกหลักท้ายเกม (ล็อกอิน หรืออย่างน้อยแอด OA เมื่อ flag ปิด)
   await expect(cta.locator("a.cbs-line-btn").first()).toBeVisible();
   await expect(cta.locator("a.cbs-browse-link").first()).toBeVisible();
   await expect(cta.locator("input[type=email]")).toHaveCount(0);
 
   // ...และต้องยิง cta_view ด้วย ไม่งั้นเวลาเห็นคลิก = 0 จะแยกไม่ออกว่าไม่มีคน
-  // เล่นถึง, เห็นแล้วไม่กด หรือ CTA พัง
+  // เล่นถึง, เห็นแล้วไม่กด หรือ CTA พัง — ต้องมี cta_variant ด้วยเพื่อเทียบอัตรา
+  // สำเร็จของแต่ละทาง (line_login / line_oa_inapp / line_oa_noflag)
   await expect
     .poll(() => trackedEvents.includes("casegame_cta_view"), { timeout: 5_000 })
+    .toBe(true);
+  const ctaView = tracked.find((e) => e.name === "casegame_cta_view");
+  expect(typeof ctaView?.props.cta_variant).toBe("string");
+
+  // casegame_rank_view ยิงเมื่อ percentile โหลดสำเร็จ — ตัวหารของคำถาม "เห็น
+  // percentile แล้วกด CTA มากขึ้นไหม" ต่อ run_id เข้ากับ cta_view/cta_click
+  await expect
+    .poll(() => trackedEvents.includes("casegame_rank_view"), { timeout: 5_000 })
     .toBe(true);
 
   // ทุก event ของรอบเล่นเดียวกันต้องมี run_id ค่าเดียวกัน — เป็นตัวที่ใช้ต่อ
   // funnel ใน SQL และใช้ตัดการรีโหลดหน้าซ้ำในโหมด autostart ออก
   const runIds = new Set(
-    ["casegame_start", "casegame_first_tap", "casegame_first_decision", "casegame_complete", "casegame_cta_view"].map(
-      (name) => tracked.find((e) => e.name === name)?.props.run_id
-    )
+    [
+      "casegame_start", "casegame_first_tap", "casegame_first_decision",
+      "casegame_complete", "casegame_cta_view", "casegame_rank_view",
+    ].map((name) => tracked.find((e) => e.name === name)?.props.run_id)
   );
   expect(runIds.size).toBe(1);
   expect([...runIds][0]).toBeTruthy();

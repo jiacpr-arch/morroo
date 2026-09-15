@@ -113,3 +113,46 @@ export function trackEmailSignup(userId: string): void {
   window.fbq?.("track", "CompleteRegistration", { content_name: "signup" }, { eventID: eventId });
   window.ttq?.track("CompleteRegistration", { content_name: "signup" }, { event_id: eventId });
 }
+
+/**
+ * Browser ViewContent เมื่อผู้ใช้เห็นการ์ดราคา — เดิมมีแต่ pricing_view เข้า
+ * PostHog เท่านั้น ไม่มีสัญญาณอะไรเข้า Meta เลยว่าคนไหน "เห็นราคาแล้ว" ทำให้
+ * ตั้ง Custom Conversion / Lookalike จากขั้นนี้ไม่ได้ ยิงคู่กับ pricing_view
+ * เสมอ (ครั้งเดียวต่อ session ตาม guard ใน PricingViewTracker)
+ */
+export function trackPricingViewContent(surface: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.fbq?.("track", "ViewContent", {
+      content_name: "pricing",
+      content_type: "pricing",
+      content_ids: [surface],
+    });
+    window.ttq?.track("ViewContent", {
+      content_name: "pricing",
+      content_type: "pricing",
+      content_id: surface,
+    });
+  } catch {
+    // pixel อาจถูก ad blocker บล็อก — ห้ามทำให้หน้าเว็บพัง
+  }
+}
+
+/**
+ * Browser Lead เมื่อกดปุ่ม LINE (OA หรือ debrief ท้ายเกม) — ไม่มี eventID
+ * เพราะไม่มี server CAPI คู่กันสำหรับการกดลิงก์ LINE (ต่างจาก trackLead ที่
+ * dedupe กับ app/api/leads/create ด้วย `lead:<code>`) และห้ามใช้รูปแบบ id
+ * เดียวกันโดยไม่ตั้งใจ ไม่งั้น Meta จะ dedupe event คนละความหมายทิ้งกันเอง
+ *
+ * ไม่ยิง gtag generate_lead ที่นี่โดยตั้งใจ — ไม่อยากให้การกด LINE (ซึ่งไม่ใช่
+ * lead ที่มีคนตามต่อแบบ trackLead) ไปปนกับ Lead conversion ของ Google Ads
+ */
+export function trackLineLead(surface: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.fbq?.("track", "Lead", { content_name: "line_oa", content_category: surface });
+    window.ttq?.track("ClickButton", { content_name: "line_oa", content_id: surface });
+  } catch {
+    // pixel อาจถูก ad blocker บล็อก — ห้ามทำให้หน้าเว็บพัง
+  }
+}

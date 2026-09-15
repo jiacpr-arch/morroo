@@ -10,6 +10,16 @@ test("home page renders hero copy", async ({ page }) => {
   await expect(page.locator("body")).toContainText("หมอรู้");
 });
 
+// ราคาต้องเห็นได้ตั้งแต่ scroll แรก (2026-09-15) — แคมเปญโฆษณาวัดได้ว่าคนเข้าเว็บ
+// เห็นราคาแค่ 1% เพราะเดิมราคาอยู่ลึกลงไป ~5 จอ หน้านี้กันไม่ให้ราคาหายไปอีก
+test("home page shows the live monthly price and a single hero primary CTA", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator("body")).toContainText("฿199");
+  // ปุ่มหลักต้องมีแค่ปุ่มเดียว — ปุ่มอื่น (MEQ/Long Case/MCQ/เกมเคส) ต้องเป็น
+  // text link เล็กเท่านั้น ไม่ใช่ปุ่ม size="lg" อีกอันที่แข่งความสนใจกัน
+  await expect(page.getByRole("link", { name: "ลองทำข้อสอบฟรี — ไม่ต้องสมัคร" })).toHaveCount(1);
+});
+
 test("pricing page renders the three plans", async ({ page }) => {
   await page.goto("/pricing");
   await expect(page.locator("body")).toContainText("Bundle");

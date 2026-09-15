@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
-import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
-import { LineGlyph, SOCIAL_LINKS } from "@/components/SocialLinks";
+import { LineGlyph, SOCIAL_LINKS, trackLineClick } from "@/components/SocialLinks";
 import type { LineCtaLevel } from "@/lib/line-cta-config";
 
 const DISMISS_KEY = "morroo_line_fab_dismissed";
@@ -47,7 +46,7 @@ export default function FloatingLineButton({
         target="_blank"
         rel="noopener noreferrer"
         aria-label="เพิ่มเพื่อนใน LINE OA หมอรู้ — รับข้อสอบฟรีทุกเช้า"
-        onClick={() => track("social_click", { platform: "line", surface: "floating" })}
+        onClick={() => trackLineClick("floating")}
         className={cn(
           "group flex items-center gap-2 rounded-full bg-[#06C755] py-2.5 pl-3 pr-4 text-white shadow-lg transition-all",
           "hover:bg-[#05b34c] hover:scale-105 active:scale-95",

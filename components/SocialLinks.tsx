@@ -1,6 +1,7 @@
 "use client";
 
 import { track } from "@/lib/analytics";
+import { trackLineLead } from "@/lib/analytics/conversions";
 import { cn } from "@/lib/utils";
 
 export const SOCIAL_LINKS = {
@@ -8,6 +9,15 @@ export const SOCIAL_LINKS = {
   facebook: "https://www.facebook.com/profile.php?id=61589444333781",
   instagram: "https://www.instagram.com/morroodee/",
 } as const;
+
+/**
+ * ทุกจุดที่กดปุ่ม LINE ต้องยิงทั้ง social_click (PostHog/Supabase มีอยู่แล้ว)
+ * และ Lead เข้า Meta pixel (ใหม่) — รวมไว้ที่เดียวกันเผื่อจุดกดใหม่ในอนาคต
+ */
+export function trackLineClick(surface: string): void {
+  track("social_click", { platform: "line", surface });
+  trackLineLead(surface);
+}
 
 type Variant = "section" | "footer";
 
@@ -40,7 +50,7 @@ export function LineCtaButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label="เพิ่มเพื่อนใน LINE OA หมอรู้"
-      onClick={() => track("social_click", { platform: "line", surface })}
+      onClick={() => trackLineClick(surface)}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full bg-[#06C755] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#05b34c]",
         className,
@@ -104,7 +114,7 @@ export function SocialButtonsRow({ className }: { className?: string }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.aria}
-          onClick={() => track("social_click", { platform: s.key, surface: "buttons" })}
+          onClick={() => (s.key === "line" ? trackLineClick("buttons") : track("social_click", { platform: s.key, surface: "buttons" }))}
           className={cn(
             "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all",
             s.bg,
@@ -129,7 +139,7 @@ export function SocialIconsRow({ className }: { className?: string }) {
           rel="noopener noreferrer"
           aria-label={s.aria}
           title={s.label}
-          onClick={() => track("social_click", { platform: s.key, surface: "icons" })}
+          onClick={() => (s.key === "line" ? trackLineClick("icons") : track("social_click", { platform: s.key, surface: "icons" }))}
           className={cn(
             "inline-flex h-9 w-9 items-center justify-center rounded-full text-white transition-all",
             s.bg,

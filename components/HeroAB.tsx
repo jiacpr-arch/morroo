@@ -3,12 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ArrowRight, BookOpen, Gamepad2, Shield, Sparkles, Stethoscope, Users } from "lucide-react";
+import { ArrowRight, BookOpen, Shield, Sparkles, Stethoscope, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
 import { getVariant, type Variant } from "@/lib/ab";
 import type { HomeExamStats } from "@/lib/supabase/queries";
+import HeroPriceLine from "@/components/HeroPriceLine";
 
 const EXPERIMENT = "hero";
 
@@ -50,6 +51,45 @@ function trackHeroCta(variant: Variant | null, cta: string) {
   });
 }
 
+// ลิงก์รองใต้ CTA หลัก — เดิมเป็นปุ่มขนาดเท่ากันสามปุ่มแข่งกันเอง (MEQ /
+// Long Case / MCQ) ทำให้คนลังเลว่าจะกดอันไหน ลดเหลือ CTA หลักเดียว
+// ("ลองทำข้อสอบฟรี") ส่วนที่เหลือลงมาเป็น text link เล็กแทน — ยังกดถึงได้
+// เหมือนเดิม แต่ไม่แย่งความสนใจจากปุ่มหลัก
+function SecondaryLinks({
+  variant,
+  casegameCount,
+}: {
+  variant: Variant | null;
+  casegameCount: number;
+}) {
+  const links: { href: string; label: string; cta: string }[] = [
+    { href: "/exams", label: "ข้อสอบ MEQ", cta: "meq" },
+    { href: "/longcase", label: "Long Case", cta: "longcase" },
+    { href: "/nl", label: "MCQ", cta: "mcq" },
+    {
+      href: "/casegame",
+      label: casegameCount > 0 ? `เกมเคส ${casegameCount.toLocaleString("en-US")} เคส — เล่นฟรี` : "เกมเคส — เล่นฟรี",
+      cta: "casegame",
+    },
+  ];
+  return (
+    <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/70">
+      {links.map((link, i) => (
+        <span key={link.cta} className="flex items-center gap-x-5">
+          <Link
+            href={link.href}
+            onClick={() => trackHeroCta(variant, link.cta)}
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            {link.label}
+          </Link>
+          {i < links.length - 1 && <span className="text-white/30" aria-hidden>·</span>}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function HeroAB({
   forced = null,
   stats = null,
@@ -85,7 +125,7 @@ export default function HeroAB({
   const copy = buildCopy(totalStr, nlStr)[variant ?? "A"];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-10 sm:py-14">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-8 sm:py-14">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiLz48L3N2Zz4=')] opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
@@ -94,57 +134,38 @@ export default function HeroAB({
             alt="MorRoo.com หมอรู้ — ติวสอบแพทย์"
             width={208}
             height={208}
-            sizes="(max-width: 639px) 176px, 208px"
+            sizes="(max-width: 639px) 96px, 208px"
             loading="eager"
-            className="mx-auto mb-6 h-44 w-44 object-contain sm:h-52 sm:w-52"
+            className="mx-auto mb-4 h-24 w-24 object-contain sm:mb-6 sm:h-52 sm:w-52"
           />
-          <Badge className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
+          <Badge className="mb-4 hidden bg-white/10 text-white border-white/20 hover:bg-white/20 sm:mb-6 sm:inline-flex">
             <Sparkles className="h-3 w-3 mr-1" /> {copy.badge}
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
             {copy.headlineTop}
             <br />
             <span className="text-brand-light">{copy.headlineAccent}</span>
           </h1>
-          <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
             {copy.subline}
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/exams"
-              onClick={() => trackHeroCta(variant, "meq")}
-            >
-              <Button
-                size="lg"
-                className="bg-brand hover:bg-brand-light text-white px-8 text-base"
-              >
-                ข้อสอบ MEQ <ArrowRight className="ml-2 h-4 w-4" />
+
+          {/* CTA หลักเดียว — เดิมมี 3 ปุ่มขนาดเท่ากันแข่งกันเอง (MEQ/Long Case/
+              MCQ) เปลี่ยนเหลือปุ่มเดียวที่ตรงกับหลักการ "โชว์ของก่อน ค่อยขอ
+              สมัคร" (ตัดสินใจไว้ 2026-07-25) — /nl/practice ทำข้อสอบได้ทันที
+              ไม่ต้องสมัคร แล้วค่อยเจอกำแพงหลัง 5 ข้อซึ่งเป็นทางลัดสู่ pricing */}
+          <div className="mt-7 flex flex-col items-center gap-3">
+            <Link href="/nl/practice" onClick={() => trackHeroCta(variant, "try_free")}>
+              <Button size="lg" className="bg-brand hover:bg-brand-light text-white px-8 text-base">
+                ลองทำข้อสอบฟรี — ไม่ต้องสมัคร <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <Link
-              href="/longcase"
-              onClick={() => trackHeroCta(variant, "longcase")}
-            >
-              <Button
-                size="lg"
-                className="bg-amber-500 hover:bg-amber-400 text-white px-8 text-base"
-              >
-                Long Case Exam <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link
-              href="/nl"
-              onClick={() => trackHeroCta(variant, "mcq")}
-            >
-              <Button
-                size="lg"
-                className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
-              >
-                MCQ <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <HeroPriceLine surface="hero" />
           </div>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/60">
+
+          <SecondaryLinks variant={variant} casegameCount={casegameCount} />
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/60">
             <span className="flex items-center gap-1.5">
               <Users className="h-4 w-4" /> 1,000+ แพทย์ใช้งาน
             </span>
@@ -156,9 +177,9 @@ export default function HeroAB({
             </span>
           </div>
 
-          {/* Real MEQ + Long Case counts — the premium, case-based content that
-              sets us apart from plain MCQ banks. Numbers come live from the DB. */}
-          {(meqExamCount > 0 || longCaseCount > 0 || casegameCount > 0) && (
+          {/* Real MEQ + Long Case counts — สถิติล้วนๆ ไม่ใช่ CTA (เกมเคสย้ายไป
+              อยู่ในแถว SecondaryLinks ด้านบนแล้ว ไม่ต้องมีลิงก์ซ้ำตรงนี้) */}
+          {(meqExamCount > 0 || longCaseCount > 0) && (
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               {meqExamCount > 0 && (
                 <span className="inline-flex items-center gap-2 rounded-full border border-purple-300/30 bg-purple-400/15 px-4 py-1.5 text-sm font-semibold text-purple-50">
@@ -176,16 +197,6 @@ export default function HeroAB({
                   <Stethoscope className="h-4 w-4" />
                   Long Case กับ AI {longCaseCount.toLocaleString("en-US")} เคส
                 </span>
-              )}
-              {casegameCount > 0 && (
-                <Link
-                  href="/casegame"
-                  onClick={() => trackHeroCta(variant, "casegame")}
-                  className="inline-flex items-center gap-2 rounded-full border border-teal-300/30 bg-teal-400/15 px-4 py-1.5 text-sm font-semibold text-teal-50 transition-colors hover:bg-teal-400/25"
-                >
-                  <Gamepad2 className="h-4 w-4" />
-                  เกมเคส {casegameCount.toLocaleString("en-US")} เคส — เล่นฟรี
-                </Link>
               )}
             </div>
           )}

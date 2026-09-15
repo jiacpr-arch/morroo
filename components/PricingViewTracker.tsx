@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { track } from "@/lib/analytics";
+import { trackPricingViewContent } from "@/lib/analytics/conversions";
 
 const SESSION_FLAG = "morroo_pricing_view_fired";
 
@@ -21,13 +22,18 @@ export default function PricingViewTracker({ surface }: PricingViewTrackerProps)
       // sessionStorage may be unavailable in private mode; fall through and fire
     }
 
-    const node = sentinelRef.current;
-    if (!node || typeof IntersectionObserver === "undefined") {
-      // Fallback: fire immediately
+    const fire = () => {
       try {
         window.sessionStorage.setItem(SESSION_FLAG, "1");
       } catch {}
       track("pricing_view", { surface });
+      trackPricingViewContent(surface);
+    };
+
+    const node = sentinelRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") {
+      // Fallback: fire immediately
+      fire();
       return;
     }
 
@@ -35,10 +41,7 @@ export default function PricingViewTracker({ surface }: PricingViewTrackerProps)
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            try {
-              window.sessionStorage.setItem(SESSION_FLAG, "1");
-            } catch {}
-            track("pricing_view", { surface });
+            fire();
             observer.disconnect();
             return;
           }
