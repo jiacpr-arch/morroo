@@ -46,6 +46,11 @@ export const CASEGAME_EVENTS = {
    * แล้วกดเข้าไปดูเนื้อหาจริงในเว็บ" แทน ดู prop `target` ว่าเข้าหน้าไหน
    */
   ctaClick: "casegame_cta_click",
+  /**
+   * แสดง "เทียบกับผู้เล่นอื่น" สำเร็จ (2026-09-15) — ตัวหารของคำถาม "การเห็น
+   * percentile ทำให้กด CTA มากขึ้นไหม" ต่อ run_id เข้ากับ cta_view/cta_click
+   */
+  rankView: "casegame_rank_view",
 } as const;
 
 /**
@@ -172,6 +177,12 @@ export interface CtaViewInput extends RunScoped {
   category?: string;
   /** เกรดที่เพิ่งได้ — ใช้ดูว่าคนเล่นที่ได้เกรดไหนเดินต่อเข้าเว็บมากกว่ากัน */
   grade: string | null;
+  /** ตัวแปร CTA ที่โชว์จริง — line_login / line_oa_inapp / line_oa_noflag */
+  ctaVariant: string;
+  /** เบราว์เซอร์ในแอปที่ตรวจได้ ณ ตอน mount — null เมื่อเป็นเบราว์เซอร์ปกติ */
+  inAppBrowser: "facebook" | "instagram" | "line" | null;
+  /** จำนวนเคสที่เก็บไว้ในเครื่อง ณ ตอน mount — ดูว่าคนเล่นซ้ำกด CTA ต่างจากคนเล่นครั้งแรกไหม */
+  localRuns: number;
 }
 
 export function buildCtaViewProps(input: CtaViewInput): TrackProps {
@@ -180,17 +191,42 @@ export function buildCtaViewProps(input: CtaViewInput): TrackProps {
     category: caseGameCategory(input.category),
     grade: input.grade,
     run_id: input.runId,
+    cta_variant: input.ctaVariant,
+    in_app_browser: input.inAppBrowser,
+    local_runs: input.localRuns,
   };
 }
 
 export interface CtaClickInput extends CtaViewInput {
   target: string;
+  /** percentile ที่โชว์ ณ ตอนกด (ดู lib/casegame/percentile.ts) — null ถ้ายังโหลดไม่เสร็จ/ไม่มีข้อมูลพอ */
+  percentile: number | null;
 }
 
 export function buildCtaClickProps(input: CtaClickInput): TrackProps {
   return {
     ...buildCtaViewProps(input),
     target: input.target,
+    percentile: input.percentile,
+  };
+}
+
+export interface RankViewInput extends RunScoped {
+  slug: string;
+  category?: string;
+  scope: "slug" | "category" | null;
+  sample: number;
+  percentile: number | null;
+}
+
+export function buildRankViewProps(input: RankViewInput): TrackProps {
+  return {
+    slug: input.slug,
+    category: caseGameCategory(input.category),
+    run_id: input.runId,
+    scope: input.scope,
+    sample: input.sample,
+    percentile: input.percentile,
   };
 }
 

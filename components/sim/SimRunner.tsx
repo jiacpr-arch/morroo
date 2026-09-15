@@ -19,12 +19,14 @@ import {
 import {
   SIM_BADGE_NAMES, claimPendingLocalRuns, recordSimRun, type RecordedRun,
 } from "@/lib/sim/record";
+import { readLocalRuns } from "@/lib/sim/local-progress";
 import {
   CASEGAME_EVENTS, buildCompleteProps, buildCtaClickProps, buildFirstDecisionProps,
   buildFirstTapProps, buildStartProps, newRunId, sendCaseGameCapi,
 } from "@/lib/sim/track";
 import { track } from "@/lib/analytics";
-import DebriefBrowseCta from "@/components/sim/DebriefBrowseCta";
+import DebriefResultCard from "@/components/sim/DebriefResultCard";
+import DebriefSignupCta from "@/components/sim/DebriefSignupCta";
 import RankProgressCard from "@/components/sim/RankProgressCard";
 import NextCaseSuggestions from "@/components/sim/NextCaseSuggestions";
 import { xpToRank } from "@/lib/school/rank";
@@ -155,6 +157,9 @@ export default function SimRunner({
   const [shaking, setShaking] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
   const [reward, setReward] = useState<RecordedRun | null>(null);
+  // percentile ที่ DebriefResultCard ดึงมาได้ — ยกขึ้นมาไว้ที่นี่เพื่อให้ลิงก์
+  // "ดูแพ็กเกจสมาชิก" ท้ายจอ debrief (นอก DebriefSignupCta) ส่งไปกับ cta_click ด้วย
+  const [rankPercentile, setRankPercentile] = useState<number | null>(null);
   const [hiscore, setHiscore] = useState(() => readHiscore(scenario.slug, difficulty));
 
   const timers = useRef<{
@@ -567,6 +572,7 @@ export default function SimRunner({
     hintUsedRef.current = false;
     setResult(null);
     setReward(null);
+    setRankPercentile(null);
     setChoice(null);
     setInter(null);
     setDrama(null);
@@ -735,44 +741,29 @@ export default function SimRunner({
               ))}
             </div>
           )}
-          {reward && (reward.loggedIn || reward.isLocal) && (
-            <>
-              <RankProgressCard {...reward} />
-              {reward.isLocal && (
-                <p className="cbs-local-note">
-                  ความคืบหน้านี้เก็บไว้ในเครื่องนี้เท่านั้น ({reward.localRuns} เคส)
-                </p>
-              )}
-            </>
-          )}
+          <DebriefResultCard
+            slug={scenario.slug}
+            category={scenario.category}
+            runId={runIdRef.current}
+            result={result}
+            state={st}
+            isLongcase={isLongcase}
+            practice={practice}
+            history={reward && !reward.loggedIn ? readLocalRuns() : []}
+            onRank={setRankPercentile}
+          />
+          {reward && (reward.loggedIn || reward.isLocal) && <RankProgressCard {...reward} />}
           {reward && !reward.loggedIn && !practice && (
-            <DebriefBrowseCta
+            <DebriefSignupCta
               slug={scenario.slug}
               category={scenario.category}
               grade={result.grade}
               runId={runIdRef.current}
               localRuns={reward.localRuns}
+              rankTitle={reward.rankAfter?.rank.title ?? null}
+              percentile={rankPercentile}
             />
           )}
-          <div className="cbs-grade-row">
-            <div className="cbs-grade-box">
-              <span className={`cbs-grade cbs-g-${result.grade.toLowerCase()}`}>{result.grade}</span>
-              <span className="cbs-grade-label">GRADE</span>
-            </div>
-            <div className="cbs-metric-grid">
-              {!isLongcase && (
-                <>
-                  <Metric label="เริ่ม CPR ภายใน" value={st.firstCPRAt >= 0 ? fmtTime(st.firstCPRAt) : "—"}
-                    tone={st.firstCPRAt >= 0 && st.firstCPRAt <= 90 ? "good" : "warn"} />
-                  <Metric label="Shock แรกภายใน" value={st.firstShockAt >= 0 ? fmtTime(st.firstShockAt) : "—"}
-                    tone={st.firstShockAt >= 0 && st.firstShockAt <= 300 ? "good" : "warn"} />
-                </>
-              )}
-              <Metric label="ตัดสินใจพลาด" value={String(st.wrong)}
-                tone={st.wrong === 0 ? "good" : st.wrong <= 2 ? "warn" : "badv"} />
-              <Metric label="เวลาทั้งเคส" value={fmtTime(st.simTime)} tone="" />
-            </div>
-          </div>
           {!isLongcase && st.etco2Trace.length > 1 && (
             <div className="cbs-etco2">
               <div className="cbs-tl-title">EtCO₂ — คุณภาพ CPR ตลอดเคส</div>
@@ -828,7 +819,11 @@ export default function SimRunner({
                       category: scenario.category,
                       grade: result.grade,
                       runId: runIdRef.current,
+                      ctaVariant: "pricing_link",
+                      inAppBrowser: null,
+                      localRuns: reward?.localRuns ?? 0,
                       target: "pricing",
+                      percentile: rankPercentile,
                     })
                   )
                 }
@@ -1024,15 +1019,6 @@ export default function SimRunner({
       )}
       {flashN > 0 && <div key={`fl-${flashN}`} className="cbs-flash cbs-go" />}
       {redN > 0 && <div key={`rf-${redN}`} className="cbs-redflash cbs-go" />}
-    </div>
-  );
-}
-
-function Metric({ label, value, tone }: { label: string; value: string; tone: string }) {
-  return (
-    <div className="cbs-metric">
-      <span className="cbs-metric-label">{label}</span>
-      <span className={`cbs-metric-val ${tone ? `cbs-${tone}` : ""}`}>{value}</span>
     </div>
   );
 }

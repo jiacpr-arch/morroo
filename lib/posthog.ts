@@ -13,6 +13,7 @@
  */
 
 import type { PostHog } from "posthog-js";
+import { attributionEventProps, getBrowserStores } from "@/lib/attribution";
 
 const KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
@@ -34,6 +35,12 @@ export function initPostHog(): Promise<void> {
           autocapture: false,
         });
         client = posthog;
+        // ลงทะเบียน utm ที่เราเก็บเอง (lib/attribution.ts) เป็น super property
+        // ทันทีหลัง init — ทับค่าที่ PostHog auto-register จาก URL ปัจจุบันเอง
+        // (ซึ่งเป็นแค่ last-URL ไม่ใช่ first/last-touch ของจริงที่เราคำนวณ) ทำให้
+        // $pageview อัตโนมัติหลังจากนี้ก็ยังพก utm ไปด้วย
+        const attrProps = attributionEventProps(getBrowserStores());
+        if (attrProps) posthog.register(attrProps);
       })
       .catch(() => {
         // โหลดไม่ได้ (adblock/เน็ตล่ม) — เว็บทำงานต่อตามปกติ
@@ -50,6 +57,16 @@ export function phCapture(event: string, props?: Record<string, unknown>): void 
     return;
   }
   initPostHog().then(() => client?.capture(event, props));
+}
+
+/** ลงทะเบียน super property ใหม่ (เช่น utm ที่เพิ่งอัปเดตตอน navigate ในเว็บ) */
+export function phRegister(props: Record<string, unknown>): void {
+  if (!KEY || typeof window === "undefined") return;
+  if (client) {
+    client.register(props);
+    return;
+  }
+  initPostHog().then(() => client?.register(props));
 }
 
 /** ผูก event เข้ากับผู้ใช้ที่ล็อกอิน (ใช้ Supabase user id — ไม่ส่งอีเมล/PII) */

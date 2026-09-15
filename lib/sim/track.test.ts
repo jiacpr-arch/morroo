@@ -5,6 +5,7 @@ import {
   buildCtaViewProps,
   buildFirstDecisionProps,
   buildFirstTapProps,
+  buildRankViewProps,
   buildStartProps,
   capiContentName,
   capiEventId,
@@ -185,36 +186,85 @@ describe("durationSeconds", () => {
 describe("buildCtaViewProps", () => {
   it("carries the run so the form-shown count has a start to divide by", () => {
     expect(
-      buildCtaViewProps({ slug: "a", category: "meq", grade: "B", runId: "run-7" })
+      buildCtaViewProps({
+        slug: "a", category: "meq", grade: "B", runId: "run-7",
+        ctaVariant: "line_login", inAppBrowser: null, localRuns: 2,
+      })
     ).toEqual({
       slug: "a",
       category: "meq",
       grade: "B",
       run_id: "run-7",
+      cta_variant: "line_login",
+      in_app_browser: null,
+      local_runs: 2,
     });
+  });
+
+  it("carries the detected in-app browser, never undefined", () => {
+    const props = buildCtaViewProps({
+      slug: "a", grade: "B", runId: "run-7",
+      ctaVariant: "line_oa_inapp", inAppBrowser: "facebook", localRuns: 0,
+    });
+    expect(props.in_app_browser).toBe("facebook");
   });
 });
 
 describe("buildCtaClickProps", () => {
   it("allows a null grade for a click before any result exists", () => {
     expect(
-      buildCtaClickProps({ slug: "a", grade: null, runId: "run-1", target: "lead_form" })
+      buildCtaClickProps({
+        slug: "a", grade: null, runId: "run-1", target: "lead_form",
+        ctaVariant: "line_oa_noflag", inAppBrowser: null, localRuns: 0, percentile: null,
+      })
     ).toEqual({
       slug: "a",
       category: "acls",
       grade: null,
       run_id: "run-1",
+      cta_variant: "line_oa_noflag",
+      in_app_browser: null,
+      local_runs: 0,
       target: "lead_form",
+      percentile: null,
     });
   });
 
-  // view กับ click ต้องมีคีย์ชุดเดียวกัน (บวก target) ไม่งั้นเทียบ funnel
-  // สองขั้นนี้ใน SQL ตัวเดียวกันไม่ได้
+  // view กับ click ต้องมีคีย์ชุดเดียวกัน (บวก target/percentile) ไม่งั้นเทียบ
+  // funnel สองขั้นนี้ใน SQL ตัวเดียวกันไม่ได้
   it("is a superset of the view payload", () => {
-    const base = { slug: "a", category: "longcase", grade: "A", runId: "run-2" };
+    const base = {
+      slug: "a", category: "longcase", grade: "A", runId: "run-2",
+      ctaVariant: "line_login", inAppBrowser: null, localRuns: 3,
+    };
     const view = buildCtaViewProps(base);
-    const click = buildCtaClickProps({ ...base, target: "pricing" });
-    expect(click).toEqual({ ...view, target: "pricing" });
+    const click = buildCtaClickProps({ ...base, target: "pricing", percentile: 72 });
+    expect(click).toEqual({ ...view, target: "pricing", percentile: 72 });
+  });
+});
+
+describe("buildRankViewProps", () => {
+  it("carries scope/sample/percentile as flat primitives (no undefined)", () => {
+    expect(
+      buildRankViewProps({
+        slug: "a", category: "acls", runId: "run-3", scope: "slug", sample: 42, percentile: 71,
+      })
+    ).toEqual({
+      slug: "a",
+      category: "acls",
+      run_id: "run-3",
+      scope: "slug",
+      sample: 42,
+      percentile: 71,
+    });
+  });
+
+  it("allows a null scope/percentile when the sample is too thin", () => {
+    const props = buildRankViewProps({
+      slug: "a", runId: "run-4", scope: null, sample: 0, percentile: null,
+    });
+    expect(props.scope).toBeNull();
+    expect(props.percentile).toBeNull();
   });
 });
 

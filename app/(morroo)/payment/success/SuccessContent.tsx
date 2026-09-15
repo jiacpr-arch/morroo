@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
-import { trackPurchase } from "@/lib/analytics/conversions";
+import { trackVerifiedPurchase } from "@/lib/analytics/verified-purchase";
 import { track } from "@/lib/analytics";
 
 type VerifyStatus = "verifying" | "ok" | "pending" | "error";
@@ -54,22 +54,11 @@ export default function SuccessContent() {
 
         if (data.status === "pending") {
           setStatus("pending");
-        } else {
+        } else if (data.status === "ok") {
           setStatus("ok");
           // Fire the purchase conversion once per checkout session. The guard
           // stops a page refresh (which re-runs verify) from double-counting.
-          const firedKey = `purchase_tracked:${sessionId}`;
-          if (
-            typeof data.amount === "number" &&
-            data.currency &&
-            sessionStorage.getItem(firedKey) === null
-          ) {
-            sessionStorage.setItem(firedKey, "1");
-            trackPurchase({
-              transactionId: sessionId,
-              value: data.amount,
-              currency: data.currency,
-            });
+          if (trackVerifiedPurchase(sessionId, data)) {
             // Also mirror into our own analytics_events so the funnel we query
             // for digests/admin closes on a real conversion. trackPurchase only
             // reaches GA4/Meta/TikTok, leaving our Supabase funnel blind to the
@@ -80,6 +69,9 @@ export default function SuccessContent() {
               currency: data.currency,
             });
           }
+        } else {
+          setStatus("error");
+          setErrorMessage("ไม่สามารถยืนยันสถานะการชำระเงินได้");
         }
       } catch (err) {
         if (cancelled) return;

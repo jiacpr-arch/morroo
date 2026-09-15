@@ -501,3 +501,85 @@
 ### 7.4 ปริมาณพอให้ Meta เรียนรู้แล้วหรือยัง — พอแล้ว
 
 Meta ต้องการ ~50 conversion/สัปดาห์เพื่อออกจาก learning phase · ข้อมูลจริง 7 วัน (§4.1) มี `casegame_first_decision` **563 ครั้ง = 11 เท่าของเกณฑ์** — ต่างจากตอนใช้ "สมัครสมาชิก" เป็นเป้าซึ่งได้แค่ ~5/สัปดาห์ จนอัลกอริทึมเรียนรู้ไม่ได้ (§1)
+
+---
+
+## 8. อัปเดต 2026-09-15 — แก้หน้าแรกไม่แปลงคนเข้าเว็บเป็นสมาชิก
+
+แคมเปญวัดได้ (11 ก.ย. 2026): 362 คนเข้าเว็บ → เห็นราคา 1% → สมัคร 0.3% โฆษณาเองทำงานดี
+(CTR 10%+) ปัญหาอยู่ที่หน้าเว็บ ไม่ใช่โฆษณา งานรอบนี้แก้ 3 จุด: หน้าแรก, UTM/Pixel
+tracking, และ CTA ท้ายเกมเคส เป้าก่อนเปิดแคมเปญกลับ: เห็นราคา >10%, สมัคร >3%
+
+### 8.1 หน้าแรก — ราคาเห็นชัด + CTA เดียว
+
+- `components/HeroAB.tsx` เหลือปุ่มหลักเดียว "ลองทำข้อสอบฟรี — ไม่ต้องสมัคร" → `/nl/practice`
+  (เดิม 3 ปุ่มขนาดเท่ากันแข่งกัน) ปุ่มอื่น (MEQ/Long Case/MCQ/เกมเคส) ลงเป็น text link เล็ก
+- `components/HeroPriceLine.tsx` (ใหม่) — บรรทัดราคาสมาชิกรายเดือน (อ่านจาก `PRICING_PLANS`
+  ตัวเดียวกับ `PricingCard` ไม่ hard-code) วางใต้ปุ่มหลักในจอแรก + ท้ายหน้า
+- `app/(morroo)/page.tsx` — ตัดแถบ "ลองทำข้อสอบฟรี/เล่นเกมเคส" ที่ซ้ำกับ hero ออก
+
+**ราคาที่ใช้จริง**: ฿199/เดือน (monthly, popular) จาก `lib/types.ts` `PRICING_PLANS` — ไม่มี
+Basic/Pro/hybrid tier ใดๆ ที่ implement จริง (เช็คแล้วก่อนแก้)
+
+### 8.2 UTM persistence — `lib/attribution.ts` (ใหม่)
+
+เดิม utm หายทันทีที่ navigate ออกจากหน้าแรก ตอนนี้เก็บ first-touch (localStorage
+`morroo_attr_first`) + last-touch (sessionStorage `morroo_attr_last`) ตั้งแต่เข้าเว็บ
+(`components/AnalyticsPageviewTracker.tsx`) แล้วแนบเข้าทุก event ที่ผ่าน `lib/analytics.ts`
+`track()` อัตโนมัติ (`utm_source/medium/campaign/content/term` + `utm_touch` + `landing_path`
+— `null` เมื่อไม่มี ไม่เพิ่ม key ให้ event ที่มาจาก organic) PostHog ได้ค่าเดียวกันเป็น super
+property ผ่าน `phRegister` ใน `lib/posthog.ts` `utm_source=morroo` (games hub) ไม่ทับ
+last-touch ของจริง (`INTERNAL_UTM_SOURCES`)
+
+### 8.3 Meta Pixel — เพิ่มที่ขาด
+
+`lib/analytics/conversions.ts` เพิ่ม `trackPricingViewContent(surface)` (ยิงคู่กับ
+`pricing_view` ใน `PricingViewTracker`) และ `trackLineLead(surface)` (ยิงคู่กับ
+`social_click` ทุกจุดที่กดปุ่ม LINE ผ่าน `components/SocialLinks.tsx` `trackLineClick`)
+ไม่มี `eventID` เพราะไม่มี server CAPI คู่กันให้ dedupe
+
+### 8.4 CTA ท้ายเกมเคส — ลดจาก 6-7 ลิงก์เหลือ CTA เดียว
+
+`components/sim/DebriefBrowseCta.tsx` → แยกเป็น 2 ไฟล์:
+- `components/sim/DebriefResultCard.tsx` (ใหม่) — "ผลของคุณ": เกรด/คะแนน, จุดที่พลาด
+  (`lib/sim/debrief-summary.ts` `weakestPoint`), **เทียบกับผู้เล่นอื่น** (ใหม่ทั้งหมด — ดู 8.5),
+  สาขาที่ยังไม่ผ่าน (คนเล่นซ้ำ)
+- `components/sim/DebriefSignupCta.tsx` (แทน `DebriefBrowseCta.tsx`) — ปุ่มหลักเดียว เลือกจาก
+  flag + in-app browser ที่ตรวจได้ (`lib/in-app-browser.ts`, ย้ายมาจาก
+  `lib/firstaid/inAppBrowser.ts` ซึ่งกลายเป็น re-export): `line_login` / `line_oa_inapp`
+  (มีคำเตือนเปิดใน Safari/Chrome) / `line_oa_noflag` — copy ใช้ประโยชน์จริงเท่านั้น
+  ("เก็บยศ/XP/เหรียญ ถาวร · Leaderboard · ข้อสอบจริงฟรี 5 ข้อ/สาขา") **ไม่มี** "ปลดล็อกเคสเพิ่ม"
+  เพราะทุกเคสเล่นฟรีอยู่แล้ว ไม่มีอะไรถูกล็อก (ยืนยันกับเจ้าของแล้ว — ไม่เพิ่ม gate)
+
+ข้อความ LINE OA ยังขึ้นต้นด้วย "ขอโค้ดทดลอง Premium ฟรี" เหมือนเดิม (แมตช์
+`TRIAL_INTENT_PATTERNS`) เพิ่มบรรทัดที่มา (`lib/sim/line-links.ts`) เพื่อให้ทีมรู้ว่าใครมาจาก
+เกมเคสไหน
+
+### 8.5 "เทียบกับผู้เล่นอื่น" (ใหม่)
+
+อ่านจาก `analytics_events.casegame_complete` (ทุกคนรวม guest ต่างจาก `sim_runs` ที่มีแค่คน
+ล็อกอิน ~8%) ผ่าน SQL function `get_casegame_percentile`
+(`supabase/migrations/20260915_casegame_percentile.sql`) เรียกผ่าน
+`GET /api/casegame/rank` (rate-limited, cache CDN 10 นาที, ไม่มีวันคืน 500) เลือกระดับ slug
+ก่อนถ้าตัวอย่าง ≥30 ไม่งั้น fallback เป็นหมวด (`lib/casegame/percentile.ts`)
+
+### 8.6 Event ใหม่/แก้
+
+| Event | เปลี่ยนอะไร |
+|---|---|
+| `pricing_cta_click` (ใหม่) | คลิกบรรทัดราคาใน hero/footer — `{surface, target, plan, price}` |
+| `casegame_rank_view` (ใหม่) | percentile โหลดสำเร็จ — `{slug, category, run_id, scope, sample, percentile}` |
+| `casegame_cta_view` / `casegame_cta_click` | เพิ่ม `cta_variant`, `in_app_browser`, `local_runs`; click เพิ่ม `percentile` — **ไม่เปลี่ยนชื่อ event เดิม** |
+| ทุก event ผ่าน `track()` | เพิ่ม `utm_source/medium/campaign/content/term`, `utm_touch`, `landing_path` เมื่อมี utm ที่เก็บไว้ |
+
+### 8.7 ตรวจสอบก่อน merge
+
+`npm run test` (56 ไฟล์ 549 เทสผ่านหมด รวมของใหม่), `npm run lint` (ไม่มี error/warning ใน
+ไฟล์ที่แก้ — error ที่เหลือทั้งหมด pre-existing ในไฟล์ที่ไม่ได้แตะ), `npm run build` (ผ่าน),
+`npx playwright test` (ผ่านหมดยกเว้น 2 เทสที่ล้มเหมือนกันบน main อยู่แล้ว ไม่เกี่ยวกับงานนี้ —
+ดู PR/commit message)
+
+**พบเรื่องที่ควรแก้แยก**: `next/link` แบบ hash เดียวกันหน้า (`href="#pricing"`) ไม่ scroll/ไม่
+เปลี่ยน `location.hash` เลยเมื่อทดสอบด้วย Playwright ในโปรเจกต์นี้ (ทั้งที่ตาม docs ของ Next
+เวอร์ชันนี้ควรทำงาน) — ไม่ใช่บั๊กจาก `HeroPriceLine` ที่เพิ่มใหม่ แต่กระทบทุกลิงก์แฮชในเว็บ
+ต้องตรวจแยก
