@@ -12,6 +12,23 @@ declare global {
   }
 }
 
+// Queue events even when the Google library has not finished loading.
+// The site's existing Google tag consumes this same dataLayer; do not load
+// another tag or bypass its consent settings here.
+function googleEvent(name: string, parameters?: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  if (!window.gtag) {
+    const target = window as Window & { dataLayer?: unknown[] };
+    target.dataLayer ??= [];
+    window.gtag = function () {
+      // Google tag's command queue uses Arguments objects, not event arrays.
+      // eslint-disable-next-line prefer-rest-params
+      target.dataLayer!.push(arguments);
+    };
+  }
+  window.gtag("event", name, parameters ?? {});
+}
+
 export function trackPurchase(opts: {
   transactionId: string;
   value: number;
@@ -20,7 +37,9 @@ export function trackPurchase(opts: {
   if (typeof window === "undefined") return;
   const { transactionId, value, currency } = opts;
 
-  window.gtag?.("event", "purchase", {
+  if (!transactionId || !Number.isFinite(value) || value < 0 || !/^[A-Z]{3}$/.test(currency)) return;
+
+  googleEvent("purchase", {
     transaction_id: transactionId,
     value,
     currency,
@@ -42,7 +61,7 @@ export function trackInitiateCheckout(opts: {
   if (typeof window === "undefined") return;
   const { plan, value, currency } = opts;
 
-  window.gtag?.("event", "begin_checkout", {
+  googleEvent("begin_checkout", {
     value,
     currency,
     items: [{ item_id: plan }],
@@ -67,7 +86,7 @@ export function trackLead(code: string): void {
   // (`lead:<code>`) so Meta dedupes the browser+server pair. The browser
   // copy carries _fbp/_fbc for ad attribution.
   const eventId = `lead:${code}`;
-  window.gtag?.("event", "generate_lead");
+  googleEvent("generate_lead");
   window.fbq?.("track", "Lead", { content_name: "free_trial" }, { eventID: eventId });
   window.ttq?.track("SubmitForm", { content_name: "free_trial" }, { event_id: eventId });
 }
@@ -76,7 +95,7 @@ export function trackSignup(): void {
   if (typeof window === "undefined") return;
   // GA4 only. Meta/TikTok CompleteRegistration is already sent server-side
   // (app/auth/callback) and we lack its eventId here to dedupe a browser copy.
-  window.gtag?.("event", "sign_up", { method: "oauth" });
+  googleEvent("sign_up", { method: "oauth" });
 }
 
 export function trackEmailSignup(userId: string): void {
@@ -90,7 +109,7 @@ export function trackEmailSignup(userId: string): void {
   // keys dedup against the `signup:<userId>` server copy fired by
   // POST /api/track/registration (the register page calls both).
   const eventId = `signup:${userId}`;
-  window.gtag?.("event", "sign_up", { method: "email" });
+  googleEvent("sign_up", { method: "email" });
   window.fbq?.("track", "CompleteRegistration", { content_name: "signup" }, { eventID: eventId });
   window.ttq?.track("CompleteRegistration", { content_name: "signup" }, { event_id: eventId });
 }
