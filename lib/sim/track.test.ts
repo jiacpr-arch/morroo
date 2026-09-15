@@ -235,7 +235,7 @@ describe("buildCtaClickProps", () => {
   it("is a superset of the view payload", () => {
     const base = {
       slug: "a", category: "longcase", grade: "A", runId: "run-2",
-      ctaVariant: "line_login", inAppBrowser: null as const, localRuns: 3,
+      ctaVariant: "line_login", inAppBrowser: null, localRuns: 3,
     };
     const view = buildCtaViewProps(base);
     const click = buildCtaClickProps({ ...base, target: "pricing", percentile: 72 });
