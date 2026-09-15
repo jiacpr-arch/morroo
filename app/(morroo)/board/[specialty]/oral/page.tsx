@@ -8,7 +8,9 @@ import {
 } from "@/lib/supabase/queries-board";
 import { getBoardOralCases } from "@/lib/supabase/queries-longcase";
 import { createClient } from "@/lib/supabase/server";
-import { hasBoardAccess } from "@/lib/membership";
+import { hasBoardAccess, hasScopedAccess } from "@/lib/membership";
+import { ITEM_PRICES, itemPlanType } from "@/lib/items";
+import { fetchEntitlements } from "@/lib/entitlements";
 import LongCaseStartButton from "@/app/(morroo)/longcase/LongCaseStartButton";
 import { BOARD_SPECIALTY_SLUGS } from "@/lib/types-board";
 import type { Metadata } from "next";
@@ -62,7 +64,12 @@ export default async function BoardOralPage({
         .select("membership_type, membership_expires_at")
         .eq("id", user.id)
         .single();
-      return { hasAccess: hasBoardAccess(profile) };
+      const entitlements = await fetchEntitlements(supabase, user.id);
+      return {
+        hasAccess:
+          hasBoardAccess(profile, entitlements) ||
+          hasScopedAccess("board", [`specialty:${specialty}`], profile, entitlements),
+      };
     })(),
   ]);
 
@@ -108,14 +115,22 @@ export default async function BoardOralPage({
                 สอบ oral ต้องสมาชิก Board
               </div>
               <p className="text-amber-700 mt-0.5">
-                แพ็ก Board รายเดือน ฿499 หรือรายปี ฿4,990 — รวม MCQ บอร์ดทุกสาขา + Oral Exam ไม่จำกัด
+                เฉพาะสาขา{s.name_th} ฿{ITEM_PRICES.board_specialty_month}/เดือน (MCQ + Oral) — หรือแพ็ก Board ทุกสาขา ฿499/เดือน
               </p>
-              <Link
-                href="/pricing"
-                className="inline-block mt-2 text-amber-900 font-medium hover:underline"
-              >
-                ดูแพ็กเกจ Board →
-              </Link>
+              <div className="mt-2 flex flex-wrap gap-3">
+                <Link
+                  href={`/payment/${encodeURIComponent(itemPlanType("board_specialty", specialty, "month"))}`}
+                  className="text-amber-900 font-medium hover:underline"
+                >
+                  ปลดล็อกสาขานี้ →
+                </Link>
+                <Link
+                  href="/pricing#board"
+                  className="text-amber-900/80 hover:underline"
+                >
+                  ดูแพ็ก Board ทุกสาขา
+                </Link>
+              </div>
             </div>
           </CardContent>
         </Card>

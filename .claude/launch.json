@@ -4,8 +4,22 @@
     {
       "name": "morroo-dev",
       "runtimeExecutable": "/Users/apple/.nvm/versions/node/v24.14.0/bin/node",
-      "runtimeArgs": ["/Users/apple/Projects/morroo/scripts/start-dev.cjs"],
+      "runtimeArgs": [
+        "/Users/apple/Projects/morroo/scripts/start-dev.cjs"
+      ],
       "port": 3000
+    },
+    {
+      "name": "morroo-dev-local",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3001"
+      ],
+      "port": 3001
     }
   ]
 }

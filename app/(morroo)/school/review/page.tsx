@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import FlashcardSwiper from "@/components/school/FlashcardSwiper";
 import type { SchoolFlashcard } from "@/lib/types-school";
 import { hasSchoolAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -25,7 +26,7 @@ export default async function ReviewPage() {
     .select("membership_type, membership_expires_at, current_year")
     .eq("id", user.id)
     .maybeSingle();
-  const isPremium = hasSchoolAccess(profile);
+  const isPremium = hasSchoolAccess(profile, await fetchEntitlements(supabase, user.id));
 
   // Pull due flashcards
   const { data: due } = await supabase

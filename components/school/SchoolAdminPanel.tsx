@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,18 +10,20 @@ import { createClient } from "@/lib/supabase/client";
 import { normalizeImageUrl } from "@/lib/school/image-url";
 import { splitLessonPartsRaw, joinLessonParts } from "@/lib/school/lesson-parts";
 import ImportPanel from "./ImportPanel";
+import ContentLibraryPanel from "./ContentLibraryPanel";
 import ImageUploader from "./ImageUploader";
 import LessonReader from "./LessonReader";
 import type { SchoolLesson } from "@/lib/types-school";
 
 /**
- * Three tabs, on purpose. Everything students consume is produced by the AI
+ * Four tabs, on purpose. Everything students consume is produced by the AI
  * import in one pass, so the old one-row-at-a-time forms (Topic / Lesson /
  * Flashcard / Quiz / Case / Tag concept / Bulk JSON) were redundant — none of
- * them had ever created a row. What's left is the import itself, editing
- * content after it's saved, and visuals, which the import doesn't produce.
+ * them had ever created a row. What's left is the import itself, the library
+ * of what each import produced (delete / reorder), editing content after it's
+ * saved, and visuals, which the import doesn't produce.
  */
-type Tab = "import" | "edit" | "visual";
+type Tab = "import" | "library" | "edit" | "visual";
 
 interface Props {
   systems: { id: string; slug: string; name_th: string; icon: string }[];
@@ -43,10 +45,10 @@ export default function SchoolAdminPanel({ systems, topics }: Props) {
   const [status, setStatus] = useState<{ kind: "ok" | "err"; msg: string } | null>(null);
   const [busy, setBusy] = useState(false);
 
-  function notify(kind: "ok" | "err", msg: string) {
+  const notify = useCallback((kind: "ok" | "err", msg: string) => {
     setStatus({ kind, msg });
     setTimeout(() => setStatus(null), 3000);
-  }
+  }, []);
 
   return (
     <div className="space-y-4">
@@ -54,6 +56,7 @@ export default function SchoolAdminPanel({ systems, topics }: Props) {
         {(
           [
             ["import", "นำเข้าไฟล์ (AI)"],
+            ["library", "เนื้อหาที่มีอยู่ · ลบ / จัดลำดับ"],
             ["edit", "แก้ไขเนื้อหา + รูป"],
             ["visual", "Visual"],
           ] as const
@@ -86,6 +89,9 @@ export default function SchoolAdminPanel({ systems, topics }: Props) {
       )}
 
       {tab === "import" && <ImportPanel topics={topics} systems={systems} />}
+      {tab === "library" && (
+        <ContentLibraryPanel topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
+      )}
       {tab === "edit" && (
         <ContentEditor topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
       )}

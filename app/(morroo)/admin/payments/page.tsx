@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { PLAN_LABELS } from "@/lib/membership";
 import {
   CheckCircle,
   XCircle,
@@ -26,11 +27,7 @@ interface PaymentOrder {
   profiles?: { email: string; name: string };
 }
 
-const planLabels: Record<string, string> = {
-  monthly: "รายเดือน",
-  yearly: "รายปี",
-  bundle: "ชุดข้อสอบ",
-};
+const planLabels: Record<string, string> = PLAN_LABELS;
 
 const statusConfig: Record<string, { label: string; color: string }> = {
   pending: { label: "รอตรวจสอบ", color: "bg-yellow-100 text-yellow-700" },
@@ -125,24 +122,23 @@ export default function AdminPaymentsPage() {
       })
       .eq("id", orderId);
 
-    // If approved, update user membership
+    // If approved, grant the plan's products (per-product entitlements +
+    // legacy profile summary) through the server so every SKU — student
+    // pack, board, mcq / meq / longcase / school — is handled the same way.
     if (action === "approved") {
-      const expiresAt = new Date();
-      if (planType === "monthly") {
-        expiresAt.setMonth(expiresAt.getMonth() + 1);
-      } else if (planType === "yearly") {
-        expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-      } else {
-        expiresAt.setFullYear(expiresAt.getFullYear() + 99); // bundle = no expiry
+      const res = await fetch("/api/admin/membership", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId,
+          action: "grant_plan",
+          planType,
+          reference: orderId,
+        }),
+      });
+      if (!res.ok) {
+        alert("อนุมัติสลิปแล้ว แต่ให้สิทธิ์สมาชิกไม่สำเร็จ — ไปแก้ที่หน้า จัดการสมาชิก");
       }
-
-      await supabase
-        .from("profiles")
-        .update({
-          membership_type: planType,
-          membership_expires_at: expiresAt.toISOString(),
-        })
-        .eq("id", userId);
     }
 
     // Refresh

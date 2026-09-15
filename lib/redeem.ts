@@ -1,5 +1,15 @@
 import crypto from "crypto";
 import { createAdminClient } from "@/lib/supabase/admin";
+import {
+  COUPON_PLATFORM,
+  couponGrantPlan,
+  couponRewardDays,
+  isSelfServeCoupon,
+} from "@/lib/coupons";
+import { grantPlanDays, grantProduct } from "@/lib/entitlements";
+import { isPlanType } from "@/lib/membership";
+import { isItemPlan } from "@/lib/items";
+import { resolveItem } from "@/lib/billing/plan-resolver";
 
 export type RewardType = "monthly_1m" | "bundle_10q";
 export type RedeemSource =
@@ -86,10 +96,19 @@ export type RedeemError =
   | "not_found"
   | "expired"
   | "already_redeemed"
-  | "apply_failed";
+  | "apply_failed"
+  // coupon_codes-specific (see redeemCouponCode)
+  | "inactive"
+  | "not_started"
+  | "exhausted"
+  | "wrong_platform"
+  | "checkout_only";
+
+/** Reward granted by a code: lead redeem_codes reward, or a coupon_codes type. */
+export type RedeemRewardType = RewardType | "free_trial" | "free_month";
 
 export type RedeemResult =
-  | { ok: true; rewardType: RewardType }
+  | { ok: true; rewardType: RedeemRewardType; days?: number }
   | { ok: false; error: RedeemError };
 
 /**
@@ -115,7 +134,8 @@ export async function redeemCode(
     console.error("redeemCode lookup failed:", lookupError);
     return { ok: false, error: "apply_failed" };
   }
-  if (!row) return { ok: false, error: "not_found" };
+  // Not a lead redeem code → try the coupon_codes table (admin-issued vouchers).
+  if (!row) return redeemCouponCode(code, userId);
   if (row.redeemed_at) return { ok: false, error: "already_redeemed" };
   if (new Date(row.expires_at) < new Date()) {
     return { ok: false, error: "expired" };
@@ -173,36 +193,7 @@ async function applyReward(
   const supabase = createAdminClient();
 
   if (rewardType === "monthly_1m") {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("membership_expires_at")
-      .eq("id", userId)
-      .maybeSingle();
-
-    // Stack on top of any unexpired entitlement.
-    const now = new Date();
-    const base =
-      profile?.membership_expires_at &&
-      new Date(profile.membership_expires_at) > now
-        ? new Date(profile.membership_expires_at)
-        : now;
-    const newExpiry = new Date(
-      base.getTime() + MONTHLY_DURATION_DAYS * 24 * 60 * 60 * 1000
-    );
-
-    const { error } = await supabase
-      .from("profiles")
-      .update({
-        membership_type: "monthly",
-        membership_expires_at: newExpiry.toISOString(),
-      })
-      .eq("id", userId);
-
-    if (error) {
-      console.error("applyReward monthly failed:", error);
-      return false;
-    }
-    return true;
+    return extendMembershipDays(userId, MONTHLY_DURATION_DAYS);
   }
 
   // bundle_10q
@@ -231,4 +222,115 @@ export async function bundleCreditBalance(userId: string): Promise<number> {
     return 0;
   }
   return (data ?? []).reduce((sum, r) => sum + (r.delta ?? 0), 0);
+}
+
+/**
+ * Grant `days` of the student pack (mcq + meq + longcase + school), stacking
+ * on top of any unexpired entitlement so a user who redeems mid-subscription
+ * doesn't lose time. The legacy profile columns are re-derived afterwards.
+ */
+export async function extendMembershipDays(
+  userId: string,
+  days: number
+): Promise<boolean> {
+  return grantPlanDays(userId, "monthly", days, { source: "redeem" });
+}
+
+const COUPON_RPC_ERRORS: ReadonlySet<RedeemError> = new Set([
+  "not_found",
+  "inactive",
+  "wrong_platform",
+  "not_started",
+  "expired",
+  "exhausted",
+  "already_redeemed",
+]);
+
+/**
+ * Redeem an admin-issued coupon (coupon_codes). Validation + claim happen
+ * atomically inside the `redeem_coupon_code` RPC
+ * (supabase/migrations/20260912_coupon_codes.sql); the membership grant is
+ * applied afterwards and rolled back via `unredeem_coupon_code` on failure.
+ *
+ * Only free_trial / free_month coupons are self-serve; discount coupons are
+ * rejected with `checkout_only` before anything is consumed.
+ */
+export async function redeemCouponCode(
+  code: string,
+  userId: string
+): Promise<RedeemResult> {
+  const supabase = createAdminClient();
+
+  const { data: coupon, error: lookupError } = await supabase
+    .from("coupon_codes")
+    .select("id, coupon_type, value, plan_type")
+    .eq("code", code)
+    .maybeSingle();
+  if (lookupError) {
+    console.error("redeemCouponCode lookup failed:", lookupError);
+    return { ok: false, error: "apply_failed" };
+  }
+  if (!coupon) return { ok: false, error: "not_found" };
+  if (!isSelfServeCoupon(coupon.coupon_type)) {
+    return { ok: false, error: "checkout_only" };
+  }
+
+  const { data: claimed, error: claimError } = await supabase.rpc(
+    "redeem_coupon_code",
+    { p_code: code, p_user_id: userId, p_platform: COUPON_PLATFORM }
+  );
+  if (claimError) {
+    const msg = (claimError.message ?? "").trim() as RedeemError;
+    if (COUPON_RPC_ERRORS.has(msg)) return { ok: false, error: msg };
+    console.error("redeemCouponCode claim failed:", claimError);
+    return { ok: false, error: "apply_failed" };
+  }
+  const row = (Array.isArray(claimed) ? claimed[0] : claimed) as
+    | { coupon_id: string; coupon_type: string; value: number }
+    | undefined;
+  if (!row || !isSelfServeCoupon(row.coupon_type)) {
+    return { ok: false, error: "apply_failed" };
+  }
+
+  const days = couponRewardDays(row.coupon_type, row.value);
+  const applied = await grantCouponPlan(userId, couponGrantPlan(coupon.plan_type), days, code);
+  if (!applied) {
+    await supabase.rpc("unredeem_coupon_code", {
+      p_coupon_id: row.coupon_id,
+      p_user_id: userId,
+    });
+    return { ok: false, error: "apply_failed" };
+  }
+
+  return { ok: true, rewardType: row.coupon_type, days };
+}
+
+/**
+ * Apply `days` of whatever a free coupon points at: a PLAN_CATALOG plan
+ * (student pack by default, or Board / MCQ / … alone) or a single item
+ * (one specialty / subject / exam / case / topic).
+ */
+async function grantCouponPlan(
+  userId: string,
+  planType: string,
+  days: number,
+  code: string
+): Promise<boolean> {
+  if (isPlanType(planType)) {
+    return grantPlanDays(userId, planType, days, { source: "coupon", reference: code });
+  }
+  if (isItemPlan(planType)) {
+    const item = await resolveItem(planType);
+    if (!item) {
+      console.error("redeemCouponCode: unknown item plan", planType);
+      return false;
+    }
+    return grantProduct(userId, item.product, days, {
+      source: "coupon",
+      reference: code,
+      scope: item.scope,
+    });
+  }
+  console.error("redeemCouponCode: unknown plan", planType);
+  return false;
 }

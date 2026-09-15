@@ -8,6 +8,8 @@ import {
 import McqMock from "@/components/McqMock";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
+import { hasMcqAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 
 export const metadata: Metadata = {
   title: "ลองทำข้อสอบ NL ฟรี — MorRoo",
@@ -48,15 +50,7 @@ async function getIsPremium(): Promise<boolean> {
 
   const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
   if (!p) return false;
-  const isExpired = p.membership_expires_at
-    ? new Date(p.membership_expires_at) < new Date()
-    : false;
-  return (
-    (p.membership_type === "monthly" ||
-      p.membership_type === "yearly" ||
-      p.membership_type === "bundle") &&
-    !isExpired
-  );
+  return hasMcqAccess(p, await fetchEntitlements(supabase, user.id));
 }
 
 export default async function TryExamPage() {

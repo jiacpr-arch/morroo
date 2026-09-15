@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { createClient } from "@/lib/supabase/client";
+import { PLAN_LABELS } from "@/lib/membership";
 import {
   Shield,
   Loader2,
@@ -179,12 +180,7 @@ export default function AdminStudentDetailPage() {
         )
       : 0;
 
-  const membershipLabel: Record<string, string> = {
-    free: "Free",
-    monthly: "Monthly",
-    yearly: "Yearly",
-    bundle: "Bundle",
-  };
+  const membershipLabel: Record<string, string> = PLAN_LABELS;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">

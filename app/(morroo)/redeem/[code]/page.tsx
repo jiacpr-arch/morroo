@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import RedeemAction from "./RedeemAction";
+import { couponRewardLabel, isSelfServeCoupon } from "@/lib/coupons";
 
 export const dynamic = "force-dynamic";
 
@@ -31,7 +32,7 @@ export default async function RedeemPage({ params }: { params: Params }) {
     .maybeSingle();
 
   const now = new Date();
-  const status = !row
+  let status: string = !row
     ? "not_found"
     : row.redeemed_at
       ? row.redeemed_by === user.id
@@ -40,6 +41,41 @@ export default async function RedeemPage({ params }: { params: Params }) {
       : new Date(row.expires_at) < now
         ? "expired"
         : "ready";
+  let rewardType: string | null = row?.reward_type ?? null;
+  let rewardLabel: string | null = null;
+
+  // Not a lead code → admin-issued coupon (coupon_codes)? Mirrors the rules in
+  // the redeem_coupon_code RPC so the page can show the right state up front.
+  if (!row) {
+    const { data: coupon } = await admin
+      .from("coupon_codes")
+      .select("id, coupon_type, value, platform, is_active, starts_at, expires_at, max_uses, current_uses, max_uses_per_user")
+      .eq("code", code)
+      .maybeSingle();
+    if (coupon) {
+      const { count: mine } = await admin
+        .from("coupon_redemptions")
+        .select("id", { count: "exact", head: true })
+        .eq("coupon_id", coupon.id)
+        .eq("user_id", user.id);
+      rewardType = coupon.coupon_type;
+      rewardLabel = couponRewardLabel(coupon.coupon_type, coupon.value);
+      status =
+        (mine ?? 0) >= (coupon.max_uses_per_user ?? 1)
+          ? "redeemed_by_self"
+          : !isSelfServeCoupon(coupon.coupon_type)
+            ? "checkout_only"
+            : !coupon.is_active || (coupon.platform !== "all" && coupon.platform !== "medical")
+              ? "not_found"
+              : coupon.expires_at && new Date(coupon.expires_at) <= now
+                ? "expired"
+                : coupon.max_uses != null && (coupon.current_uses ?? 0) >= coupon.max_uses
+                  ? "exhausted"
+                  : coupon.starts_at && new Date(coupon.starts_at) > now
+                    ? "not_started"
+                    : "ready";
+    }
+  }
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-teal-50 to-white px-4 py-12">
@@ -54,8 +90,46 @@ export default async function RedeemPage({ params }: { params: Params }) {
           </p>
         </CardHeader>
         <CardContent className="space-y-4 text-center">
-          {status === "ready" && row && (
-            <RedeemAction code={code} rewardType={row.reward_type} />
+          {status === "ready" && rewardType && (
+            <RedeemAction code={code} rewardType={rewardType} rewardLabel={rewardLabel} />
+          )}
+
+          {status === "exhausted" && (
+            <>
+              <p className="text-base font-medium text-red-600">
+                โค้ดนี้ถูกใช้ครบจำนวนแล้ว
+              </p>
+              <Link href="/pricing">
+                <Button variant="outline" className="w-full">
+                  ดูแพ็กเกจ
+                </Button>
+              </Link>
+            </>
+          )}
+
+          {status === "not_started" && (
+            <>
+              <p className="text-base font-medium text-amber-600">
+                โค้ดนี้ยังไม่เปิดใช้งาน
+              </p>
+              <p className="text-sm text-muted-foreground">
+                ลองใหม่อีกครั้งเมื่อถึงวันเริ่มแคมเปญ
+              </p>
+            </>
+          )}
+
+          {status === "checkout_only" && (
+            <>
+              <p className="text-base font-medium text-teal-700">
+                {rewardLabel}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                โค้ดส่วนลดใช้ตอนชำระเงิน — แจ้งโค้ดนี้พร้อมส่งสลิป
+              </p>
+              <Link href="/pricing">
+                <Button className="w-full">ดูแพ็กเกจ</Button>
+              </Link>
+            </>
           )}
 
           {status === "redeemed_by_self" && (
@@ -94,7 +168,7 @@ export default async function RedeemPage({ params }: { params: Params }) {
                 โค้ดหมดอายุแล้ว
               </p>
               <p className="text-sm text-muted-foreground">
-                โค้ดมีอายุ 7 วันนับจากวันที่ออก
+                โค้ดนี้เลยวันหมดอายุแล้ว
               </p>
               <Link href="/pricing">
                 <Button variant="outline" className="w-full">

@@ -20,14 +20,27 @@ import {
   CreditCard,
 } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
+import { PLAN_CATALOG, PLAN_TYPES, type PlanDuration } from "@/lib/membership";
 
-const PLANS: Record<string, { name: string; price: number; period: string }> = {
-  monthly: { name: "รายเดือน", price: 199, period: "/ เดือน" },
-  yearly: { name: "รายปี", price: 1490, period: "/ ปี" },
-  bundle: { name: "ชุดข้อสอบ 10 ข้อ", price: 299, period: "" },
-  board_monthly: { name: "Board รายเดือน", price: 499, period: "/ เดือน" },
-  board_yearly: { name: "Board รายปี", price: 4990, period: "/ ปี" },
+const PLAN_PERIOD: Record<PlanDuration, string> = {
+  month: "/ เดือน",
+  year: "/ ปี",
+  lifetime: "",
 };
+
+// Derived from PLAN_CATALOG so every sellable plan (student pack, board and
+// the per-product mcq / meq / longcase / school SKUs) has a checkout page.
+const PLANS: Record<string, { name: string; price: number; period: string }> =
+  Object.fromEntries(
+    PLAN_TYPES.map((plan) => [
+      plan,
+      {
+        name: plan === "bundle" ? "ชุดข้อสอบ 10 ข้อ" : PLAN_CATALOG[plan].label,
+        price: PLAN_CATALOG[plan].amount,
+        period: PLAN_PERIOD[PLAN_CATALOG[plan].duration],
+      },
+    ])
+  );
 
 // Mirror of NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED used by the Stripe checkout
 // route. When on, the Stripe option also offers an instant PromptPay QR, so we
@@ -55,7 +68,43 @@ export default function PaymentPage({
   // Stripe loading
   const [stripeLoading, setStripeLoading] = useState(false);
 
-  const planInfo = PLANS[plan];
+  // Discount coupon (validated server-side; price shown after the check)
+  const [couponInput, setCouponInput] = useState("");
+  const [coupon, setCoupon] = useState<{ code: string; finalAmount: number; discount: number } | null>(null);
+  const [couponError, setCouponError] = useState("");
+  const [couponChecking, setCouponChecking] = useState(false);
+
+  // Items (item:…) are priced and named by the server — one subject /
+  // specialty / exam / case / topic — and come with bigger "anchor" plans.
+  type RemoteInfo = {
+    name: string;
+    price: number;
+    period: string;
+    anchors: { planType: string; label: string; amount: number; period: string }[];
+  };
+  const isItem = plan.startsWith("item:");
+  const [remoteInfo, setRemoteInfo] = useState<RemoteInfo | null>(null);
+  const [remoteLoading, setRemoteLoading] = useState(isItem);
+  useEffect(() => {
+    if (!isItem) return;
+    let cancelled = false;
+    fetch(`/api/billing/plan-info?planType=${encodeURIComponent(plan)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled) return;
+        if (j?.name) {
+          setRemoteInfo({ name: j.name, price: j.amount, period: j.period, anchors: j.anchors ?? [] });
+        }
+        setRemoteLoading(false);
+      })
+      .catch(() => !cancelled && setRemoteLoading(false));
+    return () => {
+      cancelled = true;
+    };
+  }, [plan, isItem]);
+
+  const planInfo: { name: string; price: number; period: string } | undefined =
+    PLANS[plan] ?? remoteInfo ?? undefined;
 
   useEffect(() => {
     async function checkAuth() {
@@ -73,17 +122,44 @@ export default function PaymentPage({
 
   // Canonical InitiateCheckout: fires once per payment-page visit so Meta/TikTok
   // get the signal before the user reaches Stripe checkout.
+  const trackedPrice = planInfo?.price;
   useEffect(() => {
-    const info = PLANS[plan];
-    if (!info) return;
-    trackInitiateCheckout({ plan, value: info.price, currency: "THB" });
-  }, [plan]);
+    if (trackedPrice === undefined) return;
+    trackInitiateCheckout({ plan, value: trackedPrice, currency: "THB" });
+  }, [plan, trackedPrice]);
+
+  const applyCoupon = async () => {
+    const code = couponInput.trim().toUpperCase();
+    if (!code) return;
+    setCouponChecking(true);
+    setCouponError("");
+    try {
+      const res = await fetch("/api/billing/coupon-check", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code, planType: plan }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        setCoupon(null);
+        setCouponError(data.error || "ใช้โค้ดไม่ได้");
+      } else {
+        setCoupon({ code: data.code, finalAmount: data.finalAmount, discount: data.discount });
+        track("coupon_applied", { plan, code: data.code, discount: data.discount });
+      }
+    } catch {
+      setCouponError("ตรวจสอบโค้ดไม่สำเร็จ กรุณาลองใหม่");
+    }
+    setCouponChecking(false);
+  };
+
+  const payAmount = coupon ? coupon.finalAmount : planInfo?.price ?? 0;
 
   const handleStripeCheckout = async () => {
     if (!user) return;
     setStripeLoading(true);
     setError("");
-    const price = planInfo?.price ?? 0;
+    const price = payAmount;
     track("stripe_checkout_click", { plan, price, wantInvoice });
     try {
       const res = await fetch("/api/billing/checkout", {
@@ -91,6 +167,7 @@ export default function PaymentPage({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           planType: plan,
+          couponCode: coupon?.code ?? null,
           invoiceData: wantInvoice
             ? { name: invoiceName, taxId: invoiceTaxId, address: invoiceAddress }
             : null,
@@ -107,6 +184,14 @@ export default function PaymentPage({
     }
     setStripeLoading(false);
   };
+
+  if (!planInfo && remoteLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader2 className="h-8 w-8 animate-spin text-brand" />
+      </div>
+    );
+  }
 
   if (!planInfo) {
     return (
@@ -153,13 +238,24 @@ export default function PaymentPage({
               <div>
                 <p className="font-medium">{planInfo.name}</p>
                 <p className="text-sm text-muted-foreground">
-                  แพ็กเกจ{planInfo.name}
+                  {isItem ? "ซื้อเฉพาะรายการนี้" : `แพ็กเกจ${planInfo.name}`}
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-2xl font-bold">
-                  ฿{planInfo.price.toLocaleString()}
-                </p>
+                {coupon ? (
+                  <>
+                    <p className="text-sm text-muted-foreground line-through">
+                      ฿{planInfo.price.toLocaleString()}
+                    </p>
+                    <p className="text-2xl font-bold text-brand">
+                      ฿{coupon.finalAmount.toLocaleString()}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-2xl font-bold">
+                    ฿{planInfo.price.toLocaleString()}
+                  </p>
+                )}
                 {planInfo.period && (
                   <p className="text-sm text-muted-foreground">
                     {planInfo.period}
@@ -167,8 +263,60 @@ export default function PaymentPage({
                 )}
               </div>
             </div>
+
+            {/* Discount code */}
+            <div className="mt-4 border-t pt-4">
+              <Label htmlFor="coupon" className="text-sm">มีโค้ดส่วนลด?</Label>
+              <div className="mt-1 flex gap-2">
+                <Input
+                  id="coupon"
+                  value={couponInput}
+                  onChange={(e) => {
+                    setCouponInput(e.target.value.toUpperCase());
+                    if (coupon) setCoupon(null);
+                  }}
+                  placeholder="MORROO-XXXXXX"
+                  className="font-mono uppercase"
+                  disabled={couponChecking}
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={couponChecking || !couponInput.trim()}
+                  onClick={applyCoupon}
+                >
+                  {couponChecking ? <Loader2 className="h-4 w-4 animate-spin" /> : "ใช้โค้ด"}
+                </Button>
+              </div>
+              {coupon && (
+                <p className="mt-1 text-xs text-emerald-700">
+                  ใช้โค้ด {coupon.code} แล้ว — ลด ฿{coupon.discount.toLocaleString()}
+                </p>
+              )}
+              {couponError && (
+                <p className="mt-1 text-xs text-destructive">{couponError}</p>
+              )}
+            </div>
           </CardContent>
         </Card>
+
+        {/* Bigger plans next to a single item — the item is the entry point */}
+        {remoteInfo && remoteInfo.anchors.length > 0 && (
+          <div className="rounded-lg border border-dashed p-4 text-sm">
+            <p className="font-medium mb-2">ใช้บ่อย? แพ็กใหญ่คุ้มกว่า</p>
+            <div className="flex flex-wrap gap-2">
+              {remoteInfo.anchors.map((a) => (
+                <Link
+                  key={a.planType}
+                  href={`/payment/${a.planType}`}
+                  className="inline-flex items-center gap-1 rounded-full border bg-background px-3 py-1 text-xs hover:border-brand hover:text-brand"
+                >
+                  {a.label} ฿{a.amount.toLocaleString()} {a.period}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         <PaymentTrustSignals />
 
@@ -260,7 +408,7 @@ export default function PaymentPage({
               ) : (
                 <>
                   <CreditCard className="h-4 w-4 mr-2" />
-                  ชำระผ่าน Stripe ฿{planInfo.price.toLocaleString()}
+                  ชำระผ่าน Stripe ฿{payAmount.toLocaleString()}
                 </>
               )}
             </Button>

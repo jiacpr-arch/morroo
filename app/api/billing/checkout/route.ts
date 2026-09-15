@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { stripe, STRIPE_PLANS } from "@/lib/stripe";
+import { stripe } from "@/lib/stripe";
+import { resolvePurchasable } from "@/lib/billing/plan-resolver";
+import { DISCOUNT_ERROR_TH, validateDiscountCoupon } from "@/lib/billing/coupon-checkout";
 
 export const runtime = "nodejs";
 
@@ -14,16 +16,45 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { planType, invoiceData } = body as {
+    const { planType, invoiceData, couponCode } = body as {
       planType: string;
       invoiceData?: { name: string; taxId: string; address: string } | null;
+      couponCode?: string | null;
     };
 
-    if (!planType || !STRIPE_PLANS[planType]) {
+    // A plan (PLAN_CATALOG) or an item — one subject / specialty / exam /
+    // case / topic (lib/items.ts). Both are priced server-side; the client
+    // only sends the plan string.
+    const purchasable =
+      typeof planType === "string" && planType.length <= 120
+        ? await resolvePurchasable(planType)
+        : null;
+    if (!purchasable) {
       return NextResponse.json({ error: "ประเภทแพ็กเกจไม่ถูกต้อง" }, { status: 400 });
     }
 
-    const plan = STRIPE_PLANS[planType];
+    const plan =
+      purchasable.kind === "plan"
+        ? { amount: purchasable.amount, name: purchasable.stripeName }
+        : { amount: purchasable.item.amount, name: purchasable.item.stripeName };
+
+    // Discount coupon (coupon_codes discount_percent / discount_fixed):
+    // validated here, priced into the session, consumed at fulfillment.
+    let couponMeta: Record<string, string> = {};
+    if (typeof couponCode === "string" && couponCode.trim()) {
+      const d = await validateDiscountCoupon(couponCode, user.id, planType, plan.amount);
+      if (!d.ok) {
+        return NextResponse.json({ error: DISCOUNT_ERROR_TH[d.error] }, { status: 400 });
+      }
+      plan.amount = d.finalAmount;
+      plan.name = `${plan.name} (โค้ด ${d.code})`;
+      couponMeta = {
+        couponCode: d.code,
+        couponId: d.couponId,
+        couponDiscount: String(d.discount),
+        originalAmount: String(d.originalAmount),
+      };
+    }
     const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com").trim();
 
     // PromptPay is the dominant consumer payment rail in Thailand and settles
@@ -57,10 +88,11 @@ export async function POST(request: NextRequest) {
         },
       ],
       success_url: `${siteUrl}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/payment/${planType}`,
+      cancel_url: `${siteUrl}/payment/${encodeURIComponent(planType)}`,
       metadata: {
         userId: user.id,
         planType,
+        ...couponMeta,
         invoiceName: invoiceData?.name ?? "",
         invoiceTaxId: invoiceData?.taxId ?? "",
         invoiceAddress: invoiceData?.address ?? "",

@@ -7,6 +7,7 @@ import {
   RATE_LIMITS,
 } from "@/lib/rate-limit";
 import { REWARD_TIERS, type RewardTierId } from "@/lib/bug-hunter";
+import { extendActiveProducts } from "@/lib/entitlements";
 
 // POST /api/mcq/redeem-points
 // Body: { tier: "days30" | "days90" }
@@ -82,6 +83,14 @@ export async function POST(request: NextRequest) {
       { status: 400 }
     );
   }
+
+  // The RPC only pushes the legacy profile expiry. Mirror the reward on the
+  // per-product entitlements (every active system, or the student pack when
+  // nothing is active) so the days actually unlock content.
+  await extendActiveProducts(user.id, tier.days, {
+    source: "reward",
+    reference: `bug_hunter:${body.tier}`,
+  });
 
   return NextResponse.json({
     success: true,

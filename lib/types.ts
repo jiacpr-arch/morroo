@@ -1,3 +1,5 @@
+import { PLAN_CATALOG } from "@/lib/membership";
+
 // A single upcoming exam: which topic ("สอบหัวข้ออะไร") on which date ("วันไหน").
 export interface ExamScheduleItem {
   topic: string;
@@ -206,6 +208,74 @@ export const PRICING_PLANS = [
     cta: "สมัครรายปี",
     popular: false,
     type: "yearly" as const,
+  },
+] as const;
+
+/**
+ * Per-product pricing — buy one system on its own (MCQ NL / MEQ / Long Case /
+ * School). Prices come from PLAN_CATALOG (lib/membership.ts) so checkout,
+ * Stripe and these cards never drift apart.
+ */
+export const PRODUCT_PRICING_PLANS = [
+  {
+    name: "MCQ NL",
+    price: PLAN_CATALOG.mcq_monthly.amount,
+    period: "/ เดือน",
+    description: `หรือรายปี ฿${PLAN_CATALOG.mcq_yearly.amount.toLocaleString()}`,
+    features: [
+      "ข้อสอบ MCQ NL Step 2 ไม่จำกัด",
+      "เฉลยละเอียด + Key Points ทุกข้อ",
+      "ข้อสอบใหม่ทุกสัปดาห์",
+    ],
+    cta: "สมัคร MCQ",
+    popular: false,
+    type: "mcq_monthly" as const,
+    yearlyType: "mcq_yearly" as const,
+  },
+  {
+    name: "MEQ",
+    price: PLAN_CATALOG.meq_monthly.amount,
+    period: "/ เดือน",
+    description: `หรือรายปี ฿${PLAN_CATALOG.meq_yearly.amount.toLocaleString()}`,
+    features: [
+      "ข้อสอบ MEQ ทุกชุด",
+      "🤖 AI ตรวจคำตอบไม่จำกัด",
+      "Key Points ทุกตอน",
+    ],
+    cta: "สมัคร MEQ",
+    popular: false,
+    type: "meq_monthly" as const,
+    yearlyType: "meq_yearly" as const,
+  },
+  {
+    name: "Long Case",
+    price: PLAN_CATALOG.longcase_monthly.amount,
+    period: "/ เดือน",
+    description: `หรือรายปี ฿${PLAN_CATALOG.longcase_yearly.amount.toLocaleString()}`,
+    features: [
+      "🩺 Long Case Exam กับ AI ไม่จำกัด",
+      "ทำซ้ำเคสเดิมได้",
+      "Feedback รายเคส",
+    ],
+    cta: "สมัคร Long Case",
+    popular: false,
+    type: "longcase_monthly" as const,
+    yearlyType: "longcase_yearly" as const,
+  },
+  {
+    name: "School (Y1–Y6)",
+    price: PLAN_CATALOG.school_monthly.amount,
+    period: "/ เดือน",
+    description: `หรือรายปี ฿${PLAN_CATALOG.school_yearly.amount.toLocaleString()}`,
+    features: [
+      "Flashcard / Quiz ไม่จำกัด",
+      "บทเรียนรายวัน + SRS review",
+      "ตาม curriculum ปี 1–6",
+    ],
+    cta: "สมัคร School",
+    popular: false,
+    type: "school_monthly" as const,
+    yearlyType: "school_yearly" as const,
   },
 ] as const;
 

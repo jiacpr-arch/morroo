@@ -12,7 +12,10 @@ import {
   getSchoolMasteryByTopic,
 } from "@/lib/supabase/queries-school";
 import GuidedRunner from "@/components/school/GuidedRunner";
-import { hasSchoolAccess } from "@/lib/membership";
+import { hasSchoolAccess, hasScopedAccess } from "@/lib/membership";
+import { ITEM_PRICES, itemPlanType } from "@/lib/items";
+import ItemUpsell from "@/components/ItemUpsell";
+import { fetchEntitlements } from "@/lib/entitlements";
 import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
@@ -41,7 +44,10 @@ export default async function GuidedPage({ params }: PageProps) {
     .select("membership_type, membership_expires_at")
     .eq("id", user.id)
     .maybeSingle();
-  const isPremium = hasSchoolAccess(profile);
+  const entitlements = await fetchEntitlements(supabase, user.id);
+  const isPremium =
+    hasSchoolAccess(profile, entitlements) ||
+    hasScopedAccess("school", [`topic:${id}`, `year:${topic.year}`], profile, entitlements);
 
   const [lessons, cards, quizzes, masteryMap] = await Promise.all([
     getSchoolLessons({ topicId: id }),
@@ -67,6 +73,19 @@ export default async function GuidedPage({ params }: PageProps) {
       <p className="text-sm text-muted-foreground mb-6">
         อ่าน → ฝึก → ทดสอบ → mastery check
       </p>
+
+      {!isPremium && (
+        <ItemUpsell
+          className="mb-6"
+          title="ปลดล็อกบทนี้ไม่จำกัด"
+          itemPlan={itemPlanType("school_topic", id)}
+          itemLabel={topic.name_th}
+          itemAmount={ITEM_PRICES.school_topic}
+          productPlan="school_monthly"
+          packPlan="monthly"
+          note={`ทั้งปี ${topic.year} ทุกบท ฿${ITEM_PRICES.school_year} ซื้อขาด — เลือกได้ที่หน้าชำระเงิน`}
+        />
+      )}
 
       <GuidedRunner
         topicId={id}

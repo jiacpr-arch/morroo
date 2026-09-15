@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import { PLAN_CATALOG, PLAN_TYPES } from "@/lib/membership";
 
 let _stripe: Stripe;
 
@@ -15,10 +16,14 @@ export const stripe: Stripe = new Proxy({} as Stripe, {
   },
 });
 
-export const STRIPE_PLANS: Record<string, { amount: number; name: string }> = {
-  monthly: { amount: 199, name: "MorRoo รายเดือน" },
-  yearly: { amount: 1490, name: "MorRoo รายปี" },
-  bundle: { amount: 299, name: "MorRoo ชุดข้อสอบ 10 ข้อ" },
-  board_monthly: { amount: 499, name: "MorRoo Board รายเดือน" },
-  board_yearly: { amount: 4990, name: "MorRoo Board รายปี" },
-};
+/**
+ * Sellable plans for Stripe Checkout — derived from PLAN_CATALOG
+ * (lib/membership.ts) so prices / names / products stay in one place.
+ */
+export const STRIPE_PLANS: Record<string, { amount: number; name: string }> =
+  Object.fromEntries(
+    PLAN_TYPES.map((plan) => [
+      plan,
+      { amount: PLAN_CATALOG[plan].amount, name: PLAN_CATALOG[plan].stripeName },
+    ])
+  );

@@ -12,6 +12,7 @@ import {
 import DailyLessonStepper from "@/components/school/DailyLessonStepper";
 import SubjectFilter from "@/components/school/SubjectFilter";
 import { hasSchoolAccess } from "@/lib/membership";
+import { fetchEntitlements } from "@/lib/entitlements";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -45,7 +46,7 @@ export default async function DailyPage({ searchParams }: PageProps) {
   const activeTopic = subject ? topics.find((t) => t.id === subject) : undefined;
   const topicId = activeTopic?.id;
 
-  const isPremium = hasSchoolAccess(profile);
+  const isPremium = hasSchoolAccess(profile, await fetchEntitlements(supabase, user.id));
   const [lessons, cards, quizzes] = await Promise.all([
     getMixedLessons({
       userId: user.id,

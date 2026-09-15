@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { fetchAccess } from "@/lib/entitlements";
+import { hasScopedAccess } from "@/lib/membership";
 import { createAnthropic } from "@/lib/anthropic";
 import { logAIError } from "@/lib/anthropic-error";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -29,29 +31,45 @@ export async function POST(request: Request) {
       .eq("id", user.id)
       .single();
 
-    if (!profile || profile.membership_type === "free") {
-      return NextResponse.json(
-        { error: "ฟีเจอร์ AI ตรวจคำตอบสำหรับสมาชิก Premium เท่านั้น" },
-        { status: 403 }
-      );
-    }
-
-    // Check if membership has expired
-    if (
-      profile.membership_expires_at &&
-      new Date(profile.membership_expires_at) < new Date()
-    ) {
-      return NextResponse.json(
-        { error: "สมาชิกของคุณหมดอายุแล้ว กรุณาต่ออายุสมาชิก" },
-        { status: 403 }
-      );
-    }
-
-    // 3. Parse request body
+    // Body first: examId decides whether a single-exam purchase applies.
     const body = await request.json();
-    const { studentAnswer, correctAnswer, keyPoints, question, subjectLabel } =
+    const { studentAnswer, correctAnswer, keyPoints, question, subjectLabel, examId } =
       body;
 
+    // AI grading belongs to the MEQ product (student pack or meq_* plan) —
+    // or to a single exam / exam category bought on its own.
+    const access = await fetchAccess(supabase, user.id, profile ?? null);
+    let allowed = access.meq;
+    if (!allowed && typeof examId === "string" && examId) {
+      const { data: exam } = await supabase
+        .from("exams")
+        .select("id, category")
+        .eq("id", examId)
+        .maybeSingle();
+      if (exam) {
+        allowed = hasScopedAccess(
+          "meq",
+          [`exam:${exam.id}`, `category:${exam.category}`],
+          profile ?? null,
+          access.entitlements
+        );
+      }
+    }
+    if (!allowed) {
+      const expiredMeq = access.entitlements.some(
+        (e) => e.product === "meq" && e.expires_at && new Date(e.expires_at) < new Date()
+      );
+      return NextResponse.json(
+        {
+          error: expiredMeq
+            ? "สมาชิก MEQ ของคุณหมดอายุแล้ว กรุณาต่ออายุ"
+            : "ฟีเจอร์ AI ตรวจคำตอบสำหรับสมาชิก MEQ / แพ็ก นศพ. เท่านั้น",
+        },
+        { status: 403 }
+      );
+    }
+
+    // 3. Validate request body (parsed above)
     if (!studentAnswer || !correctAnswer || !question) {
       return NextResponse.json(
         { error: "กรุณากรอกข้อมูลให้ครบถ้วน" },

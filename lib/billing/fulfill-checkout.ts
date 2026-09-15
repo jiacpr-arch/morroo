@@ -15,6 +15,11 @@
 import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { enqueueBoardGenJobs } from "@/lib/board/enqueue";
+import { isPlanType, planLabel } from "@/lib/membership";
+import { extendActiveProducts, grantItem, grantPlan } from "@/lib/entitlements";
+import { isItemPlan } from "@/lib/items";
+import { resolveItem } from "@/lib/billing/plan-resolver";
+import { recordDiscountRedemption } from "@/lib/billing/coupon-checkout";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -73,35 +78,47 @@ export async function fulfillCheckoutSession(
     return { alreadyProcessed: true };
   }
 
-  // Calculate membership expiry
   const now = new Date();
   let expiresAt: Date;
-  if (planType === "monthly" || planType === "board_monthly") {
+  let label: string;
+
+  if (isPlanType(planType)) {
+    // Grant the plan's products (per-product entitlements, stacking on any
+    // unexpired ones) and write the legacy profile summary.
+    const granted = await grantPlan(userId, planType, {
+      source: "stripe",
+      reference: session.id,
+    });
+    if (!granted.ok) {
+      console.error("[fulfill] failed to grant entitlements:", session.id);
+    }
+    expiresAt = granted.expiresAt;
+    label = planLabel(planType);
+  } else if (isItemPlan(planType)) {
+    // One subject / specialty / exam / case / topic → scoped entitlement.
+    // Items are not plans: the legacy profile summary is left untouched.
+    const item = await resolveItem(planType);
+    if (!item) {
+      console.error("[fulfill] unknown item on session:", session.id, planType);
+      return { alreadyProcessed: false };
+    }
+    const ok = await grantItem(userId, item, { source: "stripe", reference: session.id });
+    if (!ok) console.error("[fulfill] failed to grant item:", session.id);
     expiresAt = new Date(now);
-    expiresAt.setMonth(expiresAt.getMonth() + 1);
-  } else if (planType === "yearly" || planType === "board_yearly") {
-    expiresAt = new Date(now);
-    expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+    if (item.days) expiresAt.setDate(expiresAt.getDate() + item.days);
+    else expiresAt.setFullYear(expiresAt.getFullYear() + 99);
+    label = item.label;
   } else {
-    // bundle: 99 years
-    expiresAt = new Date(now);
-    expiresAt.setFullYear(expiresAt.getFullYear() + 99);
-  }
-
-  // Update profile membership
-  const { error: profileError } = await supabase
-    .from("profiles")
-    .update({
-      membership_type: planType,
-      membership_expires_at: expiresAt.toISOString(),
-    })
-    .eq("id", userId);
-
-  if (profileError) {
-    console.error("[fulfill] failed to update profile:", profileError);
+    console.error("[fulfill] unknown planType on session:", session.id, planType);
+    return { alreadyProcessed: false };
   }
 
   const totalAmount = (session.amount_total ?? 0) / 100;
+
+  // A discount coupon priced into this session → consume one use now.
+  if (metadata.couponCode) {
+    await recordDiscountRedemption(metadata.couponCode, userId, session.id);
+  }
 
   // Create payment order
   const { data: orderData, error: orderError } = await supabase
@@ -180,25 +197,13 @@ export async function fulfillCheckoutSession(
       .maybeSingle();
 
     if (pendingReferral) {
-      // Extend referrer's membership
-      const { data: referrer } = await supabase
-        .from("profiles")
-        .select("membership_expires_at, membership_type")
-        .eq("id", pendingReferral.referrer_id)
-        .maybeSingle();
-
-      if (referrer) {
-        const base =
-          referrer.membership_expires_at && new Date(referrer.membership_expires_at) > new Date()
-            ? new Date(referrer.membership_expires_at)
-            : new Date();
-        base.setDate(base.getDate() + (pendingReferral.reward_days ?? 30));
-
-        await supabase
-          .from("profiles")
-          .update({ membership_expires_at: base.toISOString() })
-          .eq("id", pendingReferral.referrer_id);
-      }
+      // Extend referrer's active products (falls back to the student pack
+      // when nothing is active) — also re-derives the legacy expiry.
+      await extendActiveProducts(
+        pendingReferral.referrer_id,
+        pendingReferral.reward_days ?? 30,
+        { source: "referral", reference: userId }
+      );
 
       // Mark referral as rewarded
       await supabase
@@ -242,11 +247,6 @@ export async function fulfillCheckoutSession(
     .maybeSingle();
 
   const publishedOn = now.toISOString().slice(0, 10);
-  const planLabels: Record<string, string> = {
-    monthly: "รายเดือน",
-    yearly: "รายปี",
-    bundle: "ชุดข้อสอบ",
-  };
 
   return {
     alreadyProcessed: false,
@@ -254,7 +254,7 @@ export async function fulfillCheckoutSession(
       sessionId: session.id,
       userId,
       planType,
-      planLabel: planLabels[planType] ?? planType,
+      planLabel: label,
       totalAmount,
       amountBeforeVat,
       vatAmount,

@@ -1,4 +1,5 @@
-// Interim voucher creation until the Phase 2 admin UI exists.
+// CLI voucher creation (the admin UI lives at /admin/firstaid/vouchers; this is the
+// headless fallback). Keep the code format in sync with lib/firstaid/server/voucherCode.ts.
 // Generates single-use unlock codes directly in morroo's Supabase (fa_vouchers),
 // same semantics as the old /api/vouchers/create endpoint.
 //

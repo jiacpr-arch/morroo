@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getLongCases } from "@/lib/supabase/queries-longcase";
 import { getLongcaseGameMap } from "@/lib/supabase/queries-sim";
 import { createClient } from "@/lib/supabase/server";
+import { fetchAccess, ownedScopes } from "@/lib/entitlements";
+import { ITEM_PRICES, LONGCASE_ITEM_MAX_ATTEMPTS, itemPlanType } from "@/lib/items";
 import { BookOpen, Stethoscope, Clock, Star, Gamepad2 } from "lucide-react";
 import type { Metadata } from "next";
 import LongCaseStartButton, { type LongCaseEntitlement } from "./LongCaseStartButton";
@@ -54,6 +56,8 @@ export default async function LongCasePage() {
   // ล็อกอินแล้วแต่ไม่มีแพ็กเกจ ยังเล่นได้ฟรี 1 เคส/เดือน ถ้าไม่นับเคสฟรีที่นี่
   // ปุ่มจะขึ้นกุญแจให้คนที่ API ยอมให้เล่น ซึ่งขัดกับแบนเนอร์บนหน้าเดียวกันเอง
   let entitlement: LongCaseEntitlement = user ? "free_case_available" : "guest";
+  // Cases / specialties bought on their own (scope case:<id> / specialty:<name>)
+  let owned = new Set<string>();
   if (user) {
     const now = new Date();
     const { data: profile } = await supabase
@@ -61,9 +65,10 @@ export default async function LongCasePage() {
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .single();
-    const expires = profile?.membership_expires_at ? new Date(profile.membership_expires_at) : null;
+    const access = await fetchAccess(supabase, user.id, profile);
+    owned = ownedScopes(access, "longcase");
 
-    if (profile?.membership_type !== "free" && !!expires && expires > now) {
+    if (access.longcase) {
       entitlement = "subscriber";
     } else {
       const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
@@ -181,7 +186,7 @@ export default async function LongCasePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {weeklyCases.map((c) => (
-              <CaseCard key={c.id} lc={c} entitlement={entitlement} gameSlug={gameMap[c.id]} isWeekly />
+              <CaseCard key={c.id} lc={c} entitlement={caseEntitlement(c, entitlement, owned)} gameSlug={gameMap[c.id]} isWeekly />
             ))}
           </div>
         </div>
@@ -193,7 +198,7 @@ export default async function LongCasePage() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">เคสทั้งหมด</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {regularCases.map((c) => (
-              <CaseCard key={c.id} lc={c} entitlement={entitlement} gameSlug={gameMap[c.id]} />
+              <CaseCard key={c.id} lc={c} entitlement={caseEntitlement(c, entitlement, owned)} gameSlug={gameMap[c.id]} />
             ))}
           </div>
         </div>
@@ -207,6 +212,15 @@ export default async function LongCasePage() {
       )}
     </div>
   );
+}
+
+function caseEntitlement(
+  lc: { id: string; specialty: string },
+  base: LongCaseEntitlement,
+  owned: Set<string>
+): LongCaseEntitlement {
+  if (base === "subscriber" || base === "guest") return base;
+  return owned.has(`case:${lc.id}`) || owned.has(`specialty:${lc.specialty}`) ? "subscriber" : base;
 }
 
 function CaseCard({ lc, entitlement, gameSlug, isWeekly }: {
@@ -246,6 +260,14 @@ function CaseCard({ lc, entitlement, gameSlug, isWeekly }: {
           </span>
         </div>
         <LongCaseStartButton caseId={lc.id} entitlement={entitlement} gameSlug={gameSlug} />
+        {(entitlement === "free_case_available" || entitlement === "free_case_used") && (
+          <Link
+            href={`/payment/${encodeURIComponent(itemPlanType("longcase_case", lc.id))}`}
+            className="mt-2 flex items-center justify-center gap-1 text-xs text-muted-foreground hover:text-brand hover:underline"
+          >
+            ซื้อเฉพาะเคสนี้ ฿{ITEM_PRICES.longcase_case} (ทำได้ {LONGCASE_ITEM_MAX_ATTEMPTS} ครั้ง) · ทั้งวิชา ฿{ITEM_PRICES.longcase_specialty}
+          </Link>
+        )}
         {gameSlug && (
           <Link
             href={`/sim/${gameSlug}`}

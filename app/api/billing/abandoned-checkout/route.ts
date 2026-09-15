@@ -12,6 +12,7 @@ import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
+import { planLabel as planLabelOf } from "@/lib/membership";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -68,12 +69,7 @@ export async function POST(request: Request) {
 
       if (!profile) continue;
 
-      const planLabels: Record<string, string> = {
-        monthly: "รายเดือน",
-        yearly: "รายปี",
-        bundle: "ชุดข้อสอบ",
-      };
-      const planLabel = planLabels[planType] ?? planType;
+      const planLabel = planLabelOf(planType);
 
       // Send LINE if linked
       if (profile.line_user_id) {

@@ -59,12 +59,13 @@ Supabase ของ morroo
 
 ## ระหว่างรอเฟส 2
 
-- สร้าง voucher ใหม่: `node scripts/firstaid/create-voucher.mjs --chapter 0 --count 5 --price 249`
+- สร้าง voucher ใหม่: หน้า admin `/admin/firstaid/vouchers` (สร้าง/ยกเลิก/ดูผู้ใช้โค้ด)
+  หรือ CLI `node scripts/firstaid/create-voucher.mjs --chapter 0 --count 5 --price 249`
 - ใบเซอร์ practical ที่ออกจากระบบ admin เก่า: รัน `02-certificates.mjs` ซ้ำรายสัปดาห์
   เพื่อให้ verify ได้บนโดเมนใหม่
 - `/checkin` เป็นหน้า stub — งานเช็คชื่อ QR/ภาคปฏิบัติกลับมาในเฟส 2
 
 ## เฟสถัดไป
 
-- **เฟส 2:** cohorts/sessions/attendance + `/checkin` + QR scan + issue-practical + หน้า admin voucher
+- **เฟส 2:** cohorts/sessions/attendance + `/checkin` + QR scan + issue-practical (หน้า admin voucher ทำแล้วที่ `/admin/firstaid/vouchers`)
 - **เฟส 3:** admin 9 หน้า, LINE webhook/nurture cron, ad-report cron, ปิดโปรเจกต์ Vercel + Supabase เก่า

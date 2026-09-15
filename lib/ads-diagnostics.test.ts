@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
 import {
+  aggregatePageStats,
   diagnoseAds,
   diagnosePages,
+  paidSourceOf,
   THRESHOLDS,
   type AdInsight,
   type PageStats,
@@ -13,6 +15,10 @@ function makePage(overrides: Partial<PageStats>): PageStats {
     sessions: 300,
     pageViews: 350,
     singleEventSessions: 60,
+    shortSessions: 40,
+    adSessions: 0,
+    adShortSessions: 0,
+    adTopSource: null,
     signups: 5,
     examStarts: 10,
     checkouts: 2,
@@ -114,6 +120,102 @@ describe("diagnosePages", () => {
     ]);
     expect(f).toHaveLength(1);
     expect(f[0].category).toBe("page_no_conversion");
+  });
+});
+
+describe("diagnosePages — ad landing mismatch", () => {
+  it("flags ad_landing_mismatch (not page_no_conversion) when paid visitors bounce in seconds", () => {
+    const f = diagnosePages([
+      makePage({
+        sessions: 800,
+        adSessions: 778,
+        adShortSessions: 663,
+        adTopSource: "fb / 52588558588397",
+        signups: 0,
+        checkouts: 0,
+      }),
+    ]);
+    expect(f).toHaveLength(1);
+    expect(f[0].category).toBe("ad_landing_mismatch");
+    expect(f[0].severity).toBe("critical");
+    expect(f[0].entityLabel).toBe("fb / 52588558588397");
+    expect(f[0].recommendation).toContain("ฝั่งโฆษณา");
+  });
+
+  it("does not flag ad_landing_mismatch when paid visitors stay", () => {
+    const f = diagnosePages([
+      makePage({ sessions: 800, adSessions: 743, adShortSessions: 299, signups: 3 }),
+    ]);
+    expect(f.some((x) => x.category === "ad_landing_mismatch")).toBe(false);
+  });
+
+  it("needs enough paid sessions before judging the ad", () => {
+    const f = diagnosePages([
+      makePage({
+        sessions: 400,
+        adSessions: THRESHOLDS.pageAdLandingMinSessions - 1,
+        adShortSessions: THRESHOLDS.pageAdLandingMinSessions - 1,
+        signups: 3,
+      }),
+    ]);
+    expect(f.some((x) => x.category === "ad_landing_mismatch")).toBe(false);
+  });
+});
+
+describe("paidSourceOf", () => {
+  it("tags Meta ad landings by source + campaign", () => {
+    expect(
+      paidSourceOf("/?fbclid=abc&utm_medium=paid&utm_source=fb&utm_campaign=525")
+    ).toBe("fb / 525");
+  });
+  it("treats a bare fbclid as a Facebook paid landing", () => {
+    expect(paidSourceOf("/?fbclid=abc")).toBe("fb");
+  });
+  it("returns null for organic / direct", () => {
+    expect(paidSourceOf("/")).toBeNull();
+    expect(paidSourceOf("/?utm_source=line&utm_medium=social")).toBeNull();
+  });
+});
+
+describe("aggregatePageStats — landing-session attribution", () => {
+  const t = (s: number) => new Date(1_700_000_000_000 + s * 1000).toISOString();
+  const rows = [
+    // Session A lands on "/", goes to /register, signs up 40s later.
+    { event_name: "pageview", session_id: "A", path: "/", properties: null, created_at: t(0) },
+    { event_name: "hero_variant_view", session_id: "A", path: "/", properties: { variant: "A" }, created_at: t(1) },
+    { event_name: "pageview", session_id: "A", path: "/register", properties: null, created_at: t(30) },
+    { event_name: "signup_submit", session_id: "A", path: "/register", properties: { method: "email" }, created_at: t(40) },
+    // Session B: paid Story tap on "/", auto view ping, gone in 1s.
+    { event_name: "pageview", session_id: "B", path: "/?fbclid=x&utm_medium=paid&utm_source=fb&utm_campaign=c1", properties: null, created_at: t(100) },
+    { event_name: "hero_variant_view", session_id: "B", path: "/?fbclid=x&utm_medium=paid&utm_source=fb&utm_campaign=c1", properties: { variant: "B" }, created_at: t(100.4) },
+    // Session C: paid landing on the case game, plays for a minute.
+    { event_name: "pageview", session_id: "C", path: "/sim/lc-01?utm_medium=paid&utm_source=fb&utm_campaign=c1", properties: null, created_at: t(200) },
+    { event_name: "casegame_start", session_id: "C", path: "/sim/lc-01", properties: null, created_at: t(203) },
+    { event_name: "casegame_complete", session_id: "C", path: "/sim/lc-01", properties: null, created_at: t(260) },
+  ];
+
+  it("credits the signup to the landing page, not to /register", () => {
+    const stats = aggregatePageStats(rows);
+    const home = stats.find((s) => s.path === "/")!;
+    const register = stats.find((s) => s.path === "/register")!;
+    expect(home.sessions).toBe(2);
+    expect(home.signups).toBe(1);
+    expect(register.sessions).toBe(0);
+    expect(register.signups).toBe(0);
+    expect(register.pageViews).toBe(1);
+  });
+
+  it("separates paid short sessions from engaged ones and ignores auto-fired pings", () => {
+    const stats = aggregatePageStats(rows);
+    const home = stats.find((s) => s.path === "/")!;
+    expect(home.adSessions).toBe(1);
+    expect(home.adShortSessions).toBe(1);
+    expect(home.singleEventSessions).toBe(1); // B: one pageview, hero ping doesn't count
+    expect(home.adTopSource).toBe("fb / c1");
+    const sim = stats.find((s) => s.path === "/sim/lc-01")!;
+    expect(sim.adSessions).toBe(1);
+    expect(sim.adShortSessions).toBe(0);
+    expect(sim.singleEventSessions).toBe(0);
   });
 });
 

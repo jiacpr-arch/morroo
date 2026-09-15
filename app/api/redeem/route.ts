@@ -36,9 +36,15 @@ export async function POST(request: Request) {
 
   if (!result.ok) {
     const status =
-      result.error === "not_found" || result.error === "expired"
+      result.error === "not_found" ||
+      result.error === "expired" ||
+      result.error === "inactive" ||
+      result.error === "not_started" ||
+      result.error === "wrong_platform"
         ? 404
-        : result.error === "already_redeemed"
+        : result.error === "already_redeemed" ||
+            result.error === "exhausted" ||
+            result.error === "checkout_only"
           ? 409
           : 500;
     return NextResponse.json({ error: result.error }, { status });
@@ -47,5 +53,6 @@ export async function POST(request: Request) {
   return NextResponse.json({
     ok: true,
     rewardType: result.rewardType,
+    days: result.days ?? null,
   });
 }

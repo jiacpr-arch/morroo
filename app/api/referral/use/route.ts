@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { findReferrerByCode, REFERRAL_REWARD_DAYS } from "@/lib/referral";
+import { extendActiveProducts } from "@/lib/entitlements";
 
 export const runtime = "nodejs";
 
@@ -49,28 +50,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "DB error" }, { status: 500 });
   }
 
-  // Give referrer +7 days reward
-  const { data: referrer } = await supabase
-    .from("profiles")
-    .select("membership_type, membership_expires_at")
-    .eq("id", referrerId)
-    .single();
+  // Give referrer +7 days reward on every product they hold (student pack
+  // when nothing is active). Also re-derives the legacy profile expiry.
+  const rewarded = await extendActiveProducts(referrerId, REFERRAL_REWARD_DAYS, {
+    source: "referral",
+    reference: referredUserId,
+  });
 
-  if (referrer) {
+  if (rewarded) {
     const now = new Date();
-    const base =
-      referrer.membership_expires_at && new Date(referrer.membership_expires_at) > now
-        ? new Date(referrer.membership_expires_at)
-        : now;
-
-    const newExpiry = new Date(base);
-    newExpiry.setDate(newExpiry.getDate() + REFERRAL_REWARD_DAYS);
-
-    await supabase
-      .from("profiles")
-      .update({ membership_expires_at: newExpiry.toISOString() })
-      .eq("id", referrerId);
-
     await supabase
       .from("referrals")
       .update({ reward_given_at: now.toISOString() })

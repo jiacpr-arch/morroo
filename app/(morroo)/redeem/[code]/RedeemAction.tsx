@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 type Props = {
   code: string;
   rewardType: string;
+  /** Pre-computed label (coupon_codes); falls back to REWARD_LABEL for lead codes. */
+  rewardLabel?: string | null;
 };
 
 const REWARD_LABEL: Record<string, string> = {
@@ -15,7 +17,7 @@ const REWARD_LABEL: Record<string, string> = {
   bundle_10q: "Bundle 10 ข้อ (มูลค่า ฿299)",
 };
 
-export default function RedeemAction({ code, rewardType }: Props) {
+export default function RedeemAction({ code, rewardType, rewardLabel }: Props) {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -46,7 +48,7 @@ export default function RedeemAction({ code, rewardType }: Props) {
     <>
       <p className="text-sm text-muted-foreground">รางวัลที่จะได้รับ</p>
       <p className="text-base font-medium text-teal-700">
-        {REWARD_LABEL[rewardType] ?? rewardType}
+        {rewardLabel ?? REWARD_LABEL[rewardType] ?? rewardType}
       </p>
       <Button
         onClick={handleRedeem}
@@ -75,6 +77,15 @@ function translateError(code?: string): string {
       return "โค้ดหมดอายุแล้ว";
     case "already_redeemed":
       return "โค้ดนี้ถูกใช้ไปแล้ว";
+    case "exhausted":
+      return "โค้ดนี้ถูกใช้ครบจำนวนแล้ว";
+    case "inactive":
+    case "wrong_platform":
+      return "โค้ดนี้ใช้ไม่ได้แล้ว";
+    case "not_started":
+      return "โค้ดนี้ยังไม่เปิดใช้งาน";
+    case "checkout_only":
+      return "โค้ดส่วนลดใช้ตอนชำระเงิน ไม่สามารถกดรับสิทธิ์ที่นี่";
     case "unauthorized":
       return "กรุณาเข้าสู่ระบบใหม่";
     default:

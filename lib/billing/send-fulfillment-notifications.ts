@@ -16,7 +16,8 @@ import type { FulfillmentResult } from "./fulfill-checkout";
 type NotifyPayload = NonNullable<FulfillmentResult["notify"]>;
 
 export async function sendFulfillmentNotifications(data: NotifyPayload): Promise<void> {
-  const planName = STRIPE_PLANS[data.planType]?.name ?? data.planType;
+  // Items (item:…) are not in STRIPE_PLANS — fall back to the resolved label.
+  const planName = STRIPE_PLANS[data.planType]?.name ?? `MorRoo ${data.planLabel}`;
 
   // Notify referrer via LINE
   if (data.referrerLineUserId) {

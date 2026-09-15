@@ -109,6 +109,12 @@ export interface CouponCode {
   is_active: boolean;
   created_at: string;
   created_by: string | null;
+  /**
+   * free_*: plan / item the coupon grants (null = student pack "monthly");
+   * discount_*: plan / item the discount is limited to (null = any).
+   * Plan strings per lib/billing/plan-resolver.ts.
+   */
+  plan_type: string | null;
 }
 
 export interface CouponRedemption {
