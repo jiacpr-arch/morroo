@@ -172,7 +172,7 @@ export default function AllExamsCountdown() {
             return (
               <div
                 key={s.type}
-                className={`flex items-center justify-between gap-3 rounded-lg ${s.bgColor} border ${s.borderColor} p-3`}
+                className={`flex flex-col gap-2 rounded-lg ${s.bgColor} border ${s.borderColor} p-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
                   <span className={s.color}>{s.icon}</span>
@@ -182,7 +182,7 @@ export default function AllExamsCountdown() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center justify-between gap-2 shrink-0 sm:justify-end">
                   <div className="flex items-center gap-1">
                     <Clock className="h-3 w-3 text-gray-400" />
                     {t.days > 0 && (

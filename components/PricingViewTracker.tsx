@@ -4,7 +4,11 @@ import { useEffect, useRef } from "react";
 import { track } from "@/lib/analytics";
 import { trackPricingViewContent } from "@/lib/analytics/conversions";
 
-const SESSION_FLAG = "morroo_pricing_view_fired";
+// Flag ต้องแยกตาม surface — เดิมใช้คีย์เดียวทั้งไซต์ ทำให้ tracker ของหน้าแรก
+// (surface="home") ที่ยิงตอนคนกด "฿199 ดูแพ็กเกจ" → #pricing กินโควตาไปคนเดียว
+// แล้วหน้า /pricing ที่เข้าทีหลังในsession เดียวกันเงียบสนิท ไม่ส่งทั้ง
+// pricing_view และ Meta ViewContent — ทำให้ funnel ขั้น "เห็นราคา" ต่ำกว่าจริง
+const sessionFlag = (surface: string) => `morroo_pricing_view_fired:${surface}`;
 
 interface PricingViewTrackerProps {
   surface: string;
@@ -17,14 +21,14 @@ export default function PricingViewTracker({ surface }: PricingViewTrackerProps)
     if (typeof window === "undefined") return;
 
     try {
-      if (window.sessionStorage.getItem(SESSION_FLAG)) return;
+      if (window.sessionStorage.getItem(sessionFlag(surface))) return;
     } catch {
       // sessionStorage may be unavailable in private mode; fall through and fire
     }
 
     const fire = () => {
       try {
-        window.sessionStorage.setItem(SESSION_FLAG, "1");
+        window.sessionStorage.setItem(sessionFlag(surface), "1");
       } catch {}
       track("pricing_view", { surface });
       trackPricingViewContent(surface);

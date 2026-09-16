@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import SectionHeading from "@/components/SectionHeading";
 import {
   GraduationCap,
   Brain,
@@ -128,22 +129,21 @@ const FEATURES: Feature[] = [
 
 export default function FeatureShowcase() {
   return (
-    <section className="py-16 bg-white border-b">
+    <section className="py-16 sm:py-20 lg:py-24 bg-muted">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <Badge className="mb-4 bg-brand/10 text-brand">ทุกอย่างในที่เดียว</Badge>
-          <h2 className="text-3xl font-bold">เครื่องมือเตรียมสอบแพทย์ครบทุกขั้น</h2>
-          <p className="mt-3 text-muted-foreground text-lg max-w-2xl mx-auto">
-            ตั้งแต่เรียนเนื้อหา ฝึกข้อสอบ ไปจนถึงจำลองสอบจริงกับ AI — เลือกใช้ฟีเจอร์ที่ตรงกับเป้าหมายของคุณได้เลย
-          </p>
-        </div>
+        <SectionHeading
+          align="center"
+          eyebrow="ทุกอย่างในที่เดียว"
+          title="เครื่องมือเตรียมสอบแพทย์ครบทุกขั้น"
+          description="ตั้งแต่เรียนเนื้อหา ฝึกข้อสอบ ไปจนถึงจำลองสอบจริงกับ AI — เลือกใช้ฟีเจอร์ที่ตรงกับเป้าหมายของคุณได้เลย"
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {FEATURES.map((f) => (
             <Link
               key={f.href}
               href={f.href}
-              className="group relative flex flex-col rounded-2xl border bg-card p-6 transition-all hover:shadow-md hover:border-brand/30"
+              className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5"
             >
               {f.badge && (
                 <Badge className={`absolute right-4 top-4 ${f.badge.className}`}>
@@ -156,7 +156,7 @@ export default function FeatureShowcase() {
                 <f.icon className={`h-6 w-6 ${f.iconText}`} />
               </div>
               <div className="flex items-baseline gap-2">
-                <h3 className="text-lg font-bold text-gray-900">{f.title}</h3>
+                <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-brand">{f.title}</h3>
                 <span className="text-xs text-muted-foreground">{f.en}</span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">

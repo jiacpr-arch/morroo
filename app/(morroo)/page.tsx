@@ -10,6 +10,7 @@ import PricingViewTracker from "@/components/PricingViewTracker";
 import SocialProofSection from "@/components/SocialProofSection";
 import FeatureShowcase from "@/components/FeatureShowcase";
 import CaseGamePromo from "@/components/CaseGamePromo";
+import SectionHeading from "@/components/SectionHeading";
 import HeroPriceLine from "@/components/HeroPriceLine";
 import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
@@ -69,7 +70,7 @@ export default async function HomePage() {
       <FeatureShowcase />
 
       {/* All Exams Countdown */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-10 border-y border-border/60 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <NlExamCountdown />
           <AllExamsCountdown />
@@ -77,23 +78,26 @@ export default async function HomePage() {
       </section>
 
       {/* Categories */}
-      <section className="py-16">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">หมวดหมู่สาขาวิชา</h2>
-            <p className="mt-2 text-muted-foreground">ครอบคลุม 6 สาขาหลักที่ออกสอบ</p>
-          </div>
+          <SectionHeading
+            align="center"
+            title="หมวดหมู่สาขาวิชา"
+            description="ครอบคลุม 6 สาขาหลักที่ออกสอบ"
+          />
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/exams?category=${encodeURIComponent(cat.name)}`}
-                className="group flex flex-col items-center gap-3 rounded-xl border p-6 transition-all hover:shadow-md hover:border-brand/30"
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 sm:p-6"
               >
-                <span className="text-4xl group-hover:scale-110 transition-transform">
+                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 text-3xl transition-all group-hover:scale-105 group-hover:bg-brand/15">
                   {cat.icon}
                 </span>
-                <span className="text-sm font-medium text-center">{cat.name}</span>
+                <span className="text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-brand">
+                  {cat.name}
+                </span>
               </Link>
             ))}
           </div>
@@ -101,19 +105,19 @@ export default async function HomePage() {
       </section>
 
       {/* Latest Exams */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-3xl font-bold">ข้อสอบล่าสุด</h2>
-              <p className="mt-1 text-muted-foreground">อัปเดตใหม่ทุกสัปดาห์</p>
-            </div>
-            <Link href="/exams">
-              <Button variant="outline" className="gap-2">
-                ดูทั้งหมด <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+          <SectionHeading
+            title="ข้อสอบล่าสุด"
+            description="อัปเดตใหม่ทุกสัปดาห์"
+            action={
+              <Link href="/exams">
+                <Button variant="outline" className="gap-2">
+                  ดูทั้งหมด <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            }
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {latestExams.length > 0 ? (
               latestExams.map((exam) => (
@@ -132,12 +136,14 @@ export default async function HomePage() {
       <SocialProofSection stats={examStats} />
 
       {/* Pricing */}
-      <section className="py-16 bg-muted/30" id="pricing">
+      <section className="py-16 sm:py-20 lg:py-24 scroll-mt-20 bg-gradient-to-b from-brand/[0.06] via-transparent to-brand/[0.06]" id="pricing">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">แพ็กเกจราคา</h2>
-            <p className="mt-2 text-muted-foreground">เลือกแพ็กเกจที่เหมาะกับคุณ</p>
-          </div>
+          <SectionHeading
+            align="center"
+            eyebrow="เริ่มฟรี ไม่ต้องใช้บัตรเครดิต"
+            title="แพ็กเกจราคา"
+            description="เลือกแพ็กเกจที่เหมาะกับคุณ"
+          />
           <PricingViewTracker surface="home" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
             {PRICING_PLANS.map((plan) => (
@@ -152,19 +158,19 @@ export default async function HomePage() {
 
       {/* News & Updates */}
       {homeNewsItems.length > 0 && (
-        <section className="py-16">
+        <section className="py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold">ข่าวและอัปเดตล่าสุด</h2>
-                <p className="mt-1 text-muted-foreground">ฟีเจอร์ใหม่ บทความ ข่าวสอบ และข่าวกู้ชีพล่าสุด</p>
-              </div>
-              <Link href="/news">
-                <Button variant="outline" className="gap-2">
-                  ดูข่าวทั้งหมด <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
+            <SectionHeading
+              title="ข่าวและอัปเดตล่าสุด"
+              description="ฟีเจอร์ใหม่ บทความ ข่าวสอบ และข่าวกู้ชีพล่าสุด"
+              action={
+                <Link href="/news">
+                  <Button variant="outline" className="gap-2">
+                    ดูข่าวทั้งหมด <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              }
+            />
             <div className="space-y-4">
               {homeNewsItems.map((item) => (
                 <NewsCard key={item.id} item={item} />
@@ -175,31 +181,30 @@ export default async function HomePage() {
       )}
 
       {/* Social */}
-      <section className="py-12 bg-white border-b">
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold">ติดตามหมอรู้</h2>
-          <p className="mt-2 text-muted-foreground">
-            📩 แอด LINE รับข้อสอบฟรีทุกเช้า 7 โมง + เทคนิคเตรียมสอบ · ติดตาม Facebook, Instagram
-            เพื่อรับข่าวสารใหม่ๆ
-          </p>
-          <div className="mt-6 flex justify-center">
-            <LineCtaButton surface="home_social" label="แอด LINE ฟรี" />
-          </div>
-          <SocialButtonsRow className="mt-4" />
+          <SectionHeading
+            align="center"
+            title="ติดตามหมอรู้"
+            description="📩 แอด LINE รับข้อสอบฟรีทุกเช้า 7 โมง + เทคนิคเตรียมสอบ · ติดตาม Facebook, Instagram เพื่อรับข่าวสารใหม่ๆ"
+            className="mb-6 sm:mb-8"
+            action={<LineCtaButton surface="home_social" label="แอด LINE ฟรี" />}
+          />
+          <SocialButtonsRow />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-brand-dark text-white">
+      <section className="py-20 bg-brand-dark text-white sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold">
-            ลองก่อนได้ ไม่ต้องสมัคร
-          </h2>
-          <p className="mt-4 text-white/70 text-lg">
-            ทำข้อสอบจริง เล่นเกมเคส และลองข้อสอบ MEQ ได้เลยโดยไม่ต้องมีบัญชี —
-            ถูกใจแล้วค่อยสมัครเพื่อเก็บความคืบหน้าและปลดล็อกเฉลยละเอียด
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-3">
+          <SectionHeading
+            align="center"
+            tone="dark"
+            title="ลองก่อนได้ ไม่ต้องสมัคร"
+            description="ทำข้อสอบจริง เล่นเกมเคส และลองข้อสอบ MEQ ได้เลยโดยไม่ต้องมีบัญชี — ถูกใจแล้วค่อยสมัครเพื่อเก็บความคืบหน้าและปลดล็อกเฉลยละเอียด"
+            className="mb-8 sm:mb-10"
+          />
+          <div className="flex flex-col items-center gap-3">
             <Link href="/nl/practice">
               <Button
                 size="lg"

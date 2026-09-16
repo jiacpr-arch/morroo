@@ -1,5 +1,6 @@
 import { Quote, Stethoscope, BookOpen, Layers, Award } from "lucide-react";
 import type { HomeExamStats } from "@/lib/supabase/queries";
+import SectionHeading from "@/components/SectionHeading";
 
 function buildStats(stats?: HomeExamStats | null) {
   const ready = stats?.totalReady ?? 0;
@@ -58,14 +59,14 @@ export default function SocialProofSection({
 }) {
   const statItems = buildStats(stats);
   return (
-    <section className="py-16 bg-white border-y">
+    <section className="py-16 sm:py-20 lg:py-24 bg-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {statItems.map((s) => (
             <div
               key={s.label}
-              className="flex flex-col items-center text-center gap-2 p-4 rounded-xl bg-brand/5 border border-brand/10"
+              className="flex flex-col items-center gap-2 rounded-2xl border border-brand/10 bg-brand/5 p-4 text-center shadow-sm"
             >
               <s.icon className="h-7 w-7 text-brand" />
               <div className="text-2xl sm:text-3xl font-bold text-brand-dark">
@@ -79,17 +80,16 @@ export default function SocialProofSection({
         </div>
 
         {/* Testimonials */}
-        <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold">เสียงจากผู้ใช้งาน</h2>
-          <p className="mt-2 text-muted-foreground">
-            แพทย์และนักศึกษาแพทย์ที่ใช้ตัวจริงพูดถึงหมอรู้
-          </p>
-        </div>
+        <SectionHeading
+          align="center"
+          title="เสียงจากผู้ใช้งาน"
+          description="แพทย์และนักศึกษาแพทย์ที่ใช้ตัวจริงพูดถึงหมอรู้"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t) => (
             <div
               key={t.name}
-              className="rounded-2xl border bg-card p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
+              className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5"
             >
               <Quote className="h-6 w-6 text-brand/40 shrink-0" />
               <p className="text-sm leading-relaxed text-foreground/90 flex-1">
