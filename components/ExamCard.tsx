@@ -67,7 +67,7 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
         })
       }
     >
-      <Card className="group h-full transition-all hover:shadow-lg hover:border-brand/30">
+      <Card className="group h-full rounded-2xl shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/5 hover:ring-brand/40">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2 flex-wrap">
             <Badge variant="secondary" className="text-xs">

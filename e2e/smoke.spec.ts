@@ -20,9 +20,11 @@ test("home page shows the live monthly price and a single hero primary CTA", asy
   await expect(page.getByRole("link", { name: "ลองทำข้อสอบฟรี — ไม่ต้องสมัคร" })).toHaveCount(1);
 });
 
-test("pricing page renders the three plans", async ({ page }) => {
+test("pricing page renders the three plan tracks", async ({ page }) => {
   await page.goto("/pricing");
-  await expect(page.locator("body")).toContainText("Bundle");
+  await expect(page.getByRole("heading", { name: "นักศึกษาแพทย์ / NL Step 2", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "แพทย์เฉพาะทาง / Board Exam", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "School ปี 1–6", exact: true })).toBeVisible();
   await expect(page.locator("body")).toContainText("รายเดือน");
   await expect(page.locator("body")).toContainText("รายปี");
 });

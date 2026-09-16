@@ -56,9 +56,16 @@ test("first-touch utm from the ad link is attached to every later event", async 
   // การ navigate ข้ามหน้า ไม่ใช่แค่รอดใน session เดียวกันบนหน้าเดิม
   await page.goto("/pricing");
   await expect
-    .poll(() => tracked.some((e) => e.name === "pricing_view" && e.props.utm_campaign === "e2e_chk"), {
-      timeout: 10_000,
-    })
+    .poll(
+      () =>
+        tracked.some(
+          (e) =>
+            e.name === "pricing_view" &&
+            e.props.surface === "pricing_page" &&
+            e.props.utm_campaign === "e2e_chk",
+        ),
+      { timeout: 10_000 },
+    )
     .toBe(true);
 
   const fbqCalls = await page.evaluate(

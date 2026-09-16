@@ -11,7 +11,7 @@ import { track } from "@/lib/analytics";
  */
 export default function CaseGamePromo({ count = 0 }: { count?: number }) {
   return (
-    <section className="py-10 sm:py-12">
+    <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/casegame"

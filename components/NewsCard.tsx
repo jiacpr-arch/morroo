@@ -55,7 +55,7 @@ export default function NewsCard({ item }: { item: NewsItem }) {
   });
 
   const inner = (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-md sm:flex-row">
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 sm:flex-row">
       {item.coverImage && (
         <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted sm:aspect-auto sm:w-56 sm:flex-shrink-0">
           <Image
