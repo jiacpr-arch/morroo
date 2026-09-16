@@ -1,6 +1,15 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
+// สีประจำหัวข้อ — /pricing ใช้รหัสสีแยกต่อแทร็ก (นศพ. เขียวแบรนด์ / Board ม่วง /
+// School มรกต) ซึ่งตรงกับสีของปุ่ม jump link และหน้าอื่นในระบบ จึงต้องส่งต่อได้
+// ไม่ใช่ล็อกไว้ที่สีแบรนด์อย่างเดียว
+const ACCENT = {
+  brand: { pill: "bg-brand/10 text-brand", bar: "bg-brand", rule: "from-brand to-brand-light" },
+  purple: { pill: "bg-purple-100 text-purple-700", bar: "bg-purple-500", rule: "from-purple-500 to-purple-400" },
+  emerald: { pill: "bg-emerald-100 text-emerald-700", bar: "bg-emerald-500", rule: "from-emerald-500 to-emerald-400" },
+} as const;
+
 type Props = {
   eyebrow?: ReactNode;
   title: ReactNode;
@@ -8,6 +17,7 @@ type Props = {
   /** ปุ่ม/ลิงก์ประกอบหัวข้อ — รับเป็น node เพราะแต่ละที่ใช้ label/href/ไอคอนต่างกัน */
   action?: ReactNode;
   align?: "left" | "center";
+  accent?: keyof typeof ACCENT;
   /** dark = วางบนแถบ bg-brand-dark ซึ่ง text-brand-dark จะมองไม่เห็น */
   tone?: "light" | "dark";
   as?: "h2" | "h3";
@@ -21,20 +31,20 @@ export default function SectionHeading({
   description,
   action,
   align = "left",
+  accent = "brand",
   tone = "light",
   as: Tag = "h2",
   id,
   className,
 }: Props) {
   const dark = tone === "dark";
+  const c = ACCENT[accent];
 
   const eyebrowEl = eyebrow ? (
     <span
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-xs font-semibold sm:text-sm",
-        dark
-          ? "border border-white/15 bg-white/10 text-white/90"
-          : "bg-brand/10 text-brand"
+        dark ? "border border-white/15 bg-white/10 text-white/90" : c.pill
       )}
     >
       {eyebrow}
@@ -72,7 +82,7 @@ export default function SectionHeading({
         <span
           className={cn(
             "mx-auto mt-4 block h-1 w-12 rounded-full bg-gradient-to-r",
-            dark ? "from-brand-light to-emerald-300" : "from-brand to-brand-light"
+            dark ? "from-brand-light to-emerald-300" : c.rule
           )}
         />
         {descriptionEl}
@@ -101,7 +111,7 @@ export default function SectionHeading({
           <span
             className={cn(
               "h-7 w-1.5 shrink-0 rounded-full sm:h-8",
-              dark ? "bg-brand-light" : "bg-brand"
+              dark ? "bg-brand-light" : c.bar
             )}
           />
           {title}

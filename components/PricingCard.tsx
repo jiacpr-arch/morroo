@@ -35,7 +35,7 @@ export default function PricingCard({
   return (
     <Card
       className={`relative flex flex-col overflow-visible ${
-        popular ? "ring-2 ring-brand shadow-xl shadow-brand/10 mt-4" : ""
+        popular ? "ring-2 ring-brand shadow-xl shadow-brand/10" : ""
       }`}
     >
       {popular && (
