@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "morroo-dev",
-      "runtimeExecutable": "/Users/apple/.nvm/versions/node/v24.14.0/bin/node",
+      "runtimeExecutable": "node",
       "runtimeArgs": [
-        "/Users/apple/Projects/morroo/scripts/start-dev.cjs"
+        "scripts/start-dev.cjs"
       ],
       "port": 3000
     },
