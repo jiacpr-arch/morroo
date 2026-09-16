@@ -13,6 +13,7 @@ import {
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 import { detectTrialIntent, handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
 import { handleAdsAutofixPostback } from "@/lib/ads-autofix-line";
+import { handleDailyMcqPostback } from "@/lib/daily-mcq-line";
 import {
   buildFollowGreeting,
   buildNonTextGreeting,
@@ -46,14 +47,17 @@ export async function POST(request: NextRequest) {
     const lineUserId = event.source?.userId;
     if (!lineUserId) continue;
 
-    // Postback: ads-autofix merge / dismiss buttons (admin only)
+    // Postback: ads-autofix merge/dismiss (admin only), then the daily MCQ
+    // answer buttons (open to any follower). Both return null for actions
+    // that aren't theirs, so chaining with ?? is safe either order.
     if (event.type === "postback" && event.postback?.data) {
-      const reply = await handleAdsAutofixPostback(
-        supabase,
-        lineUserId,
-        event.postback.data,
-        buildAdsMergeConfirmFlex
-      );
+      const reply =
+        (await handleAdsAutofixPostback(
+          supabase,
+          lineUserId,
+          event.postback.data,
+          buildAdsMergeConfirmFlex
+        )) ?? (await handleDailyMcqPostback(supabase, lineUserId, event.postback.data));
       if (reply) await sendLineMessage(lineUserId, reply);
       continue;
     }

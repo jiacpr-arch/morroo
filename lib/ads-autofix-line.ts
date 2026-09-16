@@ -26,7 +26,7 @@ import {
 const SUGGEST_LABEL = "ads-autofix-suggest";
 const SNOOZE_DAYS = 30;
 
-function parseData(data: string): Record<string, string> {
+export function parseData(data: string): Record<string, string> {
   const out: Record<string, string> = {};
   for (const part of data.split("&")) {
     const [k, v] = part.split("=");

@@ -3,6 +3,7 @@ import {
   getMcqSubjects,
   getMcqQuestions,
   getFreeAttemptsCount,
+  getMcqQuestion,
 } from "@/lib/supabase/queries-mcq";
 import McqPractice from "@/components/McqPractice";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
@@ -50,15 +51,35 @@ async function PracticeContent({
   subjectId,
   category,
   recommended,
+  pinnedQuestionId,
 }: {
   subjectId?: string;
   category?: string;
   recommended?: boolean;
+  pinnedQuestionId?: string;
 }) {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  // Deep link from the LINE daily quiz / dashboard card (?q=<question id>).
+  // getMcqQuestion() already scopes to audience="student" + status="active",
+  // so a stale/foreign id just resolves to null and this silently falls
+  // back to the normal pool.
+  const pinnedQuestion = pinnedQuestionId
+    ? await getMcqQuestion(pinnedQuestionId)
+    : null;
+  // No explicit ?subject= — default the subject filter/header to the pinned
+  // question's own subject so the chips and single-subject unlock logic
+  // below match what's actually shown first.
+  if (!subjectId && pinnedQuestion) {
+    subjectId = pinnedQuestion.subject_id;
+  }
+  // The daily quiz can be NL1 or NL2; fetch the surrounding pool in the same
+  // exam type so a pinned NL1 question isn't padded with unrelated NL2 ones.
+  const poolExamType: "NL1" | "NL2" =
+    pinnedQuestion?.exam_type === "NL1" ? "NL1" : "NL2";
 
   // Check premium status
   let isPremium = false;
@@ -148,10 +169,19 @@ async function PracticeContent({
   } else {
     questions = await getMcqQuestions({
       subjectId,
-      examType: "NL2",
+      examType: poolExamType,
       limit: 200,
       randomize: true,
     });
+  }
+
+  if (pinnedQuestion) {
+    // Always show the deep-linked question first; McqPractice renders
+    // questions[currentIndex] in order, no client-side shuffle.
+    questions = [
+      pinnedQuestion,
+      ...questions.filter((q) => q.id !== pinnedQuestion.id),
+    ];
   }
 
   const currentSubject = subjectId
@@ -383,10 +413,11 @@ export default async function PracticePage({
     subject?: string;
     category?: string;
     mode?: string;
+    q?: string;
   }>;
 }) {
   const params = await searchParams;
-  const { subject, category, mode } = params;
+  const { subject, category, mode, q } = params;
   const recommended = mode === "recommended";
 
   return (
@@ -412,6 +443,7 @@ export default async function PracticePage({
           subjectId={subject}
           category={category}
           recommended={recommended}
+          pinnedQuestionId={q}
         />
       </Suspense>
     </div>

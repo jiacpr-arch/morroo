@@ -244,7 +244,7 @@ export default function DashboardPage() {
                       : dailyMcq.scenario}
                   </p>
                 </div>
-                <Link href={`/nl/practice?subject=${dailyMcq.subject_id}`} className="shrink-0">
+                <Link href={`/nl/practice?q=${dailyMcq.id}&subject=${dailyMcq.subject_id}`} className="shrink-0">
                   <Button size="sm" className="bg-brand hover:bg-brand-light text-white gap-1.5 whitespace-nowrap">
                     ทำเลย <ArrowRight className="h-3.5 w-3.5" />
                   </Button>
@@ -318,7 +318,7 @@ export default function DashboardPage() {
                 </p>
               </div>
               <Link
-                href={`/nl/practice?subject=${dailyMcq.subject_id}`}
+                href={`/nl/practice?q=${dailyMcq.id}&subject=${dailyMcq.subject_id}`}
                 className="shrink-0"
               >
                 <Button

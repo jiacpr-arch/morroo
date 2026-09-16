@@ -1171,3 +1171,363 @@ export function buildAdsMergeConfirmFlex(args: {
     },
   };
 }
+
+// ─── Daily MCQ (LINE answer-in-chat) ───────────────────────────────────────
+//
+// Postback action name: "daily_answer" (checked in lib/daily-mcq-line.ts).
+// data format: `action=daily_answer&d=<quiz_date>&c=<A-E>&q=<question id>`.
+// `q` rides along for observability only — the handler always resolves the
+// scored question from `d` via get_daily_mcq(d), never from this client-
+// controlled id, so a forged `q` can't change which question is graded.
+
+const DIFFICULTY_TH: Record<string, string> = {
+  easy: "ง่าย",
+  medium: "ปานกลาง",
+  hard: "ยาก",
+};
+const SCENARIO_MAX = 350;
+const CHOICE_LABEL_MAX = 60;
+const ALT_TEXT_MAX = 150;
+
+function truncateText(text: string, max: number): string {
+  return text.length > max ? `${text.slice(0, max)}…` : text;
+}
+
+export interface DailyMcqQuestionData {
+  id: string;
+  scenario: string;
+  difficulty: string;
+  examType: string;
+  subjectNameTh: string;
+  subjectIcon: string;
+  quizDate: string;
+  choices: { label: string; text: string }[];
+}
+
+export interface DailyMcqStats {
+  total: number;
+  correct: number;
+}
+
+export interface DailyMcqBubbleArgs {
+  question: DailyMcqQuestionData;
+  practiceUrl: string;
+  yesterdayStats?: DailyMcqStats | null;
+  newCount?: number;
+}
+
+/** Bubble only (not a full LineMessage) so it can go standalone or in a carousel. */
+export function buildDailyMcqBubble(args: DailyMcqBubbleArgs): Record<string, unknown> {
+  const { question, practiceUrl, yesterdayStats, newCount } = args;
+  const diffTh = DIFFICULTY_TH[question.difficulty] ?? question.difficulty;
+
+  const bodyContents: Record<string, unknown>[] = [
+    {
+      type: "text",
+      text: truncateText(question.scenario, SCENARIO_MAX),
+      wrap: true,
+      size: "sm",
+    },
+  ];
+
+  if (yesterdayStats && yesterdayStats.total >= 10) {
+    const pct = Math.round((yesterdayStats.correct / yesterdayStats.total) * 100);
+    bodyContents.push({
+      type: "text",
+      text: `📊 เมื่อวานตอบถูกแค่ ${pct}% (${yesterdayStats.total} คนตอบ)`,
+      size: "xxs",
+      color: "#888888",
+      margin: "md",
+      wrap: true,
+    });
+  }
+
+  if (newCount && newCount > 0) {
+    bodyContents.push({
+      type: "text",
+      text: `🆕 เพิ่มข้อสอบใหม่ ${newCount} ข้อวันนี้!`,
+      size: "xxs",
+      color: PRIMARY,
+      margin: "sm",
+      wrap: true,
+    });
+  }
+
+  bodyContents.push({ type: "separator", margin: "md" });
+
+  bodyContents.push({
+    type: "box",
+    layout: "vertical",
+    spacing: "sm",
+    margin: "md",
+    contents: question.choices.map((choice) => ({
+      type: "button",
+      style: "secondary",
+      height: "sm",
+      action: {
+        type: "postback",
+        label: truncateText(`${choice.label}. ${choice.text}`, CHOICE_LABEL_MAX),
+        data: `action=daily_answer&d=${question.quizDate}&c=${choice.label}&q=${question.id}`,
+        displayText: `ตอบข้อ ${choice.label}`,
+      },
+    })),
+  });
+
+  return {
+    type: "bubble",
+    size: "mega",
+    header: {
+      type: "box",
+      layout: "vertical",
+      backgroundColor: PRIMARY,
+      paddingAll: "lg",
+      contents: [
+        {
+          type: "text",
+          text: `📚 ข้อสอบประจำวัน · ${question.examType}`,
+          color: "#FFFFFF",
+          weight: "bold",
+          size: "sm",
+        },
+        {
+          type: "text",
+          text: `${question.subjectIcon} ${question.subjectNameTh} · ระดับ ${diffTh}`,
+          color: "#D5F5E3",
+          size: "xs",
+        },
+      ],
+    },
+    body: {
+      type: "box",
+      layout: "vertical",
+      paddingAll: "lg",
+      contents: bodyContents,
+    },
+    footer: ctaFooter([
+      { label: "อ่านโจทย์เต็ม / ทำในเว็บ", uri: practiceUrl, style: "secondary" },
+    ]),
+  };
+}
+
+export function buildDailyMcqFlex(args: DailyMcqBubbleArgs): LineMessage {
+  const bubble = buildDailyMcqBubble(args);
+  const altText = truncateText(
+    `📚 ข้อสอบประจำวัน ${args.question.subjectNameTh}: ${args.question.scenario}`,
+    ALT_TEXT_MAX
+  );
+  return { type: "flex", altText, contents: bubble };
+}
+
+export function buildDailyMcqCarousel(
+  bubbles: Record<string, unknown>[],
+  altText: string
+): LineMessage {
+  return {
+    type: "flex",
+    altText: truncateText(altText, ALT_TEXT_MAX),
+    contents: { type: "carousel", contents: bubbles },
+  };
+}
+
+export interface DailyMcqResultArgs {
+  isCorrect: boolean;
+  correctLabel: string;
+  correctText: string;
+  explanation: string | null;
+  streak: number;
+  stats: DailyMcqStats | null;
+  practiceUrl: string;
+  shareUrl: string;
+  needsLink: boolean;
+  liffUrl: string;
+}
+
+export function buildDailyMcqResultFlex(args: DailyMcqResultArgs): LineMessage {
+  const {
+    isCorrect,
+    correctLabel,
+    correctText,
+    explanation,
+    streak,
+    stats,
+    practiceUrl,
+    shareUrl,
+    needsLink,
+    liffUrl,
+  } = args;
+
+  const headerColor = isCorrect ? PRIMARY : "#E74C3C";
+  const headerText = isCorrect ? "✅ ถูกต้อง!" : "❌ ยังไม่ถูก";
+
+  const bodyContents: Record<string, unknown>[] = [
+    {
+      type: "text",
+      text: `เฉลย: ${correctLabel}. ${truncateText(correctText, 120)}`,
+      wrap: true,
+      weight: "bold",
+      size: "sm",
+    },
+  ];
+
+  if (explanation) {
+    bodyContents.push({
+      type: "text",
+      text: truncateText(explanation, 300),
+      wrap: true,
+      size: "xs",
+      color: "#555555",
+      margin: "md",
+    });
+  }
+
+  const statsLines: string[] = [];
+  if (streak > 0) statsLines.push(`🔥 ตอบติดกัน ${streak} วัน`);
+  if (stats && stats.total >= 5) {
+    const pct = Math.round((stats.correct / stats.total) * 100);
+    statsLines.push(`👥 วันนี้มีคนตอบ ${stats.total} คน ถูก ${pct}%`);
+  }
+  if (streak > 0 && streak < 5) {
+    statsLines.push(`🎁 อีก ${5 - streak} วันติด รับสิทธิ์ทดลองใช้ฟรี 1 เดือน`);
+  }
+
+  if (statsLines.length > 0) {
+    bodyContents.push({ type: "separator", margin: "md" });
+    bodyContents.push({
+      type: "box",
+      layout: "vertical",
+      margin: "md",
+      spacing: "xs",
+      contents: statsLines.map((line) => ({
+        type: "text",
+        text: line,
+        size: "xs",
+        color: "#666666",
+        wrap: true,
+      })),
+    });
+  }
+
+  const footerButtons: { label: string; uri: string; style: "primary" | "secondary" }[] = [
+    { label: "ดูเฉลยละเอียด + ข้อคล้ายกัน", uri: practiceUrl, style: "primary" },
+    { label: "แชร์ข้อนี้ให้เพื่อน", uri: shareUrl, style: "secondary" },
+  ];
+  if (needsLink) {
+    footerButtons.push({
+      label: "เชื่อมบัญชี MorRoo เก็บสถิติ",
+      uri: liffUrl,
+      style: "secondary",
+    });
+  }
+
+  return {
+    type: "flex",
+    altText: headerText,
+    contents: {
+      type: "bubble",
+      size: "mega",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: headerColor,
+        paddingAll: "lg",
+        contents: [
+          { type: "text", text: headerText, color: "#FFFFFF", weight: "bold", size: "lg" },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "lg",
+        contents: bodyContents,
+      },
+      footer: ctaFooter(footerButtons),
+    },
+  };
+}
+
+/** Saturday carousel filler bubble — teaser for the free casegame simulator. */
+export function buildCasegameTeaserBubble(): Record<string, unknown> {
+  return {
+    type: "bubble",
+    size: "mega",
+    header: {
+      type: "box",
+      layout: "vertical",
+      backgroundColor: "#8E44AD",
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: "🎮 เสาร์นี้ลองเคสจำลอง", color: "#FFFFFF", weight: "bold", size: "md" },
+        { type: "text", text: "Long case / MEQ ฟรี ไม่ต้องสมัคร", color: "#E8DAEF", size: "xs" },
+      ],
+    },
+    body: {
+      type: "box",
+      layout: "vertical",
+      paddingAll: "lg",
+      contents: [
+        {
+          type: "text",
+          text: "ฝึกคิดแบบข้อสอบจริง ได้ฟีดแบ็กทันทีหลังตอบ ระบบสุ่มเคสให้เลยไม่ต้องเลือกเอง",
+          wrap: true,
+          size: "sm",
+        },
+      ],
+    },
+    footer: ctaFooter([
+      {
+        label: "ลองเคสจำลองฟรี",
+        uri: `${SITE}/casegame/random?utm_source=line&utm_medium=daily_mcq&utm_campaign=sat_casegame`,
+        style: "primary",
+      },
+    ]),
+  };
+}
+
+export interface WeekRecapData {
+  answers: number;
+  participants: number;
+  hardestDate: string | null;
+  hardestPct: number | null;
+  streak5Count: number;
+}
+
+/** Sunday carousel filler bubble — weekly social proof + FOMO. */
+export function buildWeekRecapBubble(recap: WeekRecapData): Record<string, unknown> {
+  const lines: string[] = [
+    `👥 สัปดาห์นี้ ${recap.participants} คน ตอบไป ${recap.answers} ข้อ`,
+  ];
+  if (recap.hardestDate && recap.hardestPct != null) {
+    lines.push(`😰 วันยากสุด ${recap.hardestDate} ถูกแค่ ${recap.hardestPct}%`);
+  }
+  if (recap.streak5Count > 0) {
+    lines.push(`🎁 ${recap.streak5Count} คนตอบครบ 5 วันติด รับสิทธิ์ทดลองใช้ฟรี!`);
+  }
+
+  return {
+    type: "bubble",
+    size: "mega",
+    header: {
+      type: "box",
+      layout: "vertical",
+      backgroundColor: PRIMARY,
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: "📊 สรุปสัปดาห์นี้", color: "#FFFFFF", weight: "bold", size: "md" },
+      ],
+    },
+    body: {
+      type: "box",
+      layout: "vertical",
+      spacing: "sm",
+      paddingAll: "lg",
+      contents: lines.map((line) => ({ type: "text", text: line, wrap: true, size: "sm" })),
+    },
+    footer: ctaFooter([
+      {
+        label: "ฝึกต่อวันนี้",
+        uri: `${SITE}/nl/practice?mode=recommended&utm_source=line&utm_medium=daily_mcq&utm_campaign=sun_recap`,
+        style: "primary",
+      },
+    ]),
+  };
+}
