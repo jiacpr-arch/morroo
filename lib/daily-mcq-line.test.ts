@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   handleDailyMcqPostback,
   bangkokToday,
@@ -360,5 +360,29 @@ describe("handleDailyMcqPostback — social proof gating", () => {
       `action=daily_answer&d=${TODAY}&c=B&q=${QUESTION.id}`
     );
     expect(JSON.stringify(reply)).toContain("วันนี้มีคนตอบ");
+  });
+});
+
+// Regression test for a real production incident: NEXT_PUBLIC_SITE_URL
+// carries trailing whitespace in this Vercel project's env config. Every
+// URL built off SITE_URL lands inside a LINE Flex "uri" action, and LINE's
+// live API hard-rejects the whole message (nothing gets sent to anyone) if
+// that uri isn't a clean absolute URL. SITE_URL is a module-level constant,
+// so this needs a fresh module import under the mutated env var.
+describe("dailyPracticeUrl — SITE_URL must be trimmed", () => {
+  const ORIGINAL = process.env.NEXT_PUBLIC_SITE_URL;
+
+  afterEach(() => {
+    if (ORIGINAL === undefined) delete process.env.NEXT_PUBLIC_SITE_URL;
+    else process.env.NEXT_PUBLIC_SITE_URL = ORIGINAL;
+  });
+
+  it("produces a clean absolute URL even when the env var has trailing whitespace", async () => {
+    vi.resetModules();
+    process.env.NEXT_PUBLIC_SITE_URL = "https://www.morroo.com\n";
+    const { dailyPracticeUrl: freshDailyPracticeUrl } = await import("./daily-mcq-line");
+    const url = freshDailyPracticeUrl("q1", "2026-09-16", "broadcast");
+    expect(url).toMatch(/^https:\/\/www\.morroo\.com\/nl\/practice\?/);
+    expect(url).not.toContain("\n");
   });
 });

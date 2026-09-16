@@ -1186,11 +1186,16 @@ const DIFFICULTY_TH: Record<string, string> = {
   hard: "ยาก",
 };
 const SCENARIO_MAX = 350;
-const CHOICE_LABEL_MAX = 60;
+// LINE's Flex Message API hard-rejects a postback/message action `label`
+// over 40 characters (confirmed against the live API — see git history).
+const CHOICE_LABEL_MAX = 40;
 const ALT_TEXT_MAX = 150;
 
 function truncateText(text: string, max: number): string {
-  return text.length > max ? `${text.slice(0, max)}…` : text;
+  // Slice to max-1 so the appended ellipsis still lands at exactly `max`
+  // chars total — callers rely on the result never exceeding `max` (e.g.
+  // LINE's hard 40-char cap on postback button labels).
+  return text.length > max ? `${text.slice(0, max - 1)}…` : text;
 }
 
 export interface DailyMcqQuestionData {

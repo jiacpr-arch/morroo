@@ -32,6 +32,18 @@ function collectPostbackData(bubble: Record<string, unknown>): string[] {
   return JSON.stringify(bubble).match(/"data":"([^"]*)"/g)?.map((m) => m.slice(8, -1)) ?? [];
 }
 
+type FlexAction = { label?: string; data?: string; uri?: string };
+function collectActions(node: unknown, out: FlexAction[] = []): FlexAction[] {
+  if (Array.isArray(node)) {
+    for (const item of node) collectActions(item, out);
+  } else if (node && typeof node === "object") {
+    const obj = node as Record<string, unknown>;
+    if (obj.action && typeof obj.action === "object") out.push(obj.action as FlexAction);
+    for (const value of Object.values(obj)) collectActions(value, out);
+  }
+  return out;
+}
+
 describe("buildDailyMcqBubble", () => {
   it("truncates a long scenario instead of sending it whole", () => {
     const bubble = buildDailyMcqBubble({ question: QUESTION, practiceUrl: "https://x.test" });
@@ -46,6 +58,26 @@ describe("buildDailyMcqBubble", () => {
       expect(d.length).toBeLessThan(300);
       expect(d).toMatch(/^action=daily_answer&d=2026-09-16&c=[A-E]&q=/);
     }
+  });
+
+  // Regression test: LINE's live API rejects the whole Flex message (nothing
+  // gets sent to anyone) if any action label exceeds 40 chars. Caught a real
+  // production incident where the cap was set to 60 and the truncator had an
+  // off-by-one that could still emit max+1 chars.
+  it("keeps every button label within LINE's real 40-char limit", () => {
+    const bubble = buildDailyMcqBubble({ question: QUESTION, practiceUrl: "https://x.test" });
+    const labels = collectActions(bubble)
+      .map((a) => a.label)
+      .filter((l): l is string => typeof l === "string");
+    expect(labels.length).toBeGreaterThan(0);
+    for (const label of labels) {
+      expect(label.length).toBeLessThanOrEqual(40);
+    }
+    // The long "Paracetamol..." choice must actually have been truncated,
+    // not just happen to fit — otherwise this test would pass vacuously.
+    const choiceALabel = labels.find((l) => l.startsWith("A. "));
+    expect(choiceALabel).toBeDefined();
+    expect(choiceALabel).toContain("…");
   });
 
   it("shows yesterday's percent-correct only at >= 10 answers", () => {
@@ -118,6 +150,16 @@ describe("buildDailyMcqResultFlex", () => {
     const msg = buildDailyMcqResultFlex(base);
     expect(base.shareUrl.length).toBeLessThan(1000);
     expect(JSON.stringify(msg)).toContain(base.shareUrl);
+  });
+
+  it("keeps every button label within LINE's 40-char limit and every uri absolute", () => {
+    const msg = buildDailyMcqResultFlex({ ...base, needsLink: true });
+    const actions = collectActions(msg);
+    expect(actions.length).toBeGreaterThan(0);
+    for (const a of actions) {
+      if (a.label) expect(a.label.length).toBeLessThanOrEqual(40);
+      if (a.uri) expect(a.uri).toMatch(/^https?:\/\//);
+    }
   });
 });
 

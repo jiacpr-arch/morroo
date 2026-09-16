@@ -32,7 +32,13 @@ const DAILY_ACTION = "daily_answer";
 const STREAK_CAMPAIGN = "daily_mcq_streak5";
 const STREAK_TARGET = 5;
 const VALID_ANSWERS = new Set(["A", "B", "C", "D", "E"]);
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+// .trim() matters here: NEXT_PUBLIC_SITE_URL carries trailing whitespace in
+// this Vercel project's env config, and every URL built from SITE_URL below
+// ends up inside a LINE Flex "uri" action, which LINE's API validates
+// strictly and rejects outright on a malformed/trailing-whitespace URI
+// (confirmed against the live API). Every other Flex builder in
+// lib/line-flex-templates.ts already trims for the same reason.
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
 
 // Leads that have already converted — don't hand out another trial.
 const CONVERTED_STAGES = new Set(["redeemed", "paid"]);
