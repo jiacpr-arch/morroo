@@ -98,6 +98,8 @@ export async function postToFacebook(post: {
   description: string;
   slug: string;
   hook?: string;
+  /** Path to link to, e.g. "/news/{id}". Defaults to "/blog/{slug}". */
+  path?: string;
 }): Promise<string> {
   const pageId = process.env.FACEBOOK_PAGE_ID;
   // Hardcode canonical URL — env-derived siteUrl gave FB "url invalid" on /feed
@@ -141,7 +143,7 @@ export async function postToFacebook(post: {
   //
   // Trailing "🔗 <url>" gives readers a second clickable touchpoint after the
   // body copy + matches the rich-caption template assembled by buildFbCaption.
-  const articleUrl = `${siteUrl}/blog/${post.slug}`;
+  const articleUrl = `${siteUrl}${post.path ?? `/blog/${post.slug}`}`;
   const message = post.hook
     ? `${post.hook}\n\n🔗 ${articleUrl}`
     : `📚 ${post.title}\n\n${post.description}\n\n🔗 ${articleUrl}`;

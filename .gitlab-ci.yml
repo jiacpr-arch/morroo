@@ -1,0 +1,131 @@
+# Content generators (ported from .github/workflows after the move to GitLab).
+#
+# Nothing here runs on push/MR. Each job runs only when a pipeline is started
+# by a Pipeline Schedule (Build → Pipeline schedules) or manually
+# (Build → Pipelines → Run pipeline) with the variable JOB set to its name.
+#
+#   JOB          schedule (UTC)     what
+#   blog         0 19 * * *         1 blog article (+ FB/LINE autopost)
+#   mcq          0 19 * * *         daily MCQ
+#   board        30 19 * * *        daily board MCQ drip
+#   board-oral   0 20 * * *         daily board oral case
+#   meq          0 20 * * 0,3       MEQ progressive case
+#   meq-games    30 20 * * 0,3      convert MEQ exams into case games
+#   longcase     0 21 * * 6         weekly long case
+#   backfill-blog-covers / insert-board-seed / rebalance-sim-choices — manual only
+#
+# Secrets come from Settings → CI/CD → Variables: SUPABASE_URL,
+# SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY, TOGETHER_API_KEY,
+# DEEPSEEK_API_KEY, SITE_URL, BLOG_GENERATE_SECRET, LINE_CHANNEL_TOKEN,
+# LINE_TARGET_ID (optional: MCQ_GEN_PROVIDER, DEEPSEEK_MODEL).
+
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $JOB'
+    - if: '$CI_PIPELINE_SOURCE == "web" && $JOB'
+    - if: '$CI_PIPELINE_SOURCE == "api" && $JOB'
+    - when: never
+
+default:
+  image: node:20
+  cache:
+    key:
+      files: [package-lock.json]
+    paths: [.npm/]
+  before_script:
+    - npm ci --ignore-scripts --cache .npm --prefer-offline
+
+.fonts: &fonts
+  - apt-get update -qq && apt-get install -y -qq fontconfig >/dev/null
+  - mkdir -p ~/.fonts && cp scripts/assets/fonts/*.ttf ~/.fonts/
+  - fc-cache -f
+  - fc-list | grep -iE 'sarabun|inter' || true
+
+blog:
+  rules: [{ if: '$JOB == "blog"' }]
+  timeout: 15m
+  variables:
+    ARTICLE_COUNT: "1"
+  script:
+    - *fonts
+    - node scripts/generate-blog.mjs
+
+mcq:
+  rules: [{ if: '$JOB == "mcq"' }]
+  timeout: 15m
+  script:
+    - node scripts/generate-mcq-daily.mjs
+
+board:
+  rules: [{ if: '$JOB == "board"' }]
+  timeout: 15m
+  script:
+    - node scripts/generate-board-daily.mjs
+
+board-oral:
+  rules: [{ if: '$JOB == "board-oral"' }]
+  timeout: 10m
+  script:
+    - node scripts/generate-board-oral-daily.mjs
+
+meq:
+  rules: [{ if: '$JOB == "meq"' }]
+  timeout: 15m
+  script:
+    - node scripts/generate-meq-weekly.mjs
+
+meq-games:
+  rules: [{ if: '$JOB == "meq-games"' }]
+  timeout: 3h
+  variables:
+    PUBLISH: "true"
+    LIMIT: ""
+    CONCURRENCY: ""
+  script:
+    - export NEXT_PUBLIC_SUPABASE_URL="$SUPABASE_URL"
+    - ARGS=""
+    - if [ "$PUBLISH" != "false" ]; then ARGS="$ARGS --publish"; fi
+    - if [ -n "$LIMIT" ]; then ARGS="$ARGS --limit $LIMIT"; fi
+    - if [ -n "$CONCURRENCY" ]; then ARGS="$ARGS --concurrency $CONCURRENCY"; fi
+    - npm run gen:meqgames -- $ARGS
+
+longcase:
+  rules: [{ if: '$JOB == "longcase"' }]
+  timeout: 15m
+  script:
+    - node scripts/generate-longcase-weekly.mjs
+
+backfill-blog-covers:
+  rules: [{ if: '$JOB == "backfill-blog-covers"' }]
+  timeout: 30m
+  variables:
+    LIMIT: ""
+    FORCE: "false"
+  script:
+    - *fonts
+    - node scripts/backfill-blog-covers.mjs
+
+insert-board-seed:
+  rules: [{ if: '$JOB == "insert-board-seed"' }]
+  timeout: 15m
+  variables:
+    ONLY_SPECIALTY: "ob_gyn"
+    MIN_SKIP_AT: "30"
+    DRY_RUN: "1"
+  script:
+    - npx tsx scripts/insert-board-seed.ts
+
+rebalance-sim-choices:
+  rules: [{ if: '$JOB == "rebalance-sim-choices"' }]
+  timeout: 2h
+  variables:
+    LIMIT: ""
+    SLUG: ""
+    DRY_RUN: "false"
+  script:
+    - export NEXT_PUBLIC_SUPABASE_URL="$SUPABASE_URL"
+    - ARGS=""
+    - if [ "$DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+    - if [ -n "$LIMIT" ]; then ARGS="$ARGS --limit $LIMIT"; fi
+    - if [ -n "$SLUG" ]; then ARGS="$ARGS --slug $SLUG"; fi
+    - npm run rebalance:simchoices -- $ARGS

@@ -6,6 +6,7 @@ import {
   buildDailyMcqCarousel,
   buildCasegameTeaserBubble,
   buildWeekRecapBubble,
+  buildBlogAnnounceFlex,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
 
@@ -173,5 +174,28 @@ describe("buildWeekRecapBubble", () => {
       streak5Count: 0,
     });
     expect(JSON.stringify(bubble)).not.toContain("วันยากสุด");
+  });
+});
+
+describe("buildBlogAnnounceFlex", () => {
+  const BASE = {
+    title: "หัวข้อทดสอบ",
+    description: "คำอธิบายสั้นๆ สำหรับทดสอบ",
+    url: "https://www.morroo.com/blog/test-slug",
+    coverImage: null,
+  };
+
+  it("defaults to blog wording", () => {
+    const flex = buildBlogAnnounceFlex(BASE);
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    expect(flex.altText).toContain("บทความใหม่");
+    expect(JSON.stringify(flex.contents)).toContain("อ่านบทความ");
+  });
+
+  it("uses news wording when kind is 'news'", () => {
+    const flex = buildBlogAnnounceFlex({ ...BASE, kind: "news", url: "https://www.morroo.com/news/abc" });
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    expect(flex.altText).toContain("ข่าวใหม่");
+    expect(JSON.stringify(flex.contents)).toContain("อ่านข่าว");
   });
 });
