@@ -16,6 +16,11 @@ const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
 
 export const CLAUDE_HAIKU_MODEL = "claude-haiku-4-5-20251001";
+// Default for every Claude batch since 2026-09-18. Was Haiku for easy/medium:
+// 70% of each day's questions came out in Haiku's stiff Thai ("อาการเบ่งตัวเป็น
+// จุดแดง"), and Sonnet 5 is both better and cheaper than the Sonnet 4.6 the
+// hard batch used ($2/$10 vs $3/$15 per MTok).
+export const CLAUDE_DEFAULT_MODEL = "claude-sonnet-5";
 export const DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash";
 
 const RETRIES_PER_PROVIDER = 2;
@@ -25,7 +30,7 @@ const RETRY_DELAY_MS = 2000;
  * Resolve which provider/model easy+medium batches should use.
  * MCQ_GEN_PROVIDER=deepseek switches to DeepSeek (requires DEEPSEEK_API_KEY,
  * model overridable via DEEPSEEK_MODEL); anything else — including unset —
- * stays on Claude Haiku.
+ * stays on Claude (CLAUDE_DEFAULT_MODEL).
  */
 export function resolveEasyMediumProvider(env = process.env) {
   const raw = (env.MCQ_GEN_PROVIDER || "claude").toLowerCase();
@@ -34,7 +39,7 @@ export function resolveEasyMediumProvider(env = process.env) {
       console.warn(
         "[llm] MCQ_GEN_PROVIDER=deepseek but DEEPSEEK_API_KEY is missing — using Claude"
       );
-      return { provider: "anthropic", model: CLAUDE_HAIKU_MODEL };
+      return { provider: "anthropic", model: CLAUDE_DEFAULT_MODEL };
     }
     return {
       provider: "deepseek",
@@ -44,7 +49,7 @@ export function resolveEasyMediumProvider(env = process.env) {
   if (raw !== "claude" && raw !== "anthropic") {
     console.warn(`[llm] Unknown MCQ_GEN_PROVIDER "${raw}" — using Claude`);
   }
-  return { provider: "anthropic", model: CLAUDE_HAIKU_MODEL };
+  return { provider: "anthropic", model: CLAUDE_DEFAULT_MODEL };
 }
 
 /** Translate an Anthropic-style tool ({name, description, input_schema}) to OpenAI format. */
@@ -70,6 +75,10 @@ async function callAnthropic({ model, maxTokens, prompt, tool }, env) {
     body: JSON.stringify({
       model,
       max_tokens: maxTokens,
+      // Sonnet 5 runs adaptive thinking by default, which can't be combined
+      // with a forced tool_choice — and generation here is a structured
+      // writing task, not one that benefits from a thinking pass.
+      thinking: { type: "disabled" },
       tools: [tool],
       tool_choice: { type: "tool", name: tool.name },
       messages: [{ role: "user", content: prompt }],
@@ -184,18 +193,18 @@ export async function generateWithTool({ provider, model, maxTokens, prompt, too
   } catch (err) {
     if (provider !== "deepseek" || !env.ANTHROPIC_API_KEY) throw err;
     // DeepSeek exhausted its retries — the daily drip must not silently drop,
-    // so rerun the same prompt on Claude Haiku (mirrors lib/anthropic.ts's
+    // so rerun the same prompt on Claude (mirrors lib/anthropic.ts's
     // createWithFallback philosophy).
-    console.warn(`[${label}] DeepSeek failed — falling back to ${CLAUDE_HAIKU_MODEL}`);
+    console.warn(`[${label}] DeepSeek failed — falling back to ${CLAUDE_DEFAULT_MODEL}`);
     const res = await callWithRetry(
       label,
       "anthropic",
-      { model: CLAUDE_HAIKU_MODEL, maxTokens, prompt, tool },
+      { model: CLAUDE_DEFAULT_MODEL, maxTokens, prompt, tool },
       env
     );
     if (res.truncated) {
-      console.warn(`[${label}] anthropic:${CLAUDE_HAIKU_MODEL} hit the output limit — result may be truncated`);
+      console.warn(`[${label}] anthropic:${CLAUDE_DEFAULT_MODEL} hit the output limit — result may be truncated`);
     }
-    return { ...res, provider: "anthropic", model: CLAUDE_HAIKU_MODEL };
+    return { ...res, provider: "anthropic", model: CLAUDE_DEFAULT_MODEL };
   }
 }

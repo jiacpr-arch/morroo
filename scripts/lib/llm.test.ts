@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   CLAUDE_HAIKU_MODEL,
+  CLAUDE_DEFAULT_MODEL,
   DEFAULT_DEEPSEEK_MODEL,
   generateWithTool,
   resolveEasyMediumProvider,
@@ -50,14 +51,16 @@ function deepseekResponse(finishReason = "tool_calls") {
 }
 
 describe("resolveEasyMediumProvider", () => {
-  it("defaults to Claude when MCQ_GEN_PROVIDER is unset or empty", () => {
+  it("defaults to Claude Sonnet 5 when MCQ_GEN_PROVIDER is unset or empty", () => {
+    expect(CLAUDE_DEFAULT_MODEL).toBe("claude-sonnet-5");
+    expect(CLAUDE_DEFAULT_MODEL).not.toBe(CLAUDE_HAIKU_MODEL);
     expect(resolveEasyMediumProvider({})).toEqual({
       provider: "anthropic",
-      model: CLAUDE_HAIKU_MODEL,
+      model: CLAUDE_DEFAULT_MODEL,
     });
     expect(resolveEasyMediumProvider({ MCQ_GEN_PROVIDER: "" })).toEqual({
       provider: "anthropic",
-      model: CLAUDE_HAIKU_MODEL,
+      model: CLAUDE_DEFAULT_MODEL,
     });
   });
 
@@ -81,7 +84,7 @@ describe("resolveEasyMediumProvider", () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     expect(resolveEasyMediumProvider({ MCQ_GEN_PROVIDER: "deepseek" })).toEqual({
       provider: "anthropic",
-      model: CLAUDE_HAIKU_MODEL,
+      model: CLAUDE_DEFAULT_MODEL,
     });
     expect(warn).toHaveBeenCalled();
     warn.mockRestore();
@@ -91,7 +94,7 @@ describe("resolveEasyMediumProvider", () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     expect(resolveEasyMediumProvider({ MCQ_GEN_PROVIDER: "gpt" })).toEqual({
       provider: "anthropic",
-      model: CLAUDE_HAIKU_MODEL,
+      model: CLAUDE_DEFAULT_MODEL,
     });
     warn.mockRestore();
   });
@@ -232,7 +235,7 @@ describe("generateWithTool", () => {
     expect(res).toMatchObject({
       data: { questions: QUESTIONS },
       provider: "anthropic",
-      model: CLAUDE_HAIKU_MODEL,
+      model: CLAUDE_DEFAULT_MODEL,
     });
   });
 

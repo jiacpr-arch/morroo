@@ -117,6 +117,19 @@ longcase:
   script:
     - node scripts/generate-longcase-weekly.mjs
 
+# One-off: write detailed_explanation for active MCQs that only have a short
+# explanation (Batch API, ~$0.01/question). Run once with MODE=submit, then
+# again with MODE=collect after the batch ends (minutes to hours). See the
+# script header for LIMIT / MODEL.
+backfill-mcq-explanations:
+  rules: [{ if: '$JOB == "backfill-mcq-explanations"' }]
+  timeout: 20m
+  variables:
+    MODE: "auto"
+    LIMIT: ""
+  script:
+    - node scripts/backfill-mcq-explanations.mjs
+
 backfill-blog-covers:
   rules: [{ if: '$JOB == "backfill-blog-covers"' }]
   timeout: 30m
