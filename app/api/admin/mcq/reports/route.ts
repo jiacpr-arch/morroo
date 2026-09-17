@@ -14,18 +14,36 @@ export async function GET() {
 
   const admin = createAdminClient();
 
-  const { data: reports, error } = await admin
-    .from("mcq_question_reports")
-    .select(
-      "id, question_id, reason, note, suggested_answer, status, points_awarded, created_at, reviewed_at, user_id, mcq_questions(scenario, correct_answer, status)"
-    )
-    .order("created_at", { ascending: false })
-    .limit(300);
+  const REPORT_FIELDS =
+    "id, question_id, reason, note, suggested_answer, status, points_awarded, created_at, reviewed_at, user_id, mcq_questions(scenario, correct_answer, status)";
 
+  // Pending reports are the actionable queue and must never be silently
+  // dropped, so they're fetched in full. Only the lower-priority reviewed
+  // history (confirmed/rejected/duplicate) is capped for payload size.
+  const [
+    { data: pending, error: pendingError },
+    { data: reviewed, error: reviewedError },
+  ] = await Promise.all([
+    admin
+      .from("mcq_question_reports")
+      .select(REPORT_FIELDS)
+      .eq("status", "pending")
+      .order("created_at", { ascending: false }),
+    admin
+      .from("mcq_question_reports")
+      .select(REPORT_FIELDS)
+      .neq("status", "pending")
+      .order("created_at", { ascending: false })
+      .limit(300),
+  ]);
+
+  const error = pendingError ?? reviewedError;
   if (error) {
     console.error("[admin/mcq/reports] list error:", error);
     return NextResponse.json({ error: "โหลดรายงานไม่สำเร็จ" }, { status: 500 });
   }
+
+  const reports = [...(pending ?? []), ...(reviewed ?? [])];
 
   // reports.user_id references auth.users (not profiles), so enrich separately.
   const userIds = [
