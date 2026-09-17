@@ -2,6 +2,7 @@ import type { LineMessage } from "./line";
 import type { MarketingSnapshot } from "./marketing-digest";
 import type { AdsDailySummary } from "./ads-daily-summary";
 import type { WeeklyAnalyticsSummary } from "./analytics-weekly";
+import type { ReengageExperimentStatus } from "./mcq-reengage-experiment";
 
 interface WeeklySummaryData {
   totalQuestions: number;
@@ -544,6 +545,41 @@ interface AdminDigestData {
   adsOps?: AdsOpsSummary | null;
   autopilotChanges?: string[];
   weekly?: WeeklyAnalyticsSummary | null;
+  reengageExperiment?: ReengageExperimentStatus | null;
+}
+
+/**
+ * Running readout of the 1-week dormant-user MCQ test, so the admin sees it
+ * every morning without opening anything. Day 7 carries the decision prompt.
+ */
+function reengageSection(s: ReengageExperimentStatus) {
+  const armLine = (label: string, a: ReengageExperimentStatus["test"]) =>
+    noteLine(`${label}: ${a.size} คน · บล็อก ${a.blocked} · ตอบ ${a.answered} · สมัคร ${a.converted}`);
+
+  if (!s.startedAt) {
+    return [
+      { type: "separator" as const, margin: "md" as const },
+      sectionTitle("🧪 ทดลอง MCQ รายสัปดาห์ — รอส่งใบแรก จันทร์ 07:00"),
+      noteLine(`กลุ่มทดลอง ${s.test.size} คน · กลุ่มควบคุม ${s.control.size} คน`),
+    ];
+  }
+
+  const day = Math.min(s.dayN, s.testDays);
+  const done = s.dayN >= s.testDays;
+  return [
+    { type: "separator" as const, margin: "md" as const },
+    sectionTitle(`🧪 ทดลอง MCQ รายสัปดาห์ — วันที่ ${day}/${s.testDays}`),
+    armLine("ทดลอง (ได้การ์ด)", s.test),
+    armLine("ควบคุม (ไม่ได้)", s.control),
+    ...(done
+      ? [
+          noteLine(
+            "✅ ครบ 1 สัปดาห์แล้ว — ตัดสินใจ: บล็อก ≈ 0 และมีคนตอบ → ต่ออีก 3 สัปดาห์ · มีบล็อก → หยุด",
+            "#16A085"
+          ),
+        ]
+      : []),
+  ];
 }
 
 function deltaText(value: number | null): string {
@@ -778,6 +814,7 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
           ...(data.adsOps ? adsOpsSection(data.adsOps) : []),
           ...autopilotSection(data.autopilotChanges ?? []),
           ...(data.weekly ? weeklySection(data.weekly) : []),
+          ...(data.reengageExperiment ? reengageSection(data.reengageExperiment) : []),
         ],
       },
       footer: {

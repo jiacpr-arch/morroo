@@ -11,6 +11,7 @@ import {
   BLOG_DIGEST_MAX_POSTS,
   buildWeeklyHardMcqFlex,
   buildNewLongCaseBubble,
+  buildAdminDigestFlex,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
 
@@ -273,6 +274,76 @@ describe("buildWeeklyHardMcqFlex", () => {
     const json = JSON.stringify(flex.contents);
     expect(json).toContain("action=daily_answer&d=2026-09-18&c=A&q=q1");
     expect(json).toContain("action=daily_answer&d=2026-09-18&c=B&q=q1");
+  });
+});
+
+describe("buildAdminDigestFlex — reengage experiment readout", () => {
+  const BASE = {
+    dateLabel: "จ. 21 ก.ย.",
+    attemptsToday: 0,
+    activeUsersToday: 0,
+    newUsersToday: 0,
+    avgAccuracyToday: null,
+    totalStudents: 0,
+    activeUsers7d: 0,
+    weakestSubject: null,
+    aiGradeFails24h: 0,
+    revenueTodayThb: null,
+  };
+  const arm = (size: number, blocked = 0, answered = 0, converted = 0) => ({
+    size,
+    blocked,
+    answered,
+    converted,
+  });
+
+  it("shows a waiting line before the first Monday send", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      reengageExperiment: { startedAt: null, dayN: 0, testDays: 7, test: arm(100), control: arm(98) },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("รอส่งใบแรก");
+    expect(json).toContain("100 คน");
+    expect(json).not.toContain("ครบ 1 สัปดาห์");
+  });
+
+  it("shows per-arm counts mid-test without the decision prompt", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      reengageExperiment: {
+        startedAt: "2026-09-21T00:00:00Z",
+        dayN: 3,
+        testDays: 7,
+        test: arm(100, 1, 6, 0),
+        control: arm(98, 0, 2, 0),
+      },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("วันที่ 3/7");
+    expect(json).toContain("บล็อก 1 · ตอบ 6");
+    expect(json).not.toContain("ครบ 1 สัปดาห์");
+  });
+
+  it("adds the decision prompt on day 7 and caps the day counter", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      reengageExperiment: {
+        startedAt: "2026-09-21T00:00:00Z",
+        dayN: 9,
+        testDays: 7,
+        test: arm(100),
+        control: arm(98),
+      },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("วันที่ 7/7");
+    expect(json).toContain("ครบ 1 สัปดาห์");
+  });
+
+  it("renders nothing about the experiment when there is none", () => {
+    const msg = buildAdminDigestFlex({ ...BASE, reengageExperiment: null });
+    expect(JSON.stringify(msg.type === "flex" ? msg.contents : {})).not.toContain("ทดลอง MCQ");
   });
 });
 

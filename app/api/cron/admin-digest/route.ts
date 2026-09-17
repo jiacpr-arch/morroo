@@ -36,6 +36,10 @@ import { summarizeAdsDay, type AdsDailySummary } from "@/lib/ads-daily-summary";
 import { fetchWeeklyAnalytics, type WeeklyAnalyticsSummary } from "@/lib/analytics-weekly";
 import { runLineCtaAutopilot } from "@/lib/line-cta-config";
 import { runHeroAutopilot, runPricingPromoAutopilot } from "@/lib/site-config";
+import {
+  getReengageExperimentStatus,
+  shouldShowReengageInDigest,
+} from "@/lib/mcq-reengage-experiment";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -373,6 +377,15 @@ export async function GET(request: Request) {
     }
   }
 
+  // --- Dormant-user MCQ A/B test readout (drops out on its own after day 7+3) ---
+  let reengageExperiment = null;
+  try {
+    const status = await getReengageExperimentStatus(supabase);
+    if (shouldShowReengageInDigest(status)) reengageExperiment = status;
+  } catch (err) {
+    console.error("[admin-digest] reengage experiment status failed:", err);
+  }
+
   const flex = buildAdminDigestFlex({
     dateLabel,
     attemptsToday,
@@ -389,6 +402,7 @@ export async function GET(request: Request) {
     adsOps,
     autopilotChanges,
     weekly,
+    reengageExperiment,
   });
 
   const ok = await sendLineMessage(adminLineId, [flex, ...suggestCards]);

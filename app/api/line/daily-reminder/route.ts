@@ -34,13 +34,18 @@ import {
   getActiveDailyAudience,
   getWeeklyAnswerCounts,
 } from "@/lib/daily-mcq-line";
+import { getReengageTestArm, markReengageSent } from "@/lib/mcq-reengage-experiment";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
 
-async function handleWeekday(supabase: ReturnType<typeof createAdminClient>, quizDate: string) {
+async function handleWeekday(
+  supabase: ReturnType<typeof createAdminClient>,
+  quizDate: string,
+  weekday: number
+) {
   const question = await loadDailyQuestion(supabase, quizDate);
   if (!question) {
     return NextResponse.json({ error: "No daily question available" }, { status: 500 });
@@ -81,6 +86,36 @@ async function handleWeekday(supabase: ReturnType<typeof createAdminClient>, qui
     }
   }
 
+  // Monday only: the re-engagement A/B test arm (dormant users who were
+  // randomized into 'weekly_mcq') gets the same card once a week. Anyone
+  // who has since become active already got it above — skip them so nobody
+  // receives it twice. See lib/mcq-reengage-experiment.ts.
+  let reengageSent = 0;
+  let reengageFailed = 0;
+  if (weekday === 1) {
+    const activeIds = new Set(audience.map((m) => m.lineUserId));
+    const testArm = (await getReengageTestArm(supabase)).filter((id) => !activeIds.has(id));
+    if (testArm.length > 0) {
+      const testMessage = buildDailyMcqFlex({
+        question: toBubbleQuestionData(question),
+        practiceUrl: dailyPracticeUrl(question.id, quizDate, "reengage_test"),
+        yesterdayStats,
+        newCount: newCount ?? 0,
+      });
+      for (const lineUserId of testArm) {
+        try {
+          const ok = await sendLineMessage(lineUserId, [testMessage]);
+          if (ok) reengageSent += 1;
+          else reengageFailed += 1;
+        } catch (err) {
+          console.error("[daily-reminder] reengage push failed for", lineUserId, err);
+          reengageFailed += 1;
+        }
+      }
+      await markReengageSent(supabase);
+    }
+  }
+
   return NextResponse.json({
     variant: "weekday_push",
     quizDate,
@@ -88,6 +123,8 @@ async function handleWeekday(supabase: ReturnType<typeof createAdminClient>, qui
     candidates: audience.length,
     sent,
     failed,
+    reengageSent,
+    reengageFailed,
   });
 }
 
@@ -213,5 +250,5 @@ export async function POST(request: Request) {
   if (weekday === 6) return handleSaturday(quizDate);
   if (weekday === 0) return handleSunday(supabase, quizDate);
   if (weekday === 5) return handleFriday(supabase, quizDate);
-  return handleWeekday(supabase, quizDate);
+  return handleWeekday(supabase, quizDate, weekday);
 }
