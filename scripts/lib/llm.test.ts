@@ -1,4 +1,21 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+// llm.mjs's Anthropic path uses the SDK's streaming client (see the comment
+// on callAnthropic for why: idle-connection timeouts on long Sonnet 5
+// generations), so it's mocked at the SDK boundary rather than via fetch.
+// vi.hoisted makes these available inside the vi.mock factory below, which
+// Vitest hoists above this file's imports.
+const { anthropicStreamMock, AnthropicCtorMock } = vi.hoisted(() => {
+  const anthropicStreamMock = vi.fn();
+  // A regular function, not an arrow — arrow functions can't be used as
+  // constructors, and this needs to work behind `new Anthropic(...)`.
+  const AnthropicCtorMock = vi.fn().mockImplementation(function () {
+    return { messages: { stream: anthropicStreamMock } };
+  });
+  return { anthropicStreamMock, AnthropicCtorMock };
+});
+vi.mock("@anthropic-ai/sdk", () => ({ default: AnthropicCtorMock }));
+
 import {
   CLAUDE_HAIKU_MODEL,
   CLAUDE_DEFAULT_MODEL,
@@ -7,6 +24,21 @@ import {
   resolveEasyMediumProvider,
   toOpenAITool,
 } from "./llm.mjs";
+
+/** Configure the mocked Anthropic client's next stream().finalMessage() result. */
+function mockAnthropicStream(resultOrError, { throws = false } = {}) {
+  anthropicStreamMock.mockReturnValueOnce({
+    finalMessage: () => (throws ? Promise.reject(resultOrError) : Promise.resolve(resultOrError)),
+  });
+}
+
+function anthropicMessage(stopReason = "tool_use") {
+  return {
+    content: [{ type: "tool_use", input: { questions: QUESTIONS } }],
+    stop_reason: stopReason,
+    usage: { input_tokens: 10, output_tokens: 20 },
+  };
+}
 
 const TOOL = {
   name: "submit_mcq_questions",
@@ -19,17 +51,6 @@ const TOOL = {
 };
 
 const QUESTIONS = [{ scenario: "ชาย 55 ปี เจ็บอก", correct_answer: "A" }];
-
-function anthropicResponse(stopReason = "tool_use") {
-  return {
-    ok: true,
-    json: async () => ({
-      content: [{ type: "tool_use", input: { questions: QUESTIONS } }],
-      stop_reason: stopReason,
-      usage: { input_tokens: 10, output_tokens: 20 },
-    }),
-  };
-}
 
 function deepseekResponse(finishReason = "tool_calls") {
   return {
@@ -126,14 +147,16 @@ describe("generateWithTool", () => {
 
   afterEach(() => {
     fetchMock.mockReset();
+    anthropicStreamMock.mockReset();
+    AnthropicCtorMock.mockClear();
     vi.unstubAllGlobals();
     vi.unstubAllEnvs();
     vi.restoreAllMocks();
     vi.useRealTimers();
   });
 
-  it("calls Anthropic with forced tool_choice and returns the tool input", async () => {
-    fetchMock.mockResolvedValueOnce(anthropicResponse());
+  it("calls Anthropic (streaming) with forced tool_choice and returns the tool input", async () => {
+    mockAnthropicStream(anthropicMessage());
 
     const res = await generateWithTool({
       provider: "anthropic",
@@ -150,12 +173,17 @@ describe("generateWithTool", () => {
       provider: "anthropic",
       model: "claude-sonnet-4-6",
     });
-    const [url, init] = fetchMock.mock.calls[0];
-    expect(url).toBe("https://api.anthropic.com/v1/messages");
-    const body = JSON.parse(init.body);
-    expect(init.headers["x-api-key"]).toBe("ant-key");
-    expect(body.tools[0].input_schema).toEqual(TOOL.input_schema);
-    expect(body.tool_choice).toEqual({ type: "tool", name: TOOL.name });
+    // Uses the streaming client (not a plain POST) — see callAnthropic's
+    // comment on why a plain fetch risks an idle-connection timeout.
+    expect(AnthropicCtorMock).toHaveBeenCalledWith({ apiKey: "ant-key" });
+    const params = anthropicStreamMock.mock.calls[0][0];
+    expect(params.model).toBe("claude-sonnet-4-6");
+    expect(params.max_tokens).toBe(1000);
+    // Thinking is intentionally left at its default (adaptive) — see the
+    // comment on callAnthropic for why disabling it is the wrong fix.
+    expect(params.thinking).toBeUndefined();
+    expect(params.tools[0].input_schema).toEqual(TOOL.input_schema);
+    expect(params.tool_choice).toEqual({ type: "tool", name: TOOL.name });
   });
 
   it("calls DeepSeek in OpenAI format and parses tool_call arguments", async () => {
@@ -185,7 +213,7 @@ describe("generateWithTool", () => {
   });
 
   it("flags truncation from Anthropic stop_reason=max_tokens", async () => {
-    fetchMock.mockResolvedValueOnce(anthropicResponse("max_tokens"));
+    mockAnthropicStream(anthropicMessage("max_tokens"));
     const res = await generateWithTool({
       provider: "anthropic",
       model: "m",
@@ -210,12 +238,12 @@ describe("generateWithTool", () => {
     expect(res.truncated).toBe(true);
   });
 
-  it("retries once, then falls back from DeepSeek to Claude Haiku", async () => {
+  it("retries once, then falls back from DeepSeek to Claude", async () => {
     vi.useFakeTimers();
     fetchMock
       .mockResolvedValueOnce({ ok: false, text: async () => "boom1" })
-      .mockResolvedValueOnce({ ok: false, text: async () => "boom2" })
-      .mockResolvedValueOnce(anthropicResponse());
+      .mockResolvedValueOnce({ ok: false, text: async () => "boom2" });
+    mockAnthropicStream(anthropicMessage());
 
     const promise = generateWithTool({
       provider: "deepseek",
@@ -228,10 +256,11 @@ describe("generateWithTool", () => {
     await vi.runAllTimersAsync();
     const res = await promise;
 
-    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
     expect(fetchMock.mock.calls[0][0]).toBe("https://api.deepseek.com/chat/completions");
     expect(fetchMock.mock.calls[1][0]).toBe("https://api.deepseek.com/chat/completions");
-    expect(fetchMock.mock.calls[2][0]).toBe("https://api.anthropic.com/v1/messages");
+    expect(anthropicStreamMock).toHaveBeenCalledTimes(1);
+    expect(anthropicStreamMock.mock.calls[0][0].model).toBe(CLAUDE_DEFAULT_MODEL);
     expect(res).toMatchObject({
       data: { questions: QUESTIONS },
       provider: "anthropic",
@@ -241,7 +270,9 @@ describe("generateWithTool", () => {
 
   it("does not fall back for Anthropic failures — the error propagates", async () => {
     vi.useFakeTimers();
-    fetchMock.mockResolvedValue({ ok: false, text: async () => "down" });
+    anthropicStreamMock.mockReturnValue({
+      finalMessage: () => Promise.reject(new Error("down")),
+    });
 
     const promise = generateWithTool({
       provider: "anthropic",
@@ -253,10 +284,10 @@ describe("generateWithTool", () => {
     });
     // Attach the rejection handler before advancing timers to avoid an
     // unhandled rejection between the final attempt and the assertion.
-    const assertion = expect(promise).rejects.toThrow("Anthropic API error");
+    const assertion = expect(promise).rejects.toThrow("down");
     await vi.runAllTimersAsync();
     await assertion;
-    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(anthropicStreamMock).toHaveBeenCalledTimes(2);
   });
 
   it("throws a parse error when DeepSeek returns malformed arguments", async () => {
@@ -280,8 +311,11 @@ describe("generateWithTool", () => {
       tool: TOOL,
       label: "t",
     });
-    // DeepSeek path falls back to Claude, whose mock also returns the malformed
-    // DeepSeek shape — so the run ends with the Anthropic "no tool_use" error.
+    anthropicStreamMock.mockReturnValue({
+      finalMessage: () => Promise.reject(new Error("no anthropic mock configured for this test")),
+    });
+    // DeepSeek path exhausts its retries on malformed JSON, then falls back
+    // to Claude — which also fails here, so the run ends in a rejection.
     const assertion = expect(promise).rejects.toThrow();
     await vi.runAllTimersAsync();
     await assertion;

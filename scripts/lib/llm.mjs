@@ -12,7 +12,8 @@
  * to Claude Haiku automatically so the daily drip never silently drops.
  */
 
-const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
+import Anthropic from "@anthropic-ai/sdk";
+
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
 
 export const CLAUDE_HAIKU_MODEL = "claude-haiku-4-5-20251001";
@@ -64,32 +65,27 @@ export function toOpenAITool(tool) {
   };
 }
 
+// Streaming (not a plain POST): Sonnet 5 runs adaptive thinking by default,
+// and a 15-question batch with full per-choice explanations can sit silently
+// "thinking" for minutes before the first byte — long enough that a plain
+// fetch gets killed by an idle-connection timeout somewhere in the network
+// path ("fetch failed" with zero API-level detail). Streaming avoids that.
+// Do NOT disable thinking to "simplify" this: forced tool_choice + disabled
+// thinking is a known combination where the model occasionally writes the
+// tool call into visible text instead of a real tool_use block, which then
+// fails below with a confusing "no tool_use in response" error.
 async function callAnthropic({ model, maxTokens, prompt, tool }, env) {
-  const res = await fetch(ANTHROPIC_URL, {
-    method: "POST",
-    headers: {
-      "x-api-key": env.ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
+  const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+  const data = await client.messages
+    .stream({
       model,
       max_tokens: maxTokens,
-      // Sonnet 5 runs adaptive thinking by default, which can't be combined
-      // with a forced tool_choice — and generation here is a structured
-      // writing task, not one that benefits from a thinking pass.
-      thinking: { type: "disabled" },
       tools: [tool],
       tool_choice: { type: "tool", name: tool.name },
       messages: [{ role: "user", content: prompt }],
-    }),
-  });
+    })
+    .finalMessage();
 
-  if (!res.ok) {
-    throw new Error(`Anthropic API error (${model}): ${await res.text()}`);
-  }
-
-  const data = await res.json();
   const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
   if (!toolUse?.input) {
     const blockTypes = (data.content ?? []).map((b) => b.type).join(",") || "(empty)";

@@ -170,8 +170,10 @@ async function submit() {
       params: {
         model: MODEL,
         max_tokens: 4000,
-        // Forced tool_choice needs thinking off; this is a writing task, not reasoning-heavy.
-        thinking: { type: "disabled" },
+        // Leave thinking at its default (adaptive) — forced tool_choice with
+        // thinking explicitly disabled is a known combination where the model
+        // occasionally writes the tool call into visible text instead of a
+        // real tool_use block (silently fails validation below, no error).
         system: SYSTEM,
         messages: [{ role: "user", content: buildPrompt(q) }],
         tools: [TOOL],
