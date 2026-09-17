@@ -48,11 +48,20 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !process.env.ANTHROPIC_API_KE
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 const anthropic = new Anthropic();
 
+// strict: true (+ additionalProperties: false on every object level, and
+// every property listed in `required`) makes the API validate tool_use.input
+// against this schema before returning it — the live batch run below found
+// stop_reason="tool_use" is not enough on its own: 238/1000 calls completed
+// "successfully" but silently omitted a required field (usually
+// key_takeaway or one choice's explanation), with no error to catch. Strict
+// mode turns that into a guarantee instead of a probability.
 const TOOL = {
   name: "write_detailed_explanation",
   description: "เขียนเฉลยละเอียดสำหรับข้อสอบ MCQ หนึ่งข้อ",
+  strict: true,
   input_schema: {
     type: "object",
+    additionalProperties: false,
     properties: {
       explanation: {
         type: "string",
@@ -61,6 +70,7 @@ const TOOL = {
       },
       detailed_explanation: {
         type: "object",
+        additionalProperties: false,
         properties: {
           summary: { type: "string", description: "1 ประโยค: คำตอบที่ถูกคืออะไร" },
           reason: {
@@ -73,6 +83,7 @@ const TOOL = {
             description: "ครบทุกตัวเลือกตามลำดับ A-E",
             items: {
               type: "object",
+              additionalProperties: false,
               properties: {
                 label: { type: "string" },
                 text: { type: "string" },
@@ -93,13 +104,21 @@ const TOOL = {
         },
         required: ["summary", "reason", "choices", "key_takeaway"],
       },
+      // strict:true requires every property to be listed in `required`, but
+      // a field that's genuinely optional still needs a clean "nothing to
+      // say" value: nullable + required, not a plain optional string. Tested
+      // the plain-string version live on 30 rows — forced to always emit
+      // *something*, the model didn't reliably use "" for "no concern" and
+      // instead wrote the same ~18-character garbage placeholder (an XML
+      // closing-tag-shaped string, unrelated to any real question content)
+      // on 29 of them. Nullable removes the pressure to invent a value.
       answer_concern: {
-        type: "string",
+        type: ["string", "null"],
         description:
-          "เว้นว่างถ้าเห็นด้วยกับคำตอบที่ให้มา ถ้าไม่เห็นด้วยให้อธิบายสั้นๆ ว่าคิดว่าคำตอบควรเป็นข้อใดเพราะอะไร (ห้ามเปลี่ยนคำตอบเอง)",
+          "null ถ้าเห็นด้วยกับคำตอบที่ให้มา ถ้าไม่เห็นด้วยให้อธิบายสั้นๆ ว่าคิดว่าคำตอบควรเป็นข้อใดเพราะอะไร (ห้ามเปลี่ยนคำตอบเอง)",
       },
     },
-    required: ["explanation", "detailed_explanation"],
+    required: ["explanation", "detailed_explanation", "answer_concern"],
   },
 };
 
