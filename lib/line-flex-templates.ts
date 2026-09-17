@@ -1349,6 +1349,128 @@ export function buildDailyMcqBubble(args: DailyMcqBubbleArgs): Record<string, un
   };
 }
 
+export interface WeeklyHardMcqArgs {
+  question: DailyMcqQuestionData;
+  practiceUrl: string;
+  weeklyAnswered: number;
+}
+
+/**
+ * Friday "hard question of the week" — same card shape as the daily bubble
+ * but framed as a challenge, plus a personalized weekly count. Pushed
+ * per-user (not broadcast), so the count is accurate per recipient.
+ */
+export function buildWeeklyHardMcqBubble(args: WeeklyHardMcqArgs): Record<string, unknown> {
+  const { question, practiceUrl, weeklyAnswered } = args;
+
+  const bodyContents: Record<string, unknown>[] = [
+    {
+      type: "text",
+      text: truncateText(question.scenario, SCENARIO_MAX),
+      wrap: true,
+      size: "sm",
+    },
+    {
+      type: "text",
+      text:
+        weeklyAnswered > 0
+          ? `🔥 สัปดาห์นี้คุณตอบไปแล้ว ${weeklyAnswered} ข้อ — ปิดท้ายด้วยข้อยากนี้ไหม?`
+          : "💪 ยังไม่ได้ตอบสักข้อในสัปดาห์นี้ — เริ่มด้วยข้อยากนี้เลย!",
+      size: "xxs",
+      color: PRIMARY,
+      margin: "md",
+      wrap: true,
+    },
+    { type: "separator", margin: "md" },
+    {
+      type: "box",
+      layout: "vertical",
+      spacing: "sm",
+      margin: "md",
+      contents: question.choices.map((choice) => ({
+        type: "button",
+        style: "secondary",
+        height: "sm",
+        action: {
+          type: "postback",
+          label: truncateText(`${choice.label}. ${choice.text}`, CHOICE_LABEL_MAX),
+          data: `action=daily_answer&d=${question.quizDate}&c=${choice.label}&q=${question.id}`,
+          displayText: `ตอบข้อ ${choice.label}`,
+        },
+      })),
+    },
+  ];
+
+  return {
+    type: "bubble",
+    size: "mega",
+    header: {
+      type: "box",
+      layout: "vertical",
+      backgroundColor: "#C0392B",
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: `🔥 ข้อยากประจำสัปดาห์ · ${question.examType}`, color: "#FFFFFF", weight: "bold", size: "sm" },
+        { type: "text", text: `${question.subjectIcon} ${question.subjectNameTh}`, color: "#F5B7B1", size: "xs" },
+      ],
+    },
+    body: { type: "box", layout: "vertical", paddingAll: "lg", contents: bodyContents },
+    footer: ctaFooter([
+      { label: "อ่านโจทย์เต็ม / ทำในเว็บ", uri: practiceUrl, style: "secondary" },
+    ]),
+  };
+}
+
+export function buildWeeklyHardMcqFlex(args: WeeklyHardMcqArgs): LineMessage {
+  const bubble = buildWeeklyHardMcqBubble(args);
+  const altText = truncateText(
+    `🔥 ข้อยากประจำสัปดาห์ ${args.question.subjectNameTh}: ${args.question.scenario}`,
+    ALT_TEXT_MAX
+  );
+  return { type: "flex", altText, contents: bubble };
+}
+
+export interface NewLongCaseData {
+  title: string;
+  specialty: string;
+  url: string;
+}
+
+/** Sunday broadcast bubble announcing the week's new long case. */
+export function buildNewLongCaseBubble(data: NewLongCaseData): Record<string, unknown> {
+  return {
+    type: "bubble",
+    size: "mega",
+    header: {
+      type: "box",
+      layout: "vertical",
+      backgroundColor: "#2874A6",
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: "🩺 Long Case ใหม่ประจำสัปดาห์", color: "#FFFFFF", weight: "bold", size: "md" },
+        { type: "text", text: data.specialty, color: "#D4E6F1", size: "xs" },
+      ],
+    },
+    body: {
+      type: "box",
+      layout: "vertical",
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: data.title, wrap: true, weight: "bold", size: "sm" },
+        {
+          type: "text",
+          text: "ซักประวัติ ตรวจร่างกาย อ่านผลแล็บ วินิจฉัย — ฝึกคิดแบบข้อสอบจริงกับ AI Examiner",
+          wrap: true,
+          size: "xs",
+          color: "#666666",
+          margin: "sm",
+        },
+      ],
+    },
+    footer: ctaFooter([{ label: "ลองทำ Long Case นี้", uri: data.url, style: "primary" }]),
+  };
+}
+
 export function buildDailyMcqFlex(args: DailyMcqBubbleArgs): LineMessage {
   const bubble = buildDailyMcqBubble(args);
   const altText = truncateText(

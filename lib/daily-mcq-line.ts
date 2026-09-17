@@ -117,6 +117,122 @@ export async function loadDailyQuestion(
   return { ...(data as McqQuestion), quiz_date: quizDate };
 }
 
+/**
+ * Load the Friday "hard question of the week" via get_weekly_hard_mcq(quizDate)
+ * — same deterministic-per-date lookup as loadDailyQuestion, filtered to
+ * difficulty='hard' on the DB side.
+ */
+export async function loadHardQuestion(
+  supabase: SupabaseClient,
+  quizDate: string
+): Promise<DailyQuestionFull | null> {
+  const { data: weekly, error: rpcError } = await supabase.rpc("get_weekly_hard_mcq", {
+    p_date: quizDate,
+  });
+  if (rpcError) {
+    console.error("[daily-mcq-line] get_weekly_hard_mcq failed:", rpcError);
+    return null;
+  }
+  const id = (weekly as { id: string }[] | null)?.[0]?.id;
+  if (!id) return null;
+
+  const { data, error } = await supabase
+    .from("mcq_questions")
+    .select("*, mcq_subjects(name, name_th, icon)")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) {
+    console.error("[daily-mcq-line] hard question lookup failed:", error);
+    return null;
+  }
+  return { ...(data as McqQuestion), quiz_date: quizDate };
+}
+
+export interface DailyMcqAudienceMember {
+  lineUserId: string;
+  name: string | null;
+}
+
+/**
+ * Who the Mon-Fri daily/hard-question push goes to: LINE-linked users who
+ * have engaged with the daily card itself OR practiced MCQs in general in
+ * the last `days` days. Replaces a broadcast-to-everyone that was mostly
+ * landing on people who never opened it (30/236 answered in 30 days).
+ */
+export async function getActiveDailyAudience(
+  supabase: SupabaseClient,
+  days = 30
+): Promise<DailyMcqAudienceMember[]> {
+  const sinceIso = new Date(Date.now() - days * 86400_000).toISOString();
+
+  const [{ data: linked }, { data: answeredRows }] = await Promise.all([
+    supabase.from("profiles").select("id, name, line_user_id").not("line_user_id", "is", null),
+    supabase.from("daily_quiz_answers").select("line_user_id").gte("created_at", sinceIso),
+  ]);
+
+  const profiles = (linked ?? []) as { id: string; name: string | null; line_user_id: string }[];
+  const byId = new Map<string, string | null>();
+
+  for (const row of (answeredRows ?? []) as { line_user_id: string }[]) {
+    if (row.line_user_id) byId.set(row.line_user_id, byId.get(row.line_user_id) ?? null);
+  }
+
+  if (profiles.length > 0) {
+    const { data: attemptRows } = await supabase
+      .from("mcq_attempts")
+      .select("user_id")
+      .in(
+        "user_id",
+        profiles.map((p) => p.id)
+      )
+      .gte("created_at", sinceIso);
+    const activeUserIds = new Set(
+      ((attemptRows ?? []) as { user_id: string }[]).map((r) => r.user_id)
+    );
+    for (const p of profiles) {
+      if (activeUserIds.has(p.id)) {
+        byId.set(p.line_user_id, p.name ?? byId.get(p.line_user_id) ?? null);
+      }
+    }
+  }
+
+  return [...byId.entries()].map(([lineUserId, name]) => ({ lineUserId, name }));
+}
+
+/**
+ * Per-user answer counts for the Friday "สัปดาห์นี้คุณตอบไป X ข้อ" line —
+ * counts daily_quiz_answers from this week's Monday (Asia/Bangkok) through
+ * today, keyed by line_user_id.
+ */
+/** Monday (YYYY-MM-DD) of the calendar week containing `quizDate`. */
+export function mondayOfWeek(quizDate: string): string {
+  const weekday = new Date(`${quizDate}T00:00:00Z`).getUTCDay(); // 0=Sun..6=Sat
+  const mondayOffset = weekday === 0 ? -6 : 1 - weekday;
+  return shiftQuizDate(quizDate, mondayOffset);
+}
+
+export async function getWeeklyAnswerCounts(
+  supabase: SupabaseClient,
+  quizDate: string
+): Promise<Map<string, number>> {
+  const monday = mondayOfWeek(quizDate);
+
+  const { data, error } = await supabase
+    .from("daily_quiz_answers")
+    .select("line_user_id")
+    .gte("quiz_date", monday)
+    .lte("quiz_date", quizDate);
+
+  const counts = new Map<string, number>();
+  if (error || !data) return counts;
+  for (const row of data as { line_user_id: string }[]) {
+    if (!row.line_user_id) continue;
+    counts.set(row.line_user_id, (counts.get(row.line_user_id) ?? 0) + 1);
+  }
+  return counts;
+}
+
 export function toBubbleQuestionData(
   question: DailyQuestionFull
 ): DailyMcqQuestionData {

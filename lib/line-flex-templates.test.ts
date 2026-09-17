@@ -9,6 +9,8 @@ import {
   buildBlogAnnounceFlex,
   buildBlogDigestCarousel,
   BLOG_DIGEST_MAX_POSTS,
+  buildWeeklyHardMcqFlex,
+  buildNewLongCaseBubble,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
 
@@ -231,5 +233,59 @@ describe("buildBlogDigestCarousel", () => {
     const carousel = msg.contents as { contents: unknown[] };
     expect(carousel.contents).toHaveLength(BLOG_DIGEST_MAX_POSTS);
     expect(msg.altText).toContain(`${BLOG_DIGEST_MAX_POSTS} เรื่อง`);
+  });
+});
+
+describe("buildWeeklyHardMcqFlex", () => {
+  const args = {
+    question: {
+      id: "q1",
+      scenario: "ผู้ป่วยชาย 60 ปี มาด้วยอาการเจ็บหน้าอก",
+      difficulty: "hard",
+      examType: "NL2",
+      subjectNameTh: "อายุรศาสตร์",
+      subjectIcon: "🫀",
+      quizDate: "2026-09-18",
+      choices: [
+        { label: "A", text: "STEMI" },
+        { label: "B", text: "NSTEMI" },
+      ],
+    },
+    practiceUrl: "https://www.morroo.com/nl/practice?q=q1",
+  };
+
+  it("personalizes the weekly-answered count per recipient", () => {
+    const flex = buildWeeklyHardMcqFlex({ ...args, weeklyAnswered: 4 });
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    expect(JSON.stringify(flex.contents)).toContain("4 ข้อ");
+    expect(flex.altText).toContain("ข้อยากประจำสัปดาห์");
+  });
+
+  it("uses encouraging copy when the recipient hasn't answered anything yet", () => {
+    const flex = buildWeeklyHardMcqFlex({ ...args, weeklyAnswered: 0 });
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    expect(JSON.stringify(flex.contents)).toContain("ยังไม่ได้ตอบสักข้อ");
+  });
+
+  it("includes a postback button per answer choice", () => {
+    const flex = buildWeeklyHardMcqFlex({ ...args, weeklyAnswered: 1 });
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    const json = JSON.stringify(flex.contents);
+    expect(json).toContain("action=daily_answer&d=2026-09-18&c=A&q=q1");
+    expect(json).toContain("action=daily_answer&d=2026-09-18&c=B&q=q1");
+  });
+});
+
+describe("buildNewLongCaseBubble", () => {
+  it("links to the given long case URL", () => {
+    const bubble = buildNewLongCaseBubble({
+      title: "หญิง 45 ปี ปวดท้องเฉียบพลัน",
+      specialty: "General Surgery",
+      url: "https://www.morroo.com/longcase/abc-123",
+    });
+    const json = JSON.stringify(bubble);
+    expect(json).toContain("https://www.morroo.com/longcase/abc-123");
+    expect(json).toContain("หญิง 45 ปี ปวดท้องเฉียบพลัน");
+    expect(json).toContain("General Surgery");
   });
 });

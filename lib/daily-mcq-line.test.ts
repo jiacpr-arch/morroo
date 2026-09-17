@@ -3,6 +3,7 @@ import {
   handleDailyMcqPostback,
   bangkokToday,
   shiftQuizDate,
+  mondayOfWeek,
 } from "./daily-mcq-line";
 
 vi.mock("./redeem", () => ({
@@ -384,5 +385,23 @@ describe("dailyPracticeUrl — SITE_URL must be trimmed", () => {
     const url = freshDailyPracticeUrl("q1", "2026-09-16", "broadcast");
     expect(url).toMatch(/^https:\/\/www\.morroo\.com\/nl\/practice\?/);
     expect(url).not.toContain("\n");
+  });
+});
+
+describe("mondayOfWeek", () => {
+  it("returns the same date when quizDate is already a Monday", () => {
+    expect(mondayOfWeek("2026-09-14")).toBe("2026-09-14"); // a Monday
+  });
+
+  it("walks back to Monday for a mid-week date (Friday)", () => {
+    expect(mondayOfWeek("2026-09-18")).toBe("2026-09-14"); // Friday -> same-week Monday
+  });
+
+  it("walks back to Monday for a Sunday (wraps to the previous week)", () => {
+    expect(mondayOfWeek("2026-09-20")).toBe("2026-09-14"); // Sunday -> the week that just ended
+  });
+
+  it("walks back to Monday for a Saturday", () => {
+    expect(mondayOfWeek("2026-09-19")).toBe("2026-09-14");
   });
 });

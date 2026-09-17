@@ -1,5 +1,5 @@
 /**
- * Weekly LINE blog digest — ONE carousel every Monday 07:00 BKK holding every
+ * Weekly LINE blog digest — ONE carousel every Wednesday 12:00 BKK holding every
  * article published in the last week, instead of a broadcast per article.
  *
  * Why: a LINE broadcast costs 1 message × every follower. With a new article
@@ -21,8 +21,8 @@ import { ensureLineCover } from "@/app/api/autopost/retry/route";
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-// Look back a little over a week so a late Monday run still catches last
-// Monday's article; the line_broadcast_at IS NULL filter prevents repeats.
+// Look back a little over a week so a late Wednesday run still catches an
+// early-week article; the line_broadcast_at IS NULL filter prevents repeats.
 const LOOKBACK_DAYS = 8;
 
 function isAuthorized(request: Request): boolean {
