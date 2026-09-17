@@ -24,7 +24,7 @@ workflow:
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $JOB'
     - if: '$CI_PIPELINE_SOURCE == "web" && $JOB'
     - if: '$CI_PIPELINE_SOURCE == "api" && $JOB'
-    - when: never
+    - when: always # ordinary push/MR — see the `no-op` job below
 
 default:
   image: node:20
@@ -40,6 +40,20 @@ default:
   - mkdir -p ~/.fonts && cp scripts/assets/fonts/*.ttf ~/.fonts/
   - fc-cache -f
   - fc-list | grep -iE 'sarabun|inter' || true
+
+# Ordinary push/MR pipelines match the workflow's `when: always` fallback but
+# no generator job below matches without $JOB set — without a real job here
+# GitLab intermittently reports that empty pipeline as failed instead of
+# skipped (long-standing upstream quirk: gitlab-org/gitlab-foss#33063).
+no-op:
+  image: alpine:3
+  before_script: []
+  rules:
+    - if: '$JOB'
+      when: never
+    - when: on_success
+  script:
+    - echo "Nothing to run for this pipeline — content generators only run via schedule or manual trigger with JOB set (see top of this file)."
 
 blog:
   rules: [{ if: '$JOB == "blog"' }]
