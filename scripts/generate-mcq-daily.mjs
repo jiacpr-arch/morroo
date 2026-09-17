@@ -216,9 +216,16 @@ async function run() {
   );
   console.log("Calling easy (6q) + medium (15q) + hard (9q) in parallel...");
   const [easyResult, mediumResult, hardResult] = await Promise.allSettled([
-    generateQuestions("easy", easyMediumTarget, 16000, haikuEasyPrompt),
-    generateQuestions("medium", easyMediumTarget, 32000, haikuMediumPrompt),
-    generateQuestions("hard", hardTarget, 24000, sonnetPrompt),
+    // Sonnet 5 runs adaptive thinking by default, which shares the same
+    // max_tokens budget as the visible output — a live test run showed 15q
+    // at 32000 and 9q at 24000 both hitting the limit mid-tool-call (now
+    // that required detailed_explanation makes each question much larger,
+    // thinking + JSON output together need more headroom than Haiku/Sonnet
+    // 4.6 ever did). Streaming (see llm.mjs) means a bigger ceiling costs
+    // nothing but avoided truncation — billing is by tokens actually used.
+    generateQuestions("easy", easyMediumTarget, 24000, haikuEasyPrompt),
+    generateQuestions("medium", easyMediumTarget, 64000, haikuMediumPrompt),
+    generateQuestions("hard", hardTarget, 48000, sonnetPrompt),
   ]);
 
   const allQuestions = [];
