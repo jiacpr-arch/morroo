@@ -225,7 +225,11 @@ async function run() {
     // nothing but avoided truncation — billing is by tokens actually used.
     generateQuestions("easy", easyMediumTarget, 24000, haikuEasyPrompt),
     generateQuestions("medium", easyMediumTarget, 64000, haikuMediumPrompt),
-    generateQuestions("hard", hardTarget, 48000, sonnetPrompt),
+    // Hard still truncated at 48000 in testing despite having fewer
+    // questions than medium (9 vs 15) — "clinical reasoning ซับซ้อน" pulls
+    // more adaptive-thinking tokens per question than medium's more
+    // straightforward cases. Matches medium's ceiling.
+    generateQuestions("hard", hardTarget, 64000, sonnetPrompt),
   ]);
 
   const allQuestions = [];

@@ -74,7 +74,10 @@ blog:
 
 mcq:
   rules: [{ if: '$JOB == "mcq"' }]
-  timeout: 15m
+  # Sonnet 5's adaptive thinking + the larger detailed_explanation schema
+  # made a full run take ~7-10m in testing (was near-instant on Haiku) —
+  # padded well past that.
+  timeout: 25m
   script:
     - node scripts/generate-mcq-daily.mjs
 
