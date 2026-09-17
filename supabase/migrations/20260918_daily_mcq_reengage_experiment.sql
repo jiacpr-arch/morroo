@@ -4,7 +4,7 @@
 -- Cohort is frozen at creation (linked LINE, free plan, no MCQ activity in the
 -- last 30 days) and split 50/50:
 --   control    — nothing extra (only the 3 weekly broadcasts everyone gets)
---   weekly_mcq — also gets the regular daily MCQ card every Monday 07:00 BKK,
+--   weekly_mcq — also gets the regular daily MCQ card every Monday 21:30 BKK,
 --                sent from /api/line/daily-reminder's Monday run
 -- Already-paying and currently-active users are excluded: the question is
 -- about winning back dormant free users, not people already converted or

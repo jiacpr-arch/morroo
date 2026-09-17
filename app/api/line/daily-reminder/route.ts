@@ -3,8 +3,8 @@
  * Hit by 3 separate pg_cron schedules (see supabase/migrations/
  * 20260917_line_reminder_schedule_v2.sql):
  *
- *   Mon-Thu 07:00  push to active players only  — daily MCQ card
- *   Fri     07:00  push to active players only  — weekly hard question
+ *   Mon-Thu 21:30  push to active players only  — daily MCQ card
+ *   Fri     21:30  push to active players only  — weekly hard question
  *   Sat     09:00  broadcast to everyone         — MEQ/long-case teaser
  *   Sun     19:00  broadcast to everyone         — new long case + week recap
  *

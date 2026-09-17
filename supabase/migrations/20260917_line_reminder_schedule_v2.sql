@@ -1,8 +1,11 @@
 -- LINE reminder schedule v2 (spacing/relevance research: broadcast only what's
 -- worth everyone's attention, push the rest to people who actually engage).
 --
---   Mon-Thu 07:00 BKK  push  daily MCQ            -> active players only
---   Fri     07:00 BKK  push  weekly hard question -> active players only
+--   Mon-Thu 21:30 BKK  push  daily MCQ            -> active players only
+--   Fri     21:30 BKK  push  weekly hard question -> active players only
+--   (21:30, not the inherited 07:00: web MCQ attempts peak at 22-23 BKK —
+--    5x the 07:00 volume — and LINE-card answers cluster hours after a
+--    07:00 send. Studying right before sleep also consolidates better.)
 --   Wed     12:00 BKK  broadcast  weekly blog digest (moved off Monday,
 --                                 which collided with the daily MCQ slot)
 --   Sat     09:00 BKK  broadcast  MEQ/long-case casegame teaser
@@ -39,11 +42,10 @@ as $$
   limit 1;
 $$;
 
--- send-daily-line-reminder already covers Mon-Fri 07:00 (set in the previous
--- migration); this just documents it stays as-is under the new v2 content.
+-- Mon-Fri 21:30 BKK = 14:30 UTC (was 07:00; see the note above).
 select cron.alter_job(
   (select jobid from cron.job where jobname = 'send-daily-line-reminder'),
-  schedule := '0 0 * * 1-5'
+  schedule := '30 14 * * 1-5'
 );
 
 select cron.schedule(

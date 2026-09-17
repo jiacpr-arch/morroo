@@ -559,7 +559,7 @@ function reengageSection(s: ReengageExperimentStatus) {
   if (!s.startedAt) {
     return [
       { type: "separator" as const, margin: "md" as const },
-      sectionTitle("🧪 ทดลอง MCQ รายสัปดาห์ — รอส่งใบแรก จันทร์ 07:00"),
+      sectionTitle("🧪 ทดลอง MCQ รายสัปดาห์ — รอส่งใบแรก จันทร์ 21:30"),
       noteLine(`กลุ่มทดลอง ${s.test.size} คน · กลุ่มควบคุม ${s.control.size} คน`),
     ];
   }
