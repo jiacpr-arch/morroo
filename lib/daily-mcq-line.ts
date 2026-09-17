@@ -154,11 +154,32 @@ export interface DailyMcqAudienceMember {
   name: string | null;
 }
 
+/** Days a newly linked LINE user gets the daily card before silence counts. */
+export const DAILY_GRACE_DAYS = 14;
+
+/**
+ * "Everyone starts in; silence opts you out." A user who linked LINE (or,
+ * lacking that timestamp, signed up) within DAILY_GRACE_DAYS is treated as
+ * active regardless of history — they can't have answered a card they never
+ * received. Falls back to createdAt because line_linked_at was added later
+ * and is null for older rows.
+ */
+export function isWithinGrace(
+  linkedAt: string | null,
+  createdAt: string | null,
+  now = Date.now()
+): boolean {
+  const anchor = linkedAt ?? createdAt;
+  if (!anchor) return false;
+  return now - new Date(anchor).getTime() < DAILY_GRACE_DAYS * 86400_000;
+}
+
 /**
  * Who the Mon-Fri daily/hard-question push goes to: LINE-linked users who
- * have engaged with the daily card itself OR practiced MCQs in general in
- * the last `days` days. Replaces a broadcast-to-everyone that was mostly
- * landing on people who never opened it (30/236 answered in 30 days).
+ * (a) answered the daily card in LINE, or (b) attempted any MCQ, in the last
+ * `days` days, or (c) linked LINE within DAILY_GRACE_DAYS (see isWithinGrace).
+ * Replaces a broadcast-to-everyone that was mostly landing on people who
+ * never opened it (30/236 answered in 30 days).
  */
 export async function getActiveDailyAudience(
   supabase: SupabaseClient,
@@ -167,11 +188,20 @@ export async function getActiveDailyAudience(
   const sinceIso = new Date(Date.now() - days * 86400_000).toISOString();
 
   const [{ data: linked }, { data: answeredRows }] = await Promise.all([
-    supabase.from("profiles").select("id, name, line_user_id").not("line_user_id", "is", null),
+    supabase
+      .from("profiles")
+      .select("id, name, line_user_id, line_linked_at, created_at")
+      .not("line_user_id", "is", null),
     supabase.from("daily_quiz_answers").select("line_user_id").gte("created_at", sinceIso),
   ]);
 
-  const profiles = (linked ?? []) as { id: string; name: string | null; line_user_id: string }[];
+  const profiles = (linked ?? []) as {
+    id: string;
+    name: string | null;
+    line_user_id: string;
+    line_linked_at: string | null;
+    created_at: string | null;
+  }[];
   const byId = new Map<string, string | null>();
 
   for (const row of (answeredRows ?? []) as { line_user_id: string }[]) {
@@ -191,7 +221,7 @@ export async function getActiveDailyAudience(
       ((attemptRows ?? []) as { user_id: string }[]).map((r) => r.user_id)
     );
     for (const p of profiles) {
-      if (activeUserIds.has(p.id)) {
+      if (activeUserIds.has(p.id) || isWithinGrace(p.line_linked_at, p.created_at)) {
         byId.set(p.line_user_id, p.name ?? byId.get(p.line_user_id) ?? null);
       }
     }
