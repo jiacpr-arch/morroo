@@ -60,9 +60,28 @@ async function triggerAutopost(slug) {
   }
 }
 
-async function generateArticle(existingTitles) {
-  const category = CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)];
+/**
+ * Picks the category whose most recent article is oldest (ties broken by
+ * CATEGORIES order), so all 3 categories — including "เทคนิคสอบ" — keep
+ * getting fresh articles instead of drifting whenever Math.random() favors
+ * the other two. `lastPublished` maps category -> ISO timestamp (or null if
+ * the category has no articles yet, which always wins).
+ */
+function pickNextCategory(lastPublished) {
+  let best = CATEGORIES[0];
+  let bestTime = Infinity;
+  for (const category of CATEGORIES) {
+    const iso = lastPublished[category];
+    const time = iso ? new Date(iso).getTime() : -Infinity;
+    if (time < bestTime) {
+      bestTime = time;
+      best = category;
+    }
+  }
+  return best;
+}
 
+async function generateArticle(existingTitles, category) {
   const prompt = `คุณเป็นแพทย์ผู้เชี่ยวชาญและนักเขียนบทความ SEO สำหรับเว็บไซต์เตรียมสอบแพทย์ "หมอรู้" (morroo.com)
 
 หมวดหมู่: ${category}
@@ -266,11 +285,26 @@ async function run() {
 
   const existingTitles = (existing ?? []).map((p) => p.title);
 
+  // Track the most recent published_at per category so each run tops up
+  // whichever category has gone longest without a new article.
+  const { data: recentByCategory } = await supabase
+    .from("blog_posts")
+    .select("category, published_at")
+    .order("published_at", { ascending: false })
+    .limit(300);
+
+  const lastPublished = {};
+  for (const row of recentByCategory ?? []) {
+    if (!(row.category in lastPublished)) lastPublished[row.category] = row.published_at;
+  }
+
   for (let i = 0; i < ARTICLE_COUNT; i++) {
     console.log(`\n--- Article ${i + 1}/${ARTICLE_COUNT} ---`);
 
     try {
-      const { article, category } = await generateArticle(existingTitles);
+      const category = pickNextCategory(lastPublished);
+      console.log(`Category: ${category}`);
+      const { article } = await generateArticle(existingTitles, category);
       console.log(`Title: ${article.title}`);
       console.log(`Slug:  ${article.slug}`);
 
@@ -321,6 +355,7 @@ async function run() {
 
       console.log(`Saved: "${saved.title}" (${saved.slug})`);
       existingTitles.unshift(saved.title);
+      lastPublished[category] = new Date().toISOString();
 
       // Trigger autopost via Vercel route (FB + LINE + state tracking)
       await triggerAutopost(saved.slug);

@@ -15,6 +15,7 @@ import {
   runAutopostRetry,
   type AutopostPlatform,
 } from "@/app/api/autopost/retry/route";
+import { autopostNewsItem } from "@/lib/news-autopost";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -39,6 +40,28 @@ export async function GET(request: Request) {
 
   const supabase = createAdminClient();
 
+  // Admin-authored news_items (product_update / exam) whose published_at has
+  // arrived but FB/LINE delivery hasn't gone out yet — e.g. items scheduled
+  // for later at creation time, or ones a prior attempt errored on.
+  const { data: dueNews } = await supabase
+    .from("news_items")
+    .select("id")
+    .in("source_type", ["product_update", "exam"])
+    .lte("published_at", new Date().toISOString())
+    .or("fb_post_id.is.null,line_broadcast_at.is.null")
+    .order("published_at", { ascending: true })
+    .limit(5);
+
+  const newsResults: Array<{ id: string; fb: string; line: string }> = [];
+  for (const row of dueNews ?? []) {
+    try {
+      const result = await autopostNewsItem(row.id);
+      newsResults.push({ id: row.id, ...result });
+    } catch (err) {
+      newsResults.push({ id: row.id, fb: `error:${String(err).slice(0, 100)}`, line: "skipped" });
+    }
+  }
+
   const { data: pending, error } = await supabase
     .from("scheduled_autoposts")
     .select("id, slug, platform")
@@ -51,7 +74,11 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
   if (!pending?.length) {
-    return NextResponse.json({ processed: 0, message: "No pending scheduled posts" });
+    return NextResponse.json({
+      processed: 0,
+      message: "No pending scheduled posts",
+      news: newsResults,
+    });
   }
 
   const results: Array<{ id: string; status: string; detail?: string }> = [];
@@ -100,5 +127,5 @@ export async function GET(request: Request) {
     }
   }
 
-  return NextResponse.json({ processed: results.length, results });
+  return NextResponse.json({ processed: results.length, results, news: newsResults });
 }

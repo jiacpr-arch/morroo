@@ -15,6 +15,7 @@ import {
   Trash2,
   Pin,
   PinOff,
+  Send,
 } from "lucide-react";
 
 interface NewsRow {
@@ -26,6 +27,16 @@ interface NewsRow {
   link: string | null;
   published_at: string;
   pinned: boolean;
+  fb_post_id: string | null;
+  fb_last_error: string | null;
+  line_broadcast_at: string | null;
+  line_last_error: string | null;
+}
+
+function statusBadge(sent: boolean, error: string | null): { label: string; className: string } {
+  if (sent) return { label: "ส่งแล้ว", className: "bg-green-100 text-green-700" };
+  if (error) return { label: "ผิดพลาด", className: "bg-red-100 text-red-700" };
+  return { label: "ยังไม่ส่ง", className: "bg-muted text-muted-foreground" };
 }
 
 const TYPE_LABEL: Record<NewsRow["source_type"], string> = {
@@ -89,6 +100,13 @@ export default function AdminNewsPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ pinned: !item.pinned }),
     });
+    await load();
+    setBusy(null);
+  }
+
+  async function resend(item: NewsRow) {
+    setBusy(item.id);
+    await fetch(`/api/admin/news/${item.id}`, { method: "POST" });
     await load();
     setBusy(null);
   }
@@ -171,6 +189,24 @@ export default function AdminNewsPage() {
                     <span className="text-xs text-muted-foreground">
                       {new Date(item.published_at).toLocaleDateString("th-TH")}
                     </span>
+                    {item.source_type !== "blog" && item.source_type !== "external_health" && (
+                      <>
+                        {(() => {
+                          const fb = statusBadge(!!item.fb_post_id, item.fb_last_error);
+                          const line = statusBadge(!!item.line_broadcast_at, item.line_last_error);
+                          return (
+                            <>
+                              <Badge className={fb.className} title={item.fb_last_error ?? undefined}>
+                                FB: {fb.label}
+                              </Badge>
+                              <Badge className={line.className} title={item.line_last_error ?? undefined}>
+                                LINE: {line.label}
+                              </Badge>
+                            </>
+                          );
+                        })()}
+                      </>
+                    )}
                   </div>
                   <p className="font-semibold">{item.title}</p>
                   <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
@@ -178,6 +214,16 @@ export default function AdminNewsPage() {
                   </p>
                 </div>
                 <div className="flex gap-2 sm:flex-col sm:items-end">
+                  {item.source_type !== "blog" && item.source_type !== "external_health" && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      disabled={busy === item.id}
+                      onClick={() => resend(item)}
+                    >
+                      <Send className="mr-1 h-4 w-4" /> ส่งอีกครั้ง
+                    </Button>
+                  )}
                   <Button
                     size="sm"
                     variant="outline"

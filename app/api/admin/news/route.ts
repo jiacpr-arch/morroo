@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { autopostNewsItem } from "@/lib/news-autopost";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 const ALLOWED_TYPES = ["product_update", "exam"] as const;
 const ALLOWED_SECTIONS = [
@@ -58,6 +60,7 @@ export async function POST(request: Request) {
     cover_image?: string | null;
     pinned?: boolean;
     published_at?: string;
+    notify_members?: boolean;
   };
   try {
     body = await request.json();
@@ -109,5 +112,19 @@ export async function POST(request: Request) {
     .select()
     .single();
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ item: data });
+
+  // Notify members immediately when the item is already published (default
+  // on) and it isn't scheduled for later — future-dated items get picked up
+  // by /api/cron/autopost-scheduled instead.
+  const notify = body.notify_members !== false;
+  let autopost: Awaited<ReturnType<typeof autopostNewsItem>> | null = null;
+  if (notify && data && new Date(data.published_at) <= new Date()) {
+    try {
+      autopost = await autopostNewsItem(data.id);
+    } catch (err) {
+      console.error("[admin/news] autopost failed:", err);
+    }
+  }
+
+  return NextResponse.json({ item: data, autopost });
 }

@@ -645,6 +645,22 @@
   color: var(--cbs-teal); font-weight: 700; text-decoration: underline;
 }
 
+/* บาร์ลอยติดล่างจอ — ย้ำ CTA เดียวกับ .cbs-browse-cta ด้านล่าง แต่ลอยตลอด
+   จนกว่าจะเลื่อนไปเห็นปุ่มจริง (ดูเหตุผลใน DebriefSignupCta.tsx) */
+.cbs-sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, rgba(13, 26, 36, 0), rgba(13, 26, 36, .92) 40%);
+  animation: cbs-sticky-in .25s ease-out both;
+}
+.cbs-sticky-cta-btn {
+  max-width: 480px; margin: 0 auto; font-size: 15px; padding: 13px;
+}
+@keyframes cbs-sticky-in {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 /* เหตุผลใต้หัวข้อ CTA — บอกว่าสมัครแล้วได้อะไรทันที ไม่ใช่แค่ "สมัครสมาชิก" ลอยๆ */
 .cbs-cta-reason {
   font-size: 13px; line-height: 1.6; color: var(--cbs-dim); text-align: center;
@@ -672,7 +688,8 @@
   .cbs-shake, .cbs-flash.cbs-go, .cbs-redflash.cbs-go,
   .cbs-title::before, .cbs-stage.cbs-drama::before, .cbs-stage.cbs-drama-red::before,
   .cbs-inter-burst, .cbs-adv-caret, .cbs-choice, .cbs-sprite.cbs-pop,
-  .cbs-inter-bubble, .cbs-stamp, .cbs-tap-coach-ring, .cbs-retry-banner {
+  .cbs-inter-bubble, .cbs-stamp, .cbs-tap-coach-ring, .cbs-retry-banner,
+  .cbs-sticky-cta {
     animation: none !important;
   }
   /* วงแหวนไม่กะพริบแล้ว ต้องคงให้เห็นอยู่ ไม่งั้นคำใบ้หายไปครึ่งหนึ่ง */

@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { autopostNewsItem } from "@/lib/news-autopost";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 async function requireAdmin(): Promise<NextResponse | null> {
   const supabase = await createClient();
@@ -63,6 +65,18 @@ export async function PATCH(
     .single();
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ item: data });
+}
+
+/** Resend to whichever of FB/LINE hasn't posted successfully yet. */
+export async function POST(
+  _request: Request,
+  context: { params: Promise<{ id: string }> },
+) {
+  const denied = await requireAdmin();
+  if (denied) return denied;
+  const { id } = await context.params;
+  const autopost = await autopostNewsItem(id);
+  return NextResponse.json({ autopost });
 }
 
 export async function DELETE(

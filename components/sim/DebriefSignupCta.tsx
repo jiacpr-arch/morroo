@@ -91,6 +91,12 @@ export default function DebriefSignupCta({
   const [variant, setVariant] = useState<CtaVariant | null>(null);
   const [inApp, setInApp] = useState<"facebook" | "instagram" | "line" | null>(null);
   const [copied, setCopied] = useState(false);
+  // ปุ่มจริงอยู่ใต้การ์ดผลลัพธ์ (grade/metrics/rank ด้านบน) — บนมือถือมักหลุดจอ
+  // แรก ผู้เล่นเลื่อนไม่ถึง (2026-09-17: casegame_cta_view ~ เท่าจำนวนคนเล่นจบ
+  // แต่ casegame_cta_click แค่ ~4%) บาร์ลอยนี้ทำหน้าที่เดียวกัน โผล่จนกว่าจะ
+  // เลื่อนมาเห็นปุ่มจริง แล้วซ่อนไปเพื่อไม่ให้มีปุ่ม LINE สองอันซ้อนกันบนจอ
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const [stickyVisible, setStickyVisible] = useState(true);
 
   // ตรวจ in-app browser + resolve variant ใน effect เท่านั้น (server ไม่มี
   // userAgent ให้ตรวจ) — ไม่ render CTA จนกว่าจะ resolve เพื่อกันจอกระพริบ
@@ -105,6 +111,18 @@ export default function DebriefSignupCta({
       setVariant("line_login");
     }
   }, []);
+
+  useEffect(() => {
+    if (!variant) return;
+    const el = panelRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setStickyVisible(!entry.isIntersecting),
+      { threshold: 0.3 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [variant]);
 
   const viewedRunRef = useRef("");
   useEffect(() => {
@@ -154,67 +172,87 @@ export default function DebriefSignupCta({
       : "แอดแล้วกดส่งข้อความที่พิมพ์ไว้ให้ — บอทส่งโค้ด Premium ฟรี 1 เดือนทันที";
   const oaUrl = lineOaTrialUrl({ slug, grade });
   const registerHref = `/register?next=${encodeURIComponent(`/sim/${slug}`)}`;
+  const primaryHref =
+    variant === "line_login"
+      ? `/api/auth/line?mode=register&next=${encodeURIComponent(`/sim/${slug}`)}`
+      : oaUrl;
+  const primaryLabel =
+    variant === "line_login" ? "เข้าสู่ระบบด้วย LINE — เก็บผลนี้ไว้" : "แอด LINE รับโค้ด Premium ฟรี 1 เดือน";
 
   return (
-    <div className="cbs-browse-cta">
-      <p className="cbs-browse-title">{title}</p>
-      <p className="cbs-cta-reason">{reason}</p>
-
-      {variant === "line_login" && (
-        <a
-          className="cbs-line-btn cbs-cta-primary"
-          // next= พากลับเข้าเคสเดิม เพื่อให้ claimPendingLocalRuns ยกประวัติเข้า
-          // บัญชีทันทีที่กลับมา ไม่ต้องรอเล่นจบอีกรอบ
-          href={`/api/auth/line?mode=register&next=${encodeURIComponent(`/sim/${slug}`)}`}
-          onClick={() => handleClick("line_login", true)}
-        >
-          <LineGlyph /> เข้าสู่ระบบด้วย LINE — เก็บผลนี้ไว้
-        </a>
+    <>
+      {stickyVisible && (
+        <div className="cbs-sticky-cta">
+          <a
+            className="cbs-line-btn cbs-sticky-cta-btn"
+            href={primaryHref}
+            {...(variant !== "line_login" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            onClick={() => handleClick(variant === "line_login" ? "line_login_sticky" : "line_trial_sticky", true)}
+          >
+            <LineGlyph /> {primaryLabel}
+          </a>
+        </div>
       )}
+      <div className="cbs-browse-cta" ref={panelRef}>
+        <p className="cbs-browse-title">{title}</p>
+        <p className="cbs-cta-reason">{reason}</p>
 
-      {variant !== "line_login" && (
-        <a
-          className="cbs-line-btn cbs-cta-primary"
-          href={oaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => handleClick("line_trial", true)}
-        >
-          <LineGlyph /> แอด LINE รับโค้ด Premium ฟรี 1 เดือน
-        </a>
-      )}
-
-      {variant === "line_oa_inapp" && (
-        <p className="cbs-iab-hint">
-          อยากล็อกอินด้วย LINE? เปิดหน้านี้ใน Safari/Chrome (กดเมนู ⋯){" "}
-          <button type="button" className="cbs-iab-copy" onClick={copyLink}>
-            {copied ? "คัดลอกลิงก์แล้ว" : "คัดลอกลิงก์"}
-          </button>
-        </p>
-      )}
-
-      <p className="cbs-cta-secondary">
-        มีบัญชีแล้ว?{" "}
-        <Link href="/login" onClick={() => handleClick("login")}>เข้าสู่ระบบ</Link>
-        {" · "}
-        <Link href={registerHref} onClick={() => handleClick("register")}>สมัครด้วย Google/อีเมล</Link>
-        {" · "}
         {variant === "line_login" && (
-          <>
-            <a href={oaUrl} target="_blank" rel="noopener noreferrer" onClick={() => handleClick("line_trial")}>
-              แอด LINE รับโค้ดทดลอง
-            </a>
-            {" · "}
-          </>
+          <a
+            className="cbs-line-btn cbs-cta-primary"
+            // next= พากลับเข้าเคสเดิม เพื่อให้ claimPendingLocalRuns ยกประวัติเข้า
+            // บัญชีทันทีที่กลับมา ไม่ต้องรอเล่นจบอีกรอบ
+            href={`/api/auth/line?mode=register&next=${encodeURIComponent(`/sim/${slug}`)}`}
+            onClick={() => handleClick("line_login", true)}
+          >
+            <LineGlyph /> เข้าสู่ระบบด้วย LINE — เก็บผลนี้ไว้
+          </a>
         )}
-        <Link href={link.href} className="cbs-browse-link" onClick={() => handleClick(link.target)}>
-          {link.label}
-        </Link>
-      </p>
 
-      <p className="cbs-login-hint">
-        ระบบจะยกเคสที่คุณเล่นไว้ในเครื่องนี้เข้าบัญชีให้ พร้อม XP และยศ
-      </p>
-    </div>
+        {variant !== "line_login" && (
+          <a
+            className="cbs-line-btn cbs-cta-primary"
+            href={oaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => handleClick("line_trial", true)}
+          >
+            <LineGlyph /> แอด LINE รับโค้ด Premium ฟรี 1 เดือน
+          </a>
+        )}
+
+        {variant === "line_oa_inapp" && (
+          <p className="cbs-iab-hint">
+            อยากล็อกอินด้วย LINE? เปิดหน้านี้ใน Safari/Chrome (กดเมนู ⋯){" "}
+            <button type="button" className="cbs-iab-copy" onClick={copyLink}>
+              {copied ? "คัดลอกลิงก์แล้ว" : "คัดลอกลิงก์"}
+            </button>
+          </p>
+        )}
+
+        <p className="cbs-cta-secondary">
+          มีบัญชีแล้ว?{" "}
+          <Link href="/login" onClick={() => handleClick("login")}>เข้าสู่ระบบ</Link>
+          {" · "}
+          <Link href={registerHref} onClick={() => handleClick("register")}>สมัครด้วย Google/อีเมล</Link>
+          {" · "}
+          {variant === "line_login" && (
+            <>
+              <a href={oaUrl} target="_blank" rel="noopener noreferrer" onClick={() => handleClick("line_trial")}>
+                แอด LINE รับโค้ดทดลอง
+              </a>
+              {" · "}
+            </>
+          )}
+          <Link href={link.href} className="cbs-browse-link" onClick={() => handleClick(link.target)}>
+            {link.label}
+          </Link>
+        </p>
+
+        <p className="cbs-login-hint">
+          ระบบจะยกเคสที่คุณเล่นไว้ในเครื่องนี้เข้าบัญชีให้ พร้อม XP และยศ
+        </p>
+      </div>
+    </>
   );
 }

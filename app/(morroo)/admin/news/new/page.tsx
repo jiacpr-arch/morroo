@@ -11,6 +11,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { createClient } from "@/lib/supabase/client";
 import { ChevronLeft, Loader2, Shield } from "lucide-react";
 
+function describeAutopostStatus(status: string): string {
+  if (status.startsWith("posted:") || status === "sent") return "✅ ส่งแล้ว";
+  if (status === "already_posted" || status === "already_sent") return "✅ ส่งไปแล้วก่อนหน้านี้";
+  if (status === "skipped:LINE_AUTOPOST_ENABLED!=true") return "⏭️ ปิดการส่ง LINE อัตโนมัติไว้";
+  if (status === "skipped") return "⏭️ ข้าม";
+  if (status.startsWith("error:")) return `❌ ผิดพลาด: ${status.slice(6)}`;
+  return status;
+}
+
 export default function NewNewsItemPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
@@ -28,6 +37,10 @@ export default function NewNewsItemPage() {
   const [link, setLink] = useState("");
   const [coverImage, setCoverImage] = useState("");
   const [pinned, setPinned] = useState(false);
+  const [notifyMembers, setNotifyMembers] = useState(true);
+  const [autopostResult, setAutopostResult] = useState<{ fb: string; line: string } | null>(
+    null,
+  );
 
   useEffect(() => {
     async function init() {
@@ -70,12 +83,18 @@ export default function NewNewsItemPage() {
         link: link || null,
         cover_image: coverImage || null,
         pinned,
+        notify_members: notifyMembers,
       }),
     });
     setSubmitting(false);
     if (!res.ok) {
       const json = await res.json().catch(() => ({}));
       setError(json.error ?? "เกิดข้อผิดพลาด");
+      return;
+    }
+    const json = await res.json().catch(() => ({}));
+    if (json.autopost) {
+      setAutopostResult(json.autopost);
       return;
     }
     router.push("/admin/news");
@@ -110,6 +129,18 @@ export default function NewNewsItemPage() {
 
       <Card>
         <CardContent className="py-6">
+          {autopostResult ? (
+            <div className="space-y-4">
+              <p className="font-medium">บันทึกข่าวแล้ว ✅</p>
+              <ul className="space-y-1 text-sm">
+                <li>Facebook: {describeAutopostStatus(autopostResult.fb)}</li>
+                <li>LINE: {describeAutopostStatus(autopostResult.line)}</li>
+              </ul>
+              <div className="flex justify-end">
+                <Button onClick={() => router.push("/admin/news")}>เสร็จสิ้น</Button>
+              </div>
+            </div>
+          ) : (
           <form onSubmit={submit} className="space-y-4">
             <div>
               <Label>ประเภท</Label>
@@ -216,6 +247,15 @@ export default function NewNewsItemPage() {
               ปักหมุดบนสุดของ /news
             </label>
 
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={notifyMembers}
+                onChange={(e) => setNotifyMembers(e.target.checked)}
+              />
+              แจ้งสมาชิกทาง LINE + Facebook
+            </label>
+
             {error && (
               <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
                 {error}
@@ -234,6 +274,7 @@ export default function NewNewsItemPage() {
               </Button>
             </div>
           </form>
+          )}
         </CardContent>
       </Card>
     </div>

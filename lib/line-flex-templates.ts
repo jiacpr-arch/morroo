@@ -107,6 +107,8 @@ interface BlogAnnounceData {
   description: string;
   url: string;
   coverImage: string | null;
+  /** "blog" (default) → "บทความใหม่" / "อ่านบทความ"; "news" → "ข่าวใหม่" / "อ่านข่าว". */
+  kind?: "blog" | "news";
 }
 
 export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
@@ -114,10 +116,11 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
     data.description.length > 60
       ? data.description.slice(0, 57).trimEnd() + "…"
       : data.description;
+  const isNews = data.kind === "news";
 
   return {
     type: "flex",
-    altText: `บทความใหม่: ${data.title}`,
+    altText: isNews ? `ข่าวใหม่: ${data.title}` : `บทความใหม่: ${data.title}`,
     contents: {
       type: "bubble",
       size: "kilo",
@@ -178,7 +181,7 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
             style: "secondary",
             action: {
               type: "uri",
-              label: "อ่านบทความ",
+              label: isNews ? "อ่านข่าว" : "อ่านบทความ",
               uri: data.url,
             },
           },
