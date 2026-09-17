@@ -74,7 +74,10 @@ blog:
 
 mcq:
   rules: [{ if: '$JOB == "mcq"' }]
-  timeout: 15m
+  # Sonnet 5's adaptive thinking + the larger detailed_explanation schema
+  # made a full run take ~7-10m in testing (was near-instant on Haiku) —
+  # padded well past that.
+  timeout: 25m
   script:
     - node scripts/generate-mcq-daily.mjs
 
@@ -116,6 +119,19 @@ longcase:
   timeout: 15m
   script:
     - node scripts/generate-longcase-weekly.mjs
+
+# One-off: write detailed_explanation for active MCQs that only have a short
+# explanation (Batch API, ~$0.01/question). Run once with MODE=submit, then
+# again with MODE=collect after the batch ends (minutes to hours). See the
+# script header for LIMIT / MODEL.
+backfill-mcq-explanations:
+  rules: [{ if: '$JOB == "backfill-mcq-explanations"' }]
+  timeout: 20m
+  variables:
+    MODE: "auto"
+    LIMIT: ""
+  script:
+    - node scripts/backfill-mcq-explanations.mjs
 
 backfill-blog-covers:
   rules: [{ if: '$JOB == "backfill-blog-covers"' }]

@@ -10,7 +10,7 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
-import { generateWithTool, resolveEasyMediumProvider } from "./lib/llm.mjs";
+import { generateWithTool, resolveEasyMediumProvider, CLAUDE_DEFAULT_MODEL } from "./lib/llm.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -61,7 +61,11 @@ const QUESTION_TOOL = {
         items: {
           type: "object",
           properties: {
-            scenario: { type: "string", description: "โจทย์สถานการณ์" },
+            scenario: {
+              type: "string",
+              description:
+                "โจทย์สถานการณ์ผู้ป่วย เขียนด้วยภาษาไทยทางคลินิกที่อ่านลื่นเหมือนข้อสอบจริง (อายุ เพศ อาการสำคัญ ประวัติ ตรวจร่างกาย ผลตรวจที่จำเป็น) ปิดท้ายด้วยคำถามที่ชัดเจน",
+            },
             choices: {
               type: "array",
               items: {
@@ -74,32 +78,52 @@ const QUESTION_TOOL = {
               },
             },
             correct_answer: { type: "string", enum: ["A", "B", "C", "D", "E"] },
-            explanation: { type: "string", description: "สรุปสั้นๆ ว่าทำไมคำตอบนี้ถูก" },
+            explanation: {
+              type: "string",
+              description:
+                "เฉลยหลัก 2-3 ประโยค: คำตอบที่ถูกคืออะไร และเหตุผลสำคัญที่สุด (ไม่ใช่สรุปสั้นบรรทัดเดียว)",
+            },
             detailed_explanation: {
               type: "object",
               properties: {
-                summary: { type: "string" },
-                reason: { type: "string" },
+                summary: { type: "string", description: "1 ประโยค: คำตอบที่ถูกคืออะไร" },
+                reason: {
+                  type: "string",
+                  description:
+                    "เหตุผลโดยละเอียดอย่างน้อย 3 ประโยค: key finding ในโจทย์ → พยาธิสรีรวิทยา/หลักการ → ทำไมนำไปสู่คำตอบนี้",
+                },
                 choices: {
                   type: "array",
+                  description: "ครบทุกตัวเลือก A-E",
                   items: {
                     type: "object",
                     properties: {
                       label: { type: "string" },
                       text: { type: "string" },
                       is_correct: { type: "boolean" },
-                      explanation: { type: "string" },
+                      explanation: {
+                        type: "string",
+                        description:
+                          "อย่างน้อย 2 ประโยค: ตัวเลือกนี้คืออะไร และทำไมถูก/ผิดสำหรับผู้ป่วยรายนี้โดยเฉพาะ",
+                      },
                     },
                     required: ["label", "text", "is_correct", "explanation"],
                   },
                 },
-                key_takeaway: { type: "string" },
+                key_takeaway: { type: "string", description: "1-2 ประโยค high-yield ที่ควรจำไปสอบ" },
               },
               required: ["summary", "reason", "choices", "key_takeaway"],
             },
             difficulty: { type: "string", enum: ["easy", "medium", "hard"] },
           },
-          required: ["scenario", "choices", "correct_answer", "explanation", "difficulty"],
+          required: [
+            "scenario",
+            "choices",
+            "correct_answer",
+            "explanation",
+            "detailed_explanation",
+            "difficulty",
+          ],
         },
       },
     },
@@ -115,11 +139,11 @@ function buildPrompt(subjectNameTh, count, difficultyInstruction, existingCount)
 กฎ:
 1. แต่ละข้อต้องมี scenario ที่มีรายละเอียดเพียงพอ เช่น อายุ เพศ อาการ ผลตรวจ
 2. ตัวเลือก 5 ข้อ (A-E) plausible ทั้งหมด
-3. คำตอบถูกอิง evidence-based medicine
-4. detailed_explanation ต้องอธิบายแต่ละตัวเลือกว่าทำไมถูกหรือผิด
+3. คำตอบถูกอิง evidence-based medicine และแนวทางที่ใช้ในประเทศไทย
+4. detailed_explanation ต้องมีครบทุกข้อ: reason อย่างน้อย 3 ประโยค, อธิบายทุกตัวเลือกอย่างน้อย 2 ประโยคว่าทำไมถูก/ผิดในบริบทผู้ป่วยรายนี้, key_takeaway ที่ควรจำไปสอบ
 5. ${difficultyInstruction}
 6. ห้ามซ้ำกับข้อสอบเดิม (ปัจจุบันมี ${existingCount} ข้อในสาขานี้)
-7. ภาษาไทยหรืออังกฤษตามความเหมาะสมของเนื้อหาทางการแพทย์
+7. ภาษา: โจทย์และเฉลยเป็นภาษาไทยทางคลินิกที่อ่านลื่นเหมือนข้อสอบจริง ศัพท์แพทย์ใช้ภาษาอังกฤษในวงเล็บ (เช่น จุดเลือดออกใต้ผิวหนัง (petechiae)) ห้ามแปลศัพท์เทคนิคแบบแข็งๆ หรือประโยคที่คนไทยไม่พูด
 8. ทุกข้อต้องเหมาะสมกับระดับ NL Step 2`;
 }
 
@@ -186,14 +210,26 @@ async function run() {
   );
 
   const easyMediumTarget = resolveEasyMediumProvider();
+  const hardTarget = { provider: "anthropic", model: CLAUDE_DEFAULT_MODEL };
   console.log(
-    `easy/medium → ${easyMediumTarget.provider}:${easyMediumTarget.model}, hard → anthropic:claude-sonnet-4-6`
+    `easy/medium → ${easyMediumTarget.provider}:${easyMediumTarget.model}, hard → ${hardTarget.provider}:${hardTarget.model}`
   );
   console.log("Calling easy (6q) + medium (15q) + hard (9q) in parallel...");
   const [easyResult, mediumResult, hardResult] = await Promise.allSettled([
-    generateQuestions("easy", easyMediumTarget, 16000, haikuEasyPrompt),
-    generateQuestions("medium", easyMediumTarget, 32000, haikuMediumPrompt),
-    generateQuestions("hard", { provider: "anthropic", model: "claude-sonnet-4-6" }, 24000, sonnetPrompt),
+    // Sonnet 5 runs adaptive thinking by default, which shares the same
+    // max_tokens budget as the visible output — a live test run showed 15q
+    // at 32000 and 9q at 24000 both hitting the limit mid-tool-call (now
+    // that required detailed_explanation makes each question much larger,
+    // thinking + JSON output together need more headroom than Haiku/Sonnet
+    // 4.6 ever did). Streaming (see llm.mjs) means a bigger ceiling costs
+    // nothing but avoided truncation — billing is by tokens actually used.
+    generateQuestions("easy", easyMediumTarget, 24000, haikuEasyPrompt),
+    generateQuestions("medium", easyMediumTarget, 64000, haikuMediumPrompt),
+    // Hard still truncated at 48000 in testing despite having fewer
+    // questions than medium (9 vs 15) — "clinical reasoning ซับซ้อน" pulls
+    // more adaptive-thinking tokens per question than medium's more
+    // straightforward cases. Matches medium's ceiling.
+    generateQuestions("hard", hardTarget, 64000, sonnetPrompt),
   ]);
 
   const allQuestions = [];
@@ -249,8 +285,23 @@ async function run() {
   }
 
   if (process.env.DRY_RUN) {
-    console.log(`[dry-run] would insert ${validQuestions.length} questions — sample:`);
-    console.log(JSON.stringify(validQuestions[0], null, 2).slice(0, 2000));
+    // Print enough to judge quality from the CI log: every stem, plus the
+    // first question of each difficulty in full.
+    console.log(`[dry-run] would insert ${validQuestions.length} questions (nothing written).`);
+    const missingDetailed = validQuestions.filter((q) => !q.detailed_explanation).length;
+    console.log(`[dry-run] missing detailed_explanation: ${missingDetailed}`);
+    for (const q of validQuestions) {
+      const choiceExpl = q.detailed_explanation?.choices?.map((c) => c.explanation?.length ?? 0) ?? [];
+      console.log(
+        `[dry-run] ${q.difficulty.padEnd(6)} | expl ${String(q.explanation?.length ?? 0).padStart(4)} ch | reason ${String(q.detailed_explanation?.reason?.length ?? 0).padStart(4)} ch | choices ${choiceExpl.join("/")} ch | ${q.scenario.replace(/\s+/g, " ").slice(0, 140)}`
+      );
+    }
+    for (const level of ["easy", "medium", "hard"]) {
+      const sample = validQuestions.find((q) => q.difficulty === level);
+      if (!sample) continue;
+      console.log(`\n[dry-run] ===== full sample: ${level} =====`);
+      console.log(JSON.stringify(sample, null, 2));
+    }
     return;
   }
 
