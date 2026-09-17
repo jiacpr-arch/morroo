@@ -48,11 +48,20 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !process.env.ANTHROPIC_API_KE
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 const anthropic = new Anthropic();
 
+// strict: true (+ additionalProperties: false on every object level, and
+// every property listed in `required`) makes the API validate tool_use.input
+// against this schema before returning it — the live batch run below found
+// stop_reason="tool_use" is not enough on its own: 238/1000 calls completed
+// "successfully" but silently omitted a required field (usually
+// key_takeaway or one choice's explanation), with no error to catch. Strict
+// mode turns that into a guarantee instead of a probability.
 const TOOL = {
   name: "write_detailed_explanation",
   description: "เขียนเฉลยละเอียดสำหรับข้อสอบ MCQ หนึ่งข้อ",
+  strict: true,
   input_schema: {
     type: "object",
+    additionalProperties: false,
     properties: {
       explanation: {
         type: "string",
@@ -61,6 +70,7 @@ const TOOL = {
       },
       detailed_explanation: {
         type: "object",
+        additionalProperties: false,
         properties: {
           summary: { type: "string", description: "1 ประโยค: คำตอบที่ถูกคืออะไร" },
           reason: {
@@ -73,6 +83,7 @@ const TOOL = {
             description: "ครบทุกตัวเลือกตามลำดับ A-E",
             items: {
               type: "object",
+              additionalProperties: false,
               properties: {
                 label: { type: "string" },
                 text: { type: "string" },
@@ -96,10 +107,10 @@ const TOOL = {
       answer_concern: {
         type: "string",
         description:
-          "เว้นว่างถ้าเห็นด้วยกับคำตอบที่ให้มา ถ้าไม่เห็นด้วยให้อธิบายสั้นๆ ว่าคิดว่าคำตอบควรเป็นข้อใดเพราะอะไร (ห้ามเปลี่ยนคำตอบเอง)",
+          "เว้นว่างถ้าเห็นด้วยกับคำตอบที่ให้มา ถ้าไม่เห็นด้วยให้อธิบายสั้นๆ ว่าคิดว่าคำตอบควรเป็นข้อใดเพราะอะไร (ห้ามเปลี่ยนคำตอบเอง) — ต้องส่งฟิลด์นี้เสมอ ใส่สตริงว่างถ้าไม่มีข้อกังวล",
       },
     },
-    required: ["explanation", "detailed_explanation"],
+    required: ["explanation", "detailed_explanation", "answer_concern"],
   },
 };
 

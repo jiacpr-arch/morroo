@@ -50,16 +50,26 @@ const SUBJECTS_ROTATION = [
   { name: "endocrine_ped", name_th: "กุมารเวช ต่อมไร้ท่อ" },
 ];
 
+// strict: true (+ additionalProperties: false on every object level — every
+// property here is already listed in its `required`, so no other change
+// needed) makes the API validate/constrain every question in the batch
+// against this schema. A live backfill run using the sibling per-question
+// tool without strict found 23.8% of calls completed normally (stop_reason
+// "tool_use", no error) while silently omitting a required field — strict
+// mode is the fix, not more retries or a bigger max_tokens.
 const QUESTION_TOOL = {
   name: "submit_mcq_questions",
   description: "Submit a batch of generated MCQ questions",
+  strict: true,
   input_schema: {
     type: "object",
+    additionalProperties: false,
     properties: {
       questions: {
         type: "array",
         items: {
           type: "object",
+          additionalProperties: false,
           properties: {
             scenario: {
               type: "string",
@@ -70,6 +80,7 @@ const QUESTION_TOOL = {
               type: "array",
               items: {
                 type: "object",
+                additionalProperties: false,
                 properties: {
                   label: { type: "string", enum: ["A", "B", "C", "D", "E"] },
                   text: { type: "string" },
@@ -85,6 +96,7 @@ const QUESTION_TOOL = {
             },
             detailed_explanation: {
               type: "object",
+              additionalProperties: false,
               properties: {
                 summary: { type: "string", description: "1 ประโยค: คำตอบที่ถูกคืออะไร" },
                 reason: {
@@ -97,6 +109,7 @@ const QUESTION_TOOL = {
                   description: "ครบทุกตัวเลือก A-E",
                   items: {
                     type: "object",
+                    additionalProperties: false,
                     properties: {
                       label: { type: "string" },
                       text: { type: "string" },
