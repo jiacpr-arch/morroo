@@ -104,10 +104,18 @@ const TOOL = {
         },
         required: ["summary", "reason", "choices", "key_takeaway"],
       },
+      // strict:true requires every property to be listed in `required`, but
+      // a field that's genuinely optional still needs a clean "nothing to
+      // say" value: nullable + required, not a plain optional string. Tested
+      // the plain-string version live on 30 rows — forced to always emit
+      // *something*, the model didn't reliably use "" for "no concern" and
+      // instead wrote the same ~18-character garbage placeholder (an XML
+      // closing-tag-shaped string, unrelated to any real question content)
+      // on 29 of them. Nullable removes the pressure to invent a value.
       answer_concern: {
-        type: "string",
+        type: ["string", "null"],
         description:
-          "เว้นว่างถ้าเห็นด้วยกับคำตอบที่ให้มา ถ้าไม่เห็นด้วยให้อธิบายสั้นๆ ว่าคิดว่าคำตอบควรเป็นข้อใดเพราะอะไร (ห้ามเปลี่ยนคำตอบเอง) — ต้องส่งฟิลด์นี้เสมอ ใส่สตริงว่างถ้าไม่มีข้อกังวล",
+          "null ถ้าเห็นด้วยกับคำตอบที่ให้มา ถ้าไม่เห็นด้วยให้อธิบายสั้นๆ ว่าคิดว่าคำตอบควรเป็นข้อใดเพราะอะไร (ห้ามเปลี่ยนคำตอบเอง)",
       },
     },
     required: ["explanation", "detailed_explanation", "answer_concern"],
