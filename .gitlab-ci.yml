@@ -24,7 +24,15 @@ workflow:
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $JOB'
     - if: '$CI_PIPELINE_SOURCE == "web" && $JOB'
     - if: '$CI_PIPELINE_SOURCE == "api" && $JOB'
-    - when: always # ordinary push/MR — see the `no-op` job below
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    # Avoid GitLab's classic duplicate-pipeline flake (gitlab-org/gitlab-foss#33063):
+    # when a branch has an open MR, a plain push would otherwise ALSO spawn a
+    # branch pipeline for the same commit alongside the merge-request one —
+    # GitLab then randomly marks one of the two "failed" with 0 jobs. Skip the
+    # push pipeline whenever an MR pipeline will run instead.
+    - if: '$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS'
+      when: never
+    - if: '$CI_COMMIT_BRANCH' # ordinary push with no open MR — see the `no-op` job below
 
 default:
   image: node:20
