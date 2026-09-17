@@ -191,6 +191,38 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
   };
 }
 
+/** Max bubbles LINE allows in one Flex carousel. */
+export const BLOG_DIGEST_MAX_POSTS = 10;
+
+export interface BlogDigestPost {
+  title: string;
+  description: string;
+  url: string;
+  coverImage: string | null;
+}
+
+/**
+ * One carousel holding every article from the past week — sent once on
+ * Monday instead of a broadcast per article, so followers get 1 LINE
+ * message a week for blog content rather than 7. Bubbles reuse
+ * buildBlogAnnounceFlex so each card looks identical to the old per-article
+ * announce (all "kilo" size, which a carousel requires to be uniform).
+ */
+export function buildBlogDigestCarousel(posts: BlogDigestPost[]): LineMessage {
+  const bubbles = posts
+    .slice(0, BLOG_DIGEST_MAX_POSTS)
+    .map((p) => buildBlogAnnounceFlex(p))
+    .flatMap((m) => (m.type === "flex" ? [m.contents] : []));
+  return {
+    type: "flex",
+    altText: truncateText(
+      `📚 บทความใหม่สัปดาห์นี้ ${bubbles.length} เรื่อง — เทคนิคสอบแพทย์จากหมอรู้`,
+      ALT_TEXT_MAX,
+    ),
+    contents: { type: "carousel", contents: bubbles },
+  };
+}
+
 interface ExpiryWarningData {
   name: string;
   expiresAt: Date;

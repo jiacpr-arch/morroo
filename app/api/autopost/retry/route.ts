@@ -162,7 +162,7 @@ async function ensureCarouselSlides(
  * cover image URL. LINE Flex hero requires JPEG/PNG ≤1024px wide;
  * gpt-image-1 PNG at 1024×1024 sometimes exceeds 1MB and uses 1:1 aspect.
  */
-async function ensureLineCover(
+export async function ensureLineCover(
   supabase: ReturnType<typeof createAdminClient>,
   slug: string,
   coverImage: string,

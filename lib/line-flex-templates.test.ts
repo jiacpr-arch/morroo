@@ -7,6 +7,8 @@ import {
   buildCasegameTeaserBubble,
   buildWeekRecapBubble,
   buildBlogAnnounceFlex,
+  buildBlogDigestCarousel,
+  BLOG_DIGEST_MAX_POSTS,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
 
@@ -197,5 +199,37 @@ describe("buildBlogAnnounceFlex", () => {
     if (flex.type !== "flex") throw new Error("expected flex message");
     expect(flex.altText).toContain("ข่าวใหม่");
     expect(JSON.stringify(flex.contents)).toContain("อ่านข่าว");
+  });
+});
+
+describe("buildBlogDigestCarousel", () => {
+  const post = (i: number) => ({
+    title: `บทความ ${i}`,
+    description: `คำอธิบาย ${i}`,
+    url: `https://www.morroo.com/blog/post-${i}`,
+    coverImage: i % 2 ? `https://cdn.example/${i}.jpg` : null,
+  });
+
+  it("packs one bubble per post into a single carousel message", () => {
+    const msg = buildBlogDigestCarousel([post(1), post(2), post(3)]);
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    const carousel = msg.contents as { type: string; contents: unknown[] };
+    expect(carousel.type).toBe("carousel");
+    expect(carousel.contents).toHaveLength(3);
+    expect(msg.altText).toContain("3 เรื่อง");
+    expect(msg.altText.length).toBeLessThanOrEqual(400);
+    // Every bubble links back to its own article.
+    for (let i = 1; i <= 3; i++) {
+      expect(JSON.stringify(carousel.contents[i - 1])).toContain(`/blog/post-${i}`);
+    }
+  });
+
+  it("caps at LINE's carousel limit", () => {
+    const many = Array.from({ length: BLOG_DIGEST_MAX_POSTS + 5 }, (_, i) => post(i));
+    const msg = buildBlogDigestCarousel(many);
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    const carousel = msg.contents as { contents: unknown[] };
+    expect(carousel.contents).toHaveLength(BLOG_DIGEST_MAX_POSTS);
+    expect(msg.altText).toContain(`${BLOG_DIGEST_MAX_POSTS} เรื่อง`);
   });
 });
