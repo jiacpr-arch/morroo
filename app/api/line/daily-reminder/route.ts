@@ -15,7 +15,7 @@
  */
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { broadcastLineMessages, sendLineMessage } from "@/lib/line";
+import { broadcastLineMessages, sendLineMessage, checkLineQuota } from "@/lib/line";
 import {
   buildDailyMcqFlex,
   buildDailyMcqCarousel,
@@ -238,6 +238,19 @@ export async function POST(request: Request) {
   const { searchParams } = new URL(request.url);
   if (searchParams.get("secret") !== process.env.BLOG_GENERATE_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // This is the single biggest LINE-quota consumer in the app (a push per
+  // active player every weekday, or a broadcast every weekend). Back off
+  // early when headroom is low instead of burning through it mid-loop.
+  const quota = await checkLineQuota();
+  if (quota.throttled) {
+    return NextResponse.json({
+      ok: false,
+      skipped: true,
+      reason: "line_quota_low",
+      remaining: quota.remaining,
+    });
   }
 
   const supabase = createAdminClient();

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
+import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { buildWeeklySummaryFlex } from "@/lib/line-flex-templates";
 
 export const runtime = "nodejs";
@@ -9,6 +9,11 @@ export async function POST(request: Request) {
   const { searchParams } = new URL(request.url);
   if (searchParams.get("secret") !== process.env.BLOG_GENERATE_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const quota = await checkLineQuota();
+  if (quota.throttled) {
+    return NextResponse.json({ ok: false, skipped: true, reason: "line_quota_low", remaining: quota.remaining });
   }
 
   const supabase = createAdminClient();
