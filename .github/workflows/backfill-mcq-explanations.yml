@@ -1,0 +1,48 @@
+name: Backfill MCQ Detailed Explanations (manual)
+
+# One-off: write detailed_explanation for active MCQs that only have a short
+# explanation (Batch API, ~$0.01/question). Run once with mode=submit, then
+# again with mode=collect after the batch ends (minutes to hours). See
+# scripts/backfill-mcq-explanations.mjs header for details.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "auto (default) = collect if a batch is pending, else submit"
+        type: choice
+        options: [auto, submit, collect]
+        default: auto
+      limit:
+        description: "Max rows to submit (blank = all still missing detailed_explanation)"
+        required: false
+        default: ""
+      model:
+        description: "Override model (default: claude-sonnet-5)"
+        required: false
+        default: ""
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Backfill detailed explanations
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODE: ${{ inputs.mode }}
+          LIMIT: ${{ inputs.limit }}
+          MODEL: ${{ inputs.model }}
+        run: node scripts/backfill-mcq-explanations.mjs
