@@ -727,19 +727,20 @@ function autopilotSection(changes: string[]) {
 const MAX_DOCTOR_ROWS = 3;
 
 // The daily-doctor's own overnight run: what it merged itself (Tier A),
-// what's waiting for a "merge !<iid>" reply (Tier B), and what it could
-// not act on at all (Tier C). Full detail lives in the MR / state report —
-// this is just enough to decide whether to open GitLab.
+// what's waiting for a "merge #<iid>" reply (Tier B), and what it could
+// not act on at all (Tier C). Full detail lives in the PR / state report —
+// this is just enough to decide whether to open GitHub. `iid` is the GitHub
+// PR number (kept as `iid` for continuity with the ads-ops summary shape).
 function doctorSection(d: DoctorDigestSummary) {
   const lines: ReturnType<typeof noteLine>[] = [noteLine(d.headline)];
 
   for (const m of d.merged.slice(0, MAX_DOCTOR_ROWS)) {
-    lines.push(noteLine(`✅ !${m.iid} ${m.title}`, "#16A085"));
+    lines.push(noteLine(`✅ #${m.iid} ${m.title}`, "#16A085"));
   }
   for (const a of d.awaiting.slice(0, MAX_DOCTOR_ROWS)) {
     lines.push(
       noteLine(
-        `🟡 !${a.iid} ${a.title}${a.risk ? ` — ${a.risk}` : ""} — พิมพ์ "merge !${a.iid}" เพื่ออนุมัติ`,
+        `🟡 #${a.iid} ${a.title}${a.risk ? ` — ${a.risk}` : ""} — พิมพ์ "merge #${a.iid}" เพื่ออนุมัติ`,
         "#F39C12"
       )
     );
