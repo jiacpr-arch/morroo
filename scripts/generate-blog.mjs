@@ -19,6 +19,7 @@
 
 import { createClient } from "@supabase/supabase-js";
 import { composeCoverWithText } from "./lib/cover-compose.mjs";
+import { notifyCronFailure } from "./cron-notify.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -298,6 +299,9 @@ async function run() {
     if (!(row.category in lastPublished)) lastPublished[row.category] = row.published_at;
   }
 
+  let savedCount = 0;
+  const articleErrors = [];
+
   for (let i = 0; i < ARTICLE_COUNT; i++) {
     console.log(`\n--- Article ${i + 1}/${ARTICLE_COUNT} ---`);
 
@@ -350,10 +354,12 @@ async function run() {
 
       if (saveError) {
         console.error(`Save error: ${saveError.message}`);
+        articleErrors.push(saveError.message);
         continue;
       }
 
       console.log(`Saved: "${saved.title}" (${saved.slug})`);
+      savedCount++;
       existingTitles.unshift(saved.title);
       lastPublished[category] = new Date().toISOString();
 
@@ -361,10 +367,27 @@ async function run() {
       await triggerAutopost(saved.slug);
     } catch (err) {
       console.error(`Error generating article ${i + 1}:`, err.message);
+      articleErrors.push(err.message);
     }
   }
 
-  console.log("\nDone.");
+  console.log(`\nDone. Saved ${savedCount}/${ARTICLE_COUNT} article(s).`);
+
+  // Per-article errors are caught above so one bad article doesn't stop the
+  // rest, but the process must not exit 0 (and silently notify nobody) when
+  // NOTHING was actually saved — that previously looked identical to a
+  // quiet successful run.
+  if (savedCount === 0) {
+    const err = new Error(
+      `Generated 0/${ARTICLE_COUNT} article(s). Errors: ${articleErrors.join("; ") || "(none captured)"}`
+    );
+    await notifyCronFailure("generate-blog", err);
+    process.exit(1);
+  }
 }
 
-run();
+run().catch(async (err) => {
+  console.error("Fatal:", err);
+  await notifyCronFailure("generate-blog", err);
+  process.exit(1);
+});
