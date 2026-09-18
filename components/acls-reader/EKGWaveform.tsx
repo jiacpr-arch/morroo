@@ -13,7 +13,7 @@ const W = STRIP_MM_W * MM;
 const H = STRIP_MM_H * MM;
 const BASE = H / 2;
 
-function seeded(seed) {
+function seeded(seed: number) {
   let s = seed;
   return () => {
     s = (s * 9301 + 49297) % 233280;
@@ -29,7 +29,7 @@ function seeded(seed) {
 //   st: ST level (mm, + = elevation)
 //   t: { amp, dur, inverted, peaked }
 //   u: small U wave amp
-function beat(x0, opts) {
+function beat(x0: number, opts: any) {
   const o = {
     p: { amp: 1.0, dur: 3, polarity: 1, present: true, ...(opts.p || {}) },
     pr: opts.pr ?? 4, // mm from P start to QRS start
@@ -107,7 +107,7 @@ function beat(x0, opts) {
 }
 
 // Repeat sinus-like beats at a heart rate filling the strip.
-function sinusStrip(bpm, beatOpts, startBase = BASE) {
+function sinusStrip(bpm: number, beatOpts: any, startBase = BASE) {
   const cycleMm = (60 / bpm) * 25; // mm per beat at 25mm/s
   const cw = cycleMm * MM;
   let d = `M 0 ${startBase}`;
@@ -123,7 +123,7 @@ function sinusStrip(bpm, beatOpts, startBase = BASE) {
   return d;
 }
 
-function buildPath(rhythmId) {
+function buildPath(rhythmId: string) {
   switch (rhythmId) {
     // ---- Normal & sinus ----
     case 'nsr':
@@ -511,7 +511,7 @@ function MonitorGrid() {
   );
 }
 
-export default function EKGWaveform({ rhythmId, variant = 'paper', color, className = '' }) {
+export default function EKGWaveform({ rhythmId, variant = 'paper', color, className = '' }: { rhythmId: string; variant?: 'paper' | 'monitor'; color?: string; className?: string }) {
   const d = buildPath(rhythmId);
   const isPaper = variant === 'paper';
   const bg = isPaper ? '#fff7f0' : '#0b0f14';

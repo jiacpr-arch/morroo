@@ -11,6 +11,7 @@ import type {
   SchoolCaseStage,
   SchoolBook,
   SchoolBookChapter,
+  SchoolVisual,
 } from "../types-school";
 
 export async function getSchoolSystems(): Promise<SchoolSystem[]> {

@@ -1799,9 +1799,11 @@ const lessonDefs = [
 ];
 
 // Derive `sections` and `quiz` from `steps` for compatibility with ResultsSummary, cohort logic, etc.
-function deriveLesson(l) {
-  const sections = l.steps.filter(s => s.type === 'read').map(s => ({ heading: s.heading, body: s.body }));
-  const quiz = l.steps.filter(s => s.type === 'quiz').map(s => ({
+// `any` here is intentional: lessonDefs is a large verbatim content literal with
+// per-step-type shapes (read/quiz/...), not worth a full discriminated union.
+function deriveLesson(l: any) {
+  const sections = l.steps.filter((s: any) => s.type === 'read').map((s: any) => ({ heading: s.heading, body: s.body }));
+  const quiz = l.steps.filter((s: any) => s.type === 'quiz').map((s: any) => ({
     id: s.id,
     topic: s.topic,
     question: s.question,
@@ -1814,14 +1816,14 @@ function deriveLesson(l) {
 
 export const preCourseLessons = lessonDefs.map(deriveLesson);
 
-export function findLessonById(id) {
+export function findLessonById(id: string) {
   return preCourseLessons.find(l => l.id === id) || null;
 }
 
-export function getLessonStepCount(lesson) {
+export function getLessonStepCount(lesson: any) {
   return lesson?.steps?.length ?? 0;
 }
 
-export function getLessonQuizCount(lesson) {
+export function getLessonQuizCount(lesson: any) {
   return lesson?.quiz?.length ?? 0;
 }

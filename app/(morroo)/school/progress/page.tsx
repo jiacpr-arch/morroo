@@ -40,14 +40,19 @@ export default async function ProgressPage() {
 
   // Sort topics by sort_order; mastery threshold gates next topic
   const sorted = [...topics].sort((a, b) => a.sort_order - b.sort_order);
-  let prevMastered = true;
-  const items = sorted.map((t) => {
+  const items: Array<{
+    topic: (typeof sorted)[number];
+    mastery: { seen: number; correct: number; pct: number };
+    mastered: boolean;
+    unlocked: boolean;
+  }> = [];
+  for (let i = 0; i < sorted.length; i++) {
+    const t = sorted[i];
     const m = mastery[t.id] ?? { seen: 0, correct: 0, pct: 0 };
     const mastered = m.seen >= 5 && m.pct >= MASTERY_THRESHOLD;
-    const unlocked = prevMastered;
-    prevMastered = mastered;
-    return { topic: t, mastery: m, mastered, unlocked };
-  });
+    const unlocked = i === 0 || items[i - 1].mastered;
+    items.push({ topic: t, mastery: m, mastered, unlocked });
+  }
 
   const overallPct = items.length
     ? Math.round(

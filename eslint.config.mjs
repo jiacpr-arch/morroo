@@ -18,6 +18,8 @@ const eslintConfig = defineConfig([
     "seed-*.js",
     // Standalone Express sub-project with its own tooling.
     "jiaraksa-sales-portal/**",
+    // Vendored/minified third-party build output — not our source.
+    "public/**/*.min.*",
   ]),
   // SSR-hydration "setMounted(true)" + interval setup are intentional patterns;
   // disable the noisy set-state-in-effect rule globally.
@@ -47,6 +49,19 @@ const eslintConfig = defineConfig([
       "app/(firstaid)/**",
       "components/firstaid/**",
       "lib/firstaid/**",
+    ],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "warn",
+    },
+  },
+  // acls-reader section: same situation — precourse.ts / ekg-quiz.ts / the
+  // ECG waveform renderer are large verbatim content/visual-generation data
+  // with per-shape variance that isn't worth a full discriminated union.
+  {
+    files: [
+      "app/(morroo)/acls-reader/**",
+      "components/acls-reader/**",
+      "lib/acls-reader/**",
     ],
     rules: {
       "@typescript-eslint/no-explicit-any": "warn",
