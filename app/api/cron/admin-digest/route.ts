@@ -29,6 +29,7 @@ import {
   buildAdminDigestFlex,
   buildAdsSuggestFlex,
   type AdsOpsSummary,
+  type DoctorDigestSummary,
 } from "@/lib/line-flex-templates";
 import { bangkokDayWindow, buildMarketingSnapshot } from "@/lib/marketing-digest";
 import { fetchAdInsights } from "@/lib/ads-diagnostics";
@@ -363,6 +364,37 @@ export async function GET(request: Request) {
     }
   }
 
+  // --- Overnight run of morroo-daily-doctor (scheduled task, not a Vercel
+  // cron — see docs/ops/daily-doctor.md). Reads its own last row so results
+  // reach this same push instead of a separate channel. ---
+  let doctor: DoctorDigestSummary | null = null;
+  try {
+    const { data: doctorRows } = await supabase
+      .from("doctor_reports")
+      .select("headline, merged, awaiting, manual")
+      .order("run_date", { ascending: false })
+      .limit(1);
+    const row = doctorRows?.[0] as
+      | {
+          headline: string;
+          merged: { iid: number; title: string }[] | null;
+          awaiting: { iid: number; title: string; risk?: string }[] | null;
+          manual: { title: string }[] | null;
+        }
+      | undefined;
+    if (row) {
+      doctor = {
+        headline: row.headline,
+        merged: row.merged ?? [],
+        awaiting: row.awaiting ?? [],
+        manual: row.manual ?? [],
+      };
+    }
+  } catch (err) {
+    // Table may not exist yet on older deployments — leave doctor at null.
+    console.error("[admin-digest] doctor report fetch failed:", err);
+  }
+
   // --- Monday edition: trailing-7-day analytics summary ---
   let weekly: WeeklyAnalyticsSummary | null = null;
   if (bangkokNow.getUTCDay() === 1) {
@@ -388,6 +420,7 @@ export async function GET(request: Request) {
     adsYesterday,
     adsOps,
     autopilotChanges,
+    doctor,
     weekly,
   });
 
@@ -413,6 +446,7 @@ export async function GET(request: Request) {
       marketing,
       adsYesterday,
       adsOps,
+      doctor,
       weekly,
     },
   });
