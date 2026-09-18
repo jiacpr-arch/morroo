@@ -5,7 +5,7 @@
 # (Build → Pipelines → Run pipeline) with the variable JOB set to its name.
 #
 #   JOB          schedule (UTC)     what
-#   blog         0 19 * * *         1 blog article (+ FB/LINE autopost)
+#   blog         0 5 * * *          1 blog article (+ FB/LINE autopost) — 12:00 BKK, not 02:00
 #   mcq          0 19 * * *         daily MCQ
 #   board        30 19 * * *        daily board MCQ drip
 #   board-oral   0 20 * * *         daily board oral case

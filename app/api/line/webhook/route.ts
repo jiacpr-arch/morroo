@@ -47,6 +47,16 @@ export async function POST(request: NextRequest) {
     const lineUserId = event.source?.userId;
     if (!lineUserId) continue;
 
+    // User blocked / removed the OA — log it so block rate is measurable
+    // (per re-engagement experiment arm, and in general).
+    if (event.type === "unfollow") {
+      const { error } = await supabase
+        .from("line_unfollow_events")
+        .insert({ line_user_id: lineUserId });
+      if (error) console.error("[line-webhook] unfollow log failed:", error);
+      continue;
+    }
+
     // Postback: ads-autofix merge/dismiss (admin only), then the daily MCQ
     // answer buttons (open to any follower). Both return null for actions
     // that aren't theirs, so chaining with ?? is safe either order.

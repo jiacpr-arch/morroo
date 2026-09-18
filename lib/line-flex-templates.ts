@@ -2,6 +2,7 @@ import type { LineMessage } from "./line";
 import type { MarketingSnapshot } from "./marketing-digest";
 import type { AdsDailySummary } from "./ads-daily-summary";
 import type { WeeklyAnalyticsSummary } from "./analytics-weekly";
+import type { ReengageExperimentStatus } from "./mcq-reengage-experiment";
 
 interface WeeklySummaryData {
   totalQuestions: number;
@@ -188,6 +189,38 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
         ],
       },
     },
+  };
+}
+
+/** Max bubbles LINE allows in one Flex carousel. */
+export const BLOG_DIGEST_MAX_POSTS = 10;
+
+export interface BlogDigestPost {
+  title: string;
+  description: string;
+  url: string;
+  coverImage: string | null;
+}
+
+/**
+ * One carousel holding every article from the past week — sent once on
+ * Monday instead of a broadcast per article, so followers get 1 LINE
+ * message a week for blog content rather than 7. Bubbles reuse
+ * buildBlogAnnounceFlex so each card looks identical to the old per-article
+ * announce (all "kilo" size, which a carousel requires to be uniform).
+ */
+export function buildBlogDigestCarousel(posts: BlogDigestPost[]): LineMessage {
+  const bubbles = posts
+    .slice(0, BLOG_DIGEST_MAX_POSTS)
+    .map((p) => buildBlogAnnounceFlex(p))
+    .flatMap((m) => (m.type === "flex" ? [m.contents] : []));
+  return {
+    type: "flex",
+    altText: truncateText(
+      `📚 บทความใหม่สัปดาห์นี้ ${bubbles.length} เรื่อง — เทคนิคสอบแพทย์จากหมอรู้`,
+      ALT_TEXT_MAX,
+    ),
+    contents: { type: "carousel", contents: bubbles },
   };
 }
 
@@ -524,6 +557,41 @@ interface AdminDigestData {
   autopilotChanges?: string[];
   weekly?: WeeklyAnalyticsSummary | null;
   doctor?: DoctorDigestSummary | null;
+  reengageExperiment?: ReengageExperimentStatus | null;
+}
+
+/**
+ * Running readout of the 1-week dormant-user MCQ test, so the admin sees it
+ * every morning without opening anything. Day 7 carries the decision prompt.
+ */
+function reengageSection(s: ReengageExperimentStatus) {
+  const armLine = (label: string, a: ReengageExperimentStatus["test"]) =>
+    noteLine(`${label}: ${a.size} คน · บล็อก ${a.blocked} · ตอบ ${a.answered} · สมัคร ${a.converted}`);
+
+  if (!s.startedAt) {
+    return [
+      { type: "separator" as const, margin: "md" as const },
+      sectionTitle("🧪 ทดลอง MCQ รายสัปดาห์ — รอส่งใบแรก จันทร์ 21:30"),
+      noteLine(`กลุ่มทดลอง ${s.test.size} คน · กลุ่มควบคุม ${s.control.size} คน`),
+    ];
+  }
+
+  const day = Math.min(s.dayN, s.testDays);
+  const done = s.dayN >= s.testDays;
+  return [
+    { type: "separator" as const, margin: "md" as const },
+    sectionTitle(`🧪 ทดลอง MCQ รายสัปดาห์ — วันที่ ${day}/${s.testDays}`),
+    armLine("ทดลอง (ได้การ์ด)", s.test),
+    armLine("ควบคุม (ไม่ได้)", s.control),
+    ...(done
+      ? [
+          noteLine(
+            "✅ ครบ 1 สัปดาห์แล้ว — ตัดสินใจ: บล็อก ≈ 0 และมีคนตอบ → ต่ออีก 3 สัปดาห์ · มีบล็อก → หยุด",
+            "#16A085"
+          ),
+        ]
+      : []),
+  ];
 }
 
 function deltaText(value: number | null): string {
@@ -790,6 +858,7 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
           ...autopilotSection(data.autopilotChanges ?? []),
           ...(data.doctor ? doctorSection(data.doctor) : []),
           ...(data.weekly ? weeklySection(data.weekly) : []),
+          ...(data.reengageExperiment ? reengageSection(data.reengageExperiment) : []),
         ],
       },
       footer: {
@@ -1358,6 +1427,128 @@ export function buildDailyMcqBubble(args: DailyMcqBubbleArgs): Record<string, un
     footer: ctaFooter([
       { label: "อ่านโจทย์เต็ม / ทำในเว็บ", uri: practiceUrl, style: "secondary" },
     ]),
+  };
+}
+
+export interface WeeklyHardMcqArgs {
+  question: DailyMcqQuestionData;
+  practiceUrl: string;
+  weeklyAnswered: number;
+}
+
+/**
+ * Friday "hard question of the week" — same card shape as the daily bubble
+ * but framed as a challenge, plus a personalized weekly count. Pushed
+ * per-user (not broadcast), so the count is accurate per recipient.
+ */
+export function buildWeeklyHardMcqBubble(args: WeeklyHardMcqArgs): Record<string, unknown> {
+  const { question, practiceUrl, weeklyAnswered } = args;
+
+  const bodyContents: Record<string, unknown>[] = [
+    {
+      type: "text",
+      text: truncateText(question.scenario, SCENARIO_MAX),
+      wrap: true,
+      size: "sm",
+    },
+    {
+      type: "text",
+      text:
+        weeklyAnswered > 0
+          ? `🔥 สัปดาห์นี้คุณตอบไปแล้ว ${weeklyAnswered} ข้อ — ปิดท้ายด้วยข้อยากนี้ไหม?`
+          : "💪 ยังไม่ได้ตอบสักข้อในสัปดาห์นี้ — เริ่มด้วยข้อยากนี้เลย!",
+      size: "xxs",
+      color: PRIMARY,
+      margin: "md",
+      wrap: true,
+    },
+    { type: "separator", margin: "md" },
+    {
+      type: "box",
+      layout: "vertical",
+      spacing: "sm",
+      margin: "md",
+      contents: question.choices.map((choice) => ({
+        type: "button",
+        style: "secondary",
+        height: "sm",
+        action: {
+          type: "postback",
+          label: truncateText(`${choice.label}. ${choice.text}`, CHOICE_LABEL_MAX),
+          data: `action=daily_answer&d=${question.quizDate}&c=${choice.label}&q=${question.id}`,
+          displayText: `ตอบข้อ ${choice.label}`,
+        },
+      })),
+    },
+  ];
+
+  return {
+    type: "bubble",
+    size: "mega",
+    header: {
+      type: "box",
+      layout: "vertical",
+      backgroundColor: "#C0392B",
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: `🔥 ข้อยากประจำสัปดาห์ · ${question.examType}`, color: "#FFFFFF", weight: "bold", size: "sm" },
+        { type: "text", text: `${question.subjectIcon} ${question.subjectNameTh}`, color: "#F5B7B1", size: "xs" },
+      ],
+    },
+    body: { type: "box", layout: "vertical", paddingAll: "lg", contents: bodyContents },
+    footer: ctaFooter([
+      { label: "อ่านโจทย์เต็ม / ทำในเว็บ", uri: practiceUrl, style: "secondary" },
+    ]),
+  };
+}
+
+export function buildWeeklyHardMcqFlex(args: WeeklyHardMcqArgs): LineMessage {
+  const bubble = buildWeeklyHardMcqBubble(args);
+  const altText = truncateText(
+    `🔥 ข้อยากประจำสัปดาห์ ${args.question.subjectNameTh}: ${args.question.scenario}`,
+    ALT_TEXT_MAX
+  );
+  return { type: "flex", altText, contents: bubble };
+}
+
+export interface NewLongCaseData {
+  title: string;
+  specialty: string;
+  url: string;
+}
+
+/** Sunday broadcast bubble announcing the week's new long case. */
+export function buildNewLongCaseBubble(data: NewLongCaseData): Record<string, unknown> {
+  return {
+    type: "bubble",
+    size: "mega",
+    header: {
+      type: "box",
+      layout: "vertical",
+      backgroundColor: "#2874A6",
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: "🩺 Long Case ใหม่ประจำสัปดาห์", color: "#FFFFFF", weight: "bold", size: "md" },
+        { type: "text", text: data.specialty, color: "#D4E6F1", size: "xs" },
+      ],
+    },
+    body: {
+      type: "box",
+      layout: "vertical",
+      paddingAll: "lg",
+      contents: [
+        { type: "text", text: data.title, wrap: true, weight: "bold", size: "sm" },
+        {
+          type: "text",
+          text: "ซักประวัติ ตรวจร่างกาย อ่านผลแล็บ วินิจฉัย — ฝึกคิดแบบข้อสอบจริงกับ AI Examiner",
+          wrap: true,
+          size: "xs",
+          color: "#666666",
+          margin: "sm",
+        },
+      ],
+    },
+    footer: ctaFooter([{ label: "ลองทำ Long Case นี้", uri: data.url, style: "primary" }]),
   };
 }
 

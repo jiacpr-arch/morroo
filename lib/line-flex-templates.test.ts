@@ -7,6 +7,11 @@ import {
   buildCasegameTeaserBubble,
   buildWeekRecapBubble,
   buildBlogAnnounceFlex,
+  buildBlogDigestCarousel,
+  BLOG_DIGEST_MAX_POSTS,
+  buildWeeklyHardMcqFlex,
+  buildNewLongCaseBubble,
+  buildAdminDigestFlex,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
 
@@ -197,5 +202,161 @@ describe("buildBlogAnnounceFlex", () => {
     if (flex.type !== "flex") throw new Error("expected flex message");
     expect(flex.altText).toContain("ข่าวใหม่");
     expect(JSON.stringify(flex.contents)).toContain("อ่านข่าว");
+  });
+});
+
+describe("buildBlogDigestCarousel", () => {
+  const post = (i: number) => ({
+    title: `บทความ ${i}`,
+    description: `คำอธิบาย ${i}`,
+    url: `https://www.morroo.com/blog/post-${i}`,
+    coverImage: i % 2 ? `https://cdn.example/${i}.jpg` : null,
+  });
+
+  it("packs one bubble per post into a single carousel message", () => {
+    const msg = buildBlogDigestCarousel([post(1), post(2), post(3)]);
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    const carousel = msg.contents as { type: string; contents: unknown[] };
+    expect(carousel.type).toBe("carousel");
+    expect(carousel.contents).toHaveLength(3);
+    expect(msg.altText).toContain("3 เรื่อง");
+    expect(msg.altText.length).toBeLessThanOrEqual(400);
+    // Every bubble links back to its own article.
+    for (let i = 1; i <= 3; i++) {
+      expect(JSON.stringify(carousel.contents[i - 1])).toContain(`/blog/post-${i}`);
+    }
+  });
+
+  it("caps at LINE's carousel limit", () => {
+    const many = Array.from({ length: BLOG_DIGEST_MAX_POSTS + 5 }, (_, i) => post(i));
+    const msg = buildBlogDigestCarousel(many);
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    const carousel = msg.contents as { contents: unknown[] };
+    expect(carousel.contents).toHaveLength(BLOG_DIGEST_MAX_POSTS);
+    expect(msg.altText).toContain(`${BLOG_DIGEST_MAX_POSTS} เรื่อง`);
+  });
+});
+
+describe("buildWeeklyHardMcqFlex", () => {
+  const args = {
+    question: {
+      id: "q1",
+      scenario: "ผู้ป่วยชาย 60 ปี มาด้วยอาการเจ็บหน้าอก",
+      difficulty: "hard",
+      examType: "NL2",
+      subjectNameTh: "อายุรศาสตร์",
+      subjectIcon: "🫀",
+      quizDate: "2026-09-18",
+      choices: [
+        { label: "A", text: "STEMI" },
+        { label: "B", text: "NSTEMI" },
+      ],
+    },
+    practiceUrl: "https://www.morroo.com/nl/practice?q=q1",
+  };
+
+  it("personalizes the weekly-answered count per recipient", () => {
+    const flex = buildWeeklyHardMcqFlex({ ...args, weeklyAnswered: 4 });
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    expect(JSON.stringify(flex.contents)).toContain("4 ข้อ");
+    expect(flex.altText).toContain("ข้อยากประจำสัปดาห์");
+  });
+
+  it("uses encouraging copy when the recipient hasn't answered anything yet", () => {
+    const flex = buildWeeklyHardMcqFlex({ ...args, weeklyAnswered: 0 });
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    expect(JSON.stringify(flex.contents)).toContain("ยังไม่ได้ตอบสักข้อ");
+  });
+
+  it("includes a postback button per answer choice", () => {
+    const flex = buildWeeklyHardMcqFlex({ ...args, weeklyAnswered: 1 });
+    if (flex.type !== "flex") throw new Error("expected flex message");
+    const json = JSON.stringify(flex.contents);
+    expect(json).toContain("action=daily_answer&d=2026-09-18&c=A&q=q1");
+    expect(json).toContain("action=daily_answer&d=2026-09-18&c=B&q=q1");
+  });
+});
+
+describe("buildAdminDigestFlex — reengage experiment readout", () => {
+  const BASE = {
+    dateLabel: "จ. 21 ก.ย.",
+    attemptsToday: 0,
+    activeUsersToday: 0,
+    newUsersToday: 0,
+    avgAccuracyToday: null,
+    totalStudents: 0,
+    activeUsers7d: 0,
+    weakestSubject: null,
+    aiGradeFails24h: 0,
+    revenueTodayThb: null,
+  };
+  const arm = (size: number, blocked = 0, answered = 0, converted = 0) => ({
+    size,
+    blocked,
+    answered,
+    converted,
+  });
+
+  it("shows a waiting line before the first Monday send", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      reengageExperiment: { startedAt: null, dayN: 0, testDays: 7, test: arm(100), control: arm(98) },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("รอส่งใบแรก");
+    expect(json).toContain("100 คน");
+    expect(json).not.toContain("ครบ 1 สัปดาห์");
+  });
+
+  it("shows per-arm counts mid-test without the decision prompt", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      reengageExperiment: {
+        startedAt: "2026-09-21T00:00:00Z",
+        dayN: 3,
+        testDays: 7,
+        test: arm(100, 1, 6, 0),
+        control: arm(98, 0, 2, 0),
+      },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("วันที่ 3/7");
+    expect(json).toContain("บล็อก 1 · ตอบ 6");
+    expect(json).not.toContain("ครบ 1 สัปดาห์");
+  });
+
+  it("adds the decision prompt on day 7 and caps the day counter", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      reengageExperiment: {
+        startedAt: "2026-09-21T00:00:00Z",
+        dayN: 9,
+        testDays: 7,
+        test: arm(100),
+        control: arm(98),
+      },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("วันที่ 7/7");
+    expect(json).toContain("ครบ 1 สัปดาห์");
+  });
+
+  it("renders nothing about the experiment when there is none", () => {
+    const msg = buildAdminDigestFlex({ ...BASE, reengageExperiment: null });
+    expect(JSON.stringify(msg.type === "flex" ? msg.contents : {})).not.toContain("ทดลอง MCQ");
+  });
+});
+
+describe("buildNewLongCaseBubble", () => {
+  it("links to the given long case URL", () => {
+    const bubble = buildNewLongCaseBubble({
+      title: "หญิง 45 ปี ปวดท้องเฉียบพลัน",
+      specialty: "General Surgery",
+      url: "https://www.morroo.com/longcase/abc-123",
+    });
+    const json = JSON.stringify(bubble);
+    expect(json).toContain("https://www.morroo.com/longcase/abc-123");
+    expect(json).toContain("หญิง 45 ปี ปวดท้องเฉียบพลัน");
+    expect(json).toContain("General Surgery");
   });
 });
