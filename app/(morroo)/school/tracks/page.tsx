@@ -45,7 +45,7 @@ export default async function TracksPage() {
         <Route className="h-6 w-6 text-lime-600" /> Curated Learning Tracks
       </h1>
       <p className="text-sm text-muted-foreground mb-6">
-        Themed bundles — เช่น "Approach to chest pain" — รวม content จากหลาย topic/ปี ตามลำดับการคิด
+        Themed bundles — เช่น &ldquo;Approach to chest pain&rdquo; — รวม content จากหลาย topic/ปี ตามลำดับการคิด
       </p>
 
       {tracks.length === 0 ? (

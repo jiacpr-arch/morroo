@@ -49,19 +49,33 @@ default:
   - fc-cache -f
   - fc-list | grep -iE 'sarabun|inter' || true
 
-# Ordinary push/MR pipelines match the workflow's `when: always` fallback but
+# Ordinary push pipelines (no open MR) match the workflow's fallback rule but
 # no generator job below matches without $JOB set — without a real job here
 # GitLab intermittently reports that empty pipeline as failed instead of
-# skipped (long-standing upstream quirk: gitlab-org/gitlab-foss#33063).
+# skipped (long-standing upstream quirk: gitlab-org/gitlab-foss#33063). MR
+# pipelines get the real `verify` job below instead, so skip this one there.
 no-op:
   image: alpine:3
   before_script: []
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
     - if: '$JOB'
       when: never
     - when: on_success
   script:
     - echo "Nothing to run for this pipeline — content generators only run via schedule or manual trigger with JOB set (see top of this file)."
+
+# Gate for merge requests: lint + typecheck + test. Kept separate from the
+# generator jobs above (those are schedule/manual-only, JOB-gated).
+verify:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+  timeout: 15m
+  script:
+    - npm run lint
+    - npm run typecheck
+    - npm test
 
 blog:
   rules: [{ if: '$JOB == "blog"' }]

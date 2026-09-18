@@ -25,8 +25,13 @@ import {
   toOpenAITool,
 } from "./llm.mjs";
 
+/** Build a fake `process.env`-shaped object for resolveEasyMediumProvider(). */
+function fakeEnv(overrides: Record<string, string | undefined>): NodeJS.ProcessEnv {
+  return overrides as NodeJS.ProcessEnv;
+}
+
 /** Configure the mocked Anthropic client's next stream().finalMessage() result. */
-function mockAnthropicStream(resultOrError, { throws = false } = {}) {
+function mockAnthropicStream(resultOrError: unknown, { throws = false } = {}) {
   anthropicStreamMock.mockReturnValueOnce({
     finalMessage: () => (throws ? Promise.reject(resultOrError) : Promise.resolve(resultOrError)),
   });
@@ -75,11 +80,11 @@ describe("resolveEasyMediumProvider", () => {
   it("defaults to Claude Sonnet 5 when MCQ_GEN_PROVIDER is unset or empty", () => {
     expect(CLAUDE_DEFAULT_MODEL).toBe("claude-sonnet-5");
     expect(CLAUDE_DEFAULT_MODEL).not.toBe(CLAUDE_HAIKU_MODEL);
-    expect(resolveEasyMediumProvider({})).toEqual({
+    expect(resolveEasyMediumProvider(fakeEnv({}))).toEqual({
       provider: "anthropic",
       model: CLAUDE_DEFAULT_MODEL,
     });
-    expect(resolveEasyMediumProvider({ MCQ_GEN_PROVIDER: "" })).toEqual({
+    expect(resolveEasyMediumProvider(fakeEnv({ MCQ_GEN_PROVIDER: "" }))).toEqual({
       provider: "anthropic",
       model: CLAUDE_DEFAULT_MODEL,
     });
@@ -87,23 +92,23 @@ describe("resolveEasyMediumProvider", () => {
 
   it("uses DeepSeek when configured with an API key", () => {
     expect(
-      resolveEasyMediumProvider({ MCQ_GEN_PROVIDER: "deepseek", DEEPSEEK_API_KEY: "k" })
+      resolveEasyMediumProvider(fakeEnv({ MCQ_GEN_PROVIDER: "deepseek", DEEPSEEK_API_KEY: "k" }))
     ).toEqual({ provider: "deepseek", model: DEFAULT_DEEPSEEK_MODEL });
   });
 
   it("honours DEEPSEEK_MODEL override", () => {
     expect(
-      resolveEasyMediumProvider({
+      resolveEasyMediumProvider(fakeEnv({
         MCQ_GEN_PROVIDER: "deepseek",
         DEEPSEEK_API_KEY: "k",
         DEEPSEEK_MODEL: "deepseek-v4-pro",
-      })
+      }))
     ).toEqual({ provider: "deepseek", model: "deepseek-v4-pro" });
   });
 
   it("falls back to Claude when deepseek is requested without a key", () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
-    expect(resolveEasyMediumProvider({ MCQ_GEN_PROVIDER: "deepseek" })).toEqual({
+    expect(resolveEasyMediumProvider(fakeEnv({ MCQ_GEN_PROVIDER: "deepseek" }))).toEqual({
       provider: "anthropic",
       model: CLAUDE_DEFAULT_MODEL,
     });
@@ -113,7 +118,7 @@ describe("resolveEasyMediumProvider", () => {
 
   it("falls back to Claude on an unknown provider value", () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
-    expect(resolveEasyMediumProvider({ MCQ_GEN_PROVIDER: "gpt" })).toEqual({
+    expect(resolveEasyMediumProvider(fakeEnv({ MCQ_GEN_PROVIDER: "gpt" }))).toEqual({
       provider: "anthropic",
       model: CLAUDE_DEFAULT_MODEL,
     });

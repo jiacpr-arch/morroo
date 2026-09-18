@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -345,13 +346,13 @@ export default function GuidedRunner({
         </p>
         <div className="flex gap-3 justify-center pt-2">
           {topicHref(topicId) && (
-            <a href={topicHref(topicId)!}>
+            <Link href={topicHref(topicId)!}>
               <Button variant="outline">กลับ Topic</Button>
-            </a>
+            </Link>
           )}
-          <a href="/school/progress">
+          <Link href="/school/progress">
             <Button>ดู Progress</Button>
-          </a>
+          </Link>
         </div>
       </CardContent>
     </Card>
