@@ -28,7 +28,7 @@ async function sendEmail({
   subject,
   html,
 }: {
-  to: string;
+  to: string | string[];
   subject: string;
   html: string;
 }) {
@@ -160,5 +160,34 @@ export async function sendTrialExpiryEmail(
     to: props.email,
     subject,
     html: trialExpiryEmail(props),
+  });
+}
+
+/**
+ * Internal ops alert (e.g. LINE OA quota exhausted). Deliberately plain and
+ * self-contained — this is the reliable fallback channel when LINE itself is
+ * the thing that's broken, so it must not depend on any LINE send path.
+ */
+export async function sendAdminAlertEmail({
+  subject,
+  text,
+}: {
+  subject: string;
+  text: string;
+}) {
+  const adminEmail = process.env.ADMIN_EMAIL;
+  if (!adminEmail) {
+    console.warn("[email] ADMIN_EMAIL not set — skipping admin alert email");
+    return { id: null };
+  }
+  const html = `<!DOCTYPE html>
+<html lang="th"><body style="font-family:sans-serif;white-space:pre-wrap;padding:24px;color:#111;">
+<h2 style="margin:0 0 16px;">${subject}</h2>
+<p>${text.replace(/\n/g, "<br/>")}</p>
+</body></html>`;
+  return sendEmail({
+    to: adminEmail.split(",").map((e) => e.trim()),
+    subject,
+    html,
   });
 }

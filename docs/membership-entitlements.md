@@ -45,7 +45,7 @@
 
 ## คอลัมน์เก่า `profiles.membership_type / membership_expires_at`
 
-ยังเก็บไว้เป็น **summary** ให้ cron / analytics / โค้ดเก่าอ่านได้ (`trial-expiry`, `expiry-warning`,
+ยังเก็บไว้เป็น **summary** ให้ cron / analytics / โค้ดเก่าอ่านได้ (`expiry-warning`,
 `signup-drip`, revenue, beta) — ทุกครั้งที่ grant/revoke จะ `syncLegacyMembership()`
 ให้ค่าเป็นแพ็กที่กว้างที่สุดที่ยัง active ทั้งหมด และ expiry = วันหมดอายุล่าสุดของแพ็กนั้น
 

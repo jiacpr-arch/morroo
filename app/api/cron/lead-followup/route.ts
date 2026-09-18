@@ -24,7 +24,7 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLeadFollowupEmail } from "@/lib/email/send";
-import { sendLineMessage } from "@/lib/line";
+import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { sendFbMessage } from "@/lib/facebook-messenger";
 import { redeemCode, type RewardType } from "@/lib/redeem";
 
@@ -134,9 +134,10 @@ type Summary = Record<`d${ReminderDay}_sent` | `d${ReminderDay}_skipped`, number
   errors: number;
 };
 
-async function run(): Promise<Summary> {
+async function run(): Promise<Summary & { lineSkippedQuota?: boolean }> {
+  const lineQuota = await checkLineQuota();
   const supabase = createAdminClient();
-  const summary: Summary = {
+  const summary: Summary & { lineSkippedQuota?: boolean } = {
     d1_sent: 0,
     d1_skipped: 0,
     d3_sent: 0,
@@ -403,6 +404,12 @@ async function run(): Promise<Summary> {
           `${siteUrl}/redeem/${codeRow.code}`
         );
 
+        if (channel === "line" && lineQuota.throttled) {
+          summary.dm_skipped++;
+          summary.lineSkippedQuota = true;
+          continue;
+        }
+
         if (channel === "line") {
           await sendLineMessage(channelId, [{ type: "text", text }]);
         } else {
@@ -478,6 +485,12 @@ async function run(): Promise<Summary> {
             .maybeSingle();
           if (alreadySent) {
             summary.expired_skipped++;
+            continue;
+          }
+
+          if (channel === "line" && lineQuota.throttled) {
+            summary.expired_skipped++;
+            summary.lineSkippedQuota = true;
             continue;
           }
 
