@@ -3,6 +3,8 @@
 import { useMemo, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { sortTopicsByCode } from "@/lib/school/topic-order";
+import { planUpload } from "@/lib/school/import-files";
 
 interface TopicOption {
   id: string;
@@ -41,6 +43,8 @@ interface Extracted {
   flashcards: ExtractedFlashcard[];
   quizzes: ExtractedQuiz[];
   classification?: Classification | null;
+  /** The lesson hit the model's output cap and is missing its tail. */
+  truncated?: boolean;
 }
 
 interface SystemOption {
@@ -74,12 +78,19 @@ const PLAN: Record<ExtractMode, { flashcards: number; quizzes: number }> = {
 const FC_PER_BATCH = 12;
 const QZ_PER_BATCH = 8;
 
-/** Files above this go through Supabase Storage — the request body can't hold them. */
-const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
-const PDF_MAX = 32 * 1024 * 1024;
+/** Same file identity rule the dedupe uses — two picks of one file aren't two files. */
+function fileKey(f: File) {
+  return `${f.name}:${f.size}`;
+}
 
-/** Give up on a step rather than spin forever if the server side was killed. */
-const STEP_TIMEOUT_MS = 240_000;
+/**
+ * Give up on a step rather than spin forever if the server side was killed.
+ * The lesson step reads the whole file and writes the most tokens, so it gets
+ * nearly the route's full 300s `maxDuration`; the derived steps are far shorter
+ * and shouldn't leave the user waiting minutes on a request that's already dead.
+ */
+const LESSON_TIMEOUT_MS = 290_000;
+const STEP_TIMEOUT_MS = 120_000;
 
 export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   // Subjects added inline live here until the next server render picks them up.
@@ -93,7 +104,9 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   const [newTopicSystem, setNewTopicSystem] = useState(systems[0]?.id ?? "");
   const [savingTopic, setSavingTopic] = useState(false);
   const [extractMode, setExtractMode] = useState<ExtractMode>("faithful");
-  const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
+  // ชื่อไฟล์ที่ใช้สร้างผลลัพธ์ชุดนี้ — เก็บไว้ต่างหากเพราะ files ถูกล้างหลังสร้างเสร็จ
+  const [sourceLabel, setSourceLabel] = useState<string | null>(null);
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
@@ -110,7 +123,10 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   // วิชาที่ยังไม่ระบุเทอม (term = null) ให้ขึ้นในทุกเทอม — ไม่งั้นวิชาเดิม
   // ที่ยังไม่ได้กรอกเทอมจะหายไปจาก dropdown ทั้งหมด
   const visibleTopics = useMemo(
-    () => topics.filter((t) => t.year === year && (t.term == null || t.term === term)),
+    () =>
+      sortTopicsByCode(
+        topics.filter((t) => t.year === year && (t.term == null || t.term === term)),
+      ),
     [topics, year, term],
   );
 
@@ -128,6 +144,38 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   function topicLabel(t: TopicOption) {
     return `${t.name_th}${t.code ? ` (${t.code})` : ""}`;
   }
+
+  /** เพิ่มไฟล์เข้าคิว — เลือกซ้ำหรือลากซ้ำไม่ทำให้มีไฟล์เดิมสองอัน */
+  function addFiles(picked: File[]) {
+    if (!picked.length) return;
+    setFiles((prev) => {
+      const seen = new Set(prev.map(fileKey));
+      const merged = [...prev];
+      for (const f of picked) {
+        if (seen.has(fileKey(f))) continue;
+        seen.add(fileKey(f));
+        merged.push(f);
+      }
+      return merged;
+    });
+    setError(null);
+  }
+
+  function removeFile(index: number) {
+    setFiles((prev) => prev.filter((_, i) => i !== index));
+  }
+
+  const totalBytes = files.reduce((sum, f) => sum + f.size, 0);
+
+  /** ทำไมปุ่ม "เริ่มสร้างเนื้อหา" ยังกดไม่ได้ — null แปลว่าพร้อมแล้ว */
+  const blockedReason =
+    files.length === 0
+      ? "เลือกไฟล์ก่อน"
+      : !topicId
+        ? visibleTopics.length === 0
+          ? `ยังไม่มีวิชาสำหรับปี ${year} เทอม ${term} — กด "+ เพิ่มวิชาใหม่" ด้านบนก่อน`
+          : "เลือกวิชาก่อนถึงจะเริ่มได้"
+        : null;
 
   /**
    * Create a subject right here, so adding one never means leaving the upload
@@ -196,19 +244,22 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
    * the platform killed server-side leaves the button spinning forever with no
    * hint that anything went wrong.
    */
-  async function post(body: FormData | Record<string, unknown>): Promise<Response> {
+  async function post(
+    body: FormData | Record<string, unknown>,
+    timeoutMs = STEP_TIMEOUT_MS,
+  ): Promise<Response> {
     const isForm = body instanceof FormData;
     return fetch("/api/admin/school/import", {
       method: "POST",
       headers: isForm ? undefined : { "content-type": "application/json" },
       body: isForm ? body : JSON.stringify(body),
-      signal: AbortSignal.timeout(STEP_TIMEOUT_MS),
+      signal: AbortSignal.timeout(timeoutMs),
     });
   }
 
   /** One import step. Throws with the server's Thai message on failure. */
-  async function step<T>(body: Record<string, unknown>): Promise<T> {
-    const res = await post(body);
+  async function step<T>(body: Record<string, unknown>, timeoutMs?: number): Promise<T> {
+    const res = await post(body, timeoutMs);
     if (!res.ok) {
       const j = (await res.json().catch(() => ({}))) as { error?: string };
       throw new Error(j.error ?? `ขั้นตอนนี้ล้มเหลว (${res.status})`);
@@ -216,9 +267,13 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
     return (await res.json()) as T;
   }
 
-  /** Upload a file too large for the request body, and return its storage path. */
+  /** Upload one file too large for the request body, and return its storage path. */
   async function uploadToStorage(f: File): Promise<string> {
-    const urlRes = await fetch("/api/admin/school/import/storage-url", { method: "POST" });
+    const urlRes = await fetch("/api/admin/school/import/storage-url", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ contentType: f.type }),
+    });
     const urlJson = (await urlRes.json()) as {
       bucket?: string;
       path?: string;
@@ -232,30 +287,47 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
     const supa = createClient();
     const { error: upErr } = await supa.storage
       .from(urlJson.bucket ?? "school-imports")
-      .uploadToSignedUrl(urlJson.path, urlJson.token, f, {
-        contentType: "application/pdf",
-      });
-    if (upErr) throw new Error(`อัปโหลดไม่สำเร็จ: ${upErr.message}`);
+      .uploadToSignedUrl(urlJson.path, urlJson.token, f, { contentType: f.type });
+    if (upErr) throw new Error(`อัปโหลด ${f.name} ไม่สำเร็จ: ${upErr.message}`);
     return urlJson.path;
   }
 
-  /** Ask for the lesson — the only step that carries the file itself. */
+  /**
+   * Ask for the lesson — the only step that carries the files themselves.
+   * All files become one lesson, and they all travel the same way: mixing the
+   * inline and storage paths in one request isn't possible, so the batch's
+   * combined size picks the route for the whole set.
+   */
   async function extractLesson(
-    f: File,
+    batch: File[],
     hint: string,
-  ): Promise<{ lesson: ExtractedLesson; classification?: Classification | null }> {
-    if (f.size > DIRECT_UPLOAD_MAX) {
-      setProgress("กำลังอัปโหลดไฟล์…");
-      const path = await uploadToStorage(f);
-      setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน…");
-      return step({ step: "lesson", storage_path: path, hint, extractMode });
+    mode: "inline" | "storage",
+  ): Promise<{
+    lesson: ExtractedLesson;
+    classification?: Classification | null;
+    truncated?: boolean;
+  }> {
+    const reading = `AI กำลังอ่าน${batch.length > 1 ? `ทั้ง ${batch.length} ไฟล์` : "ไฟล์"}และเขียนบทเรียน… (อาจใช้เวลา 2-4 นาที)`;
+
+    if (mode === "storage") {
+      const paths: string[] = [];
+      for (const [i, f] of batch.entries()) {
+        setProgress(`กำลังอัปโหลดไฟล์… (${i + 1}/${batch.length}) ${f.name}`);
+        paths.push(await uploadToStorage(f));
+      }
+      setProgress(reading);
+      return step(
+        { step: "lesson", storage_paths: paths, hint, extractMode },
+        LESSON_TIMEOUT_MS,
+      );
     }
-    setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน…");
+
+    setProgress(reading);
     const fd = new FormData();
-    fd.append("file", f);
+    for (const f of batch) fd.append("file", f);
     fd.append("hint", hint);
     fd.append("extractMode", extractMode);
-    const res = await post(fd);
+    const res = await post(fd, LESSON_TIMEOUT_MS);
     if (!res.ok) {
       const j = (await res.json().catch(() => ({}))) as { error?: string };
       throw new Error(j.error ?? `อ่านไฟล์ไม่สำเร็จ (${res.status})`);
@@ -264,22 +336,13 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   }
 
   async function run() {
-    if (!file) {
-      setError("เลือกไฟล์ก่อน");
-      return;
-    }
     if (!topicId) {
       setError("เลือกวิชาก่อน");
       return;
     }
-    if (file.type === "application/pdf" && file.size > PDF_MAX) {
-      setError(
-        `PDF ใหญ่เกินไป (${(file.size / 1024 / 1024).toFixed(1)} MB) — สูงสุด 32 MB บีบอัดหรือแยกไฟล์ก่อน`,
-      );
-      return;
-    }
-    if (file.type !== "application/pdf" && file.size > DIRECT_UPLOAD_MAX) {
-      setError(`รูปภาพใหญ่เกินไป (${(file.size / 1024 / 1024).toFixed(1)} MB) — สูงสุด 4 MB`);
+    const uploadPlan = planUpload(files);
+    if (!uploadPlan.ok) {
+      setError(uploadPlan.error);
       return;
     }
 
@@ -287,14 +350,20 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
     setError(null);
     setResult(null);
     setData(null);
+    const batch = files;
     try {
       const hint = selectedTopic
         ? `ปี ${year} เทอม ${term} · วิชา ${topicLabel(selectedTopic)}`
         : `ปี ${year} เทอม ${term}`;
 
-      // 1. Lesson (carries the file).
-      const { lesson, classification } = await extractLesson(file, hint);
-      setData({ lesson, flashcards: [], quizzes: [], classification });
+      // 1. Lesson (carries the files).
+      const { lesson, classification, truncated } = await extractLesson(
+        batch,
+        hint,
+        uploadPlan.mode,
+      );
+      setSourceLabel(batch.map((f) => f.name).join(", "));
+      setData({ lesson, flashcards: [], quizzes: [], classification, truncated });
 
       const plan = PLAN[extractMode];
 
@@ -312,7 +381,7 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         });
         if (!out.flashcards?.length) break; // model gave up — stop rather than loop forever
         flashcards.push(...out.flashcards);
-        setData({ lesson, flashcards: [...flashcards], quizzes: [], classification });
+        setData({ lesson, flashcards: [...flashcards], quizzes: [], classification, truncated });
       }
 
       // 3. Quizzes, same pattern.
@@ -329,7 +398,7 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         });
         if (!out.quizzes?.length) break;
         quizzes.push(...out.quizzes);
-        setData({ lesson, flashcards, quizzes: [...quizzes], classification });
+        setData({ lesson, flashcards, quizzes: [...quizzes], classification, truncated });
       }
     } catch (e) {
       const timedOut = e instanceof DOMException && e.name === "TimeoutError";
@@ -356,7 +425,7 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           topic_id: topicId,
-          source: file?.name ?? null,
+          source: sourceLabel,
           lesson: data.lesson,
           flashcards: data.flashcards,
           quizzes: data.quizzes,
@@ -380,7 +449,8 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         } ข้อสอบ${j.errors?.length ? ` (มี error บางส่วน: ${j.errors.join(", ")})` : ""}`,
       });
       setData(null);
-      setFile(null);
+      setSourceLabel(null);
+      setFiles([]);
       if (fileInputRef.current) fileInputRef.current.value = "";
     } catch (e) {
       setResult({ kind: "err", msg: e instanceof Error ? e.message : "เกิดข้อผิดพลาด" });
@@ -527,8 +597,13 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
           <input
             ref={fileInputRef}
             type="file"
+            multiple
             accept="application/pdf,image/png,image/jpeg,image/webp"
-            onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+            onChange={(e) => {
+              addFiles(Array.from(e.target.files ?? []));
+              // ล้างค่าไว้ ไม่งั้นเอาไฟล์ออกแล้วเลือกไฟล์เดิมซ้ำจะไม่เกิด change event
+              e.target.value = "";
+            }}
             className="sr-only"
           />
           <div
@@ -549,40 +624,52 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
             onDrop={(e) => {
               e.preventDefault();
               setDragOver(false);
-              const dropped = e.dataTransfer.files?.[0];
-              if (dropped) setFile(dropped);
+              addFiles(Array.from(e.dataTransfer.files ?? []));
             }}
             className={`w-full cursor-pointer rounded-lg border-2 border-dashed p-6 text-center text-sm transition-colors ${
               dragOver
                 ? "border-brand bg-muted"
-                : file
+                : files.length
                   ? "border-emerald-300 bg-emerald-50/50"
                   : "border-muted-foreground/30 hover:border-brand hover:bg-muted/40"
             }`}
           >
-            {file ? (
-              <div className="flex items-center justify-center gap-2">
-                <span className="truncate font-medium">{file.name}</span>
-                <span className="shrink-0 text-muted-foreground">
-                  ({Math.round(file.size / 1024)} KB)
-                </span>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setFile(null);
-                    if (fileInputRef.current) fileInputRef.current.value = "";
-                  }}
-                  className="shrink-0 text-muted-foreground underline hover:text-rose-600"
-                >
-                  เอาออก
-                </button>
+            {files.length ? (
+              <div className="space-y-1.5 text-left">
+                {files.map((f, i) => (
+                  <div
+                    key={fileKey(f)}
+                    className="flex items-center gap-2 rounded border border-emerald-200 bg-white/70 px-2 py-1.5"
+                  >
+                    <span className="shrink-0 text-xs text-muted-foreground">{i + 1}.</span>
+                    <span className="min-w-0 flex-1 truncate font-medium">{f.name}</span>
+                    <span className="shrink-0 text-muted-foreground">
+                      ({Math.round(f.size / 1024)} KB)
+                    </span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        removeFile(i);
+                      }}
+                      className="shrink-0 text-muted-foreground underline hover:text-rose-600"
+                    >
+                      เอาออก
+                    </button>
+                  </div>
+                ))}
+                <p className="pt-1 text-center text-xs text-muted-foreground">
+                  {files.length} ไฟล์ · รวม {(totalBytes / 1024 / 1024).toFixed(1)} MB จาก 32 MB —
+                  แตะเพื่อเพิ่มไฟล์ หรือลากมาวาง
+                </p>
               </div>
             ) : (
               <div className="space-y-1">
-                <p className="font-semibold">แตะเพื่อเลือกไฟล์ หรือลากไฟล์มาวาง</p>
+                <p className="font-semibold">
+                  แตะเพื่อเลือกไฟล์ หรือลากไฟล์มาวาง (เลือกได้หลายไฟล์)
+                </p>
                 <p className="text-xs text-muted-foreground">
-                  PDF สูงสุด 32 MB · รูปภาพสูงสุด 4 MB
+                  ทุกไฟล์จะถูกรวมเป็นบทเรียนเดียว · รวมสูงสุด 32 MB · รูปภาพสูงสุด 4 MB ต่อรูป
                 </p>
               </div>
             )}
@@ -596,10 +683,22 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         )}
 
         <div className="flex items-center gap-3">
-          <Button onClick={run} disabled={loading || !file || !topicId}>
-            {loading ? "กำลังสร้าง…" : "เริ่มสร้างเนื้อหา"}
+          <Button onClick={run} disabled={loading || files.length === 0 || !topicId}>
+            {loading
+              ? "กำลังสร้าง…"
+              : files.length > 1
+                ? `เริ่มสร้างเนื้อหา (${files.length} ไฟล์)`
+                : "เริ่มสร้างเนื้อหา"}
           </Button>
           {progress && <span className="text-xs text-muted-foreground">{progress}</span>}
+          {/*
+            ปุ่มที่กดไม่ได้ต้องบอกเหตุผลด้วย ไม่งั้นคนที่เลือกไฟล์ครบแล้วแต่ลืมเลือกวิชา
+            จะเห็นแค่ปุ่มจาง ๆ กดไม่ลง แล้วไม่รู้ว่าต้องทำอะไรต่อ (ข้อความเตือนในโค้ด
+            อยู่หลังการกดปุ่ม จึงไม่มีวันโผล่)
+          */}
+          {!loading && blockedReason && (
+            <span className="text-xs text-amber-700">{blockedReason}</span>
+          )}
         </div>
 
         {data && (
@@ -613,6 +712,14 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
                 ทิ้งผลลัพธ์
               </button>
             </div>
+
+            {data.truncated && (
+              <p className="rounded border border-rose-300 bg-rose-50 p-2 text-xs text-rose-900">
+                บทเรียนนี้ยาวเกินโควตาต่อครั้ง AI จึงเขียนไม่จบ — ส่วนท้ายขาดหายไป
+                (มีหมายเหตุกำกับไว้ท้ายบทเรียน) เติมให้ครบก่อนบันทึก
+                หรือแยกไฟล์ให้เล็กลงแล้วสร้างใหม่
+              </p>
+            )}
 
             {extractMode !== "faithful" && (
               <p className="rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-900">

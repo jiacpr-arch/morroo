@@ -525,8 +525,27 @@
   color: var(--cbs-ink); background: rgba(26, 188, 156, .18);
   border: 2px solid var(--cbs-teal);
 }
-.cbs-upsell { text-align: center; font-size: 13px; color: var(--cbs-dim); margin-top: 14px; }
-.cbs-upsell a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
+/* คำชวนซื้อท้ายเกม — เดิมเป็นบรรทัดข้อความเล็กสีจาง (--cbs-dim) ต่อท้ายปุ่ม
+   ผู้เล่นเลื่อนผ่านโดยไม่ทันเห็น ตอนนี้เป็นปุ่มเต็มความกว้างทรงเดียวกับปุ่มอื่น
+   ในเกม (ขอบขาวหนา เงาแข็ง กดแล้วยุบ)
+
+   ใช้สีทองไม่ใช่แดง เพราะแดงเป็นของ "เล่นเคสนี้อีกครั้ง" ซึ่งยังต้องเป็นปุ่มหลัก
+   ของจอนี้ — ทองเด่นพอ ๆ กันแต่ไม่แย่งกันเอง และไม่ชนเขียวของปุ่ม LINE */
+.cbs-upsell-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  appearance: none; cursor: pointer; font-family: inherit;
+  text-align: center; text-decoration: none;
+  border: 2.5px solid #fff; border-radius: 8px;
+  background: linear-gradient(180deg, #f7cf6a, #dfa62c);
+  color: #2a1c02; padding: 14px 12px;
+  box-shadow: 0 5px 0 #9a6d13, 0 10px 22px rgba(242, 193, 78, .32);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.cbs-upsell-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #9a6d13; }
+/* outline สีทองแบบปุ่มอื่นจะจมหายไปกับพื้นปุ่ม — ใช้ teal ให้เห็นขอบโฟกัสจริง */
+.cbs-upsell-btn:focus-visible { outline: 3px solid var(--cbs-teal); outline-offset: 2px; }
+.cbs-upsell-label { font-size: 16px; font-weight: 900; letter-spacing: .02em; }
+.cbs-upsell-sub { font-size: 12px; font-weight: 700; color: #5a4204; }
 .cbs-login-hint { text-align: center; font-size: 13px; color: var(--cbs-dim); }
 .cbs-login-hint a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
 
