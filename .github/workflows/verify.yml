@@ -1,0 +1,25 @@
+name: verify
+
+# Gate for pull requests: lint + typecheck + test. GitHub is the primary
+# remote now (Vercel deploys from here — see docs/ops/daily-doctor.md);
+# content generators stay on GitLab CI (.gitlab-ci.yml), scheduled/manual
+# only, unrelated to this workflow.
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --ignore-scripts --prefer-offline
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
