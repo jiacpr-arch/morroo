@@ -785,6 +785,176 @@ export function diagnoseAds(ads: AdInsight[]): Finding[] {
   return findings;
 }
 
+// ─── Reconcile ───────────────────────────────────────────────────────────
+//
+// diagnosePages/diagnoseAds run fresh every night with no memory of what was
+// already reported — a recurring issue piles up a new open row every day
+// (27 rows for one page/category pair was the incident that prompted this).
+// reconcileFindings closes the loop: it supersedes an old open row when a
+// fresh one reports the same issue, auto-resolves one whose entity was
+// evaluated this run but no longer trips that category (and wasn't merely
+// masked by a higher-priority finding — see MASKS below), and skips
+// re-inserting a paused ad's finding when a recent row already recorded it.
+
+/** Same category that would keep an entity out of the loop this run
+ * (`continue` inside diagnosePages/diagnoseAds) still owns the older,
+ * lower-priority categories it pre-empted — they must not be auto-resolved
+ * just because they didn't fire independently. */
+const MASKS: Partial<Record<FindingCategory, readonly FindingCategory[]>> = {
+  ad_landing_mismatch: [
+    "page_no_conversion",
+    "page_low_signup",
+    "page_high_bounce",
+    "page_low_line_cta",
+    "page_low_checkout",
+  ],
+  page_no_conversion: [
+    "page_low_signup",
+    "page_high_bounce",
+    "page_low_line_cta",
+    "page_low_checkout",
+  ],
+  ad_no_lead_high_spend: ["ad_high_cpl", "ad_low_ctr", "ad_high_frequency"],
+  ad_high_cpl: ["ad_low_ctr", "ad_high_frequency"],
+};
+
+export function isPageEvaluated(p: Pick<PageStats, "sessions">): boolean {
+  return p.sessions >= THRESHOLDS.pageMinSessions;
+}
+
+export function isAdEvaluated(ad: Pick<AdInsight, "spend">): boolean {
+  return ad.spend >= THRESHOLDS.adMinSpendThb;
+}
+
+export function isAdPaused(
+  ad: Pick<AdInsight, "status" | "effective_status">
+): boolean {
+  return (
+    ad.status === "PAUSED" ||
+    ad.effective_status === "PAUSED" ||
+    ad.effective_status === "ARCHIVED"
+  );
+}
+
+export function findingKey(
+  entityType: EntityType,
+  entityId: string,
+  category: string
+): string {
+  return `${entityType}::${entityId}::${category}`;
+}
+
+/** Minimal shape of an existing open/recently-resolved row from Supabase —
+ * just enough for reconciliation, not the full admin-page projection. */
+export interface ExistingFindingRow {
+  id: number;
+  entity_type: EntityType;
+  entity_id: string;
+  category: string;
+  resolved: boolean;
+  resolved_at: string | null;
+}
+
+export interface ReconcileInput {
+  fresh: Finding[];
+  existing: ExistingFindingRow[];
+  pages: PageStats[];
+  ads: AdInsight[];
+  now: Date;
+}
+
+export interface ReconcileResult {
+  /** Findings to actually insert this run (fresh, minus paused-ad noise). */
+  toInsert: Finding[];
+  /** Open rows to resolve: a fresh finding reports the same issue again. */
+  supersededIds: number[];
+  /** Open rows to resolve: entity was evaluated, category no longer fires,
+   * and nothing masked it either — the issue is gone, not just unmeasured. */
+  clearedIds: number[];
+  /** Fresh ad findings not inserted: the ad is already paused/archived and
+   * a recent row (open, or resolved within adWindowDays) already said so. */
+  skippedAlreadyHandled: Finding[];
+}
+
+export function reconcileFindings({
+  fresh,
+  existing,
+  pages,
+  ads,
+  now,
+}: ReconcileInput): ReconcileResult {
+  // Every fresh finding masks its lower-priority categories for the same
+  // entity, whether or not it ends up inserted — a skipped paused-ad refire
+  // still proves that category was evaluated this run.
+  const fired = new Map<string, Set<FindingCategory>>();
+  for (const f of fresh) {
+    const key = findingKey(f.entityType, f.entityId, "");
+    if (!fired.has(key)) fired.set(key, new Set());
+    fired.get(key)!.add(f.category);
+  }
+
+  const evaluated = new Set<string>();
+  for (const p of pages) {
+    if (isPageEvaluated(p)) evaluated.add(findingKey("page", p.path, ""));
+  }
+  const adsById = new Map(ads.map((a) => [a.ad_id, a]));
+  for (const ad of ads) {
+    if (isAdEvaluated(ad)) evaluated.add(findingKey("ad", ad.ad_id, ""));
+  }
+
+  const adWindowMs = THRESHOLDS.adWindowDays * 86_400_000;
+  const existingByKey = new Map<string, ExistingFindingRow[]>();
+  for (const row of existing) {
+    const key = findingKey(row.entity_type, row.entity_id, row.category);
+    if (!existingByKey.has(key)) existingByKey.set(key, []);
+    existingByKey.get(key)!.push(row);
+  }
+  const hasRecentRow = (key: string): boolean =>
+    (existingByKey.get(key) ?? []).some((row) => {
+      if (!row.resolved) return true;
+      if (!row.resolved_at) return false;
+      return now.getTime() - Date.parse(row.resolved_at) < adWindowMs;
+    });
+
+  const toInsert: Finding[] = [];
+  const skippedAlreadyHandled: Finding[] = [];
+  for (const f of fresh) {
+    const key = findingKey(f.entityType, f.entityId, f.category);
+    const ad = f.entityType === "ad" ? adsById.get(f.entityId) : undefined;
+    if (ad && isAdPaused(ad) && hasRecentRow(key)) {
+      skippedAlreadyHandled.push(f);
+    } else {
+      toInsert.push(f);
+    }
+  }
+
+  const insertedKeys = new Set(
+    toInsert.map((f) => findingKey(f.entityType, f.entityId, f.category))
+  );
+
+  const supersededIds: number[] = [];
+  const clearedIds: number[] = [];
+  for (const row of existing) {
+    if (row.resolved) continue;
+    const key = findingKey(row.entity_type, row.entity_id, row.category);
+    if (insertedKeys.has(key)) {
+      supersededIds.push(row.id);
+      continue;
+    }
+    const entityKey = findingKey(row.entity_type, row.entity_id, "");
+    if (!evaluated.has(entityKey)) continue; // no signal either way — leave open
+    const firedCategories = fired.get(entityKey) ?? new Set();
+    if (firedCategories.has(row.category as FindingCategory)) continue; // still open (was skipped, not cleared)
+    const maskedBy = [...firedCategories].some((c) =>
+      MASKS[c]?.includes(row.category as FindingCategory)
+    );
+    if (maskedBy) continue;
+    clearedIds.push(row.id);
+  }
+
+  return { toInsert, supersededIds, clearedIds, skippedAlreadyHandled };
+}
+
 // ─── Auto-actions ────────────────────────────────────────────────────────
 
 export interface AutoActionResult {

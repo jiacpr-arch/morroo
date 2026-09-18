@@ -26,8 +26,10 @@ import {
   executeAutoActions,
   fetchAdInsights,
   fetchPageStats,
+  reconcileFindings,
   THRESHOLDS,
   type AutoActionRequest,
+  type ExistingFindingRow,
   type Finding,
 } from "@/lib/ads-diagnostics";
 
@@ -86,10 +88,39 @@ export async function GET(request: Request) {
     ...diagnoseAds(adInsights),
   ];
 
+  // Reconcile against yesterday's open/recently-resolved rows so a recurring
+  // issue supersedes its own old row instead of piling up a fresh one every
+  // night, a cleared issue closes itself, and an already-paused ad that
+  // still trips a threshold doesn't reopen a finding that's already handled.
+  // Query failure fails open (rec = only what diagnose* produced) so a
+  // Supabase hiccup never silently closes real open findings.
+  let rec: ReturnType<typeof reconcileFindings> = {
+    toInsert: findings,
+    supersededIds: [],
+    clearedIds: [],
+    skippedAlreadyHandled: [],
+  };
+  const { data: existingRows, error: existingErr } = await supabase
+    .from("ad_diagnostics_findings")
+    .select("id, entity_type, entity_id, category, resolved, resolved_at")
+    .or(`resolved.eq.false,resolved_at.gte.${adSince.toISOString()}`)
+    .limit(5000);
+  if (existingErr) {
+    errors.push(`reconcile skipped: ${existingErr.message}`);
+  } else {
+    rec = reconcileFindings({
+      fresh: findings,
+      existing: (existingRows ?? []) as ExistingFindingRow[],
+      pages: pageStats,
+      ads: adInsights,
+      now,
+    });
+  }
+
   // Persist findings (one batch insert), keep IDs for action linkage.
   const findingIds = new Map<Finding, number>();
-  if (findings.length) {
-    const rows = findings.map((f) => ({
+  if (rec.toInsert.length) {
+    const rows = rec.toInsert.map((f) => ({
       run_id: runId,
       severity: f.severity,
       category: f.category,
@@ -106,13 +137,25 @@ export async function GET(request: Request) {
     if (error) {
       errors.push(`findings insert: ${error.message}`);
     } else if (data) {
-      data.forEach((r, idx) => findingIds.set(findings[idx], (r as { id: number }).id));
+      data.forEach((r, idx) => findingIds.set(rec.toInsert[idx], (r as { id: number }).id));
+
+      // Only close old rows once the fresh ones actually landed — an insert
+      // failure must never silently resolve findings nobody re-recorded.
+      const toResolve = [...rec.supersededIds, ...rec.clearedIds];
+      for (let i = 0; i < toResolve.length; i += 200) {
+        const chunk = toResolve.slice(i, i + 200);
+        const { error: resolveErr } = await supabase
+          .from("ad_diagnostics_findings")
+          .update({ resolved: true, resolved_at: now.toISOString() })
+          .in("id", chunk);
+        if (resolveErr) errors.push(`auto-resolve: ${resolveErr.message}`);
+      }
     }
   }
 
   // Execute auto-actions on the safe subset.
   const actionRequests: { req: AutoActionRequest; findingId: number | null }[] = [];
-  for (const f of findings) {
+  for (const f of rec.toInsert) {
     if (!f.autoAction) continue;
     actionRequests.push({ req: f.autoAction, findingId: findingIds.get(f) ?? null });
   }
@@ -154,12 +197,18 @@ export async function GET(request: Request) {
   const summary = {
     pagesScanned: pageStats.length,
     adsScanned: adInsights.length,
-    findings: findings.length,
+    detected: findings.length,
+    findings: rec.toInsert.length,
     bySeverity: {
-      critical: findings.filter((f) => f.severity === "critical").length,
-      warn: findings.filter((f) => f.severity === "warn").length,
-      info: findings.filter((f) => f.severity === "info").length,
+      critical: rec.toInsert.filter((f) => f.severity === "critical").length,
+      warn: rec.toInsert.filter((f) => f.severity === "warn").length,
+      info: rec.toInsert.filter((f) => f.severity === "info").length,
     },
+    autoResolved: {
+      superseded: rec.supersededIds.length,
+      cleared: rec.clearedIds.length,
+    },
+    skippedAlreadyHandled: rec.skippedAlreadyHandled.length,
     actionsTaken,
     errors,
   };
@@ -171,7 +220,7 @@ export async function GET(request: Request) {
       ok,
       pages_scanned: pageStats.length,
       ads_scanned: adInsights.length,
-      findings_count: findings.length,
+      findings_count: rec.toInsert.length,
       actions_count: actionsTaken,
       error: errors.length ? errors.join(" | ") : null,
       summary,
