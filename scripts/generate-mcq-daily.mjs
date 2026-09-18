@@ -10,6 +10,7 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import { notifyCronFailure } from "./cron-notify.mjs";
 import { generateWithTool, resolveEasyMediumProvider, CLAUDE_DEFAULT_MODEL } from "./lib/llm.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -348,7 +349,8 @@ async function run() {
   console.log(`Total in subject "${todaySubject.name_th}": ${newTotal ?? 0}`);
 }
 
-run().catch((err) => {
+run().catch(async (err) => {
   console.error("Fatal:", err);
+  await notifyCronFailure("generate-mcq-daily", err);
   process.exit(1);
 });
