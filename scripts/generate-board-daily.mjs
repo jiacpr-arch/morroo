@@ -52,7 +52,7 @@ const SUBJECT_NAME_PREFIX = {
   internal_medicine: "im",
   surgery: "surg",
   pediatrics: "peds",
-  ob_gyn: "obgyn",
+  ob_gyn: "obg",
   orthopedics: "ortho",
   psychiatry: "psych",
   anesthesiology: "anes",

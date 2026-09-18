@@ -4,8 +4,11 @@ import {
   diagnoseAds,
   diagnosePages,
   paidSourceOf,
+  reconcileFindings,
   THRESHOLDS,
   type AdInsight,
+  type ExistingFindingRow,
+  type Finding,
   type PageStats,
 } from "./ads-diagnostics";
 
@@ -327,5 +330,220 @@ describe("diagnoseAds", () => {
     const fatigue = f.find((x) => x.category === "ad_high_frequency");
     expect(fatigue?.severity).toBe("warn");
     expect(fatigue?.autoAction).toBeUndefined();
+  });
+});
+
+function makeRow(overrides: Partial<ExistingFindingRow>): ExistingFindingRow {
+  return {
+    id: 1,
+    entity_type: "page",
+    entity_id: "/lp/a",
+    category: "page_low_signup",
+    resolved: false,
+    resolved_at: null,
+    ...overrides,
+  };
+}
+
+function makeFinding(overrides: Partial<Finding>): Finding {
+  return {
+    severity: "warn",
+    category: "page_low_signup",
+    entityType: "page",
+    entityId: "/lp/a",
+    metricSnapshot: {},
+    recommendation: "test",
+    ...overrides,
+  };
+}
+
+describe("reconcileFindings", () => {
+  it("supersedes older open rows with the same key when a fresh finding repeats the issue", () => {
+    const fresh = [makeFinding({ category: "page_no_conversion", entityId: "/lp/a" })];
+    const existing = [
+      makeRow({ id: 1, category: "page_no_conversion", entity_id: "/lp/a" }),
+      makeRow({ id: 2, category: "page_no_conversion", entity_id: "/lp/a" }),
+    ];
+    const rec = reconcileFindings({ fresh, existing, pages: [], ads: [], now: new Date() });
+    expect(rec.supersededIds.sort()).toEqual([1, 2]);
+    expect(rec.toInsert).toEqual(fresh);
+  });
+
+  it("clears an open row when its entity was evaluated but the category no longer fires", () => {
+    const existing = [makeRow({ id: 5, category: "page_low_signup", entity_id: "/lp/a" })];
+    const rec = reconcileFindings({
+      fresh: [],
+      existing,
+      pages: [makePage({ path: "/lp/a", sessions: 300 })],
+      ads: [],
+      now: new Date(),
+    });
+    expect(rec.clearedIds).toEqual([5]);
+  });
+
+  it("does not clear when the entity is present but below the evaluation threshold", () => {
+    const existing = [makeRow({ id: 6, category: "page_low_signup", entity_id: "/lp/a" })];
+    const rec = reconcileFindings({
+      fresh: [],
+      existing,
+      pages: [makePage({ path: "/lp/a", sessions: THRESHOLDS.pageMinSessions - 1 })],
+      ads: [],
+      now: new Date(),
+    });
+    expect(rec.clearedIds).toEqual([]);
+  });
+
+  it("leaves a row open when its entity is absent from this run's stats entirely", () => {
+    const existing = [makeRow({ id: 7, category: "page_low_signup", entity_id: "/lp/a" })];
+    const rec = reconcileFindings({ fresh: [], existing, pages: [], ads: [], now: new Date() });
+    expect(rec.clearedIds).toEqual([]);
+  });
+
+  it("does not clear a warn category masked by a higher-priority finding on the same entity", () => {
+    const existing = [makeRow({ id: 8, category: "page_low_signup", entity_id: "/lp/a" })];
+    const fresh = [
+      makeFinding({ category: "ad_landing_mismatch", entityId: "/lp/a", severity: "critical" }),
+    ];
+    const rec = reconcileFindings({
+      fresh,
+      existing,
+      pages: [makePage({ path: "/lp/a", sessions: 900, adSessions: 800, adShortSessions: 700 })],
+      ads: [],
+      now: new Date(),
+    });
+    expect(rec.clearedIds).toEqual([]);
+    expect(rec.toInsert).toEqual(fresh);
+  });
+
+  it("does not clear an ad warn category masked by ad_high_cpl on the same ad", () => {
+    const existing = [makeRow({ id: 9, entity_type: "ad", category: "ad_low_ctr", entity_id: "100" })];
+    const fresh = [
+      makeFinding({ category: "ad_high_cpl", entityType: "ad", entityId: "100", severity: "critical" }),
+    ];
+    const rec = reconcileFindings({
+      fresh,
+      existing,
+      pages: [],
+      ads: [makeAd({ ad_id: "100", spend: 1000 })],
+      now: new Date(),
+    });
+    expect(rec.clearedIds).toEqual([]);
+  });
+
+  it("skips re-inserting a paused ad's finding when an open row already records it", () => {
+    const fresh = [
+      makeFinding({ category: "ad_high_cpl", entityType: "ad", entityId: "100", severity: "critical" }),
+    ];
+    const existing = [makeRow({ id: 10, entity_type: "ad", category: "ad_high_cpl", entity_id: "100" })];
+    const rec = reconcileFindings({
+      fresh,
+      existing,
+      pages: [],
+      ads: [makeAd({ ad_id: "100", spend: 1000, status: "PAUSED", effective_status: "PAUSED" })],
+      now: new Date(),
+    });
+    expect(rec.toInsert).toEqual([]);
+    expect(rec.skippedAlreadyHandled).toEqual(fresh);
+    expect(rec.supersededIds).toEqual([]);
+    expect(rec.clearedIds).toEqual([]);
+  });
+
+  it("also skips when the matching row was resolved recently (within the ad window)", () => {
+    const fresh = [
+      makeFinding({ category: "ad_high_cpl", entityType: "ad", entityId: "100", severity: "critical" }),
+    ];
+    const oneDayAgo = new Date(Date.now() - 86_400_000).toISOString();
+    const existing = [
+      makeRow({
+        id: 11,
+        entity_type: "ad",
+        category: "ad_high_cpl",
+        entity_id: "100",
+        resolved: true,
+        resolved_at: oneDayAgo,
+      }),
+    ];
+    const rec = reconcileFindings({
+      fresh,
+      existing,
+      pages: [],
+      ads: [makeAd({ ad_id: "100", spend: 1000, status: "PAUSED", effective_status: "PAUSED" })],
+      now: new Date(),
+    });
+    expect(rec.toInsert).toEqual([]);
+    expect(rec.skippedAlreadyHandled).toEqual(fresh);
+  });
+
+  it("re-inserts a paused ad's finding when the matching row was resolved outside the ad window", () => {
+    const fresh = [
+      makeFinding({ category: "ad_high_cpl", entityType: "ad", entityId: "100", severity: "critical" }),
+    ];
+    const longAgo = new Date(
+      Date.now() - (THRESHOLDS.adWindowDays + 2) * 86_400_000
+    ).toISOString();
+    const existing = [
+      makeRow({
+        id: 12,
+        entity_type: "ad",
+        category: "ad_high_cpl",
+        entity_id: "100",
+        resolved: true,
+        resolved_at: longAgo,
+      }),
+    ];
+    const rec = reconcileFindings({
+      fresh,
+      existing,
+      pages: [],
+      ads: [makeAd({ ad_id: "100", spend: 1000, status: "PAUSED", effective_status: "PAUSED" })],
+      now: new Date(),
+    });
+    expect(rec.toInsert).toEqual(fresh);
+    expect(rec.skippedAlreadyHandled).toEqual([]);
+  });
+
+  it("supersedes and inserts a fresh finding for an active (non-paused) ad even with an existing open row", () => {
+    const fresh = [
+      makeFinding({
+        category: "ad_high_cpl",
+        entityType: "ad",
+        entityId: "100",
+        severity: "critical",
+        autoAction: { action: "pause_ad", entityType: "ad", entityId: "100", reason: "CPL" },
+      }),
+    ];
+    const existing = [makeRow({ id: 13, entity_type: "ad", category: "ad_high_cpl", entity_id: "100" })];
+    const rec = reconcileFindings({
+      fresh,
+      existing,
+      pages: [],
+      ads: [makeAd({ ad_id: "100", spend: 1000, status: "ACTIVE", effective_status: "ACTIVE" })],
+      now: new Date(),
+    });
+    expect(rec.toInsert).toEqual(fresh);
+    expect(rec.supersededIds).toEqual([13]);
+  });
+
+  it("a skipped paused-ad refire still masks its lower-priority category, leaving both rows open", () => {
+    const fresh = [
+      makeFinding({ category: "ad_high_cpl", entityType: "ad", entityId: "100", severity: "critical" }),
+    ];
+    const existing = [
+      makeRow({ id: 14, entity_type: "ad", category: "ad_high_cpl", entity_id: "100" }),
+      makeRow({ id: 15, entity_type: "ad", category: "ad_low_ctr", entity_id: "100" }),
+    ];
+    const rec = reconcileFindings({
+      fresh,
+      existing,
+      pages: [],
+      ads: [makeAd({ ad_id: "100", spend: 1000, status: "PAUSED", effective_status: "PAUSED" })],
+      now: new Date(),
+    });
+    expect(rec.toInsert).toEqual([]);
+    expect(rec.skippedAlreadyHandled).toEqual(fresh);
+    // Neither row closes: the high-CPL row wasn't re-inserted (just skipped,
+    // not cleared) and it still masks ad_low_ctr underneath it.
+    expect(rec.supersededIds).toEqual([]);
+    expect(rec.clearedIds).toEqual([]);
   });
 });

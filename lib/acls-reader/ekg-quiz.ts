@@ -219,7 +219,7 @@ export const rhythmLabels = {
   long_qt: 'Long QT',
 };
 
-export function shuffleOptions(options, seed) {
+export function shuffleOptions(options: string[], seed: number) {
   const arr = [...options];
   let s = seed;
   for (let i = arr.length - 1; i > 0; i--) {

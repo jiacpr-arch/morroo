@@ -195,7 +195,7 @@ async function enrichTopic(
   const response = await client.messages.create({
     model: MODEL,
     max_tokens: 4000,
-    system: SYSTEM_PROMPT,
+    system: [SYSTEM_PROMPT],
     tools: [ENRICH_TOOL],
     tool_choice: { type: "tool", name: "submit_enrichment" },
     messages: [{ role: "user", content: userContent }],

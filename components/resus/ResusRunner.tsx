@@ -74,9 +74,14 @@ interface ResusRunnerProps {
   operation: Operation;
   /** โหมดทดลองเล่น (admin playtest) — ไม่บันทึกผล/ไม่แจก XP */
   practice?: boolean;
+  /**
+   * ข้ามจอ title แล้วเข้าเกมทันที — ใช้กับทราฟฟิกจากโฆษณา (`?start=1`) เพื่อให้
+   * คนที่กดโฆษณาเข้ามาได้เล่นทันทีโดยไม่ต้องกดอะไรอีก (แบบเดียวกับ SimRunner)
+   */
+  autostart?: boolean;
 }
 
-export default function ResusRunner({ operation, practice = false }: ResusRunnerProps) {
+export default function ResusRunner({ operation, practice = false, autostart = false }: ResusRunnerProps) {
   const op = operation;
   const [reducedMotion] = useState(
     () => isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -131,6 +136,16 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
     t.misc = [];
   }, []);
   useEffect(() => clearAllTimers, [clearAllTimers]);
+
+  // ทราฟฟิกจากโฆษณา: เข้าเกมทันทีโดยไม่ต้องกดจอ title ก่อน — ยิงครั้งเดียวตอน
+  // mount, startGame เป็น function declaration จึง hoist ขึ้นมาใช้ได้ (แบบเดียวกับ SimRunner)
+  const autostartedRef = useRef(false);
+  useEffect(() => {
+    if (!autostart || autostartedRef.current) return;
+    autostartedRef.current = true;
+    startGame();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autostart]);
 
   function syncView() {
     setView(snapshot(S.current));
@@ -266,6 +281,9 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
   // ---- pointer จากเวที (พิกัด viewBox แล้ว) ----
 
   function onFieldDown(p: Point) {
+    // โหมด autostart ไม่มี user gesture ตอน startGame — AudioContext เลยถูกสร้าง
+    // แบบ suspended ปลดล็อกที่การแตะจริงครั้งแรกในเวทีแทน (แบบเดียวกับ SimRunner)
+    if (!mutedRef.current) initAudio();
     const st = S.current;
     if (st.done || st.dead) return;
     if (!st.activeTool) {
@@ -324,6 +342,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
   }
 
   function onSelectTool(tool: ToolId) {
+    if (!mutedRef.current) initAudio();
     if (S.current.done || S.current.dead) return;
     stopHold();
     armTool(S.current, tool);

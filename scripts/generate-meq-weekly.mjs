@@ -8,6 +8,7 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import { notifyCronFailure } from "./cron-notify.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -188,7 +189,8 @@ async function run() {
   console.log(`Saved exam id=${examRow.id} with ${parts.length} parts`);
 }
 
-run().catch((err) => {
+run().catch(async (err) => {
   console.error("Fatal:", err);
+  await notifyCronFailure("generate-meq-weekly", err);
   process.exit(1);
 });

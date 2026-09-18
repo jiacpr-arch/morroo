@@ -11,7 +11,9 @@ import type {
   SchoolCaseStage,
   SchoolBook,
   SchoolBookChapter,
+  SchoolVisual,
 } from "../types-school";
+import { sortTopicsByCode } from "../school/topic-order";
 
 export async function getSchoolSystems(): Promise<SchoolSystem[]> {
   const supabase = await createClient();
@@ -37,7 +39,8 @@ export async function getSchoolTopicsByYear(year: number): Promise<SchoolTopic[]
     console.error("Error fetching school topics:", error);
     return [];
   }
-  return (data as SchoolTopic[]) ?? [];
+  // sort_order = ลำดับในเล่มหลักสูตร ใช้เป็น tie-break ให้วิชาที่ยังไม่มีรหัส
+  return sortTopicsByCode((data as SchoolTopic[]) ?? []);
 }
 
 export async function getSchoolTopicCounts(): Promise<{

@@ -529,6 +529,17 @@ export interface AdsOpsSummary {
   suggestsOpenTotal: number;
 }
 
+// Overnight run of the morroo-daily-doctor scheduled task (see
+// docs/ops/daily-doctor.md) — written to Supabase `doctor_reports`, read
+// here so its results reach the same morning LINE push instead of a
+// separate channel.
+export interface DoctorDigestSummary {
+  headline: string;
+  merged: { iid: number; title: string }[];
+  awaiting: { iid: number; title: string; risk?: string }[];
+  manual: { title: string }[];
+}
+
 interface AdminDigestData {
   dateLabel: string;
   attemptsToday: number;
@@ -545,6 +556,7 @@ interface AdminDigestData {
   adsOps?: AdsOpsSummary | null;
   autopilotChanges?: string[];
   weekly?: WeeklyAnalyticsSummary | null;
+  doctor?: DoctorDigestSummary | null;
   reengageExperiment?: ReengageExperimentStatus | null;
 }
 
@@ -712,6 +724,37 @@ function autopilotSection(changes: string[]) {
   ];
 }
 
+const MAX_DOCTOR_ROWS = 3;
+
+// The daily-doctor's own overnight run: what it merged itself (Tier A),
+// what's waiting for a "merge !<iid>" reply (Tier B), and what it could
+// not act on at all (Tier C). Full detail lives in the MR / state report —
+// this is just enough to decide whether to open GitLab.
+function doctorSection(d: DoctorDigestSummary) {
+  const lines: ReturnType<typeof noteLine>[] = [noteLine(d.headline)];
+
+  for (const m of d.merged.slice(0, MAX_DOCTOR_ROWS)) {
+    lines.push(noteLine(`✅ !${m.iid} ${m.title}`, "#16A085"));
+  }
+  for (const a of d.awaiting.slice(0, MAX_DOCTOR_ROWS)) {
+    lines.push(
+      noteLine(
+        `🟡 !${a.iid} ${a.title}${a.risk ? ` — ${a.risk}` : ""} — พิมพ์ "merge !${a.iid}" เพื่ออนุมัติ`,
+        "#F39C12"
+      )
+    );
+  }
+  for (const c of d.manual.slice(0, MAX_DOCTOR_ROWS)) {
+    lines.push(noteLine(`🔴 ${c.title}`, "#E74C3C"));
+  }
+
+  return [
+    { type: "separator" as const, margin: "md" as const },
+    sectionTitle("🩺 หมอประจำวัน"),
+    ...lines,
+  ];
+}
+
 function weeklySection(w: WeeklyAnalyticsSummary) {
   const signupText =
     w.signupConversion != null
@@ -813,6 +856,7 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
           ...(data.marketing ? marketingSection(data.marketing) : []),
           ...(data.adsOps ? adsOpsSection(data.adsOps) : []),
           ...autopilotSection(data.autopilotChanges ?? []),
+          ...(data.doctor ? doctorSection(data.doctor) : []),
           ...(data.weekly ? weeklySection(data.weekly) : []),
           ...(data.reengageExperiment ? reengageSection(data.reengageExperiment) : []),
         ],

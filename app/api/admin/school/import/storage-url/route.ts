@@ -1,21 +1,26 @@
 /**
  * Mint a signed upload URL for the school-imports bucket.
  *
- * The admin UI calls this before uploading a large PDF directly to Supabase
- * Storage (bypassing Vercel's serverless body limit). The returned path is
- * then passed to /api/admin/school/import as `storage_path` — that route
- * downloads the file with the service-role client, processes it, and
- * deletes it.
+ * The admin UI calls this before uploading source files directly to Supabase
+ * Storage (bypassing Vercel's serverless body limit). The returned paths are
+ * then passed to /api/admin/school/import as `storage_paths` — that route
+ * downloads them with the service-role client, processes them, and deletes
+ * them.
+ *
+ * One call mints one path, so the client loops when the batch has several
+ * files. The extension encodes the file's type: the import route has only the
+ * path to work from when rebuilding the media block.
  */
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { extensionForType } from "@/lib/school/import-files";
 
 export const runtime = "nodejs";
 
 const BUCKET = "school-imports";
 
-export async function POST() {
+export async function POST(req: NextRequest) {
   const supabase = await createClient();
   const {
     data: { user },
@@ -32,7 +37,14 @@ export async function POST() {
     return NextResponse.json({ error: "Admin only" }, { status: 403 });
   }
 
-  const path = `${user.id}/${crypto.randomUUID()}.pdf`;
+  // ชนิดไฟล์ไม่ได้ส่งมาก็ถือว่าเป็น PDF — เป็นกรณีที่เจอบ่อยที่สุด
+  const body = (await req.json().catch(() => ({}))) as { contentType?: string };
+  const ext = extensionForType(body.contentType ?? "application/pdf");
+  if (!ext) {
+    return NextResponse.json({ error: "รับเฉพาะ PDF หรือรูปภาพ" }, { status: 400 });
+  }
+
+  const path = `${user.id}/${crypto.randomUUID()}.${ext}`;
   const admin = createAdminClient();
   const { data, error } = await admin.storage
     .from(BUCKET)
