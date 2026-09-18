@@ -119,9 +119,17 @@ function onCardClick(game: HubGame) {
   track("games_hub_click", { target: game.id, group: game.audience });
 }
 
-export function GameHubCard({ game }: { game: HubGame }) {
+export function GameHubCard({
+  game,
+  size = "md",
+}: {
+  game: HubGame;
+  /** "lg" = การ์ดเด่นเต็มความกว้าง (ดู `spotlight` ใน registry.ts) — รูปเตี้ยลงแต่กว้างขึ้น, หัวข้อ/เนื้อหาตัวใหญ่ขึ้น */
+  size?: "md" | "lg";
+}) {
   const Icon = ICONS[game.icon];
   const accent = ACCENTS[game.accent];
+  const isLg = size === "lg";
 
   return (
     <a
@@ -131,15 +139,15 @@ export function GameHubCard({ game }: { game: HubGame }) {
       data-hub-card={game.id}
     >
       <article
-        className={`relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_16px_45px_-32px_rgba(15,23,42,.5)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_24px_55px_-30px_rgba(15,23,42,.42)] ${accent.card}`}
+        className={`relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_16px_45px_-32px_rgba(15,23,42,.5)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_24px_55px_-30px_rgba(15,23,42,.42)] ${accent.card} ${isLg ? "sm:flex-row" : ""}`}
       >
         {game.image && (
-          <div className="relative aspect-[3/2] overflow-hidden bg-slate-100">
+          <div className={`relative overflow-hidden bg-slate-100 ${isLg ? "aspect-[16/9] sm:aspect-auto sm:w-2/5 sm:shrink-0" : "aspect-[3/2]"}`}>
             <Image
               src={game.image.src}
               alt={game.image.alt}
               fill
-              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw"
+              sizes={isLg ? "(max-width: 639px) 100vw, 40vw" : "(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw"}
               className="object-cover transition duration-500 group-hover:scale-[1.035]"
             />
             <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/45 to-transparent" />
@@ -154,7 +162,7 @@ export function GameHubCard({ game }: { game: HubGame }) {
           </div>
         )}
 
-        <div className="relative flex flex-1 flex-col p-6">
+        <div className={`relative flex flex-1 flex-col ${isLg ? "p-6 sm:p-8" : "p-6"}`}>
           <div className={`pointer-events-none absolute -right-12 -top-14 h-36 w-36 rounded-full blur-3xl ${accent.glow}`} />
           {!game.image && (
             <div className="relative flex items-start justify-between gap-4">
@@ -169,21 +177,21 @@ export function GameHubCard({ game }: { game: HubGame }) {
             </div>
           )}
 
-          <div className={`relative flex flex-1 flex-col ${game.image ? "" : "mt-5"}`}>
-            <div className={`mb-2 text-[11px] font-bold uppercase tracking-[.18em] ${accent.eyebrow}`}>
+          <div className={`relative flex flex-1 flex-col justify-center ${game.image ? "" : "mt-5"}`}>
+            <div className={`mb-2 font-bold uppercase tracking-[.18em] ${accent.eyebrow} ${isLg ? "text-xs" : "text-[11px]"}`}>
               {game.badge ?? "เล่นฟรี · เริ่มได้เลย"}
             </div>
-            <h3 className="text-xl font-black leading-snug tracking-tight text-slate-900">
+            <h3 className={`font-black leading-snug tracking-tight text-slate-900 ${isLg ? "text-2xl sm:text-3xl" : "text-xl"}`}>
               {game.title}
             </h3>
-            <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">{game.desc}</p>
+            <p className={`mt-2 flex-1 leading-6 text-slate-600 ${isLg ? "text-base sm:leading-7" : "text-sm"}`}>{game.desc}</p>
 
             {game.tags.length > 0 && (
               <div className="mt-5 flex flex-wrap gap-1.5 border-t border-slate-100 pt-4">
                 {game.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600"
+                    className={`rounded-full bg-slate-100 font-medium text-slate-600 ${isLg ? "px-3 py-1.5 text-xs" : "px-2.5 py-1 text-[11px]"}`}
                   >
                     {tag}
                   </span>

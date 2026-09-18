@@ -170,10 +170,12 @@ export default function GamesHubPage() {
         <div className="mx-auto max-w-6xl space-y-20 px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
           {AUDIENCE_GROUPS.map((group) => {
             const { featured, compact } = gamesForAudience(group.id);
+            const spotlight = featured.filter((game) => game.spotlight);
+            const rest = featured.filter((game) => !game.spotlight);
             const style = GROUP_STYLE[group.id];
             const Icon = style.icon;
             const featuredGrid =
-              featured.length >= 3
+              rest.length >= 3
                 ? "grid gap-5 md:grid-cols-2 lg:grid-cols-3"
                 : "grid gap-5 md:grid-cols-2";
 
@@ -204,8 +206,16 @@ export default function GamesHubPage() {
                   </span>
                 </div>
 
+                {spotlight.length > 0 && (
+                  <div className="mb-5 grid gap-5">
+                    {spotlight.map((game) => (
+                      <GameHubCard key={game.id} game={game} size="lg" />
+                    ))}
+                  </div>
+                )}
+
                 <div className={featuredGrid}>
-                  {featured.map((game) => (
+                  {rest.map((game) => (
                     <GameHubCard key={game.id} game={game} />
                   ))}
                 </div>

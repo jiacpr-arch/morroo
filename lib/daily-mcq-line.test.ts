@@ -3,6 +3,9 @@ import {
   handleDailyMcqPostback,
   bangkokToday,
   shiftQuizDate,
+  mondayOfWeek,
+  isWithinGrace,
+  DAILY_GRACE_DAYS,
 } from "./daily-mcq-line";
 
 vi.mock("./redeem", () => ({
@@ -384,5 +387,52 @@ describe("dailyPracticeUrl — SITE_URL must be trimmed", () => {
     const url = freshDailyPracticeUrl("q1", "2026-09-16", "broadcast");
     expect(url).toMatch(/^https:\/\/www\.morroo\.com\/nl\/practice\?/);
     expect(url).not.toContain("\n");
+  });
+});
+
+describe("isWithinGrace — new LINE links get the daily card before silence counts", () => {
+  const NOW = Date.parse("2026-09-18T00:00:00Z");
+  const daysAgo = (d: number) => new Date(NOW - d * 86400_000).toISOString();
+
+  it("is true for a link inside the grace window", () => {
+    expect(isWithinGrace(daysAgo(3), daysAgo(200), NOW)).toBe(true);
+  });
+
+  it("is false once the window has passed", () => {
+    expect(isWithinGrace(daysAgo(DAILY_GRACE_DAYS + 1), daysAgo(200), NOW)).toBe(false);
+  });
+
+  it("prefers line_linked_at over created_at when both exist", () => {
+    // signed up long ago, linked LINE yesterday → still in grace
+    expect(isWithinGrace(daysAgo(1), daysAgo(400), NOW)).toBe(true);
+    // linked long ago, even if the account row is newer → not in grace
+    expect(isWithinGrace(daysAgo(60), daysAgo(2), NOW)).toBe(false);
+  });
+
+  it("falls back to created_at when line_linked_at is null", () => {
+    expect(isWithinGrace(null, daysAgo(5), NOW)).toBe(true);
+    expect(isWithinGrace(null, daysAgo(30), NOW)).toBe(false);
+  });
+
+  it("is false with no timestamps at all", () => {
+    expect(isWithinGrace(null, null, NOW)).toBe(false);
+  });
+});
+
+describe("mondayOfWeek", () => {
+  it("returns the same date when quizDate is already a Monday", () => {
+    expect(mondayOfWeek("2026-09-14")).toBe("2026-09-14"); // a Monday
+  });
+
+  it("walks back to Monday for a mid-week date (Friday)", () => {
+    expect(mondayOfWeek("2026-09-18")).toBe("2026-09-14"); // Friday -> same-week Monday
+  });
+
+  it("walks back to Monday for a Sunday (wraps to the previous week)", () => {
+    expect(mondayOfWeek("2026-09-20")).toBe("2026-09-14"); // Sunday -> the week that just ended
+  });
+
+  it("walks back to Monday for a Saturday", () => {
+    expect(mondayOfWeek("2026-09-19")).toBe("2026-09-14");
   });
 });

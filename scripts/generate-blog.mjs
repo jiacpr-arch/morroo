@@ -1,9 +1,11 @@
 /**
- * Blog article generator — runs on GitHub Actions (no Vercel timeout)
+ * Blog article generator — runs on GitLab CI (see .gitlab-ci.yml, JOB=blog)
  *
  * After inserting the blog post, calls /api/autopost/retry?slug=X to trigger
- * Facebook + LINE autopost (which handles format rotation, hook gen,
- * cover_image_line resize, and state tracking in DB).
+ * the Facebook autopost (which handles format rotation, hook gen, and state
+ * tracking in DB). LINE is deliberately NOT triggered here: a daily broadcast
+ * to every follower was blowing the OA monthly quota, so LINE gets one
+ * Monday digest instead — /api/cron/line-weekly-blog-digest.
  *
  * Required env vars:
  *   SUPABASE_URL
@@ -48,7 +50,7 @@ async function triggerAutopost(slug) {
     return;
   }
   try {
-    const url = `${SITE_URL}/api/autopost/retry?secret=${encodeURIComponent(BLOG_GENERATE_SECRET)}&slug=${encodeURIComponent(slug)}&platform=both`;
+    const url = `${SITE_URL}/api/autopost/retry?secret=${encodeURIComponent(BLOG_GENERATE_SECRET)}&slug=${encodeURIComponent(slug)}&platform=fb`;
     const res = await fetch(url);
     const data = await res.json();
     if (!res.ok) {

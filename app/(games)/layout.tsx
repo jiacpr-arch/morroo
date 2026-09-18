@@ -10,6 +10,15 @@ import "../globals.css";
 
 // Root layout ที่สองสำหรับ game.morroo.com — เสิร์ฟผ่าน host-rewrite ใน
 // middleware.ts และตัด Navbar/Footer ฝั่งเว็บหลักออก เพื่อให้เป็น hub อิสระ
+
+// pixel ตัวเดียวกับเว็บหลัก (app/(morroo)/layout.tsx) — hub เป็นปลายทางของ
+// โฆษณาแต่ก่อนหน้านี้ไม่มี pixel เลย ทำให้คนที่จ่ายเงินพาเข้ามามองไม่เห็นใน
+// Meta ทั้งหมด: ไม่เข้า Custom Audience (retarget ไม่ได้) และไม่ได้ cookie
+// _fbp ซึ่ง fbq ตั้งบนโดเมนแม่ morroo.com — พอผู้เล่นกดต่อไปเกมบน
+// www.morroo.com ฝั่ง CAPI (app/api/track/casegame) จึงไม่มี _fbp ให้แนบ
+// แล้ว Meta attribute conversion กลับไปหาโฆษณาไม่ได้
+const FB_PIXEL_ID = "966371002896288";
+
 const sarabun = Sarabun({
   variable: "--font-sarabun",
   subsets: ["thai", "latin"],
@@ -39,7 +48,25 @@ export default function GamesRootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="th" className={`${sarabun.variable} scroll-smooth`}>
+      <head>
+        {/* inline แบบเดียวกับ (morroo) layout — ไม่ใช้ next/script เพื่อให้ fbq
+            พร้อมก่อน hydration และโผล่ใน SSR HTML */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${FB_PIXEL_ID}');fbq('track','PageView');`,
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col bg-[#fbfdfc] font-sans text-slate-900 antialiased">
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
         <header className="sticky top-0 z-50 border-b border-slate-200/75 bg-white/88 backdrop-blur-xl">
           <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <Link
