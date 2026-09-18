@@ -10,6 +10,7 @@ import { isValidScenario, type SimScenario } from "@/lib/sim/types";
 import { caseIdFromSlug, longCaseToScenario, slugForCase } from "@/lib/sim/longcase-to-scenario";
 import { summarizeExpertise, type SpecialtyExpertise } from "@/lib/sim/expertise";
 import { normalizeSpecialty, OTHER_SPECIALTY } from "@/lib/casegame/normalize";
+import { isPremium as isPaidMember } from "@/lib/membership";
 import { getLongCaseFull } from "./queries-longcase";
 
 interface SimScenarioRow {
@@ -446,6 +447,11 @@ export interface MyDoctorProfile {
   specialties: SpecialtyExpertise[];
   /** จำนวนเคสที่ชนะทั้งหมด */
   totalWins: number;
+  /**
+   * ซื้อแพ็กเกจใดก็ตามไว้แล้วและยังไม่หมดอายุ — จอ debrief ใช้ปิดคำชวนซื้อ
+   * ไม่ให้ไปโผล่หน้าคนที่จ่ายเงินไปแล้ว
+   */
+  isPremium: boolean;
 }
 
 /**
@@ -461,7 +467,12 @@ export async function getMyDoctorProfile(): Promise<MyDoctorProfile | null> {
     if (!user) return null;
 
     const [{ data: profile }, { data: runs }] = await Promise.all([
-      supabase.from("profiles").select("school_xp").eq("id", user.id).maybeSingle(),
+      // membership_* ขอมาพร้อม school_xp ในคิวรีเดิม — ไม่มี round-trip เพิ่ม
+      supabase
+        .from("profiles")
+        .select("school_xp, membership_type, membership_expires_at")
+        .eq("id", user.id)
+        .maybeSingle(),
       supabase
         .from("sim_runs")
         .select("specialty, won")
@@ -486,6 +497,7 @@ export async function getMyDoctorProfile(): Promise<MyDoctorProfile | null> {
       xp: profile?.school_xp ?? 0,
       specialties,
       totalWins: rows.filter((r) => r.won).length,
+      isPremium: isPaidMember(profile),
     };
   } catch {
     return null;

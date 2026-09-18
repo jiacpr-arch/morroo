@@ -12,14 +12,28 @@
  *   step=flashcards  → derived from the returned lesson text (no re-upload).
  *   step=quizzes     → same, one small batch per call; the client loops.
  *
- * Every step caps `max_tokens` low enough to finish in well under a minute, and
- * streams the response so a slow generation can never trip the non-streaming
- * duration ceiling.
+ * Every step caps `max_tokens` and streams the response so a slow generation can
+ * never trip the non-streaming duration ceiling. When a step does hit its cap
+ * the response is cut mid-JSON — see `lib/school/tool-json` for how the half
+ * written field is recovered instead of silently vanishing.
  */
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createAnthropic } from "@/lib/anthropic";
 import { createClient } from "@/lib/supabase/server";
+import { compareTopicByCode } from "@/lib/school/topic-order";
+import {
+  DIRECT_UPLOAD_MAX,
+  isAllowedType,
+  mediaTypeForPath,
+  TOTAL_MAX,
+} from "@/lib/school/import-files";
+import {
+  estimateMinutes,
+  keepComplete,
+  recoverStringField,
+  tidyTruncatedBody,
+} from "@/lib/school/tool-json";
 
 const MODEL = "claude-sonnet-4-6";
 const CLASSIFY_MODEL = "claude-haiku-4-5";
@@ -30,12 +44,27 @@ export const maxDuration = 300;
 type Mode = "faithful" | "expand" | "deep";
 type Step = "lesson" | "flashcards" | "quizzes";
 
-/** Output ceiling per step. Kept small on purpose — see the file header. */
+/**
+ * Output ceiling per step. Small on purpose — see the file header — but the
+ * lesson needs real headroom: a 700-1200 word Thai lesson plus 2-4 embedded
+ * quiz blocks is ~5-8k tokens once JSON-escaped, so a 6000 ceiling truncated
+ * routinely and cost the user two minutes of generation each time.
+ */
 const STEP_MAX_TOKENS: Record<Step, number> = {
-  lesson: 6000,
+  lesson: 12000,
   flashcards: 4500,
   quizzes: 5000,
 };
+
+const LAYERS = [
+  "foundation",
+  "anatomy",
+  "physio",
+  "biochem",
+  "path",
+  "pharm",
+  "clinical",
+] as const;
 
 // ────────────────────────────────────────────────────────────────────────────
 // Tools — one per step, so the model only ever fills a small payload
@@ -56,10 +85,7 @@ const LESSON_TOOL: Anthropic.Tool = {
           "The inline quiz MUST be answerable from the part directly above it. " +
           "Aim for 700-1200 words of prose — long enough to teach, short enough to return in one response.",
       },
-      layer: {
-        type: "string",
-        enum: ["foundation", "anatomy", "physio", "biochem", "path", "pharm", "clinical"],
-      },
+      layer: { type: "string", enum: [...LAYERS] },
       estimated_min: { type: "integer", minimum: 1, maximum: 120 },
     },
     required: ["title", "body_md", "layer", "estimated_min"],
@@ -202,33 +228,56 @@ estimated_min: 25-45.`,
 // Model plumbing
 // ────────────────────────────────────────────────────────────────────────────
 
+interface StepResult {
+  /** Parsed tool input. Fields the model only half-wrote are missing from it. */
+  input: Record<string, unknown>;
+  /** The raw tool JSON, half-written tail included. */
+  raw: string;
+  /** True when the model ran out of `max_tokens` mid-answer. */
+  truncated: boolean;
+}
+
 /**
  * Run one step. Streams so that a slow generation can't hit the API's
  * non-streaming duration ceiling, then reads the single tool_use block.
+ *
+ * The raw `input_json_delta` text is kept alongside the parsed input: the SDK
+ * parses the buffer leniently and throws away any value it only saw part of, so
+ * on a `max_tokens` cut the parsed input silently loses whichever field the
+ * model was writing. Callers use the raw buffer to get it back.
  */
 async function runStep(
   step: Step,
   tool: Anthropic.Tool,
   system: Anthropic.TextBlockParam[],
   content: Anthropic.MessageParam["content"],
-): Promise<Record<string, unknown>> {
+): Promise<StepResult> {
   if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY not set");
   const client = createAnthropic();
-  const message = await client.messages
-    .stream({
-      model: MODEL,
-      max_tokens: STEP_MAX_TOKENS[step],
-      system,
-      tools: [tool],
-      tool_choice: { type: "tool", name: tool.name },
-      messages: [{ role: "user", content }],
-    })
-    .finalMessage();
+  const stream = client.messages.stream({
+    model: MODEL,
+    max_tokens: STEP_MAX_TOKENS[step],
+    system,
+    tools: [tool],
+    tool_choice: { type: "tool", name: tool.name },
+    messages: [{ role: "user", content }],
+  });
+  let raw = "";
+  for await (const event of stream) {
+    if (event.type === "content_block_delta" && event.delta.type === "input_json_delta") {
+      raw += event.delta.partial_json;
+    }
+  }
+  const message = await stream.finalMessage();
   const block = message.content.find((b) => b.type === "tool_use");
   if (!block || block.type !== "tool_use") {
     throw new Error(`โมเดลไม่ได้ตอบเป็น ${tool.name}`);
   }
-  return block.input as Record<string, unknown>;
+  return {
+    input: block.input as Record<string, unknown>,
+    raw,
+    truncated: message.stop_reason === "max_tokens",
+  };
 }
 
 function systemFor(mode: Mode, extra?: string): Anthropic.TextBlockParam[] {
@@ -239,6 +288,21 @@ function systemFor(mode: Mode, extra?: string): Anthropic.TextBlockParam[] {
   ];
   if (extra) blocks.push({ type: "text", text: extra });
   return blocks;
+}
+
+/** Wrap one file's bytes as the content block its type calls for. */
+function mediaBlockFor(mediaType: string, bytes: Buffer): Anthropic.ContentBlockParam {
+  const data = bytes.toString("base64");
+  return mediaType === "application/pdf"
+    ? { type: "document", source: { type: "base64", media_type: "application/pdf", data } }
+    : {
+        type: "image",
+        source: {
+          type: "base64",
+          media_type: mediaType as Anthropic.Base64ImageSource["media_type"],
+          data,
+        },
+      };
 }
 
 function parseMode(raw: unknown): Mode {
@@ -324,7 +388,9 @@ async function loadTopicCandidates(
       system_name: sys?.name_th ?? "—",
       code: r.code ?? null,
     };
-  });
+  })
+  // เรียงตามชั้นปี + รหัสวิชา ให้ลิสต์ที่ส่งให้โมเดลอ่านง่ายเหมือนฝั่งนักเรียน
+  .sort((a, b) => a.year - b.year || compareTopicByCode(a, b));
 }
 
 async function classifyTopic(
@@ -403,17 +469,58 @@ interface LessonShape {
   estimated_min: number;
 }
 
+/**
+ * Turn a lesson step's output into a lesson, recovering whatever a `max_tokens`
+ * cut took with it. Two minutes of generation and a fully-read PDF are too
+ * expensive to throw away over a missing tail — the reviewer edits the lesson
+ * before saving anyway, and `tidyTruncatedBody` tells them where to look.
+ */
+function buildLesson(res: StepResult): LessonShape {
+  const out = res.input;
+
+  const rawTitle = typeof out.title === "string" ? out.title : recoverStringField(res.raw, "title");
+  const title = (rawTitle ?? "").trim();
+
+  const rawBody = typeof out.body_md === "string" ? out.body_md : null;
+  let body = (rawBody?.trim() ? rawBody : recoverStringField(res.raw, "body_md")) ?? "";
+
+  if (!title || !body.trim()) {
+    throw new Error(
+      res.truncated
+        ? "AI เขียนบทเรียนยาวเกินโควตาจนไม่เหลือเนื้อหาที่ใช้ได้ — ลองแยกไฟล์ให้เล็กลง หรือลดระดับการขยายเนื้อหา"
+        : "AI ไม่ได้ส่งเนื้อหาบทเรียนกลับมา — กด \"เริ่มสร้างเนื้อหา\" อีกครั้ง",
+    );
+  }
+  if (res.truncated) body = tidyTruncatedBody(body);
+
+  const layer = LAYERS.includes(out.layer as (typeof LAYERS)[number])
+    ? (out.layer as string)
+    : "foundation";
+  const minutes =
+    typeof out.estimated_min === "number" && Number.isFinite(out.estimated_min)
+      ? Math.min(120, Math.max(1, Math.round(out.estimated_min)))
+      : estimateMinutes(body);
+
+  return { title, body_md: body, layer, estimated_min: minutes };
+}
+
 async function handleLessonStep(
   supabase: Awaited<ReturnType<typeof createClient>>,
   mode: Mode,
   mediaBlocks: Anthropic.ContentBlockParam[],
   hint: string,
 ) {
+  // Several files are one lesson, not one lesson each — say so explicitly, or
+  // the model tends to write a section per file and repeat shared background.
+  const multiFileNote =
+    mediaBlocks.length > 1
+      ? `\n\nThe material above spans ${mediaBlocks.length} files covering the same subject. Write ONE unified lesson from all of them: merge overlapping content instead of repeating it, order the material by what teaches best rather than by file order, and don't refer to the files individually ("ไฟล์แรก", "เอกสารที่ 2"). Where files genuinely conflict, keep the fuller treatment.`
+      : "";
   const content: Anthropic.MessageParam["content"] = [
     ...mediaBlocks,
     {
       type: "text",
-      text: `Write the lesson for this material.\n\n${LESSON_STRUCTURE[mode]}${
+      text: `Write the lesson for this material.\n\n${LESSON_STRUCTURE[mode]}${multiFileNote}${
         hint ? `\n\nHint: ${hint}` : ""
       }`,
     },
@@ -421,11 +528,15 @@ async function handleLessonStep(
   const topics = await loadTopicCandidates(supabase);
   // Classify off the first block only — one page/excerpt is plenty, and it
   // keeps the Haiku call cheap.
-  const [lesson, classification] = await Promise.all([
+  const [res, classification] = await Promise.all([
     runStep("lesson", LESSON_TOOL, systemFor(mode), content),
     classifyTopic(mediaBlocks.slice(0, 1), topics),
   ]);
-  return NextResponse.json({ lesson: lesson as unknown as LessonShape, classification });
+  return NextResponse.json({
+    lesson: buildLesson(res),
+    classification,
+    truncated: res.truncated,
+  });
 }
 
 async function handleFlashcardsStep(body: {
@@ -435,8 +546,11 @@ async function handleFlashcardsStep(body: {
   existing?: string[];
 }) {
   const mode = parseMode(body.extractMode);
-  if (!body.lesson?.body_md) {
-    return NextResponse.json({ error: "ต้องมี lesson ก่อนสร้าง flashcards" }, { status: 400 });
+  if (!body.lesson?.body_md?.trim()) {
+    return NextResponse.json(
+      { error: "บทเรียนยังไม่มีเนื้อหา — สร้างบทเรียนใหม่ก่อนแล้วค่อยสร้าง flashcards" },
+      { status: 400 },
+    );
   }
   const count = Math.min(Math.max(body.count ?? 12, 1), 15);
   const existing = (body.existing ?? []).slice(-60);
@@ -454,8 +568,15 @@ async function handleFlashcardsStep(body: {
       }`,
     },
   ];
-  const out = await runStep("flashcards", FLASHCARDS_TOOL, systemFor(mode, extra), content);
-  return NextResponse.json({ flashcards: out.flashcards ?? [] });
+  const res = await runStep("flashcards", FLASHCARDS_TOOL, systemFor(mode, extra), content);
+  // A batch cut short leaves a half-built last card; saving one would fail the
+  // NOT NULL columns and take the whole insert with it.
+  return NextResponse.json({
+    flashcards: keepComplete<{ front: string; back: string; difficulty: string }>(
+      res.input.flashcards,
+      ["front", "back", "difficulty"],
+    ),
+  });
 }
 
 async function handleQuizzesStep(body: {
@@ -465,8 +586,11 @@ async function handleQuizzesStep(body: {
   existing?: string[];
 }) {
   const mode = parseMode(body.extractMode);
-  if (!body.lesson?.body_md) {
-    return NextResponse.json({ error: "ต้องมี lesson ก่อนสร้าง quizzes" }, { status: 400 });
+  if (!body.lesson?.body_md?.trim()) {
+    return NextResponse.json(
+      { error: "บทเรียนยังไม่มีเนื้อหา — สร้างบทเรียนใหม่ก่อนแล้วค่อยสร้างข้อสอบ" },
+      { status: 400 },
+    );
   }
   const count = Math.min(Math.max(body.count ?? 8, 1), 10);
   const existing = (body.existing ?? []).slice(-60);
@@ -487,8 +611,16 @@ async function handleQuizzesStep(body: {
       }`,
     },
   ];
-  const out = await runStep("quizzes", QUIZZES_TOOL, systemFor(mode, extra), content);
-  return NextResponse.json({ quizzes: out.quizzes ?? [] });
+  const res = await runStep("quizzes", QUIZZES_TOOL, systemFor(mode, extra), content);
+  return NextResponse.json({
+    quizzes: keepComplete<{
+      stem: string;
+      choices: { label: string; text: string }[];
+      correct_answer: string;
+      explanation: string;
+      difficulty: string;
+    }>(res.input.quizzes, ["stem", "choices", "correct_answer", "difficulty"]),
+  });
 }
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -513,50 +645,44 @@ export async function POST(req: NextRequest) {
 
     const contentType = req.headers.get("content-type") ?? "";
 
-    // ── Branch 1 — multipart/form-data: small file uploaded straight to us.
-    // Only the lesson step ever carries a file.
+    // ── Branch 1 — multipart/form-data: small files uploaded straight to us.
+    // Only the lesson step ever carries files.
     if (contentType.startsWith("multipart/form-data")) {
       const form = await req.formData();
-      const file = form.get("file");
+      const files = form.getAll("file").filter((f): f is File => f instanceof File);
       const hint = String(form.get("hint") ?? "");
       const mode = parseMode(form.get("extractMode"));
-      if (!(file instanceof File)) {
+      if (files.length === 0) {
         return NextResponse.json({ error: "ไม่พบไฟล์" }, { status: 400 });
       }
-      // Bigger files go through Supabase Storage instead (see the client) —
+      // Bigger batches go through Supabase Storage instead (see the client) —
       // anything arriving here should already be under the platform body cap.
-      const MAX_BYTES = 4 * 1024 * 1024;
-      if (file.size > MAX_BYTES) {
-        const mb = (file.size / 1024 / 1024).toFixed(1);
+      const total = files.reduce((sum, f) => sum + f.size, 0);
+      if (total > DIRECT_UPLOAD_MAX) {
+        const mb = (total / 1024 / 1024).toFixed(1);
         return NextResponse.json(
-          { error: `ไฟล์ใหญ่เกินไป (${mb} MB) สำหรับช่องทางนี้` },
+          { error: `ไฟล์รวมกันใหญ่เกินไป (${mb} MB) สำหรับช่องทางนี้` },
           { status: 413 },
         );
       }
-      const bytes = await file.arrayBuffer();
-      if (bytes.byteLength === 0) {
-        return NextResponse.json({ error: "ไฟล์ว่าง — ลองอัปโหลดใหม่" }, { status: 400 });
+      const mediaBlocks: Anthropic.ContentBlockParam[] = [];
+      for (const file of files) {
+        if (!isAllowedType(file.type)) {
+          return NextResponse.json(
+            { error: `รับเฉพาะ PDF หรือรูปภาพ — ${file.name}` },
+            { status: 400 },
+          );
+        }
+        const bytes = await file.arrayBuffer();
+        if (bytes.byteLength === 0) {
+          return NextResponse.json(
+            { error: `ไฟล์ว่าง: ${file.name} — ลองอัปโหลดใหม่` },
+            { status: 400 },
+          );
+        }
+        mediaBlocks.push(mediaBlockFor(file.type, Buffer.from(bytes)));
       }
-      const isPdf = file.type === "application/pdf";
-      const isImage = file.type.startsWith("image/");
-      if (!isPdf && !isImage) {
-        return NextResponse.json({ error: "รับเฉพาะ PDF หรือรูปภาพ" }, { status: 400 });
-      }
-      const b64 = Buffer.from(bytes).toString("base64");
-      const mediaBlock: Anthropic.ContentBlockParam = isPdf
-        ? {
-            type: "document",
-            source: { type: "base64", media_type: "application/pdf", data: b64 },
-          }
-        : {
-            type: "image",
-            source: {
-              type: "base64",
-              media_type: file.type as Anthropic.Base64ImageSource["media_type"],
-              data: b64,
-            },
-          };
-      return await handleLessonStep(supabase, mode, [mediaBlock], hint);
+      return await handleLessonStep(supabase, mode, mediaBlocks, hint);
     }
 
     // ── Branch 2 — JSON body
@@ -564,7 +690,7 @@ export async function POST(req: NextRequest) {
       step?: string;
       extractMode?: string;
       hint?: string;
-      storage_path?: string;
+      storage_paths?: string[];
       lesson?: LessonShape;
       count?: number;
       existing?: string[];
@@ -574,50 +700,54 @@ export async function POST(req: NextRequest) {
     if (step === "flashcards") return await handleFlashcardsStep(body);
     if (step === "quizzes") return await handleQuizzesStep(body);
 
-    // Lesson step from a storage upload (files too big for the request body).
+    // Lesson step from a storage upload (batches too big for the request body).
     const mode = parseMode(body.extractMode);
-    if (!body.storage_path) {
+    const paths = body.storage_paths ?? [];
+    if (paths.length === 0) {
       return NextResponse.json({ error: "ไม่พบไฟล์ต้นฉบับ" }, { status: 400 });
     }
     const { createAdminClient } = await import("@/lib/supabase/admin");
     const admin = createAdminClient();
     const BUCKET = "school-imports";
-    const { data: blob, error: dlErr } = await admin.storage
-      .from(BUCKET)
-      .download(body.storage_path);
-    if (dlErr || !blob) {
-      return NextResponse.json(
-        { error: `ดาวน์โหลดจาก storage ไม่สำเร็จ: ${dlErr?.message ?? "ไม่พบไฟล์"}` },
-        { status: 500 },
-      );
-    }
-    const arr = new Uint8Array(await blob.arrayBuffer());
-    // Anthropic rejects PDFs over 32 MB.
-    const ANTHROPIC_PDF_MAX = 32 * 1024 * 1024;
-    if (arr.byteLength > ANTHROPIC_PDF_MAX) {
-      await admin.storage.from(BUCKET).remove([body.storage_path]);
-      const mb = (arr.byteLength / 1024 / 1024).toFixed(1);
-      return NextResponse.json(
-        { error: `PDF ใหญ่เกินขีดจำกัด (${mb} MB / 32 MB) — บีบอัดหรือแยกไฟล์ก่อน` },
-        { status: 413 },
-      );
-    }
-    const mediaBlock: Anthropic.ContentBlockParam = {
-      type: "document",
-      source: {
-        type: "base64",
-        media_type: "application/pdf",
-        data: Buffer.from(arr).toString("base64"),
-      },
-    };
-    try {
-      return await handleLessonStep(supabase, mode, [mediaBlock], body.hint ?? "");
-    } finally {
-      // Always clean up the temp object, even on failure.
+    const cleanup = () => {
+      // Always clean up the temp objects, even on failure.
       admin.storage
         .from(BUCKET)
-        .remove([body.storage_path])
+        .remove(paths)
         .catch(() => {});
+    };
+
+    try {
+      const mediaBlocks: Anthropic.ContentBlockParam[] = [];
+      let total = 0;
+      for (const path of paths) {
+        const mediaType = mediaTypeForPath(path);
+        if (!mediaType) {
+          return NextResponse.json({ error: "ชนิดไฟล์ไม่รองรับ" }, { status: 400 });
+        }
+        const { data: blob, error: dlErr } = await admin.storage.from(BUCKET).download(path);
+        if (dlErr || !blob) {
+          return NextResponse.json(
+            { error: `ดาวน์โหลดจาก storage ไม่สำเร็จ: ${dlErr?.message ?? "ไม่พบไฟล์"}` },
+            { status: 500 },
+          );
+        }
+        const arr = Buffer.from(await blob.arrayBuffer());
+        // Anthropic's 32 MB ceiling is per request, so it's the combined size
+        // that matters once several files ride along.
+        total += arr.byteLength;
+        if (total > TOTAL_MAX) {
+          const mb = (total / 1024 / 1024).toFixed(1);
+          return NextResponse.json(
+            { error: `ไฟล์รวมกันเกินขีดจำกัด (${mb} MB / 32 MB) — บีบอัดหรือแบ่งอัปหลายรอบ` },
+            { status: 413 },
+          );
+        }
+        mediaBlocks.push(mediaBlockFor(mediaType, arr));
+      }
+      return await handleLessonStep(supabase, mode, mediaBlocks, body.hint ?? "");
+    } finally {
+      cleanup();
     }
   } catch (e) {
     console.error("school import error", e);
