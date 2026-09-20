@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { fulfillCheckoutSession } from "@/lib/billing/fulfill-checkout";
 import { sendFulfillmentNotifications } from "@/lib/billing/send-fulfillment-notifications";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
-import { sendMetaEvent } from "@/lib/meta/events-api";
+import { sendMetaEvent, sourceUrl } from "@/lib/meta/events-api";
 
 export const runtime = "nodejs";
 
@@ -102,6 +102,10 @@ export async function POST(request: NextRequest) {
           sendMetaEvent({
             event: "Purchase",
             eventId: session.id,
+            // Stripe hosts the card form, so the checkout page itself is not
+            // ours to cite — the success page is where the buyer lands and
+            // where the browser pixel fires the matching event_id.
+            url: sourceUrl("/payment/success"),
             email: buyerEmail,
             externalId: notify.userId,
             fbc,

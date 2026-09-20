@@ -3,6 +3,7 @@ import {
   __resetMissingTokenWarning,
   normalizePhone,
   sendMetaEvent,
+  sourceUrl,
 } from "./events-api";
 
 /**
@@ -39,7 +40,7 @@ describe("sendMetaEvent — test_event_code gate", () => {
     vi.stubEnv("VERCEL_ENV", "production");
     const fetchMock = stubFetch();
 
-    await sendMetaEvent({ event: "ViewContent", contentType: "casegame" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "ViewContent", contentType: "casegame" });
 
     expect(fetchMock).toHaveBeenCalledOnce();
     expect(payloadOf(fetchMock)).not.toHaveProperty("test_event_code");
@@ -51,7 +52,7 @@ describe("sendMetaEvent — test_event_code gate", () => {
     vi.stubEnv("VERCEL_ENV", "preview");
     const fetchMock = stubFetch();
 
-    await sendMetaEvent({ event: "ViewContent", contentType: "casegame" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "ViewContent", contentType: "casegame" });
 
     expect(payloadOf(fetchMock)).toMatchObject({ test_event_code: "TEST31694" });
   });
@@ -62,7 +63,7 @@ describe("sendMetaEvent — test_event_code gate", () => {
     vi.stubEnv("VERCEL_ENV", "preview");
     const fetchMock = stubFetch();
 
-    await sendMetaEvent({ event: "ViewContent" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "ViewContent" });
 
     expect(payloadOf(fetchMock)).not.toHaveProperty("test_event_code");
   });
@@ -71,7 +72,7 @@ describe("sendMetaEvent — test_event_code gate", () => {
     vi.stubEnv("META_CAPI_ACCESS_TOKEN", "");
     const fetchMock = stubFetch();
 
-    await sendMetaEvent({ event: "ViewContent" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "ViewContent" });
 
     expect(fetchMock).not.toHaveBeenCalled();
   });
@@ -125,7 +126,7 @@ describe("action_source", () => {
     vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
     const fetchMock = stubFetch();
 
-    await sendMetaEvent({ event: "Purchase" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" });
 
     const data = (payloadOf(fetchMock).data as Record<string, unknown>[])[0];
     expect(data.action_source).toBe("website");
@@ -159,7 +160,7 @@ describe("token ที่หายไปต้องไม่เงียบ", (
     const err = vi.spyOn(console, "error").mockImplementation(() => {});
     const fetchMock = stubFetch();
 
-    await sendMetaEvent({ event: "Purchase" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" });
 
     expect(fetchMock).not.toHaveBeenCalled();
     expect(err).toHaveBeenCalledOnce();
@@ -173,9 +174,9 @@ describe("token ที่หายไปต้องไม่เงียบ", (
     const err = vi.spyOn(console, "error").mockImplementation(() => {});
     stubFetch();
 
-    await sendMetaEvent({ event: "Purchase" });
-    await sendMetaEvent({ event: "ViewContent" });
-    await sendMetaEvent({ event: "Lead" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "ViewContent" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "Lead" });
 
     expect(err).toHaveBeenCalledOnce();
   });
@@ -185,7 +186,7 @@ describe("token ที่หายไปต้องไม่เงียบ", (
     const err = vi.spyOn(console, "error").mockImplementation(() => {});
     stubFetch();
 
-    await sendMetaEvent({ event: "Purchase" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" });
 
     expect(err).not.toHaveBeenCalled();
   });
@@ -196,7 +197,7 @@ describe("API version", () => {
     vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
     const fetchMock = stubFetch();
 
-    await sendMetaEvent({ event: "Purchase" });
+    await sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" });
 
     const [url] = fetchMock.mock.calls[0] as unknown as [string];
     expect(url).toContain("/v24.0/");
@@ -209,7 +210,7 @@ describe("ผลลัพธ์การส่ง (ให้ caller บันท
     vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
     stubFetch();
 
-    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(true);
+    await expect(sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" })).resolves.toBe(true);
   });
 
   it("คืน false เมื่อไม่มี token — event ถูกทิ้ง", async () => {
@@ -217,7 +218,7 @@ describe("ผลลัพธ์การส่ง (ให้ caller บันท
     vi.spyOn(console, "error").mockImplementation(() => {});
     stubFetch();
 
-    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(false);
+    await expect(sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" })).resolves.toBe(false);
   });
 
   it("คืน false เมื่อ Meta ตอบ error", async () => {
@@ -228,7 +229,7 @@ describe("ผลลัพธ์การส่ง (ให้ caller บันท
       vi.fn(async () => new Response('{"error":{"message":"bad token"}}', { status: 400 }))
     );
 
-    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(false);
+    await expect(sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" })).resolves.toBe(false);
   });
 
   it("คืน false เมื่อ fetch พัง/timeout ไม่ throw ใส่ caller", async () => {
@@ -236,6 +237,75 @@ describe("ผลลัพธ์การส่ง (ให้ caller บันท
     vi.spyOn(console, "error").mockImplementation(() => {});
     vi.stubGlobal("fetch", vi.fn(async () => { throw new Error("timeout"); }));
 
-    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(false);
+    await expect(sendMetaEvent({ url: "https://www.morroo.com/test", event: "Purchase" })).resolves.toBe(false);
+  });
+});
+
+describe("event_source_url", () => {
+  const dataOf = (fetchMock: ReturnType<typeof stubFetch>) =>
+    (payloadOf(fetchMock).data as Record<string, unknown>[])[0];
+
+  it("ส่ง event_source_url ไปกับ website event", async () => {
+    vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
+    const fetchMock = stubFetch();
+
+    await sendMetaEvent({
+      event: "Purchase",
+      url: "https://www.morroo.com/payment/success",
+    });
+
+    expect(dataOf(fetchMock).event_source_url).toBe(
+      "https://www.morroo.com/payment/success"
+    );
+  });
+
+  it("website event ที่ url ว่างตอน runtime ต้อง log error ไม่ใช่ส่งเงียบ", async () => {
+    vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
+    const err = vi.spyOn(console, "error").mockImplementation(() => {});
+    const fetchMock = stubFetch();
+
+    // type บังคับไว้แล้ว แต่ค่าที่ประกอบตอน runtime ยังว่างได้ (env ไม่ตั้ง,
+    // header หาย) — Meta บล็อกเหมือนกัน จึงต้องดังไว้ก่อน
+    await sendMetaEvent({ event: "Purchase", url: "" } as Parameters<
+      typeof sendMetaEvent
+    >[0]);
+
+    expect(err).toHaveBeenCalledOnce();
+    const msg = String(err.mock.calls[0][0]);
+    expect(msg).toContain("event_source_url");
+    expect(msg).toContain("Purchase");
+    expect(dataOf(fetchMock)).not.toHaveProperty("event_source_url");
+  });
+
+  it("system_generated ไม่ต้องมี url และต้องไม่เตือน", async () => {
+    vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
+    const err = vi.spyOn(console, "error").mockImplementation(() => {});
+    const fetchMock = stubFetch();
+
+    await sendMetaEvent({
+      event: "Purchase",
+      actionSource: "system_generated",
+      phone: "0812345678",
+    });
+
+    expect(err).not.toHaveBeenCalled();
+    expect(dataOf(fetchMock).action_source).toBe("system_generated");
+  });
+});
+
+describe("sourceUrl", () => {
+  it("ต่อ path เข้ากับ NEXT_PUBLIC_SITE_URL", () => {
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://morroo.com");
+    expect(sourceUrl("/payment/success")).toBe("https://morroo.com/payment/success");
+  });
+
+  it("ทน trailing slash และ path ที่ไม่มี / นำหน้า", () => {
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://morroo.com/");
+    expect(sourceUrl("register")).toBe("https://morroo.com/register");
+  });
+
+  it("มี fallback เมื่อ env ไม่ได้ตั้ง — ห้ามคืน url ว่าง", () => {
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "");
+    expect(sourceUrl("/register")).toBe("https://www.morroo.com/register");
   });
 });

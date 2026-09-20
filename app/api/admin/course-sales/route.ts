@@ -12,7 +12,7 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { requireAdmin } from "@/lib/admin-auth";
-import { sendMetaEvent } from "@/lib/meta/events-api";
+import { sendMetaEvent, sourceUrl } from "@/lib/meta/events-api";
 import { courseSaleEventId, validateCourseSale } from "@/lib/course-sales";
 
 export const runtime = "nodejs";
@@ -104,6 +104,11 @@ export async function POST(request: Request) {
       // Closed in chat and typed in afterwards — claiming "website" here
       // would describe a visit that never happened and skew match quality.
       actionSource: "system_generated",
+      // Meta only requires event_source_url for website events, so this is
+      // not load-bearing. It points at the screen the sale was entered on,
+      // which is the only page involved, and gives the event a stable origin
+      // in Events Manager instead of a blank column.
+      url: sourceUrl("/admin/course-sales"),
       phone: sale.phone,
       value: sale.priceThb,
       currency: "THB",

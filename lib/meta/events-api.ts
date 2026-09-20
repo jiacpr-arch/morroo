@@ -32,11 +32,9 @@ export type MetaActionSource =
   | "business_messaging"
   | "other";
 
-export interface MetaEventInput {
+interface MetaEventBase {
   event: MetaEventName;
   eventId?: string;
-  /** Defaults to "website" — the only source every existing caller has. */
-  actionSource?: MetaActionSource;
   email?: string | null;
   phone?: string | null;
   externalId?: string | null;
@@ -46,13 +44,31 @@ export interface MetaEventInput {
   userAgent?: string | null;
   fbc?: string | null;
   fbp?: string | null;
-  url?: string | null;
   value?: number;
   currency?: string;
   contentIds?: string[];
   contentName?: string;
   contentType?: string;
 }
+
+/**
+ * `event_source_url` is mandatory for website events — Meta rejects a
+ * `website` event that omits it, at ingest, without telling anyone. Two call
+ * sites shipped without it (the Stripe Purchase among them) and neither the
+ * code nor the logs said so; the events simply never arrived.
+ *
+ * So the rule is expressed in the type rather than left to a runtime check:
+ * omit `actionSource` (or set it to "website") and `url` becomes mandatory,
+ * which turns that whole class of bug into a build failure. Sources with no
+ * page behind them — `system_generated` for a sale closed in chat — keep
+ * `url` optional, because Meta does not require one there.
+ */
+export type MetaEventInput =
+  | (MetaEventBase & { actionSource?: "website"; url: string })
+  | (MetaEventBase & {
+      actionSource: Exclude<MetaActionSource, "website">;
+      url?: string | null;
+    });
 
 /**
  * Put a phone number in the shape Meta hashes against: digits only, country
@@ -81,6 +97,24 @@ export function normalizePhone(raw: string): string | null {
   }
 
   return digits || null;
+}
+
+/**
+ * Absolute URL on the public site, for `event_source_url`.
+ *
+ * Call sites read `referer` where they can, but that header is absent often
+ * enough — privacy settings, direct navigation, some in-app browsers — that
+ * it cannot stand alone: a website event without a source URL is dropped by
+ * Meta, so a null referer silently costs the conversion. This supplies the
+ * page the event logically came from as the floor.
+ */
+export function sourceUrl(path: string): string {
+  // `??` would let an env var set to "" through and yield a relative URL,
+  // which Meta rejects exactly like a missing one.
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") ||
+    "https://www.morroo.com";
+  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
 // Web Crypto API — works in both Node.js 18+ and Edge runtimes (unlike node:crypto)
@@ -176,11 +210,24 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<boolean> {
   if (input.contentName) customData.content_name = input.contentName;
   if (input.contentType) customData.content_type = input.contentType;
 
+  const actionSource = input.actionSource ?? "website";
+
+  // The type already makes `url` mandatory for website events, but a value
+  // assembled at runtime can still arrive empty (an unset env var, a blank
+  // header). Meta drops those the same way, so say it out loud rather than
+  // post a payload we know it will reject.
+  if (actionSource === "website" && !input.url) {
+    console.error(
+      `[meta-capi] ${input.event} ไม่มี event_source_url ทั้งที่ action_source เป็น website ` +
+        `— Meta จะบล็อกเงียบ ๆ ตรวจ caller ที่ยิง event นี้`
+    );
+  }
+
   const eventData: Record<string, unknown> = {
     event_name: input.event,
     event_time: Math.floor(Date.now() / 1000),
     event_id: input.eventId ?? crypto.randomUUID(),
-    action_source: input.actionSource ?? "website",
+    action_source: actionSource,
     user_data: userData,
   };
   if (input.url) eventData.event_source_url = input.url;
