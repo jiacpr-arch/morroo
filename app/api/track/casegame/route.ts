@@ -17,7 +17,7 @@
  */
 
 import { NextResponse } from "next/server";
-import { sendMetaEvent } from "@/lib/meta/events-api";
+import { sendMetaEvent, sourceUrl } from "@/lib/meta/events-api";
 import { getSimScenario } from "@/lib/supabase/queries-sim";
 import {
   capiContentName, capiEventId, caseGameCategory, type CaseGameCapiEvent,
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
     userAgent: request.headers.get("user-agent"),
     fbc: readCookie("_fbc"),
     fbp: readCookie("_fbp"),
-    url: request.headers.get("referer"),
+    url: request.headers.get("referer") ?? sourceUrl(`/sim/${slug}`),
     contentType: "casegame",
     contentName: capiContentName(capiEvent, slug),
     contentIds: [`${caseGameCategory(scenario.category)}:${slug}`],
