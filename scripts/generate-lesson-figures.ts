@@ -303,9 +303,15 @@ async function callImageApi(
 
 async function renderHero(prompt: string): Promise<Buffer | null> {
   if (SKIP_HERO || !OPENAI_API_KEY) return null;
-  const full = `Modern flat medical-education illustration, 3:2 landscape, soft clinical palette (teal, navy, warm neutrals), generous whitespace, friendly not clinical.
+  // Verified 2026-09-20: without an explicit anti-realism anchor, gpt-image
+  // models default to photorealistic/cinematic renders — a first pilot run
+  // returned a moody Renaissance alchemist scene with a skull and skeleton,
+  // nothing like the flat SVG diagrams it needs to sit next to. Name the
+  // style genre directly ("Duolingo/Notion-style flat vector illustration")
+  // and list the drift we saw as an explicit negative, not just "friendly".
+  const full = `Flat 2D vector illustration, the style of a modern app onboarding screen or Duolingo/Notion-style explainer graphic — NOT a photo, NOT a painting, NOT cinematic or photorealistic rendering. 3:2 landscape. Simple geometric shapes, soft even lighting, minimal shading, generous light/white negative space. Palette: teal, soft slate blue, warm cream/neutral background, gentle pastel accents — bright and welcoming, never dark or moody. Friendly and encouraging, suitable for a nursing/medical-school app used by young students.
 SCENE: ${prompt}
-ABSOLUTE RULES: no text, letters, numbers, labels, captions, arrows with labels, charts, watermarks or typography of any kind.`;
+STRICT RULES — do not include ANY of: photorealism, oil-painting or cinematic lighting, dark/gothic/moody atmosphere, candles or candlelight, skulls, skeletons, occult or alchemist imagery, antique/Renaissance settings, horror or unsettling elements, text, letters, numbers, labels, captions, watermarks, or typography of any kind.`;
 
   let res = await callImageApi(HERO_MODEL, full, {
     size: "1536x1024",
