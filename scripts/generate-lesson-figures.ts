@@ -4,8 +4,9 @@
  * ต่อ 1 บทเรียน (school_lessons):
  *   1. ส่ง body_md ให้ Claude เสนอ "figure spec": diagram เป็น SVG 1 รูปต่อ Part
  *      (label ไทย ควบคุมข้อความได้ 100%), prompt สำหรับ hero, และ key points สำหรับการ์ดสรุป
- *   2. เรนเดอร์: SVG ใช้ตรง ๆ (ตรวจว่าพาร์สได้/ไม่มี script) · hero ผ่าน OpenAI gpt-image-1
- *      (ข้ามถ้าไม่มี OPENAI_API_KEY หรือ SKIP_HERO=1) · การ์ดสรุปจาก template SVG ในไฟล์นี้
+ *   2. เรนเดอร์: SVG ใช้ตรง ๆ (ตรวจว่าพาร์สได้/ไม่มี script) · hero ผ่าน OpenAI gpt-image-2.5-flare
+ *      (ตกไป gpt-image-1 อัตโนมัติถ้า org ยังไม่มีสิทธิ์ใช้รุ่นใหม่; ข้ามถ้าไม่มี OPENAI_API_KEY หรือ SKIP_HERO=1)
+ *      · การ์ดสรุปจาก template SVG ในไฟล์นี้
  *   3. อัปโหลดขึ้น Supabase Storage `public-assets/school/lessons/{lesson_id}/…`
  *   4. เขียนกลับ body_md ด้วย `![alt](url "caption")` ตามตำแหน่ง Part/anchor ที่ Claude ระบุ
  *      (ผ่าน splitLessonPartsRaw/joinLessonParts — marker `## ⏸ Mini Quiz` และ quiz ไม่ถูกแตะ)
@@ -266,16 +267,46 @@ async function validateSvg(svg: string, label: string): Promise<Buffer> {
   return buf;
 }
 
+/**
+ * Hero image model. gpt-image-2.5-flare (released 2026-09-08) replaces
+ * gpt-image-1: sharper detail and ~50% lower latency at the "flare" (fast)
+ * tier, which is what a decorative no-text illustration needs — "sunburst"
+ * is the slower, higher-precision-editing tier and isn't worth it here.
+ * It takes aspect_ratio/resolution instead of gpt-image-1's `size`. If the
+ * org's key hasn't rolled onto it yet, OpenAI returns a 4xx naming the model
+ * — fall back to gpt-image-1 once rather than failing the whole hero step.
+ */
+const HERO_MODEL = "gpt-image-2.5-flare";
+const HERO_MODEL_FALLBACK = "gpt-image-1";
+
+async function callImageApi(
+  model: string,
+  prompt: string,
+  body: Record<string, unknown>
+): Promise<Response> {
+  return fetch("https://api.openai.com/v1/images/generations", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${OPENAI_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ model, prompt, ...body }),
+  });
+}
+
 async function renderHero(prompt: string): Promise<Buffer | null> {
   if (SKIP_HERO || !OPENAI_API_KEY) return null;
   const full = `Modern flat medical-education illustration, 3:2 landscape, soft clinical palette (teal, navy, warm neutrals), generous whitespace, friendly not clinical.
 SCENE: ${prompt}
 ABSOLUTE RULES: no text, letters, numbers, labels, captions, arrows with labels, charts, watermarks or typography of any kind.`;
-  const res = await fetch("https://api.openai.com/v1/images/generations", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${OPENAI_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ model: "gpt-image-1", prompt: full, size: "1536x1024", quality: "medium" }),
+
+  let res = await callImageApi(HERO_MODEL, full, {
+    aspect_ratio: "3:2",
+    resolution: "1k",
+    quality: "medium",
   });
+  if (!res.ok && res.status >= 400 && res.status < 500) {
+    const errText = await res.text();
+    console.warn(`${HERO_MODEL} rejected (${res.status}: ${errText}) — falling back to ${HERO_MODEL_FALLBACK}`);
+    res = await callImageApi(HERO_MODEL_FALLBACK, full, { size: "1536x1024", quality: "medium" });
+  }
   if (!res.ok) throw new Error(`OpenAI image error ${res.status}: ${await res.text()}`);
   const json = (await res.json()) as { data?: { b64_json?: string }[] };
   const b64 = json.data?.[0]?.b64_json;
