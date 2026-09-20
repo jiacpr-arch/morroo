@@ -1,6 +1,13 @@
 # แผนใส่รูปประกอบบทเรียน School (Lesson Illustrations)
 
-> สถานะ: แผน (ยังไม่ได้ลงมือ) — เขียนจากการสำรวจโค้ด + ฐานข้อมูลจริง ณ 20 ก.ย. 2026
+> สถานะ (20 ก.ย. 2026): **Phase 0 ทำแล้ว** (`LessonFigure`, ช่อง alt/caption ในแอดมิน,
+> `school_visuals.lesson_id`, การ์ดสรุปท้ายบท, thumbnail ในลิสต์บท, event PostHog) ·
+> **สคริปต์ระดับ 2 เขียนแล้ว** (`npm run gen:figures` → `scripts/generate-lesson-figures.ts`, ยังไม่ได้รันกับ API จริง) ·
+> **Phase 1 นำร่อง FMMD 1201** วาด SVG 15 รูปไว้ที่ `public/lesson-images/school/cell-biology/` —
+> ใส่เข้า DB ด้วย `supabase/school_figures_cell_biology_20260920.sql` **หลัง deploy** (ไฟล์รูปต้องขึ้นเว็บก่อน ไม่งั้นรูปแตก)
+>
+> ตัวเลือก 3 ข้อในหัวข้อ 7 ใช้ตามที่เสนอ: hero ใช้ gpt‑image‑1, summary card เก็บใน `school_visuals` + `lesson_id`,
+> Phase 1 รีวิวโดยแอดมินก่อนปล่อย
 
 ## 0. ปัญหาและเป้าหมาย
 

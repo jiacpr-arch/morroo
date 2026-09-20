@@ -70,6 +70,24 @@ school_book_chapters             school_lessons (body_md)        school_flashcar
 หรือจำนวนข้อสอบน้อยกว่าสัดส่วนข้างต้น (prompt ฝั่ง `/api/admin/school/import`
 ก็สั่งให้ AI ออกข้อตามสัดส่วนเดียวกัน)
 
+## 3.1 รูปประกอบ (figures)
+
+บทตัวหนังสือล้วนทำให้อ่านแล้วเบื่อและสรุปไม่ได้ — ทุกบทควรมีรูป 3 ชนิด
+(รายละเอียดใน `docs/school-illustrations-plan.md`):
+
+| ชนิด | ตำแหน่ง | จำนวน |
+|------|---------|-------|
+| Hero (ภาพเปิดบท) | บรรทัดถัดจากหัวเรื่อง `# …` ของ Part 1 | 1 |
+| Diagram สรุป Part (SVG, label ไทย) | หลังย่อหน้าที่ "แนะนำ" concept ของ Part นั้น | ≤ 1 ต่อ Part (ไม่ใส่ใน Part ที่เป็น pearls/mnemonics) |
+| Summary card (สรุปท้ายบท 1 ภาพ) | `school_visuals` ที่ผูก `lesson_id` — โชว์ที่การ์ด "เรียนจบบทนี้แล้ว" | 1 |
+
+- เขียนเป็น markdown image ธรรมดา โดยใส่ **caption ไว้ใน title**: `![alt](url "caption 1 ประโยค")`
+  (`components/school/LessonFigure.tsx` เรนเดอร์เป็น figure + คำบรรยาย + กดขยาย; parser ของ Part ไม่กระทบ)
+- **alt และ caption บังคับ** — caption บอกว่า "ต้องดูอะไรในรูป" ไม่ใช่ชื่อรูปเฉย ๆ
+- Diagram: ≤ 7 องค์ประกอบ / ≤ 6 label, ไทย + ศัพท์อังกฤษในวงเล็บ, ห้ามตัวเลข dose/cut‑off ที่ไม่มีในบท
+- สร้างอัตโนมัติด้วย `npm run gen:figures` (`scripts/generate-lesson-figures.ts`) แล้วรีวิวใน
+  `/admin/school` → tab แก้ไข → "หน้าเหมือนนักเรียน" หรือแทรกมือด้วยปุ่ม "+ แทรกรูปตรงนี้" (กรอก alt/caption ก่อนอัป)
+
 ## 4. เกณฑ์ผ่าน (Mastery)
 
 - **ผ่านเมื่อทำ quiz ถูก ≥ 80% จากอย่างน้อย 5 ข้อ**
