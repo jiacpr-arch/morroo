@@ -19,7 +19,7 @@
     <circle cx="990" cy="400" r="12"/>
     <circle cx="1060" cy="340" r="20"/>
     <circle cx="200" cy="330" r="14"/>
-    <circle cx="260" cy="460" r="18"/>
+    <circle cx="150" cy="420" r="18"/>
     <circle cx="880" cy="520" r="13"/>
   </g>
   <!-- mitochondrion -->
@@ -38,7 +38,7 @@
       <path d="M130 120 v-90 a22 22 0 0 1 44 0 v90"/>
     </g>
     <!-- mtDNA loop + ribosomes -->
-    <ellipse cx="-190" cy="60" rx="26" ry="14" fill="none" stroke="#d97706" stroke-width="2.5"/>
+    <ellipse cx="-236" cy="30" rx="26" ry="14" fill="none" stroke="#d97706" stroke-width="2.5"/>
     <g fill="#d97706">
       <circle cx="-70" cy="0" r="4"/><circle cx="60" cy="20" r="4"/><circle cx="240" cy="40" r="4"/><circle cx="-250" cy="0" r="4"/>
     </g>
