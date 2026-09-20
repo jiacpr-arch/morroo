@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">ภาพประกอบบทที่ 2: ไมโทคอนเดรียแบบสไตล์ พร้อมถุงเวสิเคิลและกอลจิ</title>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <!-- soft background -->
+  <circle cx="160" cy="130" r="80" fill="#ffe4e6" opacity="0.8"/>
+  <circle cx="1070" cy="580" r="70" fill="#fef3c7" opacity="0.9"/>
+  <circle cx="120" cy="560" r="30" fill="#fef3c7"/>
+  <!-- Golgi stack in background (top right) -->
+  <g fill="#ffe4e6" stroke="#fda4af" stroke-width="2.5">
+    <path d="M880 120 c40 -16 200 -16 240 0 c-40 16 -200 16 -240 0 z"/>
+    <path d="M870 160 c44 -18 216 -18 260 0 c-44 18 -216 18 -260 0 z"/>
+    <path d="M862 200 c48 -20 232 -20 280 0 c-48 20 -232 20 -280 0 z"/>
+    <path d="M870 240 c44 -18 216 -18 260 0 c-44 18 -216 18 -260 0 z"/>
+    <path d="M880 280 c40 -16 200 -16 240 0 c-40 16 -200 16 -240 0 z"/>
+  </g>
+  <!-- vesicles -->
+  <g fill="#fecdd3" stroke="#e11d48" stroke-width="3">
+    <circle cx="930" cy="360" r="16"/>
+    <circle cx="990" cy="400" r="12"/>
+    <circle cx="1060" cy="340" r="20"/>
+    <circle cx="200" cy="330" r="14"/>
+    <circle cx="260" cy="460" r="18"/>
+    <circle cx="880" cy="520" r="13"/>
+  </g>
+  <!-- mitochondrion -->
+  <g transform="translate(560 350) rotate(-8)">
+    <rect x="-330" y="-150" width="660" height="300" rx="150" fill="#ffe4e6" stroke="#e11d48" stroke-width="5"/>
+    <rect x="-300" y="-120" width="600" height="240" rx="120" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+    <g fill="#ffe4e6" stroke="#d97706" stroke-width="3" stroke-linejoin="round">
+      <path d="M-220 -120 v70 a22 22 0 0 0 44 0 v-70"/>
+      <path d="M-120 -120 v90 a22 22 0 0 0 44 0 v-90"/>
+      <path d="M-20 -120 v75 a22 22 0 0 0 44 0 v-75"/>
+      <path d="M80 -120 v95 a22 22 0 0 0 44 0 v-95"/>
+      <path d="M180 -120 v65 a22 22 0 0 0 44 0 v-65"/>
+      <path d="M-170 120 v-80 a22 22 0 0 1 44 0 v80"/>
+      <path d="M-70 120 v-95 a22 22 0 0 1 44 0 v95"/>
+      <path d="M30 120 v-70 a22 22 0 0 1 44 0 v70"/>
+      <path d="M130 120 v-90 a22 22 0 0 1 44 0 v90"/>
+    </g>
+    <!-- mtDNA loop + ribosomes -->
+    <ellipse cx="-190" cy="60" rx="26" ry="14" fill="none" stroke="#d97706" stroke-width="2.5"/>
+    <g fill="#d97706">
+      <circle cx="-70" cy="0" r="4"/><circle cx="60" cy="20" r="4"/><circle cx="240" cy="40" r="4"/><circle cx="-250" cy="0" r="4"/>
+    </g>
+  </g>
+  <text x="48" y="630" font-size="22" fill="#64748b">Cell Biology · บทที่ 2</text>
+</svg>

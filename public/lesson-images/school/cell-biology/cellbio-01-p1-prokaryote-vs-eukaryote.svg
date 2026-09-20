@@ -63,8 +63,9 @@
     <circle cx="965" cy="389" r="4"/><circle cx="1010" cy="385" r="4"/><circle cx="1045" cy="397" r="4"/>
   </g>
   <text x="820" y="405" text-anchor="middle" font-size="20" fill="#0f172a">nucleus (chromosome สายตรง)</text>
-  <text x="1030" y="200" text-anchor="middle" font-size="20" fill="#0d9488">mitochondrion</text>
-  <text x="1040" y="430" text-anchor="middle" font-size="20" fill="#64748b">ER + ribosome 80S</text>
+  <line x1="1040" y1="168" x2="1022" y2="222" stroke="#0d9488" stroke-width="2"/>
+  <text x="1040" y="160" text-anchor="middle" font-size="20" fill="#0d9488">mitochondrion</text>
+  <text x="995" y="316" text-anchor="middle" font-size="20" fill="#64748b">ER + ribosome 80S</text>
 
   <!-- comparison rows -->
   <g font-size="22" fill="#0f172a">

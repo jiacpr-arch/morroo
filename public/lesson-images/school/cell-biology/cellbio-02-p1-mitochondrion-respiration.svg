@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">โครงสร้างไมโทคอนเดรีย 4 ส่วน และ 3 ขั้นของการหายใจระดับเซลล์</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="780" fill="#ffffff"/>
+  <text x="600" y="60" text-anchor="middle" font-size="34" font-weight="700" fill="#0f172a">Mitochondrion — โครงสร้างกับ 3 ขั้นของ cellular respiration</text>
+
+  <!-- LEFT: 3-step flow -->
+  <g stroke="#e11d48" stroke-width="2">
+    <rect x="40" y="130" width="340" height="130" rx="14" fill="#ffe4e6"/>
+    <rect x="40" y="320" width="340" height="130" rx="14" fill="#ffe4e6"/>
+    <rect x="40" y="510" width="340" height="130" rx="14" fill="#ffe4e6"/>
+  </g>
+  <g fill="#e11d48">
+    <circle cx="76" cy="166" r="20"/><circle cx="76" cy="356" r="20"/><circle cx="76" cy="546" r="20"/>
+  </g>
+  <g font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="76" y="174">1</text><text x="76" y="364">2</text><text x="76" y="554">3</text>
+  </g>
+  <g fill="#0f172a">
+    <text x="110" y="174" font-size="24" font-weight="700">Glycolysis</text>
+    <text x="64" y="212" font-size="20">cytosol · ไม่ใช้ O₂</text>
+    <text x="110" y="364" font-size="24" font-weight="700">Krebs cycle</text>
+    <text x="64" y="402" font-size="20">matrix</text>
+    <text x="110" y="554" font-size="24" font-weight="700">Oxidative phosphorylation</text>
+    <text x="64" y="592" font-size="20">inner membrane · ใช้ O₂ → H₂O</text>
+  </g>
+  <g stroke="#475569" stroke-width="3" marker-end="url(#arrow)">
+    <line x1="210" y1="262" x2="210" y2="316"/>
+    <line x1="210" y1="452" x2="210" y2="506"/>
+  </g>
+
+  <!-- RIGHT: bean -->
+  <rect x="520" y="190" width="500" height="280" rx="140" fill="#ffe4e6" stroke="#e11d48" stroke-width="4"/>
+  <rect x="546" y="216" width="448" height="228" rx="114" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+  <g fill="#ffe4e6" stroke="#d97706" stroke-width="3" stroke-linejoin="round">
+    <path d="M610 216 v60 a15 15 0 0 0 30 0 v-60"/>
+    <path d="M690 216 v75 a15 15 0 0 0 30 0 v-75"/>
+    <path d="M770 216 v65 a15 15 0 0 0 30 0 v-65"/>
+    <path d="M850 216 v70 a15 15 0 0 0 30 0 v-70"/>
+    <path d="M650 444 v-70 a15 15 0 0 1 30 0 v70"/>
+    <path d="M730 444 v-80 a15 15 0 0 1 30 0 v80"/>
+    <path d="M810 444 v-65 a15 15 0 0 1 30 0 v65"/>
+    <path d="M890 444 v-60 a15 15 0 0 1 30 0 v60"/>
+  </g>
+  <ellipse cx="612" cy="345" rx="22" ry="12" fill="none" stroke="#d97706" stroke-width="2.5"/>
+  <g fill="#d97706">
+    <circle cx="700" cy="335" r="3.5"/><circle cx="760" cy="330" r="3.5"/><circle cx="820" cy="340" r="3.5"/><circle cx="880" cy="330" r="3.5"/>
+  </g>
+
+  <!-- leaders -->
+  <g stroke="#64748b" stroke-width="2">
+    <line x1="600" y1="122" x2="600" y2="204"/>
+    <line x1="1000" y1="156" x2="1007" y2="290"/>
+    <line x1="560" y1="500" x2="620" y2="292"/>
+    <line x1="880" y1="500" x2="880" y2="380"/>
+  </g>
+  <g fill="#64748b">
+    <circle cx="600" cy="204" r="4"/><circle cx="1007" cy="290" r="4"/><circle cx="620" cy="292" r="4"/><circle cx="880" cy="380" r="4"/>
+  </g>
+  <!-- labels -->
+  <g font-size="22" fill="#0f172a">
+    <text x="440" y="116"><tspan font-weight="700">เยื่อชั้นนอก (outer membrane)</tspan> — มี porin ผ่านง่าย</text>
+    <text x="1160" y="150" text-anchor="end"><tspan font-weight="700">ช่องระหว่างเยื่อ (intermembrane space)</tspan> — H⁺ สะสม</text>
+    <text x="440" y="522" font-weight="700">เยื่อชั้นใน (inner membrane, cristae)</text>
+    <text x="440" y="550">electron transport chain + ATP synthase</text>
+    <text x="440" y="578">cardiolipin กัน ion</text>
+    <text x="870" y="522" font-weight="700">matrix</text>
+    <text x="870" y="550">Krebs cycle, β-oxidation</text>
+    <text x="870" y="578">mtDNA + ribosome 70S</text>
+  </g>
+</svg>
