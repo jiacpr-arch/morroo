@@ -140,11 +140,19 @@ export function __resetMissingTokenWarning(): void {
   warnedMissingToken = false;
 }
 
-export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
+/**
+ * Fire one CAPI event. Never throws — a Meta outage must not take the caller
+ * down with it — so the boolean is the only way to learn what happened.
+ *
+ * `true` means Meta accepted the event. Callers that persist a record of the
+ * conversion (app/api/admin/course-sales) store that answer so a dropped
+ * event stays findable instead of being assumed delivered.
+ */
+export async function sendMetaEvent(input: MetaEventInput): Promise<boolean> {
   const token = process.env.META_CAPI_ACCESS_TOKEN;
   if (!token) {
     warnMissingToken(input.event);
-    return;
+    return false;
   }
 
   const userData: Record<string, unknown> = {};
@@ -199,8 +207,11 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
       console.error(
         `[meta-capi] ${input.event} failed: ${res.status} ${text.slice(0, 200)}`
       );
+      return false;
     }
+    return true;
   } catch (err) {
     console.error(`[meta-capi] ${input.event} fetch error:`, err);
+    return false;
   }
 }

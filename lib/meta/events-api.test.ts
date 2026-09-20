@@ -203,3 +203,39 @@ describe("API version", () => {
     expect(url).not.toContain("v18.0");
   });
 });
+
+describe("ผลลัพธ์การส่ง (ให้ caller บันทึกได้ว่าถึง Meta จริงไหม)", () => {
+  it("คืน true เมื่อ Meta รับ event", async () => {
+    vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
+    stubFetch();
+
+    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(true);
+  });
+
+  it("คืน false เมื่อไม่มี token — event ถูกทิ้ง", async () => {
+    vi.stubEnv("META_CAPI_ACCESS_TOKEN", "");
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    stubFetch();
+
+    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(false);
+  });
+
+  it("คืน false เมื่อ Meta ตอบ error", async () => {
+    vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => new Response('{"error":{"message":"bad token"}}', { status: 400 }))
+    );
+
+    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(false);
+  });
+
+  it("คืน false เมื่อ fetch พัง/timeout ไม่ throw ใส่ caller", async () => {
+    vi.stubEnv("META_CAPI_ACCESS_TOKEN", "token");
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    vi.stubGlobal("fetch", vi.fn(async () => { throw new Error("timeout"); }));
+
+    await expect(sendMetaEvent({ event: "Purchase" })).resolves.toBe(false);
+  });
+});
