@@ -46,12 +46,13 @@ type Step = "lesson" | "flashcards" | "quizzes";
 
 /**
  * Output ceiling per step. Small on purpose — see the file header — but the
- * lesson needs real headroom: a 700-1200 word Thai lesson plus 2-4 embedded
- * quiz blocks is ~5-8k tokens once JSON-escaped, so a 6000 ceiling truncated
- * routinely and cost the user two minutes of generation each time.
+ * lesson needs real headroom: a 700-1200 word Thai lesson plus 6-12 embedded
+ * quiz blocks (one per part now, including the last — up from 2-4) is
+ * ~7-10k tokens once JSON-escaped, so a lower ceiling truncated routinely
+ * and cost the user two minutes of generation each time.
  */
 const STEP_MAX_TOKENS: Record<Step, number> = {
-  lesson: 12000,
+  lesson: 16000,
   flashcards: 4500,
   quizzes: 5000,
 };
@@ -80,10 +81,12 @@ const LESSON_TOOL: Anthropic.Tool = {
       body_md: {
         type: "string",
         description:
-          "Markdown lesson split into 2-4 parts. Between consecutive parts put a `## ⏸ Mini Quiz` marker line, and immediately after each marker embed ONE quiz that tests the part just above it, as a fenced ```quiz block containing JSON: " +
-          '{ "stem": string, "choices": [{ "label": "A"|"B"|"C"|"D", "text": string }], "correct_answer": "A"|"B"|"C"|"D", "explanation": string }. ' +
-          "The inline quiz MUST be answerable from the part directly above it. " +
-          "Aim for 700-1200 words of prose — long enough to teach, short enough to return in one response.",
+          "Markdown lesson split into 6-12 short parts (one idea each, ~60-150 words — this is a 'mini class' card deck that shows one part per screen, not a long-form article). " +
+          "After EVERY part — including the very last one — put a `## ⏸ Mini Quiz` marker line, and immediately after each marker embed ONE quiz that tests the part just above it, as a fenced ```quiz block containing JSON: " +
+          '{ "stem": string, "choices": [{ "label": "A"|"B"|"C"|"D", "text": string }], "correct_answer": "A"|"B"|"C"|"D", "explanation": string, "difficulty": "easy"|"medium"|"hard" }. ' +
+          "The inline quiz MUST be answerable from the part directly above it. Order the parts so quiz difficulty ramps roughly easy → hard across the lesson. " +
+          "A table or list stays whole inside one part even if that part runs longer than 150 words — never split a table/list apart. " +
+          "Aim for 700-1200 words of prose total, split across the parts.",
       },
       layer: { type: "string", enum: [...LAYERS] },
       estimated_min: { type: "integer", minimum: 1, maximum: 120 },
@@ -204,18 +207,18 @@ Same expansion rules as EXPAND mode (including the ban on inventing doses/cut-of
 };
 
 const LESSON_STRUCTURE: Record<Mode, string> = {
-  faithful: `Lesson: 2-4 parts with a mini-quiz between consecutive parts.`,
-  expand: `Lesson sections:
-  ## 🧠 Why it matters
-  ## 🔑 Key concepts (2-4 parts with mini-quizzes between)
-  ## 💡 Clinical pearls
-  ## 🎯 Mnemonics (optional)
-  ## 🔗 Connections to other topics
+  faithful: `Lesson: 6-12 short parts total (~60-150 words each, one idea per part), a mini-quiz after EVERY part including the last.`,
+  expand: `Lesson sections, each further split into short ~60-150-word parts so the WHOLE lesson totals 6-12 parts (a mini-quiz goes after every part, including the very last one):
+  ## 🧠 Why it matters (usually 1 part)
+  ## 🔑 Key concepts (split into several short parts, one idea each — most of the 6-12)
+  ## 💡 Clinical pearls (1 part)
+  ## 🎯 Mnemonics (optional, 0-1 part)
+  ## 🔗 Connections to other topics (1 part)
 estimated_min: 15-30.`,
-  deep: `Lesson sections:
+  deep: `Lesson sections, each a short ~60-150-word part (split "Key concepts" further if needed) so the WHOLE lesson totals 6-12 parts — merge or drop optional sections rather than exceeding 12. A mini-quiz goes after EVERY part, including the very last one:
   ## 🧠 Why it matters
   ## 📚 Foundation review (prerequisites)
-  ## 🔑 Key concepts (3-4 parts with mini-quizzes between)
+  ## 🔑 Key concepts (split into a few short parts)
   ## 🩺 Clinical application (cases)
   ## 💡 Clinical pearls + high-yield
   ## ⚠️ Common pitfalls

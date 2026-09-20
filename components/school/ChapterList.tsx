@@ -23,6 +23,8 @@ export interface Chapter {
   /** จำนวนข้อสอบของบทนี้ (mini quiz ที่ฝังในบท + คลังข้อสอบของวิชา) */
   quizCount: number;
   read: boolean;
+  /** รูปแรกของบท (hero) ใช้เป็น thumbnail ให้ลิสต์ไม่เป็นตัวหนังสือล้วน */
+  thumb?: string | null;
 }
 
 interface Props {
@@ -39,14 +41,14 @@ const MODES: {
   {
     key: "mixed",
     label: "อ่าน + ควิซ",
-    hint: "อ่านทีละส่วนแล้วตอบคำถามคั่นทันที — micro-learning (แนะนำ)",
+    hint: "อ่านทีละส่วนสั้น ๆ แบบ mini class ตอบคำถามท้ายส่วนก่อนไปต่อ (แนะนำ)",
     icon: Zap,
     activeClass: "border-violet-500 bg-violet-50 text-violet-700",
   },
   {
     key: "read",
     label: "อ่านอย่างเดียว",
-    hint: "อ่านเนื้อหาทั้งบทรวดเดียว ไม่มีคำถามคั่น",
+    hint: "อ่านทีละส่วนเหมือนกัน แต่ข้ามคำถามท้ายส่วนได้",
     icon: BookOpen,
     activeClass: "border-teal-500 bg-teal-50 text-teal-700",
   },
@@ -136,6 +138,15 @@ export default function ChapterList({ chapters }: Props) {
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
                 ) : (
                   <Circle className="h-5 w-5 text-muted-foreground shrink-0" />
+                )}
+                {c.thumb && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={c.thumb}
+                    alt=""
+                    loading="lazy"
+                    className="h-14 w-20 shrink-0 rounded-md border bg-white object-cover"
+                  />
                 )}
                 <div className="flex-1 min-w-0">
                   <p className="font-medium leading-snug">

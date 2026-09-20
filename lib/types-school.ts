@@ -153,5 +153,7 @@ export interface SchoolVisual {
   linked_flashcard_ids: string[];
   source: string | null;
   sort_order: number;
+  /** บทเรียนที่รูปสรุปนี้ประกอบ (null = visual ลอย ไม่ผูกบท) */
+  lesson_id?: string | null;
   school_topics?: SchoolTopic;
 }

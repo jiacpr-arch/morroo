@@ -12,25 +12,35 @@
 ```
 หนังสือฉบับเต็ม (Reference)   →  Concept Reader (micro-loop)  →  Flashcards  →  Quiz  →  Mastery
 school_book_chapters             school_lessons (body_md)        school_flashcards  school_quizzes  ≥80%
-อ่านต่อเนื่อง + สารบัญ          อ่านทีละ Part + mini-quiz                                         จาก ≥5 ข้อ
+อ่านต่อเนื่อง + สารบัญ          การ์ดทีละส่วน + mini-quiz (mini class)                            จาก ≥5 ข้อ
 ```
 
 - **หนังสือฉบับเต็ม** = ตำราอ้างอิง อ่านได้อิสระ ไม่บังคับ (ดู `BookReader`)
 - **Concept Reader** = micro-learning loop ที่บังคับทำ retrieval ระหว่างอ่าน (ดู `LessonReader`)
 
-## 1. หน่วยเนื้อหา micro-lesson (`school_lessons.body_md`)
+## 1. หน่วยเนื้อหา micro-lesson (`school_lessons.body_md`) — "mini class"
 
-- แบ่งเนื้อหาเป็น **Part** ย่อย ๆ คั่นแต่ละ Part ด้วยบรรทัด `## ⏸ Mini Quiz`
-  (กลไก `splitByMarker` ใน `components/school/LessonReader.tsx` ใช้ตัวคั่นนี้)
-- ขนาดต่อ Part: **~5–8 บรรทัด (~120–180 คำ)** — สั้นพอให้จบใน 1–2 นาที
-- จำนวน Part ต่อบทเรียน: **3–6 Part** (รวมอ่าน ~5–10 นาที = `estimated_min`)
+- แบ่งเนื้อหาเป็น **ส่วน (Part)** สั้น ๆ คั่นแต่ละส่วนด้วยบรรทัด `## ⏸ Mini Quiz`
+  (parser: `lib/school/lesson-parts.ts` `splitLessonParts`/`splitLessonPartsRaw`)
+- ขนาดต่อส่วน: **~60–150 คำ (1 ประเด็นต่อส่วน)** — สั้นพอให้จบใน 1–2 นาที
+  (ตาราง/ลิสต์ยาวเกินได้ ไม่ต้องหั่นตาราง)
+- จำนวนส่วนต่อบทเรียน: **6–12 ส่วน** (รวมอ่าน ~5–10 นาที = `estimated_min`)
+- **ทุกส่วนต้องมีคำถามท้ายส่วน รวมส่วนสุดท้ายด้วย** (trailing gate — มาร์กเกอร์
+  `## ⏸ Mini Quiz` หลังส่วนสุดท้ายเช่นกัน ไม่ใช่แค่ระหว่างส่วน อย่างที่เคยเป็น)
+- ผู้เรียนเห็นทีละส่วนเดียว ("mini class" card deck — `components/school/LessonReader.tsx`,
+  `layout="deck"`) ไม่ใช่อ่านยาวรวดเดียว; หน้าแอดมินใช้ `layout="stacked"` ดูทุกส่วนพร้อมกันตอนรีวิว
+- บทเรียนเก่าที่ยังเป็น Part ยาว (3–4 ส่วน ไม่มี trailing gate) ใช้
+  `npm run resplit:parts` (`scripts/resplit-lesson-parts.ts`) แบ่งใหม่เป็นส่วนสั้นทีละวิชา
+  (ตรวจ `after.md` ก่อนรันจริงเสมอ ดูวิธีใช้ในคอมเมนต์หัวไฟล์สคริปต์)
 
 ## 2. Retrieval (`school_quizzes`)
 
-- **1 mini-quiz ต่อ 1 Part** (gate): ต้องตอบก่อนจึงไป Part ถัดไป
+- **1 mini-quiz ต่อ 1 ส่วน** (gate): โหมด `mixed` ต้องตอบก่อนไปส่วนถัดไป
+  โหมด `read` เห็นคำถามเหมือนกันแต่ข้ามได้ (ไม่บังคับ)
 - **Final retrieval ตอนจบบท:** ข้อที่เหลือจากคลังหลังหักที่ใช้เป็น gate
 - ผู้เรียนเลือกโหมดได้เอง 3 แบบที่หน้าวิชา (`ChapterList`) และสลับได้ในบท:
-  `?mode=mixed` อ่าน+ควิซคั่น (ค่าเริ่มต้น) · `?mode=read` อ่านรวดเดียว ·
+  `?mode=mixed` อ่านทีละส่วน + ตอบคำถามก่อนไปต่อ (ค่าเริ่มต้น) ·
+  `?mode=read` อ่านทีละส่วนเหมือนกันแต่คำถามข้ามได้ ·
   `?mode=quiz` ทำข้อสอบของบทนั้นทั้งหมดรวดเดียว (`LessonQuizRunner`)
 - รูปแบบข้อ: single-best-answer MCQ 4–5 ตัวเลือก พร้อมคำอธิบายเฉลย
 
@@ -70,6 +80,24 @@ school_book_chapters             school_lessons (body_md)        school_flashcar
 หรือจำนวนข้อสอบน้อยกว่าสัดส่วนข้างต้น (prompt ฝั่ง `/api/admin/school/import`
 ก็สั่งให้ AI ออกข้อตามสัดส่วนเดียวกัน)
 
+## 3.1 รูปประกอบ (figures)
+
+บทตัวหนังสือล้วนทำให้อ่านแล้วเบื่อและสรุปไม่ได้ — ทุกบทควรมีรูป 3 ชนิด
+(รายละเอียดใน `docs/school-illustrations-plan.md`):
+
+| ชนิด | ตำแหน่ง | จำนวน |
+|------|---------|-------|
+| Hero (ภาพเปิดบท) | บรรทัดถัดจากหัวเรื่อง `# …` ของส่วนที่ 1 | 1 |
+| Diagram สรุปส่วน (SVG, label ไทย) | หลังย่อหน้าที่ "แนะนำ" concept ของส่วนนั้น | ≤ 1 ต่อส่วน (ไม่ใส่ในส่วนที่เป็น pearls/mnemonics) |
+| Summary card (สรุปท้ายบท 1 ภาพ) | `school_visuals` ที่ผูก `lesson_id` — โชว์ที่การ์ด "เรียนจบบทนี้แล้ว" | 1 |
+
+- เขียนเป็น markdown image ธรรมดา โดยใส่ **caption ไว้ใน title**: `![alt](url "caption 1 ประโยค")`
+  (`components/school/LessonFigure.tsx` เรนเดอร์เป็น figure + คำบรรยาย + กดขยาย; parser ของ Part ไม่กระทบ)
+- **alt และ caption บังคับ** — caption บอกว่า "ต้องดูอะไรในรูป" ไม่ใช่ชื่อรูปเฉย ๆ
+- Diagram: ≤ 7 องค์ประกอบ / ≤ 6 label, ไทย + ศัพท์อังกฤษในวงเล็บ, ห้ามตัวเลข dose/cut‑off ที่ไม่มีในบท
+- สร้างอัตโนมัติด้วย `npm run gen:figures` (`scripts/generate-lesson-figures.ts`) แล้วรีวิวใน
+  `/admin/school` → tab แก้ไข → "หน้าเหมือนนักเรียน" หรือแทรกมือด้วยปุ่ม "+ แทรกรูปตรงนี้" (กรอก alt/caption ก่อนอัป)
+
 ## 4. เกณฑ์ผ่าน (Mastery)
 
 - **ผ่านเมื่อทำ quiz ถูก ≥ 80% จากอย่างน้อย 5 ข้อ**
@@ -78,6 +106,6 @@ school_book_chapters             school_lessons (body_md)        school_flashcar
 
 ## 5. สรุปสั้น ๆ (ไว้อธิบายให้คนอื่นฟัง)
 
-> "ระบบใช้ Microlearning ผสม Retrieval Practice — อ่านเนื้อหาสั้น ๆ ทีละ Part
-> แล้วตอบคำถามคั่นเพื่อย้ำความจำ (Learn-and-Quiz loop แบบ Duolingo)
-> มีหนังสือฉบับเต็มเป็นตำราอ้างอิงควบคู่ไปด้วย"
+> "ระบบใช้ Microlearning ผสม Retrieval Practice — อ่านเนื้อหาสั้น ๆ ทีละส่วน
+> แบบ mini class (การ์ดทีละส่วน) แล้วตอบคำถามท้ายส่วนเพื่อย้ำความจำ
+> (Learn-and-Quiz loop แบบ Duolingo) มีหนังสือฉบับเต็มเป็นตำราอ้างอิงควบคู่ไปด้วย"

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">เส้นทาง LDL receptor: coated pit → clathrin-coated vesicle → early endosome แล้วแยกไป recycling endosome หรือ late endosome และ lysosome</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="600" y="60" text-anchor="middle" font-size="36" font-weight="700" fill="#0f172a">Endosomes — รับเข้า แยก แล้วส่งไปไหน</text>
+
+  <!-- plasma membrane with coated pit at x 150-250 -->
+  <g fill="none" stroke="#0f172a" stroke-width="3">
+    <path d="M40 120 H150 c30 0 20 70 50 70 s20 -70 50 -70 H1160"/>
+    <path d="M40 130 H150 c30 0 20 70 50 70 s20 -70 50 -70 H1160"/>
+  </g>
+  <text x="1160" y="106" text-anchor="end" font-size="20" fill="#64748b">plasma membrane</text>
+  <text x="40" y="106" font-size="20" fill="#64748b">นอกเซลล์</text>
+  <text x="40" y="162" font-size="20" fill="#64748b">ในเซลล์</text>
+  <!-- clathrin lining (dashed) under the pit -->
+  <path d="M150 142 c30 0 20 70 50 70 s20 -70 50 -70" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 5"/>
+  <!-- receptors (Y) and LDL in the pit -->
+  <g stroke="#0d9488" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M185 150 v12 m-6 -18 l6 6 l6 -6"/>
+    <path d="M200 166 v12 m-6 -18 l6 6 l6 -6"/>
+    <path d="M215 150 v12 m-6 -18 l6 6 l6 -6"/>
+  </g>
+  <g fill="#d97706">
+    <circle cx="185" cy="136" r="7"/><circle cx="200" cy="152" r="7"/><circle cx="215" cy="136" r="7"/>
+  </g>
+  <text x="270" y="172" font-size="22" font-weight="700" fill="#0f172a">① LDL + LDL receptor</text>
+  <text x="270" y="198" font-size="20" fill="#0f172a">ใน coated pit (clathrin)</text>
+
+  <!-- clathrin-coated vesicle -->
+  <line x1="200" y1="204" x2="200" y2="262" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="200" cy="305" r="38" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="5 5"/>
+  <circle cx="200" cy="305" r="28" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+  <circle cx="200" cy="305" r="7" fill="#d97706"/>
+  <text x="256" y="298" font-size="22" font-weight="700" fill="#0f172a">② clathrin-coated</text>
+  <text x="256" y="324" font-size="22" font-weight="700" fill="#0f172a">vesicle</text>
+
+  <!-- uncoating -->
+  <line x1="200" y1="348" x2="200" y2="398" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="200" cy="430" r="28" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+  <circle cx="200" cy="430" r="7" fill="#d97706"/>
+  <text x="200" y="490" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">③ uncoating</text>
+
+  <!-- early endosome -->
+  <line x1="232" y1="430" x2="336" y2="430" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="340" y="390" width="220" height="80" rx="14" fill="#ffe4e6" stroke="#e11d48" stroke-width="2"/>
+  <text x="450" y="423" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">early endosome</text>
+  <text x="450" y="451" text-anchor="middle" font-size="20" fill="#0f172a">แยก receptor / ligand</text>
+
+  <!-- (a) recycling -->
+  <line x1="560" y1="410" x2="636" y2="296" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="578" y="336" text-anchor="end" font-size="20" fill="#0d9488">receptor</text>
+  <rect x="640" y="230" width="220" height="70" rx="14" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text x="750" y="273" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">recycling endosome</text>
+  <line x1="750" y1="228" x2="750" y2="142" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="770" y="192" font-size="20" fill="#0d9488">receptor กลับไปใช้ใหม่</text>
+
+  <!-- (b) degradation -->
+  <line x1="560" y1="450" x2="636" y2="536" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="578" y="525" text-anchor="end" font-size="20" fill="#d97706">ligand (LDL)</text>
+  <rect x="640" y="500" width="220" height="80" rx="14" fill="#ffe4e6" stroke="#e11d48" stroke-width="2"/>
+  <text x="750" y="533" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">late endosome /</text>
+  <text x="750" y="561" text-anchor="middle" font-size="20" fill="#0f172a">multivesicular body</text>
+  <line x1="862" y1="540" x2="936" y2="540" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="940" y="500" width="220" height="80" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="1050" y="547" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">lysosome</text>
+  <g fill="#7c3aed">
+    <circle cx="965" cy="520" r="3.5"/><circle cx="985" cy="560" r="3.5"/><circle cx="1130" cy="518" r="3.5"/><circle cx="1120" cy="562" r="3.5"/>
+  </g>
+  <text x="1050" y="615" text-anchor="middle" font-size="20" fill="#7c3aed">ย่อยเป็น free cholesterol</text>
+
+  <!-- note -->
+  <rect x="40" y="660" width="1120" height="70" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="600" y="703" text-anchor="middle" font-size="22" fill="#0f172a"><tspan font-weight="700">หมายเหตุ:</tspan> Recycling endosome ยังทำ transcytosis ด้วย (เช่น IgG ในลำไส้)</text>
+</svg>

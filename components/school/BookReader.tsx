@@ -11,6 +11,7 @@ import type { SchoolBookChapter } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { XP, awardXp } from "@/lib/school/xp";
 import { formatChapterBody } from "@/lib/school/format-book";
+import { figureComponents } from "./LessonFigure";
 import AskMore from "./AskMore";
 
 interface Props {
@@ -109,6 +110,7 @@ export default function BookReader({ topicId, chapters, readChapterIds }: Props)
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
+                  ...figureComponents,
                   // The source text encodes section titles as ALL-CAPS / Title-case
                   // labels; formatChapterBody promotes them to h3 so they render as
                   // clearly distinct, scannable section heads instead of more body text.

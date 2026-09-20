@@ -7,6 +7,7 @@ import {
   getSchoolLesson,
   getSchoolLessons,
   getSchoolQuizzes,
+  getSchoolVisualForLesson,
 } from "@/lib/supabase/queries-school";
 import LessonReader from "@/components/school/LessonReader";
 import LessonQuizRunner, {
@@ -105,7 +106,10 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
 
   // เรียนจบแล้วต้องรู้ว่าไปไหนต่อ — หาบทถัดไปในวิชาเดียวกันตาม sort_order
   const topicHref = buildTopicHref(lesson.topic_id);
-  const siblings = await getSchoolLessons({ topicId: lesson.topic_id });
+  const [siblings, summaryVisual] = await Promise.all([
+    getSchoolLessons({ topicId: lesson.topic_id }),
+    getSchoolVisualForLesson(lesson.id),
+  ]);
   const currentIdx = siblings.findIndex((l) => l.id === lesson.id);
   const next = currentIdx >= 0 ? siblings[currentIdx + 1] : undefined;
   const nextHref = next ? lessonHref(next.id, `mode=${mode}`) : null;
@@ -179,6 +183,16 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           quizHref={`/school/lesson/${id}?mode=quiz`}
           nextLesson={nextLesson}
           topicHref={topicHref ?? undefined}
+          summaryVisual={
+            summaryVisual
+              ? {
+                  id: summaryVisual.id,
+                  title: summaryVisual.title,
+                  image_url: summaryVisual.image_url,
+                  caption: summaryVisual.caption,
+                }
+              : null
+          }
         />
       )}
 
