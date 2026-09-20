@@ -509,9 +509,11 @@ export interface AdsOpsSummary {
   /** Latest overnight ads-autofix diagnostics run (last 24h); null if none ran. */
   autofix: {
     ok: boolean;
-    /** Ads actually read from Meta. 0 with ok=true means the account was
-     *  reachable but empty for the window — still not a clean bill of health. */
+    /** Ads actually read from Meta. */
     adsScanned: number;
+    /** 0 ads read *because* nothing is running — a quiet account, not a
+     *  blind scan. Set only when the ACTIVE-ad probe confirmed it. */
+    adsIdle: boolean;
     /** Raw error from ad_diagnostics_runs, shown abbreviated. */
     error: string | null;
     findingsCount: number;
@@ -706,6 +708,8 @@ function adsOpsSection(o: AdsOpsSummary) {
         )
       );
       lines.push(noteLine("ดูรายละเอียดใน /admin/ads-diagnostics", "#888888"));
+    } else if (a.adsIdle) {
+      lines.push(noteLine("💤 ไม่มีโฆษณาที่กำลังวิ่ง — ไม่มีอะไรให้ตรวจ", "#888888"));
     } else if (a.adsScanned === 0) {
       lines.push(
         noteLine("⚠️ อ่านข้อมูลโฆษณาไม่ได้เลย (0 ตัว) — ผลตรวจรอบนี้เชื่อไม่ได้", "#E67E22")

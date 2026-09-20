@@ -20,8 +20,19 @@ const mockToken = vi.mocked(getLatestUserToken);
 const SINCE = "2026-09-18T00:00:00.000Z";
 const UNTIL = "2026-09-21T00:00:00.000Z";
 
-function metaOk(body: unknown) {
+interface FakeResponse {
+  ok: boolean;
+  status?: number;
+  json: () => Promise<unknown>;
+  text: () => Promise<string>;
+}
+
+function metaOk(body: unknown): FakeResponse {
   return { ok: true, json: async () => body, text: async () => "" };
+}
+
+function metaFail(status: number, body = ""): FakeResponse {
+  return { ok: false, status, json: async () => ({}), text: async () => body };
 }
 
 beforeEach(() => {
@@ -72,16 +83,81 @@ describe("not configured → ok:false, and never calls Meta", () => {
   });
 });
 
-describe("configured", () => {
-  it("an empty window is ok:true with zero ads — not a failure", async () => {
-    vi.stubGlobal("fetch", vi.fn(async () => metaOk({ data: [] })));
+describe("empty insights → probe how many ads are actually live", () => {
+  /** insights returns nothing; the /ads probe answers with `probe`. */
+  function stubEmptyInsights(probe: unknown, probeOk = true) {
+    const spy = vi.fn(async (url: string) =>
+      url.includes("/insights")
+        ? metaOk({ data: [] })
+        : probeOk
+          ? metaOk(probe)
+          : metaFail(400)
+    );
+    vi.stubGlobal("fetch", spy);
+    return spy;
+  }
+
+  it("a quiet account reports activeAds: 0", async () => {
+    const spy = stubEmptyInsights({ data: [], summary: { total_count: 0 } });
 
     const r = await fetchAdInsights(SINCE, UNTIL);
 
     expect(r.ok).toBe(true);
-    if (r.ok) expect(r.ads).toEqual([]);
+    if (r.ok) {
+      expect(r.ads).toEqual([]);
+      expect(r.activeAds).toBe(0);
+    }
+    // probe asks only for live ads, and only needs one row back
+    const probeUrl = spy.mock.calls.map((c) => c[0]).find((u) => !u.includes("/insights"))!;
+    expect(probeUrl).toContain("effective_status=");
+    expect(decodeURIComponent(probeUrl)).toContain('["ACTIVE"]');
+    expect(probeUrl).toContain("summary=total_count");
   });
 
+  it("live ads with no insights reports the count", async () => {
+    stubEmptyInsights({ data: [{ id: "1" }], summary: { total_count: 7 } });
+
+    const r = await fetchAdInsights(SINCE, UNTIL);
+
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.activeAds).toBe(7);
+  });
+
+  it("falls back to counting rows when summary is absent", async () => {
+    stubEmptyInsights({ data: [{ id: "1" }] });
+
+    const r = await fetchAdInsights(SINCE, UNTIL);
+    if (r.ok) expect(r.activeAds).toBe(1);
+  });
+
+  it("a failed probe is null, never 0", async () => {
+    stubEmptyInsights(null, false);
+
+    const r = await fetchAdInsights(SINCE, UNTIL);
+
+    expect(r.ok).toBe(true);
+    // null means "could not check" — collapsing it to 0 would resurrect the
+    // exact false all-clear this whole change exists to remove.
+    if (r.ok) expect(r.activeAds).toBeNull();
+  });
+
+  it("a throwing probe is null too, and does not fail the scan", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => {
+        if (url.includes("/insights")) return metaOk({ data: [] });
+        throw new Error("socket hang up");
+      })
+    );
+
+    const r = await fetchAdInsights(SINCE, UNTIL);
+
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.activeAds).toBeNull();
+  });
+});
+
+describe("configured", () => {
   it("maps real rows through", async () => {
     vi.stubGlobal(
       "fetch",
@@ -121,18 +197,33 @@ describe("configured", () => {
       expect(r.ads[0].status).toBe("ACTIVE");
       expect(r.ads[0].leads).toBe(0);
       expect(r.ads[0].cpl).toBeNull();
+      // rows came back, so there was nothing to disambiguate
+      expect(r.activeAds).toBeNull();
     }
+  });
+
+  it("does not spend a probe call when insights returned rows", async () => {
+    const spy = vi.fn(async (url: string) =>
+      url.includes("/insights")
+        ? metaOk({ data: [{ ad_id: "1", spend: "10" }] })
+        : metaOk({ "1": { id: "1", status: "ACTIVE" } })
+    );
+    vi.stubGlobal("fetch", spy);
+
+    await fetchAdInsights(SINCE, UNTIL);
+
+    expect(spy.mock.calls.filter((c) => c[0].includes("/ads?"))).toHaveLength(0);
   });
 
   it("still throws on an API failure so the caller records the message", async () => {
     vi.stubGlobal(
       "fetch",
-      vi.fn(async () => ({
-        ok: false,
-        status: 403,
-        text: async () =>
-          '{"error":{"message":"(#200) Ad account owner has NOT grant ads_management or ads_read permission","code":200}}',
-      }))
+      vi.fn(async () =>
+        metaFail(
+          403,
+          '{"error":{"message":"(#200) Ad account owner has NOT grant ads_management or ads_read permission","code":200}}'
+        )
+      )
     );
 
     await expect(fetchAdInsights(SINCE, UNTIL)).rejects.toThrow(

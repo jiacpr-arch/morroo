@@ -433,10 +433,52 @@ function pickLeadsFromActions(
  * `{ ok: true, ads: [] }` means "Meta answered, nothing matched the window";
  * `{ ok: false }` means "we never looked". Callers must not collapse the two
  * — an unread account is not a healthy one.
+ *
+ * `activeAds` disambiguates the empty case, and is only populated then:
+ *
+ *   0    — the account genuinely has nothing running. Quiet, not broken.
+ *   > 0  — ads ARE live but insights came back empty. Something is wrong.
+ *   null — not probed (ads were returned) or the probe itself failed, in
+ *          which case the caller should treat the run as untrustworthy.
  */
 export type AdInsightsResult =
-  | { ok: true; ads: AdInsight[] }
+  | { ok: true; ads: AdInsight[]; activeAds: number | null }
   | { ok: false; reason: string };
+
+/**
+ * How many ads are actually deliverable right now.
+ *
+ * `effective_status` already folds in parent adset/campaign state, so ACTIVE
+ * here means genuinely serving rather than "active but inside a paused
+ * campaign". Asks for `summary=total_count` so one row comes back regardless
+ * of account size.
+ *
+ * Returns null when the probe cannot answer — deliberately distinct from 0,
+ * because "we could not check" must not read as "nothing is running".
+ */
+async function countActiveAds(
+  accountId: string,
+  token: string
+): Promise<number | null> {
+  try {
+    const status = encodeURIComponent(JSON.stringify(["ACTIVE"]));
+    const res = await fetch(
+      `https://graph.facebook.com/${META_GRAPH_VERSION}/${accountId}/ads` +
+        `?effective_status=${status}&limit=1&summary=total_count` +
+        `&fields=id&access_token=${token}`
+    );
+    if (!res.ok) return null;
+    const json = (await res.json()) as {
+      data?: unknown[];
+      summary?: { total_count?: number };
+    };
+    const total = json.summary?.total_count;
+    if (typeof total === "number") return total;
+    return Array.isArray(json.data) ? json.data.length : null;
+  } catch {
+    return null;
+  }
+}
 
 export async function fetchAdInsights(
   sinceIso: string,
@@ -484,7 +526,11 @@ export async function fetchAdInsights(
   }
   const json = (await res.json()) as { data?: MetaInsightsRow[] };
   const rows = json.data ?? [];
-  if (rows.length === 0) return { ok: true, ads: [] };
+  if (rows.length === 0) {
+    // Empty insights are ambiguous on their own — ask the account whether
+    // anything is even running before the caller decides it's a problem.
+    return { ok: true, ads: [], activeAds: await countActiveAds(accountId, token) };
+  }
 
   // Hydrate status for each ad in one batch call so we know what's
   // already paused and don't try to pause it again.
@@ -533,7 +579,8 @@ export async function fetchAdInsights(
     };
   });
 
-  return { ok: true, ads };
+  // Not probed: insights returned rows, so the account is plainly readable.
+  return { ok: true, ads, activeAds: null };
 }
 
 // ─── Diagnose ────────────────────────────────────────────────────────────

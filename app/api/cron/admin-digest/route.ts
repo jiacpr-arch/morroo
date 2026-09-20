@@ -215,7 +215,10 @@ export async function GET(request: Request) {
           findings_count: number;
           actions_count: number;
           error: string | null;
-          summary: { bySeverity?: { critical?: number } } | null;
+          summary: {
+            bySeverity?: { critical?: number };
+            adsIdle?: boolean;
+          } | null;
         }
       | undefined;
     if (run) {
@@ -229,6 +232,7 @@ export async function GET(request: Request) {
       autofix = {
         ok: run.ok,
         adsScanned: run.ads_scanned,
+        adsIdle: run.summary?.adsIdle ?? false,
         error: run.error,
         findingsCount: run.findings_count,
         critical: run.summary?.bySeverity?.critical ?? topRows?.length ?? 0,
