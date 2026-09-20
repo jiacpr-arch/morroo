@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">เส้นทางขนส่งจาก rough ER ผ่าน COPII vesicle ไป Golgi แล้วคัดแยกที่ TGN ไป lysosome เยื่อหุ้มเซลล์ หรือ secretory vesicle และ COPI ส่งกลับ ER</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="600" y="60" text-anchor="middle" font-size="36" font-weight="700" fill="#0f172a">ER → Golgi → ปลายทาง: ใครใส่ coat อะไร</text>
+
+  <!-- Rough ER -->
+  <rect x="40" y="270" width="180" height="160" rx="14" fill="#ffe4e6" stroke="#e11d48" stroke-width="2"/>
+  <text x="130" y="302" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Rough ER</text>
+  <g fill="none" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round">
+    <path d="M60 335 c20 -12 40 12 60 0 s40 12 60 0"/>
+    <path d="M60 365 c20 -12 40 12 60 0 s40 12 60 0"/>
+    <path d="M60 395 c20 -12 40 12 60 0 s40 12 60 0"/>
+  </g>
+  <g fill="#0f172a">
+    <circle cx="75" cy="327" r="3.5"/><circle cx="115" cy="328" r="3.5"/><circle cx="155" cy="327" r="3.5"/>
+    <circle cx="95" cy="359" r="3.5"/><circle cx="135" cy="359" r="3.5"/><circle cx="175" cy="359" r="3.5"/>
+    <circle cx="75" cy="387" r="3.5"/><circle cx="115" cy="388" r="3.5"/><circle cx="155" cy="387" r="3.5"/>
+  </g>
+
+  <!-- COPII vesicles -->
+  <line x1="222" y1="350" x2="286" y2="350" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <g fill="#ffffff" stroke="#0d9488" stroke-width="3">
+    <circle cx="330" cy="322" r="18"/><circle cx="352" cy="360" r="18"/><circle cx="318" cy="382" r="14"/>
+  </g>
+  <g fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="3 3">
+    <circle cx="330" cy="322" r="24"/><circle cx="352" cy="360" r="24"/><circle cx="318" cy="382" r="20"/>
+  </g>
+  <text x="335" y="432" text-anchor="middle" font-size="20" font-weight="700" fill="#0d9488">COPII coat</text>
+
+  <!-- vesicular tubular cluster -->
+  <line x1="384" y1="350" x2="446" y2="350" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="450" y="300" width="170" height="100" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="535" y="340" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">vesicular tubular</text>
+  <text x="535" y="366" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">cluster</text>
+  <line x1="450" y1="416" x2="620" y2="416" stroke="#64748b" stroke-width="3" stroke-dasharray="8 4"/>
+  <text x="535" y="446" text-anchor="middle" font-size="20" fill="#64748b">บน microtubule</text>
+
+  <!-- Golgi stack -->
+  <line x1="622" y1="350" x2="684" y2="350" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="810" y="216" text-anchor="middle" font-size="22" font-weight="700" fill="#e11d48">Golgi apparatus</text>
+  <g fill="#ffe4e6" stroke="#e11d48" stroke-width="2">
+    <path d="M700 250 c40 -20 180 -20 220 0 c-40 20 -180 20 -220 0 z"/>
+    <path d="M700 302 c40 -20 180 -20 220 0 c-40 20 -180 20 -220 0 z"/>
+    <path d="M700 354 c40 -20 180 -20 220 0 c-40 20 -180 20 -220 0 z"/>
+    <path d="M700 406 c40 -20 180 -20 220 0 c-40 20 -180 20 -220 0 z"/>
+    <path d="M700 458 c40 -20 180 -20 220 0 c-40 20 -180 20 -220 0 z"/>
+  </g>
+  <g font-size="18" fill="#0f172a" text-anchor="middle">
+    <text x="810" y="256">cis-Golgi network</text>
+    <text x="810" y="308">cis</text>
+    <text x="810" y="360">medial</text>
+    <text x="810" y="412">trans</text>
+    <text x="810" y="464">trans-Golgi network</text>
+  </g>
+
+  <!-- COPI retrograde -->
+  <path d="M700 244 C640 170 300 170 228 264" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="10 7" marker-end="url(#arrow)"/>
+  <text x="464" y="160" text-anchor="middle" font-size="20" fill="#475569"><tspan font-weight="700">COPI</tspan> = retrograde (ส่ง ER protein กลับ)</text>
+
+  <!-- destinations from TGN -->
+  <g stroke="#475569" stroke-width="3" marker-end="url(#arrow)">
+    <line x1="922" y1="452" x2="996" y2="332"/>
+    <line x1="922" y1="458" x2="996" y2="416"/>
+    <line x1="922" y1="464" x2="996" y2="500"/>
+  </g>
+  <g fill="#f8fafc" stroke="#cbd5e1" stroke-width="2">
+    <rect x="1000" y="300" width="160" height="56" rx="14"/>
+    <rect x="1000" y="384" width="160" height="56" rx="14"/>
+    <rect x="1000" y="468" width="160" height="56" rx="14"/>
+  </g>
+  <g font-size="20" font-weight="700" fill="#0f172a" text-anchor="middle">
+    <text x="1080" y="335">lysosome</text>
+    <text x="1080" y="419">plasma membrane</text>
+    <text x="1080" y="503">secretory vesicle</text>
+  </g>
+
+  <!-- Golgi enzyme notes -->
+  <g font-size="18" fill="#64748b" text-anchor="middle">
+    <text x="760" y="518">cis: ตัด mannose · medial: เติม GlcNAc</text>
+    <text x="760" y="544">trans: เติม Gal + NANA · sulfation ที่ TGN</text>
+  </g>
+
+  <!-- coat legend -->
+  <rect x="40" y="630" width="1120" height="80" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="600" y="678" text-anchor="middle" font-size="22" fill="#0f172a"><tspan font-weight="700" fill="#0d9488">COPII</tspan> = ไปข้างหน้า ER → Golgi   ·   <tspan font-weight="700" fill="#475569">COPI</tspan> = ย้อนกลับ Golgi → ER</text>
+</svg>
