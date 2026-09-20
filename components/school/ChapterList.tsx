@@ -23,6 +23,8 @@ export interface Chapter {
   /** จำนวนข้อสอบของบทนี้ (mini quiz ที่ฝังในบท + คลังข้อสอบของวิชา) */
   quizCount: number;
   read: boolean;
+  /** รูปแรกของบท (hero) ใช้เป็น thumbnail ให้ลิสต์ไม่เป็นตัวหนังสือล้วน */
+  thumb?: string | null;
 }
 
 interface Props {
@@ -136,6 +138,15 @@ export default function ChapterList({ chapters }: Props) {
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
                 ) : (
                   <Circle className="h-5 w-5 text-muted-foreground shrink-0" />
+                )}
+                {c.thumb && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={c.thumb}
+                    alt=""
+                    loading="lazy"
+                    className="h-14 w-20 shrink-0 rounded-md border bg-white object-cover"
+                  />
                 )}
                 <div className="flex-1 min-w-0">
                   <p className="font-medium leading-snug">

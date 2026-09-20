@@ -14,6 +14,7 @@ import {
 } from "@/lib/supabase/queries-school";
 import ChapterList from "@/components/school/ChapterList";
 import { splitLessonParts } from "@/lib/school/lesson-parts";
+import { firstImageUrl } from "@/lib/school/figures";
 import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
@@ -81,6 +82,7 @@ export default async function TopicPage({ params }: PageProps) {
       estimated_min: l.estimated_min,
       quizCount: gates + pool,
       read: lessonsRead.has(l.id),
+      thumb: firstImageUrl(l.body_md),
     };
   });
 

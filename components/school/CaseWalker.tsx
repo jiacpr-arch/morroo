@@ -11,6 +11,7 @@ import Link from "next/link";
 import type { SchoolCaseStage } from "@/lib/types-school";
 import { XP, awardXp } from "@/lib/school/xp";
 import ShareResult from "./ShareResult";
+import { figureComponents } from "./LessonFigure";
 import RewardBadge from "./RewardBadge";
 
 const LAYER_BADGE: Record<string, string> = {
@@ -129,7 +130,9 @@ export default function CaseWalker({ caseId, caseTitle, stages }: Props) {
           </div>
           <h2 className="text-xl font-bold mb-3">{stage.title}</h2>
           <article className="prose prose-slate dark:prose-invert max-w-none text-sm">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{stage.body_md}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={figureComponents}>
+              {stage.body_md}
+            </ReactMarkdown>
           </article>
 
           {stage.mini_quiz_stem && stage.mini_quiz_choices && (

@@ -11,6 +11,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { SchoolFlashcard, SchoolQuiz, SchoolLesson } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
+import { figureComponents } from "./LessonFigure";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
 import RewardBadge from "./RewardBadge";
@@ -189,7 +190,7 @@ export default function DailyLessonStepper({
               </div>
               <h3 className="text-lg font-semibold">{step.lesson.title}</h3>
               <article className="prose prose-slate dark:prose-invert prose-sm max-w-none">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={figureComponents}>
                   {readingExcerpt(step.lesson.body_md)}
                 </ReactMarkdown>
               </article>

@@ -800,6 +800,27 @@ export async function getSchoolVisual(
   return (data as SchoolVisual) ?? null;
 }
 
+/** รูปสรุปท้ายบท (Visual Summary ที่ผูกกับ lesson_id) — เอาอันแรกตาม sort_order */
+export async function getSchoolVisualForLesson(
+  lessonId: string
+): Promise<SchoolVisual | null> {
+  if (!isUuid(lessonId)) return null;
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_visuals")
+    .select("*")
+    .eq("lesson_id", lessonId)
+    .eq("status", "active")
+    .order("sort_order")
+    .limit(1)
+    .maybeSingle();
+  if (error) {
+    console.error("Error fetching lesson visual:", error);
+    return null;
+  }
+  return (data as SchoolVisual) ?? null;
+}
+
 export async function getFlashcardsByIds(
   ids: string[]
 ): Promise<SchoolFlashcard[]> {

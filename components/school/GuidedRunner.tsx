@@ -23,6 +23,7 @@ import type {
 } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { topicHref } from "@/lib/school/ids";
+import { figureComponents } from "./LessonFigure";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
 import RewardBadge from "./RewardBadge";
@@ -170,7 +171,7 @@ export default function GuidedRunner({
               {lesson.layer} · {lesson.estimated_min} นาที
             </Badge>
             <article className="prose prose-slate dark:prose-invert max-w-none text-sm">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={figureComponents}>
                 {lesson.body_md}
               </ReactMarkdown>
             </article>
