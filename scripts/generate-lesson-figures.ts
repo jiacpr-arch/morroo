@@ -276,9 +276,15 @@ async function validateSvg(svg: string, label: string): Promise<Buffer> {
  * gpt-image-1: sharper detail and ~50% lower latency at the "flare" (fast)
  * tier, which is what a decorative no-text illustration needs — "sunburst"
  * is the slower, higher-precision-editing tier and isn't worth it here.
- * It takes aspect_ratio/resolution instead of gpt-image-1's `size`. If the
- * org's key hasn't rolled onto it yet, OpenAI returns a 4xx naming the model
- * — fall back to gpt-image-1 once rather than failing the whole hero step.
+ *
+ * Verified against the live API (2026-09-20): `aspect_ratio`/`resolution`
+ * came back "Unknown parameter" — third-party write-ups describing that
+ * shape didn't match this account's actual API version, and OpenAI's own
+ * docs weren't reachable to confirm ahead of time. Uses the SAME
+ * `size`/`quality` shape as gpt-image-1 instead (same model family, and
+ * that shape is proven working via the fallback call below). Still falls
+ * back to gpt-image-1 once on any 4xx (e.g. an org not yet rolled onto the
+ * new model) rather than failing the whole hero step.
  */
 const HERO_MODEL = "gpt-image-2.5-flare";
 const HERO_MODEL_FALLBACK = "gpt-image-1";
@@ -302,8 +308,7 @@ SCENE: ${prompt}
 ABSOLUTE RULES: no text, letters, numbers, labels, captions, arrows with labels, charts, watermarks or typography of any kind.`;
 
   let res = await callImageApi(HERO_MODEL, full, {
-    aspect_ratio: "3:2",
-    resolution: "1k",
+    size: "1536x1024",
     quality: "medium",
   });
   if (!res.ok && res.status >= 400 && res.status < 500) {
