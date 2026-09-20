@@ -21,6 +21,10 @@
  *           SKIP_HERO=1 ไม่ทำ hero
  *
  * รัน:  npx tsx scripts/generate-lesson-figures.ts
+ * (ตัวแปรทั้งหมดข้างบนเป็น env var — ต้องอยู่ *หน้า* คำสั่ง หรือ export ไว้ก่อน ไม่ใช่ argument ต่อท้าย
+ *  เช่น `LESSON_ID=xxx DRY=1 npx tsx scripts/generate-lesson-figures.ts` หรือถ้าใช้ `npm run gen:figures`
+ *  ต้อง `export LESSON_ID=xxx DRY=1` ก่อน แล้วค่อยรัน `npm run gen:figures` เฉย ๆ — npm run ไม่ได้แปลง
+ *  `npm run gen:figures LESSON_ID=xxx` ให้เป็น env var ให้ มันจะส่งเป็น arg ของสคริปต์แทน)
  *
  * หลังรันทุกครั้ง เปิดดูบทใน /admin/school → tab แก้ไข → "หน้าเหมือนนักเรียน" ก่อนปล่อย
  * รูปไหนไม่ดี แก้ SVG ในมือ (เป็นข้อความ) แล้วอัปทับผ่านช่อง "+ แทรกรูปตรงนี้" ได้
@@ -481,26 +485,35 @@ async function processLesson(lesson: LessonRow): Promise<void> {
   }
   const summaryBuf = await validateSvg(summarySvg, "summary card");
 
+  // Hero goes through the real image API in both DRY and live runs — it's the
+  // one step DRY previously skipped entirely (returned before reaching it),
+  // which meant `DRY=1` never actually exercised the OpenAI call. Only the
+  // Supabase upload + DB write below are gated on DRY, not the render.
+  let heroBuf: Buffer | null = null;
+  if (spec.hero) {
+    try {
+      heroBuf = await renderHero(spec.hero.image_prompt);
+    } catch (e) {
+      console.warn(`${tag}: hero skipped — ${(e as Error).message}`);
+    }
+  }
+
   if (DRY) {
     const dir = path.join(OUT_DIR, lesson.id);
     await mkdir(dir, { recursive: true });
     await writeFile(path.join(dir, "spec.json"), JSON.stringify({ ...spec, figures: spec.figures.map((f) => ({ ...f, svg: undefined })) }, null, 2));
     for (const f of figureBufs) await writeFile(path.join(dir, f.name), f.buf);
     await writeFile(path.join(dir, "summary.svg"), summaryBuf);
-    console.log(`${tag}: DRY — wrote ${figureBufs.length} diagrams + summary to ${dir}`);
+    if (heroBuf) await writeFile(path.join(dir, "hero.webp"), heroBuf);
+    console.log(
+      `${tag}: DRY — wrote ${figureBufs.length} diagrams + summary${heroBuf ? " + hero" : " (no hero — see warning above)"} to ${dir}`
+    );
     return;
   }
 
-  // Render + upload.
+  // Upload (hero was already rendered above).
   let heroUrl: string | null = null;
-  if (spec.hero) {
-    try {
-      const hero = await renderHero(spec.hero.image_prompt);
-      if (hero) heroUrl = await upload(lesson.id, "hero.webp", hero, "image/webp");
-    } catch (e) {
-      console.warn(`${tag}: hero skipped — ${(e as Error).message}`);
-    }
-  }
+  if (heroBuf) heroUrl = await upload(lesson.id, "hero.webp", heroBuf, "image/webp");
   const figureUrls = new Map<FigureSpec, string>();
   for (const f of figureBufs) {
     figureUrls.set(f.spec, await upload(lesson.id, f.name, f.buf, "image/svg+xml"));
