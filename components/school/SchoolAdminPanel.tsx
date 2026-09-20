@@ -508,8 +508,8 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
               />
             )}
 
-            {/* ใช้ LessonReader ตัวเดียวกับหน้านักเรียนเป๊ะ ๆ (การ์ด Part, mini quiz คั่น,
-                สรุปตอนจบ) แค่มีช่องอัปโหลดรูปคั่นก่อน/หลังทุก Part เพิ่มเข้ามา
+            {/* layout="stacked" = ทุกส่วนของบทแสดงพร้อมกันรวดเดียว (แอดมินรีวิวเนื้อหา
+                ไม่ได้กำลังเรียนแบบ mini class) มีช่องอัปโหลดรูปคั่นก่อน/หลังทุกส่วน
                 — แทรกรูปแล้วเนื้อหาอัปเดตทันที ตัว marker/mini quiz ไม่ถูกแตะต้อง */}
             {viewMode === "paragraphs" && kind === "lesson" && (
               <LessonReader
@@ -517,6 +517,7 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
                 lesson={previewLesson}
                 miniQuizzes={[]}
                 mode="read"
+                layout="stacked"
                 onInsertImage={insertImageInLessonPart}
               />
             )}

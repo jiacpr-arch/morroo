@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Trophy, ArrowRight, Flame, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { lessonHref } from "@/lib/school/ids";
+import { splitLessonParts } from "@/lib/school/lesson-parts";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { SchoolFlashcard, SchoolQuiz, SchoolLesson } from "@/lib/types-school";
@@ -298,17 +299,18 @@ export default function DailyLessonStepper({
   );
 }
 
-const MINI_QUIZ_MARKER = /^##\s*⏸\s*Mini Quiz.*$/m;
 const MAX_EXCERPT_CHARS = 700;
 
 /**
- * Keep the reading snippet bite-sized: take the lesson's first section (before
- * the first Mini Quiz marker) and cap it so the daily session stays ~5 min.
- * The full lesson is one tap away via the "อ่านบทเต็ม" link.
+ * Keep the reading snippet bite-sized: take the lesson's first section (a
+ * "mini class" section is already ~60-150 words by design) and cap it as a
+ * guard for older, un-migrated lessons whose first section is still long, so
+ * the daily session stays ~5 min. The full lesson is one tap away via the
+ * "อ่านบทเต็ม" link.
  */
 function readingExcerpt(md: string): string {
   if (!md) return "";
-  const firstSection = md.split(MINI_QUIZ_MARKER)[0].trim();
+  const firstSection = splitLessonParts(md).parts[0] ?? "";
   if (firstSection.length <= MAX_EXCERPT_CHARS) return firstSection;
   const truncated = firstSection.slice(0, MAX_EXCERPT_CHARS);
   // Avoid cutting mid-word.

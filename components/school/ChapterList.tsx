@@ -41,14 +41,14 @@ const MODES: {
   {
     key: "mixed",
     label: "อ่าน + ควิซ",
-    hint: "อ่านทีละส่วนแล้วตอบคำถามคั่นทันที — micro-learning (แนะนำ)",
+    hint: "อ่านทีละส่วนสั้น ๆ แบบ mini class ตอบคำถามท้ายส่วนก่อนไปต่อ (แนะนำ)",
     icon: Zap,
     activeClass: "border-violet-500 bg-violet-50 text-violet-700",
   },
   {
     key: "read",
     label: "อ่านอย่างเดียว",
-    hint: "อ่านเนื้อหาทั้งบทรวดเดียว ไม่มีคำถามคั่น",
+    hint: "อ่านทีละส่วนเหมือนกัน แต่ข้ามคำถามท้ายส่วนได้",
     icon: BookOpen,
     activeClass: "border-teal-500 bg-teal-50 text-teal-700",
   },

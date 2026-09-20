@@ -20,6 +20,13 @@
  * `splitLessonParts` returns the reading parts together with the inline quiz for
  * each gate (or null when a lesson hasn't been migrated yet, in which case the
  * reader can fall back to the legacy pool).
+ *
+ * A lesson body may end on a gate ("trailing gate" — a quiz after the very last
+ * part, with nothing following it): `parts.length === gateQuizzes.length` then,
+ * instead of the older `parts.length === gateQuizzes.length + 1` shape where the
+ * last part has no quiz. Both shapes parse; `joinLessonParts`/`buildLessonBody`
+ * both produce and round-trip either one. The "mini class" reader wants every
+ * section — including the last — to end on a question, hence the trailing gate.
  */
 
 import type { SchoolDifficulty } from "@/lib/types-school";
@@ -116,14 +123,62 @@ export function splitLessonPartsRaw(md: string): LessonPartsRaw {
     parts.push((block ? rest.slice(block[0].length) : rest).trim());
   }
 
+  // Trailing gate: the body ends right after the last marker/quiz, so the part
+  // after it is empty. Drop that empty part so parts.length === gateRaw.length
+  // — the last gate's quiz belongs to the last real section, not to a blank one.
+  if (gateRaw.length > 0 && parts[parts.length - 1] === "") {
+    parts.pop();
+  }
+
   return { parts, gateQuizzes, gateRaw };
 }
 
-/** Inverse of `splitLessonPartsRaw` — rebuilds `body_md` from (possibly edited) parts + the untouched gate separators. */
+/** True when `md` ends on a gate (a quiz after the last section, nothing following it). */
+export function hasTrailingGate(md: string): boolean {
+  const { parts, gateRaw } = splitLessonPartsRaw(md);
+  return gateRaw.length > 0 && parts.length === gateRaw.length;
+}
+
+/**
+ * Inverse of `splitLessonPartsRaw` — rebuilds `body_md` from (possibly edited)
+ * parts + the untouched gate separators. Handles both shapes: a trailing gate
+ * (`parts.length === gateRaw.length`, produced when the body ends on a quiz)
+ * and the legacy shape (`parts.length === gateRaw.length + 1`).
+ */
 export function joinLessonParts(parts: string[], gateRaw: string[]): string {
   let out = (parts[0] ?? "").trim();
   for (let i = 0; i < gateRaw.length; i++) {
-    out += `\n\n${gateRaw[i]}\n\n${(parts[i + 1] ?? "").trim()}`;
+    const next = i + 1 < parts.length ? parts[i + 1].trim() : "";
+    out += `\n\n${gateRaw[i]}`;
+    if (next) out += `\n\n${next}`;
   }
   return out;
+}
+
+/**
+ * Build a lesson body from a list of short sections, each ending on a
+ * mini-quiz gate — the canonical "mini class" shape (trailing gate, every
+ * section including the last has a question). Used by the re-split script and
+ * anywhere else that authors a lesson body directly rather than editing an
+ * existing one part-by-part.
+ */
+export function buildLessonBody(
+  sections: { body: string; quiz: InlineQuiz }[]
+): string {
+  const parts = sections.map((s) => s.body.trim());
+  const gateRaw = sections.map((s) => {
+    const json = JSON.stringify(
+      {
+        stem: s.quiz.stem,
+        choices: s.quiz.choices,
+        correct_answer: s.quiz.correct_answer,
+        explanation: s.quiz.explanation,
+        difficulty: s.quiz.difficulty,
+      },
+      null,
+      2
+    );
+    return `## ⏸ Mini Quiz\n\`\`\`quiz\n${json}\n\`\`\``;
+  });
+  return joinLessonParts(parts, gateRaw);
 }
