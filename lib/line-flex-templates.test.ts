@@ -12,6 +12,8 @@ import {
   buildWeeklyHardMcqFlex,
   buildNewLongCaseBubble,
   buildAdminDigestFlex,
+  abbreviateRunError,
+  type AdsOpsSummary,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
 
@@ -358,5 +360,111 @@ describe("buildNewLongCaseBubble", () => {
     expect(json).toContain("https://www.morroo.com/longcase/abc-123");
     expect(json).toContain("หญิง 45 ปี ปวดท้องเฉียบพลัน");
     expect(json).toContain("General Surgery");
+  });
+});
+
+describe("abbreviateRunError", () => {
+  it("pulls the human message out of a Graph API error envelope", () => {
+    const raw =
+      'ads: Meta insights failed 403: {"error":{"message":"(#200) Ad account owner has NOT grant ads_management or ads_read permission, refer to https://developers.facebook.com/docs/marketing-api/get-started/authorization/#permissions-and-features for details.","type":"OAuthException","code":200,"fbtrace_id":"Ao2dY3S9mBAiXR"}}';
+    const out = abbreviateRunError(raw);
+    expect(out).toContain("(#200)");
+    expect(out).toContain("ads: Meta insights failed 403:");
+    // the JSON scaffolding and trace id must not reach the digest bubble
+    expect(out).not.toContain("fbtrace_id");
+    expect(out).not.toContain('"type"');
+    expect(out.length).toBeLessThanOrEqual(110);
+  });
+
+  it("passes a short plain message through untouched", () => {
+    const msg = "ads: ยังไม่ได้ตั้งค่า META_AD_ACCOUNT_ID";
+    expect(abbreviateRunError(msg)).toBe(msg);
+  });
+
+  it("truncates anything past the cap with an ellipsis", () => {
+    const out = abbreviateRunError("x".repeat(500));
+    expect(out).toHaveLength(110);
+    expect(out.endsWith("…")).toBe(true);
+  });
+
+  it("collapses newlines so the bubble stays on one line", () => {
+    expect(abbreviateRunError("line one\n  line two")).toBe("line one line two");
+  });
+
+  it("has a fallback for null and blank", () => {
+    expect(abbreviateRunError(null)).toBe("ไม่มีรายละเอียดข้อผิดพลาด");
+    expect(abbreviateRunError("   ")).toBe("ไม่มีรายละเอียดข้อผิดพลาด");
+  });
+});
+
+describe("adsOps autofix — the four outcomes must stay distinguishable", () => {
+  const BASE = {
+    dateLabel: "จ. 21 ก.ย.",
+    attemptsToday: 0,
+    activeUsersToday: 0,
+    newUsersToday: 0,
+    avgAccuracyToday: null,
+    totalStudents: 0,
+    activeUsers7d: 0,
+    weakestSubject: null,
+    aiGradeFails24h: 0,
+    revenueTodayThb: null,
+  };
+
+  type Autofix = NonNullable<AdsOpsSummary["autofix"]>;
+  const render = (autofix: Autofix) => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      adsOps: {
+        autofix,
+        postMerge: [],
+        suggestsNew: 0,
+        suggestsOpenTotal: 0,
+      },
+    });
+    return JSON.stringify(msg.type === "flex" ? msg.contents : {});
+  };
+
+  const CLEAN = {
+    ok: true,
+    adsScanned: 19,
+    adsIdle: false,
+    error: null,
+    findingsCount: 0,
+    critical: 0,
+    autoPaused: 0,
+    topIssues: [],
+  };
+
+  it("a failed run shows the real reason, never a ✅", () => {
+    const json = render({
+      ...CLEAN,
+      ok: false,
+      adsScanned: 0,
+      error:
+        'ads: Meta insights failed 403: {"error":{"message":"(#200) Ad account owner has NOT grant ads_management or ads_read permission","code":200}}',
+    });
+    expect(json).toContain("ไม่สำเร็จ");
+    expect(json).toContain("(#200)");
+    expect(json).not.toContain("ไม่พบปัญหา");
+  });
+
+  it("a quiet account reads as idle, not as a failure", () => {
+    const json = render({ ...CLEAN, adsScanned: 0, adsIdle: true });
+    expect(json).toContain("ไม่มีโฆษณาที่กำลังวิ่ง");
+    expect(json).not.toContain("เชื่อไม่ได้");
+    expect(json).not.toContain("ไม่พบปัญหา");
+  });
+
+  it("a blind scan is flagged even when the run says ok", () => {
+    const json = render({ ...CLEAN, adsScanned: 0, adsIdle: false });
+    expect(json).toContain("เชื่อไม่ได้");
+    expect(json).not.toContain("ไม่พบปัญหา");
+  });
+
+  it("only a real scan earns the ✅, and it states the count", () => {
+    const json = render(CLEAN);
+    expect(json).toContain("ตรวจโฆษณา 19 ตัวแล้ว ไม่พบปัญหา");
+    expect(json).not.toContain("เชื่อไม่ได้");
   });
 });
