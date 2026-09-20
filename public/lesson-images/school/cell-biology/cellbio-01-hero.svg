@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">ภาพประกอบบทที่ 1: เซลล์ยูคาริโอตแบบสไตล์ พร้อมนิวเคลียส ไมโทคอนเดรีย และเอนโดพลาสมิกเรติคูลัม</title>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <!-- soft background shapes -->
+  <circle cx="150" cy="120" r="70" fill="#ccfbf1" opacity="0.7"/>
+  <circle cx="1060" cy="560" r="90" fill="#e2e8f0" opacity="0.9"/>
+  <circle cx="1090" cy="130" r="40" fill="#ccfbf1" opacity="0.6"/>
+  <circle cx="110" cy="540" r="26" fill="#e2e8f0"/>
+  <circle cx="1000" cy="300" r="22" fill="#ccfbf1"/>
+  <!-- cell body -->
+  <path d="M300 340 C300 180 480 120 640 140 C800 160 940 220 940 360 C940 500 800 580 620 570 C440 560 300 500 300 340 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="4"/>
+  <path d="M340 340 C340 210 490 160 640 178 C780 195 900 245 900 360 C900 470 780 540 620 532 C470 524 340 470 340 340 Z" fill="#f1f5f9" opacity="0.8"/>
+  <!-- ER ribbons (right of nucleus) -->
+  <g fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round">
+    <path d="M640 250 c40 -20 80 -20 120 10"/>
+    <path d="M650 285 c40 -20 90 -20 135 12"/>
+    <path d="M655 320 c40 -20 100 -20 145 14"/>
+  </g>
+  <g fill="#64748b">
+    <circle cx="660" cy="243" r="3.5"/><circle cx="700" cy="235" r="3.5"/><circle cx="740" cy="243" r="3.5"/>
+    <circle cx="670" cy="276" r="3.5"/><circle cx="715" cy="268" r="3.5"/><circle cx="760" cy="278" r="3.5"/>
+    <circle cx="680" cy="311" r="3.5"/><circle cx="730" cy="303" r="3.5"/><circle cx="780" cy="313" r="3.5"/>
+  </g>
+  <!-- nucleus -->
+  <circle cx="520" cy="345" r="112" fill="#cbd5e1" stroke="#64748b" stroke-width="4"/>
+  <circle cx="520" cy="345" r="100" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="545" cy="325" r="34" fill="#94a3b8"/>
+  <path d="M450 380 c20 -15 40 15 60 0 s40 -15 60 0" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M470 300 c15 -12 30 12 45 0" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+  <!-- mitochondria -->
+  <g transform="translate(730 430) rotate(-25)">
+    <rect x="-70" y="-30" width="140" height="60" rx="30" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+    <rect x="-56" y="-18" width="112" height="36" rx="18" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <g fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round">
+      <path d="M-36 -18 v14 a8 8 0 0 0 16 0 v-14"/>
+      <path d="M4 -18 v14 a8 8 0 0 0 16 0 v-14"/>
+      <path d="M-16 18 v-14 a8 8 0 0 1 16 0 v14"/>
+      <path d="M24 18 v-14 a8 8 0 0 1 16 0 v14"/>
+    </g>
+  </g>
+  <g transform="translate(400 470) rotate(20)">
+    <rect x="-60" y="-26" width="120" height="52" rx="26" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+    <rect x="-48" y="-15" width="96" height="30" rx="15" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <g fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round">
+      <path d="M-28 -15 v10 a7 7 0 0 0 14 0 v-10"/>
+      <path d="M8 -15 v10 a7 7 0 0 0 14 0 v-10"/>
+      <path d="M-10 15 v-10 a7 7 0 0 1 14 0 v10"/>
+    </g>
+  </g>
+  <g transform="translate(420 220) rotate(-40)">
+    <rect x="-52" y="-22" width="104" height="44" rx="22" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+    <rect x="-40" y="-12" width="80" height="24" rx="12" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <g fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round">
+      <path d="M-22 -12 v8 a6 6 0 0 0 12 0 v-8"/>
+      <path d="M10 -12 v8 a6 6 0 0 0 12 0 v-8"/>
+    </g>
+  </g>
+  <!-- vesicles -->
+  <circle cx="820" cy="330" r="14" fill="#ffffff" stroke="#94a3b8" stroke-width="3"/>
+  <circle cx="850" cy="380" r="10" fill="#ffffff" stroke="#94a3b8" stroke-width="3"/>
+  <circle cx="560" cy="500" r="12" fill="#ffffff" stroke="#94a3b8" stroke-width="3"/>
+  <circle cx="380" cy="300" r="9" fill="#ffffff" stroke="#94a3b8" stroke-width="3"/>
+  <!-- caption -->
+  <text x="48" y="630" font-size="22" fill="#64748b">Cell Biology · บทที่ 1</text>
+</svg>

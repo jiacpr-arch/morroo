@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">ลำดับความสามารถของสเต็มเซลล์ 5 ระดับ จาก totipotent ถึง unipotent</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="560" y="60" text-anchor="middle" font-size="36" font-weight="700" fill="#0f172a">Stem cell potency — จากกว้างสุดไปแคบสุด</text>
+
+  <!-- tiers -->
+  <g stroke="#475569" stroke-width="2">
+    <rect x="110" y="100" width="900" height="100" rx="14" fill="#f1f5f9"/>
+    <rect x="170" y="212" width="780" height="100" rx="14" fill="#e9edf3"/>
+    <rect x="230" y="324" width="660" height="100" rx="14" fill="#e2e8f0"/>
+    <rect x="290" y="436" width="540" height="100" rx="14" fill="#d9dfe8"/>
+    <rect x="350" y="548" width="420" height="100" rx="14" fill="#cbd5e1"/>
+  </g>
+  <g fill="#475569">
+    <circle cx="150" cy="150" r="20"/><circle cx="210" cy="262" r="20"/><circle cx="270" cy="374" r="20"/>
+    <circle cx="330" cy="486" r="20"/><circle cx="390" cy="598" r="20"/>
+  </g>
+  <g font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="150" y="158">1</text><text x="210" y="270">2</text><text x="270" y="382">3</text>
+    <text x="330" y="494">4</text><text x="390" y="606">5</text>
+  </g>
+  <g fill="#0f172a">
+    <text x="186" y="144" font-size="26" font-weight="700">Totipotent — zygote</text>
+    <text x="186" y="178" font-size="22">เป็นได้ทุกอย่างรวม placenta</text>
+    <text x="246" y="256" font-size="26" font-weight="700">Pluripotent — embryonic stem cell, iPSC</text>
+    <text x="246" y="290" font-size="22">เกือบทุกอย่าง ไม่สร้าง placenta</text>
+    <text x="306" y="368" font-size="26" font-weight="700">Multipotent — haematopoietic stem cell</text>
+    <text x="306" y="402" font-size="22">เฉพาะ lineage เช่นเลือด</text>
+    <text x="366" y="480" font-size="26" font-weight="700">Oligopotent — lymphoid stem cell</text>
+    <text x="366" y="514" font-size="22">บาง cell type</text>
+    <text x="426" y="592" font-size="26" font-weight="700">Unipotent — dermatocyte</text>
+    <text x="426" y="626" font-size="22">ชนิดเดียว</text>
+  </g>
+
+  <!-- side arrow -->
+  <line x1="1080" y1="110" x2="1080" y2="640" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <text transform="rotate(90 1112 375)" x="1112" y="375" text-anchor="middle" font-size="22" fill="#475569">ความสามารถในการ differentiate ลดลง ↓</text>
+
+  <text x="560" y="706" text-anchor="middle" font-size="20" fill="#64748b">กว้างสุดอยู่บน · แคบสุดอยู่ล่าง</text>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">เปรียบเทียบเซลล์โปรคาริโอตกับยูคาริโอต: ขนาด DNA ไรโบโซม และการแบ่งตัว</title>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="600" y="60" text-anchor="middle" font-size="36" font-weight="700" fill="#0f172a">Prokaryote vs Eukaryote — ต่างกันตรงไหน</text>
+
+  <!-- LEFT PANEL: prokaryote -->
+  <rect x="40" y="92" width="540" height="380" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="310" y="128" text-anchor="middle" font-size="24" font-weight="700" fill="#475569">Prokaryote (bacteria, archaea)</text>
+  <!-- rod cell -->
+  <rect x="130" y="212" width="360" height="170" rx="85" fill="#e2e8f0" stroke="#475569" stroke-width="3"/>
+  <!-- circular DNA -->
+  <ellipse cx="300" cy="292" rx="95" ry="48" fill="none" stroke="#475569" stroke-width="3"/>
+  <ellipse cx="300" cy="292" rx="80" ry="34" fill="none" stroke="#475569" stroke-width="2" stroke-dasharray="6 5"/>
+  <!-- plasmid -->
+  <circle cx="440" cy="255" r="14" fill="none" stroke="#475569" stroke-width="3"/>
+  <line x1="440" y1="238" x2="440" y2="205" stroke="#64748b" stroke-width="2"/>
+  <text x="440" y="196" text-anchor="middle" font-size="20" fill="#64748b">plasmid</text>
+  <!-- 70S ribosome dots -->
+  <g fill="#0d9488">
+    <circle cx="165" cy="290" r="4"/><circle cx="180" cy="320" r="4"/><circle cx="175" cy="255" r="4"/>
+    <circle cx="205" cy="345" r="4"/><circle cx="250" cy="352" r="4"/><circle cx="330" cy="352" r="4"/>
+    <circle cx="380" cy="345" r="4"/><circle cx="415" cy="320" r="4"/><circle cx="450" cy="300" r="4"/>
+    <circle cx="220" cy="240" r="4"/><circle cx="330" cy="230" r="4"/><circle cx="395" cy="240" r="4"/>
+    <circle cx="460" cy="340" r="4"/><circle cx="150" cy="315" r="4"/>
+  </g>
+  <text x="300" y="366" text-anchor="middle" font-size="20" fill="#0f172a">DNA วงกลม · ไม่มี nucleus</text>
+  <text x="310" y="424" text-anchor="middle" font-size="20" fill="#0d9488">จุดเขียว = ribosome 70S</text>
+
+  <!-- RIGHT PANEL: eukaryote -->
+  <rect x="620" y="92" width="540" height="380" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="890" y="128" text-anchor="middle" font-size="24" font-weight="700" fill="#475569">Eukaryote</text>
+  <!-- large cell -->
+  <ellipse cx="890" cy="305" rx="235" ry="140" fill="#e2e8f0" stroke="#475569" stroke-width="3"/>
+  <!-- nucleus double outline -->
+  <circle cx="820" cy="300" r="76" fill="#cbd5e1" stroke="#475569" stroke-width="3"/>
+  <circle cx="820" cy="300" r="66" fill="none" stroke="#475569" stroke-width="2"/>
+  <!-- linear chromosomes -->
+  <g stroke="#0f172a" stroke-width="6" stroke-linecap="round">
+    <line x1="790" y1="275" x2="815" y2="300"/>
+    <line x1="835" y1="270" x2="850" y2="300"/>
+    <line x1="795" y1="330" x2="825" y2="318"/>
+    <line x1="838" y1="335" x2="858" y2="318"/>
+  </g>
+  <!-- mitochondrion -->
+  <g transform="translate(1010 245) rotate(-15)">
+    <rect x="-48" y="-20" width="96" height="40" rx="20" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+    <g fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round">
+      <path d="M-24 -20 v12 a6 6 0 0 0 12 0 v-12"/>
+      <path d="M4 -20 v12 a6 6 0 0 0 12 0 v-12"/>
+      <path d="M-10 20 v-12 a6 6 0 0 1 12 0 v12"/>
+      <path d="M18 20 v-12 a6 6 0 0 1 12 0 v12"/>
+    </g>
+  </g>
+  <!-- ER with 80S ribosomes -->
+  <g fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round">
+    <path d="M930 340 c30 -15 60 -15 95 5"/>
+    <path d="M935 368 c30 -15 65 -15 105 6"/>
+    <path d="M940 396 c30 -15 70 -15 110 6"/>
+  </g>
+  <g fill="#0d9488">
+    <circle cx="950" cy="334" r="4"/><circle cx="985" cy="329" r="4"/><circle cx="1015" cy="338" r="4"/>
+    <circle cx="960" cy="361" r="4"/><circle cx="1000" cy="357" r="4"/><circle cx="1035" cy="368" r="4"/>
+    <circle cx="965" cy="389" r="4"/><circle cx="1010" cy="385" r="4"/><circle cx="1045" cy="397" r="4"/>
+  </g>
+  <text x="820" y="405" text-anchor="middle" font-size="20" fill="#0f172a">nucleus (chromosome สายตรง)</text>
+  <text x="1030" y="200" text-anchor="middle" font-size="20" fill="#0d9488">mitochondrion</text>
+  <text x="1040" y="430" text-anchor="middle" font-size="20" fill="#64748b">ER + ribosome 80S</text>
+
+  <!-- comparison rows -->
+  <g font-size="22" fill="#0f172a">
+    <rect x="40" y="500" width="540" height="46" rx="10" fill="#e2e8f0"/>
+    <text x="60" y="531"><tspan font-weight="700" fill="#475569">ขนาด</tspan>  1–2 µm</text>
+    <rect x="40" y="556" width="540" height="46" rx="10" fill="#f8fafc"/>
+    <text x="60" y="587"><tspan font-weight="700" fill="#475569">DNA</tspan>  วงกลม + plasmid</text>
+    <rect x="40" y="612" width="540" height="46" rx="10" fill="#e2e8f0"/>
+    <text x="60" y="643"><tspan font-weight="700" fill="#475569">Ribosome</tspan>  70S</text>
+    <rect x="40" y="668" width="540" height="46" rx="10" fill="#f8fafc"/>
+    <text x="60" y="699"><tspan font-weight="700" fill="#475569">แบ่งตัว</tspan>  binary fission</text>
+
+    <rect x="620" y="500" width="540" height="46" rx="10" fill="#e2e8f0"/>
+    <text x="640" y="531"><tspan font-weight="700" fill="#475569">ขนาด</tspan>  5–100 µm</text>
+    <rect x="620" y="556" width="540" height="46" rx="10" fill="#f8fafc"/>
+    <text x="640" y="587"><tspan font-weight="700" fill="#475569">DNA</tspan>  chromosomes สายตรง</text>
+    <rect x="620" y="612" width="540" height="46" rx="10" fill="#e2e8f0"/>
+    <text x="640" y="643"><tspan font-weight="700" fill="#475569">Ribosome</tspan>  80S</text>
+    <rect x="620" y="668" width="540" height="46" rx="10" fill="#f8fafc"/>
+    <text x="640" y="699"><tspan font-weight="700" fill="#475569">แบ่งตัว</tspan>  mitosis / meiosis</text>
+  </g>
+</svg>
