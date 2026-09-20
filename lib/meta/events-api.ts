@@ -1,5 +1,8 @@
 const PIXEL_ID = "966371002896288";
-const API_VERSION = "v18.0";
+// Keep in step with lib/ads-diagnostics.ts — both talk to the same Graph API
+// and a version that silently ages out takes every Purchase with it. v18.0
+// shipped in late 2023 and was already past Meta's ~2-year support window.
+const API_VERSION = "v24.0";
 
 type MetaEventName =
   | "PageView"
@@ -11,9 +14,29 @@ type MetaEventName =
   | "InitiateCheckout"
   | "AddToCart";
 
+/**
+ * Where the conversion actually happened.
+ *
+ * Meta uses this to judge match quality, so it must describe reality: a sale
+ * closed over chat and typed into an admin screen is `system_generated`, not
+ * a `website` visit that never occurred.
+ */
+export type MetaActionSource =
+  | "website"
+  | "app"
+  | "chat"
+  | "email"
+  | "phone_call"
+  | "physical_store"
+  | "system_generated"
+  | "business_messaging"
+  | "other";
+
 export interface MetaEventInput {
   event: MetaEventName;
   eventId?: string;
+  /** Defaults to "website" — the only source every existing caller has. */
+  actionSource?: MetaActionSource;
   email?: string | null;
   phone?: string | null;
   externalId?: string | null;
@@ -29,6 +52,35 @@ export interface MetaEventInput {
   contentIds?: string[];
   contentName?: string;
   contentType?: string;
+}
+
+/**
+ * Put a phone number in the shape Meta hashes against: digits only, country
+ * code included, no `+` and no leading international access code.
+ *
+ * Thai numbers are stored domestically (`081-234-5678`) but Meta's index keys
+ * on the international form, so a raw digit-strip matches nothing. The leading
+ * zero is what disambiguates the two: a domestic Thai number always has one,
+ * an already-international number never does — so `0661234567` (an 06x mobile)
+ * becomes `66661234567`, not a double-counted country code.
+ *
+ * Non-Thai numbers pass through untouched; we only know how to complete a
+ * number we can recognise, and guessing a country code is worse than leaving
+ * one alone.
+ */
+export function normalizePhone(raw: string): string | null {
+  let digits = raw.replace(/\D/g, "");
+  if (!digits) return null;
+
+  // 00 = international access code dialled from abroad; the country code follows.
+  if (digits.startsWith("00")) digits = digits.slice(2);
+
+  // Domestic Thai form: 0 + 8 or 9 national digits.
+  if (digits.startsWith("0") && (digits.length === 9 || digits.length === 10)) {
+    return `66${digits.slice(1)}`;
+  }
+
+  return digits || null;
 }
 
 // Web Crypto API — works in both Node.js 18+ and Edge runtimes (unlike node:crypto)
@@ -61,15 +113,45 @@ function resolveTestEventCode(): string | undefined {
   return process.env.META_TEST_EVENT_CODE?.trim() || undefined;
 }
 
+/**
+ * Say it once per instance when the token is missing.
+ *
+ * Returning silently is how an unset env var turns into months of lost
+ * Purchases with nothing in the logs — the same failure shape as the ads
+ * scan that reported "all clear" without reading the account (PR #430).
+ * Once per instance rather than per event: ViewContent alone fires ~900
+ * times a day, and a warning that floods is a warning nobody reads.
+ */
+let warnedMissingToken = false;
+
+function warnMissingToken(event: MetaEventName): void {
+  if (warnedMissingToken) return;
+  warnedMissingToken = true;
+  console.error(
+    `[meta-capi] META_CAPI_ACCESS_TOKEN ไม่ได้ตั้งค่า — ทิ้ง event ทั้งหมดเงียบ ๆ ` +
+      `(ตัวแรกที่ถูกทิ้ง: ${event}${
+        process.env.VERCEL_ENV ? `, env=${process.env.VERCEL_ENV}` : ""
+      }). Purchase/Lead จะไม่ถึง Meta จนกว่าจะตั้งค่า`
+  );
+}
+
+/** Test-only: the warning latch is module state that survives between tests. */
+export function __resetMissingTokenWarning(): void {
+  warnedMissingToken = false;
+}
+
 export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   const token = process.env.META_CAPI_ACCESS_TOKEN;
-  if (!token) return;
+  if (!token) {
+    warnMissingToken(input.event);
+    return;
+  }
 
   const userData: Record<string, unknown> = {};
   if (input.email) userData.em = [await sha256Lower(input.email)];
   if (input.phone) {
-    const digits = input.phone.replace(/\D/g, "");
-    if (digits) userData.ph = [await sha256Lower(digits)];
+    const phone = normalizePhone(input.phone);
+    if (phone) userData.ph = [await sha256Lower(phone)];
   }
   if (input.firstName) userData.fn = [await sha256Lower(input.firstName)];
   if (input.lastName) userData.ln = [await sha256Lower(input.lastName)];
@@ -90,7 +172,7 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
     event_name: input.event,
     event_time: Math.floor(Date.now() / 1000),
     event_id: input.eventId ?? crypto.randomUUID(),
-    action_source: "website",
+    action_source: input.actionSource ?? "website",
     user_data: userData,
   };
   if (input.url) eventData.event_source_url = input.url;
