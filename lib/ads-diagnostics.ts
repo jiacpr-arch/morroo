@@ -7,8 +7,12 @@
  *      Used to compute per-path funnel rates (sessions → signups, checkouts).
  *
  *   2. Meta Marketing API insights — per-ad spend / CTR / CPL / clicks.
- *      Requires META_AD_ACCOUNT_ID + META_SYSTEM_USER_TOKEN. If either env
- *      var is missing we skip ad-level checks and still report page issues.
+ *      Requires META_AD_ACCOUNT_ID + META_SYSTEM_USER_TOKEN. If either is
+ *      missing we skip ad-level checks and still report page issues — but
+ *      fetchAdInsights says so out loud (`{ ok: false }`) instead of
+ *      returning an empty list, which the caller cannot tell apart from a
+ *      clean scan. That ambiguity let four nights of Meta 403s (2026-09-13
+ *      → 09-16) reach the morning digest as "✅ ไม่พบปัญหา".
  *
  * The diagnose() pipeline is pure: it takes raw rows + insights and returns
  * a list of findings. The cron route is responsible for persistence and
@@ -21,6 +25,7 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { getLatestUserToken } from "@/lib/facebook";
+import { pauseExemptAdIds } from "@/lib/ads-pause-exemptions";
 
 // ─── Thresholds ──────────────────────────────────────────────────────────
 //
@@ -422,13 +427,30 @@ function pickLeadsFromActions(
   return 0;
 }
 
+/**
+ * Either a completed scan or a stated reason no scan happened.
+ *
+ * `{ ok: true, ads: [] }` means "Meta answered, nothing matched the window";
+ * `{ ok: false }` means "we never looked". Callers must not collapse the two
+ * — an unread account is not a healthy one.
+ */
+export type AdInsightsResult =
+  | { ok: true; ads: AdInsight[] }
+  | { ok: false; reason: string };
+
 export async function fetchAdInsights(
   sinceIso: string,
   untilIso: string
-): Promise<AdInsight[]> {
+): Promise<AdInsightsResult> {
   const accountId = process.env.META_AD_ACCOUNT_ID; // e.g. "act_123456"
   const token = await getLatestUserToken();
-  if (!accountId || !token) return [];
+  if (!accountId || !token) {
+    const missing = [
+      !accountId ? "META_AD_ACCOUNT_ID" : null,
+      !token ? "Meta token (META_SYSTEM_USER_TOKEN / app_settings)" : null,
+    ].filter(Boolean);
+    return { ok: false, reason: `ยังไม่ได้ตั้งค่า ${missing.join(" + ")}` };
+  }
 
   const fields = [
     "ad_id",
@@ -462,7 +484,7 @@ export async function fetchAdInsights(
   }
   const json = (await res.json()) as { data?: MetaInsightsRow[] };
   const rows = json.data ?? [];
-  if (rows.length === 0) return [];
+  if (rows.length === 0) return { ok: true, ads: [] };
 
   // Hydrate status for each ad in one batch call so we know what's
   // already paused and don't try to pause it again.
@@ -482,7 +504,7 @@ export async function fetchAdInsights(
     }
   }
 
-  return rows.map((r) => {
+  const ads = rows.map((r) => {
     const impressions = Number(r.impressions ?? 0);
     const clicks = Number(r.clicks ?? 0);
     const spend = Number(r.spend ?? 0);
@@ -510,6 +532,8 @@ export async function fetchAdInsights(
       frequency,
     };
   });
+
+  return { ok: true, ads };
 }
 
 // ─── Diagnose ────────────────────────────────────────────────────────────
@@ -660,7 +684,10 @@ const LEAD_OBJECTIVES = new Set([
   "MOBILE_APP_INSTALLS",
 ]);
 
-export function diagnoseAds(ads: AdInsight[]): Finding[] {
+export function diagnoseAds(
+  ads: AdInsight[],
+  exemptAdIds: Set<string> = pauseExemptAdIds()
+): Finding[] {
   const findings: Finding[] = [];
 
   for (const ad of ads) {
@@ -671,6 +698,12 @@ export function diagnoseAds(ads: AdInsight[]): Finding[] {
       ad.status === "PAUSED" ||
       ad.effective_status === "PAUSED" ||
       ad.effective_status === "ARCHIVED";
+    // An exempt ad is still diagnosed and still reported — it just never
+    // carries an autoAction, so the admin keeps the numbers and the switch.
+    // See lib/ads-pause-exemptions.ts.
+    const exempt = exemptAdIds.has(ad.ad_id);
+    const noAutoPause = alreadyPaused || exempt;
+    const exemptNote = exempt ? " (ยกเว้น auto-pause — ต้องสั่งเอง)" : "";
 
     const snapshot = {
       ad_name: ad.ad_name,
@@ -701,8 +734,8 @@ export function diagnoseAds(ads: AdInsight[]): Finding[] {
         entityLabel: ad.ad_name,
         metricSnapshot: snapshot,
         recommendation:
-          `ใช้ไป ${ad.spend.toFixed(0)} ฿ ไม่ได้ lead เลย — pause auto`,
-        autoAction: alreadyPaused
+          `ใช้ไป ${ad.spend.toFixed(0)} ฿ ไม่ได้ lead เลย — pause auto${exemptNote}`,
+        autoAction: noAutoPause
           ? undefined
           : {
               action: "pause_ad",
@@ -724,8 +757,8 @@ export function diagnoseAds(ads: AdInsight[]): Finding[] {
         entityLabel: ad.ad_name,
         metricSnapshot: snapshot,
         recommendation:
-          `CPL ${ad.cpl.toFixed(0)} ฿ > เพดาน ${THRESHOLDS.adHighCplThb} ฿ — pause auto`,
-        autoAction: alreadyPaused
+          `CPL ${ad.cpl.toFixed(0)} ฿ > เพดาน ${THRESHOLDS.adHighCplThb} ฿ — pause auto${exemptNote}`,
+        autoAction: noAutoPause
           ? undefined
           : {
               action: "pause_ad",
@@ -753,10 +786,10 @@ export function diagnoseAds(ads: AdInsight[]): Finding[] {
         entityLabel: ad.ad_name,
         metricSnapshot: snapshot,
         recommendation: shouldAutoPause
-          ? `CTR ${ad.ctr.toFixed(2)}% ที่ ${ad.impressions.toLocaleString()} imp — pause auto`
+          ? `CTR ${ad.ctr.toFixed(2)}% ที่ ${ad.impressions.toLocaleString()} imp — pause auto${exemptNote}`
           : `CTR ${ad.ctr.toFixed(2)}% ต่ำกว่า ${THRESHOLDS.adLowCtrPct}% — เปลี่ยน hook/รูป`,
         autoAction:
-          shouldAutoPause && !alreadyPaused
+          shouldAutoPause && !noAutoPause
             ? {
                 action: "pause_ad",
                 entityType: "ad",

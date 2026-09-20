@@ -28,6 +28,7 @@ import {
   fetchPageStats,
   reconcileFindings,
   THRESHOLDS,
+  type AdInsight,
   type AutoActionRequest,
   type ExistingFindingRow,
   type Finding,
@@ -68,7 +69,7 @@ export async function GET(request: Request) {
   const runId = (runRow as { id: number }).id;
 
   let pageStats: Awaited<ReturnType<typeof fetchPageStats>> = [];
-  let adInsights: Awaited<ReturnType<typeof fetchAdInsights>> = [];
+  let adInsights: AdInsight[] = [];
   const errors: string[] = [];
 
   try {
@@ -77,8 +78,20 @@ export async function GET(request: Request) {
     errors.push(`pages: ${(e as Error).message}`);
   }
 
+  // Three outcomes, and only the first is a healthy scan. Both failure modes
+  // must land in `errors` so the run is ok=false and the morning digest says
+  // so — an ad account we could not read must never read as "all clear".
   try {
-    adInsights = await fetchAdInsights(adSince.toISOString(), now.toISOString());
+    const result = await fetchAdInsights(adSince.toISOString(), now.toISOString());
+    if (!result.ok) {
+      errors.push(`ads: ${result.reason}`);
+    } else if (result.ads.length === 0) {
+      errors.push(
+        "ads: Meta ตอบกลับ 0 โฆษณา — ถ้าบัญชีมีโฆษณาที่ยังวิ่งอยู่ แปลว่า token/สิทธิ์มีปัญหา"
+      );
+    } else {
+      adInsights = result.ads;
+    }
   } catch (e) {
     errors.push(`ads: ${(e as Error).message}`);
   }

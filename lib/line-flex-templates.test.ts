@@ -12,6 +12,7 @@ import {
   buildWeeklyHardMcqFlex,
   buildNewLongCaseBubble,
   buildAdminDigestFlex,
+  abbreviateRunError,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
 
@@ -358,5 +359,39 @@ describe("buildNewLongCaseBubble", () => {
     expect(json).toContain("https://www.morroo.com/longcase/abc-123");
     expect(json).toContain("หญิง 45 ปี ปวดท้องเฉียบพลัน");
     expect(json).toContain("General Surgery");
+  });
+});
+
+describe("abbreviateRunError", () => {
+  it("pulls the human message out of a Graph API error envelope", () => {
+    const raw =
+      'ads: Meta insights failed 403: {"error":{"message":"(#200) Ad account owner has NOT grant ads_management or ads_read permission, refer to https://developers.facebook.com/docs/marketing-api/get-started/authorization/#permissions-and-features for details.","type":"OAuthException","code":200,"fbtrace_id":"Ao2dY3S9mBAiXR"}}';
+    const out = abbreviateRunError(raw);
+    expect(out).toContain("(#200)");
+    expect(out).toContain("ads: Meta insights failed 403:");
+    // the JSON scaffolding and trace id must not reach the digest bubble
+    expect(out).not.toContain("fbtrace_id");
+    expect(out).not.toContain('"type"');
+    expect(out.length).toBeLessThanOrEqual(110);
+  });
+
+  it("passes a short plain message through untouched", () => {
+    const msg = "ads: ยังไม่ได้ตั้งค่า META_AD_ACCOUNT_ID";
+    expect(abbreviateRunError(msg)).toBe(msg);
+  });
+
+  it("truncates anything past the cap with an ellipsis", () => {
+    const out = abbreviateRunError("x".repeat(500));
+    expect(out).toHaveLength(110);
+    expect(out.endsWith("…")).toBe(true);
+  });
+
+  it("collapses newlines so the bubble stays on one line", () => {
+    expect(abbreviateRunError("line one\n  line two")).toBe("line one line two");
+  });
+
+  it("has a fallback for null and blank", () => {
+    expect(abbreviateRunError(null)).toBe("ไม่มีรายละเอียดข้อผิดพลาด");
+    expect(abbreviateRunError("   ")).toBe("ไม่มีรายละเอียดข้อผิดพลาด");
   });
 });

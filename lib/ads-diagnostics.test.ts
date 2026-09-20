@@ -257,6 +257,93 @@ describe("diagnoseAds", () => {
     expect(f[0].autoAction).toBeUndefined();
   });
 
+  describe("pause exemptions", () => {
+    const EXEMPT = new Set(["100"]);
+
+    it("still reports an exempt ad, but never carries an autoAction", () => {
+      const f = diagnoseAds(
+        [
+          makeAd({
+            ad_id: "100",
+            spend: THRESHOLDS.adNoLeadSpendCeilingThb + 100,
+            leads: 0,
+            cpl: null,
+          }),
+        ],
+        EXEMPT
+      );
+      // Visibility is the point: the admin keeps the numbers, loses only the
+      // automatic switch-flip.
+      expect(f).toHaveLength(1);
+      expect(f[0].category).toBe("ad_no_lead_high_spend");
+      expect(f[0].severity).toBe("critical");
+      expect(f[0].autoAction).toBeUndefined();
+      expect(f[0].recommendation).toContain("ยกเว้น auto-pause");
+    });
+
+    it("covers the high-CPL rule too", () => {
+      const f = diagnoseAds(
+        [makeAd({ ad_id: "100", cpl: THRESHOLDS.adHighCplThb + 50, leads: 2 })],
+        EXEMPT
+      );
+      expect(f[0].category).toBe("ad_high_cpl");
+      expect(f[0].autoAction).toBeUndefined();
+    });
+
+    it("covers the egregious-CTR rule too", () => {
+      const f = diagnoseAds(
+        [
+          makeAd({
+            ad_id: "100",
+            impressions: THRESHOLDS.adAutoPauseMinImpressions + 1000,
+            ctr: THRESHOLDS.adAutoPauseCtrPct - 0.1,
+            cpl: 10,
+            leads: 5,
+          }),
+        ],
+        EXEMPT
+      );
+      expect(f[0].category).toBe("ad_low_ctr");
+      expect(f[0].autoAction).toBeUndefined();
+    });
+
+    it("leaves non-exempt ads in the same batch fully automatic", () => {
+      const f = diagnoseAds(
+        [
+          makeAd({
+            ad_id: "100",
+            spend: THRESHOLDS.adNoLeadSpendCeilingThb + 100,
+            leads: 0,
+            cpl: null,
+          }),
+          makeAd({
+            ad_id: "999",
+            spend: THRESHOLDS.adNoLeadSpendCeilingThb + 100,
+            leads: 0,
+            cpl: null,
+          }),
+        ],
+        EXEMPT
+      );
+      const byId = Object.fromEntries(f.map((x) => [x.entityId, x]));
+      expect(byId["100"].autoAction).toBeUndefined();
+      expect(byId["999"].autoAction?.action).toBe("pause_ad");
+      expect(byId["999"].recommendation).not.toContain("ยกเว้น");
+    });
+
+    it("an empty exemption set changes nothing", () => {
+      const ad = makeAd({
+        ad_id: "100",
+        spend: THRESHOLDS.adNoLeadSpendCeilingThb + 100,
+        leads: 0,
+        cpl: null,
+      });
+      expect(diagnoseAds([ad], new Set())[0].autoAction?.action).toBe(
+        "pause_ad"
+      );
+    });
+  });
+
   it("does not auto-pause a traffic-objective ad with zero leads", () => {
     const f = diagnoseAds([
       makeAd({
