@@ -9,7 +9,7 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
+import { sendLineMessage, checkLineQuota } from "@/lib/line";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -38,6 +38,11 @@ function todayBangkok(): string {
 export async function GET(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const quota = await checkLineQuota();
+  if (quota.throttled) {
+    return NextResponse.json({ ok: false, skipped: true, reason: "line_quota_low", remaining: quota.remaining });
   }
 
   const supabase = createAdminClient();

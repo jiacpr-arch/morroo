@@ -14,7 +14,7 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { broadcastLineMessages } from "@/lib/line";
+import { broadcastLineMessages, checkLineQuota } from "@/lib/line";
 import { buildBlogDigestCarousel, BLOG_DIGEST_MAX_POSTS } from "@/lib/line-flex-templates";
 import { ensureLineCover } from "@/app/api/autopost/retry/route";
 
@@ -39,6 +39,11 @@ export async function GET(request: Request) {
 
   if (process.env.LINE_AUTOPOST_ENABLED !== "true") {
     return NextResponse.json({ sent: 0, message: "skipped:LINE_AUTOPOST_ENABLED!=true" });
+  }
+
+  const quota = await checkLineQuota();
+  if (quota.throttled) {
+    return NextResponse.json({ sent: 0, skipped: true, reason: "line_quota_low", remaining: quota.remaining });
   }
 
   const supabase = createAdminClient();

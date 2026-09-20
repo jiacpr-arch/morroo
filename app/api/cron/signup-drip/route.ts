@@ -15,7 +15,7 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
+import { sendLineMessage, checkLineQuota } from "@/lib/line";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -79,7 +79,12 @@ function messageFor(day: ReminderDay, name: string, siteUrl: string): string {
   }
 }
 
-async function run(): Promise<Summary> {
+async function run(): Promise<Summary | { skipped: true; reason: string; remaining: number | null }> {
+  const quota = await checkLineQuota();
+  if (quota.throttled) {
+    return { skipped: true, reason: "line_quota_low", remaining: quota.remaining };
+  }
+
   const supabase = createAdminClient();
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
   const summary: Summary = {
