@@ -4,21 +4,26 @@
  * ต่อ 1 บทเรียน (school_lessons):
  *   1. ส่ง body_md ให้ Claude เสนอ "figure spec": diagram เป็น SVG 1 รูปต่อ Part
  *      (label ไทย ควบคุมข้อความได้ 100%), prompt สำหรับ hero, และ key points สำหรับการ์ดสรุป
- *   2. เรนเดอร์: SVG ใช้ตรง ๆ (ตรวจว่าพาร์สได้/ไม่มี script) · hero ผ่าน OpenAI gpt-image-2.5-flare
- *      (ตกไป gpt-image-1 อัตโนมัติถ้า org ยังไม่มีสิทธิ์ใช้รุ่นใหม่; ข้ามถ้าไม่มี OPENAI_API_KEY หรือ SKIP_HERO=1)
- *      · การ์ดสรุปจาก template SVG ในไฟล์นี้
+ *   2. เรนเดอร์: SVG ใช้ตรง ๆ (ตรวจว่าพาร์สได้/ไม่มี script) · การ์ดสรุปจาก template SVG ในไฟล์นี้
+ *      · hero **ปิดเป็นค่าเริ่มต้น** (ดูหมายเหตุด้านล่าง) — เปิดด้วย WITH_HERO=1 เท่านั้น ถ้าเปิดจะเรียก
+ *      OpenAI gpt-image-2.5-flare (ตกไป gpt-image-1 อัตโนมัติถ้า org ยังไม่มีสิทธิ์ใช้รุ่นใหม่)
  *   3. อัปโหลดขึ้น Supabase Storage `public-assets/school/lessons/{lesson_id}/…`
  *   4. เขียนกลับ body_md ด้วย `![alt](url "caption")` ตามตำแหน่ง Part/anchor ที่ Claude ระบุ
  *      (ผ่าน splitLessonPartsRaw/joinLessonParts — marker `## ⏸ Mini Quiz` และ quiz ไม่ถูกแตะ)
  *      และ upsert แถวใน school_visuals (lesson_id) สำหรับการ์ดสรุป
  *
+ * หมายเหตุเรื่อง hero: ทดสอบแล้วรูปที่ได้จาก gpt-image-2.5-flare ผ่าน API ตรง ๆ
+ * คุณภาพ/สไตล์ไม่นิ่งพอ (ครั้งหนึ่งหลุดเป็นภาพมืดมีกะโหลก) เทียบกับรูปที่ทำเอง/อัปโหลดมือ
+ * ผ่านหน้า `/admin/school` → tab แก้ไข → ปุ่ม "+ แทรกรูปตรงนี้" จึงปิด hero ไว้เป็นค่าเริ่มต้น
+ * ให้ diagram (ที่คุม label ได้ 100%) เป็นตัวหลัก ส่วน hero ให้แอดมินเลือกรูปเองแทน
+ *
  * Env ที่ต้องมี: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
- * Env เสริม:     OPENAI_API_KEY (hero), MODEL (default claude-sonnet-4-6)
+ * Env เสริม:     OPENAI_API_KEY (ใช้เมื่อ WITH_HERO=1), MODEL (default claude-sonnet-4-6)
  *
  * เลือกบท:  LESSON_ID=<uuid>   หรือ  TOPIC="FMMD 1201" (ทุกบทในวิชา)  หรือ  ALL=1
  * ควบคุม:   DRY=1   เขียน spec + svg ลง scripts/lesson-figures-out/ อย่างเดียว ไม่อัป/ไม่แก้ DB
  *           FORCE=1 ทำซ้ำแม้บทมีรูปแล้ว (รูปเก่าที่สคริปต์นี้ใส่จะถูกลบออกก่อน)
- *           SKIP_HERO=1 ไม่ทำ hero
+ *           WITH_HERO=1 เปิดสร้าง hero ด้วย AI (ปิดอยู่โดยค่าเริ่มต้น — ดูหมายเหตุด้านบน)
  *
  * รัน:  npx tsx scripts/generate-lesson-figures.ts
  * (ตัวแปรทั้งหมดข้างบนเป็น env var — ต้องอยู่ *หน้า* คำสั่ง หรือ export ไว้ก่อน ไม่ใช่ argument ต่อท้าย
@@ -53,7 +58,7 @@ const TOPIC = process.env.TOPIC;
 const ALL = flag("ALL");
 const DRY = flag("DRY");
 const FORCE = flag("FORCE");
-const SKIP_HERO = flag("SKIP_HERO");
+const WITH_HERO = flag("WITH_HERO");
 
 const BUCKET = "public-assets";
 const PREFIX = "school/lessons";
@@ -302,7 +307,7 @@ async function callImageApi(
 }
 
 async function renderHero(prompt: string): Promise<Buffer | null> {
-  if (SKIP_HERO || !OPENAI_API_KEY) return null;
+  if (!WITH_HERO || !OPENAI_API_KEY) return null;
   // Verified 2026-09-20: without an explicit anti-realism anchor, gpt-image
   // models default to photorealistic/cinematic renders — a first pilot run
   // returned a moody Renaissance alchemist scene with a skull and skeleton,
@@ -517,7 +522,7 @@ async function processLesson(lesson: LessonRow): Promise<void> {
     await writeFile(path.join(dir, "summary.svg"), summaryBuf);
     if (heroBuf) await writeFile(path.join(dir, "hero.webp"), heroBuf);
     console.log(
-      `${tag}: DRY — wrote ${figureBufs.length} diagrams + summary${heroBuf ? " + hero" : " (no hero — see warning above)"} to ${dir}`
+      `${tag}: DRY — wrote ${figureBufs.length} diagrams + summary${heroBuf ? " + hero" : " (no hero — WITH_HERO not set, or see warning above if it was)"} to ${dir}`
     );
     return;
   }

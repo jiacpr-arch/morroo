@@ -2,12 +2,18 @@
 
 > สถานะ (20 ก.ย. 2026): **Phase 0 ทำแล้ว** (`LessonFigure`, ช่อง alt/caption ในแอดมิน,
 > `school_visuals.lesson_id`, การ์ดสรุปท้ายบท, thumbnail ในลิสต์บท, event PostHog) ·
-> **สคริปต์ระดับ 2 เขียนแล้ว** (`npm run gen:figures` → `scripts/generate-lesson-figures.ts`, ยังไม่ได้รันกับ API จริง) ·
-> **Phase 1 นำร่อง FMMD 1201** วาด SVG 15 รูปไว้ที่ `public/lesson-images/school/cell-biology/` —
+> **สคริปต์ระดับ 2 เขียนแล้วและรันกับ API จริงแล้ว** (`npm run gen:figures` → `scripts/generate-lesson-figures.ts`) —
+> diagram (Claude เขียน SVG) ใช้งานได้ดี ทดสอบจริงกับบท FMMD 1201 lesson 1 สำเร็จ ·
+> **Phase 1 นำร่อง FMMD 1201** วาด SVG มือ 15 รูปไว้ที่ `public/lesson-images/school/cell-biology/` —
 > ใส่เข้า DB ด้วย `supabase/school_figures_cell_biology_20260920.sql` **หลัง deploy** (ไฟล์รูปต้องขึ้นเว็บก่อน ไม่งั้นรูปแตก)
 >
-> ตัวเลือก 3 ข้อในหัวข้อ 7 ใช้ตามที่เสนอ: hero ใช้ gpt‑image‑1, summary card เก็บใน `school_visuals` + `lesson_id`,
-> Phase 1 รีวิวโดยแอดมินก่อนปล่อย
+> **เปลี่ยนจากแผนเดิม:** ทดสอบ hero ด้วย gpt-image-2.5-flare ผ่าน API ตรง ๆ แล้วคุณภาพ/สไตล์ไม่นิ่งพอ
+> (ครั้งหนึ่งหลุดเป็นภาพมืดมีกะโหลก ทั้งที่ prompt สั่ง flat/friendly ไว้) เทียบกับรูปที่ทำเอง/อัปโหลดมือผ่าน
+> `/admin/school` ไม่ได้คุณภาพเท่า — **ตัดสินใจ (20 ก.ย.): ปิด hero-by-AI เป็นค่าเริ่มต้นในสคริปต์
+> (`WITH_HERO=1` ถึงจะเปิด) ให้แอดมินหา/อัปโหลด hero เองแทน** diagram ยังเป็น AI (Claude เขียน SVG)
+> เหมือนเดิมเพราะคุมคุณภาพ label ได้ 100% ไม่มีปัญหาเรื่องสไตล์หลุด
+>
+> ตัวเลือกอื่นในหัวข้อ 7: summary card เก็บใน `school_visuals` + `lesson_id`, Phase 1 รีวิวโดยแอดมินก่อนปล่อย
 
 ## 0. ปัญหาและเป้าหมาย
 
