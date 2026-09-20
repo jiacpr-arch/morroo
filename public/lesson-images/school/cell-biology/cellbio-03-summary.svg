@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="t" font-family="Sarabun, 'Noto Sans Thai', system-ui, -apple-system, sans-serif">
+  <title id="t">สรุปบทที่ 3: เพอรอกซิโซม ไลโซโซม M6P pathway และ autophagy</title>
+  <rect width="1200" height="900" fill="#ffffff"/>
+  <rect x="24" y="24" width="1152" height="150" rx="14" fill="#e11d48"/>
+  <text x="60" y="92" font-size="36" font-weight="700" fill="#ffffff">สรุปบทที่ 3: Peroxisome · Lysosome · Autophagy</text>
+  <rect x="60" y="114" width="300" height="40" rx="20" fill="#ffffff" fill-opacity="0.2"/>
+  <text x="210" y="141" text-anchor="middle" font-size="20" fill="#ffffff">FMMD 1201 ชีววิทยาของเซลล์</text>
+  <rect x="60" y="210" width="1080" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="110" cy="262" r="26" fill="#e11d48"/>
+    <text x="110" y="271" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">1</text>
+    <text x="160" y="254" font-size="24" fill="#0f172a">Peroxisome: เยื่อชั้นเดียว · catalase กำจัด H₂O₂</text>
+    <text x="160" y="288" font-size="24" fill="#0f172a">· β-oxidation ของ VLCFA</text>
+  <rect x="60" y="330" width="1080" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="110" cy="382" r="26" fill="#e11d48"/>
+    <text x="110" y="391" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">2</text>
+    <text x="160" y="374" font-size="24" fill="#0f172a">โรค peroxisome: Zellweger (import) · ALD (ABCD1, VLCFA)</text>
+    <text x="160" y="408" font-size="24" fill="#0f172a">· Refsum (phytanic acid)</text>
+  <rect x="60" y="450" width="1080" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="110" cy="502" r="26" fill="#e11d48"/>
+    <text x="110" y="511" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">3</text>
+    <text x="160" y="494" font-size="24" fill="#0f172a">Lysosome: pH 4.5–5.0 · acid hydrolase ~40 ชนิด</text>
+    <text x="160" y="528" font-size="24" fill="#0f172a">· ทำงานเฉพาะที่กรด (safety lock)</text>
+  <rect x="60" y="570" width="1080" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="110" cy="622" r="26" fill="#e11d48"/>
+    <text x="110" y="631" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">4</text>
+    <text x="160" y="614" font-size="24" fill="#0f172a">M6P pathway: ติดป้ายที่ cis-Golgi → receptor ที่ TGN</text>
+    <text x="160" y="648" font-size="24" fill="#0f172a">→ ปล่อยใน endosome → lysosome</text>
+  <rect x="60" y="690" width="1080" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="110" cy="742" r="26" fill="#e11d48"/>
+    <text x="110" y="751" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">5</text>
+    <text x="160" y="751" font-size="24" fill="#0f172a">Autophagy 4 ขั้น: โอบ → ปิด (เยื่อ 2 ชั้น) → รวม lysosome → ย่อย</text>
+  <text x="600" y="862" text-anchor="middle" font-size="20" fill="#64748b">ทวนแล้วไปทำ Final Retrieval ต่อได้เลย</text>
+</svg>
