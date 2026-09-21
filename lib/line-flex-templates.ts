@@ -224,6 +224,74 @@ export function buildBlogDigestCarousel(posts: BlogDigestPost[]): LineMessage {
   };
 }
 
+export interface NewsletterPost {
+  title: string;
+  slug: string;
+}
+
+export interface NewsletterData {
+  tip: string;
+  posts: NewsletterPost[];
+  siteUrl: string;
+}
+
+/** Replaces the old plain-text "หมอรู้ Weekly" broadcast with a Flex bubble. */
+export function buildNewsletterFlex(data: NewsletterData): LineMessage {
+  const postRows: Record<string, unknown>[] = data.posts.slice(0, 3).map((post) => ({
+    type: "box",
+    layout: "vertical",
+    margin: "sm",
+    action: { type: "uri", uri: `${data.siteUrl}/blog/${post.slug}` },
+    contents: [
+      { type: "text", text: `• ${post.title}`, size: "sm", color: "#16A085", wrap: true },
+    ],
+  }));
+
+  return {
+    type: "flex",
+    altText: truncateText(`📚 หมอรู้ Weekly — ${data.tip}`, ALT_TEXT_MAX),
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#16A085",
+        paddingAll: "lg",
+        contents: [
+          { type: "text", text: "📚 หมอรู้ Weekly", color: "#FFFFFF", weight: "bold", size: "lg" },
+          { type: "text", text: "เตรียมสอบประจำสัปดาห์", color: "#D5F5E3", size: "xs" },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          { type: "text", text: "💡 เทคนิคประจำสัปดาห์", weight: "bold", size: "sm", color: "#16A085" },
+          { type: "text", text: data.tip, size: "sm", wrap: true, margin: "sm" },
+          ...(postRows.length
+            ? [
+                { type: "separator", margin: "lg" },
+                {
+                  type: "text",
+                  text: "📖 บทความใหม่",
+                  weight: "bold",
+                  size: "sm",
+                  color: "#16A085",
+                  margin: "lg",
+                },
+                ...postRows,
+              ]
+            : []),
+        ],
+      },
+      footer: ctaFooter([{ label: "ฝึกสอบ MEQ + MCQ", uri: `${data.siteUrl}/exams`, style: "primary" }]),
+    },
+  };
+}
+
 interface ExpiryWarningData {
   name: string;
   expiresAt: Date;
