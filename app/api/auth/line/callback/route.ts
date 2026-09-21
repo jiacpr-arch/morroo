@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient as createServerSupabaseClient } from "@/lib/supabase/server";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
-import { sendMetaEvent } from "@/lib/meta/events-api";
+import { sendMetaEvent, sourceUrl } from "@/lib/meta/events-api";
 import { sendWelcomeEmail } from "@/lib/email/send";
 import { safeInternalPath } from "@/lib/safe-redirect";
 
@@ -326,6 +326,9 @@ export async function GET(request: Request) {
       sendMetaEvent({
         event: "CompleteRegistration",
         eventId: signupEventId,
+        // LINE sends the user straight back to the callback; /register is the
+        // page that started the flow.
+        url: sourceUrl("/register"),
         email: lineEmail,
         externalId: userId,
         ip,

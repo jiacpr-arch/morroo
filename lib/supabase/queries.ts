@@ -1,3 +1,4 @@
+import { isUuid } from "@/lib/school/ids";
 import { createClient } from "./server";
 import type { Exam, ExamPart } from "../types";
 import type { QuestionBankStats } from "./queries-mcq";
@@ -51,6 +52,10 @@ export function sortExamsAvailableFirst(exams: Exam[], partCounts: Record<string
 }
 
 export async function getExam(id: string): Promise<Exam | null> {
+  // `exams.id` is a uuid column, so a junk route segment (crawlers hit
+  // /exams/tel:0885588078 after following a mis-resolved tel: href) would make
+  // Postgres raise 22P02 and log a server error instead of rendering a 404.
+  if (!isUuid(id)) return null;
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("exams")
@@ -67,6 +72,8 @@ export async function getExam(id: string): Promise<Exam | null> {
 }
 
 export async function getExamParts(examId: string): Promise<ExamPart[]> {
+  // Same uuid guard as getExam: `exam_parts.exam_id` is a uuid column.
+  if (!isUuid(examId)) return [];
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("exam_parts")

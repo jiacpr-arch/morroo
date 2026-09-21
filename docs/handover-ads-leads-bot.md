@@ -151,7 +151,7 @@ CREATE TABLE bundle_credits (
 );
 ```
 
-### `trial_messages_sent` (`20260509`) — dedupe trial-expiry reminders (D-3 / D-1)
+### `trial_messages_sent` (`20260509`) — dedupe membership-expiry reminders (`/api/line/expiry-warning`, D-7/D-3/D-1)
 ```sql
 CREATE TABLE trial_messages_sent (
   profile_id           uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -296,7 +296,7 @@ NEXT_PUBLIC_SITE_URL=              # e.g. https://www.morroo.com
 | Method+Path | หน้าที่ |
 |---|---|
 | `GET /api/cron/lead-followup` | Daily — ส่ง follow-up email/LINE/Messenger (D1, D3, D6) |
-| `GET /api/cron/trial-expiry` | Daily — D-3 / D-1 reminder ก่อน trial หมดอายุ |
+| `POST /api/line/expiry-warning` | Daily (pg_cron 09:00 BKK) — D-7/D-3/D-1 reminder ก่อนสมาชิกหมดอายุ (LINE ถ้าผูกไว้ ไม่งั้น email; แทนที่ `/api/cron/trial-expiry` เดิมที่ถูกลบเพราะซ้ำซ้อนกันวันที่ 3) |
 | `GET /api/autopost/retry?platform=fb\|line\|ig\|both\|all&slug=...&limit=1` | Retry autopost (1 article/invocation, Vercel 60s cap) |
 
 **Auth pattern ของ cron:** รับได้ทั้ง `Authorization: Bearer ${CRON_SECRET}` (Vercel Cron) หรือ `?secret=${BLOG_GENERATE_SECRET}` (external)
@@ -380,7 +380,7 @@ NEXT_PUBLIC_SITE_URL=              # e.g. https://www.morroo.com
   - Main OA → `/api/line/webhook`
   - Jiaroo OA → `/api/line/jiaroo-webhook`
   - LIFF endpoint → `/lp/free-trial` (หรือที่ตั้งไว้)
-- **Vercel Cron** (`vercel.json`): schedule `/api/cron/lead-followup` (daily), `/api/cron/trial-expiry` (daily), `/api/line/daily-reminder`, `/api/line/expiry-warning`, `/api/line/weekly-summary`, `/api/autopost/retry`
+- **Vercel Cron** (`vercel.json`): schedule `/api/cron/lead-followup` (daily), `/api/autopost/retry`. `/api/line/daily-reminder`, `/api/line/expiry-warning`, `/api/line/weekly-summary` are scheduled via pg_cron instead (see `supabase/migrations/20260512_cron_vault_rewrite.sql`).
 - **Supabase pg_cron + `net.http_post`**: schedule LINE notifications ฝั่ง DB (อ้าง `current_setting('app.site_url')`, `current_setting('app.blog_generate_secret')`)
 - **Stripe**: coupon ถูกสร้างคู่กับ redeem code (`stripe_coupon_id` column)
 

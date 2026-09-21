@@ -1,5 +1,8 @@
 const PIXEL_ID = "966371002896288";
-const API_VERSION = "v18.0";
+// Keep in step with lib/ads-diagnostics.ts — both talk to the same Graph API
+// and a version that silently ages out takes every Purchase with it. v18.0
+// shipped in late 2023 and was already past Meta's ~2-year support window.
+const API_VERSION = "v24.0";
 
 type MetaEventName =
   | "PageView"
@@ -11,7 +14,25 @@ type MetaEventName =
   | "InitiateCheckout"
   | "AddToCart";
 
-export interface MetaEventInput {
+/**
+ * Where the conversion actually happened.
+ *
+ * Meta uses this to judge match quality, so it must describe reality: a sale
+ * closed over chat and typed into an admin screen is `system_generated`, not
+ * a `website` visit that never occurred.
+ */
+export type MetaActionSource =
+  | "website"
+  | "app"
+  | "chat"
+  | "email"
+  | "phone_call"
+  | "physical_store"
+  | "system_generated"
+  | "business_messaging"
+  | "other";
+
+interface MetaEventBase {
   event: MetaEventName;
   eventId?: string;
   email?: string | null;
@@ -23,12 +44,77 @@ export interface MetaEventInput {
   userAgent?: string | null;
   fbc?: string | null;
   fbp?: string | null;
-  url?: string | null;
   value?: number;
   currency?: string;
   contentIds?: string[];
   contentName?: string;
   contentType?: string;
+}
+
+/**
+ * `event_source_url` is mandatory for website events — Meta rejects a
+ * `website` event that omits it, at ingest, without telling anyone. Two call
+ * sites shipped without it (the Stripe Purchase among them) and neither the
+ * code nor the logs said so; the events simply never arrived.
+ *
+ * So the rule is expressed in the type rather than left to a runtime check:
+ * omit `actionSource` (or set it to "website") and `url` becomes mandatory,
+ * which turns that whole class of bug into a build failure. Sources with no
+ * page behind them — `system_generated` for a sale closed in chat — keep
+ * `url` optional, because Meta does not require one there.
+ */
+export type MetaEventInput =
+  | (MetaEventBase & { actionSource?: "website"; url: string })
+  | (MetaEventBase & {
+      actionSource: Exclude<MetaActionSource, "website">;
+      url?: string | null;
+    });
+
+/**
+ * Put a phone number in the shape Meta hashes against: digits only, country
+ * code included, no `+` and no leading international access code.
+ *
+ * Thai numbers are stored domestically (`081-234-5678`) but Meta's index keys
+ * on the international form, so a raw digit-strip matches nothing. The leading
+ * zero is what disambiguates the two: a domestic Thai number always has one,
+ * an already-international number never does — so `0661234567` (an 06x mobile)
+ * becomes `66661234567`, not a double-counted country code.
+ *
+ * Non-Thai numbers pass through untouched; we only know how to complete a
+ * number we can recognise, and guessing a country code is worse than leaving
+ * one alone.
+ */
+export function normalizePhone(raw: string): string | null {
+  let digits = raw.replace(/\D/g, "");
+  if (!digits) return null;
+
+  // 00 = international access code dialled from abroad; the country code follows.
+  if (digits.startsWith("00")) digits = digits.slice(2);
+
+  // Domestic Thai form: 0 + 8 or 9 national digits.
+  if (digits.startsWith("0") && (digits.length === 9 || digits.length === 10)) {
+    return `66${digits.slice(1)}`;
+  }
+
+  return digits || null;
+}
+
+/**
+ * Absolute URL on the public site, for `event_source_url`.
+ *
+ * Call sites read `referer` where they can, but that header is absent often
+ * enough — privacy settings, direct navigation, some in-app browsers — that
+ * it cannot stand alone: a website event without a source URL is dropped by
+ * Meta, so a null referer silently costs the conversion. This supplies the
+ * page the event logically came from as the floor.
+ */
+export function sourceUrl(path: string): string {
+  // `??` would let an env var set to "" through and yield a relative URL,
+  // which Meta rejects exactly like a missing one.
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") ||
+    "https://www.morroo.com";
+  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
 // Web Crypto API — works in both Node.js 18+ and Edge runtimes (unlike node:crypto)
@@ -61,15 +147,53 @@ function resolveTestEventCode(): string | undefined {
   return process.env.META_TEST_EVENT_CODE?.trim() || undefined;
 }
 
-export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
+/**
+ * Say it once per instance when the token is missing.
+ *
+ * Returning silently is how an unset env var turns into months of lost
+ * Purchases with nothing in the logs — the same failure shape as the ads
+ * scan that reported "all clear" without reading the account (PR #430).
+ * Once per instance rather than per event: ViewContent alone fires ~900
+ * times a day, and a warning that floods is a warning nobody reads.
+ */
+let warnedMissingToken = false;
+
+function warnMissingToken(event: MetaEventName): void {
+  if (warnedMissingToken) return;
+  warnedMissingToken = true;
+  console.error(
+    `[meta-capi] META_CAPI_ACCESS_TOKEN ไม่ได้ตั้งค่า — ทิ้ง event ทั้งหมดเงียบ ๆ ` +
+      `(ตัวแรกที่ถูกทิ้ง: ${event}${
+        process.env.VERCEL_ENV ? `, env=${process.env.VERCEL_ENV}` : ""
+      }). Purchase/Lead จะไม่ถึง Meta จนกว่าจะตั้งค่า`
+  );
+}
+
+/** Test-only: the warning latch is module state that survives between tests. */
+export function __resetMissingTokenWarning(): void {
+  warnedMissingToken = false;
+}
+
+/**
+ * Fire one CAPI event. Never throws — a Meta outage must not take the caller
+ * down with it — so the boolean is the only way to learn what happened.
+ *
+ * `true` means Meta accepted the event. Callers that persist a record of the
+ * conversion (app/api/admin/course-sales) store that answer so a dropped
+ * event stays findable instead of being assumed delivered.
+ */
+export async function sendMetaEvent(input: MetaEventInput): Promise<boolean> {
   const token = process.env.META_CAPI_ACCESS_TOKEN;
-  if (!token) return;
+  if (!token) {
+    warnMissingToken(input.event);
+    return false;
+  }
 
   const userData: Record<string, unknown> = {};
   if (input.email) userData.em = [await sha256Lower(input.email)];
   if (input.phone) {
-    const digits = input.phone.replace(/\D/g, "");
-    if (digits) userData.ph = [await sha256Lower(digits)];
+    const phone = normalizePhone(input.phone);
+    if (phone) userData.ph = [await sha256Lower(phone)];
   }
   if (input.firstName) userData.fn = [await sha256Lower(input.firstName)];
   if (input.lastName) userData.ln = [await sha256Lower(input.lastName)];
@@ -86,11 +210,24 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   if (input.contentName) customData.content_name = input.contentName;
   if (input.contentType) customData.content_type = input.contentType;
 
+  const actionSource = input.actionSource ?? "website";
+
+  // The type already makes `url` mandatory for website events, but a value
+  // assembled at runtime can still arrive empty (an unset env var, a blank
+  // header). Meta drops those the same way, so say it out loud rather than
+  // post a payload we know it will reject.
+  if (actionSource === "website" && !input.url) {
+    console.error(
+      `[meta-capi] ${input.event} ไม่มี event_source_url ทั้งที่ action_source เป็น website ` +
+        `— Meta จะบล็อกเงียบ ๆ ตรวจ caller ที่ยิง event นี้`
+    );
+  }
+
   const eventData: Record<string, unknown> = {
     event_name: input.event,
     event_time: Math.floor(Date.now() / 1000),
     event_id: input.eventId ?? crypto.randomUUID(),
-    action_source: "website",
+    action_source: actionSource,
     user_data: userData,
   };
   if (input.url) eventData.event_source_url = input.url;
@@ -117,8 +254,11 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
       console.error(
         `[meta-capi] ${input.event} failed: ${res.status} ${text.slice(0, 200)}`
       );
+      return false;
     }
+    return true;
   } catch (err) {
     console.error(`[meta-capi] ${input.event} fetch error:`, err);
+    return false;
   }
 }

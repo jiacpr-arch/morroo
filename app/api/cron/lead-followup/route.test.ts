@@ -10,8 +10,17 @@ const sendLineMessageMock = vi.fn(async () => true);
 const sendFbMessageMock = vi.fn(async () => true);
 const sendEmailMock = vi.fn(async () => {});
 const redeemCodeMock = vi.fn(async () => ({ ok: true as const, rewardType: "monthly_1m" as const }));
+const checkLineQuotaMock = vi.fn(async () => ({
+  limit: null,
+  used: null,
+  remaining: null,
+  throttled: false,
+}));
 
-vi.mock("@/lib/line", () => ({ sendLineMessage: sendLineMessageMock }));
+vi.mock("@/lib/line", () => ({
+  sendLineMessage: sendLineMessageMock,
+  checkLineQuota: checkLineQuotaMock,
+}));
 vi.mock("@/lib/facebook-messenger", () => ({ sendFbMessage: sendFbMessageMock }));
 vi.mock("@/lib/email/send", () => ({ sendLeadFollowupEmail: sendEmailMock }));
 vi.mock("@/lib/redeem", () => ({ redeemCode: redeemCodeMock }));

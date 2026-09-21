@@ -185,9 +185,12 @@ export async function GET(request: Request) {
   let adsYesterday: AdsDailySummary | null = null;
   try {
     const yesterday = bangkokDayWindow(now, 1);
-    adsYesterday = summarizeAdsDay(
-      await fetchAdInsights(yesterday.label, yesterday.label)
-    );
+    const result = await fetchAdInsights(yesterday.label, yesterday.label);
+    // Unreadable account → leave the section off the digest entirely rather
+    // than render a zeroed-out day that looks like real "nobody spent" data.
+    // The ads-ops section below reports the failure itself.
+    if (result.ok) adsYesterday = summarizeAdsDay(result.ads);
+    else console.error("[admin-digest] ads snapshot skipped:", result.reason);
   } catch (err) {
     console.error("[admin-digest] ads snapshot failed:", err);
   }
@@ -199,7 +202,7 @@ export async function GET(request: Request) {
     // Latest ads-autofix diagnostics run in the last 24h.
     const { data: runRows } = await supabase
       .from("ad_diagnostics_runs")
-      .select("id, ok, findings_count, actions_count, summary")
+      .select("id, ok, ads_scanned, findings_count, actions_count, error, summary")
       .gte("started_at", last24hUtc)
       .order("started_at", { ascending: false })
       .limit(1);
@@ -208,9 +211,14 @@ export async function GET(request: Request) {
       | {
           id: number;
           ok: boolean;
+          ads_scanned: number;
           findings_count: number;
           actions_count: number;
-          summary: { bySeverity?: { critical?: number } } | null;
+          error: string | null;
+          summary: {
+            bySeverity?: { critical?: number };
+            adsIdle?: boolean;
+          } | null;
         }
       | undefined;
     if (run) {
@@ -223,6 +231,9 @@ export async function GET(request: Request) {
         .limit(2);
       autofix = {
         ok: run.ok,
+        adsScanned: run.ads_scanned,
+        adsIdle: run.summary?.adsIdle ?? false,
+        error: run.error,
         findingsCount: run.findings_count,
         critical: run.summary?.bySeverity?.critical ?? topRows?.length ?? 0,
         autoPaused: run.actions_count,

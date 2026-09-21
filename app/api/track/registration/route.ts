@@ -19,7 +19,7 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendMetaEvent } from "@/lib/meta/events-api";
+import { sendMetaEvent, sourceUrl } from "@/lib/meta/events-api";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 
 export const runtime = "nodejs";
@@ -73,7 +73,8 @@ export async function POST(request: Request) {
   const ttclid = readCookie("ttclid");
   const ttp = readCookie("_ttp");
   const eventId = `signup:${user.id}`;
-  const url = request.headers.get("referer");
+  // referer is missing often enough that it cannot be the only source.
+  const url = request.headers.get("referer") ?? sourceUrl("/register");
 
   // เดิมใช้ after() แต่พบว่าหายเงียบเกือบหมดบน production (ดู
   // app/api/track/casegame/route.ts) — instance ถูกดับก่อน fetch เสร็จเวลามี

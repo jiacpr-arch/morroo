@@ -509,6 +509,13 @@ export interface AdsOpsSummary {
   /** Latest overnight ads-autofix diagnostics run (last 24h); null if none ran. */
   autofix: {
     ok: boolean;
+    /** Ads actually read from Meta. */
+    adsScanned: number;
+    /** 0 ads read *because* nothing is running — a quiet account, not a
+     *  blind scan. Set only when the ACTIVE-ad probe confirmed it. */
+    adsIdle: boolean;
+    /** Raw error from ad_diagnostics_runs, shown abbreviated. */
+    error: string | null;
     findingsCount: number;
     critical: number;
     autoPaused: number;
@@ -650,6 +657,38 @@ function marketingSection(m: MarketingSnapshot) {
   ];
 }
 
+const RUN_ERROR_MAX = 110;
+
+/**
+ * Squeeze a run's `error` into one readable LINE line.
+ *
+ * Meta failures arrive as a raw JSON envelope — the 2026-09-13 403 was ~380
+ * characters of which only the `message` mattered. Pull that out when it's
+ * there, fall back to the raw string, and always cap the length: a digest
+ * bubble that overflows is a digest nobody reads.
+ */
+export function abbreviateRunError(error: string | null): string {
+  if (!error) return "ไม่มีรายละเอียดข้อผิดพลาด";
+  const flat = error.replace(/\s+/g, " ").trim();
+  if (!flat) return "ไม่มีรายละเอียดข้อผิดพลาด";
+
+  // `"message":"…"` — the only genuinely human part of a Graph API error.
+  const match = flat.match(/"message"\s*:\s*"((?:[^"\\]|\\.)*)"/);
+  let picked = flat;
+  if (match) {
+    // Keep the stage prefix ("ads: Meta insights failed 403:") — it says
+    // which half of the run broke — then splice the message in after it.
+    const prefix = flat.slice(0, flat.indexOf("{")).trim();
+    const message = match[1].replace(/\\"/g, '"').replace(/\\\//g, "/");
+    picked = prefix ? `${prefix} ${message}` : message;
+  }
+  const clean = picked.replace(/\s+/g, " ").trim();
+
+  return clean.length > RUN_ERROR_MAX
+    ? `${clean.slice(0, RUN_ERROR_MAX - 1)}…`
+    : clean;
+}
+
 // Overnight ads-ops pipeline (autofix → suggest → post-merge watch).
 // Those crons no longer push LINE themselves — this is where their
 // results reach the admin.
@@ -658,10 +697,25 @@ function adsOpsSection(o: AdsOpsSummary) {
 
   if (o.autofix) {
     const a = o.autofix;
+    // Order matters: "ตรวจไม่ได้" and "ตรวจแล้วไม่เจอ" must never collapse
+    // into the same ✅. The blind-scan case is called out on its own even
+    // when ok=true, because 0 ads read is not evidence of anything.
     if (!a.ok) {
-      lines.push(noteLine("⚠️ รอบตรวจเมื่อคืนมีข้อผิดพลาด — ดูรายละเอียดใน /admin/ads-diagnostics", "#E74C3C"));
+      lines.push(
+        noteLine(
+          `⚠️ รอบตรวจเมื่อคืนไม่สำเร็จ — ${abbreviateRunError(a.error)}`,
+          "#E74C3C"
+        )
+      );
+      lines.push(noteLine("ดูรายละเอียดใน /admin/ads-diagnostics", "#888888"));
+    } else if (a.adsIdle) {
+      lines.push(noteLine("💤 ไม่มีโฆษณาที่กำลังวิ่ง — ไม่มีอะไรให้ตรวจ", "#888888"));
+    } else if (a.adsScanned === 0) {
+      lines.push(
+        noteLine("⚠️ อ่านข้อมูลโฆษณาไม่ได้เลย (0 ตัว) — ผลตรวจรอบนี้เชื่อไม่ได้", "#E67E22")
+      );
     } else if (a.findingsCount === 0) {
-      lines.push(noteLine("✅ ตรวจโฆษณาแล้ว ไม่พบปัญหา"));
+      lines.push(noteLine(`✅ ตรวจโฆษณา ${a.adsScanned} ตัวแล้ว ไม่พบปัญหา`));
     } else {
       lines.push(
         noteLine(
