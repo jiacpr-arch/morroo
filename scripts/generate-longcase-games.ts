@@ -12,7 +12,7 @@
  *       npm run gen:casegames -- --specialty Surgery  (เฉพาะสาขา)
  *       npm run gen:casegames -- --force              (ทับเคสที่มีเกมแล้ว)
  *       npm run gen:casegames -- --publish            (publish เลย — ไม่แนะนำ ควรรีวิวก่อน)
- *       npm run gen:casegames -- --model claude-opus-4-7   (โมเดลคุณภาพสูงขึ้น)
+ *       npm run gen:casegames -- --model claude-opus-5   (โมเดลคุณภาพสูงขึ้น)
  *
  * ต้องมี env: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
  */
@@ -40,7 +40,7 @@ const PUBLISH = has("--publish");
 const LIMIT = val("--limit") ? Number(val("--limit")) : undefined;
 const CASE_ID = val("--case");
 const SPECIALTY = val("--specialty");
-const MODELS = [val("--model") ?? "claude-sonnet-4-6", "claude-haiku-4-5"];
+const MODELS = [val("--model") ?? "claude-sonnet-5", "claude-haiku-4-5"];
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;

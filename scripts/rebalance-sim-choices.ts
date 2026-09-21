@@ -30,7 +30,7 @@ const val = (f: string): string | undefined => {
 const DRY = has("--dry-run");
 const LIMIT = val("--limit") ? Number(val("--limit")) : undefined;
 const SLUG = val("--slug");
-const MODELS = [val("--model") ?? "claude-sonnet-4-6", "claude-haiku-4-5"];
+const MODELS = [val("--model") ?? "claude-sonnet-5", "claude-haiku-4-5"];
 const CONCURRENCY = Math.max(1, Number(val("--concurrency") ?? 4));
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;

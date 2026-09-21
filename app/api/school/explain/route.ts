@@ -3,7 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAnthropic } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
-const MODEL = "claude-sonnet-4-6";
+const MODEL = "claude-sonnet-5";
 
 /**
  * Self-explanation grader (Feynman technique).
