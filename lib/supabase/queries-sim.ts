@@ -4,6 +4,7 @@
 // (แอดมิน/AI สร้าง, เฉพาะ status='published') — รวมกันโดย built-in ชนะเมื่อ slug ซ้ำ
 
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { SIM_SCENARIOS, getBuiltinScenario } from "@/lib/sim/scenarios";
 import type { SimDbCharacter } from "@/lib/sim/characters";
 import { isValidScenario, type SimScenario } from "@/lib/sim/types";
@@ -43,7 +44,7 @@ function rowToScenario(row: SimScenarioRow): SimScenario | null {
 export async function getSimScenarios(): Promise<SimScenario[]> {
   const out = [...SIM_SCENARIOS];
   try {
-    const supabase = await createClient();
+    const supabase = createAdminClient();
     const { data } = await supabase
       .from("sim_scenarios")
       .select(SCENARIO_COLS)
@@ -157,7 +158,7 @@ export interface LongcaseGameCard {
  */
 export async function getLongcaseGameCards(): Promise<LongcaseGameCard[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createAdminClient();
     const { data } = await supabase
       .from("long_cases")
       .select("id, title, specialty, difficulty, audience, is_weekly")
