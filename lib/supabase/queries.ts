@@ -1,5 +1,6 @@
 import { isUuid } from "@/lib/school/ids";
 import { createClient } from "./server";
+import { createAdminClient } from "./admin";
 import type { Exam, ExamPart } from "../types";
 import type { QuestionBankStats } from "./queries-mcq";
 
@@ -19,7 +20,7 @@ export type HomeExamStats = QuestionBankStats & {
 };
 
 export async function getExams(): Promise<Exam[]> {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("exams")
     .select("*")
@@ -103,7 +104,7 @@ export async function getAllExams(): Promise<Exam[]> {
 }
 
 export async function getExamPartCounts(): Promise<Record<string, number>> {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("exam_parts")
     .select("exam_id");
