@@ -9,6 +9,7 @@ import {
   buildBlogAnnounceFlex,
   buildBlogDigestCarousel,
   BLOG_DIGEST_MAX_POSTS,
+  buildWeeklyNewsletterFlex,
   buildWeeklyHardMcqFlex,
   buildNewLongCaseBubble,
   buildAdminDigestFlex,
@@ -236,6 +237,46 @@ describe("buildBlogDigestCarousel", () => {
     const carousel = msg.contents as { contents: unknown[] };
     expect(carousel.contents).toHaveLength(BLOG_DIGEST_MAX_POSTS);
     expect(msg.altText).toContain(`${BLOG_DIGEST_MAX_POSTS} เรื่อง`);
+  });
+});
+
+describe("buildWeeklyNewsletterFlex", () => {
+  const BASE = {
+    tip: "ฝึกคิด DD จากอาการก่อนอ่านคำถาม",
+    articles: [
+      { title: "บทความ 1", url: "https://www.morroo.com/blog/post-1" },
+      { title: "บทความ 2", url: "https://www.morroo.com/blog/post-2" },
+    ],
+    examsUrl: "https://www.morroo.com/exams",
+  };
+
+  it("sends a single flex bubble, not raw text", () => {
+    const msg = buildWeeklyNewsletterFlex(BASE);
+    expect(msg.type).toBe("flex");
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    const bubble = msg.contents as { type: string };
+    expect(bubble.type).toBe("bubble");
+  });
+
+  it("links each article and the exams CTA", () => {
+    const msg = buildWeeklyNewsletterFlex(BASE);
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    const json = JSON.stringify(msg.contents);
+    expect(json).toContain("/blog/post-1");
+    expect(json).toContain("/blog/post-2");
+    expect(json).toContain(BASE.examsUrl);
+  });
+
+  it("still renders a card with no articles", () => {
+    const msg = buildWeeklyNewsletterFlex({ ...BASE, articles: [] });
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    expect(JSON.stringify(msg.contents)).not.toContain("บทความใหม่");
+  });
+
+  it("caps altText length", () => {
+    const msg = buildWeeklyNewsletterFlex(BASE);
+    if (msg.type !== "flex") throw new Error("expected flex message");
+    expect(msg.altText.length).toBeLessThanOrEqual(150);
   });
 });
 

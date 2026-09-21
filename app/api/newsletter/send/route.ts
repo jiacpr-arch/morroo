@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { broadcastLineMessages, checkLineQuota } from "@/lib/line";
+import { buildWeeklyNewsletterFlex } from "@/lib/line-flex-templates";
 
 // Weekly tips pool — rotates by week number
 const TIPS = [
@@ -13,37 +15,19 @@ const TIPS = [
   "🏥 Long Case: ฝึก present ให้จบใน 3 นาที: CC+HPI (1 นาที) → PE+Lab (1 นาที) → Diagnosis+Plan (1 นาที)",
 ];
 
-async function sendLinebroadcast(message: string): Promise<{ success: boolean; error?: string }> {
-  const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  if (!token) return { success: false, error: "LINE_CHANNEL_ACCESS_TOKEN not set" };
-
-  const res = await fetch("https://api.line.me/v2/bot/message/broadcast", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({
-      messages: [
-        {
-          type: "text",
-          text: message,
-        },
-      ],
-    }),
-  });
-
-  if (!res.ok) {
-    const err = await res.text();
-    return { success: false, error: err };
-  }
-  return { success: true };
-}
-
 export async function POST(request: Request) {
   const { searchParams } = new URL(request.url);
   if (searchParams.get("secret") !== process.env.BLOG_GENERATE_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  if (process.env.LINE_AUTOPOST_ENABLED !== "true") {
+    return NextResponse.json({ success: false, message: "skipped:LINE_AUTOPOST_ENABLED!=true" });
+  }
+
+  const quota = await checkLineQuota();
+  if (quota.throttled) {
+    return NextResponse.json({ success: false, skipped: true, reason: "line_quota_low", remaining: quota.remaining });
   }
 
   const supabase = await createClient();
@@ -61,26 +45,19 @@ export async function POST(request: Request) {
 
   const siteUrl = "https://www.morroo.com";
 
-  // Build LINE message
-  let message = "📚 หมอรู้ Weekly — เตรียมสอบประจำสัปดาห์\n\n";
+  const flex = buildWeeklyNewsletterFlex({
+    tip,
+    articles: (posts ?? []).map((post: { title: string; slug: string }) => ({
+      title: post.title,
+      url: `${siteUrl}/blog/${post.slug}`,
+    })),
+    examsUrl: `${siteUrl}/exams`,
+  });
 
-  message += `💡 เทคนิคประจำสัปดาห์\n${tip}\n\n`;
-
-  if (posts && posts.length > 0) {
-    message += "📖 บทความใหม่\n";
-    for (const post of posts) {
-      message += `• ${post.title}\n  ${siteUrl}/blog/${post.slug}\n`;
-    }
-    message += "\n";
-  }
-
-  message += `🎯 ฝึกสอบ MEQ + MCQ ได้เลย\n${siteUrl}/exams\n\n`;
-  message += "─────────────────\nหมอรู้ — เตรียมสอบแพทย์ด้วย AI";
-
-  const result = await sendLinebroadcast(message);
+  const result = await broadcastLineMessages([flex]);
 
   return NextResponse.json({
-    success: result.success,
+    success: result.ok,
     error: result.error,
     tip: tip.slice(0, 50),
     posts: posts?.length ?? 0,

@@ -224,6 +224,84 @@ export function buildBlogDigestCarousel(posts: BlogDigestPost[]): LineMessage {
   };
 }
 
+export interface WeeklyNewsletterArticle {
+  title: string;
+  url: string;
+}
+
+export interface WeeklyNewsletterData {
+  tip: string;
+  articles: WeeklyNewsletterArticle[];
+  examsUrl: string;
+}
+
+const NEWSLETTER_TIP_MAX = 200;
+const NEWSLETTER_ARTICLE_TITLE_MAX = 60;
+const NEWSLETTER_MAX_ARTICLES = 3;
+
+/** Monday tip + latest articles, as a single card instead of a raw-text broadcast. */
+export function buildWeeklyNewsletterFlex(data: WeeklyNewsletterData): LineMessage {
+  const articles = data.articles.slice(0, NEWSLETTER_MAX_ARTICLES);
+  const articleRows = articles.map((article) => ({
+    type: "box" as const,
+    layout: "horizontal" as const,
+    margin: "sm" as const,
+    action: { type: "uri" as const, uri: article.url },
+    contents: [
+      { type: "text" as const, text: "▸", size: "sm" as const, color: PRIMARY, flex: 0 },
+      {
+        type: "text" as const,
+        text: truncateText(article.title, NEWSLETTER_ARTICLE_TITLE_MAX),
+        size: "sm" as const,
+        color: "#2C3E50",
+        wrap: true,
+        margin: "sm" as const,
+        flex: 1,
+      },
+    ],
+  }));
+
+  return {
+    type: "flex",
+    altText: truncateText(
+      `📚 หมอรู้ Weekly — เทคนิคสอบประจำสัปดาห์${articles.length > 0 ? ` + บทความใหม่ ${articles.length} เรื่อง` : ""}`,
+      ALT_TEXT_MAX,
+    ),
+    contents: {
+      type: "bubble",
+      size: "mega",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: PRIMARY,
+        paddingAll: "lg",
+        contents: [
+          { type: "text", text: "📚 หมอรู้ Weekly", color: "#FFFFFF", weight: "bold", size: "lg" },
+          { type: "text", text: "เตรียมสอบประจำสัปดาห์", color: "#D5F5E3", size: "xs" },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "lg",
+        spacing: "md",
+        contents: [
+          sectionTitle("💡 เทคนิคประจำสัปดาห์"),
+          { type: "text", text: truncateText(data.tip, NEWSLETTER_TIP_MAX), size: "sm", color: "#444444", wrap: true },
+          ...(articleRows.length > 0
+            ? [
+                { type: "separator" as const, margin: "md" as const },
+                sectionTitle("📖 บทความใหม่"),
+                ...articleRows,
+              ]
+            : []),
+        ],
+      },
+      footer: ctaFooter([{ label: "ฝึกสอบ MEQ + MCQ", uri: data.examsUrl, style: "primary" }]),
+    },
+  };
+}
+
 interface ExpiryWarningData {
   name: string;
   expiresAt: Date;
