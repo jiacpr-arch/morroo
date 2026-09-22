@@ -26,6 +26,7 @@ import {
   buildDailyMcqResultFlex,
   type DailyMcqQuestionData,
 } from "@/lib/line-flex-templates";
+import { liffDeepLink, toLiffUri } from "@/lib/line-links";
 import type { McqQuestion } from "@/lib/types-mcq";
 
 const DAILY_ACTION = "daily_answer";
@@ -42,19 +43,6 @@ const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").
 
 // Leads that have already converted — don't hand out another trial.
 const CONVERTED_STAGES = new Set(["redeemed", "paid"]);
-
-/**
- * LIFF deep link for `path`. Opening this from inside the LINE app skips
- * straight past the login screen (the visitor is already LINE-authenticated)
- * and lands on /line/liff signed into morroo — see app/(morroo)/line/liff
- * and app/api/auth/line/liff-session. Falls back to a plain site URL when
- * NEXT_PUBLIC_LIFF_ID isn't configured, so this never breaks on a deploy
- * that hasn't set up the LIFF app yet.
- */
-function liffDeepLink(path: string): string {
-  const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
-  return liffId ? `https://liff.line.me/${liffId}${path}` : `${SITE_URL}${path}`;
-}
 
 function txt(text: string): LineMessage {
   return { type: "text", text };
@@ -74,7 +62,11 @@ export function shiftQuizDate(dateStr: string, days: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-/** Build the "ทำในเว็บ" / "ดูเฉลยละเอียด" deep link, tagged for attribution. */
+/**
+ * Build the "ทำในเว็บ" / "ดูเฉลยละเอียด" deep link, tagged for attribution.
+ * Wrapped as a LIFF URL (when configured) so tapping it from LINE lands the
+ * visitor signed in instead of on a logged-out page — see lib/line-links.
+ */
 export function dailyPracticeUrl(
   questionId: string,
   quizDate: string,
@@ -87,9 +79,11 @@ export function dailyPracticeUrl(
     utm_campaign: quizDate,
     utm_content: content,
   });
-  return `${SITE_URL}/nl/practice?${params.toString()}`;
+  return toLiffUri(`${SITE_URL}/nl/practice?${params.toString()}`);
 }
 
+// Also a LIFF link when shared — the friend who taps it gets signed in (or
+// created a new account and signed in) the same way the original recipient did.
 function dailyShareUrl(questionId: string, quizDate: string): string {
   const url = dailyPracticeUrl(questionId, quizDate, "share");
   const text = `📚 ลองตอบข้อสอบ MCQ ประจำวันนี้ดูสิ!\n${url}`;
@@ -313,7 +307,7 @@ export async function handleDailyMcqPostback(
     return [
       txt(
         "โจทย์ข้อนี้หมดเวลาแล้ว รอข้อใหม่พรุ่งนี้ 7 โมงเช้า 🌅\n\nหรือฝึกต่อได้เลยที่นี่:\n" +
-          `${SITE_URL}/nl/practice?utm_source=line&utm_medium=daily_mcq&utm_content=expired`
+          toLiffUri(`${SITE_URL}/nl/practice?utm_source=line&utm_medium=daily_mcq&utm_content=expired`)
       ),
     ];
   }
@@ -478,7 +472,7 @@ async function maybeIssueStreakReward(
       `โค้ด: ${issued.code}`,
       "",
       "กดลิงก์นี้แล้ว login ด้วย LINE รับสิทธิ์ได้ทันทีครับ 🩺",
-      `${SITE_URL}/redeem/${issued.code}`,
+      toLiffUri(`${SITE_URL}/redeem/${issued.code}`),
       "(โค้ดหมดอายุใน 7 วัน)",
     ].join("\n");
   } catch (err) {

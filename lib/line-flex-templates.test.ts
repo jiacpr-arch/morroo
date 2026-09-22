@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, afterEach } from "vitest";
 import {
   buildDailyMcqBubble,
   buildDailyMcqFlex,
@@ -13,6 +13,12 @@ import {
   buildWeeklyHardMcqFlex,
   buildNewLongCaseBubble,
   buildAdminDigestFlex,
+  buildAdsSuggestFlex,
+  buildWeeklySummaryFlex,
+  buildExpiryWarningMessage,
+  buildStreakNudgeFlex,
+  buildExamResultFlex,
+  buildChatbotCard,
   abbreviateRunError,
   type AdsOpsSummary,
   type DailyMcqQuestionData,
@@ -507,5 +513,137 @@ describe("adsOps autofix — the four outcomes must stay distinguishable", () =>
     const json = render(CLEAN);
     expect(json).toContain("ตรวจโฆษณา 19 ตัวแล้ว ไม่พบปัญหา");
     expect(json).not.toContain("เชื่อไม่ได้");
+  });
+});
+
+// LIFF rollout (lib/line-links.ts) regression guard: every customer-facing
+// button must open as a LIFF deep link when NEXT_PUBLIC_LIFF_ID is set (so
+// tapping it from inside LINE lands the visitor signed in), while internal
+// admin/ops cards (never opened from a customer's LINE) must stay untouched.
+describe("LIFF deep links on customer-facing Flex buttons", () => {
+  const LIFF_ID = "2010009663-BMDYoMQk";
+  const ORIGINAL_LIFF_ID = process.env.NEXT_PUBLIC_LIFF_ID;
+
+  afterEach(() => {
+    if (ORIGINAL_LIFF_ID === undefined) delete process.env.NEXT_PUBLIC_LIFF_ID;
+    else process.env.NEXT_PUBLIC_LIFF_ID = ORIGINAL_LIFF_ID;
+  });
+
+  it("rewrites the dashboard/exams buttons on the weekly summary card", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildWeeklySummaryFlex({
+      totalQuestions: 10,
+      correctCount: 7,
+      accuracy: 70,
+      bestSubject: "ประสาทวิทยา",
+      bestSubjectIcon: "🧠",
+      streak: 3,
+    });
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/dashboard`);
+  });
+
+  it("rewrites the register + read-article buttons on a blog/news announce card", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildBlogAnnounceFlex({
+      title: "บทความทดสอบ",
+      description: "รายละเอียด",
+      url: "https://www.morroo.com/blog/test-slug",
+      coverImage: null,
+    });
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/register`);
+    expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/blog/test-slug`);
+  });
+
+  it("rewrites the renew/pricing buttons on the expiry-warning card", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildExpiryWarningMessage({
+      name: "หมอตัวอย่าง",
+      expiresAt: new Date(Date.now() + 3 * 86400_000),
+      membershipType: "monthly",
+    });
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris.some((u) => u === `https://liff.line.me/${LIFF_ID}/payment/monthly`)).toBe(true);
+    expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/pricing`);
+  });
+
+  it("rewrites the practice button on the streak-nudge card", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildStreakNudgeFlex({
+      name: "หมอตัวอย่าง",
+      streak: 2,
+      practiceUrl: "https://www.morroo.com/nl/practice?utm_source=line",
+    });
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/nl/practice?utm_source=line`);
+  });
+
+  it("rewrites the dashboard/exams buttons on an exam-result card", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildExamResultFlex({
+      score: 8,
+      maxScore: 10,
+      subjectLabel: "ประสาทวิทยา",
+      questionPreview: "โจทย์ตัวอย่าง",
+      feedback: "ทำได้ดี",
+      matchedCount: 4,
+      totalKeyPoints: 5,
+      weakTopics: [],
+    });
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/dashboard`);
+    expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/exams`);
+  });
+
+  it("rewrites every chatbot CTA card's buttons", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    for (const card of ["pricing", "register", "longcase", "meq"] as const) {
+      const flex = buildChatbotCard(card);
+      const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+      expect(uris.length).toBeGreaterThan(0);
+      for (const uri of uris) {
+        expect(uri).toMatch(new RegExp(`^https://liff\\.line\\.me/${LIFF_ID}/`));
+      }
+    }
+  });
+
+  it("falls back to plain morroo.com URLs when NEXT_PUBLIC_LIFF_ID is unset", () => {
+    delete process.env.NEXT_PUBLIC_LIFF_ID;
+    const flex = buildChatbotCard("register");
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris).toContain("https://www.morroo.com/register");
+    expect(JSON.stringify(flex)).not.toContain("liff.line.me");
+  });
+
+  it("never rewrites the admin digest card, even with a LIFF ID configured", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildAdminDigestFlex({
+      dateLabel: "จ. 21 ก.ย.",
+      attemptsToday: 0,
+      activeUsersToday: 0,
+      newUsersToday: 0,
+      avgAccuracyToday: null,
+      totalStudents: 0,
+      activeUsers7d: 0,
+      weakestSubject: null,
+      aiGradeFails24h: 0,
+      revenueTodayThb: null,
+    });
+    expect(JSON.stringify(flex)).not.toContain("liff.line.me");
+    expect(JSON.stringify(flex)).toContain("https://www.morroo.com/admin");
+  });
+
+  it("never rewrites the ads-autofix suggestion card, even with a LIFF ID configured", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildAdsSuggestFlex({
+      pagePath: "/lp/free-trial",
+      recommendation: "ลดงบ 20%",
+      severity: "warning",
+      prNumber: 123,
+      prUrl: "https://github.com/jiacpr-arch/morroo/pull/123",
+      baseline: {},
+    });
+    expect(JSON.stringify(flex)).not.toContain("liff.line.me");
   });
 });

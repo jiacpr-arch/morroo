@@ -3,6 +3,7 @@ import type { MarketingSnapshot } from "./marketing-digest";
 import type { AdsDailySummary } from "./ads-daily-summary";
 import type { WeeklyAnalyticsSummary } from "./analytics-weekly";
 import type { ReengageExperimentStatus } from "./mcq-reengage-experiment";
+import { toLiffUri } from "./line-links";
 
 interface WeeklySummaryData {
   totalQuestions: number;
@@ -81,7 +82,7 @@ export function buildWeeklySummaryFlex(data: WeeklySummaryData): LineMessage {
             action: {
               type: "uri",
               label: "ดู Dashboard",
-              uri: "https://www.morroo.com/dashboard",
+              uri: toLiffUri("https://www.morroo.com/dashboard"),
             },
             style: "primary",
             color: "#16A085",
@@ -118,6 +119,7 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
       ? data.description.slice(0, 57).trimEnd() + "…"
       : data.description;
   const isNews = data.kind === "news";
+  const articleUrl = toLiffUri(data.url);
 
   return {
     type: "flex",
@@ -134,7 +136,7 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
               size: "full",
               aspectRatio: "1.91:1",
               aspectMode: "cover",
-              action: { type: "uri", uri: data.url },
+              action: { type: "uri", uri: articleUrl },
             },
           }
         : {}),
@@ -174,7 +176,7 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
             action: {
               type: "uri",
               label: "สมัครฟรี",
-              uri: "https://www.morroo.com/register",
+              uri: toLiffUri("https://www.morroo.com/register"),
             },
           },
           {
@@ -183,7 +185,7 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
             action: {
               type: "uri",
               label: isNews ? "อ่านข่าว" : "อ่านบทความ",
-              uri: data.url,
+              uri: articleUrl,
             },
           },
         ],
@@ -246,7 +248,7 @@ export function buildWeeklyNewsletterFlex(data: WeeklyNewsletterData): LineMessa
     type: "box" as const,
     layout: "horizontal" as const,
     margin: "sm" as const,
-    action: { type: "uri" as const, uri: article.url },
+    action: { type: "uri" as const, uri: toLiffUri(article.url) },
     contents: [
       { type: "text" as const, text: "▸", size: "sm" as const, color: PRIMARY, flex: 0 },
       {
@@ -297,7 +299,7 @@ export function buildWeeklyNewsletterFlex(data: WeeklyNewsletterData): LineMessa
             : []),
         ],
       },
-      footer: ctaFooter([{ label: "ฝึกสอบ MEQ + MCQ", uri: data.examsUrl, style: "primary" }]),
+      footer: ctaFooter([{ label: "ฝึกสอบ MEQ + MCQ", uri: toLiffUri(data.examsUrl), style: "primary" }]),
     },
   };
 }
@@ -385,7 +387,7 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
             action: {
               type: "uri",
               label: "🔄 ต่ออายุเลย",
-              uri: `${siteUrl}/payment/${renewPath}`,
+              uri: toLiffUri(`${siteUrl}/payment/${renewPath}`),
             },
             style: "primary",
             color: "#0EA5E9",
@@ -395,7 +397,7 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
             action: {
               type: "uri",
               label: "ดูแพ็กเกจทั้งหมด",
-              uri: `${siteUrl}/pricing`,
+              uri: toLiffUri(`${siteUrl}/pricing`),
             },
             style: "secondary",
           },
@@ -481,7 +483,7 @@ export function buildStreakNudgeFlex(data: StreakNudgeData): LineMessage {
             action: {
               type: "uri",
               label: "ทำข้อสอบเลย",
-              uri: data.practiceUrl,
+              uri: toLiffUri(data.practiceUrl),
             },
             style: "primary",
             color: accent,
@@ -636,7 +638,7 @@ export function buildExamResultFlex(data: ExamResultData): LineMessage {
             action: {
               type: "uri",
               label: "ดู Dashboard",
-              uri: `${siteUrl}/dashboard`,
+              uri: toLiffUri(`${siteUrl}/dashboard`),
             },
             style: "primary",
             color: "#16A085",
@@ -646,7 +648,7 @@ export function buildExamResultFlex(data: ExamResultData): LineMessage {
             action: {
               type: "uri",
               label: "ทำข้อสอบต่อ",
-              uri: `${siteUrl}/exams`,
+              uri: toLiffUri(`${siteUrl}/exams`),
             },
             style: "secondary",
           },
@@ -1154,8 +1156,8 @@ function pricingCard(): LineMessage {
         ],
       },
       footer: ctaFooter([
-        { label: "ดูแพ็กเกจทั้งหมด", uri: `${SITE}/pricing`, style: "primary" },
-        { label: "สมัครฟรีก่อน", uri: `${SITE}/register`, style: "secondary" },
+        { label: "ดูแพ็กเกจทั้งหมด", uri: toLiffUri(`${SITE}/pricing`), style: "primary" },
+        { label: "สมัครฟรีก่อน", uri: toLiffUri(`${SITE}/register`), style: "secondary" },
       ]),
     },
   };
@@ -1191,7 +1193,7 @@ function registerCard(): LineMessage {
         ],
       },
       footer: ctaFooter([
-        { label: "สมัครฟรีเลย", uri: `${SITE}/register`, style: "primary" },
+        { label: "สมัครฟรีเลย", uri: toLiffUri(`${SITE}/register`), style: "primary" },
       ]),
     },
   };
@@ -1224,8 +1226,8 @@ function longcaseCard(): LineMessage {
         ],
       },
       footer: ctaFooter([
-        { label: "ลอง Long Case", uri: `${SITE}/longcase`, style: "primary" },
-        { label: "สมัครฟรี", uri: `${SITE}/register`, style: "secondary" },
+        { label: "ลอง Long Case", uri: toLiffUri(`${SITE}/longcase`), style: "primary" },
+        { label: "สมัครฟรี", uri: toLiffUri(`${SITE}/register`), style: "secondary" },
       ]),
     },
   };
@@ -1258,8 +1260,8 @@ function meqCard(): LineMessage {
         ],
       },
       footer: ctaFooter([
-        { label: "ลองทำ MEQ", uri: `${SITE}/exams`, style: "primary" },
-        { label: "ดูแพ็กเกจ", uri: `${SITE}/pricing`, style: "secondary" },
+        { label: "ลองทำ MEQ", uri: toLiffUri(`${SITE}/exams`), style: "primary" },
+        { label: "ดูแพ็กเกจ", uri: toLiffUri(`${SITE}/pricing`), style: "secondary" },
       ]),
     },
   };
@@ -1768,7 +1770,7 @@ export function buildNewLongCaseBubble(data: NewLongCaseData): Record<string, un
         },
       ],
     },
-    footer: ctaFooter([{ label: "ลองทำ Long Case นี้", uri: data.url, style: "primary" }]),
+    footer: ctaFooter([{ label: "ลองทำ Long Case นี้", uri: toLiffUri(data.url), style: "primary" }]),
   };
 }
 
@@ -1939,7 +1941,7 @@ export function buildCasegameTeaserBubble(): Record<string, unknown> {
     footer: ctaFooter([
       {
         label: "ลองเคสจำลองฟรี",
-        uri: `${SITE}/casegame/random?utm_source=line&utm_medium=daily_mcq&utm_campaign=sat_casegame`,
+        uri: toLiffUri(`${SITE}/casegame/random?utm_source=line&utm_medium=daily_mcq&utm_campaign=sat_casegame`),
         style: "primary",
       },
     ]),
@@ -1988,7 +1990,7 @@ export function buildWeekRecapBubble(recap: WeekRecapData): Record<string, unkno
     footer: ctaFooter([
       {
         label: "ฝึกต่อวันนี้",
-        uri: `${SITE}/nl/practice?mode=recommended&utm_source=line&utm_medium=daily_mcq&utm_campaign=sun_recap`,
+        uri: toLiffUri(`${SITE}/nl/practice?mode=recommended&utm_source=line&utm_medium=daily_mcq&utm_campaign=sun_recap`),
         style: "primary",
       },
     ]),
