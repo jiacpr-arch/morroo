@@ -405,6 +405,93 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
   };
 }
 
+interface StreakNudgeData {
+  name: string | null;
+  streak: number;
+  practiceUrl: string;
+}
+
+/** Card pushed by the streak-nudge cron to users who were active yesterday but haven't done today's exam yet. */
+export function buildStreakNudgeFlex(data: StreakNudgeData): LineMessage {
+  const greeting = data.name ? `น้อง${data.name}` : "น้อง";
+  const urgent = data.streak >= 3;
+  const accent = urgent ? "#F39C12" : "#16A085";
+  const streakLine = urgent
+    ? `🔥 ${greeting} มี streak ${data.streak} วันติด — อย่าให้ขาดวันนี้นะครับ!`
+    : `📚 ${greeting} เริ่มไว้แล้วเมื่อวาน — ทำต่อวันนี้สักข้อก็ยังดี!`;
+
+  return {
+    type: "flex",
+    altText: `${greeting} วันนี้ยังไม่ได้ทำข้อสอบเลย`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: accent,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "⏰ ยังไม่ได้ทำข้อสอบวันนี้",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: "MorRoo Daily Practice",
+            color: urgent ? "#FDEBD0" : "#D5F5E3",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: streakLine,
+            size: "sm",
+            color: "#444444",
+            wrap: true,
+          },
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "ทำข้อสอบ 5 ข้อ ใช้เวลาแค่ 5 นาที 👍",
+            size: "sm",
+            color: "#666666",
+            wrap: true,
+            margin: "md",
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "ทำข้อสอบเลย",
+              uri: data.practiceUrl,
+            },
+            style: "primary",
+            color: accent,
+          },
+        ],
+      },
+    },
+  };
+}
+
 // ----------------------------------------------------------------------------
 // Exam grading result — pushed to LINE after AI grades an MEQ answer.
 
