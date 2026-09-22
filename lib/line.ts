@@ -251,6 +251,66 @@ export async function sendLineMessage(
   return res.ok;
 }
 
+/**
+ * Reply to a specific webhook event via LINE's reply API — free, unlike
+ * push/broadcast, so answering the event that triggered the reply this way
+ * instead of always pushing keeps the monthly quota for sends nothing
+ * triggered a reply for (see the quota-awareness comment above). A reply
+ * token is single-use and expires quickly (LINE doesn't document an exact
+ * window), so this can legitimately fail on a slow handler — callers should
+ * fall back to sendLineMessage() when it does; replyOrPushLineMessage()
+ * below does that automatically.
+ */
+export async function replyLineMessage(
+  replyToken: string,
+  messages: LineMessage[]
+): Promise<boolean> {
+  const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+  if (!token) {
+    console.error("[line] LINE_CHANNEL_ACCESS_TOKEN not set");
+    return false;
+  }
+
+  const res = await fetch("https://api.line.me/v2/bot/message/reply", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ replyToken, messages }),
+  });
+
+  if (!res.ok) {
+    // Not a quota check here — the reply API doesn't draw from the
+    // push/broadcast monthly quota, so a failure here is always the token
+    // (expired, already used, or missing) rather than the Aug 2026 failure
+    // mode. flagQuotaExceededFromSend stays specific to push/broadcast.
+    const errText = await res.text().catch(() => "<no body>");
+    console.warn(`[line] reply failed status=${res.status} body=${errText}`);
+  }
+
+  return res.ok;
+}
+
+/**
+ * Reply when possible, push when not — the default way webhook handlers
+ * should answer the event that triggered them. Saves quota on the common
+ * case (reply succeeds) without risking a dropped message on the rare one
+ * (token already expired by the time a slow handler, e.g. one that calls
+ * the chatbot AI, gets around to sending).
+ */
+export async function replyOrPushLineMessage(
+  lineUserId: string,
+  replyToken: string | undefined,
+  messages: LineMessage[]
+): Promise<boolean> {
+  if (replyToken) {
+    const replied = await replyLineMessage(replyToken, messages);
+    if (replied) return true;
+  }
+  return sendLineMessage(lineUserId, messages);
+}
+
 export async function broadcastLineMessages(
   messages: LineMessage[]
 ): Promise<{ ok: boolean; error?: string }> {

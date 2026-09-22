@@ -1,15 +1,16 @@
 # สเปก: LINE LIFF สำหรับหมอรู้ + ผลกระทบต่อระบบ autopost
 
-> สถานะ: **Phase 0 + 1 + 3 (auth bridge + แปลงปุ่มลูกค้าเป็น LIFF) เสร็จแล้ว** — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
+> สถานะ: **Phase 0 + 1 + 3 + §6 (auth bridge + แปลงปุ่มลูกค้าเป็น LIFF + webhook reply‑token) เสร็จแล้ว** — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
 > เป้าหมาย: ทุกลิงก์ที่ส่งจาก LINE OA เปิดแล้ว "ล็อกอินให้อัตโนมัติ" และการเชื่อมบัญชีเหลือแค่แตะครั้งเดียว โดยไม่ต้องรื้อ pipeline autopost
 >
 > **สิ่งที่ทำเสร็จแล้วในรอบนี้:**
 > - **Phase 0** — ตั้งค่า LINE Developers console ครบ: LINE Login channel "morroologin" (`LINE_LOGIN_CHANNEL_ID=2010009663`) ผูกกับ OA `@901nmwcd` แล้ว, LIFF app "morroo" (`NEXT_PUBLIC_LIFF_ID=2010009663-BMDYoMQk`) ตั้ง Endpoint = `/line/liff`, Scope = profile/openid/email, Add friend = On (aggressive), และยื่นขอ email permission แล้ว (รอ LINE อนุมัติ — ระบบใช้ placeholder email ระหว่างรอได้ปกติ)
 > - **Phase 1** — `lib/line-id-token.ts`, `lib/line-auth.ts`: logic verify ID token + find‑or‑create/link/sign‑in ที่ใช้ร่วมกันระหว่าง LINE Login OAuth (`app/api/auth/line/callback`, refactor แล้วไม่เปลี่ยน behavior) กับ LIFF; `app/api/auth/line/liff-session/route.ts` (ใหม่) แทน `/api/line/liff-link` เดิม (deprecated); `app/(morroo)/line/liff/page.tsx` อ่าน `liff.state` เพื่อ redirect กลับไปหน้าที่ตั้งใจเปิดหลัง sign‑in
 > - **Phase 3 (ขยายจากแผนเดิม — ทำครบทุกปุ่มลูกค้าในรอบเดียว ไม่ใช่แค่ 1 ปุ่ม)** — `lib/line-links.ts` (ใหม่): `toLiffUri(fullUrl)` ห่อ URL เต็มที่มีอยู่แล้วให้เป็น LIFF deep link (รักษา path/query เดิมทั้งหมด รวม UTM), `liffDeepLink(path)` สำหรับ path เปล่า — ทั้งคู่ fallback เป็น URL ธรรมดาเมื่อไม่ได้ตั้ง `NEXT_PUBLIC_LIFF_ID`. ใช้ห่อปุ่มลูกค้าทั้งหมด 14 จุดใน `lib/line-flex-templates.ts` + `lib/daily-mcq-line.ts` (สรุปรายการ, ประกาศบทความ/ข่าว, newsletter, แจ้งเตือนหมดอายุ+จ่ายเงิน, streak‑nudge, ผลสอบ, การ์ด chatbot 4 ใบ, MCQ ประจำวัน/รายสัปดาห์, ผลเฉลย MCQ + แชร์เพื่อน + redeem code, Long Case ใหม่, teaser เสาร์/สรุปอาทิตย์) — **ไม่แตะ** การ์ดแอดมิน (`buildAdminDigestFlex`, `buildAdsSuggestFlex`) และแคปชัน FB/IG (`lib/autopost-copy.ts`, `lib/facebook.ts`, `lib/instagram.ts`) โดยตั้งใจ มี regression test กันไม่ให้ `liff.line.me` หลุดเข้าไปในแคปชันโซเชียล
-> - Email policy ที่ยืนยันแล้ว: ไม่มี email จาก ID token → ใช้ placeholder `line_{userId}@line.morroo.com` (ชื่อ domain เดิมที่ `app/api/auth/line/callback` ใช้อยู่แล้ว) ไม่บล็อกผู้ใช้
+> - Email policy ที่ยืนยันแล้ว: ไม่มี email จาก ID token → ใช้ placeholder `line_{userId}@line.morroo.com` (ชื่อ domain เดิมที่ `app/api/auth/line/callback` ใช้อยู่แล้ว) ไม่บล็อกผู้ใช้ (ยืนยันแล้วว่า LINE อนุมัติ email permission ของ channel นี้เร็วกว่าคาด — ผู้ใช้ใหม่ที่เชื่อมผ่าน LIFF ตอนนี้ได้อีเมลจริงแล้ว ไม่ใช่ placeholder)
+> - **§6** — webhook (`app/api/line/webhook/route.ts`) ตอบด้วย `replyToken` ก่อนแทน push ตรง (`replyOrPushLineMessage()` ใน `lib/line.ts`, fallback เป็น push อัตโนมัติถ้า reply ล้มเหลว) — ประหยัดโควตารายเดือนของ LINE เพราะข้อความตอบแชท (ปริมาณหลัก) ไม่กินโควตาอีกต่อไป
 >
-> **ยังไม่ทำ** (Phase 2, 4, 5, 6 เดิม): หน้า LIFF แบบ layout เบา + catch‑all route (ตอนนี้ `/line/liff` ยังอยู่ layout เต็มของเว็บ ใช้งานได้ปกติ), เลิก link‑code flow (`MORROO-XXXXXX`), webhook เปลี่ยนไปใช้ reply‑token แทน push (ประหยัดโควตา LINE), autopost link‑builder/UTM/quota consolidation ฝั่ง blog/news digest — คงแผนเดิมไว้ด้านล่างเป็น backlog
+> **ยังไม่ทำ** (Phase 2, 4, 5 เดิม): หน้า LIFF แบบ layout เบา + catch‑all route (ตอนนี้ `/line/liff` ยังอยู่ layout เต็มของเว็บ ใช้งานได้ปกติ), เลิก link‑code flow (`MORROO-XXXXXX`), autopost link‑builder/UTM/quota consolidation ฝั่ง blog/news digest — คงแผนเดิมไว้ด้านล่างเป็น backlog
 
 ---
 
@@ -20,7 +21,7 @@
 | ใช้ LIFF ได้ไหม | ได้ และมีของอยู่แล้วครึ่งทาง: `@line/liff` ติดตั้งแล้ว, มีหน้า `/line/liff`, มี `/api/line/liff-link` ที่ verify ID token กับ LINE แล้ว |
 | อะไรที่ยังขาด | (1) LIFF ยังสร้าง Supabase session ไม่ได้ ต้องไปกด login เอง (2) ปุ่มใน Flex ทุกใบยังชี้ `https://www.morroo.com/...` ซึ่งเปิดใน in‑app browser แบบไม่มี session (3) หน้า LIFF ยังอยู่ใต้ layout เต็ม (Navbar/Footer/ChatWidget/popup) |
 | autopost ต้องแก้ไหม | **แก้น้อยมาก** — ไม่ต้องแตะ FB/IG เลย แก้แค่ "ตัวสร้างลิงก์ฝั่ง LINE" ให้เป็นจุดเดียว + เพิ่ม UTM + quota check ให้ news broadcast |
-| ของแถมที่ควรทำพร้อมกัน | webhook ตอบด้วย `replyToken` แทน push → ข้อความตอบกลับ (chatbot, เฉลย MCQ, greeting) **ไม่กินโควตารายเดือน** |
+| ของแถมที่ควรทำพร้อมกัน | ✅ ทำแล้ว — webhook ตอบด้วย `replyToken` แทน push → ข้อความตอบกลับ (chatbot, เฉลย MCQ, greeting) **ไม่กินโควตารายเดือน** |
 
 ---
 
@@ -34,7 +35,7 @@
 | LIFF link API | `app/api/line/liff-link/route.ts` | verify ID token กับ `api.line.me/oauth2/v2.1/verify` (aud = `LINE_LOGIN_CHANNEL_ID`) แล้ว update `profiles.line_user_id` **ถ้ามี Supabase session อยู่แล้ว** ถ้าไม่มีตอบ `{linked:false}` แล้วให้ผู้ใช้ไปกด login เอง |
 | LINE Login (OAuth) | `app/api/auth/line/route.ts`, `app/api/auth/line/callback/route.ts` | callback ทำครบ: หา user จาก `line_user_id` → ถ้าไม่มีสร้าง user → `admin.generateLink` + `verifyOtp` เพื่อ set cookie session |
 | Link code | `app/api/line/generate-code/route.ts` + webhook branch `MORROO-XXXXXX` | flow เดิม: copy code ไปพิมพ์ใน LINE (มี friction สูง) |
-| Webhook | `app/api/line/webhook/route.ts` | follow / postback (daily MCQ, ads‑autofix) / text → chatbot; **ตอบทุกอย่างด้วย `sendLineMessage` (push)** ไม่ได้อ่าน `replyToken` |
+| Webhook | `app/api/line/webhook/route.ts` | follow / postback (daily MCQ, ads‑autofix) / text → chatbot; ✅ ตอบด้วย `replyOrPushLineMessage()` (reply ก่อน, fallback push อัตโนมัติ) |
 | Flex templates | `lib/line-flex-templates.ts` | ปุ่มทั้งหมดเป็น `uri: https://www.morroo.com/...` (มี `SITE` hardcode + `siteUrl` จาก env ปนกัน) |
 | Daily MCQ | `lib/daily-mcq-line.ts` | ผลเฉลยมีปุ่ม "เชื่อมบัญชี" ชี้ `${SITE_URL}/line/liff` อยู่แล้ว (`needsLink`) |
 | Profile UI | `app/(morroo)/profile/page.tsx` | ปุ่มสร้างรหัส MORROO‑ + copy |
@@ -187,14 +188,17 @@ window.location.replace("/nl/practice?q=…")   ← หน้าเว็บจ�
 
 ---
 
-## 6. ของแถมที่ควรทำในรอบเดียวกัน: webhook ใช้ reply แทน push
+## 6. webhook ใช้ reply แทน push ✅ เสร็จแล้ว (2026‑09‑22)
 
-ตอนนี้ `app/api/line/webhook/route.ts` parse event โดยไม่อ่าน `replyToken` แล้วตอบทุกอย่างด้วย `sendLineMessage` (push) — ทั้ง chatbot reply, greeting ตอน follow, เฉลย daily MCQ, ads‑autofix — **ทุกข้อความนับโควตา** ทั้งที่ reply API ฟรี
+`app/api/line/webhook/route.ts` เดิม parse event โดยไม่อ่าน `replyToken` แล้วตอบทุกอย่างด้วย `sendLineMessage` (push) — ทั้ง chatbot reply, greeting ตอน follow, เฉลย daily MCQ, ads‑autofix, ผลลิงก์โค้ด MORROO‑XXXXXX — **ทุกข้อความนับโควตา** ทั้งที่ reply API ฟรี
 
-แผน:
-- `lib/line.ts`: เพิ่ม `replyLineMessage(replyToken, messages)` → `POST /v2/bot/message/reply`; ถ้า reply ล้มเหลว (token หมดอายุ ~1 นาที / ใช้ซ้ำ) ค่อย fallback `sendLineMessage`
-- webhook: เก็บ `event.replyToken` แล้วเปลี่ยนจุดตอบกลับให้ใช้ reply ก่อน (chatbot ที่เรียก Claude ใช้เวลา 2‑10 วิ ยังอยู่ในหน้าต่าง reply)
-- ทำก่อน Phase 3 ได้เลย ไม่พึ่ง LIFF; ผลคือโควตาที่เหลือไปใช้กับ daily MCQ push / digest ได้มากขึ้น
+**สิ่งที่ทำจริง:**
+- `lib/line.ts`: เพิ่ม `replyLineMessage(replyToken, messages)` → `POST /v2/bot/message/reply` (ไม่มี quota check เพราะ reply API ไม่กินโควตา push/broadcast อยู่แล้ว) และ `replyOrPushLineMessage(lineUserId, replyToken, messages)` — reply ก่อน ถ้าไม่สำเร็จ (token หมดอายุ/ใช้ซ้ำ/ไม่มี token) fallback ไป `sendLineMessage` (push) ให้อัตโนมัติ
+- `app/api/line/webhook/route.ts`: อ่าน `event.replyToken` จากทุก event แล้วเปลี่ยนทุกจุดที่เคย `sendLineMessage` เป็น `replyOrPushLineMessage` — ครอบคลุม postback (ads‑autofix, daily MCQ), follow greeting, non‑text greeting, chatbot reply (ทั้ง rate‑limit/email‑capture/ปกติ), ผลลัพธ์โค้ด MORROO‑XXXXXX ทุกกรณี (ไม่พบ/หมดอายุ/ผูกกับบัญชีอื่น/error/สำเร็จ)
+- `app/api/line/jiaroo-webhook/route.ts`: ตรวจแล้วไม่มีการส่งข้อความ LINE เลย (webhook คนละแบบ) ไม่มีอะไรต้องแก้
+- Tests: `lib/line.test.ts` เพิ่มเทสคลุม `replyLineMessage` (สำเร็จ/token ไม่ถูกต้อง/ไม่มี access token) และ `replyOrPushLineMessage` (reply สำเร็จไม่แตะ push, ไม่มี replyToken ไป push ตรง, reply ล้มเหลว fallback ไป push) — รวม 860 เทสทั้งโปรเจกต์ผ่านหมด
+
+ผลคือโควตาที่เหลือไปใช้กับ daily MCQ push / digest broadcast ได้มากขึ้น เพราะข้อความตอบโต้ในแชท (ซึ่งเป็นปริมาณหลักของ traffic) ไม่กินโควตาอีกต่อไป
 
 ---
 
