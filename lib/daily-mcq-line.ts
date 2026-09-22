@@ -43,6 +43,19 @@ const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").
 // Leads that have already converted — don't hand out another trial.
 const CONVERTED_STAGES = new Set(["redeemed", "paid"]);
 
+/**
+ * LIFF deep link for `path`. Opening this from inside the LINE app skips
+ * straight past the login screen (the visitor is already LINE-authenticated)
+ * and lands on /line/liff signed into morroo — see app/(morroo)/line/liff
+ * and app/api/auth/line/liff-session. Falls back to a plain site URL when
+ * NEXT_PUBLIC_LIFF_ID isn't configured, so this never breaks on a deploy
+ * that hasn't set up the LIFF app yet.
+ */
+function liffDeepLink(path: string): string {
+  const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
+  return liffId ? `https://liff.line.me/${liffId}${path}` : `${SITE_URL}${path}`;
+}
+
 function txt(text: string): LineMessage {
   return { type: "text", text };
 }
@@ -403,7 +416,7 @@ export async function handleDailyMcqPostback(
       ),
       shareUrl: dailyShareUrl(question.id, quizDate),
       needsLink: !userId,
-      liffUrl: `${SITE_URL}/line/liff`,
+      liffUrl: liffDeepLink("/line/liff"),
     }),
   ];
 

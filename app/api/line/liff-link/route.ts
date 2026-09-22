@@ -5,6 +5,14 @@ import { createAdminClient } from "@/lib/supabase/admin";
 /**
  * POST /api/line/liff-link
  *
+ * @deprecated Superseded by /api/auth/line/liff-session, which the
+ * app/(morroo)/line/liff page now calls instead. That route handles the
+ * same case this one does (an already signed-in visitor linking their LINE
+ * identity) *and* signs in / creates an account when there's no Supabase
+ * session yet, instead of leaving the visitor to log in manually. Kept
+ * around only in case another LIFF app or an external caller still points
+ * here — no functional change.
+ *
  * Body: { idToken: string }
  *
  * Verifies a LIFF-issued ID token with LINE, then links the resulting LINE

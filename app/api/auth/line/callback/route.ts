@@ -6,6 +6,7 @@ import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 import { sendMetaEvent, sourceUrl } from "@/lib/meta/events-api";
 import { sendWelcomeEmail } from "@/lib/email/send";
 import { safeInternalPath } from "@/lib/safe-redirect";
+import { resolveOrCreateLineUser, establishSessionFor } from "@/lib/line-auth";
 
 /**
  * GET /api/auth/line/callback
@@ -145,117 +146,21 @@ export async function GET(request: Request) {
   }
 
   // ── Step 4: Find or create Supabase user ──────────────────────
+  // (logic shared with the LIFF auth bridge — see lib/line-auth.ts)
   const supabase = createAdminClient();
 
-  // Check if a profile already has this LINE user ID linked.
-  // `maybeSingle()` returns null when no rows match but still surfaces an
-  // error if the query is ambiguous (e.g. duplicate line_user_id rows).
-  const { data: existingByLine, error: lookupError } = await supabase
-    .from("profiles")
-    .select("id, email")
-    .eq("line_user_id", lineProfile.userId)
-    .maybeSingle();
+  const resolved = await resolveOrCreateLineUser(supabase, {
+    lineUserId: lineProfile.userId,
+    displayName: lineProfile.displayName,
+    pictureUrl: lineProfile.pictureUrl,
+    email: lineEmail,
+  });
 
-  if (lookupError) {
-    console.error("LINE profile lookup failed:", lookupError);
-    return NextResponse.redirect(`${origin}/login?error=line_lookup_failed`);
+  if ("error" in resolved) {
+    return NextResponse.redirect(`${origin}/login?error=${resolved.error}`);
   }
 
-  // Placeholder email for LINE accounts that didn't grant email scope.
-  const targetEmail =
-    lineEmail ?? `line_${lineProfile.userId}@line.morroo.com`;
-
-  let userId: string;
-  let isNewSignup = false;
-
-  if (existingByLine) {
-    // Already linked — just sign them in
-    userId = existingByLine.id;
-  } else {
-    // Look up any existing profile with the target email. Querying `profiles`
-    // directly avoids pulling the entire auth.users table via listUsers()
-    // (which is paginated and would miss users past the first page).
-    const { data: profileByEmail, error: emailLookupError } = await supabase
-      .from("profiles")
-      .select("id")
-      .eq("email", targetEmail)
-      .maybeSingle();
-
-    if (emailLookupError) {
-      console.error("LINE email lookup failed:", emailLookupError);
-      return NextResponse.redirect(`${origin}/login?error=line_lookup_failed`);
-    }
-
-    if (profileByEmail) {
-      // Link LINE to existing account
-      userId = profileByEmail.id;
-      const { error: updateError } = await supabase
-        .from("profiles")
-        .update({
-          line_user_id: lineProfile.userId,
-          line_linked_at: new Date().toISOString(),
-        })
-        .eq("id", userId);
-
-      if (updateError) {
-        console.error("Failed to link LINE to profile:", updateError);
-        return NextResponse.redirect(
-          `${origin}/login?error=line_link_failed`
-        );
-      }
-    } else {
-      // Create a new Supabase user. Use a deterministic ID-less flow and
-      // rely on the unique email constraint at the DB to prevent duplicates
-      // from concurrent requests (createUser will surface a conflict error).
-      const tempPassword = `line_${crypto.randomUUID()}`;
-      const { data: newUser, error: createError } =
-        await supabase.auth.admin.createUser({
-          email: targetEmail,
-          password: tempPassword,
-          email_confirm: true,
-          user_metadata: {
-            name: lineProfile.displayName,
-            avatar_url: lineProfile.pictureUrl,
-            provider: "line",
-          },
-        });
-
-      if (createError || !newUser.user) {
-        console.error("Failed to create user for LINE login:", createError);
-        return NextResponse.redirect(
-          `${origin}/login?error=line_create_failed`
-        );
-      }
-
-      userId = newUser.user.id;
-      isNewSignup = true;
-
-      // The auth.users INSERT trigger (handle_new_user) auto-creates a
-      // profile row with default fields but no line_* columns. Upsert with
-      // merge-on-conflict (ignoreDuplicates left at the default of false) so
-      // the trigger-created row gets the LINE identity backfilled, and the
-      // path still works if the trigger is ever removed.
-      const { error: upsertError } = await supabase.from("profiles").upsert(
-        {
-          id: userId,
-          email: targetEmail,
-          name: lineProfile.displayName,
-          role: "user",
-          membership_type: "free",
-          line_user_id: lineProfile.userId,
-          line_linked_at: new Date().toISOString(),
-        },
-        { onConflict: "id" }
-      );
-
-      if (upsertError) {
-        console.error("Failed to upsert profile for LINE user:", upsertError);
-        return NextResponse.redirect(
-          `${origin}/login?error=line_create_failed`
-        );
-      }
-    }
-  }
+  const { userId, isNewSignup } = resolved;
 
   // ── Step 5: Sign the user in by verifying the OTP server-side ─
   // The previous flow redirected to Supabase's /auth/v1/verify endpoint,
@@ -281,27 +186,16 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${origin}/login?error=line_no_email`);
   }
 
-  const { data: linkData, error: linkError } =
-    await supabase.auth.admin.generateLink({
-      type: "magiclink",
-      email: userEmail,
-      options: { redirectTo: `${origin}/auth/callback` },
-    });
-
-  if (linkError || !linkData?.properties?.hashed_token) {
-    console.error("Failed to generate magic link:", linkError);
-    return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
-  }
-
   const supabaseServer = await createServerSupabaseClient();
-  const { error: verifyError } = await supabaseServer.auth.verifyOtp({
-    type: "magiclink",
-    token_hash: linkData.properties.hashed_token,
-  });
+  const sessionResult = await establishSessionFor(
+    supabase,
+    supabaseServer,
+    userEmail,
+    `${origin}/auth/callback`
+  );
 
-  if (verifyError) {
-    console.error("Failed to verify magic link OTP:", verifyError);
-    return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
+  if (!sessionResult.ok) {
+    return NextResponse.redirect(`${origin}/login?error=${sessionResult.error}`);
   }
 
   if (isNewSignup) {
