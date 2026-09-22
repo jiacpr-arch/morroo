@@ -13,6 +13,7 @@ import { xpToRank } from "@/lib/school/rank";
 import type { Profile } from "@/lib/types";
 import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
 import { PRODUCTS, PRODUCT_INFO, planLabel, resolveAccess, type EntitlementLike } from "@/lib/membership";
+import { liffDeepLink } from "@/lib/line-links";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -570,19 +571,41 @@ export default function ProfilePage() {
                 <p className="text-xs text-muted-foreground">รหัสหมดอายุใน 24 ชั่วโมง</p>
               </div>
             ) : (
-              <Button
-                onClick={handleGenerateLine}
-                disabled={generatingLine}
-                variant="outline"
-                className="w-full gap-2 border-green-300 text-green-700 hover:bg-green-50"
-              >
-                {generatingLine ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
+              <div className="space-y-2">
+                {/* Primary path: LIFF deep link — opening this from inside LINE
+                    links the account with one tap (no code to copy/paste), then
+                    sends the visitor back here via liff.state (see
+                    app/(morroo)/line/liff/page.tsx). Opened outside LINE, it
+                    bounces through LINE Login's web flow first, which is fine —
+                    it's still one tap fewer than the code flow below. */}
+                <a
+                  href={liffDeepLink("/profile")}
+                  onClick={() => track("line_liff_link_click", { surface: "profile" })}
+                  className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#06C755] hover:bg-[#05b34c] text-white font-semibold py-2.5 px-4 text-sm transition-colors"
+                >
                   <Link2 className="h-4 w-4" />
-                )}
-                สร้างรหัสเชื่อมต่อบัญชี (ขั้นตอนที่ 2)
-              </Button>
+                  เชื่อม LINE (อัตโนมัติ)
+                </a>
+                {/* Fallback: the original copy-a-code-into-LINE-chat flow, for
+                    anyone the LIFF tap doesn't work for (e.g. LINE_LOGIN env
+                    not yet configured on a fork/preview). Clicking this sets
+                    lineCode, which switches this whole block over to the
+                    code-display branch above on the next render. */}
+                <button
+                  type="button"
+                  onClick={handleGenerateLine}
+                  disabled={generatingLine}
+                  className="w-full text-center text-xs text-muted-foreground hover:text-foreground underline underline-offset-2 disabled:opacity-60"
+                >
+                  {generatingLine ? (
+                    <span className="inline-flex items-center gap-1">
+                      <Loader2 className="h-3 w-3 animate-spin" /> กำลังสร้างรหัส...
+                    </span>
+                  ) : (
+                    "เชื่อมไม่ได้? ใช้วิธีเดิม: สร้างรหัสเชื่อมต่อ"
+                  )}
+                </button>
+              </div>
             )}
           </CardContent>
         </Card>

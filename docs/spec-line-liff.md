@@ -1,6 +1,6 @@
 # สเปก: LINE LIFF สำหรับหมอรู้ + ผลกระทบต่อระบบ autopost
 
-> สถานะ: **Phase 0 + 1 + 3 + §6 (auth bridge + แปลงปุ่มลูกค้าเป็น LIFF + webhook reply‑token) เสร็จแล้ว** — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
+> สถานะ: **Phase 0 + 1 + 3 + 4 + §6 เสร็จแล้ว** (auth bridge, แปลงปุ่มลูกค้าเป็น LIFF, ปุ่ม "เชื่อม LINE" อัตโนมัติที่ /profile, webhook reply‑token) — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
 > เป้าหมาย: ทุกลิงก์ที่ส่งจาก LINE OA เปิดแล้ว "ล็อกอินให้อัตโนมัติ" และการเชื่อมบัญชีเหลือแค่แตะครั้งเดียว โดยไม่ต้องรื้อ pipeline autopost
 >
 > **สิ่งที่ทำเสร็จแล้วในรอบนี้:**
@@ -9,8 +9,9 @@
 > - **Phase 3 (ขยายจากแผนเดิม — ทำครบทุกปุ่มลูกค้าในรอบเดียว ไม่ใช่แค่ 1 ปุ่ม)** — `lib/line-links.ts` (ใหม่): `toLiffUri(fullUrl)` ห่อ URL เต็มที่มีอยู่แล้วให้เป็น LIFF deep link (รักษา path/query เดิมทั้งหมด รวม UTM), `liffDeepLink(path)` สำหรับ path เปล่า — ทั้งคู่ fallback เป็น URL ธรรมดาเมื่อไม่ได้ตั้ง `NEXT_PUBLIC_LIFF_ID`. ใช้ห่อปุ่มลูกค้าทั้งหมด 14 จุดใน `lib/line-flex-templates.ts` + `lib/daily-mcq-line.ts` (สรุปรายการ, ประกาศบทความ/ข่าว, newsletter, แจ้งเตือนหมดอายุ+จ่ายเงิน, streak‑nudge, ผลสอบ, การ์ด chatbot 4 ใบ, MCQ ประจำวัน/รายสัปดาห์, ผลเฉลย MCQ + แชร์เพื่อน + redeem code, Long Case ใหม่, teaser เสาร์/สรุปอาทิตย์) — **ไม่แตะ** การ์ดแอดมิน (`buildAdminDigestFlex`, `buildAdsSuggestFlex`) และแคปชัน FB/IG (`lib/autopost-copy.ts`, `lib/facebook.ts`, `lib/instagram.ts`) โดยตั้งใจ มี regression test กันไม่ให้ `liff.line.me` หลุดเข้าไปในแคปชันโซเชียล
 > - Email policy ที่ยืนยันแล้ว: ไม่มี email จาก ID token → ใช้ placeholder `line_{userId}@line.morroo.com` (ชื่อ domain เดิมที่ `app/api/auth/line/callback` ใช้อยู่แล้ว) ไม่บล็อกผู้ใช้ (ยืนยันแล้วว่า LINE อนุมัติ email permission ของ channel นี้เร็วกว่าคาด — ผู้ใช้ใหม่ที่เชื่อมผ่าน LIFF ตอนนี้ได้อีเมลจริงแล้ว ไม่ใช่ placeholder)
 > - **§6** — webhook (`app/api/line/webhook/route.ts`) ตอบด้วย `replyToken` ก่อนแทน push ตรง (`replyOrPushLineMessage()` ใน `lib/line.ts`, fallback เป็น push อัตโนมัติถ้า reply ล้มเหลว) — ประหยัดโควตารายเดือนของ LINE เพราะข้อความตอบแชท (ปริมาณหลัก) ไม่กินโควตาอีกต่อไป
+> - **Phase 4** — หน้า `/profile` ปุ่มหลักตอนยังไม่เชื่อมบัญชีเปลี่ยนเป็น "เชื่อม LINE (อัตโนมัติ)" (`liffDeepLink("/profile")`) คงปุ่ม "สร้างรหัสเชื่อมต่อ" เดิมไว้เป็น fallback ลิงก์เล็กๆ ใต้ปุ่มหลัก — **ตั้งใจไม่แตะ** ปุ่ม "เพิ่มเพื่อน LINE OA" ทุกจุด (FloatingLineButton, SocialLinks, OnboardingChecklist) เพราะเป็นคนละ flow กับการเชื่อมบัญชี (ดูเหตุผลใน §Phase 4 ด้านล่าง)
 >
-> **ยังไม่ทำ** (Phase 2, 4, 5 เดิม): หน้า LIFF แบบ layout เบา + catch‑all route (ตอนนี้ `/line/liff` ยังอยู่ layout เต็มของเว็บ ใช้งานได้ปกติ), เลิก link‑code flow (`MORROO-XXXXXX`), autopost link‑builder/UTM/quota consolidation ฝั่ง blog/news digest — คงแผนเดิมไว้ด้านล่างเป็น backlog
+> **ยังไม่ทำ** (Phase 2, 5 เดิม): หน้า LIFF แบบ layout เบา + catch‑all route (ตอนนี้ `/line/liff` ยังอยู่ layout เต็มของเว็บ ใช้งานได้ปกติ), autopost link‑builder/UTM/quota consolidation ฝั่ง blog/news digest — คงแผนเดิมไว้ด้านล่างเป็น backlog
 
 ---
 
@@ -156,12 +157,15 @@ window.location.replace("/nl/practice?q=…")   ← หน้าเว็บจ�
 
 **Tests**: `lib/line-links.test.ts` (ใหม่, ครอบ `toLiffUri`/`liffDeepLink` ทั้ง happy path + fallback), เพิ่ม describe block ใน `lib/line-flex-templates.test.ts` ยืนยันปุ่มลูกค้าแต่ละใบห่อถูกต้อง + การ์ดแอดมิน/ads‑autofix ไม่ถูกแตะแม้ตั้ง LIFF_ID ไว้, `lib/autopost-copy.test.ts` (ใหม่) กัน FB/IG caption หลุด LIFF URL — รวม 854 เทสทั้งโปรเจกต์ผ่านหมด
 
-### Phase 4 — เลิก link code (optional, ~2 ชม.)
+### Phase 4 — เลิก link code ✅ ทำบางส่วนแล้ว (2026‑09‑22, คง fallback ตามแผน)
 
-- `app/(morroo)/profile/page.tsx`: แทนปุ่ม "สร้างรหัส" ด้วยปุ่มเดียว "เชื่อม LINE" → `href = lineDeepLink("/profile")` (เปิดแอป LINE → LIFF → link → กลับมา `/profile` พร้อม badge ✅)
-- `components/FloatingLineButton.tsx` / `SocialLinks.line`: ชี้ LIFF (aggressive add‑friend) แทน `line.me/R/ti/p/` → แอดเพื่อน + เชื่อมบัญชีในจังหวะเดียวถ้าล็อกอินเว็บอยู่
-- `OnboardingChecklist` ข้อ "เชื่อม LINE" ใช้ลิงก์เดียวกัน
-- คง `generate-code` + webhook `MORROO-` ไว้เป็น fallback อีก 1 รอบ release แล้วค่อยลบ
+**สิ่งที่ทำจริง:**
+- `app/(morroo)/profile/page.tsx`: ปุ่มหลักตอนยังไม่เชื่อมบัญชีเปลี่ยนเป็น **"เชื่อม LINE (อัตโนมัติ)"** → `href = liffDeepLink("/profile")` (เปิดแอป LINE → LIFF → link อัตโนมัติ → `liff.state` พากลับมา `/profile` ทันที หน้าจะ refetch โปรไฟล์เองแล้วเห็นสถานะ "เชื่อมต่อแล้ว ✓") ปุ่มเดิม "สร้างรหัสเชื่อมต่อบัญชี" ยังอยู่ **เป็นลิงก์ข้อความเล็กๆ ใต้ปุ่มหลัก** ("เชื่อมไม่ได้? ใช้วิธีเดิม: สร้างรหัสเชื่อมต่อ") ตามที่ตัดสินใจไว้ — ไม่ลบ `generate-code` API หรือ webhook branch `MORROO-` ออก
+- `app/api/line/generate-code/route.ts` และ webhook branch `MORROO-XXXXXX` (`app/api/line/webhook/route.ts`) — **คงไว้ทั้งคู่** เป็น fallback ตามแผน ไม่มีกำหนดลบ
+
+**ตัดสินใจไม่ทำ** (ต่างจากดราฟต์แรกที่เขียนไว้):
+- `components/FloatingLineButton.tsx` / `SocialLinks.line` ("เพิ่มเพื่อน LINE OA") — **ไม่เปลี่ยนเป็น LIFF** เพราะปุ่มเหล่านี้คือ "แอดเพื่อน OA" ไม่ใช่ "เชื่อมบัญชี" ซึ่ง `line.me/R/ti/p/@901nmwcd` เป็นรูปแบบ deep‑link ที่ LINE ออกแบบมาให้ใช้กับกรณีนี้โดยเฉพาะอยู่แล้ว (มือถือเปิดแอป LINE ตรง, เดสก์ท็อปเปิดเว็บ/QR ให้) การเปลี่ยนเป็น LIFF จะไม่ได้อะไรเพิ่ม แถมผู้เยี่ยมชมที่ไม่ได้เปิดจากในแอป LINE (คนส่วนใหญ่ที่เห็นปุ่มนี้บนเว็บ) จะโดนเด้งไปหน้า LINE Login โดยไม่จำเป็น
+- `OnboardingChecklist` ข้อ "เพิ่มเพื่อน LINE" — คงลิงก์เดิมด้วยเหตุผลเดียวกัน (เป็นการ์ด "แอดเพื่อน" ไม่ใช่ "เชื่อมบัญชี")
 
 ### Phase 5 — ของแถมที่ LIFF เปิดโอกาสให้ (ทำทีหลัง)
 
