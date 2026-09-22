@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { safeInternalPath } from "@/lib/safe-redirect";
 
 const LIFF_ID = process.env.NEXT_PUBLIC_LIFF_ID;
 
@@ -23,6 +24,16 @@ export default function LiffLandingPage() {
           throw new Error("NEXT_PUBLIC_LIFF_ID ยังไม่ได้ตั้งค่า");
         }
 
+        // Capture the deep-link target *before* liff.init() runs — when this
+        // page is opened via https://liff.line.me/{LIFF_ID}/<path>?<query>,
+        // the LIFF SDK redirects here with the original path+query preserved
+        // in the `liff.state` query param, but does not navigate onward on
+        // its own. We read it now and replace() there once sign-in succeeds.
+        const pendingRedirect = safeInternalPath(
+          new URLSearchParams(window.location.search).get("liff.state"),
+          ""
+        );
+
         const liff = (await import("@line/liff")).default;
         await liff.init({ liffId: LIFF_ID });
 
@@ -36,28 +47,43 @@ export default function LiffLandingPage() {
           throw new Error("ไม่พบ LINE ID token");
         }
 
+        let profileName = "";
+        let pictureUrl: string | undefined;
         try {
           const profile = await liff.getProfile();
-          if (!cancelled) setDisplayName(profile.displayName ?? "");
+          profileName = profile.displayName ?? "";
+          pictureUrl = profile.pictureUrl;
+          if (!cancelled) setDisplayName(profileName);
         } catch {
           // Profile is non-critical for linking
         }
 
-        const res = await fetch("/api/line/liff-link", {
+        const res = await fetch("/api/auth/line/liff-session", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ idToken }),
+          body: JSON.stringify({ idToken, displayName: profileName, pictureUrl }),
         });
         const json = (await res.json()) as {
+          ok?: boolean;
           linked?: boolean;
+          reason?: string;
           error?: string;
         };
 
-        if (!res.ok) {
+        if (!res.ok || !json.ok) {
           throw new Error(json.error ?? "เชื่อมบัญชีล้มเหลว");
         }
 
         if (cancelled) return;
+
+        // Signed in (new or existing account) or linked onto an existing
+        // session — either way there's now a live morroo session, so honor
+        // the deep link the user actually tapped instead of stopping here.
+        if (json.linked && pendingRedirect) {
+          window.location.replace(pendingRedirect);
+          return;
+        }
+
         setStatus(json.linked ? "linked" : "added");
       } catch (e) {
         if (cancelled) return;
