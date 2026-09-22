@@ -1,16 +1,15 @@
 # สเปก: LINE LIFF สำหรับหมอรู้ + ผลกระทบต่อระบบ autopost
 
-> สถานะ: **Phase 1 (auth bridge) implement แล้ว** — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
+> สถานะ: **Phase 0 + 1 + 3 (auth bridge + แปลงปุ่มลูกค้าเป็น LIFF) เสร็จแล้ว** — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
 > เป้าหมาย: ทุกลิงก์ที่ส่งจาก LINE OA เปิดแล้ว "ล็อกอินให้อัตโนมัติ" และการเชื่อมบัญชีเหลือแค่แตะครั้งเดียว โดยไม่ต้องรื้อ pipeline autopost
 >
-> **สิ่งที่ทำเสร็จแล้วในรอบนี้** (ดูรายละเอียดใน §3–4 เดิม ปรับสถานะเป็น "เสร็จแล้ว"):
-> - `lib/line-id-token.ts`, `lib/line-auth.ts` — logic verify ID token + find‑or‑create/link/sign‑in ที่ใช้ร่วมกันระหว่าง LINE Login OAuth (`app/api/auth/line/callback`, refactor แล้วไม่เปลี่ยน behavior) กับ LIFF
-> - `app/api/auth/line/liff-session/route.ts` (ใหม่) — endpoint ที่ `/line/liff` เรียก แทน `/api/line/liff-link` เดิม (ตอนนี้ deprecated แต่ยังไม่ลบ)
-> - `app/(morroo)/line/liff/page.tsx` — เรียก endpoint ใหม่ + อ่าน `liff.state` เพื่อ redirect กลับไปหน้าที่ตั้งใจเปิดหลัง sign‑in สำเร็จ
-> - `lib/daily-mcq-line.ts` — ปุ่ม "เชื่อมบัญชี MorRoo เก็บสถิติ" ในผลเฉลย daily MCQ ใช้ LIFF deep link จริงแล้ว (`liffDeepLink()`, fallback เป็น URL ธรรมดาถ้าไม่ได้ตั้ง `NEXT_PUBLIC_LIFF_ID`)
-> - Email policy ที่ยืนยันแล้ว: ไม่มี email จาก ID token → ใช้ placeholder `line_{userId}@line.morroo.com` (ชื่อ domain เดิมที่ `app/api/auth/line/callback` ใช้อยู่แล้ว ไม่ใช่ `users.morroo.com` ตามดราฟต์แรก) ไม่บล็อกผู้ใช้
+> **สิ่งที่ทำเสร็จแล้วในรอบนี้:**
+> - **Phase 0** — ตั้งค่า LINE Developers console ครบ: LINE Login channel "morroologin" (`LINE_LOGIN_CHANNEL_ID=2010009663`) ผูกกับ OA `@901nmwcd` แล้ว, LIFF app "morroo" (`NEXT_PUBLIC_LIFF_ID=2010009663-BMDYoMQk`) ตั้ง Endpoint = `/line/liff`, Scope = profile/openid/email, Add friend = On (aggressive), และยื่นขอ email permission แล้ว (รอ LINE อนุมัติ — ระบบใช้ placeholder email ระหว่างรอได้ปกติ)
+> - **Phase 1** — `lib/line-id-token.ts`, `lib/line-auth.ts`: logic verify ID token + find‑or‑create/link/sign‑in ที่ใช้ร่วมกันระหว่าง LINE Login OAuth (`app/api/auth/line/callback`, refactor แล้วไม่เปลี่ยน behavior) กับ LIFF; `app/api/auth/line/liff-session/route.ts` (ใหม่) แทน `/api/line/liff-link` เดิม (deprecated); `app/(morroo)/line/liff/page.tsx` อ่าน `liff.state` เพื่อ redirect กลับไปหน้าที่ตั้งใจเปิดหลัง sign‑in
+> - **Phase 3 (ขยายจากแผนเดิม — ทำครบทุกปุ่มลูกค้าในรอบเดียว ไม่ใช่แค่ 1 ปุ่ม)** — `lib/line-links.ts` (ใหม่): `toLiffUri(fullUrl)` ห่อ URL เต็มที่มีอยู่แล้วให้เป็น LIFF deep link (รักษา path/query เดิมทั้งหมด รวม UTM), `liffDeepLink(path)` สำหรับ path เปล่า — ทั้งคู่ fallback เป็น URL ธรรมดาเมื่อไม่ได้ตั้ง `NEXT_PUBLIC_LIFF_ID`. ใช้ห่อปุ่มลูกค้าทั้งหมด 14 จุดใน `lib/line-flex-templates.ts` + `lib/daily-mcq-line.ts` (สรุปรายการ, ประกาศบทความ/ข่าว, newsletter, แจ้งเตือนหมดอายุ+จ่ายเงิน, streak‑nudge, ผลสอบ, การ์ด chatbot 4 ใบ, MCQ ประจำวัน/รายสัปดาห์, ผลเฉลย MCQ + แชร์เพื่อน + redeem code, Long Case ใหม่, teaser เสาร์/สรุปอาทิตย์) — **ไม่แตะ** การ์ดแอดมิน (`buildAdminDigestFlex`, `buildAdsSuggestFlex`) และแคปชัน FB/IG (`lib/autopost-copy.ts`, `lib/facebook.ts`, `lib/instagram.ts`) โดยตั้งใจ มี regression test กันไม่ให้ `liff.line.me` หลุดเข้าไปในแคปชันโซเชียล
+> - Email policy ที่ยืนยันแล้ว: ไม่มี email จาก ID token → ใช้ placeholder `line_{userId}@line.morroo.com` (ชื่อ domain เดิมที่ `app/api/auth/line/callback` ใช้อยู่แล้ว) ไม่บล็อกผู้ใช้
 >
-> **ยังไม่ทำ** (Phase 0, 2–6 เดิม): ตั้งค่า LINE console, หน้า LIFF แบบ layout เบา + catch‑all route, เปลี่ยนปุ่มอื่นที่เหลือทั้งหมด, เลิก link‑code flow, webhook reply‑token, autopost link‑builder/UTM/quota consolidation — คงแผนเดิมไว้ด้านล่างเป็น backlog
+> **ยังไม่ทำ** (Phase 2, 4, 5, 6 เดิม): หน้า LIFF แบบ layout เบา + catch‑all route (ตอนนี้ `/line/liff` ยังอยู่ layout เต็มของเว็บ ใช้งานได้ปกติ), เลิก link‑code flow (`MORROO-XXXXXX`), webhook เปลี่ยนไปใช้ reply‑token แทน push (ประหยัดโควตา LINE), autopost link‑builder/UTM/quota consolidation ฝั่ง blog/news digest — คงแผนเดิมไว้ด้านล่างเป็น backlog
 
 ---
 
@@ -143,18 +142,18 @@ window.location.replace("/nl/practice?q=…")   ← หน้าเว็บจ�
 
 หมายเหตุ Next.js: ก่อนเขียนโค้ดต้องอ่าน `node_modules/next/dist/docs/` ตาม `AGENTS.md` (route group ที่มี root layout ของตัวเอง, `middleware.ts` vs `proxy.ts`, `searchParams` เป็น Promise ใน Next 16)
 
-### Phase 3 — เปลี่ยนปุ่มใน Flex ให้เป็น LIFF (~ครึ่งวัน, ทีละใบ)
+### Phase 3 — เปลี่ยนปุ่มใน Flex ให้เป็น LIFF ✅ เสร็จแล้ว (2026‑09‑22)
 
-ลำดับตามผลลัพธ์/ความเสี่ยง (ต่ำ → สูง):
+**เปลี่ยนใจจากแผนเดิม**: แผนแรกจะทำทีละใบ (เริ่มจากปุ่มเดียว วัดผล 1 สัปดาห์ค่อยทำต่อ) แต่พอ auth bridge ยืนยันว่าทำงานถูกต้องจริงในแอป LINE แล้ว (Phase 0+1 ผ่านการทดสอบมือ) จึงตัดสินใจแปลงปุ่มลูกค้าทั้งหมดในรอบเดียว เพราะความเสี่ยงต่ำ (แค่ห่อ URL, มี test คุ้มกัน) และไม่มีเหตุผลต้องรอ
 
-1. **Daily MCQ result** (`buildDailyMcqResultFlex`): ปุ่ม "เชื่อมบัญชี" (`liffUrl`) ✅ เปลี่ยนเป็น LIFF deep link แล้ว (Phase 1) — `practiceUrl` ยังคงเป็น URL ธรรมดาตามเดิม (ตั้งใจ: ต้องเปิดได้ทั้งในและนอก LINE เช่นตอนแชร์ต่อ)
-2. **Expiry reminder / payment** (`${siteUrl}/payment/...`, `/pricing`): เปิดแล้วล็อกอินอยู่ = ไม่หลุดตอนจ่ายเงิน
-3. **Dashboard / exams** ในการ์ดสรุปรายสัปดาห์
-4. **Blog digest carousel + news announce**: `url` → `lineDeepLink("/blog/"+slug, {utm_source:"line", utm_medium:"digest", utm_campaign:<week>})`
-5. **Chatbot cards** (`buildChatbotCard("register")` ฯลฯ) และ **follow greeting**: `/register` → LIFF (สมัครด้วย LINE ทันที ไม่ต้องกรอกฟอร์ม)
-6. Rich menu ใน OA Manager: ชี้ LIFF URL เดียวกัน
+**สิ่งที่ทำจริง:**
+- `lib/line-links.ts` (ใหม่) — `toLiffUri(fullUrl)`: รับ URL เต็มที่ caller สร้างไว้แล้ว (คง query/UTM ทุกตัว) แล้วห่อเป็น `https://liff.line.me/{LIFF_ID}<path><search>` เฉพาะเมื่อ host เป็น `www.morroo.com`/`morroo.com`; ไม่ใช่ host ของเราหรือไม่มี `NEXT_PUBLIC_LIFF_ID` → คืนค่าเดิมเฉยๆ. `liffDeepLink(path)` สำหรับกรณีมีแค่ path เปล่า (ย้ายมาจาก `lib/daily-mcq-line.ts` เดิม)
+- ห่อทุกปุ่มลูกค้าใน `lib/line-flex-templates.ts`: `buildWeeklySummaryFlex`, `buildBlogAnnounceFlex` (+ `buildBlogDigestCarousel` ที่ reuse), `buildWeeklyNewsletterFlex`, `buildExpiryWarningMessage`, `buildStreakNudgeFlex`, `buildExamResultFlex`, `buildChatbotCard` (ทั้ง 4 การ์ดย่อย: pricing/register/longcase/meq), `buildDailyMcqBubble`/`buildWeeklyHardMcqBubble` (รับ `practiceUrl` ที่ห่อมาจาก caller แล้ว), `buildDailyMcqResultFlex` (เช่นกัน), `buildNewLongCaseBubble`, `buildCasegameTeaserBubble`, `buildWeekRecapBubble`
+- `lib/daily-mcq-line.ts`: `dailyPracticeUrl()` ห่อด้วย `toLiffUri` ที่จุดเดียว (ครอบคลุมทั้งปุ่ม Flex และลิงก์ในข้อความ share/expired), ลิงก์ redeem code (streak‑5 reward) ก็ห่อด้วย — **เปลี่ยนใจจากแผนเดิม**: `practiceUrl`/`shareUrl` ก็แปลงเป็น LIFF ด้วย (ไม่ใช่แค่ `liffUrl` ปุ่มเชื่อมบัญชี) เพราะข้อดีคือเพื่อนที่กดลิงก์จากการแชร์ต่อก็ได้ auto sign‑in/sign‑up ทันทีเหมือนกัน ไม่มีข้อเสียที่มองเห็น
+- **ตั้งใจไม่แตะ**: การ์ดแอดมิน (`buildAdminDigestFlex` → `/admin`, `buildAdsSuggestFlex`/`buildAdsMergeConfirmFlex` ระบบ ads‑autofix) เพราะเป็นเครื่องมือภายใน ไม่ใช่ลูกค้า; แคปชัน FB/IG (`lib/autopost-copy.ts`, `lib/facebook.ts`, `lib/instagram.ts`) เพราะ LIFF URL เปิดนอกแอป LINE จะเด้ง LINE Login ก่อน ไม่เหมาะกับ social caption — คนละไฟล์กับ `line-flex-templates.ts`/`daily-mcq-line.ts` อยู่แล้วจึงไม่มีความเสี่ยงชนกัน มี regression test ใน `lib/autopost-copy.test.ts` ยืนยันไม่มี `liff.line.me` หลุดเข้าไป
+- Rich menu ใน OA Manager (ตั้งค่านอกโค้ด) — **ยังไม่ทำ**, ทำเมื่อสะดวก ไม่บล็อกอะไร
 
-กฎ: **FB/IG ต้องได้ URL ธรรมดาเสมอ** (LIFF URL ใช้นอก LINE ได้แต่จะเด้ง LINE Login ก่อน ไม่เหมาะกับ social อื่น) → `lineDeepLink` ใช้เฉพาะใน `lib/line-flex-templates.ts` และ `lib/daily-mcq-line.ts`
+**Tests**: `lib/line-links.test.ts` (ใหม่, ครอบ `toLiffUri`/`liffDeepLink` ทั้ง happy path + fallback), เพิ่ม describe block ใน `lib/line-flex-templates.test.ts` ยืนยันปุ่มลูกค้าแต่ละใบห่อถูกต้อง + การ์ดแอดมิน/ads‑autofix ไม่ถูกแตะแม้ตั้ง LIFF_ID ไว้, `lib/autopost-copy.test.ts` (ใหม่) กัน FB/IG caption หลุด LIFF URL — รวม 854 เทสทั้งโปรเจกต์ผ่านหมด
 
 ### Phase 4 — เลิก link code (optional, ~2 ชม.)
 
