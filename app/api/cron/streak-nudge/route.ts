@@ -15,9 +15,15 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
+import { buildStreakNudgeFlex } from "@/lib/line-flex-templates";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
+
+// .trim() matters: NEXT_PUBLIC_SITE_URL carries trailing whitespace in this
+// Vercel project's env config, and LINE's API rejects a Flex "uri" action
+// outright on a malformed/trailing-whitespace URI.
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
 
 function isAuthorized(request: Request): boolean {
   const url = new URL(request.url);
@@ -63,6 +69,12 @@ export async function GET(request: Request) {
   const profiles =
     (linked as Array<{ id: string; name: string | null; line_user_id: string }> | null) ?? [];
 
+  const practiceUrl = `${SITE_URL}/nl/practice?${new URLSearchParams({
+    utm_source: "line",
+    utm_medium: "push",
+    utm_campaign: "streak_nudge",
+  }).toString()}`;
+
   let nudged = 0;
   let skipped = 0;
 
@@ -98,18 +110,10 @@ export async function GET(request: Request) {
     });
     const streak = Number(streakData ?? 0);
 
-    const greeting = p.name ? `น้อง${p.name}` : "น้อง";
-    const streakLine =
-      streak >= 3
-        ? `🔥 น้องมี streak ${streak} วันติด — อย่าให้ขาดวันนี้นะครับ!`
-        : "📚 น้องเริ่มไว้แล้วเมื่อวาน — ทำต่อวันนี้สักข้อก็ยังดี!";
-
-    const text = `${greeting} วันนี้ยังไม่ได้ทำข้อสอบเลย\n\n${streakLine}\n\nเปิด MorRoo → ทำข้อสอบ 5 ข้อ ใช้เวลาแค่ 5 นาที 👍`;
+    const flex = buildStreakNudgeFlex({ name: p.name, streak, practiceUrl });
 
     try {
-      const ok = await sendLineMessage(p.line_user_id, [
-        { type: "text", text },
-      ]);
+      const ok = await sendLineMessage(p.line_user_id, [flex]);
       if (ok) nudged++;
     } catch (err) {
       console.error(`[streak-nudge] push failed for ${p.id}:`, err);

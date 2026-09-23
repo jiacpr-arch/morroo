@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage, verifyLineSignature, type LineMessage } from "@/lib/line";
+import { replyOrPushLineMessage, verifyLineSignature, type LineMessage } from "@/lib/line";
 import {
   generateChatbotReply,
   trimHistory,
@@ -38,6 +38,12 @@ export async function POST(request: NextRequest) {
       source?: { userId?: string };
       message?: { type: string; text?: string };
       postback?: { data?: string };
+      // Present on every event except unfollow (LINE has already lost the
+      // ability to reply by the time it tells us about that one). Reply
+      // tokens are single-use and expire quickly, so treat this as
+      // best-effort — replyOrPushLineMessage() falls back to a push send
+      // whenever the reply fails.
+      replyToken?: string;
     }>;
   };
 
@@ -68,13 +74,19 @@ export async function POST(request: NextRequest) {
           event.postback.data,
           buildAdsMergeConfirmFlex
         )) ?? (await handleDailyMcqPostback(supabase, lineUserId, event.postback.data));
-      if (reply) await sendLineMessage(lineUserId, reply);
+      if (reply) await replyOrPushLineMessage(lineUserId, event.replyToken, reply);
       continue;
     }
 
     // User added the OA — open the sales conversation right away.
     if (event.type === "follow") {
-      await sendSalesGreeting(supabase, lineUserId, buildFollowGreeting(), "[เพิ่มเพื่อน]");
+      await sendSalesGreeting(
+        supabase,
+        lineUserId,
+        event.replyToken,
+        buildFollowGreeting(),
+        "[เพิ่มเพื่อน]"
+      );
       continue;
     }
 
@@ -84,6 +96,7 @@ export async function POST(request: NextRequest) {
       await sendSalesGreeting(
         supabase,
         lineUserId,
+        event.replyToken,
         buildNonTextGreeting(),
         describeNonTextMessage(event.message?.type)
       );
@@ -99,7 +112,7 @@ export async function POST(request: NextRequest) {
 
       // Non-link-code messages → fall through to the chatbot.
       if (!text.startsWith("MORROO-")) {
-        await handleChatbotReply(supabase, lineUserId, rawText);
+        await handleChatbotReply(supabase, lineUserId, event.replyToken, rawText);
         continue;
       }
 
@@ -115,7 +128,7 @@ export async function POST(request: NextRequest) {
       }
 
       if (!linkCode) {
-        await sendLineMessage(lineUserId, [
+        await replyOrPushLineMessage(lineUserId, event.replyToken, [
           {
             type: "text",
             text: "❌ ไม่พบรหัสนี้ หรือรหัสหมดอายุแล้ว\n\nสร้างรหัสใหม่ได้ที่ Profile ในแอป MorRoo",
@@ -125,7 +138,7 @@ export async function POST(request: NextRequest) {
       }
 
       if (new Date(linkCode.expires_at) < new Date()) {
-        await sendLineMessage(lineUserId, [
+        await replyOrPushLineMessage(lineUserId, event.replyToken, [
           {
             type: "text",
             text: "❌ รหัสหมดอายุแล้ว กรุณาสร้างรหัสใหม่ที่แอป MorRoo",
@@ -147,7 +160,7 @@ export async function POST(request: NextRequest) {
       }
 
       if (existing && existing.id !== linkCode.user_id) {
-        await sendLineMessage(lineUserId, [
+        await replyOrPushLineMessage(lineUserId, event.replyToken, [
           {
             type: "text",
             text: "❌ LINE นี้เชื่อมต่อกับบัญชีอื่นอยู่แล้ว หากต้องการเปลี่ยน ติดต่อ support",
@@ -167,7 +180,7 @@ export async function POST(request: NextRequest) {
 
       if (linkError) {
         console.error("Failed to link LINE user to profile:", linkError);
-        await sendLineMessage(lineUserId, [
+        await replyOrPushLineMessage(lineUserId, event.replyToken, [
           {
             type: "text",
             text: "❌ เกิดข้อผิดพลาดระหว่างเชื่อมต่อ กรุณาลองใหม่อีกครั้ง",
@@ -187,7 +200,7 @@ export async function POST(request: NextRequest) {
         console.error("Failed to delete used LINE link code:", deleteError);
       }
 
-      await sendLineMessage(lineUserId, [
+      await replyOrPushLineMessage(lineUserId, event.replyToken, [
         {
           type: "text",
           text: "✅ เชื่อมต่อ LINE สำเร็จ!\n\nคุณจะได้รับการแจ้งเตือนจาก MorRoo ผ่าน LINE แล้ว 🎉",
@@ -206,6 +219,7 @@ export async function POST(request: NextRequest) {
 async function sendSalesGreeting(
   supabase: ReturnType<typeof createAdminClient>,
   lineUserId: string,
+  replyToken: string | undefined,
   greeting: string,
   userPlaceholder: string
 ): Promise<void> {
@@ -213,7 +227,7 @@ async function sendSalesGreeting(
     channel: "line",
     channelUserId: lineUserId,
   });
-  await sendLineMessage(lineUserId, [
+  await replyOrPushLineMessage(lineUserId, replyToken, [
     { type: "text", text: greeting },
     buildChatbotCard("register"),
   ]);
@@ -229,6 +243,7 @@ const LINE_RATE_LIMIT_PER_HOUR = 30;
 async function handleChatbotReply(
   supabase: ReturnType<typeof createAdminClient>,
   lineUserId: string,
+  replyToken: string | undefined,
   userMessage: string
 ): Promise<void> {
   // Resolve lead early — needed for email capture and intent handling.
@@ -240,7 +255,7 @@ async function handleChatbotReply(
   // If the user sent a bare email address, save it and acknowledge.
   const emailAck = await handleEmailCapture(leadId, userMessage);
   if (emailAck) {
-    await sendLineMessage(lineUserId, [{ type: "text", text: emailAck }]);
+    await replyOrPushLineMessage(lineUserId, replyToken, [{ type: "text", text: emailAck }]);
     await supabase.from("chat_messages").insert([
       { channel: "line", channel_user_id: lineUserId, lead_id: leadId, role: "user", content: userMessage },
       { channel: "line", channel_user_id: lineUserId, lead_id: leadId, role: "assistant", content: emailAck },
@@ -258,7 +273,7 @@ async function handleChatbotReply(
     .gte("created_at", sinceIso);
 
   if ((recentCount ?? 0) >= LINE_RATE_LIMIT_PER_HOUR) {
-    await sendLineMessage(lineUserId, [
+    await replyOrPushLineMessage(lineUserId, replyToken, [
       {
         type: "text",
         text: "ขอโทษครับ น้องส่งข้อความเยอะเกินไปในชั่วโมงนี้ 😅 ลองใหม่อีกที่หลังนะครับ",
@@ -303,7 +318,7 @@ async function handleChatbotReply(
     messages.push({ type: "text", text: intentMsg });
   }
 
-  await sendLineMessage(lineUserId, messages);
+  await replyOrPushLineMessage(lineUserId, replyToken, messages);
 
   await supabase.from("chat_messages").insert([
     {

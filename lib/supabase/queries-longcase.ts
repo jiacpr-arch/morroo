@@ -1,4 +1,5 @@
 import { createClient } from "./server";
+import { createAdminClient } from "./admin";
 import type { LongCase, LongCaseFull, LongCaseSession } from "../types";
 
 // Get all published student Long Cases (list view — no sensitive data)
@@ -21,7 +22,7 @@ export async function getLongCases(): Promise<LongCase[]> {
 
 // Count of published student Long Cases — cheap HEAD count for homepage stats.
 export async function getLongCaseCount(): Promise<number> {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { count, error } = await supabase
     .from("long_cases")
     .select("id", { count: "exact", head: true })

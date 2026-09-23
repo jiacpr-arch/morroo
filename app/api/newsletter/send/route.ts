@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { broadcastLineMessages, checkLineQuota } from "@/lib/line";
-import { buildNewsletterFlex } from "@/lib/line-flex-templates";
-
-export const runtime = "nodejs";
+import { buildWeeklyNewsletterFlex } from "@/lib/line-flex-templates";
 
 // Weekly tips pool — rotates by week number
 const TIPS = [
@@ -23,9 +21,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  if (process.env.LINE_AUTOPOST_ENABLED !== "true") {
+    return NextResponse.json({ success: false, message: "skipped:LINE_AUTOPOST_ENABLED!=true" });
+  }
+
   const quota = await checkLineQuota();
   if (quota.throttled) {
-    return NextResponse.json({ ok: false, skipped: true, reason: "line_quota_low", remaining: quota.remaining });
+    return NextResponse.json({ success: false, skipped: true, reason: "line_quota_low", remaining: quota.remaining });
   }
 
   const supabase = await createClient();
@@ -33,7 +35,7 @@ export async function POST(request: Request) {
   // Get 3 latest blog posts
   const { data: posts } = await supabase
     .from("blog_posts")
-    .select("title, slug")
+    .select("title, slug, description")
     .order("published_at", { ascending: false })
     .limit(3);
 
@@ -41,13 +43,18 @@ export async function POST(request: Request) {
   const weekNum = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
   const tip = TIPS[weekNum % TIPS.length];
 
-  const message = buildNewsletterFlex({
+  const siteUrl = "https://www.morroo.com";
+
+  const flex = buildWeeklyNewsletterFlex({
     tip,
-    posts: (posts ?? []).map((p: { title: string; slug: string }) => ({ title: p.title, slug: p.slug })),
-    siteUrl: "https://www.morroo.com",
+    articles: (posts ?? []).map((post: { title: string; slug: string }) => ({
+      title: post.title,
+      url: `${siteUrl}/blog/${post.slug}`,
+    })),
+    examsUrl: `${siteUrl}/exams`,
   });
 
-  const result = await broadcastLineMessages([message]);
+  const result = await broadcastLineMessages([flex]);
 
   return NextResponse.json({
     success: result.ok,

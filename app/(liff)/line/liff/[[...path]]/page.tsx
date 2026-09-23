@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { safeInternalPath } from "@/lib/safe-redirect";
 
 const LIFF_ID = process.env.NEXT_PUBLIC_LIFF_ID;
 
@@ -23,6 +24,39 @@ export default function LiffLandingPage() {
           throw new Error("NEXT_PUBLIC_LIFF_ID ยังไม่ได้ตั้งค่า");
         }
 
+        // Capture the deep-link target *before* liff.init() runs. Opening
+        // https://liff.line.me/{LIFF_ID}/<path>?<query> is a two-step LINE
+        // redirect: first to this Endpoint URL with `?liff.state=/<path>...`
+        // attached, then — once `liff.init()` below completes — the LIFF SDK
+        // itself navigates the browser again, this time to
+        // <endpoint><path>?<query> (path appended directly, no liff.state).
+        // That second navigation is a real page load, so it only resolves
+        // if Next has a route for it — hence this page living under an
+        // optional catch-all (`[[...path]]`) instead of the exact-match
+        // route it used to be (confirmed via production request logs: a
+        // blog link 200'd on /line/liff then 404'd on /line/liff/blog/<slug>
+        // a moment later, before this route existed). We read whichever
+        // form this particular load arrived as — nested path segments, or
+        // (for the first hop, or a caller that builds the query form
+        // directly) the `liff.state` param.
+        const url = new URL(window.location.href);
+        const extraPath = url.pathname.replace(/^\/line\/liff/, "");
+        const searchParams = new URLSearchParams(url.search);
+        const liffState = searchParams.get("liff.state");
+        searchParams.delete("liff.state");
+        const remainingQuery = searchParams.toString();
+        const target = extraPath
+          ? extraPath + (remainingQuery ? `?${remainingQuery}` : "")
+          : liffState;
+        // A target that just points back at this same page (e.g. the daily
+        // MCQ "link account" button uses liffDeepLink("/line/liff") because
+        // it has nothing further to redirect to) isn't a real deep link —
+        // treat it as none, instead of bouncing through an extra reload.
+        const pendingRedirect = safeInternalPath(
+          target === "/line/liff" ? "" : target,
+          ""
+        );
+
         const liff = (await import("@line/liff")).default;
         await liff.init({ liffId: LIFF_ID });
 
@@ -36,28 +70,43 @@ export default function LiffLandingPage() {
           throw new Error("ไม่พบ LINE ID token");
         }
 
+        let profileName = "";
+        let pictureUrl: string | undefined;
         try {
           const profile = await liff.getProfile();
-          if (!cancelled) setDisplayName(profile.displayName ?? "");
+          profileName = profile.displayName ?? "";
+          pictureUrl = profile.pictureUrl;
+          if (!cancelled) setDisplayName(profileName);
         } catch {
           // Profile is non-critical for linking
         }
 
-        const res = await fetch("/api/line/liff-link", {
+        const res = await fetch("/api/auth/line/liff-session", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ idToken }),
+          body: JSON.stringify({ idToken, displayName: profileName, pictureUrl }),
         });
         const json = (await res.json()) as {
+          ok?: boolean;
           linked?: boolean;
+          reason?: string;
           error?: string;
         };
 
-        if (!res.ok) {
+        if (!res.ok || !json.ok) {
           throw new Error(json.error ?? "เชื่อมบัญชีล้มเหลว");
         }
 
         if (cancelled) return;
+
+        // Signed in (new or existing account) or linked onto an existing
+        // session — either way there's now a live morroo session, so honor
+        // the deep link the user actually tapped instead of stopping here.
+        if (json.linked && pendingRedirect) {
+          window.location.replace(pendingRedirect);
+          return;
+        }
+
         setStatus(json.linked ? "linked" : "added");
       } catch (e) {
         if (cancelled) return;

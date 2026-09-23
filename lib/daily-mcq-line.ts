@@ -26,6 +26,7 @@ import {
   buildDailyMcqResultFlex,
   type DailyMcqQuestionData,
 } from "@/lib/line-flex-templates";
+import { liffDeepLink, toLiffUri } from "@/lib/line-links";
 import type { McqQuestion } from "@/lib/types-mcq";
 
 const DAILY_ACTION = "daily_answer";
@@ -61,7 +62,11 @@ export function shiftQuizDate(dateStr: string, days: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-/** Build the "ทำในเว็บ" / "ดูเฉลยละเอียด" deep link, tagged for attribution. */
+/**
+ * Build the "ทำในเว็บ" / "ดูเฉลยละเอียด" deep link, tagged for attribution.
+ * Wrapped as a LIFF URL (when configured) so tapping it from LINE lands the
+ * visitor signed in instead of on a logged-out page — see lib/line-links.
+ */
 export function dailyPracticeUrl(
   questionId: string,
   quizDate: string,
@@ -74,9 +79,11 @@ export function dailyPracticeUrl(
     utm_campaign: quizDate,
     utm_content: content,
   });
-  return `${SITE_URL}/nl/practice?${params.toString()}`;
+  return toLiffUri(`${SITE_URL}/nl/practice?${params.toString()}`);
 }
 
+// Also a LIFF link when shared — the friend who taps it gets signed in (or
+// created a new account and signed in) the same way the original recipient did.
 function dailyShareUrl(questionId: string, quizDate: string): string {
   const url = dailyPracticeUrl(questionId, quizDate, "share");
   const text = `📚 ลองตอบข้อสอบ MCQ ประจำวันนี้ดูสิ!\n${url}`;
@@ -300,7 +307,7 @@ export async function handleDailyMcqPostback(
     return [
       txt(
         "โจทย์ข้อนี้หมดเวลาแล้ว รอข้อใหม่พรุ่งนี้ 7 โมงเช้า 🌅\n\nหรือฝึกต่อได้เลยที่นี่:\n" +
-          `${SITE_URL}/nl/practice?utm_source=line&utm_medium=daily_mcq&utm_content=expired`
+          toLiffUri(`${SITE_URL}/nl/practice?utm_source=line&utm_medium=daily_mcq&utm_content=expired`)
       ),
     ];
   }
@@ -403,7 +410,7 @@ export async function handleDailyMcqPostback(
       ),
       shareUrl: dailyShareUrl(question.id, quizDate),
       needsLink: !userId,
-      liffUrl: `${SITE_URL}/line/liff`,
+      liffUrl: liffDeepLink("/line/liff"),
     }),
   ];
 
@@ -465,7 +472,7 @@ async function maybeIssueStreakReward(
       `โค้ด: ${issued.code}`,
       "",
       "กดลิงก์นี้แล้ว login ด้วย LINE รับสิทธิ์ได้ทันทีครับ 🩺",
-      `${SITE_URL}/redeem/${issued.code}`,
+      toLiffUri(`${SITE_URL}/redeem/${issued.code}`),
       "(โค้ดหมดอายุใน 7 วัน)",
     ].join("\n");
   } catch (err) {
