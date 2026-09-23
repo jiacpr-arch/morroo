@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAnthropic } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
+import { enforceSchoolAiQuota } from "@/lib/school/ai-quota";
 
 const MODEL = "claude-haiku-4-5-20251001";
 
@@ -27,6 +28,10 @@ export async function POST(req: NextRequest) {
     if (!user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+
+    // Quota ต่อวัน — ทุกคำถามเรียก Anthropic จริง จึงต้องมีเพดาน
+    const overQuota = await enforceSchoolAiQuota(supabase, user.id);
+    if (overQuota) return overQuota;
 
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
