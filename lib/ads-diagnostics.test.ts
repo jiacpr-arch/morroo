@@ -3,10 +3,12 @@ import {
   aggregatePageStats,
   diagnoseAds,
   diagnosePages,
+  gateAutoPauseActions,
   paidSourceOf,
   reconcileFindings,
   THRESHOLDS,
   type AdInsight,
+  type AutoActionRequest,
   type ExistingFindingRow,
   type Finding,
   type PageStats,
@@ -632,5 +634,52 @@ describe("reconcileFindings", () => {
     // not cleared) and it still masks ad_low_ctr underneath it.
     expect(rec.supersededIds).toEqual([]);
     expect(rec.clearedIds).toEqual([]);
+  });
+});
+
+describe("gateAutoPauseActions", () => {
+  function makeRequest(entityId: string): AutoActionRequest {
+    return { action: "pause_ad", entityType: "ad", entityId, reason: "test" };
+  }
+
+  it("allows the batch through when at or below the limit", () => {
+    const requests = [makeRequest("1"), makeRequest("2"), makeRequest("3")];
+    const gate = gateAutoPauseActions(requests, 3);
+    expect(gate.tripped).toBe(false);
+    expect(gate.allowed).toEqual(requests);
+    expect(gate.blocked).toEqual([]);
+  });
+
+  it("trips and blocks the whole batch when over the limit", () => {
+    const requests = [makeRequest("1"), makeRequest("2"), makeRequest("3"), makeRequest("4")];
+    const gate = gateAutoPauseActions(requests, 3);
+    expect(gate.tripped).toBe(true);
+    expect(gate.allowed).toEqual([]);
+    expect(gate.blocked).toEqual(requests);
+  });
+
+  it("defaults to THRESHOLDS.maxAutoPausesPerRun when no limit is passed", () => {
+    const atLimit = Array.from({ length: THRESHOLDS.maxAutoPausesPerRun }, (_, i) =>
+      makeRequest(String(i))
+    );
+    expect(gateAutoPauseActions(atLimit).tripped).toBe(false);
+
+    const overLimit = Array.from({ length: THRESHOLDS.maxAutoPausesPerRun + 1 }, (_, i) =>
+      makeRequest(String(i))
+    );
+    expect(gateAutoPauseActions(overLimit).tripped).toBe(true);
+  });
+
+  it("never partially executes — it's all-or-nothing", () => {
+    const requests = [makeRequest("1"), makeRequest("2"), makeRequest("3"), makeRequest("4"), makeRequest("5")];
+    const gate = gateAutoPauseActions(requests, 2);
+    expect(gate.allowed).toHaveLength(0);
+    expect(gate.blocked).toHaveLength(5);
+  });
+
+  it("empty input never trips", () => {
+    const gate = gateAutoPauseActions([], 3);
+    expect(gate.tripped).toBe(false);
+    expect(gate.allowed).toEqual([]);
   });
 });
