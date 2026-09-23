@@ -61,6 +61,13 @@ export const THRESHOLDS = {
   adAutoPauseMinImpressions: 3000,       // …and we have enough data
   adNoLeadSpendCeilingThb: 500,          // spend > X with 0 leads → auto-pause
   adHighFrequency: 4.0,                  // creative fatigue signal
+
+  // Circuit breaker: a single run should never pause more than this many
+  // ads. A real, isolated bad ad is the normal case (0-1 per night); a
+  // broken attribution pipeline or a Meta-side data glitch can instead make
+  // many ads look bad at once — auto-pausing all of them would compound the
+  // bug into an outage. See gateAutoPauseActions() below.
+  maxAutoPausesPerRun: 3,
 } as const;
 
 // ─── Types ───────────────────────────────────────────────────────────────
@@ -1036,6 +1043,35 @@ export function reconcileFindings({
 }
 
 // ─── Auto-actions ────────────────────────────────────────────────────────
+
+export interface AutoActionGateResult {
+  /** Requests safe to execute this run — empty when the breaker trips. */
+  allowed: AutoActionRequest[];
+  /** Requests withheld because the breaker tripped — still surfaced as
+   * findings (they were already inserted before this gate runs), just
+   * without an executed action, so the admin decides by hand. */
+  blocked: AutoActionRequest[];
+  tripped: boolean;
+}
+
+/**
+ * Circuit breaker for executeAutoActions(): pure decision, no side effects,
+ * so it's cheap to unit-test independently of the Meta API calls it guards.
+ *
+ * All-or-nothing on purpose — partially acting (e.g. pausing only the first
+ * `max`) would still execute writes driven by whatever produced the spike,
+ * and an arbitrary subset of a bogus batch is not meaningfully safer than
+ * the whole batch.
+ */
+export function gateAutoPauseActions(
+  requests: AutoActionRequest[],
+  max: number = THRESHOLDS.maxAutoPausesPerRun
+): AutoActionGateResult {
+  if (requests.length <= max) {
+    return { allowed: requests, blocked: [], tripped: false };
+  }
+  return { allowed: [], blocked: requests, tripped: true };
+}
 
 export interface AutoActionResult {
   request: AutoActionRequest;

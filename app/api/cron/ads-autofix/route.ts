@@ -6,10 +6,13 @@
  *   2. fetchAdInsights  — Meta Marketing API for the same window (optional)
  *   3. diagnosePages + diagnoseAds → findings
  *   4. persist findings → ad_diagnostics_findings
- *   5. executeAutoActions on the safe subset (pause underperforming ads)
+ *   5. gateAutoPauseActions — circuit breaker (THRESHOLDS.maxAutoPausesPerRun)
+ *   6. executeAutoActions on the gated subset (pause underperforming ads)
  *
- * No LINE push here — results land in ad_diagnostics_runs/_findings and
- * surface in the 08:00 admin digest (/api/cron/admin-digest).
+ * Findings always land in ad_diagnostics_runs/_findings and surface in the
+ * 08:00 admin digest (/api/cron/admin-digest). If the circuit breaker trips,
+ * that's also pushed to LINE immediately (via sendLineMessage) rather than
+ * waiting for the digest — a batch that large is worth waking someone for.
  *
  * Reversible by design: auto-actions are limited to status=PAUSED writes.
  * The original state is stored in ad_auto_actions so the admin can revert
@@ -20,12 +23,14 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { sendLineMessage } from "@/lib/line";
 import {
   diagnoseAds,
   diagnosePages,
   executeAutoActions,
   fetchAdInsights,
   fetchPageStats,
+  gateAutoPauseActions,
   reconcileFindings,
   THRESHOLDS,
   type AdInsight,
@@ -183,9 +188,44 @@ export async function GET(request: Request) {
     actionRequests.push({ req: f.autoAction, findingId: findingIds.get(f) ?? null });
   }
 
+  // Circuit breaker: too many auto-pause candidates in one run usually means
+  // the *diagnosis* is wrong (broken attribution, a Meta data glitch), not
+  // that this many ads are actually bad. Withhold all writes for this run —
+  // the findings above are already persisted, so nothing is lost, it just
+  // waits for a human at /admin/ads-diagnostics instead of executing blind.
+  const gate = gateAutoPauseActions(actionRequests.map((a) => a.req));
+  if (gate.tripped) {
+    const breakerMsg =
+      `circuit breaker: ${gate.blocked.length} ads เข้าเกณฑ์ auto-pause พร้อมกัน ` +
+      `(limit ${THRESHOLDS.maxAutoPausesPerRun}) — งดสั่ง pause ทั้งหมดคืนนี้ ต้องตรวจเอง`;
+    errors.push(breakerMsg);
+
+    const adminLineId = process.env.ADMIN_LINE_USER_ID;
+    if (adminLineId) {
+      try {
+        const lines = gate.blocked
+          .slice(0, 10)
+          .map((r) => `• ${r.entityId}: ${r.reason}`)
+          .join("\n");
+        const more =
+          gate.blocked.length > 10 ? `\n…และอีก ${gate.blocked.length - 10} ตัว` : "";
+        await sendLineMessage(adminLineId, [
+          {
+            type: "text",
+            text:
+              `🚨 ads-autofix circuit breaker\n${breakerMsg}\n\n${lines}${more}\n\n` +
+              `ตรวจ/สั่ง pause เองที่ /admin/ads-diagnostics`,
+          },
+        ]);
+      } catch (e) {
+        errors.push(`circuit breaker LINE alert failed: ${(e as Error).message}`);
+      }
+    }
+  }
+
   let actionsTaken = 0;
-  if (actionRequests.length) {
-    const results = await executeAutoActions(actionRequests.map((a) => a.req));
+  if (gate.allowed.length) {
+    const results = await executeAutoActions(gate.allowed);
     const auditRows = results.map((r, idx) => ({
       finding_id: actionRequests[idx].findingId,
       run_id: runId,
@@ -236,6 +276,8 @@ export async function GET(request: Request) {
     },
     skippedAlreadyHandled: rec.skippedAlreadyHandled.length,
     actionsTaken,
+    circuitBreakerTripped: gate.tripped,
+    autoPauseCandidates: actionRequests.length,
     errors,
   };
 
