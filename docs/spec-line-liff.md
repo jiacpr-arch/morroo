@@ -1,6 +1,6 @@
 # สเปก: LINE LIFF สำหรับหมอรู้ + ผลกระทบต่อระบบ autopost
 
-> สถานะ: **Phase 0 + 1 + 3 + 4 + §6 เสร็จแล้ว** (auth bridge, แปลงปุ่มลูกค้าเป็น LIFF, ปุ่ม "เชื่อม LINE" อัตโนมัติที่ /profile, webhook reply‑token) — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
+> สถานะ: **Phase 0 + 1 + 2 + 3 + 4 + §6 เสร็จแล้ว** (auth bridge, แปลงปุ่มลูกค้าเป็น LIFF, ปุ่ม "เชื่อม LINE" อัตโนมัติที่ /profile, webhook reply‑token, layout เบาสำหรับหน้า LIFF) — เขียน 2026‑09‑21, อัปเดต 2026‑09‑22
 > เป้าหมาย: ทุกลิงก์ที่ส่งจาก LINE OA เปิดแล้ว "ล็อกอินให้อัตโนมัติ" และการเชื่อมบัญชีเหลือแค่แตะครั้งเดียว โดยไม่ต้องรื้อ pipeline autopost
 >
 > **สิ่งที่ทำเสร็จแล้วในรอบนี้:**
@@ -10,8 +10,9 @@
 > - Email policy ที่ยืนยันแล้ว: ไม่มี email จาก ID token → ใช้ placeholder `line_{userId}@line.morroo.com` (ชื่อ domain เดิมที่ `app/api/auth/line/callback` ใช้อยู่แล้ว) ไม่บล็อกผู้ใช้ (ยืนยันแล้วว่า LINE อนุมัติ email permission ของ channel นี้เร็วกว่าคาด — ผู้ใช้ใหม่ที่เชื่อมผ่าน LIFF ตอนนี้ได้อีเมลจริงแล้ว ไม่ใช่ placeholder)
 > - **§6** — webhook (`app/api/line/webhook/route.ts`) ตอบด้วย `replyToken` ก่อนแทน push ตรง (`replyOrPushLineMessage()` ใน `lib/line.ts`, fallback เป็น push อัตโนมัติถ้า reply ล้มเหลว) — ประหยัดโควตารายเดือนของ LINE เพราะข้อความตอบแชท (ปริมาณหลัก) ไม่กินโควตาอีกต่อไป
 > - **Phase 4** — หน้า `/profile` ปุ่มหลักตอนยังไม่เชื่อมบัญชีเปลี่ยนเป็น "เชื่อม LINE (อัตโนมัติ)" (`liffDeepLink("/profile")`) คงปุ่ม "สร้างรหัสเชื่อมต่อ" เดิมไว้เป็น fallback ลิงก์เล็กๆ ใต้ปุ่มหลัก — **ตั้งใจไม่แตะ** ปุ่ม "เพิ่มเพื่อน LINE OA" ทุกจุด (FloatingLineButton, SocialLinks, OnboardingChecklist) เพราะเป็นคนละ flow กับการเชื่อมบัญชี (ดูเหตุผลใน §Phase 4 ด้านล่าง)
+> - **Phase 2** — ย้าย `/line/liff` ไป route group ใหม่ `app/(liff)` พร้อม root layout เบาของตัวเอง (`app/(liff)/layout.tsx`) — ตัด Navbar/Footer/ChatWidget/ExitIntentPopup/FirstVisitNudge/BetaPromoBanner/GTM/FB/TikTok pixel ทั้งหมดออก เหลือแค่ font + PostHog + Vercel Analytics; **ไม่ได้ทำ catch‑all route** (`[[...path]]`) ตามดราฟต์แรก เพราะกลไกจริงของ LIFF ใช้ query param `liff.state` ส่ง path กลับมา ไม่ใช่ nested route segment — หน้า `/line/liff` เดี่ยวๆ (ไม่ต้อง catch‑all) จัดการ redirect ได้ครบอยู่แล้วตั้งแต่ Phase 1
 >
-> **ยังไม่ทำ** (Phase 2, 5 เดิม): หน้า LIFF แบบ layout เบา + catch‑all route (ตอนนี้ `/line/liff` ยังอยู่ layout เต็มของเว็บ ใช้งานได้ปกติ), autopost link‑builder/UTM/quota consolidation ฝั่ง blog/news digest — คงแผนเดิมไว้ด้านล่างเป็น backlog
+> **ยังไม่ทำ** (Phase 5 เดิม): autopost link‑builder/UTM/quota consolidation ฝั่ง blog/news digest — คงแผนเดิมไว้ด้านล่างเป็น backlog
 
 ---
 
@@ -133,16 +134,18 @@ window.location.replace("/nl/practice?q=…")   ← หน้าเว็บจ�
 - ผู้ใช้ล็อกอินเว็บด้วยบัญชี A แต่ LINE ผูกกับ B อยู่แล้ว → **ทำแล้ว**: ไม่ link ทับ ตอบ `{ ok:true, linked:false, reason:"already_linked_other" }` (`linkLineToUser` ใน `lib/line-auth.ts`)
 - Rate limit บน `/api/auth/line/liff-session`: **ยังไม่ทำ** — ตัดสินใจข้ามในรอบนี้เพื่อไม่ให้ scope บวม เพราะ endpoint นี้ยิงผ่านได้ก็ต่อเมื่อมี ID token ที่ LINE เซ็นจริงเท่านั้น (ความเสี่ยง abuse ต่ำกว่า endpoint เปิดสาธารณะทั่วไป) — ถ้าพบการยิงซ้ำผิดปกติค่อยเพิ่ม pattern เดียวกับ `LINE_RATE_LIMIT_PER_HOUR` ใน webhook ทีหลัง
 
-### Phase 2 — หน้า LIFF แบบเบา + deep link (~ครึ่งวัน)
+### Phase 2 — หน้า LIFF แบบเบา ✅ เสร็จแล้ว (2026‑09‑22)
 
-| ไฟล์ | งาน |
-|---|---|
-| `app/(liff)/layout.tsx` (ใหม่) | root layout เบา: font + globals.css + PostHog เท่านั้น **ไม่มี** Navbar, Footer, ChatWidget, ExitIntentPopup, FirstVisitNudge, BetaPromoBanner, GTM/FB pixel (กัน popup ทับหน้า LIFF และลด JS) |
-| `app/(liff)/line/liff/[[...path]]/page.tsx` | ย้ายจาก `app/(morroo)/line/liff/page.tsx`; อ่าน `params.path` + `searchParams` → หลัง liff-session สำเร็จ `location.replace("/" + path.join("/") + "?" + query)`; ถ้าไม่มี path → แสดงการ์ด "เชื่อมบัญชีสำเร็จ" เหมือนเดิม + ปุ่ม `liff.closeWindow()` |
-| `lib/safe-redirect.ts` | ใช้ `safeInternalPath` กับ path ที่ประกอบขึ้น กัน open redirect |
-| `lib/line-links.ts` (ใหม่) | `lineDeepLink(path, utm?)` → คืน `https://liff.line.me/${NEXT_PUBLIC_LIFF_ID}${path}` ถ้ามี LIFF ID, ไม่มีให้ fallback `https://www.morroo.com${path}`; + `SITE_URL` trimmed ที่เดียว |
+**ต่างจากแผนเดิม**: ดราฟต์แรกจะทำ catch‑all route (`[[...path]]`) เพื่ออ่าน path จาก URL segment โดยตรง — พอเข้าใจกลไกจริงของ LIFF ชัดแล้ว (ดู §2 ข้อ 1 ด้านล่าง) พบว่า LIFF **ไม่ได้ส่ง path มาเป็น route segment** แต่ส่งมาเป็น query param `liff.state` บน Endpoint URL คงที่ (`/line/liff`) เสมอ — Phase 1 จัดการ redirect ด้วยกลไกนี้ไปแล้วตั้งแต่ต้น เพราะงั้น Phase 2 จึงเหลือแค่ "ย้าย layout" ไม่ต้องเปลี่ยนโครง route
 
-หมายเหตุ Next.js: ก่อนเขียนโค้ดต้องอ่าน `node_modules/next/dist/docs/` ตาม `AGENTS.md` (route group ที่มี root layout ของตัวเอง, `middleware.ts` vs `proxy.ts`, `searchParams` เป็น Promise ใน Next 16)
+**สิ่งที่ทำจริง:**
+- `app/(liff)/layout.tsx` (ใหม่) — root layout ที่สอง (เหมือนแพทเทิร์น `app/(games)/layout.tsx`): มี Sarabun font + `../globals.css` + PostHog + Vercel Analytics + `AnalyticsPageviewTracker` เท่านั้น **ไม่มี** Navbar, Footer, ChatWidget, ExitIntentPopup, FirstVisitNudge, BetaPromoBanner, AiHealthProvider/AiStatusBanner, SignupConversion, GTM/FB/TikTok pixel, Clarity — ตั้ง `robots: noindex` ด้วยเพราะเป็นหน้า technical hand‑off ไม่ใช่หน้าที่ควรติด SEO
+- ย้าย `app/(morroo)/line/liff/page.tsx` → `app/(liff)/line/liff/page.tsx` **เนื้อหาไม่เปลี่ยนเลย** (ยังเป็น path เดี่ยว ไม่ใช่ catch‑all) เพราะ `liff.state` parsing ที่ทำไว้ตั้งแต่ Phase 1 ครอบคลุมทุก deep‑link case อยู่แล้ว
+- อัปเดตคอมเมนต์อ้างอิง path เดิมใน `app/api/line/liff-link/route.ts`, `app/(morroo)/profile/page.tsx`, `lib/line-links.ts` ให้ชี้ path ใหม่
+- ตรวจ `middleware.ts` แล้ว: route group เป็นแค่การจัดไฟล์ฝั่ง Next.js ไม่กระทบ pathname จริงที่ middleware เห็น (`/line/liff` เหมือนเดิมทุกประการ) → `updateSession()` (refresh cookie ของ Supabase) ยังทำงานปกติ ไม่ต้องแก้ middleware
+- ตรวจแล้วว่า `onboarding_done=false` (ค่า default ของ user ใหม่) จะทำให้ middleware เด้งไป `/onboarding` ก่อนถึง `liff.state` redirect target เสมอ — **นี่คือพฤติกรรมเดิมของทั้งเว็บอยู่แล้ว** (ผู้สมัครใหม่ทุกช่องทาง ทั้ง Google OAuth และ LINE OAuth ก็โดน onboarding บังคับก่อนเหมือนกัน ไม่ว่าจะตั้งใจไปหน้าไหนก็ตาม) จึงไม่ใช่บั๊กที่ Phase 2/LIFF สร้างขึ้นมาใหม่ ไม่ต้องแก้
+
+**Tests**: ไม่มี logic ใหม่ต้องเทส (ย้ายไฟล์ + layout ล้วนๆ) — รัน `npm run build` เต็มรูปแบบยืนยันว่า `/line/liff` build เป็น static route ได้ถูกต้องไม่มี error, ครบ 860 เทสเดิมผ่านหมด, lint/typecheck ผ่าน
 
 ### Phase 3 — เปลี่ยนปุ่มใน Flex ให้เป็น LIFF ✅ เสร็จแล้ว (2026‑09‑22)
 

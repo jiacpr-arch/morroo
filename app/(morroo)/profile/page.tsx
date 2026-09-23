@@ -575,7 +575,7 @@ export default function ProfilePage() {
                 {/* Primary path: LIFF deep link — opening this from inside LINE
                     links the account with one tap (no code to copy/paste), then
                     sends the visitor back here via liff.state (see
-                    app/(morroo)/line/liff/page.tsx). Opened outside LINE, it
+                    app/(liff)/line/liff/page.tsx). Opened outside LINE, it
                     bounces through LINE Login's web flow first, which is fine —
                     it's still one tap fewer than the code flow below. */}
                 <a

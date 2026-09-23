@@ -3,7 +3,7 @@
  *
  * Opening a LIFF URL (`https://liff.line.me/{LIFF_ID}/...`) from inside the
  * LINE app skips straight past login — the visitor is already
- * LINE-authenticated, so /line/liff (see app/(morroo)/line/liff and
+ * LINE-authenticated, so /line/liff (see app/(liff)/line/liff and
  * app/api/auth/line/liff-session) signs them in immediately instead of
  * dropping them on a logged-out page. Both helpers fall back to a plain
  * morroo.com URL when NEXT_PUBLIC_LIFF_ID isn't configured, so nothing here
