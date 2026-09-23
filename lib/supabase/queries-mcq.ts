@@ -1,5 +1,6 @@
 import { createClient } from "./server";
 import { createAdminClient } from "./admin";
+import { isUuid } from "@/lib/school/ids";
 import type { McqSubject, McqQuestion, McqAudience } from "../types-mcq";
 
 /**
@@ -172,6 +173,12 @@ export async function getMcqQuestion(
   id: string,
   opts?: { audience?: McqAudience }
 ): Promise<McqQuestion | null> {
+  // `mcq_questions.id` is a uuid column. Callers pass this straight from a
+  // `?q=` deep link (LINE daily quiz / dashboard card), so a stale or
+  // tampered value would make Postgres raise 22P02 and log a server error
+  // instead of the intended silent fallback to the normal pool. Same guard
+  // as getExam()/getExamParts() in queries.ts.
+  if (!isUuid(id)) return null;
   const supabase = await createClient();
   const audience = opts?.audience ?? "student";
   const { data, error } = await supabase
