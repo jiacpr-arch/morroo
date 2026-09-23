@@ -147,6 +147,25 @@ window.location.replace("/nl/practice?q=…")   ← หน้าเว็บจ�
 
 **Tests**: ไม่มี logic ใหม่ต้องเทส (ย้ายไฟล์ + layout ล้วนๆ) — รัน `npm run build` เต็มรูปแบบยืนยันว่า `/line/liff` build เป็น static route ได้ถูกต้องไม่มี error, ครบ 860 เทสเดิมผ่านหมด, lint/typecheck ผ่าน
 
+### Phase 2.1 — hotfix: `[[...path]]` จริงๆ (2026‑09‑23) — **แก้ข้อสรุปผิดของ Phase 2**
+
+**บั๊กจริงที่เจอในโปรดักชัน**: บทความ "เทคนิคจำ Endocrinology" ที่ broadcast ผ่าน LINE ตอน 05:00 UTC วันนี้ — ผู้ใช้กด "อ่านบทความ" แล้วเจอหน้า 404 ตรงๆ บน `www.morroo.com`
+
+**สาเหตุ (ยืนยันจาก Vercel production request logs)**: ข้อสรุปใน Phase 2 (ด้านบน) ที่ว่า "LIFF ไม่ได้ส่ง path มาเป็น route segment" **ผิด** — อ่าน §2 ข้อ 1 ให้ครบ: กลไกจริงเป็น **สองสเต็ป**
+1. เปิดครั้งแรกที่ Endpoint URL พร้อม `?liff.state=/<path>?<query>` แนบมา (เป็น query param จริง ตรงตามที่ Phase 1 อ่าน)
+2. **แต่หลัง `liff.init()` สำเร็จ ตัว LIFF SDK เองจะ navigate เบราว์เซอร์ไปอีกรอบ** เป็น `<endpoint><path>?<query>` (ต่อ path ตรงๆ ไม่ใช่ query param แล้ว) — เป็น real page load จริง ไม่ใช่แค่ history.replaceState
+
+สเต็ป 2 คือของจริงที่ยิง request ไปยัง `/line/liff/blog/memorize-endocrinology-exam-tips` (log ยืนยัน: `GET /line/liff 200` ตามด้วย `GET /line/liff/blog/memorize-endocrinology-exam-tips 404` ห่างกันไม่ถึงวินาที) — Next.js ไม่มี route รองรับ path ซ้อนแบบนี้ (หน้าเดิมเป็น exact‑match path เดียว) เลย 404 ทุกลิงก์ที่ `toLiffUri()`/`liffDeepLink()` ห่อไว้ (บทความ blog/news, ปุ่ม "เชื่อม LINE" ใน `/profile`, ลิงก์ในการ์ด newsletter ฯลฯ) ยกเว้นเคสที่ path ที่ต่อท้ายว่างเปล่า
+
+**แผนเดิม (ดราฟต์แรกก่อน Phase 1) ที่เสนอ catch‑all route `[[...path]]` ถูกต้องมาตั้งแต่ต้น** — แค่เหตุผลตอนนั้นยังไม่ครบ (ไม่รู้เรื่อง "สองสเต็ป" นี้)
+
+**สิ่งที่แก้:**
+- ย้าย `app/(liff)/line/liff/page.tsx` → `app/(liff)/line/liff/[[...path]]/page.tsx` (optional catch‑all) เพื่อให้ Next จับ path ซ้อนจากสเต็ป 2 ได้จริง
+- เปลี่ยน logic อ่าน deep‑link target: อ่าน `window.location.pathname` (ตัด prefix `/line/liff` ออก) รวมกับ query string ที่เหลือ (ตัด `liff.state` ออกถ้ามี) เป็นหลัก — ยัง fallback ไปอ่าน `liff.state` เผื่อ caller ไหนสร้าง URL แบบ query‑param ตรงๆ (เช่น request ที่มาถึงในสเต็ป 1 ก่อน SDK จะ navigate ต่อ)
+- กัน edge case: ปุ่ม "เชื่อมบัญชี" ใน daily MCQ ใช้ `liffDeepLink("/line/liff")` (ตั้งใจไม่มี target ต่อ) — ถ้า target ที่คำนวณได้ชี้กลับมาที่ `/line/liff` เอง ให้ถือว่าไม่มี pendingRedirect แทนที่จะ replace() วนกลับมาหน้าตัวเองเปล่าๆ
+
+**Tests**: ไม่มี logic ที่ unit‑test ได้ง่าย (อ่าน `window.location` ในเบราว์เซอร์จริง) — ยืนยันด้วย `npm run build` เต็มรูปแบบ (`/line/liff/[[...path]]` ขึ้นเป็น `ƒ` dynamic route แทน static เดิม), ครบ 860 เทสเดิมผ่านหมด, lint/typecheck ผ่าน (error `pickExpiryChannel` ใน typecheck เป็นของเดิมบน `main` อยู่แล้ว ไม่เกี่ยวกับการแก้นี้ — เช็คแล้วด้วยการ build `main` เปล่าๆ เทียบ)
+
 ### Phase 3 — เปลี่ยนปุ่มใน Flex ให้เป็น LIFF ✅ เสร็จแล้ว (2026‑09‑22)
 
 **เปลี่ยนใจจากแผนเดิม**: แผนแรกจะทำทีละใบ (เริ่มจากปุ่มเดียว วัดผล 1 สัปดาห์ค่อยทำต่อ) แต่พอ auth bridge ยืนยันว่าทำงานถูกต้องจริงในแอป LINE แล้ว (Phase 0+1 ผ่านการทดสอบมือ) จึงตัดสินใจแปลงปุ่มลูกค้าทั้งหมดในรอบเดียว เพราะความเสี่ยงต่ำ (แค่ห่อ URL, มี test คุ้มกัน) และไม่มีเหตุผลต้องรอ
