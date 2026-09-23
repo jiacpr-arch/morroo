@@ -7,8 +7,12 @@ import {
   getSchoolLesson,
   getSchoolLessons,
   getSchoolQuizzes,
+  getSchoolTopic,
   getSchoolVisualForLesson,
 } from "@/lib/supabase/queries-school";
+import TopicUpsell from "@/components/school/TopicUpsell";
+import { isFreeSampleLesson } from "@/lib/school/topic-access";
+import { canOpenSchoolTopic } from "@/lib/school/topic-access-server";
 import LessonReader from "@/components/school/LessonReader";
 import LessonQuizRunner, {
   type RunnerQuiz,
@@ -18,7 +22,9 @@ import { sortByDifficultyAsc } from "@/lib/school/difficulty";
 import { splitLessonParts } from "@/lib/school/lesson-parts";
 import { isUuid, lessonHref, topicHref as buildTopicHref } from "@/lib/school/ids";
 
-export const revalidate = 60;
+// สิทธิ์อ่านขึ้นกับผู้ใช้แต่ละคน จึง render ต่อ request — เดิม revalidate = 60
+// แคชหน้าร่วมกันทุกคน ใช้กับการล็อกเนื้อหาไม่ได้
+export const dynamic = "force-dynamic";
 
 type Mode = "mixed" | "read" | "quiz";
 
@@ -58,6 +64,39 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
   const mode = parseMode((await searchParams).mode);
   const lesson = await getSchoolLesson(id);
   if (!lesson) notFound();
+
+  // ทางเข้าหลักของเนื้อหาคือลิงก์บทจากหน้าวิชา และเข้าตรงด้วย URL ได้ จึงต้อง
+  // เช็คสิทธิ์ที่นี่ — ผู้ที่ยังไม่ได้ซื้ออ่านได้เฉพาะบทแรกของวิชาเป็นตัวอย่าง
+  const topicHref = buildTopicHref(lesson.topic_id);
+  const [topic, siblings] = await Promise.all([
+    getSchoolTopic(lesson.topic_id),
+    getSchoolLessons({ topicId: lesson.topic_id }),
+  ]);
+  const freeSample = isFreeSampleLesson(
+    lesson.id,
+    siblings.map((l) => l.id)
+  );
+  if (!freeSample && !(topic && (await canOpenSchoolTopic(topic)))) {
+    return (
+      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+        {topicHref && (
+          <Link href={topicHref}>
+            <Button variant="ghost" size="sm" className="gap-2 -ml-2 mb-4">
+              <ArrowLeft className="h-4 w-4" /> กลับไปหน้าวิชา
+            </Button>
+          </Link>
+        )}
+        <h1 className="text-2xl font-bold mb-2 flex items-center gap-2">
+          <BookOpen className="h-6 w-6 text-teal-600" /> {lesson.title}
+        </h1>
+        <p className="text-sm text-muted-foreground mb-6">
+          บทนี้อยู่ในวิชา{topic ? ` “${topic.name_th}”` : ""} — บทแรกของทุกวิชาอ่านฟรี
+          ส่วนบทที่เหลือต้องปลดล็อกก่อน
+        </p>
+        {topic && <TopicUpsell topic={topic} title="ปลดล็อกบทนี้และทุกบทของวิชา" />}
+      </div>
+    );
+  }
 
   // โหมดควิซใช้ข้อสอบทั้งคลังของ layer นี้ ส่วนโหมดอ่านคั่นใช้แค่พอเป็น gate
   // + final retrieval จึงจำกัดไว้ 10 ข้อเหมือนเดิม
@@ -105,11 +144,8 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
     mode === "read" ? "อ่านอย่างเดียว" : mode === "quiz" ? "ควิซอย่างเดียว" : "อ่าน + ควิซ";
 
   // เรียนจบแล้วต้องรู้ว่าไปไหนต่อ — หาบทถัดไปในวิชาเดียวกันตาม sort_order
-  const topicHref = buildTopicHref(lesson.topic_id);
-  const [siblings, summaryVisual] = await Promise.all([
-    getSchoolLessons({ topicId: lesson.topic_id }),
-    getSchoolVisualForLesson(lesson.id),
-  ]);
+  // (siblings โหลดไว้แล้วตอนเช็คสิทธิ์ด้านบน)
+  const summaryVisual = await getSchoolVisualForLesson(lesson.id);
   const currentIdx = siblings.findIndex((l) => l.id === lesson.id);
   const next = currentIdx >= 0 ? siblings[currentIdx + 1] : undefined;
   const nextHref = next ? lessonHref(next.id, `mode=${mode}`) : null;

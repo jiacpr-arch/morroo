@@ -4,9 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import {
   getSchoolVisual,
+  getSchoolLessons,
   getFlashcardsByIds,
 } from "@/lib/supabase/queries-school";
 import VisualDetail from "@/components/school/VisualDetail";
+import TopicUpsell from "@/components/school/TopicUpsell";
+import { isFreeSampleLesson } from "@/lib/school/topic-access";
+import { canOpenSchoolTopic } from "@/lib/school/topic-access-server";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +31,25 @@ export default async function VisualPage({ params }: PageProps) {
   const { id } = await params;
   const visual = await getSchoolVisual(id);
   if (!visual) notFound();
-  const flashcards = await getFlashcardsByIds(visual.linked_flashcard_ids ?? []);
+
+  // รูปสรุปมีทั้งโน้ตและ flashcards ของวิชา — ล็อกตามวิชาต้นทาง ยกเว้นรูปที่
+  // ผูกกับบทตัวอย่างฟรี (หน้าบทนั้นก็แสดงรูปนี้อยู่แล้ว)
+  const topic = visual.school_topics ?? null;
+  let unlocked = true;
+  if (topic) {
+    unlocked = await canOpenSchoolTopic(topic);
+    if (!unlocked && visual.lesson_id) {
+      const lessons = await getSchoolLessons({ topicId: topic.id });
+      unlocked = isFreeSampleLesson(
+        visual.lesson_id,
+        lessons.map((l) => l.id)
+      );
+    }
+  }
+
+  const flashcards = unlocked
+    ? await getFlashcardsByIds(visual.linked_flashcard_ids ?? [])
+    : [];
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
@@ -36,7 +58,18 @@ export default async function VisualPage({ params }: PageProps) {
           <ArrowLeft className="h-4 w-4" /> Visuals
         </Button>
       </Link>
-      <VisualDetail visual={visual} flashcards={flashcards} />
+      {unlocked || !topic ? (
+        <VisualDetail visual={visual} flashcards={flashcards} />
+      ) : (
+        <>
+          <h1 className="text-2xl font-bold mb-2">{visual.title}</h1>
+          <p className="text-sm text-muted-foreground mb-6">
+            รูปสรุปนี้อยู่ในวิชา “{topic.name_th}” — ปลดล็อกวิชาเพื่อดูรูป ช็อตโน้ต และ
+            flashcards ที่ผูกไว้
+          </p>
+          <TopicUpsell topic={topic} title="ปลดล็อกรูปสรุปและทุกบทของวิชา" />
+        </>
+      )}
     </div>
   );
 }

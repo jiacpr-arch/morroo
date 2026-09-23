@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   ChevronRight,
   Circle,
+  Lock,
   Zap,
 } from "lucide-react";
 
@@ -25,6 +26,13 @@ export interface Chapter {
   read: boolean;
   /** รูปแรกของบท (hero) ใช้เป็น thumbnail ให้ลิสต์ไม่เป็นตัวหนังสือล้วน */
   thumb?: string | null;
+  /**
+   * ผู้ใช้ยังไม่มีสิทธิ์อ่านบทนี้ — ยังลิงก์ไปหน้าบทเรียนตามเดิม (หน้านั้น
+   * เป็นที่กั้นจริงและแสดงการ์ดซื้อ) ที่นี่แค่บอกล่วงหน้าว่าล็อกอยู่
+   */
+  locked?: boolean;
+  /** บทตัวอย่างที่เปิดให้อ่านฟรี — ติดป้ายเฉพาะเมื่อบทอื่นในวิชายังล็อก */
+  freeSample?: boolean;
 }
 
 interface Props {
@@ -134,7 +142,9 @@ export default function ChapterList({ chapters }: Props) {
                 href={c.href}
                 className="flex items-center gap-3 rounded-lg border p-4 hover:bg-muted/50 transition-colors"
               >
-                {c.read ? (
+                {c.locked ? (
+                  <Lock className="h-5 w-5 text-muted-foreground shrink-0" />
+                ) : c.read ? (
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
                 ) : (
                   <Circle className="h-5 w-5 text-muted-foreground shrink-0" />
@@ -161,6 +171,15 @@ export default function ChapterList({ chapters }: Props) {
                     )}
                   </div>
                 </div>
+                {c.locked ? (
+                  <Badge variant="secondary" className="text-[10px] shrink-0">
+                    ต้องปลดล็อก
+                  </Badge>
+                ) : c.freeSample ? (
+                  <Badge className="bg-sky-100 text-sky-700 text-[10px] shrink-0">
+                    อ่านฟรี
+                  </Badge>
+                ) : null}
                 {mode === "quiz" && c.quizCount === 0 && (
                   <Badge variant="secondary" className="text-[10px]">
                     ยังไม่มีข้อสอบ

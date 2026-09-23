@@ -13,9 +13,12 @@ import {
   getSchoolBookByTopic,
 } from "@/lib/supabase/queries-school";
 import ChapterList from "@/components/school/ChapterList";
+import TopicUpsell from "@/components/school/TopicUpsell";
 import { splitLessonParts } from "@/lib/school/lesson-parts";
 import { firstImageUrl } from "@/lib/school/figures";
 import { isUuid } from "@/lib/school/ids";
+import { isFreeSampleLesson } from "@/lib/school/topic-access";
+import { canOpenSchoolTopic } from "@/lib/school/topic-access-server";
 
 export const dynamic = "force-dynamic";
 
@@ -44,11 +47,13 @@ export default async function TopicPage({ params }: PageProps) {
   const topic = await getSchoolTopic(id);
   if (!topic) notFound();
 
-  const [lessons, quizzes, bookResult] = await Promise.all([
+  const [lessons, quizzes, bookResult, unlocked] = await Promise.all([
     getSchoolLessons({ topicId: id }),
     getSchoolQuizzes({ topicId: id, limit: 100 }),
     getSchoolBookByTopic(id),
+    canOpenSchoolTopic(topic),
   ]);
+  const lessonIds = lessons.map((l) => l.id);
   const book = bookResult?.book ?? null;
   const bookChapterCount = bookResult?.chapters.length ?? 0;
 
@@ -83,8 +88,11 @@ export default async function TopicPage({ params }: PageProps) {
       quizCount: gates + pool,
       read: lessonsRead.has(l.id),
       thumb: firstImageUrl(l.body_md),
+      locked: !unlocked && !isFreeSampleLesson(l.id, lessonIds),
+      freeSample: !unlocked && isFreeSampleLesson(l.id, lessonIds),
     };
   });
+  const hasLockedChapters = chapters.some((c) => c.locked);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -122,12 +130,21 @@ export default async function TopicPage({ params }: PageProps) {
         <p className="text-sm text-muted-foreground mb-6">{topic.summary}</p>
       )}
 
+      {/* ลิสต์บทยังโชว์ครบให้เห็นว่าซื้อแล้วได้อะไร บทแรกอ่านฟรี ที่เหลือล็อก */}
+      {hasLockedChapters && (
+        <TopicUpsell
+          className="mb-6"
+          topic={topic}
+          title={`อ่านบทแรกฟรี — ปลดล็อกอีก ${chapters.filter((c) => c.locked).length} บทของวิชานี้`}
+        />
+      )}
+
       {/* เนื้อหาแยกเป็นบท + เลือกโหมดการเรียน — ทางเข้าหลักของวิชา */}
       <div className="mb-8">
         <ChapterList chapters={chapters} />
       </div>
 
-      {/* Full-text book (reference) — อ่านได้อิสระ ไม่ gating */}
+      {/* Full-text book (reference) — ล็อกพร้อมวิชา (หน้าหนังสือเป็นที่กั้นจริง) */}
       {book && bookChapterCount > 0 && (
         <Card className="mb-8 border-amber-200 bg-amber-50/50">
           <CardContent className="p-5 flex items-center justify-between gap-4">
@@ -136,7 +153,8 @@ export default async function TopicPage({ params }: PageProps) {
                 <BookOpenText className="h-4 w-4" /> อ่านหนังสือฉบับเต็ม (Reference)
               </p>
               <p className="text-sm text-muted-foreground">
-                เนื้อหาฉบับเต็ม {bookChapterCount} บท แบบอ่านต่อเนื่อง + สารบัญ — เปิดอ่านได้อิสระ
+                เนื้อหาฉบับเต็ม {bookChapterCount} บท แบบอ่านต่อเนื่อง + สารบัญ
+                {unlocked ? " — เปิดอ่านได้อิสระ" : " — อ่านบทแรกฟรี"}
               </p>
             </div>
             <Link href={`/school/book/${book.id}`}>

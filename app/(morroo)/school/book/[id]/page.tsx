@@ -6,6 +6,9 @@ import { ArrowLeft, BookOpenText } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getSchoolBook, getSchoolTopic } from "@/lib/supabase/queries-school";
 import BookReader from "@/components/school/BookReader";
+import TopicUpsell from "@/components/school/TopicUpsell";
+import { FREE_SAMPLE_LESSONS } from "@/lib/school/topic-access";
+import { canOpenSchoolTopic } from "@/lib/school/topic-access-server";
 
 export const dynamic = "force-dynamic";
 
@@ -31,6 +34,14 @@ export default async function BookPage({ params }: PageProps) {
   const { book, chapters } = result;
 
   const topic = await getSchoolTopic(book.topic_id);
+
+  // หนังสือฉบับเต็มคือเนื้อหาที่ลึกที่สุดของวิชา — ล็อกพร้อมวิชา ผู้ที่ยัง
+  // ไม่ได้ซื้ออ่านได้เฉพาะบทแรก ตัดที่ server จึงไม่มีเนื้อบทที่ล็อกหลุดไป client
+  const unlocked = topic ? await canOpenSchoolTopic(topic) : false;
+  const visibleChapters = unlocked
+    ? chapters
+    : chapters.slice(0, FREE_SAMPLE_LESSONS);
+  const lockedCount = chapters.length - visibleChapters.length;
 
   // Which chapters has this user already read?
   const supabase = await createClient();
@@ -80,8 +91,16 @@ export default async function BookPage({ params }: PageProps) {
       ) : (
         <BookReader
           topicId={book.topic_id}
-          chapters={chapters}
+          chapters={visibleChapters}
           readChapterIds={readChapterIds}
+        />
+      )}
+
+      {lockedCount > 0 && topic && (
+        <TopicUpsell
+          className="mt-8"
+          topic={topic}
+          title={`อ่านต่ออีก ${lockedCount} บทของหนังสือเล่มนี้`}
         />
       )}
 

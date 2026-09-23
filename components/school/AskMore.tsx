@@ -42,7 +42,14 @@ export default function AskMore({ topicId, chapterId }: Props) {
         return;
       }
       if (!res.ok) {
-        setError("ขออภัย ระบบมีปัญหา ลองใหม่อีกครั้ง");
+        // 429 = ชนเพดานคำถามต่อวัน — เซิร์ฟเวอร์ส่งข้อความบอกเหตุผลมาให้
+        // ห้ามกลบเป็น "ระบบมีปัญหา" ไม่งั้นผู้ใช้จะกดลองใหม่วนไปเรื่อย ๆ
+        const j = (await res.json().catch(() => ({}))) as { error?: string };
+        setError(
+          res.status === 429 && j.error
+            ? j.error
+            : "ขออภัย ระบบมีปัญหา ลองใหม่อีกครั้ง"
+        );
         return;
       }
       const data = (await res.json()) as { answer: string };
