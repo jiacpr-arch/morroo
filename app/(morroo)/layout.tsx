@@ -12,6 +12,7 @@ import { AiHealthProvider } from "@/components/ai/AiHealthProvider";
 import AiStatusBanner from "@/components/ai/AiStatusBanner";
 import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
+import TrialBanner from "@/components/TrialBanner";
 import ChatWidget from "@/components/ChatWidget";
 import FloatingLineCta from "@/components/FloatingLineCta";
 import SignupConversion from "@/components/analytics/SignupConversion";
@@ -135,7 +136,7 @@ const faqSchema = {
       name: "ทดลองใช้ฟรีได้ไหม?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ได้ครับ สมัครฟรีเข้าถึง MCQ 5 ข้อต่อสาขา, MEQ เคสตัวอย่าง และ Long Case 1 เคสต่อเดือน โดยไม่ต้องใส่บัตรเครดิต",
+        text: "ได้ครับ สมัครฟรีแล้วทดลองทุกฟีเจอร์ 7 วัน (ครั้งเดียวต่อบัญชี) หลังจากนั้นใช้ MCQ 5 ข้อต่อสาขา, MEQ พร้อม AI ตรวจ 1 เคส และ Long Case 1 เคสต่อเดือนได้ฟรี โดยไม่ต้องใส่บัตรเครดิต",
       },
     },
   ],
@@ -220,6 +221,7 @@ export default function RootLayout({
           <AiStatusBanner />
           <BetaProvider>
             <BetaPromoBanner variant="sticky-top" />
+            <TrialBanner />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />

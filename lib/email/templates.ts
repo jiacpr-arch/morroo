@@ -138,10 +138,14 @@ export function welcomeEmail({ name }: WelcomeEmailProps): string {
     </p>
 
     <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin: 24px 0;">
-      <h3 style="color: ${DARK_COLOR}; margin: 0 0 12px; font-size: 16px;">สิ่งที่คุณทำได้ฟรีวันนี้</h3>
+      <p style="color: #374151; font-size: 15px; line-height: 1.6; margin: 0 0 16px;">
+        🎁 <strong>ทดลองใช้ทุกฟีเจอร์ฟรี 7 วัน</strong> นับจากวันสมัคร (ครั้งเดียวต่อบัญชี) —
+        วันหมดสิทธิ์แสดงอยู่ด้านบนของเว็บ หลังจากนั้นราคาเต็ม รายเดือน ฿299 · รายปี ฿2,490 (ซื้อครั้งแรกเหลือ ฿199 / ฿1,490)
+      </p>
+      <h3 style="color: ${DARK_COLOR}; margin: 0 0 12px; font-size: 16px;">หลังหมดช่วงทดลอง ยังใช้ฟรีได้</h3>
       <ul style="color: #374151; font-size: 15px; line-height: 1.8; margin: 0; padding-left: 20px;">
         <li>MCQ 5 ข้อ ต่อสาขาวิชา (6 สาขา)</li>
-        <li>ข้อสอบ MEQ เคสตัวอย่าง พร้อมเฉลย</li>
+        <li>ข้อสอบ MEQ เคสฟรี พร้อม AI ตรวจคำตอบ 1 เคส</li>
         <li>Long Case กับ AI 1 เคสต่อเดือน</li>
       </ul>
     </div>

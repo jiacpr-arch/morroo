@@ -3,12 +3,12 @@ import { BookOpen, Sparkles, ShieldCheck, Clock } from "lucide-react";
 const PROPS = [
   {
     icon: BookOpen,
-    title: "เริ่มใช้ฟรี ไม่มีวันหมดอายุ",
-    desc: "MCQ 5 ข้อ/สาขา · MEQ เคสตัวอย่าง · Long Case 1 เคส/เดือน",
+    title: "สมัครวันนี้ ทดลองฟรี 7 วัน ทุกฟีเจอร์",
+    desc: "ครั้งเดียวต่อบัญชี · หลังจากนั้นใช้ฟรีต่อได้: MCQ 5 ข้อ/สาขา · MEQ + AI ตรวจ 1 เคส · Long Case 1 เคส/เดือน",
   },
   {
     icon: Sparkles,
-    title: "AI ตรวจคำตอบทันที (สมาชิก)",
+    title: "AI ตรวจคำตอบทันที",
     desc: "feedback ละเอียดจาก AI Examiner ภายในไม่กี่วินาที",
   },
   {

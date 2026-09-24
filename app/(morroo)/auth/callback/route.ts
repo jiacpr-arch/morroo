@@ -9,6 +9,7 @@ import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 import { sendMetaEvent } from "@/lib/meta/events-api";
 import { sendWelcomeEmail } from "@/lib/email/send";
 import { applyReferralCode } from "@/lib/referral-apply";
+import { grantSignupTrial } from "@/lib/trial";
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
@@ -75,6 +76,11 @@ export async function GET(request: NextRequest) {
             })
             .eq("id", data.user.id);
         }
+      }
+
+      // New accounts start with the 7-day free trial (one per account).
+      if (isNewSignup) {
+        await grantSignupTrial(data.user.id, data.user.email);
       }
 
       // Google sign-up carries the referral code as ?ref= (see register page).

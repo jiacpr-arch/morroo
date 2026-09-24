@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import RedeemAction from "./RedeemAction";
 import { couponRewardLabel, isSelfServeCoupon } from "@/lib/coupons";
 import { hasUsedTrial } from "@/lib/redeem";
+import { getTrialStatus } from "@/lib/trial";
 
 export const dynamic = "force-dynamic";
 
@@ -42,8 +43,12 @@ export default async function RedeemPage({ params }: { params: Params }) {
       : new Date(row.expires_at) < now
         ? "expired"
         : "ready";
+  let trialEndsAt: string | null = null;
   if (status === "ready" && row?.reward_type === "monthly_1m" && (await hasUsedTrial(user.id))) {
     status = "trial_used";
+    // e.g. a new account that already got the sign-up trial automatically.
+    const trial = await getTrialStatus(user.id);
+    if (trial.active) trialEndsAt = trial.endsAt;
   }
   let rewardType: string | null = row?.reward_type ?? null;
   let rewardLabel: string | null = null;
@@ -111,7 +116,27 @@ export default async function RedeemPage({ params }: { params: Params }) {
             </>
           )}
 
-          {status === "trial_used" && (
+          {status === "trial_used" && trialEndsAt && (
+            <>
+              <p className="text-base font-medium text-teal-700">
+                คุณได้รับสิทธิ์ทดลองใช้ฟรี 7 วันแล้ว ✓
+              </p>
+              <p className="text-sm text-muted-foreground">
+                ใช้ได้ทุกฟีเจอร์ถึง{" "}
+                {new Date(trialEndsAt).toLocaleDateString("th-TH", {
+                  timeZone: "Asia/Bangkok",
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+              <Link href="/dashboard">
+                <Button className="w-full">ไปหน้าแดชบอร์ด</Button>
+              </Link>
+            </>
+          )}
+
+          {status === "trial_used" && !trialEndsAt && (
             <>
               <p className="text-base font-medium text-amber-600">
                 บัญชีนี้ใช้สิทธิ์ทดลองฟรีไปแล้ว
