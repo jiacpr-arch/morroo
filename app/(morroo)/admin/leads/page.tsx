@@ -461,7 +461,7 @@ export default function AdminLeadsPage() {
                     </td>
                     <td className="px-4 py-3 text-xs">
                       {l.reward_choice === "monthly_1m"
-                        ? "1 เดือน"
+                        ? "ทดลอง 7 วัน"
                         : l.reward_choice === "bundle_10q"
                           ? "Bundle 10"
                           : "—"}
@@ -513,7 +513,7 @@ export default function AdminLeadsPage() {
                                     <span>{c.code}</span>
                                     <Badge variant="outline" className="text-[10px]">
                                       {c.reward_type === "monthly_1m"
-                                        ? "1 เดือน"
+                                        ? "ทดลอง 7 วัน"
                                         : "Bundle 10"}
                                     </Badge>
                                     <span className="text-muted-foreground">

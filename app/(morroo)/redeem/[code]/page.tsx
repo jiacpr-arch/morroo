@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import RedeemAction from "./RedeemAction";
 import { couponRewardLabel, isSelfServeCoupon } from "@/lib/coupons";
+import { hasUsedTrial } from "@/lib/redeem";
 
 export const dynamic = "force-dynamic";
 
@@ -41,6 +42,9 @@ export default async function RedeemPage({ params }: { params: Params }) {
       : new Date(row.expires_at) < now
         ? "expired"
         : "ready";
+  if (status === "ready" && row?.reward_type === "monthly_1m" && (await hasUsedTrial(user.id))) {
+    status = "trial_used";
+  }
   let rewardType: string | null = row?.reward_type ?? null;
   let rewardLabel: string | null = null;
 
@@ -103,6 +107,20 @@ export default async function RedeemPage({ params }: { params: Params }) {
                 <Button variant="outline" className="w-full">
                   ดูแพ็กเกจ
                 </Button>
+              </Link>
+            </>
+          )}
+
+          {status === "trial_used" && (
+            <>
+              <p className="text-base font-medium text-amber-600">
+                บัญชีนี้ใช้สิทธิ์ทดลองฟรีไปแล้ว
+              </p>
+              <p className="text-sm text-muted-foreground">
+                สิทธิ์ทดลองใช้ได้ 1 ครั้งต่อบัญชี
+              </p>
+              <Link href="/pricing">
+                <Button className="w-full">ดูแพ็กเกจ</Button>
               </Link>
             </>
           )}

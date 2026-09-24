@@ -6,9 +6,9 @@ import type { BotIntent } from "@/lib/chatbot";
 // Stages where the lead has already converted — no point re-issuing a trial.
 const CONVERTED_STAGES = new Set(["redeemed", "paid"]);
 
-// Cap how many bot-issued codes one lead can ever request — prevents the same
-// user from spamming "ขอโค้ดใหม่" indefinitely after each one expires.
-const MAX_CODES_PER_LEAD = 3;
+// A lead gets one free-trial code from the bot, ever. Redemption is also
+// limited to one trial per account (see hasUsedTrial in lib/redeem.ts).
+const MAX_CODES_PER_LEAD = 1;
 
 const TRIAL_CAMPAIGN = "bot_intent_trial";
 
@@ -117,8 +117,8 @@ export async function handleBotIntent(
 
 function buildIssueMessage(code: string, isReissue: boolean): string {
   const intro = isReissue
-    ? "พี่ออกโค้ดทดลองใช้รายเดือนฟรี 1 เดือนใหม่ให้น้องเลยครับ 🎁"
-    : "🎁 พี่มีโค้ดทดลองใช้ MorRoo รายเดือนฟรี 1 เดือนสำหรับน้องเลย!";
+    ? "พี่ออกโค้ดทดลองใช้ฟรี 7 วันใหม่ให้น้องเลยครับ 🎁"
+    : "🎁 พี่มีโค้ดทดลองใช้ MorRoo ฟรี 7 วัน (ทุกฟีเจอร์) สำหรับน้องเลย!";
   return [
     intro,
     "",
@@ -147,7 +147,7 @@ function buildResendMessage(code: string, expiresAtIso: string): string {
 
 function buildLimitMessage(): string {
   return [
-    "ขอโทษครับ น้องได้รับโค้ดทดลองใช้ครบโควตาแล้วนะครับ 😅",
+    "ขอโทษครับ สิทธิ์ทดลองฟรีรับได้ 1 ครั้งต่อคน และน้องรับไปแล้วนะครับ 😅",
     "",
     "ถ้าสนใจสมัครรายเดือน ฿199 หรือรายปี ฿1,490 ดูได้ที่ morroo.com/pricing",
     "หรือทักหา support สำหรับความช่วยเหลือเพิ่มเติมครับ",

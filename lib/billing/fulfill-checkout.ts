@@ -20,6 +20,7 @@ import { extendActiveProducts, grantItem, grantPlan } from "@/lib/entitlements";
 import { isItemPlan } from "@/lib/items";
 import { resolveItem } from "@/lib/billing/plan-resolver";
 import { recordDiscountRedemption } from "@/lib/billing/coupon-checkout";
+import { REFERRAL_MAX_REWARDS_PER_YEAR, REFERRAL_REWARD_DAYS } from "@/lib/referral";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -177,7 +178,8 @@ export async function fulfillCheckoutSession(
     console.error("[fulfill] failed to create invoice:", invoiceError);
   }
 
-  // Referral reward: extend referrer membership by 30 days
+  // Referral reward: extend referrer membership by the referral's reward_days,
+  // up to REFERRAL_MAX_REWARDS_PER_YEAR rewarded friends per rolling year.
   const { data: buyer } = await supabase
     .from("profiles")
     .select("referred_by, membership_expires_at")
@@ -185,7 +187,7 @@ export async function fulfillCheckoutSession(
     .maybeSingle();
 
   let referrerLineUserId: string | null = null;
-  let referrerRewardDays = 30;
+  let referrerRewardDays = REFERRAL_REWARD_DAYS;
 
   if (buyer?.referred_by) {
     const { data: pendingReferral } = await supabase
@@ -196,12 +198,30 @@ export async function fulfillCheckoutSession(
       .eq("status", "pending")
       .maybeSingle();
 
+    let capped = false;
     if (pendingReferral) {
+      const yearAgo = new Date(Date.now() - 365 * 86400_000).toISOString();
+      const { count: rewardedThisYear } = await supabase
+        .from("referrals")
+        .select("id", { count: "exact", head: true })
+        .eq("referrer_id", pendingReferral.referrer_id)
+        .eq("status", "rewarded")
+        .gte("rewarded_at", yearAgo);
+      capped = (rewardedThisYear ?? 0) >= REFERRAL_MAX_REWARDS_PER_YEAR;
+      if (capped) {
+        await supabase
+          .from("referrals")
+          .update({ status: "capped" })
+          .eq("id", pendingReferral.id);
+      }
+    }
+
+    if (pendingReferral && !capped) {
       // Extend referrer's active products (falls back to the student pack
       // when nothing is active) — also re-derives the legacy expiry.
       await extendActiveProducts(
         pendingReferral.referrer_id,
-        pendingReferral.reward_days ?? 30,
+        pendingReferral.reward_days ?? REFERRAL_REWARD_DAYS,
         { source: "referral", reference: userId }
       );
 
@@ -218,7 +238,7 @@ export async function fulfillCheckoutSession(
         .maybeSingle();
 
       referrerLineUserId = referrerProfile?.line_user_id ?? null;
-      referrerRewardDays = pendingReferral.reward_days ?? 30;
+      referrerRewardDays = pendingReferral.reward_days ?? REFERRAL_REWARD_DAYS;
     }
   }
 

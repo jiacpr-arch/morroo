@@ -169,7 +169,7 @@ export default function DebriefSignupCta({
   const reason =
     variant === "line_login"
       ? "แตะเดียว ไม่ต้องพิมพ์ · ได้ XP/ยศ/เหรียญ ขึ้น Leaderboard + ทำข้อสอบจริงฟรี 5 ข้อ/สาขา"
-      : "แอดแล้วกดส่งข้อความที่พิมพ์ไว้ให้ — บอทส่งโค้ด Premium ฟรี 1 เดือนทันที";
+      : "แอดแล้วกดส่งข้อความที่พิมพ์ไว้ให้ — บอทส่งโค้ด Premium ฟรี 7 วันทันที";
   const oaUrl = lineOaTrialUrl({ slug, grade });
   const registerHref = `/register?next=${encodeURIComponent(`/sim/${slug}`)}`;
   const primaryHref =
@@ -177,7 +177,7 @@ export default function DebriefSignupCta({
       ? `/api/auth/line?mode=register&next=${encodeURIComponent(`/sim/${slug}`)}`
       : oaUrl;
   const primaryLabel =
-    variant === "line_login" ? "เข้าสู่ระบบด้วย LINE — เก็บผลนี้ไว้" : "แอด LINE รับโค้ด Premium ฟรี 1 เดือน";
+    variant === "line_login" ? "เข้าสู่ระบบด้วย LINE — เก็บผลนี้ไว้" : "แอด LINE รับโค้ด Premium ฟรี 7 วัน";
 
   return (
     <>
@@ -217,7 +217,7 @@ export default function DebriefSignupCta({
             rel="noopener noreferrer"
             onClick={() => handleClick("line_trial", true)}
           >
-            <LineGlyph /> แอด LINE รับโค้ด Premium ฟรี 1 เดือน
+            <LineGlyph /> แอด LINE รับโค้ด Premium ฟรี 7 วัน
           </a>
         )}
 

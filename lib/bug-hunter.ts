@@ -3,7 +3,7 @@
 // can spend those points on free membership days (see
 // 20260617_bug_hunter_rewards.sql). Keep API and UI in sync via this module.
 
-export type RewardTierId = "days30" | "days90";
+export type RewardTierId = "days7" | "days30";
 
 export interface RewardTier {
   id: RewardTierId;
@@ -14,11 +14,13 @@ export interface RewardTier {
   label: string;
 }
 
-// Roughly 1 point ≈ 1 day, with a bulk discount on the larger tier.
 export const REWARD_TIERS: Record<RewardTierId, RewardTier> = {
-  days30: { id: "days30", cost: 30, days: 30, label: "สมาชิกฟรี 30 วัน" },
-  days90: { id: "days90", cost: 75, days: 90, label: "สมาชิกฟรี 90 วัน" },
+  days7: { id: "days7", cost: 30, days: 7, label: "สมาชิกฟรี 7 วัน" },
+  days30: { id: "days30", cost: 75, days: 30, label: "สมาชิกฟรี 30 วัน" },
 };
+
+/** A user may redeem points for free days at most once per this many days. */
+export const REDEEM_COOLDOWN_DAYS = 30;
 
 export const REWARD_TIER_LIST: RewardTier[] = Object.values(REWARD_TIERS);
 

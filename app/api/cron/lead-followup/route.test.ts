@@ -284,6 +284,6 @@ describe("lead-followup cron", () => {
     const call = sendLineMessageMock.mock.calls[0] as unknown as [string, Array<{ text: string }>];
     expect(call[0]).toBe("U-exp");
     expect(call[1][0].text).toContain("หมดอายุ");
-    expect(call[1][0].text).toContain("ขอโค้ดทดลอง");
+    expect(call[1][0].text).toContain("morroo.com/pricing");
   });
 });

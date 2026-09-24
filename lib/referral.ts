@@ -32,3 +32,6 @@ export async function findReferrerByCode(
 }
 
 export const REFERRAL_REWARD_DAYS = 7; // days added to referrer's membership
+// Referrer is rewarded for at most this many friends per rolling 365 days;
+// referrals past the cap are marked "capped" and grant nothing.
+export const REFERRAL_MAX_REWARDS_PER_YEAR = 4;

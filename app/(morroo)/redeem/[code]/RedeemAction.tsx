@@ -13,7 +13,7 @@ type Props = {
 };
 
 const REWARD_LABEL: Record<string, string> = {
-  monthly_1m: "สมาชิกรายเดือน 1 เดือน (มูลค่า ฿199)",
+  monthly_1m: "ทดลองใช้ฟรี 7 วัน (ทุกฟีเจอร์)",
   bundle_10q: "Bundle 10 ข้อ (มูลค่า ฿299)",
 };
 
@@ -79,6 +79,8 @@ function translateError(code?: string): string {
       return "โค้ดนี้ถูกใช้ไปแล้ว";
     case "exhausted":
       return "โค้ดนี้ถูกใช้ครบจำนวนแล้ว";
+    case "trial_used":
+      return "บัญชีนี้ใช้สิทธิ์ทดลองฟรีไปแล้ว (1 ครั้งต่อบัญชี)";
     case "inactive":
     case "wrong_platform":
       return "โค้ดนี้ใช้ไม่ได้แล้ว";

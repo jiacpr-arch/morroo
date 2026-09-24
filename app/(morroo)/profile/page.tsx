@@ -29,7 +29,7 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState("");
   const [referralCode, setReferralCode] = useState<string | null>(null);
-  const [referralStats, setReferralStats] = useState({ total: 0, rewarded: 0 });
+  const [referralStats, setReferralStats] = useState({ total: 0, rewarded: 0, rewardedDays: 0 });
   const [copied, setCopied] = useState(false);
   const [generatingCode, setGeneratingCode] = useState(false);
   const [lineLinked, setLineLinked] = useState(false);
@@ -389,7 +389,7 @@ export default function ProfilePage() {
                 <Flag className="h-3 w-3" /> เฉลยไม่ถูก?
               </span>
               ใต้เฉลยแต่ละข้อ รับ +1 คะแนนทันที และ +10 คะแนนเมื่อแอดมินยืนยัน
-              แล้วนำคะแนนมาแลกเป็นสมาชิกฟรีได้
+              แล้วนำคะแนนมาแลกเป็นสมาชิกฟรีได้ (เดือนละ 1 ครั้ง)
             </p>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -466,10 +466,10 @@ export default function ProfilePage() {
         <Card>
           <CardHeader>
             <h3 className="font-semibold flex items-center gap-2">
-              <Gift className="h-5 w-5 text-brand" /> ชวนเพื่อน รับ 30 วันฟรี
+              <Gift className="h-5 w-5 text-brand" /> ชวนเพื่อน รับ 7 วันฟรี
             </h3>
             <p className="text-sm text-muted-foreground mt-1">
-              เพื่อนสมัครสมาชิกผ่านลิงก์คุณ → คุณได้สิทธิ์ใช้งานเพิ่ม 30 วันทันที
+              เพื่อนสมัครสมาชิกผ่านลิงก์คุณ → คุณได้สิทธิ์ใช้งานเพิ่ม 7 วันทันที (สูงสุด 4 คน/ปี)
             </p>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -484,7 +484,7 @@ export default function ProfilePage() {
                     </p>
                   </div>
                   <div className="rounded-lg bg-muted/50 p-3 text-center">
-                    <p className="text-2xl font-bold text-green-600">{referralStats.rewarded * 30}</p>
+                    <p className="text-2xl font-bold text-green-600">{referralStats.rewardedDays ?? 0}</p>
                     <p className="text-xs text-muted-foreground mt-1">วันที่ได้รับแล้ว</p>
                   </div>
                 </div>

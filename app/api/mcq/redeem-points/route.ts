@@ -6,11 +6,12 @@ import {
   rateLimitResponse,
   RATE_LIMITS,
 } from "@/lib/rate-limit";
-import { REWARD_TIERS, type RewardTierId } from "@/lib/bug-hunter";
+import { REDEEM_COOLDOWN_DAYS, REWARD_TIERS, type RewardTierId } from "@/lib/bug-hunter";
 import { extendActiveProducts } from "@/lib/entitlements";
 
 // POST /api/mcq/redeem-points
-// Body: { tier: "days30" | "days90" }
+// Body: { tier: "days7" | "days30" }
+// Limited to one redemption per REDEEM_COOLDOWN_DAYS.
 // Spends the signed-in user's Bug Hunter points on free membership days.
 export async function POST(request: NextRequest) {
   let body: { tier?: string };
@@ -51,6 +52,29 @@ export async function POST(request: NextRequest) {
 
   // The redeem RPC is SECURITY DEFINER and restricted to the service role.
   const admin = createAdminClient();
+
+  const { data: lastRedeem } = await admin
+    .from("reporter_point_redemptions")
+    .select("created_at")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (lastRedeem) {
+    const nextAt =
+      new Date(lastRedeem.created_at).getTime() + REDEEM_COOLDOWN_DAYS * 86400_000;
+    if (nextAt > Date.now()) {
+      const nextDate = new Date(nextAt).toLocaleDateString("th-TH", {
+        timeZone: "Asia/Bangkok",
+        day: "numeric",
+        month: "short",
+      });
+      return NextResponse.json(
+        { error: `แลกแต้มได้เดือนละ 1 ครั้ง — แลกครั้งถัดไปได้ ${nextDate}` },
+        { status: 429 }
+      );
+    }
+  }
   const { data, error } = await admin.rpc("redeem_reporter_points", {
     p_user_id: user.id,
     p_cost: tier.cost,

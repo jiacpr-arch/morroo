@@ -43,6 +43,7 @@ export async function POST(request: Request) {
       result.error === "wrong_platform"
         ? 404
         : result.error === "already_redeemed" ||
+            result.error === "trial_used" ||
             result.error === "exhausted" ||
             result.error === "checkout_only"
           ? 409
