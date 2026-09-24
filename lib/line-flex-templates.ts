@@ -308,7 +308,19 @@ interface ExpiryWarningData {
   name: string;
   expiresAt: Date;
   membershipType: string;
+  /** Set when the expiring access is the 7-day free trial — switches to trial copy with prices. */
+  trialPrices?: TrialPriceInfo;
 }
+
+/** Regular and first-purchase prices quoted in trial-ending reminders. */
+export interface TrialPriceInfo {
+  monthly: number;
+  yearly: number;
+  monthlyIntro: number;
+  yearlyIntro: number;
+}
+
+const thb = (n: number) => `฿${n.toLocaleString("en-US")}`;
 
 const PLAN_LABELS: Record<string, string> = {
   monthly: "รายเดือน",
@@ -328,6 +340,10 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
   );
   const renewPath = data.membershipType === "bundle" ? "bundle" : data.membershipType;
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+
+  if (data.trialPrices) {
+    return buildTrialEndingMessage(dateStr, daysLeft, data.trialPrices, siteUrl);
+  }
 
   return {
     type: "flex",
@@ -403,6 +419,70 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
           },
         ],
       },
+    },
+  };
+}
+
+/** Trial-ending reminder: one-time trial, end date, regular + first-purchase price. */
+function buildTrialEndingMessage(
+  dateStr: string,
+  daysLeft: number,
+  prices: TrialPriceInfo,
+  siteUrl: string
+): LineMessage {
+  const hasIntro = prices.monthlyIntro < prices.monthly;
+  return {
+    type: "flex",
+    altText: `ทดลองใช้ MorRoo ฟรีเหลืออีก ${daysLeft} วัน (หมด ${dateStr})`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: daysLeft <= 1 ? "#E74C3C" : "#F39C12",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: daysLeft <= 1 ? "⚠️ ทดลองฟรีหมดพรุ่งนี้" : `⏰ ทดลองฟรีเหลือ ${daysLeft} วัน`,
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: "สิทธิ์ทดลอง 7 วัน มีครั้งเดียวต่อบัญชี",
+            color: "#FDEBD0",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          statRow("หมดสิทธิ์", dateStr),
+          statRow("รายเดือน", hasIntro ? `${thb(prices.monthlyIntro)} (ปกติ ${thb(prices.monthly)})` : thb(prices.monthly)),
+          statRow("รายปี", hasIntro ? `${thb(prices.yearlyIntro)} (ปกติ ${thb(prices.yearly)})` : thb(prices.yearly)),
+          { type: "separator" as const, margin: "md" as const },
+          {
+            type: "text" as const,
+            text: hasIntro
+              ? "ราคาพิเศษสำหรับการซื้อครั้งแรก — สมัครก่อนหมดสิทธิ์เพื่อใช้ต่อเนื่อง ไม่งั้นจะกลับไปใช้โควตาฟรี"
+              : "สมัครก่อนหมดสิทธิ์เพื่อใช้ต่อเนื่อง ไม่งั้นจะกลับไปใช้โควตาฟรี",
+            size: "sm" as const,
+            color: "#666666",
+            wrap: true,
+            margin: "md" as const,
+          },
+        ],
+      },
+      footer: ctaFooter([
+        { label: "สมัครสมาชิก", uri: toLiffUri(`${siteUrl}/pricing`), style: "primary" },
+      ]),
     },
   };
 }

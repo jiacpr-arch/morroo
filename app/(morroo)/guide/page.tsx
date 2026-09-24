@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BookOpen, GraduationCap, Brain, Stethoscope, Gamepad2, CreditCard, MessageCircle, Users, FileText, HelpCircle } from "lucide-react";
+import { planPriceText } from "@/lib/membership";
 
 export const metadata: Metadata = {
   title: "คู่มือการใช้งาน — หมอรู้",
@@ -94,7 +95,7 @@ const sections = [
     content: [
       {
         subtitle: "แพ็กเกจ",
-        text: "ฟรี (จำกัดจำนวน) | รายเดือน ฿199 | รายปี ฿1,490 (ประหยัด 38%) | ชุดข้อสอบ ฿299 — ทุกแพ็กเกจจ่ายครั้งเดียว ไม่ต่ออัตโนมัติ",
+        text: `ฟรี (จำกัดจำนวน) | รายเดือน ${planPriceText("monthly")} | รายปี ${planPriceText("yearly")} | ชุดข้อสอบ ${planPriceText("bundle")} — ราคาพิเศษสำหรับการซื้อครั้งแรก · ทุกแพ็กเกจจ่ายครั้งเดียว ไม่ต่ออัตโนมัติ`,
       },
       {
         subtitle: "วิธีชำระเงิน",

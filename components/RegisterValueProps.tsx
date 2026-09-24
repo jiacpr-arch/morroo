@@ -1,4 +1,5 @@
 import { BookOpen, Sparkles, ShieldCheck, Clock } from "lucide-react";
+import { formatBaht, planIntroAmount } from "@/lib/membership";
 
 const PROPS = [
   {
@@ -19,7 +20,7 @@ const PROPS = [
   {
     icon: Clock,
     title: "ยกเลิกได้ทุกเมื่อ",
-    desc: "ไม่ผูกมัด รายเดือนแค่ ฿199 / รายปี ฿1,490",
+    desc: `ไม่ผูกมัด ซื้อครั้งแรก รายเดือน ${formatBaht(planIntroAmount("monthly"))} / รายปี ${formatBaht(planIntroAmount("yearly"))}`,
   },
 ];
 

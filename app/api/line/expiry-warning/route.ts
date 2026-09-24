@@ -30,6 +30,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { sendTrialExpiryEmail } from "@/lib/email/send";
 import { buildExpiryWarningMessage } from "@/lib/line-flex-templates";
+import { getTrialStatus, TRIAL_FULL_PRICES } from "@/lib/trial";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -123,6 +124,11 @@ async function run() {
 
     for (const user of (users ?? []) as ProfileRow[]) {
       try {
+        // Free-trial users get trial copy (one-time trial, end date, prices).
+        // D-7 would land on sign-up day for a 7-day trial, so it's skipped.
+        const onTrial = (await getTrialStatus(user.id)).active;
+        if (onTrial && days === 7) continue;
+
         let channel = pickExpiryChannel(
           { lineUserId: user.line_user_id, email: user.email },
           days
@@ -156,6 +162,7 @@ async function run() {
             name: user.name ?? "",
             expiresAt: new Date(user.membership_expires_at),
             membershipType: user.membership_type,
+            trialPrices: onTrial ? TRIAL_FULL_PRICES : undefined,
           });
           const ok = await sendLineMessage(user.line_user_id!, [msg]);
           if (!ok) {
@@ -170,6 +177,7 @@ async function run() {
             expiresAt: user.membership_expires_at,
             pricingUrl: `${siteUrl}/pricing`,
             daysBeforeExpiry: days as EmailReminderDay,
+            trialPrices: onTrial ? TRIAL_FULL_PRICES : undefined,
           });
           summary.email_sent++;
         }

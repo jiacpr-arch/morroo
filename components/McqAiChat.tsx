@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import type { McqQuestion } from "@/lib/types-mcq";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
+import { formatBaht, planIntroAmount } from "@/lib/membership";
 
 interface McqAiChatProps {
   question: McqQuestion;
@@ -143,7 +144,7 @@ export default function McqAiChat({
           <Link href="/pricing" className="flex-shrink-0">
             <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white gap-1.5 text-xs">
               <Sparkles className="h-3.5 w-3.5" />
-              ฿199/เดือน
+              {formatBaht(planIntroAmount("monthly"))}/เดือน
             </Button>
           </Link>
         </CardContent>

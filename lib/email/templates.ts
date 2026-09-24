@@ -30,6 +30,8 @@ export interface TrialExpiryEmailProps {
   pricingUrl: string;
   /** Days remaining (3 or 1) — selects copy variant. */
   daysBeforeExpiry: 3 | 1;
+  /** Set when the expiring access is the 7-day free trial — trial copy with prices. */
+  trialPrices?: { monthly: number; yearly: number; monthlyIntro: number; yearlyIntro: number };
 }
 
 export interface ReceiptEmailProps {
@@ -95,8 +97,8 @@ function newsletterFooterHtml(unsubscribeUrl?: string): string {
 
 const PACKAGE_LABELS: Record<string, string> = {
   bundle: "Bundle Pack (30 วัน) — ฿99",
-  monthly: "Full รายเดือน — ฿199/เดือน",
-  yearly: "Full รายปี — ฿1,490/ปี",
+  monthly: "Full รายเดือน",
+  yearly: "Full รายปี",
 };
 
 const PACKAGE_FEATURES: Record<string, string[]> = {
@@ -560,6 +562,7 @@ export function trialExpiryEmail({
   expiresAt,
   pricingUrl,
   daysBeforeExpiry,
+  trialPrices,
 }: TrialExpiryEmailProps): string {
   const expiresLabel = new Date(expiresAt).toLocaleDateString("th-TH", {
     year: "numeric",
@@ -583,6 +586,20 @@ export function trialExpiryEmail({
           ctaLabel: "ต่ออายุเดี๋ยวนี้",
           accent: "#DC2626",
         };
+
+  if (trialPrices) {
+    const thb = (n: number) => `฿${n.toLocaleString("en-US")}`;
+    const hasIntro = trialPrices.monthlyIntro < trialPrices.monthly;
+    variant.headline =
+      daysBeforeExpiry === 3 ? "ทดลองฟรีเหลืออีก 3 วัน ⏳" : "ทดลองฟรีหมดพรุ่งนี้! 🚨";
+    variant.subhead =
+      "สิทธิ์ทดลองใช้ทุกฟีเจอร์ 7 วันมีครั้งเดียวต่อบัญชี — หลังหมดสิทธิ์ ราคาเต็ม " +
+      `รายเดือน ${thb(trialPrices.monthly)} · รายปี ${thb(trialPrices.yearly)}` +
+      (hasIntro
+        ? ` แต่ซื้อครั้งแรกเหลือ ${thb(trialPrices.monthlyIntro)} / ${thb(trialPrices.yearlyIntro)}`
+        : "");
+    variant.ctaLabel = "สมัครสมาชิก";
+  }
 
   return `<!DOCTYPE html>
 <html lang="th">

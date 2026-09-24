@@ -1,6 +1,8 @@
 import { describe, it, expect } from "vitest";
 import {
   PLAN_CATALOG,
+  formatBaht,
+  planPriceText,
   PLAN_TYPES,
   deriveLegacyMembership,
   hasBoardAccess,
@@ -227,5 +229,21 @@ describe("intro (first-purchase) pricing", () => {
   it("planDisplayPrice has no compareAt for plans without an intro", () => {
     expect(planDisplayPrice("bundle")).toEqual({ price: 299, compareAt: null, savePercent: 0 });
     expect(planIntroAmount("bundle")).toBe(299);
+  });
+});
+
+describe("planPriceText", () => {
+  it("shows the first-purchase price with the regular price alongside", () => {
+    const { amount, introAmount } = PLAN_CATALOG.monthly;
+    const text = planPriceText("monthly");
+    if (introAmount && introAmount < amount) {
+      expect(text).toBe(`฿${introAmount.toLocaleString("en-US")} (ปกติ ฿${amount.toLocaleString("en-US")})`);
+    } else {
+      expect(text).toBe(`฿${amount.toLocaleString("en-US")}`);
+    }
+  });
+
+  it("formats thousands with a comma", () => {
+    expect(formatBaht(2490)).toBe("฿2,490");
   });
 });

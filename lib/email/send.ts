@@ -152,8 +152,11 @@ export async function sendLeadFollowupEmail(
 export async function sendTrialExpiryEmail(
   props: TrialExpiryEmailProps & { email: string }
 ) {
-  const subject =
-    props.daysBeforeExpiry === 3
+  const subject = props.trialPrices
+    ? props.daysBeforeExpiry === 3
+      ? "⏳ ทดลองใช้หมอรู้ฟรีเหลือ 3 วัน"
+      : "🚨 ทดลองใช้หมอรู้ฟรีหมดพรุ่งนี้"
+    : props.daysBeforeExpiry === 3
       ? "⏳ เหลือ 3 วัน — สมาชิกหมอรู้ของคุณกำลังจะหมดอายุ"
       : "🚨 พรุ่งนี้หมดอายุ — ต่ออายุสมาชิกหมอรู้";
   return sendEmail({
