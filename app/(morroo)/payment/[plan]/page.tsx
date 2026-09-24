@@ -20,7 +20,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
-import { PLAN_CATALOG, PLAN_TYPES, type PlanDuration } from "@/lib/membership";
+import { PLAN_CATALOG, PLAN_TYPES, isPlanType, type PlanDuration } from "@/lib/membership";
 
 const PLAN_PERIOD: Record<PlanDuration, string> = {
   month: "/ เดือน",
@@ -36,6 +36,7 @@ const PLANS: Record<string, { name: string; price: number; period: string }> =
       plan,
       {
         name: plan === "bundle" ? "ชุดข้อสอบ 10 ข้อ" : PLAN_CATALOG[plan].label,
+        // Regular price until plan-info says which price this user pays.
         price: PLAN_CATALOG[plan].amount,
         period: PLAN_PERIOD[PLAN_CATALOG[plan].duration],
       },
@@ -103,8 +104,29 @@ export default function PaymentPage({
     };
   }, [plan, isItem]);
 
+  // Plans: plan-info returns this user's price — the first-purchase price
+  // (with the regular price to strike through) or the regular one.
+  const [planPrice, setPlanPrice] = useState<{ amount: number; regularAmount: number; intro: boolean } | null>(null);
+  useEffect(() => {
+    if (!isPlanType(plan)) return;
+    let cancelled = false;
+    fetch(`/api/billing/plan-info?planType=${encodeURIComponent(plan)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled || typeof j?.amount !== "number") return;
+        setPlanPrice({ amount: j.amount, regularAmount: j.regularAmount ?? j.amount, intro: !!j.intro });
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [plan]);
+
   const planInfo: { name: string; price: number; period: string } | undefined =
-    PLANS[plan] ?? remoteInfo ?? undefined;
+    PLANS[plan]
+      ? { ...PLANS[plan], price: planPrice?.amount ?? PLANS[plan].price }
+      : remoteInfo ?? undefined;
+  const introRegular = planPrice?.intro ? planPrice.regularAmount : null;
 
   useEffect(() => {
     async function checkAuth() {
@@ -122,7 +144,8 @@ export default function PaymentPage({
 
   // Canonical InitiateCheckout: fires once per payment-page visit so Meta/TikTok
   // get the signal before the user reaches Stripe checkout.
-  const trackedPrice = planInfo?.price;
+  // Plans wait for plan-info so the event carries the price actually charged.
+  const trackedPrice = PLANS[plan] && !planPrice ? undefined : planInfo?.price;
   useEffect(() => {
     if (trackedPrice === undefined) return;
     trackInitiateCheckout({ plan, value: trackedPrice, currency: "THB" });
@@ -251,6 +274,15 @@ export default function PaymentPage({
                       ฿{coupon.finalAmount.toLocaleString()}
                     </p>
                   </>
+                ) : introRegular ? (
+                  <>
+                    <p className="text-sm text-muted-foreground line-through">
+                      ฿{introRegular.toLocaleString()}
+                    </p>
+                    <p className="text-2xl font-bold text-brand">
+                      ฿{planInfo.price.toLocaleString()}
+                    </p>
+                  </>
                 ) : (
                   <p className="text-2xl font-bold">
                     ฿{planInfo.price.toLocaleString()}
@@ -263,6 +295,13 @@ export default function PaymentPage({
                 )}
               </div>
             </div>
+
+            {introRegular && (
+              <p className="mt-3 rounded-md bg-brand/5 px-3 py-2 text-xs text-brand">
+                ราคาพิเศษสำหรับการสั่งซื้อครั้งแรก · ครั้งถัดไป ฿{introRegular.toLocaleString()}
+                {planInfo.period ? ` ${planInfo.period}` : ""}
+              </p>
+            )}
 
             {/* Discount code */}
             <div className="mt-4 border-t pt-4">

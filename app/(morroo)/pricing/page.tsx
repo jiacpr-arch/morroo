@@ -11,8 +11,8 @@ import SectionHeading from "@/components/SectionHeading";
 import SocialProofSection from "@/components/SocialProofSection";
 import { PRICING_FAQ_ITEMS } from "@/lib/pricing-faq";
 import { LineCtaButton } from "@/components/SocialLinks";
-import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
-import { PLAN_CATALOG } from "@/lib/membership";
+import { PRICING_PLANS, BOARD_PRICING_PLANS, planCardPrice, yearlySaving } from "@/lib/types";
+import { PLAN_CATALOG, PLAN_TYPES, planDisplayPrice } from "@/lib/membership";
 import { GraduationCap, Mic, Stethoscope, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -47,10 +47,12 @@ const STUDENT_MAIN = PRICING_PLANS.filter(
   (p) => p.type === "monthly" || p.type === "yearly"
 );
 
+const SCHOOL_SAVING = yearlySaving("school_monthly", "school_yearly");
+
 const SCHOOL_PLANS = [
   {
     name: "School รายเดือน",
-    price: PLAN_CATALOG.school_monthly.amount,
+    ...planCardPrice("school_monthly"),
     period: "/ เดือน",
     description: "นักศึกษาแพทย์ปี 1–6 ทบทวนตาม curriculum",
     features: [
@@ -64,18 +66,22 @@ const SCHOOL_PLANS = [
   },
   {
     name: "School รายปี",
-    price: PLAN_CATALOG.school_yearly.amount,
+    ...planCardPrice("school_yearly"),
     period: "/ ปี",
     description: "ใช้ทั้งปีการศึกษา",
     features: [
       "ทุกอย่างในแพ็กรายเดือน",
-      `ประหยัด ฿${(PLAN_CATALOG.school_monthly.amount * 12 - PLAN_CATALOG.school_yearly.amount).toLocaleString()}/ปี`,
+      `ประหยัด ฿${SCHOOL_SAVING.baht.toLocaleString()}/ปี (${SCHOOL_SAVING.percent}%)`,
     ],
     cta: "สมัคร School รายปี",
     popular: false,
+    badge: "คุ้มที่สุด",
     type: "school_yearly" as const,
   },
 ] as const;
+
+// Headline for the first-purchase banner.
+const MAX_INTRO_SAVE = Math.max(...PLAN_TYPES.map((p) => planDisplayPrice(p).savePercent));
 
 function MiniLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -110,6 +116,9 @@ export default function PricingPage() {
             <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-gradient-to-r from-brand to-brand-light" />
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               เลือกแทร็กที่ตรงกับเป้าหมาย — แต่ละแทร็กมีแค่รายเดือนกับรายปี
+            </p>
+            <p className="mx-auto mt-3 inline-flex rounded-full bg-brand/10 px-4 py-1.5 text-sm font-semibold text-brand">
+              🎉 สมาชิกใหม่ — ซื้อครั้งแรกลดสูงสุด {MAX_INTRO_SAVE}%
             </p>
             <PricingFreeCta />
           </div>
@@ -155,9 +164,9 @@ export default function PricingPage() {
             <MiniLink href="/payment/bundle">ชุด 10 ข้อ ฿{PLAN_CATALOG.bundle.amount}</MiniLink>
             <span className="mx-1 hidden sm:inline">·</span>
             <span>หรือซื้อแยกรายระบบ:</span>
-            <MiniLink href="/payment/mcq_monthly">MCQ ฿{PLAN_CATALOG.mcq_monthly.amount}/เดือน</MiniLink>
-            <MiniLink href="/payment/meq_monthly">MEQ ฿{PLAN_CATALOG.meq_monthly.amount}/เดือน</MiniLink>
-            <MiniLink href="/payment/longcase_monthly">Long Case ฿{PLAN_CATALOG.longcase_monthly.amount}/เดือน</MiniLink>
+            <MiniLink href="/payment/mcq_monthly">MCQ ฿{planDisplayPrice("mcq_monthly").price}/เดือน</MiniLink>
+            <MiniLink href="/payment/meq_monthly">MEQ ฿{planDisplayPrice("meq_monthly").price}/เดือน</MiniLink>
+            <MiniLink href="/payment/longcase_monthly">Long Case ฿{planDisplayPrice("longcase_monthly").price}/เดือน</MiniLink>
           </div>
         </div>
       </section>

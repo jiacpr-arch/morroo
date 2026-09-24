@@ -38,7 +38,7 @@ export default function HeroPriceLine({
         dark ? "text-white/80 hover:text-white" : "text-white/85 hover:text-white",
       )}
     >
-      สมาชิก ฿{monthly.price.toLocaleString()}{monthly.period} · ยกเลิกได้ทุกเมื่อ · ดูแพ็กเกจ
+      สมาชิกใหม่ ฿{monthly.price.toLocaleString()}{monthly.period} · ยกเลิกได้ทุกเมื่อ · ดูแพ็กเกจ
       <ArrowRight className="h-3.5 w-3.5" />
     </Link>
   );

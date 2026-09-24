@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Lock } from "lucide-react";
-import { PLAN_CATALOG, type PlanType } from "@/lib/membership";
+import { PLAN_CATALOG, planIntroAmount, type PlanType } from "@/lib/membership";
 
 export interface ItemUpsellProps {
   /** Card headline, e.g. "ปลดล็อกวิชานี้" */
@@ -68,7 +68,7 @@ export default function ItemUpsell({
           <p className="text-xs text-muted-foreground">ทั้งระบบ</p>
           <p className="text-sm font-medium leading-snug">{product.label}</p>
           <p className="mt-1 text-lg font-bold">
-            ฿{product.amount.toLocaleString()}{" "}
+            ฿{planIntroAmount(productPlan).toLocaleString()}{" "}
             <span className="text-xs font-normal text-muted-foreground">{period(product.duration)}</span>
           </p>
         </Link>
@@ -83,7 +83,7 @@ export default function ItemUpsell({
             <p className="text-xs text-muted-foreground">ครบทุกระบบ</p>
             <p className="text-sm font-medium leading-snug">แพ็ก นศพ. {pack.label}</p>
             <p className="mt-1 text-lg font-bold">
-              ฿{pack.amount.toLocaleString()}{" "}
+              ฿{planIntroAmount(packPlan).toLocaleString()}{" "}
               <span className="text-xs font-normal text-muted-foreground">{period(pack.duration)}</span>
             </p>
           </Link>

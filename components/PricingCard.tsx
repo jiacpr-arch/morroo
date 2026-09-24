@@ -18,6 +18,12 @@ interface PricingCardProps {
   type: string;
   /** Optional yearly SKU for per-product plans — rendered as a secondary link. */
   yearlyType?: string;
+  /** Regular price shown struck through next to a first-purchase `price`. */
+  compareAt?: number | null;
+  /** Small line under the price, e.g. what the next purchase costs. */
+  note?: string;
+  /** Top badge text; defaults to "แนะนำ" on `popular` cards. */
+  badge?: string;
 }
 
 export default function PricingCard({
@@ -30,17 +36,26 @@ export default function PricingCard({
   popular,
   type,
   yearlyType,
+  compareAt,
+  note,
+  badge,
 }: PricingCardProps) {
   const href = type === "free" ? "/register" : `/payment/${type}`;
+  const badgeText = badge ?? (popular ? "แนะนำ" : null);
+  const savePercent = compareAt && compareAt > price ? Math.round((1 - price / compareAt) * 100) : 0;
   return (
     <Card
       className={`relative flex flex-col overflow-visible ${
         popular ? "ring-2 ring-brand shadow-xl shadow-brand/10" : ""
       }`}
     >
-      {popular && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white px-4 z-10">
-          แนะนำ
+      {badgeText && (
+        <Badge
+          className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 z-10 text-white ${
+            popular ? "bg-brand" : "bg-amber-500"
+          }`}
+        >
+          {badgeText}
         </Badge>
       )}
       <CardHeader className="text-center pb-2">
@@ -49,12 +64,23 @@ export default function PricingCard({
       </CardHeader>
       <CardContent className="text-center flex-1">
         <div className="my-4">
+          {savePercent > 0 && (
+            <div className="mb-1 flex items-center justify-center gap-2 text-sm">
+              <span className="text-muted-foreground line-through">
+                ฿{compareAt!.toLocaleString()}
+              </span>
+              <span className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-600">
+                ลด {savePercent}%
+              </span>
+            </div>
+          )}
           <span className="text-4xl font-bold">
             {price === 0 ? "ฟรี" : `฿${price.toLocaleString()}`}
           </span>
           {period && (
             <span className="text-muted-foreground text-sm"> {period}</span>
           )}
+          {note && <p className="mt-1 text-xs text-muted-foreground">{note}</p>}
         </div>
         <ul className="space-y-2 text-sm text-left">
           {features.map((feature) => (

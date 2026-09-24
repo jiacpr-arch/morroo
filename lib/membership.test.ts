@@ -10,7 +10,9 @@ import {
   hasMeqAccess,
   hasSchoolAccess,
   isPremium,
+  planDisplayPrice,
   planDurationDays,
+  planIntroAmount,
   planExpiry,
   planProducts,
   resolveAccess,
@@ -209,5 +211,21 @@ describe("deriveLegacyMembership", () => {
       membership_type: "bundle",
       membership_expires_at: null,
     });
+  });
+});
+
+describe("intro (first-purchase) pricing", () => {
+  it("every intro price is below its regular price", () => {
+    for (const plan of PLAN_TYPES) {
+      const { amount, introAmount } = PLAN_CATALOG[plan];
+      if (introAmount !== undefined) expect(introAmount).toBeLessThan(amount);
+    }
+  });
+  it("planDisplayPrice shows the intro price with the regular one struck through", () => {
+    expect(planDisplayPrice("monthly")).toEqual({ price: 199, compareAt: 299, savePercent: 33 });
+  });
+  it("planDisplayPrice has no compareAt for plans without an intro", () => {
+    expect(planDisplayPrice("bundle")).toEqual({ price: 299, compareAt: null, savePercent: 0 });
+    expect(planIntroAmount("bundle")).toBe(299);
   });
 });

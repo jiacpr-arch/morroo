@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PLAN_CATALOG, PLAN_TYPES, PRODUCT_INFO, PRODUCTS } from "@/lib/membership";
+import { PLAN_CATALOG, PLAN_TYPES, PRODUCT_INFO, PRODUCTS, planDisplayPrice } from "@/lib/membership";
 
 const PERIOD: Record<string, string> = {
   month: "/ เดือน",
@@ -36,11 +36,17 @@ export default function PricingCompareTable() {
           <tbody>
             {PLAN_TYPES.map((plan) => {
               const spec = PLAN_CATALOG[plan];
+              const { price, compareAt } = planDisplayPrice(plan);
               return (
                 <tr key={plan} className="border-t">
                   <td className="px-4 py-2 font-medium whitespace-nowrap">{spec.label}</td>
                   <td className="px-4 py-2 whitespace-nowrap">
-                    ฿{spec.amount.toLocaleString()}{" "}
+                    {compareAt && (
+                      <span className="mr-1 text-xs text-muted-foreground line-through">
+                        ฿{compareAt.toLocaleString()}
+                      </span>
+                    )}
+                    ฿{price.toLocaleString()}{" "}
                     <span className="text-xs text-muted-foreground">{PERIOD[spec.duration]}</span>
                   </td>
                   {PRODUCTS.map((p) => (
@@ -66,7 +72,7 @@ export default function PricingCompareTable() {
           </tbody>
         </table>
         <p className="px-4 pt-3 text-xs text-muted-foreground">
-          ชุดข้อสอบ = เครดิต 10 ข้อ ไม่มีวันหมดอายุ · ทุกแพ็กถือพร้อมกันได้ หมดอายุแยกกัน
+          ราคาขีดฆ่า = ราคาปกติ ส่วนลดใช้กับการซื้อครั้งแรก · ชุดข้อสอบ = เครดิต 10 ข้อ ไม่มีวันหมดอายุ · ทุกแพ็กถือพร้อมกันได้ หมดอายุแยกกัน
         </p>
       </div>
     </details>
