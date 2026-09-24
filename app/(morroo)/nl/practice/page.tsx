@@ -188,6 +188,14 @@ async function PracticeContent({
   const currentSubject = subjectId
     ? allNl2Subjects.find((s) => s.id === subjectId)
     : null;
+  // Once a subject is picked, the chip grid collapses to a one-line summary
+  // so the questions aren't pushed below the fold on mobile.
+  const hasSelection = !useRecommended && (isInternalMed || !!currentSubject);
+  const selectionLabel = isInternalMed
+    ? "🩺 อายุรกรรม"
+    : currentSubject
+      ? `${currentSubject.icon} ${currentSubject.name_th}`
+      : "";
 
   return (
     <div>
@@ -199,7 +207,9 @@ async function PracticeContent({
           tryLabel="ลองเกมเคสฟรี"
         />
       )}
-      <InternalAdsBanner placement="practice-top" className="mb-4" />
+      <div className={hasSelection ? "hidden sm:block" : undefined}>
+        <InternalAdsBanner placement="practice-top" className="mb-3 sm:mb-4" />
+      </div>
 
       {/* Recommended banner */}
       {useRecommended && recBreakdown && (
@@ -232,7 +242,7 @@ async function PracticeContent({
 
       {/* Mode toggle */}
       {user && (
-        <div className="mb-4 flex flex-wrap gap-2">
+        <div className="mb-3 flex flex-wrap gap-2 sm:mb-4">
           <Link href="/nl/practice?mode=recommended">
             <Badge
               variant={useRecommended ? "default" : "secondary"}
@@ -258,11 +268,31 @@ async function PracticeContent({
 
       {/* Subject Filter — hidden in recommended mode */}
       {!useRecommended && (
-        <div className="mb-6">
-          <h3 className="text-sm font-medium mb-2 text-muted-foreground">
-            เลือกสาขา
-          </h3>
-          <div className="flex flex-wrap gap-2">
+        <details
+          className="group/subjects mb-4 sm:mb-6"
+          open={!hasSelection}
+        >
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-2 select-none [&::-webkit-details-marker]:hidden">
+            {hasSelection ? (
+              <span className="min-w-0 truncate text-sm font-medium">
+                {selectionLabel}{" "}
+                <span className="font-normal text-muted-foreground">
+                  — {questions.length} ข้อ
+                </span>
+              </span>
+            ) : (
+              <span className="text-sm font-medium text-muted-foreground">
+                เลือกสาขา
+              </span>
+            )}
+            <span className="shrink-0 text-sm text-brand hover:underline">
+              <span className="group-open/subjects:hidden">เปลี่ยนสาขา ▾</span>
+              <span className="hidden group-open/subjects:inline">
+                {hasSelection ? "ซ่อน ▴" : ""}
+              </span>
+            </span>
+          </summary>
+          <div className="mt-2 flex flex-wrap gap-2">
             <Link href="/nl/practice">
               <Badge
                 variant={
@@ -308,12 +338,12 @@ async function PracticeContent({
             )}
           </div>
           {otherSubjects.length > 0 && (
-            <details className="mt-2 group" open={otherSelected}>
+            <details className="mt-2 group/others" open={otherSelected}>
               <summary className="cursor-pointer list-none text-sm text-brand hover:underline inline-flex items-center gap-1 select-none">
-                <span className="group-open:hidden">
+                <span className="group-open/others:hidden">
                   + ดูสาขาอื่น ๆ ({otherSubjects.length})
                 </span>
-                <span className="hidden group-open:inline">− ซ่อนสาขาอื่น</span>
+                <span className="hidden group-open/others:inline">− ซ่อนสาขาอื่น</span>
               </summary>
               <div className="flex flex-wrap gap-2 mt-2">
                 {otherSubjects.map((subject) => (
@@ -338,29 +368,21 @@ async function PracticeContent({
               </div>
             </details>
           )}
-        </div>
+        </details>
       )}
 
-      {/* Info */}
-      <div className="mb-6 text-sm text-muted-foreground">
-        {useRecommended ? (
-          <span>ชุดแนะนำ — {questions.length} ข้อ</span>
-        ) : isInternalMed ? (
-          <span>🩺 อายุรกรรม — {questions.length} ข้อ</span>
-        ) : currentSubject ? (
-          <span>
-            {currentSubject.icon} {currentSubject.name_th} — {questions.length}{" "}
-            ข้อ
-          </span>
-        ) : (
-          <span>คละทุกสาขา — {questions.length} ข้อ</span>
-        )}
-      </div>
+      {/* Info — once a subject is picked, the collapsed summary shows this */}
+      {!hasSelection && (
+        <div className="mb-4 text-sm text-muted-foreground sm:mb-6">
+          {useRecommended ? "ชุดแนะนำ" : "คละทุกสาขา"} — {questions.length} ข้อ
+        </div>
+      )}
 
       {/* Buy just this subject — shown in context, not on /pricing */}
       {user && !isPremium && !useRecommended && (isInternalMed || currentSubject) && (
         <ItemUpsell
-          className="mb-6"
+          collapsible
+          className="mb-4 sm:mb-6"
           title={isInternalMed ? "ปลดล็อกหมวดอายุรกรรมทั้งหมด" : "ปลดล็อกวิชานี้ไม่จำกัด"}
           itemPlan={
             isInternalMed
@@ -422,17 +444,17 @@ export default async function PracticePage({
   const recommended = mode === "recommended";
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="mb-6">
+    <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6 sm:py-8 lg:px-8">
+      {/* Header — kept compact on mobile so the questions sit near the top */}
+      <div className="mb-3 sm:mb-6">
         <Link
           href="/nl"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand mb-4"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand mb-1 sm:mb-4"
         >
           <ArrowLeft className="h-4 w-4" /> กลับหน้า NL
         </Link>
-        <h1 className="text-2xl font-bold">ฝึกทำข้อสอบ NL</h1>
-        <p className="text-muted-foreground text-sm mt-1">
+        <h1 className="text-xl font-bold sm:text-2xl">ฝึกทำข้อสอบ NL</h1>
+        <p className="hidden text-muted-foreground text-sm mt-1 sm:block">
           เลือกตอบแล้วดูเฉลยทันที
         </p>
       </div>
