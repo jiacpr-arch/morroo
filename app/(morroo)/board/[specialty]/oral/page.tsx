@@ -8,7 +8,7 @@ import {
 } from "@/lib/supabase/queries-board";
 import { getBoardOralCases } from "@/lib/supabase/queries-longcase";
 import { createClient } from "@/lib/supabase/server";
-import { hasBoardAccess, hasScopedAccess } from "@/lib/membership";
+import { hasBoardAccess, hasScopedAccess, planPriceText } from "@/lib/membership";
 import { ITEM_PRICES, itemPlanType } from "@/lib/items";
 import { fetchEntitlements } from "@/lib/entitlements";
 import LongCaseStartButton from "@/app/(morroo)/longcase/LongCaseStartButton";
@@ -115,7 +115,7 @@ export default async function BoardOralPage({
                 สอบ oral ต้องสมาชิก Board
               </div>
               <p className="text-amber-700 mt-0.5">
-                เฉพาะสาขา{s.name_th} ฿{ITEM_PRICES.board_specialty_month}/เดือน (MCQ + Oral) — หรือแพ็ก Board ทุกสาขา ฿499/เดือน
+                เฉพาะสาขา{s.name_th} ฿{ITEM_PRICES.board_specialty_month}/เดือน (MCQ + Oral) — หรือแพ็ก Board ทุกสาขา {planPriceText("board_monthly")}/เดือน
               </p>
               <div className="mt-2 flex flex-wrap gap-3">
                 <Link

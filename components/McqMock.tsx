@@ -20,6 +20,7 @@ import Link from "next/link";
 import type { McqQuestion } from "@/lib/types-mcq";
 import ReportErrorButton from "@/components/ReportErrorButton";
 import { track } from "@/lib/analytics";
+import { planIntroAmount } from "@/lib/membership";
 
 interface McqMockProps {
   questions: McqQuestion[];
@@ -406,7 +407,7 @@ export default function McqMock({
                 พร้อมเฉลยละเอียดทุกข้อ
               </p>
               <p className="text-sm font-semibold text-brand">
-                เริ่มต้นเพียง 199 บาท/เดือน
+                เริ่มต้นเพียง {planIntroAmount("monthly")} บาท/เดือน
               </p>
               <Link
                 href="/pricing"

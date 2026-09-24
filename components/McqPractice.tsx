@@ -31,6 +31,7 @@ import { useBeta } from "@/components/beta/BetaProvider";
 import BetaCheckpointSurvey from "@/components/beta/BetaCheckpointSurvey";
 import BetaExitSurvey from "@/components/beta/BetaExitSurvey";
 import BetaPaywall from "@/components/beta/BetaPaywall";
+import { formatBaht, planIntroAmount } from "@/lib/membership";
 
 interface McqPracticeProps {
   questions: McqQuestion[];
@@ -540,7 +541,7 @@ export default function McqPractice({
                           <p className="text-xs text-muted-foreground">สำหรับสมาชิก Premium เท่านั้น</p>
                           <Link href="/pricing">
                             <button className="bg-brand hover:bg-brand/90 text-white text-sm px-5 py-2 rounded-lg font-medium">
-                              อัปเกรด ฿199/เดือน
+                              อัปเกรด {formatBaht(planIntroAmount("monthly"))}/เดือน
                             </button>
                           </Link>
                         </div>
@@ -608,7 +609,7 @@ export default function McqPractice({
                       <Link href="/pricing">
                         <button className="bg-brand hover:bg-brand/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm w-full sm:w-auto">
                           <Sparkles className="h-4 w-4 inline mr-1" />
-                          อัปเกรด ฿199/เดือน
+                          อัปเกรด {formatBaht(planIntroAmount("monthly"))}/เดือน
                         </button>
                       </Link>
                       <Button

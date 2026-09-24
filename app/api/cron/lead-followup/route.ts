@@ -27,6 +27,7 @@ import { sendLeadFollowupEmail } from "@/lib/email/send";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { sendFbMessage } from "@/lib/facebook-messenger";
 import { redeemCode, type RewardType } from "@/lib/redeem";
+import { planPriceText } from "@/lib/membership";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -108,7 +109,7 @@ const ACTIVATED_MESSAGE = [
 const EXPIRED_MESSAGE = [
   "โค้ดทดลองใช้ของน้องหมดอายุแล้วครับ 😢",
   "",
-  "ถ้ายังสนใจ ดูแพ็กเกจรายเดือน ฿199 ได้ที่ https://www.morroo.com/pricing",
+  `ถ้ายังสนใจ ดูแพ็กเกจรายเดือน ${planPriceText("monthly")} ได้ที่ https://www.morroo.com/pricing`,
   "หรือเริ่มใช้แบบฟรีได้เลย (MCQ 5 ข้อ/วิชา, Long Case 1 เคส/เดือน)",
 ].join("\n");
 

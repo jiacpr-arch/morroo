@@ -2,6 +2,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { issueRedeemCode } from "@/lib/redeem";
 import type { ChatChannelKey } from "@/lib/lead-channel";
 import type { BotIntent } from "@/lib/chatbot";
+import { planPriceText } from "@/lib/membership";
 
 // Stages where the lead has already converted — no point re-issuing a trial.
 const CONVERTED_STAGES = new Set(["redeemed", "paid"]);
@@ -149,7 +150,7 @@ function buildLimitMessage(): string {
   return [
     "ขอโทษครับ สิทธิ์ทดลองฟรีรับได้ 1 ครั้งต่อคน และน้องรับไปแล้วนะครับ 😅",
     "",
-    "ถ้าสนใจสมัครรายเดือน ฿199 หรือรายปี ฿1,490 ดูได้ที่ morroo.com/pricing",
+    `ถ้าสนใจสมัครรายเดือน ${planPriceText("monthly")} หรือรายปี ${planPriceText("yearly")} ดูได้ที่ morroo.com/pricing`,
     "หรือทักหา support สำหรับความช่วยเหลือเพิ่มเติมครับ",
   ].join("\n");
 }

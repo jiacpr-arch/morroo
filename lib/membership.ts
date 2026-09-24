@@ -235,6 +235,21 @@ export function planIntroAmount(plan: PlanType): number {
   return PLAN_CATALOG[plan].introAmount ?? PLAN_CATALOG[plan].amount;
 }
 
+/** "฿1,490" */
+export function formatBaht(n: number): string {
+  return `฿${n.toLocaleString("en-US")}`;
+}
+
+/**
+ * Price for copy aimed at people who haven't bought yet: the first-purchase
+ * price with the regular price alongside, e.g. "฿199 (ปกติ ฿299)". Use this
+ * instead of hard-coding amounts so copy follows PLAN_CATALOG.
+ */
+export function planPriceText(plan: PlanType): string {
+  const { price, compareAt } = planDisplayPrice(plan);
+  return compareAt ? `${formatBaht(price)} (ปกติ ${formatBaht(compareAt)})` : formatBaht(price);
+}
+
 export interface PlanDisplayPrice {
   /** Price a first-time buyer pays. */
   price: number;
