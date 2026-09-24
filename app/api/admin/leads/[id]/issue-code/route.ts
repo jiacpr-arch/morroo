@@ -14,7 +14,7 @@ import { sendRedeemCodeEmail } from "@/lib/email/send";
  *   - the lead's reward_choice was wrong and we want to reissue
  *
  * Body (all optional):
- *   { rewardType?: "monthly_1m" | "bundle_10q" }  // overrides lead's default
+ *   { rewardType?: "monthly_1m" }  // bundle_10q is no longer issued (credits were never usable)
  *
  * Returns: { ok, code, expiresAt }
  */
@@ -23,7 +23,7 @@ const REWARD_LABEL: Record<RewardType, string> = {
   monthly_1m: "ทดลองใช้ฟรี 7 วัน",
   bundle_10q: "Bundle 10 ข้อ",
 };
-const VALID_REWARDS: RewardType[] = ["monthly_1m", "bundle_10q"];
+const VALID_REWARDS: RewardType[] = ["monthly_1m"];
 
 export async function POST(
   request: Request,
@@ -61,9 +61,7 @@ export async function POST(
       ? (body.rewardType as RewardType)
       : null;
   const rewardType: RewardType =
-    overrideReward ??
-    (lead.reward_choice as RewardType | null) ??
-    "monthly_1m";
+    overrideReward ?? "monthly_1m";
 
   const issued = await issueRedeemCode({
     rewardType,

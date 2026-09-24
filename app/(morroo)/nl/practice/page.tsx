@@ -105,7 +105,8 @@ async function PracticeContent({
       // (DB trigger). The legacy per-subject 5-free cap only applies to
       // plain-free users.
       const beta = computeBetaStatus(profile as Partial<Profile> as Profile | null);
-      if (beta.isBeta) {
+      // Once Beta expires the user falls back to the normal free cap.
+      if (beta.isBeta && !beta.isExpired) {
         freeUsedCount = 0;
       } else {
         freeUsedCount = await getFreeAttemptsCount(user.id, subjectId);

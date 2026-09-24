@@ -35,7 +35,7 @@ export default function FreeTrialBanner({ surface, tryHref, tryLabel }: Props) {
               {tryHref ? "ลองได้เลย ไม่ต้องสมัคร ไม่ต้องใส่บัตร" : "ทดลองฟรี ไม่ต้องใส่บัตรเครดิต"}
             </div>
             <div className="text-sm text-muted-foreground mt-0.5">
-              MCQ 5 ข้อ/สาขา · MEQ 2 เคส · Long Case 1 เคส · ใช้ AI ตรวจคำตอบ
+              MCQ 5 ข้อ/สาขา · MEQ เคสตัวอย่าง · Long Case 1 เคส/เดือน
             </div>
           </div>
         </div>

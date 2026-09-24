@@ -61,7 +61,7 @@ function messageFor(day: ReminderDay, name: string, siteUrl: string): string {
     case 1:
       return (
         `สวัสดี ${who} 👋\n` +
-        `1 วันที่ผ่านมาเริ่มทบทวนกันต่อ — หมอรู้มี MEQ 2 เคสฟรีรอใช้ AI ตรวจคำตอบทันที\n` +
+        `1 วันที่ผ่านมาเริ่มทบทวนกันต่อ — หมอรู้มี MEQ เคสตัวอย่างให้ลองทำฟรี พร้อมเฉลยละเอียด\n` +
         `${siteUrl}/exams`
       );
     case 3:

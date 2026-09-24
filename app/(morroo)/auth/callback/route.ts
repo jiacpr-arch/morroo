@@ -8,6 +8,7 @@ import {
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 import { sendMetaEvent } from "@/lib/meta/events-api";
 import { sendWelcomeEmail } from "@/lib/email/send";
+import { applyReferralCode } from "@/lib/referral-apply";
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
@@ -73,6 +74,15 @@ export async function GET(request: NextRequest) {
               has_seen_beta_welcome: false,
             })
             .eq("id", data.user.id);
+        }
+      }
+
+      // Google sign-up carries the referral code as ?ref= (see register page).
+      const ref = searchParams.get("ref");
+      if (isNewSignup && ref) {
+        const referral = await applyReferralCode(data.user.id, ref);
+        if (!referral.ok) {
+          console.error("[auth/callback] referral apply failed:", referral.error);
         }
       }
 

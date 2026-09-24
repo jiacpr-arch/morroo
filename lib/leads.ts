@@ -49,6 +49,9 @@ export async function createLead(
 
   const supabase = createAdminClient();
   const email = args.email.trim().toLowerCase();
+  // bundle_10q credits are never consumed anywhere, so every lead gets the
+  // free trial regardless of the form variant it came from.
+  args = { ...args, rewardChoice: "monthly_1m" };
 
   if (args.fbLeadId) {
     const { data: existing } = await supabase

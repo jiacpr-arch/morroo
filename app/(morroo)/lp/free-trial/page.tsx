@@ -70,7 +70,6 @@ export default async function FreeTrialLanding({
             </p>
             <div className="mt-6">
               <LeadForm
-                defaultReward={sp.reward === "bundle_10q" ? "bundle_10q" : "monthly_1m"}
                 campaign={sp.campaign}
                 adSet={sp.ad_set}
               />

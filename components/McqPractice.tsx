@@ -57,7 +57,9 @@ export default function McqPractice({
   sessionBoardSection = null,
 }: McqPracticeProps) {
   const { status: betaStatus, recordAttempt, refresh: refreshBeta } = useBeta();
-  const isBeta = betaStatus?.isBeta ?? false;
+  // Only an unexpired Beta counts: once Beta ends the user falls back to the
+  // normal free cap instead of being locked out.
+  const isBeta = (betaStatus?.isBeta ?? false) && !betaStatus?.isExpired;
   // Beta users get their own quota (from DB). Non-beta free users keep the
   // legacy 5-question/free cap.
   const effectiveLimit = isBeta
@@ -85,9 +87,8 @@ export default function McqPractice({
     0,
     effectiveLimit - effectiveUsedBaseline - sessionAnswered
   );
-  const isBetaExpired = isBeta && (betaStatus?.isExpired ?? false);
   const isQuotaExhausted =
-    !isPremium && showResult && (freeRemaining === 0 || isBetaExpired);
+    !isPremium && showResult && freeRemaining === 0;
 
   // Get user on mount and create session
   useEffect(() => {
@@ -134,9 +135,9 @@ export default function McqPractice({
     track("mcq_free_limit_hit", {
       logged_in: !!userId,
       answered_in_session: sessionAnswered,
-      reason: isBetaExpired ? "beta_expired" : "quota",
+      reason: "quota",
     });
-  }, [isQuotaExhausted, userId, sessionAnswered, isBetaExpired]);
+  }, [isQuotaExhausted, userId, sessionAnswered]);
 
   const question = questions[currentIndex];
 
@@ -589,7 +590,7 @@ export default function McqPractice({
               {isBeta && betaStatus ? (
                 <BetaPaywall
                   status={betaStatus}
-                  reason={isBetaExpired ? "expired" : "quota"}
+                  reason="quota"
                 />
               ) : (
                 <Card className="border-brand bg-brand/5">

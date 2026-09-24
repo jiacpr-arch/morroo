@@ -141,8 +141,8 @@ export function welcomeEmail({ name }: WelcomeEmailProps): string {
       <h3 style="color: ${DARK_COLOR}; margin: 0 0 12px; font-size: 16px;">สิ่งที่คุณทำได้ฟรีวันนี้</h3>
       <ul style="color: #374151; font-size: 15px; line-height: 1.8; margin: 0; padding-left: 20px;">
         <li>MCQ 5 ข้อ ต่อสาขาวิชา (6 สาขา)</li>
-        <li>ข้อสอบ MEQ 2 เคส พร้อม feedback</li>
-        <li>Long Case กับ AI 1 เคส</li>
+        <li>ข้อสอบ MEQ เคสตัวอย่าง พร้อมเฉลย</li>
+        <li>Long Case กับ AI 1 เคสต่อเดือน</li>
       </ul>
     </div>
 
