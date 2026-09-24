@@ -1,4 +1,32 @@
-import { PLAN_CATALOG } from "@/lib/membership";
+import { PLAN_CATALOG, planDisplayPrice, type PlanType } from "@/lib/membership";
+
+const PERIOD_TH = { month: "/ เดือน", year: "/ ปี", lifetime: "" } as const;
+
+/**
+ * Card price fields for a plan: the first-purchase price as the headline,
+ * the regular price struck through, and a note saying what later purchases
+ * cost. Keeps every pricing card on PLAN_CATALOG.
+ */
+export function planCardPrice(plan: PlanType) {
+  const d = planDisplayPrice(plan);
+  return {
+    price: d.price,
+    compareAt: d.compareAt,
+    note: d.compareAt
+      ? `ราคาพิเศษซื้อครั้งแรก · ครั้งถัดไป ฿${d.compareAt.toLocaleString()} ${PERIOD_TH[PLAN_CATALOG[plan].duration]}`.trim()
+      : undefined,
+  };
+}
+
+/** Yearly vs 12× monthly at first-purchase prices: { percent, baht }. */
+export function yearlySaving(monthly: PlanType, yearly: PlanType) {
+  const m = planDisplayPrice(monthly).price * 12;
+  const y = planDisplayPrice(yearly).price;
+  return { percent: Math.round((1 - y / m) * 100), baht: m - y };
+}
+
+const STUDENT_SAVING = yearlySaving("monthly", "yearly");
+const BOARD_SAVING = yearlySaving("board_monthly", "board_yearly");
 
 // A single upcoming exam: which topic ("สอบหัวข้ออะไร") on which date ("วันไหน").
 export interface ExamScheduleItem {
@@ -178,7 +206,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "รายเดือน",
-    price: 199,
+    ...planCardPrice("monthly"),
     period: "/ เดือน",
     description: "เข้าถึงข้อสอบทั้งหมด",
     features: [
@@ -195,18 +223,19 @@ export const PRICING_PLANS = [
   },
   {
     name: "รายปี",
-    price: 1490,
+    ...planCardPrice("yearly"),
     period: "/ ปี",
-    description: "ประหยัดกว่า 38%",
+    description: `ประหยัดกว่ารายเดือน ${STUDENT_SAVING.percent}%`,
     features: [
       "ทุกอย่างในแพ็กรายเดือน",
       "🤖 AI ตรวจคำตอบไม่จำกัด",
       "🩺 Long Case Exam ไม่จำกัด",
-      "ประหยัด ฿898/ปี",
+      `ประหยัด ฿${STUDENT_SAVING.baht.toLocaleString()}/ปี`,
       "สิทธิ์ก่อนใคร",
     ],
     cta: "สมัครรายปี",
     popular: false,
+    badge: "คุ้มที่สุด",
     type: "yearly" as const,
   },
 ] as const;
@@ -219,9 +248,9 @@ export const PRICING_PLANS = [
 export const PRODUCT_PRICING_PLANS = [
   {
     name: "MCQ NL",
-    price: PLAN_CATALOG.mcq_monthly.amount,
+    ...planCardPrice("mcq_monthly"),
     period: "/ เดือน",
-    description: `หรือรายปี ฿${PLAN_CATALOG.mcq_yearly.amount.toLocaleString()}`,
+    description: `หรือรายปี ฿${planDisplayPrice("mcq_yearly").price.toLocaleString()}`,
     features: [
       "ข้อสอบ MCQ NL Step 2 ไม่จำกัด",
       "เฉลยละเอียด + Key Points ทุกข้อ",
@@ -234,9 +263,9 @@ export const PRODUCT_PRICING_PLANS = [
   },
   {
     name: "MEQ",
-    price: PLAN_CATALOG.meq_monthly.amount,
+    ...planCardPrice("meq_monthly"),
     period: "/ เดือน",
-    description: `หรือรายปี ฿${PLAN_CATALOG.meq_yearly.amount.toLocaleString()}`,
+    description: `หรือรายปี ฿${planDisplayPrice("meq_yearly").price.toLocaleString()}`,
     features: [
       "ข้อสอบ MEQ ทุกชุด",
       "🤖 AI ตรวจคำตอบไม่จำกัด",
@@ -249,9 +278,9 @@ export const PRODUCT_PRICING_PLANS = [
   },
   {
     name: "Long Case",
-    price: PLAN_CATALOG.longcase_monthly.amount,
+    ...planCardPrice("longcase_monthly"),
     period: "/ เดือน",
-    description: `หรือรายปี ฿${PLAN_CATALOG.longcase_yearly.amount.toLocaleString()}`,
+    description: `หรือรายปี ฿${planDisplayPrice("longcase_yearly").price.toLocaleString()}`,
     features: [
       "🩺 Long Case Exam กับ AI ไม่จำกัด",
       "ทำซ้ำเคสเดิมได้",
@@ -264,9 +293,9 @@ export const PRODUCT_PRICING_PLANS = [
   },
   {
     name: "School (Y1–Y6)",
-    price: PLAN_CATALOG.school_monthly.amount,
+    ...planCardPrice("school_monthly"),
     period: "/ เดือน",
-    description: `หรือรายปี ฿${PLAN_CATALOG.school_yearly.amount.toLocaleString()}`,
+    description: `หรือรายปี ฿${planDisplayPrice("school_yearly").price.toLocaleString()}`,
     features: [
       "Flashcard / Quiz ไม่จำกัด",
       "บทเรียนรายวัน + SRS review",
@@ -287,7 +316,7 @@ export const PRODUCT_PRICING_PLANS = [
 export const BOARD_PRICING_PLANS = [
   {
     name: "Board รายเดือน",
-    price: 499,
+    ...planCardPrice("board_monthly"),
     period: "/ เดือน",
     description: "เตรียมสอบบอร์ดราชวิทยาลัยฯ ครบทุกสาขา",
     features: [
@@ -303,17 +332,18 @@ export const BOARD_PRICING_PLANS = [
   },
   {
     name: "Board รายปี",
-    price: 4990,
+    ...planCardPrice("board_yearly"),
     period: "/ ปี",
-    description: "ประหยัดกว่า 17% — เหมาะกับเตรียมสอบ 1 รอบเต็ม",
+    description: `ประหยัดกว่ารายเดือน ${BOARD_SAVING.percent}% — เหมาะกับเตรียมสอบ 1 รอบเต็ม`,
     features: [
       "ทุกอย่างในแพ็ก Board รายเดือน",
-      "ประหยัด ฿998/ปี",
+      `ประหยัด ฿${BOARD_SAVING.baht.toLocaleString()}/ปี`,
       "ใช้เตรียมสอบทั้งปีไม่จำกัด",
       "สิทธิ์ทดลอง feature ใหม่ก่อนใคร",
     ],
     cta: "สมัคร Board รายปี",
     popular: false,
+    badge: "คุ้มที่สุด",
     type: "board_yearly" as const,
   },
 ] as const;

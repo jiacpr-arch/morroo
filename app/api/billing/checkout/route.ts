@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { stripe } from "@/lib/stripe";
 import { resolvePurchasable } from "@/lib/billing/plan-resolver";
 import { DISCOUNT_ERROR_TH, validateDiscountCoupon } from "@/lib/billing/coupon-checkout";
+import { resolveCheckoutAmount } from "@/lib/billing/intro-price";
 
 export const runtime = "nodejs";
 
@@ -33,10 +34,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "ประเภทแพ็กเกจไม่ถูกต้อง" }, { status: 400 });
     }
 
-    const plan =
-      purchasable.kind === "plan"
-        ? { amount: purchasable.amount, name: purchasable.stripeName }
-        : { amount: purchasable.item.amount, name: purchasable.item.stripeName };
+    // First-purchase price for plans with an introAmount (lib/membership.ts).
+    const price = await resolveCheckoutAmount(purchasable, user.id);
+    const plan = {
+      amount: price.amount,
+      name:
+        (purchasable.kind === "plan" ? purchasable.stripeName : purchasable.item.stripeName) +
+        (price.intro ? " (ราคาพิเศษครั้งแรก)" : ""),
+    };
+    const introMeta: Record<string, string> = price.intro
+      ? { introPrice: "1", regularAmount: String(price.regularAmount) }
+      : {};
 
     // Discount coupon (coupon_codes discount_percent / discount_fixed):
     // validated here, priced into the session, consumed at fulfillment.
@@ -92,6 +100,7 @@ export async function POST(request: NextRequest) {
       metadata: {
         userId: user.id,
         planType,
+        ...introMeta,
         ...couponMeta,
         invoiceName: invoiceData?.name ?? "",
         invoiceTaxId: invoiceData?.taxId ?? "",
