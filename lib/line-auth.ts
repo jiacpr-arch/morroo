@@ -9,6 +9,7 @@
  * conditions as before.
  */
 import type { createAdminClient } from "@/lib/supabase/admin";
+import { grantSignupTrial } from "@/lib/trial";
 import type { createClient as createServerSupabaseClient } from "@/lib/supabase/server";
 
 type AdminClient = ReturnType<typeof createAdminClient>;
@@ -137,6 +138,9 @@ export async function resolveOrCreateLineUser(
     console.error("[line-auth] failed to upsert profile for new LINE user:", upsertError);
     return { error: "line_create_failed" };
   }
+
+  // New accounts start with the 7-day free trial (one per account).
+  await grantSignupTrial(userId, targetEmail);
 
   return { userId, email: targetEmail, isNewSignup: true };
 }

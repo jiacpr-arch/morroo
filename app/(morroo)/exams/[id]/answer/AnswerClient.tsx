@@ -375,8 +375,16 @@ export default function AnswerClient({
                           )}
                         </div>
 
-                        {/* AI Grade Button — paid members only */}
-                        {isPaidMember && studentNotes[part.part_number - 1]?.trim() && (
+                        {/* AI Grade Button — paid members, or a signed-in free
+                            user on a free case (1 free case per account,
+                            enforced by /api/grade) */}
+                        {!isPaidMember && exam.is_free && profile && (
+                          <p className="text-xs text-muted-foreground">
+                            🤖 สมาชิกฟรีใช้ AI ตรวจคำตอบได้ 1 เคส (ทุกตอนของเคสนั้น)
+                          </p>
+                        )}
+                        {(isPaidMember || (exam.is_free && !!profile)) &&
+                          studentNotes[part.part_number - 1]?.trim() && (
                           <AIGradeButton
                             studentAnswer={studentNotes[part.part_number - 1]}
                             correctAnswer={part.answer}

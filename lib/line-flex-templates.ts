@@ -1187,7 +1187,8 @@ function registerCard(): LineMessage {
         paddingAll: "lg",
         contents: [
           bulletRow("✓", "ทำข้อสอบ 5 ข้อ/สาขา"),
-          bulletRow("✓", "MEQ เคสตัวอย่าง (ดูเฉลย)"),
+          bulletRow("✓", "ทุกฟีเจอร์ 7 วันแรก"),
+          bulletRow("✓", "MEQ + AI ตรวจ 1 เคส"),
           bulletRow("✓", "Long Case 1 เคส/เดือน"),
         ],
       },

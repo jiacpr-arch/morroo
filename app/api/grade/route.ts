@@ -40,10 +40,11 @@ export async function POST(request: Request) {
     // or to a single exam / exam category bought on its own.
     const access = await fetchAccess(supabase, user.id, profile ?? null);
     let allowed = access.meq;
+    let freeGradeUsedOn: string | null = null;
     if (!allowed && typeof examId === "string" && examId) {
       const { data: exam } = await supabase
         .from("exams")
-        .select("id, category")
+        .select("id, category, is_free")
         .eq("id", examId)
         .maybeSingle();
       if (exam) {
@@ -53,7 +54,22 @@ export async function POST(request: Request) {
           profile ?? null,
           access.entitlements
         );
+        // Free users get AI grading on one free case (every part of it).
+        if (!allowed && exam.is_free) {
+          const free = await claimFreeMeqGrade(user.id, exam.id);
+          allowed = free.ok;
+          freeGradeUsedOn = free.ok ? null : free.usedOn;
+        }
       }
+    }
+    if (!allowed && freeGradeUsedOn) {
+      return NextResponse.json(
+        {
+          error:
+            "สมาชิกฟรีใช้ AI ตรวจคำตอบได้ 1 เคส และคุณใช้สิทธิ์นี้ไปแล้ว — สมัครสมาชิกเพื่อใช้ AI ตรวจได้ทุกเคส",
+        },
+        { status: 403 }
+      );
     }
     if (!allowed) {
       const expiredMeq = access.entitlements.some(
@@ -243,4 +259,30 @@ async function pushExamResultToLine(params: {
   });
 
   await sendLineMessage(params.lineUserId, [flex]);
+}
+
+/**
+ * Claim (or re-use) the one free MEQ case a free user may have AI-graded.
+ * The first exam graded is stored in free_meq_grades; further parts of that
+ * same exam stay allowed, any other exam is refused.
+ */
+async function claimFreeMeqGrade(
+  userId: string,
+  examId: string
+): Promise<{ ok: true } | { ok: false; usedOn: string }> {
+  const admin = createAdminClient();
+  const { error: insertError } = await admin
+    .from("free_meq_grades")
+    .upsert({ user_id: userId, exam_id: examId }, { onConflict: "user_id", ignoreDuplicates: true });
+  if (insertError) {
+    console.error("[grade] free_meq_grades claim failed:", insertError);
+    return { ok: false, usedOn: "" };
+  }
+  const { data: row } = await admin
+    .from("free_meq_grades")
+    .select("exam_id")
+    .eq("user_id", userId)
+    .maybeSingle();
+  if (row?.exam_id === examId) return { ok: true };
+  return { ok: false, usedOn: row?.exam_id ?? "unknown" };
 }
