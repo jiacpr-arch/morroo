@@ -17,6 +17,11 @@ export interface ItemUpsellProps {
   packPlan?: PlanType;
   note?: string;
   className?: string;
+  /**
+   * Start collapsed to a single row (title + cheapest price) that expands on
+   * tap — for pages where the card would otherwise push content off-screen.
+   */
+  collapsible?: boolean;
 }
 
 /**
@@ -37,18 +42,15 @@ export default function ItemUpsell({
   packPlan,
   note,
   className = "",
+  collapsible = false,
 }: ItemUpsellProps) {
   const product = PLAN_CATALOG[productPlan];
   const pack = packPlan ? PLAN_CATALOG[packPlan] : null;
   const period = (d: "month" | "year" | "lifetime") =>
     d === "month" ? "/ เดือน" : d === "year" ? "/ ปี" : "";
 
-  return (
-    <div className={`rounded-xl border border-brand/30 bg-gradient-to-r from-brand/5 to-amber-50/60 p-4 ${className}`}>
-      <div className="flex items-center gap-2 mb-3">
-        <Lock className="h-4 w-4 text-brand" />
-        <span className="text-sm font-semibold">{title}</span>
-      </div>
+  const options = (
+    <>
       <div className={`grid gap-2 ${pack ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
         <Link
           href={`/payment/${encodeURIComponent(itemPlan)}`}
@@ -90,6 +92,38 @@ export default function ItemUpsell({
         )}
       </div>
       {note && <p className="mt-2 text-xs text-muted-foreground">{note}</p>}
+    </>
+  );
+
+  const cardClass = `rounded-xl border border-brand/30 bg-gradient-to-r from-brand/5 to-amber-50/60 ${className}`;
+
+  if (collapsible) {
+    return (
+      <details className={`group/upsell px-4 py-3 ${cardClass}`}>
+        <summary className="flex cursor-pointer list-none items-center gap-2 select-none [&::-webkit-details-marker]:hidden">
+          <Lock className="h-4 w-4 shrink-0 text-brand" />
+          <span className="min-w-0 flex-1 truncate text-sm font-semibold">
+            {title}
+          </span>
+          <span className="shrink-0 text-xs text-brand">
+            <span className="group-open/upsell:hidden">
+              ดูราคา ▾
+            </span>
+            <span className="hidden group-open/upsell:inline">ซ่อน ▴</span>
+          </span>
+        </summary>
+        <div className="mt-3">{options}</div>
+      </details>
+    );
+  }
+
+  return (
+    <div className={`p-4 ${cardClass}`}>
+      <div className="flex items-center gap-2 mb-3">
+        <Lock className="h-4 w-4 text-brand" />
+        <span className="text-sm font-semibold">{title}</span>
+      </div>
+      {options}
     </div>
   );
 }
