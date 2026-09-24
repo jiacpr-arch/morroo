@@ -9,6 +9,7 @@ import BookReader from "@/components/school/BookReader";
 import TopicUpsell from "@/components/school/TopicUpsell";
 import { FREE_SAMPLE_LESSONS } from "@/lib/school/topic-access";
 import { canOpenSchoolTopic } from "@/lib/school/topic-access-server";
+import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
+  if (!isUuid(id)) notFound();
   const result = await getSchoolBook(id);
   return {
     title: result?.book.title
@@ -29,6 +31,8 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function BookPage({ params }: PageProps) {
   const { id } = await params;
+  // Reject non-uuid params (e.g. a literal "null") before touching the DB.
+  if (!isUuid(id)) notFound();
   const result = await getSchoolBook(id);
   if (!result) notFound();
   const { book, chapters } = result;

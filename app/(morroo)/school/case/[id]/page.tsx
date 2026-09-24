@@ -8,6 +8,7 @@ import {
   getSchoolCaseStages,
 } from "@/lib/supabase/queries-school";
 import CaseWalker from "@/components/school/CaseWalker";
+import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +18,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
+  if (!isUuid(id)) notFound();
   const c = await getSchoolCase(id);
   return {
     title: c ? `${c.title} — Integrated Case` : "Case",
@@ -26,6 +28,8 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function CasePage({ params }: PageProps) {
   const { id } = await params;
+  // Reject non-uuid params (e.g. a literal "null") before touching the DB.
+  if (!isUuid(id)) notFound();
   const c = await getSchoolCase(id);
   if (!c) notFound();
   const stages = await getSchoolCaseStages(id);
