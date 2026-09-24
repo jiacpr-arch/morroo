@@ -126,6 +126,18 @@ export default function McqPractice({
     questionStartTime.current = Date.now();
   }, [currentIndex]);
 
+  // Bring the new question back into view — otherwise the next question
+  // opens scrolled down to where the explanation/"ข้อถัดไป" button was.
+  const topRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [currentIndex]);
+
   // ปลายทางของ funnel ฝั่ง /nl/practice — คนที่ทำฟรีจนครบโควตาแล้วเจอกำแพง
   // เทียบเท่า casegame_cta_view ของเกม: เป็นตัวหารที่บอกว่ามีคนไปถึงจุดตัดสินใจ
   // กี่คน ยิงครั้งเดียวต่อการโหลดหน้า ไม่งั้น re-render จะยิงซ้ำรัว
@@ -267,7 +279,7 @@ export default function McqPractice({
   }
 
   return (
-    <div className="space-y-6">
+    <div ref={topRef} className="space-y-6 scroll-mt-20">
       {/* Progress Bar */}
       <div className="flex items-center justify-between text-sm">
         <span className="text-muted-foreground">
