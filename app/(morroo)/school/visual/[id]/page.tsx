@@ -11,6 +11,7 @@ import VisualDetail from "@/components/school/VisualDetail";
 import TopicUpsell from "@/components/school/TopicUpsell";
 import { isFreeSampleLesson } from "@/lib/school/topic-access";
 import { canOpenSchoolTopic } from "@/lib/school/topic-access-server";
+import { isUuid } from "@/lib/school/ids";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
+  if (!isUuid(id)) notFound();
   const v = await getSchoolVisual(id);
   return {
     title: v ? `${v.title} — Visual Summary` : "Visual Summary",
@@ -29,6 +31,8 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function VisualPage({ params }: PageProps) {
   const { id } = await params;
+  // Reject non-uuid params (e.g. a literal "null") before touching the DB.
+  if (!isUuid(id)) notFound();
   const visual = await getSchoolVisual(id);
   if (!visual) notFound();
 
