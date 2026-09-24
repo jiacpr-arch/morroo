@@ -98,8 +98,14 @@ export interface PlanSpec {
   label: string;
   /** Stripe product name. */
   stripeName: string;
-  /** Price in THB (inclusive of VAT). */
+  /** Regular price in THB (inclusive of VAT) — what repeat buyers pay. */
   amount: number;
+  /**
+   * Introductory price for a customer's first purchase (see
+   * lib/billing/intro-price.ts). The regular `amount` is shown struck
+   * through next to it, so it must be a price people actually pay.
+   */
+  introAmount?: number;
   products: readonly Product[];
   duration: PlanDuration;
 }
@@ -109,22 +115,25 @@ export interface PlanSpec {
  * /payment/[plan] page, fulfillment labels and admin grant menus all derive
  * from this map.
  *
- * NOTE: per-product prices (mcq_* / meq_* / longcase_* / school_*) are
- * initial list prices — adjust here and they propagate everywhere.
+ * NOTE: prices are set here only and propagate everywhere. Plans with an
+ * `introAmount` sell at that price on a customer's first purchase and at
+ * `amount` afterwards (lib/billing/intro-price.ts).
  */
 export const PLAN_CATALOG: Record<PlanType, PlanSpec> = {
   // ---- Student pack (NL Step 2) ----
   monthly: {
     label: "รายเดือน",
     stripeName: "MorRoo รายเดือน",
-    amount: 199,
+    amount: 299,
+    introAmount: 199,
     products: ["mcq", "meq", "longcase", "school"],
     duration: "month",
   },
   yearly: {
     label: "รายปี",
     stripeName: "MorRoo รายปี",
-    amount: 1490,
+    amount: 2490,
+    introAmount: 1490,
     products: ["mcq", "meq", "longcase", "school"],
     duration: "year",
   },
@@ -139,14 +148,16 @@ export const PLAN_CATALOG: Record<PlanType, PlanSpec> = {
   board_monthly: {
     label: "Board รายเดือน",
     stripeName: "MorRoo Board รายเดือน",
-    amount: 499,
+    amount: 699,
+    introAmount: 499,
     products: ["board"],
     duration: "month",
   },
   board_yearly: {
     label: "Board รายปี",
     stripeName: "MorRoo Board รายปี",
-    amount: 4990,
+    amount: 6990,
+    introAmount: 4990,
     products: ["board"],
     duration: "year",
   },
@@ -154,62 +165,96 @@ export const PLAN_CATALOG: Record<PlanType, PlanSpec> = {
   mcq_monthly: {
     label: "MCQ รายเดือน",
     stripeName: "MorRoo MCQ NL รายเดือน",
-    amount: 99,
+    amount: 149,
+    introAmount: 99,
     products: ["mcq"],
     duration: "month",
   },
   mcq_yearly: {
     label: "MCQ รายปี",
     stripeName: "MorRoo MCQ NL รายปี",
-    amount: 790,
+    amount: 1190,
+    introAmount: 790,
     products: ["mcq"],
     duration: "year",
   },
   meq_monthly: {
     label: "MEQ รายเดือน",
     stripeName: "MorRoo MEQ รายเดือน",
-    amount: 99,
+    amount: 149,
+    introAmount: 99,
     products: ["meq"],
     duration: "month",
   },
   meq_yearly: {
     label: "MEQ รายปี",
     stripeName: "MorRoo MEQ รายปี",
-    amount: 790,
+    amount: 1190,
+    introAmount: 790,
     products: ["meq"],
     duration: "year",
   },
   longcase_monthly: {
     label: "Long Case รายเดือน",
     stripeName: "MorRoo Long Case รายเดือน",
-    amount: 129,
+    amount: 199,
+    introAmount: 129,
     products: ["longcase"],
     duration: "month",
   },
   longcase_yearly: {
     label: "Long Case รายปี",
     stripeName: "MorRoo Long Case รายปี",
-    amount: 990,
+    amount: 1490,
+    introAmount: 990,
     products: ["longcase"],
     duration: "year",
   },
   school_monthly: {
     label: "School รายเดือน",
     stripeName: "MorRoo School รายเดือน",
-    amount: 99,
+    amount: 149,
+    introAmount: 99,
     products: ["school"],
     duration: "month",
   },
   school_yearly: {
     label: "School รายปี",
     stripeName: "MorRoo School รายปี",
-    amount: 790,
+    amount: 1190,
+    introAmount: 790,
     products: ["school"],
     duration: "year",
   },
 };
 
 export const PLAN_TYPES = Object.keys(PLAN_CATALOG) as PlanType[];
+
+/** First-purchase price of a plan (its regular price when it has no intro). */
+export function planIntroAmount(plan: PlanType): number {
+  return PLAN_CATALOG[plan].introAmount ?? PLAN_CATALOG[plan].amount;
+}
+
+export interface PlanDisplayPrice {
+  /** Price a first-time buyer pays. */
+  price: number;
+  /** Regular price to show struck through, or null when there is no intro. */
+  compareAt: number | null;
+  /** Whole-percent discount of `price` against `compareAt` (0 when none). */
+  savePercent: number;
+}
+
+/** Headline price for pricing cards: intro price + struck-through regular. */
+export function planDisplayPrice(plan: PlanType): PlanDisplayPrice {
+  const { amount } = PLAN_CATALOG[plan];
+  const price = planIntroAmount(plan);
+  if (price >= amount) return { price: amount, compareAt: null, savePercent: 0 };
+  return {
+    price,
+    compareAt: amount,
+    savePercent: Math.round((1 - price / amount) * 100),
+  };
+}
 
 export function isPlanType(value: unknown): value is PlanType {
   return typeof value === "string" && value in PLAN_CATALOG;

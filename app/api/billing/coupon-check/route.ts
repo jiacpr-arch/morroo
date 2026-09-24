@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { resolvePurchasable } from "@/lib/billing/plan-resolver";
 import { DISCOUNT_ERROR_TH, validateDiscountCoupon } from "@/lib/billing/coupon-checkout";
 import { COUPON_CODE_RE } from "@/lib/coupons";
+import { resolveCheckoutAmount } from "@/lib/billing/intro-price";
 
 export const runtime = "nodejs";
 
@@ -38,7 +39,8 @@ export async function POST(request: Request) {
   if (!purchasable) {
     return NextResponse.json({ ok: false, error: "ไม่พบแพ็กเกจนี้" }, { status: 400 });
   }
-  const amount = purchasable.kind === "plan" ? purchasable.amount : purchasable.item.amount;
+  // Same base as checkout: the first-purchase price when the user qualifies.
+  const { amount } = await resolveCheckoutAmount(purchasable, user.id);
 
   const d = await validateDiscountCoupon(code, user.id, planType, amount);
   if (!d.ok) {

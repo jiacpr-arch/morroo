@@ -8,7 +8,7 @@ interface TrialInfo {
   active: boolean;
   endsAt?: string;
   daysLeft?: number;
-  prices?: { monthly: number; yearly: number };
+  prices?: { monthly: number; yearly: number; monthlyIntro: number; yearlyIntro: number };
 }
 
 // Hidden for the rest of the browser session once closed; it comes back on
@@ -83,7 +83,12 @@ export default function TrialBanner() {
           {prices && (
             <p className="mt-0.5 opacity-90">
               หลังหมดสิทธิ์ ราคาเต็ม: รายเดือน <strong>{baht(prices.monthly)}</strong> · รายปี{" "}
-              <strong>{baht(prices.yearly)}</strong>{" "}
+              <strong>{baht(prices.yearly)}</strong>
+              {(prices.monthlyIntro < prices.monthly || prices.yearlyIntro < prices.yearly) && (
+                <>
+                  {" "}(ซื้อครั้งแรกเหลือ {baht(prices.monthlyIntro)} / {baht(prices.yearlyIntro)})
+                </>
+              )}{" "}
               <Link href="/pricing" className="font-semibold underline underline-offset-2">
                 ดูแพ็กเกจ
               </Link>

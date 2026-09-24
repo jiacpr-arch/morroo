@@ -10,10 +10,15 @@ import { PLAN_CATALOG } from "@/lib/membership";
 /** Campaign tag on the redeem code auto-issued at sign-up. */
 export const SIGNUP_TRIAL_CAMPAIGN = "signup_trial";
 
-/** Full list prices shown next to the trial countdown. */
+/**
+ * Prices shown next to the trial countdown: the regular (full) price and the
+ * first-purchase intro price a trial user — who hasn't bought yet — would pay.
+ */
 export const TRIAL_FULL_PRICES = {
   monthly: PLAN_CATALOG.monthly.amount,
   yearly: PLAN_CATALOG.yearly.amount,
+  monthlyIntro: PLAN_CATALOG.monthly.introAmount ?? PLAN_CATALOG.monthly.amount,
+  yearlyIntro: PLAN_CATALOG.yearly.introAmount ?? PLAN_CATALOG.yearly.amount,
 };
 
 /**
