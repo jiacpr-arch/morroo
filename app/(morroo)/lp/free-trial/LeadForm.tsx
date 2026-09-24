@@ -81,7 +81,7 @@ export default function LeadForm({
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="rounded-lg border-2 border-teal-500 bg-teal-50 px-4 py-3">
         <p className="text-sm font-semibold text-teal-800">
-          สิทธิ์ที่คุณจะได้รับ: สมาชิกรายเดือน 1 เดือน (มูลค่า ฿199)
+          สิทธิ์ที่คุณจะได้รับ: ทดลองใช้ทุกฟีเจอร์ฟรี 7 วัน (1 ครั้งต่อคน)
         </p>
         <p className="mt-0.5 text-xs text-teal-700">
           ใช้ทุกฟีเจอร์ไม่จำกัด — MCQ, MEQ, Long Case, แดชบอร์ด
@@ -140,7 +140,7 @@ export default function LeadForm({
         className="w-full bg-teal-600 hover:bg-teal-700"
         size="lg"
       >
-        {submitting ? "กำลังส่งโค้ด..." : "รับโค้ดทดลองฟรี 1 เดือน →"}
+        {submitting ? "กำลังส่งโค้ด..." : "รับโค้ดทดลองฟรี 7 วัน →"}
       </Button>
 
       {!consent && name && email && (

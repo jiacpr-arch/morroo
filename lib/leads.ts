@@ -3,7 +3,7 @@ import { issueRedeemCode, type RewardType, type RedeemSource } from "@/lib/redee
 import { sendRedeemCodeEmail } from "@/lib/email/send";
 
 const REWARD_LABEL: Record<RewardType, string> = {
-  monthly_1m: "สมาชิกรายเดือน 1 เดือน",
+  monthly_1m: "ทดลองใช้ฟรี 7 วัน",
   bundle_10q: "Bundle 10 ข้อ",
 };
 
@@ -34,6 +34,9 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  * Idempotency: when args.fbLeadId is provided (FB Instant Form path), the
  * UNIQUE constraint on leads.fb_lead_id makes this a no-op replay. The
  * existing lead is returned along with its outstanding code.
+ *
+ * A free-trial code is issued at most once per email: re-submitting the form
+ * with the same email returns the code already on file instead of a new one.
  *
  * Email is fired-and-forgotten — failures are logged but don't block the
  * caller, since the lead is the durable record and the code can be re-sent.
@@ -67,6 +70,20 @@ export async function createLead(
         code: code?.code ?? "",
         isDuplicate: true,
       };
+    }
+  }
+
+  if (args.rewardChoice === "monthly_1m") {
+    const { data: prior } = await supabase
+      .from("redeem_codes")
+      .select("code, lead_id")
+      .eq("issued_to_email", email)
+      .eq("reward_type", "monthly_1m")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (prior?.lead_id) {
+      return { ok: true, leadId: prior.lead_id, code: prior.code, isDuplicate: true };
     }
   }
 

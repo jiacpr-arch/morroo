@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "ทดลองใช้ฟรี — หมอรู้",
   description:
-    "ลงทะเบียนรับสิทธิ์ทดลองใช้หมอรู้ฟรี เลือกระหว่าง 1 เดือนเต็ม หรือ Bundle 10 ข้อ",
+    "ลงทะเบียนรับสิทธิ์ทดลองใช้หมอรู้ฟรี ใช้ได้ทุกฟีเจอร์ 7 วัน ไม่ต้องใช้บัตรเครดิต",
   alternates: { canonical: "https://www.morroo.com/lp/free-trial" },
 };
 
@@ -44,7 +44,7 @@ export default async function FreeTrialLanding({
         <section className="mt-8 flex flex-wrap justify-center gap-8 rounded-2xl border bg-white px-6 py-5 shadow-sm">
           <Stat value="6,700+" label="ข้อสอบ MCQ" />
           <Stat value="12 สาขา" label="ครอบคลุม Board" />
-          <Stat value="ฟรี 1 เดือน" label="ไม่ต้องใช้บัตรเครดิต" />
+          <Stat value="ฟรี 7 วัน" label="ไม่ต้องใช้บัตรเครดิต" />
         </section>
 
         <section className="mt-6 grid gap-6 md:grid-cols-3">

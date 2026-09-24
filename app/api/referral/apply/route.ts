@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { REFERRAL_REWARD_DAYS } from "@/lib/referral";
 
 // POST /api/referral/apply
 // Body: { code: string }
@@ -54,7 +55,7 @@ export async function POST(request: NextRequest) {
     referred_id: user.id,
     code: upperCode,
     status: "pending",
-    reward_days: 30,
+    reward_days: REFERRAL_REWARD_DAYS,
   });
 
   if (insertErr) {
@@ -80,11 +81,17 @@ export async function GET() {
     .select("id", { count: "exact", head: true })
     .eq("referrer_id", user.id);
 
-  const { count: rewardedCount } = await admin
+  const { data: rewardedRows } = await admin
     .from("referrals")
-    .select("id", { count: "exact", head: true })
+    .select("reward_days")
     .eq("referrer_id", user.id)
     .eq("status", "rewarded");
 
-  return NextResponse.json({ total: count ?? 0, rewarded: rewardedCount ?? 0 });
+  const rewarded = rewardedRows?.length ?? 0;
+  const rewardedDays = (rewardedRows ?? []).reduce(
+    (sum, r) => sum + (r.reward_days ?? REFERRAL_REWARD_DAYS),
+    0
+  );
+
+  return NextResponse.json({ total: count ?? 0, rewarded, rewardedDays });
 }

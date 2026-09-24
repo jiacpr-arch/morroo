@@ -28,7 +28,7 @@ describe("describeNonTextMessage", () => {
 describe("sales greetings", () => {
   it("open with the free-trial hook and a qualifying question", () => {
     for (const text of [buildFollowGreeting(), buildNonTextGreeting()]) {
-      expect(text).toContain("ฟรี 1 เดือน");
+      expect(text).toContain("ฟรี 7 วัน");
       expect(text).toContain("เตรียมสอบอะไร");
       expect(text.length).toBeLessThan(400);
     }

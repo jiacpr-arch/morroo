@@ -35,7 +35,7 @@ type ReminderDay = 1 | 3 | 6;
 const REMINDER_DAYS: ReminderDay[] = [1, 3, 6];
 
 const REWARD_LABEL: Record<RewardType, string> = {
-  monthly_1m: "สมาชิกรายเดือน 1 เดือน",
+  monthly_1m: "ทดลองใช้ฟรี 7 วัน",
   bundle_10q: "Bundle 10 ข้อ",
 };
 
@@ -99,17 +99,17 @@ function hasActivePaidMembership(p: ProfileRow, now: Date): boolean {
 }
 
 const ACTIVATED_MESSAGE = [
-  "🎉 พี่เปิดสิทธิ์ทดลองใช้ MorRoo รายเดือนฟรี 1 เดือนให้น้องแล้วครับ (บัญชี LINE เดียวกับที่น้องสมัครไว้)",
+  "🎉 พี่เปิดสิทธิ์ทดลองใช้ MorRoo ฟรี 7 วันให้น้องแล้วครับ (บัญชี LINE เดียวกับที่น้องสมัครไว้)",
   "",
   "เข้าใช้ได้เลยที่ https://www.morroo.com/dashboard",
-  "ลอง MCQ 3,000+ ข้อ, MEQ และ Long Case ได้ไม่จำกัดตลอด 1 เดือนนี้เลย 🩺",
+  "ลอง MCQ 3,000+ ข้อ, MEQ และ Long Case ได้ไม่จำกัดตลอด 7 วันนี้เลย 🩺",
 ].join("\n");
 
 const EXPIRED_MESSAGE = [
   "โค้ดทดลองใช้ของน้องหมดอายุแล้วครับ 😢",
   "",
-  "ถ้ายังสนใจ พิมพ์ว่า \"ขอโค้ดทดลอง\" มาได้เลย พี่ออกโค้ดใหม่ให้ทันที",
-  "หรือดูแพ็กเกจรายเดือน ฿199 ได้ที่ https://www.morroo.com/pricing",
+  "ถ้ายังสนใจ ดูแพ็กเกจรายเดือน ฿199 ได้ที่ https://www.morroo.com/pricing",
+  "หรือเริ่มใช้แบบฟรีได้เลย (MCQ 5 ข้อ/วิชา, Long Case 1 เคส/เดือน)",
 ].join("\n");
 
 const DM_MESSAGES: Record<
@@ -117,9 +117,9 @@ const DM_MESSAGES: Record<
   (code: string, daysRemaining: number, redeemUrl: string) => string
 > = {
   1: (code, days, url) =>
-    `สวัสดีครับ! โค้ดทดลองใช้ MorRoo ฟรี 1 เดือนของน้องยังรอน้องอยู่นะครับ 🩺\n\nโค้ด: ${code}\n\nกดลิงก์นี้แล้ว login ด้วย LINE รับสิทธิ์ได้ทันที (เหลือ ${days} วัน)\n${url}`,
+    `สวัสดีครับ! โค้ดทดลองใช้ MorRoo ฟรี 7 วันของน้องยังรอน้องอยู่นะครับ 🩺\n\nโค้ด: ${code}\n\nกดลิงก์นี้แล้ว login ด้วย LINE รับสิทธิ์ได้ทันที (เหลือ ${days} วัน)\n${url}`,
   3: (code, days, url) =>
-    `น้องยังไม่ได้ใช้โค้ดเลยนะครับ! ยังมีเวลาอีก ${days} วัน 😊\n\nโค้ด: ${code}\n\nกดลิงก์เดียวจบ รับสิทธิ์ทดลองฟรี 1 เดือนเลยครับ\n${url}`,
+    `น้องยังไม่ได้ใช้โค้ดเลยนะครับ! ยังมีเวลาอีก ${days} วัน 😊\n\nโค้ด: ${code}\n\nกดลิงก์เดียวจบ รับสิทธิ์ทดลองฟรี 7 วันเลยครับ\n${url}`,
   6: (code, _days, url) =>
     `⚠️ โค้ดของน้องจะหมดอายุพรุ่งนี้แล้ว! อย่าพลาดนะครับ\n\nโค้ด: ${code}\n\nกดรับสิทธิ์ก่อนหมดอายุ:\n${url}`,
 };

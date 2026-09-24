@@ -1852,7 +1852,7 @@ export function buildDailyMcqResultFlex(args: DailyMcqResultArgs): LineMessage {
     statsLines.push(`👥 วันนี้มีคนตอบ ${stats.total} คน ถูก ${pct}%`);
   }
   if (streak > 0 && streak < 5) {
-    statsLines.push(`🎁 อีก ${5 - streak} วันติด รับสิทธิ์ทดลองใช้ฟรี 1 เดือน`);
+    statsLines.push(`🎁 อีก ${5 - streak} วันติด รับสิทธิ์ทดลองใช้ฟรี 7 วัน`);
   }
 
   if (statsLines.length > 0) {

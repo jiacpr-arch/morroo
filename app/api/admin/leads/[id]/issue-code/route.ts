@@ -20,7 +20,7 @@ import { sendRedeemCodeEmail } from "@/lib/email/send";
  */
 
 const REWARD_LABEL: Record<RewardType, string> = {
-  monthly_1m: "สมาชิกรายเดือน 1 เดือน",
+  monthly_1m: "ทดลองใช้ฟรี 7 วัน",
   bundle_10q: "Bundle 10 ข้อ",
 };
 const VALID_REWARDS: RewardType[] = ["monthly_1m", "bundle_10q"];

@@ -23,7 +23,10 @@ export type RedeemSource =
 const CODE_PREFIX = "MORROO";
 const CODE_TTL_DAYS = 7;
 const BUNDLE_QUESTION_COUNT = 10;
-const MONTHLY_DURATION_DAYS = 30;
+// The "monthly_1m" reward type keeps its stored name, but a free trial is now
+// 7 days and only one trial code may ever be redeemed per account.
+export const TRIAL_DURATION_DAYS = 7;
+const TRIAL_REWARD_TYPE: RewardType = "monthly_1m";
 
 // Crockford base32 — drops I, L, O, U to avoid confusion with 1/0/V.
 const ALPHABET = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
@@ -97,6 +100,8 @@ export type RedeemError =
   | "expired"
   | "already_redeemed"
   | "apply_failed"
+  // the account has already redeemed a free-trial code
+  | "trial_used"
   // coupon_codes-specific (see redeemCouponCode)
   | "inactive"
   | "not_started"
@@ -140,6 +145,9 @@ export async function redeemCode(
   if (new Date(row.expires_at) < new Date()) {
     return { ok: false, error: "expired" };
   }
+  if (row.reward_type === TRIAL_REWARD_TYPE && (await hasUsedTrial(userId))) {
+    return { ok: false, error: "trial_used" };
+  }
 
   // Claim the code — only one writer wins.
   const { data: claimed, error: claimError } = await supabase
@@ -160,6 +168,17 @@ export async function redeemCode(
   if (!claimed) return { ok: false, error: "already_redeemed" };
 
   const rewardType = claimed.reward_type as RewardType;
+
+  // Re-check after the claim so two different trial codes redeemed at the same
+  // moment can't both go through.
+  if (rewardType === TRIAL_REWARD_TYPE && (await hasUsedTrial(userId, code))) {
+    await supabase
+      .from("redeem_codes")
+      .update({ redeemed_by: null, redeemed_at: null })
+      .eq("code", code);
+    return { ok: false, error: "trial_used" };
+  }
+
   const applied = await applyReward(userId, rewardType, code);
 
   if (!applied) {
@@ -185,6 +204,30 @@ export async function redeemCode(
   return { ok: true, rewardType };
 }
 
+/**
+ * true when the user has already redeemed a free-trial code (optionally
+ * ignoring `exceptCode`, the one being redeemed right now).
+ */
+export async function hasUsedTrial(
+  userId: string,
+  exceptCode?: string
+): Promise<boolean> {
+  const supabase = createAdminClient();
+  let query = supabase
+    .from("redeem_codes")
+    .select("code", { count: "exact", head: true })
+    .eq("redeemed_by", userId)
+    .eq("reward_type", TRIAL_REWARD_TYPE)
+    .not("redeemed_at", "is", null);
+  if (exceptCode) query = query.neq("code", exceptCode);
+  const { count, error } = await query;
+  if (error) {
+    console.error("hasUsedTrial lookup failed:", error);
+    return false;
+  }
+  return (count ?? 0) > 0;
+}
+
 async function applyReward(
   userId: string,
   rewardType: RewardType,
@@ -192,8 +235,8 @@ async function applyReward(
 ): Promise<boolean> {
   const supabase = createAdminClient();
 
-  if (rewardType === "monthly_1m") {
-    return extendMembershipDays(userId, MONTHLY_DURATION_DAYS);
+  if (rewardType === TRIAL_REWARD_TYPE) {
+    return extendMembershipDays(userId, TRIAL_DURATION_DAYS);
   }
 
   // bundle_10q

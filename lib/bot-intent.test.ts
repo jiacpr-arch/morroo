@@ -121,14 +121,15 @@ describe("handleBotIntent — issue new code", () => {
     );
   });
 
-  it("issues a code for a lead already at code_issued stage when no active code", async () => {
-    // The whole point of Phase 4: re-request after expiry should still work.
-    pushIssueFlow({ leadStage: "code_issued", existingCount: 1 });
+  it("does not issue a second code once the lead already had one", async () => {
+    // One trial code per lead — an expired code is not replaced.
+    responseQueue.push({ data: { stage: "code_issued", email: null }, error: null });
+    responseQueue.push({ data: null, error: null }); // no active code
+    responseQueue.push({ count: 1, error: null });   // one code already issued
     const msg = await handleBotIntent("lead-1", "trial", "facebook");
     expect(msg).not.toBeNull();
-    expect(msg).toContain("MORROO-ABCD-1234");
-    // Reissue framing for non-first-time users.
-    expect(msg).toContain("ออกโค้ด");
+    expect(msg).not.toContain("MORROO-ABCD-1234");
+    expect(msg).toContain("1 ครั้งต่อคน");
   });
 
   it("returns null but does not throw if issueRedeemCode throws", async () => {
@@ -206,7 +207,7 @@ describe("handleBotIntent — abuse cap", () => {
   it("returns the limit message once MAX_CODES_PER_LEAD is reached", async () => {
     responseQueue.push({ data: { stage: "code_issued", email: null }, error: null });
     responseQueue.push({ data: null, error: null }); // no active code
-    responseQueue.push({ count: 3, error: null });   // already 3 codes issued
+    responseQueue.push({ count: 1, error: null });   // cap is one code per lead
 
     const { issueRedeemCode } = await import("@/lib/redeem");
     const callsBefore = (issueRedeemCode as ReturnType<typeof vi.fn>).mock.calls.length;
@@ -214,7 +215,7 @@ describe("handleBotIntent — abuse cap", () => {
     const msg = await handleBotIntent("lead-1", "trial", "facebook");
 
     expect(msg).not.toBeNull();
-    expect(msg).toContain("ครบโควตา");
+    expect(msg).toContain("1 ครั้งต่อคน");
     expect(msg).toContain("morroo.com/pricing");
     expect((issueRedeemCode as ReturnType<typeof vi.fn>).mock.calls.length).toBe(callsBefore);
   });
