@@ -102,7 +102,7 @@ export default function FirstVisitNudge() {
           <p className="text-sm text-muted-foreground">
             เปิดดู{" "}
             <span className="font-semibold text-foreground">
-              MCQ 5 ข้อ/สาขา · MEQ 2 เคส · Long Case 1 เคส
+              MCQ 5 ข้อ/สาขา · MEQ เคสตัวอย่าง · Long Case 1 เคส/เดือน
             </span>{" "}
             ได้เลย ไม่ต้องใส่บัตรเครดิต
           </p>

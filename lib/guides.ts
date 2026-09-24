@@ -88,7 +88,7 @@ export const GUIDES: Guide[] = [
       {
         heading: "แหล่งฝึกที่ใช้ได้จริง",
         body: [
-          "หมอรู้ (MorRoo) มีข้อสอบ MEQ Progressive Case มากกว่า 200 เคสครอบคลุม 6 สาขาหลัก พร้อม AI Examiner ที่ให้คะแนน + feedback แบบสอบจริงทันที — ฟรี 2 เคสแรกไม่ต้องใช้บัตรเครดิต",
+          "หมอรู้ (MorRoo) มีข้อสอบ MEQ Progressive Case มากกว่า 200 เคสครอบคลุม 6 สาขาหลัก พร้อม AI Examiner ที่ให้คะแนน + feedback แบบสอบจริงทันที — มีเคสตัวอย่างให้ลองฟรีไม่ต้องใช้บัตรเครดิต",
           "ใช้คู่กับ Long Case Simulator ที่ AI รับบทผู้ป่วยให้ซักประวัติ + นำเสนอ Examiner เหมือนสอบจริง — มี 1 เคสฟรีต่อบัญชี",
         ],
       },
@@ -156,14 +156,14 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        heading: "ลองทำ MEQ ฟรี — มี AI ตรวจให้",
+        heading: "ลองทำ MEQ ฟรี",
         body: [
-          "หมอรู้มี MEQ Progressive Case 200+ เคสครอบคลุมทุกสาขา ลองฟรี 2 เคสไม่ต้องใส่บัตรเครดิต AI จะตรวจคำตอบทันทีและให้ feedback แบบเดียวกับกรรมการสอบจริง",
+          "หมอรู้มี MEQ Progressive Case 200+ เคสครอบคลุมทุกสาขา มีเคสตัวอย่างให้ลองฟรีไม่ต้องใส่บัตรเครดิต สมาชิกใช้ AI ตรวจคำตอบและรับ feedback แบบเดียวกับกรรมการสอบจริง",
         ],
       },
     ],
     relatedLinks: [
-      { href: "/exams", label: "เริ่มทำ MEQ ฟรี 2 เคส" },
+      { href: "/exams", label: "เริ่มทำ MEQ เคสตัวอย่างฟรี" },
       { href: "/learn/sob-nl-step-3", label: "ตารางอ่านเตรียมสอบ NL Step 3" },
       { href: "/longcase", label: "ฝึก Long Case กับ AI Patient" },
     ],

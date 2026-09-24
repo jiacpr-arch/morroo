@@ -83,7 +83,8 @@ async function PracticeContent({
       hasScopedAccess("board", [`specialty:${specialty}`], p, entitlements);
     if (!isPremium) {
       const beta = computeBetaStatus(profile as Partial<Profile> as Profile | null);
-      if (beta.isBeta) {
+      // Once Beta expires the user falls back to the normal free cap.
+      if (beta.isBeta && !beta.isExpired) {
         freeUsedCount = 0;
       } else {
         freeUsedCount = await getFreeAttemptsCount(user.id);

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { REFERRAL_REWARD_DAYS } from "@/lib/referral";
+import { applyReferralCode } from "@/lib/referral-apply";
 
 // POST /api/referral/apply
 // Body: { code: string }
@@ -21,45 +22,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing code" }, { status: 400 });
   }
 
-  const upperCode = code.toUpperCase();
-  const admin = createAdminClient();
-
-  const { data: referrer, error: referrerErr } = await admin
-    .from("profiles")
-    .select("id")
-    .eq("referral_code", upperCode)
-    .maybeSingle();
-
-  if (referrerErr) {
-    return NextResponse.json({ error: "ไม่สามารถตรวจสอบรหัสได้" }, { status: 500 });
-  }
-  if (!referrer) {
-    return NextResponse.json({ error: "รหัสผู้แนะนำไม่ถูกต้อง" }, { status: 404 });
-  }
-
-  if (referrer.id === user.id) {
-    return NextResponse.json({ error: "ไม่สามารถใช้รหัสของตัวเองได้" }, { status: 400 });
-  }
-
-  const { error: updateErr } = await admin
-    .from("profiles")
-    .update({ referred_by: upperCode })
-    .eq("id", user.id);
-
-  if (updateErr) {
-    return NextResponse.json({ error: "บันทึกรหัสผู้แนะนำไม่สำเร็จ" }, { status: 500 });
-  }
-
-  const { error: insertErr } = await admin.from("referrals").insert({
-    referrer_id: referrer.id,
-    referred_id: user.id,
-    code: upperCode,
-    status: "pending",
-    reward_days: REFERRAL_REWARD_DAYS,
-  });
-
-  if (insertErr) {
-    return NextResponse.json({ error: "สร้างรายการแนะนำไม่สำเร็จ" }, { status: 500 });
+  const result = await applyReferralCode(user.id, code);
+  if (!result.ok) {
+    const errors: Record<typeof result.error, [string, number]> = {
+      lookup_failed: ["ไม่สามารถตรวจสอบรหัสได้", 500],
+      not_found: ["รหัสผู้แนะนำไม่ถูกต้อง", 404],
+      self: ["ไม่สามารถใช้รหัสของตัวเองได้", 400],
+      update_failed: ["บันทึกรหัสผู้แนะนำไม่สำเร็จ", 500],
+      insert_failed: ["สร้างรายการแนะนำไม่สำเร็จ", 500],
+    };
+    const [message, status] = errors[result.error];
+    return NextResponse.json({ error: message }, { status });
   }
 
   return NextResponse.json({ success: true });
