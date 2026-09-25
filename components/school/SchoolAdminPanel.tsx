@@ -46,6 +46,8 @@ export default function SchoolAdminPanel({ systems, topics }: Props) {
   const [tab, setTab] = useState<Tab>("import");
   const [status, setStatus] = useState<{ kind: "ok" | "err"; msg: string } | null>(null);
   const [busy, setBusy] = useState(false);
+  // Set by the library's "แก้เนื้อหา + รูป" button so the editor opens on that lesson.
+  const [editTarget, setEditTarget] = useState<EditTarget | null>(null);
 
   const notify = useCallback((kind: "ok" | "err", msg: string) => {
     setStatus({ kind, msg });
@@ -58,7 +60,7 @@ export default function SchoolAdminPanel({ systems, topics }: Props) {
         {(
           [
             ["import", "นำเข้าไฟล์ (AI)"],
-            ["library", "เนื้อหาที่มีอยู่ · ลบ / จัดลำดับ"],
+            ["library", "เนื้อหาที่มีอยู่ · แก้ไข / ย้ายวิชา / ลบ"],
             ["edit", "แก้ไขเนื้อหา + รูป"],
             ["visual", "Visual"],
           ] as const
@@ -92,16 +94,37 @@ export default function SchoolAdminPanel({ systems, topics }: Props) {
 
       {tab === "import" && <ImportPanel topics={topics} systems={systems} />}
       {tab === "library" && (
-        <ContentLibraryPanel topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
+        <ContentLibraryPanel
+          topics={topics}
+          busy={busy}
+          setBusy={setBusy}
+          notify={notify}
+          onEditBody={(topicId, lessonId) => {
+            setEditTarget({ topicId, lessonId });
+            setTab("edit");
+          }}
+        />
       )}
       {tab === "edit" && (
-        <ContentEditor topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
+        <ContentEditor
+          key={editTarget?.lessonId ?? "default"}
+          initial={editTarget}
+          topics={topics}
+          busy={busy}
+          setBusy={setBusy}
+          notify={notify}
+        />
       )}
       {tab === "visual" && (
         <VisualForm topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
       )}
     </div>
   );
+}
+
+interface EditTarget {
+  topicId: string;
+  lessonId: string;
 }
 
 type EditKind = "lesson" | "book_chapter";
@@ -126,19 +149,30 @@ type ViewMode = "edit" | "preview" | "paragraphs";
  * image upload + insert at the cursor. Fills the gap where the other tabs can
  * only create new rows, not edit content already in the database.
  */
-function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topics"] } & CommonProps) {
+function ContentEditor({
+  topics,
+  busy,
+  setBusy,
+  notify,
+  initial,
+}: { topics: Props["topics"]; initial?: EditTarget | null } & CommonProps) {
   const years = Array.from(new Set(topics.map((t) => t.year))).sort((a, b) => a - b);
-  const [year, setYear] = useState<number>(topics[0]?.year ?? years[0] ?? 1);
+  const initialTopic = (initial && topics.find((t) => t.id === initial.topicId)) || topics[0];
+  const [year, setYear] = useState<number>(initialTopic?.year ?? years[0] ?? 1);
 
   const termsForYear = Array.from(
     new Set(topics.filter((t) => t.year === year).map((t) => t.term ?? null))
   ).sort((a, b) => (a ?? 0) - (b ?? 0));
-  const [term, setTerm] = useState<number | null>(topics[0]?.term ?? null);
+  const [term, setTerm] = useState<number | null>(initialTopic?.term ?? null);
 
   const topicsForYearTerm = topics.filter(
     (t) => t.year === year && (t.term ?? null) === term
   );
-  const [topicId, setTopicId] = useState(topicsForYearTerm[0]?.id ?? topics[0]?.id ?? "");
+  const [topicId, setTopicId] = useState(
+    initialTopic?.id ?? topicsForYearTerm[0]?.id ?? topics[0]?.id ?? ""
+  );
+  // Lesson to open on the first load (from the library's edit button); cleared once used.
+  const pendingLessonId = useRef(initial?.lessonId ?? null);
   const [kind, setKind] = useState<EditKind>("lesson");
   const [items, setItems] = useState<EditItem[]>([]);
   const [selectedId, setSelectedId] = useState("");
@@ -197,9 +231,12 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
         }
         if (!cancelled) {
           setItems(rows);
-          if (rows[0]) {
-            setSelectedId(rows[0].id);
-            setBody(rows[0].body_md);
+          const wanted = pendingLessonId.current;
+          pendingLessonId.current = null;
+          const first = rows.find((r) => r.id === wanted) ?? rows[0];
+          if (first) {
+            setSelectedId(first.id);
+            setBody(first.body_md);
           }
         }
       } finally {
