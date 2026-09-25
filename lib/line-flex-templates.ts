@@ -299,7 +299,9 @@ export function buildWeeklyNewsletterFlex(data: WeeklyNewsletterData): LineMessa
             : []),
         ],
       },
-      footer: ctaFooter([{ label: "ฝึกสอบ MEQ + MCQ", uri: toLiffUri(data.examsUrl), style: "primary" }]),
+      footer: ctaFooter([
+        { label: "ฝึกสอบ MEQ + MCQ", uri: toLiffUri(data.examsUrl), style: "primary", color: "#1ABC9C" },
+      ]),
     },
   };
 }
@@ -1372,7 +1374,9 @@ function bulletRow(bullet: string, text: string) {
   };
 }
 
-function ctaFooter(buttons: { label: string; uri: string; style: "primary" | "secondary" }[]) {
+function ctaFooter(
+  buttons: { label: string; uri: string; style: "primary" | "secondary"; color?: string }[],
+) {
   return {
     type: "box" as const,
     layout: "vertical" as const,
@@ -1382,7 +1386,7 @@ function ctaFooter(buttons: { label: string; uri: string; style: "primary" | "se
       type: "button" as const,
       action: { type: "uri" as const, label: b.label, uri: b.uri },
       style: b.style,
-      ...(b.style === "primary" ? { color: PRIMARY } : {}),
+      ...(b.style === "primary" ? { color: b.color ?? PRIMARY } : {}),
     })),
   };
 }
