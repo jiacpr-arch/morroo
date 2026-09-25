@@ -5,6 +5,8 @@ import {
   computeTrialConversion,
   isLapseEligible,
   isLapseReason,
+  isSameLapse,
+  LAPSE_AFTER_DAYS,
   parseLapseSource,
   sanitizeReasonDetail,
   selectWinbackOffer,
@@ -120,6 +122,28 @@ describe("isLapseEligible", () => {
   });
   it("is closed for a plan with months left", () => {
     expect(isLapseEligible("yearly", daysAgo(-200), NOW)).toBe(false);
+    expect(isLapseEligible("monthly", daysAgo(-4), NOW)).toBe(false);
+  });
+  it("closes LAPSE_AFTER_DAYS after the expiry — old accounts can't farm coupons", () => {
+    expect(isLapseEligible("monthly", daysAgo(LAPSE_AFTER_DAYS), NOW)).toBe(true);
+    expect(isLapseEligible("monthly", daysAgo(LAPSE_AFTER_DAYS + 1), NOW)).toBe(false);
+    expect(isLapseEligible("monthly", daysAgo(3 * 365), NOW)).toBe(false);
+  });
+  it("rejects a missing or invalid expiry", () => {
+    expect(isLapseEligible("monthly", null, NOW)).toBe(false);
+    expect(isLapseEligible("monthly", "not a date", NOW)).toBe(false);
+  });
+});
+
+describe("isSameLapse", () => {
+  it("compares instants, not strings", () => {
+    expect(isSameLapse("2026-09-24T00:00:00Z", "2026-09-24T07:00:00+07:00")).toBe(true);
+    expect(isSameLapse("2026-09-24T00:00:00.000Z", "2026-09-24T00:00:00+00:00")).toBe(true);
+  });
+  it("is false for a different expiry or a missing one", () => {
+    expect(isSameLapse("2026-09-24T00:00:00Z", "2026-10-24T00:00:00Z")).toBe(false);
+    expect(isSameLapse(null, "2026-09-24T00:00:00Z")).toBe(false);
+    expect(isSameLapse("bad", "bad")).toBe(false);
   });
 });
 

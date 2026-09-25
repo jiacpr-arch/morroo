@@ -27,7 +27,8 @@ export type DiscountError =
   | "exhausted"
   | "already_redeemed"
   | "not_discount"
-  | "wrong_plan";
+  | "wrong_plan"
+  | "wrong_user";
 
 export type DiscountResult =
   | {
@@ -52,14 +53,15 @@ export async function validateDiscountCoupon(
   if (!code) return { ok: false, error: "not_found" };
   const admin = createAdminClient();
 
-  const { data: c } = await admin
-    .from("coupon_codes")
-    .select(
-      "id, code, coupon_type, value, platform, max_uses, max_uses_per_user, current_uses, starts_at, expires_at, is_active, plan_type"
-    )
-    .eq("code", code)
-    .maybeSingle();
+  // `*` rather than a column list so a missing restricted_user_id column
+  // (migration 20260926_winback_coupon_user not applied yet) can't turn
+  // every code into "not_found".
+  const { data: c } = await admin.from("coupon_codes").select("*").eq("code", code).maybeSingle();
   if (!c) return { ok: false, error: "not_found" };
+  // Personal coupon (e.g. win-back) — only the account it was issued to.
+  if (c.restricted_user_id && c.restricted_user_id !== userId) {
+    return { ok: false, error: "wrong_user" };
+  }
   if (!isDiscountCoupon(c.coupon_type)) return { ok: false, error: "not_discount" };
   if (!c.is_active) return { ok: false, error: "inactive" };
   if (c.platform !== "all" && c.platform !== COUPON_PLATFORM) {
@@ -135,4 +137,5 @@ export const DISCOUNT_ERROR_TH: Record<DiscountError, string> = {
   already_redeemed: "คุณใช้โค้ดนี้ไปแล้ว",
   not_discount: "โค้ดนี้เป็นโค้ดสมาชิกฟรี — กรอกที่หน้า /redeem",
   wrong_plan: "โค้ดนี้ใช้กับแพ็กอื่น",
+  wrong_user: "โค้ดนี้ใช้ได้เฉพาะบัญชีที่ได้รับโค้ดเท่านั้น",
 };

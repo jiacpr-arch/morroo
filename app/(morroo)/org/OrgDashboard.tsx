@@ -47,7 +47,7 @@ export default function OrgDashboard({
   currentUserId: string;
 }) {
   const router = useRouter();
-  const { org, members } = data;
+  const { org, members, loadError } = data;
   const [sortKey, setSortKey] = useState<SortKey>("lastActive");
   const [sortAsc, setSortAsc] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -190,6 +190,15 @@ export default function OrgDashboard({
         รหัสกลุ่ม <span className="font-mono font-semibold text-foreground">{org.join_code}</span> — ส่งลิงก์เชิญให้สมาชิกกดเข้าร่วม
         (ต้องสมัคร / เข้าสู่ระบบ MorRoo ก่อน)
       </p>
+
+      {loadError && (
+        <div
+          role="alert"
+          className="mb-4 rounded-md border border-amber-200 bg-amber-50 px-4 py-2 text-sm text-amber-800"
+        >
+          {loadError}
+        </div>
+      )}
 
       {error && (
         <div className="mb-4 rounded-md border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-700">{error}</div>

@@ -298,6 +298,44 @@ export function summarizeMemberProgress(
   return out;
 }
 
+/** One row of the `org_member_progress` RPC (already aggregated in SQL). */
+export interface MemberProgressAggregate {
+  user_id: string;
+  attempts: number | string | null;
+  correct: number | string | null;
+  last_active: string | null;
+  streak: number | null;
+}
+
+/**
+ * MemberProgress from the SQL aggregate (supabase/migrations/
+ * 20260926_org_member_progress.sql) — same shape and rounding as
+ * summarizeMemberProgress; members without attempts get zeros.
+ */
+export function progressFromAggregates(
+  userIds: readonly string[],
+  rows: readonly MemberProgressAggregate[]
+): Record<string, MemberProgress> {
+  const out: Record<string, MemberProgress> = {};
+  for (const id of userIds) {
+    out[id] = { attempts: 0, correct: 0, accuracy: 0, lastActive: null, streak: 0 };
+  }
+  for (const r of rows) {
+    if (!(r.user_id in out)) continue;
+    const attempts = Number(r.attempts) || 0;
+    const correct = Number(r.correct) || 0;
+    const t = r.last_active ? new Date(r.last_active).getTime() : NaN;
+    out[r.user_id] = {
+      attempts,
+      correct,
+      accuracy: attempts ? Math.round((correct / attempts) * 1000) / 10 : 0,
+      lastActive: Number.isFinite(t) ? new Date(t).toISOString() : null,
+      streak: Math.max(0, Number(r.streak) || 0),
+    };
+  }
+  return out;
+}
+
 // ----------------------------------------------------------------------------
 // CSV export
 // ----------------------------------------------------------------------------
