@@ -1,6 +1,7 @@
 import { createClient } from "./client";
 import type { McqAttempt, McqSession } from "../types-mcq";
 import type { MockPercentileRow } from "../mcq-mock-percentile";
+import { recordMcqReviewOutcome } from "../mcq-review";
 
 // --- Client-side save functions (called from browser components) ---
 
@@ -35,6 +36,15 @@ export async function saveMcqAttempt(attempt: {
     return null;
   }
   return data as McqAttempt;
+}
+
+/** Feed one answer into the "ทบทวนข้อที่ผิด" SRS queue (see lib/mcq-review.ts). Never throws. */
+export async function recordMcqReview(
+  userId: string,
+  questionId: string,
+  isCorrect: boolean
+): Promise<void> {
+  await recordMcqReviewOutcome(createClient(), userId, questionId, isCorrect);
 }
 
 export async function createMcqSession(session: {

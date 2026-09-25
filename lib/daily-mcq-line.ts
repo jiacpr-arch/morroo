@@ -27,6 +27,7 @@ import {
   type DailyMcqQuestionData,
 } from "@/lib/line-flex-templates";
 import { liffDeepLink, toLiffUri } from "@/lib/line-links";
+import { recordMcqReviewOutcome } from "@/lib/mcq-review";
 import type { McqQuestion } from "@/lib/types-mcq";
 
 const DAILY_ACTION = "daily_answer";
@@ -379,6 +380,9 @@ export async function handleDailyMcqPostback(
     if (attemptError) {
       console.error("[daily-mcq-line] mcq_attempts mirror failed:", attemptError);
     }
+    // Same SRS queue as /nl/practice — a missed daily question shows up in
+    // ?mode=review tomorrow. Never throws.
+    await recordMcqReviewOutcome(supabase, userId, question.id, isCorrect);
   }
 
   const [{ data: streakData }, { data: statsData }] = await Promise.all([

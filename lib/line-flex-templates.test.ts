@@ -17,6 +17,7 @@ import {
   buildWeeklySummaryFlex,
   buildExpiryWarningMessage,
   buildStreakNudgeFlex,
+  buildMcqReviewReminderFlex,
   buildExamResultFlex,
   buildChatbotCard,
   abbreviateRunError,
@@ -599,6 +600,20 @@ describe("LIFF deep links on customer-facing Flex buttons", () => {
     });
     const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
     expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/nl/practice?utm_source=line`);
+  });
+
+  it("rewrites the review button and states the due count on the mcq-review reminder", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildMcqReviewReminderFlex({
+      name: "หมอตัวอย่าง",
+      dueCount: 7,
+      reviewUrl: "https://www.morroo.com/nl/practice?mode=review&utm_source=line",
+    });
+    expect((flex as { altText: string }).altText).toBe("วันนี้มี 7 ข้อที่ถึงรอบทบทวน");
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris).toContain(
+      `https://liff.line.me/${LIFF_ID}/nl/practice?mode=review&utm_source=line`
+    );
   });
 
   it("rewrites the dashboard/exams buttons on an exam-result card", () => {
