@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Play, Sparkles, Stethoscope, Trophy, Zap } from "lucide-react";
 import { track } from "@/lib/analytics";
-import caseIllustration from "@/public/images/games/courses/long-case-meq.jpg";
 
 /**
  * แบนเนอร์โปรโมต "เกมเคส" (/casegame) บนหน้าแรก — วางไว้บนสุดใต้ hero
@@ -21,7 +20,10 @@ export default function CaseGamePromo({ count = 0 }: { count?: number }) {
         >
           <div className="relative overflow-hidden">
             <Image
-              src={caseIllustration}
+              src="/images/games/courses/long-case-meq.jpg"
+              width={900}
+              height={600}
+              blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoMAAgAA4BaJQBOgCHPEBxEAAD9sx1hW65BVuO/dk3brHYkuZ5A9qZVF6BtP4SnCSbpg60tVii2+tD3XEVmoIRImfdgAA=="
               alt="ภาพประกอบเกมฝึกคิดเป็นแพทย์ ตั้งแต่ซักประวัติจนถึงวางแผนรักษา"
               sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(100vw - 48px), (max-width: 1279px) 40vw, 517px"
               placeholder="blur"
