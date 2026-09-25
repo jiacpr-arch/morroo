@@ -256,7 +256,9 @@ export async function runAutopostRetry(opts: {
   if (targetSlug) {
     query = query.eq("slug", targetSlug);
   } else if (doIg && !doFb && !doLine && !doFbStory && !doIgStory && !doIgCarousel && !doIgReel) {
-    query = query.is("ig_post_id", null);
+    // Skip posts IG can't render (no cover, not a quote card): they'd come back
+    // as skipped:no_cover every day and block every older post in the queue.
+    query = query.is("ig_post_id", null).or("cover_image.not.is.null,autopost_format.eq.quote_card");
   } else if (doFb && !doLine && !doIg && !doFbStory && !doIgStory && !doIgCarousel && !doIgReel) {
     query = query.is("fb_post_id", null);
   } else if (doLine && !doFb && !doIg && !doFbStory && !doIgStory && !doIgCarousel && !doIgReel) {
@@ -264,7 +266,8 @@ export async function runAutopostRetry(opts: {
   } else if (doFbStory && !doFb && !doLine && !doIg && !doIgStory && !doIgCarousel && !doIgReel) {
     query = query.is("fb_story_id", null);
   } else if (doIgStory && !doFb && !doLine && !doIg && !doFbStory && !doIgCarousel && !doIgReel) {
-    query = query.is("ig_story_id", null);
+    // Same as IG feed: the story needs a cover to render its 9:16 asset.
+    query = query.is("ig_story_id", null).or("cover_image.not.is.null,cover_image_story.not.is.null");
   } else if (doIgCarousel && !doFb && !doLine && !doIg && !doFbStory && !doIgStory && !doIgReel) {
     query = query.is("ig_carousel_id", null);
   } else if (doIgReel && !doFb && !doLine && !doIg && !doFbStory && !doIgStory && !doIgCarousel) {
