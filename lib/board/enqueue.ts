@@ -5,7 +5,7 @@
 //
 // For every active board specialty that has fewer than `targetCount` board
 // questions in `mcq_questions` (status in active/review), insert one job row.
-// The cron worker picks them up one specialty per minute.
+// The cron worker (hourly) picks them up one specialty per tick.
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 

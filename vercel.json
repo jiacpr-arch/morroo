@@ -79,7 +79,7 @@
     },
     {
       "path": "/api/cron/board-gen",
-      "schedule": "* * * * *"
+      "schedule": "7 * * * *"
     },
     {
       "path": "/api/cron/line-weekly-blog-digest",
