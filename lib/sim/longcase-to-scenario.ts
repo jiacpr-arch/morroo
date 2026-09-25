@@ -4,12 +4,15 @@
 // ทุกจุดตัดสินใจอิง ground truth จริง ไม่มีการเดา/แต่งข้อมูลการแพทย์ —
 //   - สั่งตรวจ/แลป: ตัวถูก = ผล isAbnormal (informative), ตัวลวง = ผลปกติ
 //   - วินิจฉัย: ตัวถูก = correct_diagnosis, ตัวลวง = accepted_ddx ที่เหลือ
-//   - ซักประวัติ: HPI ต้องมาก่อน PMH/SH เสมอ (ลำดับซักประวัติมาตรฐานสากล
-//     ไม่ใช่ข้อมูลเฉพาะเคส)
+//   - ซักประวัติ: ถาม-ตอบทีละหัวข้อตามลำดับมาตรฐานสากล (HPI → PMH → ยา →
+//     แพ้ยา → FH → SH → ROS) ผู้ป่วยตอบทันทีหลังถามถูก (จังหวะเดียวกับเกมร้านยา
+//     ของ pharmroo) — ลำดับเป็นมาตรฐาน ไม่ใช่ข้อมูลเฉพาะเคส
 //   - ตรวจร่างกาย: เรียงตามลำดับ head-to-toe มาตรฐาน (ใช้กลุ่มเดียวกับ
 //     SYNONYM_GROUPS ใน lib/longcase-match.ts) ไม่เดาว่าระบบไหนสำคัญกับเคสนี้
 //   - การรักษา: ใช้ลำดับที่ผู้เขียนเคสเขียนไว้เองใน management_plan เป็น
 //     ground truth (ไม่ใช่การเดาลำดับใหม่)
+//   - อาจารย์ซักถาม: ตัวถูก = modelAnswer ของคำถามนั้น, ตัวลวง = modelAnswer
+//     ของคำถามอื่นในเคสเดียวกัน
 // ตัวลวงทุกจุดไม่ตั้ง worsen (ไม่ใช่ความผิดพลาดร้ายแรง แค่ลำดับไม่เหมาะ)
 
 import type { LongCaseFull } from "@/lib/types";
@@ -177,63 +180,58 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
   if (hx.cc) story.push({ inter: txt(truncate(hx.cc, 60)), t: 0 });
   story.push(say("att_dech", "stern", "คุณคือแพทย์เวรที่รับเคสนี้ — ประเมินและตัดสินใจให้ตรงจุด", 4));
 
-  // ---- Act 1: ซักประวัติ (choice: HPI ต้องมาก่อน PMH/SH เสมอ — ลำดับสากล) ----
+  // ---- Act 1: ซักประวัติ — จังหวะถาม-ตอบต่อเนื่องแบบเกมร้านยา (pharmroo) ----
+  // ทุกหัวข้อที่มีข้อมูลกลายเป็น 1 choice: เลือกถามถูก → ผู้ป่วยตอบทันที →
+  // คำถามถัดไปเกริ่นจากคำตอบล่าสุด (ถาม → ตอบ → ถามต่อ แทนการบรรยายยาวรวดเดียว)
+  // ลำดับซักประวัติมาตรฐานสากล (HPI → PMH → ยา → แพ้ยา → FH → SH → ROS)
+  // ไม่ใช่ข้อมูลเฉพาะเคส; ตัวลวง = ถามข้ามลำดับ / หยุดซักแล้วไปตรวจร่างกายเลย
+  interface HxStep { label: string; topic: string; answer: string }
+  const hxSteps: HxStep[] = [];
   const hpiText = [hx.pi, hx.onset].filter(Boolean).join(" ");
-  interface HxCand { label: string; text: string }
-  const laterCandidates: HxCand[] = [];
-  if (hx.pmh) laterCandidates.push({ label: "ซักประวัติโรคประจำตัว (PMH)", text: `PMH: ${hx.pmh}` });
-  if (hx.sh) laterCandidates.push({ label: "ซักประวัติสังคม (SH)", text: `SH: ${hx.sh}` });
-  if (hx.meds) laterCandidates.push({ label: "ซักประวัติการใช้ยา", text: `ยาที่ใช้ปัจจุบัน: ${hx.meds}` });
-  if (hx.fh) laterCandidates.push({ label: "ซักประวัติครอบครัว (FH)", text: `FH: ${hx.fh}` });
-  if (hx.ros) laterCandidates.push({ label: "ทบทวนอาการตามระบบ (ROS)", text: `ROS: ${hx.ros}` });
+  if (hpiText) hxSteps.push({ label: "ซักประวัติปัจจุบัน (HPI)", topic: "ประวัติปัจจุบัน", answer: hpiText });
+  if (hx.pmh) hxSteps.push({ label: "ซักประวัติโรคประจำตัว (PMH)", topic: "โรคประจำตัว", answer: hx.pmh });
+  if (hx.meds) hxSteps.push({ label: "ซักประวัติการใช้ยา", topic: "ยาที่ใช้อยู่", answer: hx.meds });
+  if (hx.allergies) hxSteps.push({ label: "ถามประวัติแพ้ยา", topic: "ประวัติแพ้ยา", answer: hx.allergies });
+  if (hx.fh) hxSteps.push({ label: "ซักประวัติครอบครัว (FH)", topic: "ประวัติครอบครัว", answer: hx.fh });
+  if (hx.sh) hxSteps.push({ label: "ซักประวัติสังคม (SH)", topic: "ประวัติสังคม", answer: hx.sh });
+  if (hx.ros) hxSteps.push({ label: "ทบทวนอาการตามระบบ (ROS)", topic: "อาการตามระบบ", answer: hx.ros });
 
-  if (hpiText && laterCandidates.length >= 1) {
+  const HX_STOP_LABEL = "พอแล้ว ข้ามไปตรวจร่างกายเลย";
+  hxSteps.forEach((step, i) => {
+    const next = hxSteps[i + 1];
+    const prev = hxSteps[i - 1];
+    const answer = txt(step.answer);
+    const options: ChoiceOption[] = [
+      {
+        tgt: "ASK",
+        label: step.label,
+        ok: true,
+        then: [say(hxSpeaker, i === 0 ? "talk" : "idle", truncate(answer, i === 0 ? 300 : 240), 6)],
+      },
+    ];
+    if (next) {
+      options.push({
+        tgt: "ASK",
+        label: next.label,
+        ok: false,
+        why: `ถามตามลำดับ — ต้องได้${step.topic}ก่อน แล้วค่อยถาม${next.topic}`,
+      });
+    }
+    options.push({
+      tgt: "PE",
+      label: HX_STOP_LABEL,
+      ok: false,
+      why: `ประวัติยังไม่ครบ — ยังไม่ได้ถาม${hxSteps.slice(i).map((s) => s.topic).join(", ")}`,
+    });
     story.push({
       choice: {
-        q: "จะซักประวัติเรื่องอะไรก่อน",
-        options: [
-          {
-            tgt: "ASK",
-            label: "ซักประวัติปัจจุบัน (HPI)",
-            ok: true,
-            then: [say(hxSpeaker, "talk", truncate(hpiText, 300), 6)],
-          },
-          {
-            tgt: "ASK",
-            label: laterCandidates[0].label,
-            ok: false,
-            why: "ควรซักประวัติปัจจุบันให้ครบก่อน ค่อยถามประวัติเดิม/สังคมทีหลัง",
-          },
-        ],
+        q: prev ? `${prev.topic}: ${truncate(txt(prev.answer), 40)} — จะถามอะไรต่อ` : "จะซักประวัติเรื่องอะไรก่อน",
+        options,
       },
     });
-  } else if (hpiText) {
-    story.push(say(hxSpeaker, "talk", truncate(hpiText, 300), 6));
-  }
-
-  if (laterCandidates.length >= 2) {
-    story.push({
-      choice: {
-        q: "จะถามอะไรต่อ",
-        options: [
-          {
-            tgt: "ASK",
-            label: laterCandidates[0].label,
-            ok: true,
-            then: [say("att_dech", "idle", truncate(laterCandidates[0].text, 240), 4)],
-          },
-          {
-            tgt: "ASK",
-            label: laterCandidates[1].label,
-            ok: false,
-            why: "ค่อยถามทีหลังได้ ตอนนี้ประเมินโรคประจำตัว/ความเสี่ยงก่อน",
-          },
-        ],
-      },
-    });
-    for (const c of laterCandidates.slice(1)) story.push(say("att_dech", "idle", truncate(c.text, 240), 4));
-  } else {
-    for (const c of laterCandidates) story.push(say("att_dech", "idle", truncate(c.text, 240), 4));
+  });
+  if (hxSteps.length >= 2) {
+    story.push(say("att_dech", "talk", "ซักประวัติครบแล้ว — ต่อไป**ตรวจร่างกาย**", 3));
   }
 
   // ---- Act 2: ตรวจร่างกาย (choice: ลำดับ head-to-toe มาตรฐาน) ----
@@ -388,13 +386,58 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
     .filter((q) => q.question && q.modelAnswer)
     .sort((a, b) => b.points - a.points)
     .slice(0, 4);
-  if (examinerQs.length >= 1) {
-    story.push(say("att_dech", "stern", "ถึงช่วงอาจารย์ซักถาม — ลองตอบในใจก่อน แล้วแตะดูแนวทางคำตอบ", 4));
-    for (const q of examinerQs) {
+  if (examinerQs.length >= 2) {
+    // ≥2 ข้อ → ถามทีละข้อเป็น choice (จังหวะถาม-ตอบแบบเกมร้านยา): ข้อถูก = modelAnswer
+    // ของข้อนั้น, ตัวลวง = modelAnswer ของคำถามอื่นในเคสเดียวกัน (ground truth จริง
+    // แต่ตอบคนละคำถาม) → เฉลยเต็มใน then ทันทีหลังตอบถูก
+    story.push(say("att_dech", "stern", "ถึงช่วงอาจารย์ซักถาม — เลือกแนวทางคำตอบที่ตรงคำถามที่สุด", 4));
+    examinerQs.forEach((q, i) => {
       const pts = q.points > 0 ? ` [${q.points} คะแนน]` : "";
-      story.push(say("att_dech", "stern", `❓ ${truncate(q.question, 260)}${pts}`, 5));
-      story.push(say("att_dech", "talk", `💡 แนวทางคำตอบ: ${truncate(q.modelAnswer, 260)}`, 5));
-    }
+      const nOk = normalizeKey(q.modelAnswer);
+      const seen = new Set([nOk]);
+      const wrongLabels: string[] = [];
+      for (const other of [...examinerQs.slice(i + 1), ...examinerQs.slice(0, i)]) {
+        const n = normalizeKey(other.modelAnswer);
+        if (seen.has(n)) continue;
+        seen.add(n);
+        wrongLabels.push(truncate(txt(other.modelAnswer), 90));
+        if (wrongLabels.length >= 2) break;
+      }
+      const reveal = say("att_dech", "happy", `💡 แนวทางคำตอบ: ${truncate(q.modelAnswer, 260)}`, 5);
+      if (!wrongLabels.length) {
+        story.push(say("att_dech", "stern", `❓ ${truncate(q.question, 260)}${pts}`, 5));
+        story.push(reveal);
+        return;
+      }
+      story.push({
+        choice: {
+          q: txt(`❓ ${truncate(q.question, 160)}${pts}`),
+          options: [
+            {
+              tgt: "EXAM",
+              label: truncate(txt(q.modelAnswer), okLabelCap(wrongLabels, 90)),
+              ok: true,
+              then: [reveal],
+            },
+            ...wrongLabels.map(
+              (label): ChoiceOption => ({
+                tgt: "EXAM",
+                label,
+                ok: false,
+                why: "เป็นแนวทางคำตอบของอีกคำถามหนึ่ง — ยังไม่ได้ตอบสิ่งที่อาจารย์ถาม",
+              }),
+            ),
+          ],
+        },
+      });
+    });
+  } else if (examinerQs.length === 1) {
+    // ข้อเดียวไม่มีตัวลวงจากข้อมูลจริง → active recall: ถามก่อน แล้วแตะดูแนวทางคำตอบ
+    const [q] = examinerQs;
+    const pts = q.points > 0 ? ` [${q.points} คะแนน]` : "";
+    story.push(say("att_dech", "stern", "ถึงช่วงอาจารย์ซักถาม — ลองตอบในใจก่อน แล้วแตะดูแนวทางคำตอบ", 4));
+    story.push(say("att_dech", "stern", `❓ ${truncate(q.question, 260)}${pts}`, 5));
+    story.push(say("att_dech", "talk", `💡 แนวทางคำตอบ: ${truncate(q.modelAnswer, 260)}`, 5));
   }
 
   // ---- Act 6: debrief (teaching points ที่เหลือ — ไม่ซ้ำกับที่โชว์ตอนเฉลยวินิจฉัย) ----
