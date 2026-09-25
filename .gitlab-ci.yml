@@ -11,6 +11,7 @@
 #   board-oral   0 20 * * *         daily board oral case
 #   meq          0 20 * * 0,3       MEQ progressive case
 #   meq-games    30 20 * * 0,3      convert MEQ exams into case games
+#                                   (manual run with FORCE=true regenerates every exam)
 #   longcase     0 21 * * 6         weekly long case
 #   backfill-blog-covers / insert-board-seed / rebalance-sim-choices — manual only
 #
@@ -120,10 +121,15 @@ meq-games:
     PUBLISH: "true"
     LIMIT: ""
     CONCURRENCY: ""
+    # FORCE=true: regenerate exams that already have a game (upsert over the
+    # same meq-<examId> slug) — e.g. after the game format/prompt changes.
+    # An exam whose regeneration fails keeps its existing game.
+    FORCE: ""
   script:
     - export NEXT_PUBLIC_SUPABASE_URL="$SUPABASE_URL"
     - ARGS=""
     - if [ "$PUBLISH" != "false" ]; then ARGS="$ARGS --publish"; fi
+    - if [ "$FORCE" = "true" ]; then ARGS="$ARGS --force"; fi
     - if [ -n "$LIMIT" ]; then ARGS="$ARGS --limit $LIMIT"; fi
     - if [ -n "$CONCURRENCY" ]; then ARGS="$ARGS --concurrency $CONCURRENCY"; fi
     - npm run gen:meqgames -- $ARGS
