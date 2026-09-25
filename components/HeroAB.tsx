@@ -3,8 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ArrowRight, Sparkles, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, BookOpen, Check, Sparkles, Users } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
 import { getVariant, type Variant } from "@/lib/ab";
 import type { HomeExamStats } from "@/lib/supabase/queries";
@@ -16,9 +17,6 @@ const EXPERIMENT = "hero";
 // เป็นม่วง/อำพัน/มรกต ซึ่งเป็นสามโทนที่ไม่เกี่ยวกันวางบนแบรนด์ teal
 const PILL =
   "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3.5 py-1.5 text-sm font-medium text-white/85";
-
-const DOT_PATTERN =
-  "PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiLz48L3N2Zz4=";
 
 type Copy = {
   badge: string;
@@ -80,7 +78,7 @@ function SecondaryLinks({
     },
   ];
   return (
-    <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-white/60 sm:text-sm">
+    <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-white/75 sm:text-sm lg:justify-start">
       {links.map((link, i) => (
         <span key={link.cta} className="flex items-center gap-x-4">
           <Link
@@ -129,85 +127,98 @@ export default function HeroAB({
   const copy = buildCopy(totalStr, nlStr)[variant ?? "A"];
 
   return (
-    <section className="relative isolate overflow-hidden bg-brand-dark py-10 sm:py-16 lg:py-20">
-      {/* ชั้นตกแต่งทุกชั้นเป็น absolute inset-0 — ไม่มีชิ้นไหนกว้างเกินคอนเทนเนอร์
-          จึงไม่ทำให้หน้าเกิด scroll แนวนอน */}
-      <div className="pointer-events-none absolute inset-0 hero-glow" />
-      <div
-        className={`pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml;base64,${DOT_PATTERN}')] opacity-25 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_35%,black,transparent)]`}
-      />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-b from-transparent to-background sm:h-12 lg:h-16" />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          {/* โลโก้ + badge อยู่แถวเดียวกัน — เดิมโลโก้ 208px กินพื้นที่ครึ่งจอบน
-              จนหัวเรื่องไม่ได้เป็นพระเอก */}
-          <div className="flex items-center justify-center gap-3 sm:gap-4">
+    <section className="relative isolate overflow-hidden bg-brand-dark py-10 sm:py-14 lg:py-20">
+      <div className="pointer-events-none absolute inset-0 hero-glow" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:px-8">
+        <div className="min-w-0 text-center lg:text-left">
+          <div className="flex items-center justify-center gap-3 lg:justify-start">
             <Image
               src="/images/logo-morroo.png"
               alt="MorRoo.com หมอรู้ — ติวสอบแพทย์"
-              width={208}
-              height={208}
-              sizes="(max-width: 639px) 64px, 88px"
-              loading="eager"
-              className="h-16 w-16 shrink-0 object-contain drop-shadow-[0_6px_20px_rgba(26,188,156,0.25)] sm:h-22 sm:w-22"
+              width={64}
+              height={64}
+              className="h-14 w-14 shrink-0 object-contain"
             />
-            <span className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/90 backdrop-blur-sm sm:inline-flex">
-              <Sparkles className="h-3.5 w-3.5 text-brand-light" /> {copy.badge}
-            </span>
+            <p className="text-left text-sm leading-relaxed text-white/80">
+              <span className="block font-semibold text-emerald-200">พื้นที่เรียนรู้ของว่าที่คุณหมอ</span>
+              ค่อย ๆ เก่งขึ้น ในทุกวัน
+            </p>
           </div>
-
-          {/* ห้ามใช้ tracking-tight/leading-tight กับหัวเรื่องไทยขนาดนี้ —
-              สระบนกับวรรณยุกต์จะชนตัวอักษรบรรทัดล่าง */}
-          <h1 className="mx-auto mt-6 max-w-4xl text-[2rem] font-extrabold leading-[1.2] text-white sm:mt-8 sm:text-5xl lg:text-6xl">
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3 py-2 text-xs text-white/85 sm:text-sm">
+            <Sparkles className="h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
+            {copy.badge}
+          </div>
+          <h1 className="mt-5 text-[1.9rem] font-bold leading-[1.4] text-white sm:text-[2.75rem] lg:text-[2.6rem] xl:text-5xl">
             {copy.headlineTop}
             <br />
-            <span className="bg-gradient-to-r from-brand-light via-emerald-300 to-brand-light bg-clip-text text-transparent">
-              {copy.headlineAccent}
-            </span>
+            <span className="text-emerald-300">{copy.headlineAccent}</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 sm:mt-5 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/80 lg:mx-0">
             {copy.subline}
           </p>
 
-          {/* CTA หลักเดียว — เดิมมี 3 ปุ่มขนาดเท่ากันแข่งกันเอง (MEQ/Long Case/
-              MCQ) เปลี่ยนเหลือปุ่มเดียวที่ตรงกับหลักการ "โชว์ของก่อน ค่อยขอ
-              สมัคร" (ตัดสินใจไว้ 2026-07-25) — /nl/practice ทำข้อสอบได้ทันที
-              ไม่ต้องสมัคร แล้วค่อยเจอกำแพงหลัง 5 ข้อซึ่งเป็นทางลัดสู่ pricing */}
-          <div className="mt-8 flex flex-col items-center gap-3 sm:mt-9">
-            <Link href="/nl/practice" onClick={() => trackHeroCta(variant, "try_free")}>
-              <Button
-                size="xl"
-                className="bg-brand text-white shadow-lg shadow-brand/30 ring-1 ring-brand-light/40 hover:-translate-y-0.5 hover:bg-brand-light hover:shadow-xl hover:shadow-brand/40"
-              >
-                ลองทำข้อสอบฟรี — ไม่ต้องสมัคร <ArrowRight className="ml-1 h-5 w-5" />
-              </Button>
+          {/* Keep the existing single primary CTA, experiment and pricing events. */}
+          <div className="mt-7 flex flex-col items-center gap-3 lg:items-start">
+            <Link
+              href="/nl/practice"
+              onClick={() => trackHeroCta(variant, "try_free")}
+              className={cn(
+                buttonVariants({ size: "xl" }),
+                "h-auto min-h-12 max-w-full whitespace-normal bg-emerald-300 px-5 py-3 text-center text-brand-dark shadow-lg shadow-black/10 hover:bg-emerald-200",
+              )}
+            >
+              ลองทำข้อสอบฟรี — ไม่ต้องสมัคร <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
             </Link>
             <HeroPriceLine surface="hero" />
           </div>
-
-          {/* แถบพิสูจน์ — เหลือเฉพาะตัวเลขที่ไม่ถูกพูดซ้ำที่อื่นในหน้า ส่วนสถิติ
-              MCQ / MEQ / Long Case / เฉลยผู้เชี่ยวชาญ ที่เคยอยู่ตรงนี้ซ้ำกับ stat
-              tile ใน SocialProofSection ถัดลงไปสองจอแทบคำต่อคำ จึงตัดออกให้เหลือ
-              ที่เดียว (2026-09-16) */}
-          <div className="mx-auto mt-9 flex max-w-3xl flex-wrap items-center justify-center gap-2 sm:mt-10">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
             <span className={PILL}>
-              <Users className="h-4 w-4 text-brand-light" />
+              <Users className="h-4 w-4 text-brand-light" aria-hidden="true" />
               1,000+ แพทย์ใช้งาน
             </span>
-            {/* ตัวนับสดของข้อที่กำลังถูกสร้าง/ตรวจอยู่ตอนนี้ */}
             {totalBuilding > 0 && (
               <span className={PILL}>
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300" />
-                </span>
-                อีก {totalBuilding.toLocaleString("en-US")} ข้อกำลังสร้าง — เพิ่มเข้าคลังเรื่อยๆ ทุกวัน
+                <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-300" aria-hidden="true" />
+                อีก {totalBuilding.toLocaleString("en-US")} ข้อกำลังสร้าง
               </span>
             )}
           </div>
-
           <SecondaryLinks variant={variant} casegameCount={casegameCount} />
+        </div>
+
+        <div className="min-w-0">
+          <figure className="overflow-hidden rounded-[1.75rem] border border-white/15 bg-[#f6f4eb] shadow-2xl shadow-black/20">
+            <div className="relative">
+              <Image
+                src="/images/home/medical-study-together.webp"
+                width={1440}
+                height={960}
+                blurDataURL="data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAgAA4BaJZACdAEVu7JBnGgA3i8bsHGrKJSncXxGVsXuRK3M1gTHIaq90vBdPAB4q3rjacXuintYd4PoyBUMAAA="
+                alt="ภาพประกอบนักศึกษาแพทย์ทบทวนบทเรียนด้วยกันในบรรยากาศอบอุ่น"
+                sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(100vw - 48px), (max-width: 1279px) 46vw, 568px"
+                preload
+                placeholder="blur"
+                className="aspect-[3/2] w-full object-cover"
+              />
+              <span className="absolute right-3 bottom-3 rounded-full bg-black/50 px-2.5 py-1 text-[10px] text-white">ภาพประกอบ</span>
+            </div>
+            <figcaption className="flex items-center gap-4 p-5 sm:p-6">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#e2ebe0] text-brand-dark" aria-hidden="true">
+                <BookOpen className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-lg font-bold leading-relaxed text-brand-dark">เส้นทางสู่การเป็นหมอ เริ่มทีละก้าว</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#536557]">อ่านให้เข้าใจ ฝึกให้มั่นใจ ไปกับหมอรู้</p>
+              </div>
+            </figcaption>
+          </figure>
+          <div className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-white/80 sm:text-sm">
+            {["เรียนตามจังหวะของคุณ", "ฝึกได้ทุกที่", "เริ่มต้นได้ฟรี"].map((label) => (
+              <span key={label} className="inline-flex items-center gap-1.5">
+                <Check className="h-3.5 w-3.5 text-emerald-300" aria-hidden="true" /> {label}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
