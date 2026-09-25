@@ -12,6 +12,8 @@ describe("meqSystemPrompt", () => {
     expect(p).toContain('ห้าม say ที่ขึ้นต้นด้วย "ถูกต้อง"');
     // ตัวอย่าง torsion เป็นรุ่นเก่า — ต้องบอก AI ว่ากติกาชนะตัวอย่าง
     expect(p).toContain("ตัวอย่างนี้เป็นรูปแบบรุ่นเก่า");
+    expect(p).toContain("อ่านน้อยแต่บ่อย");
+    expect(p).toContain("ห้ามมี say ติดกันเกิน 2 node");
   });
 });
 
@@ -58,6 +60,22 @@ describe("applyMeqConventions", () => {
     expect(texts[3]).toBe("ถูกต้อง"); // ไม่เหลืออะไร → คงเดิม
     expect(texts[4]).toBe("ผลนี้ถูกต้องตามเกณฑ์"); // ไม่ได้ขึ้นต้น → ไม่แตะ
     expect(nested.say.text).toBe("**BNP** สูงจาก wall stress");
+  });
+
+  it("moves the attending's explanation after a correct diagnosis into the debrief", () => {
+    const explain = { say: { who: "att_dech", pose: "talk", text: "นับ major criteria ได้ 4 ข้อ" } };
+    const next = { choice: { q: "ผลตรวจใดสนับสนุน", options: [{ tgt: "DX", label: "x", ok: true }, { tgt: "DX", label: "y", ok: false }] } };
+    const story: unknown[] = [
+      { choice: { q: "วินิจฉัย", options: [{ tgt: "DX", label: "RF", ok: true, then: [explain, next] }, { tgt: "DX", label: "JIA", ok: false }] } },
+      { say: { who: "att_dech", pose: "happy", text: "สรุป" } },
+      { inter: "เคสสำเร็จ!!", green: true },
+      { end: true },
+    ];
+    applyMeqConventions(story);
+    const dx = (story[0] as { choice: { options: { then?: unknown[] }[] } }).choice.options[0];
+    expect(dx.then).toEqual([next]);
+    expect(story[2]).toEqual(explain);
+    expect(story[3]).toMatchObject({ inter: "เคสสำเร็จ!!" });
   });
 
   it("ignores malformed input", () => {

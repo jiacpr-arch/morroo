@@ -21,6 +21,7 @@
 
 import type { LongCaseFull } from "@/lib/types";
 import { matchKey, normalizeKey, readHistoryScript } from "@/lib/longcase-match";
+import { chunkLongSays } from "./chunk-says";
 import {
   isValidScenario,
   type ChoiceOption,
@@ -660,7 +661,8 @@ export function longCaseToScenario(lc: LongCaseFull, others: OtherCaseRef[] = []
     difficultyTag: "basic",
     category: "longcase",
     sourceCaseId: lc.id,
-    story,
+    // อ่านน้อยแต่บ่อย: บทพูดยาวแตกเป็นหลายท่อนสั้นๆ แตะทีละท่อน
+    story: chunkLongSays(story),
   };
 
   return isValidScenario(scenario) ? scenario : null;
