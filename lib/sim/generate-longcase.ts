@@ -75,17 +75,20 @@ export function longcaseSystemPrompt(
 - { "say": { "who": <charId>, "pose": <pose>, "text": "...", }, "t": <วินาที>? } — บทพูด
 - { "inter": "ข้อความสั้น!!", "green": true?, "t": <วินาที>? } — ตะโกนเต็มจอ
 - { "choice": { "q": "คำถามสั้น", "options": [ { "tgt": "<หมวด>", "label": "...", "ok": true/false, "why": "เหตุผลเมื่อผิด", "worsen": true?, "then": [<node>...]? } ] } }
+- { "labSheet": { "title": "ใบรายงานผลตรวจ", "patient": "ชื่อ · อายุ", "rows": [ { "name": "CBC", "value": "WBC 11,200", "abnormal": true, "isNew": true } ] } } — ใบรายงานผลแลปแบบกระดาษจริง (ใส่ใน then ของ choice สั่งแลปข้อถูก แทนการให้ตัวละครอ่านผล; rows สะสมผลที่ได้มาแล้ว ผลใหม่ใส่ isNew)
+- { "orderSheet": { "patient": "ชื่อ · อายุ", "orders": [ { "text": "NPO" }, { "text": "IV fluid NSS 100 ml/hr", "isNew": true } ] } } — ใบสั่งการรักษา (doctor's order) สะสม ใส่ใน then ของ order ข้อถูก ให้ผู้เล่นเห็นว่าสั่งอะไรไปแล้ว
+- choice ที่ใส่ "shelf": true จะแสดงเป็น "ชั้น order" แบบ grid — ใช้กับช่วงสั่งการรักษา ใส่ตัวเลือก 5-6 ข้อ (order ถูก 1 + order หลอกที่สมจริง) label เป็นข้อความ order สั้นแบบที่หมอเขียนจริง (ชื่อยา ขนาด วิธีให้)
 - { "end": true } — node สุดท้ายเสมอ
 
 ## โครงเรื่องมาตรฐาน (เดินตามลำดับนี้ 9-12 จุดตัดสินใจ)
 1. เปิดเรื่อง: พยาบาลรายงาน vitals จาก patient_info + inter อาการนำ + attending เปิดเคส
 2. ซักประวัติ (~3-4 choice ต่อกัน จังหวะ "ถาม → ผู้ป่วยตอบทันที → ถามต่อ"): เลือกคำถามที่แยกโรคได้ — ข้อถูกใส่ then เป็น say สั้นๆ 1 node ให้ผู้ป่วยตอบด้วยปากตัวเองตาม history_script (ใช้ sprite ผู้ป่วยที่ตรงเพศ/วัยตามกติกาข้อ 1 — ทารก/เด็กเล็กให้ mother_rel ตอบแทน); q ของ choice ถัดไปเกริ่นจากคำตอบล่าสุดสั้นๆ (เช่น "ปวดมา 3 ชม. อาเจียนด้วย — อยากรู้อะไรต่อ"); ตัวลวงคือคำถามที่ยังไม่ควรถามตอนนี้ หรือการรีบสรุป/ข้ามไปตรวจก่อนได้ข้อมูลสำคัญ — ห้ามให้ attending บรรยายประวัติยาวรวดเดียวแทนผู้ป่วย
-3. ตรวจร่างกาย (~2 choice): เลือกระบบ/สิ่งที่ตรวจ — then เผย pe_findings สำคัญ
-4. Investigation (~1-2 choice): เลือก lab/imaging ที่ถูก (อิง lab_results ตัวที่ isAbnormal:true) และรู้ว่าเมื่อไรไม่ควรรอผล
-5. วินิจฉัย (1 choice): ข้อถูก = correct_diagnosis; ข้อลวง = accepted_ddx ตัวอื่น
-6. การรักษา (~1-2 choice): อิง management_plan; ทางเลือกอันตรายใส่ worsen:true
+3. ตรวจร่างกาย (~2-3 choice ต่อกันแบบเดียวกับซักประวัติ): ตรวจทีละระบบ — then เผย pe_findings ของระบบนั้นทันที แล้ว q ข้อถัดไปเกริ่นจากสิ่งที่เพิ่งตรวจเจอ
+4. Investigation (~1-2 choice): สั่งทีละรายการ เลือก lab/imaging ที่ถูก (อิง lab_results ตัวที่ isAbnormal:true) และรู้ว่าเมื่อไรไม่ควรรอผล — ข้อถูกใส่ then เป็น labSheet (ใบรายงานผล) ไม่ใช่ให้พยาบาลอ่านผล
+5. วินิจฉัย (1 choice, 4 ตัวเลือก): ข้อถูก = correct_diagnosis; ข้อลวง = accepted_ddx ตัวอื่น — **ห้ามให้ attending เฉลยหรือพูด "ถูกต้อง — <โรค>" หลังเลือก** ให้ผู้เล่นตัดสินใจเอง แล้วต่อด้วย choice ให้เหตุผล (ผลตรวจข้อไหนสนับสนุนการวินิจฉัยนี้)
+6. การรักษา (~2-3 choice แบบ shelf: true เขียน order ทีละข้อตามลำดับใน management_plan): ข้อถูกใส่ then เป็น orderSheet สะสม; order อันตรายใส่ worsen:true — ห้ามใช้ labelPreview/เขียนฉลากยา
 7. **ช่วงอาจารย์ซักถาม (สำคัญมากต่อการเรียนรู้):** att_dech ถามคำถามจาก examiner_questions ทีละข้อ (say node คำถามก่อน) แล้ว say node ถัดไปเผยแนวทางคำตอบจาก modelAnswer — ทำ 3-4 ข้อสำคัญสุด เพื่อฝึก active recall เหมือนสอบ long case จริง
-8. debrief: attending สรุป teaching_points 2-3 ข้อ → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
+8. debrief ทีละขั้น: teaching_points 2-3 ข้อ แยก 1 ข้อต่อ 1 say node (ห้ามรวมหลายประเด็นในบทพูดเดียว) → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
 
 ## กติกาสำคัญ
 1. ตัวละคร (who): ผู้ป่วยเลือกให้ตรงเพศ/วัยของเคส — patient_young_male (ชายอายุ <35), patient_generic (ชายวัยกลางคน 35-59), patient_elderly_male (ชายอายุ ≥60), patient_female (หญิงผู้ใหญ่), patient_elderly (หญิงสูงอายุ ≥60), patient_pregnant (หญิงตั้งครรภ์แก่/เห็นท้องชัด), patient_child (เด็กอายุ <15), mother_rel (แม่/ญาติ — ใช้ตอบซักประวัติแทนทารก/เด็กเล็กอายุ <7 ที่พูดเองไม่ได้); ทีมแพทย์: nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}

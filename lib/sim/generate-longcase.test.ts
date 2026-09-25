@@ -41,6 +41,14 @@ describe("longcase generation prompt (shared)", () => {
     expect(p).toContain("ถาม → ผู้ป่วยตอบทันที → ถามต่อ");
   });
 
+  it("documents the labSheet node and forbids the attending from revealing the diagnosis", () => {
+    const p = longcaseSystemPrompt([], caseRow);
+    expect(p).toContain('"labSheet"');
+    expect(p).toContain('"orderSheet"');
+    expect(p).toContain('"shelf": true');
+    expect(p).toContain("ห้ามให้ attending เฉลย");
+  });
+
   it("lists extra characters when provided", () => {
     const p = longcaseSystemPrompt(
       [{ slug: "resident_joe", name: "เรสซิเดนต์โจ", role: "Resident", personality: "ใจเย็น" }],

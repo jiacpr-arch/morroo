@@ -154,8 +154,9 @@ describe("longCaseToScenario", () => {
     expect(describeScenarioError(s)).toBeNull();
   });
 
-  it("degrades to reveal (no scored choice) when data lacks ground truth", () => {
-    // แลปทั้งหมด abnormal → ไม่มีตัวลวงปกติ; accepted_ddx มีแต่ correct → ไม่มีตัวลวง ddx
+  it("without normal results or DDx distractors: labs still chain (stop-early distractor), dx is not a choice", () => {
+    // แลปทั้งหมด abnormal → ไม่มีตัวลวงผลปกติ แต่ยังมีตัวลวง "หยุดสั่งก่อนครบ";
+    // accepted_ddx มีแต่ correct และไม่มีเคสอื่น → ไม่มีตัวลวง ddx
     const s = longCaseToScenario(
       mk({
         correct_diagnosis: "Sepsis",
@@ -165,7 +166,9 @@ describe("longCaseToScenario", () => {
       }),
     )!;
     expect(describeScenarioError(s)).toBeNull();
-    expect(choices(s).some((c) => c.options.some((o) => o.tgt === "LAB"))).toBe(false);
+    const lab = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "LAB"));
+    expect(lab).toHaveLength(2);
+    for (const c of lab) expect(c.options.some((o) => !o.ok && o.label.includes("ไปสรุปการวินิจฉัย"))).toBe(true);
     expect(choices(s).some((c) => c.options.some((o) => o.tgt === "DX"))).toBe(false);
   });
 
@@ -325,12 +328,99 @@ describe("longCaseToScenario", () => {
     expect(sayTexts(s).some((t) => t.startsWith("PMH:") || t.startsWith("SH:"))).toBe(false);
   });
 
-  it("reveals a teaching point right after the correct diagnosis is chosen", () => {
+  // ---- ตรวจร่างกาย / แลป / วินิจฉัย / รักษา / debrief แบบถาม-ตอบทีละขั้น ----
+  const OTHERS = [
+    { diagnosis: "Acute appendicitis", teachingPoints: ["Alvarado score ช่วยประเมินความน่าจะเป็นของไส้ติ่งอักเสบ"], managementPlan: "NPO, IV fluid; Appendectomy" },
+    { diagnosis: "Renal colic", teachingPoints: ["NSAIDs เป็น first-line สำหรับปวดนิ่วในไต", "CT KUB non-contrast เป็น gold standard"], managementPlan: "Ketorolac 30 mg IV; Tamsulosin 0.4 mg OD; bilateral orchiopexy" },
+    { diagnosis: "Epididymo-orchitis", teachingPoints: ["ซ้ำกับ DDx — ต้องไม่ถูกใช้ซ้ำ"] },
+  ];
+
+  it("examines one system at a time head-to-toe, each finding revealed right after the pick", () => {
     const s = longCaseToScenario(TORSION)!;
-    const dx = choices(s).find((c) => c.options.some((o) => o.tgt === "DX"))!;
-    const ok = dx.options.find((o) => o.ok)!;
-    const thenTexts = (ok.then ?? []).flatMap((n) => ("say" in n ? [n.say.text] : []));
-    expect(thenTexts.some((t) => t.includes("surgical emergency"))).toBe(true);
+    const pe = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "PE"));
+    expect(pe.map((c) => c.options.find((o) => o.ok)!.label)).toEqual(["ตรวจ GA", "ตรวจ Heart", "ตรวจ GU"]);
+    const guThen = pe[2].options.find((o) => o.ok)!.then!;
+    expect("say" in guThen[0] && guThen[0].say.text).toContain("high-riding testis");
+    expect(pe[1].q).toContain("GA");
+    for (const c of pe) expect(c.options.some((o) => !o.ok && o.label.includes("ส่งตรวจเพิ่มเติม"))).toBe(true);
+  });
+
+  it("orders labs one at a time and hands back a cumulative lab report sheet, then a full summary", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const lab = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "LAB"));
+    expect(lab.map((c) => c.options.find((o) => o.ok)!.label)).toEqual(["สั่ง CBC", "สั่ง Scrotal US"]);
+    const sheet2 = lab[1].options.find((o) => o.ok)!.then![0];
+    expect("labSheet" in sheet2).toBe(true);
+    if (!("labSheet" in sheet2)) return;
+    expect(sheet2.labSheet.rows.map((r) => r.name)).toEqual(["CBC", "Scrotal US"]);
+    expect(sheet2.labSheet.rows[1]).toMatchObject({ abnormal: true, isNew: true });
+    expect(sheet2.labSheet.rows[0].isNew).toBeFalsy();
+    expect(sheet2.labSheet.patient).toContain("นายสมชาย");
+    const summary = s.story.find((n) => "labSheet" in n && n.labSheet.title.includes("สรุป"));
+    expect(summary && "labSheet" in summary && summary.labSheet.rows.map((r) => r.name)).toEqual(["CBC", "Scrotal US", "UA"]);
+  });
+
+  it("lets the player diagnose with no attending reveal, padding options with other cases' diagnoses", () => {
+    const s = longCaseToScenario(TORSION, OTHERS)!;
+    expect(describeScenarioError(s)).toBeNull();
+    const dx = choices(s).find((c) => c.options.some((o) => o.ok && o.tgt === "DX"))!;
+    expect(dx.options.length).toBe(5);
+    expect(dx.options.find((o) => o.ok)!.then ?? []).toHaveLength(0);
+    // DDx ของเคสเอง + dx ของเคสอื่น (Epididymo-orchitis ไม่ซ้ำ)
+    const labels = dx.options.map((o) => o.label);
+    expect(labels).toContain("Acute appendicitis");
+    expect(labels).toContain("Renal colic");
+    expect(labels.filter((l) => l.includes("Epididymo-orchitis"))).toHaveLength(1);
+    // ไม่มีอาจารย์พูด "ถูกต้อง — <dx>"
+    expect(playthrough(s.story).some((t) => t.startsWith("ถูกต้อง"))).toBe(false);
+  });
+
+  it("asks which result supports the diagnosis (abnormal right, normal wrong)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const ev = choices(s).find((c) => c.q.includes("สนับสนุน"))!;
+    expect(ev.options.find((o) => o.ok)!.label).toContain("CBC");
+    expect(ev.options.some((o) => !o.ok && o.label.includes("UA"))).toBe(true);
+  });
+
+  it("writes orders one at a time from an order shelf, handing back a cumulative doctor's order sheet", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const mg = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "MGMT"));
+    expect(mg).toHaveLength(3);
+    for (const c of mg) expect(c.shelf).toBe(true);
+    expect(mg[1].options.find((o) => o.ok)!.label).toContain("bilateral orchiopexy");
+    const sheet = mg[1].options.find((o) => o.ok)!.then![0];
+    expect("orderSheet" in sheet).toBe(true);
+    if (!("orderSheet" in sheet)) return;
+    expect(sheet.orderSheet.orders).toHaveLength(2);
+    expect(sheet.orderSheet.orders[0].text).toContain("Emergency surgical exploration");
+    expect(sheet.orderSheet.orders[1]).toMatchObject({ isNew: true });
+    expect(mg[2].options.some((o) => !o.ok && o.label.includes("ครบแล้ว"))).toBe(true);
+  });
+
+  it("stocks the order shelf with other cases' orders as decoys, never this case's own orders", () => {
+    const s = longCaseToScenario(TORSION, OTHERS)!;
+    expect(describeScenarioError(s)).toBeNull();
+    const mg = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "MGMT"));
+    const decoys = mg.flatMap((c) => c.options.filter((o) => o.why?.includes("โรคอื่น")).map((o) => o.label));
+    expect(decoys.length).toBeGreaterThan(0);
+    expect(decoys).toContain("Appendectomy");
+    // "bilateral orchiopexy" เป็น order ของเคสนี้เอง — ห้ามโผล่เป็นตัวหลอก
+    expect(decoys.some((d) => d.includes("orchiopexy"))).toBe(false);
+    expect(mg[0].options.length).toBeGreaterThanOrEqual(5);
+  });
+
+  it("debriefs one point at a time: pick this case's lesson over other cases' lessons, then the reveal", () => {
+    const s = longCaseToScenario(TORSION, OTHERS)!;
+    expect(describeScenarioError(s)).toBeNull();
+    const learn = choices(s).filter((c) => c.options.some((o) => o.tgt === "LEARN"));
+    expect(learn).toHaveLength(2);
+    const ok = learn[0].options.find((o) => o.ok)!;
+    expect(ok.label).toContain("surgical emergency");
+    expect(learn[0].options.filter((o) => !o.ok).every((o) => !o.label.includes("Testicular"))).toBe(true);
+    expect("say" in ok.then![0] && ok.then![0].say.text).toContain("💡");
+    // ไม่มีเคสอื่น → ทีละข้อแบบแตะไปต่อ (ไม่ทิ้งรวดเดียวใน node เดียว)
+    const plain = longCaseToScenario(TORSION)!;
+    expect(sayTexts(plain).filter((t) => t.startsWith("💡"))).toHaveLength(2);
   });
 
   it("stays valid when examiner_questions is missing or malformed", () => {

@@ -7,6 +7,8 @@ import { resolveCharacter, type SimDbCharacter } from "@/lib/sim/characters";
 import { simBgUrl } from "@/lib/sim/backgrounds";
 import CharacterSprite from "@/components/sim/CharacterSprite";
 import EcgMonitor from "@/components/sim/EcgMonitor";
+import PaperSheet, { type Paper } from "@/components/sim/PaperSheet";
+import { orderIcon } from "@/lib/sim/order-icon";
 import {
   DEFAULT_DIFFICULTY, DIFFICULTY, applyFx, createInitialState, fmtTime,
   getDifficulty, gradeFor, nextNode, pushEtco2, recordCorrect, recordWrong,
@@ -153,10 +155,11 @@ export default function SimRunner({
   const [dlgSegments, setDlgSegments] = useState<TextSegment[]>([]);
   const [dlgCount, setDlgCount] = useState(0);
   const [typing, setTyping] = useState(false);
-  const [choice, setChoice] = useState<{ q: string; options: ChoiceOption[]; hintTgt: string | null; tried: Set<string> } | null>(null);
+  const [choice, setChoice] = useState<{ q: string; options: ChoiceOption[]; hintTgt: string | null; tried: Set<string>; shelf: boolean } | null>(null);
   const [decisionLeft, setDecisionLeft] = useState(getDifficulty(difficulty).decisionTime);
   const [drama, setDrama] = useState<"red" | "white" | null>(null);
   const [inter, setInter] = useState<{ text: string; green: boolean } | null>(null);
+  const [paper, setPaper] = useState<Paper | null>(null);
   const [flashN, setFlashN] = useState(0);
   const [redN, setRedN] = useState(0);
   const [shaking, setShaking] = useState(false);
@@ -341,6 +344,7 @@ export default function SimRunner({
     setResult({ won, grade, score, isHiscore });
     setChoice(null);
     setInter(null);
+    setPaper(null);
     setScreen("debrief");
     if (isBrowser) window.scrollTo(0, 0);
   }
@@ -355,7 +359,7 @@ export default function SimRunner({
       ? (c.options.find((o) => o.ok)?.tgt || null)
       : null;
     // snapshot ชุดข้อผิดเข้า state — อ่าน ref ระหว่าง render ไม่ได้ (react-hooks/refs)
-    setChoice({ q: c.q, options: shuffled(c.options), hintTgt, tried: new Set(wrongPicksRef.current) });
+    setChoice({ q: c.q, options: shuffled(c.options), hintTgt, tried: new Set(wrongPicksRef.current), shelf: !!c.shelf });
     setDecisionLeft(diff.decisionTime);
     if (timers.current.dec) clearInterval(timers.current.dec);
     let left = diff.decisionTime;
@@ -434,6 +438,15 @@ export default function SimRunner({
 
     if ("choice" in node) {
       showChoice(node.choice);
+      return;
+    }
+
+    // ใบรายงานผลแลป / ใบสั่งการรักษา — ค้างจนผู้เล่นแตะ (อ่านเองทีละบรรทัดเหมือนใบจริง)
+    if ("labSheet" in node || "orderSheet" in node) {
+      busyRef.current = true;
+      setDrama(null);
+      setAwaitTap(false);
+      setPaper("labSheet" in node ? { kind: "lab", sheet: node.labSheet } : { kind: "order", sheet: node.orderSheet });
       return;
     }
 
@@ -564,6 +577,12 @@ export default function SimRunner({
     advance();
   }
 
+  function onPaperTap() {
+    setPaper(null);
+    busyRef.current = false;
+    advance();
+  }
+
   function startGame() {
     clearAllTimers();
     if (!mutedRef.current) initAudio(); // ปลดล็อก AudioContext ตอนผู้ใช้แตะปุ่ม
@@ -580,6 +599,7 @@ export default function SimRunner({
     setRankPercentile(null);
     setChoice(null);
     setInter(null);
+    setPaper(null);
     setDrama(null);
     setSpeaker(null);
     setPlate(null);
@@ -951,23 +971,47 @@ export default function SimRunner({
               {choice.hintTgt && (
                 <div className="cbs-hint">💡 ลองสั่งหมวด <b>{choice.hintTgt}</b> ดูสิ</div>
               )}
-              {choice.options.map((o, i) => {
-                const tried = choice.tried.has(o.label);
-                const dim = !tried && choice.hintTgt && o.tgt !== choice.hintTgt;
-                const glow = choice.hintTgt && o.tgt === choice.hintTgt;
-                return (
-                  <button
-                    key={i}
-                    type="button"
-                    disabled={tried}
-                    className={`cbs-choice ${tried ? "cbs-choice-tried" : ""} ${dim ? "cbs-choice-dim" : ""} ${glow ? "cbs-choice-hint" : ""}`}
-                    onClick={() => pick(o)}
-                  >
-                    <span className="cbs-choice-tgt">▸ สั่ง {o.tgt}</span>
-                    {o.label}
-                  </button>
-                );
-              })}
+              {choice.shelf ? (
+                // ชั้น order — การ์ดหลายใบแบบ grid (ตัวหลอกเยอะ) เหมือนหยิบ order จากชุดคำสั่งจริง
+                <div className="cbs-shelf-grid">
+                  {choice.options.map((o, i) => {
+                    const tried = choice.tried.has(o.label);
+                    const dim = !tried && choice.hintTgt && o.tgt !== choice.hintTgt;
+                    const glow = choice.hintTgt && o.tgt === choice.hintTgt;
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        disabled={tried}
+                        className={`cbs-shelf-item ${tried ? "cbs-choice-tried" : ""} ${dim ? "cbs-choice-dim" : ""} ${glow ? "cbs-choice-hint" : ""}`}
+                        onClick={() => pick(o)}
+                      >
+                        <span className="cbs-shelf-icon" aria-hidden>{orderIcon(o.label)}</span>
+                        <span className="cbs-shelf-name">{o.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
+                choice.options.map((o, i) => {
+                  const tried = choice.tried.has(o.label);
+                  const dim = !tried && choice.hintTgt && o.tgt !== choice.hintTgt;
+                  const glow = choice.hintTgt && o.tgt === choice.hintTgt;
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      disabled={tried}
+                      className={`cbs-choice ${tried ? "cbs-choice-tried" : ""} ${dim ? "cbs-choice-dim" : ""} ${glow ? "cbs-choice-hint" : ""}`}
+                      onClick={() => pick(o)}
+                    >
+                      {/* ward case: หมวดอย่าง ASK/EXAM/LEARN ไม่ใช่ "คำสั่ง" จึงไม่ต่อคำว่าสั่ง */}
+                      <span className="cbs-choice-tgt">▸ {isLongcase ? o.tgt : `สั่ง ${o.tgt}`}</span>
+                      {o.label}
+                    </button>
+                  );
+                })
+              )}
               <div className="cbs-choice-timer">
                 <div
                   className={`cbs-choice-timer-fill ${timerPct < 30 ? "cbs-low" : ""}`}
@@ -1027,6 +1071,7 @@ export default function SimRunner({
           </div>
         </div>
       )}
+      {paper && <PaperSheet paper={paper} onDone={onPaperTap} />}
       {flashN > 0 && <div key={`fl-${flashN}`} className="cbs-flash cbs-go" />}
       {redN > 0 && <div key={`rf-${redN}`} className="cbs-redflash cbs-go" />}
     </div>
