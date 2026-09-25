@@ -20,6 +20,7 @@ import type { DifficultyLevel } from "@/lib/types-standard";
 import Link from "next/link";
 import {
   saveMcqAttempt,
+  recordMcqReview,
   createMcqSession,
   updateMcqSession,
 } from "@/lib/supabase/mutations-mcq";
@@ -188,6 +189,13 @@ export default function McqPractice({
           // Silently fail — don't block UI
         });
 
+        // NL only — the review queue and ?mode=review are student-audience.
+        // Wrong → enters/resets the queue; right on a due question → next
+        // interval. Never throws.
+        if (sessionAudience === "student") {
+          void recordMcqReview(userId, question.id, isCorrect);
+        }
+
         // Beta: optimistic counter bump + checkpoint survey triggers.
         if (isBeta) {
           recordAttempt();
@@ -219,6 +227,7 @@ export default function McqPractice({
       sessionAnswered,
       effectiveLimit,
       viaRecommendation,
+      sessionAudience,
     ]
   );
 

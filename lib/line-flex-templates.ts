@@ -494,6 +494,90 @@ export function buildStreakNudgeFlex(data: StreakNudgeData): LineMessage {
   };
 }
 
+interface McqReviewReminderData {
+  name: string | null;
+  dueCount: number;
+  reviewUrl: string;
+}
+
+/** Card pushed by the mcq-review-reminder cron — NL questions whose SRS review falls due today. */
+export function buildMcqReviewReminderFlex(data: McqReviewReminderData): LineMessage {
+  const greeting = data.name ? `น้อง${data.name}` : "น้อง";
+  const accent = "#8E44AD";
+
+  return {
+    type: "flex",
+    altText: `วันนี้มี ${data.dueCount} ข้อที่ถึงรอบทบทวน`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: accent,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: `🔁 วันนี้มี ${data.dueCount} ข้อที่ถึงรอบทบทวน`,
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+            wrap: true,
+          },
+          {
+            type: "text",
+            text: "MorRoo ทบทวนข้อที่ผิด",
+            color: "#E8DAEF",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: `${greeting} ข้อที่เคยตอบผิดถึงเวลากลับมาทบทวนแล้ว — ทำตอนนี้จำได้แม่นกว่ารอให้ลืม`,
+            size: "sm",
+            color: "#444444",
+            wrap: true,
+          },
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "ตอบถูกแล้วระบบจะเว้นระยะให้นานขึ้นเรื่อย ๆ 📈",
+            size: "sm",
+            color: "#666666",
+            wrap: true,
+            margin: "md",
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "ทบทวนเลย",
+              uri: toLiffUri(data.reviewUrl),
+            },
+            style: "primary",
+            color: accent,
+          },
+        ],
+      },
+    },
+  };
+}
+
 // ----------------------------------------------------------------------------
 // Exam grading result — pushed to LINE after AI grades an MEQ answer.
 
