@@ -93,13 +93,31 @@ ${JSON.stringify(exam)}
 ${JSON.stringify(lcTorsion)}`;
 }
 
+/** คำชมนำหน้าบทพูด ("ถูกต้อง — …") ที่ AI มักใส่ทั้งที่ prompt ห้าม — ผู้เล่นรู้อยู่แล้วว่าถูกเพราะเกมเดินต่อ */
+// "**ถูกต้อง!** …" / "ถูกต้อง — …" → ตัดทิ้งทั้งก้อน
+const CORRECT_PREFIX_RE = /^(?:\*\*ถูกต้อง(?:ครับ|ค่ะ|คะ)?[!.]*\*\*|ถูกต้อง(?:ครับ|ค่ะ|คะ)?[!.]*)\s*[—–:-]?\s*/;
+// "**ถูกต้อง — X** …" → "**X** …" (คง ** ตัวเปิดของคำเน้นที่ปิดทีหลังไว้)
+const CORRECT_PREFIX_IN_EM_RE = /^\*\*ถูกต้อง(?:ครับ|ค่ะ|คะ)?[!.]*\s*[—–:-]\s*/;
+
+function stripCorrectPrefix(text: string): string {
+  const out = CORRECT_PREFIX_IN_EM_RE.test(text)
+    ? text.replace(CORRECT_PREFIX_IN_EM_RE, "**")
+    : text.replace(CORRECT_PREFIX_RE, "");
+  return out.replace(/^\*\*\*\*/, "").trim() ? out : text;
+}
+
 /**
- * ปรับผลจาก AI ให้ตรงกติกาที่ AI มักหลุด: choice ที่ข้อถูกได้ใบสั่งการรักษา (orderSheet)
- * คือจุดสั่ง order → บังคับเป็นชั้น order (shelf) — mutate story ตรงๆ ทั้ง then ที่ซ้อนกัน
+ * ปรับผลจาก AI ให้ตรงกติกาที่ AI มักหลุด (mutate story ตรงๆ รวม then ที่ซ้อนกัน):
+ *  - choice ที่ข้อถูกได้ใบสั่งการรักษา (orderSheet) คือจุดสั่ง order → บังคับเป็นชั้น order (shelf)
+ *  - ตัดคำชม "ถูกต้อง — " หน้าบทพูด เหลือแต่คำอธิบาย (ถ้าไม่เหลืออะไรเลยคงข้อความเดิมไว้)
  */
 export function applyMeqConventions(story: unknown): void {
   if (!Array.isArray(story)) return;
   for (const node of story) {
+    const say = (node as { say?: { text?: unknown } } | null)?.say;
+    if (say && typeof say.text === "string") {
+      say.text = stripCorrectPrefix(say.text);
+    }
     const choice = (node as { choice?: { shelf?: boolean; options?: unknown } } | null)?.choice;
     if (!choice || !Array.isArray(choice.options)) continue;
     for (const opt of choice.options as { ok?: boolean; then?: unknown }[]) {
