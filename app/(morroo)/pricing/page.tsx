@@ -1,3 +1,4 @@
+import LearningPageHero from "@/components/LearningPageHero";
 import { Suspense } from "react";
 import Link from "next/link";
 import PricingCard from "@/components/PricingCard";
@@ -104,24 +105,23 @@ export default function PricingPage() {
       <PricingViewTracker surface="pricing_page" />
 
       {/* แถบเปิดหน้า — คำถามเดียวที่ผู้เข้าชมต้องตอบ แล้วตามด้วยทางลัดไปแต่ละแทร็ก */}
-      <section className="bg-muted py-14 sm:py-16">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Suspense fallback={null}>
             <PricingPromo />
           </Suspense>
-          <div className="text-center">
-            <h1 className="text-3xl font-extrabold text-brand-dark sm:text-4xl lg:text-5xl">
-              คุณกำลังเตรียมสอบอะไร?
-            </h1>
-            <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-gradient-to-r from-brand to-brand-light" />
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              เลือกแทร็กที่ตรงกับเป้าหมาย — แต่ละแทร็กมีแค่รายเดือนกับรายปี
-            </p>
-            <p className="mx-auto mt-3 inline-flex rounded-full bg-brand/10 px-4 py-1.5 text-sm font-semibold text-brand">
+          <LearningPageHero
+            eyebrow="เลือกเส้นทางที่เหมาะกับคุณ"
+            title="คุณกำลังเตรียมสอบอะไร?"
+            description="เริ่มจากเป้าหมายของคุณ แล้วเลือกแพ็กเกจรายเดือนหรือรายปีที่เหมาะกับจังหวะการเรียน"
+            scene="together"
+            className="mb-0"
+          >
+            <p className="inline-flex rounded-full bg-brand/10 px-4 py-1.5 text-sm font-semibold text-[#35694f]">
               🎉 สมาชิกใหม่ — ซื้อครั้งแรกลดสูงสุด {MAX_INTRO_SAVE}%
             </p>
-            <PricingFreeCta />
-          </div>
+            <PricingFreeCta align="left" />
+          </LearningPageHero>
 
           {/* Track jump links — สีตรงกับ accent ของแต่ละแทร็กด้านล่าง */}
           <nav className="mt-8 flex flex-wrap justify-center gap-2" aria-label="เลือกแทร็ก">

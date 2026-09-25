@@ -1,3 +1,4 @@
+import LearningPageHero from "@/components/LearningPageHero";
 import { Suspense } from "react";
 import ExamCard from "@/components/ExamCard";
 import { Badge } from "@/components/ui/badge";
@@ -111,20 +112,15 @@ export default async function ExamsPage({
       />
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <LandingPageTracker event="exams_list_view" />
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="text-3xl font-bold">ข้อสอบทั้งหมด</h1>
-          <p className="mt-2 text-muted-foreground">
-            เลือกข้อสอบที่ต้องการฝึก
-          </p>
-          <SectionUpdatesBadge section="exams" className="mt-3" />
-        </div>
-        <LineCtaButton
-          surface="exams"
-          label="แอด LINE รับข้อสอบฟรีทุกเช้า"
-          className="shrink-0 self-start sm:self-auto"
-        />
-      </div>
+      <LearningPageHero
+        eyebrow="ค่อย ๆ ฝึกคิด เข้าใจเคสทีละขั้น"
+        title="ข้อสอบทั้งหมด"
+        description="ฝึกข้อสอบ MEQ แบบ Progressive Case ตั้งแต่ข้อมูลแรกจนถึงการวางแผนรักษา — เลือกสาขาและระดับที่อยากฝึก แล้วเริ่มไปทีละเคส"
+        scene="practice"
+      >
+        <SectionUpdatesBadge section="exams" />
+        <LineCtaButton surface="exams" label="แอด LINE รับข้อสอบฟรีทุกเช้า" />
+      </LearningPageHero>
 
       {/* Exam Countdown */}
       <div className="mb-8">
@@ -134,7 +130,7 @@ export default async function ExamsPage({
       <InternalAdsBanner placement="exams-top" className="mb-8" />
 
       {/* Filters */}
-      <div className="mb-8 space-y-4">
+      <div className="mb-8 space-y-4 rounded-2xl border border-border bg-card p-5 sm:p-6">
         {/* Category filter */}
         <div>
           <h3 className="text-sm font-medium mb-2 text-muted-foreground">

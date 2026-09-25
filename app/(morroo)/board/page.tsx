@@ -1,3 +1,4 @@
+import LearningPageHero from "@/components/LearningPageHero";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, GraduationCap, CircleCheckBig, Loader2 } from "lucide-react";
@@ -35,14 +36,16 @@ export default async function BoardPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-8">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand mb-4"
-        >
-          <ArrowLeft className="h-4 w-4" /> กลับหน้าแรก
-        </Link>
-        <div className="flex items-center gap-2 mb-2">
+      <Link href="/" className="mb-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand">
+        <ArrowLeft className="h-4 w-4" /> กลับหน้าแรก
+      </Link>
+      <LearningPageHero
+        eyebrow="อีกก้าวบนเส้นทางแพทย์เฉพาะทาง"
+        title="เตรียมสอบบอร์ดเฉพาะทาง"
+        description="ฝึกข้อสอบ MCQ ตาม Blueprint จริงของแต่ละราชวิทยาลัยฯ — ทบทวนหัวข้อตรงโครงสอบ ปรับคะแนนตามจุดอ่อนของตัวเอง"
+        scene="clinical"
+      >
+        <div className="flex flex-wrap items-center gap-2">
           <Badge className="bg-purple-100 text-purple-700 gap-1">
             <GraduationCap className="h-3 w-3" />
             Board Exam
@@ -63,13 +66,6 @@ export default async function BoardPage() {
             </Badge>
           )}
         </div>
-        <h1 className="text-3xl font-bold">
-          เตรียมสอบบอร์ดเฉพาะทาง
-        </h1>
-        <p className="mt-2 text-muted-foreground max-w-2xl">
-          ฝึกข้อสอบ MCQ ตาม Blueprint จริงของแต่ละราชวิทยาลัยฯ —
-          ทบทวนหัวข้อตรงโครงสอบ ปรับคะแนนตามจุดอ่อนของตัวเอง
-        </p>
         {totals.projectedTotal > 0 && (
           <p className="mt-2 text-sm text-muted-foreground max-w-2xl">
             ตอนนี้มีข้อสอบในคลังรวม{" "}
@@ -83,7 +79,7 @@ export default async function BoardPage() {
             )}
           </p>
         )}
-      </div>
+      </LearningPageHero>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {specialties.map((s) => (

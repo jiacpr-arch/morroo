@@ -1,0 +1,15 @@
+# Learning-page imagery
+
+Two illustrative images generated using the built-in image_gen tool on 2026-09-25. These depict fictional study situations, not actual users, staff or testimonials. Converted from generated 1536 × 1024 PNGs to 1200 × 800 WebP with Sharp, quality 82. Combined size: 133,654 bytes (about 131 KiB).
+
+## focused-practice.webp
+
+Use case: photorealistic-natural. Asset type: decorative editorial banner for MorRoo, a warm and welcoming Thai medical learning website. Create a premium natural photograph of a young adult Thai woman medical student studying independently at a pale oak desk in a quiet university library, white shirt and muted sage cardigan, writing thoughtful notes in an open cream notebook while looking at a tablet on a stand. No white coat needed. A small stack of sage green books and a ceramic mug. Gentle focused expression, relaxed and hopeful, never looking at camera. Light filled background with softly blurred pale bookshelves and plants. Warm daylight, cream, sage, light oak and subtle teal palette, tactile paper, understated editorial photography. Wide landscape 3:2 composition with her face and tablet in the central safe area, lots of space around head, suitable for cropping into a wide mobile banner. No readable text on books or screens, no logos, no watermarks, no floating graphics, anatomically believable hands. Illustrative brand imagery, not a real customer testimonial.
+
+## clinical-learning.webp
+
+Use case: photorealistic-natural. Asset type: beautiful welcoming editorial banner for MorRoo Thai medical education website, covering clinical case practice and specialist study. Candid photograph of two Thai adult doctors, a female senior mentor in her forties and a young adult male medical trainee in his twenties, discussing a closed patient-free teaching case on a tablet together at a small desk in a bright hospital teaching room. Both wearing simple clean white coats over sage green and pale blue clothing. Looking attentively at tablet and each other, approachable and reassuring, quiet confidence, gentle natural smiles, NOT looking at camera. No patient, no procedure, no readable patient information, no visible diagnostic charts. Modern cream interior with pale oak shelves and softly blurred glass window and green plants. Warm diffused morning daylight, sage, cream and teal palette, premium natural editorial photography matching a warm student-library study campaign. Wide landscape 3:2 composition, both heads comfortably in the central safe zone with negative space around, hands natural and anatomically believable, tablet held low centrally, suitable for wide website crops. No text, logos, watermarks, floating UI or badges. Fictional illustrative scene, not a staff portrait or testimonial.
+
+## Reused images
+
+LearningPageHero also uses the existing assets public/images/home/medical-study-together.webp, public/images/home/calm-study-desk.webp and public/images/games/courses/long-case-meq.jpg. See the homepage image README for the original generation prompts.

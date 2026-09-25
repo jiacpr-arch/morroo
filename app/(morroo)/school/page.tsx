@@ -1,3 +1,4 @@
+import LearningPageHero from "@/components/LearningPageHero";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -141,19 +142,19 @@ export default async function SchoolPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-6">
-        <div className="flex items-center gap-2 mb-2">
-          <Badge className="bg-indigo-100 text-indigo-700">โหมดใหม่</Badge>
+      <LearningPageHero
+        eyebrow="ค่อย ๆ เก่งขึ้น ไปด้วยกันทุกวัน"
+        title="School — เรียนแพทย์ Y1–Y6"
+        description="ทบทวนเนื้อหาแพทย์ตั้งแต่ปี 1 ถึงปี 6 แบบวันละนิด ด้วย flashcard, quiz และ AI ช่วยติว พร้อมระบบทบทวนอัตโนมัติและ streak ที่ช่วยให้เรียนได้ต่อเนื่อง"
+        scene="together"
+      >
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge className="bg-brand/10 text-[#35694f]">เรียนรู้วันละนิด</Badge>
           <Badge variant="secondary">{totalFlashcards} flashcards</Badge>
           <Badge variant="secondary">{totalQuizzes} ข้อสอบสั้น</Badge>
         </div>
-        <h1 className="text-3xl font-bold">School — เรียนแพทย์ Y1–Y6</h1>
-        <p className="mt-2 text-muted-foreground max-w-2xl">
-          ติวแพทย์ตั้งแต่ปี 1 ถึงปี 6 แบบวันละนิด — flashcard + quiz + AI ช่วยติว
-          พร้อมระบบทบทวนอัตโนมัติและ streak ให้เรียนต่อเนื่องเหมือน Duolingo
-        </p>
-        <SectionUpdatesBadge section="school" className="mt-3" />
-      </div>
+        <SectionUpdatesBadge section="school" />
+      </LearningPageHero>
 
       {/* ชั้นปี + วิชา — เห็นชื่อวิชาตรงนี้เลย ไม่ต้องกดเข้าไปดูทีละปี */}
       <div className="mb-8 space-y-6">
