@@ -6,7 +6,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { createClient } from "@/lib/supabase/client";
-import { bulkUpdateMcqQuestionStatus } from "@/lib/supabase/mutations-mcq-admin";
+import {
+  bulkUpdateMcqQuestionStatus,
+  fetchAdminMcqQuestions,
+} from "@/lib/supabase/mutations-mcq-admin";
 import {
   ChevronLeft, Shield, Loader2, ClipboardCheck, CheckCircle2,
 } from "lucide-react";
@@ -37,22 +40,20 @@ export default function BoardReviewPage() {
     specFilter: string,
     sectionFilter: string
   ): Promise<McqQuestion[]> {
-    const supabase = createClient();
-    let q = supabase
-      .from("mcq_questions")
-      .select("*")
-      .eq("audience", "board")
-      .eq("status", "review")
-      .order("created_at", { ascending: false })
-      .limit(PAGE_LIMIT);
-    if (specFilter) q = q.eq("board_specialty", specFilter);
-    if (sectionFilter) q = q.eq("board_section", sectionFilter);
-    const { data, error } = await q;
-    if (error) {
+    // ทั้งแถวรวมเฉลย → อ่านผ่าน /api/admin/mcq/questions (service role)
+    const { rows, error } = await fetchAdminMcqQuestions<McqQuestion>("review", {
+      audience: "board",
+      status: "review",
+      board_specialty: specFilter || undefined,
+      board_section: sectionFilter || undefined,
+      order: "desc",
+      limit: PAGE_LIMIT,
+    });
+    if (error !== null) {
       console.error("Failed to load review queue:", error);
       return [];
     }
-    return (data ?? []) as McqQuestion[];
+    return rows;
   }
 
   useEffect(() => {

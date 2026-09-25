@@ -14,12 +14,14 @@ import {
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
-import type { McqQuestion } from "@/lib/types-mcq";
+import type { McqPublicQuestion } from "@/lib/mcq-public";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import { formatBaht, planIntroAmount } from "@/lib/membership";
 
 interface McqAiChatProps {
-  question: McqQuestion;
+  question: Pick<McqPublicQuestion, "id">;
+  /** เฉลยของข้อนี้ — McqPractice ส่งมาหลัง /api/mcq/reveal แล้วเท่านั้น */
+  correctAnswer: string;
   selectedAnswer: string | null;
   isPremium?: boolean;
 }
@@ -37,6 +39,7 @@ const SUGGESTED_QUESTIONS = [
 
 export default function McqAiChat({
   question,
+  correctAnswer,
   selectedAnswer,
   isPremium = false,
 }: McqAiChatProps) {
@@ -73,18 +76,22 @@ export default function McqAiChat({
       const res = await fetch("/api/ai/mcq-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        // server โหลดโจทย์ + เฉลยเองจาก questionId (service role)
         body: JSON.stringify({
-          question: {
-            scenario: question.scenario,
-            choices: question.choices,
-            correct_answer: question.correct_answer,
-            explanation: question.explanation,
-            detailed_explanation: question.detailed_explanation,
-          },
+          questionId: question.id,
           userMessage: text.trim(),
         }),
       });
 
+      if (res.status === 403) {
+        // ข้อนี้อยู่ใน Mock ที่กำลังสอบ — ไม่ใช่ AI ล่ม
+        const blocked = await res.json().catch(() => ({}));
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: String(blocked?.error ?? "ยังถามข้อนี้ไม่ได้ในตอนนี้") },
+        ]);
+        return;
+      }
       if (!res.ok) {
         throw new Error("Failed to get response");
       }
@@ -119,10 +126,10 @@ export default function McqAiChat({
     if (
       q === "ทำไมตัวเลือกอื่นถึงไม่ถูก?" &&
       selectedAnswer &&
-      selectedAnswer !== question.correct_answer
+      selectedAnswer !== correctAnswer
     ) {
       sendMessage(
-        `ทำไมข้อ ${selectedAnswer} ถึงไม่ถูก? แล้วข้อ ${question.correct_answer} ถูกเพราะอะไร?`
+        `ทำไมข้อ ${selectedAnswer} ถึงไม่ถูก? แล้วข้อ ${correctAnswer} ถูกเพราะอะไร?`
       );
     } else {
       sendMessage(q);
@@ -192,7 +199,7 @@ export default function McqAiChat({
                     </button>
                   ))}
                   {selectedAnswer &&
-                    selectedAnswer !== question.correct_answer && (
+                    selectedAnswer !== correctAnswer && (
                       <button
                         onClick={() =>
                           sendMessage(

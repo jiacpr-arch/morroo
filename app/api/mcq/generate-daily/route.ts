@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 // Generate 10 MCQ questions per subject, rotating through subjects daily
 // Easy+Medium → Haiku (fast, cheap), Hard → Sonnet (deep clinical reasoning)
@@ -160,7 +160,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "ANTHROPIC_API_KEY not set" }, { status: 500 });
   }
 
-  const supabase = await createClient();
+  // Secret-guarded cron with no user session — write with the service role
+  // (anon has no insert policy on mcq_questions).
+  const supabase = createAdminClient();
 
   // Determine today's subject based on day-of-year rotation
   const now = new Date();

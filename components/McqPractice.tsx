@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +15,7 @@ import {
   Lock,
   Sparkles,
 } from "lucide-react";
-import type { McqQuestion } from "@/lib/types-mcq";
+import type { McqAnswerKey, McqPracticeQuestion, McqRevealResponse } from "@/lib/mcq-public";
 import DifficultyBadge from "@/components/DifficultyBadge";
 import type { DifficultyLevel } from "@/lib/types-standard";
 import Link from "next/link";
@@ -36,7 +37,11 @@ import BetaPaywall from "@/components/beta/BetaPaywall";
 import { formatBaht, planIntroAmount } from "@/lib/membership";
 
 interface McqPracticeProps {
-  questions: McqQuestion[];
+  /**
+   * ข้อสอบไม่มีเฉลย — ตอบแล้วขอเฉลยทีละข้อจาก /api/mcq/reveal ยกเว้นข้อที่ server
+   * ฝัง answerKey มาให้แล้ว (ผู้ใช้ยังไม่ล็อกอิน ช่วงข้อฟรี)
+   */
+  questions: McqPracticeQuestion[];
   isPremium?: boolean;
   freeUsedCount?: number;
   freeLimit?: number;
@@ -60,6 +65,7 @@ export default function McqPractice({
   sessionBoardSection = null,
 }: McqPracticeProps) {
   const { status: betaStatus, recordAttempt, refresh: refreshBeta } = useBeta();
+  const pathname = usePathname();
   // Only an unexpired Beta counts: once Beta ends the user falls back to the
   // normal free cap instead of being locked out.
   const isBeta = (betaStatus?.isBeta ?? false) && !betaStatus?.isExpired;
@@ -79,6 +85,12 @@ export default function McqPractice({
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
+  // เฉลยของข้อปัจจุบัน — มีหลังตอบแล้วเท่านั้น
+  const [answerKey, setAnswerKey] = useState<McqAnswerKey | null>(null);
+  const [revealing, setRevealing] = useState(false);
+  const [revealError, setRevealError] = useState<{ message: string; needsLogin: boolean } | null>(null);
+  // เฉลยที่เคยขอแล้วในรอบนี้ (ทำใหม่ไม่ต้องยิง /api/mcq/reveal ซ้ำ)
+  const revealedKeys = useRef<Map<string, McqAnswerKey>>(new Map());
   const [stats, setStats] = useState({ correct: 0, total: 0 });
   const [userId, setUserId] = useState<string | null>(null);
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -155,14 +167,18 @@ export default function McqPractice({
   }, [isQuotaExhausted, userId, sessionAnswered]);
 
   const question = questions[currentIndex];
+  // ข้อที่แสดงอยู่ตอนนี้ — ใช้ทิ้งผล /api/mcq/reveal ที่กลับมาหลังเปลี่ยนข้อแล้ว
+  const currentQuestionId = useRef<string | undefined>(question?.id);
+  useEffect(() => {
+    currentQuestionId.current = question?.id;
+  }, [question?.id]);
 
-  const handleSelectAnswer = useCallback(
-    (label: string) => {
-      if (showResult) return;
-      setSelectedAnswer(label);
+  const applyResult = useCallback(
+    (label: string, key: McqAnswerKey) => {
+      setAnswerKey(key);
       setShowResult(true);
 
-      const isCorrect = label === question.correct_answer;
+      const isCorrect = label === key.correct_answer;
       // Auto-expand explanation when correct so students can learn more
       if (isCorrect) {
         setShowExplanation(true);
@@ -232,8 +248,8 @@ export default function McqPractice({
       }
     },
     [
-      showResult,
       question,
+      isPremium,
       userId,
       sessionId,
       isBeta,
@@ -246,12 +262,69 @@ export default function McqPractice({
     ]
   );
 
+  const handleSelectAnswer = useCallback(
+    async (label: string) => {
+      if (showResult || revealing || !question) return;
+      setSelectedAnswer(label);
+      setRevealError(null);
+
+      const cached = question.answerKey ?? revealedKeys.current.get(question.id);
+      if (cached) {
+        applyResult(label, cached);
+        return;
+      }
+
+      // เฉลยไม่ได้มากับข้อสอบ — ถาม server (ต้องล็อกอิน, มี rate limit,
+      // ข้อที่อยู่ใน Mock ที่กำลังสอบจะถูกปฏิเสธ)
+      const questionId = question.id;
+      setRevealing(true);
+      try {
+        const res = await fetch("/api/mcq/reveal", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ questionId, selected: label }),
+        });
+        const data = (await res.json().catch(() => null)) as
+          | (McqRevealResponse & { error?: string })
+          | null;
+        if (currentQuestionId.current !== questionId) return;
+        if (!res.ok || !data || typeof data.correct_answer !== "string") {
+          setSelectedAnswer(null);
+          setRevealError({
+            message:
+              data?.error ??
+              (res.status === 401 ? "เข้าสู่ระบบเพื่อดูเฉลย" : "โหลดเฉลยไม่สำเร็จ ลองใหม่อีกครั้ง"),
+            needsLogin: res.status === 401,
+          });
+          return;
+        }
+        const key: McqAnswerKey = {
+          correct_answer: data.correct_answer,
+          explanation: data.explanation ?? null,
+          detailed_explanation: data.detailed_explanation ?? null,
+        };
+        revealedKeys.current.set(questionId, key);
+        applyResult(label, key);
+      } catch {
+        if (currentQuestionId.current !== questionId) return;
+        setSelectedAnswer(null);
+        setRevealError({ message: "โหลดเฉลยไม่สำเร็จ ลองใหม่อีกครั้ง", needsLogin: false });
+      } finally {
+        if (currentQuestionId.current === questionId) setRevealing(false);
+      }
+    },
+    [showResult, revealing, question, applyResult]
+  );
+
   const handleNext = useCallback(() => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
       setSelectedAnswer(null);
       setShowResult(false);
       setShowExplanation(false);
+      setAnswerKey(null);
+      setRevealing(false);
+      setRevealError(null);
     }
   }, [currentIndex, questions.length]);
 
@@ -260,6 +333,9 @@ export default function McqPractice({
     setSelectedAnswer(null);
     setShowResult(false);
     setShowExplanation(false);
+    setAnswerKey(null);
+    setRevealing(false);
+    setRevealError(null);
     setStats({ correct: 0, total: 0 });
     setSessionAnswered(0);
   }, []);
@@ -346,10 +422,8 @@ export default function McqPractice({
             {question.exam_source && ` • ${question.exam_source}`}
           </Badge>
         )}
-        {(question as McqQuestion & { difficulty_level?: number }).difficulty_level && (
-          <DifficultyBadge
-            level={(question as McqQuestion & { difficulty_level?: number }).difficulty_level as DifficultyLevel}
-          />
+        {question.difficulty_level && (
+          <DifficultyBadge level={question.difficulty_level as DifficultyLevel} />
         )}
       </div>
 
@@ -366,7 +440,7 @@ export default function McqPractice({
       <div className="space-y-3">
         {question.choices.map((choice) => {
           const isSelected = selectedAnswer === choice.label;
-          const isCorrect = choice.label === question.correct_answer;
+          const isCorrect = !!answerKey && choice.label === answerKey.correct_answer;
 
           let borderClass = "border-border hover:border-brand/50";
           let bgClass = "bg-white";
@@ -389,8 +463,8 @@ export default function McqPractice({
           return (
             <button
               key={choice.label}
-              onClick={() => handleSelectAnswer(choice.label)}
-              disabled={showResult}
+              onClick={() => void handleSelectAnswer(choice.label)}
+              disabled={showResult || revealing}
               className={`w-full text-left p-4 rounded-xl border-2 transition-all ${borderClass} ${bgClass} ${
                 !showResult ? "cursor-pointer" : "cursor-default"
               }`}
@@ -422,22 +496,48 @@ export default function McqPractice({
         })}
       </div>
 
+      {revealing && (
+        <p className="text-sm text-muted-foreground" role="status">
+          กำลังตรวจคำตอบ…
+        </p>
+      )}
+
+      {revealError && (
+        <div
+          className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800"
+          role="alert"
+        >
+          {revealError.message}
+          {revealError.needsLogin && (
+            <>
+              {" "}
+              <Link
+                href={`/login?next=${encodeURIComponent(pathname || "/nl/practice")}`}
+                className="font-medium text-brand hover:underline"
+              >
+                เข้าสู่ระบบ →
+              </Link>
+            </>
+          )}
+        </div>
+      )}
+
       {/* Explanation */}
-      {showResult && (question.detailed_explanation || question.explanation) && (
+      {showResult && answerKey && (answerKey.detailed_explanation || answerKey.explanation) && (
         <div>
           {/* Free users: show short explanation always */}
-          {!isPremium && question.explanation && (
+          {!isPremium && answerKey.explanation && (
             <Card className="border-brand/20 mb-3">
               <CardContent className="p-4">
                 <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
-                  {question.explanation}
+                  {answerKey.explanation}
                 </p>
               </CardContent>
             </Card>
           )}
 
           {/* Toggle detailed explanation */}
-          {question.detailed_explanation && (
+          {answerKey.detailed_explanation && (
             <>
               <button
                 onClick={() => setShowExplanation(!showExplanation)}
@@ -468,11 +568,11 @@ export default function McqPractice({
                           <div className="flex items-start gap-2 mb-2">
                             <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
                             <h4 className="font-bold text-green-800">
-                              คำตอบที่ถูกต้อง: {question.correct_answer}
+                              คำตอบที่ถูกต้อง: {answerKey.correct_answer}
                             </h4>
                           </div>
                           <p className="text-sm leading-relaxed text-green-900">
-                            {question.detailed_explanation.summary}
+                            {answerKey.detailed_explanation.summary}
                           </p>
                         </CardContent>
                       </Card>
@@ -482,7 +582,7 @@ export default function McqPractice({
                         <CardContent className="p-4">
                           <h4 className="font-bold text-blue-800 mb-2">เหตุผลโดยละเอียด</h4>
                           <p className="text-sm leading-relaxed whitespace-pre-line text-foreground/80">
-                            {question.detailed_explanation.reason}
+                            {answerKey.detailed_explanation.reason}
                           </p>
                         </CardContent>
                       </Card>
@@ -491,7 +591,7 @@ export default function McqPractice({
                       <div>
                         <h4 className="font-bold text-sm mb-3">อธิบายแต่ละตัวเลือก</h4>
                         <div className="space-y-2">
-                          {question.detailed_explanation.choices.map((ce) => (
+                          {answerKey.detailed_explanation.choices.map((ce) => (
                             <div
                               key={ce.label}
                               className={`p-3 rounded-lg border text-sm ${
@@ -528,12 +628,12 @@ export default function McqPractice({
                       </div>
 
                       {/* Key takeaway */}
-                      {question.detailed_explanation.key_takeaway && (
+                      {answerKey.detailed_explanation.key_takeaway && (
                         <Card className="border-amber-200 bg-amber-50/30">
                           <CardContent className="p-4">
                             <h4 className="font-bold text-amber-800 mb-1 text-sm">สรุปจุดสำคัญ</h4>
                             <p className="text-sm leading-relaxed text-amber-900">
-                              {question.detailed_explanation.key_takeaway}
+                              {answerKey.detailed_explanation.key_takeaway}
                             </p>
                           </CardContent>
                         </Card>
@@ -545,12 +645,12 @@ export default function McqPractice({
                       <div className="blur-sm pointer-events-none select-none space-y-3" aria-hidden>
                         <Card className="border-green-300 bg-green-50/50">
                           <CardContent className="p-4">
-                            <p className="text-sm">{question.detailed_explanation.summary}</p>
+                            <p className="text-sm">{answerKey.detailed_explanation.summary}</p>
                           </CardContent>
                         </Card>
                         <Card className="border-blue-200 bg-blue-50/30">
                           <CardContent className="p-4">
-                            <p className="text-sm">{question.detailed_explanation.reason}</p>
+                            <p className="text-sm">{answerKey.detailed_explanation.reason}</p>
                           </CardContent>
                         </Card>
                       </div>
@@ -576,11 +676,11 @@ export default function McqPractice({
           )}
 
           {/* Fallback simple explanation for premium (no detailed_explanation yet) */}
-          {isPremium && !question.detailed_explanation && question.explanation && (
+          {isPremium && !answerKey.detailed_explanation && answerKey.explanation && (
             <Card className="border-brand/20">
               <CardContent className="p-4">
                 <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
-                  {question.explanation}
+                  {answerKey.explanation}
                 </p>
               </CardContent>
             </Card>
@@ -605,8 +705,13 @@ export default function McqPractice({
       )}
 
       {/* AI Chat - ask questions about this MCQ */}
-      {showResult && (
-        <McqAiChat question={question} selectedAnswer={selectedAnswer} isPremium={isPremium} />
+      {showResult && answerKey && (
+        <McqAiChat
+          question={question}
+          correctAnswer={answerKey.correct_answer}
+          selectedAnswer={selectedAnswer}
+          isPremium={isPremium}
+        />
       )}
 
       {/* Actions */}

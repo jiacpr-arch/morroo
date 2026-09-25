@@ -1,5 +1,9 @@
 import { NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { isUuid } from "@/lib/school/ids";
+import { ACTIVE_MOCK_BLOCK_MESSAGE, isQuestionInActiveMock } from "@/lib/mcq-active-mock";
+import type { McqQuestion } from "@/lib/types-mcq";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { createAnthropic, CHAT_MODELS, createWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
@@ -21,35 +25,44 @@ export async function POST(request: NextRequest) {
   const rlResp = rateLimitResponse(rl, RATE_LIMITS.aiChat);
   if (rlResp) return rlResp;
 
-  const {
-    question,
-    userMessage,
-  }: {
-    question: {
-      scenario: string;
-      choices: { label: string; text: string }[];
-      correct_answer: string;
-      explanation: string | null;
-      detailed_explanation: {
-        summary: string;
-        reason: string;
-        choices: {
-          label: string;
-          text: string;
-          is_correct: boolean;
-          explanation: string;
-        }[];
-        key_takeaway: string;
-      } | null;
-    };
-    userMessage: string;
-  } = await request.json();
+  // Body: { questionId, userMessage } — โจทย์และเฉลยโหลดฝั่ง server ด้วย service role
+  // (browser ไม่มีเฉลยแล้ว ดู lib/mcq-public.ts) และไม่ตอบข้อที่อยู่ใน Mock ที่กำลังสอบ
+  let body: { questionId?: unknown; userMessage?: unknown };
+  try {
+    body = await request.json();
+  } catch {
+    return new Response(JSON.stringify({ error: "Invalid JSON body" }), { status: 400 });
+  }
+  const { questionId } = body ?? {};
+  const userMessage = typeof body?.userMessage === "string" ? body.userMessage : "";
 
-  if (!question || !userMessage) {
+  if (!isUuid(questionId) || !userMessage.trim()) {
     return new Response(
       JSON.stringify({ error: "Missing question or message" }),
       { status: 400 }
     );
+  }
+
+  const admin = createAdminClient();
+  if (await isQuestionInActiveMock(admin, user.id, questionId)) {
+    return new Response(JSON.stringify({ error: ACTIVE_MOCK_BLOCK_MESSAGE }), {
+      status: 403,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  const { data: questionRow } = await admin
+    .from("mcq_questions")
+    .select("scenario, choices, correct_answer, explanation, detailed_explanation")
+    .eq("id", questionId)
+    .eq("status", "active")
+    .maybeSingle();
+  const question = questionRow as Pick<
+    McqQuestion,
+    "scenario" | "choices" | "correct_answer" | "explanation" | "detailed_explanation"
+  > | null;
+  if (!question) {
+    return new Response(JSON.stringify({ error: "ไม่พบข้อสอบนี้" }), { status: 404 });
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;

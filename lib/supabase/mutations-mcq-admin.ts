@@ -1,7 +1,10 @@
-import { createClient } from "./client";
 import type { McqChoice, McqChoiceExplanation } from "../types-mcq";
+import type { McqAdminListFilters, McqAdminView } from "../mcq-admin-api";
 
-// Admin-only MCQ CRUD mutations (browser client, role checked server-side by RLS)
+// Admin-only MCQ CRUD — ใช้จากหน้า admin ในเบราว์เซอร์ ยิงไป
+// /api/admin/mcq/questions (requireAdmin + service role) เพราะคอลัมน์เฉลย
+// (correct_answer / explanation / detailed_explanation / ai_notes) ถูก revoke
+// จาก anon/authenticated — ห้ามอ่านเฉลยผ่าน supabase client ของเบราว์เซอร์
 
 export interface McqDetailedExplanation {
   summary: string;
@@ -38,33 +41,41 @@ export interface McqQuestionInput {
   reference_source?: string | null;
 }
 
+const BASE = "/api/admin/mcq/questions";
+
+async function send(url: string, method: string, body: unknown): Promise<Response | null> {
+  try {
+    return await fetch(url, {
+      method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  } catch (err) {
+    console.error(`MCQ admin ${method} ${url} failed:`, err);
+    return null;
+  }
+}
+
 export async function createMcqQuestion(
   data: McqQuestionInput
 ): Promise<{ id: string } | null> {
-  const supabase = createClient();
-  const { data: row, error } = await supabase
-    .from("mcq_questions")
-    .insert(data)
-    .select("id")
-    .single();
-  if (error) {
-    console.error("Error creating MCQ question:", error);
+  const res = await send(BASE, "POST", data);
+  const json = (await res?.json().catch(() => null)) as { id?: string; error?: string } | null;
+  if (!res?.ok || !json?.id) {
+    console.error("Error creating MCQ question:", json?.error ?? res?.status);
     return null;
   }
-  return row as { id: string };
+  return { id: json.id };
 }
 
 export async function updateMcqQuestion(
   id: string,
   data: Partial<McqQuestionInput>
 ): Promise<boolean> {
-  const supabase = createClient();
-  const { error } = await supabase
-    .from("mcq_questions")
-    .update(data)
-    .eq("id", id);
-  if (error) {
-    console.error("Error updating MCQ question:", error);
+  const res = await send(`${BASE}/${encodeURIComponent(id)}`, "PATCH", data);
+  if (!res?.ok) {
+    const json = (await res?.json().catch(() => null)) as { error?: string } | null;
+    console.error("Error updating MCQ question:", json?.error ?? res?.status);
     return false;
   }
   return true;
@@ -74,16 +85,7 @@ export async function updateMcqQuestionStatus(
   id: string,
   status: "active" | "review" | "disabled"
 ): Promise<boolean> {
-  const supabase = createClient();
-  const { error } = await supabase
-    .from("mcq_questions")
-    .update({ status })
-    .eq("id", id);
-  if (error) {
-    console.error("Error updating MCQ status:", error);
-    return false;
-  }
-  return true;
+  return updateMcqQuestion(id, { status });
 }
 
 export async function deleteMcqQuestion(id: string): Promise<boolean> {
@@ -96,15 +98,47 @@ export async function bulkUpdateMcqQuestionStatus(
   status: "active" | "review" | "disabled"
 ): Promise<{ ok: number; failed: number }> {
   if (ids.length === 0) return { ok: 0, failed: 0 };
-  const supabase = createClient();
-  const { error, count } = await supabase
-    .from("mcq_questions")
-    .update({ status }, { count: "exact" })
-    .in("id", ids);
-  if (error) {
-    console.error("Bulk status update failed:", error);
+  const res = await send(BASE, "PATCH", { ids, status });
+  const json = (await res?.json().catch(() => null)) as { ok?: number; failed?: number } | null;
+  if (!res?.ok || typeof json?.ok !== "number") {
+    console.error("Bulk status update failed:", res?.status);
     return { ok: 0, failed: ids.length };
   }
-  const ok = count ?? ids.length;
-  return { ok, failed: ids.length - ok };
+  return { ok: json.ok, failed: json.failed ?? ids.length - json.ok };
+}
+
+/** ข้อสอบ 1 ข้อพร้อมเฉลย สำหรับฟอร์มแก้ไข (null = ไม่พบ/ไม่มีสิทธิ์) */
+export async function fetchAdminMcqQuestion(id: string): Promise<Record<string, unknown> | null> {
+  try {
+    const res = await fetch(`${BASE}/${encodeURIComponent(id)}`, { cache: "no-store" });
+    if (!res.ok) return null;
+    const json = (await res.json()) as { question?: Record<string, unknown> };
+    return json.question ?? null;
+  } catch (err) {
+    console.error("Error fetching MCQ question:", err);
+    return null;
+  }
+}
+
+/**
+ * อ่านรายการข้อสอบ (รวมเฉลยตาม view) ผ่าน service role หนึ่งหน้า (≤1000 แถว)
+ * คืน { rows } หรือ { error }
+ */
+export async function fetchAdminMcqQuestions<T>(
+  view: Exclude<McqAdminView, "detail">,
+  filters: Partial<McqAdminListFilters> = {}
+): Promise<{ rows: T[]; error: null } | { rows: null; error: string }> {
+  const params = new URLSearchParams({ view });
+  for (const [k, v] of Object.entries(filters)) {
+    if (v === undefined || v === null || v === "" || v === false) continue;
+    params.set(k, v === true ? "1" : String(v));
+  }
+  try {
+    const res = await fetch(`${BASE}?${params.toString()}`, { cache: "no-store" });
+    const json = (await res.json().catch(() => null)) as { rows?: T[]; error?: string } | null;
+    if (!res.ok || !json?.rows) return { rows: null, error: json?.error ?? `HTTP ${res.status}` };
+    return { rows: json.rows, error: null };
+  } catch (err) {
+    return { rows: null, error: String(err) };
+  }
 }

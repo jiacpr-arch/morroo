@@ -10,6 +10,7 @@ import {
   type CommentRow,
 } from "@/lib/mcq-comments";
 import { COMMENT_FIELDS, toPublicComments } from "@/lib/supabase/queries-mcq-comments";
+import { ACTIVE_MOCK_BLOCK_MESSAGE, isQuestionInActiveMock } from "@/lib/mcq-active-mock";
 
 // Hard cap per question — discussions on a single MCQ are small; this just
 // keeps a pathological thread from producing a huge payload.
@@ -34,6 +35,11 @@ export async function GET(request: NextRequest) {
       { error: "ต้องเข้าสู่ระบบก่อนจึงจะดูการอภิปรายได้" },
       { status: 401 }
     );
+  }
+
+  // คอมเมนต์มักเฉลยคำตอบ — ไม่ให้อ่านระหว่างที่ข้อนี้อยู่ใน Mock ที่กำลังสอบ
+  if (await isQuestionInActiveMock(createAdminClient(), user.id, questionId)) {
+    return NextResponse.json({ error: ACTIVE_MOCK_BLOCK_MESSAGE }, { status: 403 });
   }
 
   // RLS: status='visible' OR own comment.

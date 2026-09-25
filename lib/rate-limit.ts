@@ -26,6 +26,8 @@ export const RATE_LIMITS = {
   mcqCommentVote: { max: 300, windowSeconds: 3600 }, // 300 vote toggles / hour
   mcqCommentReport: { max: 20, windowSeconds: 86400 }, // 20 comment reports / day
   mcqMockSubmit: { max: 30, windowSeconds: 3600 },   // 30 mock submissions / hour
+  // เฉลยทีละข้อในโหมดฝึก — คนทำจริงเร็วสุด ~1 ข้อ/10-20 วิ, กันดูดเฉลยทั้งคลัง
+  mcqReveal: { max: 300, windowSeconds: 3600 },      // 300 answer reveals / hour
 } as const satisfies Record<string, RateLimitConfig>;
 
 /**

@@ -5,7 +5,10 @@ import { useRouter, useParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Loader2, Shield } from "lucide-react";
 import { McqForm, type AdminMcqSubject, type AdminBoardTopic } from "../McqForm";
-import type { McqDetailedExplanation } from "@/lib/supabase/mutations-mcq-admin";
+import {
+  fetchAdminMcqQuestion,
+  type McqDetailedExplanation,
+} from "@/lib/supabase/mutations-mcq-admin";
 
 export default function EditMcqPage() {
   const router = useRouter();
@@ -30,12 +33,9 @@ export default function EditMcqPage() {
 
       setIsAdmin(true);
 
-      const [qRes, sRes, tRes] = await Promise.all([
-        supabase
-          .from("mcq_questions")
-          .select("id, subject_id, exam_type, exam_source, scenario, choices, correct_answer, explanation, detailed_explanation, difficulty, topic, status, audience, board_section, board_topic, board_age_group, board_level, reference_source")
-          .eq("id", questionId)
-          .single(),
+      const [question, sRes, tRes] = await Promise.all([
+        // มีเฉลย → อ่านผ่าน /api/admin/mcq/questions/[id] (service role)
+        fetchAdminMcqQuestion(questionId),
         supabase
           .from("mcq_subjects")
           .select("id, name_th, icon, audience, board_specialty, board_subspecialty")
@@ -46,7 +46,7 @@ export default function EditMcqPage() {
           .order("display_order"),
       ]);
 
-      setInitial(qRes.data as Record<string, unknown> | null);
+      setInitial(question);
       setSubjects((sRes.data as AdminMcqSubject[]) || []);
       setBoardTopics(flattenTopics(tRes.data));
       setLoading(false);
