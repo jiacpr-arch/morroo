@@ -20,6 +20,28 @@ import Link from "next/link";
 import type { McqQuestion } from "@/lib/types-mcq";
 import ReportErrorButton from "@/components/ReportErrorButton";
 import { track } from "@/lib/analytics";
+import { createClient } from "@/lib/supabase/client";
+import {
+  fetchMockPercentile,
+  saveCompletedMockSession,
+} from "@/lib/supabase/mutations-mcq";
+import { pickMockRank } from "@/lib/mcq-mock-percentile";
+import MockRankCard, { type MockRankState } from "@/components/MockRankCard";
+
+/**
+ * เปิดการบันทึกผล + percentile เทียบคนอื่นท้ายสอบ (get_mock_percentile)
+ * ส่งเฉพาะ mock จริง (/nl/mock, /board/[specialty]/mock) — /nl/try เป็นเดโม
+ * ห้ามส่ง ไม่งั้นผลเดโมจะไปปนใน cohort
+ */
+export interface McqMockCohort {
+  audience: "student" | "board";
+  examType?: "NL1" | "NL2" | null;
+  boardSpecialty?: string | null;
+  /** ชื่อชุดที่โชว์บนการ์ด/ข้อความแชร์ เช่น "Mock NL" */
+  label: string;
+  /** path ของหน้านี้ ใช้ทำลิงก์แชร์และ ?next= ตอนล็อกอิน */
+  path: string;
+}
 
 interface McqMockProps {
   questions: McqQuestion[];
@@ -30,6 +52,7 @@ interface McqMockProps {
    * plain results screen — used by the full /nl/mock exam.
    */
   upsell?: { totalQuestions?: number };
+  cohort?: McqMockCohort;
 }
 
 type MockPhase = "exam" | "results" | "review";
@@ -46,6 +69,7 @@ export default function McqMock({
   questions,
   timeLimitMinutes,
   upsell,
+  cohort,
 }: McqMockProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
@@ -55,6 +79,14 @@ export default function McqMock({
   const [reviewIndex, setReviewIndex] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // รอบที่เท่าไหร่ (สอบใหม่ = +1) — ผล rank ผูกกับรอบ ถ้ารอบไม่ตรงถือว่ายังโหลดอยู่
+  // เลี่ยง setState ตรงๆ ใน effect ตอนเข้าหน้าผล
+  const [attempt, setAttempt] = useState(0);
+  const [rankResult, setRankResult] = useState<{
+    attempt: number;
+    state: MockRankState;
+  } | null>(null);
+  const savedAttemptRef = useRef<number | null>(null);
 
   // Timer
   useEffect(() => {
@@ -76,6 +108,56 @@ export default function McqMock({
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [phase]);
+
+  // ส่งข้อสอบ (กดเอง หรือหมดเวลา) → บันทึก mcq_sessions แล้วขอ percentile
+  // ครั้งเดียวต่อรอบ (ref กัน StrictMode ยิงซ้ำ / สลับไปหน้า review แล้วกลับมา)
+  useEffect(() => {
+    if (phase !== "results" || !cohort) return;
+    if (savedAttemptRef.current === attempt) return;
+    savedAttemptRef.current = attempt;
+
+    const correct = questions.reduce(
+      (n, q, i) => (answers[i] === q.correct_answer ? n + 1 : n),
+      0
+    );
+    const finish = (state: MockRankState) =>
+      setRankResult({ attempt, state });
+
+    (async () => {
+      try {
+        const supabase = createClient();
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (!user) return finish({ status: "guest" });
+
+        const session = await saveCompletedMockSession({
+          user_id: user.id,
+          audience: cohort.audience,
+          exam_type: cohort.examType ?? null,
+          board_specialty: cohort.boardSpecialty ?? null,
+          total_questions: questions.length,
+          correct_count: correct,
+          time_limit_minutes: Math.round(timeLimitMinutes),
+        });
+        if (!session) return finish({ status: "unavailable" });
+
+        const rows = await fetchMockPercentile(session.id);
+        if (!rows) return finish({ status: "unavailable" });
+
+        const rank = pickMockRank(rows);
+        track("mock_percentile_view", {
+          audience: cohort.audience,
+          total_questions: questions.length,
+          ranked: rank.status === "ranked",
+          percentile: rank.status === "ranked" ? rank.percentile : null,
+        });
+        finish({ status: "done", rank });
+      } catch {
+        finish({ status: "unavailable" });
+      }
+    })();
+  }, [phase, attempt, cohort, questions, answers, timeLimitMinutes]);
 
   const formatTime = (seconds: number) => {
     const h = Math.floor(seconds / 3600);
@@ -121,6 +203,7 @@ export default function McqMock({
     setShowConfirmSubmit(false);
     setReviewIndex(0);
     setShowExplanation(false);
+    setAttempt((n) => n + 1);
   }, [timeLimitMinutes]);
 
   // Calculate results
@@ -385,6 +468,22 @@ export default function McqMock({
             </p>
           </CardContent>
         </Card>
+
+        {/* Percentile เทียบผู้ที่ทำ mock ประเภทเดียวกัน */}
+        {cohort && (
+          <MockRankCard
+            state={
+              rankResult && rankResult.attempt === attempt
+                ? rankResult.state
+                : { status: "loading" }
+            }
+            label={cohort.label}
+            shareUrl={`https://www.morroo.com${cohort.path}`}
+            loginNext={cohort.path}
+            correct={results.correct}
+            total={results.total}
+          />
+        )}
 
         {/* Upsell — shown only to visitors who haven't bought a plan yet */}
         {upsell && (
