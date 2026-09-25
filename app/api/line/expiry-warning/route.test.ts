@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { pickExpiryChannel, expiryWindow } from "./route";
+import { pickExpiryChannel, expiryWindow, lapsedWindow } from "./route";
 
 describe("pickExpiryChannel", () => {
   it("prefers LINE whenever it's linked, on every reminder day", () => {
@@ -57,5 +57,15 @@ describe("expiryWindow", () => {
     // Gaps for days 2 and 4-6 are expected — those days simply have no reminder.
     expect(new Date(d1.to).getTime()).toBeLessThanOrEqual(new Date(d3.from).getTime());
     expect(new Date(d3.to).getTime()).toBeLessThanOrEqual(new Date(d7.from).getTime());
+  });
+});
+
+describe("lapsedWindow (D+1 win-back)", () => {
+  it("covers the 24h before now, adjacent to the D-1 window", () => {
+    const now = Date.UTC(2026, 8, 25, 2, 0, 0);
+    const lapsed = lapsedWindow(now);
+    expect(lapsed.from).toBe(new Date(now - 86400_000).toISOString());
+    expect(lapsed.to).toBe(new Date(now).toISOString());
+    expect(lapsed.to).toBe(expiryWindow(now, 1).from);
   });
 });

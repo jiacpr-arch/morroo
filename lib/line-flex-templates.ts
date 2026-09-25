@@ -487,6 +487,75 @@ function buildTrialEndingMessage(
   };
 }
 
+/**
+ * D+1 after a plan / trial ran out (plans don't auto-renew): ask why they're
+ * not renewing — the /renewal survey then shows a tailored win-back offer.
+ */
+export function buildWinbackMessage(data: { name: string; wasTrial: boolean }): LineMessage {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+  const greeting = data.name ? `คุณ${data.name}` : "คุณหมอ";
+  return {
+    type: "flex",
+    altText: data.wasTrial
+      ? "ทดลองใช้ MorRoo หมดแล้ว — บอกเหตุผล รับข้อเสนอพิเศษ"
+      : "สมาชิก MorRoo หมดอายุแล้ว — บอกเหตุผล รับข้อเสนอพิเศษ",
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#0EA5E9",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: data.wasTrial ? "ทดลองใช้ฟรีหมดแล้ว" : "สมาชิกหมดอายุแล้ว",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: "ขอ 1 นาที บอกเราหน่อย",
+            color: "#E0F2FE",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text" as const,
+            text: `${greeting} ยังไม่ต่ออายุเพราะอะไร? ตอบ 1 ข้อ แล้วรับข้อเสนอพิเศษที่เหมาะกับคุณ`,
+            size: "sm" as const,
+            color: "#333333",
+            wrap: true,
+          },
+          {
+            type: "text" as const,
+            text: "บัญชีและประวัติการทำข้อสอบยังอยู่ครบ",
+            size: "xs" as const,
+            color: "#888888",
+            wrap: true,
+          },
+        ],
+      },
+      footer: ctaFooter([
+        {
+          label: "บอกเหตุผล รับข้อเสนอ",
+          uri: toLiffUri(`${siteUrl}/renewal?source=expiry_line`),
+          style: "primary",
+        },
+      ]),
+    },
+  };
+}
+
 interface StreakNudgeData {
   name: string | null;
   streak: number;

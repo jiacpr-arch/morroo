@@ -16,6 +16,7 @@ import { PRODUCTS, PRODUCT_INFO, planLabel, resolveAccess, type EntitlementLike 
 import { liffDeepLink } from "@/lib/line-links";
 import PushToggle from "@/components/pwa/PushToggle";
 import { fetchOrgMemberships, isOrgActive, orgEntitlementRows, type OrgMembershipRow } from "@/lib/organizations";
+import { isLapseEligible } from "@/lib/winback";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -336,6 +337,15 @@ export default function ProfilePage() {
                       );
                     })}
                 </ul>
+              </div>
+            )}
+            {/* แพ็กจ่ายครั้งเดียว ไม่ต่ออายุอัตโนมัติ — ใกล้หมด/หมดแล้ว ถามเหตุผล + ข้อเสนอ win-back */}
+            {isLapseEligible(profile?.membership_type, profile?.membership_expires_at) && (
+              <div className="rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground flex items-center justify-between gap-2">
+                <span>แพ็กเกจเป็นแบบจ่ายครั้งเดียว ไม่มีการตัดเงินอัตโนมัติ</span>
+                <Link href="/renewal?source=profile" className="shrink-0 font-medium text-brand hover:underline">
+                  ไม่ต่ออายุ? บอกเหตุผล
+                </Link>
               </div>
             )}
             {!access.anyPaid && !entitlements.some((e) => e.scope && e.scope !== "*" && (!e.expires_at || new Date(e.expires_at) > new Date())) && (
