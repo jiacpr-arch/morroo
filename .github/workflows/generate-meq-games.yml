@@ -1,0 +1,63 @@
+name: Generate MEQ Case Games
+
+# แปลงข้อสอบ MEQ (progressive case) ที่ published แล้วเป็นเกมเคส (sim_scenarios
+# category='meq') ด้วย scripts/generate-meq-games.ts — รันมือเท่านั้น
+# (รอบตามตารางอยู่ที่ job meq-games ใน .gitlab-ci.yml ไม่ตั้ง schedule ซ้ำที่นี่)
+#
+# force=true: สร้างใหม่ทับข้อที่มีเกมแล้ว (upsert slug meq-<examId> เดิม) — ใช้หลัง
+# เปลี่ยนรูปแบบเกม/prompt ข้อไหนสร้างไม่สำเร็จจะไม่ถูกเขียนทับ เกมเดิมยังอยู่
+#
+# ต้องมี repo secrets: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "สร้างใหม่ทับข้อที่มีเกมแล้ว (true) หรือแปลงเฉพาะข้อที่ยังไม่มีเกม (false)"
+        type: boolean
+        default: false
+      limit:
+        description: "จำนวนสูงสุดต่อรอบ (เว้นว่าง = ทุกข้อ) — ลอง 3 ก่อนแล้วค่อยรันเต็ม"
+        required: false
+      publish:
+        description: "เผยแพร่ทันที (true) หรือบันทึกเป็น draft (false) — ระวัง: force + draft จะซ่อนเกมที่ publish อยู่"
+        type: boolean
+        default: true
+      concurrency:
+        description: "แปลงพร้อมกันกี่เคส (ค่าเริ่มต้น 3)"
+        required: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    # ทั้งคลังใช้เวลานาน (เคสละ ~1-2 นาที แม้แปลงขนานกัน)
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Convert published MEQ exams into case games
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INPUT_FORCE: ${{ inputs.force }}
+          INPUT_PUBLISH: ${{ inputs.publish }}
+          INPUT_LIMIT: ${{ inputs.limit }}
+          INPUT_CONCURRENCY: ${{ inputs.concurrency }}
+        run: |
+          ARGS=""
+          if [ "$INPUT_PUBLISH" != "false" ]; then ARGS="$ARGS --publish"; fi
+          if [ "$INPUT_FORCE" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ -n "$INPUT_LIMIT" ]; then ARGS="$ARGS --limit $INPUT_LIMIT"; fi
+          if [ -n "$INPUT_CONCURRENCY" ]; then ARGS="$ARGS --concurrency $INPUT_CONCURRENCY"; fi
+          echo "Running: npm run gen:meqgames -- $ARGS"
+          npm run gen:meqgames -- $ARGS
