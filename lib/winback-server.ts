@@ -83,9 +83,7 @@ export async function getLatestFeedback(userId: string) {
   const admin = createAdminClient();
   const { data } = await admin
     .from("cancellation_feedback")
-    .select(
-      "id, reason, offer_kind, offer_percent, offer_plan, offer_coupon_code, offer_expires_at, offer_response, created_at"
-    )
+    .select(FEEDBACK_COLUMNS)
     .eq("user_id", userId)
     .order("created_at", { ascending: false })
     .limit(1)
@@ -93,9 +91,14 @@ export async function getLatestFeedback(userId: string) {
   return data as FeedbackRecord | null;
 }
 
+export const FEEDBACK_COLUMNS =
+  "id, reason, offer_kind, offer_percent, offer_plan, offer_coupon_code, offer_expires_at, offer_response, access_expires_at, created_at";
+
 export interface FeedbackRecord {
   id: string;
   reason: string;
+  /** Expiry that had run out when they answered — identifies the lapse. */
+  access_expires_at: string | null;
   offer_kind: "discount" | "none";
   offer_percent: number | null;
   offer_plan: string | null;
@@ -107,11 +110,13 @@ export interface FeedbackRecord {
 
 /**
  * Single-use discount coupon for this user's win-back offer, restricted to
- * the plan they'd renew. Checked and consumed by the normal checkout coupon
- * path (lib/billing/coupon-checkout.ts).
+ * the plan they'd renew and to this account (coupon_codes.restricted_user_id,
+ * supabase/migrations/20260926_winback_coupon_user.sql). Checked and consumed
+ * by the normal checkout coupon path (lib/billing/coupon-checkout.ts).
  */
 export async function issueWinbackCoupon(
-  offer: Extract<WinbackOffer, { kind: "discount" }>
+  offer: Extract<WinbackOffer, { kind: "discount" }>,
+  userId: string
 ): Promise<{ id: string; code: string; expiresAt: string } | null> {
   const admin = createAdminClient();
   const expiresAt = new Date(Date.now() + offer.validDays * 86_400_000).toISOString();
@@ -134,6 +139,7 @@ export async function issueWinbackCoupon(
         source: "winback",
         is_active: true,
         plan_type: offer.plan,
+        restricted_user_id: userId,
       })
       .select("id, code")
       .single();
@@ -144,4 +150,28 @@ export async function issueWinbackCoupon(
     }
   }
   return null;
+}
+
+/** Switch off a coupon that lost the one-offer-per-lapse race (never shown to anyone). */
+export async function deactivateCoupon(couponId: string): Promise<void> {
+  const admin = createAdminClient();
+  const { error } = await admin.from("coupon_codes").update({ is_active: false }).eq("id", couponId);
+  if (error) console.error("[winback] coupon deactivate failed:", couponId, error.message);
+}
+
+/** The survey answer this user already gave for the lapse ending at `accessExpiresAt`. */
+export async function getFeedbackForLapse(
+  userId: string,
+  accessExpiresAt: string
+): Promise<FeedbackRecord | null> {
+  const admin = createAdminClient();
+  const { data } = await admin
+    .from("cancellation_feedback")
+    .select(FEEDBACK_COLUMNS)
+    .eq("user_id", userId)
+    .eq("access_expires_at", accessExpiresAt)
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+  return data as FeedbackRecord | null;
 }
