@@ -349,9 +349,29 @@ export interface EntitlementLike {
    * see lib/items.ts. Scoped rows never grant product-level access.
    */
   scope?: string | null;
+  /**
+   * Where the row came from. `org` marks a synthetic row derived from an
+   * organization membership (lib/organizations.ts) — additive, see
+   * resolveAccess.
+   */
+  source?: string | null;
 }
 
 export const WHOLE_PRODUCT_SCOPE = "*";
+
+/** `source` of synthetic rows granted by a group / institution plan. */
+export const ORG_ENTITLEMENT_SOURCE = "org";
+
+export function isOrgRow(e: EntitlementLike): boolean {
+  return e.source === ORG_ENTITLEMENT_SOURCE;
+}
+
+/** Rows bought / granted to the user personally (excludes org rows). */
+export function personalRows<T extends EntitlementLike>(
+  entitlements: readonly T[] | null | undefined
+): T[] {
+  return (entitlements ?? []).filter((e) => !isOrgRow(e));
+}
 
 export function isWholeProductRow(e: EntitlementLike): boolean {
   return !e.scope || e.scope === WHOLE_PRODUCT_SCOPE;
@@ -449,20 +469,30 @@ export function hasScopedAccess(
 /**
  * Resolve access from a profile plus its entitlement rows.
  *
- * Rule: once a user has ANY entitlement row (active or expired) the rows are
- * authoritative — the legacy columns are ignored so an admin revoke can never
- * be re-opened by a stale `membership_type`. Users with no rows at all fall
- * back to the legacy plan mapping.
+ * Rule: once a user has ANY personal entitlement row (active or expired) the
+ * rows are authoritative — the legacy columns are ignored so an admin revoke
+ * can never be re-opened by a stale `membership_type`. Users with no personal
+ * rows at all fall back to the legacy plan mapping.
+ *
+ * Organization rows (`source = 'org'`) are purely additive: their products
+ * are unioned on top of whatever the personal rows / legacy columns give, and
+ * they never switch off the legacy fallback — joining a group must not hide
+ * an older individual plan, and leaving it must not take one away.
  */
 export function resolveAccess(
   profile: MembershipLike | null | undefined,
   entitlements?: readonly EntitlementLike[] | null,
   now: Date = new Date()
 ): Access {
-  const hasRows = !!entitlements && entitlements.length > 0;
-  const products = hasRows
-    ? entitledProducts(entitlements, now)
-    : legacyProducts(profile, now);
+  const personal = personalRows(entitlements);
+  const base =
+    personal.length > 0
+      ? entitledProducts(personal, now)
+      : legacyProducts(profile, now);
+  const products = [...base];
+  for (const p of entitledProducts((entitlements ?? []).filter(isOrgRow), now)) {
+    if (!products.includes(p)) products.push(p);
+  }
   if (products.length === 0) return NO_ACCESS;
   return {
     school: products.includes("school"),
@@ -536,12 +566,12 @@ export function hasFullStudentAccess(
   profile: MembershipLike | null | undefined,
   entitlements?: readonly EntitlementLike[] | null
 ): boolean {
-  const hasRows = !!entitlements && entitlements.length > 0;
-  if (!hasRows) {
+  if (personalRows(entitlements).length === 0) {
     // Legacy semantics: bundle counted as full student access.
     const t = profile?.membership_type;
-    if (!t || legacyExpired(profile, new Date())) return false;
-    return t === "monthly" || t === "yearly" || t === "bundle";
+    if (t && !legacyExpired(profile, new Date())) {
+      if (t === "monthly" || t === "yearly" || t === "bundle") return true;
+    }
   }
   const a = resolveAccess(profile, entitlements);
   return a.mcq && a.meq && a.longcase;
@@ -566,6 +596,9 @@ export function deriveLegacyMembership(
   currentType?: string | null,
   now: Date = new Date()
 ): { membership_type: MembershipType; membership_expires_at: string | null } {
+  // Org rows are live-derived and never written to the legacy summary —
+  // otherwise leaving the org would leave a stale paid plan behind.
+  entitlements = personalRows(entitlements);
   const active = entitledProducts(entitlements, now);
   if (active.length === 0) {
     return { membership_type: "free", membership_expires_at: null };

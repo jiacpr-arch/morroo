@@ -107,3 +107,29 @@
   → ตอน fulfil บันทึกการใช้ผ่าน RPC `redeem_coupon_code` และเก็บ `coupon_redemptions.stripe_session_id`
 - ราคาหลังหักไม่ต่ำกว่า ฿10 (ขั้นต่ำของ Stripe สำหรับ THB)
 - สร้างคูปองที่ `/admin/coupons` มีช่อง "ให้แพ็ก / รายการ" (free) หรือ "ใช้กับแพ็ก" (discount)
+
+## แพ็กเกจกลุ่ม / สถาบัน (organizations) — MVP
+
+สำหรับคณะแพทย์ / ติวเตอร์ / กลุ่มเพื่อน — **ชำระเงินนอกระบบ** (ใบแจ้งหนี้ / โอน) แล้ว admin สร้างกลุ่มเอง
+— migration `supabase/migrations/20260925_organizations.sql`
+
+- ตาราง `organizations (id, name, seats, plan, expires_at, join_code, note, …)` และ
+  `organization_members (org_id, user_id, role 'owner'|'member', joined_at)`
+- RLS: สมาชิกอ่านกลุ่มของตัวเองได้, ผู้ใช้อ่านแถวสมาชิกของตัวเองได้, owner อ่านสมาชิกทั้งกลุ่มได้, admin อ่านได้ทั้งหมด
+  — เขียนผ่าน service role (API) เท่านั้น
+- **สิทธิ์**: `fetchEntitlements()` (`lib/entitlements.ts`) เติมแถวสังเคราะห์ `source = 'org'` หนึ่งแถวต่อ product ของ
+  `organizations.plan` (ค่าเริ่มต้น `yearly` = แพ็ก นศพ.) หมดอายุตาม `organizations.expires_at`
+  — `lib/organizations.ts` `orgEntitlementRows`. ไม่มีการเขียนลง `membership_entitlements` หรือ `profiles.membership_type`
+  ดังนั้นสิทธิ์จบเองทันทีเมื่อกลุ่มหมดอายุหรือสมาชิกถูกลบ
+- กติกาใน `resolveAccess`: แถว org เป็นแบบ **บวกเพิ่ม** — ไม่นับเป็น "มีแถวแล้ว" (ไม่ปิด legacy fallback),
+  products = สิทธิ์ส่วนตัว ∪ สิทธิ์จากกลุ่ม; `deriveLegacyMembership` ตัดแถว org ทิ้งเสมอ
+  (`syncLegacyMembership` และ `/api/admin/membership` ใช้ `fetchEntitlements(..., { includeOrg: false })`)
+- ที่นั่ง: ทุกแถวสมาชิก (รวม owner) = 1 ที่นั่ง; การเข้าร่วมเช็คผ่าน RPC `join_organization` (lock แถว org กันแย่งที่นั่งพร้อมกัน)
+
+| หน้า / API | ใช้ทำอะไร |
+|---|---|
+| `/admin/organizations` · `/api/admin/organizations[/id]` | สร้างกลุ่ม, ตั้งที่นั่ง/แพ็ก/วันหมดอายุ, ตั้งผู้ดูแลด้วยอีเมล, สร้างรหัสใหม่, ลบกลุ่ม |
+| `/org/join/<code>` · `POST /api/org/join` | สมาชิกกดเข้าร่วม (ต้องล็อกอิน) |
+| `/org` | owner: แดชบอร์ดสมาชิก (MCQ ที่ทำ, ความแม่นยำ, ใช้งานล่าสุด, streak), ลบสมาชิก, คัดลอกลิงก์เชิญ, Export CSV · คนทั่วไป: ช่องใส่รหัสกลุ่ม |
+| `DELETE /api/org/members` | owner / admin ลบสมาชิก (ลบ owner ได้เฉพาะ admin) |
+| `/pricing#group` | CTA "สำหรับกลุ่ม/สถาบัน" → LINE OA |

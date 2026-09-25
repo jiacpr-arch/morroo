@@ -15,6 +15,7 @@ import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
 import { PRODUCTS, PRODUCT_INFO, planLabel, resolveAccess, type EntitlementLike } from "@/lib/membership";
 import { liffDeepLink } from "@/lib/line-links";
 import PushToggle from "@/components/pwa/PushToggle";
+import { fetchOrgMemberships, isOrgActive, orgEntitlementRows, type OrgMembershipRow } from "@/lib/organizations";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -27,6 +28,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [entitlements, setEntitlements] = useState<EntitlementLike[]>([]);
+  const [orgs, setOrgs] = useState<OrgMembershipRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState("");
   const [referralCode, setReferralCode] = useState<string | null>(null);
@@ -52,16 +54,21 @@ export default function ProfilePage() {
 
       setUserEmail(user.email || "");
 
-      const [{ data }, { data: rows }] = await Promise.all([
+      const [{ data }, { data: rows }, orgMemberships] = await Promise.all([
         supabase.from("profiles").select("*").eq("id", user.id).single(),
         supabase
           .from("membership_entitlements")
-          .select("product, scope, expires_at")
+          .select("product, scope, expires_at, source")
           .eq("user_id", user.id),
+        fetchOrgMemberships(supabase, user.id),
       ]);
 
       setProfile(data);
-      setEntitlements((rows ?? []) as EntitlementLike[]);
+      setEntitlements([
+        ...((rows ?? []) as EntitlementLike[]),
+        ...orgEntitlementRows(user.id, orgMemberships),
+      ]);
+      setOrgs(orgMemberships);
       if (data?.line_user_id) setLineLinked(true);
       if (data?.referral_code) {
         setReferralCode(data.referral_code);
@@ -222,7 +229,17 @@ export default function ProfilePage() {
               <p className="text-xs text-muted-foreground mb-2">สิทธิ์รายระบบ</p>
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
                 {PRODUCTS.map((p) => {
-                  const row = entitlements.find((e) => e.product === p && (!e.scope || e.scope === "*"));
+                  // Latest-expiring active whole-product row (personal or group).
+                  const row = entitlements
+                    .filter(
+                      (e) =>
+                        e.product === p &&
+                        (!e.scope || e.scope === "*") &&
+                        (!e.expires_at || new Date(e.expires_at) > new Date())
+                    )
+                    .sort((a, b) =>
+                      !a.expires_at ? -1 : !b.expires_at ? 1 : b.expires_at.localeCompare(a.expires_at)
+                    )[0];
                   const active = access[p];
                   return (
                     <div
@@ -246,6 +263,36 @@ export default function ProfilePage() {
                 })}
               </div>
             </div>
+            {/* Group / institution plans */}
+            {orgs.map((m) => (
+              <div
+                key={m.org_id}
+                className="flex items-center justify-between gap-3 rounded-lg border border-brand/30 bg-brand/5 px-3 py-2 text-sm"
+              >
+                <span className="flex items-center gap-1.5">
+                  <Users className="h-4 w-4 text-brand" />
+                  กลุ่ม <span className="font-medium">{m.organizations?.name ?? "-"}</span>
+                </span>
+                <span className="flex items-center gap-2 text-xs text-muted-foreground">
+                  {isOrgActive(m.organizations)
+                    ? `ถึง ${new Date(m.organizations!.expires_at).toLocaleDateString("th-TH")}`
+                    : "หมดอายุแล้ว"}
+                  {m.role === "owner" && (
+                    <Link href="/org" className="font-medium text-brand hover:underline">
+                      จัดการกลุ่ม
+                    </Link>
+                  )}
+                </span>
+              </div>
+            ))}
+            {orgs.length === 0 && (
+              <p className="text-xs text-muted-foreground">
+                เรียนเป็นกลุ่ม / สถาบัน?{" "}
+                <Link href="/org" className="text-brand hover:underline">
+                  ใส่รหัสกลุ่ม
+                </Link>
+              </p>
+            )}
             {profile?.membership_expires_at && (
               <div className="flex items-center justify-between">
                 <span className="text-muted-foreground flex items-center gap-1">

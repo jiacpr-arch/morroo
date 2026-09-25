@@ -25,6 +25,7 @@ import {
   HeartPulse,
   Ticket,
   Timer,
+  Building2,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -256,6 +257,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">สิทธิ์แยกรายระบบ School · MCQ · MEQ · Long Case · Board — ให้/ต่อ/ยกเลิกทีละระบบ และกำหนด role</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/organizations">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-brand/30">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Building2 className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">กลุ่ม / สถาบัน</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">แพ็กเกจกลุ่ม — สร้างกลุ่ม ตั้งที่นั่ง/วันหมดอายุ ผู้ดูแล และรหัสเข้าร่วม</p>
             </CardContent>
           </Card>
         </Link>
