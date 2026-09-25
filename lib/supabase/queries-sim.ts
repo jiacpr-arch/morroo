@@ -32,6 +32,23 @@ interface SimScenarioRow {
 
 const SCENARIO_COLS = "slug, title, subtitle, difficulty_tag, category, source_case_id, bg, story";
 
+/**
+ * เปิด/ปิดเกมเคส long case ที่ AI แปลงเก็บไว้ใน sim_scenarios
+ *
+ * ปิดไว้ (false): ทุก long case เล่นผ่านเวอร์ชันสังเคราะห์ lc-<caseId> จาก
+ * longCaseToScenario ซึ่งได้จังหวะถาม-ตอบทีละขั้น ใบแลป ชั้น order และ debrief
+ * ทีละประเด็นทันที — เกม AI รุ่นเก่ายังสร้างด้วยโครงเดิม (บรรยายยาว/อาจารย์เฉลย)
+ * ลิงก์ slug ของเกม AI เดิมยังใช้ได้ แต่จะเสิร์ฟเวอร์ชันสังเคราะห์ของเคสต้นทางแทน
+ * เปิด (true) คืนเมื่อสร้างเกม AI ชุดใหม่ด้วย prompt ปัจจุบันแล้ว
+ * ไม่กระทบ MEQ (ไม่มีเวอร์ชันสังเคราะห์) และเคส built-in
+ */
+const SERVE_AI_LONGCASE_GAMES = false;
+
+/** แถวเกม long case ที่ AI แปลง (ชี้กลับเคสต้นทาง) — ถูกซ่อนเมื่อปิด SERVE_AI_LONGCASE_GAMES */
+function isHiddenAiLongcase(row: { category: string | null; source_case_id: string | null }): boolean {
+  return !SERVE_AI_LONGCASE_GAMES && row.category === "longcase" && !!row.source_case_id;
+}
+
 function rowToScenario(row: SimScenarioRow): SimScenario | null {
   const scenario = {
     slug: row.slug,
@@ -57,6 +74,7 @@ export async function getSimScenarios(): Promise<SimScenario[]> {
       .order("created_at", { ascending: true });
     for (const row of (data as SimScenarioRow[] | null) ?? []) {
       if (out.some((s) => s.slug === row.slug)) continue;
+      if (isHiddenAiLongcase(row)) continue;
       const scenario = rowToScenario(row);
       if (scenario) out.push(scenario);
     }
@@ -105,7 +123,14 @@ export async function getSimScenario(slug: string): Promise<SimScenario | null> 
       .eq("slug", slug)
       .eq("status", "published")
       .maybeSingle();
-    if (data) return rowToScenario(data as SimScenarioRow);
+    const row = data as SimScenarioRow | null;
+    if (row && isHiddenAiLongcase(row)) {
+      // ลิงก์เกม AI เดิม → เสิร์ฟเวอร์ชันสังเคราะห์ของเคสต้นทาง (หน้าเกม redirect
+      // ไป slug lc-<caseId>) ถ้าเคสต้นทางเล่นไม่ได้แล้วค่อยใช้เวอร์ชัน AI เหมือนเดิม
+      const synth = await getSimScenario(slugForCase(row.source_case_id as string));
+      return synth ?? rowToScenario(row);
+    }
+    if (row) return rowToScenario(row);
   } catch {
     // ตกไปลองเส้นทางสังเคราะห์ด้านล่าง
   }
@@ -246,6 +271,7 @@ export interface PolishedLongcaseCard {
  * มาให้ครบเพื่อให้เข้าลิสต์หลักที่จัดกลุ่ม/กรองได้เหมือนเคสอื่น
  */
 export async function getPolishedLongcaseCards(): Promise<PolishedLongcaseCard[]> {
+  if (!SERVE_AI_LONGCASE_GAMES) return [];
   try {
     const supabase = await createClient();
     const { data } = await supabase
@@ -385,6 +411,14 @@ export async function getSimScenariosByCategory(category: string): Promise<SimSc
 /** map: long_case id → slug ของเกมเคสที่ published (ใช้ทำลิงก์ "เล่นเป็นเกม" ในหน้า /longcase) */
 export async function getLongcaseGameMap(): Promise<Record<string, string>> {
   const map: Record<string, string> = {};
+  if (!SERVE_AI_LONGCASE_GAMES) {
+    // ทุกเคส published เล่นเป็นเกมได้ผ่านเวอร์ชันสังเคราะห์ — built-in ที่ชี้เคสต้นทางชนะ
+    for (const c of await getLongcaseGameCards()) map[c.caseId] = c.slug;
+    for (const s of SIM_SCENARIOS) {
+      if (s.category === "longcase" && s.sourceCaseId) map[s.sourceCaseId] = s.slug;
+    }
+    return map;
+  }
   try {
     const supabase = await createClient();
     const { data } = await supabase

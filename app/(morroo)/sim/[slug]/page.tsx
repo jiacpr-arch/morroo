@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import SimRunner from "@/components/sim/SimRunner";
 import {
@@ -40,6 +40,14 @@ export default async function SimPlayPage({ params, searchParams }: PageProps) {
     searchParams,
   ]);
   if (!scenario) notFound();
+  // slug เดิมที่ตอนนี้เสิร์ฟเกมอีกตัว (เช่น เกม AI รุ่นเก่า → เวอร์ชันสังเคราะห์ lc-<caseId>)
+  // ย้ายไป URL หลักให้ผลการเล่น/สถิติไปรวมที่ slug เดียว
+  if (scenario.slug !== slug) {
+    const qs = new URLSearchParams();
+    for (const [k, v] of Object.entries(sp)) if (typeof v === "string") qs.set(k, v);
+    const q = qs.toString();
+    redirect(`/sim/${scenario.slug}${q ? `?${q}` : ""}`);
+  }
 
   return (
     <SimRunner
