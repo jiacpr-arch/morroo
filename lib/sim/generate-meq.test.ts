@@ -38,6 +38,28 @@ describe("applyMeqConventions", () => {
     expect(nested.choice).toMatchObject({ shelf: true });
   });
 
+  it("strips a leading 'ถูกต้อง —' from say text but keeps the explanation and balanced emphasis", () => {
+    const say = (text: string) => ({ say: { who: "att_dech", pose: "talk", text } });
+    const nested = say("ถูกต้อง — **BNP** สูงจาก wall stress");
+    const story = [
+      say("ถูกต้อง — AG 27 สูงมาก"),
+      say("**ถูกต้อง!** ต้องให้ insulin"),
+      say("**ถูกต้อง — ห้ามใช้ ATD** ตลอดชีวิต"),
+      say("ถูกต้อง"),
+      say("ผลนี้ถูกต้องตามเกณฑ์"),
+      { choice: { q: "q", options: [{ tgt: "LAB", label: "a", ok: true, then: [nested] }, { tgt: "LAB", label: "b", ok: false }] } },
+    ];
+    applyMeqConventions(story);
+    const texts = story.slice(0, 5).map((n) => (n as { say: { text: string } }).say.text);
+    expect(texts[0]).toBe("AG 27 สูงมาก");
+    expect(texts[1]).toBe("ต้องให้ insulin");
+    // ** ตัวเปิดของคำเน้นที่ปิดทีหลังต้องไม่หาย
+    expect(texts[2]).toBe("**ห้ามใช้ ATD** ตลอดชีวิต");
+    expect(texts[3]).toBe("ถูกต้อง"); // ไม่เหลืออะไร → คงเดิม
+    expect(texts[4]).toBe("ผลนี้ถูกต้องตามเกณฑ์"); // ไม่ได้ขึ้นต้น → ไม่แตะ
+    expect(nested.say.text).toBe("**BNP** สูงจาก wall stress");
+  });
+
   it("ignores malformed input", () => {
     expect(() => applyMeqConventions(null)).not.toThrow();
     expect(() => applyMeqConventions([null, { choice: { options: "x" } }])).not.toThrow();

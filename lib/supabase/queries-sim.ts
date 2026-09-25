@@ -42,7 +42,7 @@ const SCENARIO_COLS = "slug, title, subtitle, difficulty_tag, category, source_c
  * เปิด (true) คืนเมื่อสร้างเกม AI ชุดใหม่ด้วย prompt ปัจจุบันแล้ว
  * ไม่กระทบ MEQ (ไม่มีเวอร์ชันสังเคราะห์) และเคส built-in
  */
-const SERVE_AI_LONGCASE_GAMES = false;
+const SERVE_AI_LONGCASE_GAMES = true;
 
 /** แถวเกม long case ที่ AI แปลง (ชี้กลับเคสต้นทาง) — ถูกซ่อนเมื่อปิด SERVE_AI_LONGCASE_GAMES */
 function isHiddenAiLongcase(row: { category: string | null; source_case_id: string | null }): boolean {
