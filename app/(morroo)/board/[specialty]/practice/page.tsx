@@ -8,7 +8,12 @@ import {
   getBoardSpecialty,
   getBoardBlueprint,
 } from "@/lib/supabase/queries-board";
-import { getMcqQuestions, getFreeAttemptsCount } from "@/lib/supabase/queries-mcq";
+import {
+  getMcqQuestions,
+  getFreeAttemptsCount,
+  getMcqAnswerKeys,
+} from "@/lib/supabase/queries-mcq";
+import type { McqPracticeQuestion } from "@/lib/mcq-public";
 import McqPractice from "@/components/McqPractice";
 import { computeBetaStatus } from "@/lib/beta";
 import { hasBoardAccess, hasFullStudentAccess, hasScopedAccess } from "@/lib/membership";
@@ -92,13 +97,23 @@ async function PracticeContent({
     }
   }
 
-  const questions = await getMcqQuestions({
+  let questions: McqPracticeQuestion[] = await getMcqQuestions({
     audience: "board",
     boardSpecialty: specialty,
     boardSection: section,
     limit: 200,
     randomize: true,
   });
+
+  // ยังไม่ล็อกอิน: ฝังเฉลยเฉพาะข้อฟรี (FREE_LIMIT ข้อแรก) — ล็อกอินแล้วขอเฉลย
+  // ทีละข้อผ่าน /api/mcq/reveal
+  if (!user && questions.length > 0) {
+    const keys = await getMcqAnswerKeys(questions.slice(0, FREE_LIMIT).map((q) => q.id));
+    questions = questions.map((q) => {
+      const answerKey = keys.get(q.id);
+      return answerKey ? { ...q, answerKey } : q;
+    });
+  }
 
   const sectionMeta = section
     ? BOARD_SECTIONS.find((sec) => sec.code === section)

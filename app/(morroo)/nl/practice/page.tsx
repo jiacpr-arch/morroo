@@ -4,6 +4,7 @@ import {
   getMcqQuestions,
   getFreeAttemptsCount,
   getMcqQuestion,
+  getMcqAnswerKeys,
 } from "@/lib/supabase/queries-mcq";
 import McqPractice from "@/components/McqPractice";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
@@ -22,7 +23,8 @@ import { ITEM_PRICES, itemPlanType, mcqSubjectPrice } from "@/lib/items";
 import ItemUpsell from "@/components/ItemUpsell";
 import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
 import { getDueReviewQuestions, getMcqReviewDueCount } from "@/lib/mcq-review";
-import type { McqQuestion, McqSubject } from "@/lib/types-mcq";
+import type { McqSubject } from "@/lib/types-mcq";
+import type { McqPracticeQuestion } from "@/lib/mcq-public";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ NL",
@@ -160,7 +162,7 @@ async function PracticeContent({
   const otherSelected =
     !!subjectId && otherSubjects.some((s) => s.id === subjectId);
 
-  let questions: McqQuestion[];
+  let questions: McqPracticeQuestion[];
   let recBreakdown: Awaited<ReturnType<typeof getRecommendedQuestions>>["breakdown"] | null = null;
 
   if (useReview && user) {
@@ -195,6 +197,17 @@ async function PracticeContent({
       pinnedQuestion,
       ...questions.filter((q) => q.id !== pinnedQuestion.id),
     ];
+  }
+
+  // ยังไม่ล็อกอิน: /api/mcq/reveal ต้องล็อกอิน จึงฝังเฉลยมาให้เฉพาะข้อฟรี
+  // (FREE_LIMIT ข้อแรก — ครบแล้วเจอกำแพงสมัคร, "ทำใหม่" กลับไปข้อแรก)
+  // ล็อกอินแล้วไม่ฝังเลย ขอเฉลยทีละข้อหลังตอบ
+  if (!user && questions.length > 0) {
+    const keys = await getMcqAnswerKeys(questions.slice(0, FREE_LIMIT).map((q) => q.id));
+    questions = questions.map((q) => {
+      const answerKey = keys.get(q.id);
+      return answerKey ? { ...q, answerKey } : q;
+    });
   }
 
   const currentSubject = subjectId

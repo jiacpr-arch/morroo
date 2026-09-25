@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/client";
 import {
+  fetchAdminMcqQuestions,
   updateMcqQuestion,
   bulkUpdateMcqQuestionStatus,
 } from "@/lib/supabase/mutations-mcq-admin";
@@ -96,22 +97,18 @@ export default function AutoAnswerPage() {
     setError(null);
     setResult(null);
     setRunning(true);
-    const supabase = createClient();
-
-    // Fetch the batch of review questions to answer.
-    let q = supabase
-      .from("mcq_questions")
-      .select("id, scenario, choices")
-      .eq("status", "review")
-      .eq("audience", audience)
-      .order("created_at", { ascending: true })
-      .limit(Math.min(Math.max(maxCount, 1), 500));
-    if (examSource !== "all") q = q.eq("exam_source", examSource);
-    if (subjectId !== "all") q = q.eq("subject_id", subjectId);
-    if (onlyUnanswered) q = q.is("detailed_explanation", null);
-    const { data, error: qErr } = await q;
-    if (qErr) { setError(qErr.message); setRunning(false); return; }
-    const rows = (data as unknown as QRow[]) ?? [];
+    // Fetch the batch of review questions to answer. The "unanswered" filter
+    // reads detailed_explanation (hidden from the browser role) → admin API.
+    const { rows, error: qErr } = await fetchAdminMcqQuestions<QRow>("answer", {
+      status: "review",
+      audience,
+      exam_source: examSource !== "all" ? examSource : undefined,
+      subject_id: subjectId !== "all" ? subjectId : undefined,
+      missing_detailed: onlyUnanswered,
+      order: "asc",
+      limit: Math.min(Math.max(maxCount, 1), 500),
+    });
+    if (qErr !== null) { setError(qErr); setRunning(false); return; }
     if (rows.length === 0) {
       setRunning(false);
       setResult({ done: 0, failed: 0, activated: 0 });

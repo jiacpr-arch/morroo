@@ -7,7 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { createClient } from "@/lib/supabase/client";
-import { updateMcqQuestion } from "@/lib/supabase/mutations-mcq-admin";
+import {
+  fetchAdminMcqQuestions,
+  updateMcqQuestion,
+} from "@/lib/supabase/mutations-mcq-admin";
 import { parseCsv } from "@/lib/board-import";
 import {
   ChevronLeft, Shield, Loader2, Download, Upload, CheckCircle2, AlertCircle,
@@ -95,23 +98,23 @@ export default function CsvRoundtripPage() {
   async function onExport() {
     setExporting(true);
     setExportInfo(null);
-    const supabase = createClient();
     const all: DbRow[] = [];
     const CHUNK = 1000;
+    // มีเฉลย → อ่านผ่าน /api/admin/mcq/questions (service role)
     for (let from = 0; ; from += CHUNK) {
-      let q = supabase
-        .from("mcq_questions")
-        .select("id, exam_source, exam_type, scenario, choices, correct_answer, explanation, detailed_explanation, mcq_subjects(name_th)")
-        .eq("status", "review").eq("audience", "student")
-        .order("created_at", { ascending: true })
-        .range(from, from + CHUNK - 1);
-      if (examSource !== "all") q = q.eq("exam_source", examSource);
-      if (subjectId !== "all") q = q.eq("subject_id", subjectId);
-      const { data, error } = await q;
-      if (error) { setExporting(false); setExportInfo(`error: ${error.message}`); return; }
-      if (!data || data.length === 0) break;
-      all.push(...(data as unknown as DbRow[]));
-      if (data.length < CHUNK) break;
+      const { rows, error } = await fetchAdminMcqQuestions<DbRow>("export", {
+        status: "review",
+        audience: "student",
+        exam_source: examSource !== "all" ? examSource : undefined,
+        subject_id: subjectId !== "all" ? subjectId : undefined,
+        order: "asc",
+        offset: from,
+        limit: CHUNK,
+      });
+      if (error !== null) { setExporting(false); setExportInfo(`error: ${error}`); return; }
+      if (rows.length === 0) break;
+      all.push(...rows);
+      if (rows.length < CHUNK) break;
     }
 
     const lines = [EXPORT_HEADERS.join(",")];

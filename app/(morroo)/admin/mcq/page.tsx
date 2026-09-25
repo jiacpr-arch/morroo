@@ -8,7 +8,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/client";
-import { updateMcqQuestionStatus } from "@/lib/supabase/mutations-mcq-admin";
+import {
+  fetchAdminMcqQuestions,
+  updateMcqQuestionStatus,
+} from "@/lib/supabase/mutations-mcq-admin";
 import {
   Shield, Loader2, ChevronLeft, Plus, Search,
   Pencil, Eye, EyeOff, AlertCircle, CheckCircle, Upload,
@@ -73,15 +76,16 @@ export default function AdminMcqPage() {
 
       const CHUNK = 1000;
       const all: McqQuestion[] = [];
+      // เฉลยอ่านได้เฉพาะ service role → ผ่าน /api/admin/mcq/questions
       for (let from = 0; ; from += CHUNK) {
-        const { data, error } = await supabase
-          .from("mcq_questions")
-          .select("id, subject_id, exam_type, scenario, correct_answer, difficulty, status, topic, audience, board_specialty, board_section, created_at, mcq_subjects(name_th, icon)")
-          .order("created_at", { ascending: false })
-          .range(from, from + CHUNK - 1);
-        if (error || !data || data.length === 0) break;
-        all.push(...(data as unknown as McqQuestion[]));
-        if (data.length < CHUNK) break;
+        const { rows } = await fetchAdminMcqQuestions<McqQuestion>("list", {
+          order: "desc",
+          offset: from,
+          limit: CHUNK,
+        });
+        if (!rows || rows.length === 0) break;
+        all.push(...rows);
+        if (rows.length < CHUNK) break;
       }
 
       const sRes = await supabase.from("mcq_subjects").select("id, name_th, icon, audience").order("name_th");

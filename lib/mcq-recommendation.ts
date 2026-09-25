@@ -1,5 +1,9 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { McqQuestion } from "./types-mcq";
+import { MCQ_PUBLIC_SELECT, type McqPublicQuestion } from "./mcq-public";
+
+// Always the caller's user-scoped client — questions come back WITHOUT the
+// answer key (see lib/mcq-public.ts); McqPractice reveals per question.
+type McqQuestion = McqPublicQuestion;
 
 export interface RecommendationBreakdown {
   review: number;
@@ -158,11 +162,11 @@ async function fetchQuestionsByIds(
   if (ids.length === 0) return [];
   const { data } = await supabase
     .from("mcq_questions")
-    .select("*, mcq_subjects(name, name_th, icon)")
+    .select(MCQ_PUBLIC_SELECT)
     .in("id", ids)
     .eq("status", "active")
     .eq("audience", "student");
-  return (data as McqQuestion[] | null) ?? [];
+  return (data as unknown as McqQuestion[] | null) ?? [];
 }
 
 async function fetchUnseenQuestions(
@@ -176,7 +180,7 @@ async function fetchUnseenQuestions(
   const fetchLimit = Math.max(limit * 4, 50);
   let query = supabase
     .from("mcq_questions")
-    .select("*, mcq_subjects(name, name_th, icon)")
+    .select(MCQ_PUBLIC_SELECT)
     .eq("status", "active")
     .eq("audience", "student")
     .eq("exam_type", examType)
@@ -187,7 +191,7 @@ async function fetchUnseenQuestions(
   }
 
   const { data } = await query;
-  const rows = (data as McqQuestion[] | null) ?? [];
+  const rows = (data as unknown as McqQuestion[] | null) ?? [];
   const unseen = rows.filter((q) => !excludeIds.has(q.id));
   return shuffle(unseen).slice(0, limit);
 }

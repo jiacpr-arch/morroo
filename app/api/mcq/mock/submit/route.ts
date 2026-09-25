@@ -17,6 +17,7 @@ import {
   type MockUnrankedReason,
 } from "@/lib/mcq-mock-grade";
 import type { McqQuestion } from "@/lib/types-mcq";
+import { releaseActiveMockSet } from "@/lib/mcq-active-mock";
 
 type ReviewRow = Pick<McqQuestion, "id" | "correct_answer" | "explanation" | "detailed_explanation">;
 
@@ -98,6 +99,9 @@ export async function POST(request: NextRequest) {
   const unrankedReason: MockUnrankedReason | null = expired ? "expired" : tooFast ? "too_fast" : null;
   const tokenHash = mockTokenHash(body.token as string);
   const { cohort } = payload;
+
+  // ส่งแล้ว = เห็นเฉลยทั้งชุดอยู่แล้ว — ปลดล็อก /api/mcq/reveal สำหรับข้อในชุดนี้
+  await releaseActiveMockSet(admin, user.id, tokenHash);
 
   const { data: inserted, error: insErr } = await admin
     .from("mcq_sessions")

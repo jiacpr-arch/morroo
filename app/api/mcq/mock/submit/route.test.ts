@@ -10,7 +10,8 @@ const state: {
   insertError: { code: string } | null;
   existing: Record<string, unknown> | null;
   inserted: Record<string, unknown>[];
-} = { user: null, questions: [], insertError: null, existing: null, inserted: [] };
+  released: Record<string, string>[];
+} = { user: null, questions: [], insertError: null, existing: null, inserted: [], released: [] };
 
 vi.mock("@/lib/supabase/server", () => ({
   createClient: async () => ({
@@ -27,6 +28,18 @@ vi.mock("@/lib/rate-limit", () => ({
 vi.mock("@/lib/supabase/admin", () => ({
   createAdminClient: () => ({
     from: (table: string) => {
+      if (table === "mock_active_sets") {
+        return {
+          delete: () => ({
+            eq: (c1: string, v1: string) => ({
+              eq: async (c2: string, v2: string) => {
+                state.released.push({ [c1]: v1, [c2]: v2 });
+                return { error: null };
+              },
+            }),
+          }),
+        };
+      }
       if (table === "mcq_questions") {
         return {
           select: () => ({
@@ -96,6 +109,7 @@ beforeEach(() => {
   state.insertError = null;
   state.existing = null;
   state.inserted = [];
+  state.released = [];
 });
 
 describe("POST /api/mcq/mock/submit", () => {
@@ -151,6 +165,16 @@ describe("POST /api/mcq/mock/submit", () => {
       graded_by_server: true,
     });
     expect(state.inserted[0].mock_token_hash).toMatch(/^[0-9a-f]{64}$/);
+    // ส่งแล้ว → ปลดชุดนี้ออกจาก mock_active_sets ให้ /api/mcq/reveal ใช้ได้
+    expect(state.released).toEqual([
+      { user_id: "user-1", token_hash: state.inserted[0].mock_token_hash },
+    ]);
+  });
+
+  it("does not release the active set for a rejected token", async () => {
+    state.user = { id: "user-2" };
+    await POST(req({ token: token(), answers: {} }));
+    expect(state.released).toHaveLength(0);
   });
 
   it("ignores client-supplied score fields", async () => {

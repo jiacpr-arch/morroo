@@ -8,7 +8,8 @@ import type {
   BoardMetricRow,
 } from "../types-board";
 import { buildBoardMetricsMap } from "../types-board";
-import type { McqSubject, McqQuestion } from "../types-mcq";
+import type { McqSubject } from "../types-mcq";
+import { MCQ_PUBLIC_SELECT, type McqPublicQuestion } from "../mcq-public";
 
 export async function getBoardSpecialties(): Promise<BoardSpecialty[]> {
   const supabase = await createClient();
@@ -138,7 +139,8 @@ export async function getBoardSpecialtyMetrics(): Promise<
 }
 
 export interface BoardMockSample {
-  questions: McqQuestion[];
+  /** ไม่มีเฉลย — หน้า mock ตัดเฉลย/ออก token ต่อใน lib/mcq-mock-server.ts */
+  questions: McqPublicQuestion[];
   totalTarget: number;
   totalAvailable: number;
   bySection: Array<{
@@ -168,7 +170,7 @@ export async function sampleBoardMock(
     return { questions: [], totalTarget: 0, totalAvailable: 0, bySection: [] };
   }
 
-  const collected: McqQuestion[] = [];
+  const collected: McqPublicQuestion[] = [];
   const seenIds = new Set<string>();
   const bySection: BoardMockSample["bySection"] = [];
   let totalTarget = 0;
@@ -187,13 +189,13 @@ export async function sampleBoardMock(
       // No topic_categories — sample at section level
       const { data } = await supabase
         .from("mcq_questions")
-        .select("*, mcq_subjects(name, name_th, icon)")
+        .select(MCQ_PUBLIC_SELECT)
         .eq("status", "active")
         .eq("audience", "board")
         .eq("board_specialty", specialtySlug)
         .eq("board_section", bp.section_code)
         .limit(Math.max(bp.question_count * 4, 50));
-      const rows = (data as McqQuestion[] | null) ?? [];
+      const rows = (data as unknown as McqPublicQuestion[] | null) ?? [];
       const shuffled = rows.sort(() => Math.random() - 0.5).slice(0, bp.question_count);
       for (const q of shuffled) {
         if (!seenIds.has(q.id)) {
@@ -208,14 +210,14 @@ export async function sampleBoardMock(
         const target = topic.total_count;
         const { data } = await supabase
           .from("mcq_questions")
-          .select("*, mcq_subjects(name, name_th, icon)")
+          .select(MCQ_PUBLIC_SELECT)
           .eq("status", "active")
           .eq("audience", "board")
           .eq("board_specialty", specialtySlug)
           .eq("board_section", bp.section_code)
           .eq("board_topic", topic.slug)
           .limit(Math.max(target * 4, 20));
-        const rows = (data as McqQuestion[] | null) ?? [];
+        const rows = (data as unknown as McqPublicQuestion[] | null) ?? [];
         const shuffled = rows.sort(() => Math.random() - 0.5).slice(0, target);
         for (const q of shuffled) {
           if (!seenIds.has(q.id)) {

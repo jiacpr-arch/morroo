@@ -30,7 +30,9 @@ export interface McqMockGradeResult {
   perQuestion: { id: string; selected: string | null; isCorrect: boolean }[];
 }
 
-export function toMockPublicQuestion(q: McqQuestion): McqMockQuestion {
+export function toMockPublicQuestion(
+  q: Pick<McqQuestion, "id" | "subject_id" | "exam_source" | "scenario" | "choices" | "mcq_subjects">,
+): McqMockQuestion {
   return {
     id: q.id,
     subject_id: q.subject_id,

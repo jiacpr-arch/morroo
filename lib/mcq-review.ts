@@ -19,7 +19,11 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { nextSrsState } from "./school/srs";
-import type { McqQuestion } from "./types-mcq";
+import { MCQ_PUBLIC_SELECT, type McqPublicQuestion } from "./mcq-public";
+
+// Due questions are read with the caller's user-scoped client — no answer key
+// (see lib/mcq-public.ts); McqPractice reveals per question.
+type McqQuestion = McqPublicQuestion;
 
 /** A correct review that would push the interval past this graduates the question. */
 export const GRADUATE_AFTER_DAYS = 60;
@@ -212,11 +216,11 @@ export async function getDueReviewQuestions(
 
   const { data: qs } = await supabase
     .from("mcq_questions")
-    .select("*, mcq_subjects(name, name_th, icon)")
+    .select(MCQ_PUBLIC_SELECT)
     .in("id", ids)
     .eq("status", "active")
     .eq("audience", "student");
-  const byId = new Map(((qs as McqQuestion[] | null) ?? []).map((q) => [q.id, q]));
+  const byId = new Map(((qs as unknown as McqQuestion[] | null) ?? []).map((q) => [q.id, q]));
   return ids
     .map((id) => byId.get(id))
     .filter((q): q is McqQuestion => !!q)

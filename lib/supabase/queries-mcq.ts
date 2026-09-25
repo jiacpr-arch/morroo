@@ -2,6 +2,12 @@ import { createClient } from "./server";
 import { createAdminClient } from "./admin";
 import { isUuid } from "@/lib/school/ids";
 import type { McqSubject, McqQuestion, McqAudience } from "../types-mcq";
+import {
+  MCQ_PUBLIC_SELECT,
+  toAnswerKey,
+  type McqAnswerKey,
+  type McqPublicQuestion,
+} from "../mcq-public";
 
 /**
  * Live counts for the question bank, split by audience and readiness.
@@ -101,13 +107,14 @@ export async function getMcqQuestions(options?: {
   boardSection?: string;
   boardTopic?: string;
   boardAgeGroup?: "peds" | "adult" | "mixed";
-}): Promise<McqQuestion[]> {
+}): Promise<McqPublicQuestion[]> {
   const supabase = await createClient();
   // Default audience filter — guards /nl flows from picking up board rows
   const audience = options?.audience ?? "student";
+  // ไม่มีเฉลย — ผู้ใช้ขอเฉลยทีละข้อผ่าน /api/mcq/reveal (ดู lib/mcq-public.ts)
   let query = supabase
     .from("mcq_questions")
-    .select("*, mcq_subjects(name, name_th, icon)")
+    .select(MCQ_PUBLIC_SELECT)
     .eq("status", "active")
     .eq("audience", audience);
 
@@ -136,7 +143,7 @@ export async function getMcqQuestions(options?: {
     return [];
   }
 
-  let questions = (data as McqQuestion[]) || [];
+  let questions = (data as unknown as McqPublicQuestion[]) || [];
 
   // Shuffle if randomize
   if (options?.randomize) {
@@ -152,11 +159,15 @@ export async function getMcqQuestions(options?: {
  * which deliberately draws from a small curated pool instead of the full
  * question bank so a shared marketing link can't be used to farm every
  * question for free.
+ *
+ * Returns the answer key too (the demo grades in the browser), so it reads
+ * with the service role — anon/authenticated can't select the answer
+ * columns. Only call this with a fixed server-side id list, never user input.
  */
 export async function getMcqQuestionsByIds(ids: string[]): Promise<McqQuestion[]> {
   if (ids.length === 0) return [];
-  const supabase = await createClient();
-  const { data, error } = await supabase
+  const admin = createAdminClient();
+  const { data, error } = await admin
     .from("mcq_questions")
     .select("*, mcq_subjects(name, name_th, icon)")
     .in("id", ids)
@@ -172,7 +183,7 @@ export async function getMcqQuestionsByIds(ids: string[]): Promise<McqQuestion[]
 export async function getMcqQuestion(
   id: string,
   opts?: { audience?: McqAudience }
-): Promise<McqQuestion | null> {
+): Promise<McqPublicQuestion | null> {
   // `mcq_questions.id` is a uuid column. Callers pass this straight from a
   // `?q=` deep link (LINE daily quiz / dashboard card), so a stale or
   // tampered value would make Postgres raise 22P02 and log a server error
@@ -183,7 +194,7 @@ export async function getMcqQuestion(
   const audience = opts?.audience ?? "student";
   const { data, error } = await supabase
     .from("mcq_questions")
-    .select("*, mcq_subjects(name, name_th, icon)")
+    .select(MCQ_PUBLIC_SELECT)
     .eq("id", id)
     .eq("status", "active")
     .eq("audience", audience)
@@ -193,7 +204,33 @@ export async function getMcqQuestion(
     console.error("Error fetching MCQ question:", error);
     return null;
   }
-  return data as McqQuestion;
+  return data as unknown as McqPublicQuestion;
+}
+
+/**
+ * เฉลยของข้อที่ระบุ อ่านด้วย service role — ใช้ฝั่ง server เท่านั้น สำหรับกรณีที่
+ * ตั้งใจฝังเฉลยไปกับหน้า (ผู้ใช้ยังไม่ล็อกอินในโหมดฝึก / Mock ที่ตรวจใน browser)
+ * ผู้ใช้ที่ล็อกอินแล้วต้องขอผ่าน /api/mcq/reveal ซึ่งมี rate limit + กัน Mock
+ */
+export async function getMcqAnswerKeys(ids: string[]): Promise<Map<string, McqAnswerKey>> {
+  const out = new Map<string, McqAnswerKey>();
+  if (ids.length === 0) return out;
+  const admin = createAdminClient();
+  const { data, error } = await admin
+    .from("mcq_questions")
+    .select("id, correct_answer, explanation, detailed_explanation")
+    .in("id", ids);
+  if (error) {
+    console.error("Error fetching MCQ answer keys:", error);
+    return out;
+  }
+  for (const row of (data ?? []) as Pick<
+    McqQuestion,
+    "id" | "correct_answer" | "explanation" | "detailed_explanation"
+  >[]) {
+    out.set(row.id, toAnswerKey(row));
+  }
+  return out;
 }
 
 export async function getFreeAttemptsCount(
