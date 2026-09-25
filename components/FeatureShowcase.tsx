@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import SectionHeading from "@/components/SectionHeading";
 import {
@@ -129,21 +130,33 @@ const FEATURES: Feature[] = [
 
 export default function FeatureShowcase() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-muted">
+    <section className="bg-[#f3f5ef] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          align="center"
-          eyebrow="ทุกอย่างในที่เดียว"
-          title="เครื่องมือเตรียมสอบแพทย์ครบทุกขั้น"
-          description="ตั้งแต่เรียนเนื้อหา ฝึกข้อสอบ ไปจนถึงจำลองสอบจริงกับ AI — เลือกใช้ฟีเจอร์ที่ตรงกับเป้าหมายของคุณได้เลย"
-        />
+        <div className="mb-10 grid items-center gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <SectionHeading
+            eyebrow="พื้นที่เล็ก ๆ สำหรับเป้าหมายที่ยิ่งใหญ่"
+            title="เรียนรู้ในแบบที่ใช่ เตรียมพร้อมในแบบของคุณ"
+            description="ตั้งแต่ทบทวนบทเรียน ฝึกข้อสอบ ไปจนถึงจำลองเคสกับ AI — เลือกเริ่มจากสิ่งที่อยากฝึก แล้วค่อย ๆ เติมความมั่นใจไปด้วยกัน"
+            className="mb-0 sm:mb-0"
+          />
+          <Image
+            src="/images/home/calm-study-desk.webp"
+            width={1440}
+            height={960}
+            blurDataURL="data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoMAAgAA4BaJZgCdAD7Fu0tB0IQAPAN5V11CfUcKzmxjdo4gmw84yYQerfRphUqiGmsux2VkqclzwWbj1rsieUAAAA="
+            alt="มุมอ่านหนังสือแสงธรรมชาติ พร้อมสมุด หนังสือ และหูฟังแพทย์"
+            sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(100vw - 48px), (max-width: 1279px) 44vw, 548px"
+            placeholder="blur"
+            className="aspect-[16/9] w-full rounded-3xl object-cover"
+          />
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {FEATURES.map((f) => (
             <Link
               key={f.href}
               href={f.href}
-              className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5"
+              className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 motion-safe:hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
             >
               {f.badge && (
                 <Badge className={`absolute right-4 top-4 ${f.badge.className}`}>
@@ -155,7 +168,7 @@ export default function FeatureShowcase() {
               >
                 <f.icon className={`h-6 w-6 ${f.iconText}`} />
               </div>
-              <div className="flex items-baseline gap-2">
+              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                 <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-brand">{f.title}</h3>
                 <span className="text-xs text-muted-foreground">{f.en}</span>
               </div>
