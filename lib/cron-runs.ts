@@ -140,6 +140,7 @@ async function recordFinish(
     meta: result.meta ?? null,
   };
   try {
+    if (runId == null && (await adoptOrphanStart(supabase, job, startedAt, row))) return;
     const query =
       runId != null
         ? supabase.from("cron_runs").update(row).eq("id", runId)
@@ -149,6 +150,36 @@ async function recordFinish(
     if (error) throw error;
   } catch (err) {
     console.error(`[cron-runs] ${job}: failed to record finish:`, err);
+  }
+}
+
+/**
+ * A start insert we gave up on (withTimeout) may still have landed. Finish
+ * that row instead of inserting a second one — otherwise it stays 'running'
+ * and the next sweep reports a false timeout. Returns true if a row was found.
+ */
+async function adoptOrphanStart(
+  supabase: AnyClient,
+  job: string,
+  startedAt: Date,
+  row: Record<string, unknown>
+): Promise<boolean> {
+  try {
+    const { data, error } = await withTimeout(
+      supabase
+        .from("cron_runs")
+        .update(row)
+        .eq("job", job)
+        .eq("started_at", startedAt.toISOString())
+        .eq("status", "running")
+        .select("id"),
+      "cron_runs adopt orphan"
+    );
+    if (error) throw error;
+    return ((data as { id: number }[] | null) ?? []).length > 0;
+  } catch (err) {
+    console.error(`[cron-runs] ${job}: orphan start lookup failed:`, err);
+    return false;
   }
 }
 
