@@ -7,7 +7,9 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { SIM_SCENARIOS, getBuiltinScenario } from "@/lib/sim/scenarios";
 import type { SimDbCharacter } from "@/lib/sim/characters";
-import { isValidScenario, type SimScenario } from "@/lib/sim/types";
+import { isValidScenario, type SimScenario, type StoryNode } from "@/lib/sim/types";
+import { applyMeqConventions } from "@/lib/sim/generate-meq";
+import { chunkLongSays } from "@/lib/sim/chunk-says";
 import {
   caseIdFromSlug,
   longCaseToScenario,
@@ -52,8 +54,20 @@ function isHiddenAiLongcase(row: { category: string | null; source_case_id: stri
   return !simFlags.serveAiLongcaseGames && row.category === "longcase" && !!row.source_case_id;
 }
 
+/**
+ * อ่านน้อยแต่บ่อยสำหรับเกมที่ AI สร้างเก็บไว้ (MEQ / long case) — ทำตอนโหลด ไม่ต้องสร้างใหม่:
+ * ย้ายคำอธิบายหลังตอบวินิจฉัยไป debrief, ตัดคำชม "ถูกต้อง —", แตกบทพูดยาวเป็นท่อนสั้น
+ * (idempotent — เกมที่สร้างด้วย prompt ใหม่แล้วผ่านซ้ำก็ไม่เปลี่ยน)
+ */
+function shortReadStory(category: string | null, story: unknown): unknown {
+  if ((category !== "meq" && category !== "longcase") || !Array.isArray(story)) return story;
+  const copy = structuredClone(story) as unknown[];
+  applyMeqConventions(copy);
+  return chunkLongSays(copy as StoryNode[]);
+}
+
 function rowToScenario(row: SimScenarioRow): SimScenario | null {
-  const scenario = {
+  const raw = {
     slug: row.slug,
     title: row.title,
     subtitle: row.subtitle ?? "",
@@ -63,7 +77,9 @@ function rowToScenario(row: SimScenarioRow): SimScenario | null {
     bg: row.bg ?? undefined,
     story: row.story,
   };
-  return isValidScenario(scenario) ? scenario : null;
+  if (!isValidScenario(raw)) return null;
+  const scenario = { ...raw, story: shortReadStory(row.category, raw.story) };
+  return isValidScenario(scenario) ? scenario : raw;
 }
 
 export async function getSimScenarios(): Promise<SimScenario[]> {

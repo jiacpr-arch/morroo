@@ -16,6 +16,7 @@ const AI_LONGCASE_ROW = {
   bg: null,
   story: [{ say: { who: "att_dech", pose: "talk", text: "เวอร์ชัน AI เดิม" } }, { end: true }],
 };
+const LONG_EXPLAIN = Array.from({ length: 10 }, (_, i) => `เหตุผลข้อ ${i + 1} ของการวินิจฉัยนี้`).join(" ");
 const MEQ_ROW = {
   slug: "meq-fever-01",
   title: "MEQ: ไข้",
@@ -24,7 +25,20 @@ const MEQ_ROW = {
   category: "meq",
   source_case_id: null,
   bg: null,
-  story: [{ say: { who: "att_dech", pose: "talk", text: "MEQ" } }, { end: true }],
+  story: [
+    { say: { who: "att_dech", pose: "talk", text: "MEQ" } },
+    {
+      choice: {
+        q: "วินิจฉัย",
+        options: [
+          { tgt: "DX", label: "Dengue", ok: true, then: [{ say: { who: "att_dech", pose: "talk", text: `ถูกต้อง — ${LONG_EXPLAIN}` } }] },
+          { tgt: "DX", label: "Flu", ok: false },
+        ],
+      },
+    },
+    { inter: "เคสสำเร็จ!!", green: true },
+    { end: true },
+  ],
 };
 const LONG_CASE = {
   id: CASE_ID,
@@ -157,5 +171,24 @@ describe("with AI long-case games switched back on", () => {
 
   it("links the long case to its AI game", async () => {
     expect((await getLongcaseGameMap())[CASE_ID]).toBe(AI_LONGCASE_ROW.slug);
+  });
+
+  it("serves stored MEQ games as short reads: no lecture after the diagnosis, long lines split, no 'ถูกต้อง —'", async () => {
+    const s = await getSimScenario(MEQ_ROW.slug);
+    expect(s).not.toBeNull();
+    const story = s!.story;
+    const dx = story.find((n) => "choice" in n);
+    expect(dx && "choice" in dx && dx.choice.options[0].then).toEqual([]);
+    const says = story.flatMap((n) => ("say" in n ? [n.say.text] : []));
+    const moved = says.filter((t) => t.includes("เหตุผลข้อ"));
+    expect(moved.length).toBeGreaterThan(1);
+    for (const t of says) {
+      expect(t.length).toBeLessThanOrEqual(110);
+      expect(t.startsWith("ถูกต้อง")).toBe(false);
+    }
+    // ท่อนที่ย้ายมาอยู่ก่อนฉากปิด
+    const closeIdx = story.findIndex((n) => "inter" in n);
+    const lastMovedIdx = story.findLastIndex((n) => "say" in n && n.say.text.includes("เหตุผลข้อ"));
+    expect(lastMovedIdx).toBeLessThan(closeIdx);
   });
 });
