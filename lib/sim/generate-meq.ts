@@ -65,8 +65,10 @@ MEQ ต้นฉบับเป็นเคสเดียวที่ไล่�
 - เรียงจุดตัดสินใจตามธีมของแต่ละตอน เช่น initial assessment → แปลผล lab → differential → วินิจฉัยชัด → การรักษา → complication/follow-up (อิงลำดับตอนจริงในข้อสอบ)
 - **ช่วงอาจารย์ซักถาม (สำคัญมากต่อการเรียนรู้):** แทรก att_dech ถาม 2-3 คำถามสำคัญจาก question ของตอนท้ายๆ (say node คำถามก่อน แล้ว say node ถัดไปเผยแนวทางคำตอบจาก answer) เพื่อฝึก active recall เหมือนสอบจริง
 - ผล lab/imaging ที่ scenario ให้มา แสดงเป็น labSheet (ใบรายงานผล) หลังผู้เล่นเลือกสั่งตรวจถูก แทนการให้ตัวละครอ่านผล
-- สั่งการรักษา: ใช้ choice แบบ shelf: true เขียน order ทีละข้อ ข้อถูกใส่ then เป็น orderSheet สะสมให้เห็นว่าสั่งอะไรไปแล้ว
-- วินิจฉัย: **ห้ามให้ attending เฉลยหรือพูด "ถูกต้อง — <โรค>" หลังเลือก** ให้ผู้เล่นตัดสินใจเองจากตัวเลือก
+- **สั่งการรักษา (บังคับ): ทุก choice ที่ผู้เล่นสั่ง order การรักษา ต้องใส่ "shelf": true และมี 5-6 ตัวเลือก** (order ถูก 1 + order หลอกที่สมจริง 4-5 ข้อ เช่น ยาผิดตัว/ขนาดผิด/ข้อห้ามใช้ในเคสนี้/order ที่ยังไม่ถึงเวลา) — ข้อถูกใส่ then เป็น orderSheet สะสม (order ที่สั่งไปแล้วทั้งหมด + order ใหม่ใส่ isNew) ทำ 2-3 choice ต่อกันทีละ order ตัวอย่าง:
+  { "choice": { "q": "เขียน order การรักษา — ข้อแรกสั่งอะไร", "shelf": true, "options": [ { "tgt": "MGMT", "label": "Benzathine penicillin G 1.2 MU IM stat", "ok": true, "then": [ { "orderSheet": { "patient": "เด็กชาย 8 ปี", "orders": [ { "text": "Benzathine penicillin G 1.2 MU IM stat", "isNew": true } ] } } ] }, { "tgt": "MGMT", "label": "Ibuprofen 10 mg/kg PO q 8 hr", "ok": false, "why": "..." }, ... ] } }
+- **วินิจฉัย: ผู้เล่นตัดสินใจเอง ห้ามมีใครเฉลยหรือสรุปแทน** — then ของข้อถูกในจุดวินิจฉัยต้องไม่มี say ของ attending ที่อธิบาย/นับ criteria/ยืนยันการวินิจฉัย ให้เดินเรื่องต่อด้วย choice ถัดไป (เช่น ให้ผู้เล่นเลือกเองว่าผลตรวจข้อไหนสนับสนุนการวินิจฉัย) เหตุผลเชิงสอนเก็บไว้ช่วง debrief
+- **ห้าม say ที่ขึ้นต้นด้วย "ถูกต้อง" ทั้งเรื่อง** — ผู้เล่นรู้อยู่แล้วว่าตอบถูกเพราะเกมเดินต่อ
 - ปิดด้วย att_dech สรุป key_points สำคัญ 2-3 ข้อ แยก 1 ข้อต่อ 1 say node (ห้ามรวมหลายประเด็นในบทพูดเดียว) → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
 
 ## กติกาสำคัญ
@@ -74,7 +76,7 @@ MEQ ต้นฉบับเป็นเคสเดียวที่ไล่�
 2. pose: idle, talk, panic, stern, happy เท่านั้น
 3. **ห้ามใช้ fx ทุกชนิด** (ไม่มี alarm/cpr/shock/epi/rosc/rhythm) — นี่คือเคส ward ไม่ใช่ arrest
 4. เน้นคำสำคัญด้วย **คำเน้น** เท่านั้น — ห้ามใช้ HTML เด็ดขาด
-5. ทุก choice มี 3 ตัวเลือก และมีข้อถูก (ok: true) เพียงข้อเดียว; ข้อถูกใส่ then เดินเรื่องต่อ
+5. ทุก choice มี 3 ตัวเลือก (ยกเว้น choice ชั้น order ที่ shelf: true มี 5-6 ตัวเลือก) และมีข้อถูก (ok: true) เพียงข้อเดียว; ข้อถูกใส่ then เดินเรื่องต่อ
 6. **หัวใจของคุณภาพ — ตัวเลือกผิด (distractor) ต้องเป็น "กับดักคลินิกที่สมจริงเฉพาะเคสนี้" ไม่ใช่ตัวลวงงี่เง่าหรือกฎ generic** และ why ต้องอธิบายเหตุผลเฉพาะเคสว่าทำไมผิด (เลียนแบบความลึกของตัวลวง + why จากตัวอย่าง torsion ด้านล่าง)
 7. เนื้อหาต้องอิงข้อมูลในข้อสอบเท่านั้น ห้ามแต่งข้อมูลผู้ป่วย/ผลตรวจเพิ่มนอกเหนือจาก scenario/answer/key_points
 8. slug ขึ้นต้นด้วย meq- ; title ขึ้นต้นด้วย "MEQ: ..." — **ห้ามเฉลยโรคในชื่อเกม:** title/subtitle/slug ต้องตั้งจากอาการนำหรือสถานการณ์ที่ชวนติดตาม (เช่น "ชาย 25 ปี ปวดรอบสะดือย้ายลงท้องน้อยขวา") ห้ามมีชื่อโรค การวินิจฉัย หรือตัวย่อโรค (เช่น appendicitis, DKA, STEMI) เพราะผู้เล่นต้องได้ฝึกวินิจฉัยเอง (ห้ามใช้ title ของข้อสอบต้นฉบับถ้ามันเฉลยโรค)
@@ -87,5 +89,25 @@ MEQ ต้นฉบับเป็นเคสเดียวที่ไล่�
 ${JSON.stringify(exam)}
 
 ## ตัวอย่างเกมเคสที่สมบูรณ์และมีคุณภาพ (เคส Testicular torsion — เลียนแบบความลึกของตัวลวง + why แบบนี้)
+**หมายเหตุ:** ตัวอย่างนี้เป็นรูปแบบรุ่นเก่า ให้เลียนแบบเฉพาะความลึกของตัวลวงและ why — ส่วนที่ขัดกับกติกาข้างบนให้ทำตามกติกาข้างบน (ใช้ labSheet แทนการอ่านผลแลป, ใช้ชั้น order shelf: true + orderSheet ตอนสั่งการรักษา, ไม่มีบทพูดเฉลย/ชมหลังวินิจฉัย)
 ${JSON.stringify(lcTorsion)}`;
+}
+
+/**
+ * ปรับผลจาก AI ให้ตรงกติกาที่ AI มักหลุด: choice ที่ข้อถูกได้ใบสั่งการรักษา (orderSheet)
+ * คือจุดสั่ง order → บังคับเป็นชั้น order (shelf) — mutate story ตรงๆ ทั้ง then ที่ซ้อนกัน
+ */
+export function applyMeqConventions(story: unknown): void {
+  if (!Array.isArray(story)) return;
+  for (const node of story) {
+    const choice = (node as { choice?: { shelf?: boolean; options?: unknown } } | null)?.choice;
+    if (!choice || !Array.isArray(choice.options)) continue;
+    for (const opt of choice.options as { ok?: boolean; then?: unknown }[]) {
+      if (!Array.isArray(opt?.then)) continue;
+      if (opt.ok === true && opt.then.some((n) => !!n && typeof n === "object" && "orderSheet" in n)) {
+        choice.shelf = true;
+      }
+      applyMeqConventions(opt.then);
+    }
+  }
 }
