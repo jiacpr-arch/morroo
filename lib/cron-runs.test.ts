@@ -173,6 +173,26 @@ describe("withCronRun", () => {
     expect(finishCall()).toMatchObject({ job: "board-gen", status: "ok" });
   });
 
+  it("finishes a start row that landed after the insert timed out instead of inserting a duplicate", async () => {
+    respond = (call) => {
+      if (call.table === "cron_runs" && has(call, "insert") && has(call, "single")) {
+        return { data: null, error: { message: "timed out" } };
+      }
+      if (call.table === "cron_runs" && has(call, "update") && call.ops.some((o) => o.method === "eq" && o.args[0] === "started_at")) {
+        return { data: [{ id: 338 }], error: null }; // the orphaned 'running' row
+      }
+      return defaultRespond(call);
+    };
+    const res = await withCronRun<[Request]>("board-gen", async () => Response.json({ ok: true }), { authorize: allow })(req());
+    expect(res.status).toBe(200);
+
+    const adopt = calls.find((c) => c.table === "cron_runs" && c.ops.some((o) => o.method === "eq" && o.args[0] === "started_at"))!;
+    expect(arg(adopt, "update")).toMatchObject({ status: "ok", http_status: 200 });
+    expect(adopt.ops.filter((o) => o.method === "eq").map((o) => o.args[0])).toEqual(["job", "started_at", "status"]);
+    // No second (fallback) insert.
+    expect(calls.filter((c) => c.table === "cron_runs" && has(c, "insert") && !has(c, "single"))).toHaveLength(0);
+  });
+
   it("throttles alerts per job", async () => {
     respond = (call) => {
       if (call.table === "app_settings" && has(call, "maybeSingle")) {
