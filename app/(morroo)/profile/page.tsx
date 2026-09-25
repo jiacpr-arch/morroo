@@ -8,12 +8,13 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
-import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins, Sparkles, GraduationCap } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins, Sparkles, GraduationCap, Bell } from "lucide-react";
 import { xpToRank } from "@/lib/school/rank";
 import type { Profile } from "@/lib/types";
 import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
 import { PRODUCTS, PRODUCT_INFO, planLabel, resolveAccess, type EntitlementLike } from "@/lib/membership";
 import { liffDeepLink } from "@/lib/line-links";
+import PushToggle from "@/components/pwa/PushToggle";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -607,6 +608,23 @@ export default function ProfilePage() {
                 </button>
               </div>
             )}
+          </CardContent>
+        </Card>
+
+        {/* Web Push — per-device opt-in (PWA). Complements LINE for users
+            who never link it; the streak-nudge cron sends LINE first and
+            only falls back to push, so nobody gets both. */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Bell className="h-5 w-5 text-brand" /> การแจ้งเตือน
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              รับแจ้งเตือนจากหมอรู้บนมือถือหรือคอมเครื่องนี้ โดยไม่ต้องเชื่อม LINE
+            </p>
+          </CardHeader>
+          <CardContent>
+            <PushToggle />
           </CardContent>
         </Card>
 
