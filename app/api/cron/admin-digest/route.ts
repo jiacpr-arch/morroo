@@ -17,6 +17,8 @@
  *    separate text messages
  *  - Mondays: trailing-7-day analytics summary (absorbed the old
  *    analytics-digest cron)
+ *  - cron health: failed runs in the last 24h and jobs that missed their
+ *    schedule, from `cron_runs` (lib/cron-runs.ts)
  *
  * Auth: Vercel Cron injects `Authorization: Bearer $CRON_SECRET`.
  * External callers can use `?secret=$BLOG_GENERATE_SECRET`.
@@ -29,6 +31,7 @@ import {
   buildAdminDigestFlex,
   buildAdsSuggestFlex,
   type AdsOpsSummary,
+  type CronDigestSummary,
   type DoctorDigestSummary,
 } from "@/lib/line-flex-templates";
 import { bangkokDayWindow, buildMarketingSnapshot } from "@/lib/marketing-digest";
@@ -41,12 +44,17 @@ import {
   getReengageExperimentStatus,
   shouldShowReengageInDigest,
 } from "@/lib/mcq-reengage-experiment";
+import { fetchCronHealth, withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
 // LINE push API caps a single push at 5 messages: 1 digest + up to 4 cards.
 const MAX_SUGGEST_CARDS = 4;
+
+// cron_runs rows older than this are pruned by the digest (board-gen alone
+// logs ~1,440 rows/day).
+const CRON_RUNS_RETENTION_DAYS = 30;
 
 function isAuthorized(request: Request): boolean {
   const url = new URL(request.url);
@@ -64,7 +72,7 @@ function isAuthorized(request: Request): boolean {
   return false;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -429,6 +437,29 @@ export async function GET(request: Request) {
     console.error("[admin-digest] reengage experiment status failed:", err);
   }
 
+  // --- Cron health: failures in the last 24h + jobs that missed their
+  // schedule (see lib/cron-runs.ts). Also prunes the run log. ---
+  let cronHealth: CronDigestSummary | null = null;
+  try {
+    const health = await fetchCronHealth(supabase, now);
+    cronHealth = {
+      totalJobs: health.length,
+      failures: health
+        .filter((h) => h.failures24h > 0)
+        .map((h) => ({ job: h.job, count: h.failures24h, lastError: h.lastError })),
+      stale: health
+        .filter((h) => h.stale && h.lastRun)
+        .map((h) => ({ job: h.job, lastRunAt: h.lastRun!.started_at })),
+    };
+    await supabase
+      .from("cron_runs")
+      .delete()
+      .lt("started_at", new Date(now.getTime() - CRON_RUNS_RETENTION_DAYS * 86_400_000).toISOString());
+  } catch (err) {
+    // Table may not exist yet on older deployments — leave the section off.
+    console.error("[admin-digest] cron health failed:", err);
+  }
+
   const flex = buildAdminDigestFlex({
     dateLabel,
     attemptsToday,
@@ -447,6 +478,7 @@ export async function GET(request: Request) {
     doctor,
     weekly,
     reengageExperiment,
+    cronHealth,
   });
 
   const ok = await sendLineMessage(adminLineId, [flex, ...suggestCards]);
@@ -473,6 +505,9 @@ export async function GET(request: Request) {
       adsOps,
       doctor,
       weekly,
+      cronHealth,
     },
   });
 }
+
+export const GET = withCronRun("admin-digest", handleGet, { authorize: isAuthorized });

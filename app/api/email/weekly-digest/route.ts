@@ -12,6 +12,7 @@ import { sendWeeklyDigest } from "@/lib/email/send";
 import { generateUnsubscribeUrl } from "@/lib/newsletter-unsubscribe";
 import { sendLineMessage } from "@/lib/line";
 import { buildWeeklySummaryFlex } from "@/lib/line-flex-templates";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -27,12 +28,14 @@ function isAuthorized(request: Request): boolean {
   return !!cronSecret && auth === `Bearer ${cronSecret}`;
 }
 
+const handleWithRunLog = withCronRun("email-weekly-digest", handle, { authorize: isAuthorized });
+
 export async function GET(request: Request) {
-  return handle(request);
+  return handleWithRunLog(request);
 }
 
 export async function POST(request: Request) {
-  return handle(request);
+  return handleWithRunLog(request);
 }
 
 async function handle(request: Request) {

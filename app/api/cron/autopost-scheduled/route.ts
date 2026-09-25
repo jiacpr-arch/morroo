@@ -16,6 +16,7 @@ import {
   type AutopostPlatform,
 } from "@/app/api/autopost/retry/route";
 import { autopostNewsItem } from "@/lib/news-autopost";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -33,7 +34,7 @@ interface ScheduledRow {
   platform: string;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -129,3 +130,5 @@ export async function GET(request: Request) {
 
   return NextResponse.json({ processed: results.length, results, news: newsResults });
 }
+
+export const GET = withCronRun("autopost-scheduled", handleGet, { authorize: isAuthorized });

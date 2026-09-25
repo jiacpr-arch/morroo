@@ -25,6 +25,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { buildStreakNudgeFlex } from "@/lib/line-flex-templates";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -73,7 +74,7 @@ function isAuthorized(request: Request): boolean {
   return false;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -171,3 +172,5 @@ export async function GET(request: Request) {
     skipped,
   });
 }
+
+export const GET = withCronRun("streak-nudge", handleGet, { authorize: isAuthorized });

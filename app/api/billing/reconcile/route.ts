@@ -28,6 +28,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { fulfillCheckoutSession } from "@/lib/billing/fulfill-checkout";
 import { sendFulfillmentNotifications } from "@/lib/billing/send-fulfillment-notifications";
 import type Stripe from "stripe";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 // Reconciling many sessions can take a while. 60s is the cap on Vercel
@@ -164,12 +165,16 @@ async function runReconciliation(request: Request) {
   }
 }
 
+const reconcileWithRunLog = withCronRun("billing-reconcile", runReconciliation, {
+  authorize: isAuthorized,
+});
+
 // Vercel Cron sends GET. External cron runners typically send POST.
 // Both entry points do exactly the same thing.
 export async function GET(request: Request) {
-  return runReconciliation(request);
+  return reconcileWithRunLog(request);
 }
 
 export async function POST(request: Request) {
-  return runReconciliation(request);
+  return reconcileWithRunLog(request);
 }

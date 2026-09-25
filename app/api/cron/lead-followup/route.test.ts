@@ -24,6 +24,11 @@ vi.mock("@/lib/line", () => ({
 vi.mock("@/lib/facebook-messenger", () => ({ sendFbMessage: sendFbMessageMock }));
 vi.mock("@/lib/email/send", () => ({ sendLeadFollowupEmail: sendEmailMock }));
 vi.mock("@/lib/redeem", () => ({ redeemCode: redeemCodeMock }));
+// Run logging has its own tests (lib/cron-runs.test.ts); pass straight through
+// so it doesn't consume the queued supabase results below.
+vi.mock("@/lib/cron-runs", () => ({
+  withCronRun: (_job: string, handler: (req: Request) => Promise<Response>) => handler,
+}));
 
 // ─── Supabase mock ────────────────────────────────────────────────────────────
 // Each supabase.from() call pops one result from the queue.

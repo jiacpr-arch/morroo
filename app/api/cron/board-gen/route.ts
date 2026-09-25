@@ -13,6 +13,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { runBoardGenAgent } from "@/lib/board/gen-agent";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -132,7 +133,7 @@ async function processOne() {
   }
 }
 
-export async function GET(request: NextRequest) {
+async function handle(request: NextRequest) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -140,11 +141,7 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({ ok: true, ...out });
 }
 
+export const GET = withCronRun("board-gen", handle, { authorize: isAuthorized });
+
 // Allow POST too — admin trigger from the dashboard hits this with a body.
-export async function POST(request: NextRequest) {
-  if (!isAuthorized(request)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-  const out = await processOne();
-  return NextResponse.json({ ok: true, ...out });
-}
+export const POST = GET;
