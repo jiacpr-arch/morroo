@@ -3,6 +3,7 @@ import type { LongCaseFull } from "@/lib/types";
 import { longCaseToScenario, slugForCase } from "./longcase-to-scenario";
 import { describeScenarioError } from "./validate";
 import type { ChoiceNode, SimScenario, StoryNode } from "./types";
+import { SAY_MAX_CHARS } from "./chunk-says";
 
 function mk(over: Partial<LongCaseFull>): LongCaseFull {
   return {
@@ -490,5 +491,21 @@ describe("longCaseToScenario", () => {
     expect(hxWho(hxCase({ age: 28, gender: "หญิง" }, "ตั้งครรภ์ GA 34 สัปดาห์ เจ็บครรภ์"))).toContain("patient_pregnant");
     // ครรภ์อ่อน (ectopic 7 สัปดาห์) ยังไม่เห็นท้อง → sprite หญิงปกติ
     expect(hxWho(hxCase({ age: 26, gender: "หญิง" }, "ประจำเดือนขาด ตั้งครรภ์ 7 สัปดาห์ ปวดท้องน้อย"))).toContain("patient_female");
+  });
+
+  it("keeps every line short — long speech is split into several short taps (read little, often)", () => {
+    const longPi = Array.from({ length: 12 }, (_, i) => `อาการข้อที่ ${i + 1} เป็นมากขึ้นเรื่อยๆ`).join(" ");
+    const s = longCaseToScenario(
+      mk({ correct_diagnosis: "X", accepted_ddx: ["X", "Y"], history_script: { cc: "ไข้", pi: longPi, pmh: "ไม่มี" } }),
+    )!;
+    expect(describeScenarioError(s)).toBeNull();
+    const all = (nodes: StoryNode[]): string[] =>
+      nodes.flatMap((n) =>
+        "say" in n ? [n.say.text] : "choice" in n ? n.choice.options.flatMap((o) => all(o.then ?? [])) : [],
+      );
+    const texts = all(s.story);
+    for (const t of texts) expect(t.length).toBeLessThanOrEqual(SAY_MAX_CHARS);
+    // HPI ยาวถูกแตกเป็นหลายท่อน ไม่ใช่ถูกตัดทิ้ง
+    expect(texts.filter((t) => t.includes("อาการข้อที่")).length).toBeGreaterThan(1);
   });
 });

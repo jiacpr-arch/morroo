@@ -63,13 +63,14 @@ MEQ ต้นฉบับเป็นเคสเดียวที่ไล่�
 - จังหวะถาม-ตอบ: ช่วงที่ต้องซักประวัติ/หาข้อมูลเพิ่ม ให้ข้อถูกใส่ then เป็น say สั้นๆ ที่ผู้ป่วย/ญาติตอบด้วยปากตัวเองทันที แล้ว q ของ choice ถัดไปเกริ่นจากคำตอบล่าสุด (ถาม → ตอบ → ถามต่อ) แทนการบรรยายยาวรวดเดียว
 - ข้อถูก (ok: true) มาจาก answer/key_points ของตอนนั้น; ข้อลวงคือกับดักคลินิกที่ answer ปฏิเสธหรือที่แพทย์มักพลาดในเคสแบบนี้
 - เรียงจุดตัดสินใจตามธีมของแต่ละตอน เช่น initial assessment → แปลผล lab → differential → วินิจฉัยชัด → การรักษา → complication/follow-up (อิงลำดับตอนจริงในข้อสอบ)
-- **ช่วงอาจารย์ซักถาม (สำคัญมากต่อการเรียนรู้):** แทรก att_dech ถาม 2-3 คำถามสำคัญจาก question ของตอนท้ายๆ (say node คำถามก่อน แล้ว say node ถัดไปเผยแนวทางคำตอบจาก answer) เพื่อฝึก active recall เหมือนสอบจริง
+- **ช่วงอาจารย์ซักถาม (สำคัญมากต่อการเรียนรู้):** แทรก att_dech ถาม 2-3 คำถามสำคัญจาก question ของตอนท้ายๆ เป็น choice (ข้อถูกมาจาก answer) แล้ว then เผยแนวทางคำตอบสั้นๆ 1 say — ฝึก active recall เหมือนสอบจริง
+- **อ่านน้อยแต่บ่อย (สำคัญมาก — การอ่านหลายบรรทัดรบกวนการเรียนรู้):** ทุก say ยาวไม่เกิน ~100 ตัวอักษร (1-2 บรรทัดบนมือถือ) มีประเด็นเดียว — ถ้ามีข้อมูลมากให้แยกเป็นหลาย say หรือเปลี่ยนเป็นคำถามให้ผู้เล่นเลือกแทนการบอก; **ห้ามมี say ติดกันเกิน 2 node โดยไม่มี choice คั่น** ทั้งเรื่อง (รวม debrief)
 - ผล lab/imaging ที่ scenario ให้มา แสดงเป็น labSheet (ใบรายงานผล) หลังผู้เล่นเลือกสั่งตรวจถูก แทนการให้ตัวละครอ่านผล
 - **สั่งการรักษา (บังคับ): ทุก choice ที่ผู้เล่นสั่ง order การรักษา ต้องใส่ "shelf": true และมี 5-6 ตัวเลือก** (order ถูก 1 + order หลอกที่สมจริง 4-5 ข้อ เช่น ยาผิดตัว/ขนาดผิด/ข้อห้ามใช้ในเคสนี้/order ที่ยังไม่ถึงเวลา) — ข้อถูกใส่ then เป็น orderSheet สะสม (order ที่สั่งไปแล้วทั้งหมด + order ใหม่ใส่ isNew) ทำ 2-3 choice ต่อกันทีละ order ตัวอย่าง:
   { "choice": { "q": "เขียน order การรักษา — ข้อแรกสั่งอะไร", "shelf": true, "options": [ { "tgt": "MGMT", "label": "Benzathine penicillin G 1.2 MU IM stat", "ok": true, "then": [ { "orderSheet": { "patient": "เด็กชาย 8 ปี", "orders": [ { "text": "Benzathine penicillin G 1.2 MU IM stat", "isNew": true } ] } } ] }, { "tgt": "MGMT", "label": "Ibuprofen 10 mg/kg PO q 8 hr", "ok": false, "why": "..." }, ... ] } }
-- **วินิจฉัย: ผู้เล่นตัดสินใจเอง ห้ามมีใครเฉลยหรือสรุปแทน** — then ของข้อถูกในจุดวินิจฉัยต้องไม่มี say ของ attending ที่อธิบาย/นับ criteria/ยืนยันการวินิจฉัย ให้เดินเรื่องต่อด้วย choice ถัดไป (เช่น ให้ผู้เล่นเลือกเองว่าผลตรวจข้อไหนสนับสนุนการวินิจฉัย) เหตุผลเชิงสอนเก็บไว้ช่วง debrief
+- **วินิจฉัย: ผู้เล่นตัดสินใจเอง ห้ามมีใครเฉลยหรือสรุปแทน** — choice วินิจฉัย (tgt: "DX") ข้อถูก**ห้ามมี say ใน then เลย** ให้เดินเรื่องต่อด้วย choice ถัดไปทันที (เช่น ให้ผู้เล่นเลือกเองว่าผลตรวจข้อไหนสนับสนุนการวินิจฉัย) เหตุผลเชิงสอนย้ายไปช่วง debrief
 - **ห้าม say ที่ขึ้นต้นด้วย "ถูกต้อง" ทั้งเรื่อง** — ผู้เล่นรู้อยู่แล้วว่าตอบถูกเพราะเกมเดินต่อ
-- ปิดด้วย att_dech สรุป key_points สำคัญ 2-3 ข้อ แยก 1 ข้อต่อ 1 say node (ห้ามรวมหลายประเด็นในบทพูดเดียว) → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
+- **debrief แบบถาม-ตอบทีละประเด็น:** key_points สำคัญ 3-4 ข้อ (รวมเหตุผลที่ทำให้วินิจฉัยได้) แต่ละข้อเป็น choice สั้นๆ ให้ผู้เล่นเลือกข้อความที่ถูก (tgt: "LEARN", ตัวลวงคือความเข้าใจผิดที่พบบ่อย) แล้ว then เป็น say สรุป 1 บรรทัด — ห้ามให้อาจารย์บรรยายสรุปยาวรวดเดียว → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
 
 ## กติกาสำคัญ
 1. ตัวละคร (who): ผู้ป่วยเลือกให้ตรงเพศ/วัยของเคส — patient_young_male (ชายอายุ <35), patient_generic (ชายวัยกลางคน 35-59), patient_elderly_male (ชายอายุ ≥60), patient_female (หญิงผู้ใหญ่), patient_elderly (หญิงสูงอายุ ≥60), patient_pregnant (หญิงตั้งครรภ์แก่/เห็นท้องชัด), patient_child (เด็กอายุ <15), mother_rel (แม่/ญาติ — ใช้ตอบซักประวัติแทนทารก/เด็กเล็กอายุ <7 ที่พูดเองไม่ได้); ทีมแพทย์: nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
@@ -113,6 +114,47 @@ function stripCorrectPrefix(text: string): string {
  */
 export function applyMeqConventions(story: unknown): void {
   if (!Array.isArray(story)) return;
+  moveDxExplanationsToDebrief(story);
+  applyNodeConventions(story);
+}
+
+/**
+ * ผู้เล่นต้องตัดสินใจวินิจฉัยเองโดยไม่มีใครสรุปให้ทันที — ย้าย say ที่อยู่ใน then ของข้อถูก
+ * ในจุดวินิจฉัย (choice ที่มีตัวเลือก tgt "DX") ไปไว้ช่วง debrief ก่อนฉากปิด "เคสสำเร็จ"
+ * (ไม่ทิ้งเนื้อหา แค่เลื่อนเวลาเฉลยไปหลังผู้เล่นทำเคสจบ) — mutate story ตรงๆ
+ */
+function moveDxExplanationsToDebrief(story: unknown[]): void {
+  const moved: unknown[] = [];
+  const visit = (nodes: unknown[]) => {
+    for (const node of nodes) {
+      const choice = (node as { choice?: { options?: unknown } } | null)?.choice;
+      if (!choice || !Array.isArray(choice.options)) continue;
+      const opts = choice.options as { tgt?: unknown; ok?: boolean; then?: unknown }[];
+      const isDx = opts.some((o) => o?.tgt === "DX");
+      for (const opt of opts) {
+        if (!Array.isArray(opt?.then)) continue;
+        if (isDx && opt.ok === true) {
+          const keep = opt.then.filter((n) => !(n && typeof n === "object" && "say" in n));
+          moved.push(...opt.then.filter((n) => n && typeof n === "object" && "say" in n));
+          opt.then = keep;
+        }
+        visit(opt.then as unknown[]);
+      }
+    }
+  };
+  visit(story);
+  if (!moved.length) return;
+  // แทรกก่อนฉากปิด (inter สีเขียวตัวสุดท้าย) หรือก่อน end ถ้าไม่มี
+  let at = story.length;
+  for (let i = story.length - 1; i >= 0; i--) {
+    const n = story[i] as { inter?: unknown; green?: boolean; end?: boolean } | null;
+    if (n && ((typeof n.inter === "string" && n.green) || n.end === true)) at = i;
+    if (n && typeof n.inter === "string" && n.green) break;
+  }
+  story.splice(at, 0, ...moved);
+}
+
+function applyNodeConventions(story: unknown[]): void {
   for (const node of story) {
     const say = (node as { say?: { text?: unknown } } | null)?.say;
     if (say && typeof say.text === "string") {
@@ -125,7 +167,7 @@ export function applyMeqConventions(story: unknown): void {
       if (opt.ok === true && opt.then.some((n) => !!n && typeof n === "object" && "orderSheet" in n)) {
         choice.shelf = true;
       }
-      applyMeqConventions(opt.then);
+      applyNodeConventions(opt.then);
     }
   }
 }
