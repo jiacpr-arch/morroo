@@ -25,6 +25,7 @@ export const RATE_LIMITS = {
   mcqCommentWrite: { max: 30, windowSeconds: 3600 }, // 30 comment posts/edits / hour
   mcqCommentVote: { max: 300, windowSeconds: 3600 }, // 300 vote toggles / hour
   mcqCommentReport: { max: 20, windowSeconds: 86400 }, // 20 comment reports / day
+  mcqMockSubmit: { max: 30, windowSeconds: 3600 },   // 30 mock submissions / hour
 } as const satisfies Record<string, RateLimitConfig>;
 
 /**

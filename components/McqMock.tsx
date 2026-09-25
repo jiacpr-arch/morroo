@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,17 +23,23 @@ import ReportErrorButton from "@/components/ReportErrorButton";
 import { track } from "@/lib/analytics";
 import { planIntroAmount } from "@/lib/membership";
 import { createClient } from "@/lib/supabase/client";
-import {
-  fetchMockPercentile,
-  saveCompletedMockSession,
-} from "@/lib/supabase/mutations-mcq";
+import { fetchMockPercentile, submitMockExam } from "@/lib/supabase/mutations-mcq";
 import { pickMockRank } from "@/lib/mcq-mock-percentile";
+import {
+  toMockReviewItem,
+  type McqMockQuestion,
+  type McqMockReviewItem,
+  type MockSubmitResponse,
+} from "@/lib/mcq-mock-grade";
 import MockRankCard, { type MockRankState } from "@/components/MockRankCard";
 
 /**
  * เปิดการบันทึกผล + percentile เทียบคนอื่นท้ายสอบ (get_mock_percentile)
  * ส่งเฉพาะ mock จริง (/nl/mock, /board/[specialty]/mock) — /nl/try เป็นเดโม
  * ห้ามส่ง ไม่งั้นผลเดโมจะไปปนใน cohort
+ *
+ * cohort ตรงนี้ใช้แค่แสดงผล (ชื่อชุด/ลิงก์) — cohort ที่บันทึกจริงมาจาก token
+ * ที่ server เซ็น (lib/mcq-mock-token.ts)
  */
 export interface McqMockCohort {
   audience: "student" | "board";
@@ -44,8 +51,7 @@ export interface McqMockCohort {
   path: string;
 }
 
-interface McqMockProps {
-  questions: McqQuestion[];
+interface McqMockBaseProps {
   timeLimitMinutes: number;
   /**
    * Shown as a sales card on the results screen for visitors who haven't
@@ -55,6 +61,23 @@ interface McqMockProps {
   upsell?: { totalQuestions?: number };
   cohort?: McqMockCohort;
 }
+
+type McqMockProps = McqMockBaseProps &
+  (
+    | {
+        /**
+         * โหมด server ตรวจ (ผู้ใช้ล็อกอินบนหน้า mock จริง): ข้อสอบไม่มีเฉลย
+         * ตอนส่งยิง /api/mcq/mock/submit ได้คะแนน + เฉลยกลับมา
+         */
+        questions: McqMockQuestion[];
+        mockToken: string;
+      }
+    | {
+        /** โหมดตรวจใน browser (ผู้ใช้ยังไม่ล็อกอิน, /nl/try): ไม่บันทึก ไม่จัดอันดับ */
+        questions: McqQuestion[];
+        mockToken?: undefined;
+      }
+  );
 
 type MockPhase = "exam" | "results" | "review";
 
@@ -66,12 +89,21 @@ interface SubjectResult {
   total: number;
 }
 
-export default function McqMock({
-  questions,
-  timeLimitMinutes,
-  upsell,
-  cohort,
-}: McqMockProps) {
+/** ผลตรวจจาก server ของรอบหนึ่ง (โหมด token) — ไม่มี state ของรอบนี้ = กำลังตรวจ */
+type GradeState =
+  | { attempt: number; status: "error"; message: string }
+  | { attempt: number; status: "done"; response: MockSubmitResponse };
+
+function hasAnswerKey(q: McqMockQuestion | McqQuestion): q is McqQuestion {
+  return typeof (q as Partial<McqQuestion>).correct_answer === "string";
+}
+
+export default function McqMock(props: McqMockProps) {
+  const { timeLimitMinutes, upsell, cohort } = props;
+  const questions: McqMockQuestion[] = props.questions;
+  const mockToken = props.mockToken ?? null;
+  const router = useRouter();
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [phase, setPhase] = useState<MockPhase>("exam");
@@ -88,77 +120,127 @@ export default function McqMock({
     state: MockRankState;
   } | null>(null);
   const savedAttemptRef = useRef<number | null>(null);
+  const [grade, setGrade] = useState<GradeState | null>(null);
+  // token ใช้ได้ครั้งเดียว — สอบใหม่ในโหมด token = ขอชุดใหม่จาก server
+  const [restarting, setRestarting] = useState(false);
 
-  // Timer
+  // โหมด browser: เฉลยมากับข้อสอบอยู่แล้ว
+  const localReview = useMemo(() => {
+    if (mockToken) return null;
+    const map = new Map<string, McqMockReviewItem>();
+    for (const q of props.questions) {
+      if (hasAnswerKey(q)) map.set(q.id, toMockReviewItem(q));
+    }
+    return map;
+  }, [mockToken, props.questions]);
+
+  const currentGrade = grade && grade.attempt === attempt ? grade : null;
+  const review = useMemo(() => {
+    if (localReview) return localReview;
+    if (currentGrade?.status !== "done") return null;
+    return new Map(currentGrade.response.perQuestion.map((p) => [p.id, p]));
+  }, [localReview, currentGrade]);
+
+  // Timer — นับจากเวลาจริง (Date.now) ไม่ใช่จำนวน tick เพราะ browser หน่วง
+  // setInterval ตอนแท็บอยู่เบื้องหลัง ไม่งั้นเวลาบนจอจะเหลือเกินจริงและส่งเลยกำหนด
   useEffect(() => {
     if (phase !== "exam") return;
+    const total = timeLimitMinutes * 60;
+    const startedAt = Date.now();
 
     timerRef.current = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          // Time's up - auto submit
-          clearInterval(timerRef.current!);
-          setPhase("results");
-          return 0;
-        }
-        return prev - 1;
-      });
+      const left = Math.max(0, total - Math.floor((Date.now() - startedAt) / 1000));
+      setTimeLeft(left);
+      if (left <= 0) {
+        // Time's up - auto submit
+        clearInterval(timerRef.current!);
+        setPhase("results");
+      }
     }, 1000);
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [phase]);
+  }, [phase, attempt, timeLimitMinutes]);
 
-  // ส่งข้อสอบ (กดเอง หรือหมดเวลา) → บันทึก mcq_sessions แล้วขอ percentile
+  const finishRank = useCallback(
+    (forAttempt: number, state: MockRankState) => setRankResult({ attempt: forAttempt, state }),
+    []
+  );
+
+  const requestPercentile = useCallback(
+    async (forAttempt: number, res: MockSubmitResponse) => {
+      if (!cohort) return;
+      if (!res.ranked || !res.sessionId) {
+        return finishRank(
+          forAttempt,
+          res.unrankedReason === "save_failed" || !res.unrankedReason
+            ? { status: "unavailable" }
+            : { status: "unranked", reason: res.unrankedReason }
+        );
+      }
+      const rows = await fetchMockPercentile(res.sessionId);
+      if (!rows) return finishRank(forAttempt, { status: "unavailable" });
+      const rank = pickMockRank(rows);
+      track("mock_percentile_view", {
+        audience: cohort.audience,
+        total_questions: res.total,
+        ranked: rank.status === "ranked",
+        percentile: rank.status === "ranked" ? rank.percentile : null,
+      });
+      finishRank(forAttempt, { status: "done", rank });
+    },
+    [cohort, finishRank]
+  );
+
+  // โหมด token: ส่งคำตอบให้ server ตรวจ (ได้คะแนน + เฉลย) แล้วขอ percentile
+  const submitToServer = useCallback(
+    async (forAttempt: number, token: string, answerByIndex: Record<number, string>) => {
+      const byId: Record<string, string | null> = {};
+      questions.forEach((q, i) => {
+        byId[q.id] = answerByIndex[i] ?? null;
+      });
+      const res = await submitMockExam(token, byId);
+      if (!res.ok) {
+        setGrade({ attempt: forAttempt, status: "error", message: res.error });
+        return;
+      }
+      setGrade({ attempt: forAttempt, status: "done", response: res.data });
+      try {
+        await requestPercentile(forAttempt, res.data);
+      } catch {
+        finishRank(forAttempt, { status: "unavailable" });
+      }
+    },
+    [questions, requestPercentile, finishRank]
+  );
+
+  // ส่งข้อสอบ (กดเอง หรือหมดเวลา) → ตรวจ/บันทึก แล้วขอ percentile
   // ครั้งเดียวต่อรอบ (ref กัน StrictMode ยิงซ้ำ / สลับไปหน้า review แล้วกลับมา)
   useEffect(() => {
-    if (phase !== "results" || !cohort) return;
+    if (phase !== "results") return;
     if (savedAttemptRef.current === attempt) return;
     savedAttemptRef.current = attempt;
 
-    const correct = questions.reduce(
-      (n, q, i) => (answers[i] === q.correct_answer ? n + 1 : n),
-      0
-    );
-    const finish = (state: MockRankState) =>
-      setRankResult({ attempt, state });
+    if (mockToken) {
+      void submitToServer(attempt, mockToken, answers);
+      return;
+    }
+    if (!cohort) return;
 
+    // โหมด browser บนหน้า mock จริง: ไม่บันทึก — บอกให้ล็อกอินถ้ายังไม่ได้ล็อกอิน
     (async () => {
       try {
         const supabase = createClient();
         const {
           data: { user },
         } = await supabase.auth.getUser();
-        if (!user) return finish({ status: "guest" });
-
-        const session = await saveCompletedMockSession({
-          user_id: user.id,
-          audience: cohort.audience,
-          exam_type: cohort.examType ?? null,
-          board_specialty: cohort.boardSpecialty ?? null,
-          total_questions: questions.length,
-          correct_count: correct,
-          time_limit_minutes: Math.round(timeLimitMinutes),
-        });
-        if (!session) return finish({ status: "unavailable" });
-
-        const rows = await fetchMockPercentile(session.id);
-        if (!rows) return finish({ status: "unavailable" });
-
-        const rank = pickMockRank(rows);
-        track("mock_percentile_view", {
-          audience: cohort.audience,
-          total_questions: questions.length,
-          ranked: rank.status === "ranked",
-          percentile: rank.status === "ranked" ? rank.percentile : null,
-        });
-        finish({ status: "done", rank });
+        finishRank(attempt, user ? { status: "unavailable" } : { status: "guest" });
       } catch {
-        finish({ status: "unavailable" });
+        finishRank(attempt, { status: "unavailable" });
       }
     })();
-  }, [phase, attempt, cohort, questions, answers, timeLimitMinutes]);
+  }, [phase, attempt, cohort, mockToken, answers, submitToServer, finishRank]);
 
   const formatTime = (seconds: number) => {
     const h = Math.floor(seconds / 3600);
@@ -197,6 +279,13 @@ export default function McqMock({
   }, []);
 
   const handleRestart = useCallback(() => {
+    if (mockToken) {
+      // token เดิมใช้แล้ว — ให้ server สุ่มชุดใหม่ + token ใหม่ (page ใส่ key=token
+      // ไว้ component จึง remount เองเมื่อได้ชุดใหม่)
+      setRestarting(true);
+      router.refresh();
+      return;
+    }
     setCurrentIndex(0);
     setAnswers({});
     setPhase("exam");
@@ -205,7 +294,10 @@ export default function McqMock({
     setReviewIndex(0);
     setShowExplanation(false);
     setAttempt((n) => n + 1);
-  }, [timeLimitMinutes]);
+  }, [mockToken, router, timeLimitMinutes]);
+
+  const correctAnswerOf = (q: McqMockQuestion): string | null =>
+    review?.get(q.id)?.correct_answer ?? null;
 
   // Calculate results
   const getResults = () => {
@@ -214,7 +306,8 @@ export default function McqMock({
 
     questions.forEach((q, i) => {
       const userAnswer = answers[i];
-      const isCorrect = userAnswer === q.correct_answer;
+      const correctAnswer = correctAnswerOf(q);
+      const isCorrect = userAnswer !== undefined && userAnswer === correctAnswer;
       if (isCorrect) correct++;
 
       const subjectId = q.subject_id;
@@ -253,6 +346,47 @@ export default function McqMock({
       <div className="text-center py-16">
         <p className="text-lg text-muted-foreground">ไม่มีข้อสอบ</p>
       </div>
+    );
+  }
+
+  if (restarting) {
+    return (
+      <div className="text-center py-16 text-muted-foreground animate-pulse">
+        กำลังสุ่มข้อสอบชุดใหม่...
+      </div>
+    );
+  }
+
+  // โหมด token: ยังไม่ได้ผลตรวจจาก server — รอ หรือให้ลองส่งใหม่
+  if (phase !== "exam" && !review) {
+    const failed = currentGrade?.status === "error" ? currentGrade : null;
+    return (
+      <Card className={failed ? "border-red-200 bg-red-50" : ""}>
+        <CardContent className="p-8 text-center space-y-4">
+          {failed ? (
+            <>
+              <AlertTriangle className="h-8 w-8 text-red-600 mx-auto" />
+              <p className="font-semibold text-red-800">ส่งคำตอบไม่สำเร็จ</p>
+              <p className="text-sm text-red-700">{failed.message}</p>
+              {mockToken && (
+                <Button
+                  onClick={() => {
+                    setGrade(null);
+                    void submitToServer(attempt, mockToken, answers);
+                  }}
+                  className="bg-brand hover:bg-brand-light text-white gap-2"
+                >
+                  <Send className="h-4 w-4" /> ลองส่งอีกครั้ง
+                </Button>
+              )}
+            </>
+          ) : (
+            <p className="text-muted-foreground animate-pulse">
+              กำลังตรวจคำตอบ...
+            </p>
+          )}
+        </CardContent>
+      </Card>
     );
   }
 
@@ -591,8 +725,16 @@ export default function McqMock({
   // --- REVIEW PHASE ---
   if (phase === "review") {
     const reviewQuestion = questions[reviewIndex];
+    // เฉลยของข้อนี้ (โหมด token มาจาก response ของ /api/mcq/mock/submit)
+    const reviewKey: McqMockReviewItem = review?.get(reviewQuestion.id) ?? {
+      id: reviewQuestion.id,
+      correct_answer: null,
+      explanation: null,
+      detailed_explanation: null,
+    };
     const userAnswer = answers[reviewIndex];
-    const isCorrect = userAnswer === reviewQuestion.correct_answer;
+    const isCorrect =
+      userAnswer !== undefined && userAnswer === reviewKey.correct_answer;
 
     return (
       <div className="space-y-6">
@@ -644,7 +786,7 @@ export default function McqMock({
           {reviewQuestion.choices.map((choice) => {
             const isSelected = userAnswer === choice.label;
             const isChoiceCorrect =
-              choice.label === reviewQuestion.correct_answer;
+              choice.label === reviewKey.correct_answer;
 
             let borderClass = "border-border opacity-60";
             let bgClass = "bg-white";
@@ -690,7 +832,7 @@ export default function McqMock({
         </div>
 
         {/* Explanation */}
-        {(reviewQuestion.detailed_explanation || reviewQuestion.explanation) && (
+        {(reviewKey.detailed_explanation || reviewKey.explanation) && (
           <div>
             <button
               onClick={() => setShowExplanation(!showExplanation)}
@@ -705,18 +847,18 @@ export default function McqMock({
             </button>
             {showExplanation && (
               <div className="mt-3 space-y-4">
-                {reviewQuestion.detailed_explanation ? (
+                {reviewKey.detailed_explanation ? (
                   <>
                     <Card className="border-green-300 bg-green-50/50">
                       <CardContent className="p-4">
                         <div className="flex items-start gap-2 mb-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
                           <h4 className="font-bold text-green-800">
-                            คำตอบที่ถูกต้อง: {reviewQuestion.correct_answer}
+                            คำตอบที่ถูกต้อง: {reviewKey.correct_answer}
                           </h4>
                         </div>
                         <p className="text-sm leading-relaxed text-green-900">
-                          {reviewQuestion.detailed_explanation.summary}
+                          {reviewKey.detailed_explanation.summary}
                         </p>
                       </CardContent>
                     </Card>
@@ -725,7 +867,7 @@ export default function McqMock({
                       <CardContent className="p-4">
                         <h4 className="font-bold text-blue-800 mb-2">เหตุผลโดยละเอียด</h4>
                         <p className="text-sm leading-relaxed whitespace-pre-line text-foreground/80">
-                          {reviewQuestion.detailed_explanation.reason}
+                          {reviewKey.detailed_explanation.reason}
                         </p>
                       </CardContent>
                     </Card>
@@ -733,7 +875,7 @@ export default function McqMock({
                     <div>
                       <h4 className="font-bold text-sm mb-3">อธิบายแต่ละตัวเลือก</h4>
                       <div className="space-y-2">
-                        {reviewQuestion.detailed_explanation.choices.map((ce) => (
+                        {reviewKey.detailed_explanation.choices.map((ce) => (
                           <div
                             key={ce.label}
                             className={`p-3 rounded-lg border text-sm ${
@@ -764,12 +906,12 @@ export default function McqMock({
                       </div>
                     </div>
 
-                    {reviewQuestion.detailed_explanation.key_takeaway && (
+                    {reviewKey.detailed_explanation.key_takeaway && (
                       <Card className="border-amber-200 bg-amber-50/30">
                         <CardContent className="p-4">
                           <h4 className="font-bold text-amber-800 mb-1 text-sm">สรุปจุดสำคัญ</h4>
                           <p className="text-sm leading-relaxed text-amber-900">
-                            {reviewQuestion.detailed_explanation.key_takeaway}
+                            {reviewKey.detailed_explanation.key_takeaway}
                           </p>
                         </CardContent>
                       </Card>
@@ -779,7 +921,7 @@ export default function McqMock({
                   <Card className="border-brand/20">
                     <CardContent className="p-4">
                       <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
-                        {reviewQuestion.explanation}
+                        {reviewKey.explanation}
                       </p>
                     </CardContent>
                   </Card>
