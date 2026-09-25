@@ -40,6 +40,12 @@ async function MockExamContent({ count }: { count: number }) {
     <McqMock
       questions={questions.slice(0, actualCount)}
       timeLimitMinutes={timeLimitMinutes}
+      cohort={{
+        audience: "student",
+        examType: "NL2",
+        label: "Mock NL",
+        path: "/nl/mock",
+      }}
     />
   );
 }
