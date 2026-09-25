@@ -1,3 +1,4 @@
+import LearningPageHero from "@/components/LearningPageHero";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Stethoscope, Zap } from "lucide-react";
@@ -113,37 +114,24 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
   const isEmpty = featured.length + cards.length === 0;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-      {/* Hero โทน ward (amber/teal) */}
-      <section className="relative overflow-hidden rounded-2xl bg-[#132320] px-6 py-10 text-center text-white sm:px-10">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            background:
-              "radial-gradient(ellipse 130% 60% at 50% -10%, rgba(217,138,43,.35), transparent 60%), radial-gradient(ellipse 120% 60% at 50% 115%, rgba(26,188,156,.28), transparent 55%)",
-          }}
-        />
-        <div className="relative space-y-3">
-          <p className="font-mono text-[11px] uppercase tracking-[.4em] text-amber-400">
-            Long Case · Ward Round
-          </p>
-          <h1 className="text-3xl font-black sm:text-4xl">
-            เกม<span className="text-amber-400">เคส</span>
-          </h1>
-          <p className="mx-auto max-w-md text-sm leading-7 text-slate-300">
-            คุณคือ <b className="text-white">แพทย์เจ้าของไข้</b> — ซักประวัติ ตรวจร่างกาย
-            สั่งแลป วินิจฉัยและรักษา ทุกการตัดสินใจมีผลต่อผู้ป่วยจริง
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-xs text-slate-300">
-            <span className="inline-flex items-center gap-1 rounded-full border border-white/20 px-3 py-1">
-              <Stethoscope className="h-3.5 w-3.5 text-teal-400" /> เล่นไล่จากง่ายไปยาก
-            </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-white/20 px-3 py-1">
-              <Zap className="h-3.5 w-3.5 text-amber-400" /> เก็บ XP + Badge
-            </span>
-          </div>
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <LearningPageHero
+        eyebrow="Long Case · Ward Round"
+        title={<>เกม<span className="text-amber-300">เคส</span></>}
+        description={<>สวมบทบาทเป็น <strong className="text-white">แพทย์เจ้าของไข้</strong> ฝึกซักประวัติ ตรวจร่างกาย สั่งแลป วินิจฉัยและรักษา — เรียนรู้ผ่านการตัดสินใจทีละขั้น</>}
+        scene="game"
+        tone="dark"
+        className="mb-0"
+      >
+        <div className="flex flex-wrap items-center gap-2 text-xs text-white/85">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3 py-1.5">
+            <Stethoscope className="h-3.5 w-3.5 text-emerald-300" /> เล่นไล่จากง่ายไปยาก
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3 py-1.5">
+            <Zap className="h-3.5 w-3.5 text-amber-300" /> เก็บ XP + Badge
+          </span>
         </div>
-      </section>
+      </LearningPageHero>
 
       <div className="mt-6">
         {doctor ? (

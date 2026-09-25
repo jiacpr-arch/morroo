@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 /**
  * Most pricing-page visitors look at the plans and click nothing (in the last
@@ -11,9 +12,9 @@ import { Button } from "@/components/ui/button";
  * instead of leaving with no action. Tracked separately so its lift on the
  * pricing → register step is measurable.
  */
-export default function PricingFreeCta() {
+export default function PricingFreeCta({ align = "center" }: { align?: "left" | "center" }) {
   return (
-    <div className="mt-6 flex flex-col items-center gap-2">
+    <div className={cn("mt-6 flex flex-col gap-2", align === "left" ? "items-start" : "items-center")}>
       <Link
         href="/register"
         onClick={() =>

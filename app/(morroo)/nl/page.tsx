@@ -1,3 +1,4 @@
+import LearningPageHero from "@/components/LearningPageHero";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -33,21 +34,21 @@ export default async function NLPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <Badge className="bg-blue-100 text-blue-700">MCQ</Badge>
+      <LearningPageHero
+        eyebrow="ฝึกวันนี้ มั่นใจขึ้นอีกนิด"
+        title="ข้อสอบใบประกอบวิชาชีพ"
+        description={<>
+          ฝึกทำข้อสอบ National License แบบ MCQ ครบทุกสาขา เริ่มจากโหมดฝึกซ้อม แล้วค่อยท้าทายตัวเองด้วยการจำลองสอบ ·{" "}
+          <Link href="/nl/calendar" className="underline underline-offset-4 hover:text-brand">ดูปฏิทินสอบ NL 2569</Link>
+        </>}
+        scene="practice"
+      >
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge className="bg-brand/10 text-[#35694f]">MCQ / NL</Badge>
           <Badge variant="secondary">{totalQuestions} ข้อ</Badge>
         </div>
-        <h1 className="text-3xl font-bold">ข้อสอบใบประกอบวิชาชีพ</h1>
-        <p className="mt-2 text-muted-foreground">
-          ฝึกทำข้อสอบ National License แบบ MCQ ครบทุกสาขา ·{" "}
-          <Link href="/nl/calendar" className="underline hover:text-brand">
-            ดูปฏิทินสอบ NL 2569
-          </Link>
-        </p>
-        <SectionUpdatesBadge section="nl" className="mt-3" />
-      </div>
+        <SectionUpdatesBadge section="nl" />
+      </LearningPageHero>
 
       {/* All Exams Countdown */}
       <div className="mb-8">

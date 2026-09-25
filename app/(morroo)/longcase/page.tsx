@@ -1,3 +1,4 @@
+import LearningPageHero from "@/components/LearningPageHero";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -88,26 +89,21 @@ export default async function LongCasePage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <LandingPageTracker event="longcase_view" />
-      {!user && (
-        <FreeTrialBanner
-          surface="longcase"
-          tryHref="/casegame"
-          tryLabel="เล่นเคสฟรีตอนนี้"
-        />
-      )}
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-3">
+      <LearningPageHero
+        eyebrow="พื้นที่ฝึก ก่อนเจอสถานการณ์จริง"
+        title="ฝึกสอบ Long Case"
+        description="AI รับบทเป็นผู้ป่วย คุณซักประวัติ ตรวจร่างกาย สั่ง Lab แล้วนำเสนอต่อ AI Examiner ที่ให้ feedback และคะแนนแบบสอบจริง"
+        scene="clinical"
+      >
+        <div className="flex flex-wrap items-center gap-2">
           <Badge className="bg-amber-100 text-amber-800 border-amber-300">Long Case Exam</Badge>
           <Badge variant="secondary">{cases.length} เคส</Badge>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900">ฝึกสอบ Long Case</h1>
-        <p className="mt-2 text-muted-foreground max-w-2xl">
-          AI รับบทเป็นผู้ป่วย คุณซักประวัติ ตรวจร่างกาย สั่ง Lab แล้วนำเสนอต่อ AI Examiner
-          ที่ให้ feedback และคะแนนแบบสอบจริง
-        </p>
-        <SectionUpdatesBadge section="longcase" className="mt-3" />
-      </div>
+        <SectionUpdatesBadge section="longcase" />
+      </LearningPageHero>
+      {!user && (
+        <FreeTrialBanner surface="longcase" tryHref="/casegame" tryLabel="เล่นเคสฟรีตอนนี้" />
+      )}
 
       {/* Exam Countdown */}
       <div className="mb-8">
@@ -135,7 +131,7 @@ export default async function LongCasePage() {
 
       {/* โปรโมทเกมเคส — เล่นเป็นเกมตัดสินใจแบบ visual novel */}
       <Link href="/casegame" className="mb-8 block">
-        <div className="flex items-center gap-4 rounded-xl border-2 border-teal-300 bg-teal-50 p-5 transition-colors hover:bg-teal-100">
+        <div className="flex flex-col items-start gap-4 rounded-2xl border border-brand/25 bg-[#f3f5ef] p-5 transition-colors hover:bg-teal-50 sm:flex-row sm:items-center">
           <div className="text-3xl shrink-0">🎮</div>
           <div className="flex-1">
             <p className="font-semibold text-teal-900">เล่นเป็นเกมตัดสินใจ — ลองเวอร์ชันเกมของ Long Case</p>
