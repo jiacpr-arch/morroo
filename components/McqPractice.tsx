@@ -27,6 +27,7 @@ import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 import McqAiChat from "@/components/McqAiChat";
 import ReportErrorButton from "@/components/ReportErrorButton";
+import McqDiscussion from "@/components/McqDiscussion";
 import { useBeta } from "@/components/beta/BetaProvider";
 import BetaCheckpointSurvey from "@/components/beta/BetaCheckpointSurvey";
 import BetaExitSurvey from "@/components/beta/BetaExitSurvey";
@@ -572,6 +573,12 @@ export default function McqPractice({
             choiceLabels={question.choices.map((c) => c.label)}
           />
         </div>
+      )}
+
+      {/* Discussion thread — only after answering so comments can't spoil
+          the answer. Reading/posting is free for signed-in users. */}
+      {showResult && (
+        <McqDiscussion key={question.id} questionId={question.id} userId={userId} />
       )}
 
       {/* AI Chat - ask questions about this MCQ */}

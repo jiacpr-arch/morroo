@@ -212,6 +212,19 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
         </Link>
+        <Link href="/admin/mcq/comments">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5 text-sky-600" />
+                <h3 className="font-bold">อภิปรายข้อสอบ (Moderation)</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ความคิดเห็นที่ถูกรายงาน/ซ่อนอัตโนมัติ — ซ่อน เปิด หรือลบ</p>
+            </CardContent>
+          </Card>
+        </Link>
         <Link href="/admin/payments">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
             <CardHeader className="pb-2">
