@@ -8,6 +8,7 @@ import {
   sampleBoardMock,
 } from "@/lib/supabase/queries-board";
 import McqMock from "@/components/McqMock";
+import { prepareMockExam } from "@/lib/mcq-mock-server";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -64,6 +65,12 @@ async function MockContent({ specialty }: { specialty: string }) {
     Math.ceil(sample.totalAvailable * MINUTES_PER_QUESTION)
   );
   const isShortOnContent = sample.totalAvailable < sample.totalTarget;
+  // ล็อกอินแล้ว: ตัดเฉลยออก + ออก token ให้ server ตรวจ/บันทึก/จัดอันดับ
+  const exam = await prepareMockExam(
+    sample.questions,
+    { audience: "board", examType: null, boardSpecialty: specialty },
+    timeLimitMinutes
+  );
 
   return (
     <div>
@@ -105,7 +112,11 @@ async function MockContent({ specialty }: { specialty: string }) {
       )}
 
       <McqMock
-        questions={sample.questions}
+        // token ใหม่ (สอบใหม่ → router.refresh) = ชุดใหม่ → remount ล้าง state
+        key={exam.mockToken ?? "local"}
+        {...(exam.mode === "graded"
+          ? { questions: exam.questions, mockToken: exam.mockToken }
+          : { questions: exam.questions })}
         timeLimitMinutes={timeLimitMinutes}
         cohort={{
           audience: "board",

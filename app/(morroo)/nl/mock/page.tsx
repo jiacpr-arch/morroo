@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { getMcqQuestions } from "@/lib/supabase/queries-mcq";
 import McqMock from "@/components/McqMock";
+import { prepareMockExam } from "@/lib/mcq-mock-server";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
@@ -35,10 +36,20 @@ async function MockExamContent({ count }: { count: number }) {
   }
 
   const actualCount = Math.min(count, questions.length);
+  // ล็อกอินแล้ว: ตัดเฉลยออก + ออก token ให้ server ตรวจ/บันทึก/จัดอันดับ
+  const exam = await prepareMockExam(
+    questions.slice(0, actualCount),
+    { audience: "student", examType: "NL2", boardSpecialty: null },
+    timeLimitMinutes
+  );
 
   return (
     <McqMock
-      questions={questions.slice(0, actualCount)}
+      // token ใหม่ (สอบใหม่ → router.refresh) = ชุดใหม่ → remount ล้าง state
+      key={exam.mockToken ?? "local"}
+      {...(exam.mode === "graded"
+        ? { questions: exam.questions, mockToken: exam.mockToken }
+        : { questions: exam.questions })}
       timeLimitMinutes={timeLimitMinutes}
       cohort={{
         audience: "student",

@@ -16,7 +16,15 @@ export type MockRankState =
   | { status: "loading" }
   | { status: "guest" }
   | { status: "unavailable" }
+  /** server ตรวจแล้วแต่รอบนี้ไม่นับอันดับ (ดู /api/mcq/mock/submit) */
+  | { status: "unranked"; reason: "too_fast" | "expired" | "already_submitted" }
   | { status: "done"; rank: MockRank };
+
+const UNRANKED_MESSAGE: Record<Extract<MockRankState, { status: "unranked" }>["reason"], string> = {
+  too_fast: "รอบนี้ส่งเร็วเกินกว่าจะอ่านข้อสอบครบ จึงไม่นำไปจัดอันดับ — ลองทำชุดใหม่แบบตั้งใจอีกครั้ง",
+  expired: "รอบนี้ส่งหลังหมดเวลาสอบนานเกินไป จึงไม่นำไปจัดอันดับ",
+  already_submitted: "ชุดข้อสอบนี้ส่งไปแล้ว — นับอันดับจากการส่งครั้งแรกเท่านั้น",
+};
 
 interface Props {
   state: MockRankState;
@@ -46,6 +54,17 @@ export default function MockRankCard({ state, label, shareUrl, correct, total, l
             เข้าสู่ระบบ
           </Link>{" "}
           เพื่อบันทึกผลและดูว่าคุณทำได้ดีกว่ากี่ % ของผู้ที่ทำชุดนี้
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (state.status === "unranked") {
+    return (
+      <Card className="border-dashed">
+        <CardContent className="p-4 text-sm text-center text-muted-foreground">
+          <Users className="h-4 w-4 inline mr-1 -mt-0.5" />
+          {UNRANKED_MESSAGE[state.reason]}
         </CardContent>
       </Card>
     );

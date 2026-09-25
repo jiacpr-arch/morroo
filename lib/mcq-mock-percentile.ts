@@ -1,6 +1,7 @@
 // Percentile ท้าย Mock Exam ("ดีกว่า X% ของผู้ที่ทำชุดนี้") — pure ทั้งไฟล์
 // ตัวเลขดิบมาจาก RPC get_mock_percentile
-// (supabase/migrations/20260925_mock_percentile.sql) ซึ่งคืน 2 scope:
+// (supabase/migrations/20260925_mock_percentile.sql, ล่าสุด 20260926_mock_server_graded.sql
+// ที่นับเฉพาะผลที่ server ตรวจ) ซึ่งคืน 2 scope:
 //   size  = mock ประเภทเดียวกัน จำนวนข้อเท่ากัน (เทียบตรงที่สุด)
 //   track = mock ประเภทเดียวกันทุกขนาด (fallback เมื่อ size ตัวอย่างบาง)
 
@@ -29,8 +30,9 @@ export const MOCK_MAX_QUESTIONS = 300;
 
 /**
  * คะแนน mock ที่เป็นไปได้: 1..MOCK_MAX_QUESTIONS ข้อ และ 0 <= ถูก <= ทั้งหมด
- * RPC ตัดแถวที่ไม่ผ่านทิ้งทั้งฝั่งผู้เรียกและ cohort อยู่แล้ว ฝั่ง client เช็กซ้ำ
- * แค่เพื่อไม่บันทึกแถวที่ไม่มีวันถูกนับ
+ * ตรงกับเงื่อนไขใน RPC — ตอนนี้แถวที่นับต้อง graded_by_server ด้วย (บันทึกโดย
+ * /api/mcq/mock/submit เท่านั้น ดู 20260926_mock_server_graded.sql) เงื่อนไขนี้จึง
+ * เหลือเป็นแค่ด่านสำรอง
  */
 export function isPlausibleMockScore(totalQuestions: number, correctCount: number): boolean {
   return (

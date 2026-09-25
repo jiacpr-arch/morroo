@@ -1,6 +1,7 @@
 import { createClient } from "./client";
 import type { McqAttempt, McqSession } from "../types-mcq";
-import { isPlausibleMockScore, type MockPercentileRow } from "../mcq-mock-percentile";
+import type { MockPercentileRow } from "../mcq-mock-percentile";
+import type { McqMockAnswers, MockSubmitResponse } from "../mcq-mock-grade";
 import { recordMcqReviewOutcome } from "../mcq-review";
 
 // --- Client-side save functions (called from browser components) ---
@@ -106,51 +107,34 @@ export async function updateMcqSession(
   return data as McqSession;
 }
 
-// --- Mock exam: บันทึกผลตอนส่ง + ดึง percentile เทียบคนอื่น ---
+// --- Mock exam: ส่งให้ server ตรวจ/บันทึก + ดึง percentile เทียบคนอื่น ---
 
 /**
- * บันทึก mock ที่ส่งแล้วเป็น mcq_sessions แถวเดียว (mode='mock', completed_at
- * ตั้งเลย) — สร้างตอนส่งแทนตอนเริ่ม เพราะคนที่เปิดแล้วทิ้งกลางทางไม่ควรมีแถว
- * ค้างไม่มีคะแนนไปถ่วง cohort ของ get_mock_percentile
- *
- * ข้อจำกัด: correct_count มาจาก browser และ RLS ของ mcq_sessions ให้เขียนแถวของ
- * ตัวเองได้ — RPC จึงตัดแถวที่คะแนนเป็นไปไม่ได้ทิ้ง (ดู isPlausibleMockScore และ
- * 20260926_mock_percentile_fix.sql) แต่คะแนนปลอมที่ "เป็นไปได้" ยังผ่าน
+ * ส่งคำตอบ mock ให้ /api/mcq/mock/submit ตรวจกับ mcq_questions แล้วบันทึก
+ * mcq_sessions ด้วย service role (graded_by_server) — browser ไม่ insert แถว mock
+ * เองอีกต่อไป คะแนน/จำนวนข้อ/cohort มาจาก token ที่ server เซ็นเท่านั้น
+ * คืนคะแนน + เฉลยทุกข้อไว้ใช้บนหน้าผล/ทบทวน
  */
-export async function saveCompletedMockSession(session: {
-  user_id: string;
-  audience: "student" | "board";
-  exam_type?: "NL1" | "NL2" | null;
-  board_specialty?: string | null;
-  total_questions: number;
-  correct_count: number;
-  time_limit_minutes?: number | null;
-}): Promise<McqSession | null> {
-  // RPC จะไม่นับแถวแบบนี้อยู่แล้ว — ไม่ต้องบันทึก ให้ UI แสดง "unavailable"
-  if (!isPlausibleMockScore(session.total_questions, session.correct_count)) return null;
-  const supabase = createClient();
-  const { data, error } = await supabase
-    .from("mcq_sessions")
-    .insert({
-      user_id: session.user_id,
-      mode: "mock",
-      audience: session.audience,
-      exam_type: session.audience === "student" ? session.exam_type ?? "NL2" : null,
-      board_specialty: session.audience === "board" ? session.board_specialty ?? null : null,
-      subject_id: null,
-      total_questions: session.total_questions,
-      correct_count: session.correct_count,
-      time_limit_minutes: session.time_limit_minutes ?? null,
-      completed_at: new Date().toISOString(),
-    })
-    .select()
-    .single();
-
-  if (error) {
-    console.error("Error saving mock session:", error);
-    return null;
+export async function submitMockExam(
+  token: string,
+  answers: McqMockAnswers
+): Promise<{ ok: true; data: MockSubmitResponse } | { ok: false; error: string }> {
+  try {
+    const res = await fetch("/api/mcq/mock/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, answers }),
+    });
+    const json = (await res.json().catch(() => null)) as
+      | (MockSubmitResponse & { error?: string })
+      | null;
+    if (!res.ok || !json || !Array.isArray(json.perQuestion)) {
+      return { ok: false, error: json?.error || "เชื่อมต่อไม่สำเร็จ ลองใหม่อีกครั้ง" };
+    }
+    return { ok: true, data: json };
+  } catch {
+    return { ok: false, error: "เชื่อมต่อไม่สำเร็จ ลองใหม่อีกครั้ง" };
   }
-  return data as McqSession;
 }
 
 /** RPC get_mock_percentile — คืน null ถ้า RPC ยังไม่ deploy/พลาด ให้ UI ซ่อนการ์ดเฉยๆ */
