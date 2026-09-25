@@ -13,7 +13,7 @@ import { PRICING_FAQ_ITEMS } from "@/lib/pricing-faq";
 import { LineCtaButton } from "@/components/SocialLinks";
 import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
 import { PLAN_CATALOG } from "@/lib/membership";
-import { GraduationCap, Mic, Stethoscope, BookOpen } from "lucide-react";
+import { GraduationCap, Mic, Stethoscope, BookOpen, Users } from "lucide-react";
 import type { Metadata } from "next";
 
 const faqSchema = {
@@ -125,6 +125,9 @@ export default function PricingPage() {
             <a href="#school" className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-colors border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100">
               <BookOpen className="h-4 w-4" /> School ปี 1–6
             </a>
+            <a href="#group" className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-colors border-brand/30 bg-background text-brand hover:bg-brand/10">
+              <Users className="h-4 w-4" /> กลุ่ม / สถาบัน
+            </a>
           </nav>
 
           <div className="mt-8">
@@ -204,6 +207,40 @@ export default function PricingPage() {
             {SCHOOL_PLANS.map((plan) => (
               <PricingCard key={plan.name} {...plan} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Track 4 — กลุ่ม / สถาบัน (B2B, ชำระเงินนอกระบบ — ทีมงานสร้างกลุ่มให้ที่ /admin/organizations) */}
+      <section id="group" className="scroll-mt-20 bg-brand/5 py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            align="center"
+            accent="brand"
+            eyebrow={<><Users className="h-3.5 w-3.5" /> คณะแพทย์ · ติวเตอร์ · กลุ่มเพื่อน</>}
+            title="สำหรับกลุ่ม/สถาบัน"
+            description="ซื้อสิทธิ์พรีเมียมให้ทั้งรุ่นหรือทั้งกลุ่มในบิลเดียว พร้อมแดชบอร์ดติดตามความคืบหน้าของสมาชิก"
+          />
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              { title: "สิทธิ์เต็มทุกคน", body: "สมาชิกทุกคนได้สิทธิ์เหมือนแพ็กรายบุคคล เข้าร่วมง่ายด้วยลิงก์เชิญ" },
+              { title: "แดชบอร์ดผู้ดูแล", body: "ดูจำนวนข้อที่ทำ ความแม่นยำ วันที่ใช้งานล่าสุด และ streak ของแต่ละคน · Export CSV" },
+              { title: "ชำระแบบองค์กร", body: "ชำระผ่านใบแจ้งหนี้ / โอนเงินในนามสถาบัน — สอบถามราคาตามจำนวนที่นั่งได้ทาง LINE" },
+            ].map((f) => (
+              <div key={f.title} className="rounded-2xl border bg-background p-5 shadow-sm">
+                <h3 className="font-semibold text-brand-dark">{f.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{f.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col items-center gap-3 text-center">
+            <LineCtaButton surface="pricing_group" label="ติดต่อทีมงานทาง LINE ขอใบเสนอราคา" />
+            <p className="text-xs text-muted-foreground">
+              มีรหัสกลุ่มแล้ว?{" "}
+              <Link href="/org" className="text-brand hover:underline">
+                เข้าร่วมกลุ่มที่นี่
+              </Link>
+            </p>
           </div>
         </div>
       </section>

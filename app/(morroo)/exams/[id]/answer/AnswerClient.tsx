@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import type { Exam, ExamPart, Profile } from "@/lib/types";
 import { hasMeqAccess, hasScopedAccess, type EntitlementLike } from "@/lib/membership";
+import { fetchOrgEntitlements } from "@/lib/organizations";
 import { ITEM_PRICES, itemPlanType } from "@/lib/items";
 import ItemUpsell from "@/components/ItemUpsell";
 
@@ -90,15 +91,16 @@ export default function AnswerClient({
         data: { user },
       } = await supabase.auth.getUser();
       if (user) {
-        const [{ data }, { data: rows }] = await Promise.all([
+        const [{ data }, { data: rows }, orgRows] = await Promise.all([
           supabase.from("profiles").select("*").eq("id", user.id).single(),
           supabase
             .from("membership_entitlements")
-            .select("product, expires_at")
+            .select("product, scope, expires_at, source")
             .eq("user_id", user.id),
+          fetchOrgEntitlements(supabase, user.id),
         ]);
         setProfile(data);
-        setEntitlements((rows ?? []) as EntitlementLike[]);
+        setEntitlements([...((rows ?? []) as EntitlementLike[]), ...orgRows]);
       }
       setLoading(false);
     }
