@@ -22,6 +22,7 @@ import { createClient } from "@supabase/supabase-js";
 import {
   MEQ_PART_COLUMNS,
   SCENARIO_TOOL,
+  applyMeqConventions,
   meqSystemPrompt,
   type ExtraCharacter,
   type MeqExamRow,
@@ -200,6 +201,7 @@ async function run() {
       // บังคับ slug = meq-<examId> เพื่อ URL เสถียร (upsert ทับตัวเดิม)
       scenario.slug = `meq-${e.id}`;
       scenario.category = "meq";
+      applyMeqConventions(scenario.story);
       const invalid = describeScenarioError(scenario, extraCharIds);
       if (invalid) throw new Error(`ไม่ผ่าน validate: ${invalid}`);
 
