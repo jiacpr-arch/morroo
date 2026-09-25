@@ -11,6 +11,7 @@
  *       npm run gen:meqgames -- --exam <uuid>        (ข้อสอบเดียว)
  *       npm run gen:meqgames -- --category ศัลยศาสตร์  (เฉพาะสาขา)
  *       npm run gen:meqgames -- --force              (ทับข้อสอบที่มีเกมแล้ว)
+ *       npm run gen:meqgames -- --force --legacy-only (ทับเฉพาะเกมรูปแบบเก่า — ยังไม่มี orderSheet)
  *       npm run gen:meqgames -- --publish            (publish เลย — ไม่แนะนำ ควรรีวิวก่อน)
  *       npm run gen:meqgames -- --model claude-opus-4-7   (โมเดลคุณภาพสูงขึ้น)
  *
@@ -39,6 +40,8 @@ const val = (f: string): string | undefined => {
 
 const DRY = has("--dry-run");
 const FORCE = has("--force");
+// เฉพาะข้อที่เกมยังเป็นรูปแบบเก่า (ไม่มีใบสั่งการรักษา) — ใช้เก็บตกข้อที่รอบ --force ก่อนหน้าล้ม
+const LEGACY_ONLY = has("--legacy-only");
 const PUBLISH = has("--publish");
 const LIMIT = val("--limit") ? Number(val("--limit")) : undefined;
 const EXAM_ID = val("--exam");
@@ -75,11 +78,18 @@ async function generateOne(
   client: Anthropic,
   exam: MeqExamRow,
   extraCharacters: ExtraCharacter[],
+  previousError: string | null = null,
 ): Promise<Record<string, unknown> | null> {
   const system = meqSystemPrompt(extraCharacters, exam);
   const userPrompt = [
     "แปลงข้อสอบ MEQ ที่ให้ในระบบเป็นเกมเคส ตามโครงเรื่องมาตรฐานและกติกาทุกข้อ",
     "เดินเรื่องตามลำดับตอน (parts) ของข้อสอบ ใช้ answer/key_points สร้างตัวลวงที่เป็นกับดักคลินิกเฉพาะเคส + why เฉพาะเคส (เลียนแบบความลึกของตัวอย่าง torsion)",
+    ...(previousError
+      ? [
+          `รอบก่อนไม่ผ่านการตรวจ: ${previousError}`,
+          "สร้างใหม่ทั้งเรื่องโดยแก้จุดนี้ — ทุก choice ข้อถูกต้องยาวไม่เกิน 1.8 เท่าของตัวลวงที่ยาวที่สุด (เติมรายละเอียดให้ตัวลวง หรือย่อข้อถูกให้กระชับ)",
+        ]
+      : []),
   ].join("\n");
 
   let lastErr: unknown;
@@ -131,14 +141,17 @@ async function run() {
 
   // ข้อสอบที่มีเกมแล้ว (ข้าม ยกเว้น --force)
   const covered = new Set<string>();
-  if (!FORCE) {
+  if (!FORCE || LEGACY_ONLY) {
     const { data: existing } = await supabase
       .from("sim_scenarios")
-      .select("source_exam_id")
+      .select("source_exam_id, story")
       .eq("category", "meq")
       .not("source_exam_id", "is", null);
-    for (const r of (existing as { source_exam_id: string | null }[] | null) ?? []) {
-      if (r.source_exam_id) covered.add(r.source_exam_id);
+    for (const r of (existing as { source_exam_id: string | null; story: unknown }[] | null) ?? []) {
+      if (!r.source_exam_id) continue;
+      // --legacy-only: ข้ามเฉพาะเกมที่เป็นรูปแบบใหม่แล้ว (มี orderSheet) — ที่เหลือสร้างใหม่ทับ
+      if (LEGACY_ONLY && !JSON.stringify(r.story ?? null).includes('"orderSheet"')) continue;
+      covered.add(r.source_exam_id);
     }
   }
 
@@ -161,7 +174,7 @@ async function run() {
 
   console.log(
     `พบข้อสอบ MEQ ที่จะแปลง ${exams.length} ข้อ` +
-      (covered.size ? ` (ข้ามที่มีเกมแล้ว ${covered.size})` : "") +
+      (covered.size ? ` (ข้าม ${covered.size} ข้อที่${LEGACY_ONLY ? "เป็นรูปแบบใหม่แล้ว" : "มีเกมแล้ว"})` : "") +
       (DRY ? " — DRY RUN" : ` — model ${MODELS[0]}, บันทึกเป็น ${PUBLISH ? "published" : "draft"}`),
   );
 
@@ -196,14 +209,21 @@ async function run() {
         difficulty: e.difficulty,
         parts,
       };
-      const scenario = await generateOne(client, examRow, extraCharacters);
-      if (!scenario) throw new Error("no scenario");
-      // บังคับ slug = meq-<examId> เพื่อ URL เสถียร (upsert ทับตัวเดิม)
-      scenario.slug = `meq-${e.id}`;
-      scenario.category = "meq";
-      applyMeqConventions(scenario.story);
-      const invalid = describeScenarioError(scenario, extraCharIds);
-      if (invalid) throw new Error(`ไม่ผ่าน validate: ${invalid}`);
+      // ไม่ผ่าน validate (ส่วนใหญ่คือข้อถูกยาวกว่าตัวลวงเกินเกณฑ์) → ให้ AI แก้อีกรอบโดยบอก
+      // ข้อผิดพลาดตรงๆ ก่อนยอมแพ้ (ข้อที่ล้มยังคงเกมเดิมไว้ ไม่ถูกเขียนทับ)
+      let scenario: Record<string, unknown> | null = null;
+      let invalid: string | null = null;
+      for (let attempt = 0; attempt < 2; attempt++) {
+        scenario = await generateOne(client, examRow, extraCharacters, invalid);
+        if (!scenario) throw new Error("no scenario");
+        // บังคับ slug = meq-<examId> เพื่อ URL เสถียร (upsert ทับตัวเดิม)
+        scenario.slug = `meq-${e.id}`;
+        scenario.category = "meq";
+        applyMeqConventions(scenario.story);
+        invalid = describeScenarioError(scenario, extraCharIds);
+        if (!invalid) break;
+      }
+      if (invalid || !scenario) throw new Error(`ไม่ผ่าน validate: ${invalid}`);
 
       // fallback ต้องไม่ใช้ e.title ดิบ — อาจเฉลยโรค (มาจาก exams.title เก่า
       // ที่ยังไม่ผ่านกติกาไม่สปอยล์); ใช้ placeholder กลางแทนถ้า AI ไม่ส่ง title มา

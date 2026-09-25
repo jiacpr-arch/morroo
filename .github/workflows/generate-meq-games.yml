@@ -16,6 +16,10 @@ on:
         description: "สร้างใหม่ทับข้อที่มีเกมแล้ว (true) หรือแปลงเฉพาะข้อที่ยังไม่มีเกม (false)"
         type: boolean
         default: false
+      legacy_only:
+        description: "ใช้คู่กับ force: สร้างใหม่เฉพาะข้อที่เกมยังเป็นรูปแบบเก่า (ไม่มีใบสั่งการรักษา) — เก็บตกข้อที่รอบก่อนล้ม"
+        type: boolean
+        default: false
       limit:
         description: "จำนวนสูงสุดต่อรอบ (เว้นว่าง = ทุกข้อ) — ลอง 3 ก่อนแล้วค่อยรันเต็ม"
         required: false
@@ -50,6 +54,7 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           INPUT_FORCE: ${{ inputs.force }}
+          INPUT_LEGACY_ONLY: ${{ inputs.legacy_only }}
           INPUT_PUBLISH: ${{ inputs.publish }}
           INPUT_LIMIT: ${{ inputs.limit }}
           INPUT_CONCURRENCY: ${{ inputs.concurrency }}
@@ -57,6 +62,7 @@ jobs:
           ARGS=""
           if [ "$INPUT_PUBLISH" != "false" ]; then ARGS="$ARGS --publish"; fi
           if [ "$INPUT_FORCE" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ "$INPUT_LEGACY_ONLY" = "true" ]; then ARGS="$ARGS --legacy-only"; fi
           if [ -n "$INPUT_LIMIT" ]; then ARGS="$ARGS --limit $INPUT_LIMIT"; fi
           if [ -n "$INPUT_CONCURRENCY" ]; then ARGS="$ARGS --concurrency $INPUT_CONCURRENCY"; fi
           echo "Running: npm run gen:meqgames -- $ARGS"
