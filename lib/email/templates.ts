@@ -34,6 +34,14 @@ export interface TrialExpiryEmailProps {
   trialPrices?: { monthly: number; yearly: number; monthlyIntro: number; yearlyIntro: number };
 }
 
+/** D+1 after a plan / trial ran out: "why not renewing?" survey with a win-back offer. */
+export interface WinbackEmailProps {
+  name: string;
+  /** /renewal?source=expiry_email */
+  surveyUrl: string;
+  wasTrial: boolean;
+}
+
 export interface ReceiptEmailProps {
   name: string;
   email: string;
@@ -644,6 +652,43 @@ export function trialExpiryEmail({
 
     <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0;">
       มีคำถามตอบกลับอีเมลนี้ได้เลยครับ — ทีมหมอรู้พร้อมช่วย
+    </p>
+  </div>
+  ${footerHtml}
+</div>
+</body>
+</html>`;
+}
+
+export function winbackEmail({ name, surveyUrl, wasTrial }: WinbackEmailProps): string {
+  const headline = wasTrial ? "ทดลองใช้ฟรีหมดแล้ว — เป็นยังไงบ้าง?" : "สมาชิกหมดอายุแล้ว — บอกเราหน่อย";
+  const intro = wasTrial
+    ? "ช่วง 7 วันที่ผ่านมาหมอรู้ช่วยคุณได้แค่ไหน? ถ้ายังไม่สมัคร บอกเหตุผลเราสั้น ๆ"
+    : "แพ็กเกจของคุณหมดอายุแล้ว (แพ็กเกจเป็นแบบจ่ายครั้งเดียว ไม่มีการตัดเงินอัตโนมัติ) ถ้ายังไม่ต่ออายุ บอกเหตุผลเราสั้น ๆ";
+
+  return `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<div style="${baseStyle}">
+  ${headerHtml}
+  <div style="padding: 32px;">
+    <h2 style="color: ${DARK_COLOR}; font-size: 22px; margin: 0 0 12px;">${headline}</h2>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
+      สวัสดีคุณ <strong>${name}</strong>,
+    </p>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+      ${intro} — ตอบ 1 ข้อ ใช้เวลาไม่ถึงนาที แล้วรับข้อเสนอพิเศษที่เหมาะกับคุณ
+    </p>
+    <div style="text-align: center; margin: 28px 0;">
+      <a href="${surveyUrl}"
+         style="display: inline-block; background: #0EA5E9; color: #ffffff; text-decoration: none;
+                padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+        บอกเหตุผล รับข้อเสนอ →
+      </a>
+    </div>
+    <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0;">
+      บัญชีและประวัติการทำข้อสอบของคุณยังอยู่ครบ กลับมาใช้ต่อได้ทุกเมื่อ
     </p>
   </div>
   ${footerHtml}

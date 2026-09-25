@@ -14,6 +14,11 @@
  *   D-3  LINE if linked, else email (never both).
  *   D-1  LINE if linked, else email (never both).
  *
+ *   D+1  win-back (LINE if linked, else email): plans are one-time purchases
+ *        and don't auto-renew, so the day after access runs out we ask why
+ *        they're not renewing — /renewal records the reason and shows a
+ *        tailored offer (lib/winback.ts). Stored as days_before_expiry = -1.
+ *
  * Dedupe via trial_messages_sent (profile_id, days_before_expiry, channel)
  * — safe to retry / run multiple times a day without repeat sends.
  *
@@ -28,8 +33,10 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
-import { sendTrialExpiryEmail } from "@/lib/email/send";
-import { buildExpiryWarningMessage } from "@/lib/line-flex-templates";
+import { sendTrialExpiryEmail, sendWinbackEmail } from "@/lib/email/send";
+import { buildExpiryWarningMessage, buildWinbackMessage } from "@/lib/line-flex-templates";
+import { getLapseState, getLatestFeedback } from "@/lib/winback-server";
+import { canIssueWinback } from "@/lib/winback";
 import { getTrialStatus, TRIAL_FULL_PRICES } from "@/lib/trial";
 
 export const runtime = "nodejs";
@@ -83,6 +90,17 @@ export function expiryWindow(now: number, days: ReminderDay): { from: string; to
   };
 }
 
+/** trial_messages_sent.days_before_expiry marker for the D+1 win-back. */
+export const WINBACK_DAY = -1;
+
+/** Access ran out within the last day — each lapsed profile lands here exactly once. */
+export function lapsedWindow(now: number): { from: string; to: string } {
+  return {
+    from: new Date(now - 86400_000).toISOString(),
+    to: new Date(now).toISOString(),
+  };
+}
+
 type ProfileRow = {
   id: string;
   name: string | null;
@@ -96,6 +114,8 @@ async function run() {
   const summary = {
     line_sent: 0,
     email_sent: 0,
+    winback_line_sent: 0,
+    winback_email_sent: 0,
     skipped_dedup: 0,
     skipped_no_channel: 0,
     errors: 0,
@@ -192,6 +212,87 @@ async function run() {
         console.error("[expiry-warning] failed for profile", user.id, err);
         summary.errors++;
       }
+    }
+  }
+
+  // ── D+1 win-back ───────────────────────────────────────────────────────
+  const lapsed = lapsedWindow(now);
+  const { data: lapsedUsers, error: lapsedError } = await supabase
+    .from("profiles")
+    .select("id, name, email, line_user_id, membership_type, membership_expires_at")
+    .neq("membership_type", "free")
+    .neq("membership_type", "bundle")
+    .gte("membership_expires_at", lapsed.from)
+    .lt("membership_expires_at", lapsed.to);
+
+  if (lapsedError) {
+    console.error("[expiry-warning] D+1 query error:", lapsedError);
+    summary.errors++;
+  }
+
+  for (const user of (lapsedUsers ?? []) as ProfileRow[]) {
+    try {
+      // Already answered the survey (e.g. from the profile page) — don't ask again.
+      const latest = await getLatestFeedback(user.id);
+      if (latest && !canIssueWinback(latest.created_at)) {
+        summary.skipped_dedup++;
+        continue;
+      }
+
+      let channel = pickExpiryChannel(
+        { lineUserId: user.line_user_id, email: user.email },
+        1
+      );
+      if (channel === "line" && quota.throttled) {
+        const hasRealEmail = !!user.email && !user.email.endsWith("@line.morroo.com");
+        channel = hasRealEmail ? "email" : null;
+      }
+      if (!channel) {
+        summary.skipped_no_channel++;
+        continue;
+      }
+
+      const { data: alreadySent } = await supabase
+        .from("trial_messages_sent")
+        .select("profile_id")
+        .eq("profile_id", user.id)
+        .eq("days_before_expiry", WINBACK_DAY)
+        .eq("channel", channel)
+        .maybeSingle();
+      if (alreadySent) {
+        summary.skipped_dedup++;
+        continue;
+      }
+
+      const { wasTrial } = await getLapseState(user.id);
+      if (channel === "line") {
+        const ok = await sendLineMessage(user.line_user_id!, [
+          buildWinbackMessage({ name: user.name ?? "", wasTrial }),
+        ]);
+        if (!ok) {
+          summary.errors++;
+          continue;
+        }
+        summary.winback_line_sent++;
+      } else {
+        await sendWinbackEmail({
+          email: user.email!,
+          name: user.name ?? "คุณหมอ",
+          wasTrial,
+          surveyUrl: `${siteUrl}/renewal?source=expiry_email`,
+        });
+        summary.winback_email_sent++;
+      }
+
+      const { error: insertError } = await supabase
+        .from("trial_messages_sent")
+        .insert({ profile_id: user.id, days_before_expiry: WINBACK_DAY, channel });
+      if (insertError && insertError.code !== "23505") {
+        console.error("[expiry-warning] win-back dedupe insert failed:", insertError);
+      }
+    } catch (err) {
+      console.error("[expiry-warning] win-back failed for profile", user.id, err);
+      summary.errors++;
     }
   }
 

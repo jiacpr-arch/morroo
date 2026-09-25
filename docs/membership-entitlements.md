@@ -107,3 +107,19 @@
   → ตอน fulfil บันทึกการใช้ผ่าน RPC `redeem_coupon_code` และเก็บ `coupon_redemptions.stripe_session_id`
 - ราคาหลังหักไม่ต่ำกว่า ฿10 (ขั้นต่ำของ Stripe สำหรับ THB)
 - สร้างคูปองที่ `/admin/coupons` มีช่อง "ให้แพ็ก / รายการ" (free) หรือ "ใช้กับแพ็ก" (discount)
+- ลิงก์ `/payment/<plan>?coupon=CODE` เติมโค้ดและกดใช้ให้อัตโนมัติ
+
+## ไม่ต่ออายุ / win-back (cancellation_feedback)
+
+แพ็กทุกตัวเป็น **จ่ายครั้งเดียว** (Stripe Checkout `mode: "payment"`) ไม่มี subscription ให้ยกเลิก/พัก
+จุด "ยกเลิก" จึงเป็นตอนแพ็กหรือ trial 7 วันหมดแล้วไม่ซื้อต่อ:
+
+- หน้า `/renewal` (3 ขั้น): เลือกเหตุผล (สอบเสร็จแล้ว / แพงไป / ไม่ค่อยได้ใช้ / เนื้อหาไม่ตรง / อื่นๆ + ข้อความ)
+  → ข้อเสนอตามเหตุผล (`lib/winback.ts` `selectWinbackOffer`) → รับข้อเสนอ (ไป `/payment/<plan>?coupon=…`) หรือยืนยันไม่ต่อ
+- เปิดได้เมื่อแพ็กเหลือ ≤ 3 วันหรือหมดแล้ว (`isLapseEligible`) — ลิงก์จากหน้าโปรไฟล์ และข้อความ D+1
+  หลังหมดอายุใน cron `app/api/line/expiry-warning` (LINE ถ้าผูกไว้ ไม่งั้นอีเมล; dedupe `trial_messages_sent.days_before_expiry = -1`)
+- ส่วนลด = แถวใหม่ใน `coupon_codes` (`source = 'winback'`, `discount_percent`, ใช้ได้ 1 ครั้ง, ผูกกับแพ็กที่จะต่อ)
+  ออกใหม่ได้ 1 ครั้งต่อ 60 วันต่อผู้ใช้ — "สอบเสร็จแล้ว" ได้โค้ดอายุ 6 เดือนแทนการ "พักสมาชิก"
+- บันทึกใน `cancellation_feedback` — migration `supabase/migrations/20260925_cancellation_feedback.sql`
+- Admin: `/admin/winback` — สัดส่วนเหตุผล, อัตรากดรับ / ใช้โค้ดจริง (`coupon_redemptions`), และ trial → จ่ายเงิน
+  (`redeem_codes` monthly_1m เทียบ `payment_orders` approved)

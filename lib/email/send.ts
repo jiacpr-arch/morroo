@@ -10,6 +10,7 @@ import {
   redeemCodeEmail,
   leadFollowupEmail,
   trialExpiryEmail,
+  winbackEmail,
 } from "./templates";
 import type {
   WelcomeEmailProps,
@@ -19,6 +20,7 @@ import type {
   RedeemCodeEmailProps,
   LeadFollowupEmailProps,
   TrialExpiryEmailProps,
+  WinbackEmailProps,
 } from "./templates";
 
 const FROM_ADDRESS = "หมอรู้ <noreply@morroo.com>";
@@ -163,6 +165,17 @@ export async function sendTrialExpiryEmail(
     to: props.email,
     subject,
     html: trialExpiryEmail(props),
+  });
+}
+
+/** D+1 win-back: "why not renewing?" survey link (app/api/line/expiry-warning). */
+export async function sendWinbackEmail(props: WinbackEmailProps & { email: string }) {
+  return sendEmail({
+    to: props.email,
+    subject: props.wasTrial
+      ? "ทดลองใช้หมอรู้หมดแล้ว — ขอ 1 นาทีได้ไหม?"
+      : "สมาชิกหมอรู้หมดอายุแล้ว — ขอ 1 นาทีได้ไหม?",
+    html: winbackEmail(props),
   });
 }
 
