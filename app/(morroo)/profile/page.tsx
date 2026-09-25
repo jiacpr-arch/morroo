@@ -15,6 +15,7 @@ import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
 import { PRODUCTS, PRODUCT_INFO, planLabel, resolveAccess, type EntitlementLike } from "@/lib/membership";
 import { liffDeepLink } from "@/lib/line-links";
 import PushToggle from "@/components/pwa/PushToggle";
+import { unsubscribePushOnLogout } from "@/lib/push-client";
 import { fetchOrgMemberships, isOrgActive, orgEntitlementRows, type OrgMembershipRow } from "@/lib/organizations";
 import { isLapseEligible } from "@/lib/winback";
 
@@ -86,6 +87,7 @@ export default function ProfilePage() {
   }, [router]);
 
   const handleLogout = async () => {
+    await unsubscribePushOnLogout();
     const supabase = createClient();
     await supabase.auth.signOut();
     router.push("/");

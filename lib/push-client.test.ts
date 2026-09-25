@@ -1,5 +1,11 @@
-import { describe, it, expect } from "vitest";
-import { getPushSupport, isIOS, urlBase64ToUint8Array, type PushEnv } from "./push-client";
+import { describe, it, expect, vi, afterEach } from "vitest";
+import {
+  getPushSupport,
+  isIOS,
+  unsubscribePushOnLogout,
+  urlBase64ToUint8Array,
+  type PushEnv,
+} from "./push-client";
 
 const IPHONE_SAFARI =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Mobile/15E148 Safari/604.1";
@@ -74,5 +80,47 @@ describe("urlBase64ToUint8Array", () => {
     );
     // "hi" → "aGk=" → unpadded "aGk"
     expect(Array.from(urlBase64ToUint8Array("aGk"))).toEqual([104, 105]);
+  });
+});
+
+describe("unsubscribePushOnLogout", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  function stubBrowser(sub: { endpoint: string; unsubscribe: () => Promise<boolean> } | null) {
+    const fetchMock = vi.fn().mockResolvedValue(new Response("{}"));
+    vi.stubGlobal("fetch", fetchMock);
+    vi.stubGlobal("navigator", {
+      serviceWorker: {
+        getRegistration: async () => ({ pushManager: { getSubscription: async () => sub } }),
+      },
+    });
+    return fetchMock;
+  }
+
+  it("deletes the server row and unsubscribes the browser", async () => {
+    const unsubscribe = vi.fn().mockResolvedValue(true);
+    const fetchMock = stubBrowser({ endpoint: "https://fcm.googleapis.com/fcm/send/x", unsubscribe });
+    await unsubscribePushOnLogout();
+    expect(fetchMock).toHaveBeenCalledWith(
+      "/api/push/subscribe",
+      expect.objectContaining({
+        method: "DELETE",
+        body: JSON.stringify({ endpoint: "https://fcm.googleapis.com/fcm/send/x" }),
+      })
+    );
+    expect(unsubscribe).toHaveBeenCalled();
+  });
+
+  it("does nothing without a subscription and never throws", async () => {
+    const fetchMock = stubBrowser(null);
+    await unsubscribePushOnLogout();
+    expect(fetchMock).not.toHaveBeenCalled();
+
+    vi.stubGlobal("navigator", {
+      serviceWorker: { getRegistration: () => Promise.reject(new Error("boom")) },
+    });
+    await expect(unsubscribePushOnLogout()).resolves.toBeUndefined();
   });
 });

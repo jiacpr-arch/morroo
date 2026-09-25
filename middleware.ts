@@ -30,6 +30,19 @@ function isGameHost(request: NextRequest): boolean {
   return GAME_HOST_RE.test(host);
 }
 
+// PWA plumbing the browser fetches on its own, not page navigations: the
+// service worker script (re-checked on every SW update) and the web app
+// manifest. They must skip the session refresh — a redirect (e.g. to
+// /onboarding) makes the browser refuse to register the SW and turns the
+// manifest into HTML — and each check would otherwise cost a getUser() round
+// trip. The host rewrite still applies (firstaid.morroo.com/sw.js is its own
+// killer worker at /firstaid/sw.js).
+const PWA_ASSET_PATHS = new Set(["/sw.js", "/manifest.webmanifest"]);
+
+function isPwaAssetPath(pathname: string): boolean {
+  return PWA_ASSET_PATHS.has(pathname);
+}
+
 function shouldSendCapiPageView(request: NextRequest): boolean {
   const ua = request.headers.get("user-agent") ?? "";
   if (BOT_UA_RE.test(ua)) return false;
@@ -90,6 +103,11 @@ export async function middleware(request: NextRequest) {
       target.pathname = pathname.replace(/^\/games/, "") || "/";
       return NextResponse.redirect(target, 301);
     }
+  }
+
+  // Service worker / manifest: host rewrite only — no session, no CAPI.
+  if (isPwaAssetPath(pathname)) {
+    return rewriteUrl ? NextResponse.rewrite(rewriteUrl) : NextResponse.next();
   }
 
   // Skip Supabase session refresh if not configured
