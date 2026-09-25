@@ -30,6 +30,8 @@ import {
   type MeqPart,
 } from "@/lib/sim/generate-meq";
 import { describeScenarioError } from "@/lib/sim/validate";
+import { chunkLongSays } from "@/lib/sim/chunk-says";
+import type { StoryNode } from "@/lib/sim/types";
 
 const args = process.argv.slice(2);
 const has = (f: string) => args.includes(f);
@@ -224,6 +226,8 @@ async function run() {
         if (!invalid) break;
       }
       if (invalid || !scenario) throw new Error(`ไม่ผ่าน validate: ${invalid}`);
+      // อ่านน้อยแต่บ่อย: แตกบทพูดยาวเป็นหลายท่อนสั้นๆ (หลัง validate — โครงถูกแล้ว)
+      scenario.story = chunkLongSays(scenario.story as StoryNode[]);
 
       // fallback ต้องไม่ใช้ e.title ดิบ — อาจเฉลยโรค (มาจาก exams.title เก่า
       // ที่ยังไม่ผ่านกติกาไม่สปอยล์); ใช้ placeholder กลางแทนถ้า AI ไม่ส่ง title มา
