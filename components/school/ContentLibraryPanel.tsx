@@ -6,7 +6,26 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { ArrowDown, ArrowUp, ExternalLink, Loader2, RefreshCw, Trash2 } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowRightLeft,
+  ArrowUp,
+  ExternalLink,
+  Loader2,
+  Pencil,
+  RefreshCw,
+  Trash2,
+} from "lucide-react";
+import type { MoveResult, MoveScope } from "@/lib/school/move-content";
+import {
+  FlashcardEditDialog,
+  LessonEditDialog,
+  MoveBatchDialog,
+  QuizEditDialog,
+  type FlashcardEdit,
+  type LessonEdit,
+  type QuizEdit,
+} from "./ContentEditDialogs";
 
 type Supabase = ReturnType<typeof createClient>;
 
@@ -24,6 +43,8 @@ interface Props {
   busy: boolean;
   setBusy: (b: boolean) => void;
   notify: (kind: "ok" | "err", msg: string) => void;
+  /** Open the body + image editor tab at this lesson. */
+  onEditBody?: (topicId: string, lessonId: string) => void;
 }
 
 interface TopicCounts {
@@ -85,6 +106,12 @@ interface Batch {
   quizzes: number;
 }
 
+type OpenDialog =
+  | { kind: "moveBatch"; batch: Batch }
+  | { kind: "lesson"; lesson: LessonRow }
+  | { kind: "flashcard"; id: string }
+  | { kind: "quiz"; id: string };
+
 const PAGE = 1000;
 const YEARS = [1, 2, 3, 4, 5, 6];
 
@@ -138,7 +165,8 @@ function sourceLabel(source: string | null) {
   return source ?? "(ไม่ระบุไฟล์ต้นทาง)";
 }
 
-export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: Props) {
+export default function ContentLibraryPanel({ topics, busy, setBusy, notify, onEditBody }: Props) {
+  const [dialog, setDialog] = useState<OpenDialog | null>(null);
   const [counts, setCounts] = useState<Record<string, TopicCounts>>({});
   const [countsLoading, setCountsLoading] = useState(true);
   const [year, setYear] = useState<number | null>(null);
@@ -397,6 +425,81 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
     }
   }
 
+  function topicName(id: string) {
+    return topics.find((t) => t.id === id)?.name_th ?? "วิชาใหม่";
+  }
+
+  /** Run an edit/move, then close the dialog and refresh. Moves also refresh the per-subject counts. */
+  async function runEdit(action: () => Promise<{ msg: string; moved: boolean }>) {
+    if (!topicId) return;
+    setBusy(true);
+    try {
+      const { msg, moved } = await action();
+      notify("ok", msg);
+      setDialog(null);
+      await loadTopic(topicId);
+      if (moved) void loadCounts();
+    } catch (e) {
+      notify("err", errMsg(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  // Lessons and whole batches move through the API: it appends lessons after
+  // the target subject's order and carries their Visual Summary cards along.
+  async function moveViaApi(scope: MoveScope, toTopicId: string): Promise<MoveResult> {
+    const res = await fetch("/api/admin/school/move", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ from_topic_id: topicId, to_topic_id: toTopicId, scope }),
+    });
+    const json = (await res.json().catch(() => null)) as (MoveResult & { error?: string }) | null;
+    if (!res.ok || !json?.ok) throw new Error(json?.error ?? `ย้ายวิชาไม่สำเร็จ (${res.status})`);
+    return json;
+  }
+
+  function moveBatch(b: Batch, toTopicId: string) {
+    return runEdit(async () => {
+      const r = await moveViaApi({ kind: "batch", source: b.source }, toTopicId);
+      return {
+        msg: `ย้ายไป "${topicName(toTopicId)}" แล้ว — บทเรียน ${r.lessons} · Flashcards ${r.flashcards} · ข้อสอบ ${r.quizzes}`,
+        moved: true,
+      };
+    });
+  }
+
+  function saveLesson(l: LessonRow, edit: LessonEdit) {
+    return runEdit(async () => {
+      if (edit.title !== l.title || edit.estimated_min !== l.estimated_min) {
+        const { error } = await createClient()
+          .from("school_lessons")
+          .update({ title: edit.title, estimated_min: edit.estimated_min })
+          .eq("id", l.id);
+        if (error) throw error;
+      }
+      if (edit.toTopicId !== topicId) {
+        await moveViaApi({ kind: "lesson", id: l.id }, edit.toTopicId);
+        return { msg: `ย้ายบท "${edit.title}" ไป "${topicName(edit.toTopicId)}" แล้ว`, moved: true };
+      }
+      return { msg: "บันทึกบทเรียนแล้ว", moved: false };
+    });
+  }
+
+  // Flashcards and quizzes have nothing hanging off them, so a subject change
+  // is just part of the same row update.
+  function saveRow(table: "school_flashcards" | "school_quizzes", id: string, edit: FlashcardEdit | QuizEdit) {
+    return runEdit(async () => {
+      const { error } = await createClient().from(table).update(edit).eq("id", id);
+      if (error) throw error;
+      const moved = edit.topic_id !== topicId;
+      return {
+        msg: moved ? `บันทึกและย้ายไป "${topicName(edit.topic_id)}" แล้ว` : "บันทึกแล้ว",
+        moved,
+      };
+    });
+  }
+
   return (
     <div className="space-y-4">
       <Card>
@@ -407,7 +510,7 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
               <p className="text-xs text-muted-foreground">
                 {countsLoading
                   ? "กำลังนับเนื้อหาทุกวิชา…"
-                  : `มีเนื้อหาแล้ว ${topicsWithContent} วิชา — กดวิชาเพื่อดูรายการ ลบ หรือจัดลำดับบทเรียน`}
+                  : `มีเนื้อหาแล้ว ${topicsWithContent} วิชา — กดวิชาเพื่อดูรายการ แก้ไข ย้ายวิชา ลบ หรือจัดลำดับบทเรียน`}
               </p>
             </div>
             <Button
@@ -538,8 +641,9 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
                 <section className="space-y-2">
                   <h4 className="text-sm font-semibold">ไฟล์ที่อัปโหลดแล้ว ({batches.length})</h4>
                   <p className="text-xs text-muted-foreground">
-                    จัดกลุ่มตามชื่อไฟล์ต้นทาง — &quot;ลบทั้งชุด&quot; จะลบบทเรียน flashcards
-                    และข้อสอบที่มาจากไฟล์นั้นพร้อมกัน
+                    จัดกลุ่มตามชื่อไฟล์ต้นทาง — &quot;ย้ายวิชา&quot; และ &quot;ลบทั้งชุด&quot;
+                    ทำกับบทเรียน flashcards และข้อสอบที่มาจากไฟล์นั้นพร้อมกัน
+                    (อัปโหลดผิดวิชา กด &quot;ย้ายวิชา&quot; ได้เลย ไม่ต้องลบแล้วอัปโหลดใหม่)
                   </p>
                   {batches.length === 0 && (
                     <p className="text-sm text-muted-foreground">ยังไม่มีเนื้อหาในวิชานี้</p>
@@ -562,16 +666,27 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
                             </p>
                           )}
                         </div>
-                        <Button
-                          type="button"
-                          size="sm"
-                          variant="outline"
-                          className="text-red-600"
-                          disabled={busy}
-                          onClick={() => void removeBatch(b)}
-                        >
-                          <Trash2 className="mr-1 h-4 w-4" /> ลบทั้งชุด
-                        </Button>
+                        <div className="flex flex-wrap gap-2">
+                          <Button
+                            type="button"
+                            size="sm"
+                            variant="outline"
+                            disabled={busy}
+                            onClick={() => setDialog({ kind: "moveBatch", batch: b })}
+                          >
+                            <ArrowRightLeft className="mr-1 h-4 w-4" /> ย้ายวิชา
+                          </Button>
+                          <Button
+                            type="button"
+                            size="sm"
+                            variant="outline"
+                            className="text-red-600"
+                            disabled={busy}
+                            onClick={() => void removeBatch(b)}
+                          >
+                            <Trash2 className="mr-1 h-4 w-4" /> ลบทั้งชุด
+                          </Button>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -612,6 +727,11 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
                             isFirst={i === 0}
                             isLast={i === detail.lessons.length - 1}
                             onMove={(dir) => void moveLesson(i, dir)}
+                          />
+                          <EditButton
+                            disabled={busy}
+                            title="แก้ไขบทเรียน / ย้ายวิชา"
+                            onClick={() => setDialog({ kind: "lesson", lesson: l })}
                           />
                           <RemoveButton
                             disabled={busy}
@@ -693,6 +813,11 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
                             </p>
                           </div>
                           <HiddenBadge status={f.status} />
+                          <EditButton
+                            disabled={busy}
+                            title="แก้ไข flashcard / ย้ายวิชา"
+                            onClick={() => setDialog({ kind: "flashcard", id: f.id })}
+                          />
                           <RemoveButton
                             disabled={busy}
                             title="ลบ flashcard"
@@ -723,6 +848,11 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
                             </p>
                           </div>
                           <HiddenBadge status={q.status} />
+                          <EditButton
+                            disabled={busy}
+                            title="แก้ไขข้อสอบ / ย้ายวิชา"
+                            onClick={() => setDialog({ kind: "quiz", id: q.id })}
+                          />
                           <RemoveButton
                             disabled={busy}
                             title="ลบข้อสอบ"
@@ -737,6 +867,60 @@ export default function ContentLibraryPanel({ topics, busy, setBusy, notify }: P
             )}
           </CardContent>
         </Card>
+      )}
+
+      {selectedTopic && dialog?.kind === "moveBatch" && (
+        <MoveBatchDialog
+          topics={topics}
+          fromTopicId={selectedTopic.id}
+          sourceLabel={sourceLabel(dialog.batch.source)}
+          summary={`บทเรียน ${dialog.batch.lessons.length} · Flashcards ${dialog.batch.flashcards} · ข้อสอบ ${dialog.batch.quizzes} — ตอนนี้อยู่ใน "${selectedTopic.name_th}"`}
+          busy={busy}
+          onClose={() => setDialog(null)}
+          onSubmit={(to) => void moveBatch(dialog.batch, to)}
+        />
+      )}
+      {selectedTopic && dialog?.kind === "lesson" && (
+        <LessonEditDialog
+          key={dialog.lesson.id}
+          lesson={dialog.lesson}
+          topics={topics}
+          fromTopicId={selectedTopic.id}
+          busy={busy}
+          onClose={() => setDialog(null)}
+          onSubmit={(edit) => void saveLesson(dialog.lesson, edit)}
+          onEditBody={
+            onEditBody
+              ? () => {
+                  const lessonId = dialog.lesson.id;
+                  setDialog(null);
+                  onEditBody(selectedTopic.id, lessonId);
+                }
+              : undefined
+          }
+        />
+      )}
+      {selectedTopic && dialog?.kind === "flashcard" && (
+        <FlashcardEditDialog
+          key={dialog.id}
+          id={dialog.id}
+          topics={topics}
+          fromTopicId={selectedTopic.id}
+          busy={busy}
+          onClose={() => setDialog(null)}
+          onSubmit={(edit) => void saveRow("school_flashcards", dialog.id, edit)}
+        />
+      )}
+      {selectedTopic && dialog?.kind === "quiz" && (
+        <QuizEditDialog
+          key={dialog.id}
+          id={dialog.id}
+          topics={topics}
+          fromTopicId={selectedTopic.id}
+          busy={busy}
+          onClose={() => setDialog(null)}
+          onSubmit={(edit) => void saveRow("school_quizzes", dialog.id, edit)}
+        />
       )}
     </div>
   );
@@ -808,6 +992,31 @@ function MoveButtons({
         <ArrowDown className="h-4 w-4" />
       </Button>
     </>
+  );
+}
+
+function EditButton({
+  disabled,
+  title,
+  onClick,
+}: {
+  disabled: boolean;
+  title: string;
+  onClick: () => void;
+}) {
+  return (
+    <Button
+      type="button"
+      variant="outline"
+      size="icon"
+      title={title}
+      aria-label={title}
+      className="shrink-0"
+      disabled={disabled}
+      onClick={onClick}
+    >
+      <Pencil className="h-4 w-4" />
+    </Button>
   );
 }
 
