@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  isPlausibleMockScore,
+  MOCK_MAX_QUESTIONS,
   mockRankCohortLabel,
   mockRankHeadline,
   mockShareText,
@@ -89,5 +91,23 @@ describe("mock rank copy", () => {
     expect(ranked).toContain("ดีกว่า 81%");
     expect(ranked).toContain("https://www.morroo.com/nl/mock");
     expect(mockShareText({ ...base, rank: null })).not.toContain("ดีกว่า");
+  });
+});
+
+describe("isPlausibleMockScore", () => {
+  it("accepts real mock sizes and scores", () => {
+    expect(isPlausibleMockScore(20, 0)).toBe(true);
+    expect(isPlausibleMockScore(100, 73)).toBe(true);
+    expect(isPlausibleMockScore(200, 200)).toBe(true);
+    expect(isPlausibleMockScore(MOCK_MAX_QUESTIONS, 1)).toBe(true);
+  });
+
+  it("rejects impossible scores (mirrors the RPC's plausibility filter)", () => {
+    expect(isPlausibleMockScore(50, 51)).toBe(false);
+    expect(isPlausibleMockScore(50, -1)).toBe(false);
+    expect(isPlausibleMockScore(0, 0)).toBe(false);
+    expect(isPlausibleMockScore(MOCK_MAX_QUESTIONS + 1, 10)).toBe(false);
+    expect(isPlausibleMockScore(50, 2.5)).toBe(false);
+    expect(isPlausibleMockScore(Number.NaN, 0)).toBe(false);
   });
 });

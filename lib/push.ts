@@ -94,9 +94,17 @@ export async function sendPushToSubscriptions(
   ensureVapid(cfg);
   const body = JSON.stringify(payload);
   const goneIds: string[] = [];
+  const sentIds: string[] = [];
 
   await Promise.all(
     subscriptions.map(async (sub) => {
+      // Defence in depth for rows saved before the subscribe route checked
+      // the host: never POST to a non-push-service URL.
+      if (!isAllowedPushEndpoint(sub.endpoint)) {
+        result.failed++;
+        console.error(`[push] skipped subscription ${sub.id}: endpoint host not allowlisted`);
+        return;
+      }
       try {
         await webpush.sendNotification(
           { endpoint: sub.endpoint, keys: { p256dh: sub.p256dh, auth: sub.auth } },
@@ -105,6 +113,7 @@ export async function sendPushToSubscriptions(
           { TTL: 12 * 3600, urgency: "normal" }
         );
         result.sent++;
+        sentIds.push(sub.id);
       } catch (err) {
         if (isGoneError(err)) {
           goneIds.push(sub.id);
@@ -125,8 +134,7 @@ export async function sendPushToSubscriptions(
     }
   }
 
-  const sentIds = subscriptions.map((s) => s.id).filter((id) => !goneIds.includes(id));
-  if (result.sent > 0 && sentIds.length > 0) {
+  if (sentIds.length > 0) {
     // Best-effort bookkeeping — an error here is ignored, the send already happened.
     await supabase
       .from("push_subscriptions")
@@ -155,6 +163,34 @@ export async function sendPushToUser(
   return sendPushToSubscriptions(supabase, (data ?? []) as PushSubscriptionRow[], payload);
 }
 
+// Real browser push services. The endpoint is user-supplied and the server
+// POSTs to it (webpush.sendNotification), so anything else would let a user
+// aim our server at arbitrary hosts (SSRF).
+//   Chrome/Edge-Chromium/Android → fcm.googleapis.com (legacy android.googleapis.com)
+//   Firefox                      → updates.push.services.mozilla.com (*.push.services.mozilla.com)
+//   Safari / iOS PWA             → web.push.apple.com (*.push.apple.com)
+//   Edge legacy / Windows (WNS)  → *.notify.windows.com (e.g. wns2-par02p.notify.windows.com)
+const PUSH_HOSTS = new Set([
+  "fcm.googleapis.com",
+  "android.googleapis.com",
+  "updates.push.services.mozilla.com",
+  "web.push.apple.com",
+]);
+const PUSH_HOST_SUFFIXES = [".push.services.mozilla.com", ".push.apple.com", ".notify.windows.com"];
+
+/** True only for an https URL on a known push service (default port, no credentials). */
+export function isAllowedPushEndpoint(endpoint: string): boolean {
+  let url: URL;
+  try {
+    url = new URL(endpoint);
+  } catch {
+    return false;
+  }
+  if (url.protocol !== "https:" || url.port !== "" || url.username || url.password) return false;
+  const host = url.hostname.toLowerCase();
+  return PUSH_HOSTS.has(host) || PUSH_HOST_SUFFIXES.some((s) => host.endsWith(s));
+}
+
 /** Shape the browser's PushSubscription.toJSON() into a table row. Null if malformed. */
 export function parseSubscriptionJson(
   input: unknown
@@ -165,15 +201,9 @@ export function parseSubscriptionJson(
   const p256dh = typeof o.keys?.p256dh === "string" ? o.keys.p256dh : "";
   const auth = typeof o.keys?.auth === "string" ? o.keys.auth : "";
   if (!endpoint || !p256dh || !auth) return null;
-  let url: URL;
-  try {
-    url = new URL(endpoint);
-  } catch {
-    return null;
-  }
-  // Push services are always https; refuse anything else so the server never
-  // POSTs to an arbitrary internal URL on a user's behalf.
-  if (url.protocol !== "https:" || endpoint.length > 1024) return null;
+  // Only known push services — the server POSTs to this URL, so an arbitrary
+  // host would be SSRF on a user's behalf.
+  if (endpoint.length > 1024 || !isAllowedPushEndpoint(endpoint)) return null;
   if (p256dh.length > 256 || auth.length > 128) return null;
   return { endpoint, p256dh, auth };
 }

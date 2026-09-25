@@ -174,11 +174,17 @@ export function canIssueWinback(
 }
 
 /**
- * Survey is offered when access has run out or will within this many days
+ * Survey is offered when access will run out within this many days
  * (short enough that a 7-day trial user only sees it in the trial's last days,
- * and a member deep into a yearly plan can't farm coupons).
+ * and a member deep into a yearly plan can't farm coupons)...
  */
 export const LAPSE_WINDOW_DAYS = 3;
+
+/**
+ * ...or ran out at most this many days ago. Without an upper bound an
+ * account that lapsed years ago could collect a fresh coupon every cooldown.
+ */
+export const LAPSE_AFTER_DAYS = 60;
 
 export function isLapseEligible(
   lastPlan: string | null | undefined,
@@ -189,7 +195,27 @@ export function isLapseEligible(
   if (!expiresAt) return false;
   const t = new Date(expiresAt).getTime();
   if (!Number.isFinite(t)) return false;
-  return t - now.getTime() <= LAPSE_WINDOW_DAYS * 86_400_000;
+  const untilExpiry = t - now.getTime();
+  return (
+    untilExpiry <= LAPSE_WINDOW_DAYS * 86_400_000 &&
+    untilExpiry >= -LAPSE_AFTER_DAYS * 86_400_000
+  );
+}
+
+/**
+ * Two expiry timestamps name the same lapse (one survey answer / coupon per
+ * lapse — cancellation_feedback is unique on (user_id, access_expires_at)).
+ * Compared as instants, since PostgREST and the profile row may format the
+ * same timestamptz differently.
+ */
+export function isSameLapse(
+  a: string | Date | null | undefined,
+  b: string | Date | null | undefined
+): boolean {
+  if (!a || !b) return false;
+  const ta = new Date(a).getTime();
+  const tb = new Date(b).getTime();
+  return Number.isFinite(ta) && ta === tb;
 }
 
 // ─── Admin aggregates ────────────────────────────────────────────────────

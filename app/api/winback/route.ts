@@ -5,8 +5,11 @@
  * POST  /api/winback  { reason, detail?, source? } → { id, offer }
  *       Records the answer in cancellation_feedback and issues the tailored
  *       offer (a single-use discount coupon when the reason calls for one).
- *       One new offer per WINBACK_COOLDOWN_DAYS — inside it the previous
- *       offer is returned instead.
+ *       One offer per lapse (cancellation_feedback is unique on
+ *       (user_id, access_expires_at)) and at most one new offer per
+ *       WINBACK_COOLDOWN_DAYS — otherwise the previous offer is returned.
+ *       Only open from LAPSE_WINDOW_DAYS before to LAPSE_AFTER_DAYS after
+ *       the expiry; the coupon is restricted to this user.
  * PATCH /api/winback  { id, response: "accepted" | "declined" }
  *
  * Plans are one-time purchases, so there's nothing to cancel in Stripe —
@@ -21,6 +24,7 @@ import {
   canIssueWinback,
   isLapseEligible,
   isLapseReason,
+  isSameLapse,
   parseLapseSource,
   sanitizeReasonDetail,
   selectWinbackOffer,
@@ -28,11 +32,15 @@ import {
   type WinbackOfferView,
 } from "@/lib/winback";
 import {
+  FEEDBACK_COLUMNS,
+  deactivateCoupon,
+  getFeedbackForLapse,
   getLapseState,
   getLatestFeedback,
   hasActiveOrgAccess,
   issueWinbackCoupon,
   type FeedbackRecord,
+  type LapseState,
 } from "@/lib/winback-server";
 
 export const runtime = "nodejs";
@@ -76,6 +84,13 @@ function toView(row: FeedbackRecord, wasTrial: boolean): WinbackOfferView {
   };
 }
 
+/** An earlier answer that still stands: same lapse, or inside the cooldown. */
+function standingFeedback(latest: FeedbackRecord | null, state: LapseState): FeedbackRecord | null {
+  if (!latest) return null;
+  if (isSameLapse(latest.access_expires_at, state.expiresAt)) return latest;
+  return canIssueWinback(latest.created_at) ? null : latest;
+}
+
 async function currentUser() {
   const supabase = await createClient();
   const {
@@ -93,7 +108,7 @@ export async function GET() {
     getLatestFeedback(user.id),
     hasActiveOrgAccess(user.id),
   ]);
-  const existing = latest && !canIssueWinback(latest.created_at) ? latest : null;
+  const existing = standingFeedback(latest, state);
 
   return NextResponse.json({
     eligible: !inOrg && isLapseEligible(state.lastPlan, state.expiresAt),
@@ -130,16 +145,17 @@ export async function POST(request: Request) {
       { status: 403 }
     );
   }
-  if (latest && !canIssueWinback(latest.created_at)) {
+  const standing = standingFeedback(latest, state);
+  if (standing) {
     return NextResponse.json({
-      id: latest.id,
+      id: standing.id,
       reused: true,
-      offer: toView(latest, state.wasTrial),
+      offer: toView(standing, state.wasTrial),
     });
   }
 
   const offer = selectWinbackOffer(reason, { wasTrial: state.wasTrial, lastPlan: state.lastPlan });
-  const coupon = offer.kind === "discount" ? await issueWinbackCoupon(offer) : null;
+  const coupon = offer.kind === "discount" ? await issueWinbackCoupon(offer, user.id) : null;
   const discount = offer.kind === "discount" && coupon ? offer : null;
 
   const admin = createAdminClient();
@@ -160,12 +176,20 @@ export async function POST(request: Request) {
       offer_coupon_code: coupon?.code ?? null,
       offer_expires_at: coupon?.expiresAt ?? null,
     })
-    .select(
-      "id, reason, offer_kind, offer_percent, offer_plan, offer_coupon_code, offer_expires_at, offer_response, created_at"
-    )
+    .select(FEEDBACK_COLUMNS)
     .single();
 
   if (error || !row) {
+    // Nobody will ever see this coupon — switch it off.
+    if (coupon) await deactivateCoupon(coupon.id);
+    // Lost a race with a concurrent POST for the same lapse (unique index
+    // uq_cancellation_feedback_user_lapse): return the answer that won.
+    if (error?.code === "23505" && state.expiresAt) {
+      const first = await getFeedbackForLapse(user.id, state.expiresAt);
+      if (first) {
+        return NextResponse.json({ id: first.id, reused: true, offer: toView(first, state.wasTrial) });
+      }
+    }
     console.error("[winback] insert failed:", error?.message);
     return NextResponse.json({ error: "บันทึกไม่สำเร็จ กรุณาลองใหม่" }, { status: 500 });
   }

@@ -27,7 +27,7 @@ import {
   type DailyMcqQuestionData,
 } from "@/lib/line-flex-templates";
 import { liffDeepLink, toLiffUri } from "@/lib/line-links";
-import { recordMcqReviewOutcome } from "@/lib/mcq-review";
+import { isReviewQueueAudience, recordMcqReviewOutcome } from "@/lib/mcq-review";
 import type { McqQuestion } from "@/lib/types-mcq";
 
 const DAILY_ACTION = "daily_answer";
@@ -381,8 +381,12 @@ export async function handleDailyMcqPostback(
       console.error("[daily-mcq-line] mcq_attempts mirror failed:", attemptError);
     }
     // Same SRS queue as /nl/practice — a missed daily question shows up in
-    // ?mode=review tomorrow. Never throws.
-    await recordMcqReviewOutcome(supabase, userId, question.id, isCorrect);
+    // ?mode=review tomorrow. Student-audience only: the review page serves
+    // nothing else, so a board question here would inflate the badge and the
+    // LINE reminder count forever. Never throws.
+    if (isReviewQueueAudience(question)) {
+      await recordMcqReviewOutcome(supabase, userId, question.id, isCorrect);
+    }
   }
 
   const [{ data: streakData }, { data: statsData }] = await Promise.all([

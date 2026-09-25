@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { pickExpiryChannel, expiryWindow, lapsedWindow } from "./route";
+import { pickExpiryChannel, expiryWindow, lapsedWindow, dedupeSince, WINBACK_DAY } from "./route";
 
 describe("pickExpiryChannel", () => {
   it("prefers LINE whenever it's linked, on every reminder day", () => {
@@ -67,5 +67,29 @@ describe("lapsedWindow (D+1 win-back)", () => {
     expect(lapsed.from).toBe(new Date(now - 86400_000).toISOString());
     expect(lapsed.to).toBe(new Date(now).toISOString());
     expect(lapsed.to).toBe(expiryWindow(now, 1).from);
+  });
+});
+
+describe("dedupeSince (once per lapse, not once per account)", () => {
+  const DAY = 86400_000;
+  const expiry = "2026-09-24T12:00:00.000Z";
+  const t = (iso: string) => new Date(iso).getTime();
+
+  it("D+1: a send for this lapse counts, one for an earlier lapse doesn't", () => {
+    const since = t(dedupeSince(expiry, WINBACK_DAY));
+    // Sent by the cron the day after this expiry → dedupes a rerun.
+    expect(t(expiry) + 0.5 * DAY).toBeGreaterThanOrEqual(since);
+    // Sent after the previous plan lapsed (before they bought again).
+    expect(t("2026-06-25T02:00:00Z")).toBeLessThan(since);
+  });
+
+  it("D-N: the send window for this expiry is inside the dedupe range", () => {
+    for (const days of [7, 3, 1] as const) {
+      const since = t(dedupeSince(expiry, days));
+      const earliestSend = t(expiry) - days * DAY;
+      expect(earliestSend).toBeGreaterThanOrEqual(since);
+      // A reminder for an expiry ≥ 2 days earlier is outside it.
+      expect(t(expiry) - 2 * DAY - days * DAY).toBeLessThan(since);
+    }
   });
 });

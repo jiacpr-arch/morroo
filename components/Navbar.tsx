@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, User, LogOut, Shield } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { unsubscribePushOnLogout } from "@/lib/push-client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
 import BetaHeaderCounter from "@/components/beta/BetaHeaderCounter";
 import NavbarRankChip from "@/components/school/NavbarRankChip";
@@ -79,6 +80,7 @@ export default function Navbar() {
   }, [user, supabase]);
 
   const handleLogout = async () => {
+    await unsubscribePushOnLogout();
     await supabase.auth.signOut();
     setUser(null);
     window.location.href = "/";

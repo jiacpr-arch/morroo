@@ -4,6 +4,7 @@ import { requireAdmin } from "@/lib/admin-auth";
 import { isPlanType } from "@/lib/membership";
 import { DEFAULT_ORG_PLAN, validateSeats, type Organization } from "@/lib/organizations";
 import { assignOwner, findProfileByEmail, insertOrgWithCode } from "@/lib/organizations-server";
+import { IN_CHUNK, chunk, fetchAllPages, mapLimit } from "@/lib/paging";
 
 export const runtime = "nodejs";
 
@@ -26,26 +27,46 @@ export async function GET() {
   if (!guard.ok) return guard.response;
 
   const admin = createAdminClient();
-  const [{ data: orgs, error }, { data: members }] = await Promise.all([
+  // Members are paged: one plain select is silently capped at PostgREST's
+  // max-rows (1000), which under-counted members and dropped owners.
+  const [{ data: orgs, error }, members] = await Promise.all([
     admin
       .from("organizations")
       .select("id, name, seats, plan, expires_at, join_code, note, created_at")
       .order("created_at", { ascending: false }),
-    admin.from("organization_members").select("org_id, user_id, role"),
+    fetchAllPages<MemberRow>((from, to) =>
+      admin
+        .from("organization_members")
+        .select("org_id, user_id, role")
+        .order("org_id")
+        .order("user_id")
+        .range(from, to)
+    ),
   ]);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (members.error) return NextResponse.json({ error: members.error }, { status: 500 });
 
-  const rows = (members ?? []) as MemberRow[];
-  const ownerIds = [...new Set(rows.filter((m) => m.role === "owner").map((m) => m.user_id))];
-  const { data: profiles } = ownerIds.length
-    ? await admin.from("profiles").select("id, email, name").in("id", ownerIds)
-    : { data: [] };
-  const profileById = new Map(
-    ((profiles ?? []) as { id: string; email: string | null; name: string | null }[]).map((p) => [p.id, p])
-  );
+  const byOrg = new Map<string, MemberRow[]>();
+  for (const m of members.rows) {
+    const list = byOrg.get(m.org_id);
+    if (list) list.push(m);
+    else byOrg.set(m.org_id, [m]);
+  }
+  const ownerIds = [
+    ...new Set(members.rows.filter((m) => m.role === "owner").map((m) => m.user_id)),
+  ];
+  const profilePages = await mapLimit(chunk(ownerIds, IN_CHUNK), 4, async (ids) => {
+    const { data, error: profileError } = await admin
+      .from("profiles")
+      .select("id, email, name")
+      .in("id", ids);
+    if (profileError) console.error("admin organizations: owner profiles failed:", profileError.message);
+    return (data ?? []) as { id: string; email: string | null; name: string | null }[];
+  });
+  const profileById = new Map(profilePages.flat().map((p) => [p.id, p]));
 
   const items = ((orgs ?? []) as (Organization & { note: string | null })[]).map((o) => {
-    const mine = rows.filter((m) => m.org_id === o.id);
+    const mine = byOrg.get(o.id) ?? [];
     return {
       ...o,
       member_count: mine.length,

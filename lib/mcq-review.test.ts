@@ -2,6 +2,8 @@ import { describe, it, expect, vi } from "vitest";
 import {
   bangkokDayEnd,
   isReviewDue,
+  isReviewQueueAudience,
+  getMcqReviewDueCount,
   nextMcqReviewState,
   recordMcqReviewOutcome,
   GRADUATE_AFTER_DAYS,
@@ -193,5 +195,45 @@ describe("recordMcqReviewOutcome", () => {
       recordMcqReviewOutcome(client as never, "u1", "q1", false, NOW)
     ).resolves.toBeUndefined();
     errSpy.mockRestore();
+  });
+});
+
+describe("isReviewQueueAudience", () => {
+  it("only admits student-audience questions", () => {
+    expect(isReviewQueueAudience({ audience: "student" })).toBe(true);
+    expect(isReviewQueueAudience({ audience: "board" })).toBe(false);
+    expect(isReviewQueueAudience({ audience: null })).toBe(false);
+    expect(isReviewQueueAudience({})).toBe(false);
+  });
+});
+
+describe("getMcqReviewDueCount", () => {
+  it("counts only active student questions, matching what ?mode=review serves", async () => {
+    const eqs: [string, unknown][] = [];
+    let selected = "";
+    const chain = {
+      eq(col: string, val: unknown) {
+        eqs.push([col, val]);
+        return chain;
+      },
+      lt: () => Promise.resolve({ count: 4, error: null }),
+    };
+    const client = {
+      from: () => ({
+        select: (cols: string) => {
+          selected = cols;
+          return chain;
+        },
+      }),
+    };
+    await expect(getMcqReviewDueCount(client as never, "u1", NOW)).resolves.toBe(4);
+    expect(selected).toContain("mcq_questions!inner(");
+    expect(eqs).toEqual(
+      expect.arrayContaining([
+        ["user_id", "u1"],
+        ["mcq_questions.status", "active"],
+        ["mcq_questions.audience", "student"],
+      ])
+    );
   });
 });

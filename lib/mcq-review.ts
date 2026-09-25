@@ -51,6 +51,17 @@ export function bangkokDayEnd(now: Date = new Date()): Date {
   return new Date(nextLocalMidnight - BANGKOK_OFFSET_MS);
 }
 
+/**
+ * The queue (and ?mode=review) is NL-only: getDueReviewQuestions serves
+ * audience='student' questions, so only those may enter the queue — otherwise
+ * the badge / LINE reminder count questions the review page never shows.
+ * Browser writers already gate on the session audience; server writers (LINE
+ * daily quiz) must check the question itself.
+ */
+export function isReviewQueueAudience(question: { audience?: string | null }): boolean {
+  return question.audience === "student";
+}
+
 export function isReviewDue(dueAt: string | Date, now: Date = new Date()): boolean {
   return new Date(dueAt).getTime() < bangkokDayEnd(now).getTime();
 }
@@ -150,7 +161,11 @@ export async function recordMcqReviewOutcome(
   }
 }
 
-/** Number of active questions due for review today — drives the toggle badge. */
+/**
+ * Number of active student questions due for review today — drives the toggle
+ * badge. Same filter as getDueReviewQuestions and the mcq_review_due_counts
+ * RPC so the badge, the LINE reminder and the review page agree.
+ */
 export async function getMcqReviewDueCount(
   supabase: SupabaseClient,
   userId: string,
@@ -158,9 +173,13 @@ export async function getMcqReviewDueCount(
 ): Promise<number> {
   const { count, error } = await supabase
     .from("mcq_review_queue")
-    .select("question_id, mcq_questions!inner(status)", { count: "exact", head: true })
+    .select("question_id, mcq_questions!inner(status, audience)", {
+      count: "exact",
+      head: true,
+    })
     .eq("user_id", userId)
     .eq("mcq_questions.status", "active")
+    .eq("mcq_questions.audience", "student")
     .lt("due_at", bangkokDayEnd(now).toISOString());
   if (error) {
     console.error("[mcq-review] due count failed:", error);

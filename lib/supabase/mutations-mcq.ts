@@ -1,6 +1,6 @@
 import { createClient } from "./client";
 import type { McqAttempt, McqSession } from "../types-mcq";
-import type { MockPercentileRow } from "../mcq-mock-percentile";
+import { isPlausibleMockScore, type MockPercentileRow } from "../mcq-mock-percentile";
 import { recordMcqReviewOutcome } from "../mcq-review";
 
 // --- Client-side save functions (called from browser components) ---
@@ -112,6 +112,10 @@ export async function updateMcqSession(
  * บันทึก mock ที่ส่งแล้วเป็น mcq_sessions แถวเดียว (mode='mock', completed_at
  * ตั้งเลย) — สร้างตอนส่งแทนตอนเริ่ม เพราะคนที่เปิดแล้วทิ้งกลางทางไม่ควรมีแถว
  * ค้างไม่มีคะแนนไปถ่วง cohort ของ get_mock_percentile
+ *
+ * ข้อจำกัด: correct_count มาจาก browser และ RLS ของ mcq_sessions ให้เขียนแถวของ
+ * ตัวเองได้ — RPC จึงตัดแถวที่คะแนนเป็นไปไม่ได้ทิ้ง (ดู isPlausibleMockScore และ
+ * 20260926_mock_percentile_fix.sql) แต่คะแนนปลอมที่ "เป็นไปได้" ยังผ่าน
  */
 export async function saveCompletedMockSession(session: {
   user_id: string;
@@ -122,6 +126,8 @@ export async function saveCompletedMockSession(session: {
   correct_count: number;
   time_limit_minutes?: number | null;
 }): Promise<McqSession | null> {
+  // RPC จะไม่นับแถวแบบนี้อยู่แล้ว — ไม่ต้องบันทึก ให้ UI แสดง "unavailable"
+  if (!isPlausibleMockScore(session.total_questions, session.correct_count)) return null;
   const supabase = createClient();
   const { data, error } = await supabase
     .from("mcq_sessions")

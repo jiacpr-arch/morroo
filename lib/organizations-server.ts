@@ -7,12 +7,15 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import {
   generateJoinCode,
+  progressFromAggregates,
   summarizeMemberProgress,
   type AttemptLite,
   type MemberProgress,
+  type MemberProgressAggregate,
   type OrgRole,
   type Organization,
 } from "@/lib/organizations";
+import { IN_CHUNK, chunk, fetchAllPages, mapLimit } from "@/lib/paging";
 
 export interface OrgMemberDetail {
   user_id: string;
@@ -26,6 +29,8 @@ export interface OrgMemberDetail {
 export interface OrgDashboardData {
   org: Organization;
   members: OrgMemberDetail[];
+  /** Thai message when part of the data failed to load (shown on /org), else null. */
+  loadError: string | null;
 }
 
 const ORG_COLUMNS = "id, name, seats, plan, expires_at, join_code, created_at";
@@ -86,59 +91,111 @@ export async function countMembers(orgId: string): Promise<number> {
   return count ?? 0;
 }
 
-const ATTEMPT_PAGE = 1000;
-const ATTEMPT_MAX = 100_000;
+/** Fallback cap per 100-member chunk when the aggregate RPC isn't deployed. */
+const FALLBACK_ATTEMPTS_PER_CHUNK = 20_000;
+
+const PROGRESS_ERROR =
+  "โหลดสถิติการทำข้อสอบของสมาชิกไม่สำเร็จ ตัวเลขด้านล่างอาจไม่ครบ กรุณารีเฟรชอีกครั้ง";
+const PROGRESS_PARTIAL =
+  "สมาชิกบางคนมีประวัติการทำข้อสอบมากเกินกว่าจะโหลดได้ครบ ตัวเลขด้านล่างเป็นข้อมูลบางส่วน";
+
+/** PostgREST "function not found" — migration 20260926_org_member_progress not applied yet. */
+function isMissingFunction(error: { code?: string } | null): boolean {
+  return error?.code === "PGRST202" || error?.code === "42883";
+}
 
 /**
- * Every MCQ attempt for these users, paged past PostgREST's 1000-row cap.
- * Only the three columns the dashboard needs.
+ * Per-member progress. Primary path: the `org_member_progress` RPC
+ * (aggregated in SQL, one jsonb row — no row cap, no giant `.in()` URL).
+ * If that function isn't deployed yet, fall back to reading raw attempts in
+ * 100-member chunks (4 in flight), capped per chunk. Failures are reported,
+ * never silently rendered as zeros.
  */
-async function fetchAttempts(userIds: string[]): Promise<AttemptLite[]> {
-  if (userIds.length === 0) return [];
+async function fetchMemberProgress(
+  orgId: string,
+  userIds: string[]
+): Promise<{ progress: Record<string, MemberProgress>; error: string | null }> {
+  if (userIds.length === 0) return { progress: {}, error: null };
   const admin = createAdminClient();
-  const out: AttemptLite[] = [];
-  for (let from = 0; from < ATTEMPT_MAX; from += ATTEMPT_PAGE) {
-    const { data, error } = await admin
-      .from("mcq_attempts")
-      .select("user_id, is_correct, created_at")
-      .in("user_id", userIds)
-      .order("created_at", { ascending: false })
-      .range(from, from + ATTEMPT_PAGE - 1);
-    if (error) {
-      console.error("org fetchAttempts failed:", error.message);
-      break;
-    }
-    const page = (data ?? []) as AttemptLite[];
-    out.push(...page);
-    if (page.length < ATTEMPT_PAGE) break;
+
+  const { data, error } = await admin.rpc("org_member_progress", { p_org_id: orgId });
+  if (!error) {
+    const rows = (Array.isArray(data) ? data : []) as MemberProgressAggregate[];
+    return { progress: progressFromAggregates(userIds, rows), error: null };
   }
-  return out;
+  if (!isMissingFunction(error)) {
+    console.error("org_member_progress failed:", error.message);
+    return { progress: progressFromAggregates(userIds, []), error: PROGRESS_ERROR };
+  }
+
+  let failed = false;
+  let truncated = false;
+  const pages = await mapLimit(chunk(userIds, IN_CHUNK), 4, async (ids) => {
+    const r = await fetchAllPages<AttemptLite>(
+      (from, to) =>
+        admin
+          .from("mcq_attempts")
+          .select("user_id, is_correct, created_at")
+          .in("user_id", ids)
+          .order("created_at", { ascending: false })
+          .order("id", { ascending: true })
+          .range(from, to),
+      { maxRows: FALLBACK_ATTEMPTS_PER_CHUNK }
+    );
+    if (r.error) {
+      console.error("org fetchAttempts failed:", r.error);
+      failed = true;
+    }
+    if (r.truncated) truncated = true;
+    return r.rows;
+  });
+  return {
+    progress: summarizeMemberProgress(userIds, pages.flat()),
+    error: failed ? PROGRESS_ERROR : truncated ? PROGRESS_PARTIAL : null,
+  };
 }
 
 export async function loadOrgDashboard(orgId: string): Promise<OrgDashboardData | null> {
   const admin = createAdminClient();
-  const [{ data: org }, { data: memberRows }] = await Promise.all([
+  const [{ data: org }, memberPage] = await Promise.all([
     admin.from("organizations").select(ORG_COLUMNS).eq("id", orgId).maybeSingle(),
-    admin
-      .from("organization_members")
-      .select("user_id, role, joined_at")
-      .eq("org_id", orgId)
-      .order("joined_at", { ascending: true }),
+    // Paged: seats go up to 10000, past PostgREST's 1000-row cap.
+    fetchAllPages<{ user_id: string; role: OrgRole; joined_at: string }>((from, to) =>
+      admin
+        .from("organization_members")
+        .select("user_id, role, joined_at")
+        .eq("org_id", orgId)
+        .order("joined_at", { ascending: true })
+        .order("user_id", { ascending: true })
+        .range(from, to)
+    ),
   ]);
   if (!org) return null;
-  const members = (memberRows ?? []) as { user_id: string; role: OrgRole; joined_at: string }[];
+  if (memberPage.error) console.error("org members load failed:", memberPage.error);
+  const members = memberPage.rows;
   const ids = members.map((m) => m.user_id);
 
-  const [{ data: profiles }, attempts] = await Promise.all([
-    ids.length
-      ? admin.from("profiles").select("id, name, email").in("id", ids)
-      : Promise.resolve({ data: [] }),
-    fetchAttempts(ids),
+  let profilesFailed = false;
+  const [profilePages, progress] = await Promise.all([
+    mapLimit(chunk(ids, IN_CHUNK), 4, async (chunkIds) => {
+      const { data, error } = await admin
+        .from("profiles")
+        .select("id, name, email")
+        .in("id", chunkIds);
+      if (error) {
+        console.error("org member profiles failed:", error.message);
+        profilesFailed = true;
+      }
+      return (data ?? []) as { id: string; name: string | null; email: string | null }[];
+    }),
+    fetchMemberProgress(orgId, ids),
   ]);
-  const byId = new Map(
-    ((profiles ?? []) as { id: string; name: string | null; email: string | null }[]).map((p) => [p.id, p])
-  );
-  const progress = summarizeMemberProgress(ids, attempts);
+  const byId = new Map(profilePages.flat().map((p) => [p.id, p]));
+
+  const loadError = memberPage.error
+    ? "โหลดรายชื่อสมาชิกไม่สำเร็จ รายชื่อด้านล่างอาจไม่ครบ กรุณารีเฟรชอีกครั้ง"
+    : (progress.error ??
+      (profilesFailed ? "โหลดชื่อ/อีเมลของสมาชิกบางคนไม่สำเร็จ กรุณารีเฟรชอีกครั้ง" : null));
 
   return {
     org: org as Organization,
@@ -146,8 +203,9 @@ export async function loadOrgDashboard(orgId: string): Promise<OrgDashboardData 
       ...m,
       name: byId.get(m.user_id)?.name ?? null,
       email: byId.get(m.user_id)?.email ?? null,
-      progress: progress[m.user_id],
+      progress: progress.progress[m.user_id],
     })),
+    loadError,
   };
 }
 

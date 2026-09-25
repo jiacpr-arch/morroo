@@ -13,6 +13,7 @@ import {
   generateJoinCode,
   normalizeJoinCode,
   orgEntitlementRows,
+  progressFromAggregates,
   seatsRemaining,
   streakFromDays,
   summarizeMemberProgress,
@@ -246,6 +247,41 @@ describe("summarizeMemberProgress", () => {
     });
     expect(out.u2).toEqual({ attempts: 0, correct: 0, accuracy: 0, lastActive: null, streak: 0 });
     expect(out.stranger).toBeUndefined();
+  });
+});
+
+describe("progressFromAggregates", () => {
+  it("maps the SQL aggregate like summarizeMemberProgress and zero-fills the rest", () => {
+    const out = progressFromAggregates(
+      ["u1", "u2"],
+      [
+        // PostgREST returns bigint as number, timestamptz with an offset.
+        { user_id: "u1", attempts: 3, correct: "2", last_active: "2026-09-25T10:00:00+07:00", streak: 3 },
+        { user_id: "stranger", attempts: 9, correct: 9, last_active: null, streak: 1 },
+      ]
+    );
+    expect(out.u1).toEqual({
+      attempts: 3,
+      correct: 2,
+      accuracy: 66.7,
+      lastActive: "2026-09-25T03:00:00.000Z",
+      streak: 3,
+    });
+    expect(out.u2).toEqual({ attempts: 0, correct: 0, accuracy: 0, lastActive: null, streak: 0 });
+    expect(out.stranger).toBeUndefined();
+  });
+
+  it("agrees with summarizeMemberProgress on the same attempts", () => {
+    const attempts = [
+      { user_id: "u1", is_correct: true, created_at: "2026-09-25T03:00:00Z" },
+      { user_id: "u1", is_correct: false, created_at: "2026-09-24T03:00:00Z" },
+    ];
+    const fromRaw = summarizeMemberProgress(["u1"], attempts, FIXED);
+    const fromSql = progressFromAggregates(
+      ["u1"],
+      [{ user_id: "u1", attempts: 2, correct: 1, last_active: "2026-09-25T03:00:00Z", streak: 2 }]
+    );
+    expect(fromSql).toEqual(fromRaw);
   });
 });
 

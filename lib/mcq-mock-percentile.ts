@@ -21,6 +21,28 @@ export type MockRank =
 /** ต่ำกว่านี้ไม่โชว์ % — ตัวอย่างน้อยเกินจะมีความหมาย และ DB ก็ไม่คืน below ให้อยู่แล้ว */
 export const MOCK_PERCENTILE_MIN_SAMPLE = 10;
 
+/**
+ * ขนาด mock ใหญ่สุดที่ถือว่าเป็นไปได้ (board = 200 ข้อ) — ต้องตรงกับเงื่อนไข
+ * plausibility ใน get_mock_percentile (supabase/migrations/20260926_mock_percentile_fix.sql)
+ */
+export const MOCK_MAX_QUESTIONS = 300;
+
+/**
+ * คะแนน mock ที่เป็นไปได้: 1..MOCK_MAX_QUESTIONS ข้อ และ 0 <= ถูก <= ทั้งหมด
+ * RPC ตัดแถวที่ไม่ผ่านทิ้งทั้งฝั่งผู้เรียกและ cohort อยู่แล้ว ฝั่ง client เช็กซ้ำ
+ * แค่เพื่อไม่บันทึกแถวที่ไม่มีวันถูกนับ
+ */
+export function isPlausibleMockScore(totalQuestions: number, correctCount: number): boolean {
+  return (
+    Number.isInteger(totalQuestions) &&
+    Number.isInteger(correctCount) &&
+    totalQuestions >= 1 &&
+    totalQuestions <= MOCK_MAX_QUESTIONS &&
+    correctCount >= 0 &&
+    correctCount <= totalQuestions
+  );
+}
+
 function isUsable(row: MockPercentileRow | undefined, minSample: number): row is MockPercentileRow & { below: number } {
   return !!row && row.sample >= minSample && typeof row.below === "number" && row.below >= 0;
 }

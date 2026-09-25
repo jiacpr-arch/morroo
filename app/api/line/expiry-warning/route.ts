@@ -17,10 +17,16 @@
  *   D+1  win-back (LINE if linked, else email): plans are one-time purchases
  *        and don't auto-renew, so the day after access runs out we ask why
  *        they're not renewing — /renewal records the reason and shows a
- *        tailored offer (lib/winback.ts). Stored as days_before_expiry = -1.
+ *        tailored offer (lib/winback.ts). Stored as days_before_expiry = -1,
+ *        once per lapse (see dedupe below).
  *
  * Dedupe via trial_messages_sent (profile_id, days_before_expiry, channel)
- * — safe to retry / run multiple times a day without repeat sends.
+ * — safe to retry / run multiple times a day without repeat sends. That key
+ * has no expiry in it, so one row per profile/day/channel is reused across
+ * membership periods: a row only counts as "already sent" when its sent_at
+ * falls in the current period (sent_at >= dedupeSince(expiry, day)), and
+ * sending upserts sent_at. So each reminder and the D+1 win-back go out once
+ * per lapse, not once per account ever.
  *
  * Scheduled via pg_cron (see supabase/migrations/20260512_cron_vault_rewrite.sql,
  * job `send-expiry-warning`, 0 2 * * * UTC = 09:00 Asia/Bangkok) hitting this
@@ -36,7 +42,7 @@ import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { sendTrialExpiryEmail, sendWinbackEmail } from "@/lib/email/send";
 import { buildExpiryWarningMessage, buildWinbackMessage } from "@/lib/line-flex-templates";
 import { getLapseState, getLatestFeedback, hasActiveOrgAccess } from "@/lib/winback-server";
-import { canIssueWinback } from "@/lib/winback";
+import { canIssueWinback, isSameLapse } from "@/lib/winback";
 import { getTrialStatus, TRIAL_FULL_PRICES } from "@/lib/trial";
 
 export const runtime = "nodejs";
@@ -99,6 +105,17 @@ export function lapsedWindow(now: number): { from: string; to: string } {
     from: new Date(now - 86400_000).toISOString(),
     to: new Date(now).toISOString(),
   };
+}
+
+/**
+ * Earliest sent_at that belongs to the membership period ending at
+ * `expiresAt` for the message sent `daysBeforeExpiry` days before it (D+1 =
+ * -1). A D-N message goes out N-1..N days before expiry, D+1 up to a day
+ * after, so anything older than (N+1) days before this expiry was for a
+ * previous period (a renewal always moves the expiry past that send).
+ */
+export function dedupeSince(expiresAt: string, daysBeforeExpiry: number): string {
+  return new Date(new Date(expiresAt).getTime() - (daysBeforeExpiry + 1) * 86400_000).toISOString();
 }
 
 type ProfileRow = {
@@ -171,6 +188,7 @@ async function run() {
           .eq("profile_id", user.id)
           .eq("days_before_expiry", days)
           .eq("channel", channel)
+          .gte("sent_at", dedupeSince(user.membership_expires_at, days))
           .maybeSingle();
         if (alreadySent) {
           summary.skipped_dedup++;
@@ -204,8 +222,11 @@ async function run() {
 
         const { error: insertError } = await supabase
           .from("trial_messages_sent")
-          .insert({ profile_id: user.id, days_before_expiry: days, channel });
-        if (insertError && insertError.code !== "23505") {
+          .upsert(
+            { profile_id: user.id, days_before_expiry: days, channel, sent_at: new Date().toISOString() },
+            { onConflict: "profile_id,days_before_expiry,channel" }
+          );
+        if (insertError) {
           console.error("[expiry-warning] dedupe insert failed:", insertError);
         }
       } catch (err) {
@@ -232,9 +253,14 @@ async function run() {
 
   for (const user of (lapsedUsers ?? []) as ProfileRow[]) {
     try {
-      // Already answered the survey (e.g. from the profile page) — don't ask again.
+      // Already answered the survey for this lapse / recently (e.g. from the
+      // profile page) — don't ask again.
       const latest = await getLatestFeedback(user.id);
-      if (latest && !canIssueWinback(latest.created_at)) {
+      if (
+        latest &&
+        (isSameLapse(latest.access_expires_at, user.membership_expires_at) ||
+          !canIssueWinback(latest.created_at))
+      ) {
         summary.skipped_dedup++;
         continue;
       }
@@ -263,6 +289,7 @@ async function run() {
         .eq("profile_id", user.id)
         .eq("days_before_expiry", WINBACK_DAY)
         .eq("channel", channel)
+        .gte("sent_at", dedupeSince(user.membership_expires_at, WINBACK_DAY))
         .maybeSingle();
       if (alreadySent) {
         summary.skipped_dedup++;
@@ -291,8 +318,16 @@ async function run() {
 
       const { error: insertError } = await supabase
         .from("trial_messages_sent")
-        .insert({ profile_id: user.id, days_before_expiry: WINBACK_DAY, channel });
-      if (insertError && insertError.code !== "23505") {
+        .upsert(
+          {
+            profile_id: user.id,
+            days_before_expiry: WINBACK_DAY,
+            channel,
+            sent_at: new Date().toISOString(),
+          },
+          { onConflict: "profile_id,days_before_expiry,channel" }
+        );
+      if (insertError) {
         console.error("[expiry-warning] win-back dedupe insert failed:", insertError);
       }
     } catch (err) {

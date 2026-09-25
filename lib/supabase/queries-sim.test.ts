@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 // เกม long case ที่ AI แปลงเก็บใน sim_scenarios ถูกปิด (SERVE_AI_LONGCASE_GAMES)
 // — ทุก long case ต้องเล่นผ่านเวอร์ชันสังเคราะห์ lc-<caseId> ที่ได้รูปแบบถาม-ตอบ
@@ -88,13 +88,23 @@ const {
   getPolishedLongcaseCards,
   getLongcaseGameCards,
   getLongcaseGameMap,
+  simFlags,
 } = await import("./queries-sim");
+
+const DEFAULT_SERVE_AI = simFlags.serveAiLongcaseGames;
+afterEach(() => {
+  simFlags.serveAiLongcaseGames = DEFAULT_SERVE_AI;
+});
 
 beforeEach(() => {
   from.mockClear();
 });
 
 describe("AI long-case games are replaced by the synthesized step-by-step version", () => {
+  beforeEach(() => {
+    simFlags.serveAiLongcaseGames = false;
+  });
+
   it("drops AI long-case rows from the scenario list but keeps MEQ", async () => {
     const slugs = (await getSimScenarios()).map((s) => s.slug);
     expect(slugs).not.toContain(AI_LONGCASE_ROW.slug);
@@ -122,5 +132,30 @@ describe("AI long-case games are replaced by the synthesized step-by-step versio
 
   it("links every published long case to its synthesized game", async () => {
     expect((await getLongcaseGameMap())[CASE_ID]).toBe(`lc-${CASE_ID}`);
+  });
+});
+
+describe("with AI long-case games switched back on", () => {
+  beforeEach(() => {
+    simFlags.serveAiLongcaseGames = true;
+  });
+
+  it("lists AI long-case rows alongside MEQ", async () => {
+    const slugs = (await getSimScenarios()).map((s) => s.slug);
+    expect(slugs).toContain(AI_LONGCASE_ROW.slug);
+    expect(slugs).toContain(MEQ_ROW.slug);
+  });
+
+  it("serves the AI slug as-is", async () => {
+    expect((await getSimScenario(AI_LONGCASE_ROW.slug))?.slug).toBe(AI_LONGCASE_ROW.slug);
+  });
+
+  it("doesn't also synthesize a card for a case the AI game already covers", async () => {
+    const cards = await getLongcaseGameCards();
+    expect(cards.map((c) => c.slug)).not.toContain(`lc-${CASE_ID}`);
+  });
+
+  it("links the long case to its AI game", async () => {
+    expect((await getLongcaseGameMap())[CASE_ID]).toBe(AI_LONGCASE_ROW.slug);
   });
 });
