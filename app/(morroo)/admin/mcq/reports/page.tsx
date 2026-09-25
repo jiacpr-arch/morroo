@@ -172,7 +172,10 @@ export default function McqReportsPage() {
       </div>
       <p className="text-sm text-muted-foreground mb-6">
         ยืนยันรายงานที่ถูกต้องเพื่อให้ <span className="font-semibold">+10 คะแนน</span>{" "}
-        กับผู้แจ้ง — แล้วแก้เฉลยในข้อนั้นได้เลย
+        กับผู้แจ้ง — แล้วแก้เฉลยในข้อนั้นได้เลย ·{" "}
+        <Link href="/admin/mcq/comments" className="underline underline-offset-2">
+          ดูความคิดเห็นที่ถูกรายงาน
+        </Link>
       </p>
 
       {toast && (
