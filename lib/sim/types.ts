@@ -5,6 +5,11 @@
 //   { inter: 'ข้อความ!!', drama?, green?, fx?, t? } — จังหวะตะโกนเต็มจอ
 //   { skip: 'คำบรรยาย', t }                — time-skip (เช่น CPR 2 นาที)
 //   { choice: { q, options: [{ tgt, label, ok, why?, worsen?, then?[] }] } }
+//   { labSheet: { title, patient?, rows: [{ name, value, abnormal?, isNew? }] } }
+//                                         — ใบรายงานผลแลป แตะเพื่อไปต่อ
+//   { orderSheet: { patient?, orders: [{ text, isNew? }] } }
+//                                         — ใบสั่งการรักษา (doctor's order) แตะเพื่อไปต่อ
+// choice.shelf = true → แสดงตัวเลือกเป็น "ชั้นออร์เดอร์" แบบ grid (ตัวหลอกเยอะ)
 //   { end: true }
 //
 // text เป็น plain text — เน้นคำด้วย **คำเน้น** (render ผ่าน parseEmphasis
@@ -55,14 +60,48 @@ export interface ChoiceOption {
 }
 
 export interface ChoiceNode {
-  choice: { q: string; options: ChoiceOption[] };
+  /** shelf: แสดงเป็นชั้น order แบบ grid แทนปุ่มเรียงแนวตั้ง */
+  choice: { q: string; options: ChoiceOption[]; shelf?: boolean };
+}
+
+export interface LabSheetRow {
+  name: string;
+  value: string;
+  abnormal?: boolean;
+  /** ผลที่เพิ่งออก — ไฮไลต์ในใบให้เห็นว่าได้ข้อมูลอะไรใหม่ */
+  isNew?: boolean;
+}
+
+/** ใบรายงานผลตรวจ (จำลองกระดาษจริง) — ค้างจนผู้เล่นแตะไปต่อ */
+export interface LabSheetNode {
+  labSheet: { title: string; patient?: string; rows: LabSheetRow[] };
+  t?: number;
+}
+
+export interface OrderSheetRow {
+  text: string;
+  /** order ที่เพิ่งสั่ง — ไฮไลต์ในใบ */
+  isNew?: boolean;
+}
+
+/** ใบสั่งการรักษา (doctor's order sheet) สะสม — ค้างจนผู้เล่นแตะไปต่อ */
+export interface OrderSheetNode {
+  orderSheet: { patient?: string; orders: OrderSheetRow[] };
+  t?: number;
 }
 
 export interface EndNode {
   end: true;
 }
 
-export type StoryNode = SayNode | InterNode | SkipNode | ChoiceNode | EndNode;
+export type StoryNode =
+  | SayNode
+  | InterNode
+  | SkipNode
+  | ChoiceNode
+  | LabSheetNode
+  | OrderSheetNode
+  | EndNode;
 
 export interface SimScenario {
   slug: string;
@@ -133,9 +172,29 @@ export function isValidScenario(x: unknown): x is SimScenario {
     if (node.end === true) return true;
     if (typeof node.inter === "string") return true;
     if (typeof node.skip === "string") return typeof node.t === "number";
+    if (node.labSheet && typeof node.labSheet === "object") {
+      const ls = node.labSheet as Record<string, unknown>;
+      return (
+        typeof ls.title === "string" &&
+        Array.isArray(ls.rows) &&
+        ls.rows.length > 0 &&
+        ls.rows.every((r) => {
+          const row = r as Record<string, unknown> | null;
+          return !!row && typeof row.name === "string" && typeof row.value === "string";
+        })
+      );
+    }
     if (node.say && typeof node.say === "object") {
       const say = node.say as Record<string, unknown>;
       return typeof say.who === "string" && typeof say.text === "string";
+    }
+    if (node.orderSheet && typeof node.orderSheet === "object") {
+      const os = node.orderSheet as Record<string, unknown>;
+      return (
+        Array.isArray(os.orders) &&
+        os.orders.length > 0 &&
+        os.orders.every((r) => typeof (r as Record<string, unknown> | null)?.text === "string")
+      );
     }
     if (node.choice && typeof node.choice === "object") {
       const c = node.choice as Record<string, unknown>;

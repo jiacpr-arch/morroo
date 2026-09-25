@@ -8,7 +8,12 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { SIM_SCENARIOS, getBuiltinScenario } from "@/lib/sim/scenarios";
 import type { SimDbCharacter } from "@/lib/sim/characters";
 import { isValidScenario, type SimScenario } from "@/lib/sim/types";
-import { caseIdFromSlug, longCaseToScenario, slugForCase } from "@/lib/sim/longcase-to-scenario";
+import {
+  caseIdFromSlug,
+  longCaseToScenario,
+  slugForCase,
+  type OtherCaseRef,
+} from "@/lib/sim/longcase-to-scenario";
 import { summarizeExpertise, type SpecialtyExpertise } from "@/lib/sim/expertise";
 import { normalizeSpecialty, OTHER_SPECIALTY } from "@/lib/casegame/normalize";
 import { isPremium as isPaidMember } from "@/lib/membership";
@@ -61,6 +66,34 @@ export async function getSimScenarios(): Promise<SimScenario[]> {
   return out;
 }
 
+/**
+ * การวินิจฉัย + teaching points + แผนการรักษาของเคสอื่นในสาขาเดียวกัน — ใช้เป็นตัวลวง
+ * ของ choice วินิจฉัย, ชั้น order และ debrief ในเกมสังเคราะห์ (ground truth จริงของเคสนั้นๆ)
+ * ล้มเหลวเมื่อไรคืน [] — เกมยังเล่นได้ด้วยตัวลวงจากเคสตัวเอง
+ */
+async function getOtherCaseRefs(caseId: string, specialty: string | null): Promise<OtherCaseRef[]> {
+  if (!specialty) return [];
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("long_cases")
+      .select("correct_diagnosis, teaching_points, management_plan")
+      .eq("is_published", true)
+      .eq("specialty", specialty)
+      .neq("id", caseId)
+      .limit(40);
+    return ((data ?? []) as { correct_diagnosis: string | null; teaching_points: unknown; management_plan: string | null }[])
+      .filter((r) => r.correct_diagnosis)
+      .map((r) => ({
+        diagnosis: r.correct_diagnosis as string,
+        teachingPoints: Array.isArray(r.teaching_points) ? r.teaching_points : [],
+        managementPlan: r.management_plan ?? "",
+      }));
+  } catch {
+    return [];
+  }
+}
+
 export async function getSimScenario(slug: string): Promise<SimScenario | null> {
   const builtin = getBuiltinScenario(slug);
   if (builtin) return builtin;
@@ -81,7 +114,7 @@ export async function getSimScenario(slug: string): Promise<SimScenario | null> 
   if (caseId) {
     try {
       const lc = await getLongCaseFull(caseId);
-      if (lc) return longCaseToScenario(lc);
+      if (lc) return longCaseToScenario(lc, await getOtherCaseRefs(lc.id, lc.specialty));
     } catch {
       // เงียบ — คืน null ด้านล่าง
     }

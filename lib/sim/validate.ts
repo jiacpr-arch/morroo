@@ -47,6 +47,20 @@ function checkNodes(
       return `${at}: rhythm "${node.fx.rhythm}" ไม่ถูกต้อง`;
     }
 
+    if ("labSheet" in node) {
+      const texts = [node.labSheet.title, node.labSheet.patient ?? "", ...node.labSheet.rows.flatMap((r) => [r.name, r.value])];
+      if (texts.some((t) => /<[a-z/!]/i.test(t))) {
+        return `${at}: labSheet ห้ามมี HTML`;
+      }
+    }
+
+    if ("orderSheet" in node) {
+      const texts = [node.orderSheet.patient ?? "", ...node.orderSheet.orders.map((o) => o.text)];
+      if (texts.some((t) => /<[a-z/!]/i.test(t))) {
+        return `${at}: orderSheet ห้ามมี HTML`;
+      }
+    }
+
     if ("choice" in node) {
       const oks = node.choice.options.filter((o) => o.ok === true);
       if (oks.length !== 1) {
