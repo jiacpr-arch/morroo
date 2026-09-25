@@ -30,6 +30,7 @@ import {
 import {
   getLapseState,
   getLatestFeedback,
+  hasActiveOrgAccess,
   issueWinbackCoupon,
   type FeedbackRecord,
 } from "@/lib/winback-server";
@@ -87,11 +88,15 @@ export async function GET() {
   const user = await currentUser();
   if (!user) return NextResponse.json({ error: "กรุณาเข้าสู่ระบบก่อน" }, { status: 401 });
 
-  const [state, latest] = await Promise.all([getLapseState(user.id), getLatestFeedback(user.id)]);
+  const [state, latest, inOrg] = await Promise.all([
+    getLapseState(user.id),
+    getLatestFeedback(user.id),
+    hasActiveOrgAccess(user.id),
+  ]);
   const existing = latest && !canIssueWinback(latest.created_at) ? latest : null;
 
   return NextResponse.json({
-    eligible: isLapseEligible(state.lastPlan, state.expiresAt),
+    eligible: !inOrg && isLapseEligible(state.lastPlan, state.expiresAt),
     wasTrial: state.wasTrial,
     lastPlan: state.lastPlan,
     lastPlanLabel: state.lastPlan ? planLabel(state.lastPlan) : null,
@@ -114,8 +119,12 @@ export async function POST(request: Request) {
   const detail = sanitizeReasonDetail(body.detail);
   const source = parseLapseSource(body.source);
 
-  const [state, latest] = await Promise.all([getLapseState(user.id), getLatestFeedback(user.id)]);
-  if (!isLapseEligible(state.lastPlan, state.expiresAt)) {
+  const [state, latest, inOrg] = await Promise.all([
+    getLapseState(user.id),
+    getLatestFeedback(user.id),
+    hasActiveOrgAccess(user.id),
+  ]);
+  if (inOrg || !isLapseEligible(state.lastPlan, state.expiresAt)) {
     return NextResponse.json(
       { error: "แบบสอบถามนี้เปิดให้ตอบเมื่อสมาชิกใกล้หมดอายุหรือหมดอายุแล้ว" },
       { status: 403 }

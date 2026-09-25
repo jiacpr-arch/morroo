@@ -340,7 +340,8 @@ export default function ProfilePage() {
               </div>
             )}
             {/* แพ็กจ่ายครั้งเดียว ไม่ต่ออายุอัตโนมัติ — ใกล้หมด/หมดแล้ว ถามเหตุผล + ข้อเสนอ win-back */}
-            {isLapseEligible(profile?.membership_type, profile?.membership_expires_at) && (
+            {!orgs.some((m) => isOrgActive(m.organizations)) &&
+              isLapseEligible(profile?.membership_type, profile?.membership_expires_at) && (
               <div className="rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground flex items-center justify-between gap-2">
                 <span>แพ็กเกจเป็นแบบจ่ายครั้งเดียว ไม่มีการตัดเงินอัตโนมัติ</span>
                 <Link href="/renewal?source=profile" className="shrink-0 font-medium text-brand hover:underline">

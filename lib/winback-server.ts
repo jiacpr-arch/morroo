@@ -7,11 +7,21 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { COUPON_PLATFORM, generateCouponCode } from "@/lib/coupons";
 import { isPlanType, PLAN_CATALOG } from "@/lib/membership";
 import type { WinbackOffer } from "@/lib/winback";
+import { fetchOrgMemberships, isOrgActive } from "@/lib/organizations";
 
 export interface LapseState {
   lastPlan: string | null;
   expiresAt: string | null;
   wasTrial: boolean;
+}
+
+/**
+ * Still covered by an active group / institution plan — their personal plan
+ * lapsing doesn't cost them access, so there's nothing to win back.
+ */
+export async function hasActiveOrgAccess(userId: string): Promise<boolean> {
+  const memberships = await fetchOrgMemberships(createAdminClient(), userId);
+  return memberships.some((m) => isOrgActive(m.organizations));
 }
 
 /**

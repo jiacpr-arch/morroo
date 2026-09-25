@@ -35,7 +35,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { sendTrialExpiryEmail, sendWinbackEmail } from "@/lib/email/send";
 import { buildExpiryWarningMessage, buildWinbackMessage } from "@/lib/line-flex-templates";
-import { getLapseState, getLatestFeedback } from "@/lib/winback-server";
+import { getLapseState, getLatestFeedback, hasActiveOrgAccess } from "@/lib/winback-server";
 import { canIssueWinback } from "@/lib/winback";
 import { getTrialStatus, TRIAL_FULL_PRICES } from "@/lib/trial";
 
@@ -235,6 +235,11 @@ async function run() {
       // Already answered the survey (e.g. from the profile page) — don't ask again.
       const latest = await getLatestFeedback(user.id);
       if (latest && !canIssueWinback(latest.created_at)) {
+        summary.skipped_dedup++;
+        continue;
+      }
+      // Group / institution plan still covers them — nothing lapsed.
+      if (await hasActiveOrgAccess(user.id)) {
         summary.skipped_dedup++;
         continue;
       }
