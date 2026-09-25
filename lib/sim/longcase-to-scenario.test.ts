@@ -202,7 +202,7 @@ describe("longCaseToScenario", () => {
 
   it("orders physical exam choices head-to-toe (GA before GU)", () => {
     const s = longCaseToScenario(TORSION)!;
-    const peChoices = choices(s).filter((c) => c.options.some((o) => o.tgt === "PE"));
+    const peChoices = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "PE"));
     expect(peChoices.length).toBeGreaterThanOrEqual(1);
     expect(peChoices[0].options.find((o) => o.ok)!.label).toContain("GA");
   });
@@ -225,10 +225,24 @@ describe("longCaseToScenario", () => {
   function sayTexts(s: SimScenario): string[] {
     return s.story.flatMap((n) => ("say" in n ? [n.say.text] : []));
   }
+  /** ข้อความทั้งหมดตามลำดับที่ผู้เล่นเห็นเมื่อตอบถูกทุกข้อ (say + คำถาม choice + then ของข้อถูก) */
+  function playthrough(nodes: StoryNode[]): string[] {
+    return nodes.flatMap((n) => {
+      if ("say" in n) return [n.say.text];
+      if ("choice" in n) {
+        const ok = n.choice.options.find((o) => o.ok);
+        return [n.choice.q, ...playthrough(ok?.then ?? [])];
+      }
+      return [];
+    });
+  }
+  function examChoices(s: SimScenario): ChoiceNode["choice"][] {
+    return choices(s).filter((c) => c.options.some((o) => o.tgt === "EXAM"));
+  }
 
   it("adds an examiner Q&A phase surfacing the case's real questions AND model answers", () => {
     const s = longCaseToScenario(TORSION)!;
-    const texts = sayTexts(s);
+    const texts = playthrough(s.story);
     // คำถามสอบจริงต้องปรากฏ
     expect(texts.some((t) => t.includes("cremasteric reflex หายไป"))).toBe(true);
     // เฉลยจริงต้องปรากฏด้วย (ไม่ใช่แค่ถามลอยๆ)
@@ -237,24 +251,78 @@ describe("longCaseToScenario", () => {
     expect(texts.some((t) => t.includes("ช่วงอาจารย์ซักถาม"))).toBe(true);
   });
 
+  it("asks each examiner question as a choice: its own model answer is right, other questions' answers are distractors", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const exam = examChoices(s);
+    expect(exam.length).toBe(4);
+    const crem = exam.find((c) => c.q.includes("cremasteric reflex หายไป"))!;
+    expect(crem.options.filter((o) => o.ok)).toHaveLength(1);
+    expect(crem.options.find((o) => o.ok)!.label).toContain("reflex arc ขาดออก");
+    for (const o of crem.options.filter((x) => !x.ok)) {
+      expect(o.label).not.toContain("reflex arc");
+      expect(o.worsen).toBeFalsy();
+    }
+  });
+
   it("shows each examiner question before its model answer (retrieval-practice order)", () => {
     const s = longCaseToScenario(TORSION)!;
-    const texts = sayTexts(s);
+    const texts = playthrough(s.story);
     const qIdx = texts.findIndex((t) => t.includes("cremasteric reflex หายไป"));
-    const aIdx = texts.findIndex((t) => t.includes("reflex arc ขาดออก"));
+    const aIdx = texts.findIndex((t) => t.startsWith("💡") && t.includes("reflex arc ขาดออก"));
     expect(qIdx).toBeGreaterThanOrEqual(0);
     expect(aIdx).toBeGreaterThan(qIdx);
   });
 
   it("caps examiner questions at 4 and orders them by points (highest first)", () => {
     const s = longCaseToScenario(TORSION)!;
-    const questionNodes = sayTexts(s).filter((t) => t.startsWith("❓"));
-    expect(questionNodes.length).toBeLessThanOrEqual(4);
+    const qs = examChoices(s).map((c) => c.q);
+    expect(qs.length).toBeLessThanOrEqual(4);
     // ข้อ points สูงสุด (Doppler = 20) ต้องมาก่อนข้อ points ต่ำกว่า (cremasteric = 15)
-    const dopplerIdx = questionNodes.findIndex((t) => t.includes("Doppler US ปกติ"));
-    const cremIdx = questionNodes.findIndex((t) => t.includes("cremasteric reflex หายไป"));
+    const dopplerIdx = qs.findIndex((t) => t.includes("Doppler US ปกติ"));
+    const cremIdx = qs.findIndex((t) => t.includes("cremasteric reflex หายไป"));
     expect(dopplerIdx).toBeGreaterThanOrEqual(0);
     expect(dopplerIdx).toBeLessThan(cremIdx);
+  });
+
+  it("falls back to ask-then-reveal when the case has only one examiner question", () => {
+    const s = longCaseToScenario(
+      mk({
+        correct_diagnosis: "X",
+        accepted_ddx: ["X", "Y"],
+        examiner_questions: [{ question: "กลไกคืออะไร", modelAnswer: "เพราะ Z", points: 10 }],
+      }),
+    )!;
+    expect(describeScenarioError(s)).toBeNull();
+    expect(examChoices(s)).toHaveLength(0);
+    const texts = sayTexts(s);
+    expect(texts.findIndex((t) => t.includes("เพราะ Z"))).toBeGreaterThan(texts.findIndex((t) => t.includes("กลไกคืออะไร")));
+  });
+
+  // ---- ซักประวัติแบบถาม-ตอบต่อเนื่อง (จังหวะเดียวกับเกมร้านยา pharmroo) ----
+  it("turns every history topic into its own ask → patient-answers choice, in standard order", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const ask = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "ASK"));
+    // TORSION มี HPI, PMH, SH → 3 จุดถาม
+    expect(ask.map((c) => c.options.find((o) => o.ok)!.label)).toEqual([
+      "ซักประวัติปัจจุบัน (HPI)",
+      "ซักประวัติโรคประจำตัว (PMH)",
+      "ซักประวัติสังคม (SH)",
+    ]);
+    // ผู้ป่วยตอบเองทันทีหลังถามถูก
+    const pmhThen = ask[1].options.find((o) => o.ok)!.then!;
+    expect(pmhThen).toHaveLength(1);
+    expect("say" in pmhThen[0] && pmhThen[0].say.who).toBe("patient_young_male");
+    expect("say" in pmhThen[0] && pmhThen[0].say.text).toContain("ไม่มีโรคประจำตัว");
+    // คำถามถัดไปเกริ่นจากคำตอบล่าสุด
+    expect(ask[2].q).toContain("ไม่มีโรคประจำตัว");
+    // ตัวลวง: ถามข้ามลำดับ + หยุดซักประวัติก่อนครบ
+    expect(ask[0].options.some((o) => !o.ok && o.label.includes("PMH"))).toBe(true);
+    for (const c of ask) expect(c.options.some((o) => !o.ok && o.label.includes("ตรวจร่างกาย"))).toBe(true);
+  });
+
+  it("no longer narrates PMH/SH as a monologue by the attending", () => {
+    const s = longCaseToScenario(TORSION)!;
+    expect(sayTexts(s).some((t) => t.startsWith("PMH:") || t.startsWith("SH:"))).toBe(false);
   });
 
   it("reveals a teaching point right after the correct diagnosis is chosen", () => {

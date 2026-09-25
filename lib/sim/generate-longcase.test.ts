@@ -36,6 +36,11 @@ describe("longcase generation prompt (shared)", () => {
     expect(p).toContain("ห้ามใช้ fx");
   });
 
+  it("asks for a chained ask → patient-answers history rhythm (same pacing as pharmroo's game)", () => {
+    const p = longcaseSystemPrompt([], caseRow);
+    expect(p).toContain("ถาม → ผู้ป่วยตอบทันที → ถามต่อ");
+  });
+
   it("lists extra characters when provided", () => {
     const p = longcaseSystemPrompt(
       [{ slug: "resident_joe", name: "เรสซิเดนต์โจ", role: "Resident", personality: "ใจเย็น" }],
