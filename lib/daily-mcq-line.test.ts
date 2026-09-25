@@ -54,6 +54,7 @@ type FakeOpts = {
   stats?: { total: number; correct: number } | null;
   leadStage?: string | null;
   existingRewardCode?: string | null;
+  questionAudience?: string;
 };
 
 function fakeSupabase(opts: FakeOpts = {}) {
@@ -65,6 +66,7 @@ function fakeSupabase(opts: FakeOpts = {}) {
     stats = { total: 3, correct: 2 },
     leadStage = null,
     existingRewardCode = null,
+    questionAudience = "student",
   } = opts;
 
   const mcqAttemptsInsert = vi.fn(() => Promise.resolve({ error: null }));
@@ -88,7 +90,11 @@ function fakeSupabase(opts: FakeOpts = {}) {
         return {
           select: () => ({
             eq: () => ({
-              single: () => Promise.resolve({ data: QUESTION, error: null }),
+              single: () =>
+                Promise.resolve({
+                  data: { ...QUESTION, audience: questionAudience },
+                  error: null,
+                }),
             }),
           }),
         };
@@ -327,6 +333,22 @@ describe("handleDailyMcqPostback — mcq_attempts mirror", () => {
       LINE_USER,
       `action=daily_answer&d=${TODAY}&c=B&q=${QUESTION.id}`
     );
+    expect(reviewQueueUpsert).not.toHaveBeenCalled();
+  });
+
+  it("doesn't queue a missed non-student question (review page is NL-only)", async () => {
+    const { client, reviewQueueUpsert, mcqAttemptsInsert } = fakeSupabase({
+      linkedUserId: "user_1",
+      isNewAnswer: true,
+      questionAudience: "board",
+    });
+    await handleDailyMcqPostback(
+      client as never,
+      LINE_USER,
+      `action=daily_answer&d=${TODAY}&c=A&q=${QUESTION.id}`
+    );
+    // Still mirrored into normal stats, just not into the review queue.
+    expect(mcqAttemptsInsert).toHaveBeenCalledTimes(1);
     expect(reviewQueueUpsert).not.toHaveBeenCalled();
   });
 });
