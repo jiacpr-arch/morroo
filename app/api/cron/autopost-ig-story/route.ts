@@ -12,6 +12,7 @@
 
 import { NextResponse } from "next/server";
 import { runAutopostRetry } from "@/app/api/autopost/retry/route";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -23,7 +24,7 @@ function isAuthorized(request: Request): boolean {
   return Boolean(process.env.CRON_SECRET) && auth === `Bearer ${process.env.CRON_SECRET}`;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -34,3 +35,5 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }
 }
+
+export const GET = withCronRun("autopost-ig-story", handleGet, { authorize: isAuthorized });

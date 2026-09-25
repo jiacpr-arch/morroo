@@ -714,6 +714,14 @@ export interface DoctorDigestSummary {
   manual: { title: string }[];
 }
 
+// Cron health from `cron_runs` (lib/cron-runs.ts): jobs that failed in the
+// last 24h and jobs that haven't run within their expected interval.
+export interface CronDigestSummary {
+  totalJobs: number;
+  failures: { job: string; count: number; lastError: string | null }[];
+  stale: { job: string; lastRunAt: string }[];
+}
+
 interface AdminDigestData {
   dateLabel: string;
   attemptsToday: number;
@@ -732,6 +740,7 @@ interface AdminDigestData {
   weekly?: WeeklyAnalyticsSummary | null;
   doctor?: DoctorDigestSummary | null;
   reengageExperiment?: ReengageExperimentStatus | null;
+  cronHealth?: CronDigestSummary | null;
 }
 
 /**
@@ -936,6 +945,43 @@ function adsOpsSection(o: AdsOpsSummary) {
   ];
 }
 
+const MAX_CRON_ROWS = 4;
+
+function cronSection(c: CronDigestSummary) {
+  if (c.failures.length === 0 && c.stale.length === 0) {
+    return [
+      { type: "separator" as const, margin: "md" as const },
+      noteLine(`⏱ Cron ทั้ง ${c.totalJobs} งานทำงานปกติใน 24 ชม.`, "#16A085"),
+    ];
+  }
+  const lines: ReturnType<typeof noteLine>[] = [];
+  for (const f of c.failures.slice(0, MAX_CRON_ROWS)) {
+    const err = f.lastError ? ` — ${f.lastError.slice(0, 80)}` : "";
+    lines.push(noteLine(`🔴 ${f.job} ล้มเหลว ${f.count} ครั้ง${err}`, "#E74C3C"));
+  }
+  if (c.failures.length > MAX_CRON_ROWS) {
+    lines.push(noteLine(`และอีก ${c.failures.length - MAX_CRON_ROWS} งานที่ล้มเหลว`, "#E74C3C"));
+  }
+  for (const s of c.stale.slice(0, MAX_CRON_ROWS)) {
+    const when = new Date(s.lastRunAt).toLocaleString("th-TH", {
+      timeZone: "Asia/Bangkok",
+      day: "numeric",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    lines.push(noteLine(`🟡 ${s.job} ไม่ได้รันตามรอบ (ล่าสุด ${when})`, "#F39C12"));
+  }
+  if (c.stale.length > MAX_CRON_ROWS) {
+    lines.push(noteLine(`และอีก ${c.stale.length - MAX_CRON_ROWS} งานที่ไม่ได้รันตามรอบ`, "#F39C12"));
+  }
+  return [
+    { type: "separator" as const, margin: "md" as const },
+    sectionTitle("⏱ สถานะ Cron (24 ชม.)"),
+    ...lines,
+  ];
+}
+
 function autopilotSection(changes: string[]) {
   if (changes.length === 0) return [];
   return [
@@ -1081,6 +1127,7 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
           ...(data.doctor ? doctorSection(data.doctor) : []),
           ...(data.weekly ? weeklySection(data.weekly) : []),
           ...(data.reengageExperiment ? reengageSection(data.reengageExperiment) : []),
+          ...(data.cronHealth ? cronSection(data.cronHealth) : []),
         ],
       },
       footer: {

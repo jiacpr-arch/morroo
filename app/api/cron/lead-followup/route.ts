@@ -27,6 +27,7 @@ import { sendLeadFollowupEmail } from "@/lib/email/send";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { sendFbMessage } from "@/lib/facebook-messenger";
 import { redeemCode, type RewardType } from "@/lib/redeem";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -521,13 +522,15 @@ async function run(): Promise<Summary & { lineSkippedQuota?: boolean }> {
   return summary;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const summary = await run();
   return NextResponse.json({ ok: true, ...summary });
 }
+
+export const GET = withCronRun("lead-followup", handleGet, { authorize: isAuthorized });
 
 export async function POST(request: Request) {
   return GET(request);

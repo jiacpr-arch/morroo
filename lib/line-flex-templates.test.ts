@@ -394,6 +394,28 @@ describe("buildAdminDigestFlex — reengage experiment readout", () => {
     const msg = buildAdminDigestFlex({ ...BASE, reengageExperiment: null });
     expect(JSON.stringify(msg.type === "flex" ? msg.contents : {})).not.toContain("ทดลอง MCQ");
   });
+
+  it("shows an all-clear cron line when nothing failed or went stale", () => {
+    const msg = buildAdminDigestFlex({ ...BASE, cronHealth: { totalJobs: 20, failures: [], stale: [] } });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("Cron ทั้ง 20 งานทำงานปกติ");
+    expect(json).not.toContain("สถานะ Cron");
+  });
+
+  it("lists failing and stale crons", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      cronHealth: {
+        totalJobs: 20,
+        failures: [{ job: "streak-nudge", count: 1, lastError: "timeout: ไม่มีการบันทึกจบงาน" }],
+        stale: [{ job: "exam-watch", lastRunAt: "2026-09-23T00:30:00Z" }],
+      },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("สถานะ Cron");
+    expect(json).toContain("streak-nudge ล้มเหลว 1 ครั้ง — timeout");
+    expect(json).toContain("exam-watch ไม่ได้รันตามรอบ");
+  });
 });
 
 describe("buildNewLongCaseBubble", () => {

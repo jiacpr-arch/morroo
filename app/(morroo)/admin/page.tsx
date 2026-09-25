@@ -24,6 +24,7 @@ import {
   Flag,
   HeartPulse,
   Ticket,
+  Timer,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -411,6 +412,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">ดูสถานะการโพสต์ Instagram และกด retry บทความที่ failed</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/crons">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-slate-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Timer className="h-5 w-5 text-slate-600" />
+                <h3 className="font-bold">สถานะ Cron</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูว่า cron แต่ละงานรันล่าสุดเมื่อไร สำเร็จหรือล้มเหลว และงานที่ไม่ได้รันตามรอบ</p>
             </CardContent>
           </Card>
         </Link>

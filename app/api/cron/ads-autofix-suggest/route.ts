@@ -25,6 +25,7 @@ import {
   pickFindingsToSuggest,
   runRiskChecks,
 } from "@/lib/ads-page-suggester";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -36,7 +37,7 @@ function isAuthorized(request: Request): boolean {
   return Boolean(process.env.CRON_SECRET) && auth === `Bearer ${process.env.CRON_SECRET}`;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -132,3 +133,5 @@ export async function GET(request: Request) {
     errors,
   });
 }
+
+export const GET = withCronRun("ads-autofix-suggest", handleGet, { authorize: isAuthorized });
