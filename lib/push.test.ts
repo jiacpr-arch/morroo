@@ -8,6 +8,7 @@ vi.mock("web-push", () => {
 
 import webpush from "web-push";
 import {
+  isAllowedPushEndpoint,
   isGoneError,
   isPushConfigured,
   parseSubscriptionJson,
@@ -29,7 +30,7 @@ function setVapidEnv() {
 }
 
 function sub(id: string, userId = "u1"): PushSubscriptionRow {
-  return { id, user_id: userId, endpoint: `https://push.example/${id}`, p256dh: "p", auth: "a" };
+  return { id, user_id: userId, endpoint: `https://fcm.googleapis.com/fcm/send/${id}`, p256dh: "p", auth: "a" };
 }
 
 /** Records delete/update calls; select resolves to `rows`. */
@@ -137,7 +138,10 @@ describe("sendPushToSubscriptions", () => {
     expect(setVapidDetails).toHaveBeenCalledWith("mailto:test@morroo.com", "pub", "priv");
     expect(sendNotification).toHaveBeenCalledTimes(2);
     const [target, body] = sendNotification.mock.calls[0];
-    expect(target).toEqual({ endpoint: "https://push.example/s1", keys: { p256dh: "p", auth: "a" } });
+    expect(target).toEqual({
+      endpoint: "https://fcm.googleapis.com/fcm/send/s1",
+      keys: { p256dh: "p", auth: "a" },
+    });
     expect(JSON.parse(body as string)).toEqual(payload);
     expect(calls.updated).toEqual([["s1", "s2"]]);
     expect(calls.deleted).toEqual([]);
@@ -180,6 +184,19 @@ describe("sendPushToSubscriptions", () => {
     const { client } = fakeSupabase([], { message: "boom" });
     const res = await sendPushToSubscriptions(client, [sub("s1")], { title: "t", body: "b" });
     expect(res.removed).toBe(0);
+  });
+
+  it("never POSTs to a non-allowlisted endpoint (pre-existing rows)", async () => {
+    setVapidEnv();
+    sendNotification.mockResolvedValue({ statusCode: 201, body: "", headers: {} });
+    const { client, calls } = fakeSupabase();
+    const evil = { ...sub("evil"), endpoint: "https://169.254.169.254/latest/meta-data" };
+    const res = await sendPushToSubscriptions(client, [sub("ok"), evil], { title: "t", body: "b" });
+
+    expect(res).toEqual({ skipped: false, sent: 1, failed: 1, removed: 0 });
+    expect(sendNotification).toHaveBeenCalledTimes(1);
+    expect(sendNotification.mock.calls[0][0].endpoint).toBe("https://fcm.googleapis.com/fcm/send/ok");
+    expect(calls.updated).toEqual([["ok"]]);
   });
 
   it("returns early for an empty list", async () => {
@@ -236,5 +253,42 @@ describe("parseSubscriptionJson", () => {
   it("rejects non-https endpoints", () => {
     expect(parseSubscriptionJson({ ...valid, endpoint: "http://localhost:5432/x" })).toBeNull();
     expect(parseSubscriptionJson({ ...valid, endpoint: "not a url" })).toBeNull();
+  });
+
+  it("rejects https endpoints outside the push-service allowlist", () => {
+    expect(parseSubscriptionJson({ ...valid, endpoint: "https://evil.example/x" })).toBeNull();
+    expect(parseSubscriptionJson({ ...valid, endpoint: "https://10.0.0.1/x" })).toBeNull();
+  });
+});
+
+describe("isAllowedPushEndpoint", () => {
+  it.each([
+    "https://fcm.googleapis.com/fcm/send/abc",
+    "https://android.googleapis.com/gcm/send/abc",
+    "https://updates.push.services.mozilla.com/wpush/v2/abc",
+    "https://web.push.apple.com/QAbc",
+    "https://api.push.apple.com/3/device/abc",
+    "https://wns2-par02p.notify.windows.com/w/?token=abc",
+    "https://db5.notify.windows.com/?token=abc",
+    "https://FCM.GoogleAPIs.com/fcm/send/abc",
+  ])("accepts %s", (endpoint) => {
+    expect(isAllowedPushEndpoint(endpoint)).toBe(true);
+  });
+
+  it.each([
+    "http://fcm.googleapis.com/fcm/send/abc", // not https
+    "https://fcm.googleapis.com:8443/fcm/send/abc", // non-default port
+    "https://user:pw@fcm.googleapis.com/fcm/send/abc", // credentials
+    "https://storage.googleapis.com/bucket/x", // other googleapis service
+    "https://fcm.googleapis.com.evil.example/x", // suffix trick
+    "https://evilpush.apple.com/x", // no dot boundary
+    "https://notify.windows.com.attacker.net/x",
+    "https://localhost/x",
+    "https://127.0.0.1/x",
+    "https://169.254.169.254/latest/meta-data",
+    "not a url",
+    "",
+  ])("rejects %s", (endpoint) => {
+    expect(isAllowedPushEndpoint(endpoint)).toBe(false);
   });
 });

@@ -53,7 +53,18 @@ export default function PushToggle() {
       try {
         const reg = await navigator.serviceWorker.getRegistration("/");
         const sub = reg ? await reg.pushManager.getSubscription() : null;
-        if (!cancelled) setStatus(sub ? "on" : "off");
+        if (cancelled) return;
+        setStatus(sub ? "on" : "off");
+        // The browser subscription outlives logins: re-save it so the row
+        // belongs to whoever is signed in now (the upsert moves it off a
+        // previous account on a shared device). Best-effort, fire and forget.
+        if (sub) {
+          fetch("/api/push/subscribe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ subscription: sub.toJSON() }),
+          }).catch(() => {});
+        }
       } catch {
         if (!cancelled) setStatus("off");
       }

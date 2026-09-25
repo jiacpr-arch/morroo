@@ -59,6 +59,29 @@ export function readPushEnv(): PushEnv | null {
   };
 }
 
+/**
+ * Logout hook: drop this browser's push subscription (server row + browser
+ * subscription) so a shared device stops getting the previous account's
+ * reminders and the next account starts with the toggle off. Must run BEFORE
+ * signOut — the DELETE needs the session. Best-effort and time-boxed: never
+ * throws, never holds logout up for more than ~2s.
+ */
+export async function unsubscribePushOnLogout(): Promise<void> {
+  if (typeof navigator === "undefined" || !("serviceWorker" in navigator)) return;
+  const work = (async () => {
+    const reg = await navigator.serviceWorker.getRegistration("/");
+    const sub = reg ? await reg.pushManager.getSubscription() : null;
+    if (!sub) return;
+    await fetch("/api/push/subscribe", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ endpoint: sub.endpoint }),
+    }).catch(() => {});
+    await sub.unsubscribe();
+  })().catch(() => {});
+  await Promise.race([work, new Promise<void>((resolve) => setTimeout(resolve, 2000))]);
+}
+
 /** VAPID public key (base64url) → the BufferSource pushManager.subscribe wants. */
 export function urlBase64ToUint8Array(base64String: string): Uint8Array<ArrayBuffer> {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
