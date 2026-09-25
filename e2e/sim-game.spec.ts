@@ -202,6 +202,9 @@ test("first-time player is told where to tap, and only once", async ({ page }) =
  * ซึ่งมี unit test คุมอยู่แล้วที่ lib/casegame/recommend.test.ts
  */
 test("debrief suggests what to play next, with a reason", async ({ page }) => {
+  // เดินเรื่องทั้งเคสจนถึง debrief ใช้ ~30s บน production build — เกิน timeout
+  // ปกติ 30s (toPass ข้างล่างรอได้ถึง 120s อยู่แล้ว) จึงขยายเป็น 3 เท่าแบบเทสด้านบน
+  test.slow();
   await page.route("**/api/casegame/recommend", async (route) => {
     const body = route.request().postDataJSON() as { excludeSlug?: string };
     expect(body.excludeSlug).toBe("lc-testicular-torsion-01");
