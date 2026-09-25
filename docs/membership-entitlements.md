@@ -107,3 +107,45 @@
   → ตอน fulfil บันทึกการใช้ผ่าน RPC `redeem_coupon_code` และเก็บ `coupon_redemptions.stripe_session_id`
 - ราคาหลังหักไม่ต่ำกว่า ฿10 (ขั้นต่ำของ Stripe สำหรับ THB)
 - สร้างคูปองที่ `/admin/coupons` มีช่อง "ให้แพ็ก / รายการ" (free) หรือ "ใช้กับแพ็ก" (discount)
+- ลิงก์ `/payment/<plan>?coupon=CODE` เติมโค้ดและกดใช้ให้อัตโนมัติ
+
+## ไม่ต่ออายุ / win-back (cancellation_feedback)
+
+แพ็กทุกตัวเป็น **จ่ายครั้งเดียว** (Stripe Checkout `mode: "payment"`) ไม่มี subscription ให้ยกเลิก/พัก
+จุด "ยกเลิก" จึงเป็นตอนแพ็กหรือ trial 7 วันหมดแล้วไม่ซื้อต่อ:
+
+- หน้า `/renewal` (3 ขั้น): เลือกเหตุผล (สอบเสร็จแล้ว / แพงไป / ไม่ค่อยได้ใช้ / เนื้อหาไม่ตรง / อื่นๆ + ข้อความ)
+  → ข้อเสนอตามเหตุผล (`lib/winback.ts` `selectWinbackOffer`) → รับข้อเสนอ (ไป `/payment/<plan>?coupon=…`) หรือยืนยันไม่ต่อ
+- เปิดได้เมื่อแพ็กเหลือ ≤ 3 วันหรือหมดแล้ว (`isLapseEligible`) — ลิงก์จากหน้าโปรไฟล์ และข้อความ D+1
+  หลังหมดอายุใน cron `app/api/line/expiry-warning` (LINE ถ้าผูกไว้ ไม่งั้นอีเมล; dedupe `trial_messages_sent.days_before_expiry = -1`)
+- ส่วนลด = แถวใหม่ใน `coupon_codes` (`source = 'winback'`, `discount_percent`, ใช้ได้ 1 ครั้ง, ผูกกับแพ็กที่จะต่อ)
+  ออกใหม่ได้ 1 ครั้งต่อ 60 วันต่อผู้ใช้ — "สอบเสร็จแล้ว" ได้โค้ดอายุ 6 เดือนแทนการ "พักสมาชิก"
+- บันทึกใน `cancellation_feedback` — migration `supabase/migrations/20260925_cancellation_feedback.sql`
+- Admin: `/admin/winback` — สัดส่วนเหตุผล, อัตรากดรับ / ใช้โค้ดจริง (`coupon_redemptions`), และ trial → จ่ายเงิน
+  (`redeem_codes` monthly_1m เทียบ `payment_orders` approved)
+
+## แพ็กเกจกลุ่ม / สถาบัน (organizations) — MVP
+
+สำหรับคณะแพทย์ / ติวเตอร์ / กลุ่มเพื่อน — **ชำระเงินนอกระบบ** (ใบแจ้งหนี้ / โอน) แล้ว admin สร้างกลุ่มเอง
+— migration `supabase/migrations/20260925_organizations.sql`
+
+- ตาราง `organizations (id, name, seats, plan, expires_at, join_code, note, …)` และ
+  `organization_members (org_id, user_id, role 'owner'|'member', joined_at)`
+- RLS: สมาชิกอ่านกลุ่มของตัวเองได้, ผู้ใช้อ่านแถวสมาชิกของตัวเองได้, owner อ่านสมาชิกทั้งกลุ่มได้, admin อ่านได้ทั้งหมด
+  — เขียนผ่าน service role (API) เท่านั้น
+- **สิทธิ์**: `fetchEntitlements()` (`lib/entitlements.ts`) เติมแถวสังเคราะห์ `source = 'org'` หนึ่งแถวต่อ product ของ
+  `organizations.plan` (ค่าเริ่มต้น `yearly` = แพ็ก นศพ.) หมดอายุตาม `organizations.expires_at`
+  — `lib/organizations.ts` `orgEntitlementRows`. ไม่มีการเขียนลง `membership_entitlements` หรือ `profiles.membership_type`
+  ดังนั้นสิทธิ์จบเองทันทีเมื่อกลุ่มหมดอายุหรือสมาชิกถูกลบ
+- กติกาใน `resolveAccess`: แถว org เป็นแบบ **บวกเพิ่ม** — ไม่นับเป็น "มีแถวแล้ว" (ไม่ปิด legacy fallback),
+  products = สิทธิ์ส่วนตัว ∪ สิทธิ์จากกลุ่ม; `deriveLegacyMembership` ตัดแถว org ทิ้งเสมอ
+  (`syncLegacyMembership` และ `/api/admin/membership` ใช้ `fetchEntitlements(..., { includeOrg: false })`)
+- ที่นั่ง: ทุกแถวสมาชิก (รวม owner) = 1 ที่นั่ง; การเข้าร่วมเช็คผ่าน RPC `join_organization` (lock แถว org กันแย่งที่นั่งพร้อมกัน)
+
+| หน้า / API | ใช้ทำอะไร |
+|---|---|
+| `/admin/organizations` · `/api/admin/organizations[/id]` | สร้างกลุ่ม, ตั้งที่นั่ง/แพ็ก/วันหมดอายุ, ตั้งผู้ดูแลด้วยอีเมล, สร้างรหัสใหม่, ลบกลุ่ม |
+| `/org/join/<code>` · `POST /api/org/join` | สมาชิกกดเข้าร่วม (ต้องล็อกอิน) |
+| `/org` | owner: แดชบอร์ดสมาชิก (MCQ ที่ทำ, ความแม่นยำ, ใช้งานล่าสุด, streak), ลบสมาชิก, คัดลอกลิงก์เชิญ, Export CSV · คนทั่วไป: ช่องใส่รหัสกลุ่ม |
+| `DELETE /api/org/members` | owner / admin ลบสมาชิก (ลบ owner ได้เฉพาะ admin) |
+| `/pricing#group` | CTA "สำหรับกลุ่ม/สถาบัน" → LINE OA |

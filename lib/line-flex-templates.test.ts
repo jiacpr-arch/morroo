@@ -17,6 +17,7 @@ import {
   buildWeeklySummaryFlex,
   buildExpiryWarningMessage,
   buildStreakNudgeFlex,
+  buildMcqReviewReminderFlex,
   buildExamResultFlex,
   buildChatbotCard,
   abbreviateRunError,
@@ -394,6 +395,28 @@ describe("buildAdminDigestFlex — reengage experiment readout", () => {
     const msg = buildAdminDigestFlex({ ...BASE, reengageExperiment: null });
     expect(JSON.stringify(msg.type === "flex" ? msg.contents : {})).not.toContain("ทดลอง MCQ");
   });
+
+  it("shows an all-clear cron line when nothing failed or went stale", () => {
+    const msg = buildAdminDigestFlex({ ...BASE, cronHealth: { totalJobs: 20, failures: [], stale: [] } });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("Cron ทั้ง 20 งานทำงานปกติ");
+    expect(json).not.toContain("สถานะ Cron");
+  });
+
+  it("lists failing and stale crons", () => {
+    const msg = buildAdminDigestFlex({
+      ...BASE,
+      cronHealth: {
+        totalJobs: 20,
+        failures: [{ job: "streak-nudge", count: 1, lastError: "timeout: ไม่มีการบันทึกจบงาน" }],
+        stale: [{ job: "exam-watch", lastRunAt: "2026-09-23T00:30:00Z" }],
+      },
+    });
+    const json = JSON.stringify(msg.type === "flex" ? msg.contents : {});
+    expect(json).toContain("สถานะ Cron");
+    expect(json).toContain("streak-nudge ล้มเหลว 1 ครั้ง — timeout");
+    expect(json).toContain("exam-watch ไม่ได้รันตามรอบ");
+  });
 });
 
 describe("buildNewLongCaseBubble", () => {
@@ -577,6 +600,20 @@ describe("LIFF deep links on customer-facing Flex buttons", () => {
     });
     const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
     expect(uris).toContain(`https://liff.line.me/${LIFF_ID}/nl/practice?utm_source=line`);
+  });
+
+  it("rewrites the review button and states the due count on the mcq-review reminder", () => {
+    process.env.NEXT_PUBLIC_LIFF_ID = LIFF_ID;
+    const flex = buildMcqReviewReminderFlex({
+      name: "หมอตัวอย่าง",
+      dueCount: 7,
+      reviewUrl: "https://www.morroo.com/nl/practice?mode=review&utm_source=line",
+    });
+    expect((flex as { altText: string }).altText).toBe("วันนี้มี 7 ข้อที่ถึงรอบทบทวน");
+    const uris = collectActions((flex as { contents: unknown }).contents).map((a) => a.uri);
+    expect(uris).toContain(
+      `https://liff.line.me/${LIFF_ID}/nl/practice?mode=review&utm_source=line`
+    );
   });
 
   it("rewrites the dashboard/exams buttons on an exam-result card", () => {

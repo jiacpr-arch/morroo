@@ -17,6 +17,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { broadcastLineMessages, checkLineQuota } from "@/lib/line";
 import { buildBlogDigestCarousel, BLOG_DIGEST_MAX_POSTS } from "@/lib/line-flex-templates";
 import { ensureLineCover } from "@/app/api/autopost/retry/route";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -32,7 +33,7 @@ function isAuthorized(request: Request): boolean {
   return Boolean(process.env.CRON_SECRET) && auth === `Bearer ${process.env.CRON_SECRET}`;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -96,3 +97,5 @@ export async function GET(request: Request) {
   }
   return NextResponse.json({ sent: 1, articles: slugs.length, slugs });
 }
+
+export const GET = withCronRun("line-weekly-blog-digest", handleGet, { authorize: isAuthorized });

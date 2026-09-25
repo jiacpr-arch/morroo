@@ -107,6 +107,12 @@ async function MockContent({ specialty }: { specialty: string }) {
       <McqMock
         questions={sample.questions}
         timeLimitMinutes={timeLimitMinutes}
+        cohort={{
+          audience: "board",
+          boardSpecialty: specialty,
+          label: `Mock บอร์ด${s.name_th}`,
+          path: `/board/${specialty}/mock`,
+        }}
       />
     </div>
   );

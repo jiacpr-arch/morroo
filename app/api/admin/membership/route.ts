@@ -137,7 +137,7 @@ export async function POST(request: Request) {
 
   const admin = createAdminClient();
   const [entitlements, { data: profile }] = await Promise.all([
-    fetchEntitlements(admin, userId),
+    fetchEntitlements(admin, userId, { includeOrg: false }),
     admin
       .from("profiles")
       .select("membership_type, membership_expires_at")

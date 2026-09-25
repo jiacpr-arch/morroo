@@ -26,6 +26,7 @@ import {
   entitledScopes,
 } from "@/lib/membership";
 import type { ItemSpec } from "@/lib/items";
+import { fetchOrgEntitlements } from "@/lib/organizations";
 
 export type EntitlementSource =
   | "stripe"
@@ -35,7 +36,9 @@ export type EntitlementSource =
   | "coupon"
   | "referral"
   | "reward"
-  | "backfill";
+  | "backfill"
+  /** Synthetic, never stored — see lib/organizations.ts orgEntitlementRows. */
+  | "org";
 
 export interface EntitlementRow extends EntitlementLike {
   user_id: string;
@@ -50,21 +53,42 @@ export interface EntitlementRow extends EntitlementLike {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyClient = SupabaseClient<any, any, any>;
 
-/** All entitlement rows for one user (active and expired). */
+export interface FetchEntitlementsOptions {
+  /**
+   * Append synthetic `source = 'org'` rows for the user's group / institution
+   * memberships (default true). Pass false where only the user's own stored
+   * rows matter: legacy-summary sync and the admin grant editor.
+   */
+  includeOrg?: boolean;
+}
+
+/**
+ * All entitlement rows for one user (active and expired) — the single place
+ * every access check reads from, so group plans (lib/organizations.ts) apply
+ * everywhere personal plans do. Org rows are additive in resolveAccess.
+ */
 export async function fetchEntitlements(
   supabase: AnyClient,
-  userId: string
+  userId: string,
+  opts: FetchEntitlementsOptions = {}
 ): Promise<EntitlementRow[]> {
-  const { data, error } = await supabase
-    .from("membership_entitlements")
-    .select("user_id, product, scope, expires_at, source, reference, updated_at")
-    .eq("user_id", userId);
-  if (error) {
-    // Table missing (migration not applied yet) → fall back to legacy columns.
-    console.error("fetchEntitlements failed:", error.message);
-    return [];
-  }
-  return (data ?? []) as EntitlementRow[];
+  const includeOrg = opts.includeOrg ?? true;
+  const [own, org] = await Promise.all([
+    supabase
+      .from("membership_entitlements")
+      .select("user_id, product, scope, expires_at, source, reference, updated_at")
+      .eq("user_id", userId)
+      .then(({ data, error }: { data: unknown; error: { message: string } | null }) => {
+        if (error) {
+          // Table missing (migration not applied yet) → fall back to legacy columns.
+          console.error("fetchEntitlements failed:", error.message);
+          return [] as EntitlementRow[];
+        }
+        return (data ?? []) as EntitlementRow[];
+      }),
+    includeOrg ? fetchOrgEntitlements(supabase, userId) : Promise.resolve([]),
+  ]);
+  return [...own, ...org];
 }
 
 /**
@@ -244,7 +268,7 @@ export async function syncLegacyMembership(
       .select("membership_type")
       .eq("id", userId)
       .maybeSingle(),
-    fetchEntitlements(admin, userId),
+    fetchEntitlements(admin, userId, { includeOrg: false }),
   ]);
   const derived = deriveLegacyMembership(
     entitlements,

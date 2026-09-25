@@ -17,6 +17,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { planPriceText } from "@/lib/membership";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -178,13 +179,15 @@ async function run(): Promise<Summary | { skipped: true; reason: string; remaini
   return summary;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const summary = await run();
   return NextResponse.json({ ok: true, ...summary });
 }
+
+export const GET = withCronRun("signup-drip", handleGet, { authorize: isAuthorized });
 
 export async function POST(request: Request) {
   return GET(request);

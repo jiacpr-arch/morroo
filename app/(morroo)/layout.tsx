@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Sarabun } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
@@ -19,6 +19,7 @@ import SignupConversion from "@/components/analytics/SignupConversion";
 import PostHogInit from "@/components/PostHogInit";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import FirstVisitNudge from "@/components/FirstVisitNudge";
+import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
 import "../globals.css";
 
 const GA_ID = "G-D7FX2CK8JY";
@@ -93,11 +94,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.morroo.com",
   },
+  // PWA: manifest served by app/(morroo)/manifest.webmanifest/route.ts.
+  manifest: "/manifest.webmanifest",
+  icons: {
+    apple: "/icons/apple-touch-icon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "หมอรู้",
+    statusBarStyle: "default",
+  },
   // FB requires fb:app_id meta on all pages that should be shareable via
   // Graph API `link` param — without it FB rejects with "url is invalid".
   other: {
     "fb:app_id": "1524889459310260",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#16A085",
 };
 
 const organizationSchema = {
@@ -238,6 +253,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <PostHogInit />
+        <ServiceWorkerRegister />
         <Suspense fallback={null}>
           <AnalyticsPageviewTracker />
         </Suspense>

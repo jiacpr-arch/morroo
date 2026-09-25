@@ -20,6 +20,7 @@ import type { DifficultyLevel } from "@/lib/types-standard";
 import Link from "next/link";
 import {
   saveMcqAttempt,
+  recordMcqReview,
   createMcqSession,
   updateMcqSession,
 } from "@/lib/supabase/mutations-mcq";
@@ -27,6 +28,7 @@ import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 import McqAiChat from "@/components/McqAiChat";
 import ReportErrorButton from "@/components/ReportErrorButton";
+import McqDiscussion from "@/components/McqDiscussion";
 import { useBeta } from "@/components/beta/BetaProvider";
 import BetaCheckpointSurvey from "@/components/beta/BetaCheckpointSurvey";
 import BetaExitSurvey from "@/components/beta/BetaExitSurvey";
@@ -202,6 +204,13 @@ export default function McqPractice({
           // Silently fail — don't block UI
         });
 
+        // NL only — the review queue and ?mode=review are student-audience.
+        // Wrong → enters/resets the queue; right on a due question → next
+        // interval. Never throws.
+        if (sessionAudience === "student") {
+          void recordMcqReview(userId, question.id, isCorrect);
+        }
+
         // Beta: optimistic counter bump + checkpoint survey triggers.
         if (isBeta) {
           recordAttempt();
@@ -233,6 +242,7 @@ export default function McqPractice({
       sessionAnswered,
       effectiveLimit,
       viaRecommendation,
+      sessionAudience,
     ]
   );
 
@@ -586,6 +596,12 @@ export default function McqPractice({
             choiceLabels={question.choices.map((c) => c.label)}
           />
         </div>
+      )}
+
+      {/* Discussion thread — only after answering so comments can't spoil
+          the answer. Reading/posting is free for signed-in users. */}
+      {showResult && (
+        <McqDiscussion key={question.id} questionId={question.id} userId={userId} />
       )}
 
       {/* AI Chat - ask questions about this MCQ */}

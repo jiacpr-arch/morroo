@@ -51,10 +51,14 @@ const PROMPTPAY_ENABLED =
 
 export default function PaymentPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ plan: string }>;
+  searchParams: Promise<{ coupon?: string }>;
 }) {
   const { plan } = use(params);
+  // ?coupon=CODE — prefilled and auto-applied (win-back offer links from /renewal).
+  const presetCoupon = (use(searchParams).coupon ?? "").trim().toUpperCase();
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -70,7 +74,7 @@ export default function PaymentPage({
   const [stripeLoading, setStripeLoading] = useState(false);
 
   // Discount coupon (validated server-side; price shown after the check)
-  const [couponInput, setCouponInput] = useState("");
+  const [couponInput, setCouponInput] = useState(presetCoupon);
   const [coupon, setCoupon] = useState<{ code: string; finalAmount: number; discount: number } | null>(null);
   const [couponError, setCouponError] = useState("");
   const [couponChecking, setCouponChecking] = useState(false);
@@ -151,8 +155,8 @@ export default function PaymentPage({
     trackInitiateCheckout({ plan, value: trackedPrice, currency: "THB" });
   }, [plan, trackedPrice]);
 
-  const applyCoupon = async () => {
-    const code = couponInput.trim().toUpperCase();
+  const applyCoupon = async (raw: string = couponInput) => {
+    const code = raw.trim().toUpperCase();
     if (!code) return;
     setCouponChecking(true);
     setCouponError("");
@@ -175,6 +179,15 @@ export default function PaymentPage({
     }
     setCouponChecking(false);
   };
+
+  // Auto-apply a preset code once the user is known (coupon-check needs auth).
+  const [presetApplied, setPresetApplied] = useState(false);
+  useEffect(() => {
+    if (!presetCoupon || presetApplied || !user) return;
+    setPresetApplied(true);
+    void applyCoupon(presetCoupon);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [presetCoupon, presetApplied, user]);
 
   const payAmount = coupon ? coupon.finalAmount : planInfo?.price ?? 0;
 
@@ -322,7 +335,7 @@ export default function PaymentPage({
                   type="button"
                   variant="outline"
                   disabled={couponChecking || !couponInput.trim()}
-                  onClick={applyCoupon}
+                  onClick={() => applyCoupon()}
                 >
                   {couponChecking ? <Loader2 className="h-4 w-4 animate-spin" /> : "ใช้โค้ด"}
                 </Button>

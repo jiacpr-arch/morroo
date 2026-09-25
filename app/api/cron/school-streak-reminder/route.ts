@@ -10,6 +10,7 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, checkLineQuota } from "@/lib/line";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -35,7 +36,7 @@ function todayBangkok(): string {
   return tzNow.toISOString().slice(0, 10);
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -77,3 +78,5 @@ export async function GET(request: Request) {
 
   return NextResponse.json({ ok: true, candidates: streaks?.length ?? 0, sent });
 }
+
+export const GET = withCronRun("school-streak-reminder", handleGet, { authorize: isAuthorized });

@@ -17,6 +17,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createAnthropic } from "@/lib/anthropic";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { loadBookContext } from "@/lib/school/book-context";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -113,7 +114,7 @@ interface QuestionRow {
   question: string;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -163,6 +164,8 @@ export async function GET(request: Request) {
     details: summary,
   });
 }
+
+export const GET = withCronRun("school-enrich", handleGet, { authorize: isAuthorized });
 
 async function enrichTopic(
   supabase: ReturnType<typeof createAdminClient>,

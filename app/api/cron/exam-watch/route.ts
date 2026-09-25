@@ -20,6 +20,7 @@ import {
   diffNewLines,
   extractAnnouncementLines,
 } from "@/lib/exam-watch";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -42,7 +43,7 @@ function isAuthorized(request: Request): boolean {
   return false;
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -122,3 +123,5 @@ export async function GET(request: Request) {
     notified,
   });
 }
+
+export const GET = withCronRun("exam-watch", handleGet, { authorize: isAuthorized });

@@ -11,7 +11,7 @@ import LandingPageTracker from "@/components/LandingPageTracker";
 import FreeTrialBanner from "@/components/FreeTrialBanner";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft, RotateCcw, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
@@ -21,6 +21,7 @@ import { fetchEntitlements } from "@/lib/entitlements";
 import { ITEM_PRICES, itemPlanType, mcqSubjectPrice } from "@/lib/items";
 import ItemUpsell from "@/components/ItemUpsell";
 import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
+import { getDueReviewQuestions, getMcqReviewDueCount } from "@/lib/mcq-review";
 import type { McqQuestion, McqSubject } from "@/lib/types-mcq";
 
 export const metadata: Metadata = {
@@ -51,11 +52,13 @@ async function PracticeContent({
   subjectId,
   category,
   recommended,
+  review,
   pinnedQuestionId,
 }: {
   subjectId?: string;
   category?: string;
   recommended?: boolean;
+  review?: boolean;
   pinnedQuestionId?: string;
 }) {
   const supabase = await createClient();
@@ -117,6 +120,13 @@ async function PracticeContent({
   // Recommended mode requires a signed-in user with history. Fall back
   // to the normal random pool otherwise.
   const useRecommended = recommended && !!user;
+  // Review mode (ทบทวนข้อที่ผิด) serves the user's SRS queue — see
+  // lib/mcq-review.ts. Also signed-in only.
+  const useReview = review && !!user;
+  // Selected-mode flags for the toggle; subject filter + upsell only apply
+  // to the manual pool.
+  const isManual = !useRecommended && !useReview;
+  const reviewDueCount = user ? await getMcqReviewDueCount(supabase, user.id) : 0;
 
   const allNl2Subjects = await getMcqSubjects("NL2");
   // Hide subjects that have no questions yet — there's nothing to practice
@@ -153,7 +163,9 @@ async function PracticeContent({
   let questions: McqQuestion[];
   let recBreakdown: Awaited<ReturnType<typeof getRecommendedQuestions>>["breakdown"] | null = null;
 
-  if (useRecommended && user) {
+  if (useReview && user) {
+    questions = await getDueReviewQuestions(supabase, user.id, { limit: 20 });
+  } else if (useRecommended && user) {
     const rec = await getRecommendedQuestions(supabase, user.id, {
       examType: "NL2",
       limit: 20,
@@ -176,7 +188,7 @@ async function PracticeContent({
     });
   }
 
-  if (pinnedQuestion) {
+  if (pinnedQuestion && !useReview) {
     // Always show the deep-linked question first; McqPractice renders
     // questions[currentIndex] in order, no client-side shuffle.
     questions = [
@@ -190,7 +202,7 @@ async function PracticeContent({
     : null;
   // Once a subject is picked, the chip grid collapses to a one-line summary
   // so the questions aren't pushed below the fold on mobile.
-  const hasSelection = !useRecommended && (isInternalMed || !!currentSubject);
+  const hasSelection = isManual && (isInternalMed || !!currentSubject);
   const selectionLabel = isInternalMed
     ? "🩺 อายุรกรรม"
     : currentSubject
@@ -240,6 +252,22 @@ async function PracticeContent({
         </div>
       )}
 
+      {/* Review banner */}
+      {useReview && (
+        <div className="mb-6 rounded-xl border border-violet-200 bg-gradient-to-r from-violet-50 to-brand/5 px-4 py-3">
+          <div className="flex items-center gap-2 mb-1">
+            <RotateCcw className="h-4 w-4 text-violet-600" />
+            <span className="text-sm font-semibold text-violet-700">
+              ทบทวนข้อที่ผิด — ข้อที่ถึงรอบทบทวนวันนี้
+            </span>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            ตอบถูก ระบบจะเว้นระยะก่อนถามซ้ำให้นานขึ้น (1 → 3 → 8 → 20 วัน …) ·
+            ตอบผิด กลับมาเริ่มทบทวนใหม่พรุ่งนี้
+          </p>
+        </div>
+      )}
+
       {/* Mode toggle */}
       {user && (
         <div className="mb-3 flex flex-wrap gap-2 sm:mb-4">
@@ -253,11 +281,29 @@ async function PracticeContent({
               <Sparkles className="h-3 w-3" /> แนะนำให้คุณ
             </Badge>
           </Link>
+          <Link href="/nl/practice?mode=review">
+            <Badge
+              variant={useReview ? "default" : "secondary"}
+              className={`cursor-pointer gap-1 ${
+                useReview ? "bg-brand text-white" : "hover:bg-brand/10"
+              }`}
+            >
+              <RotateCcw className="h-3 w-3" /> ทบทวนข้อที่ผิด
+              {reviewDueCount > 0 && (
+                <span
+                  className="ml-0.5 inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-red-500 px-1.5 text-[10px] font-bold leading-4 text-white"
+                  aria-label={`ถึงรอบทบทวน ${reviewDueCount} ข้อ`}
+                >
+                  {reviewDueCount > 99 ? "99+" : reviewDueCount}
+                </span>
+              )}
+            </Badge>
+          </Link>
           <Link href="/nl/practice">
             <Badge
-              variant={!useRecommended ? "default" : "secondary"}
+              variant={isManual ? "default" : "secondary"}
               className={`cursor-pointer ${
-                !useRecommended ? "bg-brand text-white" : "hover:bg-brand/10"
+                isManual ? "bg-brand text-white" : "hover:bg-brand/10"
               }`}
             >
               เลือกเอง
@@ -266,8 +312,8 @@ async function PracticeContent({
         </div>
       )}
 
-      {/* Subject Filter — hidden in recommended mode */}
-      {!useRecommended && (
+      {/* Subject Filter — manual mode only */}
+      {isManual && (
         <details
           className="group/subjects mb-4 sm:mb-6"
           open={!hasSelection}
@@ -374,12 +420,16 @@ async function PracticeContent({
       {/* Info — once a subject is picked, the collapsed summary shows this */}
       {!hasSelection && (
         <div className="mb-4 text-sm text-muted-foreground sm:mb-6">
-          {useRecommended ? "ชุดแนะนำ" : "คละทุกสาขา"} — {questions.length} ข้อ
+          {useReview
+            ? "ถึงรอบทบทวน"
+            : useRecommended
+              ? "ชุดแนะนำ"
+              : "คละทุกสาขา"} — {questions.length} ข้อ
         </div>
       )}
 
       {/* Buy just this subject — shown in context, not on /pricing */}
-      {user && !isPremium && !useRecommended && (isInternalMed || currentSubject) && (
+      {user && !isPremium && isManual && (isInternalMed || currentSubject) && (
         <ItemUpsell
           collapsible
           className="mb-4 sm:mb-6"
@@ -414,6 +464,19 @@ async function PracticeContent({
           freeLimit={FREE_LIMIT}
           viaRecommendation={useRecommended}
         />
+      ) : useReview ? (
+        <div className="text-center py-16 text-muted-foreground">
+          <p className="text-lg">🎉 วันนี้ไม่มีข้อที่ถึงรอบทบทวน</p>
+          <p className="text-sm mt-1">
+            ข้อที่ตอบผิดจะถูกเก็บไว้ให้กลับมาทบทวนตามรอบโดยอัตโนมัติ
+          </p>
+          <Link
+            href="/nl/practice?mode=recommended"
+            className="text-brand hover:underline mt-2 inline-block"
+          >
+            ทำชุดแนะนำต่อ
+          </Link>
+        </div>
       ) : (
         <div className="text-center py-16 text-muted-foreground">
           <p className="text-lg">ยังไม่มีข้อสอบในสาขานี้</p>
@@ -442,6 +505,7 @@ export default async function PracticePage({
   const params = await searchParams;
   const { subject, category, mode, q } = params;
   const recommended = mode === "recommended";
+  const review = mode === "review";
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6 sm:py-8 lg:px-8">
@@ -466,6 +530,7 @@ export default async function PracticePage({
           subjectId={subject}
           category={category}
           recommended={recommended}
+          review={review}
           pinnedQuestionId={q}
         />
       </Suspense>

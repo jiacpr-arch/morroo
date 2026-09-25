@@ -68,6 +68,7 @@ function fakeSupabase(opts: FakeOpts = {}) {
   } = opts;
 
   const mcqAttemptsInsert = vi.fn(() => Promise.resolve({ error: null }));
+  const reviewQueueUpsert = vi.fn(() => Promise.resolve({ error: null }));
 
   const client = {
     rpc(name: string, args: Record<string, unknown>) {
@@ -152,11 +153,23 @@ function fakeSupabase(opts: FakeOpts = {}) {
           }),
         };
       }
+      if (table === "mcq_review_queue") {
+        return {
+          select: () => ({
+            eq: () => ({
+              eq: () => ({
+                maybeSingle: () => Promise.resolve({ data: null, error: null }),
+              }),
+            }),
+          }),
+          upsert: reviewQueueUpsert,
+        };
+      }
       throw new Error(`unexpected table: ${table}`);
     },
   };
 
-  return { client, mcqAttemptsInsert };
+  return { client, mcqAttemptsInsert, reviewQueueUpsert };
 }
 
 beforeEach(() => {
@@ -286,6 +299,35 @@ describe("handleDailyMcqPostback — mcq_attempts mirror", () => {
     );
     expect(mcqAttemptsInsert).not.toHaveBeenCalled();
     expect(JSON.stringify(reply)).toContain("เชื่อมบัญชี");
+  });
+
+  it("queues a wrong daily answer for spaced-repetition review", async () => {
+    const { client, reviewQueueUpsert } = fakeSupabase({
+      linkedUserId: "user_1",
+      isNewAnswer: true,
+    });
+    await handleDailyMcqPostback(
+      client as never,
+      LINE_USER,
+      `action=daily_answer&d=${TODAY}&c=A&q=${QUESTION.id}`
+    );
+    expect(reviewQueueUpsert).toHaveBeenCalledWith(
+      expect.objectContaining({ user_id: "user_1", question_id: QUESTION.id, interval_days: 1 }),
+      { onConflict: "user_id,question_id" }
+    );
+  });
+
+  it("doesn't queue a correct daily answer that was never missed", async () => {
+    const { client, reviewQueueUpsert } = fakeSupabase({
+      linkedUserId: "user_1",
+      isNewAnswer: true,
+    });
+    await handleDailyMcqPostback(
+      client as never,
+      LINE_USER,
+      `action=daily_answer&d=${TODAY}&c=B&q=${QUESTION.id}`
+    );
+    expect(reviewQueueUpsert).not.toHaveBeenCalled();
   });
 });
 

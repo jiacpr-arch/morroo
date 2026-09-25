@@ -46,7 +46,7 @@ test("first-touch utm from the ad link is attached to every later event", async 
   // การนำทางไปกับ hash เองเป็นพฤติกรรมของ next/link ในแอปนี้ (คุมแยกด้วย
   // manual/smoke test เพราะ headless click กับ same-page hash anchor ไม่นิ่งพอ
   // จะยืนยันด้วย automation) เทสนี้จึงยืนยันแค่ว่า handler ยิง event ถูกต้อง
-  await page.getByRole("link", { name: /สมาชิก ฿199/ }).first().click();
+  await page.getByRole("link", { name: /สมาชิก(ใหม่)? ฿/ }).first().click();
   await expect
     .poll(() => tracked.some((e) => e.name === "pricing_cta_click" && e.props.utm_campaign === "e2e_chk"))
     .toBe(true);

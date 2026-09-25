@@ -24,6 +24,9 @@ import {
   Flag,
   HeartPulse,
   Ticket,
+  Timer,
+  Building2,
+  UserMinus,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -212,6 +215,19 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
         </Link>
+        <Link href="/admin/mcq/comments">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5 text-sky-600" />
+                <h3 className="font-bold">อภิปรายข้อสอบ (Moderation)</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ความคิดเห็นที่ถูกรายงาน/ซ่อนอัตโนมัติ — ซ่อน เปิด หรือลบ</p>
+            </CardContent>
+          </Card>
+        </Link>
         <Link href="/admin/payments">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
             <CardHeader className="pb-2">
@@ -242,6 +258,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">สิทธิ์แยกรายระบบ School · MCQ · MEQ · Long Case · Board — ให้/ต่อ/ยกเลิกทีละระบบ และกำหนด role</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/organizations">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-brand/30">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Building2 className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">กลุ่ม / สถาบัน</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">แพ็กเกจกลุ่ม — สร้างกลุ่ม ตั้งที่นั่ง/วันหมดอายุ ผู้ดูแล และรหัสเข้าร่วม</p>
             </CardContent>
           </Card>
         </Link>
@@ -388,6 +417,19 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
         </Link>
+        <Link href="/admin/winback">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-sky-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <UserMinus className="h-5 w-5 text-sky-600" />
+                <h3 className="font-bold">ไม่ต่ออายุ / Win-back</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">เหตุผลที่ไม่ต่ออายุ อัตรารับข้อเสนอส่วนลด และ conversion จาก trial → จ่ายเงิน</p>
+            </CardContent>
+          </Card>
+        </Link>
         <Link href="/admin/firstaid/vouchers">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-emerald-200">
             <CardHeader className="pb-2">
@@ -411,6 +453,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">ดูสถานะการโพสต์ Instagram และกด retry บทความที่ failed</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/crons">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-slate-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Timer className="h-5 w-5 text-slate-600" />
+                <h3 className="font-bold">สถานะ Cron</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูว่า cron แต่ละงานรันล่าสุดเมื่อไร สำเร็จหรือล้มเหลว และงานที่ไม่ได้รันตามรอบ</p>
             </CardContent>
           </Card>
         </Link>

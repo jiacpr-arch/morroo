@@ -24,6 +24,7 @@ import {
   type GhConfig,
 } from "@/lib/github-api";
 import { fetchPageStats, type PageStats } from "@/lib/ads-diagnostics";
+import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
 export const maxDuration = 120;
@@ -152,7 +153,7 @@ async function openRevertPR(
   return { number: pr.number, html_url: pr.html_url };
 }
 
-export async function GET(request: Request) {
+async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -261,3 +262,5 @@ export async function GET(request: Request) {
 
   return NextResponse.json({ ok: true, updates });
 }
+
+export const GET = withCronRun("ads-postmerge-watch", handleGet, { authorize: isAuthorized });

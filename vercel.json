@@ -70,6 +70,10 @@
       "schedule": "0 11 * * *"
     },
     {
+      "path": "/api/cron/mcq-review-reminder",
+      "schedule": "30 1 * * *"
+    },
+    {
       "path": "/api/cron/school-enrich",
       "schedule": "0 18 * * *"
     },
