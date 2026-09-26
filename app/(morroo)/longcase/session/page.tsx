@@ -9,11 +9,13 @@ import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, F
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 import { consumeSSE } from "@/lib/sse";
 import { matchResult } from "@/lib/longcase-match";
+import { toLongCaseResult, type LongCaseResult } from "@/lib/longcase-media";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import FeedbackCard from "./FeedbackCard";
 import { DictationButton, ReadReplyButton, VoiceSettings, useLongCaseVoice } from "./LongCaseVoice";
 import { appendDictation } from "./device-speech";
 import { PatientConversation } from "./PatientConversation";
+import { InvestigationImages } from "./InvestigationImages";
 
 type Phase = LongCaseSession["phase"];
 
@@ -61,7 +63,7 @@ function LongCaseSessionInner() {
 
   // Lab
   const [labOrdered, setLabOrdered] = useState<string[]>([]);
-  const [labRevealed, setLabRevealed] = useState<Record<string, { value: string; isAbnormal: boolean }>>({});
+  const [labRevealed, setLabRevealed] = useState<Record<string, LongCaseResult>>({});
   const [labKeys, setLabKeys] = useState<string[]>([]);
 
   // DDx + Management
@@ -258,11 +260,13 @@ function LongCaseSessionInner() {
         ...(data.long_case?.lab_results || {}),
         ...(data.long_case?.imaging_results || {}),
       };
-      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
-      for (const lab of labs) revealed[lab] = matchResult(lab, results) || { value: "ไม่มีผลในระบบ", isAbnormal: false };
+      const revealed: Record<string, LongCaseResult> = {};
+      for (const lab of labs) {
+        revealed[lab] = toLongCaseResult(matchResult(lab, results)) || { value: "ไม่มีผลในระบบ", isAbnormal: false };
+      }
       setLabRevealed(prev => ({ ...prev, ...revealed }));
     } catch {
-      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
+      const revealed: Record<string, LongCaseResult> = {};
       for (const lab of labs) revealed[lab] = { value: "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่", isAbnormal: false };
       setLabRevealed(prev => ({ ...prev, ...revealed }));
     }
@@ -603,7 +607,7 @@ function LongCaseSessionInner() {
                         className={`rounded-lg border p-2.5 cursor-pointer transition-colors min-w-[100px] ${ordered ? "border-blue-400 bg-white" : "border-blue-300 bg-white hover:bg-blue-100"}`}
                       >
                         <div className="font-medium text-sm text-blue-800">{name}</div>
-                        {res && <p className={`text-xs mt-0.5 ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>}
+                        {res && <LabResultText res={res} className="mt-0.5" />}
                         {!res && ordered && <p className="text-xs text-blue-400 mt-0.5">โหลด...</p>}
                       </div>
                     );
@@ -644,11 +648,13 @@ function LongCaseSessionInner() {
                       {name}
                       {isRecommended && !ordered && <span className="text-blue-400 text-xs">★</span>}
                     </div>
-                    {res && <p className={`text-xs mt-1 ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>}
+                    {res && <LabResultText res={res} className="mt-1" />}
                   </div>
                 );
               })}
             </div>
+            <InvestigationImages ordered={labOrdered} revealed={labRevealed} />
+
             <Button onClick={() => savePhase("ddx")} disabled={labOrdered.length === 0} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
               เสร็จแล้ว → เขียน DDx <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
@@ -946,6 +952,13 @@ function LongCaseSessionInner() {
       </div>
     </div>
   );
+}
+
+// A result with a picture points to the image panel instead of spoiling the
+// report inline — the student reads the ECG/CXR first.
+function LabResultText({ res, className }: { res: LongCaseResult; className: string }) {
+  if (res.image_url) return <p className={`text-xs text-blue-600 ${className}`}>🖼 ดูภาพด้านล่าง</p>;
+  return <p className={`text-xs ${className} ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>;
 }
 
 export default function LongCaseSessionPage() {
