@@ -211,6 +211,18 @@ describe("longCaseToScenario", () => {
     expect(peChoices[0].options.find((o) => o.ok)!.label).toContain("GA");
   });
 
+  it("keeps PE steps whose finding carries a photo (object form)", () => {
+    const withPhoto = mk({
+      ...TORSION,
+      pe_findings: { ...TORSION.pe_findings, GA: { text: "Pale, sweating", image_url: "/images/longcase/ga.webp" } },
+    });
+    const s = longCaseToScenario(withPhoto)!;
+    const peChoices = choices(s).filter((c) => c.options.some((o) => o.ok && o.tgt === "PE"));
+    expect(peChoices[0].options.find((o) => o.ok)!.label).toContain("GA");
+    expect(JSON.stringify(s)).toContain("Pale, sweating");
+    expect(JSON.stringify(s)).not.toContain("image_url");
+  });
+
   it("gates management on the case author's own written order (not a guessed order)", () => {
     const s = longCaseToScenario(TORSION)!;
     const mgmt = choices(s).find((c) => c.options.some((o) => o.tgt === "MGMT"))!;

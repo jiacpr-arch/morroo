@@ -9,13 +9,13 @@ import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, F
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 import { consumeSSE } from "@/lib/sse";
 import { matchResult } from "@/lib/longcase-match";
-import { toLongCaseResult, type LongCaseResult } from "@/lib/longcase-media";
+import { toLongCaseResult, toPeFinding, type LongCaseResult, type PeFinding } from "@/lib/longcase-media";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import FeedbackCard from "./FeedbackCard";
 import { DictationButton, ReadReplyButton, VoiceSettings, useLongCaseVoice } from "./LongCaseVoice";
 import { appendDictation } from "./device-speech";
 import { PatientConversation } from "./PatientConversation";
-import { InvestigationImages } from "./InvestigationImages";
+import { FindingImages, type FindingImage } from "./FindingImages";
 
 type Phase = LongCaseSession["phase"];
 
@@ -59,7 +59,7 @@ function LongCaseSessionInner() {
 
   // PE
   const [peSelected, setPeSelected] = useState<string[]>([]);
-  const [peRevealed, setPeRevealed] = useState<Record<string, string>>({});
+  const [peRevealed, setPeRevealed] = useState<Record<string, PeFinding>>({});
 
   // Lab
   const [labOrdered, setLabOrdered] = useState<string[]>([]);
@@ -240,12 +240,12 @@ function LongCaseSessionInner() {
       const res = await fetch(`/api/longcase/session?id=${sessionId}&includePe=true`);
       const data = await res.json();
       const findings = data.long_case?.pe_findings || {};
-      const revealed: Record<string, string> = {};
-      for (const sys of systems) revealed[sys] = matchResult(sys, findings) || "ปกติ ไม่มีสิ่งผิดปกติ";
+      const revealed: Record<string, PeFinding> = {};
+      for (const sys of systems) revealed[sys] = toPeFinding(matchResult(sys, findings)) || { text: "ปกติ ไม่มีสิ่งผิดปกติ" };
       setPeRevealed(prev => ({ ...prev, ...revealed }));
     } catch {
-      const revealed: Record<string, string> = {};
-      for (const sys of systems) revealed[sys] = "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่";
+      const revealed: Record<string, PeFinding> = {};
+      for (const sys of systems) revealed[sys] = { text: "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่" };
       setPeRevealed(prev => ({ ...prev, ...revealed }));
     }
   }
@@ -559,12 +559,24 @@ function LongCaseSessionInner() {
                     }}
                   >
                     <div className="font-medium text-sm text-gray-800">{sys}</div>
-                    {revealed && <p className={`text-xs mt-1 ${revealed.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}`}>{revealed}</p>}
+                    {revealed && (revealed.image_url
+                      ? <p className="text-xs mt-1 text-blue-600">🖼 ดูภาพด้านล่าง</p>
+                      : <p className={`text-xs mt-1 ${revealed.text.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}`}>{revealed.text}</p>)}
                     {!revealed && selected && <p className="text-xs text-amber-500 mt-1">โหลด...</p>}
                   </div>
                 );
               })}
             </div>
+            <FindingImages
+              heading="ภาพตรวจร่างกาย — ลองบรรยายสิ่งที่เห็นก่อนเปิดผล"
+              items={peSelected.flatMap((sys): FindingImage[] => {
+                const f = peRevealed[sys];
+                return f?.image_url
+                  ? [{ name: sys, image_url: f.image_url, image_credit: f.image_credit, report: f.text, isAbnormal: false }]
+                  : [];
+              })}
+            />
+
             <Button onClick={() => savePhase("lab")} disabled={peSelected.length === 0} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
               เสร็จแล้ว → สั่ง Lab/Imaging <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
@@ -653,7 +665,15 @@ function LongCaseSessionInner() {
                 );
               })}
             </div>
-            <InvestigationImages ordered={labOrdered} revealed={labRevealed} />
+            <FindingImages
+              heading="ภาพผลตรวจ — ลองอ่านเองก่อนเปิดผลอ่าน"
+              items={labOrdered.flatMap((name): FindingImage[] => {
+                const r = labRevealed[name];
+                return r?.image_url
+                  ? [{ name, image_url: r.image_url, image_credit: r.image_credit, report: r.value, isAbnormal: r.isAbnormal }]
+                  : [];
+              })}
+            />
 
             <Button onClick={() => savePhase("ddx")} disabled={labOrdered.length === 0} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
               เสร็จแล้ว → เขียน DDx <ChevronRight className="h-4 w-4 ml-1" />

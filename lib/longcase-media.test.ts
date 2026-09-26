@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { safeImageUrl, toLongCaseResult } from "@/lib/longcase-media";
+import { peFindingText, safeImageUrl, toLongCaseResult, toPeFinding } from "@/lib/longcase-media";
 
 describe("safeImageUrl", () => {
   it("accepts https and site-relative paths", () => {
@@ -43,5 +43,28 @@ describe("toLongCaseResult", () => {
     expect(toLongCaseResult({ image_url: "/a.webp" })).toEqual({ value: "", isAbnormal: false, image_url: "/a.webp" });
     expect(toLongCaseResult({})).toBeUndefined();
     expect(toLongCaseResult(null)).toBeUndefined();
+  });
+});
+
+describe("toPeFinding / peFindingText", () => {
+  it("keeps legacy string findings", () => {
+    expect(toPeFinding("Clear both lungs")).toEqual({ text: "Clear both lungs" });
+    expect(peFindingText("Clear both lungs")).toBe("Clear both lungs");
+  });
+
+  it("reads object findings with a photo", () => {
+    const raw = { text: "Yellowish sclera", image_url: "/images/longcase/jaundice.webp", image_credit: "Own photo, consented" };
+    expect(toPeFinding(raw)).toEqual(raw);
+    expect(peFindingText(raw)).toBe("Yellowish sclera");
+  });
+
+  it("accepts value as an alias for text and drops unsafe images", () => {
+    expect(toPeFinding({ value: "Clubbing", image_url: "javascript:x" })).toEqual({ text: "Clubbing" });
+  });
+
+  it("returns empty for missing findings", () => {
+    expect(toPeFinding(undefined)).toBeUndefined();
+    expect(toPeFinding({})).toBeUndefined();
+    expect(peFindingText(undefined)).toBe("");
   });
 });

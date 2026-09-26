@@ -21,6 +21,7 @@
 
 import type { LongCaseFull } from "@/lib/types";
 import { matchKey, normalizeKey, readHistoryScript } from "@/lib/longcase-match";
+import { peFindingText } from "@/lib/longcase-media";
 import { chunkLongSays } from "./chunk-says";
 import {
   isValidScenario,
@@ -273,7 +274,7 @@ export function longCaseToScenario(lc: LongCaseFull, others: OtherCaseRef[] = []
   // ตัวลวง = ตรวจข้ามลำดับ / หยุดตรวจแล้วไปส่งแลปเลย
   const peSteps = orderPeEntries(
     Object.entries(asObj(lc.pe_findings))
-      .map(([k, v]) => [txt(k), txt(asStr(v))] as [string, string])
+      .map(([k, v]) => [txt(k), txt(peFindingText(v))] as [string, string])
       .filter(([k, v]) => k && v),
   ).slice(0, MAX_PE_STEPS);
   const PE_STOP_LABEL = "พอแล้ว ไปส่งตรวจเพิ่มเติมเลย";

@@ -5,7 +5,7 @@ import { Loader2, Upload, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-// อัปโหลดรูป ECG / CXR แล้วได้ snippet ไปวางใน Imaging Results (JSON)
+// อัปโหลดรูป ECG / CXR / รูปตรวจร่างกาย แล้วได้ snippet ไปวางใน JSON ของเคส
 export function ResultImageUploader() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -44,7 +44,7 @@ export function ResultImageUploader() {
   return (
     <Card>
       <CardHeader className="pb-2">
-        <CardTitle className="text-sm">อัปโหลดรูปผลตรวจ (ECG / CXR)</CardTitle>
+        <CardTitle className="text-sm">อัปโหลดรูปผลตรวจ (ECG / CXR / ตรวจร่างกาย)</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3 text-xs text-muted-foreground">
         <p>
@@ -73,7 +73,12 @@ export function ResultImageUploader() {
           <div className="space-y-2">
             {/* eslint-disable-next-line @next/next/no-img-element -- preview รูปจาก Storage (URL dynamic) */}
             <img src={url} alt="ตัวอย่างรูปที่อัปโหลด" className="max-h-48 rounded border bg-black object-contain" />
-            <p>วาง snippet นี้ในรายการที่ต้องการ เช่น <code>&quot;ECG&quot;: {"{"} &quot;value&quot;: &quot;…&quot;, &quot;isAbnormal&quot;: true, <b>วางตรงนี้</b> {"}"}</code></p>
+            <p>วาง snippet นี้ในรายการที่ต้องการ</p>
+            <ul className="list-disc pl-4 space-y-1">
+              <li>Imaging: <code>&quot;ECG&quot;: {"{"} &quot;value&quot;: &quot;…&quot;, &quot;isAbnormal&quot;: true, <b>วางตรงนี้</b> {"}"}</code></li>
+              <li>ตรวจร่างกาย: <code>&quot;Skin&quot;: {"{"} &quot;text&quot;: &quot;…&quot;, <b>วางตรงนี้</b> {"}"}</code></li>
+            </ul>
+            <p>ต้องกรอกผลอ่าน (value / text) ทุกครั้ง — AI ผู้คุมสอบและการให้คะแนนอ่านจากข้อความเท่านั้น</p>
             <pre className="whitespace-pre-wrap break-all rounded bg-muted p-2 font-mono text-foreground">{snippet}</pre>
             <Button type="button" variant="outline" size="sm" onClick={copy} className="gap-1">
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}

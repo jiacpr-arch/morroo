@@ -20,7 +20,7 @@ const SPECIALTIES = [
 const JSON_FIELDS = [
   { key: "patient_info", label: "Patient Info (JSON)" },
   { key: "history_script", label: "History Script (JSON)" },
-  { key: "pe_findings", label: "PE Findings (JSON)" },
+  { key: "pe_findings", label: "PE Findings (JSON) — ใส่รูปได้: { \"text\", \"image_url\", \"image_credit\" }" },
   { key: "lab_results", label: "Lab Results (JSON)" },
   { key: "imaging_results", label: "Imaging Results (JSON) — ECG / CXR ใส่ image_url ได้" },
   { key: "accepted_ddx", label: "Accepted DDx (JSON array)" },

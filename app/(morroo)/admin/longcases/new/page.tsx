@@ -48,6 +48,7 @@ const EMPTY_CASE = {
   "General Appearance": "Alert, no acute distress",
   "Heart": "Regular rate, no murmur",
   "Lung": "Clear to auscultation bilaterally",
+  "Skin": { "text": "No rash, no jaundice", "image_url": "", "image_credit": "" },
   "Abdomen": "Soft, non-tender"
 }`,
   lab_results: `{
@@ -296,7 +297,7 @@ export default function NewLongCasePage() {
         {[
           { key: "patient_info", label: "Patient Info (JSON)" },
           { key: "history_script", label: "History Script (JSON)" },
-          { key: "pe_findings", label: "PE Findings (JSON)" },
+          { key: "pe_findings", label: "PE Findings (JSON) — ใส่รูปได้: { \"text\", \"image_url\", \"image_credit\" }" },
           { key: "lab_results", label: "Lab Results (JSON)" },
           { key: "imaging_results", label: "Imaging Results (JSON) — ECG / CXR ใส่ image_url ได้" },
           { key: "accepted_ddx", label: "Accepted DDx (JSON array)" },

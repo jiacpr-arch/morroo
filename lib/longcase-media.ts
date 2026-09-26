@@ -45,3 +45,33 @@ export function toLongCaseResult(raw: unknown): LongCaseResult | undefined {
     ...(image_url && credit ? { image_credit: credit } : {}),
   };
 }
+
+/**
+ * A PE finding is either the legacy plain string or an object carrying a
+ * photo of the sign (jaundice, clubbing, rash…): `{ text, image_url?, image_credit? }`.
+ */
+export interface PeFinding {
+  text: string;
+  image_url?: string;
+  image_credit?: string;
+}
+
+export function toPeFinding(raw: unknown): PeFinding | undefined {
+  if (typeof raw === "string") return raw ? { text: raw } : undefined;
+  if (!raw || typeof raw !== "object") return undefined;
+  const o = raw as Record<string, unknown>;
+  const text = typeof o.text === "string" ? o.text : typeof o.value === "string" ? o.value : "";
+  const image_url = safeImageUrl(o.image_url);
+  if (!text && !image_url) return undefined;
+  const credit = typeof o.image_credit === "string" ? o.image_credit.trim() : "";
+  return {
+    text,
+    ...(image_url ? { image_url } : {}),
+    ...(image_url && credit ? { image_credit: credit } : {}),
+  };
+}
+
+/** Text-only view of a PE finding, for AI prompts and the sim converter. */
+export function peFindingText(raw: unknown): string {
+  return toPeFinding(raw)?.text ?? "";
+}
