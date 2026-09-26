@@ -13,6 +13,9 @@
  *           FORCE=1  ทำซ้ำแม้ระบบนั้นมีรูปแล้ว
  *           ONLY=<index,index>  ทำเฉพาะบางรายการ (index เริ่ม 0)
  *
+ * ทางที่ง่ายกว่า (ไม่ต้องมี key ในเครื่อง): หน้า /admin/longcases/[id] → กล่อง "สร้างภาพประกอบ
+ * ตรวจร่างกายด้วย AI" ซึ่งเรียก /api/admin/longcases/pe-illustration บน server ที่มี key อยู่แล้ว
+ *
  * รัน:  DRY=1 npx tsx scripts/generate-longcase-pe-images.ts   ← ดูรูปก่อน
  *       npx tsx scripts/generate-longcase-pe-images.ts         ← อัปจริง
  * หลังรัน: ให้แพทย์ดูทุกรูปในหน้าเคสจริงก่อนปล่อย รูปไหนไม่ถูก ลบ image_url ออกจาก
@@ -23,8 +26,8 @@ import { randomUUID } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
-import sharp from "sharp";
 import { toPeFinding } from "@/lib/longcase-media";
+import { PE_ILLUSTRATION_CREDIT as CREDIT, generateIllustration } from "@/lib/longcase-illustration";
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -35,9 +38,6 @@ const ONLY = (process.env.ONLY ?? "").split(",").filter(Boolean).map(Number);
 
 const BUCKET = "longcase-media";
 const OUT_DIR = path.join(process.cwd(), "scripts", "longcase-pe-images-out");
-const MODEL = "gpt-image-2.5-flare";
-const MODEL_FALLBACK = "gpt-image-1";
-const CREDIT = "ภาพประกอบสร้างด้วย AI (ไม่ใช่ภาพผู้ป่วยจริง)";
 
 function flag(name: string): boolean {
   return ["1", "true", "yes"].includes((process.env[name] ?? "").toLowerCase());
@@ -91,35 +91,6 @@ const ITEMS: Item[] = [
   },
 ];
 
-function prompt(scene: string): string {
-  return `Medical textbook illustration for teaching physical examination to medical students — clean digital painting, realistic proportions and anatomy, soft even clinical lighting, plain light neutral background, close-up framed on the body region. Clearly an illustration, NOT a photograph of a real patient.
-SIGN TO SHOW: ${scene}
-RULES: show only the described sign accurately; no blood or gore; no text, letters, numbers, arrows, labels, watermarks or captions; no identifiable real person.`;
-}
-
-async function callImageApi(model: string, text: string): Promise<Response> {
-  return fetch("https://api.openai.com/v1/images/generations", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${OPENAI_API_KEY}`, "Content-Type": "application/json" },
-    // same size/quality shape as generate-lesson-figures (verified against the live API)
-    body: JSON.stringify({ model, prompt: text, size: "1536x1024", quality: "high" }),
-  });
-}
-
-async function render(scene: string): Promise<Buffer> {
-  const text = prompt(scene);
-  let res = await callImageApi(MODEL, text);
-  if (!res.ok && res.status >= 400 && res.status < 500) {
-    console.warn(`  ${MODEL} rejected (${res.status}: ${await res.text()}) — falling back to ${MODEL_FALLBACK}`);
-    res = await callImageApi(MODEL_FALLBACK, text);
-  }
-  if (!res.ok) throw new Error(`OpenAI image error ${res.status}: ${await res.text()}`);
-  const json = (await res.json()) as { data?: { b64_json?: string }[] };
-  const b64 = json.data?.[0]?.b64_json;
-  if (!b64) throw new Error("OpenAI image: empty response");
-  return sharp(Buffer.from(b64, "base64")).resize({ width: 1200 }).webp({ quality: 82 }).toBuffer();
-}
-
 async function main() {
   if (!OPENAI_API_KEY) throw new Error("Missing OPENAI_API_KEY");
   if (!DRY && (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY)) {
@@ -147,7 +118,7 @@ async function main() {
       }
 
       console.log(`${label}: generating…`);
-      const webp = await render(item.scene);
+      const webp = await generateIllustration(item.scene, OPENAI_API_KEY);
       const file = path.join(OUT_DIR, `${i}-${item.caseId.slice(0, 8)}-${item.system}.webp`);
       await writeFile(file, webp);
       console.log(`  saved ${path.relative(process.cwd(), file)}`);
