@@ -6,13 +6,13 @@ import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LineGlyph, SOCIAL_LINKS, trackLineClick } from "@/components/SocialLinks";
 import type { LineCtaLevel } from "@/lib/line-cta-config";
+import { isFocusedPracticeRoute } from "@/lib/focus-routes";
 
 const DISMISS_KEY = "morroo_line_fab_dismissed";
 
 /**
- * Always-visible LINE add-friend bubble, pinned bottom-left so it never
- * overlaps the chat launcher (bottom-right). Hidden on admin / LIFF routes
- * and once the visitor dismisses it for the session.
+ * Desktop LINE add-friend bubble. Mobile visitors use the shared contact
+ * launcher in ChatWidget so the two floating controls do not cover content.
  *
  * `level` comes from the Tier-1 config autopilot (app_settings). At level 2
  * the bubble gets an attention pulse — the daily cron raises it when LINE
@@ -31,13 +31,13 @@ export default function FloatingLineButton({
   }, []);
 
   const hiddenRoute =
-    pathname?.startsWith("/admin") || pathname?.startsWith("/line");
+    pathname?.startsWith("/admin") || pathname?.startsWith("/line") || isFocusedPracticeRoute(pathname);
   if (hiddenRoute || dismissed) return null;
 
   const boosted = level === 2;
 
   return (
-    <div className="fixed bottom-5 left-5 z-50 flex items-center">
+    <div className="fixed bottom-5 left-5 z-50 hidden items-center sm:flex">
       {boosted && (
         <span className="absolute left-0 top-1/2 -z-10 h-12 w-12 -translate-y-1/2 animate-ping rounded-full bg-[#06C755]/50" />
       )}

@@ -26,6 +26,7 @@ import LeaderboardCard from "@/components/LeaderboardCard";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
 import ShareToEarnCard from "@/components/ShareToEarnCard";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
+import PageIntro from "@/components/PageIntro";
 
 interface SubjectStat {
   subject_id: string;
@@ -221,7 +222,8 @@ export default function DashboardPage() {
 
   if (totalAttempts === 0) {
     return (
-      <div className="mx-auto max-w-2xl px-4 py-12">
+      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+        <PageIntro eyebrow="พื้นที่การเรียนของคุณ" title="ผลการเรียน" description="เริ่มฝึกสักชุด แล้วกลับมาดูความก้าวหน้าและจุดที่ควรทบทวนได้ที่นี่" className="mb-6" />
         <div className="mb-8">
           <AllExamsCountdown />
         </div>
@@ -253,9 +255,9 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
         )}
-        <div className="text-center">
+        <div className="rounded-2xl border border-surface-border bg-white p-8 text-center">
           <BarChart3 className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-          <h1 className="text-2xl font-bold mb-2">ยังไม่มีข้อมูลการเรียน</h1>
+          <h2 className="text-2xl font-bold mb-2">ยังไม่มีข้อมูลการเรียน</h2>
           <p className="text-muted-foreground mb-6">
             เริ่มทำข้อสอบเพื่อดูสถิติและจุดอ่อนของคุณ
           </p>
@@ -271,12 +273,7 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold">ผลการเรียน</h1>
-        <p className="text-muted-foreground mt-1">
-          ติดตามความก้าวหน้าและจุดที่ต้องปรับปรุง
-        </p>
-      </div>
+      <PageIntro eyebrow="พื้นที่การเรียนของคุณ" title="ผลการเรียน" description="ติดตามความก้าวหน้า เห็นจุดแข็ง และเลือกสิ่งที่ควรทบทวนต่อ" className="mb-6" />
 
       {/* Onboarding checklist */}
       {userId && <OnboardingChecklist userId={userId} />}

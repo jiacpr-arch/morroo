@@ -56,7 +56,7 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-8 rounded-3xl border border-surface-border bg-surface-warm p-5 sm:p-7">
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <Badge variant="secondary">{exam.category}</Badge>
           <Badge className={difficultyColors[exam.difficulty]}>
@@ -69,7 +69,7 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
             {totalParts} ตอน
           </Badge>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold">{exam.title}</h1>
+        <h1 className="text-2xl font-bold leading-snug text-brand-dark sm:text-3xl">{exam.title}</h1>
 
         {/* Progress bar */}
         {currentPart >= 0 && (
@@ -82,7 +82,7 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
               </span>
               <span>{Math.min(currentPart, totalParts)}/{totalParts}</span>
             </div>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
+            <div className="h-2 overflow-hidden rounded-full bg-white" role="progressbar" aria-label="ความคืบหน้าข้อสอบ" aria-valuemin={0} aria-valuemax={totalParts} aria-valuenow={Math.min(currentPart, totalParts)}>
               <div
                 className="h-full bg-brand rounded-full transition-all duration-500"
                 style={{
@@ -96,7 +96,7 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
 
       {/* Not started yet */}
       {currentPart === -1 && (
-        <Card className="text-center py-12">
+        <Card className="py-12 text-center">
           <CardContent className="space-y-6">
             <div className="mx-auto w-20 h-20 rounded-full bg-brand/10 flex items-center justify-center">
               <Play className="h-10 w-10 text-brand" />
@@ -149,8 +149,12 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
               return (
                 <Card key={part.id} className="border-brand/20 bg-brand/5">
                   <CardHeader className="pb-0">
-                    <div
-                      className="flex items-center justify-between cursor-pointer"
+                    <button
+                      type="button"
+                      disabled={!hasNote}
+                      aria-expanded={isExpanded}
+                      aria-label={`${isExpanded ? "ซ่อน" : "ดู"}บันทึก ${part.title}`}
+                      className="flex w-full items-center justify-between gap-3 rounded-lg text-left focus-visible:outline-2 focus-visible:outline-brand"
                       onClick={() => {
                         setExpandedNotes((prev) => {
                           const next = new Set(prev);
@@ -178,7 +182,7 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
                           ? <ChevronUp className="h-4 w-4 text-muted-foreground" />
                           : <ChevronDown className="h-4 w-4 text-muted-foreground" />
                       )}
-                    </div>
+                    </button>
                     {isExpanded && hasNote && (
                       <div className="mt-3 ml-11 p-3 rounded-md bg-white border border-amber-200 text-sm whitespace-pre-line text-muted-foreground">
                         {notes[index]}
@@ -205,33 +209,33 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {/* Scenario */}
-                  <div className="rounded-lg bg-muted/50 p-4 border-l-4 border-brand">
+                  <div className="rounded-xl border-l-4 border-brand bg-surface-warm p-4 sm:p-5">
                     <h3 className="text-sm font-semibold text-muted-foreground mb-2">
                       สถานการณ์
                     </h3>
-                    <div className="text-sm leading-relaxed whitespace-pre-line">
+                    <div className="whitespace-pre-line text-base leading-8">
                       {part.scenario}
                     </div>
                   </div>
 
                   {/* Question */}
-                  <div className="rounded-lg bg-brand/5 p-4 border border-brand/20">
+                  <div className="rounded-xl border border-surface-border bg-white p-4 sm:p-5">
                     <h3 className="text-sm font-semibold text-brand mb-2">
                       คำถาม
                     </h3>
-                    <p className="text-sm font-medium">{part.question}</p>
+                    <p className="text-base font-medium leading-8">{part.question}</p>
                   </div>
 
                   {/* Note / Answer area */}
-                  <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4">
+                  <div className="rounded-xl border border-surface-border bg-surface-warm p-4 sm:p-5">
                     <div className="flex items-center gap-2 mb-2">
-                      <PenLine className="h-4 w-4 text-amber-600" />
-                      <h3 className="text-sm font-semibold text-amber-800">
+                      <PenLine className="h-4 w-4 text-brand" />
+                      <h3 className="text-sm font-semibold text-brand-dark">
                         คำตอบของคุณ
                       </h3>
                     </div>
                     <textarea
-                      className="w-full min-h-[120px] rounded-md border border-amber-200 bg-white p-3 text-sm leading-relaxed placeholder:text-amber-300 focus:outline-none focus:ring-2 focus:ring-brand/30 resize-y"
+                      className="min-h-[160px] w-full resize-y rounded-xl border border-surface-border bg-white p-4 text-base leading-7 outline-none placeholder:text-muted-foreground focus-visible:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
                       placeholder="พิมพ์คำตอบของคุณที่นี่..."
                       value={notes[index] || ""}
                       onChange={(e) =>

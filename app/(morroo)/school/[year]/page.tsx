@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import {
   getSchoolTopicsByYear,
@@ -9,6 +8,7 @@ import {
   getSchoolBookMap,
 } from "@/lib/supabase/queries-school";
 import SubjectRail from "@/components/school/SubjectRail";
+import PageIntro from "@/components/PageIntro";
 
 export const revalidate = 60;
 
@@ -47,24 +47,18 @@ export default async function YearPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-6">
-        <Link href="/school">
-          <Button variant="ghost" size="sm" className="gap-2 -ml-2">
-            <ArrowLeft className="h-4 w-4" /> เลือกชั้นปีอื่น
-          </Button>
+      <div className="mb-4">
+        <Link href="/school" className="inline-flex min-h-10 items-center gap-2 rounded-lg px-2 text-sm font-medium text-brand-dark hover:bg-surface-warm">
+          <ArrowLeft className="h-4 w-4" /> เลือกชั้นปีอื่น
         </Link>
-        <div className="mt-2 flex items-center gap-2 flex-wrap">
+      </div>
+      <PageIntro eyebrow="School · เรียนตามชั้นปี" title={`ชั้นปี ${yearNum}`} description="ปัดดูวิชาทั้งหมดของปีนี้ แล้วแตะวิชาที่อยากเรียน" className="mb-6">
           <Badge className="bg-indigo-100 text-indigo-700">ปี {yearNum}</Badge>
           <Badge variant="secondary">{topics.length} วิชา</Badge>
           {totalCredits > 0 && (
             <Badge variant="secondary">รวม {totalCredits} หน่วยกิต</Badge>
           )}
-        </div>
-        <h1 className="text-3xl font-bold mt-2">ชั้นปี {yearNum}</h1>
-        <p className="text-sm text-muted-foreground mt-1">
-          ปัดดูวิชาทั้งหมดของปีนี้ แล้วแตะวิชาที่อยากเรียน
-        </p>
-      </div>
+      </PageIntro>
 
       {topics.length === 0 ? (
         <div className="border rounded-lg p-8 text-center text-muted-foreground">

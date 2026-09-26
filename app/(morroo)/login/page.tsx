@@ -10,6 +10,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 import { safeInternalPath } from "@/lib/safe-redirect";
+import AuthIllustration from "@/components/AuthIllustration";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
 
@@ -103,13 +104,17 @@ function LoginForm() {
       : "/api/auth/line?mode=login";
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-12rem)] px-4 py-8">
-      <Card className="w-full max-w-md">
+    <div className="flex items-center justify-center min-h-[calc(100vh-12rem)] px-4 py-8 sm:px-6">
+      <div className="grid w-full max-w-5xl items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="hidden lg:block">
+        <AuthIllustration scene="desk" title="กลับมาเรียนต่อได้อย่างสบายใจ" description="โจทย์ที่ฝึก ความคืบหน้า และสิ่งที่ควรทบทวน รอคุณอยู่ในที่เดียว" />
+      </div>
+      <Card className="w-full max-w-md justify-self-center border border-surface-border shadow-sm">
         <CardHeader className="text-center space-y-2">
-          <div className="text-4xl">🩺</div>
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-2xl">🩺</div>
           <h1 className="text-2xl font-bold">เข้าสู่ระบบ</h1>
           <p className="text-sm text-muted-foreground">
-            ยินดีต้อนรับกลับมา
+            ยินดีต้อนรับกลับมา เรียนต่อจากที่ค้างไว้กัน
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -220,6 +225,7 @@ function LoginForm() {
           </p>
         </CardFooter>
       </Card>
+      </div>
     </div>
   );
 }
