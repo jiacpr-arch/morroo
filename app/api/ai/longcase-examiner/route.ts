@@ -4,6 +4,7 @@ import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/querie
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { getBoardReference } from "@/lib/board-references";
 import { matchResult } from "@/lib/longcase-match";
+import { peFindingText } from "@/lib/longcase-media";
 import { createAnthropic, CHAT_MODELS, SCORE_MODELS, createWithFallback, streamTextWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
 
   // Parse case data. Imaging lives in a separate map from labs; merge them so
   // imaging orders resolve too.
-  const peFindings = lc.pe_findings as Record<string, string>;
+  const peFindings = (lc.pe_findings ?? {}) as Record<string, unknown>;
   const labResults = {
     ...(lc.lab_results as Record<string, { value: string; isAbnormal: boolean }>),
     ...((lc.imaging_results as Record<string, { value: string; isAbnormal: boolean }> | null) || {}),
@@ -51,7 +52,7 @@ export async function POST(request: NextRequest) {
   // PE selected by student
   const peSelected = Array.isArray(session.pe_selected) ? session.pe_selected : [];
   const peRevealedText = peSelected.map((sys: string) =>
-    `${sys}: ${matchResult(sys, peFindings) || "ปกติ"}`
+    `${sys}: ${peFindingText(matchResult(sys, peFindings)) || "ปกติ"}`
   ).join("\n");
 
   // Labs ordered by student

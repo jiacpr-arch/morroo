@@ -9,11 +9,17 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { ArrowLeft, Loader2, Save, Sparkles } from "lucide-react";
+import { ResultImageUploader } from "../ResultImageUploader";
 
 const SPECIALTIES = [
   "Medicine", "Surgery", "Obstetrics", "Pediatrics",
   "Emergency", "Cardiology", "Neurology", "Orthopedics",
 ];
+
+// imaging_results is nullable — store "{}" as null like the generators do.
+function emptyToNull(v: unknown) {
+  return v && typeof v === "object" && Object.keys(v).length > 0 ? v : null;
+}
 
 const EMPTY_CASE = {
   title: "",
@@ -42,11 +48,15 @@ const EMPTY_CASE = {
   "General Appearance": "Alert, no acute distress",
   "Heart": "Regular rate, no murmur",
   "Lung": "Clear to auscultation bilaterally",
+  "Skin": { "text": "No rash, no jaundice", "image_url": "", "image_credit": "" },
   "Abdomen": "Soft, non-tender"
 }`,
   lab_results: `{
   "CBC": { "value": "WBC 8.5, Hgb 13.2, Plt 220", "isAbnormal": false },
   "BMP": { "value": "Na 138, K 4.0, Cr 0.9, Glucose 95", "isAbnormal": false }
+}`,
+  imaging_results: `{
+  "ECG": { "value": "Normal sinus rhythm, rate 80", "isAbnormal": false, "image_url": "", "image_credit": "" }
 }`,
   correct_diagnosis: "",
   accepted_ddx: `["การวินิจฉัยที่ถูกต้อง", "Differential 1", "Differential 2"]`,
@@ -98,7 +108,7 @@ export default function NewLongCasePage() {
 
     // Validate JSON fields
     const jsonFields = [
-      "patient_info", "history_script", "pe_findings", "lab_results",
+      "patient_info", "history_script", "pe_findings", "lab_results", "imaging_results",
       "accepted_ddx", "teaching_points", "examiner_questions", "scoring_rubric",
     ];
     for (const f of jsonFields) {
@@ -125,6 +135,7 @@ export default function NewLongCasePage() {
         history_script: JSON.parse(form.history_script),
         pe_findings: JSON.parse(form.pe_findings),
         lab_results: JSON.parse(form.lab_results),
+        imaging_results: emptyToNull(JSON.parse(form.imaging_results)),
         correct_diagnosis: form.correct_diagnosis.trim(),
         accepted_ddx: JSON.parse(form.accepted_ddx),
         management_plan: form.management_plan.trim(),
@@ -286,8 +297,9 @@ export default function NewLongCasePage() {
         {[
           { key: "patient_info", label: "Patient Info (JSON)" },
           { key: "history_script", label: "History Script (JSON)" },
-          { key: "pe_findings", label: "PE Findings (JSON)" },
+          { key: "pe_findings", label: "PE Findings (JSON) — ใส่รูปได้: { \"text\", \"image_url\", \"image_credit\" }" },
           { key: "lab_results", label: "Lab Results (JSON)" },
+          { key: "imaging_results", label: "Imaging Results (JSON) — ECG / CXR ใส่ image_url ได้" },
           { key: "accepted_ddx", label: "Accepted DDx (JSON array)" },
           { key: "teaching_points", label: "Teaching Points (JSON array)" },
           { key: "examiner_questions", label: "Examiner Questions (JSON array)" },
@@ -305,6 +317,8 @@ export default function NewLongCasePage() {
             </CardContent>
           </Card>
         ))}
+
+        <ResultImageUploader />
 
         {error && (
           <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">

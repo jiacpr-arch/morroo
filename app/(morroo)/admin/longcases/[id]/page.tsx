@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { ArrowLeft, Loader2, Save, Pencil, Trash2 } from "lucide-react";
+import { ResultImageUploader } from "../ResultImageUploader";
 
 const SPECIALTIES = [
   "Medicine", "Surgery", "Obstetrics", "Pediatrics",
@@ -19,8 +20,9 @@ const SPECIALTIES = [
 const JSON_FIELDS = [
   { key: "patient_info", label: "Patient Info (JSON)" },
   { key: "history_script", label: "History Script (JSON)" },
-  { key: "pe_findings", label: "PE Findings (JSON)" },
+  { key: "pe_findings", label: "PE Findings (JSON) — ใส่รูปได้: { \"text\", \"image_url\", \"image_credit\" }" },
   { key: "lab_results", label: "Lab Results (JSON)" },
+  { key: "imaging_results", label: "Imaging Results (JSON) — ECG / CXR ใส่ image_url ได้" },
   { key: "accepted_ddx", label: "Accepted DDx (JSON array)" },
   { key: "teaching_points", label: "Teaching Points (JSON array)" },
   { key: "examiner_questions", label: "Examiner Questions (JSON array)" },
@@ -40,11 +42,17 @@ type FormState = {
   history_script: string;
   pe_findings: string;
   lab_results: string;
+  imaging_results: string;
   accepted_ddx: string;
   teaching_points: string;
   examiner_questions: string;
   scoring_rubric: string;
 };
+
+// imaging_results is nullable — store "{}" as null like the generators do.
+function emptyToNull(v: unknown) {
+  return v && typeof v === "object" && Object.keys(v).length > 0 ? v : null;
+}
 
 function toFormState(data: Record<string, unknown>): FormState {
   const json = (v: unknown) =>
@@ -62,6 +70,7 @@ function toFormState(data: Record<string, unknown>): FormState {
     history_script: json(data.history_script),
     pe_findings: json(data.pe_findings),
     lab_results: json(data.lab_results),
+    imaging_results: json(data.imaging_results ?? {}),
     accepted_ddx: json(data.accepted_ddx),
     teaching_points: json(data.teaching_points),
     examiner_questions: json(data.examiner_questions),
@@ -147,6 +156,7 @@ export default function EditLongCasePage({
         history_script: JSON.parse(form.history_script),
         pe_findings: JSON.parse(form.pe_findings),
         lab_results: JSON.parse(form.lab_results),
+        imaging_results: emptyToNull(JSON.parse(form.imaging_results)),
         accepted_ddx: JSON.parse(form.accepted_ddx),
         teaching_points: JSON.parse(form.teaching_points),
         examiner_questions: JSON.parse(form.examiner_questions),
@@ -344,6 +354,8 @@ export default function EditLongCasePage({
             </CardContent>
           </Card>
         ))}
+
+        <ResultImageUploader />
 
         {error && (
           <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">

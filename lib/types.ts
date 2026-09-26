@@ -1,4 +1,5 @@
 import { PLAN_CATALOG, planDisplayPrice, type PlanType } from "@/lib/membership";
+import type { LongCaseResult, PeFinding } from "@/lib/longcase-media";
 
 const PERIOD_TH = { month: "/ เดือน", year: "/ ปี", lifetime: "" } as const;
 
@@ -126,9 +127,9 @@ export interface LongCaseSession {
 
 export interface LongCaseFull extends LongCase {
   history_script: Record<string, unknown>;
-  pe_findings: Record<string, string>;
-  lab_results: Record<string, { value: string; isAbnormal: boolean }>;
-  imaging_results: Record<string, { value: string; isAbnormal: boolean }> | null;
+  pe_findings: Record<string, string | PeFinding>;
+  lab_results: Record<string, LongCaseResult>;
+  imaging_results: Record<string, LongCaseResult> | null;
   accepted_ddx: string[];
   management_plan: string;
   teaching_points: string[];

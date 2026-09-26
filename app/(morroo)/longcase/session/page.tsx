@@ -9,11 +9,15 @@ import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, F
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 import { consumeSSE } from "@/lib/sse";
 import { matchResult } from "@/lib/longcase-match";
+import { toLongCaseResult, toPeFinding, type LongCaseResult, type PeFinding } from "@/lib/longcase-media";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import FeedbackCard from "./FeedbackCard";
 import { DictationButton, ReadReplyButton, VoiceSettings, useLongCaseVoice } from "./LongCaseVoice";
 import { appendDictation } from "./device-speech";
 import { PatientConversation } from "./PatientConversation";
+import { FindingImages, type FindingImage } from "./FindingImages";
+import { PatientAvatar } from "./PatientAvatar";
+import { getCharacter } from "@/lib/sim/characters";
 
 type Phase = LongCaseSession["phase"];
 
@@ -57,11 +61,11 @@ function LongCaseSessionInner() {
 
   // PE
   const [peSelected, setPeSelected] = useState<string[]>([]);
-  const [peRevealed, setPeRevealed] = useState<Record<string, string>>({});
+  const [peRevealed, setPeRevealed] = useState<Record<string, PeFinding>>({});
 
   // Lab
   const [labOrdered, setLabOrdered] = useState<string[]>([]);
-  const [labRevealed, setLabRevealed] = useState<Record<string, { value: string; isAbnormal: boolean }>>({});
+  const [labRevealed, setLabRevealed] = useState<Record<string, LongCaseResult>>({});
   const [labKeys, setLabKeys] = useState<string[]>([]);
 
   // DDx + Management
@@ -238,12 +242,12 @@ function LongCaseSessionInner() {
       const res = await fetch(`/api/longcase/session?id=${sessionId}&includePe=true`);
       const data = await res.json();
       const findings = data.long_case?.pe_findings || {};
-      const revealed: Record<string, string> = {};
-      for (const sys of systems) revealed[sys] = matchResult(sys, findings) || "ปกติ ไม่มีสิ่งผิดปกติ";
+      const revealed: Record<string, PeFinding> = {};
+      for (const sys of systems) revealed[sys] = toPeFinding(matchResult(sys, findings)) || { text: "ปกติ ไม่มีสิ่งผิดปกติ" };
       setPeRevealed(prev => ({ ...prev, ...revealed }));
     } catch {
-      const revealed: Record<string, string> = {};
-      for (const sys of systems) revealed[sys] = "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่";
+      const revealed: Record<string, PeFinding> = {};
+      for (const sys of systems) revealed[sys] = { text: "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่" };
       setPeRevealed(prev => ({ ...prev, ...revealed }));
     }
   }
@@ -258,11 +262,13 @@ function LongCaseSessionInner() {
         ...(data.long_case?.lab_results || {}),
         ...(data.long_case?.imaging_results || {}),
       };
-      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
-      for (const lab of labs) revealed[lab] = matchResult(lab, results) || { value: "ไม่มีผลในระบบ", isAbnormal: false };
+      const revealed: Record<string, LongCaseResult> = {};
+      for (const lab of labs) {
+        revealed[lab] = toLongCaseResult(matchResult(lab, results)) || { value: "ไม่มีผลในระบบ", isAbnormal: false };
+      }
       setLabRevealed(prev => ({ ...prev, ...revealed }));
     } catch {
-      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
+      const revealed: Record<string, LongCaseResult> = {};
       for (const lab of labs) revealed[lab] = { value: "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่", isAbnormal: false };
       setLabRevealed(prev => ({ ...prev, ...revealed }));
     }
@@ -374,6 +380,10 @@ function LongCaseSessionInner() {
 
   const pi = lc?.patient_info as { name?: string; age?: number; gender?: string; underlying?: string[]; vitals?: Record<string, string | number> } | undefined;
 
+  // Infants/young children can't answer — the sprite is the parent instead.
+  const historySpeakerId = (lc as { history_speaker?: string } | null)?.history_speaker;
+  const historySpeakerName = (historySpeakerId && getCharacter(historySpeakerId)?.name) || "ผู้ป่วย";
+
   if (loading) return (
     <div className="flex items-center justify-center min-h-screen">
       <Loader2 className="h-8 w-8 animate-spin text-amber-500" />
@@ -476,6 +486,7 @@ function LongCaseSessionInner() {
               <MessageSquare className="h-5 w-5" /> ซักประวัติ
             </h2>
             <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด &ldquo;เสร็จแล้ว&rdquo;</p>
+            <PatientAvatar charId={historySpeakerId} talking={chatLoading || voice.speakingId !== null} />
             <PatientConversation key={`${sessionId}:conversation`} voice={voice}
               disabled={dictating || chatLoading || !!chatInput.trim()}
               onActiveChange={setConversing} onAsk={text => sendChat(text, true)}
@@ -493,7 +504,7 @@ function LongCaseSessionInner() {
                       ? "bg-amber-500 text-white"
                       : "bg-gray-100 text-gray-800"
                   }`}>
-                    {m.role === "assistant" && <p className="text-xs font-semibold text-gray-500 mb-1">👤 ผู้ป่วย</p>}
+                    {m.role === "assistant" && <p className="text-xs font-semibold text-gray-500 mb-1">👤 {historySpeakerName}</p>}
                     <p className="whitespace-pre-wrap">{m.content}</p>
                     {m.role === "assistant" && (
                       <div><ReadReplyButton voice={voice} text={m.content} id={`history-${i}`} disabled={conversing || dictating || chatLoading} /></div>
@@ -555,12 +566,24 @@ function LongCaseSessionInner() {
                     }}
                   >
                     <div className="font-medium text-sm text-gray-800">{sys}</div>
-                    {revealed && <p className={`text-xs mt-1 ${revealed.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}`}>{revealed}</p>}
+                    {revealed && (revealed.image_url
+                      ? <p className="text-xs mt-1 text-blue-600">🖼 ดูภาพด้านล่าง</p>
+                      : <p className={`text-xs mt-1 ${revealed.text.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}`}>{revealed.text}</p>)}
                     {!revealed && selected && <p className="text-xs text-amber-500 mt-1">โหลด...</p>}
                   </div>
                 );
               })}
             </div>
+            <FindingImages
+              heading="ภาพตรวจร่างกาย — ลองบรรยายสิ่งที่เห็นก่อนเปิดผล"
+              items={peSelected.flatMap((sys): FindingImage[] => {
+                const f = peRevealed[sys];
+                return f?.image_url
+                  ? [{ name: sys, image_url: f.image_url, image_credit: f.image_credit, report: f.text, isAbnormal: false }]
+                  : [];
+              })}
+            />
+
             <Button onClick={() => savePhase("lab")} disabled={peSelected.length === 0} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
               เสร็จแล้ว → สั่ง Lab/Imaging <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
@@ -603,7 +626,7 @@ function LongCaseSessionInner() {
                         className={`rounded-lg border p-2.5 cursor-pointer transition-colors min-w-[100px] ${ordered ? "border-blue-400 bg-white" : "border-blue-300 bg-white hover:bg-blue-100"}`}
                       >
                         <div className="font-medium text-sm text-blue-800">{name}</div>
-                        {res && <p className={`text-xs mt-0.5 ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>}
+                        {res && <LabResultText res={res} className="mt-0.5" />}
                         {!res && ordered && <p className="text-xs text-blue-400 mt-0.5">โหลด...</p>}
                       </div>
                     );
@@ -644,11 +667,21 @@ function LongCaseSessionInner() {
                       {name}
                       {isRecommended && !ordered && <span className="text-blue-400 text-xs">★</span>}
                     </div>
-                    {res && <p className={`text-xs mt-1 ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>}
+                    {res && <LabResultText res={res} className="mt-1" />}
                   </div>
                 );
               })}
             </div>
+            <FindingImages
+              heading="ภาพผลตรวจ — ลองอ่านเองก่อนเปิดผลอ่าน"
+              items={labOrdered.flatMap((name): FindingImage[] => {
+                const r = labRevealed[name];
+                return r?.image_url
+                  ? [{ name, image_url: r.image_url, image_credit: r.image_credit, report: r.value, isAbnormal: r.isAbnormal }]
+                  : [];
+              })}
+            />
+
             <Button onClick={() => savePhase("ddx")} disabled={labOrdered.length === 0} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
               เสร็จแล้ว → เขียน DDx <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
@@ -946,6 +979,13 @@ function LongCaseSessionInner() {
       </div>
     </div>
   );
+}
+
+// A result with a picture points to the image panel instead of spoiling the
+// report inline — the student reads the ECG/CXR first.
+function LabResultText({ res, className }: { res: LongCaseResult; className: string }) {
+  if (res.image_url) return <p className={`text-xs text-blue-600 ${className}`}>🖼 ดูภาพด้านล่าง</p>;
+  return <p className={`text-xs ${className} ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>;
 }
 
 export default function LongCaseSessionPage() {
