@@ -11,7 +11,9 @@ for (const width of [390, 768, 1280, 1440]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.screenshot({ path: testInfo.outputPath(`branding-${width}.png`) });
     if (width < 1280) {
-      await page.getByRole("button", { name: "เปิดเมนู", exact: true }).click();
+      const mobileMenu = page.locator('nav[aria-label="เมนูหลัก"] > details');
+      await mobileMenu.locator('summary[aria-label="เมนู"]').click();
+      await expect(mobileMenu).toHaveAttribute("open", "");
     }
     await expect(page.locator("nav").getByRole("link", { name: "สมัครสมาชิก", exact: true })).toBeVisible();
     const schema = await page.locator('script[type="application/ld+json"]').allTextContents();

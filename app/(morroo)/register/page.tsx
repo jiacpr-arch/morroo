@@ -14,6 +14,7 @@ import { safeInternalPath } from "@/lib/safe-redirect";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import LandingPageTracker from "@/components/LandingPageTracker";
 import RegisterValueProps from "@/components/RegisterValueProps";
+import AuthIllustration from "@/components/AuthIllustration";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
 
@@ -163,15 +164,16 @@ function RegisterForm() {
   }
 
   return (
-    <div className="flex items-start justify-center min-h-[calc(100vh-12rem)] px-4 py-8">
+    <div className="flex items-start justify-center min-h-[calc(100vh-12rem)] px-4 py-8 sm:px-6">
       <LandingPageTracker event="register_view" />
-      <div className="w-full max-w-md md:max-w-4xl grid gap-6 md:grid-cols-[1fr_minmax(0,28rem)]">
-        <div className="hidden md:block">
+      <div className="grid w-full max-w-md gap-6 lg:max-w-5xl lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
+        <div className="hidden space-y-4 lg:block">
+          <AuthIllustration scene="together" title="เริ่มต้นไปด้วยกัน" description="ทบทวนบทเรียน ฝึกโจทย์ และค่อย ๆ เห็นพัฒนาการของตัวเองในทุกวัน" />
           <RegisterValueProps />
         </div>
-      <Card className="w-full">
+      <Card className="w-full max-w-md self-start justify-self-center border border-surface-border shadow-sm">
         <CardHeader className="text-center space-y-2">
-          <div className="text-4xl">🩺</div>
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-2xl">🩺</div>
           <h1 className="text-2xl font-bold">สมัครสมาชิก</h1>
           <p className="text-sm text-muted-foreground">
             เริ่มต้นเตรียมสอบแพทย์กับหมอรู้
