@@ -4,6 +4,13 @@ import type { AdsDailySummary } from "./ads-daily-summary";
 import type { WeeklyAnalyticsSummary } from "./analytics-weekly";
 import type { ReengageExperimentStatus } from "./mcq-reengage-experiment";
 import { toLiffUri } from "./line-links";
+import {
+  formatActionItemValue,
+  severityIcon,
+  sortActionItems,
+  totalActionCount,
+  type AdminActionItem,
+} from "./admin-action-items";
 
 interface WeeklySummaryData {
   totalQuestions: number;
@@ -974,6 +981,67 @@ interface AdminDigestData {
   doctor?: DoctorDigestSummary | null;
   reengageExperiment?: ReengageExperimentStatus | null;
   cronHealth?: CronDigestSummary | null;
+  /**
+   * Admin action queue (lib/admin-action-items.ts). null/undefined = lookup
+   * unavailable → section omitted; all-zero → "✅ ไม่มีงานค้าง".
+   */
+  actionItems?: AdminActionItem[] | null;
+  /** ISO time the digest was built — used for "ค้าง N วัน" ages. Defaults to now. */
+  generatedAt?: string;
+}
+
+// Rows in the action section — keeps the (already long) digest bubble well
+// under LINE's 30 KB bubble limit; the rest are summarised in one line.
+export const MAX_ACTION_ROWS = 8;
+
+const SEVERITY_COLOR = { high: "#E74C3C", medium: "#E67E22", low: "#555555" } as const;
+
+// "What do I need to do today" — first thing in the digest. Each row is a
+// tappable box that opens the admin page where the queue is handled.
+function actionItemsSection(items: AdminActionItem[], now: Date) {
+  const pending = sortActionItems(items);
+  if (pending.length === 0) {
+    return [
+      sectionTitle("📋 งานรอแอดมิน"),
+      noteLine("✅ ไม่มีงานค้าง", "#16A085"),
+      { type: "separator" as const, margin: "md" as const },
+    ];
+  }
+  const rows = pending.slice(0, MAX_ACTION_ROWS).map((item) => ({
+    type: "box" as const,
+    layout: "horizontal" as const,
+    margin: "sm" as const,
+    // LINE caps action labels at 40 chars.
+    action: { type: "uri" as const, label: item.label.slice(0, 40), uri: item.href },
+    contents: [
+      {
+        type: "text" as const,
+        text: `${severityIcon(item.severity)} ${item.label}`,
+        size: "xs" as const,
+        color: "#0EA5E9",
+        decoration: "underline" as const,
+        wrap: true,
+        flex: 7,
+      },
+      {
+        type: "text" as const,
+        text: formatActionItemValue(item, now),
+        size: "xs" as const,
+        weight: "bold" as const,
+        color: SEVERITY_COLOR[item.severity],
+        align: "end" as const,
+        flex: 4,
+      },
+    ],
+  }));
+  const extra = pending.length - MAX_ACTION_ROWS;
+  return [
+    sectionTitle(`📋 งานรอแอดมิน (${totalActionCount(pending)})`),
+    ...rows,
+    ...(extra > 0 ? [noteLine(`และอีก ${extra} รายการ — ดูใน Admin Dashboard`, "#888888")] : []),
+    noteLine("แตะแต่ละรายการเพื่อเปิดหน้าจัดการ", "#AAAAAA"),
+    { type: "separator" as const, margin: "md" as const },
+  ];
 }
 
 /**
@@ -1303,10 +1371,14 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
     data.revenueTodayThb != null
       ? `฿${data.revenueTodayThb.toLocaleString("th-TH")}`
       : "—";
+  const now = data.generatedAt ? new Date(data.generatedAt) : new Date();
+  const actionTotal = data.actionItems ? totalActionCount(data.actionItems) : 0;
 
   return {
     type: "flex",
-    altText: `MorRoo เช้านี้ ${data.dateLabel} — รายได้ ${revenueText} · สมัครใหม่ ${data.newUsersToday} คน`,
+    altText:
+      `MorRoo เช้านี้ ${data.dateLabel} — รายได้ ${revenueText} · สมัครใหม่ ${data.newUsersToday} คน` +
+      (actionTotal > 0 ? ` · งานรอแอดมิน ${actionTotal}` : ""),
     contents: {
       type: "bubble",
       size: "kilo",
@@ -1337,6 +1409,7 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
         spacing: "md",
         paddingAll: "lg",
         contents: [
+          ...(data.actionItems ? actionItemsSection(data.actionItems, now) : []),
           sectionTitle("💰 ธุรกิจวันนี้"),
           statRow("รายได้", revenueText),
           statRow("สมาชิกใหม่", `${data.newUsersToday} คน`),
