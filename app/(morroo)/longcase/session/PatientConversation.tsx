@@ -13,6 +13,13 @@ const labels: Record<Stage, string> = {
   listening: "กำลังฟังคำถาม…", waiting: "ปิดไมค์แล้ว กำลังรอคนไข้ตอบ…",
   speaking: "คนไข้กำลังพูด · ไมค์ปิดอยู่",
 };
+// How long the student may pause before a question is sent. Thai speakers
+// often pause mid-question, so the default leaves room to think.
+const PAUSES = [2000, 3000, 5000];
+const DEFAULT_PAUSE = 5000;
+// Keep listening through quiet stretches (thinking between questions) instead
+// of ending the conversation, but never leave the mic open indefinitely.
+const MAX_QUIET_MS = 120_000;
 
 // Half-duplex, opt-in, history-only. Never retry an AI request automatically.
 export function PatientConversation({ voice, disabled, onAsk, onActiveChange, onDraft }: {
@@ -27,6 +34,9 @@ export function PatientConversation({ voice, disabled, onAsk, onActiveChange, on
   const [allowBrowser, setAllowBrowser] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [message, setMessage] = useState("");
+  const [pause, setPause] = useState(DEFAULT_PAUSE);
+  const pauseRef = useRef(pause);
+  useEffect(() => { pauseRef.current = pause; }, [pause]);
   const generation = useRef(0);
   const running = useRef(false);
   const recognition = useRef<DeviceRecognition | null>(null);
@@ -106,6 +116,7 @@ export function PatientConversation({ voice, disabled, onAsk, onActiveChange, on
       if (!await ready) { fail("เปิดเสียงอ่านไม่ได้ กรุณาตรวจเสียงในเครื่องแล้วเริ่มใหม่"); return; }
       if (!valid()) return;
       clearTimers();
+      let quietSince = Date.now();
 
       const listen = () => {
         if (!valid()) return;
@@ -125,14 +136,26 @@ export function PatientConversation({ voice, disabled, onAsk, onActiveChange, on
           setTranscript("");
           setStage("listening");
 
-          const finish = async () => {
+          // Nothing was said: reopen the mic rather than ending the conversation.
+          const relisten = () => {
             if (!valid() || settled) return;
             settled = true;
             clearTimers();
-            detach(); // Fully release mic before network or playback.
+            detach();
+            if (Date.now() - quietSince >= MAX_QUIET_MS) {
+              fail("ไม่ได้ยินคำถามนาน 2 นาที ปิดไมค์แล้ว กดเริ่มคุยเมื่อพร้อม");
+              return;
+            }
+            schedule(listen, 250);
+          };
+          const finish = async () => {
+            if (!valid() || settled) return;
             const text = [...finals.values()].join(" ").trim();
+            if (!text && !pending.trim()) { relisten(); return; }
+            settled = true;
+            clearTimers();
+            detach(); // Fully release mic before network or playback.
             if (pending.trim()) { fail("ข้อความยังถอดเสียงไม่ครบ เก็บไว้ในช่องพิมพ์แล้ว กรุณาตรวจและส่งเอง"); return; }
-            if (!text) { fail("ยังไม่ได้ยินคำถาม กดเริ่มคุยเพื่อลองใหม่ได้"); return; }
             draft.current = ""; // This turn is being sent, never resend on Stop.
             setStage("waiting");
             try {
@@ -143,6 +166,7 @@ export function PatientConversation({ voice, disabled, onAsk, onActiveChange, on
               const played = await callbacks.current.voice.read(reply, "conversation-reply");
               if (!valid()) return;
               if (!played) { fail("เสียงอ่านหยุดหรือเล่นไม่ได้ กดเริ่มใหม่เมื่อพร้อม"); return; }
+              quietSince = Date.now();
               schedule(listen, 400); // Allow speaker echo to decay.
             } catch { fail("เชื่อมต่อไม่ได้ หยุดโหมดสนทนาแล้ว ไม่มีการส่งซ้ำอัตโนมัติ"); }
           };
@@ -168,12 +192,20 @@ export function PatientConversation({ voice, disabled, onAsk, onActiveChange, on
             draft.current = [...finals.values(), pending].filter(Boolean).join(" ");
             setTranscript(draft.current);
             if (silence) { clearTimeout(silence); timers.current.delete(silence); }
-            silence = schedule(closeTurn, 1800);
+            silence = schedule(closeTurn, pauseRef.current);
           };
-          rec.onerror = event => { if (!settled) fail(recognitionError(event.error)); };
+          rec.onerror = event => {
+            if (settled) return;
+            // Engines report silence as an error; onend follows and relistens.
+            if (event.error === "no-speech") return;
+            fail(recognitionError(event.error));
+          };
           rec.onend = () => { void finish(); };
           rec.start();
-          schedule(() => fail("หยุดไมค์เมื่อครบ 60 วินาที เก็บข้อความที่ยังไม่ส่งไว้ในช่องพิมพ์แล้ว"), 60_000);
+          schedule(() => {
+            if (draft.current.trim()) fail("หยุดไมค์เมื่อครบ 60 วินาที เก็บข้อความที่ยังไม่ส่งไว้ในช่องพิมพ์แล้ว");
+            else relisten();
+          }, 60_000);
         } catch { fail("เปิดไมค์ไม่ได้ กรุณาตรวจสิทธิ์ไมโครโฟนแล้วกดเริ่มใหม่"); }
       };
       listen();
@@ -190,7 +222,12 @@ export function PatientConversation({ voice, disabled, onAsk, onActiveChange, on
       </Button>
       <span role="status" className="text-sm text-amber-900">{labels[stage]}</span>
     </div>
-    <p className="text-xs text-gray-700">พูดถามแล้วเว้นจังหวะประมาณ 2 วินาที ระบบจะส่งข้อความอัตโนมัติ คนไข้ AI พูดตอบจบแล้วจึงเปิดไมค์รอบถัดไป · ใช้ AI ข้อความและโควตาเดิม ไม่มีค่า API เสียงเพิ่ม</p>
+    <p className="text-xs text-gray-700">คุยได้ต่อเนื่องเหมือนคุยกับคนไข้จริง: พูดถามแล้วหยุดประมาณ {pause / 1000} วินาที ระบบจะส่งคำถามให้เอง คนไข้ AI พูดตอบจบแล้วเปิดไมค์ฟังคำถามถัดไปอัตโนมัติ เงียบคิดได้โดยไมค์ไม่ปิด · ใช้ AI ข้อความและโควตาเดิม ไม่มีค่า API เสียงเพิ่ม</p>
+    <label className="flex flex-wrap items-center gap-2 text-xs text-gray-700">หยุดพูดนานเท่าไรจึงส่งคำถาม
+      <select value={pause} className="rounded border bg-white p-1.5" onChange={e => setPause(Number(e.target.value))}>
+        {PAUSES.map(ms => <option key={ms} value={ms}>{ms / 1000} วินาที</option>)}
+      </select>
+    </label>
     <p className="text-xs text-gray-600">กดหยุดได้ทุกเมื่อ ข้อความที่ส่งแล้วอาจยังได้รับคำตอบ · แนะนำหูฟัง และยังไม่รองรับการพูดแทรก</p>
     {supported && <label className="flex items-start gap-2 text-xs text-gray-600">
       <input type="checkbox" checked={allowBrowser} disabled={active} className="mt-0.5" onChange={e => setAllowBrowser(e.target.checked)} />

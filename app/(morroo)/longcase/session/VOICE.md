@@ -7,9 +7,13 @@ schema, billing, or other product pages are changed.
 
 ### Patient conversation (History only)
 
-- Explicit Start opts into automatically sending finalized questions after
-  roughly 1.8 seconds without recognition updates. Existing drafts must first
-  be sent or cleared. The manual dictation workflow remains available.
+- Explicit Start opts into automatically sending finalized questions after a
+  pause without recognition updates: 5 seconds by default, selectable 2/3/5 s
+  so students can think mid-question. Existing drafts must first be sent or
+  cleared. The manual dictation workflow remains available.
+- Silence alone does not end the conversation: a `no-speech` result, an engine
+  ending with nothing heard, or the 60 s guard with an empty draft reopens the
+  mic. After 2 minutes with no question the loop stops.
 - Local Thai recognition is the default. A separate, initially unchecked
   consent permits the browser recognition service; no silent remote fallback.
 - Device voice gives a readiness prompt, then the microphone opens. Recognition
