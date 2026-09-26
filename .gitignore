@@ -16,3 +16,4 @@ tsconfig.tsbuildinfo
 /public/sitemap.xml
 /public/sitemap-*.xml
 scripts/longcase-pe-images-out/
+scripts/ptbxl-ecg-out/
