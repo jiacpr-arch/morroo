@@ -53,19 +53,19 @@ export default function LearningPageHero({
       data-learning-hero
       className={cn(
         "mb-8 grid overflow-hidden rounded-3xl border lg:grid-cols-[1.15fr_0.85fr]",
-        dark ? "border-white/10 bg-brand-dark text-white" : "border-[#dfe7da] bg-[#f3f5ef] text-brand-dark",
+        dark ? "border-white/10 bg-brand-dark text-white" : "border-surface-border bg-surface-warm text-brand-dark",
         className,
       )}
     >
       <div className="min-w-0 self-center p-6 sm:p-8 lg:py-10">
-        <p className={cn("flex items-center gap-2 text-sm font-semibold", dark ? "text-emerald-200" : "text-[#35694f]")}>
+        <p className={cn("flex items-center gap-2 text-sm font-semibold", dark ? "text-emerald-200" : "text-brand-dark")}>
           <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", dark ? "bg-emerald-300" : "bg-brand")} aria-hidden="true" />
           {eyebrow}
         </p>
         <h1 className="mt-3 text-[1.75rem] font-bold leading-[1.45] text-balance sm:text-3xl xl:text-4xl">
           {title}
         </h1>
-        <div className={cn("mt-3 max-w-2xl text-sm leading-7 sm:text-base", dark ? "text-white/80" : "text-[#536557]")}>
+        <div className={cn("mt-3 max-w-2xl text-sm leading-7 sm:text-base", dark ? "text-white/80" : "text-ink-soft")}>
           {description}
         </div>
         {children && <div className="mt-5 space-y-3">{children}</div>}

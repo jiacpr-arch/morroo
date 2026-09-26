@@ -6,6 +6,8 @@ import { X, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
 import { useIsLoggedIn } from "@/lib/hooks/useIsLoggedIn";
+import { usePathname } from "next/navigation";
+import { isFocusedPracticeRoute } from "@/lib/focus-routes";
 
 const SHOWN_KEY = "morroo_exit_intent_shown";
 
@@ -23,11 +25,16 @@ const SHOWN_KEY = "morroo_exit_intent_shown";
 export default function ExitIntentPopup() {
   const [open, setOpen] = useState(false);
   const isLoggedIn = useIsLoggedIn();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (isFocusedPracticeRoute(pathname)) setOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     // null = session still resolving; only arm the triggers for known guests.
-    if (isLoggedIn !== false) return;
+    if (isLoggedIn !== false || isFocusedPracticeRoute(pathname)) return;
     try {
       if (window.sessionStorage.getItem(SHOWN_KEY)) return;
     } catch {
@@ -94,9 +101,9 @@ export default function ExitIntentPopup() {
       document.removeEventListener("touchstart", onTouchStart);
       document.removeEventListener("touchmove", onTouchMove);
     };
-  }, [isLoggedIn]);
+  }, [isLoggedIn, pathname]);
 
-  if (!open) return null;
+  if (!open || isFocusedPracticeRoute(pathname)) return null;
 
   return (
     <div

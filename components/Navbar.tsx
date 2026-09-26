@@ -5,34 +5,41 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut, Shield } from "lucide-react";
+import { ChevronDown, Menu, X, User, LogOut, Shield } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { unsubscribePushOnLogout } from "@/lib/push-client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
 import BetaHeaderCounter from "@/components/beta/BetaHeaderCounter";
 import NavbarRankChip from "@/components/school/NavbarRankChip";
 
-const navLinks: { href: string; label: string; isNew?: boolean }[] = [
+const primaryNavLinks: { href: string; label: string; isNew?: boolean }[] = [
   { href: "/", label: "หน้าแรก" },
   { href: "/school", label: "School" },
   { href: "/nl", label: "MCQ" },
   { href: "/exams", label: "MEQ" },
   { href: "/longcase", label: "Long Case" },
   { href: "/casegame", label: "เกมเคส", isNew: true },
+  { href: "/pricing", label: "แพ็กเกจ" },
+];
+
+const exploreNavLinks = [
   // middleware 301 ไป game.morroo.com บนโปรดักชัน (hub รวมเกมทุกเว็บ)
   { href: "/games", label: "เกม" },
   { href: "/acls-reader", label: "ACLS" },
   { href: "/board", label: "Board" },
   { href: "/blog", label: "บทความ" },
-  { href: "/pricing", label: "แพ็กเกจ" },
   { href: "/guide", label: "คู่มือ" },
 ];
+
+function isActive(pathname: string | null, href: string) {
+  return pathname === href || (href !== "/" && pathname?.startsWith(`${href}/`));
+}
 
 /** จุดสีส้มเน้นเมนูใหม่ — ping ครั้งเดียวตอนโหลดเพื่อไม่กวนสายตาตลอดเวลา */
 function NewDot() {
   return (
     <span className="absolute -right-2 -top-0.5 flex h-1.5 w-1.5" aria-label="ฟีเจอร์ใหม่">
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75 [animation-iteration-count:3]" />
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75 [animation-iteration-count:3] motion-reduce:animate-none" />
       <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500" />
     </span>
   );
@@ -44,7 +51,6 @@ const authNavLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const supabase = createClient();
@@ -87,7 +93,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-md">
+    <nav aria-label="เมนูหลัก" className="sticky top-0 z-50 border-b border-surface-border bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" aria-label="MorRoo หมอรู้ — หน้าแรก" className="flex shrink-0 items-center gap-2 font-bold text-lg">
@@ -96,21 +102,38 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden xl:flex items-center gap-3">
-          {navLinks.map((link) => (
+        <div className="hidden xl:flex items-center gap-4">
+          {primaryNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`relative text-sm font-medium transition-colors hover:text-brand ${
-                pathname === link.href
-                  ? "text-brand"
-                  : "text-muted-foreground"
+              aria-current={isActive(pathname, link.href) ? "page" : undefined}
+              className={`relative rounded-md py-2 text-sm font-medium transition-colors hover:text-brand focus-visible:outline-2 focus-visible:outline-brand ${
+                isActive(pathname, link.href) ? "text-brand-dark" : "text-muted-foreground"
               }`}
             >
               {link.label}
               {link.isNew && <NewDot />}
             </Link>
           ))}
+          <details className="group relative">
+            <summary className="flex cursor-pointer list-none items-center gap-1 rounded-md py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-brand focus-visible:outline-2 focus-visible:outline-brand [&::-webkit-details-marker]:hidden">
+              เพิ่มเติม <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+            </summary>
+            <div className="absolute left-1/2 top-full mt-2 w-44 -translate-x-1/2 rounded-2xl border border-surface-border bg-white p-2 shadow-xl">
+              {exploreNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive(pathname, link.href) ? "page" : undefined}
+                  onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
+                  className={`block rounded-lg px-3 py-2 text-sm font-medium hover:bg-surface-warm hover:text-brand-dark ${isActive(pathname, link.href) ? "bg-surface-warm text-brand-dark" : "text-muted-foreground"}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </details>
         </div>
 
         {/* Auth buttons */}
@@ -175,29 +198,37 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile menu button */}
-        <div className="xl:hidden flex items-center gap-2">
+        {/* Mobile account chips leave room for the native menu control. */}
+        <div className="flex items-center gap-2 pr-12 xl:hidden">
           {user && <NavbarRankChip />}
           {user && <BetaHeaderCounter />}
-          <button aria-label={mobileOpen ? "ปิดเมนู" : "เปิดเมนู"} aria-expanded={mobileOpen} onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile nav */}
-      {mobileOpen && (
-        <div className="border-t bg-white xl:hidden">
+      {/* Native details opens immediately, even before client hydration. */}
+      <details className="group xl:hidden" onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          event.currentTarget.removeAttribute("open");
+          event.currentTarget.querySelector("summary")?.focus();
+        }
+      }}>
+        <summary aria-label="เมนู" className="absolute right-4 top-2.5 flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-xl text-brand-dark hover:bg-surface-warm focus-visible:outline-2 focus-visible:outline-brand [&::-webkit-details-marker]:hidden">
+          <Menu className="h-6 w-6 group-open:hidden" />
+          <X className="hidden h-6 w-6 group-open:block" />
+        </summary>
+        <div id="mobile-main-menu" className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-surface-border bg-white shadow-xl">
           <div className="space-y-1 px-4 py-3">
-            {navLinks.map((link) => (
+            <p className="px-3 pb-1 text-xs font-semibold text-muted-foreground">เริ่มเรียน</p>
+            {primaryNavLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={`block rounded-md px-3 py-2 text-sm font-medium ${
-                  pathname === link.href
-                    ? "bg-brand/10 text-brand"
-                    : "text-muted-foreground hover:bg-muted"
+                onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
+                aria-current={isActive(pathname, link.href) ? "page" : undefined}
+                className={`block rounded-xl px-3 py-2.5 text-sm font-medium ${
+                  isActive(pathname, link.href)
+                    ? "bg-surface-warm text-brand-dark"
+                    : "text-muted-foreground hover:bg-surface-warm"
                 }`}
               >
                 {link.label}
@@ -208,6 +239,18 @@ export default function Navbar() {
                 )}
               </Link>
             ))}
+            <p className="border-t border-surface-border px-3 pb-1 pt-4 text-xs font-semibold text-muted-foreground">สำรวจเพิ่มเติม</p>
+            {exploreNavLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
+                aria-current={isActive(pathname, link.href) ? "page" : undefined}
+                className={`block rounded-xl px-3 py-2.5 text-sm font-medium ${isActive(pathname, link.href) ? "bg-surface-warm text-brand-dark" : "text-muted-foreground hover:bg-surface-warm"}`}
+              >
+                {link.label}
+              </Link>
+            ))}
             <div className="border-t pt-3 mt-3 space-y-2">
               {user ? (
                 <>
@@ -215,7 +258,7 @@ export default function Navbar() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
                       className={`block rounded-md px-3 py-2 text-sm font-medium ${
                         pathname === link.href
                           ? "bg-brand/10 text-brand"
@@ -228,7 +271,7 @@ export default function Navbar() {
                   {isAdmin && (
                     <Link
                       href="/admin"
-                      onClick={() => setMobileOpen(false)}
+                      onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
                       className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
                     >
                       Admin
@@ -236,7 +279,7 @@ export default function Navbar() {
                   )}
                   <Link
                     href="/profile"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
                     className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
                   >
                     โปรไฟล์
@@ -252,14 +295,14 @@ export default function Navbar() {
                 <>
                   <Link
                     href="/login"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
                     className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
                   >
                     เข้าสู่ระบบ
                   </Link>
                   <Link
                     href="/register"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
                     className="block rounded-md bg-brand px-3 py-2 text-center text-sm font-medium text-white"
                   >
                     สมัครสมาชิก
@@ -269,7 +312,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      )}
+      </details>
     </nav>
   );
 }

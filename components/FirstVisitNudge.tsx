@@ -6,6 +6,8 @@ import { X, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
 import { useIsLoggedIn } from "@/lib/hooks/useIsLoggedIn";
+import { usePathname } from "next/navigation";
+import { isFocusedPracticeRoute } from "@/lib/focus-routes";
 
 const SEEN_KEY = "morroo_first_visit_nudge_v1";
 const EXIT_INTENT_KEY = "morroo_exit_intent_shown";
@@ -21,11 +23,16 @@ const EXIT_INTENT_KEY = "morroo_exit_intent_shown";
 export default function FirstVisitNudge() {
   const [open, setOpen] = useState(false);
   const isLoggedIn = useIsLoggedIn();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (isFocusedPracticeRoute(pathname)) setOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     // null = session still resolving; only arm the triggers for known guests.
-    if (isLoggedIn !== false) return;
+    if (isLoggedIn !== false || isFocusedPracticeRoute(pathname)) return;
     try {
       if (window.localStorage.getItem(SEEN_KEY)) return;
     } catch {
@@ -66,14 +73,14 @@ export default function FirstVisitNudge() {
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return cleanup;
-  }, [isLoggedIn]);
+  }, [isLoggedIn, pathname]);
 
   function dismiss(method: "x" | "later") {
     track("first_visit_nudge_dismiss", { method });
     setOpen(false);
   }
 
-  if (!open) return null;
+  if (!open || isFocusedPracticeRoute(pathname)) return null;
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[70] flex justify-center px-4 pb-4 sm:inset-x-auto sm:right-4 sm:justify-end">
