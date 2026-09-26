@@ -19,6 +19,7 @@
     "gen:meqgames": "tsx scripts/generate-meq-games.ts",
     "rebalance:simchoices": "tsx scripts/rebalance-sim-choices.ts",
     "gen:figures": "tsx scripts/generate-lesson-figures.ts",
+    "gen:infographics": "tsx scripts/generate-lesson-infographics.ts",
     "resplit:parts": "tsx scripts/resplit-lesson-parts.ts"
   },
   "dependencies": {
