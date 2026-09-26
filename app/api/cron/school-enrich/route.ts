@@ -22,7 +22,7 @@ import { withCronRun } from "@/lib/cron-runs";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-const MODEL = "claude-sonnet-4-6";
+const MODEL = "claude-sonnet-5";
 const MAX_TOPICS_PER_RUN = 3;
 const MAX_QUESTIONS_PER_TOPIC = 20;
 const MAX_CONTEXT_CHARS = 12000;

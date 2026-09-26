@@ -4,6 +4,7 @@ node_modules/
 .next/
 test-results/
 playwright-report/
+.DS_Store
 
 # Next.js สร้างใหม่ทุกครั้งที่ dev/build — เอกสาร Next ระบุว่าไม่ควร track
 next-env.d.ts
