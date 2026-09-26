@@ -123,7 +123,8 @@ async function endSpeech(page: Page, error = false) {
   }, error);
 }
 
-async function startConversation(page: Page) {
+async function startConversation(page: Page, pause: string | null = "2000") {
+  if (pause) await page.getByLabel("หยุดพูดนานเท่าไรจึงส่งคำถาม").selectOption(pause);
   await page.getByRole("button", { name: "เริ่มคุยกับคนไข้", exact: true }).click();
   await expect.poll(async () => (await speechState(page)).spoken.length).toBeGreaterThan(0);
   await endSpeech(page);
@@ -151,6 +152,26 @@ test("patient conversation auto-sends once, reads the reply with mic off, then l
   await expect(page.getByRole("textbox")).toBeEnabled();
   await endSpeech(page);
   expect((await speechState(page)).starts).toBe(2);
+});
+
+test("conversation waits for a natural 5 second pause and keeps listening through silence", async ({ page }) => {
+  const requests = await setup(page);
+  await expect(page.getByLabel("หยุดพูดนานเท่าไรจึงส่งคำถาม")).toHaveValue("5000");
+  await startConversation(page, null);
+  // Silence while thinking: the engine reports no-speech and ends, the mic reopens.
+  await page.evaluate(() => {
+    const rec = (window as unknown as { __speech: { recognizer: { onerror: (e: unknown) => void; onend: () => void } } }).__speech.recognizer;
+    rec.onerror({ error: "no-speech" });
+    rec.onend();
+  });
+  await expect.poll(async () => (await speechState(page)).starts).toBe(2);
+  await expect(page.getByText("กำลังฟังคำถาม…", { exact: true })).toBeVisible();
+  await expect(page.getByRole("alert")).toHaveCount(0);
+  await result(page, "เจ็บหน้าอกตอนไหนครับ");
+  await page.waitForTimeout(3000);
+  expect(requests).toHaveLength(0);
+  await expect.poll(() => requests.length, { timeout: 5000 }).toBe(1);
+  expect(requests[0].body).toEqual({ sessionId: "test-session", messages: [{ role: "user", content: "เจ็บหน้าอกตอนไหนครับ" }] });
 });
 
 test("stopping conversation preserves unsent speech and ignores delayed recognition callbacks", async ({ page }) => {
