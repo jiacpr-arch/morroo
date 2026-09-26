@@ -1,14 +1,18 @@
 // Cron worker: process one board_gen_jobs row per tick.
 //
-// Scheduled in vercel.json every minute. Each invocation:
+// Scheduled in vercel.json hourly. Each invocation:
 //   1. Lock the oldest queued row (status → 'running')
 //   2. Run the agent for one specialty (≤ 60s window)
 //   3. Mark done / error
 //
 // Why one specialty per tick? Vercel Hobby caps maxDuration at 60s. A full
 // 30-question gen + critique fits comfortably under that for ONE specialty.
-// Fanning out 11 specialties per single subscription = 11 minutes total —
-// acceptable for an onboarding-time pipeline.
+//
+// Why hourly? Every specialty is far past the 30-question target, so
+// subscriptions rarely enqueue anything; the queue is mostly admin re-fills
+// (a new specialty is ready within the hour). For an immediate run, hit this
+// route with ?secret=BLOG_GENERATE_SECRET. The daily +1/specialty drip is
+// scripts/generate-board-daily.mjs (GitLab), which writes its own rows.
 
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -29,6 +33,9 @@ function isAuthorized(request: NextRequest): boolean {
   return false;
 }
 
+const STUCK_AFTER_MS = 90_000;
+const DAILY_STUCK_AFTER_MS = 20 * 60_000;
+
 async function processOne() {
   const admin = createAdminClient();
 
@@ -36,23 +43,37 @@ async function processOne() {
   // updating the row, leaving it forever in `running`. Reset anything
   // running > 90s back to `queued` so the next tick re-picks it. After
   // 3 attempts mark `error` permanently so we don't loop forever.
-  const stuckCutoff = new Date(Date.now() - 90_000).toISOString();
-  await admin
-    .from("board_gen_jobs")
-    .update({
-      status: "error",
-      error: "stuck in running > 90s for 3+ attempts (likely Vercel timeout)",
-      completed_at: new Date().toISOString(),
-    })
-    .eq("status", "running")
-    .lt("started_at", stuckCutoff)
-    .gte("attempts", 3);
-  await admin
-    .from("board_gen_jobs")
-    .update({ status: "queued", started_at: null })
-    .eq("status", "running")
-    .lt("started_at", stuckCutoff)
-    .lt("attempts", 3);
+  //
+  // `daily` rows are written straight into `running` by the GitLab drip
+  // script, which takes ~90–160s per specialty — a 90s cutoff re-queued them
+  // mid-run and generated duplicate questions. They only count as stuck past
+  // the script's 15-min job timeout. (Admin retries copy `trigger`, so a
+  // `daily` row can still be ours; the long cutoff reaps it eventually.)
+  const now = Date.now();
+  for (const { daily, afterMs } of [
+    { daily: false, afterMs: STUCK_AFTER_MS },
+    { daily: true, afterMs: DAILY_STUCK_AFTER_MS },
+  ]) {
+    const cutoff = new Date(now - afterMs).toISOString();
+    await admin
+      .from("board_gen_jobs")
+      .update({
+        status: "error",
+        error: "stuck in running for 3+ attempts (likely Vercel timeout)",
+        completed_at: new Date().toISOString(),
+      })
+      .eq("status", "running")
+      .filter("trigger", daily ? "eq" : "neq", "daily")
+      .lt("started_at", cutoff)
+      .gte("attempts", 3);
+    await admin
+      .from("board_gen_jobs")
+      .update({ status: "queued", started_at: null })
+      .eq("status", "running")
+      .filter("trigger", daily ? "eq" : "neq", "daily")
+      .lt("started_at", cutoff)
+      .lt("attempts", 3);
+  }
 
   // Atomic-ish claim: pick oldest queued, flip to running.
   // Race condition: if two cron invocations overlap, the second will pick
