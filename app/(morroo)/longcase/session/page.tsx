@@ -16,6 +16,8 @@ import { DictationButton, ReadReplyButton, VoiceSettings, useLongCaseVoice } fro
 import { appendDictation } from "./device-speech";
 import { PatientConversation } from "./PatientConversation";
 import { FindingImages, type FindingImage } from "./FindingImages";
+import { PatientAvatar } from "./PatientAvatar";
+import { getCharacter } from "@/lib/sim/characters";
 
 type Phase = LongCaseSession["phase"];
 
@@ -378,6 +380,10 @@ function LongCaseSessionInner() {
 
   const pi = lc?.patient_info as { name?: string; age?: number; gender?: string; underlying?: string[]; vitals?: Record<string, string | number> } | undefined;
 
+  // Infants/young children can't answer — the sprite is the parent instead.
+  const historySpeakerId = (lc as { history_speaker?: string } | null)?.history_speaker;
+  const historySpeakerName = (historySpeakerId && getCharacter(historySpeakerId)?.name) || "ผู้ป่วย";
+
   if (loading) return (
     <div className="flex items-center justify-center min-h-screen">
       <Loader2 className="h-8 w-8 animate-spin text-amber-500" />
@@ -480,6 +486,7 @@ function LongCaseSessionInner() {
               <MessageSquare className="h-5 w-5" /> ซักประวัติ
             </h2>
             <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด &ldquo;เสร็จแล้ว&rdquo;</p>
+            <PatientAvatar charId={historySpeakerId} talking={chatLoading || voice.speakingId !== null} />
             <PatientConversation key={`${sessionId}:conversation`} voice={voice}
               disabled={dictating || chatLoading || !!chatInput.trim()}
               onActiveChange={setConversing} onAsk={text => sendChat(text, true)}
@@ -497,7 +504,7 @@ function LongCaseSessionInner() {
                       ? "bg-amber-500 text-white"
                       : "bg-gray-100 text-gray-800"
                   }`}>
-                    {m.role === "assistant" && <p className="text-xs font-semibold text-gray-500 mb-1">👤 ผู้ป่วย</p>}
+                    {m.role === "assistant" && <p className="text-xs font-semibold text-gray-500 mb-1">👤 {historySpeakerName}</p>}
                     <p className="whitespace-pre-wrap">{m.content}</p>
                     {m.role === "assistant" && (
                       <div><ReadReplyButton voice={voice} text={m.content} id={`history-${i}`} disabled={conversing || dictating || chatLoading} /></div>

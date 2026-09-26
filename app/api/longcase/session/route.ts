@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
+import { readHistoryScript } from "@/lib/longcase-match";
+import { historySpeaker, patientCharId } from "@/lib/sim/patient-character";
 
 // GET /api/longcase/session?id=xxx&includePe=true&includeLab=true
 export async function GET(request: NextRequest) {
@@ -36,6 +38,14 @@ export async function GET(request: NextRequest) {
     delete (caseData as Record<string, unknown>).lab_results;
     delete (caseData as Record<string, unknown>).imaging_results;
   }
+  // Patient avatar sprite — picked server-side because pregnancy is read from
+  // the history script, which never leaves the server.
+  const pi = ((caseData as Record<string, unknown>).patient_info ?? {}) as Record<string, unknown>;
+  const hx = readHistoryScript((caseData as Record<string, unknown>).history_script as Record<string, unknown> | undefined);
+  const patientChar = patientCharId(pi, [hx.cc, hx.pi, hx.onset, hx.pmh].filter(Boolean).join(" "));
+  (caseData as Record<string, unknown>).patient_char = patientChar;
+  (caseData as Record<string, unknown>).history_speaker = historySpeaker(pi, patientChar);
+
   // Never expose history_script to client
   delete (caseData as Record<string, unknown>).history_script;
   delete (caseData as Record<string, unknown>).correct_diagnosis;
