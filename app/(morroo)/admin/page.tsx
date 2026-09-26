@@ -8,6 +8,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { ActivityHeatmap } from "@/components/ActivityHeatmap";
 import {
+  formatActionItemValue,
+  severityIcon,
+  type AdminActionItem,
+} from "@/lib/admin-action-items";
+import {
   Shield,
   Loader2,
   BookOpen,
@@ -46,6 +51,7 @@ export default function AdminDashboard() {
     totalLongCases: 0,
   });
   const [heatmap, setHeatmap] = useState<HeatmapCell[]>([]);
+  const [actionItems, setActionItems] = useState<AdminActionItem[] | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -58,6 +64,14 @@ export default function AdminDashboard() {
       if (profile?.role !== "admin") { setLoading(false); return; }
 
       setIsAdmin(true);
+
+      // Non-blocking: the dashboard renders without it.
+      fetch("/api/admin/action-items")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((j: { items?: AdminActionItem[] } | null) => {
+          if (j?.items) setActionItems(j.items);
+        })
+        .catch(() => {});
 
       const [examsRes, usersRes, paymentsRes, longcasesRes, heatmapRes] =
         await Promise.all([
@@ -160,6 +174,38 @@ export default function AdminDashboard() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Action queue — same list as the morning LINE digest */}
+      {actionItems && (
+        <Card className={`mb-8 ${actionItems.length > 0 ? "border-orange-300" : ""}`}>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">📋 งานรอแอดมิน</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {actionItems.length === 0 ? (
+              <p className="text-sm text-muted-foreground">✅ ไม่มีงานค้าง</p>
+            ) : (
+              <ul className="divide-y">
+                {actionItems.map((item) => (
+                  <li key={item.key}>
+                    <Link
+                      href={item.path}
+                      className="flex items-center justify-between gap-3 py-2 text-sm hover:text-brand"
+                    >
+                      <span>
+                        {severityIcon(item.severity)} {item.label}
+                      </span>
+                      <Badge variant={item.severity === "high" ? "destructive" : "secondary"}>
+                        {formatActionItemValue(item, new Date())}
+                      </Badge>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </CardContent>
+        </Card>
+      )}
 
       {/* Activity Heatmap */}
       {heatmap.length > 0 && (

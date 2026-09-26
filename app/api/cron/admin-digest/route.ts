@@ -19,6 +19,8 @@
  *    analytics-digest cron)
  *  - cron health: failed runs in the last 24h and jobs that missed their
  *    schedule, from `cron_runs` (lib/cron-runs.ts)
+ *  - "📋 งานรอแอดมิน": every admin queue with a count and a tap-through
+ *    link to its admin page (lib/admin-action-items.ts) — top of the bubble
  *
  * Auth: Vercel Cron injects `Authorization: Bearer $CRON_SECRET`.
  * External callers can use `?secret=$BLOG_GENERATE_SECRET`.
@@ -45,6 +47,7 @@ import {
   shouldShowReengageInDigest,
 } from "@/lib/mcq-reengage-experiment";
 import { fetchCronHealth, withCronRun } from "@/lib/cron-runs";
+import { getAdminActionItems, type AdminActionItem } from "@/lib/admin-action-items";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -460,7 +463,19 @@ async function handleGet(request: Request) {
     console.error("[admin-digest] cron health failed:", err);
   }
 
+  // --- Admin action queue: everything waiting on the admin, each with a
+  // link to the page that handles it (lib/admin-action-items.ts). Each queue
+  // fails in isolation; this outer catch only guards the unexpected. ---
+  let actionItems: AdminActionItem[] | null = null;
+  try {
+    actionItems = await getAdminActionItems(supabase, now);
+  } catch (err) {
+    console.error("[admin-digest] action items failed:", err);
+  }
+
   const flex = buildAdminDigestFlex({
+    actionItems,
+    generatedAt: now.toISOString(),
     dateLabel,
     attemptsToday,
     activeUsersToday,
@@ -506,6 +521,7 @@ async function handleGet(request: Request) {
       doctor,
       weekly,
       cronHealth,
+      actionItems,
     },
   });
 }

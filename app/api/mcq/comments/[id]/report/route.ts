@@ -1,5 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { buildAdminAlertText, sendThrottledAdminAlert } from "@/lib/admin-alerts";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { isUuid, validateReportReason } from "@/lib/mcq-comments";
 
@@ -61,6 +63,28 @@ export async function POST(
     console.error("[mcq/comments/report] insert error:", error);
     return NextResponse.json({ error: "รายงานไม่สำเร็จ" }, { status: 500 });
   }
+
+  // The comment was visible before this report; if the DB trigger just
+  // auto-hid it (≥3 reports), tell the admin now — a wrongly silenced
+  // comment shouldn't wait for the morning digest. Throttled per 6h.
+  after(async () => {
+    const admin = createAdminClient();
+    const { data: current } = await admin
+      .from("mcq_comments")
+      .select("status, body")
+      .eq("id", id)
+      .maybeSingle();
+    if ((current as { status?: string } | null)?.status !== "hidden") return;
+    await sendThrottledAdminAlert(
+      admin,
+      "comment_autohidden",
+      buildAdminAlertText({
+        title: "🙈 คอมเมนต์ถูกซ่อนอัตโนมัติ (รายงานครบ 3 ครั้ง)",
+        detail: `"${(current as { body?: string }).body ?? ""}"`,
+        path: "/admin/mcq/comments",
+      })
+    );
+  });
 
   return NextResponse.json({ ok: true });
 }

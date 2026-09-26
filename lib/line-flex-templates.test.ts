@@ -21,6 +21,7 @@ import {
   buildExamResultFlex,
   buildChatbotCard,
   abbreviateRunError,
+  MAX_ACTION_ROWS,
   type AdsOpsSummary,
   type DailyMcqQuestionData,
 } from "./line-flex-templates";
@@ -416,6 +417,78 @@ describe("buildAdminDigestFlex — reengage experiment readout", () => {
     expect(json).toContain("สถานะ Cron");
     expect(json).toContain("streak-nudge ล้มเหลว 1 ครั้ง — timeout");
     expect(json).toContain("exam-watch ไม่ได้รันตามรอบ");
+  });
+});
+
+describe("buildAdminDigestFlex — งานรอแอดมิน", () => {
+  const BASE = {
+    dateLabel: "ส. 26 ก.ย.",
+    attemptsToday: 0,
+    activeUsersToday: 0,
+    newUsersToday: 0,
+    avgAccuracyToday: null,
+    totalStudents: 0,
+    activeUsers7d: 0,
+    weakestSubject: null,
+    aiGradeFails24h: 0,
+    revenueTodayThb: null,
+    generatedAt: "2026-09-26T01:00:00Z",
+  };
+  const mk = (key: string, count: number, severity: "high" | "medium" | "low" = "medium") => ({
+    key,
+    label: `งาน ${key}`,
+    count,
+    path: `/admin/${key}`,
+    href: `https://www.morroo.com/admin/${key}`,
+    severity,
+  });
+  const render = (actionItems: Parameters<typeof buildAdminDigestFlex>[0]["actionItems"]) => {
+    const msg = buildAdminDigestFlex({ ...BASE, actionItems });
+    if (msg.type !== "flex") throw new Error("expected flex");
+    return msg;
+  };
+
+  it("shows the all-clear line when every queue is zero", () => {
+    const json = JSON.stringify(render([mk("a", 0), mk("b", 0)]).contents);
+    expect(json).toContain("📋 งานรอแอดมิน");
+    expect(json).toContain("✅ ไม่มีงานค้าง");
+  });
+
+  it("omits the section when the lookup was unavailable", () => {
+    expect(JSON.stringify(render(null).contents)).not.toContain("งานรอแอดมิน");
+  });
+
+  it("lists non-zero items with a tappable admin link, most urgent first", () => {
+    const msg = render([
+      mk("leads", 75, "low"),
+      mk("payments", 2, "high"),
+      { ...mk("reports", 3), oldestAt: "2026-09-24T01:00:00Z" },
+      mk("zero", 0),
+    ]);
+    const json = JSON.stringify(msg.contents);
+    expect(json).toContain("📋 งานรอแอดมิน (80)");
+    expect(json).toContain('"uri":"https://www.morroo.com/admin/payments"');
+    expect(json).toContain('"uri":"https://www.morroo.com/admin/leads"');
+    expect(json).toContain("3 · ค้าง 2 วัน");
+    expect(json).not.toContain("งาน zero");
+    expect(json.indexOf("งาน payments")).toBeLessThan(json.indexOf("งาน reports"));
+    expect(json.indexOf("งาน reports")).toBeLessThan(json.indexOf("งาน leads"));
+    expect(msg.altText).toContain("งานรอแอดมิน 80");
+  });
+
+  it("caps the rows and summarises the rest", () => {
+    const items = Array.from({ length: MAX_ACTION_ROWS + 3 }, (_, i) => mk(`q${i}`, i + 1));
+    const json = JSON.stringify(render(items).contents);
+    expect((json.match(/"type":"uri"/g) ?? []).length).toBe(MAX_ACTION_ROWS + 1); // + footer button
+    expect(json).toContain("และอีก 3 รายการ");
+    // Plenty of headroom under LINE's 30 KB bubble limit for the other sections.
+    expect(json.length).toBeLessThan(12_000);
+  });
+
+  it("marks a failed queue instead of hiding it", () => {
+    const json = JSON.stringify(render([{ ...mk("orgs", 0), failed: true }]).contents);
+    expect(json).toContain("ตรวจไม่ได้");
+    expect(json).not.toContain("ไม่มีงานค้าง");
   });
 });
 

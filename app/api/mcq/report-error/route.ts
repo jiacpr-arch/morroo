@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { buildAdminAlertText, sendThrottledAdminAlert } from "@/lib/admin-alerts";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 
 // Accepted reasons — must stay in sync with the CHECK constraint on
@@ -69,6 +70,18 @@ export async function POST(request: NextRequest) {
   // Use the admin client to bypass RLS and let the trigger update profile points.
   const admin = createAdminClient();
 
+  // A 3rd "wrong_answer" report makes the DB trigger pull an active question
+  // into status='review' — snapshot the status so we can tell afterwards.
+  let statusBefore: string | null = null;
+  if (reason === "wrong_answer") {
+    const { data: q } = await admin
+      .from("mcq_questions")
+      .select("status")
+      .eq("id", question_id)
+      .maybeSingle();
+    statusBefore = (q as { status?: string } | null)?.status ?? null;
+  }
+
   const { error } = await admin.from("mcq_question_reports").insert({
     question_id,
     user_id: user.id,
@@ -87,6 +100,30 @@ export async function POST(request: NextRequest) {
     }
     console.error("[mcq/report-error] insert error:", error);
     return NextResponse.json({ error: "บันทึกรายงานไม่สำเร็จ" }, { status: 500 });
+  }
+
+  // Question just auto-flagged (active → review): students may be learning a
+  // wrong answer key right now, so alert the admin immediately (throttled 6h;
+  // further flags still reach the morning digest).
+  if (statusBefore === "active") {
+    after(async () => {
+      const { data: q } = await admin
+        .from("mcq_questions")
+        .select("status, scenario")
+        .eq("id", question_id)
+        .maybeSingle();
+      const row = q as { status?: string; scenario?: string } | null;
+      if (row?.status !== "review") return;
+      await sendThrottledAdminAlert(
+        admin,
+        "mcq_autoflagged",
+        buildAdminAlertText({
+          title: "⚠️ ข้อสอบถูกแจ้งเฉลยผิดครบ 3 ครั้ง — ย้ายเข้า review อัตโนมัติ",
+          detail: row.scenario ?? null,
+          path: `/admin/mcq/${question_id}`,
+        })
+      );
+    });
   }
 
   // Fetch the user's updated total so the UI can show "+1 point"
