@@ -15,6 +15,8 @@ tsconfig.tsbuildinfo
 /public/robots.txt
 /public/sitemap.xml
 /public/sitemap-*.xml
+scripts/longcase-pe-images-out/
+scripts/ptbxl-ecg-out/
 
 # generate-lesson-infographics candidates (local review only)
 /scripts/lesson-infographics-out/

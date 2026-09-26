@@ -18,6 +18,7 @@ import PushToggle from "@/components/pwa/PushToggle";
 import { unsubscribePushOnLogout } from "@/lib/push-client";
 import { fetchOrgMemberships, isOrgActive, orgEntitlementRows, type OrgMembershipRow } from "@/lib/organizations";
 import { isLapseEligible } from "@/lib/winback";
+import PageIntro from "@/components/PageIntro";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -188,7 +189,7 @@ export default function ProfilePage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold mb-8">โปรไฟล์</h1>
+      <PageIntro eyebrow="บัญชีของคุณ" title="โปรไฟล์" description="ดูสิทธิ์การเรียน จัดการบัญชี และติดตามสิ่งที่คุณได้รับจากหมอรู้" className="mb-8" />
 
       <div className="space-y-6">
         {/* Profile Info */}

@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, X, Send, Stethoscope } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
+import { usePathname } from "next/navigation";
+import { LineGlyph, SOCIAL_LINKS, trackLineClick } from "@/components/SocialLinks";
+import { isFocusedPracticeRoute } from "@/lib/focus-routes";
 
 type Msg = { role: "user" | "assistant"; content: string; streaming?: boolean };
 
@@ -75,8 +78,10 @@ function renderContent(text: string, streaming?: boolean) {
 }
 
 export default function ChatWidget() {
+  const pathname = usePathname();
   const { reportAiFailure } = useAiHealth();
   const [open, setOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([GREETING]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
@@ -84,6 +89,13 @@ export default function ChatWidget() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const sessionIdRef = useRef<string>("");
+
+  useEffect(() => {
+    if (isFocusedPracticeRoute(pathname)) {
+      setOpen(false);
+      setContactOpen(false);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     sessionIdRef.current = getOrCreateSessionId();
@@ -196,16 +208,50 @@ export default function ChatWidget() {
   }
 
   const isStreaming = messages.some((m) => m.streaming);
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/line") || isFocusedPracticeRoute(pathname)) return null;
 
   return (
     <>
+      {/* One mobile contact launcher gives access to LINE and chat. */}
+      {contactOpen && !open && (
+        <div id="mobile-contact-options" className="fixed bottom-20 right-4 z-50 w-56 rounded-2xl border border-surface-border bg-white p-2 shadow-xl sm:hidden">
+          <p className="px-3 py-2 text-xs font-semibold text-ink-soft">ติดต่อหมอรู้</p>
+          <button
+            type="button"
+            onClick={() => { setOpen(true); setContactOpen(false); }}
+            className="flex min-h-11 w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm font-medium text-brand-dark hover:bg-surface-warm"
+          >
+            <MessageCircle className="h-5 w-5 text-brand" /> ถามพี่หมอรู้
+          </button>
+          <a
+            href={SOCIAL_LINKS.line}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => { trackLineClick("floating"); setContactOpen(false); }}
+            className="flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-brand-dark hover:bg-surface-warm"
+          >
+            <LineGlyph className="h-5 w-5 text-[#06C755]" /> แอด LINE รับข้อสอบฟรี
+          </a>
+        </div>
+      )}
+      <button
+        type="button"
+        onClick={() => { if (open) setOpen(false); else setContactOpen((v) => !v); }}
+        aria-label={open || contactOpen ? "ปิดช่องทางติดต่อ" : "เปิดช่องทางติดต่อ"}
+        aria-controls={contactOpen ? "mobile-contact-options" : undefined}
+        aria-expanded={contactOpen}
+        className="fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-white shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:hidden"
+      >
+        {open || contactOpen ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
+        {unread && !open && <span className="absolute right-0 top-0 h-3 w-3 rounded-full bg-amber-400" />}
+      </button>
       {/* Launcher bubble */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "ปิดแชท" : "เปิดแชทกับพี่หมอรู้"}
         className={cn(
-          "fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition-all",
+          "fixed bottom-5 right-5 z-50 hidden h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition-all sm:flex",
           "bg-gradient-to-br from-primary to-primary/70 hover:scale-105 active:scale-95",
           "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
         )}
