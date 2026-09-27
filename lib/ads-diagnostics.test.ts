@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import {
   aggregatePageStats,
   diagnoseAds,
@@ -39,7 +39,7 @@ function makeAd(overrides: Partial<AdInsight>): AdInsight {
     adset_id: "200",
     adset_name: "Set",
     campaign_id: "300",
-    campaign_name: "Campaign",
+    campaign_name: "[MR]_Campaign",
     status: "ACTIVE",
     effective_status: "ACTIVE",
     impressions: 5000,
@@ -343,6 +343,78 @@ describe("diagnoseAds", () => {
       expect(diagnoseAds([ad], new Set())[0].autoAction?.action).toBe(
         "pause_ad"
       );
+    });
+  });
+
+  describe("auto-pause scope (Morroo campaigns only)", () => {
+    const noLead = {
+      spend: THRESHOLDS.adNoLeadSpendCeilingThb + 100,
+      leads: 0,
+      cpl: null,
+    };
+
+    it("reports but never pauses another business's ad in the shared account", () => {
+      // The 2026-09 incident: Jia CPR Messenger ads read as "0 leads".
+      const f = diagnoseAds([
+        makeAd({
+          ...noLead,
+          ad_name: "JIA CPR | P1-แอร์ v3 | Messenger | Sep2026",
+          campaign_name: "CBO on",
+        }),
+      ]);
+      expect(f).toHaveLength(1);
+      expect(f[0].category).toBe("ad_no_lead_high_spend");
+      expect(f[0].autoAction).toBeUndefined();
+      expect(f[0].recommendation).toContain("ไม่ใช่แคมเปญ Morroo");
+    });
+
+    it("still pauses Morroo's own campaigns, whatever the casing", () => {
+      for (const campaign_name of [
+        "[MR]_Traffic_CaseGame",
+        "MorRoo - Signup - Med/Nurse Students - Jun26",
+        "ACLSmorroo Campaign",
+      ]) {
+        const f = diagnoseAds([makeAd({ ...noLead, campaign_name })], new Set());
+        expect(f[0].autoAction?.action).toBe("pause_ad");
+      }
+    });
+
+    it("covers the high-CPL and egregious-CTR rules too", () => {
+      const other = { campaign_name: "JIA CPR - Lead Gen v2" };
+      const cpl = diagnoseAds(
+        [makeAd({ ...other, cpl: THRESHOLDS.adHighCplThb + 50, leads: 2 })],
+        new Set()
+      );
+      expect(cpl[0].category).toBe("ad_high_cpl");
+      expect(cpl[0].autoAction).toBeUndefined();
+
+      const ctr = diagnoseAds(
+        [
+          makeAd({
+            ...other,
+            impressions: THRESHOLDS.adAutoPauseMinImpressions + 1000,
+            ctr: THRESHOLDS.adAutoPauseCtrPct - 0.1,
+            cpl: 10,
+            leads: 5,
+          }),
+        ],
+        new Set()
+      );
+      expect(ctr[0].category).toBe("ad_low_ctr");
+      expect(ctr[0].autoAction).toBeUndefined();
+    });
+
+    it("ADS_AUTOPAUSE_CAMPAIGN_IDS brings an oddly-named Morroo campaign into scope", () => {
+      vi.stubEnv("ADS_AUTOPAUSE_CAMPAIGN_IDS", "777, 888");
+      try {
+        const f = diagnoseAds(
+          [makeAd({ ...noLead, campaign_id: "888", campaign_name: "online free Campaign" })],
+          new Set()
+        );
+        expect(f[0].autoAction?.action).toBe("pause_ad");
+      } finally {
+        vi.unstubAllEnvs();
+      }
     });
   });
 
