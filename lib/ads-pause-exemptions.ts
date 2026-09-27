@@ -72,6 +72,42 @@ export function pauseExemptAdIds(now: Date = new Date()): Set<string> {
   return new Set(activeExemptions(now).map((e) => e.adId));
 }
 
+/**
+ * Scope: which campaigns auto-pause may touch at all.
+ *
+ * The ad account (META_AD_ACCOUNT_ID) is shared by every business in the
+ * group — Jia CPR, AED rental, RooDee… — but diagnoseAds() judges every ad by
+ * Morroo's yardstick: leads = Instant Form / CompleteRegistration. A Jia CPR
+ * Messenger ad produces chats, not those, so it always reads as "0 leads" and
+ * got paused night after night (P1-แอร์, P3-ก่อนเข้างาน, JOIN CLASS, P2, P4 —
+ * 2026-09-20 → 09-27). Those ads are run by jia-ads-hub now; Morroo only
+ * auto-pauses its own campaigns. Everything else is still diagnosed and
+ * reported, it just never gets an autoAction.
+ *
+ * A campaign is Morroo's when its name matches MORROO_CAMPAIGN_NAME
+ * ("[MR]_…", "MorRoo - …", "ACLSmorroo …") or its id is listed in
+ * ADS_AUTOPAUSE_CAMPAIGN_IDS (comma-separated) — for a Morroo campaign whose
+ * name doesn't follow the convention.
+ */
+export const MORROO_CAMPAIGN_NAME = /\[MR\]|morroo/i;
+
+function scopeCampaignIdsFromEnv(): Set<string> {
+  const raw = process.env.ADS_AUTOPAUSE_CAMPAIGN_IDS;
+  if (!raw) return new Set();
+  return new Set(raw.split(",").map((s) => s.trim()).filter(Boolean));
+}
+
+/** True when auto-pause may act on an ad in this campaign. */
+export function inAutoPauseScope(campaign: {
+  campaign_id: string;
+  campaign_name: string;
+}): boolean {
+  return (
+    MORROO_CAMPAIGN_NAME.test(campaign.campaign_name) ||
+    scopeCampaignIdsFromEnv().has(campaign.campaign_id)
+  );
+}
+
 /** The reason an ad is exempt, or null when auto-pause may proceed. */
 export function pauseExemptReason(
   adId: string,

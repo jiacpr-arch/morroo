@@ -25,7 +25,7 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { getLatestUserToken } from "@/lib/facebook";
-import { pauseExemptAdIds } from "@/lib/ads-pause-exemptions";
+import { inAutoPauseScope, pauseExemptAdIds } from "@/lib/ads-pause-exemptions";
 
 // ─── Thresholds ──────────────────────────────────────────────────────────
 //
@@ -740,7 +740,8 @@ const LEAD_OBJECTIVES = new Set([
 
 export function diagnoseAds(
   ads: AdInsight[],
-  exemptAdIds: Set<string> = pauseExemptAdIds()
+  exemptAdIds: Set<string> = pauseExemptAdIds(),
+  inScope: (ad: AdInsight) => boolean = inAutoPauseScope
 ): Finding[] {
   const findings: Finding[] = [];
 
@@ -756,8 +757,15 @@ export function diagnoseAds(
     // carries an autoAction, so the admin keeps the numbers and the switch.
     // See lib/ads-pause-exemptions.ts.
     const exempt = exemptAdIds.has(ad.ad_id);
-    const noAutoPause = alreadyPaused || exempt;
-    const exemptNote = exempt ? " (ยกเว้น auto-pause — ต้องสั่งเอง)" : "";
+    // Ads outside Morroo's own campaigns belong to other businesses sharing
+    // the account — report them, never pause them. See inAutoPauseScope().
+    const outOfScope = !inScope(ad);
+    const noAutoPause = alreadyPaused || exempt || outOfScope;
+    const exemptNote = exempt
+      ? " (ยกเว้น auto-pause — ต้องสั่งเอง)"
+      : outOfScope
+        ? " (ไม่ใช่แคมเปญ Morroo — ไม่ auto-pause)"
+        : "";
 
     const snapshot = {
       ad_name: ad.ad_name,
