@@ -11,6 +11,10 @@ const SCENES = {
     src: "/images/learning/clinical-learning.webp",
     alt: "ภาพประกอบแพทย์รุ่นพี่และแพทย์ฝึกหัดทบทวนเคสร่วมกัน",
   },
+  acls: {
+    src: "/images/learning/acls-together.webp",
+    alt: "ภาพประกอบแพทย์รุ่นพี่และแพทย์ฝึกหัดทบทวนบทเรียนด้วยกัน",
+  },
   together: {
     src: "/images/home/medical-study-together.webp",
     alt: "ภาพประกอบนักศึกษาแพทย์เรียนรู้และทบทวนบทเรียนด้วยกัน",
@@ -18,6 +22,10 @@ const SCENES = {
   desk: {
     src: "/images/home/calm-study-desk.webp",
     alt: "มุมอ่านหนังสือแสงธรรมชาติ พร้อมสมุด หนังสือ และหูฟังแพทย์",
+  },
+  guide: {
+    src: "/images/learning/guide-study.webp",
+    alt: "ภาพประกอบโต๊ะอ่านหนังสือพร้อมตำรา สมุดจด และหูฟังแพทย์",
   },
   game: {
     src: "/images/games/courses/long-case-meq.jpg",
@@ -77,7 +85,7 @@ export default function LearningPageHero({
           fill
           sizes="(max-width: 1023px) calc(100vw - 64px), (max-width: 1279px) 38vw, 490px"
           loading="eager"
-          className={cn("object-cover", scene === "practice" || scene === "clinical" ? "object-[center_25%]" : "object-center")}
+          className={cn("object-cover", scene === "practice" || scene === "clinical" || scene === "acls" ? "object-[center_25%]" : "object-center")}
         />
         <span className="absolute bottom-3 right-3 rounded-full bg-black/50 px-2.5 py-1 text-[10px] text-white">ภาพประกอบ</span>
       </div>

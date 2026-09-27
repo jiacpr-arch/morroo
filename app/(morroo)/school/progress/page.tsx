@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, TrendingUp, Lock, Unlock, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Lock, Unlock, CheckCircle2 } from "lucide-react";
+import PageIntro from "@/components/PageIntro";
 import { createClient } from "@/lib/supabase/server";
 import {
   getSchoolTopicsByYear,
@@ -62,34 +62,30 @@ export default async function ProgressPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <Link href="/school">
-        <Button variant="ghost" size="sm" className="gap-2 -ml-2 mb-4">
-          <ArrowLeft className="h-4 w-4" /> กลับ
-        </Button>
+      <Link href="/school" className="mb-5 inline-flex min-h-10 items-center gap-2 rounded-md text-sm text-ink-soft hover:text-brand focus-visible:outline-2 focus-visible:outline-brand">
+        <ArrowLeft className="h-4 w-4" /> กลับไป School
       </Link>
-      <div className="mb-4 flex items-center gap-2">
-        <Badge className="bg-indigo-100 text-indigo-700">Mastery</Badge>
-        <Badge variant="outline">ปี {profile.current_year}</Badge>
-        <Badge variant="outline">เฉลี่ย {overallPct}%</Badge>
-        <Badge variant="outline">Streak {streak.current_streak} วัน</Badge>
-      </div>
-      <h1 className="text-2xl font-bold mb-2 flex items-center gap-2">
-        <TrendingUp className="h-6 w-6 text-indigo-600" /> Progress รายหัวข้อ
-      </h1>
-      <p className="text-sm text-muted-foreground mb-6">
-        ระบบใช้ Mastery Learning (Bloom) — ทำ quiz ≥ 5 ข้อ + ถูก ≥ {MASTERY_THRESHOLD}% เพื่อปลดล็อกหัวข้อถัดไป
-      </p>
+      <PageIntro
+        eyebrow="School · ความคืบหน้า"
+        title="ความเข้าใจรายหัวข้อ"
+        description={`ฝึกอย่างน้อย 5 ข้อและตอบถูก ${MASTERY_THRESHOLD}% เพื่อปลดล็อกหัวข้อถัดไป`}
+        className="mb-6"
+      >
+        <Badge className="bg-white text-brand-dark">ปี {profile.current_year}</Badge>
+        <Badge variant="outline" className="bg-white">เฉลี่ย {overallPct}%</Badge>
+        <Badge variant="outline" className="bg-white">เรียนต่อเนื่อง {streak.current_streak} วัน</Badge>
+      </PageIntro>
 
       {items.length === 0 ? (
-        <div className="border rounded-lg p-8 text-center text-muted-foreground">
+        <div className="rounded-2xl border border-surface-border bg-surface-warm p-8 text-center text-ink-soft">
           ยังไม่มีหัวข้อในชั้นปีนี้
         </div>
       ) : (
-        <div className="space-y-2">
+        <div className="space-y-3">
           {items.map(({ topic, mastery: m, mastered, unlocked }) => (
             <Card
               key={topic.id}
-              className={!unlocked ? "opacity-50 border-dashed" : ""}
+              className={!unlocked ? "border-dashed bg-surface-warm/50" : "shadow-sm"}
             >
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
@@ -101,7 +97,7 @@ export default async function ProgressPage() {
                     <Lock className="h-5 w-5 text-muted-foreground shrink-0" />
                   )}
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold">{topic.name_th}</p>
+                    <p className="font-semibold text-brand-dark">{topic.name_th}</p>
                     <p className="text-xs text-muted-foreground">{topic.name_en}</p>
                   </div>
                   <div className="text-right">
@@ -128,16 +124,12 @@ export default async function ProgressPage() {
                   <div className="flex gap-2 mt-3">
                     <Link
                       href={`/school/flashcards?topic=${topic.id}`}
-                      className="flex-1"
+                      className="inline-flex min-h-10 flex-1 items-center justify-center rounded-xl border border-surface-border bg-white px-3 text-sm font-medium text-brand-dark hover:border-brand focus-visible:outline-2 focus-visible:outline-brand"
                     >
-                      <Button size="sm" variant="outline" className="w-full">
-                        Flashcards
-                      </Button>
+                      Flashcards
                     </Link>
-                    <Link href={`/school/quiz?topic=${topic.id}`} className="flex-1">
-                      <Button size="sm" variant="outline" className="w-full">
-                        Quiz
-                      </Button>
+                    <Link href={`/school/quiz?topic=${topic.id}`} className="inline-flex min-h-10 flex-1 items-center justify-center rounded-xl border border-surface-border bg-white px-3 text-sm font-medium text-brand-dark hover:border-brand focus-visible:outline-2 focus-visible:outline-brand">
+                      Quiz
                     </Link>
                   </div>
                 )}

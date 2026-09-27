@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
 import { useIsLoggedIn } from "@/lib/hooks/useIsLoggedIn";
 import { usePathname } from "next/navigation";
-import { isFocusedPracticeRoute } from "@/lib/focus-routes";
+import { isUninterruptedRoute } from "@/lib/focus-routes";
 
 const SEEN_KEY = "morroo_first_visit_nudge_v1";
 const EXIT_INTENT_KEY = "morroo_exit_intent_shown";
@@ -26,13 +26,13 @@ export default function FirstVisitNudge() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (isFocusedPracticeRoute(pathname)) setOpen(false);
+    if (isUninterruptedRoute(pathname)) setOpen(false);
   }, [pathname]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     // null = session still resolving; only arm the triggers for known guests.
-    if (isLoggedIn !== false || isFocusedPracticeRoute(pathname)) return;
+    if (isLoggedIn !== false || isUninterruptedRoute(pathname)) return;
     try {
       if (window.localStorage.getItem(SEEN_KEY)) return;
     } catch {
@@ -80,7 +80,7 @@ export default function FirstVisitNudge() {
     setOpen(false);
   }
 
-  if (!open || isFocusedPracticeRoute(pathname)) return null;
+  if (!open || isUninterruptedRoute(pathname)) return null;
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[70] flex justify-center px-4 pb-4 sm:inset-x-auto sm:right-4 sm:justify-end">

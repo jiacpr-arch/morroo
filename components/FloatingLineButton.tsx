@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LineGlyph, SOCIAL_LINKS, trackLineClick } from "@/components/SocialLinks";
 import type { LineCtaLevel } from "@/lib/line-cta-config";
-import { isFocusedPracticeRoute } from "@/lib/focus-routes";
+import { isUninterruptedRoute } from "@/lib/focus-routes";
 
 const DISMISS_KEY = "morroo_line_fab_dismissed";
 
@@ -31,7 +31,7 @@ export default function FloatingLineButton({
   }, []);
 
   const hiddenRoute =
-    pathname?.startsWith("/admin") || pathname?.startsWith("/line") || isFocusedPracticeRoute(pathname);
+    pathname?.startsWith("/admin") || pathname?.startsWith("/line") || isUninterruptedRoute(pathname);
   if (hiddenRoute || dismissed) return null;
 
   const boosted = level === 2;

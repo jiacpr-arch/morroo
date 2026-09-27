@@ -20,7 +20,10 @@ The site uses Sarabun for Thai and Latin interface copy. The base radius is `0.7
 - **Learning and account pages:** `PageIntro` gives the page a consistent heading and short next-step description. Place progress, topics, or account controls below it in white cards.
 - **Focused practice:** Keep questions, timing, progress, and the answer field in a narrow reading column. Hide floating contact and guest promotion controls while a timed question is active.
 - **Registration and login:** Use `AuthIllustration` on wide screens and keep the form first on small screens. The illustration does not replace headings or form labels.
+- **First-time setup:** Keep the three onboarding choices in one reading column. A labeled study illustration can sit beside the form on wide screens; on mobile, show the form immediately. Choice cards expose their selected state with `aria-pressed`.
+- **Checkout:** Use a compact `PageIntro`, then show the package, final price, coupon result, trust information, and payment action in that order. Keep decorative images and floating contact controls out of the payment flow.
 - **Navigation:** Keep common learning destinations visible. Put less frequent destinations in the "เพิ่มเติม" menu. On mobile, show grouped links and one contact launcher with chat and LINE choices.
+- **Reader subnavigation:** Let short links wrap on narrow screens instead of widening the document. Verify the page at 320px as well as standard phone widths.
 
 ## Accessibility and image rules
 

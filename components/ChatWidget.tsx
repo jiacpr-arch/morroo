@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import { usePathname } from "next/navigation";
 import { LineGlyph, SOCIAL_LINKS, trackLineClick } from "@/components/SocialLinks";
-import { isFocusedPracticeRoute } from "@/lib/focus-routes";
+import { isUninterruptedRoute } from "@/lib/focus-routes";
 
 type Msg = { role: "user" | "assistant"; content: string; streaming?: boolean };
 
@@ -91,7 +91,7 @@ export default function ChatWidget() {
   const sessionIdRef = useRef<string>("");
 
   useEffect(() => {
-    if (isFocusedPracticeRoute(pathname)) {
+    if (isUninterruptedRoute(pathname)) {
       setOpen(false);
       setContactOpen(false);
     }
@@ -208,7 +208,7 @@ export default function ChatWidget() {
   }
 
   const isStreaming = messages.some((m) => m.streaming);
-  if (pathname?.startsWith("/admin") || pathname?.startsWith("/line") || isFocusedPracticeRoute(pathname)) return null;
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/line") || isUninterruptedRoute(pathname)) return null;
 
   return (
     <>

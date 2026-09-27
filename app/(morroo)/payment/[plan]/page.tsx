@@ -13,6 +13,7 @@ import { track } from "@/lib/analytics";
 import { trackInitiateCheckout } from "@/lib/analytics/conversions";
 import LandingPageTracker from "@/components/LandingPageTracker";
 import PaymentTrustSignals from "@/components/PaymentTrustSignals";
+import PageIntro from "@/components/PageIntro";
 import {
   ArrowLeft,
   Loader2,
@@ -249,35 +250,40 @@ export default function PaymentPage({
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:py-10">
       <LandingPageTracker
         event="payment_view"
         properties={{ plan }}
       />
       <Link
         href="/pricing"
-        className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand mb-6"
+        className="mb-5 inline-flex min-h-10 items-center gap-1 rounded-md text-sm text-ink-soft hover:text-brand focus-visible:outline-2 focus-visible:outline-brand"
       >
         <ArrowLeft className="h-4 w-4" /> กลับไปเลือกแพ็กเกจ
       </Link>
 
-      <h1 className="text-2xl font-bold mb-6">ชำระเงิน</h1>
+      <PageIntro
+        eyebrow="ขั้นตอนสุดท้าย"
+        title="ตรวจแพ็กเกจก่อนชำระเงิน"
+        description="ดูรายละเอียดและยอดชำระให้ครบก่อนดำเนินการ คุณจะไปยังหน้าชำระเงินที่ปลอดภัยหลังจากกดปุ่มด้านล่าง"
+        className="mb-6"
+      />
 
       <div className="space-y-6">
         {/* Order summary */}
-        <Card>
+        <Card className="shadow-sm">
           <CardHeader>
-            <h2 className="font-semibold">สรุปคำสั่งซื้อ</h2>
+            <h2 className="text-lg font-semibold text-brand-dark">สรุปคำสั่งซื้อ</h2>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-medium">{planInfo.name}</p>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div className="min-w-0">
+                <p className="font-semibold text-brand-dark">{planInfo.name}</p>
                 <p className="text-sm text-muted-foreground">
                   {isItem ? "ซื้อเฉพาะรายการนี้" : `แพ็กเกจ${planInfo.name}`}
                 </p>
               </div>
-              <div className="text-right">
+              <div className="shrink-0 text-right">
                 {coupon ? (
                   <>
                     <p className="text-sm text-muted-foreground line-through">
@@ -317,9 +323,9 @@ export default function PaymentPage({
             )}
 
             {/* Discount code */}
-            <div className="mt-4 border-t pt-4">
+            <div className="mt-5 border-t border-surface-border pt-5">
               <Label htmlFor="coupon" className="text-sm">มีโค้ดส่วนลด?</Label>
-              <div className="mt-1 flex gap-2">
+              <div className="mt-2 flex gap-2">
                 <Input
                   id="coupon"
                   value={couponInput}
@@ -328,12 +334,13 @@ export default function PaymentPage({
                     if (coupon) setCoupon(null);
                   }}
                   placeholder="MORROO-XXXXXX"
-                  className="font-mono uppercase"
+                  className="min-w-0 font-mono uppercase"
                   disabled={couponChecking}
                 />
                 <Button
                   type="button"
                   variant="outline"
+                  className="shrink-0"
                   disabled={couponChecking || !couponInput.trim()}
                   onClick={() => applyCoupon()}
                 >
@@ -341,12 +348,12 @@ export default function PaymentPage({
                 </Button>
               </div>
               {coupon && (
-                <p className="mt-1 text-xs text-emerald-700">
+                <p className="mt-2 text-sm text-emerald-700" role="status">
                   ใช้โค้ด {coupon.code} แล้ว — ลด ฿{coupon.discount.toLocaleString()}
                 </p>
               )}
               {couponError && (
-                <p className="mt-1 text-xs text-destructive">{couponError}</p>
+                <p className="mt-2 text-sm text-destructive" role="alert">{couponError}</p>
               )}
             </div>
           </CardContent>
@@ -354,14 +361,14 @@ export default function PaymentPage({
 
         {/* Bigger plans next to a single item — the item is the entry point */}
         {remoteInfo && remoteInfo.anchors.length > 0 && (
-          <div className="rounded-lg border border-dashed p-4 text-sm">
+          <div className="rounded-2xl border border-dashed border-surface-border bg-surface-warm p-4 text-sm">
             <p className="font-medium mb-2">ใช้บ่อย? แพ็กใหญ่คุ้มกว่า</p>
             <div className="flex flex-wrap gap-2">
               {remoteInfo.anchors.map((a) => (
                 <Link
                   key={a.planType}
                   href={`/payment/${a.planType}`}
-                  className="inline-flex items-center gap-1 rounded-full border bg-background px-3 py-1 text-xs hover:border-brand hover:text-brand"
+                  className="inline-flex min-h-9 items-center gap-1 rounded-full border border-surface-border bg-white px-3 py-1 text-xs hover:border-brand hover:text-brand focus-visible:outline-2 focus-visible:outline-brand"
                 >
                   {a.label} ฿{a.amount.toLocaleString()} {a.period}
                 </Link>
@@ -373,9 +380,9 @@ export default function PaymentPage({
         <PaymentTrustSignals />
 
         {/* Stripe payment section */}
-        <Card className="border-brand/20">
+        <Card className="border-brand/20 shadow-sm">
           <CardHeader>
-            <h2 className="font-semibold flex items-center gap-2">
+            <h2 className="flex items-center gap-2 text-lg font-semibold text-brand-dark">
               <CreditCard className="h-5 w-5 text-brand" />
               {PROMPTPAY_ENABLED
                 ? "ชำระด้วย PromptPay หรือบัตร"
@@ -398,7 +405,7 @@ export default function PaymentPage({
             </div>
 
             {wantInvoice && (
-              <div className="rounded-lg border bg-muted/30 p-4 space-y-3">
+              <div className="space-y-3 rounded-xl border border-surface-border bg-surface-warm p-4">
                 <div>
                   <Label htmlFor="invoiceName" className="text-sm">
                     ชื่อ / บริษัท <span className="text-destructive">*</span>
@@ -440,7 +447,7 @@ export default function PaymentPage({
             )}
 
             {error && (
-              <div className="flex items-center gap-2 text-sm text-destructive">
+              <div className="flex items-center gap-2 text-sm text-destructive" role="alert">
                 <AlertCircle className="h-4 w-4" />
                 {error}
               </div>

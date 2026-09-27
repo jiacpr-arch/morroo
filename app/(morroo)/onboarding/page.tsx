@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -71,16 +72,45 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-gradient-to-b from-brand/5 to-background">
+    <div className="min-h-screen bg-surface-warm/50 px-4 py-8 sm:px-6 lg:py-12">
+      <div className="mx-auto grid w-full max-w-6xl items-start gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <aside className="hidden overflow-hidden rounded-3xl border border-surface-border bg-white shadow-sm lg:block">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image
+              src="/images/learning/welcome-study.webp"
+              alt="ภาพประกอบนักศึกษาแพทย์วางแผนการอ่านหนังสือในห้องสมุด"
+              fill
+              sizes="(max-width: 1023px) 0px, 420px"
+              className="object-cover"
+            />
+            <span className="absolute bottom-3 right-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] text-white">ภาพประกอบ</span>
+          </div>
+          <div className="space-y-3 p-7">
+            <p className="text-sm font-semibold text-brand">เริ่มต้นในแบบของคุณ</p>
+            <p className="text-2xl font-bold leading-snug text-brand-dark">เป้าหมายชัดขึ้น การอ่านหนังสือก็ง่ายขึ้น</p>
+            <p className="text-sm leading-7 text-ink-soft">เลือกการสอบและเวลาที่เหมาะกับคุณ แล้ว MorRoo จะจัดพื้นที่เรียนให้ตรงกับเป้าหมาย</p>
+          </div>
+        </aside>
+        <div className="mx-auto w-full max-w-xl lg:mx-0">
       {/* Header */}
-      <div className="mb-8 text-center">
-        <div className="text-4xl mb-3">🩺</div>
-        <h1 className="text-2xl font-bold">ยินดีต้อนรับสู่ MorRoo</h1>
-        <p className="text-muted-foreground mt-1">ตอบ 3 คำถามเพื่อปรับ dashboard ให้เหมาะกับคุณ</p>
+      <div className="mb-7 rounded-3xl border border-surface-border bg-surface-warm p-6 sm:p-8">
+        <p className="text-sm font-semibold text-brand-dark">ตั้งค่าการเรียน · ใช้เวลาไม่นาน</p>
+        <h1 className="mt-2 text-2xl font-bold leading-snug text-brand-dark sm:text-3xl">ยินดีต้อนรับสู่ MorRoo</h1>
+        <p className="mt-2 text-sm leading-7 text-ink-soft">ตอบ 3 คำถามเพื่อปรับหน้าเรียนให้เหมาะกับคุณ เปลี่ยนเป้าหมายภายหลังได้</p>
+        <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-2xl lg:hidden">
+          <Image
+            src="/images/learning/welcome-study.webp"
+            alt="ภาพประกอบนักศึกษาแพทย์วางแผนการอ่านหนังสือในห้องสมุด"
+            fill
+            sizes="(max-width: 639px) calc(100vw - 80px), 500px"
+            className="object-cover object-[center_40%]"
+          />
+          <span className="absolute bottom-3 right-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] text-white">ภาพประกอบ</span>
+        </div>
       </div>
 
       {/* Progress */}
-      <div className="w-full max-w-md mb-6">
+      <div className="mb-6 w-full px-1">
         <div className="flex items-center justify-between mb-2">
           {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
             <div key={i} className="flex items-center flex-1">
@@ -109,7 +139,7 @@ export default function OnboardingPage() {
       </div>
 
       {/* Card */}
-      <Card className="w-full max-w-md">
+      <Card className="w-full shadow-sm">
         {/* Step 1 — Target Exam */}
         {step === 1 && (
           <>
@@ -121,8 +151,10 @@ export default function OnboardingPage() {
               {EXAM_OPTIONS.map((opt) => (
                 <button
                   key={opt.value}
+                  type="button"
+                  aria-pressed={targetExam === opt.value}
                   onClick={() => setTargetExam(opt.value)}
-                  className={`w-full text-left rounded-xl border-2 p-4 transition-all hover:border-brand hover:bg-brand/5 ${
+                  className={`w-full min-h-16 text-left rounded-xl border-2 p-4 transition-all hover:border-brand hover:bg-surface-warm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
                     targetExam === opt.value
                       ? "border-brand bg-brand/10"
                       : "border-border"
@@ -155,8 +187,10 @@ export default function OnboardingPage() {
               {DAILY_GOALS.map((g) => (
                 <button
                   key={g.value}
+                  type="button"
+                  aria-pressed={dailyGoal === g.value}
                   onClick={() => setDailyGoal(g.value)}
-                  className={`w-full text-left rounded-xl border-2 p-4 transition-all hover:border-brand hover:bg-brand/5 ${
+                  className={`w-full min-h-16 text-left rounded-xl border-2 p-4 transition-all hover:border-brand hover:bg-surface-warm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
                     dailyGoal === g.value
                       ? "border-brand bg-brand/10"
                       : "border-border"
@@ -190,8 +224,10 @@ export default function OnboardingPage() {
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat.slug}
+                    type="button"
+                    aria-pressed={weakSubjects.includes(cat.slug)}
                     onClick={() => toggleSubject(cat.slug)}
-                    className={`rounded-xl border-2 p-3 text-center transition-all hover:border-brand hover:bg-brand/5 ${
+                    className={`min-h-20 rounded-xl border-2 p-3 text-center transition-all hover:border-brand hover:bg-surface-warm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
                       weakSubjects.includes(cat.slug)
                         ? "border-brand bg-brand/10"
                         : "border-border"
@@ -247,12 +283,15 @@ export default function OnboardingPage() {
 
       {/* Skip */}
       <button
+        type="button"
         onClick={handleFinish}
-        className="mt-4 text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
+        className="mt-4 rounded-md px-2 py-2 text-sm text-ink-soft underline-offset-4 hover:text-brand-dark hover:underline focus-visible:outline-2 focus-visible:outline-brand"
         disabled={saving}
       >
         ข้ามและไปหน้าหลัก
       </button>
+        </div>
+      </div>
     </div>
   );
 }
