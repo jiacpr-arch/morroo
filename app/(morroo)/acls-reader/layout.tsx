@@ -17,47 +17,47 @@ export default function AclsReaderLayout({
 }) {
   return (
     <div>
-      <div className="border-b border-border bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex h-12 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="border-b border-surface-border bg-white/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-5xl flex-col items-start gap-1 px-4 py-2 sm:min-h-12 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 sm:py-0 lg:px-8">
           <Link
             href="/acls-reader"
-            className="flex items-center gap-2 text-sm font-semibold text-brand"
+            className="flex min-h-9 shrink-0 items-center gap-2 rounded-md text-sm font-semibold text-brand focus-visible:outline-2 focus-visible:outline-brand"
           >
             <HeartPulse className="h-4 w-4" />
             <span>ACLS Reader</span>
           </Link>
-          <div className="flex items-center gap-1 text-sm">
+          <nav aria-label="เมนู ACLS Reader" className="flex w-full flex-wrap items-center gap-1 text-xs sm:w-auto sm:text-sm">
             <Link
               href="/acls-reader"
-              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-9 items-center rounded-lg px-2.5 py-1.5 font-medium text-ink-soft transition-colors hover:bg-surface-warm hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand sm:px-3"
             >
               เนื้อหา ACLS
             </Link>
             <Link
               href="/acls-reader/qa-deep"
-              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-9 items-center rounded-lg px-2.5 py-1.5 font-medium text-ink-soft transition-colors hover:bg-surface-warm hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand sm:px-3"
             >
               Q&A เชิงลึก
             </Link>
             <Link
               href="/acls-reader/test"
-              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-9 items-center rounded-lg px-2.5 py-1.5 font-medium text-ink-soft transition-colors hover:bg-surface-warm hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand sm:px-3"
             >
               แบบทดสอบ
             </Link>
             <Link
               href="/acls-reader/ekg"
-              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-9 items-center rounded-lg px-2.5 py-1.5 font-medium text-ink-soft transition-colors hover:bg-surface-warm hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand sm:px-3"
             >
               ฝึก EKG
             </Link>
             <Link
               href="/acls-reader/learn"
-              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-9 items-center rounded-lg px-2.5 py-1.5 font-medium text-ink-soft transition-colors hover:bg-surface-warm hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand sm:px-3"
             >
               บทเรียน
             </Link>
-          </div>
+          </nav>
         </div>
       </div>
       {children}

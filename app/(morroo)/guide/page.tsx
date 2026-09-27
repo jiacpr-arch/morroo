@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { BookOpen, GraduationCap, Brain, Stethoscope, Gamepad2, CreditCard, MessageCircle, Users, FileText, HelpCircle } from "lucide-react";
 import { planPriceText } from "@/lib/membership";
+import LearningPageHero from "@/components/LearningPageHero";
 
 export const metadata: Metadata = {
   title: "คู่มือการใช้งาน — หมอรู้",
@@ -158,23 +159,26 @@ const faqs = [
 export default function GuidePage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-3xl font-bold mb-3">คู่มือการใช้งาน</h1>
-        <p className="text-muted-foreground text-lg">
-          เรียนรู้วิธีใช้หมอรู้เพื่อเตรียมสอบแพทย์อย่างมีประสิทธิภาพ
-        </p>
-      </div>
+      <LearningPageHero
+        eyebrow="เริ่มใช้งาน MorRoo"
+        title="คู่มือการใช้งาน"
+        description="หาวิธีเริ่มเรียน ฝึกข้อสอบ และติดตามความก้าวหน้าได้จากคู่มือนี้"
+        scene="desk"
+      >
+        <a href="#start" className="inline-flex min-h-10 items-center justify-center rounded-xl bg-brand px-4 text-sm font-semibold text-white hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+          เริ่มอ่านคู่มือ
+        </a>
+      </LearningPageHero>
 
       {/* Quick Nav */}
-      <nav className="mb-12 rounded-xl border bg-muted/30 p-4">
-        <p className="text-sm font-medium mb-3">สารบัญ</p>
+      <nav aria-label="สารบัญคู่มือ" className="mb-12 rounded-2xl border border-surface-border bg-surface-warm p-4 sm:p-5">
+        <p className="mb-3 text-sm font-semibold text-brand-dark">สารบัญ</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {sections.map((s) => (
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-brand/10 hover:text-brand transition-colors"
+              className="flex min-h-10 items-center gap-2 rounded-xl px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-white hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand"
             >
               <s.icon className="h-4 w-4 shrink-0" />
               <span>{s.title}</span>
@@ -193,11 +197,11 @@ export default function GuidePage() {
               </div>
               <h2 className="text-xl font-bold">{s.title}</h2>
             </div>
-            <div className="space-y-4 pl-13">
+            <div className="space-y-3 sm:pl-13">
               {s.content.map((c, i) => (
-                <div key={i} className="rounded-lg border p-4">
-                  <h3 className="font-semibold mb-1">{c.subtitle}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{c.text}</p>
+                <div key={i} className="rounded-2xl border border-surface-border bg-white p-4 shadow-sm sm:p-5">
+                  <h3 className="mb-1 font-semibold text-brand-dark">{c.subtitle}</h3>
+                  <p className="text-sm leading-7 text-ink-soft">{c.text}</p>
                 </div>
               ))}
             </div>
@@ -215,19 +219,19 @@ export default function GuidePage() {
         </div>
         <div className="space-y-3">
           {faqs.map((f, i) => (
-            <details key={i} className="group rounded-lg border p-4">
-              <summary className="font-medium cursor-pointer list-none flex items-center justify-between">
+            <details key={i} className="group rounded-2xl border border-surface-border bg-white p-4 shadow-sm">
+              <summary className="flex min-h-10 cursor-pointer list-none items-center justify-between gap-3 rounded-md font-medium text-brand-dark focus-visible:outline-2 focus-visible:outline-brand">
                 {f.q}
                 <span className="text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
               </summary>
-              <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
+              <p className="mt-2 text-sm leading-7 text-ink-soft">{f.a}</p>
             </details>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <div className="mt-12 rounded-xl bg-brand/10 border border-brand/20 p-6 text-center">
+      <div className="mt-12 rounded-2xl border border-surface-border bg-surface-warm p-6 text-center sm:p-8">
         <h2 className="text-lg font-semibold mb-2">มีคำถามเพิ่มเติม?</h2>
         <p className="text-sm text-muted-foreground mb-4">
           ติดต่อเราทาง LINE OA หรือส่ง feedback ได้เลย

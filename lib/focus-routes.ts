@@ -11,3 +11,14 @@ export function isFocusedPracticeRoute(pathname: string | null) {
     /^\/exams\/[^/]+(?:\/answer)?$/.test(pathname)
   );
 }
+
+/** Keep setup and checkout flows clear of floating contact and promotion controls. */
+export function isUninterruptedRoute(pathname: string | null) {
+  if (!pathname) return false;
+  return (
+    pathname === "/onboarding" ||
+    pathname === "/school/onboarding" ||
+    pathname.startsWith("/payment/") ||
+    isFocusedPracticeRoute(pathname)
+  );
+}

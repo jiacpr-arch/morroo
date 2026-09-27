@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles, Calendar, ArrowLeft, RefreshCw } from "lucide-react";
 import type { StudyPlan } from "@/lib/types-study-plan";
+import PageIntro from "@/components/PageIntro";
 
 export default function StudyPlanPage() {
   const router = useRouter();
@@ -83,37 +84,37 @@ export default function StudyPlanPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-6">
+      <div className="mb-5">
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand mb-4"
+          className="inline-flex min-h-10 items-center gap-1 rounded-md text-sm text-ink-soft hover:text-brand focus-visible:outline-2 focus-visible:outline-brand"
         >
           <ArrowLeft className="h-4 w-4" /> กลับ Dashboard
         </Link>
-        <h1 className="text-2xl font-bold flex items-center gap-2">
-          <Sparkles className="h-6 w-6 text-brand" />
-          แผนอ่านหนังสือของคุณ
-        </h1>
-        <p className="text-muted-foreground text-sm mt-1">
-          AI วางแผนรายสัปดาห์ตามวันสอบและจุดอ่อนของคุณ
-        </p>
       </div>
+      <PageIntro
+        eyebrow="พื้นที่เรียนของคุณ"
+        title="แผนอ่านหนังสือของคุณ"
+        description="กำหนดวันสอบและเวลาที่อ่านได้จริง เพื่อสร้างแผนรายสัปดาห์ที่กลับมาทบทวนได้ง่าย"
+        className="mb-6"
+      />
 
       {/* Settings */}
-      <Card className="mb-6">
+      <Card className="mb-6 shadow-sm">
         <CardHeader>
-          <CardTitle className="text-base">ตั้งค่า</CardTitle>
+          <CardTitle className="text-lg text-brand-dark">ตั้งค่าแผนของคุณ</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-1">วันสอบ</label>
-            <div className="flex items-center gap-2">
+            <label htmlFor="study-exam-date" className="mb-2 block text-sm font-medium">วันสอบ</label>
+            <div className="flex flex-wrap items-center gap-2">
               <Calendar className="h-4 w-4 text-muted-foreground" />
               <input
+                id="study-exam-date"
                 type="date"
                 value={examDate}
                 onChange={(e) => setExamDate(e.target.value)}
-                className="border rounded px-3 py-2 text-sm"
+                className="min-h-10 rounded-xl border border-surface-border bg-white px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-brand"
               />
               {daysUntil != null && daysUntil > 0 && (
                 <span className="text-sm text-muted-foreground">
@@ -123,16 +124,17 @@ export default function StudyPlanPage() {
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">
+            <label htmlFor="study-daily-hours" className="mb-2 block text-sm font-medium">
               เวลาอ่านหนังสือต่อวัน: {dailyHours} ชั่วโมง
             </label>
             <input
+              id="study-daily-hours"
               type="range"
               min={1}
               max={8}
               value={dailyHours}
               onChange={(e) => setDailyHours(Number(e.target.value))}
-              className="w-full"
+              className="w-full accent-brand"
             />
           </div>
           <Button
@@ -154,7 +156,7 @@ export default function StudyPlanPage() {
               </>
             )}
           </Button>
-          {error && <p className="text-sm text-red-600">{error}</p>}
+          {error && <p className="text-sm text-destructive" role="alert">{error}</p>}
         </CardContent>
       </Card>
 
@@ -174,15 +176,15 @@ export default function StudyPlanPage() {
             </p>
           )}
           {plan.advice && (
-            <Card className="mb-6 border-brand/30 bg-brand/5">
+            <Card className="mb-6 border-brand/20 bg-surface-warm">
               <CardContent className="py-4">
-                <p className="text-sm text-gray-700">{plan.advice}</p>
+                <p className="text-sm leading-7 text-ink-soft">{plan.advice}</p>
               </CardContent>
             </Card>
           )}
           <div className="space-y-4">
             {plan.weeks.map((week) => (
-              <Card key={week.week_number}>
+              <Card key={week.week_number} className="shadow-sm">
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-base">
@@ -197,9 +199,9 @@ export default function StudyPlanPage() {
                 <CardContent>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {week.daily_tasks.map((day, i) => (
-                      <div key={i} className="rounded-lg border p-3 bg-muted/20">
+                      <div key={i} className="rounded-xl border border-surface-border bg-surface-warm p-4">
                         <p className="text-sm font-semibold mb-2">{day.day}</p>
-                        <ul className="text-sm text-gray-700 space-y-1">
+                        <ul className="space-y-1 text-sm leading-6 text-ink-soft">
                           {day.tasks.map((task, j) => (
                             <li key={j} className="flex gap-2">
                               <span className="text-brand shrink-0">•</span>

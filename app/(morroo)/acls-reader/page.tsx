@@ -5,6 +5,7 @@ import { preCourseLessons } from "@/lib/acls-reader/precourse";
 import ReaderProgress from "@/components/acls-reader/ReaderProgress";
 import LandingPageTracker from "@/components/LandingPageTracker";
 import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
+import LearningPageHero from "@/components/LearningPageHero";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export const revalidate = 600;
@@ -54,15 +55,22 @@ export default async function AclsReaderHome() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <LandingPageTracker event="acls_reader_view" />
-      <header className="mb-10 text-center">
-        <h1 className="text-3xl font-bold sm:text-4xl">คู่มือทบทวน ACLS</h1>
-        <p className="mt-3 text-lg text-muted-foreground">
-          อ่านเป็นบท · เรียน pre-course · ทำแบบทดสอบ · ฝึกอ่าน EKG
-        </p>
-        <div className="mt-3 flex justify-center">
+      <LearningPageHero
+        eyebrow="ACLS Reader · อ่าน ฝึก ทบทวน"
+        title="คู่มือทบทวน ACLS"
+        description="เลือกอ่านเป็นบท เรียน Pre-course ทำแบบทดสอบ หรือฝึกอ่าน EKG ในเส้นทางเดียวกัน"
+        scene="clinical"
+      >
+        <div className="flex flex-wrap items-center gap-3">
+          <Link href="/acls-reader/learn" className="inline-flex min-h-10 items-center justify-center rounded-xl bg-brand px-4 text-sm font-semibold text-white hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+            เริ่มบทเรียน
+          </Link>
+          <Link href="/acls-reader/test" className="inline-flex min-h-10 items-center justify-center rounded-xl border border-surface-border bg-white px-4 text-sm font-semibold text-brand-dark hover:border-brand focus-visible:outline-2 focus-visible:outline-brand">
+            ดูแบบทดสอบ
+          </Link>
           <SectionUpdatesBadge section="acls" />
         </div>
-      </header>
+      </LearningPageHero>
 
       <ReaderProgress
         lessons={preCourseLessons.map((l) => ({ id: l.id, passingScore: l.passingScore }))}

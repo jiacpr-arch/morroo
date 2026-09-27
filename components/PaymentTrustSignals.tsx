@@ -27,18 +27,18 @@ const SIGNALS = [
 // summary and the payment-method selector — the moment of greatest doubt.
 export default function PaymentTrustSignals() {
   return (
-    <div className="rounded-xl border bg-muted/30 p-4 sm:p-5">
+    <div className="rounded-2xl border border-surface-border bg-surface-warm p-4 sm:p-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {SIGNALS.map((s) => (
           <div key={s.title} className="flex items-start gap-3">
-            <div className="shrink-0 mt-0.5 h-8 w-8 rounded-full bg-white border flex items-center justify-center">
+            <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-surface-border bg-white">
               <s.icon className="h-4 w-4 text-brand" />
             </div>
             <div>
-              <div className="text-sm font-semibold text-foreground">
+              <div className="text-sm font-semibold text-brand-dark">
                 {s.title}
               </div>
-              <div className="text-xs text-muted-foreground mt-0.5">
+              <div className="mt-0.5 text-xs leading-5 text-ink-soft">
                 {s.desc}
               </div>
             </div>
