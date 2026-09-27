@@ -77,8 +77,8 @@ export default function OnboardingPage() {
         <aside className="hidden overflow-hidden rounded-3xl border border-surface-border bg-white shadow-sm lg:block">
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
-              src="/images/home/calm-study-desk.webp"
-              alt="มุมอ่านหนังสือแสงธรรมชาติ พร้อมสมุด หนังสือ และหูฟังแพทย์"
+              src="/images/learning/welcome-study.webp"
+              alt="ภาพประกอบนักศึกษาแพทย์วางแผนการอ่านหนังสือในห้องสมุด"
               fill
               sizes="(max-width: 1023px) 0px, 420px"
               className="object-cover"
@@ -97,6 +97,16 @@ export default function OnboardingPage() {
         <p className="text-sm font-semibold text-brand-dark">ตั้งค่าการเรียน · ใช้เวลาไม่นาน</p>
         <h1 className="mt-2 text-2xl font-bold leading-snug text-brand-dark sm:text-3xl">ยินดีต้อนรับสู่ MorRoo</h1>
         <p className="mt-2 text-sm leading-7 text-ink-soft">ตอบ 3 คำถามเพื่อปรับหน้าเรียนให้เหมาะกับคุณ เปลี่ยนเป้าหมายภายหลังได้</p>
+        <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-2xl lg:hidden">
+          <Image
+            src="/images/learning/welcome-study.webp"
+            alt="ภาพประกอบนักศึกษาแพทย์วางแผนการอ่านหนังสือในห้องสมุด"
+            fill
+            sizes="(max-width: 639px) calc(100vw - 80px), 500px"
+            className="object-cover object-[center_40%]"
+          />
+          <span className="absolute bottom-3 right-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] text-white">ภาพประกอบ</span>
+        </div>
       </div>
 
       {/* Progress */}

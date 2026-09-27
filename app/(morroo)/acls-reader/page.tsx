@@ -59,7 +59,7 @@ export default async function AclsReaderHome() {
         eyebrow="ACLS Reader · อ่าน ฝึก ทบทวน"
         title="คู่มือทบทวน ACLS"
         description="เลือกอ่านเป็นบท เรียน Pre-course ทำแบบทดสอบ หรือฝึกอ่าน EKG ในเส้นทางเดียวกัน"
-        scene="clinical"
+        scene="acls"
       >
         <div className="flex flex-wrap items-center gap-3">
           <Link href="/acls-reader/learn" className="inline-flex min-h-10 items-center justify-center rounded-xl bg-brand px-4 text-sm font-semibold text-white hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">

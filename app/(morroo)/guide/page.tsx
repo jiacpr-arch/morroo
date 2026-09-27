@@ -163,7 +163,7 @@ export default function GuidePage() {
         eyebrow="เริ่มใช้งาน MorRoo"
         title="คู่มือการใช้งาน"
         description="หาวิธีเริ่มเรียน ฝึกข้อสอบ และติดตามความก้าวหน้าได้จากคู่มือนี้"
-        scene="desk"
+        scene="guide"
       >
         <a href="#start" className="inline-flex min-h-10 items-center justify-center rounded-xl bg-brand px-4 text-sm font-semibold text-white hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
           เริ่มอ่านคู่มือ
