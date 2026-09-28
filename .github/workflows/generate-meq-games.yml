@@ -30,6 +30,9 @@ on:
       concurrency:
         description: "แปลงพร้อมกันกี่เคส (ค่าเริ่มต้น 3)"
         required: false
+      exam:
+        description: "exam id (uuid) — สร้างเฉพาะข้อนี้ (เว้นว่าง = ทุกข้อ) ใช้คู่กับ force หลังแก้เนื้อหาข้อสอบ"
+        required: false
 
 jobs:
   generate:
@@ -58,6 +61,7 @@ jobs:
           INPUT_PUBLISH: ${{ inputs.publish }}
           INPUT_LIMIT: ${{ inputs.limit }}
           INPUT_CONCURRENCY: ${{ inputs.concurrency }}
+          INPUT_EXAM: ${{ inputs.exam }}
         run: |
           ARGS=""
           if [ "$INPUT_PUBLISH" != "false" ]; then ARGS="$ARGS --publish"; fi
@@ -65,5 +69,11 @@ jobs:
           if [ "$INPUT_LEGACY_ONLY" = "true" ]; then ARGS="$ARGS --legacy-only"; fi
           if [ -n "$INPUT_LIMIT" ]; then ARGS="$ARGS --limit $INPUT_LIMIT"; fi
           if [ -n "$INPUT_CONCURRENCY" ]; then ARGS="$ARGS --concurrency $INPUT_CONCURRENCY"; fi
+          if [ -n "$INPUT_EXAM" ]; then
+            if ! printf '%s' "$INPUT_EXAM" | grep -Eq '^[0-9a-fA-F-]{36}$'; then
+              echo "exam must be a uuid" >&2; exit 1
+            fi
+            ARGS="$ARGS --exam $INPUT_EXAM"
+          fi
           echo "Running: npm run gen:meqgames -- $ARGS"
           npm run gen:meqgames -- $ARGS
