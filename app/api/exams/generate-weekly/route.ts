@@ -1,19 +1,13 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import {
+  pickMeqSlot,
+  isDuplicateMeqTitle,
+  existingCasesPromptBlock,
+} from "@/lib/meq-schedule.mjs";
 
 // Auto-generate MEQ (Progressive Case) exams — 2 per week (Mon + Thu)
 // Each exam has 6 parts with progressive scenario, using Sonnet for quality
-
-const CATEGORIES = [
-  "อายุรศาสตร์",
-  "ศัลยศาสตร์",
-  "กุมารเวชศาสตร์",
-  "สูติศาสตร์-นรีเวชวิทยา",
-  "ออร์โธปิดิกส์",
-  "จิตเวชศาสตร์",
-];
-
-const DIFFICULTIES: Array<"easy" | "medium" | "hard"> = ["easy", "medium", "hard"];
 
 interface GeneratedExam {
   title: string;
@@ -45,20 +39,19 @@ export async function POST(request: Request) {
   const supabase = await createClient();
   const now = new Date();
 
-  // Rotate category based on week number
-  const weekOfYear = Math.floor(
-    (now.getTime() - new Date(now.getFullYear(), 0, 1).getTime()) / (7 * 24 * 60 * 60 * 1000)
-  );
-  const dayOfWeek = now.getUTCDay(); // 0=Sun, 1=Mon, 4=Thu
-  const categoryIndex = (weekOfYear * 2 + (dayOfWeek >= 4 ? 1 : 0)) % CATEGORIES.length;
-  const category = CATEGORIES[categoryIndex];
-  const difficulty = DIFFICULTIES[(weekOfYear + (dayOfWeek >= 4 ? 1 : 0)) % 3];
+  const { category, difficulty } = pickMeqSlot(now);
 
-  // Count existing exams to avoid duplicate topics
-  const { count: existingCount } = await supabase
+  // Pass existing titles so the model avoids repeating cases (a bare count
+  // wasn't enough), and reject exact/near-duplicate titles below.
+  const { data: existingRows } = await supabase
     .from("exams")
-    .select("id", { count: "exact", head: true })
-    .eq("category", category);
+    .select("title")
+    .eq("category", category)
+    .order("created_at", { ascending: false })
+    .limit(300);
+  const existingTitles: string[] = (existingRows ?? [])
+    .map((r: { title: string | null }) => r.title ?? "")
+    .filter(Boolean);
 
   const prompt = `คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญสาขา ${category} สร้างข้อสอบ MEQ แบบ Progressive Case สำหรับสอบใบประกอบวิชาชีพ (NL Step 2)
 
@@ -67,7 +60,7 @@ export async function POST(request: Request) {
 กฎ:
 1. สาขา: ${category}
 2. ความยาก: ${difficulty === "easy" ? "ง่าย" : difficulty === "hard" ? "ยาก" : "ปานกลาง"}
-3. เรื่องต้องไม่ซ้ำกับที่มี (มี ${existingCount ?? 0} ข้อในสาขานี้แล้ว)
+3. เรื่องต้องไม่ซ้ำกับเคสที่มีอยู่แล้ว (ดูรายการด้านล่าง)
 4. ตอนที่ 1: ประวัติเบื้องต้น + vital signs → ถาม initial assessment
 5. ตอนที่ 2: ผล lab/investigation → ถาม interpretation
 6. ตอนที่ 3: เพิ่ม clinical progression → ถาม differential diagnosis
@@ -78,7 +71,7 @@ export async function POST(request: Request) {
 11. เฉลยต้องละเอียด evidence-based
 12. ภาษาไทย (medical term ภาษาอังกฤษได้)
 13. ห้ามเฉลยการวินิจฉัยในชื่อข้อสอบ (title) เด็ดขาด — ตั้งชื่อจากอาการนำ/สถานการณ์ผู้ป่วยเท่านั้น ห้ามมีชื่อโรค คำวินิจฉัย หรือตัวย่อโรคปรากฏในชื่อ
-
+${existingCasesPromptBlock(existingTitles)}
 ตอบเป็น JSON เท่านั้น:
 {
   "title": "ชื่อ case จากอาการนำ ห้ามเฉลยโรค เช่น 'ชาย 55 ปี อาเจียนเป็นเลือด'",
@@ -141,6 +134,13 @@ export async function POST(request: Request) {
 
   if (!exam.title || !Array.isArray(exam.parts) || exam.parts.length < 4) {
     return NextResponse.json({ error: "Invalid exam structure" }, { status: 500 });
+  }
+
+  if (isDuplicateMeqTitle(exam.title, existingTitles)) {
+    return NextResponse.json(
+      { error: "Duplicate case generated", title: exam.title },
+      { status: 409 }
+    );
   }
 
   // Set publish_date to next available slot (today or future)
