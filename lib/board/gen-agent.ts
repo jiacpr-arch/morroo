@@ -4,12 +4,12 @@
 //   1. Read blueprint topics + section weights
 //   2. Fan-out gen calls across sections (parallel, one Haiku call per section)
 //   3. Self-critique each question with Haiku → confidence 0..1 + issues
-//   4. Map confidence → mcq_questions.status: 'active' | 'review' | drop
+//   4. Map confidence → mcq_questions.status: 'active' | drop (no review pass)
 //
 // Tuning targets (per spec from product):
 //   - 30 questions / specialty as starter pack
 //   - "เลียนแบบข้อสอบบอร์ดราชวิทยาลัย" — heavy clinical reasoning, real refs
-//   - Hybrid quality gate: high confidence → publish, low → admin review
+//   - Quality gate: publish immediately, critique only drops very low confidence
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { BOARD_SECTIONS } from "@/lib/types-board";
@@ -443,9 +443,9 @@ export async function runBoardGenAgent(args: {
   }
   const fallbackSubjectId = subjectRows?.[0]?.id ?? null;
 
-  // INSERT FIRST as status='review' so generation work is committed even if
-  // the function times out mid-critique. Critique then promotes
-  // high-confidence rows to 'active' best-effort below.
+  // INSERT FIRST as status='active' (no admin review pass) so generation work
+  // is committed even if the function times out mid-critique. Critique then
+  // disables very-low-confidence rows best-effort below.
   type InsertPair = { q: GeneratedQuestion; row: Record<string, unknown> };
   const insertRows: InsertPair[] = valid
     .map((q): InsertPair | null => {
@@ -466,7 +466,7 @@ export async function runBoardGenAgent(args: {
             ? q.difficulty
             : "medium",
           topic: q.board_topic || null,
-          status: "review" as const,
+          status: "active" as const,
           board_specialty: specialtySlug,
           board_section: q.board_section,
           board_topic: q.board_topic || "general",
@@ -494,11 +494,11 @@ export async function runBoardGenAgent(args: {
     return result;
   }
 
-  result.inserted_review = inserted.length;
+  result.inserted_active = inserted.length;
   trace(`insert-done (${inserted.length} rows)`);
 
-  // Critique inline best-effort: promote high-confidence rows to 'active'.
-  // If the function times out here, rows stay 'review' (still saved).
+  // Critique inline best-effort: disable low-confidence rows.
+  // If the function times out here, rows stay 'active' (still saved).
   const CRITIQUE_CONCURRENCY = 5;
   const pairs = inserted.map((row, idx) => ({
     id: row.id as string,
@@ -515,22 +515,15 @@ export async function runBoardGenAgent(args: {
         const pair = batch[j];
         const notes = `confidence=${c.confidence.toFixed(2)}${c.issues.length ? ` | issues: ${c.issues.join("; ").slice(0, 300)}` : ""}`;
         if (c.confidence < 0.5) {
-          // Quality too low — disable so it doesn't clutter review queue
+          // Quality too low — disable so learners never see it
           await admin
             .from("mcq_questions")
             .update({ status: "disabled", ai_notes: notes })
             .eq("id", pair.id);
-          result.inserted_review--;
+          result.inserted_active--;
           result.dropped++;
-        } else if (c.confidence >= 0.85) {
-          await admin
-            .from("mcq_questions")
-            .update({ status: "active", ai_notes: notes })
-            .eq("id", pair.id);
-          result.inserted_review--;
-          result.inserted_active++;
         } else {
-          // 0.5 <= confidence < 0.85 — keep as 'review', just update notes
+          // confidence >= 0.5 — stays 'active', just record notes
           await admin
             .from("mcq_questions")
             .update({ ai_notes: notes })
