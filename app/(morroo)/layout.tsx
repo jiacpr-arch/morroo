@@ -238,7 +238,11 @@ export default function RootLayout({
             <BetaPromoBanner variant="sticky-top" />
             <TrialBanner />
             <Navbar />
-            <main className="flex-1">{children}</main>
+            {/* min-h-screen keeps the footer below the fold while client pages
+                (profile, exams, nl/practice, sim...) show their short loading
+                state — otherwise the footer is on screen and gets shoved down
+                when the data arrives, which was our biggest CLS source. */}
+            <main className="flex-1 min-h-screen">{children}</main>
             <Footer />
             <BetaWelcomeModal />
             <ChatWidget />
