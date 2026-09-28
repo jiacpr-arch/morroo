@@ -9,6 +9,11 @@
 
 import { createClient } from "@supabase/supabase-js";
 import { notifyCronFailure } from "./cron-notify.mjs";
+import {
+  pickMeqSlot,
+  isDuplicateMeqTitle,
+  existingCasesPromptBlock,
+} from "../lib/meq-schedule.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -20,17 +25,6 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !ANTHROPIC_API_KEY) {
 }
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-
-const CATEGORIES = [
-  "อายุรศาสตร์",
-  "ศัลยศาสตร์",
-  "กุมารเวชศาสตร์",
-  "สูติศาสตร์-นรีเวชวิทยา",
-  "ออร์โธปิดิกส์",
-  "จิตเวชศาสตร์",
-];
-
-const DIFFICULTIES = ["easy", "medium", "hard"];
 
 const EXAM_TOOL = {
   name: "submit_meq_exam",
@@ -68,80 +62,38 @@ const EXAM_TOOL = {
 
 async function run() {
   const now = new Date();
-  const weekOfYear = Math.floor(
-    (now.getTime() - new Date(now.getFullYear(), 0, 1).getTime()) / (7 * 24 * 60 * 60 * 1000)
-  );
-  const dayOfWeek = now.getUTCDay(); // 0=Sun, 1=Mon, 4=Thu
-  const categoryIndex = (weekOfYear * 2 + (dayOfWeek >= 4 ? 1 : 0)) % CATEGORIES.length;
-  const category = CATEGORIES[categoryIndex];
-  const difficulty = DIFFICULTIES[(weekOfYear + (dayOfWeek >= 4 ? 1 : 0)) % 3];
+  const { weekOfYear, dayOfWeek, category, difficulty } = pickMeqSlot(now);
 
   console.log(`Week ${weekOfYear} day ${dayOfWeek} → category="${category}" difficulty="${difficulty}"`);
 
-  const { count: existingCount } = await supabase
+  // Pass existing titles to the model (a bare count wasn't enough — it kept
+  // regenerating the same few cases) and reject exact/near-duplicate titles.
+  const { data: existingRows, error: existingError } = await supabase
     .from("exams")
-    .select("id", { count: "exact", head: true })
-    .eq("category", category);
-
-  console.log(`Existing exams in this category: ${existingCount ?? 0}`);
-
-  const prompt = `คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญสาขา ${category} สร้างข้อสอบ MEQ Progressive Case สำหรับสอบ NL Step 2
-
-สร้าง 1 ข้อสอบ MEQ ที่มี 6 ตอน (parts) ต่อเนื่องกัน แล้วเรียก tool submit_meq_exam
-
-กฎ:
-1. สาขา: ${category}
-2. ความยาก: ${difficulty === "easy" ? "ง่าย" : difficulty === "hard" ? "ยาก" : "ปานกลาง"}
-3. เรื่องต้องไม่ซ้ำกับที่มี (มี ${existingCount ?? 0} ข้อในสาขานี้แล้ว)
-4. ตอนที่ 1: ประวัติเบื้องต้น + vital signs → ถาม initial assessment
-5. ตอนที่ 2: ผล lab/investigation → ถาม interpretation
-6. ตอนที่ 3: เพิ่ม clinical progression → ถาม differential diagnosis
-7. ตอนที่ 4: ผล imaging/special test → ถาม definitive diagnosis
-8. ตอนที่ 5: ถาม management plan
-9. ตอนที่ 6: complication หรือ follow-up → ถาม long-term management
-10. แต่ละตอน: scenario, question, answer (ละเอียด evidence-based), key_points (3-5 จุดสำคัญ), time_minutes (default 10)
-11. ภาษาไทย (medical term ภาษาอังกฤษได้)
-12. ห้ามเฉลยการวินิจฉัยในชื่อข้อสอบ (title) เด็ดขาด — ตั้งชื่อจากอาการนำ/สถานการณ์ผู้ป่วยเท่านั้น (เช่น "ชาย 55 ปี อาเจียนเป็นเลือด") ห้ามมีชื่อโรค คำวินิจฉัย หรือตัวย่อโรคปรากฏในชื่อ เพราะจะสปอยล์คำตอบก่อนผู้เรียนเริ่มทำข้อสอบ`;
-
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "x-api-key": ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-6",
-      // 6 parts × (scenario + question + detailed answer + key_points) blows
-      // through 8k tokens; we hit max_tokens mid-output and only "title"
-      // came back. 32k matches the MCQ Sonnet batch.
-      max_tokens: 32000,
-      tools: [EXAM_TOOL],
-      tool_choice: { type: "tool", name: "submit_meq_exam" },
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
-
-  if (!res.ok) {
-    console.error(`Claude API error: ${await res.text()}`);
-    process.exit(1);
+    .select("title")
+    .eq("category", category)
+    .order("created_at", { ascending: false })
+    .limit(300);
+  if (existingError) {
+    throw new Error(`Failed to load existing exams: ${existingError.message}`);
   }
+  const existingTitles = (existingRows ?? []).map((r) => r.title).filter(Boolean);
+  console.log(`Existing exams in this category: ${existingTitles.length}`);
 
-  const data = await res.json();
-  console.log(`Claude stop_reason: ${data.stop_reason} (usage: in=${data.usage?.input_tokens} out=${data.usage?.output_tokens})`);
-  const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
-  if (!toolUse?.input) {
-    console.error("No tool_use in response");
-    process.exit(1);
+  const MAX_ATTEMPTS = 3;
+  const rejected = [];
+  let exam = null;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS && !exam; attempt++) {
+    const candidate = await generateExam(category, difficulty, [...existingTitles, ...rejected]);
+    if (isDuplicateMeqTitle(candidate.title, existingTitles)) {
+      console.warn(`Attempt ${attempt}: duplicate title "${candidate.title}" — retrying`);
+      rejected.push(candidate.title);
+      continue;
+    }
+    exam = candidate;
   }
-
-  const exam = toolUse.input;
-  if (!exam.title || !Array.isArray(exam.parts) || exam.parts.length < 4) {
-    console.error("Invalid exam structure:");
-    console.error(`  title: ${exam.title ?? "(missing)"}`);
-    console.error(`  parts: ${Array.isArray(exam.parts) ? `${exam.parts.length} items` : typeof exam.parts}`);
-    console.error(`  raw input keys: ${Object.keys(exam).join(", ")}`);
-    process.exit(1);
+  if (!exam) {
+    throw new Error(`Model kept generating duplicate cases: ${rejected.join(" | ")}`);
   }
 
   console.log(`Generated: "${exam.title}" with ${exam.parts.length} parts`);
@@ -187,6 +139,68 @@ async function run() {
   }
 
   console.log(`Saved exam id=${examRow.id} with ${parts.length} parts`);
+}
+
+async function generateExam(category, difficulty, existingTitles) {
+  const prompt = `คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญสาขา ${category} สร้างข้อสอบ MEQ Progressive Case สำหรับสอบ NL Step 2
+
+สร้าง 1 ข้อสอบ MEQ ที่มี 6 ตอน (parts) ต่อเนื่องกัน แล้วเรียก tool submit_meq_exam
+
+กฎ:
+1. สาขา: ${category}
+2. ความยาก: ${difficulty === "easy" ? "ง่าย" : difficulty === "hard" ? "ยาก" : "ปานกลาง"}
+3. เรื่องต้องไม่ซ้ำกับเคสที่มีอยู่แล้ว (ดูรายการด้านล่าง)
+4. ตอนที่ 1: ประวัติเบื้องต้น + vital signs → ถาม initial assessment
+5. ตอนที่ 2: ผล lab/investigation → ถาม interpretation
+6. ตอนที่ 3: เพิ่ม clinical progression → ถาม differential diagnosis
+7. ตอนที่ 4: ผล imaging/special test → ถาม definitive diagnosis
+8. ตอนที่ 5: ถาม management plan
+9. ตอนที่ 6: complication หรือ follow-up → ถาม long-term management
+10. แต่ละตอน: scenario, question, answer (ละเอียด evidence-based), key_points (3-5 จุดสำคัญ), time_minutes (default 10)
+11. ภาษาไทย (medical term ภาษาอังกฤษได้)
+12. ห้ามเฉลยการวินิจฉัยในชื่อข้อสอบ (title) เด็ดขาด — ตั้งชื่อจากอาการนำ/สถานการณ์ผู้ป่วยเท่านั้น (เช่น "ชาย 55 ปี อาเจียนเป็นเลือด") ห้ามมีชื่อโรค คำวินิจฉัย หรือตัวย่อโรคปรากฏในชื่อ เพราะจะสปอยล์คำตอบก่อนผู้เรียนเริ่มทำข้อสอบ
+${existingCasesPromptBlock(existingTitles)}`;
+
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "x-api-key": ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "claude-sonnet-4-6",
+      // 6 parts × (scenario + question + detailed answer + key_points) blows
+      // through 8k tokens; we hit max_tokens mid-output and only "title"
+      // came back. 32k matches the MCQ Sonnet batch.
+      max_tokens: 32000,
+      tools: [EXAM_TOOL],
+      tool_choice: { type: "tool", name: "submit_meq_exam" },
+      messages: [{ role: "user", content: prompt }],
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Claude API error: ${await res.text()}`);
+  }
+
+  const data = await res.json();
+  console.log(`Claude stop_reason: ${data.stop_reason} (usage: in=${data.usage?.input_tokens} out=${data.usage?.output_tokens})`);
+  const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
+  if (!toolUse?.input) {
+    throw new Error("No tool_use in response");
+  }
+
+  const exam = toolUse.input;
+  if (!exam.title || !Array.isArray(exam.parts) || exam.parts.length < 4) {
+    console.error("Invalid exam structure:");
+    console.error(`  title: ${exam.title ?? "(missing)"}`);
+    console.error(`  parts: ${Array.isArray(exam.parts) ? `${exam.parts.length} items` : typeof exam.parts}`);
+    console.error(`  raw input keys: ${Object.keys(exam).join(", ")}`);
+    throw new Error("Invalid exam structure");
+  }
+
+  return exam;
 }
 
 run().catch(async (err) => {
