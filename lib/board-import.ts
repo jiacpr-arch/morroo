@@ -183,7 +183,7 @@ export function validateAndMap(
     const correct = raw.correct.toUpperCase();
     const explanation = raw.explanation;
     const reference = raw.reference;
-    const status = (raw.status || "review").toLowerCase();
+    const status = (raw.status || "active").toLowerCase();
 
     const subject = subjectBySpecialty.get(specialty);
     if (!specialty) errors.push("ขาด specialty");

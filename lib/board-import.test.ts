@@ -118,10 +118,10 @@ describe("validateAndMap", () => {
     expect(res.headerError).toMatch(/ขาดคอลัมน์/);
   });
 
-  it("defaults status to 'review' if blank", () => {
+  it("defaults status to 'active' if blank", () => {
     const csv = makeCsv({ ...validRow, status: "" });
     const res = validateAndMap(parseCsv(csv), subjects, topics);
-    expect(res.parsed[0].insert?.status).toBe("review");
+    expect(res.parsed[0].insert?.status).toBe("active");
   });
 
   it("allows blank optional fields (age, level, reference, explanation)", () => {

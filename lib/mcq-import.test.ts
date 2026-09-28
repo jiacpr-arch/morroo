@@ -85,14 +85,23 @@ describe("validateAndMapMcq", () => {
     expect(res.parsed[0].errors.join(" ")).toMatch(/ตัวเลือกไม่ครบ/);
   });
 
-  it("defaults status to 'review' and difficulty to 'medium' when blank", () => {
+  it("defaults status to 'active' and difficulty to 'medium' when blank", () => {
     const res = validateAndMapMcq(
       parseCsv(makeCsv({ ...validRow, status: "", difficulty: "" })),
       subjects
     );
     expect(res.parsed[0].errors).toEqual([]);
-    expect(res.parsed[0].insert?.status).toBe("review");
+    expect(res.parsed[0].insert?.status).toBe("active");
     expect(res.parsed[0].insert?.difficulty).toBe("medium");
+  });
+
+  it("keeps blank-status rows without a real answer in 'review'", () => {
+    const res = validateAndMapMcq(
+      parseCsv(makeCsv({ ...validRow, status: "", correct: "" })),
+      subjects
+    );
+    expect(res.parsed[0].errors).toEqual([]);
+    expect(res.parsed[0].insert?.status).toBe("review");
   });
 
   it("allows blank exam_source and question_number", () => {

@@ -57,9 +57,9 @@ const VALID_STATUS = new Set(["active", "review", "disabled"]);
  *
  * Intent:
  * - `correct` is a *draft* from the source — when blank we store a placeholder
- *   "A" (the admin sets the real answer during review). Rows default to
- *   `status=review` so they stay hidden from learners (RLS exposes only active)
- *   until verified.
+ *   "A" (the admin sets the real answer during review). Rows with a real answer
+ *   default to `status=active` (no review pass); rows with only the placeholder
+ *   default to `status=review` so a made-up key never reaches learners.
  * - student rows always carry exam_type (NL1/NL2) and null board_* fields to
  *   satisfy the mcq_questions audience-consistency CHECK constraint.
  */
@@ -80,7 +80,9 @@ function mapOneRow(
   const choiceE = (raw.choice_e ?? "").trim();
   const correctRaw = (raw.correct ?? "").trim().toUpperCase();
   const difficulty = ((raw.difficulty ?? "").trim() || "medium").toLowerCase();
-  const status = ((raw.status ?? "").trim() || "review").toLowerCase();
+  const status = (
+    (raw.status ?? "").trim() || (VALID_CORRECT.has(correctRaw) ? "active" : "review")
+  ).toLowerCase();
   const questionNumber = (raw.question_number ?? "").trim();
 
   const subject = subjectByName.get(subjectName);

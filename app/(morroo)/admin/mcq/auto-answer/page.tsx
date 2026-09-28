@@ -43,7 +43,7 @@ export default function AutoAnswerPage() {
   const [onlyUnanswered, setOnlyUnanswered] = useState(true);
   const [model, setModel] = useState<"haiku" | "sonnet">("haiku");
   const [maxCount, setMaxCount] = useState(100);
-  const [activate, setActivate] = useState(false);
+  const [activate, setActivate] = useState(true);
 
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState("");
@@ -267,7 +267,7 @@ export default function AutoAnswerPage() {
           </label>
           <label className="flex items-center gap-2 text-sm cursor-pointer">
             <input type="checkbox" checked={activate} onChange={(e) => setActivate(e.target.checked)} className="h-4 w-4" />
-            เปิดใช้งาน (active) หลังเฉลยเสร็จ — ⚠️ ควรสุ่มตรวจก่อน แนะนำยังไม่ติ๊กในรอบแรก
+            เปิดใช้งาน (active) ทันทีหลังเฉลยเสร็จ
           </label>
 
           <div className="flex items-center gap-3 pt-1">
