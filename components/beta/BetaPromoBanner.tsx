@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
+import { isPromoActive } from "@/lib/beta";
 
 type Variant = "sticky-top" | "inline";
 
@@ -13,31 +14,54 @@ interface PromoInfo {
 
 interface BetaPromoBannerProps {
   variant: Variant;
+  /**
+   * Promo state read on the server (layout). When given, the banner is in the
+   * initial HTML and no client fetch happens — inserting it after load pushed
+   * the whole page down (CLS).
+   */
+  initialPromo?: PromoInfo;
 }
 
+// Also read by the pre-paint script in app/(morroo)/layout.tsx, which sets
+// html[data-promo-dismissed] so a dismissed banner is hidden before first paint.
 const DISMISS_KEY = "beta_promo_banner_dismissed_v1";
 
-export default function BetaPromoBanner({ variant }: BetaPromoBannerProps) {
-  const [promo, setPromo] = useState<PromoInfo | null>(null);
+export default function BetaPromoBanner({ variant, initialPromo }: BetaPromoBannerProps) {
+  const [promo, setPromo] = useState<PromoInfo | null>(initialPromo ?? null);
   const [dismissed, setDismissed] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(!!initialPromo);
 
   useEffect(() => {
     setMounted(true);
-    if (variant === "sticky-top" && typeof window !== "undefined") {
-      if (localStorage.getItem(DISMISS_KEY)) setDismissed(true);
+    if (variant === "sticky-top") {
+      try {
+        if (localStorage.getItem(DISMISS_KEY)) setDismissed(true);
+      } catch {
+        /* storage blocked — just show it */
+      }
+    }
+    if (initialPromo) {
+      // Server HTML may be cached past the promo end — drop it if expired.
+      if (initialPromo.isActive && !isPromoActive(initialPromo.endsAt)) {
+        setPromo({ ...initialPromo, isActive: false });
+      }
+      return;
     }
     fetch("/api/beta/promo")
       .then((r) => r.json())
       .then((data: PromoInfo) => setPromo(data))
       .catch(() => {});
-  }, [variant]);
+  }, [variant, initialPromo]);
 
   if (!mounted || !promo || !promo.isActive) return null;
   if (variant === "sticky-top" && dismissed) return null;
 
   const handleDismiss = () => {
-    localStorage.setItem(DISMISS_KEY, "1");
+    try {
+      localStorage.setItem(DISMISS_KEY, "1");
+    } catch {
+      /* ignore */
+    }
     setDismissed(true);
   };
 
@@ -59,7 +83,7 @@ export default function BetaPromoBanner({ variant }: BetaPromoBannerProps) {
   }
 
   return (
-    <div className="relative bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-sm">
+    <div data-promo-banner className="relative bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-sm">
       {/* แถบนี้อยู่บนสุดของทุกหน้า = สิ่งแรกที่คนเห็น จึงนำด้วย "ลองก่อน" ไม่ใช่
           "สมัครเลย" (2026-07-25 เจ้าของสั่งว่าอยากโชว์ของก่อน ค่อยให้ลงทะเบียน
           ทีหลัง) โปรโมชั่น Beta ยังอยู่ครบ แค่ลดเป็นข้อเสนอรอง */}

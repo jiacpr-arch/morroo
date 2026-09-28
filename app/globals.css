@@ -122,3 +122,8 @@
     size: A4;
   }
 }
+
+/* Set pre-paint by app/(morroo)/layout.tsx when the promo banner was dismissed. */
+html[data-promo-dismissed] [data-promo-banner] {
+  display: none;
+}
