@@ -3,7 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchAccess } from "@/lib/entitlements";
 import { hasScopedAccess } from "@/lib/membership";
 import { createAnthropic } from "@/lib/anthropic";
-import { logAIError } from "@/lib/anthropic-error";
+import { AI_PAUSED_MESSAGE, isUsageLimitError, logAIError } from "@/lib/anthropic-error";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { buildExamResultFlex } from "@/lib/line-flex-templates";
@@ -206,6 +206,9 @@ ${studentAnswer}
       stage: "unknown",
       message: error instanceof Error ? error.message : String(error),
     });
+    if (isUsageLimitError(error)) {
+      return NextResponse.json({ error: AI_PAUSED_MESSAGE }, { status: 503 });
+    }
     return NextResponse.json(
       { error: "เกิดข้อผิดพลาดในการตรวจคำตอบ กรุณาลองใหม่" },
       { status: 500 }

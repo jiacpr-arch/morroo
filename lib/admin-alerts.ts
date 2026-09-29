@@ -17,7 +17,7 @@ type AdminClient = ReturnType<typeof createAdminClient>;
 
 export const ADMIN_ALERT_THROTTLE_MS = 6 * 60 * 60_000;
 
-export type AdminAlertKind = "comment_autohidden" | "mcq_autoflagged";
+export type AdminAlertKind = "comment_autohidden" | "mcq_autoflagged" | "ai_usage_limit";
 
 export function adminAlertKey(kind: AdminAlertKind): string {
   return `admin_alert_sent_at:${kind}`;
