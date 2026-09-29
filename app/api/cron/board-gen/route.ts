@@ -12,7 +12,7 @@
 // subscriptions rarely enqueue anything; the queue is mostly admin re-fills
 // (a new specialty is ready within the hour). For an immediate run, hit this
 // route with ?secret=BLOG_GENERATE_SECRET. The daily +1/specialty drip is
-// scripts/generate-board-daily.mjs (GitLab), which writes its own rows.
+// scripts/generate-board-daily.mjs (GitHub Actions), which writes its own rows.
 
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -44,7 +44,7 @@ async function processOne() {
   // running > 90s back to `queued` so the next tick re-picks it. After
   // 3 attempts mark `error` permanently so we don't loop forever.
   //
-  // `daily` rows are written straight into `running` by the GitLab drip
+  // `daily` rows are written straight into `running` by the daily drip
   // script, which takes ~90–160s per specialty — a 90s cutoff re-queued them
   // mid-run and generated duplicate questions. They only count as stuck past
   // the script's 15-min job timeout. (Admin retries copy `trigger`, so a

@@ -1,8 +1,8 @@
 name: Generate MEQ Case Games
 
 # แปลงข้อสอบ MEQ (progressive case) ที่ published แล้วเป็นเกมเคส (sim_scenarios
-# category='meq') ด้วย scripts/generate-meq-games.ts — รันมือเท่านั้น
-# (รอบตามตารางอยู่ที่ job meq-games ใน .gitlab-ci.yml ไม่ตั้ง schedule ซ้ำที่นี่)
+# category='meq') ด้วย scripts/generate-meq-games.ts — script ข้ามข้อที่มีเกมแล้ว
+# ตั้งเวลา 30 นาทีหลังรอบสร้าง MEQ (generate-meq.yml) เพื่อเก็บของใหม่ รันมือได้ด้วย
 #
 # force=true: สร้างใหม่ทับข้อที่มีเกมแล้ว (upsert slug meq-<examId> เดิม) — ใช้หลัง
 # เปลี่ยนรูปแบบเกม/prompt ข้อไหนสร้างไม่สำเร็จจะไม่ถูกเขียนทับ เกมเดิมยังอยู่
@@ -10,6 +10,9 @@ name: Generate MEQ Case Games
 # ต้องมี repo secrets: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
 
 on:
+  schedule:
+    # จันทร์ + พฤหัส 03:30 ICT (= 20:30 UTC วันก่อน) — หลัง generate-meq 30 นาที
+    - cron: "30 20 * * 0,3"
   workflow_dispatch:
     inputs:
       force:

@@ -23,8 +23,9 @@ Mirroring repositories (พบปัญหานี้ครั้งนึง�
 - **Supabase**: security advisors ใหม่, `board_gen_jobs` ที่ error/ค้าง, `scheduled_autoposts`
   ที่ล้มเหลว, `_ai_grade_errors`, `mcq_question_reports` ที่ค้าง, ความสดของเนื้อหา (blog/mcq/exam)
 - **GitHub Actions**: check บน PR ที่หมอเปิดเอง (lint+typecheck+test, `.github/workflows/verify.yml`)
-- **GitLab CI pipeline ของ content generator (blog/mcq/board/…) — หมอไม่ได้เช็คโดยตรง**
-  (ไม่มี `glab` แล้ว) ดูอ้อมๆ จากความสดของเนื้อหาใน Supabase แทน ถ้าดู stale ต้องเข้า GitLab เองดูพีพไลน์
+- **GitHub Actions ของ content generator** (blog/mcq/board/…, `.github/workflows/generate-*.yml`)
+  — ย้ายกลับจาก GitLab pipeline schedule แล้ว (GitLab หยุดรันตั้งแต่ 19 ก.ย. 2026) ดู scheduled run
+  ที่ล้มเหลวในแท็บ Actions ควบคู่กับความสดของเนื้อหาใน Supabase
 
 ## ระดับความเสี่ยง (tier)
 
