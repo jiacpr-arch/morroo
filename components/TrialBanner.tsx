@@ -64,15 +64,20 @@ export default function TrialBanner() {
     setDismissed(true);
   };
 
+  // Floats over the page (fixed) instead of sitting above the navbar: it only
+  // appears after /api/trial answers, and inserting it into the flow then
+  // pushed the whole page down (CLS). Sits above the mobile chat button.
   return (
     <div
+      role="status"
       className={
-        urgent
-          ? "border-b border-amber-300 bg-amber-50 text-amber-950"
-          : "border-b border-emerald-300 bg-emerald-50 text-emerald-950"
+        "fixed inset-x-4 bottom-20 z-40 rounded-xl border shadow-lg sm:inset-x-auto sm:bottom-5 sm:left-5 sm:max-w-md " +
+        (urgent
+          ? "border-amber-300 bg-amber-50 text-amber-950"
+          : "border-emerald-300 bg-emerald-50 text-emerald-950")
       }
     >
-      <div className="mx-auto flex max-w-6xl items-start gap-3 px-4 py-2.5 text-sm">
+      <div className="flex items-start gap-3 px-4 py-3 text-sm">
         <span className="mt-0.5 text-base leading-none">{urgent ? "⏰" : "🎁"}</span>
         <div className="flex-1 min-w-0">
           <p>

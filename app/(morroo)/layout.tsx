@@ -20,6 +20,8 @@ import PostHogInit from "@/components/PostHogInit";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import FirstVisitNudge from "@/components/FirstVisitNudge";
 import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
+import { getBetaPromoEndsAt } from "@/lib/beta-promo";
+import { isPromoActive } from "@/lib/beta";
 import "../globals.css";
 
 const GA_ID = "G-D7FX2CK8JY";
@@ -157,17 +159,29 @@ const faqSchema = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const promoEndsAt = await getBetaPromoEndsAt().catch(() => null);
+  const promo = { endsAt: promoEndsAt, isActive: isPromoActive(promoEndsAt) };
+
   return (
     <html
       lang="th"
       className={`${sarabun.variable} ${geistMono.variable} h-full antialiased`}
+      // The pre-paint script below adds data-promo-dismissed before hydration.
+      suppressHydrationWarning
     >
       <head>
+        {/* Hide a dismissed promo banner before first paint, so it isn't shown
+            and then removed (a layout shift). Key matches BetaPromoBanner. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('beta_promo_banner_dismissed_v1'))document.documentElement.setAttribute('data-promo-dismissed','')}catch(e){}`,
+          }}
+        />
         {/* Must stay inline in <head> (not next/script) so Google Ads' tag detector finds gtag.js in the SSR HTML. */}
         <script
           async
@@ -235,10 +249,14 @@ export default function RootLayout({
         <AiHealthProvider>
           <AiStatusBanner />
           <BetaProvider>
-            <BetaPromoBanner variant="sticky-top" />
+            <BetaPromoBanner variant="sticky-top" initialPromo={promo} />
             <TrialBanner />
             <Navbar />
-            <main className="flex-1">{children}</main>
+            {/* min-h-screen keeps the footer below the fold while client pages
+                (profile, exams, nl/practice, sim...) show their short loading
+                state — otherwise the footer is on screen and gets shoved down
+                when the data arrives, which was our biggest CLS source. */}
+            <main className="flex-1 min-h-screen">{children}</main>
             <Footer />
             <BetaWelcomeModal />
             <ChatWidget />
