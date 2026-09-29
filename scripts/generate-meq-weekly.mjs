@@ -13,6 +13,7 @@ import {
   pickMeqSlot,
   isDuplicateMeqTitle,
   existingCasesPromptBlock,
+  normalizeMeqToolInput,
 } from "../lib/meq-schedule.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -191,7 +192,7 @@ ${existingCasesPromptBlock(existingTitles)}`;
     throw new Error("No tool_use in response");
   }
 
-  const exam = toolUse.input;
+  const exam = normalizeMeqToolInput(toolUse.input);
   if (!exam.title || !Array.isArray(exam.parts) || exam.parts.length < 4) {
     console.error("Invalid exam structure:");
     console.error(`  title: ${exam.title ?? "(missing)"}`);
