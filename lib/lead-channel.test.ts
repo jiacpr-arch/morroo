@@ -2,13 +2,18 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 
 type QueryResult<T> = { data: T | null; error: { message: string } | null };
 
-let lookupResult: QueryResult<{ id: string }> = { data: null, error: null };
+let lookupResult: QueryResult<{ id: string; stage?: string }> = { data: null, error: null };
+let profileResult: QueryResult<{
+  id: string;
+  membership_type: string | null;
+  membership_expires_at: string | null;
+}> = { data: null, error: null };
 let insertResult: QueryResult<{ id: string }> = { data: null, error: null };
 const updateCalls: Array<Record<string, unknown>> = [];
 const insertCalls: Array<Record<string, unknown>> = [];
 const lookupFilters: Array<{ column: string; value: unknown }> = [];
 
-function makeBuilder() {
+function makeBuilder(table: string) {
   // Chain that captures the eq()/select()/maybeSingle() it was called with
   // and resolves to whichever result was set up by the test.
   const chain: Record<string, unknown> = {};
@@ -19,7 +24,9 @@ function makeBuilder() {
   });
   chain.order = vi.fn(() => chain);
   chain.limit = vi.fn(() => chain);
-  chain.maybeSingle = vi.fn(() => Promise.resolve(lookupResult));
+  chain.maybeSingle = vi.fn(() =>
+    Promise.resolve(table === "profiles" ? profileResult : lookupResult)
+  );
   chain.single = vi.fn(() => Promise.resolve(insertResult));
   chain.insert = vi.fn((payload: Record<string, unknown>) => {
     insertCalls.push(payload);
@@ -38,13 +45,14 @@ function makeBuilder() {
 }
 
 vi.mock("@/lib/supabase/admin", () => ({
-  createAdminClient: () => ({ from: vi.fn(() => makeBuilder()) }),
+  createAdminClient: () => ({ from: vi.fn((table: string) => makeBuilder(table)) }),
 }));
 
-import { getOrCreateLeadFromChannel } from "./lead-channel";
+import { getOrCreateLeadFromChannel, stageForProfile } from "./lead-channel";
 
 beforeEach(() => {
   lookupResult = { data: null, error: null };
+  profileResult = { data: null, error: null };
   insertResult = { data: null, error: null };
   updateCalls.length = 0;
   insertCalls.length = 0;
@@ -122,5 +130,53 @@ describe("getOrCreateLeadFromChannel", () => {
     });
 
     expect(id).toBeNull();
+  });
+
+  it("stages a LINE contact who already has an account as registered/paid", async () => {
+    insertResult = { data: { id: "lead-member" }, error: null };
+    profileResult = {
+      data: { id: "user-1", membership_type: "yearly", membership_expires_at: "2999-01-01T00:00:00Z" },
+      error: null,
+    };
+
+    await getOrCreateLeadFromChannel({ channel: "line", channelUserId: "U-member" });
+
+    expect(insertCalls[0]).toMatchObject({ stage: "paid", user_id: "user-1" });
+  });
+
+  it("promotes an existing 'new' LINE lead once the contact has signed up", async () => {
+    lookupResult = { data: { id: "lead-old", stage: "new" }, error: null };
+    profileResult = {
+      data: { id: "user-2", membership_type: "free", membership_expires_at: null },
+      error: null,
+    };
+
+    const id = await getOrCreateLeadFromChannel({ channel: "line", channelUserId: "U-late" });
+
+    expect(id).toBe("lead-old");
+    expect(updateCalls[0]).toMatchObject({ stage: "registered", user_id: "user-2" });
+  });
+
+  it("leaves a later-stage lead's stage alone", async () => {
+    lookupResult = { data: { id: "lead-coded", stage: "code_issued" }, error: null };
+    profileResult = {
+      data: { id: "user-3", membership_type: "free", membership_expires_at: null },
+      error: null,
+    };
+
+    await getOrCreateLeadFromChannel({ channel: "line", channelUserId: "U-coded" });
+
+    expect(updateCalls[0]).not.toHaveProperty("stage");
+  });
+});
+
+describe("stageForProfile", () => {
+  const now = new Date("2026-09-29T00:00:00Z");
+
+  it("is paid only for an unexpired non-free membership", () => {
+    expect(stageForProfile({ membership_type: "monthly", membership_expires_at: "2026-10-05T00:00:00Z" }, now)).toBe("paid");
+    expect(stageForProfile({ membership_type: "monthly", membership_expires_at: "2026-09-01T00:00:00Z" }, now)).toBe("registered");
+    expect(stageForProfile({ membership_type: "free", membership_expires_at: null }, now)).toBe("registered");
+    expect(stageForProfile({ membership_type: null, membership_expires_at: null }, now)).toBe("registered");
   });
 });
