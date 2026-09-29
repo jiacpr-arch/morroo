@@ -1,5 +1,5 @@
 /**
- * Blog article generator — runs on GitLab CI (see .gitlab-ci.yml, JOB=blog)
+ * Blog article generator — runs on GitHub Actions (.github/workflows/generate-blog.yml)
  *
  * After inserting the blog post, calls /api/autopost/retry?slug=X to trigger
  * the Facebook autopost (which handles format rotation, hook gen, and state
