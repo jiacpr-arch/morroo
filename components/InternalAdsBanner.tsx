@@ -12,17 +12,20 @@ interface Props {
 }
 
 export default function InternalAdsBanner({ placement, className }: Props) {
-  const [idx, setIdx] = useState<number | null>(null);
+  // Render the first ad on the server so the banner's space is there from the
+  // first paint — it used to render null until mount, then pop in above the
+  // page content and push it down (CLS on /nl/practice etc.). The random
+  // starting ad is picked after mount; every ad has the same height.
+  const [idx, setIdx] = useState(0);
 
   useEffect(() => {
     setIdx(Math.floor(Math.random() * NETWORK_SITES.length));
     const t = setInterval(() => {
-      setIdx((i) => (((i ?? 0) + 1) % NETWORK_SITES.length));
+      setIdx((i) => (i + 1) % NETWORK_SITES.length);
     }, ROTATE_MS);
     return () => clearInterval(t);
   }, []);
 
-  if (idx === null) return null;
   const ad = NETWORK_SITES[idx];
 
   return (
@@ -45,11 +48,12 @@ export default function InternalAdsBanner({ placement, className }: Props) {
           {ad.emoji}
         </span>
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-semibold text-sm text-gray-900">
+          {/* Single line (no wrap) so rotating ads never change the height. */}
+          <div className="flex items-center gap-2">
+            <span className="truncate font-semibold text-sm text-gray-900">
               {ad.label}
             </span>
-            <span className="text-[10px] uppercase tracking-wide text-brand bg-brand/10 px-1.5 py-0.5 rounded-full">
+            <span className="shrink-0 text-[10px] uppercase tracking-wide text-brand bg-brand/10 px-1.5 py-0.5 rounded-full">
               เว็บในเครือเรา
             </span>
           </div>
