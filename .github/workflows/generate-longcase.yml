@@ -1,9 +1,7 @@
 name: Generate Weekly Long Case
 
 on:
-  schedule:
-    # อาทิตย์ 04:00 ICT (= 21:00 UTC วันเสาร์)
-    - cron: "0 21 * * 6"
+  # Scheduled by Vercel cron: /api/cron/dispatch-generators (lib/generator-schedule.ts)
   workflow_dispatch:
 
 jobs:

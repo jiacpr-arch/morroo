@@ -1,9 +1,7 @@
 name: Generate Daily Board MCQ
 
 on:
-  schedule:
-    # ทุกวัน 02:30 ICT (= 19:30 UTC วันก่อน) — offset 30 นาทีจาก generate-mcq
-    - cron: "30 19 * * *"
+  # Scheduled by Vercel cron: /api/cron/dispatch-generators (lib/generator-schedule.ts)
   workflow_dispatch:
     inputs:
       dry_run:
