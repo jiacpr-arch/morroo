@@ -12,6 +12,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { notifyCronFailure } from "./cron-notify.mjs";
 import { generateWithTool, resolveEasyMediumProvider, CLAUDE_DEFAULT_MODEL } from "./lib/llm.mjs";
+import { normalizeMcqChoices } from "./lib/mcq-choices.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -268,6 +269,7 @@ async function run() {
   }
 
   const validQuestions = allQuestions
+    .map((q) => ({ ...q, choices: normalizeMcqChoices(q.choices) }))
     .filter(
       (q) =>
         q.scenario &&
