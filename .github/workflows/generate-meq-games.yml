@@ -10,9 +10,7 @@ name: Generate MEQ Case Games
 # ต้องมี repo secrets: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
 
 on:
-  schedule:
-    # จันทร์ + พฤหัส 03:30 ICT (= 20:30 UTC วันก่อน) — หลัง generate-meq 30 นาที
-    - cron: "30 20 * * 0,3"
+  # Scheduled by Vercel cron: /api/cron/dispatch-generators (lib/generator-schedule.ts)
   workflow_dispatch:
     inputs:
       force:

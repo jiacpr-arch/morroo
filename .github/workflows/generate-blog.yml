@@ -1,9 +1,7 @@
 name: Generate Blog Article
 
 on:
-  schedule:
-    # ทุกวัน 12:00 ICT (= 05:00 UTC)
-    - cron: "0 5 * * *"
+  # Scheduled by Vercel cron: /api/cron/dispatch-generators (lib/generator-schedule.ts)
   workflow_dispatch:
     inputs:
       count:

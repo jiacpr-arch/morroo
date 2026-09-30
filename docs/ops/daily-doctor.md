@@ -24,8 +24,9 @@ Mirroring repositories (พบปัญหานี้ครั้งนึง�
   ที่ล้มเหลว, `_ai_grade_errors`, `mcq_question_reports` ที่ค้าง, ความสดของเนื้อหา (blog/mcq/exam)
 - **GitHub Actions**: check บน PR ที่หมอเปิดเอง (lint+typecheck+test, `.github/workflows/verify.yml`)
 - **GitHub Actions ของ content generator** (blog/mcq/board/…, `.github/workflows/generate-*.yml`)
-  — ย้ายกลับจาก GitLab pipeline schedule แล้ว (GitLab หยุดรันตั้งแต่ 19 ก.ย. 2026) ดู scheduled run
-  ที่ล้มเหลวในแท็บ Actions ควบคู่กับความสดของเนื้อหาใน Supabase
+  — Vercel cron `/api/cron/dispatch-generators` เป็นตัวสั่งรัน (GitHub `schedule:` ไม่ยิงให้ repo นี้
+  ตั้งแต่ ส.ค. 2026) ดู `cron_runs` job `dispatch-generators` + run ที่ล้มเหลวในแท็บ Actions ควบคู่กับ
+  ความสดของเนื้อหาใน Supabase
 
 ## ระดับความเสี่ยง (tier)
 

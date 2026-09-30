@@ -38,6 +38,7 @@ export const CRON_JOBS: readonly CronJobDef[] = [
   { job: "school-review-reminder", path: "/api/cron/school-review-reminder", schedule: "0 11 * * *" },
   { job: "school-enrich", path: "/api/cron/school-enrich", schedule: "0 18 * * *" },
   { job: "board-gen", path: "/api/cron/board-gen", schedule: "7 * * * *" },
+  { job: "dispatch-generators", path: "/api/cron/dispatch-generators", schedule: "0,30 5,19-21 * * *" },
   { job: "line-weekly-blog-digest", path: "/api/cron/line-weekly-blog-digest", schedule: "0 5 * * 3" },
 ];
 

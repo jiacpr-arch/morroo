@@ -1,9 +1,7 @@
 name: Generate Daily MCQ
 
 on:
-  schedule:
-    # ทุกวัน 02:00 ICT (= 19:00 UTC วันก่อน)
-    - cron: "0 19 * * *"
+  # Scheduled by Vercel cron: /api/cron/dispatch-generators (lib/generator-schedule.ts)
   workflow_dispatch:
     inputs:
       dry_run:
