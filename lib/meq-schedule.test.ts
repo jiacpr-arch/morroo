@@ -5,6 +5,7 @@ import {
   pickMeqSlot,
   isDuplicateMeqTitle,
   existingCasesPromptBlock,
+  normalizeMeqToolInput,
 } from "./meq-schedule.mjs";
 
 describe("pickMeqSlot", () => {
@@ -45,5 +46,24 @@ describe("existingCasesPromptBlock", () => {
   it("lists titles, or is empty when there are none", () => {
     expect(existingCasesPromptBlock([])).toBe("");
     expect(existingCasesPromptBlock(["A", "B"])).toContain("- A\n- B");
+  });
+});
+
+describe("normalizeMeqToolInput", () => {
+  const parts = [{ part_number: 1, title: "t" }];
+
+  it("parses parts returned as a JSON string", () => {
+    const out = normalizeMeqToolInput({ title: "x", parts: JSON.stringify(parts) });
+    expect(out.parts).toEqual(parts);
+  });
+
+  it("leaves a real array untouched", () => {
+    const input = { title: "x", parts };
+    expect(normalizeMeqToolInput(input)).toBe(input);
+  });
+
+  it("leaves unparseable or non-array strings for the caller to reject", () => {
+    expect(normalizeMeqToolInput({ title: "x", parts: "{oops" }).parts).toBe("{oops");
+    expect(normalizeMeqToolInput({ title: "x", parts: '{"a":1}' }).parts).toBe('{"a":1}');
   });
 });
