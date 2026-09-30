@@ -65,6 +65,24 @@ function BrandWordmark(): React.ReactElement {
   );
 }
 
+// Drawn as SVG rather than the "✓" character: Satori's bundled font has no
+// U+2713 glyph, and its dynamic-font fallback fetch returns 400 on Vercel, so
+// the text version logged "Failed to load dynamic font for ✓" every run.
+function CheckIcon(): React.ReactElement {
+  return (
+    <svg width="44" height="44" viewBox="0 0 24 24">
+      <path
+        d="M4 12.5l5 5L20 6.5"
+        fill="none"
+        stroke="#ffffff"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 async function renderSlide(node: React.ReactElement, label: string): Promise<Buffer> {
   // Surface the actual Satori / sharp error to the caller — the catch-all in
   // ensureCarouselSlides only logs the wrapped error and Vercel truncates
@@ -226,11 +244,9 @@ function BulletSlide({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "44px",
-              fontWeight: 900,
             }}
           >
-            ✓
+            <CheckIcon />
           </div>
           <div
             style={{
