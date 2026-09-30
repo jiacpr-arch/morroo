@@ -63,7 +63,7 @@ export async function getExam(id: string): Promise<Exam | null> {
     .select("*")
     .eq("id", id)
     .eq("status", "published")
-    .single();
+    .maybeSingle();
 
   if (error) {
     console.error("Error fetching exam:", error);

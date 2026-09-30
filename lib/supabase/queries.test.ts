@@ -14,6 +14,7 @@ function makeBuilder(result: unknown) {
     chain[m] = vi.fn(() => chain);
   }
   chain.single = vi.fn(() => Promise.resolve(result));
+  chain.maybeSingle = vi.fn(() => Promise.resolve(result));
   chain.then = (resolve: (v: unknown) => unknown) =>
     Promise.resolve(resolve(result));
   return chain;
@@ -51,6 +52,34 @@ describe("getExam", () => {
     const exam = await getExam(REAL_ID);
     expect(from).toHaveBeenCalledWith("exams");
     expect(exam).toMatchObject({ id: REAL_ID });
+  });
+
+  it("treats a missing published exam as a normal not-found result", async () => {
+    const builder = makeBuilder({ data: null, error: null });
+    builder.single = vi.fn(async () => ({
+      data: null,
+      error: { code: "PGRST116", details: "The result contains 0 rows" },
+    }));
+    from.mockReturnValue(builder);
+    const log = vi.spyOn(console, "error").mockImplementation(() => {});
+    try {
+      expect(await getExam(REAL_ID)).toBeNull();
+      expect(log).not.toHaveBeenCalled();
+    } finally {
+      log.mockRestore();
+    }
+  });
+
+  it("still logs database failures", async () => {
+    const error = { code: "42501", message: "permission denied" };
+    from.mockReturnValue(makeBuilder({ data: null, error }));
+    const log = vi.spyOn(console, "error").mockImplementation(() => {});
+    try {
+      expect(await getExam(REAL_ID)).toBeNull();
+      expect(log).toHaveBeenCalledWith("Error fetching exam:", error);
+    } finally {
+      log.mockRestore();
+    }
   });
 });
 
