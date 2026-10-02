@@ -1,9 +1,12 @@
 /**
  * Daily MCQ generator — runs on GitHub Actions
  *
- * Generates 30 MCQ questions/day for a rotating subject:
- * - Haiku (cheap, fast): 21 easy + medium
- * - Sonnet (deep reasoning): 9 hard
+ * Generates 30 MCQ questions/day for a rotating subject (6 easy, 15 medium,
+ * 9 hard — see llm.mjs for which model serves each batch), then gates them:
+ *   1. findStructuralProblems() drops malformed items
+ *   2. a reviewer model pass (reviewQuestions) keeps ok items, repairs fixable
+ *      ones and drops the rest — the Oct 2026 audit of the old Haiku output
+ *      found ~75% needed repair, so nothing is published unreviewed
  *
  * Required env vars:
  *   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
@@ -13,6 +16,18 @@ import { createClient } from "@supabase/supabase-js";
 import { notifyCronFailure } from "./cron-notify.mjs";
 import { generateWithTool, resolveEasyMediumProvider, CLAUDE_DEFAULT_MODEL } from "./lib/llm.mjs";
 import { normalizeMcqChoices } from "./lib/mcq-choices.mjs";
+import {
+  findStructuralProblems,
+  REVIEW_TOOL,
+  buildReviewPrompt,
+  applyReview,
+} from "./lib/mcq-quality.mjs";
+
+// Questions per reviewer call. A "fix" verdict carries a full rewritten
+// question, so keep batches small enough that a full chunk of rewrites + adaptive
+// thinking fit comfortably under REVIEW_MAX_TOKENS.
+const REVIEW_CHUNK = 8;
+const REVIEW_MAX_TOKENS = 64000;
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -177,6 +192,50 @@ async function generateQuestions(label, target, maxTokens, prompt) {
   return { questions, tag: `${res.provider}:${res.model}` };
 }
 
+/**
+ * Second-opinion pass: a reviewer model checks each question like an exam
+ * board member and returns ok / fix (with the repaired question) / reject.
+ * Returns [{ question, note, status }] — rejected and unrepairable questions
+ * are dropped. If a reviewer call itself fails, that chunk is kept but parked
+ * in status "review" (hidden from students) rather than published unchecked.
+ */
+async function reviewQuestions(subjectNameTh, questions) {
+  const target = { provider: "anthropic", model: CLAUDE_DEFAULT_MODEL };
+  const chunks = [];
+  for (let i = 0; i < questions.length; i += REVIEW_CHUNK) {
+    chunks.push(questions.slice(i, i + REVIEW_CHUNK));
+  }
+  const results = await Promise.allSettled(
+    chunks.map((chunk, n) =>
+      generateWithTool({
+        ...target,
+        maxTokens: REVIEW_MAX_TOKENS,
+        prompt: buildReviewPrompt(subjectNameTh, chunk),
+        tool: REVIEW_TOOL,
+        label: `review-${n}`,
+      })
+    )
+  );
+
+  const out = [];
+  results.forEach((result, n) => {
+    const chunk = chunks[n];
+    if (result.status === "rejected") {
+      console.error(`review-${n} failed, parking ${chunk.length} questions in review: ${result.reason?.message ?? result.reason}`);
+      for (const q of chunk) out.push({ question: q, note: "review call failed", status: "review" });
+      return;
+    }
+    const reviews = result.value.data?.reviews ?? [];
+    chunk.forEach((q, i) => {
+      const review = reviews.find((r) => r.index === i);
+      const { question, note } = applyReview(q, review, normalizeMcqChoices);
+      console.log(`[review-${n}#${i}] ${note.slice(0, 160)}`);
+      if (question) out.push({ question, note, status: "active" });
+    });
+  });
+  return out;
+}
+
 async function run() {
   const now = new Date();
   const dayOfYear = Math.floor(
@@ -268,32 +327,34 @@ async function run() {
     process.exit(1);
   }
 
-  const validQuestions = allQuestions
+  const wellFormed = allQuestions
     .map((q) => ({ ...q, choices: normalizeMcqChoices(q.choices) }))
-    .filter(
-      (q) =>
-        q.scenario &&
-        Array.isArray(q.choices) &&
-        q.choices.length >= 4 &&
-        q.correct_answer &&
-        ["A", "B", "C", "D", "E"].includes(q.correct_answer)
-    )
-    .map((q) => ({
-      subject_id: subjectRow.id,
-      exam_type: "NL2",
-      exam_source: "AI-generated-daily",
-      scenario: q.scenario,
-      choices: q.choices,
-      correct_answer: q.correct_answer,
-      explanation: q.explanation || null,
-      detailed_explanation: q.detailed_explanation || null,
-      difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
-      is_ai_enhanced: true,
-      ai_notes: `Auto-generated on ${now.toISOString().split("T")[0]} | ${q.gen_tag}`,
-      status: "active",
-    }));
+    .filter((q) => {
+      const problems = findStructuralProblems(q);
+      if (problems.length) {
+        console.warn(`Dropping malformed question (${problems.join("; ")}): ${String(q.scenario ?? "").slice(0, 80)}`);
+      }
+      return problems.length === 0;
+    });
+  console.log(`Structurally valid: ${wellFormed.length}/${allQuestions.length}`);
 
-  console.log(`Valid questions after filter: ${validQuestions.length}/${allQuestions.length}`);
+  const reviewed = await reviewQuestions(todaySubject.name_th, wellFormed);
+  console.log(`Kept after review: ${reviewed.length}/${wellFormed.length}`);
+
+  const validQuestions = reviewed.map(({ question: q, note, status }) => ({
+    subject_id: subjectRow.id,
+    exam_type: "NL2",
+    exam_source: "AI-generated-daily",
+    scenario: q.scenario,
+    choices: q.choices,
+    correct_answer: q.correct_answer,
+    explanation: q.explanation || null,
+    detailed_explanation: q.detailed_explanation || null,
+    difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
+    is_ai_enhanced: true,
+    ai_notes: `Auto-generated on ${now.toISOString().split("T")[0]} | ${q.gen_tag} | ${note}`.slice(0, 500),
+    status,
+  }));
 
   if (validQuestions.length === 0) {
     console.error("No valid questions after validation");
@@ -304,6 +365,7 @@ async function run() {
     // Print enough to judge quality from the CI log: every stem, plus the
     // first question of each difficulty in full.
     console.log(`[dry-run] would insert ${validQuestions.length} questions (nothing written).`);
+    for (const q of validQuestions) console.log(`[dry-run] ${q.status.padEnd(6)} | ${q.ai_notes}`);
     const missingDetailed = validQuestions.filter((q) => !q.detailed_explanation).length;
     console.log(`[dry-run] missing detailed_explanation: ${missingDetailed}`);
     for (const q of validQuestions) {
@@ -347,7 +409,8 @@ async function run() {
   const medium = validQuestions.filter((q) => q.difficulty === "medium").length;
   const hard = validQuestions.filter((q) => q.difficulty === "hard").length;
 
-  console.log(`Inserted ${inserted?.length ?? 0} questions: easy=${easy} medium=${medium} hard=${hard}`);
+  const parked = validQuestions.filter((q) => q.status !== "active").length;
+  console.log(`Inserted ${inserted?.length ?? 0} questions: easy=${easy} medium=${medium} hard=${hard} (parked in review: ${parked})`);
   console.log(`Total in subject "${todaySubject.name_th}": ${newTotal ?? 0}`);
 }
 
