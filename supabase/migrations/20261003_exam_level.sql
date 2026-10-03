@@ -16,9 +16,11 @@ UPDATE public.profiles SET target_exam = 'part2' WHERE target_exam = 'NL3';
 UPDATE public.profiles SET target_exam = NULL
   WHERE target_exam IS NOT NULL AND target_exam NOT IN ('part1', 'part2', 'NL2', 'meq', 'board');
 
+-- CHECK ยังรับค่าเก่า (NL1 / NL3 / both) ไว้ด้วย: onboarding ของโค้ดก่อน merge ยังเขียนค่าเหล่านี้
+-- และโค้ดใหม่อ่านผ่าน normalizeTarget() ได้ — ไม่งั้นการสมัครใหม่บน prod จะพังระหว่างรอ deploy
 ALTER TABLE public.profiles
   ADD CONSTRAINT profiles_target_exam_check
-  CHECK (target_exam IS NULL OR target_exam IN ('part1', 'part2', 'NL2', 'meq', 'board'));
+  CHECK (target_exam IS NULL OR target_exam IN ('part1', 'part2', 'NL2', 'meq', 'board', 'NL1', 'NL3', 'both'));
 
 -- ─── 2) board_specialty + get_daily_mcq(p_date, p_pool, p_board_specialty) ──
 -- ผู้ใช้ระดับ board เลือกสาขา (อายุรศาสตร์, ศัลยศาสตร์ …) เพื่อรับข้อสอบรายวันของสาขานั้น
