@@ -6,7 +6,7 @@
  * `action=daily_answer&d=<quiz_date>&c=<A-E>&q=<question id>`.
  *
  * Security: `d` and `c` are the only inputs trusted for scoring. The graded
- * question is always re-derived server-side from get_daily_mcq(d) — never
+ * question is always re-derived server-side from get_daily_mcq_v2(d, pool, specialty) — never
  * from the client-controlled `q` — so a forged `q` can't let someone answer
  * a question they already know the answer to. `d` is only accepted for
  * today or yesterday (Asia/Bangkok), closing old cards after one day.
@@ -29,6 +29,7 @@ import {
 import { liffDeepLink, toLiffUri } from "@/lib/line-links";
 import { isReviewQueueAudience, recordMcqReviewOutcome } from "@/lib/mcq-review";
 import type { McqQuestion } from "@/lib/types-mcq";
+import { isBoardSpecialtySlug, isMcqPool, mcqPoolForTarget, type McqPool } from "@/lib/exam-level";
 
 const DAILY_ACTION = "daily_answer";
 const STREAK_CAMPAIGN = "daily_mcq_streak5";
@@ -71,7 +72,9 @@ export function shiftQuizDate(dateStr: string, days: number): string {
 export function dailyPracticeUrl(
   questionId: string,
   quizDate: string,
-  content: string
+  content: string,
+  /** ข้อ Board → เปิดหน้าฝึกของสาขานั้น (หน้า /nl/practice รองรับเฉพาะข้อนักศึกษา) */
+  boardSpecialty?: string | null
 ): string {
   const params = new URLSearchParams({
     q: questionId,
@@ -80,7 +83,10 @@ export function dailyPracticeUrl(
     utm_campaign: quizDate,
     utm_content: content,
   });
-  return toLiffUri(`${SITE_URL}/nl/practice?${params.toString()}`);
+  const path = isBoardSpecialtySlug(boardSpecialty)
+    ? `/board/${boardSpecialty}/practice`
+    : "/nl/practice";
+  return toLiffUri(`${SITE_URL}${path}?${params.toString()}`);
 }
 
 // Also a LIFF link when shared — the friend who taps it gets signed in (or
@@ -95,18 +101,21 @@ export type DailyQuestionFull = McqQuestion & { quiz_date: string };
 
 /**
  * Load the full row (choices, correct_answer, explanation) for the day's
- * question, resolved via get_daily_mcq(quizDate) — the single canonical
+ * question, resolved via get_daily_mcq_v2(quizDate, pool, specialty) — the single canonical
  * source of "which question is today's", shared with the broadcast route.
  */
 export async function loadDailyQuestion(
   supabase: SupabaseClient,
-  quizDate: string
+  quizDate: string,
+  pool: McqPool | null = null,
+  boardSpecialty: string | null = null
 ): Promise<DailyQuestionFull | null> {
-  const { data: daily, error: rpcError } = await supabase.rpc("get_daily_mcq", {
-    p_date: quizDate,
-  });
+  const args: Record<string, string> = { p_date: quizDate };
+  if (pool) args.p_pool = pool;
+  if (pool === "board" && boardSpecialty) args.p_board_specialty = boardSpecialty;
+  const { data: daily, error: rpcError } = await supabase.rpc("get_daily_mcq_v2", args);
   if (rpcError) {
-    console.error("[daily-mcq-line] get_daily_mcq failed:", rpcError);
+    console.error("[daily-mcq-line] get_daily_mcq_v2 failed:", rpcError);
     return null;
   }
   const id = (daily as { id: string }[] | null)?.[0]?.id;
@@ -160,6 +169,10 @@ export async function loadHardQuestion(
 export interface DailyMcqAudienceMember {
   lineUserId: string;
   name: string | null;
+  /** Question pool for the member's chosen exam level (null = mixed NL1+NL2). */
+  pool: McqPool | null;
+  /** Board specialty slug when pool is "board". */
+  boardSpecialty: string | null;
 }
 
 /** Days a newly linked LINE user gets the daily card before silence counts. */
@@ -198,7 +211,7 @@ export async function getActiveDailyAudience(
   const [{ data: linked }, { data: answeredRows }] = await Promise.all([
     supabase
       .from("profiles")
-      .select("id, name, line_user_id, line_linked_at, created_at")
+      .select("id, name, line_user_id, line_linked_at, created_at, target_exam, board_specialty")
       .not("line_user_id", "is", null),
     supabase.from("daily_quiz_answers").select("line_user_id").gte("created_at", sinceIso),
   ]);
@@ -209,8 +222,11 @@ export async function getActiveDailyAudience(
     line_user_id: string;
     line_linked_at: string | null;
     created_at: string | null;
+    target_exam: string | null;
+    board_specialty: string | null;
   }[];
   const byId = new Map<string, string | null>();
+  const poolById = new Map<string, { pool: McqPool | null; boardSpecialty: string | null }>();
 
   for (const row of (answeredRows ?? []) as { line_user_id: string }[]) {
     if (row.line_user_id) byId.set(row.line_user_id, byId.get(row.line_user_id) ?? null);
@@ -231,11 +247,21 @@ export async function getActiveDailyAudience(
     for (const p of profiles) {
       if (activeUserIds.has(p.id) || isWithinGrace(p.line_linked_at, p.created_at)) {
         byId.set(p.line_user_id, p.name ?? byId.get(p.line_user_id) ?? null);
+        const pool = mcqPoolForTarget(p.target_exam, p.board_specialty);
+        poolById.set(p.line_user_id, {
+          pool,
+          boardSpecialty: pool === "board" ? p.board_specialty : null,
+        });
       }
     }
   }
 
-  return [...byId.entries()].map(([lineUserId, name]) => ({ lineUserId, name }));
+  return [...byId.entries()].map(([lineUserId, name]) => ({
+    lineUserId,
+    name,
+    pool: poolById.get(lineUserId)?.pool ?? null,
+    boardSpecialty: poolById.get(lineUserId)?.boardSpecialty ?? null,
+  }));
 }
 
 /**
@@ -278,7 +304,8 @@ export function toBubbleQuestionData(
     id: question.id,
     scenario: question.scenario,
     difficulty: question.difficulty,
-    examType: question.exam_type ?? "NL2",
+    // ข้อ Board ไม่มี exam_type — หัวการ์ดแสดง "Board"
+    examType: question.audience === "board" ? "Board" : (question.exam_type ?? "NL2"),
     subjectNameTh: question.mcq_subjects?.name_th ?? "",
     subjectIcon: question.mcq_subjects?.icon ?? "🩺",
     quizDate: question.quiz_date,
@@ -314,7 +341,12 @@ export async function handleDailyMcqPostback(
   }
   if (!VALID_ANSWERS.has(choice)) return null;
 
-  const question = await loadDailyQuestion(supabase, quizDate);
+  // `p` only picks which pool today's question came from (NL1/NL2/board) so
+  // grading re-derives the same card the user saw; it is allow-listed and
+  // never a question id, so it can't be used to pick an easier question.
+  const pool = isMcqPool(params.p) ? params.p : null;
+  const boardSpecialty = pool === "board" && isBoardSpecialtySlug(params.s) ? params.s : null;
+  const question = await loadDailyQuestion(supabase, quizDate, pool, boardSpecialty);
   if (!question) {
     return [txt("ขออภัย ตอนนี้ระบบหาโจทย์ข้อนี้ไม่เจอ ลองใหม่อีกครั้งนะครับ 🙏")];
   }
@@ -414,7 +446,8 @@ export async function handleDailyMcqPostback(
       practiceUrl: dailyPracticeUrl(
         question.id,
         quizDate,
-        stored.is_correct ? "result_correct" : "result_wrong"
+        stored.is_correct ? "result_correct" : "result_wrong",
+        question.audience === "board" ? question.board_specialty : null
       ),
       shareUrl: dailyShareUrl(question.id, quizDate),
       needsLink: !userId,

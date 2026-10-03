@@ -29,6 +29,7 @@ export const CRON_JOBS: readonly CronJobDef[] = [
   { job: "autopost-scheduled", path: "/api/cron/autopost-scheduled", schedule: "*/15 * * * *" },
   { job: "ig-insights", path: "/api/cron/ig-insights", schedule: "0 4 * * *" },
   { job: "admin-digest", path: "/api/cron/admin-digest", schedule: "0 1 * * *" },
+  { job: "exam-countdown", path: "/api/cron/exam-countdown", schedule: "5 1 * * *" },
   { job: "streak-nudge", path: "/api/cron/streak-nudge", schedule: "0 12 * * *" },
   { job: "mcq-review-reminder", path: "/api/cron/mcq-review-reminder", schedule: "30 1 * * *" },
   { job: "ads-autofix", path: "/api/cron/ads-autofix", schedule: "0 22 * * *" },

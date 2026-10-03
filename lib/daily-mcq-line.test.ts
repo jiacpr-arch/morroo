@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   handleDailyMcqPostback,
   bangkokToday,
+  dailyPracticeUrl,
   shiftQuizDate,
   mondayOfWeek,
   isWithinGrace,
@@ -74,7 +75,7 @@ function fakeSupabase(opts: FakeOpts = {}) {
 
   const client = {
     rpc(name: string, args: Record<string, unknown>) {
-      if (name === "get_daily_mcq") {
+      if (name === "get_daily_mcq_v2") {
         return Promise.resolve({ data: [{ id: QUESTION.id, quiz_date: args.p_date }], error: null });
       }
       if (name === "daily_quiz_streak") {
@@ -194,6 +195,46 @@ describe("handleDailyMcqPostback — routing", () => {
   });
 });
 
+describe("handleDailyMcqPostback — exam-level pool", () => {
+  async function poolArgs(data: string) {
+    const { client } = fakeSupabase();
+    const rpc = vi.spyOn(client, "rpc");
+    await handleDailyMcqPostback(client as never, LINE_USER, data);
+    return rpc.mock.calls.find((c) => c[0] === "get_daily_mcq_v2")?.[1] as Record<string, unknown>;
+  }
+
+  it("re-derives the question from the allow-listed pool in `p`", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=NL1`);
+    expect(args).toEqual({ p_date: TODAY, p_pool: "NL1" });
+  });
+
+  it("ignores an unknown pool and grades against the mixed pool", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=hacked`);
+    expect(args).toEqual({ p_date: TODAY });
+  });
+
+  it("re-derives a board card from pool + specialty", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=board&s=internal_medicine`);
+    expect(args).toEqual({ p_date: TODAY, p_pool: "board", p_board_specialty: "internal_medicine" });
+  });
+
+  it("ignores a specialty outside the board pool or in a bad shape", async () => {
+    expect(await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=NL1&s=internal_medicine`)).toEqual({
+      p_date: TODAY,
+      p_pool: "NL1",
+    });
+    expect(await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=board&s=Robert%27%3B--`)).toEqual({
+      p_date: TODAY,
+      p_pool: "board",
+    });
+  });
+
+  it("works for old cards without a pool", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1`);
+    expect(args).toEqual({ p_date: TODAY });
+  });
+});
+
 describe("handleDailyMcqPostback — validity window", () => {
   it("rejects a quiz_date older than yesterday", async () => {
     const { client } = fakeSupabase();
@@ -231,7 +272,7 @@ describe("handleDailyMcqPostback — validity window", () => {
 });
 
 describe("handleDailyMcqPostback — scoring is server-derived, not from `q`", () => {
-  it("grades against get_daily_mcq(d)'s question even with a forged `q`", async () => {
+  it("grades against get_daily_mcq_v2(d)'s question even with a forged `q`", async () => {
     const { client } = fakeSupabase();
     const reply = await handleDailyMcqPostback(
       client as never,
@@ -239,7 +280,7 @@ describe("handleDailyMcqPostback — scoring is server-derived, not from `q`", (
       `action=daily_answer&d=${TODAY}&c=B&q=some-other-question-id`
     );
     // B is QUESTION.correct_answer — scored correct because the handler
-    // resolved the question via get_daily_mcq(d), not the forged `q`.
+    // resolved the question via get_daily_mcq_v2(d), not the forged `q`.
     expect(JSON.stringify(reply)).toContain("ถูกต้อง");
   });
 
@@ -498,5 +539,21 @@ describe("mondayOfWeek", () => {
 
   it("walks back to Monday for a Saturday", () => {
     expect(mondayOfWeek("2026-09-19")).toBe("2026-09-14");
+  });
+});
+
+describe("dailyPracticeUrl — board questions open their specialty's practice page", () => {
+  it("defaults to /nl/practice", () => {
+    expect(dailyPracticeUrl("q1", TODAY, "push")).toContain("/nl/practice?q=q1");
+  });
+
+  it("uses /board/<specialty>/practice for a board question", () => {
+    expect(dailyPracticeUrl("q1", TODAY, "push", "internal_medicine")).toContain(
+      "/board/internal_medicine/practice?q=q1"
+    );
+  });
+
+  it("falls back to /nl/practice for a malformed specialty", () => {
+    expect(dailyPracticeUrl("q1", TODAY, "push", "../x")).toContain("/nl/practice?q=q1");
   });
 });

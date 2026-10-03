@@ -7,16 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { CATEGORIES } from "@/lib/types";
+import { EXAM_TARGETS, type ExamTarget } from "@/lib/exam-level";
 import { CheckCircle2, ChevronRight, Loader2 } from "lucide-react";
 
-type TargetExam = "NL1" | "NL2" | "both" | "board";
-
-const EXAM_OPTIONS: { value: TargetExam; label: string; desc: string; icon: string }[] = [
-  { value: "NL1", label: "NL1", desc: "ขั้นตอนที่ 1 — ข้อสอบเนื้อหา", icon: "📝" },
-  { value: "NL2", label: "NL2", desc: "ขั้นตอนที่ 2 — ข้อสอบทักษะทางคลินิก", icon: "🩺" },
-  { value: "both", label: "ทั้งสอง (NL1 + NL2)", desc: "เตรียมทุกขั้นตอนพร้อมกัน", icon: "🎯" },
-  { value: "board", label: "Board เฉพาะทาง", desc: "สอบวุฒิบัตรราชวิทยาลัยฯ", icon: "🎓" },
-];
+const EXAM_OPTIONS = EXAM_TARGETS.map((t) => ({
+  value: t.id,
+  label: t.label,
+  desc: t.desc,
+  icon: t.icon,
+}));
 
 const DAILY_GOALS = [
   { value: 10, label: "10 ข้อ", desc: "เบาๆ สบายๆ", icon: "🌱" },
@@ -29,7 +28,7 @@ const TOTAL_STEPS = 3;
 export default function OnboardingPage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
-  const [targetExam, setTargetExam] = useState<TargetExam | null>(null);
+  const [targetExam, setTargetExam] = useState<ExamTarget | null>(null);
   const [dailyGoal, setDailyGoal] = useState<number | null>(null);
   const [weakSubjects, setWeakSubjects] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
@@ -50,7 +49,7 @@ export default function OnboardingPage() {
       const { error } = await supabase.from("profiles").update({
         onboarding_done: true,
         daily_goal: dailyGoal ?? 20,
-        target_exam: targetExam ?? "both",
+        target_exam: targetExam,
         weak_subjects: weakSubjects.length > 0 ? weakSubjects : null,
       }).eq("id", user.id);
 

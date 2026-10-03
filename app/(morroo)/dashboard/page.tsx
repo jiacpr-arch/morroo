@@ -24,6 +24,9 @@ import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import LeaderboardCard from "@/components/LeaderboardCard";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
+import ExamLevelCard from "@/components/ExamLevelCard";
+import NlExamCountdown from "@/components/NlExamCountdown";
+import { examKindsForTarget, isExamTarget, normalizeTarget, type ExamTarget } from "@/lib/exam-level";
 import ShareToEarnCard from "@/components/ShareToEarnCard";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
 import PageIntro from "@/components/PageIntro";
@@ -92,6 +95,11 @@ export default function DashboardPage() {
   const [dailyGoal, setDailyGoal] = useState(20);
   const [todayCount, setTodayCount] = useState(0);
   const [lineLinked, setLineLinked] = useState(false);
+  const [targetExam, setTargetExam] = useState<ExamTarget | null>(null);
+  // false = never set, or still a pre-2570 value (NL1/NL3/both) → ask again
+  const [levelConfirmed, setLevelConfirmed] = useState(false);
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const [boardSpecialty, setBoardSpecialty] = useState<string | null>(null);
   const [, setNewQuestions] = useState<{
     count: number;
     difficulty: { easy: number; medium: number; hard: number };
@@ -140,7 +148,7 @@ export default function DashboardPage() {
           supabase.rpc("get_user_accuracy_trend", { p_user_id: user.id }),
           supabase.rpc("get_user_streak", { p_user_id: user.id }),
           supabase.rpc("get_user_vs_global_avg", { p_user_id: user.id }),
-          supabase.from("profiles").select("daily_goal, line_user_id").eq("id", user.id).single(),
+          supabase.from("profiles").select("daily_goal, line_user_id, target_exam, board_specialty, current_year").eq("id", user.id).single(),
           supabase.from("mcq_attempts")
             .select("id", { count: "exact", head: true })
             .eq("user_id", user.id)
@@ -156,6 +164,10 @@ export default function DashboardPage() {
       setComparison((compRes.data as SubjectComparison[]) || []);
       setDailyGoal(profileRes.data?.daily_goal ?? 20);
       setLineLinked(!!profileRes.data?.line_user_id);
+      setTargetExam(normalizeTarget(profileRes.data?.target_exam));
+      setLevelConfirmed(isExamTarget(profileRes.data?.target_exam));
+      setCurrentYear(profileRes.data?.current_year ?? null);
+      setBoardSpecialty(profileRes.data?.board_specialty ?? null);
       setTodayCount(todayRes.count ?? 0);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const dailyRow = (dailyRes.data as any[])?.[0];
@@ -220,6 +232,24 @@ export default function DashboardPage() {
         )
       : 0;
 
+  // ระดับข้อสอบ: ยังไม่ตั้ง / ยังเป็นค่าระบบเดิม → ชวนเลือก; มีระดับ → นับถอยหลังรอบสอบของระดับนั้น
+  const examKinds = examKindsForTarget(targetExam);
+  const levelBlock = (
+    <>
+      {!levelConfirmed && (
+        <div className="mb-4">
+          <ExamLevelCard
+            initialTarget={targetExam}
+            initialYear={currentYear}
+            initialBoardSpecialty={boardSpecialty}
+            variant="prompt"
+          />
+        </div>
+      )}
+      {examKinds.length > 0 && <NlExamCountdown kinds={examKinds} className="mb-4" />}
+    </>
+  );
+
   if (totalAttempts === 0) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -227,6 +257,7 @@ export default function DashboardPage() {
         <div className="mb-8">
           <AllExamsCountdown />
         </div>
+        {levelBlock}
         {dailyMcq && (
           <Card className="mb-8 border-brand/40 bg-gradient-to-r from-brand/5 to-amber-50/60">
             <CardContent className="py-5 px-5">
@@ -282,6 +313,8 @@ export default function DashboardPage() {
       <div className="mb-4">
         <AllExamsCountdown />
       </div>
+
+      {levelBlock}
 
       <InternalAdsBanner placement="dashboard-top" className="mb-4" />
 

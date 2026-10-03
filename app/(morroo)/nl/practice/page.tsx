@@ -25,6 +25,7 @@ import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
 import { getDueReviewQuestions, getMcqReviewDueCount } from "@/lib/mcq-review";
 import type { McqSubject } from "@/lib/types-mcq";
 import type { McqPracticeQuestion } from "@/lib/mcq-public";
+import { practiceExamForTarget, type PracticeExam } from "@/lib/exam-level";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ NL",
@@ -56,12 +57,14 @@ async function PracticeContent({
   recommended,
   review,
   pinnedQuestionId,
+  examParam,
 }: {
   subjectId?: string;
   category?: string;
   recommended?: boolean;
   review?: boolean;
   pinnedQuestionId?: string;
+  examParam?: string;
 }) {
   const supabase = await createClient();
   const {
@@ -81,25 +84,22 @@ async function PracticeContent({
   if (!subjectId && pinnedQuestion) {
     subjectId = pinnedQuestion.subject_id;
   }
-  // The daily quiz can be NL1 or NL2; fetch the surrounding pool in the same
-  // exam type so a pinned NL1 question isn't padded with unrelated NL2 ones.
-  const poolExamType: "NL1" | "NL2" =
-    pinnedQuestion?.exam_type === "NL1" ? "NL1" : "NL2";
-
   // Check premium status
   let isPremium = false;
   let freeUsedCount = 0;
   let entitlements: EntitlementLike[] = [];
+  let profileTarget: string | null = null;
 
   if (user) {
     const { data: profile } = await supabase
       .from("profiles")
       .select(
-        "membership_type, membership_expires_at, beta_enrolled_via, beta_started_at, beta_expires_at, beta_questions_used, beta_questions_limit, has_seen_beta_welcome, beta_coupon_code, beta_coupon_issued_at"
+        "membership_type, membership_expires_at, beta_enrolled_via, beta_started_at, beta_expires_at, beta_questions_used, beta_questions_limit, has_seen_beta_welcome, beta_coupon_code, beta_coupon_issued_at, target_exam"
       )
       .eq("id", user.id)
       .single();
 
+    profileTarget = (profile as { target_exam?: string | null } | null)?.target_exam ?? null;
     const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
     // NL MCQ is its own product — student pack, bundle or mcq_* plan.
     entitlements = await fetchEntitlements(supabase, user.id);
@@ -119,6 +119,25 @@ async function PracticeContent({
     }
   }
 
+  // Which exam pool to practice: explicit ?exam= wins, then the exam type of
+  // a deep-linked question (daily quiz can be NL1 or NL2, so a pinned question
+  // isn't padded with the other exam's), then the user's chosen level
+  // (profiles.target_exam, see lib/exam-level), then NL2 as before.
+  // "all" = ส่วนที่ 1 ระบบใหม่ (พื้นฐาน + คลินิก รวมกัน).
+  const pinnedExam =
+    pinnedQuestion?.exam_type === "NL1" || pinnedQuestion?.exam_type === "NL2"
+      ? pinnedQuestion.exam_type
+      : null;
+  const examType: PracticeExam =
+    examParam === "NL1" || examParam === "NL2" || examParam === "all"
+      ? examParam
+      : (pinnedExam ?? practiceExamForTarget(profileTarget));
+  // Query filter: undefined = no exam_type filter (all student questions).
+  const examFilter = examType === "all" ? undefined : examType;
+  // Every internal link keeps the chosen exam so switching subject/mode doesn't reset it.
+  const practiceHref = (params: Record<string, string> = {}, exam = examType) =>
+    `/nl/practice?${new URLSearchParams({ ...params, exam }).toString()}`;
+
   // Recommended mode requires a signed-in user with history. Fall back
   // to the normal random pool otherwise.
   const useRecommended = recommended && !!user;
@@ -130,10 +149,10 @@ async function PracticeContent({
   const isManual = !useRecommended && !useReview;
   const reviewDueCount = user ? await getMcqReviewDueCount(supabase, user.id) : 0;
 
-  const allNl2Subjects = await getMcqSubjects("NL2");
+  const examSubjects = await getMcqSubjects(examFilter);
   // Hide subjects that have no questions yet — there's nothing to practice
   // and an empty selection just confuses the user.
-  const subjects = allNl2Subjects.filter((s) => s.question_count > 0);
+  const subjects = examSubjects.filter((s) => s.question_count > 0);
   const mainSingles = MAIN_SUBJECT_NAMES.map((name) =>
     subjects.find((s) => s.name === name)
   ).filter((s): s is McqSubject => !!s);
@@ -169,7 +188,8 @@ async function PracticeContent({
     questions = await getDueReviewQuestions(supabase, user.id, { limit: 20 });
   } else if (useRecommended && user) {
     const rec = await getRecommendedQuestions(supabase, user.id, {
-      examType: "NL2",
+      // Recommendation pools are per exam type; the mixed view falls back to NL2 as before.
+      examType: examFilter ?? "NL2",
       limit: 20,
     });
     questions = rec.questions;
@@ -184,7 +204,7 @@ async function PracticeContent({
   } else {
     questions = await getMcqQuestions({
       subjectId,
-      examType: poolExamType,
+      examType: examFilter,
       limit: 200,
       randomize: true,
     });
@@ -211,7 +231,7 @@ async function PracticeContent({
   }
 
   const currentSubject = subjectId
-    ? allNl2Subjects.find((s) => s.id === subjectId)
+    ? examSubjects.find((s) => s.id === subjectId)
     : null;
   // Once a subject is picked, the chip grid collapses to a one-line summary
   // so the questions aren't pushed below the fold on mobile.
@@ -281,10 +301,24 @@ async function PracticeContent({
         </div>
       )}
 
+      {/* Exam switch — defaults to the user's level (profiles.target_exam) */}
+      <div className="mb-3 flex flex-wrap items-center gap-2 sm:mb-4" role="group" aria-label="เลือกข้อสอบ">
+        {(["all", "NL1", "NL2"] as const).map((t) => (
+          <Link key={t} href={practiceHref({}, t)}>
+            <Badge
+              variant={examType === t ? "default" : "secondary"}
+              className={`cursor-pointer ${examType === t ? "bg-brand text-white" : "hover:bg-brand/10"}`}
+            >
+              {t === "all" ? "ส่วนที่ 1 · รวม" : t === "NL1" ? "พื้นฐาน (NL1)" : "คลินิก (NL2)"}
+            </Badge>
+          </Link>
+        ))}
+      </div>
+
       {/* Mode toggle */}
       {user && (
         <div className="mb-3 flex flex-wrap gap-2 sm:mb-4">
-          <Link href="/nl/practice?mode=recommended">
+          <Link href={practiceHref({ mode: "recommended" })}>
             <Badge
               variant={useRecommended ? "default" : "secondary"}
               className={`cursor-pointer gap-1 ${
@@ -294,7 +328,7 @@ async function PracticeContent({
               <Sparkles className="h-3 w-3" /> แนะนำให้คุณ
             </Badge>
           </Link>
-          <Link href="/nl/practice?mode=review">
+          <Link href={practiceHref({ mode: "review" })}>
             <Badge
               variant={useReview ? "default" : "secondary"}
               className={`cursor-pointer gap-1 ${
@@ -312,7 +346,7 @@ async function PracticeContent({
               )}
             </Badge>
           </Link>
-          <Link href="/nl/practice">
+          <Link href={practiceHref()}>
             <Badge
               variant={isManual ? "default" : "secondary"}
               className={`cursor-pointer ${
@@ -352,7 +386,7 @@ async function PracticeContent({
             </span>
           </summary>
           <div className="mt-2 flex flex-wrap gap-2">
-            <Link href="/nl/practice">
+            <Link href={practiceHref()}>
               <Badge
                 variant={
                   !subjectId && !isInternalMed ? "default" : "secondary"
@@ -369,7 +403,7 @@ async function PracticeContent({
             {mainSingles.map((subject) => (
               <Link
                 key={subject.id}
-                href={`/nl/practice?subject=${subject.id}`}
+                href={practiceHref({ subject: subject.id })}
               >
                 <Badge
                   variant={subjectId === subject.id ? "default" : "secondary"}
@@ -384,7 +418,7 @@ async function PracticeContent({
               </Link>
             ))}
             {internalMedIds.length > 0 && (
-              <Link href={`/nl/practice?category=${INTERNAL_MED_CATEGORY}`}>
+              <Link href={practiceHref({ category: INTERNAL_MED_CATEGORY })}>
                 <Badge
                   variant={isInternalMed ? "default" : "secondary"}
                   className={`cursor-pointer ${
@@ -408,7 +442,7 @@ async function PracticeContent({
                 {otherSubjects.map((subject) => (
                   <Link
                     key={subject.id}
-                    href={`/nl/practice?subject=${subject.id}`}
+                    href={practiceHref({ subject: subject.id })}
                   >
                     <Badge
                       variant={
@@ -484,7 +518,7 @@ async function PracticeContent({
             ข้อที่ตอบผิดจะถูกเก็บไว้ให้กลับมาทบทวนตามรอบโดยอัตโนมัติ
           </p>
           <Link
-            href="/nl/practice?mode=recommended"
+            href={practiceHref({ mode: "recommended" })}
             className="text-brand hover:underline mt-2 inline-block"
           >
             ทำชุดแนะนำต่อ
@@ -494,7 +528,7 @@ async function PracticeContent({
         <div className="text-center py-16 text-muted-foreground">
           <p className="text-lg">ยังไม่มีข้อสอบในสาขานี้</p>
           <Link
-            href="/nl/practice"
+            href={practiceHref()}
             className="text-brand hover:underline mt-2 inline-block"
           >
             ดูสาขาอื่น
@@ -513,10 +547,11 @@ export default async function PracticePage({
     category?: string;
     mode?: string;
     q?: string;
+    exam?: string;
   }>;
 }) {
   const params = await searchParams;
-  const { subject, category, mode, q } = params;
+  const { subject, category, mode, q, exam } = params;
   const recommended = mode === "recommended";
   const review = mode === "review";
 
@@ -545,6 +580,7 @@ export default async function PracticePage({
           recommended={recommended}
           review={review}
           pinnedQuestionId={q}
+          examParam={exam}
         />
       </Suspense>
     </div>

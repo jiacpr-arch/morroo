@@ -12,37 +12,47 @@ import {
 import ExamDaysLeft from "@/components/ExamDaysLeft";
 
 export const metadata: Metadata = {
-  title: "ปฏิทินสอบ NL 2569 — วันสอบใบประกอบวิชาชีพแพทย์ทุกรอบ (ศรว.)",
+  title: "ปฏิทินสอบ NL 2569–2570 — วันสอบใบประกอบวิชาชีพแพทย์ทุกรอบ (ศรว.)",
   description:
-    "ตารางวันสอบ National License ปี 2569 ครบทุกรอบ — NL ขั้นตอนที่ 1, ขั้นตอนที่ 2 และ OSCE ตามประกาศ ศรว. พร้อมนับถอยหลังถึงวันสอบ และคลังข้อสอบ MCQ ไว้เตรียมตัว",
+    "ตารางวันสอบ National License ปี 2569–2570 — ส่วนที่ 1 ระบบใหม่, NL2 เดิม และ OSCE ตามประกาศ ศรว. พร้อมนับถอยหลังถึงวันสอบ และคลังข้อสอบ MCQ ไว้เตรียมตัว",
   alternates: { canonical: "https://www.morroo.com/nl/calendar" },
   openGraph: {
-    title: "ปฏิทินสอบ NL 2569 — วันสอบทุกรอบ พร้อมนับถอยหลัง",
+    title: "ปฏิทินสอบ NL 2569–2570 — วันสอบทุกรอบ พร้อมนับถอยหลัง",
     description:
-      "วันสอบใบประกอบวิชาชีพแพทย์ปี 2569 ครบทุกขั้นตอนตามประกาศ ศรว. อัพเดทล่าสุด",
+      "วันสอบใบประกอบวิชาชีพแพทย์ปี 2569–2570 ครบทุกขั้นตอนตามประกาศ ศรว. รวมระบบสอบใหม่",
     url: "https://www.morroo.com/nl/calendar",
   },
 };
 
-const STEP_SECTIONS: Array<{
-  step: ExamRound["step"];
+const KIND_SECTIONS: Array<{
+  kind: ExamRound["kind"];
   title: string;
   subtitle: string;
 }> = [
   {
-    step: 1,
-    title: "ขั้นตอนที่ 1 — วิทยาศาสตร์การแพทย์พื้นฐาน",
-    subtitle: "Basic Medical Sciences (MCQ)",
+    kind: "part1",
+    title: "ส่วนที่ 1 — วิทยาศาสตร์การแพทย์ + การประกอบวิชาชีพเวชกรรม (ระบบใหม่ 2570)",
+    subtitle: "พื้นฐาน + คลินิกในข้อสอบเดียว (MCQ) — แทน NL1 + NL2 เดิม",
   },
   {
-    step: 2,
-    title: "ขั้นตอนที่ 2 — วิทยาศาสตร์การแพทย์คลินิก",
-    subtitle: "Clinical Sciences (MCQ)",
-  },
-  {
-    step: 3,
-    title: "ขั้นตอนที่ 3 — ทักษะทางคลินิก (OSCE)",
+    kind: "osce",
+    title: "ทักษะทางคลินิก (OSCE) — ขั้นตอนที่ 3 เดิม / ส่วนที่ 2 ระบบใหม่",
     subtitle: "Objective Structured Clinical Examination",
+  },
+  {
+    kind: "meq",
+    title: "MEQ + Long case — ทักษะทางคลินิก (ผู้จบจากต่างประเทศ)",
+    subtitle: "สอบอัตนัยประยุกต์ (MEQ) และ Long case",
+  },
+  {
+    kind: "nl2",
+    title: "NL ขั้นตอนที่ 2 เดิม — วิทยาศาสตร์การแพทย์คลินิก",
+    subtitle: "สำหรับผู้ที่ผ่าน NL1 เดิมแล้ว — เปิดสอบถึงรอบ ต.ค. 2570",
+  },
+  {
+    kind: "nl1",
+    title: "NL ขั้นตอนที่ 1 เดิม — วิทยาศาสตร์การแพทย์พื้นฐาน",
+    subtitle: "สอบครั้งสุดท้าย 24 ม.ค. 2569 — หลังจากนี้ไปสอบส่วนที่ 1",
   },
 ];
 
@@ -58,23 +68,29 @@ export default function NlCalendarPage() {
       <div className="mb-8">
         <div className="mb-2 flex items-center gap-2">
           <CalendarDays className="h-5 w-5 text-brand" />
-          <Badge className="bg-blue-100 text-blue-700">ปี 2569</Badge>
+          <Badge className="bg-blue-100 text-blue-700">ปี 2569–2570</Badge>
         </div>
-        <h1 className="text-3xl font-bold">ปฏิทินสอบ NL 2569</h1>
+        <h1 className="text-3xl font-bold">ปฏิทินสอบ NL 2569–2570</h1>
         <p className="mt-2 text-muted-foreground">
           วันสอบใบประกอบวิชาชีพแพทย์ (National License) ทุกขั้นตอน ทุกรอบ
           ตามประกาศศูนย์ประเมินและรับรองความรู้ความสามารถในการประกอบวิชาชีพเวชกรรม
           (ศรว.)
         </p>
+        <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          ระบบสอบใหม่ตามข้อบังคับแพทยสภา พ.ศ. 2568: ตั้งแต่ปี 2570 สอบ{" "}
+          <strong>ส่วนที่ 1</strong> (พื้นฐาน + คลินิก รวมข้อสอบเดียว) และ{" "}
+          <strong>ส่วนที่ 2</strong> (ทักษะทางคลินิก) — ผู้ที่ผ่าน NL1 เดิมแล้วยังสอบ NL2
+          เดิมต่อได้ถึงรอบ ต.ค. 2570
+        </p>
       </div>
 
       <div className="space-y-6">
-        {STEP_SECTIONS.map((section) => {
-          const rounds = NL_EXAM_ROUNDS.filter((r) => r.step === section.step);
+        {KIND_SECTIONS.map((section) => {
+          const rounds = NL_EXAM_ROUNDS.filter((r) => r.kind === section.kind);
           if (rounds.length === 0) return null;
 
           return (
-            <Card key={section.step}>
+            <Card key={section.kind}>
               <CardHeader className="pb-2">
                 <h2 className="text-xl font-bold">{section.title}</h2>
                 <p className="text-sm text-muted-foreground">
