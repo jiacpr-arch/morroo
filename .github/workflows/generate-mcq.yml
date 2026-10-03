@@ -17,8 +17,9 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    # Sonnet 5 adaptive thinking + detailed_explanation schema: ~7-10m per run
-    timeout-minutes: 25
+    # Sonnet 5 adaptive thinking + detailed_explanation schema: ~7-10m to
+    # generate, plus the parallel reviewer pass (~5-10m)
+    timeout-minutes: 40
 
     steps:
       - uses: actions/checkout@v4
