@@ -70,10 +70,29 @@ describe("buildDailyMcqBubble", () => {
   it("keeps every postback button's data under LINE's 300-char limit", () => {
     const bubble = buildDailyMcqBubble({ question: QUESTION, practiceUrl: "https://x.test" });
     const dataStrings = collectPostbackData(bubble);
-    expect(dataStrings.length).toBe(5);
-    for (const d of dataStrings) {
-      expect(d.length).toBeLessThan(300);
+    // 5 answer buttons + the "change level" postback
+    expect(dataStrings.length).toBe(6);
+    const answers = dataStrings.filter((d) => d.startsWith("action=daily_answer"));
+    expect(answers).toHaveLength(5);
+    for (const d of dataStrings) expect(d.length).toBeLessThan(300);
+    for (const d of answers) {
       expect(d).toMatch(/^action=daily_answer&d=2026-09-16&c=[A-E]&q=/);
+      expect(d).not.toContain("&p=");
+    }
+    expect(dataStrings).toContain("action=level_menu");
+  });
+
+  it("carries the exam-level pool in each answer postback when given", () => {
+    const bubble = buildDailyMcqBubble({
+      question: QUESTION,
+      practiceUrl: "https://x.test",
+      pool: "NL1",
+    });
+    const answers = collectPostbackData(bubble).filter((d) => d.startsWith("action=daily_answer"));
+    expect(answers).toHaveLength(5);
+    for (const d of answers) {
+      expect(d).toMatch(/&q=[^&]*&p=NL1$/);
+      expect(d.length).toBeLessThan(300);
     }
   });
 

@@ -19,6 +19,8 @@ import { unsubscribePushOnLogout } from "@/lib/push-client";
 import { fetchOrgMemberships, isOrgActive, orgEntitlementRows, type OrgMembershipRow } from "@/lib/organizations";
 import { isLapseEligible } from "@/lib/winback";
 import PageIntro from "@/components/PageIntro";
+import ExamLevelCard from "@/components/ExamLevelCard";
+import { isExamTarget } from "@/lib/exam-level";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -587,6 +589,14 @@ export default function ProfilePage() {
             )}
           </CardContent>
         </Card>
+
+        {/* ระดับข้อสอบ — ขับข้อสอบรายวัน LINE / เตือนวันสอบ / หน้าฝึก */}
+        {profile && (
+          <ExamLevelCard
+            initialTarget={isExamTarget(profile.target_exam) ? profile.target_exam : null}
+            initialYear={profile.current_year}
+          />
+        )}
 
         {/* LINE Notification */}
         <Card>

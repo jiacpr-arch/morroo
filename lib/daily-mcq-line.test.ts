@@ -194,6 +194,30 @@ describe("handleDailyMcqPostback — routing", () => {
   });
 });
 
+describe("handleDailyMcqPostback — exam-level pool", () => {
+  async function poolArgs(data: string) {
+    const { client } = fakeSupabase();
+    const rpc = vi.spyOn(client, "rpc");
+    await handleDailyMcqPostback(client as never, LINE_USER, data);
+    return rpc.mock.calls.find((c) => c[0] === "get_daily_mcq")?.[1] as Record<string, unknown>;
+  }
+
+  it("re-derives the question from the allow-listed pool in `p`", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=NL1`);
+    expect(args).toEqual({ p_date: TODAY, p_pool: "NL1" });
+  });
+
+  it("ignores an unknown pool and grades against the mixed pool", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=hacked`);
+    expect(args).toEqual({ p_date: TODAY });
+  });
+
+  it("works for old cards without a pool", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1`);
+    expect(args).toEqual({ p_date: TODAY });
+  });
+});
+
 describe("handleDailyMcqPostback — validity window", () => {
   it("rejects a quiz_date older than yesterday", async () => {
     const { client } = fakeSupabase();

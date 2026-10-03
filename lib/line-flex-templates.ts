@@ -1910,12 +1910,15 @@ export interface DailyMcqBubbleArgs {
   practiceUrl: string;
   yesterdayStats?: DailyMcqStats | null;
   newCount?: number;
+  /** Exam-level pool the question was drawn from (lib/exam-level McqPool); rides in the postback so grading re-derives the same question. */
+  pool?: string | null;
 }
 
 /** Bubble only (not a full LineMessage) so it can go standalone or in a carousel. */
 export function buildDailyMcqBubble(args: DailyMcqBubbleArgs): Record<string, unknown> {
-  const { question, practiceUrl, yesterdayStats, newCount } = args;
+  const { question, practiceUrl, yesterdayStats, newCount, pool } = args;
   const diffTh = DIFFICULTY_TH[question.difficulty] ?? question.difficulty;
+  const poolParam = pool ? `&p=${encodeURIComponent(pool)}` : "";
 
   const bodyContents: Record<string, unknown>[] = [
     {
@@ -1963,7 +1966,7 @@ export function buildDailyMcqBubble(args: DailyMcqBubbleArgs): Record<string, un
       action: {
         type: "postback",
         label: truncateText(`${choice.label}. ${choice.text}`, CHOICE_LABEL_MAX),
-        data: `action=daily_answer&d=${question.quizDate}&c=${choice.label}&q=${question.id}`,
+        data: `action=daily_answer&d=${question.quizDate}&c=${choice.label}&q=${question.id}${poolParam}`,
         displayText: `ตอบข้อ ${choice.label}`,
       },
     })),
@@ -1999,9 +2002,30 @@ export function buildDailyMcqBubble(args: DailyMcqBubbleArgs): Record<string, un
       paddingAll: "lg",
       contents: bodyContents,
     },
-    footer: ctaFooter([
-      { label: "อ่านโจทย์เต็ม / ทำในเว็บ", uri: practiceUrl, style: "secondary" },
-    ]),
+    footer: withLevelButton(
+      ctaFooter([{ label: "อ่านโจทย์เต็ม / ทำในเว็บ", uri: practiceUrl, style: "secondary" }])
+    ),
+  };
+}
+
+/** Adds a small "change level" postback (handled by lib/line-level.ts) under a CTA footer. */
+function withLevelButton(footer: ReturnType<typeof ctaFooter>) {
+  return {
+    ...footer,
+    contents: [
+      ...footer.contents,
+      {
+        type: "button" as const,
+        style: "link" as const,
+        height: "sm" as const,
+        action: {
+          type: "postback" as const,
+          label: "🎯 เปลี่ยนระดับข้อสอบ",
+          data: "action=level_menu",
+          displayText: "เปลี่ยนระดับ",
+        },
+      },
+    ],
   };
 }
 

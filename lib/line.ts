@@ -1,7 +1,17 @@
 import crypto from "crypto";
 import { createAdminClient } from "@/lib/supabase/admin";
 
-type LineTextMessage = { type: "text"; text: string };
+export type LineQuickReplyItem = {
+  type: "action";
+  action:
+    | { type: "postback"; label: string; data: string; displayText?: string }
+    | { type: "message"; label: string; text: string };
+};
+type LineTextMessage = {
+  type: "text";
+  text: string;
+  quickReply?: { items: LineQuickReplyItem[] };
+};
 type LineFlexMessage = { type: "flex"; altText: string; contents: Record<string, unknown> };
 export type LineMessage = LineTextMessage | LineFlexMessage;
 

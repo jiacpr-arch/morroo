@@ -14,6 +14,7 @@ import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 import { detectTrialIntent, handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
 import { handleAdsAutofixPostback } from "@/lib/ads-autofix-line";
 import { handleDailyMcqPostback } from "@/lib/daily-mcq-line";
+import { handleLevelPostback, isLevelMenuText, levelMenuFor } from "@/lib/line-level";
 import {
   buildFollowGreeting,
   buildNonTextGreeting,
@@ -73,7 +74,9 @@ export async function POST(request: NextRequest) {
           lineUserId,
           event.postback.data,
           buildAdsMergeConfirmFlex
-        )) ?? (await handleDailyMcqPostback(supabase, lineUserId, event.postback.data));
+        )) ??
+        (await handleDailyMcqPostback(supabase, lineUserId, event.postback.data)) ??
+        (await handleLevelPostback(supabase, lineUserId, event.postback.data));
       if (reply) await replyOrPushLineMessage(lineUserId, event.replyToken, reply);
       continue;
     }
@@ -109,6 +112,16 @@ export async function POST(request: NextRequest) {
       if (!rawText) continue;
 
       const text = rawText.toUpperCase();
+
+      // "ระดับ" / "เปลี่ยนระดับ" → exam-level quick-reply menu (no chatbot call).
+      if (isLevelMenuText(rawText)) {
+        await replyOrPushLineMessage(
+          lineUserId,
+          event.replyToken,
+          await levelMenuFor(supabase, lineUserId)
+        );
+        continue;
+      }
 
       // Non-link-code messages → fall through to the chatbot.
       if (!text.startsWith("MORROO-")) {

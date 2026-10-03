@@ -35,6 +35,7 @@ import {
   getWeeklyAnswerCounts,
 } from "@/lib/daily-mcq-line";
 import { getReengageTestArm, markReengageSent } from "@/lib/mcq-reengage-experiment";
+import type { McqPool } from "@/lib/exam-level";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -65,18 +66,33 @@ async function handleWeekday(
     .eq("audience", "student")
     .gte("created_at", new Date(Date.now() - 86400_000).toISOString());
 
-  const message = buildDailyMcqFlex({
-    question: toBubbleQuestionData(question),
-    practiceUrl: dailyPracticeUrl(question.id, quizDate, "push"),
-    yesterdayStats,
-    newCount: newCount ?? 0,
-  });
+  // One card per exam-level pool (NL1 / NL2 / board / mixed), built once and
+  // reused for every member of that pool. A pool with no active question
+  // falls back to the mixed card so nobody is skipped.
+  const messageByPool = new Map<McqPool | null, ReturnType<typeof buildDailyMcqFlex>>();
+  const messageFor = async (pool: McqPool | null) => {
+    const cached = messageByPool.get(pool);
+    if (cached) return cached;
+    const poolQuestion = pool ? await loadDailyQuestion(supabase, quizDate, pool) : null;
+    const usedPool = poolQuestion ? pool : null;
+    const q = poolQuestion ?? question;
+    const built = buildDailyMcqFlex({
+      question: toBubbleQuestionData(q),
+      practiceUrl: dailyPracticeUrl(q.id, quizDate, "push"),
+      yesterdayStats,
+      newCount: newCount ?? 0,
+      pool: usedPool,
+    });
+    messageByPool.set(pool, built);
+    return built;
+  };
 
   const audience = await getActiveDailyAudience(supabase);
   let sent = 0;
   let failed = 0;
   for (const member of audience) {
     try {
+      const message = await messageFor(member.pool);
       const ok = await sendLineMessage(member.lineUserId, [message]);
       if (ok) sent += 1;
       else failed += 1;

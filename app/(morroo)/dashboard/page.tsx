@@ -24,6 +24,9 @@ import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import LeaderboardCard from "@/components/LeaderboardCard";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
+import ExamLevelCard from "@/components/ExamLevelCard";
+import NlExamCountdown from "@/components/NlExamCountdown";
+import { examStepsForTarget, isExamTarget, type ExamTarget } from "@/lib/exam-level";
 import ShareToEarnCard from "@/components/ShareToEarnCard";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
 import PageIntro from "@/components/PageIntro";
@@ -92,6 +95,8 @@ export default function DashboardPage() {
   const [dailyGoal, setDailyGoal] = useState(20);
   const [todayCount, setTodayCount] = useState(0);
   const [lineLinked, setLineLinked] = useState(false);
+  const [targetExam, setTargetExam] = useState<ExamTarget | null>(null);
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
   const [, setNewQuestions] = useState<{
     count: number;
     difficulty: { easy: number; medium: number; hard: number };
@@ -140,7 +145,7 @@ export default function DashboardPage() {
           supabase.rpc("get_user_accuracy_trend", { p_user_id: user.id }),
           supabase.rpc("get_user_streak", { p_user_id: user.id }),
           supabase.rpc("get_user_vs_global_avg", { p_user_id: user.id }),
-          supabase.from("profiles").select("daily_goal, line_user_id").eq("id", user.id).single(),
+          supabase.from("profiles").select("daily_goal, line_user_id, target_exam, current_year").eq("id", user.id).single(),
           supabase.from("mcq_attempts")
             .select("id", { count: "exact", head: true })
             .eq("user_id", user.id)
@@ -156,6 +161,8 @@ export default function DashboardPage() {
       setComparison((compRes.data as SubjectComparison[]) || []);
       setDailyGoal(profileRes.data?.daily_goal ?? 20);
       setLineLinked(!!profileRes.data?.line_user_id);
+      setTargetExam(isExamTarget(profileRes.data?.target_exam) ? profileRes.data.target_exam : null);
+      setCurrentYear(profileRes.data?.current_year ?? null);
       setTodayCount(todayRes.count ?? 0);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const dailyRow = (dailyRes.data as any[])?.[0];
@@ -220,6 +227,19 @@ export default function DashboardPage() {
         )
       : 0;
 
+  // ระดับข้อสอบ: ยังไม่ตั้ง / เลือก "ทุกขั้นตอน" → ชวนเลือก; ตั้งแล้ว → นับถอยหลังรอบสอบของระดับนั้น
+  const examSteps = examStepsForTarget(targetExam);
+  const levelBlock = (
+    <>
+      {(targetExam === null || targetExam === "both") && (
+        <div className="mb-4">
+          <ExamLevelCard initialTarget={targetExam} initialYear={currentYear} variant="prompt" />
+        </div>
+      )}
+      {examSteps.length > 0 && <NlExamCountdown steps={examSteps} className="mb-4" />}
+    </>
+  );
+
   if (totalAttempts === 0) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -227,6 +247,7 @@ export default function DashboardPage() {
         <div className="mb-8">
           <AllExamsCountdown />
         </div>
+        {levelBlock}
         {dailyMcq && (
           <Card className="mb-8 border-brand/40 bg-gradient-to-r from-brand/5 to-amber-50/60">
             <CardContent className="py-5 px-5">
@@ -282,6 +303,8 @@ export default function DashboardPage() {
       <div className="mb-4">
         <AllExamsCountdown />
       </div>
+
+      {levelBlock}
 
       <InternalAdsBanner placement="dashboard-top" className="mb-4" />
 

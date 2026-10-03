@@ -29,6 +29,7 @@ import {
 import { liffDeepLink, toLiffUri } from "@/lib/line-links";
 import { isReviewQueueAudience, recordMcqReviewOutcome } from "@/lib/mcq-review";
 import type { McqQuestion } from "@/lib/types-mcq";
+import { isMcqPool, mcqPoolForTarget, type McqPool } from "@/lib/exam-level";
 
 const DAILY_ACTION = "daily_answer";
 const STREAK_CAMPAIGN = "daily_mcq_streak5";
@@ -100,11 +101,13 @@ export type DailyQuestionFull = McqQuestion & { quiz_date: string };
  */
 export async function loadDailyQuestion(
   supabase: SupabaseClient,
-  quizDate: string
+  quizDate: string,
+  pool: McqPool | null = null
 ): Promise<DailyQuestionFull | null> {
-  const { data: daily, error: rpcError } = await supabase.rpc("get_daily_mcq", {
-    p_date: quizDate,
-  });
+  const { data: daily, error: rpcError } = await supabase.rpc(
+    "get_daily_mcq",
+    pool ? { p_date: quizDate, p_pool: pool } : { p_date: quizDate }
+  );
   if (rpcError) {
     console.error("[daily-mcq-line] get_daily_mcq failed:", rpcError);
     return null;
@@ -160,6 +163,8 @@ export async function loadHardQuestion(
 export interface DailyMcqAudienceMember {
   lineUserId: string;
   name: string | null;
+  /** Question pool for the member's chosen exam level (null = mixed NL1+NL2). */
+  pool: McqPool | null;
 }
 
 /** Days a newly linked LINE user gets the daily card before silence counts. */
@@ -198,7 +203,7 @@ export async function getActiveDailyAudience(
   const [{ data: linked }, { data: answeredRows }] = await Promise.all([
     supabase
       .from("profiles")
-      .select("id, name, line_user_id, line_linked_at, created_at")
+      .select("id, name, line_user_id, line_linked_at, created_at, target_exam")
       .not("line_user_id", "is", null),
     supabase.from("daily_quiz_answers").select("line_user_id").gte("created_at", sinceIso),
   ]);
@@ -209,8 +214,10 @@ export async function getActiveDailyAudience(
     line_user_id: string;
     line_linked_at: string | null;
     created_at: string | null;
+    target_exam: string | null;
   }[];
   const byId = new Map<string, string | null>();
+  const poolById = new Map<string, McqPool | null>();
 
   for (const row of (answeredRows ?? []) as { line_user_id: string }[]) {
     if (row.line_user_id) byId.set(row.line_user_id, byId.get(row.line_user_id) ?? null);
@@ -231,11 +238,16 @@ export async function getActiveDailyAudience(
     for (const p of profiles) {
       if (activeUserIds.has(p.id) || isWithinGrace(p.line_linked_at, p.created_at)) {
         byId.set(p.line_user_id, p.name ?? byId.get(p.line_user_id) ?? null);
+        poolById.set(p.line_user_id, mcqPoolForTarget(p.target_exam));
       }
     }
   }
 
-  return [...byId.entries()].map(([lineUserId, name]) => ({ lineUserId, name }));
+  return [...byId.entries()].map(([lineUserId, name]) => ({
+    lineUserId,
+    name,
+    pool: poolById.get(lineUserId) ?? null,
+  }));
 }
 
 /**
@@ -314,7 +326,11 @@ export async function handleDailyMcqPostback(
   }
   if (!VALID_ANSWERS.has(choice)) return null;
 
-  const question = await loadDailyQuestion(supabase, quizDate);
+  // `p` only picks which pool today's question came from (NL1/NL2/board) so
+  // grading re-derives the same card the user saw; it is allow-listed and
+  // never a question id, so it can't be used to pick an easier question.
+  const pool = isMcqPool(params.p) ? params.p : null;
+  const question = await loadDailyQuestion(supabase, quizDate, pool);
   if (!question) {
     return [txt("ขออภัย ตอนนี้ระบบหาโจทย์ข้อนี้ไม่เจอ ลองใหม่อีกครั้งนะครับ 🙏")];
   }
