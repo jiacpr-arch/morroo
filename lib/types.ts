@@ -64,7 +64,7 @@ export interface Profile {
   /** XP สะสมฝั่ง school — ใช้คิดยศแพทย์ (lib/school/rank.ts) และ leaderboard */
   school_xp: number;
   /** ระดับปัจจุบันดู lib/exam-level ExamTarget; NL1/NL3/both = ค่าระบบเดิมก่อน 2570 (อ่านผ่าน normalizeTarget) */
-  target_exam: "part1" | "part2" | "NL2" | "board" | "NL1" | "NL3" | "both" | null;
+  target_exam: "part1" | "part2" | "NL2" | "meq" | "board" | "NL1" | "NL3" | "both" | null;
   weak_subjects: string[] | null;
   exam_schedule: ExamScheduleItem[] | null;
   referral_code: string | null;

@@ -9,6 +9,7 @@ import {
   mcqPoolForTarget,
   normalizeTarget,
   practiceExamForTarget,
+  practicePathForTarget,
   suggestTargetFromYear,
 } from "./exam-level";
 
@@ -46,6 +47,7 @@ describe("exam-level", () => {
     expect(mcqPoolForTarget("part1")).toBeNull(); // mixed NL1+NL2 = ส่วนที่ 1
     expect(mcqPoolForTarget("NL2")).toBe("NL2");
     expect(mcqPoolForTarget("part2")).toBe("NL2");
+    expect(mcqPoolForTarget("meq")).toBe("NL2"); // MEQ has no daily MCQ — clinical NL2 card
     expect(mcqPoolForTarget("board")).toBeNull(); // board daily card needs a /board deep link first
     expect(mcqPoolForTarget("NL1")).toBeNull(); // legacy → part1
     expect(mcqPoolForTarget(null)).toBeNull();
@@ -55,9 +57,16 @@ describe("exam-level", () => {
     expect(examKindsForTarget("part1")).toEqual(["part1"]);
     expect(examKindsForTarget("NL2")).toEqual(["nl2"]);
     expect(examKindsForTarget("part2")).toEqual(["osce"]);
+    expect(examKindsForTarget("meq")).toEqual(["meq"]);
     expect(examKindsForTarget("both")).toEqual(["part1"]);
     expect(examKindsForTarget("board")).toEqual([]);
     expect(examKindsForTarget(null)).toEqual([]);
+  });
+
+  it("sends MEQ users to the MEQ bank", () => {
+    expect(practicePathForTarget("meq")).toBe("/exams");
+    expect(practicePathForTarget("part1")).toBe("/nl/practice");
+    expect(practicePathForTarget(null)).toBe("/nl/practice");
   });
 
   it("picks the practice exam", () => {

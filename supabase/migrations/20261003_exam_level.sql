@@ -6,7 +6,7 @@
 -- ─── 1) target_exam → ระบบ ศรว. ใหม่ ───────────────────────────────────────
 -- ข้อบังคับแพทยสภา พ.ศ. 2568: ตั้งแต่ 2570 สอบ ส่วนที่ 1 (พื้นฐาน+คลินิก รวม) +
 -- ส่วนที่ 2 (OSCE); NL1 เดิมสอบครั้งสุดท้าย ม.ค. 2569, NL2 เดิมเปิดถึง ต.ค. 2570
---   part1 = ส่วนที่ 1, part2 = ส่วนที่ 2 (OSCE), NL2 = NL2 เดิม, board = Board
+--   part1 = ส่วนที่ 1, part2 = ส่วนที่ 2 (OSCE), NL2 = NL2 เดิม, meq = MEQ + Long case, board = Board
 -- map ค่าเดิม: NL1 / both → part1, NL3 → part2 (NL2, board คงเดิม)
 ALTER TABLE public.profiles DROP CONSTRAINT IF EXISTS profiles_target_exam_check;
 
@@ -14,11 +14,11 @@ UPDATE public.profiles SET target_exam = 'part1' WHERE target_exam IN ('NL1', 'b
 UPDATE public.profiles SET target_exam = 'part2' WHERE target_exam = 'NL3';
 -- ค่าแปลกปลอมอื่น (ถ้ามี) → ยังไม่ตั้งระดับ ให้ dashboard ถามใหม่
 UPDATE public.profiles SET target_exam = NULL
-  WHERE target_exam IS NOT NULL AND target_exam NOT IN ('part1', 'part2', 'NL2', 'board');
+  WHERE target_exam IS NOT NULL AND target_exam NOT IN ('part1', 'part2', 'NL2', 'meq', 'board');
 
 ALTER TABLE public.profiles
   ADD CONSTRAINT profiles_target_exam_check
-  CHECK (target_exam IS NULL OR target_exam IN ('part1', 'part2', 'NL2', 'board'));
+  CHECK (target_exam IS NULL OR target_exam IN ('part1', 'part2', 'NL2', 'meq', 'board'));
 
 -- ─── 2) get_daily_mcq(p_date, p_pool) ──────────────────────────────────────
 -- p_pool: 'NL1' | 'NL2' → นักศึกษา exam_type นั้น, 'board' → audience board,

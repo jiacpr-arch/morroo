@@ -40,6 +40,11 @@ const KIND_SECTIONS: Array<{
     subtitle: "Objective Structured Clinical Examination",
   },
   {
+    kind: "meq",
+    title: "MEQ + Long case — ทักษะทางคลินิก (ผู้จบจากต่างประเทศ)",
+    subtitle: "สอบอัตนัยประยุกต์ (MEQ) และ Long case",
+  },
+  {
     kind: "nl2",
     title: "NL ขั้นตอนที่ 2 เดิม — วิทยาศาสตร์การแพทย์คลินิก",
     subtitle: "สำหรับผู้ที่ผ่าน NL1 เดิมแล้ว — เปิดสอบถึงรอบ ต.ค. 2570",

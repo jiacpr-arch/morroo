@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   CURRENT_YEARS,
   EXAM_TARGETS,
@@ -113,6 +114,19 @@ export default function ExamLevelCard({ initialTarget, initialYear, variant = "s
           </button>
         ))}
       </div>
+
+      {target === "meq" && (
+        <p className="mt-3 text-sm text-ink-soft">
+          ฝึกต่อได้ที่{" "}
+          <Link href="/exams" className="font-medium text-brand hover:underline">
+            คลังข้อสอบ MEQ
+          </Link>{" "}
+          และ{" "}
+          <Link href="/longcase" className="font-medium text-brand hover:underline">
+            Long Case
+          </Link>
+        </p>
+      )}
 
       <p className="mt-3 min-h-5 text-xs" aria-live="polite">
         {status === "saved" && <span className="text-brand-dark">✓ บันทึกแล้ว</span>}

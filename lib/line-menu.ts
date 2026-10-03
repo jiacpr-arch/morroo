@@ -64,7 +64,8 @@ export function buildRichMenu(): Record<string, unknown> & {
     areas: [
       area(0, 0, { type: "postback", data: `action=${MENU_TODAY_ACTION}`, displayText: "ข้อสอบวันนี้" }),
       area(1, 0, { type: "postback", data: "action=level_menu", displayText: "เปลี่ยนระดับสอบ" }),
-      area(2, 0, { type: "uri", uri: liffDeepLink("/nl/practice?utm_source=line&utm_medium=rich_menu") }),
+      // /practice redirects by level (MEQ → /exams, others → /nl/practice)
+      area(2, 0, { type: "uri", uri: liffDeepLink("/practice?utm_source=line&utm_medium=rich_menu") }),
       area(0, 1, { type: "uri", uri: liffDeepLink("/dashboard?utm_source=line&utm_medium=rich_menu") }),
       area(1, 1, { type: "uri", uri: liffDeepLink("/nl/calendar?utm_source=line&utm_medium=rich_menu") }),
       area(2, 1, { type: "uri", uri: liffDeepLink("/pricing?utm_source=line&utm_medium=rich_menu") }),

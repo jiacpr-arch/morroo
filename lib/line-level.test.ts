@@ -34,7 +34,7 @@ describe("buildLevelMenu", () => {
     const msg = buildLevelMenu("both"); // legacy value shows its new name
     if (msg.type !== "text") throw new Error("expected text");
     const items = msg.quickReply?.items ?? [];
-    expect(items).toHaveLength(4);
+    expect(items).toHaveLength(5);
     for (const i of items) {
       if (i.action.type !== "postback") throw new Error("expected postback");
       expect(i.action.label.length).toBeLessThanOrEqual(20);

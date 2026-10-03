@@ -6,16 +6,17 @@
  *   ส่วนที่ 1 = วิทยาศาสตร์การแพทย์ + การประกอบวิชาชีพเวชกรรม (รวม NL1+NL2 เดิม, MCQ)
  *   ส่วนที่ 2 = ทักษะตรวจร่างกาย + หัตถการทางคลินิก (OSCE)
  * ช่วงเปลี่ยนผ่าน: คนที่ผ่าน NL1 เดิมแล้วสอบ NL2 เดิมต่อได้ถึง ต.ค. 2570
+ * MEQ + Long case: การสอบทักษะทางคลินิกของผู้จบจากต่างประเทศ (และรูปแบบที่ใช้ใน Board หลายสาขา)
  * (NL1 เดิมสอบครั้งสุดท้าย 24 ม.ค. 2569 — จึงไม่มีให้เลือกแล้ว)
  *
  * Pure module (ไม่ import server code) เพื่อให้ client component ใช้ได้
  */
 
-export type ExamTarget = "part1" | "NL2" | "part2" | "board";
+export type ExamTarget = "part1" | "NL2" | "part2" | "meq" | "board";
 /** กลุ่มข้อสอบที่ get_daily_mcq(p_pool) รับ */
 export type McqPool = "NL1" | "NL2" | "board";
 /** ชนิดรอบสอบใน lib/exam-dates.ts */
-export type ExamKind = "nl1" | "nl2" | "part1" | "osce";
+export type ExamKind = "nl1" | "nl2" | "part1" | "osce" | "meq";
 /** exam_type ของหน้า /nl/practice — "all" = ผสม NL1+NL2 (ส่วนที่ 1) */
 export type PracticeExam = "all" | "NL1" | "NL2";
 
@@ -49,6 +50,13 @@ export const EXAM_TARGETS: readonly ExamTargetOption[] = [
     shortLabel: "NL2 เดิม",
     desc: "สำหรับคนที่ผ่าน NL1 เดิมแล้ว — สอบได้ถึงรอบ ต.ค. 2570",
     icon: "📘",
+  },
+  {
+    id: "meq",
+    label: "MEQ + Long case",
+    shortLabel: "MEQ + Long case",
+    desc: "สอบอัตนัยประยุกต์ + Long case (ผู้จบจากต่างประเทศ / เตรียม Board)",
+    icon: "✍️",
   },
   {
     id: "board",
@@ -110,6 +118,7 @@ export function mcqPoolForTarget(t: string | null | undefined): McqPool | null {
   switch (normalizeTarget(t)) {
     case "NL2":
     case "part2":
+    case "meq":
       return "NL2";
     default:
       return null;
@@ -125,9 +134,16 @@ export function examKindsForTarget(t: string | null | undefined): ExamKind[] {
       return ["nl2"];
     case "part2":
       return ["osce"];
+    case "meq":
+      return ["meq"];
     default:
       return [];
   }
+}
+
+/** หน้าฝึกหลักของระดับนี้ — MEQ ไปคลัง MEQ, ระดับอื่นไปคลัง MCQ */
+export function practicePathForTarget(t: string | null | undefined): string {
+  return normalizeTarget(t) === "meq" ? "/exams" : "/nl/practice";
 }
 
 /** exam ของหน้า /nl/practice (ไม่ได้ตั้งระดับ = NL2 เหมือนเดิม) */
