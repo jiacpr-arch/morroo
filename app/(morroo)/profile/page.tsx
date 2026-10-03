@@ -20,7 +20,7 @@ import { fetchOrgMemberships, isOrgActive, orgEntitlementRows, type OrgMembershi
 import { isLapseEligible } from "@/lib/winback";
 import PageIntro from "@/components/PageIntro";
 import ExamLevelCard from "@/components/ExamLevelCard";
-import { isExamTarget } from "@/lib/exam-level";
+import { normalizeTarget } from "@/lib/exam-level";
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
@@ -593,7 +593,7 @@ export default function ProfilePage() {
         {/* ระดับข้อสอบ — ขับข้อสอบรายวัน LINE / เตือนวันสอบ / หน้าฝึก */}
         {profile && (
           <ExamLevelCard
-            initialTarget={isExamTarget(profile.target_exam) ? profile.target_exam : null}
+            initialTarget={normalizeTarget(profile.target_exam)}
             initialYear={profile.current_year}
           />
         )}

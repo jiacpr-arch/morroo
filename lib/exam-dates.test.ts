@@ -13,29 +13,39 @@ describe("getNextExamRound", () => {
     expect(next?.confirmed).toBe(true);
   });
 
-  it("default ไม่นับรอบ OSCE (step 3)", () => {
+  it("default ไม่นับรอบ OSCE", () => {
     // 1 มิ.ย. 2569 — OSCE รอบพิเศษ 7 มิ.ย. ใกล้กว่า แต่ banner ขาย MCQ
     const next = getNextExamRound(new Date("2026-06-01T00:00:00+07:00"));
     expect(next?.date).toBe("2026-07-19");
-    expect(next?.step).toBe(2);
+    expect(next?.kind).toBe("nl2");
   });
 
-  it("ระบุ steps เองได้", () => {
-    const next = getNextExamRound(new Date("2026-06-01T00:00:00+07:00"), [3]);
+  it("ระบุ kinds เองได้", () => {
+    const next = getNextExamRound(new Date("2026-06-01T00:00:00+07:00"), ["osce"]);
     expect(next?.date).toBe("2026-06-07");
   });
 
   it("วันสอบพอดีเที่ยงคืน ICT ถือว่าเริ่มแล้ว — เลื่อนไปรอบถัดไป", () => {
     const next = getNextExamRound(new Date("2026-07-19T00:00:00+07:00"));
-    expect(next?.date).toBe("2026-10-10");
+    expect(next?.date).toBe("2026-10-11");
   });
 
   it("ไม่มีรอบเหลือ → null", () => {
-    expect(getNextExamRound(new Date("2027-01-01T00:00:00+07:00"))).toBeNull();
+    expect(getNextExamRound(new Date("2028-01-01T00:00:00+07:00"))).toBeNull();
+  });
+
+  it("หลังรอบ NL2 เดิมรอบสุดท้ายของปี 2569 ไปต่อที่ส่วนที่ 1 ระบบใหม่", () => {
+    const next = getNextExamRound(new Date("2026-10-12T00:00:00+07:00"));
+    expect(next?.kind).toBe("part1");
   });
 });
 
 describe("NL_EXAM_ROUNDS data", () => {
+  it("NL1 เดิมไม่มีรอบหลัง ม.ค. 2569 (สอบครั้งสุดท้าย 24 ม.ค. 2569)", () => {
+    const nl1 = NL_EXAM_ROUNDS.filter((r) => r.kind === "nl1");
+    expect(nl1.every((r) => r.date <= "2026-01-24")).toBe(true);
+  });
+
   it("วันที่เป็น ISO ทั้งหมดและ label ไม่ซ้ำ", () => {
     const labels = new Set<string>();
     for (const r of NL_EXAM_ROUNDS) {

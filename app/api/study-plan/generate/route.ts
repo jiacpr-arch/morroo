@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { examTargetLabel } from "@/lib/exam-level";
 import { createClient } from "@/lib/supabase/server";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { createAnthropic } from "@/lib/anthropic";
@@ -105,7 +106,7 @@ export async function POST(request: NextRequest) {
   const systemPrompt = [
     {
       type: "text" as const,
-      text: `คุณเป็นที่ปรึกษาการเตรียมสอบแพทย์ (NL1/NL2) วางแผนอ่านรายสัปดาห์ให้นักศึกษา
+      text: `คุณเป็นที่ปรึกษาการเตรียมสอบใบประกอบวิชาชีพแพทย์ (ศรว.: ส่วนที่ 1 รวมพื้นฐาน+คลินิก, ส่วนที่ 2 ทักษะ OSCE, หรือ NL2 เดิม) วางแผนอ่านรายสัปดาห์ให้นักศึกษา
 ตอบเป็น JSON เท่านั้น ห้ามมีข้อความอื่นใดนอกเหนือจาก JSON
 ภาษาทุกข้อความใน JSON ต้องเป็นภาษาไทยที่กระชับและใช้งานได้จริง`,
       cache_control: { type: "ephemeral" as const },
@@ -114,7 +115,7 @@ export async function POST(request: NextRequest) {
 
   const userPrompt = `ข้อมูลนักศึกษา:
 - ชื่อ: ${p.name ?? "ไม่ระบุ"}
-- สอบ: ${p.target_exam ?? "NL2"}
+- สอบ: ${examTargetLabel(p.target_exam) ?? "NL2"}
 - วันสอบ: ${p.exam_date} (อีก ${daysUntil} วัน, ${weeksCount} สัปดาห์)
 - เวลาอ่านหนังสือที่ทำได้ต่อวัน: ${dailyHours} ชั่วโมง
 - สาขาที่เคยระบุว่าไม่มั่นใจ: ${(p.weak_subjects ?? []).join(", ") || "-"}

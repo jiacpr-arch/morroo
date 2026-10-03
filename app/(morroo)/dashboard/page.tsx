@@ -26,7 +26,7 @@ import LeaderboardCard from "@/components/LeaderboardCard";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
 import ExamLevelCard from "@/components/ExamLevelCard";
 import NlExamCountdown from "@/components/NlExamCountdown";
-import { examStepsForTarget, isExamTarget, type ExamTarget } from "@/lib/exam-level";
+import { examKindsForTarget, isExamTarget, normalizeTarget, type ExamTarget } from "@/lib/exam-level";
 import ShareToEarnCard from "@/components/ShareToEarnCard";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
 import PageIntro from "@/components/PageIntro";
@@ -96,6 +96,8 @@ export default function DashboardPage() {
   const [todayCount, setTodayCount] = useState(0);
   const [lineLinked, setLineLinked] = useState(false);
   const [targetExam, setTargetExam] = useState<ExamTarget | null>(null);
+  // false = never set, or still a pre-2570 value (NL1/NL3/both) → ask again
+  const [levelConfirmed, setLevelConfirmed] = useState(false);
   const [currentYear, setCurrentYear] = useState<number | null>(null);
   const [, setNewQuestions] = useState<{
     count: number;
@@ -161,7 +163,8 @@ export default function DashboardPage() {
       setComparison((compRes.data as SubjectComparison[]) || []);
       setDailyGoal(profileRes.data?.daily_goal ?? 20);
       setLineLinked(!!profileRes.data?.line_user_id);
-      setTargetExam(isExamTarget(profileRes.data?.target_exam) ? profileRes.data.target_exam : null);
+      setTargetExam(normalizeTarget(profileRes.data?.target_exam));
+      setLevelConfirmed(isExamTarget(profileRes.data?.target_exam));
       setCurrentYear(profileRes.data?.current_year ?? null);
       setTodayCount(todayRes.count ?? 0);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -227,16 +230,16 @@ export default function DashboardPage() {
         )
       : 0;
 
-  // ระดับข้อสอบ: ยังไม่ตั้ง / เลือก "ทุกขั้นตอน" → ชวนเลือก; ตั้งแล้ว → นับถอยหลังรอบสอบของระดับนั้น
-  const examSteps = examStepsForTarget(targetExam);
+  // ระดับข้อสอบ: ยังไม่ตั้ง / ยังเป็นค่าระบบเดิม → ชวนเลือก; มีระดับ → นับถอยหลังรอบสอบของระดับนั้น
+  const examKinds = examKindsForTarget(targetExam);
   const levelBlock = (
     <>
-      {(targetExam === null || targetExam === "both") && (
+      {!levelConfirmed && (
         <div className="mb-4">
           <ExamLevelCard initialTarget={targetExam} initialYear={currentYear} variant="prompt" />
         </div>
       )}
-      {examSteps.length > 0 && <NlExamCountdown steps={examSteps} className="mb-4" />}
+      {examKinds.length > 0 && <NlExamCountdown kinds={examKinds} className="mb-4" />}
     </>
   );
 

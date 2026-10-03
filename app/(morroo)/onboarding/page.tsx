@@ -49,7 +49,7 @@ export default function OnboardingPage() {
       const { error } = await supabase.from("profiles").update({
         onboarding_done: true,
         daily_goal: dailyGoal ?? 20,
-        target_exam: targetExam ?? "both",
+        target_exam: targetExam,
         weak_subjects: weakSubjects.length > 0 ? weakSubjects : null,
       }).eq("id", user.id);
 

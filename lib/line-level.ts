@@ -11,7 +11,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { LineMessage } from "@/lib/line";
 import { parseData } from "@/lib/ads-autofix-line";
-import { EXAM_TARGETS, examStepsForTarget, examTargetLabel, isExamTarget } from "@/lib/exam-level";
+import { EXAM_TARGETS, examKindsForTarget, examTargetLabel, isExamTarget } from "@/lib/exam-level";
 import { formatThaiExamDate, getNextExamRound } from "@/lib/exam-dates";
 
 const MENU_ACTION = "level_menu";
@@ -44,7 +44,7 @@ export function buildLevelMenu(current: string | null): LineMessage {
         type: "action" as const,
         action: {
           type: "postback" as const,
-          label: t.label.slice(0, 20), // LINE caps quick-reply labels at 20 chars
+          label: t.shortLabel.slice(0, 20), // LINE caps quick-reply labels at 20 chars
           data: `action=${SET_ACTION}&v=${t.id}`,
           displayText: `ระดับ ${t.label}`,
         },
@@ -102,8 +102,8 @@ export async function handleLevelPostback(
     return [txt("บันทึกระดับไม่สำเร็จ ลองใหม่อีกครั้งนะครับ 🙏")];
   }
 
-  const steps = examStepsForTarget(target);
-  const next = steps.length > 0 ? getNextExamRound(now, steps) : null;
+  const kinds = examKindsForTarget(target);
+  const next = kinds.length > 0 ? getNextExamRound(now, kinds) : null;
   const lines = [
     `✅ ตั้งระดับเป็น ${examTargetLabel(target)} แล้ว`,
     "ข้อสอบประจำวันครั้งต่อไปจะตรงกับระดับนี้",

@@ -1,7 +1,7 @@
 // Set the signed-in user's exam level (profiles.target_exam) and/or study year
 // (profiles.current_year). The user id comes from the session, never the body.
 //
-// POST { target_exam?: "NL1"|"NL2"|"NL3"|"both"|"board", current_year?: 1-6 | null }
+// POST { target_exam?: "part1"|"part2"|"NL2"|"board" (lib/exam-level), current_year?: 1-6 | null }
 //   → { ok: true, data: { target_exam, current_year } }
 
 import { NextResponse } from "next/server";

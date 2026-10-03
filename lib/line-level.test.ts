@@ -31,16 +31,16 @@ describe("isLevelMenuText", () => {
 
 describe("buildLevelMenu", () => {
   it("offers every level as a quick reply within LINE's 20-char label cap", () => {
-    const msg = buildLevelMenu("NL2");
+    const msg = buildLevelMenu("both"); // legacy value shows its new name
     if (msg.type !== "text") throw new Error("expected text");
     const items = msg.quickReply?.items ?? [];
-    expect(items).toHaveLength(5);
+    expect(items).toHaveLength(4);
     for (const i of items) {
       if (i.action.type !== "postback") throw new Error("expected postback");
       expect(i.action.label.length).toBeLessThanOrEqual(20);
       expect(i.action.data).toMatch(/^action=set_level&v=/);
     }
-    expect(msg.text).toContain("NL2");
+    expect(msg.text).toContain("ส่วนที่ 1");
   });
 });
 
@@ -61,23 +61,24 @@ describe("handleLevelPostback", () => {
 
   it("saves a valid level and reports the next exam for it", async () => {
     const { client, update, eqUpdate } = fakeSupabase();
-    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=NL3", NOW);
-    expect(update).toHaveBeenCalledWith({ target_exam: "NL3" });
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=NL2", NOW);
+    expect(update).toHaveBeenCalledWith({ target_exam: "NL2" });
     expect(eqUpdate).toHaveBeenCalledWith("id", "u1");
     const text = (reply?.[0] as { text: string }).text;
-    expect(text).toContain("NL3");
+    expect(text).toContain("NL2 เดิม");
+    expect(text).toContain("NL ขั้นตอนที่ 2 รอบ 4/2569"); // next nl2 round after 3 Oct 2026
   });
 
   it("rejects an unknown level without touching the DB", async () => {
     const { client, update } = fakeSupabase();
-    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=NL9", NOW);
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=NL1", NOW); // retired level
     expect(update).not.toHaveBeenCalled();
     expect((reply?.[0] as { text: string }).text).toContain("ไม่รู้จัก");
   });
 
   it("does not save for an unlinked LINE user", async () => {
     const { client, update } = fakeSupabase({ profile: null });
-    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=NL1", NOW);
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=part1", NOW);
     expect(update).not.toHaveBeenCalled();
     expect((reply?.[0] as { text: string }).text).toContain("MORROO-");
   });
@@ -85,7 +86,7 @@ describe("handleLevelPostback", () => {
   it("reports a failed save", async () => {
     const { client } = fakeSupabase({ updateError: true });
     vi.spyOn(console, "error").mockImplementation(() => {});
-    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=NL1", NOW);
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=part1", NOW);
     expect((reply?.[0] as { text: string }).text).toContain("ไม่สำเร็จ");
   });
 });

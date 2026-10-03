@@ -25,7 +25,7 @@ import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
 import { getDueReviewQuestions, getMcqReviewDueCount } from "@/lib/mcq-review";
 import type { McqSubject } from "@/lib/types-mcq";
 import type { McqPracticeQuestion } from "@/lib/mcq-public";
-import { practiceExamType } from "@/lib/exam-level";
+import { practiceExamForTarget, type PracticeExam } from "@/lib/exam-level";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ NL",
@@ -123,14 +123,17 @@ async function PracticeContent({
   // a deep-linked question (daily quiz can be NL1 or NL2, so a pinned question
   // isn't padded with the other exam's), then the user's chosen level
   // (profiles.target_exam, see lib/exam-level), then NL2 as before.
+  // "all" = ส่วนที่ 1 ระบบใหม่ (พื้นฐาน + คลินิก รวมกัน).
   const pinnedExam =
     pinnedQuestion?.exam_type === "NL1" || pinnedQuestion?.exam_type === "NL2"
       ? pinnedQuestion.exam_type
       : null;
-  const examType: "NL1" | "NL2" =
-    examParam === "NL1" || examParam === "NL2"
+  const examType: PracticeExam =
+    examParam === "NL1" || examParam === "NL2" || examParam === "all"
       ? examParam
-      : (pinnedExam ?? practiceExamType(profileTarget));
+      : (pinnedExam ?? practiceExamForTarget(profileTarget));
+  // Query filter: undefined = no exam_type filter (all student questions).
+  const examFilter = examType === "all" ? undefined : examType;
   // Every internal link keeps the chosen exam so switching subject/mode doesn't reset it.
   const practiceHref = (params: Record<string, string> = {}, exam = examType) =>
     `/nl/practice?${new URLSearchParams({ ...params, exam }).toString()}`;
@@ -146,7 +149,7 @@ async function PracticeContent({
   const isManual = !useRecommended && !useReview;
   const reviewDueCount = user ? await getMcqReviewDueCount(supabase, user.id) : 0;
 
-  const examSubjects = await getMcqSubjects(examType);
+  const examSubjects = await getMcqSubjects(examFilter);
   // Hide subjects that have no questions yet — there's nothing to practice
   // and an empty selection just confuses the user.
   const subjects = examSubjects.filter((s) => s.question_count > 0);
@@ -185,7 +188,8 @@ async function PracticeContent({
     questions = await getDueReviewQuestions(supabase, user.id, { limit: 20 });
   } else if (useRecommended && user) {
     const rec = await getRecommendedQuestions(supabase, user.id, {
-      examType,
+      // Recommendation pools are per exam type; the mixed view falls back to NL2 as before.
+      examType: examFilter ?? "NL2",
       limit: 20,
     });
     questions = rec.questions;
@@ -200,7 +204,7 @@ async function PracticeContent({
   } else {
     questions = await getMcqQuestions({
       subjectId,
-      examType,
+      examType: examFilter,
       limit: 200,
       randomize: true,
     });
@@ -299,13 +303,13 @@ async function PracticeContent({
 
       {/* Exam switch — defaults to the user's level (profiles.target_exam) */}
       <div className="mb-3 flex flex-wrap items-center gap-2 sm:mb-4" role="group" aria-label="เลือกข้อสอบ">
-        {(["NL1", "NL2"] as const).map((t) => (
+        {(["all", "NL1", "NL2"] as const).map((t) => (
           <Link key={t} href={practiceHref({}, t)}>
             <Badge
               variant={examType === t ? "default" : "secondary"}
               className={`cursor-pointer ${examType === t ? "bg-brand text-white" : "hover:bg-brand/10"}`}
             >
-              {t === "NL1" ? "NL1 · พื้นฐาน" : "NL2 · คลินิก"}
+              {t === "all" ? "ส่วนที่ 1 · รวม" : t === "NL1" ? "พื้นฐาน (NL1)" : "คลินิก (NL2)"}
             </Badge>
           </Link>
         ))}

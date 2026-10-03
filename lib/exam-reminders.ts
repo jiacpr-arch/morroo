@@ -11,7 +11,7 @@ export const COUNTDOWN_MILESTONES = [30, 7, 1] as const;
 export interface DueReminder {
   round: ExamRound;
   daysBefore: number;
-  /** คีย์กันส่งซ้ำ: "<วันสอบ>:<step>" */
+  /** คีย์กันส่งซ้ำ: "<วันสอบ>:<kind>" */
   roundKey: string;
 }
 
@@ -27,8 +27,8 @@ export function daysUntilExam(isoDate: string, now: Date): number {
   return Math.round((exam - today) / 86400_000);
 }
 
-export function roundKeyFor(round: Pick<ExamRound, "date" | "step">): string {
-  return `${round.date}:${round.step}`;
+export function roundKeyFor(round: Pick<ExamRound, "date" | "kind">): string {
+  return `${round.date}:${round.kind}`;
 }
 
 /** รอบสอบที่ confirmed และห่างจากวันนี้ 30/7/1 วันพอดี */

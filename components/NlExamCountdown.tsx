@@ -4,25 +4,25 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CalendarClock } from "lucide-react";
 import { getNextExamRound, type ExamRound } from "@/lib/exam-dates";
-import type { ExamStep } from "@/lib/exam-level";
+import type { ExamKind } from "@/lib/exam-level";
 
 // Urgency banner สำหรับหน้า pricing — แสดงเฉพาะเมื่อมีรอบสอบใน lib/exam-dates.ts
 // ที่ยังมาไม่ถึง ไม่มีข้อมูล = ไม่ render อะไรเลย
 export default function NlExamCountdown({
-  steps,
+  kinds,
   className = "mb-10",
 }: {
-  /** จำกัดเฉพาะขั้นสอบของผู้ใช้ (lib/exam-level examStepsForTarget); ไม่ส่ง = Step 1-2 เหมือนเดิม */
-  steps?: ExamStep[];
+  /** จำกัดเฉพาะรอบของระดับผู้ใช้ (lib/exam-level examKindsForTarget); ไม่ส่ง = รอบ MCQ ทั้งหมด */
+  kinds?: ExamKind[];
   className?: string;
 } = {}) {
   const [round, setRound] = useState<ExamRound | null>(null);
   const [daysLeft, setDaysLeft] = useState(0);
-  const stepsKey = steps?.join(",") ?? "";
+  const kindsKey = kinds?.join(",") ?? "";
 
   // คำนวณฝั่ง client เท่านั้น กัน hydration mismatch จากเวลา server/client ต่างกัน
   useEffect(() => {
-    const parsed = stepsKey ? (stepsKey.split(",").map(Number) as ExamStep[]) : undefined;
+    const parsed = kindsKey ? (kindsKey.split(",") as ExamKind[]) : undefined;
     const next = getNextExamRound(new Date(), parsed);
     if (!next) {
       setRound(null);
@@ -32,7 +32,7 @@ export default function NlExamCountdown({
       new Date(`${next.date}T00:00:00+07:00`).getTime() - Date.now();
     setDaysLeft(Math.max(0, Math.ceil(ms / 86_400_000)));
     setRound(next);
-  }, [stepsKey]);
+  }, [kindsKey]);
 
   if (!round) return null;
 

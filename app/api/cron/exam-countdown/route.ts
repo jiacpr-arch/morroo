@@ -1,6 +1,7 @@
 /**
  * Exam countdown cron — เตือน 30/7/1 วันก่อนสอบ ศรว. เฉพาะคนที่ระดับ
- * (profiles.target_exam) ตรงกับรอบนั้น (NL1→step 1, NL2→2, NL3→3, both→ทุกขั้น).
+ * (profiles.target_exam) ตรงกับรอบนั้น (ส่วนที่ 1 → part1, NL2 เดิม → nl2,
+ * ส่วนที่ 2 → OSCE — ดู examKindsForTarget ใน lib/exam-level).
  *
  * - ส่งเฉพาะรอบที่ confirmed ใน lib/exam-dates.ts
  * - คนที่ยังไม่ตั้งระดับ (null) และ board ไม่ได้รับ — ประหยัดโควต้า LINE
@@ -18,7 +19,7 @@ import { sendLineMessage, checkLineQuota } from "@/lib/line";
 import { withCronRun } from "@/lib/cron-runs";
 import { isPushConfigured, sendPushToUser } from "@/lib/push";
 import { toLiffUri } from "@/lib/line-links";
-import { examStepsForTarget } from "@/lib/exam-level";
+import { examKindsForTarget } from "@/lib/exam-level";
 import { countdownBody, countdownTitle, dueReminders } from "@/lib/exam-reminders";
 
 export const runtime = "nodejs";
@@ -45,7 +46,7 @@ async function handleGet(_request: Request) {
   const { data, error } = await supabase
     .from("profiles")
     .select("id, name, line_user_id, target_exam")
-    .in("target_exam", ["NL1", "NL2", "NL3", "both"]);
+    .not("target_exam", "is", null);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
   const profiles =
@@ -71,7 +72,7 @@ async function handleGet(_request: Request) {
     }).toString()}`;
 
     for (const p of profiles) {
-      if (!examStepsForTarget(p.target_exam).includes(round.step)) continue;
+      if (!examKindsForTarget(p.target_exam).includes(round.kind)) continue;
 
       const canLine = !!p.line_user_id && lineAvailable;
       if (!canLine && !pushOn) {
