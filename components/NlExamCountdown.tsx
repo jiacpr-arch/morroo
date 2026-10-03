@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CalendarClock } from "lucide-react";
-import { getNextExamRound, type ExamRound } from "@/lib/exam-dates";
+import { NL_EXAM_ROUNDS, getNextExamRound, type ExamRound } from "@/lib/exam-dates";
 import type { ExamKind } from "@/lib/exam-level";
 
-// Urgency banner สำหรับหน้า pricing — แสดงเฉพาะเมื่อมีรอบสอบใน lib/exam-dates.ts
-// ที่ยังมาไม่ถึง ไม่มีข้อมูล = ไม่ render อะไรเลย
+// Urgency banner — แสดงเฉพาะเมื่อมีรอบสอบที่ยังมาไม่ถึง (ดึงจาก /api/exam-rounds ซึ่งอ่านตาราง
+// exam_rounds ที่อัปเดตเองจากประกาศ ศรว.; ล้มเหลว = ใช้ค่าสำรองใน lib/exam-dates.ts)
+// ไม่มีข้อมูล = ไม่ render อะไรเลย
 export default function NlExamCountdown({
   kinds,
   className = "mb-10",
@@ -22,16 +23,35 @@ export default function NlExamCountdown({
 
   // คำนวณฝั่ง client เท่านั้น กัน hydration mismatch จากเวลา server/client ต่างกัน
   useEffect(() => {
+    let cancelled = false;
     const parsed = kindsKey ? (kindsKey.split(",") as ExamKind[]) : undefined;
-    const next = getNextExamRound(new Date(), parsed);
-    if (!next) {
-      setRound(null);
-      return;
+
+    function show(rounds: readonly ExamRound[]) {
+      if (cancelled) return;
+      const next = getNextExamRound(new Date(), parsed, rounds);
+      if (!next) {
+        setRound(null);
+        return;
+      }
+      const ms = new Date(`${next.date}T00:00:00+07:00`).getTime() - Date.now();
+      setDaysLeft(Math.max(0, Math.ceil(ms / 86_400_000)));
+      setRound(next);
     }
-    const ms =
-      new Date(`${next.date}T00:00:00+07:00`).getTime() - Date.now();
-    setDaysLeft(Math.max(0, Math.ceil(ms / 86_400_000)));
-    setRound(next);
+
+    (async () => {
+      try {
+        const res = await fetch("/api/exam-rounds");
+        if (!res.ok) throw new Error(String(res.status));
+        const json = (await res.json()) as { rounds?: ExamRound[] };
+        show(Array.isArray(json.rounds) && json.rounds.length > 0 ? json.rounds : NL_EXAM_ROUNDS);
+      } catch {
+        show(NL_EXAM_ROUNDS);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [kindsKey]);
 
   if (!round) return null;

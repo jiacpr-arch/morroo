@@ -4,11 +4,9 @@ import { ArrowRight, CalendarDays, CheckCircle2, Clock3 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  NL_EXAM_ROUNDS,
-  formatThaiExamDate,
-  type ExamRound,
-} from "@/lib/exam-dates";
+import { formatThaiExamDate, type ExamRound } from "@/lib/exam-dates";
+import { loadExamRounds } from "@/lib/exam-rounds";
+import { createAdminClient } from "@/lib/supabase/admin";
 import ExamDaysLeft from "@/components/ExamDaysLeft";
 
 export const metadata: Metadata = {
@@ -56,9 +54,12 @@ const KIND_SECTIONS: Array<{
   },
 ];
 
-// วันสอบเปลี่ยนเฉพาะตอนแก้ lib/exam-dates.ts (deploy ใหม่) — หน้านี้ static ได้
-// ป้าย "เหลือ X วัน" คำนวณฝั่ง client ใน <ExamDaysLeft>
-export default function NlCalendarPage() {
+// วันสอบมาจากตาราง exam_rounds (อัปเดตเองจากประกาศ ศรว. + แก้ได้ที่ /admin/exam-dates)
+// revalidate ทุก 10 นาที; ป้าย "เหลือ X วัน" คำนวณฝั่ง client ใน <ExamDaysLeft>
+export const revalidate = 600;
+
+export default async function NlCalendarPage() {
+  const rounds = await loadExamRounds(createAdminClient());
   // สถานะ "ผ่านไปแล้ว" ตัดสินตอน render/revalidate ฝั่ง server ก็พอ
   // (ความละเอียดระดับวัน — ป้ายนับถอยหลังฝั่ง client เป็นตัวบอกเวลาจริง)
   const now = Date.now();
@@ -86,8 +87,8 @@ export default function NlCalendarPage() {
 
       <div className="space-y-6">
         {KIND_SECTIONS.map((section) => {
-          const rounds = NL_EXAM_ROUNDS.filter((r) => r.kind === section.kind);
-          if (rounds.length === 0) return null;
+          const sectionRounds = rounds.filter((r) => r.kind === section.kind);
+          if (sectionRounds.length === 0) return null;
 
           return (
             <Card key={section.kind}>
@@ -99,7 +100,7 @@ export default function NlCalendarPage() {
               </CardHeader>
               <CardContent>
                 <ul className="divide-y">
-                  {rounds.map((round) => {
+                  {sectionRounds.map((round) => {
                     const isPast =
                       new Date(`${round.date}T00:00:00+07:00`).getTime() < now;
                     // ดึงคำว่า "รอบ ..." ท้าย label พอ — ชื่อขั้นตอนอยู่ในหัวข้อแล้ว

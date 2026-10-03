@@ -1,5 +1,8 @@
-// กำหนดการสอบของ ศรว. (CMA) — ใช้ขับ countdown banner (หน้าแรก + pricing)
-// และหน้าปฏิทินสอบ /nl/calendar
+// ค่าสำรองของกำหนดการสอบ ศรว. (CMA) — ตอนนี้ปฏิทินจริงอยู่ในตาราง exam_rounds
+// (แก้ที่ /admin/exam-dates และอัปเดตเองจาก cron exam-watch); ไฟล์นี้ใช้เป็น seed และเป็นค่าสำรอง
+// ถ้าอ่านฐานข้อมูลไม่ได้ (ดู lib/exam-rounds.ts)
+//
+// เดิม: ขับ countdown banner (หน้าแรก + pricing) และหน้าปฏิทินสอบ /nl/calendar
 //
 // confirmed: true = วันจากประกาศทางการ ศรว. (https://cmathai.org/news)
 // confirmed: false = คาดการณ์จาก pattern ปีก่อน — UI จะติดป้าย "รอประกาศ ศรว." ให้เอง
@@ -67,9 +70,11 @@ export function examDateTime(round: Pick<ExamRound, "date">): number {
  */
 export function getNextExamRound(
   now: Date = new Date(),
-  kinds: ReadonlyArray<ExamKind> = MCQ_EXAM_KINDS
+  kinds: ReadonlyArray<ExamKind> = MCQ_EXAM_KINDS,
+  /** รอบสอบ — ค่าเริ่มต้นเป็นค่าสำรองในไฟล์นี้; หน้าเว็บ/cron ส่งรอบจากฐานข้อมูล (lib/exam-rounds.ts) มาแทน */
+  rounds: readonly ExamRound[] = NL_EXAM_ROUNDS
 ): ExamRound | null {
-  const upcoming = NL_EXAM_ROUNDS.filter(
+  const upcoming = rounds.filter(
     (r) => kinds.includes(r.kind) && examDateTime(r) > now.getTime()
   ).sort((a, b) => a.date.localeCompare(b.date));
   return upcoming[0] ?? null;

@@ -443,6 +443,19 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
         </Link>
+        <Link href="/admin/exam-dates">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-amber-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Newspaper className="h-5 w-5 text-amber-600" />
+                <h3 className="font-bold">ปฏิทินสอบ ศรว.</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">วันสอบอัปเดตเองจากประกาศ — ตรวจ/แก้/สแกนตอนนี้</p>
+            </CardContent>
+          </Card>
+        </Link>
         <Link href="/admin/sim">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-rose-200">
             <CardHeader className="pb-2">

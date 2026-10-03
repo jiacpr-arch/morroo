@@ -19,7 +19,7 @@ export interface ExamNewsDraft {
   title: string;
   summary: string;
   country: "th" | "foreign";
-  /** มีวันสอบ/กำหนดรับสมัคร/เปลี่ยนเกณฑ์หรือรูปแบบการสอบ → แจ้งแอดมินให้เช็ก lib/exam-dates.ts */
+  /** มีวันสอบ/กำหนดรับสมัคร/เปลี่ยนเกณฑ์หรือรูปแบบการสอบ → แจ้งแอดมินให้ตรวจปฏิทินสอบ (/admin/exam-dates) */
   exam_schedule: boolean;
   /** nl = เรื่อง ศรว./ใบประกอบวิชาชีพ (ตัวกรอง MCQ/NL บน /news); อื่นๆ = null */
   section: ExamNewsSection;
