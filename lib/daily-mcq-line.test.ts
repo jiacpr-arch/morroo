@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   handleDailyMcqPostback,
   bangkokToday,
+  dailyPracticeUrl,
   shiftQuizDate,
   mondayOfWeek,
   isWithinGrace,
@@ -210,6 +211,22 @@ describe("handleDailyMcqPostback — exam-level pool", () => {
   it("ignores an unknown pool and grades against the mixed pool", async () => {
     const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=hacked`);
     expect(args).toEqual({ p_date: TODAY });
+  });
+
+  it("re-derives a board card from pool + specialty", async () => {
+    const args = await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=board&s=internal_medicine`);
+    expect(args).toEqual({ p_date: TODAY, p_pool: "board", p_board_specialty: "internal_medicine" });
+  });
+
+  it("ignores a specialty outside the board pool or in a bad shape", async () => {
+    expect(await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=NL1&s=internal_medicine`)).toEqual({
+      p_date: TODAY,
+      p_pool: "NL1",
+    });
+    expect(await poolArgs(`action=daily_answer&d=${TODAY}&c=B&q=q1&p=board&s=Robert%27%3B--`)).toEqual({
+      p_date: TODAY,
+      p_pool: "board",
+    });
   });
 
   it("works for old cards without a pool", async () => {
@@ -522,5 +539,21 @@ describe("mondayOfWeek", () => {
 
   it("walks back to Monday for a Saturday", () => {
     expect(mondayOfWeek("2026-09-19")).toBe("2026-09-14");
+  });
+});
+
+describe("dailyPracticeUrl — board questions open their specialty's practice page", () => {
+  it("defaults to /nl/practice", () => {
+    expect(dailyPracticeUrl("q1", TODAY, "push")).toContain("/nl/practice?q=q1");
+  });
+
+  it("uses /board/<specialty>/practice for a board question", () => {
+    expect(dailyPracticeUrl("q1", TODAY, "push", "internal_medicine")).toContain(
+      "/board/internal_medicine/practice?q=q1"
+    );
+  });
+
+  it("falls back to /nl/practice for a malformed specialty", () => {
+    expect(dailyPracticeUrl("q1", TODAY, "push", "../x")).toContain("/nl/practice?q=q1");
   });
 });

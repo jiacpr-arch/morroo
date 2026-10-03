@@ -595,6 +595,7 @@ export default function ProfilePage() {
           <ExamLevelCard
             initialTarget={normalizeTarget(profile.target_exam)}
             initialYear={profile.current_year}
+            initialBoardSpecialty={profile.board_specialty}
           />
         )}
 

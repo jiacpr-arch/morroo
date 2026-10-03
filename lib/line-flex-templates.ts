@@ -1912,13 +1912,17 @@ export interface DailyMcqBubbleArgs {
   newCount?: number;
   /** Exam-level pool the question was drawn from (lib/exam-level McqPool); rides in the postback so grading re-derives the same question. */
   pool?: string | null;
+  /** Board specialty slug when pool is "board" (rides as `s=` so grading re-derives the same card). */
+  boardSpecialty?: string | null;
 }
 
 /** Bubble only (not a full LineMessage) so it can go standalone or in a carousel. */
 export function buildDailyMcqBubble(args: DailyMcqBubbleArgs): Record<string, unknown> {
-  const { question, practiceUrl, yesterdayStats, newCount, pool } = args;
+  const { question, practiceUrl, yesterdayStats, newCount, pool, boardSpecialty } = args;
   const diffTh = DIFFICULTY_TH[question.difficulty] ?? question.difficulty;
-  const poolParam = pool ? `&p=${encodeURIComponent(pool)}` : "";
+  const poolParam =
+    (pool ? `&p=${encodeURIComponent(pool)}` : "") +
+    (pool === "board" && boardSpecialty ? `&s=${encodeURIComponent(boardSpecialty)}` : "");
 
   const bodyContents: Record<string, unknown>[] = [
     {

@@ -10,6 +10,7 @@ import {
 } from "@/lib/supabase/queries-board";
 import {
   getMcqQuestions,
+  getMcqQuestion,
   getFreeAttemptsCount,
   getMcqAnswerKeys,
 } from "@/lib/supabase/queries-mcq";
@@ -43,9 +44,11 @@ export async function generateMetadata({
 async function PracticeContent({
   specialty,
   section,
+  pinnedQuestionId,
 }: {
   specialty: string;
   section?: string;
+  pinnedQuestionId?: string;
 }) {
   const s = await getBoardSpecialty(specialty);
   if (!s) return notFound();
@@ -104,6 +107,16 @@ async function PracticeContent({
     limit: 200,
     randomize: true,
   });
+
+  // Deep link from the LINE daily card (?q=<question id>): show that question
+  // first. Only honoured when it belongs to this specialty; a stale/foreign id
+  // silently falls back to the normal pool.
+  if (pinnedQuestionId) {
+    const pinned = await getMcqQuestion(pinnedQuestionId, { audience: "board" });
+    if (pinned && pinned.board_specialty === specialty) {
+      questions = [pinned, ...questions.filter((q) => q.id !== pinned.id)];
+    }
+  }
 
   // ยังไม่ล็อกอิน: ฝังเฉลยเฉพาะข้อฟรี (FREE_LIMIT ข้อแรก) — ล็อกอินแล้วขอเฉลย
   // ทีละข้อผ่าน /api/mcq/reveal
@@ -220,9 +233,9 @@ export default async function BoardPracticePage({
   searchParams,
 }: {
   params: Promise<{ specialty: string }>;
-  searchParams: Promise<{ section?: string }>;
+  searchParams: Promise<{ section?: string; q?: string }>;
 }) {
-  const [{ specialty }, { section }] = await Promise.all([
+  const [{ specialty }, { section, q }] = await Promise.all([
     params,
     searchParams,
   ]);
@@ -245,7 +258,7 @@ export default async function BoardPracticePage({
       <Suspense
         fallback={<div className="text-center py-8">กำลังโหลดข้อสอบ...</div>}
       >
-        <PracticeContent specialty={specialty} section={section} />
+        <PracticeContent specialty={specialty} section={section} pinnedQuestionId={q} />
       </Suspense>
     </div>
   );

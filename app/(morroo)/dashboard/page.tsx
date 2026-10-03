@@ -99,6 +99,7 @@ export default function DashboardPage() {
   // false = never set, or still a pre-2570 value (NL1/NL3/both) → ask again
   const [levelConfirmed, setLevelConfirmed] = useState(false);
   const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const [boardSpecialty, setBoardSpecialty] = useState<string | null>(null);
   const [, setNewQuestions] = useState<{
     count: number;
     difficulty: { easy: number; medium: number; hard: number };
@@ -147,7 +148,7 @@ export default function DashboardPage() {
           supabase.rpc("get_user_accuracy_trend", { p_user_id: user.id }),
           supabase.rpc("get_user_streak", { p_user_id: user.id }),
           supabase.rpc("get_user_vs_global_avg", { p_user_id: user.id }),
-          supabase.from("profiles").select("daily_goal, line_user_id, target_exam, current_year").eq("id", user.id).single(),
+          supabase.from("profiles").select("daily_goal, line_user_id, target_exam, board_specialty, current_year").eq("id", user.id).single(),
           supabase.from("mcq_attempts")
             .select("id", { count: "exact", head: true })
             .eq("user_id", user.id)
@@ -166,6 +167,7 @@ export default function DashboardPage() {
       setTargetExam(normalizeTarget(profileRes.data?.target_exam));
       setLevelConfirmed(isExamTarget(profileRes.data?.target_exam));
       setCurrentYear(profileRes.data?.current_year ?? null);
+      setBoardSpecialty(profileRes.data?.board_specialty ?? null);
       setTodayCount(todayRes.count ?? 0);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const dailyRow = (dailyRes.data as any[])?.[0];
@@ -236,7 +238,12 @@ export default function DashboardPage() {
     <>
       {!levelConfirmed && (
         <div className="mb-4">
-          <ExamLevelCard initialTarget={targetExam} initialYear={currentYear} variant="prompt" />
+          <ExamLevelCard
+            initialTarget={targetExam}
+            initialYear={currentYear}
+            initialBoardSpecialty={boardSpecialty}
+            variant="prompt"
+          />
         </div>
       )}
       {examKinds.length > 0 && <NlExamCountdown kinds={examKinds} className="mb-4" />}

@@ -1,6 +1,6 @@
 -- ระดับการสอบ (ส่วนที่ 1 / ส่วนที่ 2 / NL2 เดิม / board) สำหรับตามนักเรียนตามระดับ
 --   1) profiles.target_exam เปลี่ยนเป็นค่าตามระบบ ศรว. ใหม่ (+ map ค่าเดิม)
---   2) get_daily_mcq รับ p_pool เพื่อเลือกข้อสอบรายวันตามระดับ (NULL = ผสม NL1+NL2 เหมือนเดิม)
+--   2) profiles.board_specialty + get_daily_mcq รับ p_pool / p_board_specialty เพื่อเลือกข้อสอบรายวันตามระดับ (NULL = ผสม NL1+NL2 เหมือนเดิม)
 --   3) exam_reminder_log กันส่งเตือนนับถอยหลังซ้ำ (service role เท่านั้น)
 
 -- ─── 1) target_exam → ระบบ ศรว. ใหม่ ───────────────────────────────────────
@@ -20,15 +20,22 @@ ALTER TABLE public.profiles
   ADD CONSTRAINT profiles_target_exam_check
   CHECK (target_exam IS NULL OR target_exam IN ('part1', 'part2', 'NL2', 'meq', 'board'));
 
--- ─── 2) get_daily_mcq(p_date, p_pool) ──────────────────────────────────────
--- p_pool: 'NL1' | 'NL2' → นักศึกษา exam_type นั้น, 'board' → audience board,
--- NULL/อื่นๆ → พฤติกรรมเดิม (student NL1+NL2). ยัง SECURITY DEFINER + grant anon
--- เหมือนเดิม เพราะ dashboard card ใช้ตอนยังไม่ login
+-- ─── 2) board_specialty + get_daily_mcq(p_date, p_pool, p_board_specialty) ──
+-- ผู้ใช้ระดับ board เลือกสาขา (อายุรศาสตร์, ศัลยศาสตร์ …) เพื่อรับข้อสอบรายวันของสาขานั้น
+ALTER TABLE public.profiles
+  ADD COLUMN IF NOT EXISTS board_specialty text REFERENCES public.board_specialties(slug) ON DELETE SET NULL;
+
+-- p_pool: 'NL1' | 'NL2' → นักศึกษา exam_type นั้น
+--         'board'      → audience board (กรองสาขาด้วย p_board_specialty ถ้าส่งมา)
+--         NULL/อื่นๆ   → พฤติกรรมเดิม (student NL1+NL2)
+-- ยัง SECURITY DEFINER + grant anon เหมือนเดิม เพราะ dashboard card ใช้ตอนยังไม่ login
 DROP FUNCTION IF EXISTS get_daily_mcq(date);
+DROP FUNCTION IF EXISTS get_daily_mcq(date, text);
 
 CREATE OR REPLACE FUNCTION get_daily_mcq(
   p_date date DEFAULT quiz_date_bangkok(),
-  p_pool text DEFAULT NULL
+  p_pool text DEFAULT NULL,
+  p_board_specialty text DEFAULT NULL
 )
 RETURNS TABLE(
   id              uuid,
@@ -55,7 +62,9 @@ LANGUAGE sql STABLE SECURITY DEFINER AS $$
   WHERE q.status = 'active'
     AND (
       CASE
-        WHEN p_pool = 'board' THEN q.audience = 'board'
+        WHEN p_pool = 'board' THEN
+          q.audience = 'board'
+          AND (p_board_specialty IS NULL OR q.board_specialty = p_board_specialty)
         WHEN p_pool IN ('NL1', 'NL2') THEN q.audience = 'student' AND q.exam_type = p_pool
         ELSE q.audience = 'student' AND q.exam_type IN ('NL1', 'NL2')
       END
@@ -64,7 +73,7 @@ LANGUAGE sql STABLE SECURITY DEFINER AS $$
   LIMIT 1;
 $$;
 
-GRANT EXECUTE ON FUNCTION get_daily_mcq(date, text) TO authenticated, anon;
+GRANT EXECUTE ON FUNCTION get_daily_mcq(date, text, text) TO authenticated, anon;
 
 -- ─── 3) exam_reminder_log ──────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS public.exam_reminder_log (

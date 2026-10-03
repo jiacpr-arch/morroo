@@ -6,7 +6,7 @@ vi.mock("./daily-mcq-line", async (importActual) => {
 });
 
 import { loadDailyQuestion } from "./daily-mcq-line";
-import { COLS, ROWS, buildRichMenu, handleMenuPostback } from "./line-menu";
+import { COLS, ROWS, buildRichMenu, handleMenuPostback, isTodayText } from "./line-menu";
 
 const QUESTION = {
   id: "q1",
@@ -23,7 +23,9 @@ const QUESTION = {
   quiz_date: "2026-10-03",
 };
 
-function fakeSupabase(profile: { id: string; target_exam: string | null } | null) {
+function fakeSupabase(
+  profile: { id: string; target_exam: string | null; board_specialty?: string | null } | null
+) {
   return {
     from(table: string) {
       if (table !== "profiles") throw new Error(`unexpected table ${table}`);
@@ -90,7 +92,7 @@ describe("handleMenuPostback", () => {
       "U1",
       "action=menu_today"
     );
-    expect(load).toHaveBeenCalledWith(expect.anything(), expect.any(String), "NL2");
+    expect(load).toHaveBeenCalledWith(expect.anything(), expect.any(String), "NL2", null);
     const data = answerData(reply);
     expect(data).toHaveLength(5);
     for (const d of data) expect(d).toMatch(/&p=NL2$/);
@@ -130,5 +132,53 @@ describe("handleMenuPostback", () => {
     load.mockResolvedValue(null);
     const reply = await handleMenuPostback(fakeSupabase(null) as never, "U1", "action=menu_today");
     expect((reply?.[0] as { text: string }).text).toContain("ยังไม่มีข้อสอบ");
+  });
+});
+
+describe("board users", () => {
+  it("gets today's card from their specialty, linked to that specialty's practice page", async () => {
+    load.mockResolvedValue({ ...QUESTION, audience: "board", board_specialty: "surgery", exam_type: null } as never);
+    const reply = await handleMenuPostback(
+      fakeSupabase({ id: "u1", target_exam: "board", board_specialty: "surgery" }) as never,
+      "U1",
+      "action=menu_today"
+    );
+    expect(load).toHaveBeenCalledWith(expect.anything(), expect.any(String), "board", "surgery");
+    const json = JSON.stringify(reply);
+    for (const d of json.match(/action=daily_answer[^"]*/g) ?? []) expect(d).toMatch(/&p=board&s=surgery$/);
+    expect(json).toContain("/board/surgery/practice");
+    expect(json).toContain("Board"); // header shows Board, not NL2
+    expect((reply?.[0] as { quickReply?: unknown }).quickReply).toBeUndefined();
+  });
+
+  it("falls back to the mixed card when the specialty has no question", async () => {
+    load.mockImplementation(async (_s, _d, pool) => (pool ? null : (QUESTION as never)));
+    const reply = await handleMenuPostback(
+      fakeSupabase({ id: "u1", target_exam: "board", board_specialty: "radiology" }) as never,
+      "U1",
+      "action=menu_today"
+    );
+    expect(load).toHaveBeenCalledTimes(2);
+    expect(JSON.stringify(reply)).not.toContain("&s=");
+    expect(JSON.stringify(reply)).not.toContain("/board/");
+  });
+
+  it("asks a board user without a specialty to pick one", async () => {
+    load.mockResolvedValue(QUESTION as never);
+    const reply = await handleMenuPostback(
+      fakeSupabase({ id: "u1", target_exam: "board", board_specialty: null }) as never,
+      "U1",
+      "action=menu_today"
+    );
+    expect(load).toHaveBeenCalledTimes(1); // no specialty → mixed card, no pool lookup
+    expect(JSON.stringify((reply?.[0] as { quickReply?: unknown }).quickReply)).toContain("action=level_menu");
+  });
+});
+
+describe("isTodayText", () => {
+  it("matches the exact words only", () => {
+    expect(isTodayText(" ข้อสอบวันนี้ ")).toBe(true);
+    expect(isTodayText("ข้อสอบ")).toBe(true);
+    expect(isTodayText("ข้อสอบ NL2 ออกอะไรบ้าง")).toBe(false);
   });
 });

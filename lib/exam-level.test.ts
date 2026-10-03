@@ -3,6 +3,7 @@ import {
   EXAM_TARGETS,
   examKindsForTarget,
   examTargetLabel,
+  isBoardSpecialtySlug,
   isCurrentYear,
   isExamTarget,
   isMcqPool,
@@ -48,7 +49,10 @@ describe("exam-level", () => {
     expect(mcqPoolForTarget("NL2")).toBe("NL2");
     expect(mcqPoolForTarget("part2")).toBe("NL2");
     expect(mcqPoolForTarget("meq")).toBe("NL2"); // MEQ has no daily MCQ — clinical NL2 card
-    expect(mcqPoolForTarget("board")).toBeNull(); // board daily card needs a /board deep link first
+    expect(mcqPoolForTarget("board")).toBeNull(); // no specialty yet → mixed NL card
+    expect(mcqPoolForTarget("board", "internal_medicine")).toBe("board");
+    expect(mcqPoolForTarget("board", "Bad Slug!")).toBeNull();
+    expect(mcqPoolForTarget("part1", "internal_medicine")).toBeNull(); // specialty only matters for board
     expect(mcqPoolForTarget("NL1")).toBeNull(); // legacy → part1
     expect(mcqPoolForTarget(null)).toBeNull();
   });
@@ -66,6 +70,9 @@ describe("exam-level", () => {
   it("sends MEQ users to the MEQ bank", () => {
     expect(practicePathForTarget("meq")).toBe("/exams");
     expect(practicePathForTarget("part1")).toBe("/nl/practice");
+    expect(practicePathForTarget("board", "ob_gyn")).toBe("/board/ob_gyn/practice");
+    expect(practicePathForTarget("board")).toBe("/board");
+    expect(practicePathForTarget("board", "../etc")).toBe("/board");
     expect(practicePathForTarget(null)).toBe("/nl/practice");
   });
 
@@ -74,6 +81,15 @@ describe("exam-level", () => {
     expect(practiceExamForTarget("NL1")).toBe("all");
     expect(practiceExamForTarget("NL2")).toBe("NL2");
     expect(practiceExamForTarget(null)).toBe("NL2");
+  });
+
+  it("accepts board specialty slugs only in slug shape", () => {
+    expect(isBoardSpecialtySlug("emergency_medicine")).toBe(true);
+    expect(isBoardSpecialtySlug("emergency-medicine")).toBe(true);
+    expect(isBoardSpecialtySlug("")).toBe(false);
+    expect(isBoardSpecialtySlug("a b")).toBe(false);
+    expect(isBoardSpecialtySlug("Upper")).toBe(false);
+    expect(isBoardSpecialtySlug(null)).toBe(false);
   });
 
   it("labels targets and keeps LINE quick-reply labels short", () => {

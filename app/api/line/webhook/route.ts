@@ -15,7 +15,7 @@ import { detectTrialIntent, handleBotIntent, handleEmailCapture } from "@/lib/bo
 import { handleAdsAutofixPostback } from "@/lib/ads-autofix-line";
 import { handleDailyMcqPostback } from "@/lib/daily-mcq-line";
 import { handleLevelPostback, isLevelMenuText, levelMenuFor } from "@/lib/line-level";
-import { handleMenuPostback } from "@/lib/line-menu";
+import { handleMenuPostback, isTodayText } from "@/lib/line-menu";
 import {
   buildFollowGreeting,
   buildNonTextGreeting,
@@ -122,6 +122,13 @@ export async function POST(request: NextRequest) {
           event.replyToken,
           await levelMenuFor(supabase, lineUserId)
         );
+        continue;
+      }
+
+      // "ข้อสอบ" / "ข้อสอบวันนี้" → same card as the rich-menu button (no chatbot call).
+      if (isTodayText(rawText)) {
+        const reply = await handleMenuPostback(supabase, lineUserId, "action=menu_today");
+        if (reply) await replyOrPushLineMessage(lineUserId, event.replyToken, reply);
         continue;
       }
 

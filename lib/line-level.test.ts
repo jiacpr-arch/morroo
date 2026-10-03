@@ -1,12 +1,39 @@
 import { describe, expect, it, vi } from "vitest";
-import { buildLevelMenu, handleLevelPostback, isLevelMenuText, levelMenuFor } from "./line-level";
+import {
+  buildBoardMenu,
+  buildLevelMenu,
+  handleLevelPostback,
+  isLevelMenuText,
+  levelMenuFor,
+} from "./line-level";
 
-function fakeSupabase(opts: { profile?: { id: string; target_exam: string | null } | null; updateError?: boolean } = {}) {
-  const { profile = { id: "u1", target_exam: null }, updateError = false } = opts;
+const SPECIALTIES = [
+  { slug: "internal_medicine", name_th: "อายุรศาสตร์", short_name_th: "อายุรกรรม" },
+  { slug: "surgery", name_th: "ศัลยศาสตร์", short_name_th: null },
+  { slug: "ob_gyn", name_th: "สูติศาสตร์-นรีเวชวิทยา", short_name_th: null },
+];
+
+type FakeProfile = { id: string; target_exam: string | null; board_specialty?: string | null };
+
+function fakeSupabase(
+  opts: { profile?: FakeProfile | null; updateError?: boolean; specialties?: typeof SPECIALTIES } = {}
+) {
+  const {
+    profile = { id: "u1", target_exam: null, board_specialty: null },
+    updateError = false,
+    specialties = SPECIALTIES,
+  } = opts;
   const eqUpdate = vi.fn(() => Promise.resolve({ error: updateError ? { message: "boom" } : null }));
   const update = vi.fn(() => ({ eq: eqUpdate }));
   const client = {
     from(table: string) {
+      if (table === "board_specialties") {
+        return {
+          select: () => ({
+            eq: () => ({ order: () => Promise.resolve({ data: specialties, error: null }) }),
+          }),
+        };
+      }
       if (table !== "profiles") throw new Error(`unexpected table: ${table}`);
       return {
         select: () => ({
@@ -88,5 +115,65 @@ describe("handleLevelPostback", () => {
     vi.spyOn(console, "error").mockImplementation(() => {});
     const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=part1", NOW);
     expect((reply?.[0] as { text: string }).text).toContain("ไม่สำเร็จ");
+  });
+});
+
+describe("board specialty selection", () => {
+  it("choosing Board saves the level then asks for a specialty", async () => {
+    const { client, update } = fakeSupabase();
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_level&v=board", NOW);
+    expect(update).toHaveBeenCalledWith({ target_exam: "board" });
+    expect(reply).toHaveLength(2);
+    const menu = reply?.[1] as { quickReply?: { items: { action: { data: string; label: string } }[] } };
+    expect(menu.quickReply?.items.map((i) => i.action.data)).toEqual([
+      "action=set_board&v=internal_medicine",
+      "action=set_board&v=surgery",
+      "action=set_board&v=ob_gyn",
+    ]);
+    // short name preferred, and always within LINE's 20-char label cap
+    expect(menu.quickReply?.items[0].action.label).toBe("อายุรกรรม");
+    for (const i of menu.quickReply?.items ?? []) expect(i.action.label.length).toBeLessThanOrEqual(20);
+  });
+
+  it("saves the chosen specialty together with the board level", async () => {
+    const { client, update, eqUpdate } = fakeSupabase();
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_board&v=surgery", NOW);
+    expect(update).toHaveBeenCalledWith({ target_exam: "board", board_specialty: "surgery" });
+    expect(eqUpdate).toHaveBeenCalledWith("id", "u1");
+    expect((reply?.[0] as { text: string }).text).toContain("ศัลยศาสตร์");
+  });
+
+  it("rejects an unknown or malformed specialty and shows the menu again", async () => {
+    for (const v of ["ghost", "Bad%20Slug", ""]) {
+      const { client, update } = fakeSupabase();
+      const reply = await handleLevelPostback(client as never, "U1", `action=set_board&v=${v}`, NOW);
+      expect(update).not.toHaveBeenCalled();
+      expect((reply?.[0] as { quickReply?: unknown }).quickReply).toBeTruthy();
+    }
+  });
+
+  it("does not save for an unlinked LINE user", async () => {
+    const { client, update } = fakeSupabase({ profile: null });
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_board&v=surgery", NOW);
+    expect(update).not.toHaveBeenCalled();
+    expect((reply?.[0] as { text: string }).text).toContain("MORROO-");
+  });
+
+  it("reports a failed save", async () => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    const { client } = fakeSupabase({ updateError: true });
+    const reply = await handleLevelPostback(client as never, "U1", "action=set_board&v=surgery", NOW);
+    expect((reply?.[0] as { text: string }).text).toContain("ไม่สำเร็จ");
+  });
+
+  it("marks the current specialty in the menu text", () => {
+    const msg = buildBoardMenu(SPECIALTIES, "ob_gyn");
+    expect((msg as { text: string }).text).toContain("สูติศาสตร์-นรีเวชวิทยา");
+  });
+
+  it("caps the menu at LINE's 13 quick replies", () => {
+    const many = Array.from({ length: 20 }, (_, i) => ({ slug: `s${i}`, name_th: `สาขา ${i}` }));
+    const msg = buildBoardMenu(many, null) as { quickReply: { items: unknown[] } };
+    expect(msg.quickReply.items).toHaveLength(13);
   });
 });

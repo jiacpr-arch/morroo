@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { createClient } from "@/lib/supabase/client";
 import {
   CURRENT_YEARS,
   EXAM_TARGETS,
@@ -12,18 +13,54 @@ import {
 interface Props {
   initialTarget: ExamTarget | null;
   initialYear: number | null;
+  /** บอร์ดสาขาที่เลือกไว้ (board_specialties.slug) */
+  initialBoardSpecialty?: string | null;
   /** "prompt" = dashboard nudge (shown until a level is set); "settings" = always-editable card. */
   variant?: "prompt" | "settings";
 }
 
 /** เลือกชั้นปี + ระดับข้อสอบ — ข้อสอบรายวัน LINE, เตือนวันสอบ และหน้าฝึกจะตามระดับนี้ */
-export default function ExamLevelCard({ initialTarget, initialYear, variant = "settings" }: Props) {
+interface BoardOption {
+  slug: string;
+  name_th: string;
+  short_name_th: string | null;
+}
+
+export default function ExamLevelCard({
+  initialTarget,
+  initialYear,
+  initialBoardSpecialty = null,
+  variant = "settings",
+}: Props) {
   const [target, setTarget] = useState<ExamTarget | null>(initialTarget);
   const [year, setYear] = useState<number | null>(initialYear);
+  const [boardSpecialty, setBoardSpecialty] = useState<string | null>(initialBoardSpecialty);
+  const [boardOptions, setBoardOptions] = useState<BoardOption[]>([]);
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState<"idle" | "saved" | "error">("idle");
 
-  async function save(next: { target_exam?: ExamTarget; current_year?: number }) {
+  // Board has many specialties — load the list (public-readable) once Board is the level.
+  useEffect(() => {
+    if (target !== "board" || boardOptions.length > 0) return;
+    let cancelled = false;
+    (async () => {
+      const { data } = await createClient()
+        .from("board_specialties")
+        .select("slug, name_th, short_name_th")
+        .eq("is_active", true)
+        .order("display_order", { ascending: true });
+      if (!cancelled) setBoardOptions((data as BoardOption[] | null) ?? []);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [target, boardOptions.length]);
+
+  async function save(next: {
+    target_exam?: ExamTarget;
+    current_year?: number;
+    board_specialty?: string;
+  }) {
     setSaving(true);
     setStatus("idle");
     try {
@@ -55,6 +92,12 @@ export default function ExamLevelCard({ initialTarget, initialYear, variant = "s
       setYear(prevYear);
       setTarget(prevTarget);
     }
+  }
+
+  async function pickBoardSpecialty(slug: string) {
+    const prev = boardSpecialty;
+    setBoardSpecialty(slug);
+    if (!(await save({ board_specialty: slug }))) setBoardSpecialty(prev);
   }
 
   async function pickTarget(t: ExamTarget) {
@@ -114,6 +157,37 @@ export default function ExamLevelCard({ initialTarget, initialYear, variant = "s
           </button>
         ))}
       </div>
+
+      {target === "board" && (
+        <div className="mt-4">
+          <p className="text-xs font-semibold text-ink-soft">สาขา Board ที่เตรียมสอบ</p>
+          {boardOptions.length === 0 ? (
+            <p className="mt-2 text-sm text-ink-soft">กำลังโหลดสาขา…</p>
+          ) : (
+            <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="สาขา Board">
+              {boardOptions.map((b) => (
+                <button
+                  key={b.slug}
+                  type="button"
+                  disabled={saving}
+                  aria-pressed={boardSpecialty === b.slug}
+                  onClick={() => pickBoardSpecialty(b.slug)}
+                  className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                    boardSpecialty === b.slug
+                      ? "border-brand bg-brand text-white"
+                      : "border-surface-border bg-white text-ink-soft hover:border-brand"
+                  }`}
+                >
+                  {b.short_name_th ?? b.name_th}
+                </button>
+              ))}
+            </div>
+          )}
+          {!boardSpecialty && boardOptions.length > 0 && (
+            <p className="mt-2 text-xs text-ink-soft">เลือกสาขา เพื่อรับข้อสอบรายวันของสาขานั้น</p>
+          )}
+        </div>
+      )}
 
       {target === "meq" && (
         <p className="mt-3 text-sm text-ink-soft">

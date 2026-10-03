@@ -30,6 +30,12 @@ export const RICH_MENU_IMAGE_PATH = "/line/rich-menu-main.jpg";
 export const RICH_MENU_NAME_PREFIX = "morroo-main";
 export const MENU_TODAY_ACTION = "menu_today";
 
+const TODAY_TEXTS = new Set(["ข้อสอบ", "ข้อสอบวันนี้", "today"]);
+/** พิมพ์ "ข้อสอบ" / "ข้อสอบวันนี้" = กดปุ่ม ข้อสอบวันนี้ (เทียบตรงตัวหลัง trim/lowercase) */
+export function isTodayText(text: string): boolean {
+  return TODAY_TEXTS.has(text.trim().toLowerCase());
+}
+
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
 
 // แบรนด์พี่น้องในแถบล่าง
@@ -104,15 +110,20 @@ export async function handleMenuPostback(
   // profiles.line_user_id has no unique constraint — take at most one row.
   const { data } = await supabase
     .from("profiles")
-    .select("id, target_exam")
+    .select("id, target_exam, board_specialty")
     .eq("line_user_id", lineUserId)
     .limit(1);
-  const profile = (data?.[0] as { id: string; target_exam: string | null } | undefined) ?? null;
+  const profile =
+    (data?.[0] as
+      | { id: string; target_exam: string | null; board_specialty: string | null }
+      | undefined) ?? null;
 
   const date = bangkokToday();
-  const pool = mcqPoolForTarget(profile?.target_exam);
-  let question = pool ? await loadDailyQuestion(supabase, date, pool) : null;
+  const pool = mcqPoolForTarget(profile?.target_exam, profile?.board_specialty);
+  const specialty = pool === "board" ? (profile?.board_specialty ?? null) : null;
+  let question = pool ? await loadDailyQuestion(supabase, date, pool, specialty) : null;
   const usedPool = question ? pool : null;
+  const usedSpecialty = question ? specialty : null;
   question = question ?? (await loadDailyQuestion(supabase, date));
   if (!question) {
     return [
@@ -127,11 +138,16 @@ export async function handleMenuPostback(
 
   const card = buildDailyMcqFlex({
     question: toBubbleQuestionData(question),
-    practiceUrl: dailyPracticeUrl(question.id, date, "rich_menu"),
+    practiceUrl: dailyPracticeUrl(question.id, date, "rich_menu", usedSpecialty),
     pool: usedPool,
+    boardSpecialty: usedSpecialty,
   });
-  // ผูกบัญชีแล้วแต่ยังไม่ได้ตั้งระดับตามระบบใหม่ → ชวนตั้งระดับ
-  if (profile && !isExamTarget(profile.target_exam)) {
+  // ผูกบัญชีแล้วแต่ยังไม่ได้ตั้งระดับตามระบบใหม่ (หรือเป็น Board แต่ยังไม่เลือกสาขา) → ชวนตั้งระดับ
+  if (
+    profile &&
+    (!isExamTarget(profile.target_exam) ||
+      (profile.target_exam === "board" && !profile.board_specialty))
+  ) {
     return [{ ...card, quickReply: SET_LEVEL_CHIP }];
   }
   return [card];

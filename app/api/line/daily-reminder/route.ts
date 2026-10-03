@@ -69,21 +69,26 @@ async function handleWeekday(
   // One card per exam-level pool (NL1 / NL2 / board / mixed), built once and
   // reused for every member of that pool. A pool with no active question
   // falls back to the mixed card so nobody is skipped.
-  const messageByPool = new Map<McqPool | null, ReturnType<typeof buildDailyMcqFlex>>();
-  const messageFor = async (pool: McqPool | null) => {
-    const cached = messageByPool.get(pool);
+  const messageByPool = new Map<string, ReturnType<typeof buildDailyMcqFlex>>();
+  const messageFor = async (pool: McqPool | null, boardSpecialty: string | null) => {
+    const key = `${pool ?? "mixed"}:${boardSpecialty ?? ""}`;
+    const cached = messageByPool.get(key);
     if (cached) return cached;
-    const poolQuestion = pool ? await loadDailyQuestion(supabase, quizDate, pool) : null;
+    const poolQuestion = pool
+      ? await loadDailyQuestion(supabase, quizDate, pool, boardSpecialty)
+      : null;
     const usedPool = poolQuestion ? pool : null;
+    const usedSpecialty = poolQuestion && pool === "board" ? boardSpecialty : null;
     const q = poolQuestion ?? question;
     const built = buildDailyMcqFlex({
       question: toBubbleQuestionData(q),
-      practiceUrl: dailyPracticeUrl(q.id, quizDate, "push"),
+      practiceUrl: dailyPracticeUrl(q.id, quizDate, "push", usedSpecialty),
       yesterdayStats,
       newCount: newCount ?? 0,
       pool: usedPool,
+      boardSpecialty: usedSpecialty,
     });
-    messageByPool.set(pool, built);
+    messageByPool.set(key, built);
     return built;
   };
 
@@ -92,7 +97,7 @@ async function handleWeekday(
   let failed = 0;
   for (const member of audience) {
     try {
-      const message = await messageFor(member.pool);
+      const message = await messageFor(member.pool, member.boardSpecialty);
       const ok = await sendLineMessage(member.lineUserId, [message]);
       if (ok) sent += 1;
       else failed += 1;

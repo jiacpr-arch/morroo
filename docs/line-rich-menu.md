@@ -20,9 +20,9 @@
 
 | ปุ่ม | Action |
 |---|---|
-| ข้อสอบวันนี้ | postback `action=menu_today` → การ์ดข้อสอบวันนี้ตามระดับ (reply ฟรี ไม่กินโควต้า) |
-| เปลี่ยนระดับสอบ | postback `action=level_menu` → quick reply ระดับ (`lib/line-level.ts`) |
-| ฝึกทำข้อสอบ | LIFF `/practice` → MEQ ไป `/exams`, ระดับอื่นไป `/nl/practice` (เปิดตามระดับอัตโนมัติ) |
+| ข้อสอบวันนี้ | postback `action=menu_today` (หรือพิมพ์ "ข้อสอบ" / "ข้อสอบวันนี้") → การ์ดข้อสอบวันนี้ตามระดับ; Board ได้ข้อของสาขาที่เลือก (reply ฟรี ไม่กินโควต้า) |
+| เปลี่ยนระดับสอบ | postback `action=level_menu` → quick reply ระดับ (`lib/line-level.ts`); เลือก **Board** แล้วตามด้วยเมนูเลือกสาขา (ทุกสาขาที่เปิดอยู่ใน `board_specialties`) |
+| ฝึกทำข้อสอบ | LIFF `/practice` → MEQ ไป `/exams`, ระดับอื่นไป `/nl/practice` (เปิดตามระดับอัตโนมัติ) | · Board → `/board/<สาขา>/practice` (ยังไม่เลือกสาขา → `/board`)
 | ผลการเรียน | LIFF `/dashboard` |
 | นับถอยหลังวันสอบ | LIFF `/nl/calendar` |
 | แพ็กเกจ / ต่ออายุ | LIFF `/pricing` |

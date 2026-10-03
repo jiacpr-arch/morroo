@@ -93,6 +93,11 @@ export function isMcqPool(v: unknown): v is McqPool {
   return typeof v === "string" && POOLS.has(v);
 }
 
+/** slug ของ board_specialties (เช่น internal_medicine) — เช็กรูปแบบเท่านั้น; ตัวตนจริงเช็กกับ DB/FK */
+export function isBoardSpecialtySlug(v: unknown): v is string {
+  return typeof v === "string" && /^[a-z0-9][a-z0-9_-]{0,48}$/.test(v);
+}
+
 export function isCurrentYear(v: unknown): v is number {
   return typeof v === "number" && Number.isInteger(v) && v >= 1 && v <= 6;
 }
@@ -111,11 +116,16 @@ export function suggestTargetFromYear(year: number): ExamTarget | null {
 /**
  * คลังข้อสอบรายวันของระดับนี้. null = ผสม NL1+NL2 (ตรงกับส่วนที่ 1 พอดี).
  * ส่วนที่ 2 (OSCE) ไม่มีคลัง MCQ จึงใช้ข้อคลินิก NL2.
- * board ยังเป็น null โดยตั้งใจ: ลิงก์ "ทำในเว็บ" ของการ์ดรายวัน (/nl/practice?q=)
- * รองรับเฉพาะข้อ audience=student — ถ้าจะส่งข้อ board ต้องทำลิงก์ฝั่ง /board ก่อน
+ * board ใช้คลัง "board" เฉพาะเมื่อเลือกสาขาแล้ว (ลิงก์ทำในเว็บไป /board/<สาขา>/practice);
+ * ยังไม่เลือกสาขา = null (ผสม NL) เพราะ board คลังรวมทุกสาขาไม่ตรงกับสาขาของผู้ใช้
  */
-export function mcqPoolForTarget(t: string | null | undefined): McqPool | null {
+export function mcqPoolForTarget(
+  t: string | null | undefined,
+  boardSpecialty?: string | null
+): McqPool | null {
   switch (normalizeTarget(t)) {
+    case "board":
+      return isBoardSpecialtySlug(boardSpecialty) ? "board" : null;
     case "NL2":
     case "part2":
     case "meq":
@@ -141,9 +151,19 @@ export function examKindsForTarget(t: string | null | undefined): ExamKind[] {
   }
 }
 
-/** หน้าฝึกหลักของระดับนี้ — MEQ ไปคลัง MEQ, ระดับอื่นไปคลัง MCQ */
-export function practicePathForTarget(t: string | null | undefined): string {
-  return normalizeTarget(t) === "meq" ? "/exams" : "/nl/practice";
+/** หน้าฝึกหลักของระดับนี้ — MEQ → /exams, Board → สาขาที่เลือก (หรือ /board), อื่นๆ → คลัง MCQ */
+export function practicePathForTarget(
+  t: string | null | undefined,
+  boardSpecialty?: string | null
+): string {
+  switch (normalizeTarget(t)) {
+    case "meq":
+      return "/exams";
+    case "board":
+      return isBoardSpecialtySlug(boardSpecialty) ? `/board/${boardSpecialty}/practice` : "/board";
+    default:
+      return "/nl/practice";
+  }
 }
 
 /** exam ของหน้า /nl/practice (ไม่ได้ตั้งระดับ = NL2 เหมือนเดิม) */

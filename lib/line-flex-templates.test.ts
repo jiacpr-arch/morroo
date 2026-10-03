@@ -82,6 +82,28 @@ describe("buildDailyMcqBubble", () => {
     expect(dataStrings).toContain("action=level_menu");
   });
 
+  it("carries the board specialty after the pool, only for the board pool", () => {
+    const board = buildDailyMcqBubble({
+      question: QUESTION,
+      practiceUrl: "https://x.test",
+      pool: "board",
+      boardSpecialty: "internal_medicine",
+    });
+    for (const d of collectPostbackData(board).filter((x) => x.startsWith("action=daily_answer"))) {
+      expect(d).toMatch(/&p=board&s=internal_medicine$/);
+      expect(d.length).toBeLessThan(300);
+    }
+    const nl = buildDailyMcqBubble({
+      question: QUESTION,
+      practiceUrl: "https://x.test",
+      pool: "NL1",
+      boardSpecialty: "internal_medicine",
+    });
+    for (const d of collectPostbackData(nl).filter((x) => x.startsWith("action=daily_answer"))) {
+      expect(d).not.toContain("&s=");
+    }
+  });
+
   it("carries the exam-level pool in each answer postback when given", () => {
     const bubble = buildDailyMcqBubble({
       question: QUESTION,
