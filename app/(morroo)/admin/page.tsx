@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { ActivityHeatmap } from "@/components/ActivityHeatmap";
+import RichMenuInstallButton from "@/components/admin/RichMenuInstallButton";
 import {
   formatActionItemValue,
   severityIcon,
@@ -173,6 +174,11 @@ export default function AdminDashboard() {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* LINE rich menu — lib/line-menu.ts */}
+      <div className="mb-8">
+        <RichMenuInstallButton />
       </div>
 
       {/* Action queue — same list as the morning LINE digest */}

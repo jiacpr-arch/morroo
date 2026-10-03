@@ -12,7 +12,12 @@ type LineTextMessage = {
   text: string;
   quickReply?: { items: LineQuickReplyItem[] };
 };
-type LineFlexMessage = { type: "flex"; altText: string; contents: Record<string, unknown> };
+type LineFlexMessage = {
+  type: "flex";
+  altText: string;
+  contents: Record<string, unknown>;
+  quickReply?: { items: LineQuickReplyItem[] };
+};
 export type LineMessage = LineTextMessage | LineFlexMessage;
 
 // ─── Quota awareness ───────────────────────────────────────────────────────
