@@ -16,6 +16,9 @@ import {
   Pin,
   PinOff,
   Send,
+  RefreshCw,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 
 interface NewsRow {
@@ -31,6 +34,11 @@ interface NewsRow {
   fb_last_error: string | null;
   line_broadcast_at: string | null;
   line_last_error: string | null;
+  /** manual = แอดมินเขียน, auto = ดึงจาก RSS (cron exam-news-fetch) */
+  origin: "manual" | "auto";
+  is_active: boolean;
+  exam_schedule: boolean;
+  source_name: string | null;
 }
 
 function statusBadge(sent: boolean, error: string | null): { label: string; className: string } {
@@ -59,6 +67,8 @@ export default function AdminNewsPage() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [items, setItems] = useState<NewsRow[]>([]);
   const [busy, setBusy] = useState<string | null>(null);
+  const [fetching, setFetching] = useState(false);
+  const [fetchMsg, setFetchMsg] = useState<{ ok: boolean; text: string } | null>(null);
 
   async function load() {
     const res = await fetch("/api/admin/news");
@@ -102,6 +112,45 @@ export default function AdminNewsPage() {
     });
     await load();
     setBusy(null);
+  }
+
+  async function toggleActive(item: NewsRow) {
+    setBusy(item.id);
+    await fetch(`/api/admin/news/${item.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ is_active: !item.is_active }),
+    });
+    await load();
+    setBusy(null);
+  }
+
+  async function fetchNow() {
+    setFetching(true);
+    setFetchMsg(null);
+    try {
+      const res = await fetch("/api/admin/news/fetch", { method: "POST" });
+      const json = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        data?: { added: number; skipped: number; fresh: number; feedErrors: string[] };
+      };
+      if (res.ok && json.data) {
+        const d = json.data;
+        setFetchMsg({
+          ok: true,
+          text: `เพิ่ม ${d.added} ข่าว · ข้าม/ซ่อน ${d.skipped} · ใหม่ที่ตรวจ ${d.fresh}${
+            d.feedErrors.length ? ` · ฟีดผิดพลาด ${d.feedErrors.length}` : ""
+          }`,
+        });
+        await load();
+      } else {
+        setFetchMsg({ ok: false, text: json.error ?? `ไม่สำเร็จ (${res.status})` });
+      }
+    } catch {
+      setFetchMsg({ ok: false, text: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้ง" });
+    } finally {
+      setFetching(false);
+    }
   }
 
   async function resend(item: NewsRow) {
@@ -155,12 +204,34 @@ export default function AdminNewsPage() {
             โพสต์ product update และข่าวสอบ — บทความ blog จะ sync เข้ามาอัตโนมัติ
           </p>
         </div>
-        <Link href="/admin/news/new">
-          <Button className="gap-2">
-            <Plus className="h-4 w-4" /> เพิ่มข่าวใหม่
+        <div className="flex flex-wrap items-center justify-end gap-2">
+          <Button variant="outline" className="gap-2" disabled={fetching} onClick={fetchNow}>
+            {fetching ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <RefreshCw className="h-4 w-4" />
+            )}
+            ดึงข่าวตอนนี้
           </Button>
-        </Link>
+          <Link href="/admin/news/new">
+            <Button className="gap-2">
+              <Plus className="h-4 w-4" /> เพิ่มข่าวใหม่
+            </Button>
+          </Link>
+        </div>
       </div>
+      <p className="mb-4 text-xs text-muted-foreground">
+        ข่าวสอบแพทย์ดึงอัตโนมัติทุกเช้า (06:15) — ที่ AI ว่าเกี่ยวข้องขึ้นหน้า /news ทันที ที่ไม่เกี่ยวถูกซ่อนไว้
+        ซ่อน/แสดงได้ที่ปุ่มด้านขวา ข่าวอัตโนมัติจะไม่ถูกโพสต์ Facebook/LINE เอง
+      </p>
+      {fetchMsg && (
+        <p
+          className={`mb-4 text-sm ${fetchMsg.ok ? "text-green-700" : "text-red-600"}`}
+          aria-live="polite"
+        >
+          {fetchMsg.text}
+        </p>
+      )}
 
       {items.length === 0 ? (
         <Card>
@@ -171,7 +242,7 @@ export default function AdminNewsPage() {
       ) : (
         <div className="space-y-3">
           {items.map((item) => (
-            <Card key={item.id}>
+            <Card key={item.id} className={item.is_active ? undefined : "opacity-60"}>
               <CardContent className="flex flex-col gap-3 py-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex-1">
                   <div className="mb-1.5 flex flex-wrap items-center gap-2">
@@ -181,6 +252,17 @@ export default function AdminNewsPage() {
                     {item.source_section && (
                       <Badge variant="outline">{item.source_section}</Badge>
                     )}
+                    {item.origin === "auto" && (
+                      <Badge className="bg-sky-100 text-sky-700">อัตโนมัติ</Badge>
+                    )}
+                    {!item.is_active && (
+                      <Badge className="bg-gray-200 text-gray-700">ซ่อนอยู่</Badge>
+                    )}
+                    {item.exam_schedule && (
+                      <Badge className="bg-orange-100 text-orange-700">
+                        กำหนดการสอบ — เช็ก exam-dates
+                      </Badge>
+                    )}
                     {item.pinned && (
                       <Badge className="bg-yellow-100 text-yellow-800">
                         <Pin className="mr-1 h-3 w-3" /> ปักหมุด
@@ -189,7 +271,12 @@ export default function AdminNewsPage() {
                     <span className="text-xs text-muted-foreground">
                       {new Date(item.published_at).toLocaleDateString("th-TH")}
                     </span>
-                    {item.source_type !== "blog" && item.source_type !== "external_health" && (
+                    {item.origin === "auto" && item.source_name && (
+                      <span className="text-xs text-muted-foreground">{item.source_name}</span>
+                    )}
+                    {item.origin === "manual" &&
+                      item.source_type !== "blog" &&
+                      item.source_type !== "external_health" && (
                       <>
                         {(() => {
                           const fb = statusBadge(!!item.fb_post_id, item.fb_last_error);
@@ -214,7 +301,27 @@ export default function AdminNewsPage() {
                   </p>
                 </div>
                 <div className="flex gap-2 sm:flex-col sm:items-end">
-                  {item.source_type !== "blog" && item.source_type !== "external_health" && (
+                  {item.origin === "auto" && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      disabled={busy === item.id}
+                      onClick={() => toggleActive(item)}
+                    >
+                      {item.is_active ? (
+                        <>
+                          <EyeOff className="mr-1 h-4 w-4" /> ซ่อน
+                        </>
+                      ) : (
+                        <>
+                          <Eye className="mr-1 h-4 w-4" /> แสดง
+                        </>
+                      )}
+                    </Button>
+                  )}
+                  {item.origin === "manual" &&
+                    item.source_type !== "blog" &&
+                    item.source_type !== "external_health" && (
                     <Button
                       size="sm"
                       variant="outline"
