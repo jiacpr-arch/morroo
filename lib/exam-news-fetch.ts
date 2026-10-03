@@ -60,7 +60,7 @@ export function buildAdminAlertText(titles: string[], examScheduleAdded: number)
     ...(examScheduleAdded > 0
       ? [
           "",
-          `📅 ${examScheduleAdded} ข่าวเกี่ยวกับกำหนดการ/เกณฑ์สอบ — ตรวจแล้วอัปเดต lib/exam-dates.ts (วันที่ + confirmed: true)`,
+          `📅 ${examScheduleAdded} ข่าวเกี่ยวกับกำหนดการ/เกณฑ์สอบ — ปฏิทินสอบจะอัปเดตเองจากประกาศ ศรว. — ตรวจได้ที่ /admin/exam-dates`,
         ]
       : []),
     "",

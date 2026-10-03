@@ -1,11 +1,11 @@
 /**
  * Exam-watch cron — เฝ้าหน้าข่าว ศรว. (cmathai.org/news) วันละครั้ง
  *
- * เจอบรรทัดประกาศใหม่ (เทียบ snapshot ใน app_settings) → push LINE หา admin
- * เพื่อให้มาอัพเดทกำหนดการสอบใน lib/exam-dates.ts — ปฏิทิน /nl/calendar
- * และแบนเนอร์นับถอยหลังอ่านจากไฟล์นั้นไฟล์เดียว
+ * 1) อ่านประกาศ ศรว. แล้วอัปเดตปฏิทินสอบ (ตาราง exam_rounds) อัตโนมัติ ไม่ต้องมีคนยืนยัน
+ *    — ดู lib/exam-round-scan.ts (AI สกัดวันสอบ + ตัวกันพลาด + แจ้งแอดมินทุกการเปลี่ยน)
+ * 2) เจอบรรทัดประกาศใหม่ (เทียบ snapshot ใน app_settings) → push LINE หา admin
  *
- * ครั้งแรก (ยังไม่มี snapshot) จะเก็บ baseline เงียบๆ ไม่แจ้งเตือน
+ * ครั้งแรก (ยังไม่มี snapshot) จะเก็บ baseline เงียบๆ ไม่แจ้งเตือน (การสแกนรอบแรกยังทำงานปกติ)
  *
  * Schedule via vercel.json: "30 0 * * *" (07:30 เวลาไทย)
  * Auth: Authorization: Bearer $CRON_SECRET (or ?secret=$BLOG_GENERATE_SECRET).
@@ -14,6 +14,7 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
+import { scanExamAnnouncements } from "@/lib/exam-round-scan";
 import {
   EXAM_WATCH_SETTINGS_KEY,
   buildAdminAlert,
@@ -23,7 +24,8 @@ import {
 import { withCronRun } from "@/lib/cron-runs";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+// อ่านประกาศ + PDF + เรียก AI หลายไฟล์ — เผื่อเวลา
+export const maxDuration = 300;
 
 const WATCH_URL = "https://cmathai.org/news";
 
@@ -43,10 +45,32 @@ function isAuthorized(request: Request): boolean {
   return false;
 }
 
+/** อัปเดตปฏิทินสอบอัตโนมัติ — ไม่ throw: ถ้าพังก็ไม่ควรกระทบการเฝ้าประกาศเดิม */
+async function runRoundScan() {
+  if (!process.env.ANTHROPIC_API_KEY) return { skipped: "ANTHROPIC_API_KEY not set" };
+  try {
+    const r = await scanExamAnnouncements(createAdminClient(), { maxPages: 3, alert: true });
+    return {
+      listFetched: r.listFetched,
+      listError: r.listError,
+      linksFound: r.linksFound,
+      pagesRead: r.pages.length,
+      changes: r.changes,
+      applied: r.applied,
+      suspicious: r.suspicious,
+    };
+  } catch (err) {
+    console.error("[exam-watch] round scan failed:", err);
+    return { error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
 async function handleGet(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  const scan = await runRoundScan();
 
   let html: string;
   try {
@@ -63,14 +87,14 @@ async function handleGet(request: Request) {
   } catch (e) {
     // เว็บ ศรว. ล่มชั่วคราวไม่ใช่เหตุต้องปลุก admin — log ไว้พอ พรุ่งนี้ลองใหม่
     console.error("[exam-watch] fetch failed:", e);
-    return NextResponse.json({ ok: false, error: "fetch failed" });
+    return NextResponse.json({ ok: false, error: "fetch failed", scan });
   }
 
   const current = extractAnnouncementLines(html);
   if (current.length === 0) {
     // สกัดอะไรไม่ได้เลย = layout เปลี่ยนใหญ่หรือโดน block — อย่าทับ snapshot เดิม
     console.error("[exam-watch] extracted 0 lines — keeping old snapshot");
-    return NextResponse.json({ ok: false, error: "no lines extracted" });
+    return NextResponse.json({ ok: false, error: "no lines extracted", scan });
   }
 
   const supabase = createAdminClient();
@@ -112,10 +136,11 @@ async function handleGet(request: Request) {
     updated_at: new Date().toISOString(),
   });
   if (upsertErr) {
-    return NextResponse.json({ error: upsertErr.message }, { status: 500 });
+    return NextResponse.json({ error: upsertErr.message, scan }, { status: 500 });
   }
 
   return NextResponse.json({
+    scan,
     ok: true,
     baseline: !prev,
     linesOnPage: current.length,

@@ -260,7 +260,7 @@ export default function AdminNewsPage() {
                     )}
                     {item.exam_schedule && (
                       <Badge className="bg-orange-100 text-orange-700">
-                        กำหนดการสอบ — เช็ก exam-dates
+                        กำหนดการสอบ — ตรวจปฏิทินสอบ
                       </Badge>
                     )}
                     {item.pinned && (

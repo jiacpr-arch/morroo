@@ -3,7 +3,7 @@
  * (profiles.target_exam) ตรงกับรอบนั้น (ส่วนที่ 1 → part1, NL2 เดิม → nl2,
  * ส่วนที่ 2 → OSCE — ดู examKindsForTarget ใน lib/exam-level).
  *
- * - ส่งเฉพาะรอบที่ confirmed ใน lib/exam-dates.ts
+ * - ส่งเฉพาะรอบที่ confirmed ใน exam_rounds (ดู lib/exam-rounds.ts)
  * - คนที่ยังไม่ตั้งระดับ (null) และ board ไม่ได้รับ — ประหยัดโควต้า LINE
  * - กันส่งซ้ำด้วย exam_reminder_log (PK user_id, round_key, days_before):
  *   INSERT ก่อนส่ง, conflict 23505 = ส่งไปแล้ว, ส่งไม่สำเร็จทุกช่องทาง = ลบ log
@@ -20,6 +20,7 @@ import { withCronRun } from "@/lib/cron-runs";
 import { isPushConfigured, sendPushToUser } from "@/lib/push";
 import { toLiffUri } from "@/lib/line-links";
 import { examKindsForTarget } from "@/lib/exam-level";
+import { loadExamRounds } from "@/lib/exam-rounds";
 import { countdownBody, countdownTitle, dueReminders } from "@/lib/exam-reminders";
 
 export const runtime = "nodejs";
@@ -37,12 +38,13 @@ function isAuthorized(request: Request): boolean {
 }
 
 async function handleGet(_request: Request) {
-  const due = dueReminders(new Date());
+  const supabase = createAdminClient();
+  // วันสอบมาจากตาราง exam_rounds (อัปเดตเองจากประกาศ ศรว.) — ค่าสำรองคือ lib/exam-dates.ts
+  const due = dueReminders(new Date(), await loadExamRounds(supabase));
   if (due.length === 0) {
     return NextResponse.json({ ok: true, due: 0, sent: 0 });
   }
 
-  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("profiles")
     .select("id, name, line_user_id, target_exam")

@@ -21,6 +21,7 @@ import {
   isExamTarget,
 } from "@/lib/exam-level";
 import { formatThaiExamDate, getNextExamRound } from "@/lib/exam-dates";
+import { loadExamRounds } from "@/lib/exam-rounds";
 
 const MENU_ACTION = "level_menu";
 const SET_ACTION = "set_level";
@@ -177,7 +178,8 @@ export async function handleLevelPostback(
   }
 
   const kinds = examKindsForTarget(target);
-  const next = kinds.length > 0 ? getNextExamRound(now, kinds) : null;
+  const next =
+    kinds.length > 0 ? getNextExamRound(now, kinds, await loadExamRounds(supabase)) : null;
   const lines = [
     `✅ ตั้งระดับเป็น ${examTargetLabel(target)} แล้ว`,
     "ข้อสอบประจำวันครั้งต่อไปจะตรงกับระดับนี้",
