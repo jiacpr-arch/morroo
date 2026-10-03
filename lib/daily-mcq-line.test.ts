@@ -75,7 +75,7 @@ function fakeSupabase(opts: FakeOpts = {}) {
 
   const client = {
     rpc(name: string, args: Record<string, unknown>) {
-      if (name === "get_daily_mcq") {
+      if (name === "get_daily_mcq_v2") {
         return Promise.resolve({ data: [{ id: QUESTION.id, quiz_date: args.p_date }], error: null });
       }
       if (name === "daily_quiz_streak") {
@@ -200,7 +200,7 @@ describe("handleDailyMcqPostback — exam-level pool", () => {
     const { client } = fakeSupabase();
     const rpc = vi.spyOn(client, "rpc");
     await handleDailyMcqPostback(client as never, LINE_USER, data);
-    return rpc.mock.calls.find((c) => c[0] === "get_daily_mcq")?.[1] as Record<string, unknown>;
+    return rpc.mock.calls.find((c) => c[0] === "get_daily_mcq_v2")?.[1] as Record<string, unknown>;
   }
 
   it("re-derives the question from the allow-listed pool in `p`", async () => {
@@ -272,7 +272,7 @@ describe("handleDailyMcqPostback — validity window", () => {
 });
 
 describe("handleDailyMcqPostback — scoring is server-derived, not from `q`", () => {
-  it("grades against get_daily_mcq(d)'s question even with a forged `q`", async () => {
+  it("grades against get_daily_mcq_v2(d)'s question even with a forged `q`", async () => {
     const { client } = fakeSupabase();
     const reply = await handleDailyMcqPostback(
       client as never,
@@ -280,7 +280,7 @@ describe("handleDailyMcqPostback — scoring is server-derived, not from `q`", (
       `action=daily_answer&d=${TODAY}&c=B&q=some-other-question-id`
     );
     // B is QUESTION.correct_answer — scored correct because the handler
-    // resolved the question via get_daily_mcq(d), not the forged `q`.
+    // resolved the question via get_daily_mcq_v2(d), not the forged `q`.
     expect(JSON.stringify(reply)).toContain("ถูกต้อง");
   });
 

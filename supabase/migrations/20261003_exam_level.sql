@@ -1,6 +1,6 @@
 -- ระดับการสอบ (ส่วนที่ 1 / ส่วนที่ 2 / NL2 เดิม / board) สำหรับตามนักเรียนตามระดับ
 --   1) profiles.target_exam เปลี่ยนเป็นค่าตามระบบ ศรว. ใหม่ (+ map ค่าเดิม)
---   2) profiles.board_specialty + get_daily_mcq รับ p_pool / p_board_specialty เพื่อเลือกข้อสอบรายวันตามระดับ (NULL = ผสม NL1+NL2 เหมือนเดิม)
+--   2) profiles.board_specialty + get_daily_mcq_v2(p_date, p_pool, p_board_specialty) เลือกข้อสอบรายวันตามระดับ (NULL = ผสม NL1+NL2)
 --   3) exam_reminder_log กันส่งเตือนนับถอยหลังซ้ำ (service role เท่านั้น)
 
 -- ─── 1) target_exam → ระบบ ศรว. ใหม่ ───────────────────────────────────────
@@ -22,45 +22,33 @@ ALTER TABLE public.profiles
   ADD CONSTRAINT profiles_target_exam_check
   CHECK (target_exam IS NULL OR target_exam IN ('part1', 'part2', 'NL2', 'meq', 'board', 'NL1', 'NL3', 'both'));
 
--- ─── 2) board_specialty + get_daily_mcq(p_date, p_pool, p_board_specialty) ──
+-- ─── 2) board_specialty + get_daily_mcq_v2(p_date, p_pool, p_board_specialty) ──
 -- ผู้ใช้ระดับ board เลือกสาขา (อายุรศาสตร์, ศัลยศาสตร์ …) เพื่อรับข้อสอบรายวันของสาขานั้น
 ALTER TABLE public.profiles
   ADD COLUMN IF NOT EXISTS board_specialty text REFERENCES public.board_specialties(slug) ON DELETE SET NULL;
 
+-- ฟังก์ชันใหม่ get_daily_mcq_v2 (ไม่แตะ get_daily_mcq(date) เดิม — ที่ dashboard card ยังเรียกอยู่
+-- จึงไม่ต้อง DROP ของที่ใช้งานอยู่ และไม่มี overload ที่ทำให้ PostgREST เลือกฟังก์ชันไม่ได้)
 -- p_pool: 'NL1' | 'NL2' → นักศึกษา exam_type นั้น
 --         'board'      → audience board (กรองสาขาด้วย p_board_specialty ถ้าส่งมา)
---         NULL/อื่นๆ   → พฤติกรรมเดิม (student NL1+NL2)
--- ยัง SECURITY DEFINER + grant anon เหมือนเดิม เพราะ dashboard card ใช้ตอนยังไม่ login
-DROP FUNCTION IF EXISTS get_daily_mcq(date);
-DROP FUNCTION IF EXISTS get_daily_mcq(date, text);
-
-CREATE OR REPLACE FUNCTION get_daily_mcq(
+--         NULL/อื่นๆ   → ผสม NL1+NL2 (เหมือน get_daily_mcq เดิมทุกประการ)
+-- SECURITY DEFINER + grant anon เหมือนฟังก์ชันเดิม
+CREATE OR REPLACE FUNCTION public.get_daily_mcq_v2(
   p_date date DEFAULT quiz_date_bangkok(),
   p_pool text DEFAULT NULL,
   p_board_specialty text DEFAULT NULL
 )
 RETURNS TABLE(
-  id              uuid,
-  scenario        text,
-  difficulty      text,
-  subject_id      uuid,
-  subject_name_th text,
-  subject_icon    text,
-  exam_type       text,
-  quiz_date       date
+  id uuid, scenario text, difficulty text, subject_id uuid,
+  subject_name_th text, subject_icon text, exam_type text, quiz_date date
 )
-LANGUAGE sql STABLE SECURITY DEFINER AS $$
+LANGUAGE sql STABLE SECURITY DEFINER AS $fn$
   SELECT
-    q.id,
-    q.scenario,
-    q.difficulty::text,
-    q.subject_id,
-    s.name_th AS subject_name_th,
-    s.icon    AS subject_icon,
-    q.exam_type::text,
-    p_date    AS quiz_date
+    q.id, q.scenario, q.difficulty::text, q.subject_id,
+    s.name_th AS subject_name_th, s.icon AS subject_icon,
+    q.exam_type::text, p_date AS quiz_date
   FROM mcq_questions q
-  JOIN mcq_subjects  s ON s.id = q.subject_id
+  JOIN mcq_subjects s ON s.id = q.subject_id
   WHERE q.status = 'active'
     AND (
       CASE
@@ -73,14 +61,14 @@ LANGUAGE sql STABLE SECURITY DEFINER AS $$
     )
   ORDER BY md5(q.id::text || p_date::text)
   LIMIT 1;
-$$;
+$fn$;
 
-GRANT EXECUTE ON FUNCTION get_daily_mcq(date, text, text) TO authenticated, anon;
+GRANT EXECUTE ON FUNCTION public.get_daily_mcq_v2(date, text, text) TO authenticated, anon;
 
 -- ─── 3) exam_reminder_log ──────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS public.exam_reminder_log (
   user_id     uuid        NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
-  round_key   text        NOT NULL,   -- เช่น "2026-10-10:1" (วันสอบ:step)
+  round_key   text        NOT NULL,   -- เช่น "2026-10-10:part1" (วันสอบ:kind)
   days_before integer     NOT NULL,
   sent_at     timestamptz NOT NULL DEFAULT now(),
   PRIMARY KEY (user_id, round_key, days_before)

@@ -13,7 +13,7 @@
  */
 
 export type ExamTarget = "part1" | "NL2" | "part2" | "meq" | "board";
-/** กลุ่มข้อสอบที่ get_daily_mcq(p_pool) รับ */
+/** กลุ่มข้อสอบที่ get_daily_mcq_v2(p_pool) รับ */
 export type McqPool = "NL1" | "NL2" | "board";
 /** ชนิดรอบสอบใน lib/exam-dates.ts */
 export type ExamKind = "nl1" | "nl2" | "part1" | "osce" | "meq";

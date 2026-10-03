@@ -6,7 +6,7 @@
  * `action=daily_answer&d=<quiz_date>&c=<A-E>&q=<question id>`.
  *
  * Security: `d` and `c` are the only inputs trusted for scoring. The graded
- * question is always re-derived server-side from get_daily_mcq(d) — never
+ * question is always re-derived server-side from get_daily_mcq_v2(d, pool, specialty) — never
  * from the client-controlled `q` — so a forged `q` can't let someone answer
  * a question they already know the answer to. `d` is only accepted for
  * today or yesterday (Asia/Bangkok), closing old cards after one day.
@@ -101,7 +101,7 @@ export type DailyQuestionFull = McqQuestion & { quiz_date: string };
 
 /**
  * Load the full row (choices, correct_answer, explanation) for the day's
- * question, resolved via get_daily_mcq(quizDate) — the single canonical
+ * question, resolved via get_daily_mcq_v2(quizDate, pool, specialty) — the single canonical
  * source of "which question is today's", shared with the broadcast route.
  */
 export async function loadDailyQuestion(
@@ -113,9 +113,9 @@ export async function loadDailyQuestion(
   const args: Record<string, string> = { p_date: quizDate };
   if (pool) args.p_pool = pool;
   if (pool === "board" && boardSpecialty) args.p_board_specialty = boardSpecialty;
-  const { data: daily, error: rpcError } = await supabase.rpc("get_daily_mcq", args);
+  const { data: daily, error: rpcError } = await supabase.rpc("get_daily_mcq_v2", args);
   if (rpcError) {
-    console.error("[daily-mcq-line] get_daily_mcq failed:", rpcError);
+    console.error("[daily-mcq-line] get_daily_mcq_v2 failed:", rpcError);
     return null;
   }
   const id = (daily as { id: string }[] | null)?.[0]?.id;
