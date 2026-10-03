@@ -1,6 +1,6 @@
 /**
  * LINE rich menu ของหมอรู้ — เมนูเดียวสำหรับทุกคน ฝั่ง server ตัดสินระดับเอง
- * (ทำแบบเดียวกับ roodee src/lib/line-menu.ts เพื่อให้ 3 แบรนด์ใช้ grid เดียวกัน)
+ * (ทำแบบเดียวกับ roodee src/lib/line-menu.ts — layout 3×2 + แถบล่างแบรนด์ แต่ขอบแถวตามรูปของหมอรู้)
  *
  * รูป: public/line/rich-menu-main.jpg (2500×1686, ≤ 1 MB) — spec ใน docs/line-rich-menu.md
  * ติดตั้งผ่าน POST /api/admin/line/rich-menu (ปุ่มบน /admin): สร้างเมนู → อัปโหลดรูป
@@ -42,9 +42,10 @@ const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").
 const ROODEE_URL = "https://roodee.me/?utm_source=line&utm_medium=morroo_rich_menu";
 const PHARMRU_URL = "https://www.pharmru.com/?utm_source=line&utm_medium=morroo_rich_menu";
 
-// ขอบช่องในรูป 2500×1686 — ตรงกับ roodee ทุกพิกเซล
-export const COLS = [0, 835, 1664, 2500] as const;
-export const ROWS = [0, 724, 1408, 1686] as const;
+// ขอบช่องในรูป 2500×1686 — วัดจากรอยต่อระหว่างการ์ดในรูปจริง (public/line/rich-menu-main.jpg)
+// ถ้าเปลี่ยนรูป ต้องวัดรอยต่อใหม่แล้วแก้ค่าสองชุดนี้ให้ตรง ไม่งั้นพื้นที่กดจะเลื่อนไปทับการ์ดข้างเคียง
+export const COLS = [0, 840, 1662, 2500] as const;
+export const ROWS = [0, 620, 1223, 1686] as const;
 
 function area(col: number, row: number, action: Record<string, unknown>) {
   return {

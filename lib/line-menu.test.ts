@@ -54,8 +54,8 @@ describe("buildRichMenu", () => {
     expect(menu.areas.length).toBe(9);
     expect(menu.areas.length).toBeLessThanOrEqual(20);
     expect((menu.chatBarText as string).length).toBeLessThanOrEqual(14);
-    expect(COLS).toEqual([0, 835, 1664, 2500]);
-    expect(ROWS).toEqual([0, 724, 1408, 1686]);
+    expect(COLS).toEqual([0, 840, 1662, 2500]);
+    expect(ROWS).toEqual([0, 620, 1223, 1686]);
   });
 
   it("tiles the whole image without overlap", () => {
