@@ -7,8 +7,8 @@ import { logAIError } from "@/lib/anthropic-error";
  * capacity-constrained, so a partial Anthropic outage degrades quality instead
  * of blocking the user entirely.
  */
-export const CHAT_MODELS: string[] = ["claude-sonnet-4-6", "claude-haiku-4-5"];
-export const SCORE_MODELS: string[] = ["claude-opus-4-7", "claude-sonnet-4-6"];
+export const CHAT_MODELS: string[] = ["claude-sonnet-5", "claude-haiku-4-5"];
+export const SCORE_MODELS: string[] = ["claude-opus-5", "claude-sonnet-5"];
 
 /**
  * Single place to construct the Anthropic client.

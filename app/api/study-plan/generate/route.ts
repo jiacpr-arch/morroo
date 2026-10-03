@@ -8,7 +8,7 @@ import type { StudyPlan } from "@/lib/types-study-plan";
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-const MODEL = "claude-sonnet-4-6";
+const MODEL = "claude-sonnet-5";
 
 // POST /api/study-plan/generate
 // Body: { daily_hours?: number (1..8), exam_date?: string (YYYY-MM-DD) }

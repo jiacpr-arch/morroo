@@ -29,7 +29,7 @@ import {
   type OpenPrResult,
 } from "@/lib/github-api";
 
-const SUGGESTER_MODEL = "claude-sonnet-4-6";
+const SUGGESTER_MODEL = "claude-sonnet-5";
 const SUGGEST_LABEL = "ads-autofix-suggest";
 
 export interface PageFinding {

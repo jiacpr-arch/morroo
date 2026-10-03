@@ -18,7 +18,7 @@
  * ให้ diagram (ที่คุม label ได้ 100%) เป็นตัวหลัก ส่วน hero ให้แอดมินเลือกรูปเองแทน
  *
  * Env ที่ต้องมี: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
- * Env เสริม:     OPENAI_API_KEY (ใช้เมื่อ WITH_HERO=1), MODEL (default claude-sonnet-4-6)
+ * Env เสริม:     OPENAI_API_KEY (ใช้เมื่อ WITH_HERO=1), MODEL (default claude-sonnet-5)
  *
  * เลือกบท:  LESSON_ID=<uuid>   หรือ  TOPIC="FMMD 1201" (ทุกบทในวิชา)  หรือ  ALL=1
  * ควบคุม:   DRY=1   เขียน spec + svg ลง scripts/lesson-figures-out/ อย่างเดียว ไม่อัป/ไม่แก้ DB
@@ -51,7 +51,7 @@ const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const MODEL = process.env.MODEL ?? "claude-sonnet-4-6";
+const MODEL = process.env.MODEL ?? "claude-sonnet-5";
 
 const LESSON_ID = process.env.LESSON_ID;
 const TOPIC = process.env.TOPIC;

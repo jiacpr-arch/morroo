@@ -13,7 +13,7 @@
  *       npm run gen:meqgames -- --force              (ทับข้อสอบที่มีเกมแล้ว)
  *       npm run gen:meqgames -- --force --legacy-only (ทับเฉพาะเกมรูปแบบเก่า — ยังไม่มี orderSheet)
  *       npm run gen:meqgames -- --publish            (publish เลย — ไม่แนะนำ ควรรีวิวก่อน)
- *       npm run gen:meqgames -- --model claude-opus-4-7   (โมเดลคุณภาพสูงขึ้น)
+ *       npm run gen:meqgames -- --model claude-opus-5   (โมเดลคุณภาพสูงขึ้น)
  *
  * ต้องมี env: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
  */
@@ -48,7 +48,7 @@ const PUBLISH = has("--publish");
 const LIMIT = val("--limit") ? Number(val("--limit")) : undefined;
 const EXAM_ID = val("--exam");
 const CATEGORY = val("--category");
-const MODELS = [val("--model") ?? "claude-sonnet-4-6", "claude-haiku-4-5"];
+const MODELS = [val("--model") ?? "claude-sonnet-5", "claude-haiku-4-5"];
 // แปลงพร้อมกันกี่เคส — ลำพังเคสละ ~1-2 นาที ถ้าไล่ทีละเคสจะเกิน timeout ของ CI
 const CONCURRENCY = Math.max(1, Number(val("--concurrency") ?? 3));
 
