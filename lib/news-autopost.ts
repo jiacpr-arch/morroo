@@ -31,13 +31,18 @@ export async function autopostNewsItem(id: string): Promise<NewsAutopostResult> 
   const { data: item, error } = await admin
     .from("news_items")
     .select(
-      "id, title, summary, cover_image, fb_post_id, line_broadcast_at",
+      "id, title, summary, cover_image, fb_post_id, line_broadcast_at, origin",
     )
     .eq("id", id)
     .single();
 
   if (error || !item) {
     return { fb: "error:not_found", line: "error:not_found" };
+  }
+  // Second line of defence (the cron query already filters origin = manual):
+  // items imported by exam-news-fetch have no human review, so never auto-post them.
+  if (item.origin === "auto") {
+    return { fb: "skipped:auto_origin", line: "skipped:auto_origin" };
   }
 
   const url = `${SITE_URL}/news/${item.id}`;

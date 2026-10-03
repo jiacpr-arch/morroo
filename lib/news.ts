@@ -73,6 +73,7 @@ export async function getNewsItems(
     .select(
       "id, source_type, source_section, title, summary, body, link, cover_image, published_at, pinned"
     )
+    .eq("is_active", true)
     .order("pinned", { ascending: false })
     .order("published_at", { ascending: false });
 
@@ -97,6 +98,7 @@ export async function getNewsItem(id: string): Promise<NewsItem | null> {
       "id, source_type, source_section, title, summary, body, link, cover_image, published_at, pinned"
     )
     .eq("id", id)
+    .eq("is_active", true)
     .single();
   if (error || !data) return null;
   return mapRow(data as NewsRow);
@@ -112,6 +114,7 @@ export async function countRecentUpdatesBySection(
     .from("news_items")
     .select("id", { count: "exact", head: true })
     .eq("source_section", section)
+    .eq("is_active", true)
     .gte("published_at", since.toISOString());
   return count ?? 0;
 }

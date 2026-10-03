@@ -48,6 +48,8 @@ async function handleGet(request: Request) {
     .from("news_items")
     .select("id")
     .in("source_type", ["product_update", "exam"])
+    // ข่าวอัตโนมัติ (exam-news-fetch) ห้ามถูกโพสต์ Facebook/LINE เอง
+    .eq("origin", "manual")
     .lte("published_at", new Date().toISOString())
     .or("fb_post_id.is.null,line_broadcast_at.is.null")
     .order("published_at", { ascending: true })

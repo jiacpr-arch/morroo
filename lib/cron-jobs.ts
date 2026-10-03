@@ -21,6 +21,7 @@ export const CRON_JOBS: readonly CronJobDef[] = [
   { job: "billing-reconcile", path: "/api/billing/reconcile", schedule: "*/15 * * * *" },
   { job: "email-weekly-digest", path: "/api/email/weekly-digest", schedule: "0 1 * * 1" },
   { job: "lead-followup", path: "/api/cron/lead-followup", schedule: "0 2 * * *" },
+  { job: "exam-news-fetch", path: "/api/cron/exam-news-fetch", schedule: "15 23 * * *" },
   { job: "exam-watch", path: "/api/cron/exam-watch", schedule: "30 0 * * *" },
   { job: "signup-drip", path: "/api/cron/signup-drip", schedule: "45 2 * * *" },
   { job: "autopost-ig", path: "/api/cron/autopost-ig", schedule: "0 13 * * *" },

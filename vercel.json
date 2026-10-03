@@ -18,6 +18,10 @@
       "schedule": "5 1 * * *"
     },
     {
+      "path": "/api/cron/exam-news-fetch",
+      "schedule": "15 23 * * *"
+    },
+    {
       "path": "/api/cron/exam-watch",
       "schedule": "30 0 * * *"
     },

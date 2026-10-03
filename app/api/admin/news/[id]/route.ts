@@ -47,6 +47,7 @@ export async function PATCH(
     "pinned",
     "published_at",
     "source_section",
+    "is_active",
   ];
   const update: Record<string, unknown> = {};
   for (const k of allowedKeys) {
@@ -54,6 +55,13 @@ export async function PATCH(
   }
   if (Object.keys(update).length === 0) {
     return NextResponse.json({ error: "No updatable fields" }, { status: 400 });
+  }
+  if ("is_active" in update) {
+    if (typeof update.is_active !== "boolean") {
+      return NextResponse.json({ error: "is_active must be boolean" }, { status: 400 });
+    }
+    // แอดมินซ่อน/แสดง = ตรวจแล้ว
+    update.reviewed_at = new Date().toISOString();
   }
 
   const admin = createAdminClient();
